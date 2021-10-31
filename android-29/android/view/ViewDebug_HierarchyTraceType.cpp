@@ -5,7 +5,7 @@ namespace android::view
 	// Fields
 	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::BUILD_CACHE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"BUILD_CACHE",
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
@@ -13,7 +13,7 @@ namespace android::view
 	}
 	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::DRAW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"DRAW",
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
@@ -21,7 +21,7 @@ namespace android::view
 	}
 	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::INVALIDATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"INVALIDATE",
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
@@ -29,7 +29,7 @@ namespace android::view
 	}
 	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::INVALIDATE_CHILD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"INVALIDATE_CHILD",
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
@@ -37,7 +37,7 @@ namespace android::view
 	}
 	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::INVALIDATE_CHILD_IN_PARENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"INVALIDATE_CHILD_IN_PARENT",
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
@@ -45,7 +45,7 @@ namespace android::view
 	}
 	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::ON_LAYOUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"ON_LAYOUT",
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
@@ -53,7 +53,7 @@ namespace android::view
 	}
 	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::ON_MEASURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"ON_MEASURE",
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
@@ -61,7 +61,7 @@ namespace android::view
 	}
 	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::REQUEST_LAYOUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"REQUEST_LAYOUT",
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
@@ -76,7 +76,7 @@ namespace android::view
 	// Methods
 	android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/view/ViewDebug$HierarchyTraceType;",
@@ -85,7 +85,7 @@ namespace android::view
 	}
 	jarray ViewDebug_HierarchyTraceType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.ViewDebug$HierarchyTraceType",
 			"values",
 			"()[Landroid/view/ViewDebug$HierarchyTraceType;"

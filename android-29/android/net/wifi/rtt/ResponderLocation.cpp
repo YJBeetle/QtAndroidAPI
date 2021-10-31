@@ -10,28 +10,28 @@ namespace android::net::wifi::rtt
 	// Fields
 	jint ResponderLocation::ALTITUDE_FLOORS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"ALTITUDE_FLOORS"
 		);
 	}
 	jint ResponderLocation::ALTITUDE_METERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"ALTITUDE_METERS"
 		);
 	}
 	jint ResponderLocation::ALTITUDE_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"ALTITUDE_UNDEFINED"
 		);
 	}
 	__JniBaseClass ResponderLocation::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.rtt.ResponderLocation",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -39,63 +39,63 @@ namespace android::net::wifi::rtt
 	}
 	jint ResponderLocation::DATUM_NAD83_MLLW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"DATUM_NAD83_MLLW"
 		);
 	}
 	jint ResponderLocation::DATUM_NAD83_NAV88()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"DATUM_NAD83_NAV88"
 		);
 	}
 	jint ResponderLocation::DATUM_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"DATUM_UNDEFINED"
 		);
 	}
 	jint ResponderLocation::DATUM_WGS84()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"DATUM_WGS84"
 		);
 	}
 	jint ResponderLocation::LCI_VERSION_1()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"LCI_VERSION_1"
 		);
 	}
 	jint ResponderLocation::LOCATION_FIXED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"LOCATION_FIXED"
 		);
 	}
 	jint ResponderLocation::LOCATION_MOVEMENT_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"LOCATION_MOVEMENT_UNKNOWN"
 		);
 	}
 	jint ResponderLocation::LOCATION_RESERVED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"LOCATION_RESERVED"
 		);
 	}
 	jint ResponderLocation::LOCATION_VARIABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
 			"LOCATION_VARIABLE"
 		);

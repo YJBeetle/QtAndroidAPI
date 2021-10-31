@@ -14,7 +14,7 @@ namespace java::util
 	// Methods
 	java::util::EnumSet EnumSet::allOf(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"allOf",
 			"(Ljava/lang/Class;)Ljava/util/EnumSet;",
@@ -23,7 +23,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::complementOf(java::util::EnumSet arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"complementOf",
 			"(Ljava/util/EnumSet;)Ljava/util/EnumSet;",
@@ -32,7 +32,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::copyOf(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"copyOf",
 			"(Ljava/util/Collection;)Ljava/util/EnumSet;",
@@ -41,7 +41,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::copyOf(java::util::EnumSet arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"copyOf",
 			"(Ljava/util/EnumSet;)Ljava/util/EnumSet;",
@@ -50,7 +50,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::noneOf(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"noneOf",
 			"(Ljava/lang/Class;)Ljava/util/EnumSet;",
@@ -59,7 +59,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::of(java::lang::Enum arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"of",
 			"(Ljava/lang/Enum;)Ljava/util/EnumSet;",
@@ -68,7 +68,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::of(java::lang::Enum arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"of",
 			"(Ljava/lang/Enum;[Ljava/lang/Enum;)Ljava/util/EnumSet;",
@@ -78,7 +78,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"of",
 			"(Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;",
@@ -88,7 +88,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"of",
 			"(Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;",
@@ -99,7 +99,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"of",
 			"(Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;",
@@ -111,7 +111,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3, java::lang::Enum arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"of",
 			"(Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;",
@@ -124,7 +124,7 @@ namespace java::util
 	}
 	java::util::EnumSet EnumSet::range(java::lang::Enum arg0, java::lang::Enum arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.EnumSet",
 			"range",
 			"(Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;",

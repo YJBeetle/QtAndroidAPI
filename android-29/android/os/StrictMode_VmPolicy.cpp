@@ -6,7 +6,7 @@ namespace android::os
 	// Fields
 	android::os::StrictMode_VmPolicy StrictMode_VmPolicy::LAX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.StrictMode$VmPolicy",
 			"LAX",
 			"Landroid/os/StrictMode$VmPolicy;"

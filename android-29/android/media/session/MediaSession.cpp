@@ -17,14 +17,14 @@ namespace android::media::session
 	// Fields
 	jint MediaSession::FLAG_HANDLES_MEDIA_BUTTONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.MediaSession",
 			"FLAG_HANDLES_MEDIA_BUTTONS"
 		);
 	}
 	jint MediaSession::FLAG_HANDLES_TRANSPORT_CONTROLS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.MediaSession",
 			"FLAG_HANDLES_TRANSPORT_CONTROLS"
 		);

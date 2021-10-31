@@ -8,14 +8,14 @@ namespace android::widget
 	// Fields
 	jint Magnifier::SOURCE_BOUND_MAX_IN_SURFACE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.Magnifier",
 			"SOURCE_BOUND_MAX_IN_SURFACE"
 		);
 	}
 	jint Magnifier::SOURCE_BOUND_MAX_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.Magnifier",
 			"SOURCE_BOUND_MAX_VISIBLE"
 		);

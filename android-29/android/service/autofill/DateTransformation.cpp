@@ -8,7 +8,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass DateTransformation::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.DateTransformation",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

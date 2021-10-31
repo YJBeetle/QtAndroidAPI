@@ -7,7 +7,7 @@ namespace android::hardware::input
 	// Fields
 	jstring InputManager::ACTION_QUERY_KEYBOARD_LAYOUTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.input.InputManager",
 			"ACTION_QUERY_KEYBOARD_LAYOUTS",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::hardware::input
 	}
 	jstring InputManager::META_DATA_KEYBOARD_LAYOUTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.input.InputManager",
 			"META_DATA_KEYBOARD_LAYOUTS",
 			"Ljava/lang/String;"

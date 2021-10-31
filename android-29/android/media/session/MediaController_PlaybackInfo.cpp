@@ -7,7 +7,7 @@ namespace android::media::session
 	// Fields
 	__JniBaseClass MediaController_PlaybackInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.session.MediaController$PlaybackInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,14 +15,14 @@ namespace android::media::session
 	}
 	jint MediaController_PlaybackInfo::PLAYBACK_TYPE_LOCAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.MediaController$PlaybackInfo",
 			"PLAYBACK_TYPE_LOCAL"
 		);
 	}
 	jint MediaController_PlaybackInfo::PLAYBACK_TYPE_REMOTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.MediaController$PlaybackInfo",
 			"PLAYBACK_TYPE_REMOTE"
 		);

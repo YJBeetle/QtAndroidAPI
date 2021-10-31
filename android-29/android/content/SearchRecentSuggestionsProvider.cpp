@@ -7,14 +7,14 @@ namespace android::content
 	// Fields
 	jint SearchRecentSuggestionsProvider::DATABASE_MODE_2LINES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.SearchRecentSuggestionsProvider",
 			"DATABASE_MODE_2LINES"
 		);
 	}
 	jint SearchRecentSuggestionsProvider::DATABASE_MODE_QUERIES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.SearchRecentSuggestionsProvider",
 			"DATABASE_MODE_QUERIES"
 		);

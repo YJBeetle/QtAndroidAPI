@@ -5,14 +5,14 @@ namespace android::media
 	// Fields
 	jint MediaCodec_CodecException::ERROR_INSUFFICIENT_RESOURCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec$CodecException",
 			"ERROR_INSUFFICIENT_RESOURCE"
 		);
 	}
 	jint MediaCodec_CodecException::ERROR_RECLAIMED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec$CodecException",
 			"ERROR_RECLAIMED"
 		);

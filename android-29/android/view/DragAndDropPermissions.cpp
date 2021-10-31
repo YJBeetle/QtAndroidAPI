@@ -6,7 +6,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass DragAndDropPermissions::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.DragAndDropPermissions",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -20,7 +20,7 @@ namespace java::nio
 	// Methods
 	java::nio::ByteBuffer ByteBuffer::allocate(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.ByteBuffer",
 			"allocate",
 			"(I)Ljava/nio/ByteBuffer;",
@@ -29,7 +29,7 @@ namespace java::nio
 	}
 	java::nio::ByteBuffer ByteBuffer::allocateDirect(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.ByteBuffer",
 			"allocateDirect",
 			"(I)Ljava/nio/ByteBuffer;",
@@ -38,7 +38,7 @@ namespace java::nio
 	}
 	java::nio::ByteBuffer ByteBuffer::wrap(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.ByteBuffer",
 			"wrap",
 			"([B)Ljava/nio/ByteBuffer;",
@@ -47,7 +47,7 @@ namespace java::nio
 	}
 	java::nio::ByteBuffer ByteBuffer::wrap(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.ByteBuffer",
 			"wrap",
 			"([BII)Ljava/nio/ByteBuffer;",

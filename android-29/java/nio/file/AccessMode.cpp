@@ -5,7 +5,7 @@ namespace java::nio::file
 	// Fields
 	java::nio::file::AccessMode AccessMode::EXECUTE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.AccessMode",
 			"EXECUTE",
 			"Ljava/nio/file/AccessMode;"
@@ -13,7 +13,7 @@ namespace java::nio::file
 	}
 	java::nio::file::AccessMode AccessMode::READ()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.AccessMode",
 			"READ",
 			"Ljava/nio/file/AccessMode;"
@@ -21,7 +21,7 @@ namespace java::nio::file
 	}
 	java::nio::file::AccessMode AccessMode::WRITE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.AccessMode",
 			"WRITE",
 			"Ljava/nio/file/AccessMode;"
@@ -36,7 +36,7 @@ namespace java::nio::file
 	// Methods
 	java::nio::file::AccessMode AccessMode::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.AccessMode",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/AccessMode;",
@@ -45,7 +45,7 @@ namespace java::nio::file
 	}
 	jarray AccessMode::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.AccessMode",
 			"values",
 			"()[Ljava/nio/file/AccessMode;"

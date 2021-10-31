@@ -7,49 +7,49 @@ namespace android::net::http
 	// Fields
 	jint SslError::SSL_DATE_INVALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.http.SslError",
 			"SSL_DATE_INVALID"
 		);
 	}
 	jint SslError::SSL_EXPIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.http.SslError",
 			"SSL_EXPIRED"
 		);
 	}
 	jint SslError::SSL_IDMISMATCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.http.SslError",
 			"SSL_IDMISMATCH"
 		);
 	}
 	jint SslError::SSL_INVALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.http.SslError",
 			"SSL_INVALID"
 		);
 	}
 	jint SslError::SSL_MAX_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.http.SslError",
 			"SSL_MAX_ERROR"
 		);
 	}
 	jint SslError::SSL_NOTYETVALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.http.SslError",
 			"SSL_NOTYETVALID"
 		);
 	}
 	jint SslError::SSL_UNTRUSTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.http.SslError",
 			"SSL_UNTRUSTED"
 		);

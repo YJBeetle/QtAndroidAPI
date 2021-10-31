@@ -12,7 +12,7 @@ namespace android::service::autofill
 	// Fields
 	jstring AutofillService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.AutofillService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace android::service::autofill
 	}
 	jstring AutofillService::SERVICE_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.AutofillService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"

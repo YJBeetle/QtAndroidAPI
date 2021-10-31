@@ -15,7 +15,7 @@ namespace android::preference
 	// Fields
 	jstring PreferenceActivity::EXTRA_NO_HEADERS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_NO_HEADERS",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::preference
 	}
 	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::preference
 	}
 	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT_ARGUMENTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT_ARGUMENTS",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::preference
 	}
 	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT_SHORT_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT_SHORT_TITLE",
 			"Ljava/lang/String;"
@@ -47,7 +47,7 @@ namespace android::preference
 	}
 	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT_TITLE",
 			"Ljava/lang/String;"
@@ -55,7 +55,7 @@ namespace android::preference
 	}
 	jlong PreferenceActivity::HEADER_ID_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.preference.PreferenceActivity",
 			"HEADER_ID_UNDEFINED"
 		);

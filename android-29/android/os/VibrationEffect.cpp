@@ -5,7 +5,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass VibrationEffect::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.VibrationEffect",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -13,35 +13,35 @@ namespace android::os
 	}
 	jint VibrationEffect::DEFAULT_AMPLITUDE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.VibrationEffect",
 			"DEFAULT_AMPLITUDE"
 		);
 	}
 	jint VibrationEffect::EFFECT_CLICK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.VibrationEffect",
 			"EFFECT_CLICK"
 		);
 	}
 	jint VibrationEffect::EFFECT_DOUBLE_CLICK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.VibrationEffect",
 			"EFFECT_DOUBLE_CLICK"
 		);
 	}
 	jint VibrationEffect::EFFECT_HEAVY_CLICK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.VibrationEffect",
 			"EFFECT_HEAVY_CLICK"
 		);
 	}
 	jint VibrationEffect::EFFECT_TICK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.VibrationEffect",
 			"EFFECT_TICK"
 		);
@@ -55,7 +55,7 @@ namespace android::os
 	// Methods
 	android::os::VibrationEffect VibrationEffect::createOneShot(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.VibrationEffect",
 			"createOneShot",
 			"(JI)Landroid/os/VibrationEffect;",
@@ -65,7 +65,7 @@ namespace android::os
 	}
 	android::os::VibrationEffect VibrationEffect::createPredefined(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.VibrationEffect",
 			"createPredefined",
 			"(I)Landroid/os/VibrationEffect;",
@@ -74,7 +74,7 @@ namespace android::os
 	}
 	android::os::VibrationEffect VibrationEffect::createWaveform(jlongArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.VibrationEffect",
 			"createWaveform",
 			"([JI)Landroid/os/VibrationEffect;",
@@ -84,7 +84,7 @@ namespace android::os
 	}
 	android::os::VibrationEffect VibrationEffect::createWaveform(jlongArray arg0, jintArray arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.VibrationEffect",
 			"createWaveform",
 			"([J[II)Landroid/os/VibrationEffect;",

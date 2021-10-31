@@ -15,7 +15,7 @@ namespace java::nio::file::attribute
 	// Methods
 	java::nio::file::attribute::FileTime FileTime::from(java::time::Instant arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.attribute.FileTime",
 			"from",
 			"(Ljava/time/Instant;)Ljava/nio/file/attribute/FileTime;",
@@ -24,7 +24,7 @@ namespace java::nio::file::attribute
 	}
 	java::nio::file::attribute::FileTime FileTime::from(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.attribute.FileTime",
 			"from",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/nio/file/attribute/FileTime;",
@@ -34,7 +34,7 @@ namespace java::nio::file::attribute
 	}
 	java::nio::file::attribute::FileTime FileTime::fromMillis(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.attribute.FileTime",
 			"fromMillis",
 			"(J)Ljava/nio/file/attribute/FileTime;",

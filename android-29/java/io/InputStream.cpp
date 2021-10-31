@@ -18,7 +18,7 @@ namespace java::io
 	// Methods
 	java::io::InputStream InputStream::nullInputStream()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.io.InputStream",
 			"nullInputStream",
 			"()Ljava/io/InputStream;"

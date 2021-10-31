@@ -7,7 +7,7 @@ namespace org::xmlpull::v1
 	// Fields
 	jstring XmlPullParserFactory::PROPERTY_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"org.xmlpull.v1.XmlPullParserFactory",
 			"PROPERTY_NAME",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace org::xmlpull::v1
 	// Methods
 	org::xmlpull::v1::XmlPullParserFactory XmlPullParserFactory::newInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"org.xmlpull.v1.XmlPullParserFactory",
 			"newInstance",
 			"()Lorg/xmlpull/v1/XmlPullParserFactory;"
@@ -30,7 +30,7 @@ namespace org::xmlpull::v1
 	}
 	org::xmlpull::v1::XmlPullParserFactory XmlPullParserFactory::newInstance(jstring arg0, jclass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"org.xmlpull.v1.XmlPullParserFactory",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/Class;)Lorg/xmlpull/v1/XmlPullParserFactory;",

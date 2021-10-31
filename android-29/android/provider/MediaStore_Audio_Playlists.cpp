@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring MediaStore_Audio_Playlists::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Playlists::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Playlists::ENTRY_CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists",
 			"ENTRY_CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Audio_Playlists::EXTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists",
 			"EXTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Audio_Playlists::INTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists",
 			"INTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -58,7 +58,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri MediaStore_Audio_Playlists::getContentUri(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Playlists",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",

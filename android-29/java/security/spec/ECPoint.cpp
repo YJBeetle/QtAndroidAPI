@@ -6,7 +6,7 @@ namespace java::security::spec
 	// Fields
 	java::security::spec::ECPoint ECPoint::POINT_INFINITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.spec.ECPoint",
 			"POINT_INFINITY",
 			"Ljava/security/spec/ECPoint;"

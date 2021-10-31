@@ -7,21 +7,21 @@ namespace android::service::voice
 	// Fields
 	jint VoiceInteractionSession_Insets::TOUCHABLE_INSETS_CONTENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession$Insets",
 			"TOUCHABLE_INSETS_CONTENT"
 		);
 	}
 	jint VoiceInteractionSession_Insets::TOUCHABLE_INSETS_FRAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession$Insets",
 			"TOUCHABLE_INSETS_FRAME"
 		);
 	}
 	jint VoiceInteractionSession_Insets::TOUCHABLE_INSETS_REGION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession$Insets",
 			"TOUCHABLE_INSETS_REGION"
 		);

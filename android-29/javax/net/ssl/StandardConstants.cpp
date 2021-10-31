@@ -5,7 +5,7 @@ namespace javax::net::ssl
 	// Fields
 	jint StandardConstants::SNI_HOST_NAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"javax.net.ssl.StandardConstants",
 			"SNI_HOST_NAME"
 		);

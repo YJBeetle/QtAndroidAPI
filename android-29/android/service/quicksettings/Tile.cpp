@@ -7,7 +7,7 @@ namespace android::service::quicksettings
 	// Fields
 	__JniBaseClass Tile::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.quicksettings.Tile",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,21 +15,21 @@ namespace android::service::quicksettings
 	}
 	jint Tile::STATE_ACTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.quicksettings.Tile",
 			"STATE_ACTIVE"
 		);
 	}
 	jint Tile::STATE_INACTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.quicksettings.Tile",
 			"STATE_INACTIVE"
 		);
 	}
 	jint Tile::STATE_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.quicksettings.Tile",
 			"STATE_UNAVAILABLE"
 		);

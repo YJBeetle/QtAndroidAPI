@@ -8,7 +8,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass RegexValidator::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.RegexValidator",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

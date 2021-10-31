@@ -5,35 +5,35 @@ namespace android::telephony
 	// Fields
 	jint CellSignalStrength::SIGNAL_STRENGTH_GOOD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.CellSignalStrength",
 			"SIGNAL_STRENGTH_GOOD"
 		);
 	}
 	jint CellSignalStrength::SIGNAL_STRENGTH_GREAT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.CellSignalStrength",
 			"SIGNAL_STRENGTH_GREAT"
 		);
 	}
 	jint CellSignalStrength::SIGNAL_STRENGTH_MODERATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.CellSignalStrength",
 			"SIGNAL_STRENGTH_MODERATE"
 		);
 	}
 	jint CellSignalStrength::SIGNAL_STRENGTH_NONE_OR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.CellSignalStrength",
 			"SIGNAL_STRENGTH_NONE_OR_UNKNOWN"
 		);
 	}
 	jint CellSignalStrength::SIGNAL_STRENGTH_POOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.CellSignalStrength",
 			"SIGNAL_STRENGTH_POOR"
 		);

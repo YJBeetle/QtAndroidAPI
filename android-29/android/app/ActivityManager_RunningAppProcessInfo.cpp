@@ -7,7 +7,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass ActivityManager_RunningAppProcessInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,112 +15,112 @@ namespace android::app
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_BACKGROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_BACKGROUND"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_CACHED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_CACHED"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_CANT_SAVE_STATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_CANT_SAVE_STATE"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_EMPTY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_EMPTY"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_FOREGROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_FOREGROUND"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_FOREGROUND_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_FOREGROUND_SERVICE"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_GONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_GONE"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_PERCEPTIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_PERCEPTIBLE"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_PERCEPTIBLE_PRE_26()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_PERCEPTIBLE_PRE_26"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_SERVICE"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_TOP_SLEEPING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_TOP_SLEEPING"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_TOP_SLEEPING_PRE_28()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_TOP_SLEEPING_PRE_28"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"IMPORTANCE_VISIBLE"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::REASON_PROVIDER_IN_USE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"REASON_PROVIDER_IN_USE"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::REASON_SERVICE_IN_USE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"REASON_SERVICE_IN_USE"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::REASON_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"REASON_UNKNOWN"
 		);

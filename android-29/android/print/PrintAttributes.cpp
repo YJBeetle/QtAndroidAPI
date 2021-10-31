@@ -9,21 +9,21 @@ namespace android::print
 	// Fields
 	jint PrintAttributes::COLOR_MODE_COLOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintAttributes",
 			"COLOR_MODE_COLOR"
 		);
 	}
 	jint PrintAttributes::COLOR_MODE_MONOCHROME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintAttributes",
 			"COLOR_MODE_MONOCHROME"
 		);
 	}
 	__JniBaseClass PrintAttributes::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.print.PrintAttributes",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -31,21 +31,21 @@ namespace android::print
 	}
 	jint PrintAttributes::DUPLEX_MODE_LONG_EDGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintAttributes",
 			"DUPLEX_MODE_LONG_EDGE"
 		);
 	}
 	jint PrintAttributes::DUPLEX_MODE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintAttributes",
 			"DUPLEX_MODE_NONE"
 		);
 	}
 	jint PrintAttributes::DUPLEX_MODE_SHORT_EDGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintAttributes",
 			"DUPLEX_MODE_SHORT_EDGE"
 		);

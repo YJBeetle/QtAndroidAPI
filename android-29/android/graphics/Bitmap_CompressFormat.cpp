@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::Bitmap_CompressFormat Bitmap_CompressFormat::JPEG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Bitmap$CompressFormat",
 			"JPEG",
 			"Landroid/graphics/Bitmap$CompressFormat;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap_CompressFormat Bitmap_CompressFormat::PNG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Bitmap$CompressFormat",
 			"PNG",
 			"Landroid/graphics/Bitmap$CompressFormat;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap_CompressFormat Bitmap_CompressFormat::WEBP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Bitmap$CompressFormat",
 			"WEBP",
 			"Landroid/graphics/Bitmap$CompressFormat;"
@@ -36,7 +36,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Bitmap_CompressFormat Bitmap_CompressFormat::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap$CompressFormat",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Bitmap$CompressFormat;",
@@ -45,7 +45,7 @@ namespace android::graphics
 	}
 	jarray Bitmap_CompressFormat::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap$CompressFormat",
 			"values",
 			"()[Landroid/graphics/Bitmap$CompressFormat;"

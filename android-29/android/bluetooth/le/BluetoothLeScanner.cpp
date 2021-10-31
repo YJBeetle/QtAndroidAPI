@@ -8,7 +8,7 @@ namespace android::bluetooth::le
 	// Fields
 	jstring BluetoothLeScanner::EXTRA_CALLBACK_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.le.BluetoothLeScanner",
 			"EXTRA_CALLBACK_TYPE",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::bluetooth::le
 	}
 	jstring BluetoothLeScanner::EXTRA_ERROR_CODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.le.BluetoothLeScanner",
 			"EXTRA_ERROR_CODE",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::bluetooth::le
 	}
 	jstring BluetoothLeScanner::EXTRA_LIST_SCAN_RESULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.le.BluetoothLeScanner",
 			"EXTRA_LIST_SCAN_RESULT",
 			"Ljava/lang/String;"

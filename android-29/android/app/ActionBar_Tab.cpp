@@ -7,7 +7,7 @@ namespace android::app
 	// Fields
 	jint ActionBar_Tab::INVALID_POSITION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActionBar$Tab",
 			"INVALID_POSITION"
 		);

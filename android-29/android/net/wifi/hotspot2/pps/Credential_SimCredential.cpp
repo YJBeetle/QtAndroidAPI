@@ -6,7 +6,7 @@ namespace android::net::wifi::hotspot2::pps
 	// Fields
 	__JniBaseClass Credential_SimCredential::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.hotspot2.pps.Credential$SimCredential",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

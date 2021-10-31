@@ -12,7 +12,7 @@ namespace javax::xml::datatype
 	// Fields
 	jstring DatatypeFactory::DATATYPEFACTORY_IMPLEMENTATION_CLASS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeFactory",
 			"DATATYPEFACTORY_IMPLEMENTATION_CLASS",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace javax::xml::datatype
 	}
 	jstring DatatypeFactory::DATATYPEFACTORY_PROPERTY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.xml.datatype.DatatypeFactory",
 			"DATATYPEFACTORY_PROPERTY",
 			"Ljava/lang/String;"
@@ -35,7 +35,7 @@ namespace javax::xml::datatype
 	// Methods
 	javax::xml::datatype::DatatypeFactory DatatypeFactory::newDefaultInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.datatype.DatatypeFactory",
 			"newDefaultInstance",
 			"()Ljavax/xml/datatype/DatatypeFactory;"
@@ -43,7 +43,7 @@ namespace javax::xml::datatype
 	}
 	javax::xml::datatype::DatatypeFactory DatatypeFactory::newInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.datatype.DatatypeFactory",
 			"newInstance",
 			"()Ljavax/xml/datatype/DatatypeFactory;"
@@ -51,7 +51,7 @@ namespace javax::xml::datatype
 	}
 	javax::xml::datatype::DatatypeFactory DatatypeFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.datatype.DatatypeFactory",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/datatype/DatatypeFactory;",

@@ -17,7 +17,7 @@ namespace android::net::http
 	// Methods
 	android::net::http::HttpResponseCache HttpResponseCache::getInstalled()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.http.HttpResponseCache",
 			"getInstalled",
 			"()Landroid/net/http/HttpResponseCache;"
@@ -25,7 +25,7 @@ namespace android::net::http
 	}
 	android::net::http::HttpResponseCache HttpResponseCache::install(java::io::File arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.http.HttpResponseCache",
 			"install",
 			"(Ljava/io/File;J)Landroid/net/http/HttpResponseCache;",

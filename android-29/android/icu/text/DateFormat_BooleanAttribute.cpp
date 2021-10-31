@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_ALLOW_NUMERIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DateFormat$BooleanAttribute",
 			"PARSE_ALLOW_NUMERIC",
 			"Landroid/icu/text/DateFormat$BooleanAttribute;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_ALLOW_WHITESPACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DateFormat$BooleanAttribute",
 			"PARSE_ALLOW_WHITESPACE",
 			"Landroid/icu/text/DateFormat$BooleanAttribute;"
@@ -21,7 +21,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_MULTIPLE_PATTERNS_FOR_MATCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DateFormat$BooleanAttribute",
 			"PARSE_MULTIPLE_PATTERNS_FOR_MATCH",
 			"Landroid/icu/text/DateFormat$BooleanAttribute;"
@@ -29,7 +29,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_PARTIAL_LITERAL_MATCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DateFormat$BooleanAttribute",
 			"PARSE_PARTIAL_LITERAL_MATCH",
 			"Landroid/icu/text/DateFormat$BooleanAttribute;"
@@ -44,7 +44,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DateFormat$BooleanAttribute",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/DateFormat$BooleanAttribute;",
@@ -53,7 +53,7 @@ namespace android::icu::text
 	}
 	jarray DateFormat_BooleanAttribute::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DateFormat$BooleanAttribute",
 			"values",
 			"()[Landroid/icu/text/DateFormat$BooleanAttribute;"

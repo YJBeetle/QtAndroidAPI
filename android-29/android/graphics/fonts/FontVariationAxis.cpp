@@ -19,7 +19,7 @@ namespace android::graphics::fonts
 	// Methods
 	jarray FontVariationAxis::fromFontVariationSettings(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.fonts.FontVariationAxis",
 			"fromFontVariationSettings",
 			"(Ljava/lang/String;)[Landroid/graphics/fonts/FontVariationAxis;",
@@ -28,7 +28,7 @@ namespace android::graphics::fonts
 	}
 	jstring FontVariationAxis::toFontVariationSettings(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.fonts.FontVariationAxis",
 			"toFontVariationSettings",
 			"([Landroid/graphics/fonts/FontVariationAxis;)Ljava/lang/String;",

@@ -15,7 +15,7 @@ namespace java::security
 	// Methods
 	java::security::KeyStore_Builder KeyStore_Builder::newInstance(java::io::File arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
 			"newInstance",
 			"(Ljava/io/File;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;",
@@ -25,7 +25,7 @@ namespace java::security
 	}
 	java::security::KeyStore_Builder KeyStore_Builder::newInstance(java::security::KeyStore arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
 			"newInstance",
 			"(Ljava/security/KeyStore;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;",
@@ -35,7 +35,7 @@ namespace java::security
 	}
 	java::security::KeyStore_Builder KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;",
@@ -46,7 +46,7 @@ namespace java::security
 	}
 	java::security::KeyStore_Builder KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;Ljava/io/File;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;",

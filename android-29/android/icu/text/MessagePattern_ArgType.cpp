@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::CHOICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
 			"CHOICE",
 			"Landroid/icu/text/MessagePattern$ArgType;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::NONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
 			"NONE",
 			"Landroid/icu/text/MessagePattern$ArgType;"
@@ -21,7 +21,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::PLURAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
 			"PLURAL",
 			"Landroid/icu/text/MessagePattern$ArgType;"
@@ -29,7 +29,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::SELECT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
 			"SELECT",
 			"Landroid/icu/text/MessagePattern$ArgType;"
@@ -37,7 +37,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::SELECTORDINAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
 			"SELECTORDINAL",
 			"Landroid/icu/text/MessagePattern$ArgType;"
@@ -45,7 +45,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::SIMPLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
 			"SIMPLE",
 			"Landroid/icu/text/MessagePattern$ArgType;"
@@ -60,7 +60,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MessagePattern$ArgType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$ArgType;",
@@ -69,7 +69,7 @@ namespace android::icu::text
 	}
 	jarray MessagePattern_ArgType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MessagePattern$ArgType",
 			"values",
 			"()[Landroid/icu/text/MessagePattern$ArgType;"

@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_AggregationExceptions::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_AggregationExceptions::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_AggregationExceptions::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_AggregationExceptions::RAW_CONTACT_ID1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"RAW_CONTACT_ID1",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_AggregationExceptions::RAW_CONTACT_ID2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"RAW_CONTACT_ID2",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_AggregationExceptions::TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"TYPE",
 			"Ljava/lang/String;"
@@ -54,21 +54,21 @@ namespace android::provider
 	}
 	jint ContactsContract_AggregationExceptions::TYPE_AUTOMATIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"TYPE_AUTOMATIC"
 		);
 	}
 	jint ContactsContract_AggregationExceptions::TYPE_KEEP_SEPARATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"TYPE_KEEP_SEPARATE"
 		);
 	}
 	jint ContactsContract_AggregationExceptions::TYPE_KEEP_TOGETHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$AggregationExceptions",
 			"TYPE_KEEP_TOGETHER"
 		);

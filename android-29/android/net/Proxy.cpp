@@ -6,7 +6,7 @@ namespace android::net
 	// Fields
 	jstring Proxy::EXTRA_PROXY_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.Proxy",
 			"EXTRA_PROXY_INFO",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::net
 	}
 	jstring Proxy::PROXY_CHANGE_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.Proxy",
 			"PROXY_CHANGE_ACTION",
 			"Ljava/lang/String;"
@@ -34,7 +34,7 @@ namespace android::net
 	// Methods
 	jstring Proxy::getDefaultHost()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.Proxy",
 			"getDefaultHost",
 			"()Ljava/lang/String;"
@@ -42,7 +42,7 @@ namespace android::net
 	}
 	jint Proxy::getDefaultPort()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.net.Proxy",
 			"getDefaultPort",
 			"()I"
@@ -50,7 +50,7 @@ namespace android::net
 	}
 	jstring Proxy::getHost(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.Proxy",
 			"getHost",
 			"(Landroid/content/Context;)Ljava/lang/String;",
@@ -59,7 +59,7 @@ namespace android::net
 	}
 	jint Proxy::getPort(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.net.Proxy",
 			"getPort",
 			"(Landroid/content/Context;)I",

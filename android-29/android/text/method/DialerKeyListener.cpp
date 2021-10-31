@@ -6,7 +6,7 @@ namespace android::text::method
 	// Fields
 	jcharArray DialerKeyListener::CHARACTERS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.method.DialerKeyListener",
 			"CHARACTERS",
 			"[C"
@@ -26,7 +26,7 @@ namespace android::text::method
 	// Methods
 	android::text::method::DialerKeyListener DialerKeyListener::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.DialerKeyListener",
 			"getInstance",
 			"()Landroid/text/method/DialerKeyListener;"

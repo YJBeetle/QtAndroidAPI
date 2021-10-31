@@ -5,7 +5,7 @@ namespace android::os
 	// Fields
 	jstring Build_Partition::PARTITION_NAME_SYSTEM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build$Partition",
 			"PARTITION_NAME_SYSTEM",
 			"Ljava/lang/String;"

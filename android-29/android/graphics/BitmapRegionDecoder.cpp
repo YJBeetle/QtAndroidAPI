@@ -17,7 +17,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(java::io::FileDescriptor arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
 			"newInstance",
 			"(Ljava/io/FileDescriptor;Z)Landroid/graphics/BitmapRegionDecoder;",
@@ -27,7 +27,7 @@ namespace android::graphics
 	}
 	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(java::io::InputStream arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
 			"newInstance",
 			"(Ljava/io/InputStream;Z)Landroid/graphics/BitmapRegionDecoder;",
@@ -37,7 +37,7 @@ namespace android::graphics
 	}
 	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(jstring arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
 			"newInstance",
 			"(Ljava/lang/String;Z)Landroid/graphics/BitmapRegionDecoder;",
@@ -47,7 +47,7 @@ namespace android::graphics
 	}
 	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(jbyteArray arg0, jint arg1, jint arg2, jboolean arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
 			"newInstance",
 			"([BIIZ)Landroid/graphics/BitmapRegionDecoder;",

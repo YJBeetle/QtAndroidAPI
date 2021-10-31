@@ -8,98 +8,98 @@ namespace android::telephony
 	// Fields
 	jint PhoneStateListener::LISTEN_ACTIVE_DATA_SUBSCRIPTION_ID_CHANGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_ACTIVE_DATA_SUBSCRIPTION_ID_CHANGE"
 		);
 	}
 	jint PhoneStateListener::LISTEN_CALL_FORWARDING_INDICATOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_CALL_FORWARDING_INDICATOR"
 		);
 	}
 	jint PhoneStateListener::LISTEN_CALL_STATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_CALL_STATE"
 		);
 	}
 	jint PhoneStateListener::LISTEN_CELL_INFO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_CELL_INFO"
 		);
 	}
 	jint PhoneStateListener::LISTEN_CELL_LOCATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_CELL_LOCATION"
 		);
 	}
 	jint PhoneStateListener::LISTEN_DATA_ACTIVITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_DATA_ACTIVITY"
 		);
 	}
 	jint PhoneStateListener::LISTEN_DATA_CONNECTION_STATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_DATA_CONNECTION_STATE"
 		);
 	}
 	jint PhoneStateListener::LISTEN_EMERGENCY_NUMBER_LIST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_EMERGENCY_NUMBER_LIST"
 		);
 	}
 	jint PhoneStateListener::LISTEN_MESSAGE_WAITING_INDICATOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_MESSAGE_WAITING_INDICATOR"
 		);
 	}
 	jint PhoneStateListener::LISTEN_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_NONE"
 		);
 	}
 	jint PhoneStateListener::LISTEN_SERVICE_STATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_SERVICE_STATE"
 		);
 	}
 	jint PhoneStateListener::LISTEN_SIGNAL_STRENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_SIGNAL_STRENGTH"
 		);
 	}
 	jint PhoneStateListener::LISTEN_SIGNAL_STRENGTHS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_SIGNAL_STRENGTHS"
 		);
 	}
 	jint PhoneStateListener::LISTEN_USER_MOBILE_DATA_STATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.PhoneStateListener",
 			"LISTEN_USER_MOBILE_DATA_STATE"
 		);

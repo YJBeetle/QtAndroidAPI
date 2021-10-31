@@ -44,7 +44,7 @@ namespace java::net
 	// Methods
 	void ServerSocket::setSocketFactory(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.ServerSocket",
 			"setSocketFactory",
 			"(Ljava/net/SocketImplFactory;)V",

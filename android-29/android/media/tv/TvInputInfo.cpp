@@ -11,7 +11,7 @@ namespace android::media::tv
 	// Fields
 	__JniBaseClass TvInputInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvInputInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -19,7 +19,7 @@ namespace android::media::tv
 	}
 	jstring TvInputInfo::EXTRA_INPUT_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvInputInfo",
 			"EXTRA_INPUT_ID",
 			"Ljava/lang/String;"
@@ -27,70 +27,70 @@ namespace android::media::tv
 	}
 	jint TvInputInfo::TYPE_COMPONENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvInputInfo",
 			"TYPE_COMPONENT"
 		);
 	}
 	jint TvInputInfo::TYPE_COMPOSITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvInputInfo",
 			"TYPE_COMPOSITE"
 		);
 	}
 	jint TvInputInfo::TYPE_DISPLAY_PORT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvInputInfo",
 			"TYPE_DISPLAY_PORT"
 		);
 	}
 	jint TvInputInfo::TYPE_DVI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvInputInfo",
 			"TYPE_DVI"
 		);
 	}
 	jint TvInputInfo::TYPE_HDMI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvInputInfo",
 			"TYPE_HDMI"
 		);
 	}
 	jint TvInputInfo::TYPE_OTHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvInputInfo",
 			"TYPE_OTHER"
 		);
 	}
 	jint TvInputInfo::TYPE_SCART()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvInputInfo",
 			"TYPE_SCART"
 		);
 	}
 	jint TvInputInfo::TYPE_SVIDEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvInputInfo",
 			"TYPE_SVIDEO"
 		);
 	}
 	jint TvInputInfo::TYPE_TUNER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvInputInfo",
 			"TYPE_TUNER"
 		);
 	}
 	jint TvInputInfo::TYPE_VGA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvInputInfo",
 			"TYPE_VGA"
 		);

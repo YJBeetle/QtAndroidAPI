@@ -9,14 +9,14 @@ namespace android::graphics::drawable
 	// Fields
 	jint ClipDrawable::HORIZONTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.ClipDrawable",
 			"HORIZONTAL"
 		);
 	}
 	jint ClipDrawable::VERTICAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.ClipDrawable",
 			"VERTICAL"
 		);

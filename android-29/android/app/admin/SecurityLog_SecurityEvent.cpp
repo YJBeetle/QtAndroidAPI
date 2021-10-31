@@ -6,7 +6,7 @@ namespace android::app::admin
 	// Fields
 	__JniBaseClass SecurityLog_SecurityEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.SecurityLog$SecurityEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

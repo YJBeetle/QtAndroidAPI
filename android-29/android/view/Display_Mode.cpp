@@ -6,7 +6,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass Display_Mode::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.Display$Mode",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

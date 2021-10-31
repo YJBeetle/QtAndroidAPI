@@ -6,42 +6,42 @@ namespace java::util::logging
 	// Fields
 	jint ErrorManager::CLOSE_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.logging.ErrorManager",
 			"CLOSE_FAILURE"
 		);
 	}
 	jint ErrorManager::FLUSH_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.logging.ErrorManager",
 			"FLUSH_FAILURE"
 		);
 	}
 	jint ErrorManager::FORMAT_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.logging.ErrorManager",
 			"FORMAT_FAILURE"
 		);
 	}
 	jint ErrorManager::GENERIC_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.logging.ErrorManager",
 			"GENERIC_FAILURE"
 		);
 	}
 	jint ErrorManager::OPEN_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.logging.ErrorManager",
 			"OPEN_FAILURE"
 		);
 	}
 	jint ErrorManager::WRITE_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.logging.ErrorManager",
 			"WRITE_FAILURE"
 		);

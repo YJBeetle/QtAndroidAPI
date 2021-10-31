@@ -8,7 +8,7 @@ namespace android::content::res
 	// Fields
 	__JniBaseClass ColorStateList::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.res.ColorStateList",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -30,7 +30,7 @@ namespace android::content::res
 	// Methods
 	android::content::res::ColorStateList ColorStateList::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.res.ColorStateList",
 			"createFromXml",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;)Landroid/content/res/ColorStateList;",
@@ -40,7 +40,7 @@ namespace android::content::res
 	}
 	android::content::res::ColorStateList ColorStateList::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.res.ColorStateList",
 			"createFromXml",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;",
@@ -51,7 +51,7 @@ namespace android::content::res
 	}
 	android::content::res::ColorStateList ColorStateList::valueOf(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.res.ColorStateList",
 			"valueOf",
 			"(I)Landroid/content/res/ColorStateList;",

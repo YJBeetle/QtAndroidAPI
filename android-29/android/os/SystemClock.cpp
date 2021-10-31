@@ -13,7 +13,7 @@ namespace android::os
 	// Methods
 	java::time::Clock SystemClock::currentGnssTimeClock()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.SystemClock",
 			"currentGnssTimeClock",
 			"()Ljava/time/Clock;"
@@ -21,7 +21,7 @@ namespace android::os
 	}
 	jlong SystemClock::currentThreadTimeMillis()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.SystemClock",
 			"currentThreadTimeMillis",
 			"()J"
@@ -29,7 +29,7 @@ namespace android::os
 	}
 	jlong SystemClock::elapsedRealtime()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.SystemClock",
 			"elapsedRealtime",
 			"()J"
@@ -37,7 +37,7 @@ namespace android::os
 	}
 	jlong SystemClock::elapsedRealtimeNanos()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.SystemClock",
 			"elapsedRealtimeNanos",
 			"()J"
@@ -45,7 +45,7 @@ namespace android::os
 	}
 	jboolean SystemClock::setCurrentTimeMillis(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.SystemClock",
 			"setCurrentTimeMillis",
 			"(J)Z",
@@ -54,7 +54,7 @@ namespace android::os
 	}
 	void SystemClock::sleep(jlong arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.SystemClock",
 			"sleep",
 			"(J)V",
@@ -63,7 +63,7 @@ namespace android::os
 	}
 	jlong SystemClock::uptimeMillis()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.SystemClock",
 			"uptimeMillis",
 			"()J"

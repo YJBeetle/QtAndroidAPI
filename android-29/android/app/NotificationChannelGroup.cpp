@@ -6,7 +6,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass NotificationChannelGroup::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationChannelGroup",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

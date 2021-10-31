@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass CharSequenceTransformation::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.CharSequenceTransformation",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

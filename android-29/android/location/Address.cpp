@@ -8,7 +8,7 @@ namespace android::location
 	// Fields
 	__JniBaseClass Address::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.Address",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

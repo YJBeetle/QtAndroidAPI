@@ -9,7 +9,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass AutomaticZenRule::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.AutomaticZenRule",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

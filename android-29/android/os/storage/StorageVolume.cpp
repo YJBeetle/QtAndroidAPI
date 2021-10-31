@@ -8,7 +8,7 @@ namespace android::os::storage
 	// Fields
 	__JniBaseClass StorageVolume::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.storage.StorageVolume",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,7 +16,7 @@ namespace android::os::storage
 	}
 	jstring StorageVolume::EXTRA_STORAGE_VOLUME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.storage.StorageVolume",
 			"EXTRA_STORAGE_VOLUME",
 			"Ljava/lang/String;"

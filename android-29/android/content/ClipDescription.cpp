@@ -7,7 +7,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass ClipDescription::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ClipDescription",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::content
 	}
 	jstring ClipDescription::MIMETYPE_TEXT_HTML()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_HTML",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::content
 	}
 	jstring ClipDescription::MIMETYPE_TEXT_INTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_INTENT",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::content
 	}
 	jstring ClipDescription::MIMETYPE_TEXT_PLAIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_PLAIN",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::content
 	}
 	jstring ClipDescription::MIMETYPE_TEXT_URILIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_URILIST",
 			"Ljava/lang/String;"
@@ -67,7 +67,7 @@ namespace android::content
 	// Methods
 	jboolean ClipDescription::compareMimeTypes(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.content.ClipDescription",
 			"compareMimeTypes",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",

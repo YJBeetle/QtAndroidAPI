@@ -6,7 +6,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass CellSignalStrengthLte::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.CellSignalStrengthLte",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

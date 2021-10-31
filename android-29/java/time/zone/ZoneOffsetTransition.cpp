@@ -17,7 +17,7 @@ namespace java::time::zone
 	// Methods
 	java::time::zone::ZoneOffsetTransition ZoneOffsetTransition::of(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.zone.ZoneOffsetTransition",
 			"of",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneOffset;Ljava/time/ZoneOffset;)Ljava/time/zone/ZoneOffsetTransition;",

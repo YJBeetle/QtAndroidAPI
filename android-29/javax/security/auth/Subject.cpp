@@ -30,7 +30,7 @@ namespace javax::security::auth
 	// Methods
 	jobject Subject::doAs(javax::security::auth::Subject arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.security.auth.Subject",
 			"doAs",
 			"(Ljavax/security/auth/Subject;Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
@@ -40,7 +40,7 @@ namespace javax::security::auth
 	}
 	jobject Subject::doAsPrivileged(javax::security::auth::Subject arg0, __JniBaseClass arg1, java::security::AccessControlContext arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.security.auth.Subject",
 			"doAsPrivileged",
 			"(Ljavax/security/auth/Subject;Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;",
@@ -51,7 +51,7 @@ namespace javax::security::auth
 	}
 	javax::security::auth::Subject Subject::getSubject(java::security::AccessControlContext arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.security.auth.Subject",
 			"getSubject",
 			"(Ljava/security/AccessControlContext;)Ljavax/security/auth/Subject;",

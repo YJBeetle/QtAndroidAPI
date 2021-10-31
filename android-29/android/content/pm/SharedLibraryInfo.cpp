@@ -7,7 +7,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass SharedLibraryInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.SharedLibraryInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,28 +15,28 @@ namespace android::content::pm
 	}
 	jint SharedLibraryInfo::TYPE_BUILTIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.SharedLibraryInfo",
 			"TYPE_BUILTIN"
 		);
 	}
 	jint SharedLibraryInfo::TYPE_DYNAMIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.SharedLibraryInfo",
 			"TYPE_DYNAMIC"
 		);
 	}
 	jint SharedLibraryInfo::TYPE_STATIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.SharedLibraryInfo",
 			"TYPE_STATIC"
 		);
 	}
 	jint SharedLibraryInfo::VERSION_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.SharedLibraryInfo",
 			"VERSION_UNDEFINED"
 		);

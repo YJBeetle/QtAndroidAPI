@@ -9,7 +9,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass Message::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Message",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -67,7 +67,7 @@ namespace android::os
 	// Methods
 	android::os::Message Message::obtain()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Message",
 			"obtain",
 			"()Landroid/os/Message;"
@@ -75,7 +75,7 @@ namespace android::os
 	}
 	android::os::Message Message::obtain(android::os::Handler arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Message",
 			"obtain",
 			"(Landroid/os/Handler;)Landroid/os/Message;",
@@ -84,7 +84,7 @@ namespace android::os
 	}
 	android::os::Message Message::obtain(android::os::Message arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Message",
 			"obtain",
 			"(Landroid/os/Message;)Landroid/os/Message;",
@@ -93,7 +93,7 @@ namespace android::os
 	}
 	android::os::Message Message::obtain(android::os::Handler arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Message",
 			"obtain",
 			"(Landroid/os/Handler;I)Landroid/os/Message;",
@@ -103,7 +103,7 @@ namespace android::os
 	}
 	android::os::Message Message::obtain(android::os::Handler arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Message",
 			"obtain",
 			"(Landroid/os/Handler;Ljava/lang/Runnable;)Landroid/os/Message;",
@@ -113,7 +113,7 @@ namespace android::os
 	}
 	android::os::Message Message::obtain(android::os::Handler arg0, jint arg1, jobject arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Message",
 			"obtain",
 			"(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;",
@@ -124,7 +124,7 @@ namespace android::os
 	}
 	android::os::Message Message::obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Message",
 			"obtain",
 			"(Landroid/os/Handler;III)Landroid/os/Message;",
@@ -136,7 +136,7 @@ namespace android::os
 	}
 	android::os::Message Message::obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3, jobject arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Message",
 			"obtain",
 			"(Landroid/os/Handler;IIILjava/lang/Object;)Landroid/os/Message;",

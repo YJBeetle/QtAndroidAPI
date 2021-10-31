@@ -16,7 +16,7 @@ namespace java::security
 	// Methods
 	jint Security::addProvider(java::security::Provider arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.security.Security",
 			"addProvider",
 			"(Ljava/security/Provider;)I",
@@ -25,7 +25,7 @@ namespace java::security
 	}
 	jstring Security::getAlgorithmProperty(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Security",
 			"getAlgorithmProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -35,7 +35,7 @@ namespace java::security
 	}
 	__JniBaseClass Security::getAlgorithms(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Security",
 			"getAlgorithms",
 			"(Ljava/lang/String;)Ljava/util/Set;",
@@ -44,7 +44,7 @@ namespace java::security
 	}
 	jstring Security::getProperty(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Security",
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -53,7 +53,7 @@ namespace java::security
 	}
 	java::security::Provider Security::getProvider(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Security",
 			"getProvider",
 			"(Ljava/lang/String;)Ljava/security/Provider;",
@@ -62,7 +62,7 @@ namespace java::security
 	}
 	jarray Security::getProviders()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Security",
 			"getProviders",
 			"()[Ljava/security/Provider;"
@@ -70,7 +70,7 @@ namespace java::security
 	}
 	jarray Security::getProviders(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Security",
 			"getProviders",
 			"(Ljava/lang/String;)[Ljava/security/Provider;",
@@ -79,7 +79,7 @@ namespace java::security
 	}
 	jarray Security::getProviders(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Security",
 			"getProviders",
 			"(Ljava/util/Map;)[Ljava/security/Provider;",
@@ -88,7 +88,7 @@ namespace java::security
 	}
 	jint Security::insertProviderAt(java::security::Provider arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.security.Security",
 			"insertProviderAt",
 			"(Ljava/security/Provider;I)I",
@@ -98,7 +98,7 @@ namespace java::security
 	}
 	void Security::removeProvider(jstring arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.security.Security",
 			"removeProvider",
 			"(Ljava/lang/String;)V",
@@ -107,7 +107,7 @@ namespace java::security
 	}
 	void Security::setProperty(jstring arg0, jstring arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.security.Security",
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",

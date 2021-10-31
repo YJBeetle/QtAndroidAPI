@@ -15,7 +15,7 @@ namespace java::net
 	// Methods
 	jarray InetAddress::getAllByName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getAllByName",
 			"(Ljava/lang/String;)[Ljava/net/InetAddress;",
@@ -24,7 +24,7 @@ namespace java::net
 	}
 	java::net::InetAddress InetAddress::getByAddress(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getByAddress",
 			"([B)Ljava/net/InetAddress;",
@@ -33,7 +33,7 @@ namespace java::net
 	}
 	java::net::InetAddress InetAddress::getByAddress(jstring arg0, jbyteArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getByAddress",
 			"(Ljava/lang/String;[B)Ljava/net/InetAddress;",
@@ -43,7 +43,7 @@ namespace java::net
 	}
 	java::net::InetAddress InetAddress::getByName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",
@@ -52,7 +52,7 @@ namespace java::net
 	}
 	java::net::InetAddress InetAddress::getLocalHost()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getLocalHost",
 			"()Ljava/net/InetAddress;"
@@ -60,7 +60,7 @@ namespace java::net
 	}
 	java::net::InetAddress InetAddress::getLoopbackAddress()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getLoopbackAddress",
 			"()Ljava/net/InetAddress;"

@@ -5,7 +5,7 @@ namespace android::icu::math
 	// Fields
 	android::icu::math::MathContext MathContext::DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.math.MathContext",
 			"DEFAULT",
 			"Landroid/icu/math/MathContext;"
@@ -13,77 +13,77 @@ namespace android::icu::math
 	}
 	jint MathContext::ENGINEERING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"ENGINEERING"
 		);
 	}
 	jint MathContext::PLAIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"PLAIN"
 		);
 	}
 	jint MathContext::ROUND_CEILING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"ROUND_CEILING"
 		);
 	}
 	jint MathContext::ROUND_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"ROUND_DOWN"
 		);
 	}
 	jint MathContext::ROUND_FLOOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"ROUND_FLOOR"
 		);
 	}
 	jint MathContext::ROUND_HALF_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"ROUND_HALF_DOWN"
 		);
 	}
 	jint MathContext::ROUND_HALF_EVEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"ROUND_HALF_EVEN"
 		);
 	}
 	jint MathContext::ROUND_HALF_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"ROUND_HALF_UP"
 		);
 	}
 	jint MathContext::ROUND_UNNECESSARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"ROUND_UNNECESSARY"
 		);
 	}
 	jint MathContext::ROUND_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"ROUND_UP"
 		);
 	}
 	jint MathContext::SCIENTIFIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.math.MathContext",
 			"SCIENTIFIC"
 		);

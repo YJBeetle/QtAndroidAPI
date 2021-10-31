@@ -8,7 +8,7 @@ namespace java::time::temporal
 	// Fields
 	java::time::temporal::WeekFields WeekFields::ISO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.temporal.WeekFields",
 			"ISO",
 			"Ljava/time/temporal/WeekFields;"
@@ -16,7 +16,7 @@ namespace java::time::temporal
 	}
 	java::time::temporal::WeekFields WeekFields::SUNDAY_START()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.temporal.WeekFields",
 			"SUNDAY_START",
 			"Ljava/time/temporal/WeekFields;"
@@ -24,7 +24,7 @@ namespace java::time::temporal
 	}
 	__JniBaseClass WeekFields::WEEK_BASED_YEARS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.temporal.WeekFields",
 			"WEEK_BASED_YEARS",
 			"Ljava/time/temporal/TemporalUnit;"
@@ -39,7 +39,7 @@ namespace java::time::temporal
 	// Methods
 	java::time::temporal::WeekFields WeekFields::of(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.temporal.WeekFields",
 			"of",
 			"(Ljava/util/Locale;)Ljava/time/temporal/WeekFields;",
@@ -48,7 +48,7 @@ namespace java::time::temporal
 	}
 	java::time::temporal::WeekFields WeekFields::of(java::time::DayOfWeek arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.temporal.WeekFields",
 			"of",
 			"(Ljava/time/DayOfWeek;I)Ljava/time/temporal/WeekFields;",

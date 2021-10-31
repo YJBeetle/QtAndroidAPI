@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::Interpolator_Result Interpolator_Result::FREEZE_END()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Interpolator$Result",
 			"FREEZE_END",
 			"Landroid/graphics/Interpolator$Result;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::Interpolator_Result Interpolator_Result::FREEZE_START()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Interpolator$Result",
 			"FREEZE_START",
 			"Landroid/graphics/Interpolator$Result;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::Interpolator_Result Interpolator_Result::NORMAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Interpolator$Result",
 			"NORMAL",
 			"Landroid/graphics/Interpolator$Result;"
@@ -36,7 +36,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Interpolator_Result Interpolator_Result::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Interpolator$Result",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Interpolator$Result;",
@@ -45,7 +45,7 @@ namespace android::graphics
 	}
 	jarray Interpolator_Result::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Interpolator$Result",
 			"values",
 			"()[Landroid/graphics/Interpolator$Result;"

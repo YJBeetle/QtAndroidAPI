@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::NEGATIVE_H()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
 			"NEGATIVE_H",
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::NEGATIVE_HM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
 			"NEGATIVE_HM",
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
@@ -21,7 +21,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::NEGATIVE_HMS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
 			"NEGATIVE_HMS",
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
@@ -29,7 +29,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::POSITIVE_H()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
 			"POSITIVE_H",
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
@@ -37,7 +37,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::POSITIVE_HM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
 			"POSITIVE_HM",
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
@@ -45,7 +45,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::POSITIVE_HMS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
 			"POSITIVE_HMS",
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
@@ -60,7 +60,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;",
@@ -69,7 +69,7 @@ namespace android::icu::text
 	}
 	jarray TimeZoneFormat_GMTOffsetPatternType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
 			"values",
 			"()[Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"

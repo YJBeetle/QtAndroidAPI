@@ -8,7 +8,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass ContentProviderResult::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentProviderResult",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

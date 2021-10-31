@@ -8,35 +8,35 @@ namespace android::graphics
 	// Fields
 	jint HardwareRenderer::SYNC_CONTEXT_IS_STOPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.HardwareRenderer",
 			"SYNC_CONTEXT_IS_STOPPED"
 		);
 	}
 	jint HardwareRenderer::SYNC_FRAME_DROPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.HardwareRenderer",
 			"SYNC_FRAME_DROPPED"
 		);
 	}
 	jint HardwareRenderer::SYNC_LOST_SURFACE_REWARD_IF_FOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.HardwareRenderer",
 			"SYNC_LOST_SURFACE_REWARD_IF_FOUND"
 		);
 	}
 	jint HardwareRenderer::SYNC_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.HardwareRenderer",
 			"SYNC_OK"
 		);
 	}
 	jint HardwareRenderer::SYNC_REDRAW_REQUESTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.HardwareRenderer",
 			"SYNC_REDRAW_REQUESTED"
 		);

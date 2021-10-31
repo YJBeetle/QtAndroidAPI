@@ -12,7 +12,7 @@ namespace android::app
 	// Fields
 	jstring ActivityOptions::EXTRA_USAGE_TIME_REPORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.ActivityOptions",
 			"EXTRA_USAGE_TIME_REPORT",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace android::app
 	}
 	jstring ActivityOptions::EXTRA_USAGE_TIME_REPORT_PACKAGES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.ActivityOptions",
 			"EXTRA_USAGE_TIME_REPORT_PACKAGES",
 			"Ljava/lang/String;"
@@ -35,7 +35,7 @@ namespace android::app
 	// Methods
 	android::app::ActivityOptions ActivityOptions::makeBasic()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeBasic",
 			"()Landroid/app/ActivityOptions;"
@@ -43,7 +43,7 @@ namespace android::app
 	}
 	android::app::ActivityOptions ActivityOptions::makeClipRevealAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeClipRevealAnimation",
 			"(Landroid/view/View;IIII)Landroid/app/ActivityOptions;",
@@ -56,7 +56,7 @@ namespace android::app
 	}
 	android::app::ActivityOptions ActivityOptions::makeCustomAnimation(android::content::Context arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeCustomAnimation",
 			"(Landroid/content/Context;II)Landroid/app/ActivityOptions;",
@@ -67,7 +67,7 @@ namespace android::app
 	}
 	android::app::ActivityOptions ActivityOptions::makeScaleUpAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeScaleUpAnimation",
 			"(Landroid/view/View;IIII)Landroid/app/ActivityOptions;",
@@ -80,7 +80,7 @@ namespace android::app
 	}
 	android::app::ActivityOptions ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeSceneTransitionAnimation",
 			"(Landroid/app/Activity;[Landroid/util/Pair;)Landroid/app/ActivityOptions;",
@@ -90,7 +90,7 @@ namespace android::app
 	}
 	android::app::ActivityOptions ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeSceneTransitionAnimation",
 			"(Landroid/app/Activity;Landroid/view/View;Ljava/lang/String;)Landroid/app/ActivityOptions;",
@@ -101,7 +101,7 @@ namespace android::app
 	}
 	android::app::ActivityOptions ActivityOptions::makeTaskLaunchBehind()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeTaskLaunchBehind",
 			"()Landroid/app/ActivityOptions;"
@@ -109,7 +109,7 @@ namespace android::app
 	}
 	android::app::ActivityOptions ActivityOptions::makeThumbnailScaleUpAnimation(android::view::View arg0, android::graphics::Bitmap arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeThumbnailScaleUpAnimation",
 			"(Landroid/view/View;Landroid/graphics/Bitmap;II)Landroid/app/ActivityOptions;",

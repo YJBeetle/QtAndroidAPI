@@ -13,7 +13,7 @@ namespace java::text
 	// Methods
 	jboolean Normalizer::isNormalized(jstring arg0, java::text::Normalizer_Form arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.text.Normalizer",
 			"isNormalized",
 			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Z",
@@ -23,7 +23,7 @@ namespace java::text
 	}
 	jstring Normalizer::normalize(jstring arg0, java::text::Normalizer_Form arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.Normalizer",
 			"normalize",
 			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Ljava/lang/String;",

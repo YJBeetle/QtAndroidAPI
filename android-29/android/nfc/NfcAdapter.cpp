@@ -12,7 +12,7 @@ namespace android::nfc
 	// Fields
 	jstring NfcAdapter::ACTION_ADAPTER_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"ACTION_ADAPTER_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::ACTION_NDEF_DISCOVERED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"ACTION_NDEF_DISCOVERED",
 			"Ljava/lang/String;"
@@ -28,7 +28,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::ACTION_TAG_DISCOVERED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"ACTION_TAG_DISCOVERED",
 			"Ljava/lang/String;"
@@ -36,7 +36,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::ACTION_TECH_DISCOVERED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"ACTION_TECH_DISCOVERED",
 			"Ljava/lang/String;"
@@ -44,7 +44,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::ACTION_TRANSACTION_DETECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"ACTION_TRANSACTION_DETECTED",
 			"Ljava/lang/String;"
@@ -52,7 +52,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::EXTRA_ADAPTER_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_ADAPTER_STATE",
 			"Ljava/lang/String;"
@@ -60,7 +60,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::EXTRA_AID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_AID",
 			"Ljava/lang/String;"
@@ -68,7 +68,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::EXTRA_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_DATA",
 			"Ljava/lang/String;"
@@ -76,7 +76,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::EXTRA_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_ID",
 			"Ljava/lang/String;"
@@ -84,7 +84,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::EXTRA_NDEF_MESSAGES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_NDEF_MESSAGES",
 			"Ljava/lang/String;"
@@ -92,7 +92,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::EXTRA_READER_PRESENCE_CHECK_DELAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_READER_PRESENCE_CHECK_DELAY",
 			"Ljava/lang/String;"
@@ -100,7 +100,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::EXTRA_SECURE_ELEMENT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_SECURE_ELEMENT_NAME",
 			"Ljava/lang/String;"
@@ -108,7 +108,7 @@ namespace android::nfc
 	}
 	jstring NfcAdapter::EXTRA_TAG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_TAG",
 			"Ljava/lang/String;"
@@ -116,77 +116,77 @@ namespace android::nfc
 	}
 	jint NfcAdapter::FLAG_READER_NFC_A()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"FLAG_READER_NFC_A"
 		);
 	}
 	jint NfcAdapter::FLAG_READER_NFC_B()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"FLAG_READER_NFC_B"
 		);
 	}
 	jint NfcAdapter::FLAG_READER_NFC_BARCODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"FLAG_READER_NFC_BARCODE"
 		);
 	}
 	jint NfcAdapter::FLAG_READER_NFC_F()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"FLAG_READER_NFC_F"
 		);
 	}
 	jint NfcAdapter::FLAG_READER_NFC_V()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"FLAG_READER_NFC_V"
 		);
 	}
 	jint NfcAdapter::FLAG_READER_NO_PLATFORM_SOUNDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"FLAG_READER_NO_PLATFORM_SOUNDS"
 		);
 	}
 	jint NfcAdapter::FLAG_READER_SKIP_NDEF_CHECK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"FLAG_READER_SKIP_NDEF_CHECK"
 		);
 	}
 	jint NfcAdapter::STATE_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"STATE_OFF"
 		);
 	}
 	jint NfcAdapter::STATE_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"STATE_ON"
 		);
 	}
 	jint NfcAdapter::STATE_TURNING_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"STATE_TURNING_OFF"
 		);
 	}
 	jint NfcAdapter::STATE_TURNING_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.NfcAdapter",
 			"STATE_TURNING_ON"
 		);
@@ -200,7 +200,7 @@ namespace android::nfc
 	// Methods
 	android::nfc::NfcAdapter NfcAdapter::getDefaultAdapter(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.NfcAdapter",
 			"getDefaultAdapter",
 			"(Landroid/content/Context;)Landroid/nfc/NfcAdapter;",

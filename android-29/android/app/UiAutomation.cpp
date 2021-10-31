@@ -14,49 +14,49 @@ namespace android::app
 	// Fields
 	jint UiAutomation::FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.UiAutomation",
 			"FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES"
 		);
 	}
 	jint UiAutomation::ROTATION_FREEZE_0()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.UiAutomation",
 			"ROTATION_FREEZE_0"
 		);
 	}
 	jint UiAutomation::ROTATION_FREEZE_180()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.UiAutomation",
 			"ROTATION_FREEZE_180"
 		);
 	}
 	jint UiAutomation::ROTATION_FREEZE_270()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.UiAutomation",
 			"ROTATION_FREEZE_270"
 		);
 	}
 	jint UiAutomation::ROTATION_FREEZE_90()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.UiAutomation",
 			"ROTATION_FREEZE_90"
 		);
 	}
 	jint UiAutomation::ROTATION_FREEZE_CURRENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.UiAutomation",
 			"ROTATION_FREEZE_CURRENT"
 		);
 	}
 	jint UiAutomation::ROTATION_UNFREEZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.UiAutomation",
 			"ROTATION_UNFREEZE"
 		);

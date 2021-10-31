@@ -5,14 +5,14 @@ namespace android::media
 	// Fields
 	jint MediaSyncEvent::SYNC_EVENT_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaSyncEvent",
 			"SYNC_EVENT_NONE"
 		);
 	}
 	jint MediaSyncEvent::SYNC_EVENT_PRESENTATION_COMPLETE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaSyncEvent",
 			"SYNC_EVENT_PRESENTATION_COMPLETE"
 		);
@@ -26,7 +26,7 @@ namespace android::media
 	// Methods
 	android::media::MediaSyncEvent MediaSyncEvent::createEvent(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaSyncEvent",
 			"createEvent",
 			"(I)Landroid/media/MediaSyncEvent;",

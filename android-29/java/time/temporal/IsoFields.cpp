@@ -5,7 +5,7 @@ namespace java::time::temporal
 	// Fields
 	__JniBaseClass IsoFields::DAY_OF_QUARTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
 			"DAY_OF_QUARTER",
 			"Ljava/time/temporal/TemporalField;"
@@ -13,7 +13,7 @@ namespace java::time::temporal
 	}
 	__JniBaseClass IsoFields::QUARTER_OF_YEAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
 			"QUARTER_OF_YEAR",
 			"Ljava/time/temporal/TemporalField;"
@@ -21,7 +21,7 @@ namespace java::time::temporal
 	}
 	__JniBaseClass IsoFields::QUARTER_YEARS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
 			"QUARTER_YEARS",
 			"Ljava/time/temporal/TemporalUnit;"
@@ -29,7 +29,7 @@ namespace java::time::temporal
 	}
 	__JniBaseClass IsoFields::WEEK_BASED_YEAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
 			"WEEK_BASED_YEAR",
 			"Ljava/time/temporal/TemporalField;"
@@ -37,7 +37,7 @@ namespace java::time::temporal
 	}
 	__JniBaseClass IsoFields::WEEK_BASED_YEARS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
 			"WEEK_BASED_YEARS",
 			"Ljava/time/temporal/TemporalUnit;"
@@ -45,7 +45,7 @@ namespace java::time::temporal
 	}
 	__JniBaseClass IsoFields::WEEK_OF_WEEK_BASED_YEAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
 			"WEEK_OF_WEEK_BASED_YEAR",
 			"Ljava/time/temporal/TemporalField;"

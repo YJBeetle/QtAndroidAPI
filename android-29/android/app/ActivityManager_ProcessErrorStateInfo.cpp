@@ -6,14 +6,14 @@ namespace android::app
 	// Fields
 	jint ActivityManager_ProcessErrorStateInfo::CRASHED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$ProcessErrorStateInfo",
 			"CRASHED"
 		);
 	}
 	__JniBaseClass ActivityManager_ProcessErrorStateInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.ActivityManager$ProcessErrorStateInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -21,14 +21,14 @@ namespace android::app
 	}
 	jint ActivityManager_ProcessErrorStateInfo::NOT_RESPONDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$ProcessErrorStateInfo",
 			"NOT_RESPONDING"
 		);
 	}
 	jint ActivityManager_ProcessErrorStateInfo::NO_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$ProcessErrorStateInfo",
 			"NO_ERROR"
 		);

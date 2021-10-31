@@ -18,7 +18,7 @@ namespace java::time
 	// Fields
 	java::time::LocalDateTime LocalDateTime::MAX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.LocalDateTime",
 			"MAX",
 			"Ljava/time/LocalDateTime;"
@@ -26,7 +26,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::MIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.LocalDateTime",
 			"MIN",
 			"Ljava/time/LocalDateTime;"
@@ -41,7 +41,7 @@ namespace java::time
 	// Methods
 	java::time::LocalDateTime LocalDateTime::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/LocalDateTime;",
@@ -50,7 +50,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"now",
 			"()Ljava/time/LocalDateTime;"
@@ -58,7 +58,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/LocalDateTime;",
@@ -67,7 +67,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/LocalDateTime;",
@@ -76,7 +76,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::of(java::time::LocalDate arg0, java::time::LocalTime arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"of",
 			"(Ljava/time/LocalDate;Ljava/time/LocalTime;)Ljava/time/LocalDateTime;",
@@ -86,7 +86,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::of(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"of",
 			"(IIIII)Ljava/time/LocalDateTime;",
@@ -99,7 +99,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::of(jint arg0, java::time::Month arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"of",
 			"(ILjava/time/Month;III)Ljava/time/LocalDateTime;",
@@ -112,7 +112,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::of(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"of",
 			"(IIIIII)Ljava/time/LocalDateTime;",
@@ -126,7 +126,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::of(jint arg0, java::time::Month arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"of",
 			"(ILjava/time/Month;IIII)Ljava/time/LocalDateTime;",
@@ -140,7 +140,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::of(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"of",
 			"(IIIIIII)Ljava/time/LocalDateTime;",
@@ -155,7 +155,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::of(jint arg0, java::time::Month arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"of",
 			"(ILjava/time/Month;IIIII)Ljava/time/LocalDateTime;",
@@ -170,7 +170,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::ofEpochSecond(jlong arg0, jint arg1, java::time::ZoneOffset arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"ofEpochSecond",
 			"(JILjava/time/ZoneOffset;)Ljava/time/LocalDateTime;",
@@ -181,7 +181,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::ofInstant(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"ofInstant",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/LocalDateTime;",
@@ -191,7 +191,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/LocalDateTime;",
@@ -200,7 +200,7 @@ namespace java::time
 	}
 	java::time::LocalDateTime LocalDateTime::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDateTime",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalDateTime;",

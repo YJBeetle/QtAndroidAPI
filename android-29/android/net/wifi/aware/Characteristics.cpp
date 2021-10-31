@@ -7,7 +7,7 @@ namespace android::net::wifi::aware
 	// Fields
 	__JniBaseClass Characteristics::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.aware.Characteristics",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

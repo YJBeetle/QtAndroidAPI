@@ -9,7 +9,7 @@ namespace android::preference
 	// Fields
 	__JniBaseClass PreferenceActivity_Header::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.preference.PreferenceActivity$Header",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

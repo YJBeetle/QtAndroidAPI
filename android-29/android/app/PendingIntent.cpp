@@ -12,7 +12,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass PendingIntent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.PendingIntent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -20,35 +20,35 @@ namespace android::app
 	}
 	jint PendingIntent::FLAG_CANCEL_CURRENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.PendingIntent",
 			"FLAG_CANCEL_CURRENT"
 		);
 	}
 	jint PendingIntent::FLAG_IMMUTABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.PendingIntent",
 			"FLAG_IMMUTABLE"
 		);
 	}
 	jint PendingIntent::FLAG_NO_CREATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.PendingIntent",
 			"FLAG_NO_CREATE"
 		);
 	}
 	jint PendingIntent::FLAG_ONE_SHOT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.PendingIntent",
 			"FLAG_ONE_SHOT"
 		);
 	}
 	jint PendingIntent::FLAG_UPDATE_CURRENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.PendingIntent",
 			"FLAG_UPDATE_CURRENT"
 		);
@@ -62,7 +62,7 @@ namespace android::app
 	// Methods
 	android::app::PendingIntent PendingIntent::getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.PendingIntent",
 			"getActivities",
 			"(Landroid/content/Context;I[Landroid/content/Intent;I)Landroid/app/PendingIntent;",
@@ -74,7 +74,7 @@ namespace android::app
 	}
 	android::app::PendingIntent PendingIntent::getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3, android::os::Bundle arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.PendingIntent",
 			"getActivities",
 			"(Landroid/content/Context;I[Landroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/PendingIntent;",
@@ -87,7 +87,7 @@ namespace android::app
 	}
 	android::app::PendingIntent PendingIntent::getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.PendingIntent",
 			"getActivity",
 			"(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;",
@@ -99,7 +99,7 @@ namespace android::app
 	}
 	android::app::PendingIntent PendingIntent::getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3, android::os::Bundle arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.PendingIntent",
 			"getActivity",
 			"(Landroid/content/Context;ILandroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/PendingIntent;",
@@ -112,7 +112,7 @@ namespace android::app
 	}
 	android::app::PendingIntent PendingIntent::getBroadcast(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.PendingIntent",
 			"getBroadcast",
 			"(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;",
@@ -124,7 +124,7 @@ namespace android::app
 	}
 	android::app::PendingIntent PendingIntent::getForegroundService(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.PendingIntent",
 			"getForegroundService",
 			"(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;",
@@ -136,7 +136,7 @@ namespace android::app
 	}
 	android::app::PendingIntent PendingIntent::getService(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.PendingIntent",
 			"getService",
 			"(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;",
@@ -148,7 +148,7 @@ namespace android::app
 	}
 	android::app::PendingIntent PendingIntent::readPendingIntentOrNullFromParcel(android::os::Parcel arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.PendingIntent",
 			"readPendingIntentOrNullFromParcel",
 			"(Landroid/os/Parcel;)Landroid/app/PendingIntent;",
@@ -157,7 +157,7 @@ namespace android::app
 	}
 	void PendingIntent::writePendingIntentOrNullToParcel(android::app::PendingIntent arg0, android::os::Parcel arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.app.PendingIntent",
 			"writePendingIntentOrNullToParcel",
 			"(Landroid/app/PendingIntent;Landroid/os/Parcel;)V",

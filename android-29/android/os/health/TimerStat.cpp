@@ -6,7 +6,7 @@ namespace android::os::health
 	// Fields
 	__JniBaseClass TimerStat::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.health.TimerStat",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

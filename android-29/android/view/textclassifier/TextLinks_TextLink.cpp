@@ -7,7 +7,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass TextLinks_TextLink::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextLinks$TextLink",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

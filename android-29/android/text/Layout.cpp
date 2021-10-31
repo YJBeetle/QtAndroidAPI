@@ -12,84 +12,84 @@ namespace android::text
 	// Fields
 	jint Layout::BREAK_STRATEGY_BALANCED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.Layout",
 			"BREAK_STRATEGY_BALANCED"
 		);
 	}
 	jint Layout::BREAK_STRATEGY_HIGH_QUALITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.Layout",
 			"BREAK_STRATEGY_HIGH_QUALITY"
 		);
 	}
 	jint Layout::BREAK_STRATEGY_SIMPLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.Layout",
 			"BREAK_STRATEGY_SIMPLE"
 		);
 	}
 	jfloat Layout::DEFAULT_LINESPACING_ADDITION()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.text.Layout",
 			"DEFAULT_LINESPACING_ADDITION"
 		);
 	}
 	jfloat Layout::DEFAULT_LINESPACING_MULTIPLIER()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.text.Layout",
 			"DEFAULT_LINESPACING_MULTIPLIER"
 		);
 	}
 	jint Layout::DIR_LEFT_TO_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.Layout",
 			"DIR_LEFT_TO_RIGHT"
 		);
 	}
 	jint Layout::DIR_RIGHT_TO_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.Layout",
 			"DIR_RIGHT_TO_LEFT"
 		);
 	}
 	jint Layout::HYPHENATION_FREQUENCY_FULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.Layout",
 			"HYPHENATION_FREQUENCY_FULL"
 		);
 	}
 	jint Layout::HYPHENATION_FREQUENCY_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.Layout",
 			"HYPHENATION_FREQUENCY_NONE"
 		);
 	}
 	jint Layout::HYPHENATION_FREQUENCY_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.Layout",
 			"HYPHENATION_FREQUENCY_NORMAL"
 		);
 	}
 	jint Layout::JUSTIFICATION_MODE_INTER_WORD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.Layout",
 			"JUSTIFICATION_MODE_INTER_WORD"
 		);
 	}
 	jint Layout::JUSTIFICATION_MODE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.Layout",
 			"JUSTIFICATION_MODE_NONE"
 		);
@@ -103,7 +103,7 @@ namespace android::text
 	// Methods
 	jfloat Layout::getDesiredWidth(jstring arg0, android::text::TextPaint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.text.Layout",
 			"getDesiredWidth",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)F",
@@ -113,7 +113,7 @@ namespace android::text
 	}
 	jfloat Layout::getDesiredWidth(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.text.Layout",
 			"getDesiredWidth",
 			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;)F",

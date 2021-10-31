@@ -7,7 +7,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass ComponentName::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ComponentName",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -49,7 +49,7 @@ namespace android::content
 	// Methods
 	android::content::ComponentName ComponentName::createRelative(android::content::Context arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ComponentName",
 			"createRelative",
 			"(Landroid/content/Context;Ljava/lang/String;)Landroid/content/ComponentName;",
@@ -59,7 +59,7 @@ namespace android::content
 	}
 	android::content::ComponentName ComponentName::createRelative(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ComponentName",
 			"createRelative",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/ComponentName;",
@@ -69,7 +69,7 @@ namespace android::content
 	}
 	android::content::ComponentName ComponentName::readFromParcel(android::os::Parcel arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ComponentName",
 			"readFromParcel",
 			"(Landroid/os/Parcel;)Landroid/content/ComponentName;",
@@ -78,7 +78,7 @@ namespace android::content
 	}
 	android::content::ComponentName ComponentName::unflattenFromString(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ComponentName",
 			"unflattenFromString",
 			"(Ljava/lang/String;)Landroid/content/ComponentName;",
@@ -87,7 +87,7 @@ namespace android::content
 	}
 	void ComponentName::writeToParcel(android::content::ComponentName arg0, android::os::Parcel arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ComponentName",
 			"writeToParcel",
 			"(Landroid/content/ComponentName;Landroid/os/Parcel;)V",

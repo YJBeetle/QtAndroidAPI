@@ -10,7 +10,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass IntentSender::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.IntentSender",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -25,7 +25,7 @@ namespace android::content
 	// Methods
 	android::content::IntentSender IntentSender::readIntentSenderOrNullFromParcel(android::os::Parcel arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.IntentSender",
 			"readIntentSenderOrNullFromParcel",
 			"(Landroid/os/Parcel;)Landroid/content/IntentSender;",
@@ -34,7 +34,7 @@ namespace android::content
 	}
 	void IntentSender::writeIntentSenderOrNullToParcel(android::content::IntentSender arg0, android::os::Parcel arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.IntentSender",
 			"writeIntentSenderOrNullToParcel",
 			"(Landroid/content/IntentSender;Landroid/os/Parcel;)V",

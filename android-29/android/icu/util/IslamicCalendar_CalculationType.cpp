@@ -5,7 +5,7 @@ namespace android::icu::util
 	// Fields
 	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"ISLAMIC",
 			"Landroid/icu/util/IslamicCalendar$CalculationType;"
@@ -13,7 +13,7 @@ namespace android::icu::util
 	}
 	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC_CIVIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"ISLAMIC_CIVIL",
 			"Landroid/icu/util/IslamicCalendar$CalculationType;"
@@ -21,7 +21,7 @@ namespace android::icu::util
 	}
 	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC_TBLA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"ISLAMIC_TBLA",
 			"Landroid/icu/util/IslamicCalendar$CalculationType;"
@@ -29,7 +29,7 @@ namespace android::icu::util
 	}
 	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC_UMALQURA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"ISLAMIC_UMALQURA",
 			"Landroid/icu/util/IslamicCalendar$CalculationType;"
@@ -44,7 +44,7 @@ namespace android::icu::util
 	// Methods
 	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/IslamicCalendar$CalculationType;",
@@ -53,7 +53,7 @@ namespace android::icu::util
 	}
 	jarray IslamicCalendar_CalculationType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"values",
 			"()[Landroid/icu/util/IslamicCalendar$CalculationType;"

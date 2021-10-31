@@ -7,49 +7,49 @@ namespace android::telephony::gsm
 	// Fields
 	jint SmsMessage::ENCODING_16BIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsMessage",
 			"ENCODING_16BIT"
 		);
 	}
 	jint SmsMessage::ENCODING_7BIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsMessage",
 			"ENCODING_7BIT"
 		);
 	}
 	jint SmsMessage::ENCODING_8BIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsMessage",
 			"ENCODING_8BIT"
 		);
 	}
 	jint SmsMessage::ENCODING_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsMessage",
 			"ENCODING_UNKNOWN"
 		);
 	}
 	jint SmsMessage::MAX_USER_DATA_BYTES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsMessage",
 			"MAX_USER_DATA_BYTES"
 		);
 	}
 	jint SmsMessage::MAX_USER_DATA_SEPTETS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsMessage",
 			"MAX_USER_DATA_SEPTETS"
 		);
 	}
 	jint SmsMessage::MAX_USER_DATA_SEPTETS_WITH_HEADER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsMessage",
 			"MAX_USER_DATA_SEPTETS_WITH_HEADER"
 		);
@@ -68,7 +68,7 @@ namespace android::telephony::gsm
 	// Methods
 	jintArray SmsMessage::calculateLength(jstring arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
 			"calculateLength",
 			"(Ljava/lang/CharSequence;Z)[I",
@@ -78,7 +78,7 @@ namespace android::telephony::gsm
 	}
 	android::telephony::gsm::SmsMessage SmsMessage::createFromPdu(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
 			"createFromPdu",
 			"([B)Landroid/telephony/gsm/SmsMessage;",
@@ -87,7 +87,7 @@ namespace android::telephony::gsm
 	}
 	android::telephony::gsm::SmsMessage_SubmitPdu SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
 			"getSubmitPdu",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/telephony/gsm/SmsMessage$SubmitPdu;",
@@ -99,7 +99,7 @@ namespace android::telephony::gsm
 	}
 	android::telephony::gsm::SmsMessage_SubmitPdu SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
 			"getSubmitPdu",
 			"(Ljava/lang/String;Ljava/lang/String;S[BZ)Landroid/telephony/gsm/SmsMessage$SubmitPdu;",
@@ -112,7 +112,7 @@ namespace android::telephony::gsm
 	}
 	jint SmsMessage::getTPLayerLengthForPDU(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.gsm.SmsMessage",
 			"getTPLayerLengthForPDU",
 			"(Ljava/lang/String;)I",

@@ -13,7 +13,7 @@ namespace java::lang::ref
 	// Methods
 	void Reference::reachabilityFence(jobject arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.ref.Reference",
 			"reachabilityFence",
 			"(Ljava/lang/Object;)V",

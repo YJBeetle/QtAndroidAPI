@@ -17,7 +17,7 @@ namespace java::time::chrono
 	// Fields
 	java::time::chrono::HijrahChronology HijrahChronology::INSTANCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.HijrahChronology",
 			"INSTANCE",
 			"Ljava/time/chrono/HijrahChronology;"

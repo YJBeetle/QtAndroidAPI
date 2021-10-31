@@ -11,7 +11,7 @@ namespace android::bluetooth
 	// Fields
 	__JniBaseClass BluetoothGattCharacteristic::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -19,189 +19,189 @@ namespace android::bluetooth
 	}
 	jint BluetoothGattCharacteristic::FORMAT_FLOAT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"FORMAT_FLOAT"
 		);
 	}
 	jint BluetoothGattCharacteristic::FORMAT_SFLOAT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"FORMAT_SFLOAT"
 		);
 	}
 	jint BluetoothGattCharacteristic::FORMAT_SINT16()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"FORMAT_SINT16"
 		);
 	}
 	jint BluetoothGattCharacteristic::FORMAT_SINT32()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"FORMAT_SINT32"
 		);
 	}
 	jint BluetoothGattCharacteristic::FORMAT_SINT8()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"FORMAT_SINT8"
 		);
 	}
 	jint BluetoothGattCharacteristic::FORMAT_UINT16()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"FORMAT_UINT16"
 		);
 	}
 	jint BluetoothGattCharacteristic::FORMAT_UINT32()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"FORMAT_UINT32"
 		);
 	}
 	jint BluetoothGattCharacteristic::FORMAT_UINT8()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"FORMAT_UINT8"
 		);
 	}
 	jint BluetoothGattCharacteristic::PERMISSION_READ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PERMISSION_READ"
 		);
 	}
 	jint BluetoothGattCharacteristic::PERMISSION_READ_ENCRYPTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PERMISSION_READ_ENCRYPTED"
 		);
 	}
 	jint BluetoothGattCharacteristic::PERMISSION_READ_ENCRYPTED_MITM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PERMISSION_READ_ENCRYPTED_MITM"
 		);
 	}
 	jint BluetoothGattCharacteristic::PERMISSION_WRITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PERMISSION_WRITE"
 		);
 	}
 	jint BluetoothGattCharacteristic::PERMISSION_WRITE_ENCRYPTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PERMISSION_WRITE_ENCRYPTED"
 		);
 	}
 	jint BluetoothGattCharacteristic::PERMISSION_WRITE_ENCRYPTED_MITM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PERMISSION_WRITE_ENCRYPTED_MITM"
 		);
 	}
 	jint BluetoothGattCharacteristic::PERMISSION_WRITE_SIGNED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PERMISSION_WRITE_SIGNED"
 		);
 	}
 	jint BluetoothGattCharacteristic::PERMISSION_WRITE_SIGNED_MITM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PERMISSION_WRITE_SIGNED_MITM"
 		);
 	}
 	jint BluetoothGattCharacteristic::PROPERTY_BROADCAST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PROPERTY_BROADCAST"
 		);
 	}
 	jint BluetoothGattCharacteristic::PROPERTY_EXTENDED_PROPS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PROPERTY_EXTENDED_PROPS"
 		);
 	}
 	jint BluetoothGattCharacteristic::PROPERTY_INDICATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PROPERTY_INDICATE"
 		);
 	}
 	jint BluetoothGattCharacteristic::PROPERTY_NOTIFY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PROPERTY_NOTIFY"
 		);
 	}
 	jint BluetoothGattCharacteristic::PROPERTY_READ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PROPERTY_READ"
 		);
 	}
 	jint BluetoothGattCharacteristic::PROPERTY_SIGNED_WRITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PROPERTY_SIGNED_WRITE"
 		);
 	}
 	jint BluetoothGattCharacteristic::PROPERTY_WRITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PROPERTY_WRITE"
 		);
 	}
 	jint BluetoothGattCharacteristic::PROPERTY_WRITE_NO_RESPONSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"PROPERTY_WRITE_NO_RESPONSE"
 		);
 	}
 	jint BluetoothGattCharacteristic::WRITE_TYPE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"WRITE_TYPE_DEFAULT"
 		);
 	}
 	jint BluetoothGattCharacteristic::WRITE_TYPE_NO_RESPONSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"WRITE_TYPE_NO_RESPONSE"
 		);
 	}
 	jint BluetoothGattCharacteristic::WRITE_TYPE_SIGNED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"WRITE_TYPE_SIGNED"
 		);

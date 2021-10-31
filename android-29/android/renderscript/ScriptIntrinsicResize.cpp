@@ -17,7 +17,7 @@ namespace android::renderscript
 	// Methods
 	android::renderscript::ScriptIntrinsicResize ScriptIntrinsicResize::create(android::renderscript::RenderScript arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicResize",
 			"create",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/ScriptIntrinsicResize;",

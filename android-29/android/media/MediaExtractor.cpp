@@ -17,42 +17,42 @@ namespace android::media
 	// Fields
 	jint MediaExtractor::SAMPLE_FLAG_ENCRYPTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaExtractor",
 			"SAMPLE_FLAG_ENCRYPTED"
 		);
 	}
 	jint MediaExtractor::SAMPLE_FLAG_PARTIAL_FRAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaExtractor",
 			"SAMPLE_FLAG_PARTIAL_FRAME"
 		);
 	}
 	jint MediaExtractor::SAMPLE_FLAG_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaExtractor",
 			"SAMPLE_FLAG_SYNC"
 		);
 	}
 	jint MediaExtractor::SEEK_TO_CLOSEST_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaExtractor",
 			"SEEK_TO_CLOSEST_SYNC"
 		);
 	}
 	jint MediaExtractor::SEEK_TO_NEXT_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaExtractor",
 			"SEEK_TO_NEXT_SYNC"
 		);
 	}
 	jint MediaExtractor::SEEK_TO_PREVIOUS_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaExtractor",
 			"SEEK_TO_PREVIOUS_SYNC"
 		);

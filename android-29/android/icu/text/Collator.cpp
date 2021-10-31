@@ -10,56 +10,56 @@ namespace android::icu::text
 	// Fields
 	jint Collator::CANONICAL_DECOMPOSITION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Collator",
 			"CANONICAL_DECOMPOSITION"
 		);
 	}
 	jint Collator::FULL_DECOMPOSITION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Collator",
 			"FULL_DECOMPOSITION"
 		);
 	}
 	jint Collator::IDENTICAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Collator",
 			"IDENTICAL"
 		);
 	}
 	jint Collator::NO_DECOMPOSITION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Collator",
 			"NO_DECOMPOSITION"
 		);
 	}
 	jint Collator::PRIMARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Collator",
 			"PRIMARY"
 		);
 	}
 	jint Collator::QUATERNARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Collator",
 			"QUATERNARY"
 		);
 	}
 	jint Collator::SECONDARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Collator",
 			"SECONDARY"
 		);
 	}
 	jint Collator::TERTIARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Collator",
 			"TERTIARY"
 		);
@@ -73,7 +73,7 @@ namespace android::icu::text
 	// Methods
 	jarray Collator::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -81,7 +81,7 @@ namespace android::icu::text
 	}
 	jarray Collator::getAvailableULocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getAvailableULocales",
 			"()[Landroid/icu/util/ULocale;"
@@ -89,7 +89,7 @@ namespace android::icu::text
 	}
 	jstring Collator::getDisplayName(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getDisplayName",
 			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -98,7 +98,7 @@ namespace android::icu::text
 	}
 	jstring Collator::getDisplayName(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
@@ -107,7 +107,7 @@ namespace android::icu::text
 	}
 	jstring Collator::getDisplayName(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getDisplayName",
 			"(Landroid/icu/util/ULocale;Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -117,7 +117,7 @@ namespace android::icu::text
 	}
 	jstring Collator::getDisplayName(java::util::Locale arg0, java::util::Locale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getDisplayName",
 			"(Ljava/util/Locale;Ljava/util/Locale;)Ljava/lang/String;",
@@ -127,7 +127,7 @@ namespace android::icu::text
 	}
 	jintArray Collator::getEquivalentReorderCodes(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getEquivalentReorderCodes",
 			"(I)[I",
@@ -136,7 +136,7 @@ namespace android::icu::text
 	}
 	android::icu::util::ULocale Collator::getFunctionalEquivalent(jstring arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getFunctionalEquivalent",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
@@ -146,7 +146,7 @@ namespace android::icu::text
 	}
 	android::icu::util::ULocale Collator::getFunctionalEquivalent(jstring arg0, android::icu::util::ULocale arg1, jbooleanArray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getFunctionalEquivalent",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;[Z)Landroid/icu/util/ULocale;",
@@ -157,7 +157,7 @@ namespace android::icu::text
 	}
 	android::icu::text::Collator Collator::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getInstance",
 			"()Landroid/icu/text/Collator;"
@@ -165,7 +165,7 @@ namespace android::icu::text
 	}
 	android::icu::text::Collator Collator::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/Collator;",
@@ -174,7 +174,7 @@ namespace android::icu::text
 	}
 	android::icu::text::Collator Collator::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/Collator;",
@@ -183,7 +183,7 @@ namespace android::icu::text
 	}
 	jarray Collator::getKeywordValues(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getKeywordValues",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
@@ -192,7 +192,7 @@ namespace android::icu::text
 	}
 	jarray Collator::getKeywordValuesForLocale(jstring arg0, android::icu::util::ULocale arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getKeywordValuesForLocale",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
@@ -203,7 +203,7 @@ namespace android::icu::text
 	}
 	jarray Collator::getKeywords()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getKeywords",
 			"()[Ljava/lang/String;"

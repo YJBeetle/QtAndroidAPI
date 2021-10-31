@@ -12,7 +12,7 @@ namespace android::accounts
 	// Fields
 	jstring AccountManager::ACTION_ACCOUNT_REMOVED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"ACTION_ACCOUNT_REMOVED",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::ACTION_AUTHENTICATOR_INTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"ACTION_AUTHENTICATOR_INTENT",
 			"Ljava/lang/String;"
@@ -28,7 +28,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::AUTHENTICATOR_ATTRIBUTES_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"AUTHENTICATOR_ATTRIBUTES_NAME",
 			"Ljava/lang/String;"
@@ -36,7 +36,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::AUTHENTICATOR_META_DATA_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"AUTHENTICATOR_META_DATA_NAME",
 			"Ljava/lang/String;"
@@ -44,63 +44,63 @@ namespace android::accounts
 	}
 	jint AccountManager::ERROR_CODE_BAD_ARGUMENTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"ERROR_CODE_BAD_ARGUMENTS"
 		);
 	}
 	jint AccountManager::ERROR_CODE_BAD_AUTHENTICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"ERROR_CODE_BAD_AUTHENTICATION"
 		);
 	}
 	jint AccountManager::ERROR_CODE_BAD_REQUEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"ERROR_CODE_BAD_REQUEST"
 		);
 	}
 	jint AccountManager::ERROR_CODE_CANCELED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"ERROR_CODE_CANCELED"
 		);
 	}
 	jint AccountManager::ERROR_CODE_INVALID_RESPONSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"ERROR_CODE_INVALID_RESPONSE"
 		);
 	}
 	jint AccountManager::ERROR_CODE_NETWORK_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"ERROR_CODE_NETWORK_ERROR"
 		);
 	}
 	jint AccountManager::ERROR_CODE_REMOTE_EXCEPTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"ERROR_CODE_REMOTE_EXCEPTION"
 		);
 	}
 	jint AccountManager::ERROR_CODE_UNSUPPORTED_OPERATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"ERROR_CODE_UNSUPPORTED_OPERATION"
 		);
 	}
 	jstring AccountManager::KEY_ACCOUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNTS",
 			"Ljava/lang/String;"
@@ -108,7 +108,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_ACCOUNT_AUTHENTICATOR_RESPONSE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_AUTHENTICATOR_RESPONSE",
 			"Ljava/lang/String;"
@@ -116,7 +116,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_ACCOUNT_MANAGER_RESPONSE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_MANAGER_RESPONSE",
 			"Ljava/lang/String;"
@@ -124,7 +124,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_ACCOUNT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_NAME",
 			"Ljava/lang/String;"
@@ -132,7 +132,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_ACCOUNT_SESSION_BUNDLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_SESSION_BUNDLE",
 			"Ljava/lang/String;"
@@ -140,7 +140,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_ACCOUNT_STATUS_TOKEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_STATUS_TOKEN",
 			"Ljava/lang/String;"
@@ -148,7 +148,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_ACCOUNT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_TYPE",
 			"Ljava/lang/String;"
@@ -156,7 +156,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_ANDROID_PACKAGE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ANDROID_PACKAGE_NAME",
 			"Ljava/lang/String;"
@@ -164,7 +164,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_AUTHENTICATOR_TYPES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTHENTICATOR_TYPES",
 			"Ljava/lang/String;"
@@ -172,7 +172,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_AUTHTOKEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTHTOKEN",
 			"Ljava/lang/String;"
@@ -180,7 +180,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_AUTH_FAILED_MESSAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTH_FAILED_MESSAGE",
 			"Ljava/lang/String;"
@@ -188,7 +188,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_AUTH_TOKEN_LABEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTH_TOKEN_LABEL",
 			"Ljava/lang/String;"
@@ -196,7 +196,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_BOOLEAN_RESULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_BOOLEAN_RESULT",
 			"Ljava/lang/String;"
@@ -204,7 +204,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_CALLER_PID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_CALLER_PID",
 			"Ljava/lang/String;"
@@ -212,7 +212,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_CALLER_UID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_CALLER_UID",
 			"Ljava/lang/String;"
@@ -220,7 +220,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_ERROR_CODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ERROR_CODE",
 			"Ljava/lang/String;"
@@ -228,7 +228,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_ERROR_MESSAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ERROR_MESSAGE",
 			"Ljava/lang/String;"
@@ -236,7 +236,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_INTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_INTENT",
 			"Ljava/lang/String;"
@@ -244,7 +244,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_LAST_AUTHENTICATED_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_LAST_AUTHENTICATED_TIME",
 			"Ljava/lang/String;"
@@ -252,7 +252,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_PASSWORD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_PASSWORD",
 			"Ljava/lang/String;"
@@ -260,7 +260,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::KEY_USERDATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_USERDATA",
 			"Ljava/lang/String;"
@@ -268,7 +268,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::LOGIN_ACCOUNTS_CHANGED_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"LOGIN_ACCOUNTS_CHANGED_ACTION",
 			"Ljava/lang/String;"
@@ -276,7 +276,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::PACKAGE_NAME_KEY_LEGACY_NOT_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"PACKAGE_NAME_KEY_LEGACY_NOT_VISIBLE",
 			"Ljava/lang/String;"
@@ -284,7 +284,7 @@ namespace android::accounts
 	}
 	jstring AccountManager::PACKAGE_NAME_KEY_LEGACY_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"PACKAGE_NAME_KEY_LEGACY_VISIBLE",
 			"Ljava/lang/String;"
@@ -292,35 +292,35 @@ namespace android::accounts
 	}
 	jint AccountManager::VISIBILITY_NOT_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"VISIBILITY_NOT_VISIBLE"
 		);
 	}
 	jint AccountManager::VISIBILITY_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"VISIBILITY_UNDEFINED"
 		);
 	}
 	jint AccountManager::VISIBILITY_USER_MANAGED_NOT_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"VISIBILITY_USER_MANAGED_NOT_VISIBLE"
 		);
 	}
 	jint AccountManager::VISIBILITY_USER_MANAGED_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"VISIBILITY_USER_MANAGED_VISIBLE"
 		);
 	}
 	jint AccountManager::VISIBILITY_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accounts.AccountManager",
 			"VISIBILITY_VISIBLE"
 		);
@@ -334,7 +334,7 @@ namespace android::accounts
 	// Methods
 	android::accounts::AccountManager AccountManager::get(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.accounts.AccountManager",
 			"get",
 			"(Landroid/content/Context;)Landroid/accounts/AccountManager;",
@@ -343,7 +343,7 @@ namespace android::accounts
 	}
 	android::content::Intent AccountManager::newChooseAccountIntent(android::accounts::Account arg0, __JniBaseClass arg1, jarray arg2, jstring arg3, jstring arg4, jarray arg5, android::os::Bundle arg6)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.accounts.AccountManager",
 			"newChooseAccountIntent",
 			"(Landroid/accounts/Account;Ljava/util/List;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;",
@@ -358,7 +358,7 @@ namespace android::accounts
 	}
 	android::content::Intent AccountManager::newChooseAccountIntent(android::accounts::Account arg0, java::util::ArrayList arg1, jarray arg2, jboolean arg3, jstring arg4, jstring arg5, jarray arg6, android::os::Bundle arg7)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.accounts.AccountManager",
 			"newChooseAccountIntent",
 			"(Landroid/accounts/Account;Ljava/util/ArrayList;[Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;",

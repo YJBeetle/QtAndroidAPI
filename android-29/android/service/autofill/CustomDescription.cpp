@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass CustomDescription::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.CustomDescription",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

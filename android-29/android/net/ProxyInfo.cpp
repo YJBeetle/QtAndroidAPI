@@ -7,7 +7,7 @@ namespace android::net
 	// Fields
 	__JniBaseClass ProxyInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.ProxyInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -22,7 +22,7 @@ namespace android::net
 	// Methods
 	android::net::ProxyInfo ProxyInfo::buildDirectProxy(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.ProxyInfo",
 			"buildDirectProxy",
 			"(Ljava/lang/String;I)Landroid/net/ProxyInfo;",
@@ -32,7 +32,7 @@ namespace android::net
 	}
 	android::net::ProxyInfo ProxyInfo::buildDirectProxy(jstring arg0, jint arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.ProxyInfo",
 			"buildDirectProxy",
 			"(Ljava/lang/String;ILjava/util/List;)Landroid/net/ProxyInfo;",
@@ -43,7 +43,7 @@ namespace android::net
 	}
 	android::net::ProxyInfo ProxyInfo::buildPacProxy(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.ProxyInfo",
 			"buildPacProxy",
 			"(Landroid/net/Uri;)Landroid/net/ProxyInfo;",

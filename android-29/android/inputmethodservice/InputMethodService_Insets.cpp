@@ -6,28 +6,28 @@ namespace android::inputmethodservice
 	// Fields
 	jint InputMethodService_Insets::TOUCHABLE_INSETS_CONTENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.InputMethodService$Insets",
 			"TOUCHABLE_INSETS_CONTENT"
 		);
 	}
 	jint InputMethodService_Insets::TOUCHABLE_INSETS_FRAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.InputMethodService$Insets",
 			"TOUCHABLE_INSETS_FRAME"
 		);
 	}
 	jint InputMethodService_Insets::TOUCHABLE_INSETS_REGION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.InputMethodService$Insets",
 			"TOUCHABLE_INSETS_REGION"
 		);
 	}
 	jint InputMethodService_Insets::TOUCHABLE_INSETS_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.InputMethodService$Insets",
 			"TOUCHABLE_INSETS_VISIBLE"
 		);

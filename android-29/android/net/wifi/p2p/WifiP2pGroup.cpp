@@ -7,7 +7,7 @@ namespace android::net::wifi::p2p
 	// Fields
 	__JniBaseClass WifiP2pGroup::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pGroup",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

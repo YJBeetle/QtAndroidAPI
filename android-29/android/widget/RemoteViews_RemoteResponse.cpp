@@ -19,7 +19,7 @@ namespace android::widget
 	// Methods
 	android::widget::RemoteViews_RemoteResponse RemoteViews_RemoteResponse::fromFillInIntent(android::content::Intent arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.RemoteViews$RemoteResponse",
 			"fromFillInIntent",
 			"(Landroid/content/Intent;)Landroid/widget/RemoteViews$RemoteResponse;",
@@ -28,7 +28,7 @@ namespace android::widget
 	}
 	android::widget::RemoteViews_RemoteResponse RemoteViews_RemoteResponse::fromPendingIntent(android::app::PendingIntent arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.RemoteViews$RemoteResponse",
 			"fromPendingIntent",
 			"(Landroid/app/PendingIntent;)Landroid/widget/RemoteViews$RemoteResponse;",

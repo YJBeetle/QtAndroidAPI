@@ -5,7 +5,7 @@ namespace java::nio::file
 	// Fields
 	java::nio::file::StandardOpenOption StandardOpenOption::APPEND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardOpenOption",
 			"APPEND",
 			"Ljava/nio/file/StandardOpenOption;"
@@ -13,7 +13,7 @@ namespace java::nio::file
 	}
 	java::nio::file::StandardOpenOption StandardOpenOption::CREATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardOpenOption",
 			"CREATE",
 			"Ljava/nio/file/StandardOpenOption;"
@@ -21,7 +21,7 @@ namespace java::nio::file
 	}
 	java::nio::file::StandardOpenOption StandardOpenOption::CREATE_NEW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardOpenOption",
 			"CREATE_NEW",
 			"Ljava/nio/file/StandardOpenOption;"
@@ -29,7 +29,7 @@ namespace java::nio::file
 	}
 	java::nio::file::StandardOpenOption StandardOpenOption::DELETE_ON_CLOSE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardOpenOption",
 			"DELETE_ON_CLOSE",
 			"Ljava/nio/file/StandardOpenOption;"
@@ -37,7 +37,7 @@ namespace java::nio::file
 	}
 	java::nio::file::StandardOpenOption StandardOpenOption::DSYNC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardOpenOption",
 			"DSYNC",
 			"Ljava/nio/file/StandardOpenOption;"
@@ -45,7 +45,7 @@ namespace java::nio::file
 	}
 	java::nio::file::StandardOpenOption StandardOpenOption::READ()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardOpenOption",
 			"READ",
 			"Ljava/nio/file/StandardOpenOption;"
@@ -53,7 +53,7 @@ namespace java::nio::file
 	}
 	java::nio::file::StandardOpenOption StandardOpenOption::SPARSE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardOpenOption",
 			"SPARSE",
 			"Ljava/nio/file/StandardOpenOption;"
@@ -61,7 +61,7 @@ namespace java::nio::file
 	}
 	java::nio::file::StandardOpenOption StandardOpenOption::SYNC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardOpenOption",
 			"SYNC",
 			"Ljava/nio/file/StandardOpenOption;"
@@ -69,7 +69,7 @@ namespace java::nio::file
 	}
 	java::nio::file::StandardOpenOption StandardOpenOption::TRUNCATE_EXISTING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardOpenOption",
 			"TRUNCATE_EXISTING",
 			"Ljava/nio/file/StandardOpenOption;"
@@ -77,7 +77,7 @@ namespace java::nio::file
 	}
 	java::nio::file::StandardOpenOption StandardOpenOption::WRITE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardOpenOption",
 			"WRITE",
 			"Ljava/nio/file/StandardOpenOption;"
@@ -92,7 +92,7 @@ namespace java::nio::file
 	// Methods
 	java::nio::file::StandardOpenOption StandardOpenOption::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.StandardOpenOption",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/StandardOpenOption;",
@@ -101,7 +101,7 @@ namespace java::nio::file
 	}
 	jarray StandardOpenOption::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.StandardOpenOption",
 			"values",
 			"()[Ljava/nio/file/StandardOpenOption;"

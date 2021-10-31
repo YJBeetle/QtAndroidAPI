@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass Dataset::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.Dataset",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

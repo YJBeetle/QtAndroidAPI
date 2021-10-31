@@ -5,7 +5,7 @@ namespace android::text
 	// Fields
 	android::text::Layout_Alignment Layout_Alignment::ALIGN_CENTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.Layout$Alignment",
 			"ALIGN_CENTER",
 			"Landroid/text/Layout$Alignment;"
@@ -13,7 +13,7 @@ namespace android::text
 	}
 	android::text::Layout_Alignment Layout_Alignment::ALIGN_NORMAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.Layout$Alignment",
 			"ALIGN_NORMAL",
 			"Landroid/text/Layout$Alignment;"
@@ -21,7 +21,7 @@ namespace android::text
 	}
 	android::text::Layout_Alignment Layout_Alignment::ALIGN_OPPOSITE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.Layout$Alignment",
 			"ALIGN_OPPOSITE",
 			"Landroid/text/Layout$Alignment;"
@@ -36,7 +36,7 @@ namespace android::text
 	// Methods
 	android::text::Layout_Alignment Layout_Alignment::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.Layout$Alignment",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/text/Layout$Alignment;",
@@ -45,7 +45,7 @@ namespace android::text
 	}
 	jarray Layout_Alignment::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.Layout$Alignment",
 			"values",
 			"()[Landroid/text/Layout$Alignment;"

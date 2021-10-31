@@ -7,7 +7,7 @@ namespace android::app::admin
 	// Fields
 	__JniBaseClass ConnectEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.ConnectEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

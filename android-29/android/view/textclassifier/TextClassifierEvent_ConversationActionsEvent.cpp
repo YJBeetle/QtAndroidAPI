@@ -6,7 +6,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass TextClassifierEvent_ConversationActionsEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextClassifierEvent$ConversationActionsEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

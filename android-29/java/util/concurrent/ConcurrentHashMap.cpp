@@ -47,7 +47,7 @@ namespace java::util::concurrent
 	// Methods
 	java::util::concurrent::ConcurrentHashMap_KeySetView ConcurrentHashMap::newKeySet()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.ConcurrentHashMap",
 			"newKeySet",
 			"()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;"
@@ -55,7 +55,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::ConcurrentHashMap_KeySetView ConcurrentHashMap::newKeySet(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.ConcurrentHashMap",
 			"newKeySet",
 			"(I)Ljava/util/concurrent/ConcurrentHashMap$KeySetView;",

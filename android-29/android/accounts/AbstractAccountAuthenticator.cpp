@@ -9,7 +9,7 @@ namespace android::accounts
 	// Fields
 	jstring AbstractAccountAuthenticator::KEY_CUSTOM_TOKEN_EXPIRY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AbstractAccountAuthenticator",
 			"KEY_CUSTOM_TOKEN_EXPIRY",
 			"Ljava/lang/String;"

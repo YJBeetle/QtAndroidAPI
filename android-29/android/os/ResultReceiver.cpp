@@ -8,7 +8,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass ResultReceiver::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.ResultReceiver",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

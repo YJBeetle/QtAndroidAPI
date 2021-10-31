@@ -6,7 +6,7 @@ namespace android::net::wifi::hotspot2::pps
 	// Fields
 	__JniBaseClass HomeSp::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.hotspot2.pps.HomeSp",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

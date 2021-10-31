@@ -15,7 +15,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::TimeZoneNames TimeZoneNames::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneNames",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/TimeZoneNames;",
@@ -24,7 +24,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneNames TimeZoneNames::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneNames",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/TimeZoneNames;",
@@ -33,7 +33,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneNames TimeZoneNames::getTZDBInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneNames",
 			"getTZDBInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/TimeZoneNames;",

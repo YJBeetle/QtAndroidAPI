@@ -12,7 +12,7 @@ namespace java::security
 	// Fields
 	java::security::PermissionCollection Policy::UNSUPPORTED_EMPTY_COLLECTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.Policy",
 			"UNSUPPORTED_EMPTY_COLLECTION",
 			"Ljava/security/PermissionCollection;"
@@ -32,7 +32,7 @@ namespace java::security
 	// Methods
 	java::security::Policy Policy::getInstance(jstring arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Policy",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Policy$Parameters;)Ljava/security/Policy;",
@@ -42,7 +42,7 @@ namespace java::security
 	}
 	java::security::Policy Policy::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Policy",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/lang/String;)Ljava/security/Policy;",
@@ -53,7 +53,7 @@ namespace java::security
 	}
 	java::security::Policy Policy::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Policy",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/security/Provider;)Ljava/security/Policy;",
@@ -64,7 +64,7 @@ namespace java::security
 	}
 	java::security::Policy Policy::getPolicy()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.Policy",
 			"getPolicy",
 			"()Ljava/security/Policy;"
@@ -72,7 +72,7 @@ namespace java::security
 	}
 	void Policy::setPolicy(java::security::Policy arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.security.Policy",
 			"setPolicy",
 			"(Ljava/security/Policy;)V",

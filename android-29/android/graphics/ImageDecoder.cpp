@@ -16,42 +16,42 @@ namespace android::graphics
 	// Fields
 	jint ImageDecoder::ALLOCATOR_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ImageDecoder",
 			"ALLOCATOR_DEFAULT"
 		);
 	}
 	jint ImageDecoder::ALLOCATOR_HARDWARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ImageDecoder",
 			"ALLOCATOR_HARDWARE"
 		);
 	}
 	jint ImageDecoder::ALLOCATOR_SHARED_MEMORY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ImageDecoder",
 			"ALLOCATOR_SHARED_MEMORY"
 		);
 	}
 	jint ImageDecoder::ALLOCATOR_SOFTWARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ImageDecoder",
 			"ALLOCATOR_SOFTWARE"
 		);
 	}
 	jint ImageDecoder::MEMORY_POLICY_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ImageDecoder",
 			"MEMORY_POLICY_DEFAULT"
 		);
 	}
 	jint ImageDecoder::MEMORY_POLICY_LOW_RAM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ImageDecoder",
 			"MEMORY_POLICY_LOW_RAM"
 		);
@@ -65,7 +65,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::ImageDecoder_Source ImageDecoder::createSource(java::io::File arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"createSource",
 			"(Ljava/io/File;)Landroid/graphics/ImageDecoder$Source;",
@@ -74,7 +74,7 @@ namespace android::graphics
 	}
 	android::graphics::ImageDecoder_Source ImageDecoder::createSource(java::nio::ByteBuffer arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"createSource",
 			"(Ljava/nio/ByteBuffer;)Landroid/graphics/ImageDecoder$Source;",
@@ -83,7 +83,7 @@ namespace android::graphics
 	}
 	android::graphics::ImageDecoder_Source ImageDecoder::createSource(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"createSource",
 			"(Ljava/util/concurrent/Callable;)Landroid/graphics/ImageDecoder$Source;",
@@ -92,7 +92,7 @@ namespace android::graphics
 	}
 	android::graphics::ImageDecoder_Source ImageDecoder::createSource(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"createSource",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/graphics/ImageDecoder$Source;",
@@ -102,7 +102,7 @@ namespace android::graphics
 	}
 	android::graphics::ImageDecoder_Source ImageDecoder::createSource(android::content::res::AssetManager arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"createSource",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/ImageDecoder$Source;",
@@ -112,7 +112,7 @@ namespace android::graphics
 	}
 	android::graphics::ImageDecoder_Source ImageDecoder::createSource(android::content::res::Resources arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"createSource",
 			"(Landroid/content/res/Resources;I)Landroid/graphics/ImageDecoder$Source;",
@@ -122,7 +122,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap ImageDecoder::decodeBitmap(android::graphics::ImageDecoder_Source arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"decodeBitmap",
 			"(Landroid/graphics/ImageDecoder$Source;)Landroid/graphics/Bitmap;",
@@ -131,7 +131,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap ImageDecoder::decodeBitmap(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"decodeBitmap",
 			"(Landroid/graphics/ImageDecoder$Source;Landroid/graphics/ImageDecoder$OnHeaderDecodedListener;)Landroid/graphics/Bitmap;",
@@ -141,7 +141,7 @@ namespace android::graphics
 	}
 	android::graphics::drawable::Drawable ImageDecoder::decodeDrawable(android::graphics::ImageDecoder_Source arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"decodeDrawable",
 			"(Landroid/graphics/ImageDecoder$Source;)Landroid/graphics/drawable/Drawable;",
@@ -150,7 +150,7 @@ namespace android::graphics
 	}
 	android::graphics::drawable::Drawable ImageDecoder::decodeDrawable(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"decodeDrawable",
 			"(Landroid/graphics/ImageDecoder$Source;Landroid/graphics/ImageDecoder$OnHeaderDecodedListener;)Landroid/graphics/drawable/Drawable;",
@@ -160,7 +160,7 @@ namespace android::graphics
 	}
 	jboolean ImageDecoder::isMimeTypeSupported(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.graphics.ImageDecoder",
 			"isMimeTypeSupported",
 			"(Ljava/lang/String;)Z",

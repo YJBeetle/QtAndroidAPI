@@ -24,28 +24,28 @@ namespace android::inputmethodservice
 	// Fields
 	jint InputMethodService::BACK_DISPOSITION_ADJUST_NOTHING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.InputMethodService",
 			"BACK_DISPOSITION_ADJUST_NOTHING"
 		);
 	}
 	jint InputMethodService::BACK_DISPOSITION_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.InputMethodService",
 			"BACK_DISPOSITION_DEFAULT"
 		);
 	}
 	jint InputMethodService::BACK_DISPOSITION_WILL_DISMISS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.InputMethodService",
 			"BACK_DISPOSITION_WILL_DISMISS"
 		);
 	}
 	jint InputMethodService::BACK_DISPOSITION_WILL_NOT_DISMISS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.InputMethodService",
 			"BACK_DISPOSITION_WILL_NOT_DISMISS"
 		);

@@ -5,7 +5,7 @@ namespace javax::net::ssl
 	// Fields
 	javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::BUFFER_OVERFLOW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"BUFFER_OVERFLOW",
 			"Ljavax/net/ssl/SSLEngineResult$Status;"
@@ -13,7 +13,7 @@ namespace javax::net::ssl
 	}
 	javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::BUFFER_UNDERFLOW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"BUFFER_UNDERFLOW",
 			"Ljavax/net/ssl/SSLEngineResult$Status;"
@@ -21,7 +21,7 @@ namespace javax::net::ssl
 	}
 	javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::CLOSED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"CLOSED",
 			"Ljavax/net/ssl/SSLEngineResult$Status;"
@@ -29,7 +29,7 @@ namespace javax::net::ssl
 	}
 	javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::OK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"OK",
 			"Ljavax/net/ssl/SSLEngineResult$Status;"
@@ -44,7 +44,7 @@ namespace javax::net::ssl
 	// Methods
 	javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"valueOf",
 			"(Ljava/lang/String;)Ljavax/net/ssl/SSLEngineResult$Status;",
@@ -53,7 +53,7 @@ namespace javax::net::ssl
 	}
 	jarray SSLEngineResult_Status::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"values",
 			"()[Ljavax/net/ssl/SSLEngineResult$Status;"

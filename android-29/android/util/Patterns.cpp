@@ -7,7 +7,7 @@ namespace android::util
 	// Fields
 	java::util::regex::Pattern Patterns::DOMAIN_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Patterns",
 			"DOMAIN_NAME",
 			"Ljava/util/regex/Pattern;"
@@ -15,7 +15,7 @@ namespace android::util
 	}
 	java::util::regex::Pattern Patterns::EMAIL_ADDRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Patterns",
 			"EMAIL_ADDRESS",
 			"Ljava/util/regex/Pattern;"
@@ -23,7 +23,7 @@ namespace android::util
 	}
 	jstring Patterns::GOOD_IRI_CHAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Patterns",
 			"GOOD_IRI_CHAR",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::util
 	}
 	java::util::regex::Pattern Patterns::IP_ADDRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Patterns",
 			"IP_ADDRESS",
 			"Ljava/util/regex/Pattern;"
@@ -39,7 +39,7 @@ namespace android::util
 	}
 	java::util::regex::Pattern Patterns::PHONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Patterns",
 			"PHONE",
 			"Ljava/util/regex/Pattern;"
@@ -47,7 +47,7 @@ namespace android::util
 	}
 	java::util::regex::Pattern Patterns::TOP_LEVEL_DOMAIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Patterns",
 			"TOP_LEVEL_DOMAIN",
 			"Ljava/util/regex/Pattern;"
@@ -55,7 +55,7 @@ namespace android::util
 	}
 	jstring Patterns::TOP_LEVEL_DOMAIN_STR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Patterns",
 			"TOP_LEVEL_DOMAIN_STR",
 			"Ljava/lang/String;"
@@ -63,7 +63,7 @@ namespace android::util
 	}
 	jstring Patterns::TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Patterns",
 			"TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL",
 			"Ljava/lang/String;"
@@ -71,7 +71,7 @@ namespace android::util
 	}
 	java::util::regex::Pattern Patterns::WEB_URL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Patterns",
 			"WEB_URL",
 			"Ljava/util/regex/Pattern;"
@@ -86,7 +86,7 @@ namespace android::util
 	// Methods
 	jstring Patterns::concatGroups(java::util::regex::Matcher arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Patterns",
 			"concatGroups",
 			"(Ljava/util/regex/Matcher;)Ljava/lang/String;",
@@ -95,7 +95,7 @@ namespace android::util
 	}
 	jstring Patterns::digitsAndPlusOnly(java::util::regex::Matcher arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Patterns",
 			"digitsAndPlusOnly",
 			"(Ljava/util/regex/Matcher;)Ljava/lang/String;",

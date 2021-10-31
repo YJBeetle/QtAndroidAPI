@@ -6,7 +6,7 @@ namespace android::icu::text
 	// Fields
 	jint UnicodeSetIterator::IS_STRING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.UnicodeSetIterator",
 			"IS_STRING"
 		);

@@ -13,56 +13,56 @@ namespace android::view::inputmethod
 	// Fields
 	jint InputMethodManager::HIDE_IMPLICIT_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.InputMethodManager",
 			"HIDE_IMPLICIT_ONLY"
 		);
 	}
 	jint InputMethodManager::HIDE_NOT_ALWAYS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.InputMethodManager",
 			"HIDE_NOT_ALWAYS"
 		);
 	}
 	jint InputMethodManager::RESULT_HIDDEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.InputMethodManager",
 			"RESULT_HIDDEN"
 		);
 	}
 	jint InputMethodManager::RESULT_SHOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.InputMethodManager",
 			"RESULT_SHOWN"
 		);
 	}
 	jint InputMethodManager::RESULT_UNCHANGED_HIDDEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.InputMethodManager",
 			"RESULT_UNCHANGED_HIDDEN"
 		);
 	}
 	jint InputMethodManager::RESULT_UNCHANGED_SHOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.InputMethodManager",
 			"RESULT_UNCHANGED_SHOWN"
 		);
 	}
 	jint InputMethodManager::SHOW_FORCED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.InputMethodManager",
 			"SHOW_FORCED"
 		);
 	}
 	jint InputMethodManager::SHOW_IMPLICIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.InputMethodManager",
 			"SHOW_IMPLICIT"
 		);

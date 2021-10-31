@@ -20,7 +20,7 @@ namespace android::animation
 	// Methods
 	android::animation::Animator AnimatorInflater::loadAnimator(android::content::Context arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.AnimatorInflater",
 			"loadAnimator",
 			"(Landroid/content/Context;I)Landroid/animation/Animator;",
@@ -30,7 +30,7 @@ namespace android::animation
 	}
 	android::animation::StateListAnimator AnimatorInflater::loadStateListAnimator(android::content::Context arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.AnimatorInflater",
 			"loadStateListAnimator",
 			"(Landroid/content/Context;I)Landroid/animation/StateListAnimator;",

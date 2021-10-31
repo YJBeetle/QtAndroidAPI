@@ -9,28 +9,28 @@ namespace android::gesture
 	// Fields
 	jint GestureStore::ORIENTATION_INVARIANT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.gesture.GestureStore",
 			"ORIENTATION_INVARIANT"
 		);
 	}
 	jint GestureStore::ORIENTATION_SENSITIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.gesture.GestureStore",
 			"ORIENTATION_SENSITIVE"
 		);
 	}
 	jint GestureStore::SEQUENCE_INVARIANT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.gesture.GestureStore",
 			"SEQUENCE_INVARIANT"
 		);
 	}
 	jint GestureStore::SEQUENCE_SENSITIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.gesture.GestureStore",
 			"SEQUENCE_SENSITIVE"
 		);

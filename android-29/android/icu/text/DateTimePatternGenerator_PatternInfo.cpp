@@ -5,21 +5,21 @@ namespace android::icu::text
 	// Fields
 	jint DateTimePatternGenerator_PatternInfo::BASE_CONFLICT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator$PatternInfo",
 			"BASE_CONFLICT"
 		);
 	}
 	jint DateTimePatternGenerator_PatternInfo::CONFLICT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator$PatternInfo",
 			"CONFLICT"
 		);
 	}
 	jint DateTimePatternGenerator_PatternInfo::OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator$PatternInfo",
 			"OK"
 		);

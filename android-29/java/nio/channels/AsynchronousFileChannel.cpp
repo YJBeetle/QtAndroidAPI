@@ -14,7 +14,7 @@ namespace java::nio::channels
 	// Methods
 	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::open(__JniBaseClass arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousFileChannel",
 			"open",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/AsynchronousFileChannel;",
@@ -24,7 +24,7 @@ namespace java::nio::channels
 	}
 	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::open(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, jarray arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousFileChannel",
 			"open",
 			"(Ljava/nio/file/Path;Ljava/util/Set;Ljava/util/concurrent/ExecutorService;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/AsynchronousFileChannel;",

@@ -11,7 +11,7 @@ namespace android::content
 	// Fields
 	jint AbstractThreadedSyncAdapter::LOG_SYNC_DETAILS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.AbstractThreadedSyncAdapter",
 			"LOG_SYNC_DETAILS"
 		);

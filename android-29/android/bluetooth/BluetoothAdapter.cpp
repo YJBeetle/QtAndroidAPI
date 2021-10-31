@@ -11,7 +11,7 @@ namespace android::bluetooth
 	// Fields
 	jstring BluetoothAdapter::ACTION_CONNECTION_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_CONNECTION_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -19,7 +19,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::ACTION_DISCOVERY_FINISHED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_DISCOVERY_FINISHED",
 			"Ljava/lang/String;"
@@ -27,7 +27,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::ACTION_DISCOVERY_STARTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_DISCOVERY_STARTED",
 			"Ljava/lang/String;"
@@ -35,7 +35,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::ACTION_LOCAL_NAME_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_LOCAL_NAME_CHANGED",
 			"Ljava/lang/String;"
@@ -43,7 +43,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::ACTION_REQUEST_DISCOVERABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_REQUEST_DISCOVERABLE",
 			"Ljava/lang/String;"
@@ -51,7 +51,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::ACTION_REQUEST_ENABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_REQUEST_ENABLE",
 			"Ljava/lang/String;"
@@ -59,7 +59,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::ACTION_SCAN_MODE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_SCAN_MODE_CHANGED",
 			"Ljava/lang/String;"
@@ -67,7 +67,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::ACTION_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -75,14 +75,14 @@ namespace android::bluetooth
 	}
 	jint BluetoothAdapter::ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"ERROR"
 		);
 	}
 	jstring BluetoothAdapter::EXTRA_CONNECTION_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_CONNECTION_STATE",
 			"Ljava/lang/String;"
@@ -90,7 +90,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::EXTRA_DISCOVERABLE_DURATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_DISCOVERABLE_DURATION",
 			"Ljava/lang/String;"
@@ -98,7 +98,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::EXTRA_LOCAL_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_LOCAL_NAME",
 			"Ljava/lang/String;"
@@ -106,7 +106,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::EXTRA_PREVIOUS_CONNECTION_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_PREVIOUS_CONNECTION_STATE",
 			"Ljava/lang/String;"
@@ -114,7 +114,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::EXTRA_PREVIOUS_SCAN_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_PREVIOUS_SCAN_MODE",
 			"Ljava/lang/String;"
@@ -122,7 +122,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::EXTRA_PREVIOUS_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_PREVIOUS_STATE",
 			"Ljava/lang/String;"
@@ -130,7 +130,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::EXTRA_SCAN_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_SCAN_MODE",
 			"Ljava/lang/String;"
@@ -138,7 +138,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothAdapter::EXTRA_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_STATE",
 			"Ljava/lang/String;"
@@ -146,77 +146,77 @@ namespace android::bluetooth
 	}
 	jint BluetoothAdapter::SCAN_MODE_CONNECTABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"SCAN_MODE_CONNECTABLE"
 		);
 	}
 	jint BluetoothAdapter::SCAN_MODE_CONNECTABLE_DISCOVERABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"SCAN_MODE_CONNECTABLE_DISCOVERABLE"
 		);
 	}
 	jint BluetoothAdapter::SCAN_MODE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"SCAN_MODE_NONE"
 		);
 	}
 	jint BluetoothAdapter::STATE_CONNECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"STATE_CONNECTED"
 		);
 	}
 	jint BluetoothAdapter::STATE_CONNECTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"STATE_CONNECTING"
 		);
 	}
 	jint BluetoothAdapter::STATE_DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"STATE_DISCONNECTED"
 		);
 	}
 	jint BluetoothAdapter::STATE_DISCONNECTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"STATE_DISCONNECTING"
 		);
 	}
 	jint BluetoothAdapter::STATE_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"STATE_OFF"
 		);
 	}
 	jint BluetoothAdapter::STATE_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"STATE_ON"
 		);
 	}
 	jint BluetoothAdapter::STATE_TURNING_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"STATE_TURNING_OFF"
 		);
 	}
 	jint BluetoothAdapter::STATE_TURNING_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
 			"STATE_TURNING_ON"
 		);
@@ -230,7 +230,7 @@ namespace android::bluetooth
 	// Methods
 	jboolean BluetoothAdapter::checkBluetoothAddress(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.bluetooth.BluetoothAdapter",
 			"checkBluetoothAddress",
 			"(Ljava/lang/String;)Z",
@@ -239,7 +239,7 @@ namespace android::bluetooth
 	}
 	android::bluetooth::BluetoothAdapter BluetoothAdapter::getDefaultAdapter()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.bluetooth.BluetoothAdapter",
 			"getDefaultAdapter",
 			"()Landroid/bluetooth/BluetoothAdapter;"

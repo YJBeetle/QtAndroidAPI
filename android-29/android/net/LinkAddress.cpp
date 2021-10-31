@@ -8,7 +8,7 @@ namespace android::net
 	// Fields
 	__JniBaseClass LinkAddress::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.LinkAddress",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

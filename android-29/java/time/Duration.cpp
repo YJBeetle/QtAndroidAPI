@@ -8,7 +8,7 @@ namespace java::time
 	// Fields
 	java::time::Duration Duration::ZERO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Duration",
 			"ZERO",
 			"Ljava/time/Duration;"
@@ -23,7 +23,7 @@ namespace java::time
 	// Methods
 	java::time::Duration Duration::between(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"between",
 			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/Temporal;)Ljava/time/Duration;",
@@ -33,7 +33,7 @@ namespace java::time
 	}
 	java::time::Duration Duration::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"from",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Duration;",
@@ -42,7 +42,7 @@ namespace java::time
 	}
 	java::time::Duration Duration::of(jlong arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"of",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/Duration;",
@@ -52,7 +52,7 @@ namespace java::time
 	}
 	java::time::Duration Duration::ofDays(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"ofDays",
 			"(J)Ljava/time/Duration;",
@@ -61,7 +61,7 @@ namespace java::time
 	}
 	java::time::Duration Duration::ofHours(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"ofHours",
 			"(J)Ljava/time/Duration;",
@@ -70,7 +70,7 @@ namespace java::time
 	}
 	java::time::Duration Duration::ofMillis(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"ofMillis",
 			"(J)Ljava/time/Duration;",
@@ -79,7 +79,7 @@ namespace java::time
 	}
 	java::time::Duration Duration::ofMinutes(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"ofMinutes",
 			"(J)Ljava/time/Duration;",
@@ -88,7 +88,7 @@ namespace java::time
 	}
 	java::time::Duration Duration::ofNanos(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"ofNanos",
 			"(J)Ljava/time/Duration;",
@@ -97,7 +97,7 @@ namespace java::time
 	}
 	java::time::Duration Duration::ofSeconds(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"ofSeconds",
 			"(J)Ljava/time/Duration;",
@@ -106,7 +106,7 @@ namespace java::time
 	}
 	java::time::Duration Duration::ofSeconds(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"ofSeconds",
 			"(JJ)Ljava/time/Duration;",
@@ -116,7 +116,7 @@ namespace java::time
 	}
 	java::time::Duration Duration::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Duration",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Duration;",

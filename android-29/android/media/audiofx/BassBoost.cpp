@@ -6,14 +6,14 @@ namespace android::media::audiofx
 	// Fields
 	jint BassBoost::PARAM_STRENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.BassBoost",
 			"PARAM_STRENGTH"
 		);
 	}
 	jint BassBoost::PARAM_STRENGTH_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.BassBoost",
 			"PARAM_STRENGTH_SUPPORTED"
 		);

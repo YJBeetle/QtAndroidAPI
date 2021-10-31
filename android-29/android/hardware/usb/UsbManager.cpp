@@ -11,7 +11,7 @@ namespace android::hardware::usb
 	// Fields
 	jstring UsbManager::ACTION_USB_ACCESSORY_ATTACHED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"ACTION_USB_ACCESSORY_ATTACHED",
 			"Ljava/lang/String;"
@@ -19,7 +19,7 @@ namespace android::hardware::usb
 	}
 	jstring UsbManager::ACTION_USB_ACCESSORY_DETACHED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"ACTION_USB_ACCESSORY_DETACHED",
 			"Ljava/lang/String;"
@@ -27,7 +27,7 @@ namespace android::hardware::usb
 	}
 	jstring UsbManager::ACTION_USB_DEVICE_ATTACHED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"ACTION_USB_DEVICE_ATTACHED",
 			"Ljava/lang/String;"
@@ -35,7 +35,7 @@ namespace android::hardware::usb
 	}
 	jstring UsbManager::ACTION_USB_DEVICE_DETACHED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"ACTION_USB_DEVICE_DETACHED",
 			"Ljava/lang/String;"
@@ -43,7 +43,7 @@ namespace android::hardware::usb
 	}
 	jstring UsbManager::EXTRA_ACCESSORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"EXTRA_ACCESSORY",
 			"Ljava/lang/String;"
@@ -51,7 +51,7 @@ namespace android::hardware::usb
 	}
 	jstring UsbManager::EXTRA_DEVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"EXTRA_DEVICE",
 			"Ljava/lang/String;"
@@ -59,7 +59,7 @@ namespace android::hardware::usb
 	}
 	jstring UsbManager::EXTRA_PERMISSION_GRANTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.usb.UsbManager",
 			"EXTRA_PERMISSION_GRANTED",
 			"Ljava/lang/String;"

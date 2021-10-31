@@ -6,35 +6,35 @@ namespace java::lang
 	// Fields
 	jint Byte::BYTES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Byte",
 			"BYTES"
 		);
 	}
 	jbyte Byte::MAX_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"java.lang.Byte",
 			"MAX_VALUE"
 		);
 	}
 	jbyte Byte::MIN_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"java.lang.Byte",
 			"MIN_VALUE"
 		);
 	}
 	jint Byte::SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Byte",
 			"SIZE"
 		);
 	}
 	jclass Byte::TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.Byte",
 			"TYPE",
 			"Ljava/lang/Class;"
@@ -61,7 +61,7 @@ namespace java::lang
 	// Methods
 	jint Byte::compare(jbyte arg0, jbyte arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Byte",
 			"compare",
 			"(BB)I",
@@ -71,7 +71,7 @@ namespace java::lang
 	}
 	jint Byte::compareUnsigned(jbyte arg0, jbyte arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Byte",
 			"compareUnsigned",
 			"(BB)I",
@@ -81,7 +81,7 @@ namespace java::lang
 	}
 	java::lang::Byte Byte::decode(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Byte",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/Byte;",
@@ -90,7 +90,7 @@ namespace java::lang
 	}
 	jint Byte::hashCode(jbyte arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Byte",
 			"hashCode",
 			"(B)I",
@@ -99,7 +99,7 @@ namespace java::lang
 	}
 	jbyte Byte::parseByte(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jbyte>(
+		return callStaticMethod<jbyte>(
 			"java.lang.Byte",
 			"parseByte",
 			"(Ljava/lang/String;)B",
@@ -108,7 +108,7 @@ namespace java::lang
 	}
 	jbyte Byte::parseByte(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jbyte>(
+		return callStaticMethod<jbyte>(
 			"java.lang.Byte",
 			"parseByte",
 			"(Ljava/lang/String;I)B",
@@ -118,7 +118,7 @@ namespace java::lang
 	}
 	jstring Byte::toString(jbyte arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Byte",
 			"toString",
 			"(B)Ljava/lang/String;",
@@ -127,7 +127,7 @@ namespace java::lang
 	}
 	jint Byte::toUnsignedInt(jbyte arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Byte",
 			"toUnsignedInt",
 			"(B)I",
@@ -136,7 +136,7 @@ namespace java::lang
 	}
 	jlong Byte::toUnsignedLong(jbyte arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Byte",
 			"toUnsignedLong",
 			"(B)J",
@@ -145,7 +145,7 @@ namespace java::lang
 	}
 	java::lang::Byte Byte::valueOf(jbyte arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Byte",
 			"valueOf",
 			"(B)Ljava/lang/Byte;",
@@ -154,7 +154,7 @@ namespace java::lang
 	}
 	java::lang::Byte Byte::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Byte",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Byte;",
@@ -163,7 +163,7 @@ namespace java::lang
 	}
 	java::lang::Byte Byte::valueOf(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Byte",
 			"valueOf",
 			"(Ljava/lang/String;I)Ljava/lang/Byte;",

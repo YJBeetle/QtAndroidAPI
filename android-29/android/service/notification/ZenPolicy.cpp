@@ -6,7 +6,7 @@ namespace android::service::notification
 	// Fields
 	__JniBaseClass ZenPolicy::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.ZenPolicy",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,56 +14,56 @@ namespace android::service::notification
 	}
 	jint ZenPolicy::PEOPLE_TYPE_ANYONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
 			"PEOPLE_TYPE_ANYONE"
 		);
 	}
 	jint ZenPolicy::PEOPLE_TYPE_CONTACTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
 			"PEOPLE_TYPE_CONTACTS"
 		);
 	}
 	jint ZenPolicy::PEOPLE_TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
 			"PEOPLE_TYPE_NONE"
 		);
 	}
 	jint ZenPolicy::PEOPLE_TYPE_STARRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
 			"PEOPLE_TYPE_STARRED"
 		);
 	}
 	jint ZenPolicy::PEOPLE_TYPE_UNSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
 			"PEOPLE_TYPE_UNSET"
 		);
 	}
 	jint ZenPolicy::STATE_ALLOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
 			"STATE_ALLOW"
 		);
 	}
 	jint ZenPolicy::STATE_DISALLOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
 			"STATE_DISALLOW"
 		);
 	}
 	jint ZenPolicy::STATE_UNSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
 			"STATE_UNSET"
 		);

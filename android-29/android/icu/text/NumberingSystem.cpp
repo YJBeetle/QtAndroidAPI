@@ -7,7 +7,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::NumberingSystem NumberingSystem::LATIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.NumberingSystem",
 			"LATIN",
 			"Landroid/icu/text/NumberingSystem;"
@@ -27,7 +27,7 @@ namespace android::icu::text
 	// Methods
 	jarray NumberingSystem::getAvailableNames()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
 			"getAvailableNames",
 			"()[Ljava/lang/String;"
@@ -35,7 +35,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberingSystem NumberingSystem::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
 			"getInstance",
 			"()Landroid/icu/text/NumberingSystem;"
@@ -43,7 +43,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberingSystem NumberingSystem::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/NumberingSystem;",
@@ -52,7 +52,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberingSystem NumberingSystem::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/NumberingSystem;",
@@ -61,7 +61,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberingSystem NumberingSystem::getInstance(jint arg0, jboolean arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
 			"getInstance",
 			"(IZLjava/lang/String;)Landroid/icu/text/NumberingSystem;",
@@ -72,7 +72,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberingSystem NumberingSystem::getInstanceByName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
 			"getInstanceByName",
 			"(Ljava/lang/String;)Landroid/icu/text/NumberingSystem;",
@@ -81,7 +81,7 @@ namespace android::icu::text
 	}
 	jboolean NumberingSystem::isValidDigitString(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.text.NumberingSystem",
 			"isValidDigitString",
 			"(Ljava/lang/String;)Z",

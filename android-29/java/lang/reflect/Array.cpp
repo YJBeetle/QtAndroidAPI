@@ -12,7 +12,7 @@ namespace java::lang::reflect
 	// Methods
 	jobject Array::get(jobject arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.reflect.Array",
 			"get",
 			"(Ljava/lang/Object;I)Ljava/lang/Object;",
@@ -22,7 +22,7 @@ namespace java::lang::reflect
 	}
 	jboolean Array::getBoolean(jobject arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Array",
 			"getBoolean",
 			"(Ljava/lang/Object;I)Z",
@@ -32,7 +32,7 @@ namespace java::lang::reflect
 	}
 	jbyte Array::getByte(jobject arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jbyte>(
+		return callStaticMethod<jbyte>(
 			"java.lang.reflect.Array",
 			"getByte",
 			"(Ljava/lang/Object;I)B",
@@ -42,7 +42,7 @@ namespace java::lang::reflect
 	}
 	jchar Array::getChar(jobject arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jchar>(
+		return callStaticMethod<jchar>(
 			"java.lang.reflect.Array",
 			"getChar",
 			"(Ljava/lang/Object;I)C",
@@ -52,7 +52,7 @@ namespace java::lang::reflect
 	}
 	jdouble Array::getDouble(jobject arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.reflect.Array",
 			"getDouble",
 			"(Ljava/lang/Object;I)D",
@@ -62,7 +62,7 @@ namespace java::lang::reflect
 	}
 	jfloat Array::getFloat(jobject arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.reflect.Array",
 			"getFloat",
 			"(Ljava/lang/Object;I)F",
@@ -72,7 +72,7 @@ namespace java::lang::reflect
 	}
 	jint Array::getInt(jobject arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.reflect.Array",
 			"getInt",
 			"(Ljava/lang/Object;I)I",
@@ -82,7 +82,7 @@ namespace java::lang::reflect
 	}
 	jint Array::getLength(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.reflect.Array",
 			"getLength",
 			"(Ljava/lang/Object;)I",
@@ -91,7 +91,7 @@ namespace java::lang::reflect
 	}
 	jlong Array::getLong(jobject arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.reflect.Array",
 			"getLong",
 			"(Ljava/lang/Object;I)J",
@@ -101,7 +101,7 @@ namespace java::lang::reflect
 	}
 	jshort Array::getShort(jobject arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"java.lang.reflect.Array",
 			"getShort",
 			"(Ljava/lang/Object;I)S",
@@ -111,7 +111,7 @@ namespace java::lang::reflect
 	}
 	jobject Array::newInstance(jclass arg0, jintArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.reflect.Array",
 			"newInstance",
 			"(Ljava/lang/Class;[I)Ljava/lang/Object;",
@@ -121,7 +121,7 @@ namespace java::lang::reflect
 	}
 	jobject Array::newInstance(jclass arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.reflect.Array",
 			"newInstance",
 			"(Ljava/lang/Class;I)Ljava/lang/Object;",
@@ -131,7 +131,7 @@ namespace java::lang::reflect
 	}
 	void Array::set(jobject arg0, jint arg1, jobject arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.reflect.Array",
 			"set",
 			"(Ljava/lang/Object;ILjava/lang/Object;)V",
@@ -142,7 +142,7 @@ namespace java::lang::reflect
 	}
 	void Array::setBoolean(jobject arg0, jint arg1, jboolean arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.reflect.Array",
 			"setBoolean",
 			"(Ljava/lang/Object;IZ)V",
@@ -153,7 +153,7 @@ namespace java::lang::reflect
 	}
 	void Array::setByte(jobject arg0, jint arg1, jbyte arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.reflect.Array",
 			"setByte",
 			"(Ljava/lang/Object;IB)V",
@@ -164,7 +164,7 @@ namespace java::lang::reflect
 	}
 	void Array::setChar(jobject arg0, jint arg1, jchar arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.reflect.Array",
 			"setChar",
 			"(Ljava/lang/Object;IC)V",
@@ -175,7 +175,7 @@ namespace java::lang::reflect
 	}
 	void Array::setDouble(jobject arg0, jint arg1, jdouble arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.reflect.Array",
 			"setDouble",
 			"(Ljava/lang/Object;ID)V",
@@ -186,7 +186,7 @@ namespace java::lang::reflect
 	}
 	void Array::setFloat(jobject arg0, jint arg1, jfloat arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.reflect.Array",
 			"setFloat",
 			"(Ljava/lang/Object;IF)V",
@@ -197,7 +197,7 @@ namespace java::lang::reflect
 	}
 	void Array::setInt(jobject arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.reflect.Array",
 			"setInt",
 			"(Ljava/lang/Object;II)V",
@@ -208,7 +208,7 @@ namespace java::lang::reflect
 	}
 	void Array::setLong(jobject arg0, jint arg1, jlong arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.reflect.Array",
 			"setLong",
 			"(Ljava/lang/Object;IJ)V",
@@ -219,7 +219,7 @@ namespace java::lang::reflect
 	}
 	void Array::setShort(jobject arg0, jint arg1, jshort arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.reflect.Array",
 			"setShort",
 			"(Ljava/lang/Object;IS)V",

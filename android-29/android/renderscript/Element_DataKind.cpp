@@ -5,7 +5,7 @@ namespace android::renderscript
 	// Fields
 	android::renderscript::Element_DataKind Element_DataKind::PIXEL_A()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_A",
 			"Landroid/renderscript/Element$DataKind;"
@@ -13,7 +13,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Element_DataKind Element_DataKind::PIXEL_DEPTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_DEPTH",
 			"Landroid/renderscript/Element$DataKind;"
@@ -21,7 +21,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Element_DataKind Element_DataKind::PIXEL_L()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_L",
 			"Landroid/renderscript/Element$DataKind;"
@@ -29,7 +29,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Element_DataKind Element_DataKind::PIXEL_LA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_LA",
 			"Landroid/renderscript/Element$DataKind;"
@@ -37,7 +37,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Element_DataKind Element_DataKind::PIXEL_RGB()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_RGB",
 			"Landroid/renderscript/Element$DataKind;"
@@ -45,7 +45,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Element_DataKind Element_DataKind::PIXEL_RGBA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_RGBA",
 			"Landroid/renderscript/Element$DataKind;"
@@ -53,7 +53,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Element_DataKind Element_DataKind::PIXEL_YUV()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_YUV",
 			"Landroid/renderscript/Element$DataKind;"
@@ -61,7 +61,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Element_DataKind Element_DataKind::USER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"USER",
 			"Landroid/renderscript/Element$DataKind;"
@@ -76,7 +76,7 @@ namespace android::renderscript
 	// Methods
 	android::renderscript::Element_DataKind Element_DataKind::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Element$DataKind",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/Element$DataKind;",
@@ -85,7 +85,7 @@ namespace android::renderscript
 	}
 	jarray Element_DataKind::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Element$DataKind",
 			"values",
 			"()[Landroid/renderscript/Element$DataKind;"

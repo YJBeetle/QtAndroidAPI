@@ -6,7 +6,7 @@ namespace android::widget
 	// Fields
 	__JniBaseClass TextView_SavedState::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.TextView$SavedState",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

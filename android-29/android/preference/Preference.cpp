@@ -14,7 +14,7 @@ namespace android::preference
 	// Fields
 	jint Preference::DEFAULT_ORDER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.preference.Preference",
 			"DEFAULT_ORDER"
 		);

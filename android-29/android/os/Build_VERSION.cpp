@@ -5,7 +5,7 @@ namespace android::os
 	// Fields
 	jstring Build_VERSION::BASE_OS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build$VERSION",
 			"BASE_OS",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::os
 	}
 	jstring Build_VERSION::CODENAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build$VERSION",
 			"CODENAME",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::os
 	}
 	jstring Build_VERSION::INCREMENTAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build$VERSION",
 			"INCREMENTAL",
 			"Ljava/lang/String;"
@@ -29,14 +29,14 @@ namespace android::os
 	}
 	jint Build_VERSION::PREVIEW_SDK_INT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Build$VERSION",
 			"PREVIEW_SDK_INT"
 		);
 	}
 	jstring Build_VERSION::RELEASE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build$VERSION",
 			"RELEASE",
 			"Ljava/lang/String;"
@@ -44,7 +44,7 @@ namespace android::os
 	}
 	jstring Build_VERSION::SDK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build$VERSION",
 			"SDK",
 			"Ljava/lang/String;"
@@ -52,14 +52,14 @@ namespace android::os
 	}
 	jint Build_VERSION::SDK_INT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Build$VERSION",
 			"SDK_INT"
 		);
 	}
 	jstring Build_VERSION::SECURITY_PATCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build$VERSION",
 			"SECURITY_PATCH",
 			"Ljava/lang/String;"

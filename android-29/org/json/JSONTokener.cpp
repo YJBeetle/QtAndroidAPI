@@ -19,7 +19,7 @@ namespace org::json
 	// Methods
 	jint JSONTokener::dehexchar(jchar arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"org.json.JSONTokener",
 			"dehexchar",
 			"(C)I",

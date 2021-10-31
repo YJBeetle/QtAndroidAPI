@@ -7,7 +7,7 @@ namespace android::location
 	// Fields
 	__JniBaseClass GnssMeasurementsEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.GnssMeasurementsEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -13,49 +13,49 @@ namespace javax::crypto
 	// Fields
 	jint Cipher::DECRYPT_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"javax.crypto.Cipher",
 			"DECRYPT_MODE"
 		);
 	}
 	jint Cipher::ENCRYPT_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"javax.crypto.Cipher",
 			"ENCRYPT_MODE"
 		);
 	}
 	jint Cipher::PRIVATE_KEY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"javax.crypto.Cipher",
 			"PRIVATE_KEY"
 		);
 	}
 	jint Cipher::PUBLIC_KEY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"javax.crypto.Cipher",
 			"PUBLIC_KEY"
 		);
 	}
 	jint Cipher::SECRET_KEY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"javax.crypto.Cipher",
 			"SECRET_KEY"
 		);
 	}
 	jint Cipher::UNWRAP_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"javax.crypto.Cipher",
 			"UNWRAP_MODE"
 		);
 	}
 	jint Cipher::WRAP_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"javax.crypto.Cipher",
 			"WRAP_MODE"
 		);
@@ -69,7 +69,7 @@ namespace javax::crypto
 	// Methods
 	javax::crypto::Cipher Cipher::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.crypto.Cipher",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/Cipher;",
@@ -78,7 +78,7 @@ namespace javax::crypto
 	}
 	javax::crypto::Cipher Cipher::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.crypto.Cipher",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/Cipher;",
@@ -88,7 +88,7 @@ namespace javax::crypto
 	}
 	javax::crypto::Cipher Cipher::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.crypto.Cipher",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Cipher;",
@@ -98,7 +98,7 @@ namespace javax::crypto
 	}
 	jint Cipher::getMaxAllowedKeyLength(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"javax.crypto.Cipher",
 			"getMaxAllowedKeyLength",
 			"(Ljava/lang/String;)I",
@@ -107,7 +107,7 @@ namespace javax::crypto
 	}
 	__JniBaseClass Cipher::getMaxAllowedParameterSpec(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.crypto.Cipher",
 			"getMaxAllowedParameterSpec",
 			"(Ljava/lang/String;)Ljava/security/spec/AlgorithmParameterSpec;",

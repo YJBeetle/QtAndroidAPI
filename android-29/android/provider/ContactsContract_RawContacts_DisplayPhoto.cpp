@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_RawContacts_DisplayPhoto::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts$DisplayPhoto",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"

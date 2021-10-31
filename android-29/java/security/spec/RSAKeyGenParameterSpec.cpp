@@ -6,7 +6,7 @@ namespace java::security::spec
 	// Fields
 	java::math::BigInteger RSAKeyGenParameterSpec::F0()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.spec.RSAKeyGenParameterSpec",
 			"F0",
 			"Ljava/math/BigInteger;"
@@ -14,7 +14,7 @@ namespace java::security::spec
 	}
 	java::math::BigInteger RSAKeyGenParameterSpec::F4()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.spec.RSAKeyGenParameterSpec",
 			"F4",
 			"Ljava/math/BigInteger;"

@@ -32,7 +32,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::CurrencyPluralInfo CurrencyPluralInfo::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CurrencyPluralInfo",
 			"getInstance",
 			"()Landroid/icu/text/CurrencyPluralInfo;"
@@ -40,7 +40,7 @@ namespace android::icu::text
 	}
 	android::icu::text::CurrencyPluralInfo CurrencyPluralInfo::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CurrencyPluralInfo",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/CurrencyPluralInfo;",
@@ -49,7 +49,7 @@ namespace android::icu::text
 	}
 	android::icu::text::CurrencyPluralInfo CurrencyPluralInfo::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CurrencyPluralInfo",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/CurrencyPluralInfo;",

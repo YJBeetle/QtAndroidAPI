@@ -9,28 +9,28 @@ namespace android::view
 	// Fields
 	jint TouchDelegate::ABOVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.TouchDelegate",
 			"ABOVE"
 		);
 	}
 	jint TouchDelegate::BELOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.TouchDelegate",
 			"BELOW"
 		);
 	}
 	jint TouchDelegate::TO_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.TouchDelegate",
 			"TO_LEFT"
 		);
 	}
 	jint TouchDelegate::TO_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.TouchDelegate",
 			"TO_RIGHT"
 		);

@@ -6,7 +6,7 @@ namespace android::view::autofill
 	// Fields
 	__JniBaseClass AutofillValue::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.autofill.AutofillValue",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -21,7 +21,7 @@ namespace android::view::autofill
 	// Methods
 	android::view::autofill::AutofillValue AutofillValue::forDate(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.autofill.AutofillValue",
 			"forDate",
 			"(J)Landroid/view/autofill/AutofillValue;",
@@ -30,7 +30,7 @@ namespace android::view::autofill
 	}
 	android::view::autofill::AutofillValue AutofillValue::forList(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.autofill.AutofillValue",
 			"forList",
 			"(I)Landroid/view/autofill/AutofillValue;",
@@ -39,7 +39,7 @@ namespace android::view::autofill
 	}
 	android::view::autofill::AutofillValue AutofillValue::forText(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.autofill.AutofillValue",
 			"forText",
 			"(Ljava/lang/CharSequence;)Landroid/view/autofill/AutofillValue;",
@@ -48,7 +48,7 @@ namespace android::view::autofill
 	}
 	android::view::autofill::AutofillValue AutofillValue::forToggle(jboolean arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.autofill.AutofillValue",
 			"forToggle",
 			"(Z)Landroid/view/autofill/AutofillValue;",

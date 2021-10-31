@@ -5,7 +5,7 @@ namespace android::net
 	// Fields
 	android::net::LocalSocketAddress_Namespace LocalSocketAddress_Namespace::ABSTRACT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.LocalSocketAddress$Namespace",
 			"ABSTRACT",
 			"Landroid/net/LocalSocketAddress$Namespace;"
@@ -13,7 +13,7 @@ namespace android::net
 	}
 	android::net::LocalSocketAddress_Namespace LocalSocketAddress_Namespace::FILESYSTEM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.LocalSocketAddress$Namespace",
 			"FILESYSTEM",
 			"Landroid/net/LocalSocketAddress$Namespace;"
@@ -21,7 +21,7 @@ namespace android::net
 	}
 	android::net::LocalSocketAddress_Namespace LocalSocketAddress_Namespace::RESERVED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.LocalSocketAddress$Namespace",
 			"RESERVED",
 			"Landroid/net/LocalSocketAddress$Namespace;"
@@ -36,7 +36,7 @@ namespace android::net
 	// Methods
 	android::net::LocalSocketAddress_Namespace LocalSocketAddress_Namespace::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.LocalSocketAddress$Namespace",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/net/LocalSocketAddress$Namespace;",
@@ -45,7 +45,7 @@ namespace android::net
 	}
 	jarray LocalSocketAddress_Namespace::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.LocalSocketAddress$Namespace",
 			"values",
 			"()[Landroid/net/LocalSocketAddress$Namespace;"

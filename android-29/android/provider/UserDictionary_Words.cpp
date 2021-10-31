@@ -8,7 +8,7 @@ namespace android::provider
 	// Fields
 	jstring UserDictionary_Words::APP_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary$Words",
 			"APP_ID",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::provider
 	}
 	jstring UserDictionary_Words::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary$Words",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::provider
 	}
 	jstring UserDictionary_Words::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary$Words",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace android::provider
 	}
 	android::net::Uri UserDictionary_Words::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary$Words",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -40,7 +40,7 @@ namespace android::provider
 	}
 	jstring UserDictionary_Words::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary$Words",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -48,7 +48,7 @@ namespace android::provider
 	}
 	jstring UserDictionary_Words::FREQUENCY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary$Words",
 			"FREQUENCY",
 			"Ljava/lang/String;"
@@ -56,7 +56,7 @@ namespace android::provider
 	}
 	jstring UserDictionary_Words::LOCALE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary$Words",
 			"LOCALE",
 			"Ljava/lang/String;"
@@ -64,21 +64,21 @@ namespace android::provider
 	}
 	jint UserDictionary_Words::LOCALE_TYPE_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.UserDictionary$Words",
 			"LOCALE_TYPE_ALL"
 		);
 	}
 	jint UserDictionary_Words::LOCALE_TYPE_CURRENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.UserDictionary$Words",
 			"LOCALE_TYPE_CURRENT"
 		);
 	}
 	jstring UserDictionary_Words::SHORTCUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary$Words",
 			"SHORTCUT",
 			"Ljava/lang/String;"
@@ -86,7 +86,7 @@ namespace android::provider
 	}
 	jstring UserDictionary_Words::WORD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary$Words",
 			"WORD",
 			"Ljava/lang/String;"
@@ -94,7 +94,7 @@ namespace android::provider
 	}
 	jstring UserDictionary_Words::_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary$Words",
 			"_ID",
 			"Ljava/lang/String;"
@@ -114,7 +114,7 @@ namespace android::provider
 	// Methods
 	void UserDictionary_Words::addWord(android::content::Context arg0, jstring arg1, jint arg2, jint arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.UserDictionary$Words",
 			"addWord",
 			"(Landroid/content/Context;Ljava/lang/String;II)V",
@@ -126,7 +126,7 @@ namespace android::provider
 	}
 	void UserDictionary_Words::addWord(android::content::Context arg0, jstring arg1, jint arg2, jstring arg3, java::util::Locale arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.UserDictionary$Words",
 			"addWord",
 			"(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/util/Locale;)V",

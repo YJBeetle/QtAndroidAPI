@@ -19,7 +19,7 @@ namespace android::text::method
 	// Methods
 	__JniBaseClass ScrollingMovementMethod::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.ScrollingMovementMethod",
 			"getInstance",
 			"()Landroid/text/method/MovementMethod;"

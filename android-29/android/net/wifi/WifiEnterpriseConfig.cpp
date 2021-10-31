@@ -7,7 +7,7 @@ namespace android::net::wifi
 	// Fields
 	__JniBaseClass WifiEnterpriseConfig::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.WifiEnterpriseConfig",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

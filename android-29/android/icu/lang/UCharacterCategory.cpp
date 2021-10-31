@@ -12,7 +12,7 @@ namespace android::icu::lang
 	// Methods
 	jstring UCharacterCategory::toString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacterCategory",
 			"toString",
 			"(I)Ljava/lang/String;",

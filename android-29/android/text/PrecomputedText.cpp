@@ -14,7 +14,7 @@ namespace android::text
 	// Methods
 	android::text::PrecomputedText PrecomputedText::create(jstring arg0, android::text::PrecomputedText_Params arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.PrecomputedText",
 			"create",
 			"(Ljava/lang/CharSequence;Landroid/text/PrecomputedText$Params;)Landroid/text/PrecomputedText;",

@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass DateValueSanitizer::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.DateValueSanitizer",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

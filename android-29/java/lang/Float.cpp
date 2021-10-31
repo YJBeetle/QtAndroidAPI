@@ -7,77 +7,77 @@ namespace java::lang
 	// Fields
 	jint Float::BYTES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Float",
 			"BYTES"
 		);
 	}
 	jint Float::MAX_EXPONENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Float",
 			"MAX_EXPONENT"
 		);
 	}
 	jfloat Float::MAX_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"java.lang.Float",
 			"MAX_VALUE"
 		);
 	}
 	jint Float::MIN_EXPONENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Float",
 			"MIN_EXPONENT"
 		);
 	}
 	jfloat Float::MIN_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"java.lang.Float",
 			"MIN_NORMAL"
 		);
 	}
 	jfloat Float::MIN_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"java.lang.Float",
 			"MIN_VALUE"
 		);
 	}
 	jfloat Float::NEGATIVE_INFINITY()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"java.lang.Float",
 			"NEGATIVE_INFINITY"
 		);
 	}
 	jfloat Float::NaN()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"java.lang.Float",
 			"NaN"
 		);
 	}
 	jfloat Float::POSITIVE_INFINITY()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"java.lang.Float",
 			"POSITIVE_INFINITY"
 		);
 	}
 	jint Float::SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Float",
 			"SIZE"
 		);
 	}
 	jclass Float::TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.Float",
 			"TYPE",
 			"Ljava/lang/Class;"
@@ -110,7 +110,7 @@ namespace java::lang
 	// Methods
 	jint Float::compare(jfloat arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Float",
 			"compare",
 			"(FF)I",
@@ -120,7 +120,7 @@ namespace java::lang
 	}
 	jint Float::floatToIntBits(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Float",
 			"floatToIntBits",
 			"(F)I",
@@ -129,7 +129,7 @@ namespace java::lang
 	}
 	jint Float::floatToRawIntBits(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Float",
 			"floatToRawIntBits",
 			"(F)I",
@@ -138,7 +138,7 @@ namespace java::lang
 	}
 	jint Float::hashCode(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Float",
 			"hashCode",
 			"(F)I",
@@ -147,7 +147,7 @@ namespace java::lang
 	}
 	jfloat Float::intBitsToFloat(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.Float",
 			"intBitsToFloat",
 			"(I)F",
@@ -156,7 +156,7 @@ namespace java::lang
 	}
 	jboolean Float::isFinite(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Float",
 			"isFinite",
 			"(F)Z",
@@ -165,7 +165,7 @@ namespace java::lang
 	}
 	jboolean Float::isInfinite(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Float",
 			"isInfinite",
 			"(F)Z",
@@ -174,7 +174,7 @@ namespace java::lang
 	}
 	jboolean Float::isNaN(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Float",
 			"isNaN",
 			"(F)Z",
@@ -183,7 +183,7 @@ namespace java::lang
 	}
 	jfloat Float::max(jfloat arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.Float",
 			"max",
 			"(FF)F",
@@ -193,7 +193,7 @@ namespace java::lang
 	}
 	jfloat Float::min(jfloat arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.Float",
 			"min",
 			"(FF)F",
@@ -203,7 +203,7 @@ namespace java::lang
 	}
 	jfloat Float::parseFloat(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.Float",
 			"parseFloat",
 			"(Ljava/lang/String;)F",
@@ -212,7 +212,7 @@ namespace java::lang
 	}
 	jfloat Float::sum(jfloat arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.Float",
 			"sum",
 			"(FF)F",
@@ -222,7 +222,7 @@ namespace java::lang
 	}
 	jstring Float::toHexString(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Float",
 			"toHexString",
 			"(F)Ljava/lang/String;",
@@ -231,7 +231,7 @@ namespace java::lang
 	}
 	jstring Float::toString(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Float",
 			"toString",
 			"(F)Ljava/lang/String;",
@@ -240,7 +240,7 @@ namespace java::lang
 	}
 	java::lang::Float Float::valueOf(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Float",
 			"valueOf",
 			"(F)Ljava/lang/Float;",
@@ -249,7 +249,7 @@ namespace java::lang
 	}
 	java::lang::Float Float::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Float",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Float;",

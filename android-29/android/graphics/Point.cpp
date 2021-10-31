@@ -6,7 +6,7 @@ namespace android::graphics
 	// Fields
 	__JniBaseClass Point::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Point",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

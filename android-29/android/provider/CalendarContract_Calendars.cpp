@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring CalendarContract_Calendars::CALENDAR_LOCATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"CALENDAR_LOCATION",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri CalendarContract_Calendars::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring CalendarContract_Calendars::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	android::net::Uri CalendarContract_Calendars::ENTERPRISE_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"ENTERPRISE_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	jstring CalendarContract_Calendars::NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"NAME",
 			"Ljava/lang/String;"

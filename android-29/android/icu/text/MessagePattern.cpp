@@ -8,21 +8,21 @@ namespace android::icu::text
 	// Fields
 	jint MessagePattern::ARG_NAME_NOT_NUMBER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.MessagePattern",
 			"ARG_NAME_NOT_NUMBER"
 		);
 	}
 	jint MessagePattern::ARG_NAME_NOT_VALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.MessagePattern",
 			"ARG_NAME_NOT_VALID"
 		);
 	}
 	jdouble MessagePattern::NO_NUMERIC_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jdouble>(
+		return getStaticField<jdouble>(
 			"android.icu.text.MessagePattern",
 			"NO_NUMERIC_VALUE"
 		);
@@ -53,7 +53,7 @@ namespace android::icu::text
 	// Methods
 	jint MessagePattern::validateArgumentName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.text.MessagePattern",
 			"validateArgumentName",
 			"(Ljava/lang/String;)I",

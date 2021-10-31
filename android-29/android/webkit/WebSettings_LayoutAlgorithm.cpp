@@ -5,7 +5,7 @@ namespace android::webkit
 	// Fields
 	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::NARROW_COLUMNS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"NARROW_COLUMNS",
 			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
@@ -13,7 +13,7 @@ namespace android::webkit
 	}
 	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::NORMAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"NORMAL",
 			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
@@ -21,7 +21,7 @@ namespace android::webkit
 	}
 	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::SINGLE_COLUMN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"SINGLE_COLUMN",
 			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
@@ -29,7 +29,7 @@ namespace android::webkit
 	}
 	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::TEXT_AUTOSIZING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"TEXT_AUTOSIZING",
 			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
@@ -44,7 +44,7 @@ namespace android::webkit
 	// Methods
 	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$LayoutAlgorithm;",
@@ -53,7 +53,7 @@ namespace android::webkit
 	}
 	jarray WebSettings_LayoutAlgorithm::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"values",
 			"()[Landroid/webkit/WebSettings$LayoutAlgorithm;"

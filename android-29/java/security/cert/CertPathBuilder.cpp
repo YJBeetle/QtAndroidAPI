@@ -14,7 +14,7 @@ namespace java::security::cert
 	// Methods
 	jstring CertPathBuilder::getDefaultType()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertPathBuilder",
 			"getDefaultType",
 			"()Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace java::security::cert
 	}
 	java::security::cert::CertPathBuilder CertPathBuilder::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertPathBuilder",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/cert/CertPathBuilder;",
@@ -31,7 +31,7 @@ namespace java::security::cert
 	}
 	java::security::cert::CertPathBuilder CertPathBuilder::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertPathBuilder",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/cert/CertPathBuilder;",
@@ -41,7 +41,7 @@ namespace java::security::cert
 	}
 	java::security::cert::CertPathBuilder CertPathBuilder::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertPathBuilder",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertPathBuilder;",

@@ -13,7 +13,7 @@ namespace android::graphics::drawable
 	// Fields
 	jint RippleDrawable::RADIUS_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.RippleDrawable",
 			"RADIUS_AUTO"
 		);

@@ -8,7 +8,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass PackageInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,28 +16,28 @@ namespace android::content::pm
 	}
 	jint PackageInfo::INSTALL_LOCATION_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInfo",
 			"INSTALL_LOCATION_AUTO"
 		);
 	}
 	jint PackageInfo::INSTALL_LOCATION_INTERNAL_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInfo",
 			"INSTALL_LOCATION_INTERNAL_ONLY"
 		);
 	}
 	jint PackageInfo::INSTALL_LOCATION_PREFER_EXTERNAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInfo",
 			"INSTALL_LOCATION_PREFER_EXTERNAL"
 		);
 	}
 	jint PackageInfo::REQUESTED_PERMISSION_GRANTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInfo",
 			"REQUESTED_PERMISSION_GRANTED"
 		);

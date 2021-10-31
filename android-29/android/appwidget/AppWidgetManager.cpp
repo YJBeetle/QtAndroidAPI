@@ -12,7 +12,7 @@ namespace android::appwidget
 	// Fields
 	jstring AppWidgetManager::ACTION_APPWIDGET_BIND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_BIND",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::ACTION_APPWIDGET_CONFIGURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_CONFIGURE",
 			"Ljava/lang/String;"
@@ -28,7 +28,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::ACTION_APPWIDGET_DELETED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_DELETED",
 			"Ljava/lang/String;"
@@ -36,7 +36,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::ACTION_APPWIDGET_DISABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_DISABLED",
 			"Ljava/lang/String;"
@@ -44,7 +44,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::ACTION_APPWIDGET_ENABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_ENABLED",
 			"Ljava/lang/String;"
@@ -52,7 +52,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::ACTION_APPWIDGET_HOST_RESTORED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_HOST_RESTORED",
 			"Ljava/lang/String;"
@@ -60,7 +60,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::ACTION_APPWIDGET_OPTIONS_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_OPTIONS_CHANGED",
 			"Ljava/lang/String;"
@@ -68,7 +68,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::ACTION_APPWIDGET_PICK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_PICK",
 			"Ljava/lang/String;"
@@ -76,7 +76,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::ACTION_APPWIDGET_RESTORED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_RESTORED",
 			"Ljava/lang/String;"
@@ -84,7 +84,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::ACTION_APPWIDGET_UPDATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_UPDATE",
 			"Ljava/lang/String;"
@@ -92,7 +92,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::EXTRA_APPWIDGET_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_ID",
 			"Ljava/lang/String;"
@@ -100,7 +100,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::EXTRA_APPWIDGET_IDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_IDS",
 			"Ljava/lang/String;"
@@ -108,7 +108,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::EXTRA_APPWIDGET_OLD_IDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_OLD_IDS",
 			"Ljava/lang/String;"
@@ -116,7 +116,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::EXTRA_APPWIDGET_OPTIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_OPTIONS",
 			"Ljava/lang/String;"
@@ -124,7 +124,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::EXTRA_APPWIDGET_PREVIEW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_PREVIEW",
 			"Ljava/lang/String;"
@@ -132,7 +132,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::EXTRA_APPWIDGET_PROVIDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_PROVIDER",
 			"Ljava/lang/String;"
@@ -140,7 +140,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::EXTRA_APPWIDGET_PROVIDER_PROFILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_PROVIDER_PROFILE",
 			"Ljava/lang/String;"
@@ -148,7 +148,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::EXTRA_CUSTOM_EXTRAS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_CUSTOM_EXTRAS",
 			"Ljava/lang/String;"
@@ -156,7 +156,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::EXTRA_CUSTOM_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_CUSTOM_INFO",
 			"Ljava/lang/String;"
@@ -164,7 +164,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::EXTRA_HOST_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_HOST_ID",
 			"Ljava/lang/String;"
@@ -172,14 +172,14 @@ namespace android::appwidget
 	}
 	jint AppWidgetManager::INVALID_APPWIDGET_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.appwidget.AppWidgetManager",
 			"INVALID_APPWIDGET_ID"
 		);
 	}
 	jstring AppWidgetManager::META_DATA_APPWIDGET_PROVIDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"META_DATA_APPWIDGET_PROVIDER",
 			"Ljava/lang/String;"
@@ -187,7 +187,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::OPTION_APPWIDGET_HOST_CATEGORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_HOST_CATEGORY",
 			"Ljava/lang/String;"
@@ -195,7 +195,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::OPTION_APPWIDGET_MAX_HEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MAX_HEIGHT",
 			"Ljava/lang/String;"
@@ -203,7 +203,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::OPTION_APPWIDGET_MAX_WIDTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MAX_WIDTH",
 			"Ljava/lang/String;"
@@ -211,7 +211,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::OPTION_APPWIDGET_MIN_HEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MIN_HEIGHT",
 			"Ljava/lang/String;"
@@ -219,7 +219,7 @@ namespace android::appwidget
 	}
 	jstring AppWidgetManager::OPTION_APPWIDGET_MIN_WIDTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MIN_WIDTH",
 			"Ljava/lang/String;"
@@ -234,7 +234,7 @@ namespace android::appwidget
 	// Methods
 	android::appwidget::AppWidgetManager AppWidgetManager::getInstance(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.appwidget.AppWidgetManager",
 			"getInstance",
 			"(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;",

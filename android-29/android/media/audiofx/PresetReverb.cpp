@@ -6,56 +6,56 @@ namespace android::media::audiofx
 	// Fields
 	jint PresetReverb::PARAM_PRESET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.PresetReverb",
 			"PARAM_PRESET"
 		);
 	}
 	jshort PresetReverb::PRESET_LARGEHALL()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.media.audiofx.PresetReverb",
 			"PRESET_LARGEHALL"
 		);
 	}
 	jshort PresetReverb::PRESET_LARGEROOM()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.media.audiofx.PresetReverb",
 			"PRESET_LARGEROOM"
 		);
 	}
 	jshort PresetReverb::PRESET_MEDIUMHALL()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.media.audiofx.PresetReverb",
 			"PRESET_MEDIUMHALL"
 		);
 	}
 	jshort PresetReverb::PRESET_MEDIUMROOM()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.media.audiofx.PresetReverb",
 			"PRESET_MEDIUMROOM"
 		);
 	}
 	jshort PresetReverb::PRESET_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.media.audiofx.PresetReverb",
 			"PRESET_NONE"
 		);
 	}
 	jshort PresetReverb::PRESET_PLATE()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.media.audiofx.PresetReverb",
 			"PRESET_PLATE"
 		);
 	}
 	jshort PresetReverb::PRESET_SMALLROOM()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.media.audiofx.PresetReverb",
 			"PRESET_SMALLROOM"
 		);

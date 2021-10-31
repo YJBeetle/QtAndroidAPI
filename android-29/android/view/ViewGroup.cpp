@@ -29,63 +29,63 @@ namespace android::view
 	// Fields
 	jint ViewGroup::FOCUS_AFTER_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"FOCUS_AFTER_DESCENDANTS"
 		);
 	}
 	jint ViewGroup::FOCUS_BEFORE_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"FOCUS_BEFORE_DESCENDANTS"
 		);
 	}
 	jint ViewGroup::FOCUS_BLOCK_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"FOCUS_BLOCK_DESCENDANTS"
 		);
 	}
 	jint ViewGroup::LAYOUT_MODE_CLIP_BOUNDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"LAYOUT_MODE_CLIP_BOUNDS"
 		);
 	}
 	jint ViewGroup::LAYOUT_MODE_OPTICAL_BOUNDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"LAYOUT_MODE_OPTICAL_BOUNDS"
 		);
 	}
 	jint ViewGroup::PERSISTENT_ALL_CACHES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"PERSISTENT_ALL_CACHES"
 		);
 	}
 	jint ViewGroup::PERSISTENT_ANIMATION_CACHE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"PERSISTENT_ANIMATION_CACHE"
 		);
 	}
 	jint ViewGroup::PERSISTENT_NO_CACHE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"PERSISTENT_NO_CACHE"
 		);
 	}
 	jint ViewGroup::PERSISTENT_SCROLLING_CACHE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"PERSISTENT_SCROLLING_CACHE"
 		);
@@ -129,7 +129,7 @@ namespace android::view
 	// Methods
 	jint ViewGroup::getChildMeasureSpec(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewGroup",
 			"getChildMeasureSpec",
 			"(III)I",

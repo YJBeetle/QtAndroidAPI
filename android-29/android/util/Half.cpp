@@ -5,91 +5,91 @@ namespace android::util
 	// Fields
 	jshort Half::EPSILON()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.util.Half",
 			"EPSILON"
 		);
 	}
 	jshort Half::LOWEST_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.util.Half",
 			"LOWEST_VALUE"
 		);
 	}
 	jint Half::MAX_EXPONENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.util.Half",
 			"MAX_EXPONENT"
 		);
 	}
 	jshort Half::MAX_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.util.Half",
 			"MAX_VALUE"
 		);
 	}
 	jint Half::MIN_EXPONENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.util.Half",
 			"MIN_EXPONENT"
 		);
 	}
 	jshort Half::MIN_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.util.Half",
 			"MIN_NORMAL"
 		);
 	}
 	jshort Half::MIN_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.util.Half",
 			"MIN_VALUE"
 		);
 	}
 	jshort Half::NEGATIVE_INFINITY()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.util.Half",
 			"NEGATIVE_INFINITY"
 		);
 	}
 	jshort Half::NEGATIVE_ZERO()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.util.Half",
 			"NEGATIVE_ZERO"
 		);
 	}
 	jshort Half::NaN()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.util.Half",
 			"NaN"
 		);
 	}
 	jshort Half::POSITIVE_INFINITY()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.util.Half",
 			"POSITIVE_INFINITY"
 		);
 	}
 	jshort Half::POSITIVE_ZERO()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.util.Half",
 			"POSITIVE_ZERO"
 		);
 	}
 	jint Half::SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.util.Half",
 			"SIZE"
 		);
@@ -127,7 +127,7 @@ namespace android::util
 	// Methods
 	jshort Half::abs(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"abs",
 			"(S)S",
@@ -136,7 +136,7 @@ namespace android::util
 	}
 	jshort Half::ceil(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"ceil",
 			"(S)S",
@@ -145,7 +145,7 @@ namespace android::util
 	}
 	jint Half::compare(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.util.Half",
 			"compare",
 			"(SS)I",
@@ -155,7 +155,7 @@ namespace android::util
 	}
 	jshort Half::copySign(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"copySign",
 			"(SS)S",
@@ -165,7 +165,7 @@ namespace android::util
 	}
 	jboolean Half::equals(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.Half",
 			"equals",
 			"(SS)Z",
@@ -175,7 +175,7 @@ namespace android::util
 	}
 	jshort Half::floor(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"floor",
 			"(S)S",
@@ -184,7 +184,7 @@ namespace android::util
 	}
 	jint Half::getExponent(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.util.Half",
 			"getExponent",
 			"(S)I",
@@ -193,7 +193,7 @@ namespace android::util
 	}
 	jint Half::getSign(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.util.Half",
 			"getSign",
 			"(S)I",
@@ -202,7 +202,7 @@ namespace android::util
 	}
 	jint Half::getSignificand(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.util.Half",
 			"getSignificand",
 			"(S)I",
@@ -211,7 +211,7 @@ namespace android::util
 	}
 	jboolean Half::greater(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.Half",
 			"greater",
 			"(SS)Z",
@@ -221,7 +221,7 @@ namespace android::util
 	}
 	jboolean Half::greaterEquals(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.Half",
 			"greaterEquals",
 			"(SS)Z",
@@ -231,7 +231,7 @@ namespace android::util
 	}
 	jint Half::halfToIntBits(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.util.Half",
 			"halfToIntBits",
 			"(S)I",
@@ -240,7 +240,7 @@ namespace android::util
 	}
 	jint Half::halfToRawIntBits(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.util.Half",
 			"halfToRawIntBits",
 			"(S)I",
@@ -249,7 +249,7 @@ namespace android::util
 	}
 	jshort Half::halfToShortBits(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"halfToShortBits",
 			"(S)S",
@@ -258,7 +258,7 @@ namespace android::util
 	}
 	jint Half::hashCode(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.util.Half",
 			"hashCode",
 			"(S)I",
@@ -267,7 +267,7 @@ namespace android::util
 	}
 	jshort Half::intBitsToHalf(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"intBitsToHalf",
 			"(I)S",
@@ -276,7 +276,7 @@ namespace android::util
 	}
 	jboolean Half::isInfinite(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.Half",
 			"isInfinite",
 			"(S)Z",
@@ -285,7 +285,7 @@ namespace android::util
 	}
 	jboolean Half::isNaN(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.Half",
 			"isNaN",
 			"(S)Z",
@@ -294,7 +294,7 @@ namespace android::util
 	}
 	jboolean Half::isNormalized(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.Half",
 			"isNormalized",
 			"(S)Z",
@@ -303,7 +303,7 @@ namespace android::util
 	}
 	jboolean Half::less(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.Half",
 			"less",
 			"(SS)Z",
@@ -313,7 +313,7 @@ namespace android::util
 	}
 	jboolean Half::lessEquals(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.Half",
 			"lessEquals",
 			"(SS)Z",
@@ -323,7 +323,7 @@ namespace android::util
 	}
 	jshort Half::max(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"max",
 			"(SS)S",
@@ -333,7 +333,7 @@ namespace android::util
 	}
 	jshort Half::min(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"min",
 			"(SS)S",
@@ -343,7 +343,7 @@ namespace android::util
 	}
 	jshort Half::parseHalf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"parseHalf",
 			"(Ljava/lang/String;)S",
@@ -352,7 +352,7 @@ namespace android::util
 	}
 	jshort Half::round(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"round",
 			"(S)S",
@@ -361,7 +361,7 @@ namespace android::util
 	}
 	jfloat Half::toFloat(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.util.Half",
 			"toFloat",
 			"(S)F",
@@ -370,7 +370,7 @@ namespace android::util
 	}
 	jshort Half::toHalf(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"toHalf",
 			"(F)S",
@@ -379,7 +379,7 @@ namespace android::util
 	}
 	jstring Half::toHexString(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Half",
 			"toHexString",
 			"(S)Ljava/lang/String;",
@@ -388,7 +388,7 @@ namespace android::util
 	}
 	jstring Half::toString(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Half",
 			"toString",
 			"(S)Ljava/lang/String;",
@@ -397,7 +397,7 @@ namespace android::util
 	}
 	jshort Half::trunc(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"android.util.Half",
 			"trunc",
 			"(S)S",
@@ -406,7 +406,7 @@ namespace android::util
 	}
 	android::util::Half Half::valueOf(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Half",
 			"valueOf",
 			"(F)Landroid/util/Half;",
@@ -415,7 +415,7 @@ namespace android::util
 	}
 	android::util::Half Half::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Half",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/util/Half;",
@@ -424,7 +424,7 @@ namespace android::util
 	}
 	android::util::Half Half::valueOf(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Half",
 			"valueOf",
 			"(S)Landroid/util/Half;",

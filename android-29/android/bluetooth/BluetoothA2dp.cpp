@@ -7,7 +7,7 @@ namespace android::bluetooth
 	// Fields
 	jstring BluetoothA2dp::ACTION_CONNECTION_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothA2dp",
 			"ACTION_CONNECTION_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::bluetooth
 	}
 	jstring BluetoothA2dp::ACTION_PLAYING_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothA2dp",
 			"ACTION_PLAYING_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -23,14 +23,14 @@ namespace android::bluetooth
 	}
 	jint BluetoothA2dp::STATE_NOT_PLAYING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothA2dp",
 			"STATE_NOT_PLAYING"
 		);
 	}
 	jint BluetoothA2dp::STATE_PLAYING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothA2dp",
 			"STATE_PLAYING"
 		);

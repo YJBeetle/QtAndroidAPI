@@ -12,7 +12,7 @@ namespace android::webkit
 	// Methods
 	android::webkit::WebStorage WebStorage::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.WebStorage",
 			"getInstance",
 			"()Landroid/webkit/WebStorage;"

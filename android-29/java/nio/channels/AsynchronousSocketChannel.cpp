@@ -17,7 +17,7 @@ namespace java::nio::channels
 	// Methods
 	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::open()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousSocketChannel",
 			"open",
 			"()Ljava/nio/channels/AsynchronousSocketChannel;"
@@ -25,7 +25,7 @@ namespace java::nio::channels
 	}
 	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::open(java::nio::channels::AsynchronousChannelGroup arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousSocketChannel",
 			"open",
 			"(Ljava/nio/channels/AsynchronousChannelGroup;)Ljava/nio/channels/AsynchronousSocketChannel;",

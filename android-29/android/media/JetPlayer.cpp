@@ -14,7 +14,7 @@ namespace android::media
 	// Methods
 	android::media::JetPlayer JetPlayer::getJetPlayer()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.JetPlayer",
 			"getJetPlayer",
 			"()Landroid/media/JetPlayer;"
@@ -22,7 +22,7 @@ namespace android::media
 	}
 	jint JetPlayer::getMaxTracks()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.JetPlayer",
 			"getMaxTracks",
 			"()I"

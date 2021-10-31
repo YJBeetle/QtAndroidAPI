@@ -7,7 +7,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass PermissionInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PermissionInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,154 +15,154 @@ namespace android::content::pm
 	}
 	jint PermissionInfo::FLAG_COSTS_MONEY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"FLAG_COSTS_MONEY"
 		);
 	}
 	jint PermissionInfo::FLAG_HARD_RESTRICTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"FLAG_HARD_RESTRICTED"
 		);
 	}
 	jint PermissionInfo::FLAG_IMMUTABLY_RESTRICTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"FLAG_IMMUTABLY_RESTRICTED"
 		);
 	}
 	jint PermissionInfo::FLAG_INSTALLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"FLAG_INSTALLED"
 		);
 	}
 	jint PermissionInfo::FLAG_SOFT_RESTRICTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"FLAG_SOFT_RESTRICTED"
 		);
 	}
 	jint PermissionInfo::PROTECTION_DANGEROUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_DANGEROUS"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_APPOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_APPOP"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_DEVELOPMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_DEVELOPMENT"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_INSTALLER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_INSTALLER"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_INSTANT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_INSTANT"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_PRE23()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_PRE23"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_PREINSTALLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_PREINSTALLED"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_PRIVILEGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_PRIVILEGED"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_RUNTIME_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_RUNTIME_ONLY"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_SETUP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_SETUP"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_SYSTEM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_SYSTEM"
 		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_VERIFIER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_FLAG_VERIFIER"
 		);
 	}
 	jint PermissionInfo::PROTECTION_MASK_BASE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_MASK_BASE"
 		);
 	}
 	jint PermissionInfo::PROTECTION_MASK_FLAGS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_MASK_FLAGS"
 		);
 	}
 	jint PermissionInfo::PROTECTION_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_NORMAL"
 		);
 	}
 	jint PermissionInfo::PROTECTION_SIGNATURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_SIGNATURE"
 		);
 	}
 	jint PermissionInfo::PROTECTION_SIGNATURE_OR_SYSTEM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
 			"PROTECTION_SIGNATURE_OR_SYSTEM"
 		);

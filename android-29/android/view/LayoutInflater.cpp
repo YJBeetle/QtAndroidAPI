@@ -15,7 +15,7 @@ namespace android::view
 	// Methods
 	android::view::LayoutInflater LayoutInflater::from(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.LayoutInflater",
 			"from",
 			"(Landroid/content/Context;)Landroid/view/LayoutInflater;",

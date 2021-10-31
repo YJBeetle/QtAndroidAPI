@@ -5,7 +5,7 @@ namespace android::view
 	// Fields
 	jlong FrameStats::UNDEFINED_TIME_NANO()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.view.FrameStats",
 			"UNDEFINED_TIME_NANO"
 		);

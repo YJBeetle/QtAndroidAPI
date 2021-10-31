@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring Telephony_Carriers::APN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"APN",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::AUTH_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"AUTH_TYPE",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::BEARER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"BEARER",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::CARRIER_ENABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"CARRIER_ENABLED",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::CARRIER_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"CARRIER_ID",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::provider
 	}
 	android::net::Uri Telephony_Carriers::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -54,7 +54,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::CURRENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"CURRENT",
 			"Ljava/lang/String;"
@@ -62,7 +62,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -70,7 +70,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::MCC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MCC",
 			"Ljava/lang/String;"
@@ -78,7 +78,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::MMSC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MMSC",
 			"Ljava/lang/String;"
@@ -86,7 +86,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::MMSPORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MMSPORT",
 			"Ljava/lang/String;"
@@ -94,7 +94,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::MMSPROXY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MMSPROXY",
 			"Ljava/lang/String;"
@@ -102,7 +102,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::MNC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MNC",
 			"Ljava/lang/String;"
@@ -110,7 +110,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::MVNO_MATCH_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MVNO_MATCH_DATA",
 			"Ljava/lang/String;"
@@ -118,7 +118,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::MVNO_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MVNO_TYPE",
 			"Ljava/lang/String;"
@@ -126,7 +126,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"NAME",
 			"Ljava/lang/String;"
@@ -134,7 +134,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::NETWORK_TYPE_BITMASK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"NETWORK_TYPE_BITMASK",
 			"Ljava/lang/String;"
@@ -142,7 +142,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::NUMERIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"NUMERIC",
 			"Ljava/lang/String;"
@@ -150,7 +150,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::PASSWORD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"PASSWORD",
 			"Ljava/lang/String;"
@@ -158,7 +158,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::PORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"PORT",
 			"Ljava/lang/String;"
@@ -166,7 +166,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::PROTOCOL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"PROTOCOL",
 			"Ljava/lang/String;"
@@ -174,7 +174,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::PROXY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"PROXY",
 			"Ljava/lang/String;"
@@ -182,7 +182,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::ROAMING_PROTOCOL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"ROAMING_PROTOCOL",
 			"Ljava/lang/String;"
@@ -190,7 +190,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::SERVER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"SERVER",
 			"Ljava/lang/String;"
@@ -198,7 +198,7 @@ namespace android::provider
 	}
 	android::net::Uri Telephony_Carriers::SIM_APN_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"SIM_APN_URI",
 			"Landroid/net/Uri;"
@@ -206,7 +206,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::SUBSCRIPTION_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"SUBSCRIPTION_ID",
 			"Ljava/lang/String;"
@@ -214,7 +214,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"TYPE",
 			"Ljava/lang/String;"
@@ -222,7 +222,7 @@ namespace android::provider
 	}
 	jstring Telephony_Carriers::USER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"USER",
 			"Ljava/lang/String;"

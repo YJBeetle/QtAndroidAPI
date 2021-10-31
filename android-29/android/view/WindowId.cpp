@@ -7,7 +7,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass WindowId::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.WindowId",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

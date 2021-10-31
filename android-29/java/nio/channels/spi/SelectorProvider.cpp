@@ -18,7 +18,7 @@ namespace java::nio::channels::spi
 	// Methods
 	java::nio::channels::spi::SelectorProvider SelectorProvider::provider()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.spi.SelectorProvider",
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;"

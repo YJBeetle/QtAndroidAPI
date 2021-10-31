@@ -5,91 +5,91 @@ namespace android::graphics::fonts
 	// Fields
 	jint FontStyle::FONT_SLANT_ITALIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_SLANT_ITALIC"
 		);
 	}
 	jint FontStyle::FONT_SLANT_UPRIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_SLANT_UPRIGHT"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_BLACK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_BLACK"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_BOLD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_BOLD"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_EXTRA_BOLD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_EXTRA_BOLD"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_EXTRA_LIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_EXTRA_LIGHT"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_LIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_LIGHT"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_MAX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_MAX"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_MEDIUM"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_MIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_MIN"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_NORMAL"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_SEMI_BOLD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_SEMI_BOLD"
 		);
 	}
 	jint FontStyle::FONT_WEIGHT_THIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
 			"FONT_WEIGHT_THIN"
 		);

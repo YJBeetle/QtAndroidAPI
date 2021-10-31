@@ -15,7 +15,7 @@ namespace java::time::chrono
 	// Fields
 	java::time::chrono::JapaneseChronology JapaneseChronology::INSTANCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.JapaneseChronology",
 			"INSTANCE",
 			"Ljava/time/chrono/JapaneseChronology;"

@@ -6,14 +6,14 @@ namespace android::nfc::tech
 	// Fields
 	jint NfcBarcode::TYPE_KOVIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.NfcBarcode",
 			"TYPE_KOVIO"
 		);
 	}
 	jint NfcBarcode::TYPE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.NfcBarcode",
 			"TYPE_UNKNOWN"
 		);
@@ -27,7 +27,7 @@ namespace android::nfc::tech
 	// Methods
 	android::nfc::tech::NfcBarcode NfcBarcode::get(android::nfc::Tag arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.tech.NfcBarcode",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NfcBarcode;",

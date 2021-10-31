@@ -8,49 +8,49 @@ namespace android::view
 	// Fields
 	jint DragEvent::ACTION_DRAG_ENDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.DragEvent",
 			"ACTION_DRAG_ENDED"
 		);
 	}
 	jint DragEvent::ACTION_DRAG_ENTERED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.DragEvent",
 			"ACTION_DRAG_ENTERED"
 		);
 	}
 	jint DragEvent::ACTION_DRAG_EXITED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.DragEvent",
 			"ACTION_DRAG_EXITED"
 		);
 	}
 	jint DragEvent::ACTION_DRAG_LOCATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.DragEvent",
 			"ACTION_DRAG_LOCATION"
 		);
 	}
 	jint DragEvent::ACTION_DRAG_STARTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.DragEvent",
 			"ACTION_DRAG_STARTED"
 		);
 	}
 	jint DragEvent::ACTION_DROP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.DragEvent",
 			"ACTION_DROP"
 		);
 	}
 	__JniBaseClass DragEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.DragEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

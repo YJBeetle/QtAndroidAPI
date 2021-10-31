@@ -27,7 +27,7 @@ namespace android::os
 	// Methods
 	jlong Binder::clearCallingIdentity()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Binder",
 			"clearCallingIdentity",
 			"()J"
@@ -35,7 +35,7 @@ namespace android::os
 	}
 	jlong Binder::clearCallingWorkSource()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Binder",
 			"clearCallingWorkSource",
 			"()J"
@@ -43,7 +43,7 @@ namespace android::os
 	}
 	void Binder::flushPendingCommands()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Binder",
 			"flushPendingCommands",
 			"()V"
@@ -51,7 +51,7 @@ namespace android::os
 	}
 	jint Binder::getCallingPid()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Binder",
 			"getCallingPid",
 			"()I"
@@ -59,7 +59,7 @@ namespace android::os
 	}
 	jint Binder::getCallingUid()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Binder",
 			"getCallingUid",
 			"()I"
@@ -67,7 +67,7 @@ namespace android::os
 	}
 	jint Binder::getCallingUidOrThrow()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Binder",
 			"getCallingUidOrThrow",
 			"()I"
@@ -75,7 +75,7 @@ namespace android::os
 	}
 	android::os::UserHandle Binder::getCallingUserHandle()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Binder",
 			"getCallingUserHandle",
 			"()Landroid/os/UserHandle;"
@@ -83,7 +83,7 @@ namespace android::os
 	}
 	jint Binder::getCallingWorkSourceUid()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Binder",
 			"getCallingWorkSourceUid",
 			"()I"
@@ -91,7 +91,7 @@ namespace android::os
 	}
 	void Binder::joinThreadPool()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Binder",
 			"joinThreadPool",
 			"()V"
@@ -99,7 +99,7 @@ namespace android::os
 	}
 	void Binder::restoreCallingIdentity(jlong arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Binder",
 			"restoreCallingIdentity",
 			"(J)V",
@@ -108,7 +108,7 @@ namespace android::os
 	}
 	void Binder::restoreCallingWorkSource(jlong arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Binder",
 			"restoreCallingWorkSource",
 			"(J)V",
@@ -117,7 +117,7 @@ namespace android::os
 	}
 	jlong Binder::setCallingWorkSourceUid(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Binder",
 			"setCallingWorkSourceUid",
 			"(I)J",

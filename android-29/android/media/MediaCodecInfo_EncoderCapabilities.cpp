@@ -6,21 +6,21 @@ namespace android::media
 	// Fields
 	jint MediaCodecInfo_EncoderCapabilities::BITRATE_MODE_CBR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodecInfo$EncoderCapabilities",
 			"BITRATE_MODE_CBR"
 		);
 	}
 	jint MediaCodecInfo_EncoderCapabilities::BITRATE_MODE_CQ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodecInfo$EncoderCapabilities",
 			"BITRATE_MODE_CQ"
 		);
 	}
 	jint MediaCodecInfo_EncoderCapabilities::BITRATE_MODE_VBR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodecInfo$EncoderCapabilities",
 			"BITRATE_MODE_VBR"
 		);

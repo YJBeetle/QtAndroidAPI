@@ -21,7 +21,7 @@ namespace android::telephony
 	// Fields
 	jstring TelephonyManager::ACTION_CARRIER_MESSAGING_CLIENT_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_CARRIER_MESSAGING_CLIENT_SERVICE",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::ACTION_CONFIGURE_VOICEMAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_CONFIGURE_VOICEMAIL",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::ACTION_NETWORK_COUNTRY_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_NETWORK_COUNTRY_CHANGED",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::ACTION_PHONE_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_PHONE_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -53,7 +53,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::ACTION_RESPOND_VIA_MESSAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_RESPOND_VIA_MESSAGE",
 			"Ljava/lang/String;"
@@ -61,7 +61,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::ACTION_SECRET_CODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_SECRET_CODE",
 			"Ljava/lang/String;"
@@ -69,7 +69,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::ACTION_SHOW_VOICEMAIL_NOTIFICATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_SHOW_VOICEMAIL_NOTIFICATION",
 			"Ljava/lang/String;"
@@ -77,7 +77,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::ACTION_SUBSCRIPTION_CARRIER_IDENTITY_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_SUBSCRIPTION_CARRIER_IDENTITY_CHANGED",
 			"Ljava/lang/String;"
@@ -85,7 +85,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::ACTION_SUBSCRIPTION_SPECIFIC_CARRIER_IDENTITY_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"ACTION_SUBSCRIPTION_SPECIFIC_CARRIER_IDENTITY_CHANGED",
 			"Ljava/lang/String;"
@@ -93,175 +93,175 @@ namespace android::telephony
 	}
 	jint TelephonyManager::APPTYPE_CSIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"APPTYPE_CSIM"
 		);
 	}
 	jint TelephonyManager::APPTYPE_ISIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"APPTYPE_ISIM"
 		);
 	}
 	jint TelephonyManager::APPTYPE_RUIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"APPTYPE_RUIM"
 		);
 	}
 	jint TelephonyManager::APPTYPE_SIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"APPTYPE_SIM"
 		);
 	}
 	jint TelephonyManager::APPTYPE_USIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"APPTYPE_USIM"
 		);
 	}
 	jint TelephonyManager::AUTHTYPE_EAP_AKA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"AUTHTYPE_EAP_AKA"
 		);
 	}
 	jint TelephonyManager::AUTHTYPE_EAP_SIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"AUTHTYPE_EAP_SIM"
 		);
 	}
 	jint TelephonyManager::CALL_STATE_IDLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"CALL_STATE_IDLE"
 		);
 	}
 	jint TelephonyManager::CALL_STATE_OFFHOOK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"CALL_STATE_OFFHOOK"
 		);
 	}
 	jint TelephonyManager::CALL_STATE_RINGING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"CALL_STATE_RINGING"
 		);
 	}
 	jint TelephonyManager::CDMA_ROAMING_MODE_AFFILIATED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"CDMA_ROAMING_MODE_AFFILIATED"
 		);
 	}
 	jint TelephonyManager::CDMA_ROAMING_MODE_ANY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"CDMA_ROAMING_MODE_ANY"
 		);
 	}
 	jint TelephonyManager::CDMA_ROAMING_MODE_HOME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"CDMA_ROAMING_MODE_HOME"
 		);
 	}
 	jint TelephonyManager::CDMA_ROAMING_MODE_RADIO_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"CDMA_ROAMING_MODE_RADIO_DEFAULT"
 		);
 	}
 	jint TelephonyManager::DATA_ACTIVITY_DORMANT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"DATA_ACTIVITY_DORMANT"
 		);
 	}
 	jint TelephonyManager::DATA_ACTIVITY_IN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"DATA_ACTIVITY_IN"
 		);
 	}
 	jint TelephonyManager::DATA_ACTIVITY_INOUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"DATA_ACTIVITY_INOUT"
 		);
 	}
 	jint TelephonyManager::DATA_ACTIVITY_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"DATA_ACTIVITY_NONE"
 		);
 	}
 	jint TelephonyManager::DATA_ACTIVITY_OUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"DATA_ACTIVITY_OUT"
 		);
 	}
 	jint TelephonyManager::DATA_CONNECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"DATA_CONNECTED"
 		);
 	}
 	jint TelephonyManager::DATA_CONNECTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"DATA_CONNECTING"
 		);
 	}
 	jint TelephonyManager::DATA_DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"DATA_DISCONNECTED"
 		);
 	}
 	jint TelephonyManager::DATA_SUSPENDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"DATA_SUSPENDED"
 		);
 	}
 	jint TelephonyManager::DATA_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"DATA_UNKNOWN"
 		);
 	}
 	jstring TelephonyManager::EXTRA_CALL_VOICEMAIL_INTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_CALL_VOICEMAIL_INTENT",
 			"Ljava/lang/String;"
@@ -269,7 +269,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_CARRIER_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_CARRIER_ID",
 			"Ljava/lang/String;"
@@ -277,7 +277,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_CARRIER_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_CARRIER_NAME",
 			"Ljava/lang/String;"
@@ -285,7 +285,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_HIDE_PUBLIC_SETTINGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_HIDE_PUBLIC_SETTINGS",
 			"Ljava/lang/String;"
@@ -293,7 +293,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_INCOMING_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_INCOMING_NUMBER",
 			"Ljava/lang/String;"
@@ -301,7 +301,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_IS_REFRESH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_IS_REFRESH",
 			"Ljava/lang/String;"
@@ -309,7 +309,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_LAUNCH_VOICEMAIL_SETTINGS_INTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_LAUNCH_VOICEMAIL_SETTINGS_INTENT",
 			"Ljava/lang/String;"
@@ -317,7 +317,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_NETWORK_COUNTRY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_NETWORK_COUNTRY",
 			"Ljava/lang/String;"
@@ -325,7 +325,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_NOTIFICATION_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_NOTIFICATION_COUNT",
 			"Ljava/lang/String;"
@@ -333,7 +333,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_PHONE_ACCOUNT_HANDLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_PHONE_ACCOUNT_HANDLE",
 			"Ljava/lang/String;"
@@ -341,7 +341,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_SPECIFIC_CARRIER_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_SPECIFIC_CARRIER_ID",
 			"Ljava/lang/String;"
@@ -349,7 +349,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_SPECIFIC_CARRIER_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_SPECIFIC_CARRIER_NAME",
 			"Ljava/lang/String;"
@@ -357,7 +357,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_STATE",
 			"Ljava/lang/String;"
@@ -365,7 +365,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_STATE_IDLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_STATE_IDLE",
 			"Ljava/lang/String;"
@@ -373,7 +373,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_STATE_OFFHOOK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_STATE_OFFHOOK",
 			"Ljava/lang/String;"
@@ -381,7 +381,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_STATE_RINGING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_STATE_RINGING",
 			"Ljava/lang/String;"
@@ -389,7 +389,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_SUBSCRIPTION_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_SUBSCRIPTION_ID",
 			"Ljava/lang/String;"
@@ -397,7 +397,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::EXTRA_VOICEMAIL_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"EXTRA_VOICEMAIL_NUMBER",
 			"Ljava/lang/String;"
@@ -405,7 +405,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::METADATA_HIDE_VOICEMAIL_SETTINGS_MENU()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"METADATA_HIDE_VOICEMAIL_SETTINGS_MENU",
 			"Ljava/lang/String;"
@@ -413,357 +413,357 @@ namespace android::telephony
 	}
 	jint TelephonyManager::MULTISIM_ALLOWED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"MULTISIM_ALLOWED"
 		);
 	}
 	jint TelephonyManager::MULTISIM_NOT_SUPPORTED_BY_CARRIER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"MULTISIM_NOT_SUPPORTED_BY_CARRIER"
 		);
 	}
 	jint TelephonyManager::MULTISIM_NOT_SUPPORTED_BY_HARDWARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"MULTISIM_NOT_SUPPORTED_BY_HARDWARE"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_1xRTT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_1xRTT"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_CDMA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_CDMA"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_EDGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_EDGE"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_EHRPD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_EHRPD"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_EVDO_0()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_EVDO_0"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_EVDO_A()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_EVDO_A"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_EVDO_B()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_EVDO_B"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_GPRS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_GPRS"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_GSM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_GSM"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_HSDPA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_HSDPA"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_HSPA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_HSPA"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_HSPAP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_HSPAP"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_HSUPA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_HSUPA"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_IDEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_IDEN"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_IWLAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_IWLAN"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_LTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_LTE"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_NR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_NR"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_TD_SCDMA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_TD_SCDMA"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_UMTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_UMTS"
 		);
 	}
 	jint TelephonyManager::NETWORK_TYPE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"NETWORK_TYPE_UNKNOWN"
 		);
 	}
 	jint TelephonyManager::PHONE_TYPE_CDMA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"PHONE_TYPE_CDMA"
 		);
 	}
 	jint TelephonyManager::PHONE_TYPE_GSM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"PHONE_TYPE_GSM"
 		);
 	}
 	jint TelephonyManager::PHONE_TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"PHONE_TYPE_NONE"
 		);
 	}
 	jint TelephonyManager::PHONE_TYPE_SIP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"PHONE_TYPE_SIP"
 		);
 	}
 	jint TelephonyManager::SET_OPPORTUNISTIC_SUB_INACTIVE_SUBSCRIPTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SET_OPPORTUNISTIC_SUB_INACTIVE_SUBSCRIPTION"
 		);
 	}
 	jint TelephonyManager::SET_OPPORTUNISTIC_SUB_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SET_OPPORTUNISTIC_SUB_SUCCESS"
 		);
 	}
 	jint TelephonyManager::SET_OPPORTUNISTIC_SUB_VALIDATION_FAILED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SET_OPPORTUNISTIC_SUB_VALIDATION_FAILED"
 		);
 	}
 	jint TelephonyManager::SIM_STATE_ABSENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SIM_STATE_ABSENT"
 		);
 	}
 	jint TelephonyManager::SIM_STATE_CARD_IO_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SIM_STATE_CARD_IO_ERROR"
 		);
 	}
 	jint TelephonyManager::SIM_STATE_CARD_RESTRICTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SIM_STATE_CARD_RESTRICTED"
 		);
 	}
 	jint TelephonyManager::SIM_STATE_NETWORK_LOCKED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SIM_STATE_NETWORK_LOCKED"
 		);
 	}
 	jint TelephonyManager::SIM_STATE_NOT_READY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SIM_STATE_NOT_READY"
 		);
 	}
 	jint TelephonyManager::SIM_STATE_PERM_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SIM_STATE_PERM_DISABLED"
 		);
 	}
 	jint TelephonyManager::SIM_STATE_PIN_REQUIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SIM_STATE_PIN_REQUIRED"
 		);
 	}
 	jint TelephonyManager::SIM_STATE_PUK_REQUIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SIM_STATE_PUK_REQUIRED"
 		);
 	}
 	jint TelephonyManager::SIM_STATE_READY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SIM_STATE_READY"
 		);
 	}
 	jint TelephonyManager::SIM_STATE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"SIM_STATE_UNKNOWN"
 		);
 	}
 	jint TelephonyManager::UNINITIALIZED_CARD_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"UNINITIALIZED_CARD_ID"
 		);
 	}
 	jint TelephonyManager::UNKNOWN_CARRIER_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"UNKNOWN_CARRIER_ID"
 		);
 	}
 	jint TelephonyManager::UNSUPPORTED_CARD_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"UNSUPPORTED_CARD_ID"
 		);
 	}
 	jint TelephonyManager::UPDATE_AVAILABLE_NETWORKS_ABORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"UPDATE_AVAILABLE_NETWORKS_ABORTED"
 		);
 	}
 	jint TelephonyManager::UPDATE_AVAILABLE_NETWORKS_INVALID_ARGUMENTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"UPDATE_AVAILABLE_NETWORKS_INVALID_ARGUMENTS"
 		);
 	}
 	jint TelephonyManager::UPDATE_AVAILABLE_NETWORKS_NO_CARRIER_PRIVILEGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"UPDATE_AVAILABLE_NETWORKS_NO_CARRIER_PRIVILEGE"
 		);
 	}
 	jint TelephonyManager::UPDATE_AVAILABLE_NETWORKS_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"UPDATE_AVAILABLE_NETWORKS_SUCCESS"
 		);
 	}
 	jint TelephonyManager::UPDATE_AVAILABLE_NETWORKS_UNKNOWN_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"UPDATE_AVAILABLE_NETWORKS_UNKNOWN_FAILURE"
 		);
 	}
 	jint TelephonyManager::USSD_ERROR_SERVICE_UNAVAIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"USSD_ERROR_SERVICE_UNAVAIL"
 		);
 	}
 	jint TelephonyManager::USSD_RETURN_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager",
 			"USSD_RETURN_FAILURE"
 		);
 	}
 	jstring TelephonyManager::VVM_TYPE_CVVM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"VVM_TYPE_CVVM",
 			"Ljava/lang/String;"
@@ -771,7 +771,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::VVM_TYPE_OMTP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.TelephonyManager",
 			"VVM_TYPE_OMTP",
 			"Ljava/lang/String;"

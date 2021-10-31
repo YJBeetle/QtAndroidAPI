@@ -36,7 +36,7 @@ namespace android::appwidget
 	// Methods
 	android::graphics::Rect AppWidgetHostView::getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.appwidget.AppWidgetHostView",
 			"getDefaultPaddingForWidget",
 			"(Landroid/content/Context;Landroid/content/ComponentName;Landroid/graphics/Rect;)Landroid/graphics/Rect;",

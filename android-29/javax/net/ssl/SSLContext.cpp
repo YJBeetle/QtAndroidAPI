@@ -19,7 +19,7 @@ namespace javax::net::ssl
 	// Methods
 	javax::net::ssl::SSLContext SSLContext::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.SSLContext",
 			"getDefault",
 			"()Ljavax/net/ssl/SSLContext;"
@@ -27,7 +27,7 @@ namespace javax::net::ssl
 	}
 	javax::net::ssl::SSLContext SSLContext::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.SSLContext",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;",
@@ -36,7 +36,7 @@ namespace javax::net::ssl
 	}
 	javax::net::ssl::SSLContext SSLContext::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.SSLContext",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/SSLContext;",
@@ -46,7 +46,7 @@ namespace javax::net::ssl
 	}
 	javax::net::ssl::SSLContext SSLContext::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.SSLContext",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/SSLContext;",
@@ -56,7 +56,7 @@ namespace javax::net::ssl
 	}
 	void SSLContext::setDefault(javax::net::ssl::SSLContext arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"javax.net.ssl.SSLContext",
 			"setDefault",
 			"(Ljavax/net/ssl/SSLContext;)V",

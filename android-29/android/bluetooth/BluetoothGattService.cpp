@@ -8,7 +8,7 @@ namespace android::bluetooth
 	// Fields
 	__JniBaseClass BluetoothGattService::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattService",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,14 +16,14 @@ namespace android::bluetooth
 	}
 	jint BluetoothGattService::SERVICE_TYPE_PRIMARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattService",
 			"SERVICE_TYPE_PRIMARY"
 		);
 	}
 	jint BluetoothGattService::SERVICE_TYPE_SECONDARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattService",
 			"SERVICE_TYPE_SECONDARY"
 		);

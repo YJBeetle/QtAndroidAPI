@@ -6,7 +6,7 @@ namespace android::view::inputmethod
 	// Fields
 	__JniBaseClass InputBinding::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.inputmethod.InputBinding",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

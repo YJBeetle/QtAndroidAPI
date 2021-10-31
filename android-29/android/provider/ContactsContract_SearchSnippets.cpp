@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_SearchSnippets::DEFERRED_SNIPPETING_KEY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$SearchSnippets",
 			"DEFERRED_SNIPPETING_KEY",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_SearchSnippets::SNIPPET()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$SearchSnippets",
 			"SNIPPET",
 			"Ljava/lang/String;"

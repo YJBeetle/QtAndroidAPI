@@ -23,7 +23,7 @@ namespace android::telephony::mbms
 	// Methods
 	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::fromDownloadRequest(android::telephony::mbms::DownloadRequest arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.mbms.DownloadRequest$Builder",
 			"fromDownloadRequest",
 			"(Landroid/telephony/mbms/DownloadRequest;)Landroid/telephony/mbms/DownloadRequest$Builder;",
@@ -32,7 +32,7 @@ namespace android::telephony::mbms
 	}
 	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::fromSerializedRequest(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.mbms.DownloadRequest$Builder",
 			"fromSerializedRequest",
 			"([B)Landroid/telephony/mbms/DownloadRequest$Builder;",

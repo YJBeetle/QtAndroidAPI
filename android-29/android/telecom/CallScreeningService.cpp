@@ -8,7 +8,7 @@ namespace android::telecom
 	// Fields
 	jstring CallScreeningService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.CallScreeningService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

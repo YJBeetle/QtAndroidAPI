@@ -14,7 +14,7 @@ namespace android::app::slice
 	// Fields
 	jstring SliceProvider::SLICE_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceProvider",
 			"SLICE_TYPE",
 			"Ljava/lang/String;"

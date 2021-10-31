@@ -18,7 +18,7 @@ namespace android::graphics
 	// Fields
 	__JniBaseClass Bitmap::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Bitmap",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -26,7 +26,7 @@ namespace android::graphics
 	}
 	jint Bitmap::DENSITY_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Bitmap",
 			"DENSITY_NONE"
 		);
@@ -40,7 +40,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Bitmap Bitmap::createBitmap(android::graphics::Bitmap arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;",
@@ -49,7 +49,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(android::graphics::Picture arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Picture;)Landroid/graphics/Bitmap;",
@@ -58,7 +58,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
@@ -69,7 +69,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(jintArray arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"([IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
@@ -81,7 +81,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(android::graphics::Picture arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Picture;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
@@ -93,7 +93,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
@@ -105,7 +105,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2, jboolean arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(IILandroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;",
@@ -117,7 +117,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;",
@@ -130,7 +130,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, android::graphics::Bitmap_Config arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;[IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
@@ -143,7 +143,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3, jboolean arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;",
@@ -156,7 +156,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2, jboolean arg3, android::graphics::ColorSpace arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(IILandroid/graphics/Bitmap$Config;ZLandroid/graphics/ColorSpace;)Landroid/graphics/Bitmap;",
@@ -169,7 +169,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Bitmap_Config arg5)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"([IIIIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
@@ -183,7 +183,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3, jboolean arg4, android::graphics::ColorSpace arg5)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;ZLandroid/graphics/ColorSpace;)Landroid/graphics/Bitmap;",
@@ -197,7 +197,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Matrix arg5, jboolean arg6)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;",
@@ -212,7 +212,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createBitmap(android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::graphics::Bitmap_Config arg6)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;[IIIIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
@@ -227,7 +227,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::createScaledBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jboolean arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createScaledBitmap",
 			"(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;",
@@ -239,7 +239,7 @@ namespace android::graphics
 	}
 	android::graphics::Bitmap Bitmap::wrapHardwareBuffer(android::hardware::HardwareBuffer arg0, android::graphics::ColorSpace arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"wrapHardwareBuffer",
 			"(Landroid/hardware/HardwareBuffer;Landroid/graphics/ColorSpace;)Landroid/graphics/Bitmap;",

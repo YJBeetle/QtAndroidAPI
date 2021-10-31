@@ -12,7 +12,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass ResolveInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.ResolveInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

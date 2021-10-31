@@ -7,7 +7,7 @@ namespace android::icu::text
 	// Fields
 	jint SearchIterator::DONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.SearchIterator",
 			"DONE"
 		);

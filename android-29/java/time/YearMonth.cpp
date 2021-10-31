@@ -19,7 +19,7 @@ namespace java::time
 	// Methods
 	java::time::YearMonth YearMonth::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.YearMonth",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/YearMonth;",
@@ -28,7 +28,7 @@ namespace java::time
 	}
 	java::time::YearMonth YearMonth::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.YearMonth",
 			"now",
 			"()Ljava/time/YearMonth;"
@@ -36,7 +36,7 @@ namespace java::time
 	}
 	java::time::YearMonth YearMonth::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.YearMonth",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/YearMonth;",
@@ -45,7 +45,7 @@ namespace java::time
 	}
 	java::time::YearMonth YearMonth::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.YearMonth",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/YearMonth;",
@@ -54,7 +54,7 @@ namespace java::time
 	}
 	java::time::YearMonth YearMonth::of(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.YearMonth",
 			"of",
 			"(II)Ljava/time/YearMonth;",
@@ -64,7 +64,7 @@ namespace java::time
 	}
 	java::time::YearMonth YearMonth::of(jint arg0, java::time::Month arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.YearMonth",
 			"of",
 			"(ILjava/time/Month;)Ljava/time/YearMonth;",
@@ -74,7 +74,7 @@ namespace java::time
 	}
 	java::time::YearMonth YearMonth::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.YearMonth",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/YearMonth;",
@@ -83,7 +83,7 @@ namespace java::time
 	}
 	java::time::YearMonth YearMonth::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.YearMonth",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/YearMonth;",

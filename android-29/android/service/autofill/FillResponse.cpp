@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass FillResponse::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.FillResponse",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,14 +15,14 @@ namespace android::service::autofill
 	}
 	jint FillResponse::FLAG_DISABLE_ACTIVITY_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillResponse",
 			"FLAG_DISABLE_ACTIVITY_ONLY"
 		);
 	}
 	jint FillResponse::FLAG_TRACK_CONTEXT_COMMITED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillResponse",
 			"FLAG_TRACK_CONTEXT_COMMITED"
 		);

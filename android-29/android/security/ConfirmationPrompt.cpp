@@ -14,7 +14,7 @@ namespace android::security
 	// Methods
 	jboolean ConfirmationPrompt::isSupported(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.security.ConfirmationPrompt",
 			"isSupported",
 			"(Landroid/content/Context;)Z",

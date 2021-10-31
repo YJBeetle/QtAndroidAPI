@@ -12,14 +12,14 @@ namespace android::transition
 	// Fields
 	jint TransitionSet::ORDERING_SEQUENTIAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.transition.TransitionSet",
 			"ORDERING_SEQUENTIAL"
 		);
 	}
 	jint TransitionSet::ORDERING_TOGETHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.transition.TransitionSet",
 			"ORDERING_TOGETHER"
 		);

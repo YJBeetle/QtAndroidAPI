@@ -28,7 +28,7 @@ namespace java::sql
 	// Methods
 	java::sql::Date Date::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.Date",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Date;",
@@ -37,7 +37,7 @@ namespace java::sql
 	}
 	java::sql::Date Date::valueOf(java::time::LocalDate arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.Date",
 			"valueOf",
 			"(Ljava/time/LocalDate;)Ljava/sql/Date;",

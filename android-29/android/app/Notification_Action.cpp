@@ -9,7 +9,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass Notification_Action::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification$Action",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -17,77 +17,77 @@ namespace android::app
 	}
 	jint Notification_Action::SEMANTIC_ACTION_ARCHIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_ARCHIVE"
 		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_CALL"
 		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_DELETE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_DELETE"
 		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_MARK_AS_READ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_MARK_AS_READ"
 		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_MARK_AS_UNREAD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_MARK_AS_UNREAD"
 		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_MUTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_MUTE"
 		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_NONE"
 		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_REPLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_REPLY"
 		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_THUMBS_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_THUMBS_DOWN"
 		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_THUMBS_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_THUMBS_UP"
 		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_UNMUTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$Action",
 			"SEMANTIC_ACTION_UNMUTE"
 		);

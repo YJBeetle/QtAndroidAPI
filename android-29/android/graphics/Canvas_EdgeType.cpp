@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::Canvas_EdgeType Canvas_EdgeType::AA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Canvas$EdgeType",
 			"AA",
 			"Landroid/graphics/Canvas$EdgeType;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::Canvas_EdgeType Canvas_EdgeType::BW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Canvas$EdgeType",
 			"BW",
 			"Landroid/graphics/Canvas$EdgeType;"
@@ -28,7 +28,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Canvas_EdgeType Canvas_EdgeType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Canvas$EdgeType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Canvas$EdgeType;",
@@ -37,7 +37,7 @@ namespace android::graphics
 	}
 	jarray Canvas_EdgeType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Canvas$EdgeType",
 			"values",
 			"()[Landroid/graphics/Canvas$EdgeType;"

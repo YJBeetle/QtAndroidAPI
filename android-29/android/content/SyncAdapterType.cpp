@@ -6,7 +6,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass SyncAdapterType::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.SyncAdapterType",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -56,7 +56,7 @@ namespace android::content
 	// Methods
 	android::content::SyncAdapterType SyncAdapterType::newKey(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.SyncAdapterType",
 			"newKey",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SyncAdapterType;",

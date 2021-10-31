@@ -23,7 +23,7 @@ namespace java::util::concurrent
 	// Methods
 	java::util::concurrent::ForkJoinTask ForkJoinTask::adapt(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
 			"adapt",
 			"(Ljava/lang/Runnable;)Ljava/util/concurrent/ForkJoinTask;",
@@ -32,7 +32,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::ForkJoinTask ForkJoinTask::adapt(__JniBaseClass arg0, jobject arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
 			"adapt",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/ForkJoinTask;",
@@ -42,7 +42,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::ForkJoinPool ForkJoinTask::getPool()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
 			"getPool",
 			"()Ljava/util/concurrent/ForkJoinPool;"
@@ -50,7 +50,7 @@ namespace java::util::concurrent
 	}
 	jint ForkJoinTask::getQueuedTaskCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.concurrent.ForkJoinTask",
 			"getQueuedTaskCount",
 			"()I"
@@ -58,7 +58,7 @@ namespace java::util::concurrent
 	}
 	jint ForkJoinTask::getSurplusQueuedTaskCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.concurrent.ForkJoinTask",
 			"getSurplusQueuedTaskCount",
 			"()I"
@@ -66,7 +66,7 @@ namespace java::util::concurrent
 	}
 	void ForkJoinTask::helpQuiesce()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.concurrent.ForkJoinTask",
 			"helpQuiesce",
 			"()V"
@@ -74,7 +74,7 @@ namespace java::util::concurrent
 	}
 	jboolean ForkJoinTask::inForkJoinPool()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.concurrent.ForkJoinTask",
 			"inForkJoinPool",
 			"()Z"
@@ -82,7 +82,7 @@ namespace java::util::concurrent
 	}
 	__JniBaseClass ForkJoinTask::invokeAll(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
 			"invokeAll",
 			"(Ljava/util/Collection;)Ljava/util/Collection;",
@@ -91,7 +91,7 @@ namespace java::util::concurrent
 	}
 	void ForkJoinTask::invokeAll(jarray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.concurrent.ForkJoinTask",
 			"invokeAll",
 			"([Ljava/util/concurrent/ForkJoinTask;)V",
@@ -100,7 +100,7 @@ namespace java::util::concurrent
 	}
 	void ForkJoinTask::invokeAll(java::util::concurrent::ForkJoinTask arg0, java::util::concurrent::ForkJoinTask arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.concurrent.ForkJoinTask",
 			"invokeAll",
 			"(Ljava/util/concurrent/ForkJoinTask;Ljava/util/concurrent/ForkJoinTask;)V",

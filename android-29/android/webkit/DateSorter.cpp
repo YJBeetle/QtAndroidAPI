@@ -6,7 +6,7 @@ namespace android::webkit
 	// Fields
 	jint DateSorter::DAY_COUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.DateSorter",
 			"DAY_COUNT"
 		);

@@ -6,7 +6,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass NotificationManager_Policy::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager$Policy",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,140 +14,140 @@ namespace android::app
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_ALARMS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_CATEGORY_ALARMS"
 		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_CALLS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_CATEGORY_CALLS"
 		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_EVENTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_CATEGORY_EVENTS"
 		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_MEDIA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_CATEGORY_MEDIA"
 		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_MESSAGES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_CATEGORY_MESSAGES"
 		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_REMINDERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_CATEGORY_REMINDERS"
 		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_REPEAT_CALLERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_CATEGORY_REPEAT_CALLERS"
 		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_SYSTEM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_CATEGORY_SYSTEM"
 		);
 	}
 	jint NotificationManager_Policy::PRIORITY_SENDERS_ANY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_SENDERS_ANY"
 		);
 	}
 	jint NotificationManager_Policy::PRIORITY_SENDERS_CONTACTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_SENDERS_CONTACTS"
 		);
 	}
 	jint NotificationManager_Policy::PRIORITY_SENDERS_STARRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"PRIORITY_SENDERS_STARRED"
 		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_AMBIENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"SUPPRESSED_EFFECT_AMBIENT"
 		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_BADGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"SUPPRESSED_EFFECT_BADGE"
 		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_FULL_SCREEN_INTENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"SUPPRESSED_EFFECT_FULL_SCREEN_INTENT"
 		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_LIGHTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"SUPPRESSED_EFFECT_LIGHTS"
 		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_NOTIFICATION_LIST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"SUPPRESSED_EFFECT_NOTIFICATION_LIST"
 		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_PEEK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"SUPPRESSED_EFFECT_PEEK"
 		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_SCREEN_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"SUPPRESSED_EFFECT_SCREEN_OFF"
 		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_SCREEN_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"SUPPRESSED_EFFECT_SCREEN_ON"
 		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_STATUS_BAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
 			"SUPPRESSED_EFFECT_STATUS_BAR"
 		);
@@ -202,7 +202,7 @@ namespace android::app
 	// Methods
 	jstring NotificationManager_Policy::priorityCategoriesToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.NotificationManager$Policy",
 			"priorityCategoriesToString",
 			"(I)Ljava/lang/String;",
@@ -211,7 +211,7 @@ namespace android::app
 	}
 	jstring NotificationManager_Policy::prioritySendersToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.NotificationManager$Policy",
 			"prioritySendersToString",
 			"(I)Ljava/lang/String;",
@@ -220,7 +220,7 @@ namespace android::app
 	}
 	jstring NotificationManager_Policy::suppressedEffectsToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.NotificationManager$Policy",
 			"suppressedEffectsToString",
 			"(I)Ljava/lang/String;",

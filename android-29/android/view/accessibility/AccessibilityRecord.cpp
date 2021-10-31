@@ -14,7 +14,7 @@ namespace android::view::accessibility
 	// Methods
 	android::view::accessibility::AccessibilityRecord AccessibilityRecord::obtain()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityRecord",
 			"obtain",
 			"()Landroid/view/accessibility/AccessibilityRecord;"
@@ -22,7 +22,7 @@ namespace android::view::accessibility
 	}
 	android::view::accessibility::AccessibilityRecord AccessibilityRecord::obtain(android::view::accessibility::AccessibilityRecord arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityRecord",
 			"obtain",
 			"(Landroid/view/accessibility/AccessibilityRecord;)Landroid/view/accessibility/AccessibilityRecord;",

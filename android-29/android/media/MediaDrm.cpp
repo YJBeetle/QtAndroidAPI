@@ -12,140 +12,140 @@ namespace android::media
 	// Fields
 	jint MediaDrm::EVENT_KEY_EXPIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"EVENT_KEY_EXPIRED"
 		);
 	}
 	jint MediaDrm::EVENT_KEY_REQUIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"EVENT_KEY_REQUIRED"
 		);
 	}
 	jint MediaDrm::EVENT_PROVISION_REQUIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"EVENT_PROVISION_REQUIRED"
 		);
 	}
 	jint MediaDrm::EVENT_SESSION_RECLAIMED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"EVENT_SESSION_RECLAIMED"
 		);
 	}
 	jint MediaDrm::EVENT_VENDOR_DEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"EVENT_VENDOR_DEFINED"
 		);
 	}
 	jint MediaDrm::HDCP_LEVEL_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"HDCP_LEVEL_UNKNOWN"
 		);
 	}
 	jint MediaDrm::HDCP_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"HDCP_NONE"
 		);
 	}
 	jint MediaDrm::HDCP_NO_DIGITAL_OUTPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"HDCP_NO_DIGITAL_OUTPUT"
 		);
 	}
 	jint MediaDrm::HDCP_V1()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"HDCP_V1"
 		);
 	}
 	jint MediaDrm::HDCP_V2()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"HDCP_V2"
 		);
 	}
 	jint MediaDrm::HDCP_V2_1()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"HDCP_V2_1"
 		);
 	}
 	jint MediaDrm::HDCP_V2_2()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"HDCP_V2_2"
 		);
 	}
 	jint MediaDrm::HDCP_V2_3()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"HDCP_V2_3"
 		);
 	}
 	jint MediaDrm::KEY_TYPE_OFFLINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"KEY_TYPE_OFFLINE"
 		);
 	}
 	jint MediaDrm::KEY_TYPE_RELEASE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"KEY_TYPE_RELEASE"
 		);
 	}
 	jint MediaDrm::KEY_TYPE_STREAMING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"KEY_TYPE_STREAMING"
 		);
 	}
 	jint MediaDrm::OFFLINE_LICENSE_STATE_RELEASED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"OFFLINE_LICENSE_STATE_RELEASED"
 		);
 	}
 	jint MediaDrm::OFFLINE_LICENSE_STATE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"OFFLINE_LICENSE_STATE_UNKNOWN"
 		);
 	}
 	jint MediaDrm::OFFLINE_LICENSE_STATE_USABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"OFFLINE_LICENSE_STATE_USABLE"
 		);
 	}
 	jstring MediaDrm::PROPERTY_ALGORITHMS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaDrm",
 			"PROPERTY_ALGORITHMS",
 			"Ljava/lang/String;"
@@ -153,7 +153,7 @@ namespace android::media
 	}
 	jstring MediaDrm::PROPERTY_DESCRIPTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaDrm",
 			"PROPERTY_DESCRIPTION",
 			"Ljava/lang/String;"
@@ -161,7 +161,7 @@ namespace android::media
 	}
 	jstring MediaDrm::PROPERTY_DEVICE_UNIQUE_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaDrm",
 			"PROPERTY_DEVICE_UNIQUE_ID",
 			"Ljava/lang/String;"
@@ -169,7 +169,7 @@ namespace android::media
 	}
 	jstring MediaDrm::PROPERTY_VENDOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaDrm",
 			"PROPERTY_VENDOR",
 			"Ljava/lang/String;"
@@ -177,7 +177,7 @@ namespace android::media
 	}
 	jstring MediaDrm::PROPERTY_VERSION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaDrm",
 			"PROPERTY_VERSION",
 			"Ljava/lang/String;"
@@ -185,42 +185,42 @@ namespace android::media
 	}
 	jint MediaDrm::SECURITY_LEVEL_HW_SECURE_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"SECURITY_LEVEL_HW_SECURE_ALL"
 		);
 	}
 	jint MediaDrm::SECURITY_LEVEL_HW_SECURE_CRYPTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"SECURITY_LEVEL_HW_SECURE_CRYPTO"
 		);
 	}
 	jint MediaDrm::SECURITY_LEVEL_HW_SECURE_DECODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"SECURITY_LEVEL_HW_SECURE_DECODE"
 		);
 	}
 	jint MediaDrm::SECURITY_LEVEL_SW_SECURE_CRYPTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"SECURITY_LEVEL_SW_SECURE_CRYPTO"
 		);
 	}
 	jint MediaDrm::SECURITY_LEVEL_SW_SECURE_DECODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"SECURITY_LEVEL_SW_SECURE_DECODE"
 		);
 	}
 	jint MediaDrm::SECURITY_LEVEL_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm",
 			"SECURITY_LEVEL_UNKNOWN"
 		);
@@ -240,7 +240,7 @@ namespace android::media
 	// Methods
 	jint MediaDrm::getMaxSecurityLevel()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.MediaDrm",
 			"getMaxSecurityLevel",
 			"()I"
@@ -248,7 +248,7 @@ namespace android::media
 	}
 	jboolean MediaDrm::isCryptoSchemeSupported(java::util::UUID arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.MediaDrm",
 			"isCryptoSchemeSupported",
 			"(Ljava/util/UUID;)Z",
@@ -257,7 +257,7 @@ namespace android::media
 	}
 	jboolean MediaDrm::isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.MediaDrm",
 			"isCryptoSchemeSupported",
 			"(Ljava/util/UUID;Ljava/lang/String;)Z",
@@ -267,7 +267,7 @@ namespace android::media
 	}
 	jboolean MediaDrm::isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.MediaDrm",
 			"isCryptoSchemeSupported",
 			"(Ljava/util/UUID;Ljava/lang/String;I)Z",

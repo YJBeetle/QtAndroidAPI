@@ -9,49 +9,49 @@ namespace android::hardware::camera2::params
 	// Fields
 	jint RecommendedStreamConfigurationMap::USECASE_LOW_LATENCY_SNAPSHOT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
 			"USECASE_LOW_LATENCY_SNAPSHOT"
 		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_PREVIEW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
 			"USECASE_PREVIEW"
 		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_RAW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
 			"USECASE_RAW"
 		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_RECORD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
 			"USECASE_RECORD"
 		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_SNAPSHOT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
 			"USECASE_SNAPSHOT"
 		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_VIDEO_SNAPSHOT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
 			"USECASE_VIDEO_SNAPSHOT"
 		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_ZSL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
 			"USECASE_ZSL"
 		);

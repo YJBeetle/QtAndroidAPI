@@ -6,7 +6,7 @@ namespace android::net::wifi
 	// Fields
 	__JniBaseClass WifiNetworkSuggestion::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.WifiNetworkSuggestion",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

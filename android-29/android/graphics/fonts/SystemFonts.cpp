@@ -12,7 +12,7 @@ namespace android::graphics::fonts
 	// Methods
 	__JniBaseClass SystemFonts::getAvailableFonts()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.fonts.SystemFonts",
 			"getAvailableFonts",
 			"()Ljava/util/Set;"

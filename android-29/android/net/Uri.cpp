@@ -8,7 +8,7 @@ namespace android::net
 	// Fields
 	__JniBaseClass Uri::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.Uri",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,7 +16,7 @@ namespace android::net
 	}
 	android::net::Uri Uri::EMPTY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.Uri",
 			"EMPTY",
 			"Landroid/net/Uri;"
@@ -31,7 +31,7 @@ namespace android::net
 	// Methods
 	jstring Uri::decode(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.Uri",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -40,7 +40,7 @@ namespace android::net
 	}
 	jstring Uri::encode(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.Uri",
 			"encode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -49,7 +49,7 @@ namespace android::net
 	}
 	jstring Uri::encode(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.Uri",
 			"encode",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -59,7 +59,7 @@ namespace android::net
 	}
 	android::net::Uri Uri::fromFile(java::io::File arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.Uri",
 			"fromFile",
 			"(Ljava/io/File;)Landroid/net/Uri;",
@@ -68,7 +68,7 @@ namespace android::net
 	}
 	android::net::Uri Uri::fromParts(jstring arg0, jstring arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.Uri",
 			"fromParts",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
@@ -79,7 +79,7 @@ namespace android::net
 	}
 	android::net::Uri Uri::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.Uri",
 			"parse",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
@@ -88,7 +88,7 @@ namespace android::net
 	}
 	android::net::Uri Uri::withAppendedPath(android::net::Uri arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.Uri",
 			"withAppendedPath",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
@@ -98,7 +98,7 @@ namespace android::net
 	}
 	void Uri::writeToParcel(android::os::Parcel arg0, android::net::Uri arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.Uri",
 			"writeToParcel",
 			"(Landroid/os/Parcel;Landroid/net/Uri;)V",

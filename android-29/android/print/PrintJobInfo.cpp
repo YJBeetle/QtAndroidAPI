@@ -9,7 +9,7 @@ namespace android::print
 	// Fields
 	__JniBaseClass PrintJobInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.print.PrintJobInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -17,49 +17,49 @@ namespace android::print
 	}
 	jint PrintJobInfo::STATE_BLOCKED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintJobInfo",
 			"STATE_BLOCKED"
 		);
 	}
 	jint PrintJobInfo::STATE_CANCELED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintJobInfo",
 			"STATE_CANCELED"
 		);
 	}
 	jint PrintJobInfo::STATE_COMPLETED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintJobInfo",
 			"STATE_COMPLETED"
 		);
 	}
 	jint PrintJobInfo::STATE_CREATED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintJobInfo",
 			"STATE_CREATED"
 		);
 	}
 	jint PrintJobInfo::STATE_FAILED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintJobInfo",
 			"STATE_FAILED"
 		);
 	}
 	jint PrintJobInfo::STATE_QUEUED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintJobInfo",
 			"STATE_QUEUED"
 		);
 	}
 	jint PrintJobInfo::STATE_STARTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintJobInfo",
 			"STATE_STARTED"
 		);

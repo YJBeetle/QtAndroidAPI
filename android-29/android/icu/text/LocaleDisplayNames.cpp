@@ -17,7 +17,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::LocaleDisplayNames LocaleDisplayNames::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/LocaleDisplayNames;",
@@ -26,7 +26,7 @@ namespace android::icu::text
 	}
 	android::icu::text::LocaleDisplayNames LocaleDisplayNames::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/LocaleDisplayNames;",
@@ -35,7 +35,7 @@ namespace android::icu::text
 	}
 	android::icu::text::LocaleDisplayNames LocaleDisplayNames::getInstance(android::icu::util::ULocale arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;[Landroid/icu/text/DisplayContext;)Landroid/icu/text/LocaleDisplayNames;",
@@ -45,7 +45,7 @@ namespace android::icu::text
 	}
 	android::icu::text::LocaleDisplayNames LocaleDisplayNames::getInstance(android::icu::util::ULocale arg0, android::icu::text::LocaleDisplayNames_DialectHandling arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/LocaleDisplayNames$DialectHandling;)Landroid/icu/text/LocaleDisplayNames;",
@@ -55,7 +55,7 @@ namespace android::icu::text
 	}
 	android::icu::text::LocaleDisplayNames LocaleDisplayNames::getInstance(java::util::Locale arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames",
 			"getInstance",
 			"(Ljava/util/Locale;[Landroid/icu/text/DisplayContext;)Landroid/icu/text/LocaleDisplayNames;",

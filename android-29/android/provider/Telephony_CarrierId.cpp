@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring Telephony_CarrierId::CARRIER_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$CarrierId",
 			"CARRIER_ID",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring Telephony_CarrierId::CARRIER_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$CarrierId",
 			"CARRIER_NAME",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	android::net::Uri Telephony_CarrierId::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$CarrierId",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring Telephony_CarrierId::SPECIFIC_CARRIER_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$CarrierId",
 			"SPECIFIC_CARRIER_ID",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	jstring Telephony_CarrierId::SPECIFIC_CARRIER_ID_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$CarrierId",
 			"SPECIFIC_CARRIER_ID_NAME",
 			"Ljava/lang/String;"
@@ -53,7 +53,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri Telephony_CarrierId::getSpecificCarrierIdUriForSubscriptionId(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Telephony$CarrierId",
 			"getSpecificCarrierIdUriForSubscriptionId",
 			"(I)Landroid/net/Uri;",
@@ -62,7 +62,7 @@ namespace android::provider
 	}
 	android::net::Uri Telephony_CarrierId::getUriForSubscriptionId(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Telephony$CarrierId",
 			"getUriForSubscriptionId",
 			"(I)Landroid/net/Uri;",

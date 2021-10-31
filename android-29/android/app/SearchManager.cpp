@@ -8,7 +8,7 @@ namespace android::app
 	// Fields
 	jstring SearchManager::ACTION_KEY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"ACTION_KEY",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::app
 	}
 	jstring SearchManager::ACTION_MSG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"ACTION_MSG",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::app
 	}
 	jstring SearchManager::APP_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"APP_DATA",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace android::app
 	}
 	jstring SearchManager::CURSOR_EXTRA_KEY_IN_PROGRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"CURSOR_EXTRA_KEY_IN_PROGRESS",
 			"Ljava/lang/String;"
@@ -40,7 +40,7 @@ namespace android::app
 	}
 	jstring SearchManager::EXTRA_DATA_KEY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"EXTRA_DATA_KEY",
 			"Ljava/lang/String;"
@@ -48,7 +48,7 @@ namespace android::app
 	}
 	jstring SearchManager::EXTRA_NEW_SEARCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"EXTRA_NEW_SEARCH",
 			"Ljava/lang/String;"
@@ -56,7 +56,7 @@ namespace android::app
 	}
 	jstring SearchManager::EXTRA_SELECT_QUERY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"EXTRA_SELECT_QUERY",
 			"Ljava/lang/String;"
@@ -64,7 +64,7 @@ namespace android::app
 	}
 	jstring SearchManager::EXTRA_WEB_SEARCH_PENDINGINTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"EXTRA_WEB_SEARCH_PENDINGINTENT",
 			"Ljava/lang/String;"
@@ -72,14 +72,14 @@ namespace android::app
 	}
 	jint SearchManager::FLAG_QUERY_REFINEMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.SearchManager",
 			"FLAG_QUERY_REFINEMENT"
 		);
 	}
 	jstring SearchManager::INTENT_ACTION_GLOBAL_SEARCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"INTENT_ACTION_GLOBAL_SEARCH",
 			"Ljava/lang/String;"
@@ -87,7 +87,7 @@ namespace android::app
 	}
 	jstring SearchManager::INTENT_ACTION_SEARCHABLES_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"INTENT_ACTION_SEARCHABLES_CHANGED",
 			"Ljava/lang/String;"
@@ -95,7 +95,7 @@ namespace android::app
 	}
 	jstring SearchManager::INTENT_ACTION_SEARCH_SETTINGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"INTENT_ACTION_SEARCH_SETTINGS",
 			"Ljava/lang/String;"
@@ -103,7 +103,7 @@ namespace android::app
 	}
 	jstring SearchManager::INTENT_ACTION_SEARCH_SETTINGS_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"INTENT_ACTION_SEARCH_SETTINGS_CHANGED",
 			"Ljava/lang/String;"
@@ -111,7 +111,7 @@ namespace android::app
 	}
 	jstring SearchManager::INTENT_ACTION_WEB_SEARCH_SETTINGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"INTENT_ACTION_WEB_SEARCH_SETTINGS",
 			"Ljava/lang/String;"
@@ -119,7 +119,7 @@ namespace android::app
 	}
 	jstring SearchManager::INTENT_GLOBAL_SEARCH_ACTIVITY_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"INTENT_GLOBAL_SEARCH_ACTIVITY_CHANGED",
 			"Ljava/lang/String;"
@@ -127,21 +127,21 @@ namespace android::app
 	}
 	jchar SearchManager::MENU_KEY()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.app.SearchManager",
 			"MENU_KEY"
 		);
 	}
 	jint SearchManager::MENU_KEYCODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.SearchManager",
 			"MENU_KEYCODE"
 		);
 	}
 	jstring SearchManager::QUERY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"QUERY",
 			"Ljava/lang/String;"
@@ -149,7 +149,7 @@ namespace android::app
 	}
 	jstring SearchManager::SHORTCUT_MIME_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SHORTCUT_MIME_TYPE",
 			"Ljava/lang/String;"
@@ -157,7 +157,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_AUDIO_CHANNEL_CONFIG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_AUDIO_CHANNEL_CONFIG",
 			"Ljava/lang/String;"
@@ -165,7 +165,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -173,7 +173,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_DURATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_DURATION",
 			"Ljava/lang/String;"
@@ -181,7 +181,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_FLAGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_FLAGS",
 			"Ljava/lang/String;"
@@ -189,7 +189,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_FORMAT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_FORMAT",
 			"Ljava/lang/String;"
@@ -197,7 +197,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_ICON_1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_ICON_1",
 			"Ljava/lang/String;"
@@ -205,7 +205,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_ICON_2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_ICON_2",
 			"Ljava/lang/String;"
@@ -213,7 +213,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_INTENT_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_INTENT_ACTION",
 			"Ljava/lang/String;"
@@ -221,7 +221,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_INTENT_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_INTENT_DATA",
 			"Ljava/lang/String;"
@@ -229,7 +229,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_INTENT_DATA_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_INTENT_DATA_ID",
 			"Ljava/lang/String;"
@@ -237,7 +237,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_INTENT_EXTRA_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_INTENT_EXTRA_DATA",
 			"Ljava/lang/String;"
@@ -245,7 +245,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_IS_LIVE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_IS_LIVE",
 			"Ljava/lang/String;"
@@ -253,7 +253,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_LAST_ACCESS_HINT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_LAST_ACCESS_HINT",
 			"Ljava/lang/String;"
@@ -261,7 +261,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_PRODUCTION_YEAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_PRODUCTION_YEAR",
 			"Ljava/lang/String;"
@@ -269,7 +269,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_PURCHASE_PRICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_PURCHASE_PRICE",
 			"Ljava/lang/String;"
@@ -277,7 +277,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_QUERY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_QUERY",
 			"Ljava/lang/String;"
@@ -285,7 +285,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_RATING_SCORE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_RATING_SCORE",
 			"Ljava/lang/String;"
@@ -293,7 +293,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_RATING_STYLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_RATING_STYLE",
 			"Ljava/lang/String;"
@@ -301,7 +301,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_RENTAL_PRICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_RENTAL_PRICE",
 			"Ljava/lang/String;"
@@ -309,7 +309,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_RESULT_CARD_IMAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_RESULT_CARD_IMAGE",
 			"Ljava/lang/String;"
@@ -317,7 +317,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_SHORTCUT_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_SHORTCUT_ID",
 			"Ljava/lang/String;"
@@ -325,7 +325,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_SPINNER_WHILE_REFRESHING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_SPINNER_WHILE_REFRESHING",
 			"Ljava/lang/String;"
@@ -333,7 +333,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_TEXT_1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_TEXT_1",
 			"Ljava/lang/String;"
@@ -341,7 +341,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_TEXT_2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_TEXT_2",
 			"Ljava/lang/String;"
@@ -349,7 +349,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_TEXT_2_URL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_TEXT_2_URL",
 			"Ljava/lang/String;"
@@ -357,7 +357,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_VIDEO_HEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_VIDEO_HEIGHT",
 			"Ljava/lang/String;"
@@ -365,7 +365,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_COLUMN_VIDEO_WIDTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_COLUMN_VIDEO_WIDTH",
 			"Ljava/lang/String;"
@@ -373,7 +373,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_MIME_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_MIME_TYPE",
 			"Ljava/lang/String;"
@@ -381,7 +381,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_NEVER_MAKE_SHORTCUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_NEVER_MAKE_SHORTCUT",
 			"Ljava/lang/String;"
@@ -389,7 +389,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_PARAMETER_LIMIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_PARAMETER_LIMIT",
 			"Ljava/lang/String;"
@@ -397,7 +397,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_URI_PATH_QUERY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_URI_PATH_QUERY",
 			"Ljava/lang/String;"
@@ -405,7 +405,7 @@ namespace android::app
 	}
 	jstring SearchManager::SUGGEST_URI_PATH_SHORTCUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"SUGGEST_URI_PATH_SHORTCUT",
 			"Ljava/lang/String;"
@@ -413,7 +413,7 @@ namespace android::app
 	}
 	jstring SearchManager::USER_QUERY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchManager",
 			"USER_QUERY",
 			"Ljava/lang/String;"

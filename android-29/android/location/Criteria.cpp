@@ -6,42 +6,42 @@ namespace android::location
 	// Fields
 	jint Criteria::ACCURACY_COARSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Criteria",
 			"ACCURACY_COARSE"
 		);
 	}
 	jint Criteria::ACCURACY_FINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Criteria",
 			"ACCURACY_FINE"
 		);
 	}
 	jint Criteria::ACCURACY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Criteria",
 			"ACCURACY_HIGH"
 		);
 	}
 	jint Criteria::ACCURACY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Criteria",
 			"ACCURACY_LOW"
 		);
 	}
 	jint Criteria::ACCURACY_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Criteria",
 			"ACCURACY_MEDIUM"
 		);
 	}
 	__JniBaseClass Criteria::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.Criteria",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -49,28 +49,28 @@ namespace android::location
 	}
 	jint Criteria::NO_REQUIREMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Criteria",
 			"NO_REQUIREMENT"
 		);
 	}
 	jint Criteria::POWER_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Criteria",
 			"POWER_HIGH"
 		);
 	}
 	jint Criteria::POWER_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Criteria",
 			"POWER_LOW"
 		);
 	}
 	jint Criteria::POWER_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Criteria",
 			"POWER_MEDIUM"
 		);

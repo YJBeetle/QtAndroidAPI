@@ -18,7 +18,7 @@ namespace java::net
 	// Methods
 	java::net::CookieHandler CookieHandler::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.CookieHandler",
 			"getDefault",
 			"()Ljava/net/CookieHandler;"
@@ -26,7 +26,7 @@ namespace java::net
 	}
 	void CookieHandler::setDefault(java::net::CookieHandler arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.CookieHandler",
 			"setDefault",
 			"(Ljava/net/CookieHandler;)V",

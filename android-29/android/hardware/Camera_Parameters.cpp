@@ -7,7 +7,7 @@ namespace android::hardware
 	// Fields
 	jstring Camera_Parameters::ANTIBANDING_50HZ()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"ANTIBANDING_50HZ",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::ANTIBANDING_60HZ()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"ANTIBANDING_60HZ",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::ANTIBANDING_AUTO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"ANTIBANDING_AUTO",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::ANTIBANDING_OFF()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"ANTIBANDING_OFF",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::EFFECT_AQUA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_AQUA",
 			"Ljava/lang/String;"
@@ -47,7 +47,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::EFFECT_BLACKBOARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_BLACKBOARD",
 			"Ljava/lang/String;"
@@ -55,7 +55,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::EFFECT_MONO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_MONO",
 			"Ljava/lang/String;"
@@ -63,7 +63,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::EFFECT_NEGATIVE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_NEGATIVE",
 			"Ljava/lang/String;"
@@ -71,7 +71,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::EFFECT_NONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_NONE",
 			"Ljava/lang/String;"
@@ -79,7 +79,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::EFFECT_POSTERIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_POSTERIZE",
 			"Ljava/lang/String;"
@@ -87,7 +87,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::EFFECT_SEPIA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_SEPIA",
 			"Ljava/lang/String;"
@@ -95,7 +95,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::EFFECT_SOLARIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_SOLARIZE",
 			"Ljava/lang/String;"
@@ -103,7 +103,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::EFFECT_WHITEBOARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"EFFECT_WHITEBOARD",
 			"Ljava/lang/String;"
@@ -111,7 +111,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FLASH_MODE_AUTO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FLASH_MODE_AUTO",
 			"Ljava/lang/String;"
@@ -119,7 +119,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FLASH_MODE_OFF()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FLASH_MODE_OFF",
 			"Ljava/lang/String;"
@@ -127,7 +127,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FLASH_MODE_ON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FLASH_MODE_ON",
 			"Ljava/lang/String;"
@@ -135,7 +135,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FLASH_MODE_RED_EYE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FLASH_MODE_RED_EYE",
 			"Ljava/lang/String;"
@@ -143,7 +143,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FLASH_MODE_TORCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FLASH_MODE_TORCH",
 			"Ljava/lang/String;"
@@ -151,28 +151,28 @@ namespace android::hardware
 	}
 	jint Camera_Parameters::FOCUS_DISTANCE_FAR_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_DISTANCE_FAR_INDEX"
 		);
 	}
 	jint Camera_Parameters::FOCUS_DISTANCE_NEAR_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_DISTANCE_NEAR_INDEX"
 		);
 	}
 	jint Camera_Parameters::FOCUS_DISTANCE_OPTIMAL_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_DISTANCE_OPTIMAL_INDEX"
 		);
 	}
 	jstring Camera_Parameters::FOCUS_MODE_AUTO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_AUTO",
 			"Ljava/lang/String;"
@@ -180,7 +180,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FOCUS_MODE_CONTINUOUS_PICTURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_CONTINUOUS_PICTURE",
 			"Ljava/lang/String;"
@@ -188,7 +188,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FOCUS_MODE_CONTINUOUS_VIDEO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_CONTINUOUS_VIDEO",
 			"Ljava/lang/String;"
@@ -196,7 +196,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FOCUS_MODE_EDOF()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_EDOF",
 			"Ljava/lang/String;"
@@ -204,7 +204,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FOCUS_MODE_FIXED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_FIXED",
 			"Ljava/lang/String;"
@@ -212,7 +212,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FOCUS_MODE_INFINITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_INFINITY",
 			"Ljava/lang/String;"
@@ -220,7 +220,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::FOCUS_MODE_MACRO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"FOCUS_MODE_MACRO",
 			"Ljava/lang/String;"
@@ -228,21 +228,21 @@ namespace android::hardware
 	}
 	jint Camera_Parameters::PREVIEW_FPS_MAX_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.Camera$Parameters",
 			"PREVIEW_FPS_MAX_INDEX"
 		);
 	}
 	jint Camera_Parameters::PREVIEW_FPS_MIN_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.Camera$Parameters",
 			"PREVIEW_FPS_MIN_INDEX"
 		);
 	}
 	jstring Camera_Parameters::SCENE_MODE_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_ACTION",
 			"Ljava/lang/String;"
@@ -250,7 +250,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_AUTO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_AUTO",
 			"Ljava/lang/String;"
@@ -258,7 +258,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_BARCODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_BARCODE",
 			"Ljava/lang/String;"
@@ -266,7 +266,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_BEACH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_BEACH",
 			"Ljava/lang/String;"
@@ -274,7 +274,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_CANDLELIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_CANDLELIGHT",
 			"Ljava/lang/String;"
@@ -282,7 +282,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_FIREWORKS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_FIREWORKS",
 			"Ljava/lang/String;"
@@ -290,7 +290,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_HDR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_HDR",
 			"Ljava/lang/String;"
@@ -298,7 +298,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_LANDSCAPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_LANDSCAPE",
 			"Ljava/lang/String;"
@@ -306,7 +306,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_NIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_NIGHT",
 			"Ljava/lang/String;"
@@ -314,7 +314,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_NIGHT_PORTRAIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_NIGHT_PORTRAIT",
 			"Ljava/lang/String;"
@@ -322,7 +322,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_PARTY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_PARTY",
 			"Ljava/lang/String;"
@@ -330,7 +330,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_PORTRAIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_PORTRAIT",
 			"Ljava/lang/String;"
@@ -338,7 +338,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_SNOW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_SNOW",
 			"Ljava/lang/String;"
@@ -346,7 +346,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_SPORTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_SPORTS",
 			"Ljava/lang/String;"
@@ -354,7 +354,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_STEADYPHOTO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_STEADYPHOTO",
 			"Ljava/lang/String;"
@@ -362,7 +362,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_SUNSET()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_SUNSET",
 			"Ljava/lang/String;"
@@ -370,7 +370,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::SCENE_MODE_THEATRE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"SCENE_MODE_THEATRE",
 			"Ljava/lang/String;"
@@ -378,7 +378,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::WHITE_BALANCE_AUTO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_AUTO",
 			"Ljava/lang/String;"
@@ -386,7 +386,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::WHITE_BALANCE_CLOUDY_DAYLIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_CLOUDY_DAYLIGHT",
 			"Ljava/lang/String;"
@@ -394,7 +394,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::WHITE_BALANCE_DAYLIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_DAYLIGHT",
 			"Ljava/lang/String;"
@@ -402,7 +402,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::WHITE_BALANCE_FLUORESCENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_FLUORESCENT",
 			"Ljava/lang/String;"
@@ -410,7 +410,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::WHITE_BALANCE_INCANDESCENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_INCANDESCENT",
 			"Ljava/lang/String;"
@@ -418,7 +418,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::WHITE_BALANCE_SHADE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_SHADE",
 			"Ljava/lang/String;"
@@ -426,7 +426,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::WHITE_BALANCE_TWILIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_TWILIGHT",
 			"Ljava/lang/String;"
@@ -434,7 +434,7 @@ namespace android::hardware
 	}
 	jstring Camera_Parameters::WHITE_BALANCE_WARM_FLUORESCENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera$Parameters",
 			"WHITE_BALANCE_WARM_FLUORESCENT",
 			"Ljava/lang/String;"

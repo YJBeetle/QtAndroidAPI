@@ -11,35 +11,35 @@ namespace android::app::assist
 	// Fields
 	jint AssistStructure_ViewNode::TEXT_COLOR_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.assist.AssistStructure$ViewNode",
 			"TEXT_COLOR_UNDEFINED"
 		);
 	}
 	jint AssistStructure_ViewNode::TEXT_STYLE_BOLD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.assist.AssistStructure$ViewNode",
 			"TEXT_STYLE_BOLD"
 		);
 	}
 	jint AssistStructure_ViewNode::TEXT_STYLE_ITALIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.assist.AssistStructure$ViewNode",
 			"TEXT_STYLE_ITALIC"
 		);
 	}
 	jint AssistStructure_ViewNode::TEXT_STYLE_STRIKE_THRU()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.assist.AssistStructure$ViewNode",
 			"TEXT_STYLE_STRIKE_THRU"
 		);
 	}
 	jint AssistStructure_ViewNode::TEXT_STYLE_UNDERLINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.assist.AssistStructure$ViewNode",
 			"TEXT_STYLE_UNDERLINE"
 		);

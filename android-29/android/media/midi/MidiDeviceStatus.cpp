@@ -7,7 +7,7 @@ namespace android::media::midi
 	// Fields
 	__JniBaseClass MidiDeviceStatus::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.midi.MidiDeviceStatus",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

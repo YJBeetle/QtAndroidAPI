@@ -6,7 +6,7 @@ namespace android::view::textservice
 	// Fields
 	__JniBaseClass SuggestionsInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textservice.SuggestionsInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,21 +14,21 @@ namespace android::view::textservice
 	}
 	jint SuggestionsInfo::RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textservice.SuggestionsInfo",
 			"RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS"
 		);
 	}
 	jint SuggestionsInfo::RESULT_ATTR_IN_THE_DICTIONARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textservice.SuggestionsInfo",
 			"RESULT_ATTR_IN_THE_DICTIONARY"
 		);
 	}
 	jint SuggestionsInfo::RESULT_ATTR_LOOKS_LIKE_TYPO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textservice.SuggestionsInfo",
 			"RESULT_ATTR_LOOKS_LIKE_TYPO"
 		);

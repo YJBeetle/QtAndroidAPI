@@ -6,7 +6,7 @@ namespace android::telephony::mbms
 	// Fields
 	__JniBaseClass StreamingServiceInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.mbms.StreamingServiceInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

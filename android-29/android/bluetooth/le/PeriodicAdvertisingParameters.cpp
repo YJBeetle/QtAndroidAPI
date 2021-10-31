@@ -6,7 +6,7 @@ namespace android::bluetooth::le
 	// Fields
 	__JniBaseClass PeriodicAdvertisingParameters::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.le.PeriodicAdvertisingParameters",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -15,7 +15,7 @@ namespace android::media
 	// Methods
 	android::media::ImageReader ImageReader::newInstance(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ImageReader",
 			"newInstance",
 			"(IIII)Landroid/media/ImageReader;",
@@ -27,7 +27,7 @@ namespace android::media
 	}
 	android::media::ImageReader ImageReader::newInstance(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ImageReader",
 			"newInstance",
 			"(IIIIJ)Landroid/media/ImageReader;",

@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	java::util::Locale_Category Locale_Category::DISPLAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale$Category",
 			"DISPLAY",
 			"Ljava/util/Locale$Category;"
@@ -13,7 +13,7 @@ namespace java::util
 	}
 	java::util::Locale_Category Locale_Category::FORMAT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale$Category",
 			"FORMAT",
 			"Ljava/util/Locale$Category;"
@@ -28,7 +28,7 @@ namespace java::util
 	// Methods
 	java::util::Locale_Category Locale_Category::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale$Category",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/Locale$Category;",
@@ -37,7 +37,7 @@ namespace java::util
 	}
 	jarray Locale_Category::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale$Category",
 			"values",
 			"()[Ljava/util/Locale$Category;"

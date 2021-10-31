@@ -9,7 +9,7 @@ namespace android::net
 	// Fields
 	jstring VpnService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.VpnService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -17,7 +17,7 @@ namespace android::net
 	}
 	jstring VpnService::SERVICE_META_DATA_SUPPORTS_ALWAYS_ON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.VpnService",
 			"SERVICE_META_DATA_SUPPORTS_ALWAYS_ON",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::net
 	// Methods
 	android::content::Intent VpnService::prepare(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.VpnService",
 			"prepare",
 			"(Landroid/content/Context;)Landroid/content/Intent;",

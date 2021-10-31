@@ -23,7 +23,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::TimeZoneFormat TimeZoneFormat::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/TimeZoneFormat;",
@@ -32,7 +32,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneFormat TimeZoneFormat::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/TimeZoneFormat;",

@@ -10,21 +10,21 @@ namespace android::view::animation
 	// Fields
 	jint LayoutAnimationController::ORDER_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.LayoutAnimationController",
 			"ORDER_NORMAL"
 		);
 	}
 	jint LayoutAnimationController::ORDER_RANDOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.LayoutAnimationController",
 			"ORDER_RANDOM"
 		);
 	}
 	jint LayoutAnimationController::ORDER_REVERSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.LayoutAnimationController",
 			"ORDER_REVERSE"
 		);

@@ -8,28 +8,28 @@ namespace android::os
 	// Fields
 	jint Debug::SHOW_CLASSLOADER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Debug",
 			"SHOW_CLASSLOADER"
 		);
 	}
 	jint Debug::SHOW_FULL_DETAIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Debug",
 			"SHOW_FULL_DETAIL"
 		);
 	}
 	jint Debug::SHOW_INITIALIZED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Debug",
 			"SHOW_INITIALIZED"
 		);
 	}
 	jint Debug::TRACE_COUNT_ALLOCS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Debug",
 			"TRACE_COUNT_ALLOCS"
 		);
@@ -43,7 +43,7 @@ namespace android::os
 	// Methods
 	void Debug::attachJvmtiAgent(jstring arg0, jstring arg1, java::lang::ClassLoader arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"attachJvmtiAgent",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
@@ -54,7 +54,7 @@ namespace android::os
 	}
 	void Debug::changeDebugPort(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"changeDebugPort",
 			"(I)V",
@@ -63,7 +63,7 @@ namespace android::os
 	}
 	void Debug::dumpHprofData(jstring arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"dumpHprofData",
 			"(Ljava/lang/String;)V",
@@ -72,7 +72,7 @@ namespace android::os
 	}
 	jboolean Debug::dumpService(jstring arg0, java::io::FileDescriptor arg1, jarray arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.Debug",
 			"dumpService",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;[Ljava/lang/String;)Z",
@@ -83,7 +83,7 @@ namespace android::os
 	}
 	void Debug::enableEmulatorTraceOutput()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"enableEmulatorTraceOutput",
 			"()V"
@@ -91,7 +91,7 @@ namespace android::os
 	}
 	jint Debug::getBinderDeathObjectCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getBinderDeathObjectCount",
 			"()I"
@@ -99,7 +99,7 @@ namespace android::os
 	}
 	jint Debug::getBinderLocalObjectCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getBinderLocalObjectCount",
 			"()I"
@@ -107,7 +107,7 @@ namespace android::os
 	}
 	jint Debug::getBinderProxyObjectCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getBinderProxyObjectCount",
 			"()I"
@@ -115,7 +115,7 @@ namespace android::os
 	}
 	jint Debug::getBinderReceivedTransactions()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getBinderReceivedTransactions",
 			"()I"
@@ -123,7 +123,7 @@ namespace android::os
 	}
 	jint Debug::getBinderSentTransactions()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getBinderSentTransactions",
 			"()I"
@@ -131,7 +131,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalAllocCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalAllocCount",
 			"()I"
@@ -139,7 +139,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalAllocSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalAllocSize",
 			"()I"
@@ -147,7 +147,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalClassInitCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalClassInitCount",
 			"()I"
@@ -155,7 +155,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalClassInitTime()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalClassInitTime",
 			"()I"
@@ -163,7 +163,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalExternalAllocCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalExternalAllocCount",
 			"()I"
@@ -171,7 +171,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalExternalAllocSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalExternalAllocSize",
 			"()I"
@@ -179,7 +179,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalExternalFreedCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalExternalFreedCount",
 			"()I"
@@ -187,7 +187,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalExternalFreedSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalExternalFreedSize",
 			"()I"
@@ -195,7 +195,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalFreedCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalFreedCount",
 			"()I"
@@ -203,7 +203,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalFreedSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalFreedSize",
 			"()I"
@@ -211,7 +211,7 @@ namespace android::os
 	}
 	jint Debug::getGlobalGcInvocationCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalGcInvocationCount",
 			"()I"
@@ -219,7 +219,7 @@ namespace android::os
 	}
 	jint Debug::getLoadedClassCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getLoadedClassCount",
 			"()I"
@@ -227,7 +227,7 @@ namespace android::os
 	}
 	void Debug::getMemoryInfo(android::os::Debug_MemoryInfo arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"getMemoryInfo",
 			"(Landroid/os/Debug$MemoryInfo;)V",
@@ -236,7 +236,7 @@ namespace android::os
 	}
 	jlong Debug::getNativeHeapAllocatedSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Debug",
 			"getNativeHeapAllocatedSize",
 			"()J"
@@ -244,7 +244,7 @@ namespace android::os
 	}
 	jlong Debug::getNativeHeapFreeSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Debug",
 			"getNativeHeapFreeSize",
 			"()J"
@@ -252,7 +252,7 @@ namespace android::os
 	}
 	jlong Debug::getNativeHeapSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Debug",
 			"getNativeHeapSize",
 			"()J"
@@ -260,7 +260,7 @@ namespace android::os
 	}
 	jlong Debug::getPss()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Debug",
 			"getPss",
 			"()J"
@@ -268,7 +268,7 @@ namespace android::os
 	}
 	jstring Debug::getRuntimeStat(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Debug",
 			"getRuntimeStat",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -277,7 +277,7 @@ namespace android::os
 	}
 	__JniBaseClass Debug::getRuntimeStats()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Debug",
 			"getRuntimeStats",
 			"()Ljava/util/Map;"
@@ -285,7 +285,7 @@ namespace android::os
 	}
 	jint Debug::getThreadAllocCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getThreadAllocCount",
 			"()I"
@@ -293,7 +293,7 @@ namespace android::os
 	}
 	jint Debug::getThreadAllocSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getThreadAllocSize",
 			"()I"
@@ -301,7 +301,7 @@ namespace android::os
 	}
 	jint Debug::getThreadExternalAllocCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getThreadExternalAllocCount",
 			"()I"
@@ -309,7 +309,7 @@ namespace android::os
 	}
 	jint Debug::getThreadExternalAllocSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getThreadExternalAllocSize",
 			"()I"
@@ -317,7 +317,7 @@ namespace android::os
 	}
 	jint Debug::getThreadGcInvocationCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"getThreadGcInvocationCount",
 			"()I"
@@ -325,7 +325,7 @@ namespace android::os
 	}
 	jboolean Debug::isDebuggerConnected()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.Debug",
 			"isDebuggerConnected",
 			"()Z"
@@ -333,7 +333,7 @@ namespace android::os
 	}
 	void Debug::printLoadedClasses(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"printLoadedClasses",
 			"(I)V",
@@ -342,7 +342,7 @@ namespace android::os
 	}
 	void Debug::resetAllCounts()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetAllCounts",
 			"()V"
@@ -350,7 +350,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalAllocCount()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalAllocCount",
 			"()V"
@@ -358,7 +358,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalAllocSize()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalAllocSize",
 			"()V"
@@ -366,7 +366,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalClassInitCount()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalClassInitCount",
 			"()V"
@@ -374,7 +374,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalClassInitTime()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalClassInitTime",
 			"()V"
@@ -382,7 +382,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalExternalAllocCount()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalExternalAllocCount",
 			"()V"
@@ -390,7 +390,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalExternalAllocSize()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalExternalAllocSize",
 			"()V"
@@ -398,7 +398,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalExternalFreedCount()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalExternalFreedCount",
 			"()V"
@@ -406,7 +406,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalExternalFreedSize()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalExternalFreedSize",
 			"()V"
@@ -414,7 +414,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalFreedCount()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalFreedCount",
 			"()V"
@@ -422,7 +422,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalFreedSize()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalFreedSize",
 			"()V"
@@ -430,7 +430,7 @@ namespace android::os
 	}
 	void Debug::resetGlobalGcInvocationCount()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalGcInvocationCount",
 			"()V"
@@ -438,7 +438,7 @@ namespace android::os
 	}
 	void Debug::resetThreadAllocCount()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetThreadAllocCount",
 			"()V"
@@ -446,7 +446,7 @@ namespace android::os
 	}
 	void Debug::resetThreadAllocSize()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetThreadAllocSize",
 			"()V"
@@ -454,7 +454,7 @@ namespace android::os
 	}
 	void Debug::resetThreadExternalAllocCount()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetThreadExternalAllocCount",
 			"()V"
@@ -462,7 +462,7 @@ namespace android::os
 	}
 	void Debug::resetThreadExternalAllocSize()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetThreadExternalAllocSize",
 			"()V"
@@ -470,7 +470,7 @@ namespace android::os
 	}
 	void Debug::resetThreadGcInvocationCount()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"resetThreadGcInvocationCount",
 			"()V"
@@ -478,7 +478,7 @@ namespace android::os
 	}
 	jint Debug::setAllocationLimit(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"setAllocationLimit",
 			"(I)I",
@@ -487,7 +487,7 @@ namespace android::os
 	}
 	jint Debug::setGlobalAllocationLimit(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Debug",
 			"setGlobalAllocationLimit",
 			"(I)I",
@@ -496,7 +496,7 @@ namespace android::os
 	}
 	void Debug::startAllocCounting()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"startAllocCounting",
 			"()V"
@@ -504,7 +504,7 @@ namespace android::os
 	}
 	void Debug::startMethodTracing()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"startMethodTracing",
 			"()V"
@@ -512,7 +512,7 @@ namespace android::os
 	}
 	void Debug::startMethodTracing(jstring arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"startMethodTracing",
 			"(Ljava/lang/String;)V",
@@ -521,7 +521,7 @@ namespace android::os
 	}
 	void Debug::startMethodTracing(jstring arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"startMethodTracing",
 			"(Ljava/lang/String;I)V",
@@ -531,7 +531,7 @@ namespace android::os
 	}
 	void Debug::startMethodTracing(jstring arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"startMethodTracing",
 			"(Ljava/lang/String;II)V",
@@ -542,7 +542,7 @@ namespace android::os
 	}
 	void Debug::startMethodTracingSampling(jstring arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"startMethodTracingSampling",
 			"(Ljava/lang/String;II)V",
@@ -553,7 +553,7 @@ namespace android::os
 	}
 	void Debug::startNativeTracing()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"startNativeTracing",
 			"()V"
@@ -561,7 +561,7 @@ namespace android::os
 	}
 	void Debug::stopAllocCounting()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"stopAllocCounting",
 			"()V"
@@ -569,7 +569,7 @@ namespace android::os
 	}
 	void Debug::stopMethodTracing()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"stopMethodTracing",
 			"()V"
@@ -577,7 +577,7 @@ namespace android::os
 	}
 	void Debug::stopNativeTracing()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"stopNativeTracing",
 			"()V"
@@ -585,7 +585,7 @@ namespace android::os
 	}
 	jlong Debug::threadCpuTimeNanos()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Debug",
 			"threadCpuTimeNanos",
 			"()J"
@@ -593,7 +593,7 @@ namespace android::os
 	}
 	void Debug::waitForDebugger()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Debug",
 			"waitForDebugger",
 			"()V"
@@ -601,7 +601,7 @@ namespace android::os
 	}
 	jboolean Debug::waitingForDebugger()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.Debug",
 			"waitingForDebugger",
 			"()Z"

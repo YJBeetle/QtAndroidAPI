@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::Path_FillType Path_FillType::EVEN_ODD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$FillType",
 			"EVEN_ODD",
 			"Landroid/graphics/Path$FillType;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::Path_FillType Path_FillType::INVERSE_EVEN_ODD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$FillType",
 			"INVERSE_EVEN_ODD",
 			"Landroid/graphics/Path$FillType;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::Path_FillType Path_FillType::INVERSE_WINDING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$FillType",
 			"INVERSE_WINDING",
 			"Landroid/graphics/Path$FillType;"
@@ -29,7 +29,7 @@ namespace android::graphics
 	}
 	android::graphics::Path_FillType Path_FillType::WINDING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$FillType",
 			"WINDING",
 			"Landroid/graphics/Path$FillType;"
@@ -44,7 +44,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Path_FillType Path_FillType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Path$FillType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Path$FillType;",
@@ -53,7 +53,7 @@ namespace android::graphics
 	}
 	jarray Path_FillType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Path$FillType",
 			"values",
 			"()[Landroid/graphics/Path$FillType;"

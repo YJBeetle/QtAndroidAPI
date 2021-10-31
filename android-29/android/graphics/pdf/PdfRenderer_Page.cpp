@@ -9,14 +9,14 @@ namespace android::graphics::pdf
 	// Fields
 	jint PdfRenderer_Page::RENDER_MODE_FOR_DISPLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.pdf.PdfRenderer$Page",
 			"RENDER_MODE_FOR_DISPLAY"
 		);
 	}
 	jint PdfRenderer_Page::RENDER_MODE_FOR_PRINT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.pdf.PdfRenderer$Page",
 			"RENDER_MODE_FOR_PRINT"
 		);

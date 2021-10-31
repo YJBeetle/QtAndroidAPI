@@ -12,7 +12,7 @@ namespace android::app::admin
 	// Fields
 	__JniBaseClass DeviceAdminInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -20,63 +20,63 @@ namespace android::app::admin
 	}
 	jint DeviceAdminInfo::USES_ENCRYPTED_STORAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminInfo",
 			"USES_ENCRYPTED_STORAGE"
 		);
 	}
 	jint DeviceAdminInfo::USES_POLICY_DISABLE_CAMERA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminInfo",
 			"USES_POLICY_DISABLE_CAMERA"
 		);
 	}
 	jint DeviceAdminInfo::USES_POLICY_DISABLE_KEYGUARD_FEATURES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminInfo",
 			"USES_POLICY_DISABLE_KEYGUARD_FEATURES"
 		);
 	}
 	jint DeviceAdminInfo::USES_POLICY_EXPIRE_PASSWORD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminInfo",
 			"USES_POLICY_EXPIRE_PASSWORD"
 		);
 	}
 	jint DeviceAdminInfo::USES_POLICY_FORCE_LOCK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminInfo",
 			"USES_POLICY_FORCE_LOCK"
 		);
 	}
 	jint DeviceAdminInfo::USES_POLICY_LIMIT_PASSWORD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminInfo",
 			"USES_POLICY_LIMIT_PASSWORD"
 		);
 	}
 	jint DeviceAdminInfo::USES_POLICY_RESET_PASSWORD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminInfo",
 			"USES_POLICY_RESET_PASSWORD"
 		);
 	}
 	jint DeviceAdminInfo::USES_POLICY_WATCH_LOGIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminInfo",
 			"USES_POLICY_WATCH_LOGIN"
 		);
 	}
 	jint DeviceAdminInfo::USES_POLICY_WIPE_DATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminInfo",
 			"USES_POLICY_WIPE_DATA"
 		);

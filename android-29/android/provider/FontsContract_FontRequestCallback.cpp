@@ -6,42 +6,42 @@ namespace android::provider
 	// Fields
 	jint FontsContract_FontRequestCallback::FAIL_REASON_FONT_LOAD_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
 			"FAIL_REASON_FONT_LOAD_ERROR"
 		);
 	}
 	jint FontsContract_FontRequestCallback::FAIL_REASON_FONT_NOT_FOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
 			"FAIL_REASON_FONT_NOT_FOUND"
 		);
 	}
 	jint FontsContract_FontRequestCallback::FAIL_REASON_FONT_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
 			"FAIL_REASON_FONT_UNAVAILABLE"
 		);
 	}
 	jint FontsContract_FontRequestCallback::FAIL_REASON_MALFORMED_QUERY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
 			"FAIL_REASON_MALFORMED_QUERY"
 		);
 	}
 	jint FontsContract_FontRequestCallback::FAIL_REASON_PROVIDER_NOT_FOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
 			"FAIL_REASON_PROVIDER_NOT_FOUND"
 		);
 	}
 	jint FontsContract_FontRequestCallback::FAIL_REASON_WRONG_CERTIFICATES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
 			"FAIL_REASON_WRONG_CERTIFICATES"
 		);

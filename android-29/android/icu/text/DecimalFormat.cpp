@@ -19,28 +19,28 @@ namespace android::icu::text
 	// Fields
 	jint DecimalFormat::PAD_AFTER_PREFIX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DecimalFormat",
 			"PAD_AFTER_PREFIX"
 		);
 	}
 	jint DecimalFormat::PAD_AFTER_SUFFIX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DecimalFormat",
 			"PAD_AFTER_SUFFIX"
 		);
 	}
 	jint DecimalFormat::PAD_BEFORE_PREFIX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DecimalFormat",
 			"PAD_BEFORE_PREFIX"
 		);
 	}
 	jint DecimalFormat::PAD_BEFORE_SUFFIX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DecimalFormat",
 			"PAD_BEFORE_SUFFIX"
 		);

@@ -17,7 +17,7 @@ namespace android::provider
 	// Methods
 	jstring MediaStore_Audio::keyFor(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio",
 			"keyFor",
 			"(Ljava/lang/String;)Ljava/lang/String;",

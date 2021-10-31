@@ -19,7 +19,7 @@ namespace java::time::chrono
 	// Methods
 	java::time::chrono::HijrahDate HijrahDate::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/HijrahDate;",
@@ -28,7 +28,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::HijrahDate HijrahDate::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
 			"now",
 			"()Ljava/time/chrono/HijrahDate;"
@@ -36,7 +36,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::HijrahDate HijrahDate::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/chrono/HijrahDate;",
@@ -45,7 +45,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::HijrahDate HijrahDate::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/chrono/HijrahDate;",
@@ -54,7 +54,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::HijrahDate HijrahDate::of(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
 			"of",
 			"(III)Ljava/time/chrono/HijrahDate;",

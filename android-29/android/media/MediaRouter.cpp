@@ -10,35 +10,35 @@ namespace android::media
 	// Fields
 	jint MediaRouter::CALLBACK_FLAG_PERFORM_ACTIVE_SCAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter",
 			"CALLBACK_FLAG_PERFORM_ACTIVE_SCAN"
 		);
 	}
 	jint MediaRouter::CALLBACK_FLAG_UNFILTERED_EVENTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter",
 			"CALLBACK_FLAG_UNFILTERED_EVENTS"
 		);
 	}
 	jint MediaRouter::ROUTE_TYPE_LIVE_AUDIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter",
 			"ROUTE_TYPE_LIVE_AUDIO"
 		);
 	}
 	jint MediaRouter::ROUTE_TYPE_LIVE_VIDEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter",
 			"ROUTE_TYPE_LIVE_VIDEO"
 		);
 	}
 	jint MediaRouter::ROUTE_TYPE_USER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter",
 			"ROUTE_TYPE_USER"
 		);

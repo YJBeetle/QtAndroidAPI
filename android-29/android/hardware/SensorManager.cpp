@@ -12,406 +12,406 @@ namespace android::hardware
 	// Fields
 	jint SensorManager::AXIS_MINUS_X()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"AXIS_MINUS_X"
 		);
 	}
 	jint SensorManager::AXIS_MINUS_Y()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"AXIS_MINUS_Y"
 		);
 	}
 	jint SensorManager::AXIS_MINUS_Z()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"AXIS_MINUS_Z"
 		);
 	}
 	jint SensorManager::AXIS_X()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"AXIS_X"
 		);
 	}
 	jint SensorManager::AXIS_Y()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"AXIS_Y"
 		);
 	}
 	jint SensorManager::AXIS_Z()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"AXIS_Z"
 		);
 	}
 	jint SensorManager::DATA_X()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"DATA_X"
 		);
 	}
 	jint SensorManager::DATA_Y()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"DATA_Y"
 		);
 	}
 	jint SensorManager::DATA_Z()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"DATA_Z"
 		);
 	}
 	jfloat SensorManager::GRAVITY_DEATH_STAR_I()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_DEATH_STAR_I"
 		);
 	}
 	jfloat SensorManager::GRAVITY_EARTH()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_EARTH"
 		);
 	}
 	jfloat SensorManager::GRAVITY_JUPITER()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_JUPITER"
 		);
 	}
 	jfloat SensorManager::GRAVITY_MARS()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_MARS"
 		);
 	}
 	jfloat SensorManager::GRAVITY_MERCURY()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_MERCURY"
 		);
 	}
 	jfloat SensorManager::GRAVITY_MOON()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_MOON"
 		);
 	}
 	jfloat SensorManager::GRAVITY_NEPTUNE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_NEPTUNE"
 		);
 	}
 	jfloat SensorManager::GRAVITY_PLUTO()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_PLUTO"
 		);
 	}
 	jfloat SensorManager::GRAVITY_SATURN()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_SATURN"
 		);
 	}
 	jfloat SensorManager::GRAVITY_SUN()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_SUN"
 		);
 	}
 	jfloat SensorManager::GRAVITY_THE_ISLAND()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_THE_ISLAND"
 		);
 	}
 	jfloat SensorManager::GRAVITY_URANUS()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_URANUS"
 		);
 	}
 	jfloat SensorManager::GRAVITY_VENUS()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"GRAVITY_VENUS"
 		);
 	}
 	jfloat SensorManager::LIGHT_CLOUDY()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"LIGHT_CLOUDY"
 		);
 	}
 	jfloat SensorManager::LIGHT_FULLMOON()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"LIGHT_FULLMOON"
 		);
 	}
 	jfloat SensorManager::LIGHT_NO_MOON()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"LIGHT_NO_MOON"
 		);
 	}
 	jfloat SensorManager::LIGHT_OVERCAST()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"LIGHT_OVERCAST"
 		);
 	}
 	jfloat SensorManager::LIGHT_SHADE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"LIGHT_SHADE"
 		);
 	}
 	jfloat SensorManager::LIGHT_SUNLIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"LIGHT_SUNLIGHT"
 		);
 	}
 	jfloat SensorManager::LIGHT_SUNLIGHT_MAX()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"LIGHT_SUNLIGHT_MAX"
 		);
 	}
 	jfloat SensorManager::LIGHT_SUNRISE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"LIGHT_SUNRISE"
 		);
 	}
 	jfloat SensorManager::MAGNETIC_FIELD_EARTH_MAX()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"MAGNETIC_FIELD_EARTH_MAX"
 		);
 	}
 	jfloat SensorManager::MAGNETIC_FIELD_EARTH_MIN()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"MAGNETIC_FIELD_EARTH_MIN"
 		);
 	}
 	jfloat SensorManager::PRESSURE_STANDARD_ATMOSPHERE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"PRESSURE_STANDARD_ATMOSPHERE"
 		);
 	}
 	jint SensorManager::RAW_DATA_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"RAW_DATA_INDEX"
 		);
 	}
 	jint SensorManager::RAW_DATA_X()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"RAW_DATA_X"
 		);
 	}
 	jint SensorManager::RAW_DATA_Y()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"RAW_DATA_Y"
 		);
 	}
 	jint SensorManager::RAW_DATA_Z()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"RAW_DATA_Z"
 		);
 	}
 	jint SensorManager::SENSOR_ACCELEROMETER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_ACCELEROMETER"
 		);
 	}
 	jint SensorManager::SENSOR_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_ALL"
 		);
 	}
 	jint SensorManager::SENSOR_DELAY_FASTEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_DELAY_FASTEST"
 		);
 	}
 	jint SensorManager::SENSOR_DELAY_GAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_DELAY_GAME"
 		);
 	}
 	jint SensorManager::SENSOR_DELAY_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_DELAY_NORMAL"
 		);
 	}
 	jint SensorManager::SENSOR_DELAY_UI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_DELAY_UI"
 		);
 	}
 	jint SensorManager::SENSOR_LIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_LIGHT"
 		);
 	}
 	jint SensorManager::SENSOR_MAGNETIC_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_MAGNETIC_FIELD"
 		);
 	}
 	jint SensorManager::SENSOR_MAX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_MAX"
 		);
 	}
 	jint SensorManager::SENSOR_MIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_MIN"
 		);
 	}
 	jint SensorManager::SENSOR_ORIENTATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_ORIENTATION"
 		);
 	}
 	jint SensorManager::SENSOR_ORIENTATION_RAW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_ORIENTATION_RAW"
 		);
 	}
 	jint SensorManager::SENSOR_PROXIMITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_PROXIMITY"
 		);
 	}
 	jint SensorManager::SENSOR_STATUS_ACCURACY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_STATUS_ACCURACY_HIGH"
 		);
 	}
 	jint SensorManager::SENSOR_STATUS_ACCURACY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_STATUS_ACCURACY_LOW"
 		);
 	}
 	jint SensorManager::SENSOR_STATUS_ACCURACY_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_STATUS_ACCURACY_MEDIUM"
 		);
 	}
 	jint SensorManager::SENSOR_STATUS_NO_CONTACT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_STATUS_NO_CONTACT"
 		);
 	}
 	jint SensorManager::SENSOR_STATUS_UNRELIABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_STATUS_UNRELIABLE"
 		);
 	}
 	jint SensorManager::SENSOR_TEMPERATURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_TEMPERATURE"
 		);
 	}
 	jint SensorManager::SENSOR_TRICORDER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorManager",
 			"SENSOR_TRICORDER"
 		);
 	}
 	jfloat SensorManager::STANDARD_GRAVITY()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.SensorManager",
 			"STANDARD_GRAVITY"
 		);
@@ -425,7 +425,7 @@ namespace android::hardware
 	// Methods
 	jfloat SensorManager::getAltitude(jfloat arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.hardware.SensorManager",
 			"getAltitude",
 			"(FF)F",
@@ -435,7 +435,7 @@ namespace android::hardware
 	}
 	void SensorManager::getAngleChange(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.hardware.SensorManager",
 			"getAngleChange",
 			"([F[F[F)V",
@@ -446,7 +446,7 @@ namespace android::hardware
 	}
 	jfloat SensorManager::getInclination(jfloatArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.hardware.SensorManager",
 			"getInclination",
 			"([F)F",
@@ -455,7 +455,7 @@ namespace android::hardware
 	}
 	jfloatArray SensorManager::getOrientation(jfloatArray arg0, jfloatArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.hardware.SensorManager",
 			"getOrientation",
 			"([F[F)[F",
@@ -465,7 +465,7 @@ namespace android::hardware
 	}
 	void SensorManager::getQuaternionFromVector(jfloatArray arg0, jfloatArray arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.hardware.SensorManager",
 			"getQuaternionFromVector",
 			"([F[F)V",
@@ -475,7 +475,7 @@ namespace android::hardware
 	}
 	jboolean SensorManager::getRotationMatrix(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2, jfloatArray arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.hardware.SensorManager",
 			"getRotationMatrix",
 			"([F[F[F[F)Z",
@@ -487,7 +487,7 @@ namespace android::hardware
 	}
 	void SensorManager::getRotationMatrixFromVector(jfloatArray arg0, jfloatArray arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.hardware.SensorManager",
 			"getRotationMatrixFromVector",
 			"([F[F)V",
@@ -497,7 +497,7 @@ namespace android::hardware
 	}
 	jboolean SensorManager::remapCoordinateSystem(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.hardware.SensorManager",
 			"remapCoordinateSystem",
 			"([FII[F)Z",

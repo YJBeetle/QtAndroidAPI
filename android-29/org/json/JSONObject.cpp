@@ -8,7 +8,7 @@ namespace org::json
 	// Fields
 	jobject JSONObject::_NULL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"org.json.JSONObject",
 			"NULL",
 			"Ljava/lang/Object;"
@@ -53,7 +53,7 @@ namespace org::json
 	// Methods
 	jstring JSONObject::numberToString(java::lang::Number arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"org.json.JSONObject",
 			"numberToString",
 			"(Ljava/lang/Number;)Ljava/lang/String;",
@@ -62,7 +62,7 @@ namespace org::json
 	}
 	jstring JSONObject::quote(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"org.json.JSONObject",
 			"quote",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -71,7 +71,7 @@ namespace org::json
 	}
 	jobject JSONObject::wrap(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"org.json.JSONObject",
 			"wrap",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",

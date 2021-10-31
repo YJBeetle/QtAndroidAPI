@@ -17,7 +17,7 @@ namespace java::lang::invoke
 	// Methods
 	java::lang::invoke::MethodType MethodType::fromMethodDescriptorString(jstring arg0, java::lang::ClassLoader arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"fromMethodDescriptorString",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/invoke/MethodType;",
@@ -27,7 +27,7 @@ namespace java::lang::invoke
 	}
 	java::lang::invoke::MethodType MethodType::genericMethodType(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"genericMethodType",
 			"(I)Ljava/lang/invoke/MethodType;",
@@ -36,7 +36,7 @@ namespace java::lang::invoke
 	}
 	java::lang::invoke::MethodType MethodType::genericMethodType(jint arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"genericMethodType",
 			"(IZ)Ljava/lang/invoke/MethodType;",
@@ -46,7 +46,7 @@ namespace java::lang::invoke
 	}
 	java::lang::invoke::MethodType MethodType::methodType(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
@@ -55,7 +55,7 @@ namespace java::lang::invoke
 	}
 	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
@@ -65,7 +65,7 @@ namespace java::lang::invoke
 	}
 	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, jclass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
@@ -75,7 +75,7 @@ namespace java::lang::invoke
 	}
 	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, java::lang::invoke::MethodType arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodType;",
@@ -85,7 +85,7 @@ namespace java::lang::invoke
 	}
 	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;Ljava/util/List;)Ljava/lang/invoke/MethodType;",
@@ -95,7 +95,7 @@ namespace java::lang::invoke
 	}
 	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, jclass arg1, jarray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
 			"methodType",
 			"(Ljava/lang/Class;Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",

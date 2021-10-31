@@ -9,35 +9,35 @@ namespace android::widget
 	// Fields
 	jint ExpandableListView::CHILD_INDICATOR_INHERIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ExpandableListView",
 			"CHILD_INDICATOR_INHERIT"
 		);
 	}
 	jint ExpandableListView::PACKED_POSITION_TYPE_CHILD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ExpandableListView",
 			"PACKED_POSITION_TYPE_CHILD"
 		);
 	}
 	jint ExpandableListView::PACKED_POSITION_TYPE_GROUP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ExpandableListView",
 			"PACKED_POSITION_TYPE_GROUP"
 		);
 	}
 	jint ExpandableListView::PACKED_POSITION_TYPE_NULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ExpandableListView",
 			"PACKED_POSITION_TYPE_NULL"
 		);
 	}
 	jlong ExpandableListView::PACKED_POSITION_VALUE_NULL()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.widget.ExpandableListView",
 			"PACKED_POSITION_VALUE_NULL"
 		);
@@ -81,7 +81,7 @@ namespace android::widget
 	// Methods
 	jint ExpandableListView::getPackedPositionChild(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.widget.ExpandableListView",
 			"getPackedPositionChild",
 			"(J)I",
@@ -90,7 +90,7 @@ namespace android::widget
 	}
 	jlong ExpandableListView::getPackedPositionForChild(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.widget.ExpandableListView",
 			"getPackedPositionForChild",
 			"(II)J",
@@ -100,7 +100,7 @@ namespace android::widget
 	}
 	jlong ExpandableListView::getPackedPositionForGroup(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.widget.ExpandableListView",
 			"getPackedPositionForGroup",
 			"(I)J",
@@ -109,7 +109,7 @@ namespace android::widget
 	}
 	jint ExpandableListView::getPackedPositionGroup(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.widget.ExpandableListView",
 			"getPackedPositionGroup",
 			"(J)I",
@@ -118,7 +118,7 @@ namespace android::widget
 	}
 	jint ExpandableListView::getPackedPositionType(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.widget.ExpandableListView",
 			"getPackedPositionType",
 			"(J)I",

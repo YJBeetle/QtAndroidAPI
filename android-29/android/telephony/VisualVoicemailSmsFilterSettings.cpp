@@ -7,7 +7,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass VisualVoicemailSmsFilterSettings::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.VisualVoicemailSmsFilterSettings",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,14 +15,14 @@ namespace android::telephony
 	}
 	jint VisualVoicemailSmsFilterSettings::DESTINATION_PORT_ANY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.VisualVoicemailSmsFilterSettings",
 			"DESTINATION_PORT_ANY"
 		);
 	}
 	jint VisualVoicemailSmsFilterSettings::DESTINATION_PORT_DATA_SMS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.VisualVoicemailSmsFilterSettings",
 			"DESTINATION_PORT_DATA_SMS"
 		);

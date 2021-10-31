@@ -6,70 +6,70 @@ namespace android::media::audiofx
 	// Fields
 	jint EnvironmentalReverb::PARAM_DECAY_HF_RATIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.EnvironmentalReverb",
 			"PARAM_DECAY_HF_RATIO"
 		);
 	}
 	jint EnvironmentalReverb::PARAM_DECAY_TIME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.EnvironmentalReverb",
 			"PARAM_DECAY_TIME"
 		);
 	}
 	jint EnvironmentalReverb::PARAM_DENSITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.EnvironmentalReverb",
 			"PARAM_DENSITY"
 		);
 	}
 	jint EnvironmentalReverb::PARAM_DIFFUSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.EnvironmentalReverb",
 			"PARAM_DIFFUSION"
 		);
 	}
 	jint EnvironmentalReverb::PARAM_REFLECTIONS_DELAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.EnvironmentalReverb",
 			"PARAM_REFLECTIONS_DELAY"
 		);
 	}
 	jint EnvironmentalReverb::PARAM_REFLECTIONS_LEVEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.EnvironmentalReverb",
 			"PARAM_REFLECTIONS_LEVEL"
 		);
 	}
 	jint EnvironmentalReverb::PARAM_REVERB_DELAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.EnvironmentalReverb",
 			"PARAM_REVERB_DELAY"
 		);
 	}
 	jint EnvironmentalReverb::PARAM_REVERB_LEVEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.EnvironmentalReverb",
 			"PARAM_REVERB_LEVEL"
 		);
 	}
 	jint EnvironmentalReverb::PARAM_ROOM_HF_LEVEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.EnvironmentalReverb",
 			"PARAM_ROOM_HF_LEVEL"
 		);
 	}
 	jint EnvironmentalReverb::PARAM_ROOM_LEVEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.EnvironmentalReverb",
 			"PARAM_ROOM_LEVEL"
 		);

@@ -5,35 +5,35 @@ namespace android::app::admin
 	// Fields
 	jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_BATTERY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
 			"UPDATE_ERROR_BATTERY_LOW"
 		);
 	}
 	jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_FILE_NOT_FOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
 			"UPDATE_ERROR_FILE_NOT_FOUND"
 		);
 	}
 	jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_INCORRECT_OS_VERSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
 			"UPDATE_ERROR_INCORRECT_OS_VERSION"
 		);
 	}
 	jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
 			"UPDATE_ERROR_UNKNOWN"
 		);
 	}
 	jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_UPDATE_FILE_INVALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
 			"UPDATE_ERROR_UPDATE_FILE_INVALID"
 		);

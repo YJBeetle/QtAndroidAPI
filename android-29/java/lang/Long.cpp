@@ -8,35 +8,35 @@ namespace java::lang
 	// Fields
 	jint Long::BYTES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Long",
 			"BYTES"
 		);
 	}
 	jlong Long::MAX_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"java.lang.Long",
 			"MAX_VALUE"
 		);
 	}
 	jlong Long::MIN_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"java.lang.Long",
 			"MIN_VALUE"
 		);
 	}
 	jint Long::SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Long",
 			"SIZE"
 		);
 	}
 	jclass Long::TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.Long",
 			"TYPE",
 			"Ljava/lang/Class;"
@@ -63,7 +63,7 @@ namespace java::lang
 	// Methods
 	jint Long::bitCount(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Long",
 			"bitCount",
 			"(J)I",
@@ -72,7 +72,7 @@ namespace java::lang
 	}
 	jint Long::compare(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Long",
 			"compare",
 			"(JJ)I",
@@ -82,7 +82,7 @@ namespace java::lang
 	}
 	jint Long::compareUnsigned(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Long",
 			"compareUnsigned",
 			"(JJ)I",
@@ -92,7 +92,7 @@ namespace java::lang
 	}
 	java::lang::Long Long::decode(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/Long;",
@@ -101,7 +101,7 @@ namespace java::lang
 	}
 	jlong Long::divideUnsigned(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"divideUnsigned",
 			"(JJ)J",
@@ -111,7 +111,7 @@ namespace java::lang
 	}
 	java::lang::Long Long::getLong(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"getLong",
 			"(Ljava/lang/String;)Ljava/lang/Long;",
@@ -120,7 +120,7 @@ namespace java::lang
 	}
 	java::lang::Long Long::getLong(jstring arg0, java::lang::Long arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"getLong",
 			"(Ljava/lang/String;Ljava/lang/Long;)Ljava/lang/Long;",
@@ -130,7 +130,7 @@ namespace java::lang
 	}
 	java::lang::Long Long::getLong(jstring arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"getLong",
 			"(Ljava/lang/String;J)Ljava/lang/Long;",
@@ -140,7 +140,7 @@ namespace java::lang
 	}
 	jint Long::hashCode(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Long",
 			"hashCode",
 			"(J)I",
@@ -149,7 +149,7 @@ namespace java::lang
 	}
 	jlong Long::highestOneBit(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"highestOneBit",
 			"(J)J",
@@ -158,7 +158,7 @@ namespace java::lang
 	}
 	jlong Long::lowestOneBit(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"lowestOneBit",
 			"(J)J",
@@ -167,7 +167,7 @@ namespace java::lang
 	}
 	jlong Long::max(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"max",
 			"(JJ)J",
@@ -177,7 +177,7 @@ namespace java::lang
 	}
 	jlong Long::min(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"min",
 			"(JJ)J",
@@ -187,7 +187,7 @@ namespace java::lang
 	}
 	jint Long::numberOfLeadingZeros(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Long",
 			"numberOfLeadingZeros",
 			"(J)I",
@@ -196,7 +196,7 @@ namespace java::lang
 	}
 	jint Long::numberOfTrailingZeros(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Long",
 			"numberOfTrailingZeros",
 			"(J)I",
@@ -205,7 +205,7 @@ namespace java::lang
 	}
 	jlong Long::parseLong(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseLong",
 			"(Ljava/lang/String;)J",
@@ -214,7 +214,7 @@ namespace java::lang
 	}
 	jlong Long::parseLong(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseLong",
 			"(Ljava/lang/String;I)J",
@@ -224,7 +224,7 @@ namespace java::lang
 	}
 	jlong Long::parseLong(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseLong",
 			"(Ljava/lang/CharSequence;III)J",
@@ -236,7 +236,7 @@ namespace java::lang
 	}
 	jlong Long::parseUnsignedLong(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseUnsignedLong",
 			"(Ljava/lang/String;)J",
@@ -245,7 +245,7 @@ namespace java::lang
 	}
 	jlong Long::parseUnsignedLong(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseUnsignedLong",
 			"(Ljava/lang/String;I)J",
@@ -255,7 +255,7 @@ namespace java::lang
 	}
 	jlong Long::parseUnsignedLong(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"parseUnsignedLong",
 			"(Ljava/lang/CharSequence;III)J",
@@ -267,7 +267,7 @@ namespace java::lang
 	}
 	jlong Long::remainderUnsigned(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"remainderUnsigned",
 			"(JJ)J",
@@ -277,7 +277,7 @@ namespace java::lang
 	}
 	jlong Long::reverse(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"reverse",
 			"(J)J",
@@ -286,7 +286,7 @@ namespace java::lang
 	}
 	jlong Long::reverseBytes(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"reverseBytes",
 			"(J)J",
@@ -295,7 +295,7 @@ namespace java::lang
 	}
 	jlong Long::rotateLeft(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"rotateLeft",
 			"(JI)J",
@@ -305,7 +305,7 @@ namespace java::lang
 	}
 	jlong Long::rotateRight(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"rotateRight",
 			"(JI)J",
@@ -315,7 +315,7 @@ namespace java::lang
 	}
 	jint Long::signum(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Long",
 			"signum",
 			"(J)I",
@@ -324,7 +324,7 @@ namespace java::lang
 	}
 	jlong Long::sum(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"sum",
 			"(JJ)J",
@@ -334,7 +334,7 @@ namespace java::lang
 	}
 	jstring Long::toBinaryString(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toBinaryString",
 			"(J)Ljava/lang/String;",
@@ -343,7 +343,7 @@ namespace java::lang
 	}
 	jstring Long::toHexString(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toHexString",
 			"(J)Ljava/lang/String;",
@@ -352,7 +352,7 @@ namespace java::lang
 	}
 	jstring Long::toOctalString(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toOctalString",
 			"(J)Ljava/lang/String;",
@@ -361,7 +361,7 @@ namespace java::lang
 	}
 	jstring Long::toString(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toString",
 			"(J)Ljava/lang/String;",
@@ -370,7 +370,7 @@ namespace java::lang
 	}
 	jstring Long::toString(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toString",
 			"(JI)Ljava/lang/String;",
@@ -380,7 +380,7 @@ namespace java::lang
 	}
 	jstring Long::toUnsignedString(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toUnsignedString",
 			"(J)Ljava/lang/String;",
@@ -389,7 +389,7 @@ namespace java::lang
 	}
 	jstring Long::toUnsignedString(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"toUnsignedString",
 			"(JI)Ljava/lang/String;",
@@ -399,7 +399,7 @@ namespace java::lang
 	}
 	java::lang::Long Long::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Long;",
@@ -408,7 +408,7 @@ namespace java::lang
 	}
 	java::lang::Long Long::valueOf(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"valueOf",
 			"(J)Ljava/lang/Long;",
@@ -417,7 +417,7 @@ namespace java::lang
 	}
 	java::lang::Long Long::valueOf(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Long",
 			"valueOf",
 			"(Ljava/lang/String;I)Ljava/lang/Long;",

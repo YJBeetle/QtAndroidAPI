@@ -12,7 +12,7 @@ namespace android::view::autofill
 	// Fields
 	jstring AutofillManager::EXTRA_ASSIST_STRUCTURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.autofill.AutofillManager",
 			"EXTRA_ASSIST_STRUCTURE",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace android::view::autofill
 	}
 	jstring AutofillManager::EXTRA_AUTHENTICATION_RESULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.autofill.AutofillManager",
 			"EXTRA_AUTHENTICATION_RESULT",
 			"Ljava/lang/String;"
@@ -28,7 +28,7 @@ namespace android::view::autofill
 	}
 	jstring AutofillManager::EXTRA_CLIENT_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.autofill.AutofillManager",
 			"EXTRA_CLIENT_STATE",
 			"Ljava/lang/String;"

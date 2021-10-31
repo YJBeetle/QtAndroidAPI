@@ -11,259 +11,259 @@ namespace android::media
 	// Fields
 	jint MediaMetadataRetriever::METADATA_KEY_ALBUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_ALBUM"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_ALBUMARTIST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_ALBUMARTIST"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_ARTIST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_ARTIST"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_AUTHOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_AUTHOR"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_BITRATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_BITRATE"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_CAPTURE_FRAMERATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_CAPTURE_FRAMERATE"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_CD_TRACK_NUMBER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_CD_TRACK_NUMBER"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_COMPILATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_COMPILATION"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_COMPOSER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_COMPOSER"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_DATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_DATE"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_DISC_NUMBER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_DISC_NUMBER"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_DURATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_DURATION"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_EXIF_LENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_EXIF_LENGTH"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_EXIF_OFFSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_EXIF_OFFSET"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_GENRE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_GENRE"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_HAS_AUDIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_HAS_AUDIO"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_HAS_IMAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_HAS_IMAGE"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_HAS_VIDEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_HAS_VIDEO"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_IMAGE_COUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_IMAGE_COUNT"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_IMAGE_HEIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_IMAGE_HEIGHT"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_IMAGE_PRIMARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_IMAGE_PRIMARY"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_IMAGE_ROTATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_IMAGE_ROTATION"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_IMAGE_WIDTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_IMAGE_WIDTH"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_LOCATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_LOCATION"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_MIMETYPE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_MIMETYPE"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_NUM_TRACKS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_NUM_TRACKS"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_TITLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_TITLE"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_VIDEO_FRAME_COUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_VIDEO_FRAME_COUNT"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_VIDEO_HEIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_VIDEO_HEIGHT"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_VIDEO_ROTATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_VIDEO_ROTATION"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_VIDEO_WIDTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_VIDEO_WIDTH"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_WRITER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_WRITER"
 		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_YEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"METADATA_KEY_YEAR"
 		);
 	}
 	jint MediaMetadataRetriever::OPTION_CLOSEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"OPTION_CLOSEST"
 		);
 	}
 	jint MediaMetadataRetriever::OPTION_CLOSEST_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"OPTION_CLOSEST_SYNC"
 		);
 	}
 	jint MediaMetadataRetriever::OPTION_NEXT_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"OPTION_NEXT_SYNC"
 		);
 	}
 	jint MediaMetadataRetriever::OPTION_PREVIOUS_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
 			"OPTION_PREVIOUS_SYNC"
 		);

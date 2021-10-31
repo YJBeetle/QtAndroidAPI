@@ -5,7 +5,7 @@ namespace java::text
 	// Fields
 	java::text::Normalizer_Form Normalizer_Form::NFC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.text.Normalizer$Form",
 			"NFC",
 			"Ljava/text/Normalizer$Form;"
@@ -13,7 +13,7 @@ namespace java::text
 	}
 	java::text::Normalizer_Form Normalizer_Form::NFD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.text.Normalizer$Form",
 			"NFD",
 			"Ljava/text/Normalizer$Form;"
@@ -21,7 +21,7 @@ namespace java::text
 	}
 	java::text::Normalizer_Form Normalizer_Form::NFKC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.text.Normalizer$Form",
 			"NFKC",
 			"Ljava/text/Normalizer$Form;"
@@ -29,7 +29,7 @@ namespace java::text
 	}
 	java::text::Normalizer_Form Normalizer_Form::NFKD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.text.Normalizer$Form",
 			"NFKD",
 			"Ljava/text/Normalizer$Form;"
@@ -44,7 +44,7 @@ namespace java::text
 	// Methods
 	java::text::Normalizer_Form Normalizer_Form::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.Normalizer$Form",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/text/Normalizer$Form;",
@@ -53,7 +53,7 @@ namespace java::text
 	}
 	jarray Normalizer_Form::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.Normalizer$Form",
 			"values",
 			"()[Ljava/text/Normalizer$Form;"

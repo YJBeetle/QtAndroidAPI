@@ -6,7 +6,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass TextClassifier_EntityConfig::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -21,7 +21,7 @@ namespace android::view::textclassifier
 	// Methods
 	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::create(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
 			"create",
 			"(Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;)Landroid/view/textclassifier/TextClassifier$EntityConfig;",
@@ -32,7 +32,7 @@ namespace android::view::textclassifier
 	}
 	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::createWithExplicitEntityList(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
 			"createWithExplicitEntityList",
 			"(Ljava/util/Collection;)Landroid/view/textclassifier/TextClassifier$EntityConfig;",
@@ -41,7 +41,7 @@ namespace android::view::textclassifier
 	}
 	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::createWithHints(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
 			"createWithHints",
 			"(Ljava/util/Collection;)Landroid/view/textclassifier/TextClassifier$EntityConfig;",

@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring Settings_NameValueTable::NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$NameValueTable",
 			"NAME",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	jstring Settings_NameValueTable::VALUE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$NameValueTable",
 			"VALUE",
 			"Ljava/lang/String;"
@@ -35,7 +35,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri Settings_NameValueTable::getUriFor(android::net::Uri arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Settings$NameValueTable",
 			"getUriFor",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",

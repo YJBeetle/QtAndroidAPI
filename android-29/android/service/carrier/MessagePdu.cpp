@@ -6,7 +6,7 @@ namespace android::service::carrier
 	// Fields
 	__JniBaseClass MessagePdu::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.carrier.MessagePdu",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

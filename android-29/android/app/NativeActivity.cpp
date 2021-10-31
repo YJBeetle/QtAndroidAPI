@@ -8,7 +8,7 @@ namespace android::app
 	// Fields
 	jstring NativeActivity::META_DATA_FUNC_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NativeActivity",
 			"META_DATA_FUNC_NAME",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::app
 	}
 	jstring NativeActivity::META_DATA_LIB_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NativeActivity",
 			"META_DATA_LIB_NAME",
 			"Ljava/lang/String;"

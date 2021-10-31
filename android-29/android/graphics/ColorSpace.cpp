@@ -11,7 +11,7 @@ namespace android::graphics
 	// Fields
 	jfloatArray ColorSpace::ILLUMINANT_A()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_A",
 			"[F"
@@ -19,7 +19,7 @@ namespace android::graphics
 	}
 	jfloatArray ColorSpace::ILLUMINANT_B()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_B",
 			"[F"
@@ -27,7 +27,7 @@ namespace android::graphics
 	}
 	jfloatArray ColorSpace::ILLUMINANT_C()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_C",
 			"[F"
@@ -35,7 +35,7 @@ namespace android::graphics
 	}
 	jfloatArray ColorSpace::ILLUMINANT_D50()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_D50",
 			"[F"
@@ -43,7 +43,7 @@ namespace android::graphics
 	}
 	jfloatArray ColorSpace::ILLUMINANT_D55()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_D55",
 			"[F"
@@ -51,7 +51,7 @@ namespace android::graphics
 	}
 	jfloatArray ColorSpace::ILLUMINANT_D60()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_D60",
 			"[F"
@@ -59,7 +59,7 @@ namespace android::graphics
 	}
 	jfloatArray ColorSpace::ILLUMINANT_D65()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_D65",
 			"[F"
@@ -67,7 +67,7 @@ namespace android::graphics
 	}
 	jfloatArray ColorSpace::ILLUMINANT_D75()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_D75",
 			"[F"
@@ -75,7 +75,7 @@ namespace android::graphics
 	}
 	jfloatArray ColorSpace::ILLUMINANT_E()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace",
 			"ILLUMINANT_E",
 			"[F"
@@ -83,14 +83,14 @@ namespace android::graphics
 	}
 	jint ColorSpace::MAX_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ColorSpace",
 			"MAX_ID"
 		);
 	}
 	jint ColorSpace::MIN_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ColorSpace",
 			"MIN_ID"
 		);
@@ -104,7 +104,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::ColorSpace ColorSpace::adapt(android::graphics::ColorSpace arg0, jfloatArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"adapt",
 			"(Landroid/graphics/ColorSpace;[F)Landroid/graphics/ColorSpace;",
@@ -114,7 +114,7 @@ namespace android::graphics
 	}
 	android::graphics::ColorSpace ColorSpace::adapt(android::graphics::ColorSpace arg0, jfloatArray arg1, android::graphics::ColorSpace_Adaptation arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"adapt",
 			"(Landroid/graphics/ColorSpace;[FLandroid/graphics/ColorSpace$Adaptation;)Landroid/graphics/ColorSpace;",
@@ -125,7 +125,7 @@ namespace android::graphics
 	}
 	android::graphics::ColorSpace_Connector ColorSpace::connect(android::graphics::ColorSpace arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"connect",
 			"(Landroid/graphics/ColorSpace;)Landroid/graphics/ColorSpace$Connector;",
@@ -134,7 +134,7 @@ namespace android::graphics
 	}
 	android::graphics::ColorSpace_Connector ColorSpace::connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"connect",
 			"(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;)Landroid/graphics/ColorSpace$Connector;",
@@ -144,7 +144,7 @@ namespace android::graphics
 	}
 	android::graphics::ColorSpace_Connector ColorSpace::connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace_RenderIntent arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"connect",
 			"(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace$RenderIntent;)Landroid/graphics/ColorSpace$Connector;",
@@ -154,7 +154,7 @@ namespace android::graphics
 	}
 	android::graphics::ColorSpace_Connector ColorSpace::connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1, android::graphics::ColorSpace_RenderIntent arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"connect",
 			"(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace$RenderIntent;)Landroid/graphics/ColorSpace$Connector;",
@@ -165,7 +165,7 @@ namespace android::graphics
 	}
 	android::graphics::ColorSpace ColorSpace::get(android::graphics::ColorSpace_Named arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"get",
 			"(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;",
@@ -174,7 +174,7 @@ namespace android::graphics
 	}
 	android::graphics::ColorSpace ColorSpace::match(jfloatArray arg0, android::graphics::ColorSpace_Rgb_TransferParameters arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ColorSpace",
 			"match",
 			"([FLandroid/graphics/ColorSpace$Rgb$TransferParameters;)Landroid/graphics/ColorSpace;",

@@ -6,7 +6,7 @@ namespace android::view::inputmethod
 	// Fields
 	__JniBaseClass CorrectionInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.inputmethod.CorrectionInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

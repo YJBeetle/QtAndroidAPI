@@ -6,7 +6,7 @@ namespace android::print
 	// Fields
 	android::print::PageRange PageRange::ALL_PAGES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.print.PageRange",
 			"ALL_PAGES",
 			"Landroid/print/PageRange;"
@@ -14,7 +14,7 @@ namespace android::print
 	}
 	__JniBaseClass PageRange::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.print.PageRange",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

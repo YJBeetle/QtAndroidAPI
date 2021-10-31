@@ -14,7 +14,7 @@ namespace android::renderscript
 	// Methods
 	android::renderscript::Type Type::createX(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Type",
 			"createX",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;I)Landroid/renderscript/Type;",
@@ -25,7 +25,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Type Type::createXY(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Type",
 			"createXY",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;II)Landroid/renderscript/Type;",
@@ -37,7 +37,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Type Type::createXYZ(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Type",
 			"createXYZ",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;III)Landroid/renderscript/Type;",

@@ -12,7 +12,7 @@ namespace android::telephony
 	// Fields
 	jstring MbmsDownloadSession::DEFAULT_TOP_LEVEL_TEMP_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.MbmsDownloadSession",
 			"DEFAULT_TOP_LEVEL_TEMP_DIRECTORY",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace android::telephony
 	}
 	jstring MbmsDownloadSession::EXTRA_MBMS_COMPLETED_FILE_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.MbmsDownloadSession",
 			"EXTRA_MBMS_COMPLETED_FILE_URI",
 			"Ljava/lang/String;"
@@ -28,7 +28,7 @@ namespace android::telephony
 	}
 	jstring MbmsDownloadSession::EXTRA_MBMS_DOWNLOAD_REQUEST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.MbmsDownloadSession",
 			"EXTRA_MBMS_DOWNLOAD_REQUEST",
 			"Ljava/lang/String;"
@@ -36,7 +36,7 @@ namespace android::telephony
 	}
 	jstring MbmsDownloadSession::EXTRA_MBMS_DOWNLOAD_RESULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.MbmsDownloadSession",
 			"EXTRA_MBMS_DOWNLOAD_RESULT",
 			"Ljava/lang/String;"
@@ -44,7 +44,7 @@ namespace android::telephony
 	}
 	jstring MbmsDownloadSession::EXTRA_MBMS_FILE_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.MbmsDownloadSession",
 			"EXTRA_MBMS_FILE_INFO",
 			"Ljava/lang/String;"
@@ -52,91 +52,91 @@ namespace android::telephony
 	}
 	jint MbmsDownloadSession::RESULT_CANCELLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"RESULT_CANCELLED"
 		);
 	}
 	jint MbmsDownloadSession::RESULT_DOWNLOAD_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"RESULT_DOWNLOAD_FAILURE"
 		);
 	}
 	jint MbmsDownloadSession::RESULT_EXPIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"RESULT_EXPIRED"
 		);
 	}
 	jint MbmsDownloadSession::RESULT_FILE_ROOT_UNREACHABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"RESULT_FILE_ROOT_UNREACHABLE"
 		);
 	}
 	jint MbmsDownloadSession::RESULT_IO_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"RESULT_IO_ERROR"
 		);
 	}
 	jint MbmsDownloadSession::RESULT_OUT_OF_STORAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"RESULT_OUT_OF_STORAGE"
 		);
 	}
 	jint MbmsDownloadSession::RESULT_SERVICE_ID_NOT_DEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"RESULT_SERVICE_ID_NOT_DEFINED"
 		);
 	}
 	jint MbmsDownloadSession::RESULT_SUCCESSFUL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"RESULT_SUCCESSFUL"
 		);
 	}
 	jint MbmsDownloadSession::STATUS_ACTIVELY_DOWNLOADING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"STATUS_ACTIVELY_DOWNLOADING"
 		);
 	}
 	jint MbmsDownloadSession::STATUS_PENDING_DOWNLOAD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"STATUS_PENDING_DOWNLOAD"
 		);
 	}
 	jint MbmsDownloadSession::STATUS_PENDING_DOWNLOAD_WINDOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"STATUS_PENDING_DOWNLOAD_WINDOW"
 		);
 	}
 	jint MbmsDownloadSession::STATUS_PENDING_REPAIR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"STATUS_PENDING_REPAIR"
 		);
 	}
 	jint MbmsDownloadSession::STATUS_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.MbmsDownloadSession",
 			"STATUS_UNKNOWN"
 		);
@@ -150,7 +150,7 @@ namespace android::telephony
 	// Methods
 	android::telephony::MbmsDownloadSession MbmsDownloadSession::create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.MbmsDownloadSession",
 			"create",
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/MbmsDownloadSessionCallback;)Landroid/telephony/MbmsDownloadSession;",
@@ -161,7 +161,7 @@ namespace android::telephony
 	}
 	android::telephony::MbmsDownloadSession MbmsDownloadSession::create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.MbmsDownloadSession",
 			"create",
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;ILandroid/telephony/mbms/MbmsDownloadSessionCallback;)Landroid/telephony/MbmsDownloadSession;",

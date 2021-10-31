@@ -8,7 +8,7 @@ namespace android::bluetooth::le
 	// Fields
 	__JniBaseClass ScanResult::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.le.ScanResult",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,42 +16,42 @@ namespace android::bluetooth::le
 	}
 	jint ScanResult::DATA_COMPLETE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanResult",
 			"DATA_COMPLETE"
 		);
 	}
 	jint ScanResult::DATA_TRUNCATED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanResult",
 			"DATA_TRUNCATED"
 		);
 	}
 	jint ScanResult::PERIODIC_INTERVAL_NOT_PRESENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanResult",
 			"PERIODIC_INTERVAL_NOT_PRESENT"
 		);
 	}
 	jint ScanResult::PHY_UNUSED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanResult",
 			"PHY_UNUSED"
 		);
 	}
 	jint ScanResult::SID_NOT_PRESENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanResult",
 			"SID_NOT_PRESENT"
 		);
 	}
 	jint ScanResult::TX_POWER_NOT_PRESENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanResult",
 			"TX_POWER_NOT_PRESENT"
 		);

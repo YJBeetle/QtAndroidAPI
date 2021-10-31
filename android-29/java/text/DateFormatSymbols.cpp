@@ -25,7 +25,7 @@ namespace java::text
 	// Methods
 	jarray DateFormatSymbols::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormatSymbols",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -33,7 +33,7 @@ namespace java::text
 	}
 	java::text::DateFormatSymbols DateFormatSymbols::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormatSymbols",
 			"getInstance",
 			"()Ljava/text/DateFormatSymbols;"
@@ -41,7 +41,7 @@ namespace java::text
 	}
 	java::text::DateFormatSymbols DateFormatSymbols::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormatSymbols",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/text/DateFormatSymbols;",

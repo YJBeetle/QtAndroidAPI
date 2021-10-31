@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::CompactDecimalFormat_CompactStyle CompactDecimalFormat_CompactStyle::LONG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.CompactDecimalFormat$CompactStyle",
 			"LONG",
 			"Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::CompactDecimalFormat_CompactStyle CompactDecimalFormat_CompactStyle::SHORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.CompactDecimalFormat$CompactStyle",
 			"SHORT",
 			"Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
@@ -28,7 +28,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::CompactDecimalFormat_CompactStyle CompactDecimalFormat_CompactStyle::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CompactDecimalFormat$CompactStyle",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/CompactDecimalFormat$CompactStyle;",
@@ -37,7 +37,7 @@ namespace android::icu::text
 	}
 	jarray CompactDecimalFormat_CompactStyle::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CompactDecimalFormat$CompactStyle",
 			"values",
 			"()[Landroid/icu/text/CompactDecimalFormat$CompactStyle;"

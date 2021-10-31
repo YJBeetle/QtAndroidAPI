@@ -7,7 +7,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass Intent_ShortcutIconResource::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent$ShortcutIconResource",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -41,7 +41,7 @@ namespace android::content
 	// Methods
 	android::content::Intent_ShortcutIconResource Intent_ShortcutIconResource::fromContext(android::content::Context arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent$ShortcutIconResource",
 			"fromContext",
 			"(Landroid/content/Context;I)Landroid/content/Intent$ShortcutIconResource;",

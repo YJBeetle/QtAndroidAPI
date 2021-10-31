@@ -15,7 +15,7 @@ namespace android::nfc::cardemulation
 	// Methods
 	android::nfc::cardemulation::NfcFCardEmulation NfcFCardEmulation::getInstance(android::nfc::NfcAdapter arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.cardemulation.NfcFCardEmulation",
 			"getInstance",
 			"(Landroid/nfc/NfcAdapter;)Landroid/nfc/cardemulation/NfcFCardEmulation;",

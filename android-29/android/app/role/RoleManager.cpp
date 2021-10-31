@@ -6,7 +6,7 @@ namespace android::app::role
 	// Fields
 	jstring RoleManager::ROLE_ASSISTANT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_ASSISTANT",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::app::role
 	}
 	jstring RoleManager::ROLE_BROWSER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_BROWSER",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::app::role
 	}
 	jstring RoleManager::ROLE_CALL_REDIRECTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_CALL_REDIRECTION",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::app::role
 	}
 	jstring RoleManager::ROLE_CALL_SCREENING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_CALL_SCREENING",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::app::role
 	}
 	jstring RoleManager::ROLE_DIALER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_DIALER",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::app::role
 	}
 	jstring RoleManager::ROLE_EMERGENCY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_EMERGENCY",
 			"Ljava/lang/String;"
@@ -54,7 +54,7 @@ namespace android::app::role
 	}
 	jstring RoleManager::ROLE_HOME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_HOME",
 			"Ljava/lang/String;"
@@ -62,7 +62,7 @@ namespace android::app::role
 	}
 	jstring RoleManager::ROLE_SMS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_SMS",
 			"Ljava/lang/String;"

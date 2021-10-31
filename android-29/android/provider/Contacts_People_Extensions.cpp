@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring Contacts_People_Extensions::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$People$Extensions",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::provider
 	}
 	jstring Contacts_People_Extensions::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$People$Extensions",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::provider
 	}
 	jstring Contacts_People_Extensions::PERSON_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$People$Extensions",
 			"PERSON_ID",
 			"Ljava/lang/String;"

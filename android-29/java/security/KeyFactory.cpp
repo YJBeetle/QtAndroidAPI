@@ -14,7 +14,7 @@ namespace java::security
 	// Methods
 	java::security::KeyFactory KeyFactory::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyFactory",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/KeyFactory;",
@@ -23,7 +23,7 @@ namespace java::security
 	}
 	java::security::KeyFactory KeyFactory::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyFactory;",
@@ -33,7 +33,7 @@ namespace java::security
 	}
 	java::security::KeyFactory KeyFactory::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyFactory;",

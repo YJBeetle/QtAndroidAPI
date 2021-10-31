@@ -5,21 +5,21 @@ namespace android::view::accessibility
 	// Fields
 	jint AccessibilityNodeInfo_RangeInfo::RANGE_TYPE_FLOAT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$RangeInfo",
 			"RANGE_TYPE_FLOAT"
 		);
 	}
 	jint AccessibilityNodeInfo_RangeInfo::RANGE_TYPE_INT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$RangeInfo",
 			"RANGE_TYPE_INT"
 		);
 	}
 	jint AccessibilityNodeInfo_RangeInfo::RANGE_TYPE_PERCENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$RangeInfo",
 			"RANGE_TYPE_PERCENT"
 		);
@@ -33,7 +33,7 @@ namespace android::view::accessibility
 	// Methods
 	android::view::accessibility::AccessibilityNodeInfo_RangeInfo AccessibilityNodeInfo_RangeInfo::obtain(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo$RangeInfo",
 			"obtain",
 			"(IFFF)Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;",

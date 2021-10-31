@@ -5,112 +5,112 @@ namespace android::app::usage
 	// Fields
 	jint NetworkStats_Bucket::DEFAULT_NETWORK_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"DEFAULT_NETWORK_ALL"
 		);
 	}
 	jint NetworkStats_Bucket::DEFAULT_NETWORK_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"DEFAULT_NETWORK_NO"
 		);
 	}
 	jint NetworkStats_Bucket::DEFAULT_NETWORK_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"DEFAULT_NETWORK_YES"
 		);
 	}
 	jint NetworkStats_Bucket::METERED_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"METERED_ALL"
 		);
 	}
 	jint NetworkStats_Bucket::METERED_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"METERED_NO"
 		);
 	}
 	jint NetworkStats_Bucket::METERED_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"METERED_YES"
 		);
 	}
 	jint NetworkStats_Bucket::ROAMING_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"ROAMING_ALL"
 		);
 	}
 	jint NetworkStats_Bucket::ROAMING_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"ROAMING_NO"
 		);
 	}
 	jint NetworkStats_Bucket::ROAMING_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"ROAMING_YES"
 		);
 	}
 	jint NetworkStats_Bucket::STATE_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"STATE_ALL"
 		);
 	}
 	jint NetworkStats_Bucket::STATE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"STATE_DEFAULT"
 		);
 	}
 	jint NetworkStats_Bucket::STATE_FOREGROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"STATE_FOREGROUND"
 		);
 	}
 	jint NetworkStats_Bucket::TAG_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"TAG_NONE"
 		);
 	}
 	jint NetworkStats_Bucket::UID_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"UID_ALL"
 		);
 	}
 	jint NetworkStats_Bucket::UID_REMOVED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"UID_REMOVED"
 		);
 	}
 	jint NetworkStats_Bucket::UID_TETHERING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
 			"UID_TETHERING"
 		);

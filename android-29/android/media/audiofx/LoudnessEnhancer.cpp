@@ -5,7 +5,7 @@ namespace android::media::audiofx
 	// Fields
 	jint LoudnessEnhancer::PARAM_TARGET_GAIN_MB()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.LoudnessEnhancer",
 			"PARAM_TARGET_GAIN_MB"
 		);

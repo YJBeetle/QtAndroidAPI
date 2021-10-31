@@ -11,7 +11,7 @@ namespace android::content::res
 	// Fields
 	__JniBaseClass AssetFileDescriptor::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.res.AssetFileDescriptor",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -19,7 +19,7 @@ namespace android::content::res
 	}
 	jlong AssetFileDescriptor::UNKNOWN_LENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.content.res.AssetFileDescriptor",
 			"UNKNOWN_LENGTH"
 		);

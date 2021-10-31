@@ -15,7 +15,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Movie Movie::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Movie",
 			"decodeByteArray",
 			"([BII)Landroid/graphics/Movie;",
@@ -26,7 +26,7 @@ namespace android::graphics
 	}
 	android::graphics::Movie Movie::decodeFile(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Movie",
 			"decodeFile",
 			"(Ljava/lang/String;)Landroid/graphics/Movie;",
@@ -35,7 +35,7 @@ namespace android::graphics
 	}
 	android::graphics::Movie Movie::decodeStream(java::io::InputStream arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Movie",
 			"decodeStream",
 			"(Ljava/io/InputStream;)Landroid/graphics/Movie;",

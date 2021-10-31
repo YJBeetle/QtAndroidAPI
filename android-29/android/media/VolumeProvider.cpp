@@ -5,21 +5,21 @@ namespace android::media
 	// Fields
 	jint VolumeProvider::VOLUME_CONTROL_ABSOLUTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.VolumeProvider",
 			"VOLUME_CONTROL_ABSOLUTE"
 		);
 	}
 	jint VolumeProvider::VOLUME_CONTROL_FIXED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.VolumeProvider",
 			"VOLUME_CONTROL_FIXED"
 		);
 	}
 	jint VolumeProvider::VOLUME_CONTROL_RELATIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.VolumeProvider",
 			"VOLUME_CONTROL_RELATIVE"
 		);

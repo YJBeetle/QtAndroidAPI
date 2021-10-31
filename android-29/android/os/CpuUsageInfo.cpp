@@ -6,7 +6,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass CpuUsageInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.CpuUsageInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

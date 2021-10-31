@@ -5,7 +5,7 @@ namespace android::net
 	// Fields
 	android::net::NetworkInfo_State NetworkInfo_State::CONNECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.NetworkInfo$State",
 			"CONNECTED",
 			"Landroid/net/NetworkInfo$State;"
@@ -13,7 +13,7 @@ namespace android::net
 	}
 	android::net::NetworkInfo_State NetworkInfo_State::CONNECTING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.NetworkInfo$State",
 			"CONNECTING",
 			"Landroid/net/NetworkInfo$State;"
@@ -21,7 +21,7 @@ namespace android::net
 	}
 	android::net::NetworkInfo_State NetworkInfo_State::DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.NetworkInfo$State",
 			"DISCONNECTED",
 			"Landroid/net/NetworkInfo$State;"
@@ -29,7 +29,7 @@ namespace android::net
 	}
 	android::net::NetworkInfo_State NetworkInfo_State::DISCONNECTING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.NetworkInfo$State",
 			"DISCONNECTING",
 			"Landroid/net/NetworkInfo$State;"
@@ -37,7 +37,7 @@ namespace android::net
 	}
 	android::net::NetworkInfo_State NetworkInfo_State::SUSPENDED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.NetworkInfo$State",
 			"SUSPENDED",
 			"Landroid/net/NetworkInfo$State;"
@@ -45,7 +45,7 @@ namespace android::net
 	}
 	android::net::NetworkInfo_State NetworkInfo_State::UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.NetworkInfo$State",
 			"UNKNOWN",
 			"Landroid/net/NetworkInfo$State;"
@@ -60,7 +60,7 @@ namespace android::net
 	// Methods
 	android::net::NetworkInfo_State NetworkInfo_State::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.NetworkInfo$State",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/net/NetworkInfo$State;",
@@ -69,7 +69,7 @@ namespace android::net
 	}
 	jarray NetworkInfo_State::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.NetworkInfo$State",
 			"values",
 			"()[Landroid/net/NetworkInfo$State;"

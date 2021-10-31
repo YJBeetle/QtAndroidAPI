@@ -5,7 +5,7 @@ namespace android::util
 	// Fields
 	android::util::Rational Rational::NEGATIVE_INFINITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Rational",
 			"NEGATIVE_INFINITY",
 			"Landroid/util/Rational;"
@@ -13,7 +13,7 @@ namespace android::util
 	}
 	android::util::Rational Rational::NaN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Rational",
 			"NaN",
 			"Landroid/util/Rational;"
@@ -21,7 +21,7 @@ namespace android::util
 	}
 	android::util::Rational Rational::POSITIVE_INFINITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Rational",
 			"POSITIVE_INFINITY",
 			"Landroid/util/Rational;"
@@ -29,7 +29,7 @@ namespace android::util
 	}
 	android::util::Rational Rational::ZERO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Rational",
 			"ZERO",
 			"Landroid/util/Rational;"
@@ -51,7 +51,7 @@ namespace android::util
 	// Methods
 	android::util::Rational Rational::parseRational(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Rational",
 			"parseRational",
 			"(Ljava/lang/String;)Landroid/util/Rational;",

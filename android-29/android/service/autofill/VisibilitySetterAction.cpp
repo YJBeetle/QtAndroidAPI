@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass VisibilitySetterAction::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.VisibilitySetterAction",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -6,7 +6,7 @@ namespace android::text::method
 	// Fields
 	jcharArray DateTimeKeyListener::CHARACTERS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.method.DateTimeKeyListener",
 			"CHARACTERS",
 			"[C"
@@ -32,7 +32,7 @@ namespace android::text::method
 	// Methods
 	android::text::method::DateTimeKeyListener DateTimeKeyListener::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.DateTimeKeyListener",
 			"getInstance",
 			"()Landroid/text/method/DateTimeKeyListener;"
@@ -40,7 +40,7 @@ namespace android::text::method
 	}
 	android::text::method::DateTimeKeyListener DateTimeKeyListener::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.DateTimeKeyListener",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/text/method/DateTimeKeyListener;",

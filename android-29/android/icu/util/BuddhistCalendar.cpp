@@ -9,7 +9,7 @@ namespace android::icu::util
 	// Fields
 	jint BuddhistCalendar::BE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.BuddhistCalendar",
 			"BE"
 		);

@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_Groups::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Groups",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_Groups::CONTENT_SUMMARY_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Groups",
 			"CONTENT_SUMMARY_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Groups::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Groups",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_Groups::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Groups",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -45,7 +45,7 @@ namespace android::provider
 	// Methods
 	__JniBaseClass ContactsContract_Groups::newEntityIterator(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.ContactsContract$Groups",
 			"newEntityIterator",
 			"(Landroid/database/Cursor;)Landroid/content/EntityIterator;",

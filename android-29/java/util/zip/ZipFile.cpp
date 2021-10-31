@@ -10,14 +10,14 @@ namespace java::util::zip
 	// Fields
 	jint ZipFile::OPEN_DELETE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.ZipFile",
 			"OPEN_DELETE"
 		);
 	}
 	jint ZipFile::OPEN_READ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.ZipFile",
 			"OPEN_READ"
 		);

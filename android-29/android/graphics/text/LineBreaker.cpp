@@ -8,56 +8,56 @@ namespace android::graphics::text
 	// Fields
 	jint LineBreaker::BREAK_STRATEGY_BALANCED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
 			"BREAK_STRATEGY_BALANCED"
 		);
 	}
 	jint LineBreaker::BREAK_STRATEGY_HIGH_QUALITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
 			"BREAK_STRATEGY_HIGH_QUALITY"
 		);
 	}
 	jint LineBreaker::BREAK_STRATEGY_SIMPLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
 			"BREAK_STRATEGY_SIMPLE"
 		);
 	}
 	jint LineBreaker::HYPHENATION_FREQUENCY_FULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
 			"HYPHENATION_FREQUENCY_FULL"
 		);
 	}
 	jint LineBreaker::HYPHENATION_FREQUENCY_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
 			"HYPHENATION_FREQUENCY_NONE"
 		);
 	}
 	jint LineBreaker::HYPHENATION_FREQUENCY_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
 			"HYPHENATION_FREQUENCY_NORMAL"
 		);
 	}
 	jint LineBreaker::JUSTIFICATION_MODE_INTER_WORD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
 			"JUSTIFICATION_MODE_INTER_WORD"
 		);
 	}
 	jint LineBreaker::JUSTIFICATION_MODE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
 			"JUSTIFICATION_MODE_NONE"
 		);

@@ -9,7 +9,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass TextClassification_Request::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextClassification$Request",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

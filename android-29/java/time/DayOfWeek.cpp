@@ -8,7 +8,7 @@ namespace java::time
 	// Fields
 	java::time::DayOfWeek DayOfWeek::FRIDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.DayOfWeek",
 			"FRIDAY",
 			"Ljava/time/DayOfWeek;"
@@ -16,7 +16,7 @@ namespace java::time
 	}
 	java::time::DayOfWeek DayOfWeek::MONDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.DayOfWeek",
 			"MONDAY",
 			"Ljava/time/DayOfWeek;"
@@ -24,7 +24,7 @@ namespace java::time
 	}
 	java::time::DayOfWeek DayOfWeek::SATURDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.DayOfWeek",
 			"SATURDAY",
 			"Ljava/time/DayOfWeek;"
@@ -32,7 +32,7 @@ namespace java::time
 	}
 	java::time::DayOfWeek DayOfWeek::SUNDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.DayOfWeek",
 			"SUNDAY",
 			"Ljava/time/DayOfWeek;"
@@ -40,7 +40,7 @@ namespace java::time
 	}
 	java::time::DayOfWeek DayOfWeek::THURSDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.DayOfWeek",
 			"THURSDAY",
 			"Ljava/time/DayOfWeek;"
@@ -48,7 +48,7 @@ namespace java::time
 	}
 	java::time::DayOfWeek DayOfWeek::TUESDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.DayOfWeek",
 			"TUESDAY",
 			"Ljava/time/DayOfWeek;"
@@ -56,7 +56,7 @@ namespace java::time
 	}
 	java::time::DayOfWeek DayOfWeek::WEDNESDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.DayOfWeek",
 			"WEDNESDAY",
 			"Ljava/time/DayOfWeek;"
@@ -71,7 +71,7 @@ namespace java::time
 	// Methods
 	java::time::DayOfWeek DayOfWeek::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.DayOfWeek",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/DayOfWeek;",
@@ -80,7 +80,7 @@ namespace java::time
 	}
 	java::time::DayOfWeek DayOfWeek::of(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.DayOfWeek",
 			"of",
 			"(I)Ljava/time/DayOfWeek;",
@@ -89,7 +89,7 @@ namespace java::time
 	}
 	java::time::DayOfWeek DayOfWeek::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.DayOfWeek",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/DayOfWeek;",
@@ -98,7 +98,7 @@ namespace java::time
 	}
 	jarray DayOfWeek::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.DayOfWeek",
 			"values",
 			"()[Ljava/time/DayOfWeek;"

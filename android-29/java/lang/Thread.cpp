@@ -10,21 +10,21 @@ namespace java::lang
 	// Fields
 	jint Thread::MAX_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Thread",
 			"MAX_PRIORITY"
 		);
 	}
 	jint Thread::MIN_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Thread",
 			"MIN_PRIORITY"
 		);
 	}
 	jint Thread::NORM_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Thread",
 			"NORM_PRIORITY"
 		);
@@ -103,7 +103,7 @@ namespace java::lang
 	// Methods
 	jint Thread::activeCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Thread",
 			"activeCount",
 			"()I"
@@ -111,7 +111,7 @@ namespace java::lang
 	}
 	java::lang::Thread Thread::currentThread()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Thread",
 			"currentThread",
 			"()Ljava/lang/Thread;"
@@ -119,7 +119,7 @@ namespace java::lang
 	}
 	void Thread::dumpStack()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.Thread",
 			"dumpStack",
 			"()V"
@@ -127,7 +127,7 @@ namespace java::lang
 	}
 	jint Thread::enumerate(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Thread",
 			"enumerate",
 			"([Ljava/lang/Thread;)I",
@@ -136,7 +136,7 @@ namespace java::lang
 	}
 	__JniBaseClass Thread::getAllStackTraces()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Thread",
 			"getAllStackTraces",
 			"()Ljava/util/Map;"
@@ -144,7 +144,7 @@ namespace java::lang
 	}
 	__JniBaseClass Thread::getDefaultUncaughtExceptionHandler()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Thread",
 			"getDefaultUncaughtExceptionHandler",
 			"()Ljava/lang/Thread$UncaughtExceptionHandler;"
@@ -152,7 +152,7 @@ namespace java::lang
 	}
 	jboolean Thread::holdsLock(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Thread",
 			"holdsLock",
 			"(Ljava/lang/Object;)Z",
@@ -161,7 +161,7 @@ namespace java::lang
 	}
 	jboolean Thread::interrupted()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Thread",
 			"interrupted",
 			"()Z"
@@ -169,7 +169,7 @@ namespace java::lang
 	}
 	void Thread::onSpinWait()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.Thread",
 			"onSpinWait",
 			"()V"
@@ -177,7 +177,7 @@ namespace java::lang
 	}
 	void Thread::setDefaultUncaughtExceptionHandler(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.Thread",
 			"setDefaultUncaughtExceptionHandler",
 			"(Ljava/lang/Thread$UncaughtExceptionHandler;)V",
@@ -186,7 +186,7 @@ namespace java::lang
 	}
 	void Thread::sleep(jlong arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.Thread",
 			"sleep",
 			"(J)V",
@@ -195,7 +195,7 @@ namespace java::lang
 	}
 	void Thread::sleep(jlong arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.Thread",
 			"sleep",
 			"(JI)V",
@@ -205,7 +205,7 @@ namespace java::lang
 	}
 	void Thread::yield()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.Thread",
 			"yield",
 			"()V"

@@ -7,7 +7,7 @@ namespace android::nfc
 	// Fields
 	__JniBaseClass NdefMessage::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NdefMessage",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -7,7 +7,7 @@ namespace android::os
 	// Fields
 	jstring DropBoxManager::ACTION_DROPBOX_ENTRY_ADDED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.DropBoxManager",
 			"ACTION_DROPBOX_ENTRY_ADDED",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::os
 	}
 	jstring DropBoxManager::EXTRA_DROPPED_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.DropBoxManager",
 			"EXTRA_DROPPED_COUNT",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::os
 	}
 	jstring DropBoxManager::EXTRA_TAG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.DropBoxManager",
 			"EXTRA_TAG",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::os
 	}
 	jstring DropBoxManager::EXTRA_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.DropBoxManager",
 			"EXTRA_TIME",
 			"Ljava/lang/String;"
@@ -39,21 +39,21 @@ namespace android::os
 	}
 	jint DropBoxManager::IS_EMPTY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.DropBoxManager",
 			"IS_EMPTY"
 		);
 	}
 	jint DropBoxManager::IS_GZIPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.DropBoxManager",
 			"IS_GZIPPED"
 		);
 	}
 	jint DropBoxManager::IS_TEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.DropBoxManager",
 			"IS_TEXT"
 		);

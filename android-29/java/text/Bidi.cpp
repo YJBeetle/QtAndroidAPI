@@ -5,28 +5,28 @@ namespace java::text
 	// Fields
 	jint Bidi::DIRECTION_DEFAULT_LEFT_TO_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Bidi",
 			"DIRECTION_DEFAULT_LEFT_TO_RIGHT"
 		);
 	}
 	jint Bidi::DIRECTION_DEFAULT_RIGHT_TO_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Bidi",
 			"DIRECTION_DEFAULT_RIGHT_TO_LEFT"
 		);
 	}
 	jint Bidi::DIRECTION_LEFT_TO_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Bidi",
 			"DIRECTION_LEFT_TO_RIGHT"
 		);
 	}
 	jint Bidi::DIRECTION_RIGHT_TO_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Bidi",
 			"DIRECTION_RIGHT_TO_LEFT"
 		);
@@ -64,7 +64,7 @@ namespace java::text
 	// Methods
 	void Bidi::reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.text.Bidi",
 			"reorderVisually",
 			"([BI[Ljava/lang/Object;II)V",
@@ -77,7 +77,7 @@ namespace java::text
 	}
 	jboolean Bidi::requiresBidi(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.text.Bidi",
 			"requiresBidi",
 			"([CII)Z",

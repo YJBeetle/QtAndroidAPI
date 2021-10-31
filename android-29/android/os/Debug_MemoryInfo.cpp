@@ -6,7 +6,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass Debug_MemoryInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Debug$MemoryInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

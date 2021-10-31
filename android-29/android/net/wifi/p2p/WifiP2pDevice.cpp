@@ -6,21 +6,21 @@ namespace android::net::wifi::p2p
 	// Fields
 	jint WifiP2pDevice::AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pDevice",
 			"AVAILABLE"
 		);
 	}
 	jint WifiP2pDevice::CONNECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pDevice",
 			"CONNECTED"
 		);
 	}
 	__JniBaseClass WifiP2pDevice::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pDevice",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -28,21 +28,21 @@ namespace android::net::wifi::p2p
 	}
 	jint WifiP2pDevice::FAILED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pDevice",
 			"FAILED"
 		);
 	}
 	jint WifiP2pDevice::INVITED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pDevice",
 			"INVITED"
 		);
 	}
 	jint WifiP2pDevice::UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pDevice",
 			"UNAVAILABLE"
 		);

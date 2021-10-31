@@ -7,7 +7,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass SearchableInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.SearchableInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

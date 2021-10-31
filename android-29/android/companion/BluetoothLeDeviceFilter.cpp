@@ -8,7 +8,7 @@ namespace android::companion
 	// Fields
 	__JniBaseClass BluetoothLeDeviceFilter::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.companion.BluetoothLeDeviceFilter",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -23,7 +23,7 @@ namespace android::companion
 	// Methods
 	jint BluetoothLeDeviceFilter::getRenamePrefixLengthLimit()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.companion.BluetoothLeDeviceFilter",
 			"getRenamePrefixLengthLimit",
 			"()I"

@@ -5,63 +5,63 @@ namespace android::telephony::mbms
 	// Fields
 	jint GroupCall::REASON_BY_USER_REQUEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
 			"REASON_BY_USER_REQUEST"
 		);
 	}
 	jint GroupCall::REASON_FREQUENCY_CONFLICT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
 			"REASON_FREQUENCY_CONFLICT"
 		);
 	}
 	jint GroupCall::REASON_LEFT_MBMS_BROADCAST_AREA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
 			"REASON_LEFT_MBMS_BROADCAST_AREA"
 		);
 	}
 	jint GroupCall::REASON_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
 			"REASON_NONE"
 		);
 	}
 	jint GroupCall::REASON_NOT_CONNECTED_TO_HOMECARRIER_LTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
 			"REASON_NOT_CONNECTED_TO_HOMECARRIER_LTE"
 		);
 	}
 	jint GroupCall::REASON_OUT_OF_MEMORY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
 			"REASON_OUT_OF_MEMORY"
 		);
 	}
 	jint GroupCall::STATE_STALLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
 			"STATE_STALLED"
 		);
 	}
 	jint GroupCall::STATE_STARTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
 			"STATE_STARTED"
 		);
 	}
 	jint GroupCall::STATE_STOPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
 			"STATE_STOPPED"
 		);

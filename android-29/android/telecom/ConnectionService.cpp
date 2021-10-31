@@ -12,7 +12,7 @@ namespace android::telecom
 	// Fields
 	jstring ConnectionService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.ConnectionService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

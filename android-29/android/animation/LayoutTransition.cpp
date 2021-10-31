@@ -8,35 +8,35 @@ namespace android::animation
 	// Fields
 	jint LayoutTransition::APPEARING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.animation.LayoutTransition",
 			"APPEARING"
 		);
 	}
 	jint LayoutTransition::CHANGE_APPEARING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.animation.LayoutTransition",
 			"CHANGE_APPEARING"
 		);
 	}
 	jint LayoutTransition::CHANGE_DISAPPEARING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.animation.LayoutTransition",
 			"CHANGE_DISAPPEARING"
 		);
 	}
 	jint LayoutTransition::CHANGING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.animation.LayoutTransition",
 			"CHANGING"
 		);
 	}
 	jint LayoutTransition::DISAPPEARING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.animation.LayoutTransition",
 			"DISAPPEARING"
 		);

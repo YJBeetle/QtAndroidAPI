@@ -22,189 +22,189 @@ namespace android::graphics
 	// Fields
 	jint Paint::ANTI_ALIAS_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"ANTI_ALIAS_FLAG"
 		);
 	}
 	jint Paint::CURSOR_AFTER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"CURSOR_AFTER"
 		);
 	}
 	jint Paint::CURSOR_AT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"CURSOR_AT"
 		);
 	}
 	jint Paint::CURSOR_AT_OR_AFTER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"CURSOR_AT_OR_AFTER"
 		);
 	}
 	jint Paint::CURSOR_AT_OR_BEFORE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"CURSOR_AT_OR_BEFORE"
 		);
 	}
 	jint Paint::CURSOR_BEFORE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"CURSOR_BEFORE"
 		);
 	}
 	jint Paint::DEV_KERN_TEXT_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"DEV_KERN_TEXT_FLAG"
 		);
 	}
 	jint Paint::DITHER_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"DITHER_FLAG"
 		);
 	}
 	jint Paint::EMBEDDED_BITMAP_TEXT_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"EMBEDDED_BITMAP_TEXT_FLAG"
 		);
 	}
 	jint Paint::END_HYPHEN_EDIT_INSERT_ARMENIAN_HYPHEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"END_HYPHEN_EDIT_INSERT_ARMENIAN_HYPHEN"
 		);
 	}
 	jint Paint::END_HYPHEN_EDIT_INSERT_HYPHEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"END_HYPHEN_EDIT_INSERT_HYPHEN"
 		);
 	}
 	jint Paint::END_HYPHEN_EDIT_INSERT_MAQAF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"END_HYPHEN_EDIT_INSERT_MAQAF"
 		);
 	}
 	jint Paint::END_HYPHEN_EDIT_INSERT_UCAS_HYPHEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"END_HYPHEN_EDIT_INSERT_UCAS_HYPHEN"
 		);
 	}
 	jint Paint::END_HYPHEN_EDIT_INSERT_ZWJ_AND_HYPHEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"END_HYPHEN_EDIT_INSERT_ZWJ_AND_HYPHEN"
 		);
 	}
 	jint Paint::END_HYPHEN_EDIT_NO_EDIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"END_HYPHEN_EDIT_NO_EDIT"
 		);
 	}
 	jint Paint::END_HYPHEN_EDIT_REPLACE_WITH_HYPHEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"END_HYPHEN_EDIT_REPLACE_WITH_HYPHEN"
 		);
 	}
 	jint Paint::FAKE_BOLD_TEXT_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"FAKE_BOLD_TEXT_FLAG"
 		);
 	}
 	jint Paint::FILTER_BITMAP_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"FILTER_BITMAP_FLAG"
 		);
 	}
 	jint Paint::HINTING_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"HINTING_OFF"
 		);
 	}
 	jint Paint::HINTING_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"HINTING_ON"
 		);
 	}
 	jint Paint::LINEAR_TEXT_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"LINEAR_TEXT_FLAG"
 		);
 	}
 	jint Paint::START_HYPHEN_EDIT_INSERT_HYPHEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"START_HYPHEN_EDIT_INSERT_HYPHEN"
 		);
 	}
 	jint Paint::START_HYPHEN_EDIT_INSERT_ZWJ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"START_HYPHEN_EDIT_INSERT_ZWJ"
 		);
 	}
 	jint Paint::START_HYPHEN_EDIT_NO_EDIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"START_HYPHEN_EDIT_NO_EDIT"
 		);
 	}
 	jint Paint::STRIKE_THRU_TEXT_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"STRIKE_THRU_TEXT_FLAG"
 		);
 	}
 	jint Paint::SUBPIXEL_TEXT_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"SUBPIXEL_TEXT_FLAG"
 		);
 	}
 	jint Paint::UNDERLINE_TEXT_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Paint",
 			"UNDERLINE_TEXT_FLAG"
 		);

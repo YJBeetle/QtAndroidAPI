@@ -6,7 +6,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::DisplayContext DisplayContext::CAPITALIZATION_FOR_BEGINNING_OF_SENTENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"CAPITALIZATION_FOR_BEGINNING_OF_SENTENCE",
 			"Landroid/icu/text/DisplayContext;"
@@ -14,7 +14,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext DisplayContext::CAPITALIZATION_FOR_MIDDLE_OF_SENTENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"CAPITALIZATION_FOR_MIDDLE_OF_SENTENCE",
 			"Landroid/icu/text/DisplayContext;"
@@ -22,7 +22,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext DisplayContext::CAPITALIZATION_FOR_STANDALONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"CAPITALIZATION_FOR_STANDALONE",
 			"Landroid/icu/text/DisplayContext;"
@@ -30,7 +30,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext DisplayContext::CAPITALIZATION_FOR_UI_LIST_OR_MENU()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"CAPITALIZATION_FOR_UI_LIST_OR_MENU",
 			"Landroid/icu/text/DisplayContext;"
@@ -38,7 +38,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext DisplayContext::CAPITALIZATION_NONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"CAPITALIZATION_NONE",
 			"Landroid/icu/text/DisplayContext;"
@@ -46,7 +46,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext DisplayContext::DIALECT_NAMES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"DIALECT_NAMES",
 			"Landroid/icu/text/DisplayContext;"
@@ -54,7 +54,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext DisplayContext::LENGTH_FULL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"LENGTH_FULL",
 			"Landroid/icu/text/DisplayContext;"
@@ -62,7 +62,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext DisplayContext::LENGTH_SHORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"LENGTH_SHORT",
 			"Landroid/icu/text/DisplayContext;"
@@ -70,7 +70,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext DisplayContext::NO_SUBSTITUTE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"NO_SUBSTITUTE",
 			"Landroid/icu/text/DisplayContext;"
@@ -78,7 +78,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext DisplayContext::STANDARD_NAMES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"STANDARD_NAMES",
 			"Landroid/icu/text/DisplayContext;"
@@ -86,7 +86,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext DisplayContext::SUBSTITUTE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext",
 			"SUBSTITUTE",
 			"Landroid/icu/text/DisplayContext;"
@@ -101,7 +101,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::DisplayContext DisplayContext::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DisplayContext",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/DisplayContext;",
@@ -110,7 +110,7 @@ namespace android::icu::text
 	}
 	jarray DisplayContext::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DisplayContext",
 			"values",
 			"()[Landroid/icu/text/DisplayContext;"

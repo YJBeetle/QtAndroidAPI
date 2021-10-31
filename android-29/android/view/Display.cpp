@@ -12,98 +12,98 @@ namespace android::view
 	// Fields
 	jint Display::DEFAULT_DISPLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"DEFAULT_DISPLAY"
 		);
 	}
 	jint Display::FLAG_PRESENTATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"FLAG_PRESENTATION"
 		);
 	}
 	jint Display::FLAG_PRIVATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"FLAG_PRIVATE"
 		);
 	}
 	jint Display::FLAG_ROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"FLAG_ROUND"
 		);
 	}
 	jint Display::FLAG_SECURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"FLAG_SECURE"
 		);
 	}
 	jint Display::FLAG_SUPPORTS_PROTECTED_BUFFERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"FLAG_SUPPORTS_PROTECTED_BUFFERS"
 		);
 	}
 	jint Display::INVALID_DISPLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"INVALID_DISPLAY"
 		);
 	}
 	jint Display::STATE_DOZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"STATE_DOZE"
 		);
 	}
 	jint Display::STATE_DOZE_SUSPEND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"STATE_DOZE_SUSPEND"
 		);
 	}
 	jint Display::STATE_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"STATE_OFF"
 		);
 	}
 	jint Display::STATE_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"STATE_ON"
 		);
 	}
 	jint Display::STATE_ON_SUSPEND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"STATE_ON_SUSPEND"
 		);
 	}
 	jint Display::STATE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"STATE_UNKNOWN"
 		);
 	}
 	jint Display::STATE_VR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display",
 			"STATE_VR"
 		);

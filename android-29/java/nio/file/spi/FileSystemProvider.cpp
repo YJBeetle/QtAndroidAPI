@@ -20,7 +20,7 @@ namespace java::nio::file::spi
 	// Methods
 	__JniBaseClass FileSystemProvider::installedProviders()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.spi.FileSystemProvider",
 			"installedProviders",
 			"()Ljava/util/List;"

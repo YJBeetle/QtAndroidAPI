@@ -7,7 +7,7 @@ namespace java::net
 	// Fields
 	java::net::Proxy Proxy::NO_PROXY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.net.Proxy",
 			"NO_PROXY",
 			"Ljava/net/Proxy;"

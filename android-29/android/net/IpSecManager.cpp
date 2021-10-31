@@ -12,14 +12,14 @@ namespace android::net
 	// Fields
 	jint IpSecManager::DIRECTION_IN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.IpSecManager",
 			"DIRECTION_IN"
 		);
 	}
 	jint IpSecManager::DIRECTION_OUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.IpSecManager",
 			"DIRECTION_OUT"
 		);

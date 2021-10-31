@@ -18,7 +18,7 @@ namespace java::util::concurrent
 	// Methods
 	java::util::concurrent::ThreadLocalRandom ThreadLocalRandom::current()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.ThreadLocalRandom",
 			"current",
 			"()Ljava/util/concurrent/ThreadLocalRandom;"

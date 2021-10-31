@@ -8,7 +8,7 @@ namespace android::telecom
 	// Fields
 	__JniBaseClass StatusHints::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.StatusHints",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

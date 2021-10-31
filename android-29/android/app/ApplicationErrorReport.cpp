@@ -12,7 +12,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass ApplicationErrorReport::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.ApplicationErrorReport",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -20,35 +20,35 @@ namespace android::app
 	}
 	jint ApplicationErrorReport::TYPE_ANR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ApplicationErrorReport",
 			"TYPE_ANR"
 		);
 	}
 	jint ApplicationErrorReport::TYPE_BATTERY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ApplicationErrorReport",
 			"TYPE_BATTERY"
 		);
 	}
 	jint ApplicationErrorReport::TYPE_CRASH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ApplicationErrorReport",
 			"TYPE_CRASH"
 		);
 	}
 	jint ApplicationErrorReport::TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ApplicationErrorReport",
 			"TYPE_NONE"
 		);
 	}
 	jint ApplicationErrorReport::TYPE_RUNNING_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ApplicationErrorReport",
 			"TYPE_RUNNING_SERVICE"
 		);
@@ -134,7 +134,7 @@ namespace android::app
 	// Methods
 	android::content::ComponentName ApplicationErrorReport::getErrorReportReceiver(android::content::Context arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ApplicationErrorReport",
 			"getErrorReportReceiver",
 			"(Landroid/content/Context;Ljava/lang/String;I)Landroid/content/ComponentName;",

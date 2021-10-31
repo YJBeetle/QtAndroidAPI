@@ -8,7 +8,7 @@ namespace java::time::chrono
 	// Fields
 	java::time::chrono::HijrahEra HijrahEra::AH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.HijrahEra",
 			"AH",
 			"Ljava/time/chrono/HijrahEra;"
@@ -23,7 +23,7 @@ namespace java::time::chrono
 	// Methods
 	java::time::chrono::HijrahEra HijrahEra::of(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.HijrahEra",
 			"of",
 			"(I)Ljava/time/chrono/HijrahEra;",
@@ -32,7 +32,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::HijrahEra HijrahEra::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.HijrahEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/HijrahEra;",
@@ -41,7 +41,7 @@ namespace java::time::chrono
 	}
 	jarray HijrahEra::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.HijrahEra",
 			"values",
 			"()[Ljava/time/chrono/HijrahEra;"

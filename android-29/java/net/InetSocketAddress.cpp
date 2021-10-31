@@ -35,7 +35,7 @@ namespace java::net
 	// Methods
 	java::net::InetSocketAddress InetSocketAddress::createUnresolved(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.InetSocketAddress",
 			"createUnresolved",
 			"(Ljava/lang/String;I)Ljava/net/InetSocketAddress;",

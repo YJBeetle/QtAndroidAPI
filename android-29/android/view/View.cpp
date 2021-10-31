@@ -53,28 +53,28 @@ namespace android::view
 	// Fields
 	jint View::ACCESSIBILITY_LIVE_REGION_ASSERTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"ACCESSIBILITY_LIVE_REGION_ASSERTIVE"
 		);
 	}
 	jint View::ACCESSIBILITY_LIVE_REGION_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"ACCESSIBILITY_LIVE_REGION_NONE"
 		);
 	}
 	jint View::ACCESSIBILITY_LIVE_REGION_POLITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"ACCESSIBILITY_LIVE_REGION_POLITE"
 		);
 	}
 	android::util::Property View::ALPHA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"ALPHA",
 			"Landroid/util/Property;"
@@ -82,14 +82,14 @@ namespace android::view
 	}
 	jint View::AUTOFILL_FLAG_INCLUDE_NOT_IMPORTANT_VIEWS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"AUTOFILL_FLAG_INCLUDE_NOT_IMPORTANT_VIEWS"
 		);
 	}
 	jstring View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DATE",
 			"Ljava/lang/String;"
@@ -97,7 +97,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DAY",
 			"Ljava/lang/String;"
@@ -105,7 +105,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_MONTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_MONTH",
 			"Ljava/lang/String;"
@@ -113,7 +113,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_YEAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_YEAR",
 			"Ljava/lang/String;"
@@ -121,7 +121,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_CREDIT_CARD_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_NUMBER",
 			"Ljava/lang/String;"
@@ -129,7 +129,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_CREDIT_CARD_SECURITY_CODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_CREDIT_CARD_SECURITY_CODE",
 			"Ljava/lang/String;"
@@ -137,7 +137,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_EMAIL_ADDRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_EMAIL_ADDRESS",
 			"Ljava/lang/String;"
@@ -145,7 +145,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_NAME",
 			"Ljava/lang/String;"
@@ -153,7 +153,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_PASSWORD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_PASSWORD",
 			"Ljava/lang/String;"
@@ -161,7 +161,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_PHONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_PHONE",
 			"Ljava/lang/String;"
@@ -169,7 +169,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_POSTAL_ADDRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_POSTAL_ADDRESS",
 			"Ljava/lang/String;"
@@ -177,7 +177,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_POSTAL_CODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_POSTAL_CODE",
 			"Ljava/lang/String;"
@@ -185,7 +185,7 @@ namespace android::view
 	}
 	jstring View::AUTOFILL_HINT_USERNAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"AUTOFILL_HINT_USERNAME",
 			"Ljava/lang/String;"
@@ -193,392 +193,392 @@ namespace android::view
 	}
 	jint View::AUTOFILL_TYPE_DATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"AUTOFILL_TYPE_DATE"
 		);
 	}
 	jint View::AUTOFILL_TYPE_LIST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"AUTOFILL_TYPE_LIST"
 		);
 	}
 	jint View::AUTOFILL_TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"AUTOFILL_TYPE_NONE"
 		);
 	}
 	jint View::AUTOFILL_TYPE_TEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"AUTOFILL_TYPE_TEXT"
 		);
 	}
 	jint View::AUTOFILL_TYPE_TOGGLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"AUTOFILL_TYPE_TOGGLE"
 		);
 	}
 	jint View::DRAG_FLAG_GLOBAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"DRAG_FLAG_GLOBAL"
 		);
 	}
 	jint View::DRAG_FLAG_GLOBAL_PERSISTABLE_URI_PERMISSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"DRAG_FLAG_GLOBAL_PERSISTABLE_URI_PERMISSION"
 		);
 	}
 	jint View::DRAG_FLAG_GLOBAL_PREFIX_URI_PERMISSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"DRAG_FLAG_GLOBAL_PREFIX_URI_PERMISSION"
 		);
 	}
 	jint View::DRAG_FLAG_GLOBAL_URI_READ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"DRAG_FLAG_GLOBAL_URI_READ"
 		);
 	}
 	jint View::DRAG_FLAG_GLOBAL_URI_WRITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"DRAG_FLAG_GLOBAL_URI_WRITE"
 		);
 	}
 	jint View::DRAG_FLAG_OPAQUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"DRAG_FLAG_OPAQUE"
 		);
 	}
 	jint View::DRAWING_CACHE_QUALITY_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"DRAWING_CACHE_QUALITY_AUTO"
 		);
 	}
 	jint View::DRAWING_CACHE_QUALITY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"DRAWING_CACHE_QUALITY_HIGH"
 		);
 	}
 	jint View::DRAWING_CACHE_QUALITY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"DRAWING_CACHE_QUALITY_LOW"
 		);
 	}
 	jint View::FIND_VIEWS_WITH_CONTENT_DESCRIPTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FIND_VIEWS_WITH_CONTENT_DESCRIPTION"
 		);
 	}
 	jint View::FIND_VIEWS_WITH_TEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FIND_VIEWS_WITH_TEXT"
 		);
 	}
 	jint View::FOCUSABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FOCUSABLE"
 		);
 	}
 	jint View::FOCUSABLES_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FOCUSABLES_ALL"
 		);
 	}
 	jint View::FOCUSABLES_TOUCH_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FOCUSABLES_TOUCH_MODE"
 		);
 	}
 	jint View::FOCUSABLE_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FOCUSABLE_AUTO"
 		);
 	}
 	jint View::FOCUS_BACKWARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FOCUS_BACKWARD"
 		);
 	}
 	jint View::FOCUS_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FOCUS_DOWN"
 		);
 	}
 	jint View::FOCUS_FORWARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FOCUS_FORWARD"
 		);
 	}
 	jint View::FOCUS_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FOCUS_LEFT"
 		);
 	}
 	jint View::FOCUS_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FOCUS_RIGHT"
 		);
 	}
 	jint View::FOCUS_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"FOCUS_UP"
 		);
 	}
 	jint View::GONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"GONE"
 		);
 	}
 	jint View::HAPTIC_FEEDBACK_ENABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"HAPTIC_FEEDBACK_ENABLED"
 		);
 	}
 	jint View::IMPORTANT_FOR_ACCESSIBILITY_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"IMPORTANT_FOR_ACCESSIBILITY_AUTO"
 		);
 	}
 	jint View::IMPORTANT_FOR_ACCESSIBILITY_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"IMPORTANT_FOR_ACCESSIBILITY_NO"
 		);
 	}
 	jint View::IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS"
 		);
 	}
 	jint View::IMPORTANT_FOR_ACCESSIBILITY_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"IMPORTANT_FOR_ACCESSIBILITY_YES"
 		);
 	}
 	jint View::IMPORTANT_FOR_AUTOFILL_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"IMPORTANT_FOR_AUTOFILL_AUTO"
 		);
 	}
 	jint View::IMPORTANT_FOR_AUTOFILL_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"IMPORTANT_FOR_AUTOFILL_NO"
 		);
 	}
 	jint View::IMPORTANT_FOR_AUTOFILL_NO_EXCLUDE_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"IMPORTANT_FOR_AUTOFILL_NO_EXCLUDE_DESCENDANTS"
 		);
 	}
 	jint View::IMPORTANT_FOR_AUTOFILL_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"IMPORTANT_FOR_AUTOFILL_YES"
 		);
 	}
 	jint View::IMPORTANT_FOR_AUTOFILL_YES_EXCLUDE_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"IMPORTANT_FOR_AUTOFILL_YES_EXCLUDE_DESCENDANTS"
 		);
 	}
 	jint View::INVISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"INVISIBLE"
 		);
 	}
 	jint View::KEEP_SCREEN_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"KEEP_SCREEN_ON"
 		);
 	}
 	jint View::LAYER_TYPE_HARDWARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"LAYER_TYPE_HARDWARE"
 		);
 	}
 	jint View::LAYER_TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"LAYER_TYPE_NONE"
 		);
 	}
 	jint View::LAYER_TYPE_SOFTWARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"LAYER_TYPE_SOFTWARE"
 		);
 	}
 	jint View::LAYOUT_DIRECTION_INHERIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"LAYOUT_DIRECTION_INHERIT"
 		);
 	}
 	jint View::LAYOUT_DIRECTION_LOCALE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"LAYOUT_DIRECTION_LOCALE"
 		);
 	}
 	jint View::LAYOUT_DIRECTION_LTR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"LAYOUT_DIRECTION_LTR"
 		);
 	}
 	jint View::LAYOUT_DIRECTION_RTL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"LAYOUT_DIRECTION_RTL"
 		);
 	}
 	jint View::MEASURED_HEIGHT_STATE_SHIFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"MEASURED_HEIGHT_STATE_SHIFT"
 		);
 	}
 	jint View::MEASURED_SIZE_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"MEASURED_SIZE_MASK"
 		);
 	}
 	jint View::MEASURED_STATE_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"MEASURED_STATE_MASK"
 		);
 	}
 	jint View::MEASURED_STATE_TOO_SMALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"MEASURED_STATE_TOO_SMALL"
 		);
 	}
 	jint View::NOT_FOCUSABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"NOT_FOCUSABLE"
 		);
 	}
 	jint View::NO_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"NO_ID"
 		);
 	}
 	jint View::OVER_SCROLL_ALWAYS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"OVER_SCROLL_ALWAYS"
 		);
 	}
 	jint View::OVER_SCROLL_IF_CONTENT_SCROLLS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"OVER_SCROLL_IF_CONTENT_SCROLLS"
 		);
 	}
 	jint View::OVER_SCROLL_NEVER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"OVER_SCROLL_NEVER"
 		);
 	}
 	android::util::Property View::ROTATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"ROTATION",
 			"Landroid/util/Property;"
@@ -586,7 +586,7 @@ namespace android::view
 	}
 	android::util::Property View::ROTATION_X()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"ROTATION_X",
 			"Landroid/util/Property;"
@@ -594,7 +594,7 @@ namespace android::view
 	}
 	android::util::Property View::ROTATION_Y()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"ROTATION_Y",
 			"Landroid/util/Property;"
@@ -602,7 +602,7 @@ namespace android::view
 	}
 	android::util::Property View::SCALE_X()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"SCALE_X",
 			"Landroid/util/Property;"
@@ -610,7 +610,7 @@ namespace android::view
 	}
 	android::util::Property View::SCALE_Y()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"SCALE_Y",
 			"Landroid/util/Property;"
@@ -618,343 +618,343 @@ namespace android::view
 	}
 	jint View::SCREEN_STATE_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCREEN_STATE_OFF"
 		);
 	}
 	jint View::SCREEN_STATE_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCREEN_STATE_ON"
 		);
 	}
 	jint View::SCROLLBARS_INSIDE_INSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLLBARS_INSIDE_INSET"
 		);
 	}
 	jint View::SCROLLBARS_INSIDE_OVERLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLLBARS_INSIDE_OVERLAY"
 		);
 	}
 	jint View::SCROLLBARS_OUTSIDE_INSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLLBARS_OUTSIDE_INSET"
 		);
 	}
 	jint View::SCROLLBARS_OUTSIDE_OVERLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLLBARS_OUTSIDE_OVERLAY"
 		);
 	}
 	jint View::SCROLLBAR_POSITION_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLLBAR_POSITION_DEFAULT"
 		);
 	}
 	jint View::SCROLLBAR_POSITION_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLLBAR_POSITION_LEFT"
 		);
 	}
 	jint View::SCROLLBAR_POSITION_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLLBAR_POSITION_RIGHT"
 		);
 	}
 	jint View::SCROLL_AXIS_HORIZONTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLL_AXIS_HORIZONTAL"
 		);
 	}
 	jint View::SCROLL_AXIS_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLL_AXIS_NONE"
 		);
 	}
 	jint View::SCROLL_AXIS_VERTICAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLL_AXIS_VERTICAL"
 		);
 	}
 	jint View::SCROLL_INDICATOR_BOTTOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLL_INDICATOR_BOTTOM"
 		);
 	}
 	jint View::SCROLL_INDICATOR_END()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLL_INDICATOR_END"
 		);
 	}
 	jint View::SCROLL_INDICATOR_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLL_INDICATOR_LEFT"
 		);
 	}
 	jint View::SCROLL_INDICATOR_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLL_INDICATOR_RIGHT"
 		);
 	}
 	jint View::SCROLL_INDICATOR_START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLL_INDICATOR_START"
 		);
 	}
 	jint View::SCROLL_INDICATOR_TOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SCROLL_INDICATOR_TOP"
 		);
 	}
 	jint View::SOUND_EFFECTS_ENABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SOUND_EFFECTS_ENABLED"
 		);
 	}
 	jint View::STATUS_BAR_HIDDEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"STATUS_BAR_HIDDEN"
 		);
 	}
 	jint View::STATUS_BAR_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"STATUS_BAR_VISIBLE"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_FULLSCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_FULLSCREEN"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_HIDE_NAVIGATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_HIDE_NAVIGATION"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_IMMERSIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_IMMERSIVE"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_IMMERSIVE_STICKY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_IMMERSIVE_STICKY"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_LAYOUT_STABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_LAYOUT_STABLE"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_LIGHT_STATUS_BAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_LIGHT_STATUS_BAR"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_LOW_PROFILE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_LOW_PROFILE"
 		);
 	}
 	jint View::SYSTEM_UI_FLAG_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_FLAG_VISIBLE"
 		);
 	}
 	jint View::SYSTEM_UI_LAYOUT_FLAGS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"SYSTEM_UI_LAYOUT_FLAGS"
 		);
 	}
 	jint View::TEXT_ALIGNMENT_CENTER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_ALIGNMENT_CENTER"
 		);
 	}
 	jint View::TEXT_ALIGNMENT_GRAVITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_ALIGNMENT_GRAVITY"
 		);
 	}
 	jint View::TEXT_ALIGNMENT_INHERIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_ALIGNMENT_INHERIT"
 		);
 	}
 	jint View::TEXT_ALIGNMENT_TEXT_END()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_ALIGNMENT_TEXT_END"
 		);
 	}
 	jint View::TEXT_ALIGNMENT_TEXT_START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_ALIGNMENT_TEXT_START"
 		);
 	}
 	jint View::TEXT_ALIGNMENT_VIEW_END()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_ALIGNMENT_VIEW_END"
 		);
 	}
 	jint View::TEXT_ALIGNMENT_VIEW_START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_ALIGNMENT_VIEW_START"
 		);
 	}
 	jint View::TEXT_DIRECTION_ANY_RTL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_DIRECTION_ANY_RTL"
 		);
 	}
 	jint View::TEXT_DIRECTION_FIRST_STRONG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_DIRECTION_FIRST_STRONG"
 		);
 	}
 	jint View::TEXT_DIRECTION_FIRST_STRONG_LTR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_DIRECTION_FIRST_STRONG_LTR"
 		);
 	}
 	jint View::TEXT_DIRECTION_FIRST_STRONG_RTL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_DIRECTION_FIRST_STRONG_RTL"
 		);
 	}
 	jint View::TEXT_DIRECTION_INHERIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_DIRECTION_INHERIT"
 		);
 	}
 	jint View::TEXT_DIRECTION_LOCALE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_DIRECTION_LOCALE"
 		);
 	}
 	jint View::TEXT_DIRECTION_LTR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_DIRECTION_LTR"
 		);
 	}
 	jint View::TEXT_DIRECTION_RTL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"TEXT_DIRECTION_RTL"
 		);
 	}
 	android::util::Property View::TRANSLATION_X()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"TRANSLATION_X",
 			"Landroid/util/Property;"
@@ -962,7 +962,7 @@ namespace android::view
 	}
 	android::util::Property View::TRANSLATION_Y()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"TRANSLATION_Y",
 			"Landroid/util/Property;"
@@ -970,7 +970,7 @@ namespace android::view
 	}
 	android::util::Property View::TRANSLATION_Z()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"TRANSLATION_Z",
 			"Landroid/util/Property;"
@@ -978,14 +978,14 @@ namespace android::view
 	}
 	jint View::VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View",
 			"VISIBLE"
 		);
 	}
 	android::util::Property View::X()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"X",
 			"Landroid/util/Property;"
@@ -993,7 +993,7 @@ namespace android::view
 	}
 	android::util::Property View::Y()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"Y",
 			"Landroid/util/Property;"
@@ -1001,7 +1001,7 @@ namespace android::view
 	}
 	android::util::Property View::Z()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View",
 			"Z",
 			"Landroid/util/Property;"
@@ -1046,7 +1046,7 @@ namespace android::view
 	// Methods
 	jint View::combineMeasuredStates(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.View",
 			"combineMeasuredStates",
 			"(II)I",
@@ -1056,7 +1056,7 @@ namespace android::view
 	}
 	jint View::generateViewId()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.View",
 			"generateViewId",
 			"()I"
@@ -1064,7 +1064,7 @@ namespace android::view
 	}
 	jint View::getDefaultSize(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.View",
 			"getDefaultSize",
 			"(II)I",
@@ -1074,7 +1074,7 @@ namespace android::view
 	}
 	android::view::View View::inflate(android::content::Context arg0, jint arg1, android::view::ViewGroup arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.View",
 			"inflate",
 			"(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;",
@@ -1085,7 +1085,7 @@ namespace android::view
 	}
 	jint View::resolveSize(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.View",
 			"resolveSize",
 			"(II)I",
@@ -1095,7 +1095,7 @@ namespace android::view
 	}
 	jint View::resolveSizeAndState(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.View",
 			"resolveSizeAndState",
 			"(III)I",

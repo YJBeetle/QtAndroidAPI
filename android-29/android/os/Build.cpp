@@ -5,7 +5,7 @@ namespace android::os
 	// Fields
 	jstring Build::BOARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"BOARD",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::os
 	}
 	jstring Build::BOOTLOADER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"BOOTLOADER",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::os
 	}
 	jstring Build::BRAND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"BRAND",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::os
 	}
 	jstring Build::CPU_ABI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"CPU_ABI",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::os
 	}
 	jstring Build::CPU_ABI2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"CPU_ABI2",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::os
 	}
 	jstring Build::DEVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"DEVICE",
 			"Ljava/lang/String;"
@@ -53,7 +53,7 @@ namespace android::os
 	}
 	jstring Build::DISPLAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"DISPLAY",
 			"Ljava/lang/String;"
@@ -61,7 +61,7 @@ namespace android::os
 	}
 	jstring Build::FINGERPRINT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"FINGERPRINT",
 			"Ljava/lang/String;"
@@ -69,7 +69,7 @@ namespace android::os
 	}
 	jstring Build::HARDWARE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"HARDWARE",
 			"Ljava/lang/String;"
@@ -77,7 +77,7 @@ namespace android::os
 	}
 	jstring Build::HOST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"HOST",
 			"Ljava/lang/String;"
@@ -85,7 +85,7 @@ namespace android::os
 	}
 	jstring Build::ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"ID",
 			"Ljava/lang/String;"
@@ -93,7 +93,7 @@ namespace android::os
 	}
 	jstring Build::MANUFACTURER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"MANUFACTURER",
 			"Ljava/lang/String;"
@@ -101,7 +101,7 @@ namespace android::os
 	}
 	jstring Build::MODEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"MODEL",
 			"Ljava/lang/String;"
@@ -109,7 +109,7 @@ namespace android::os
 	}
 	jstring Build::PRODUCT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"PRODUCT",
 			"Ljava/lang/String;"
@@ -117,7 +117,7 @@ namespace android::os
 	}
 	jstring Build::RADIO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"RADIO",
 			"Ljava/lang/String;"
@@ -125,7 +125,7 @@ namespace android::os
 	}
 	jstring Build::SERIAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"SERIAL",
 			"Ljava/lang/String;"
@@ -133,7 +133,7 @@ namespace android::os
 	}
 	jarray Build::SUPPORTED_32_BIT_ABIS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"SUPPORTED_32_BIT_ABIS",
 			"[Ljava/lang/String;"
@@ -141,7 +141,7 @@ namespace android::os
 	}
 	jarray Build::SUPPORTED_64_BIT_ABIS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"SUPPORTED_64_BIT_ABIS",
 			"[Ljava/lang/String;"
@@ -149,7 +149,7 @@ namespace android::os
 	}
 	jarray Build::SUPPORTED_ABIS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"SUPPORTED_ABIS",
 			"[Ljava/lang/String;"
@@ -157,7 +157,7 @@ namespace android::os
 	}
 	jstring Build::TAGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"TAGS",
 			"Ljava/lang/String;"
@@ -165,14 +165,14 @@ namespace android::os
 	}
 	jlong Build::TIME()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.os.Build",
 			"TIME"
 		);
 	}
 	jstring Build::TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"TYPE",
 			"Ljava/lang/String;"
@@ -180,7 +180,7 @@ namespace android::os
 	}
 	jstring Build::UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"UNKNOWN",
 			"Ljava/lang/String;"
@@ -188,7 +188,7 @@ namespace android::os
 	}
 	jstring Build::USER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Build",
 			"USER",
 			"Ljava/lang/String;"
@@ -208,7 +208,7 @@ namespace android::os
 	// Methods
 	__JniBaseClass Build::getFingerprintedPartitions()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Build",
 			"getFingerprintedPartitions",
 			"()Ljava/util/List;"
@@ -216,7 +216,7 @@ namespace android::os
 	}
 	jstring Build::getRadioVersion()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Build",
 			"getRadioVersion",
 			"()Ljava/lang/String;"
@@ -224,7 +224,7 @@ namespace android::os
 	}
 	jstring Build::getSerial()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Build",
 			"getSerial",
 			"()Ljava/lang/String;"

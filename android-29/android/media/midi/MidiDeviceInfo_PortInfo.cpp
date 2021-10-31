@@ -5,14 +5,14 @@ namespace android::media::midi
 	// Fields
 	jint MidiDeviceInfo_PortInfo::TYPE_INPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.midi.MidiDeviceInfo$PortInfo",
 			"TYPE_INPUT"
 		);
 	}
 	jint MidiDeviceInfo_PortInfo::TYPE_OUTPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.midi.MidiDeviceInfo$PortInfo",
 			"TYPE_OUTPUT"
 		);

@@ -21,7 +21,7 @@ namespace android::opengl
 	// Methods
 	android::opengl::ETC1Util_ETC1Texture ETC1Util::compressTexture(java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.opengl.ETC1Util",
 			"compressTexture",
 			"(Ljava/nio/Buffer;IIII)Landroid/opengl/ETC1Util$ETC1Texture;",
@@ -34,7 +34,7 @@ namespace android::opengl
 	}
 	android::opengl::ETC1Util_ETC1Texture ETC1Util::createTexture(java::io::InputStream arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.opengl.ETC1Util",
 			"createTexture",
 			"(Ljava/io/InputStream;)Landroid/opengl/ETC1Util$ETC1Texture;",
@@ -43,7 +43,7 @@ namespace android::opengl
 	}
 	jboolean ETC1Util::isETC1Supported()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.opengl.ETC1Util",
 			"isETC1Supported",
 			"()Z"
@@ -51,7 +51,7 @@ namespace android::opengl
 	}
 	void ETC1Util::loadTexture(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::opengl::ETC1Util_ETC1Texture arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.ETC1Util",
 			"loadTexture",
 			"(IIIIILandroid/opengl/ETC1Util$ETC1Texture;)V",
@@ -65,7 +65,7 @@ namespace android::opengl
 	}
 	void ETC1Util::loadTexture(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, java::io::InputStream arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.ETC1Util",
 			"loadTexture",
 			"(IIIIILjava/io/InputStream;)V",
@@ -79,7 +79,7 @@ namespace android::opengl
 	}
 	void ETC1Util::writeTexture(android::opengl::ETC1Util_ETC1Texture arg0, java::io::OutputStream arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.ETC1Util",
 			"writeTexture",
 			"(Landroid/opengl/ETC1Util$ETC1Texture;Ljava/io/OutputStream;)V",

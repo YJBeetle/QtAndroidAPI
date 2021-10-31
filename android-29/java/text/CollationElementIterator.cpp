@@ -7,7 +7,7 @@ namespace java::text
 	// Fields
 	jint CollationElementIterator::NULLORDER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.CollationElementIterator",
 			"NULLORDER"
 		);
@@ -21,7 +21,7 @@ namespace java::text
 	// Methods
 	jint CollationElementIterator::primaryOrder(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.text.CollationElementIterator",
 			"primaryOrder",
 			"(I)I",
@@ -30,7 +30,7 @@ namespace java::text
 	}
 	jshort CollationElementIterator::secondaryOrder(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"java.text.CollationElementIterator",
 			"secondaryOrder",
 			"(I)S",
@@ -39,7 +39,7 @@ namespace java::text
 	}
 	jshort CollationElementIterator::tertiaryOrder(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"java.text.CollationElementIterator",
 			"tertiaryOrder",
 			"(I)S",

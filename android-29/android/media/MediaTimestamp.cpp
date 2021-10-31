@@ -5,7 +5,7 @@ namespace android::media
 	// Fields
 	android::media::MediaTimestamp MediaTimestamp::TIMESTAMP_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaTimestamp",
 			"TIMESTAMP_UNKNOWN",
 			"Landroid/media/MediaTimestamp;"

@@ -5,14 +5,14 @@ namespace android::os::health
 	// Fields
 	jint ServiceHealthStats::MEASUREMENT_LAUNCH_COUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.health.ServiceHealthStats",
 			"MEASUREMENT_LAUNCH_COUNT"
 		);
 	}
 	jint ServiceHealthStats::MEASUREMENT_START_SERVICE_COUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.health.ServiceHealthStats",
 			"MEASUREMENT_START_SERVICE_COUNT"
 		);

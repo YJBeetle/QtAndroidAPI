@@ -7,7 +7,7 @@ namespace android::icu::util
 	// Fields
 	android::icu::util::ULocale ULocale::CANADA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"CANADA",
 			"Landroid/icu/util/ULocale;"
@@ -15,7 +15,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::CANADA_FRENCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"CANADA_FRENCH",
 			"Landroid/icu/util/ULocale;"
@@ -23,7 +23,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::CHINA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"CHINA",
 			"Landroid/icu/util/ULocale;"
@@ -31,7 +31,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::CHINESE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"CHINESE",
 			"Landroid/icu/util/ULocale;"
@@ -39,7 +39,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::ENGLISH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"ENGLISH",
 			"Landroid/icu/util/ULocale;"
@@ -47,7 +47,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::FRANCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"FRANCE",
 			"Landroid/icu/util/ULocale;"
@@ -55,7 +55,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::FRENCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"FRENCH",
 			"Landroid/icu/util/ULocale;"
@@ -63,7 +63,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::GERMAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"GERMAN",
 			"Landroid/icu/util/ULocale;"
@@ -71,7 +71,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::GERMANY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"GERMANY",
 			"Landroid/icu/util/ULocale;"
@@ -79,7 +79,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::ITALIAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"ITALIAN",
 			"Landroid/icu/util/ULocale;"
@@ -87,7 +87,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::ITALY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"ITALY",
 			"Landroid/icu/util/ULocale;"
@@ -95,7 +95,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::JAPAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"JAPAN",
 			"Landroid/icu/util/ULocale;"
@@ -103,7 +103,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::JAPANESE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"JAPANESE",
 			"Landroid/icu/util/ULocale;"
@@ -111,7 +111,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::KOREA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"KOREA",
 			"Landroid/icu/util/ULocale;"
@@ -119,7 +119,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::KOREAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"KOREAN",
 			"Landroid/icu/util/ULocale;"
@@ -127,7 +127,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::PRC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"PRC",
 			"Landroid/icu/util/ULocale;"
@@ -135,14 +135,14 @@ namespace android::icu::util
 	}
 	jchar ULocale::PRIVATE_USE_EXTENSION()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.icu.util.ULocale",
 			"PRIVATE_USE_EXTENSION"
 		);
 	}
 	android::icu::util::ULocale ULocale::ROOT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"ROOT",
 			"Landroid/icu/util/ULocale;"
@@ -150,7 +150,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::SIMPLIFIED_CHINESE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"SIMPLIFIED_CHINESE",
 			"Landroid/icu/util/ULocale;"
@@ -158,7 +158,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::TAIWAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"TAIWAN",
 			"Landroid/icu/util/ULocale;"
@@ -166,7 +166,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::TRADITIONAL_CHINESE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"TRADITIONAL_CHINESE",
 			"Landroid/icu/util/ULocale;"
@@ -174,7 +174,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::UK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"UK",
 			"Landroid/icu/util/ULocale;"
@@ -182,14 +182,14 @@ namespace android::icu::util
 	}
 	jchar ULocale::UNICODE_LOCALE_EXTENSION()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.icu.util.ULocale",
 			"UNICODE_LOCALE_EXTENSION"
 		);
 	}
 	android::icu::util::ULocale ULocale::US()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale",
 			"US",
 			"Landroid/icu/util/ULocale;"
@@ -225,7 +225,7 @@ namespace android::icu::util
 	// Methods
 	android::icu::util::ULocale ULocale::acceptLanguage(jarray arg0, jbooleanArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"acceptLanguage",
 			"([Landroid/icu/util/ULocale;[Z)Landroid/icu/util/ULocale;",
@@ -235,7 +235,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::acceptLanguage(jstring arg0, jbooleanArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"acceptLanguage",
 			"(Ljava/lang/String;[Z)Landroid/icu/util/ULocale;",
@@ -245,7 +245,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::acceptLanguage(jarray arg0, jarray arg1, jbooleanArray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"acceptLanguage",
 			"([Landroid/icu/util/ULocale;[Landroid/icu/util/ULocale;[Z)Landroid/icu/util/ULocale;",
@@ -256,7 +256,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::acceptLanguage(jstring arg0, jarray arg1, jbooleanArray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"acceptLanguage",
 			"(Ljava/lang/String;[Landroid/icu/util/ULocale;[Z)Landroid/icu/util/ULocale;",
@@ -267,7 +267,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::addLikelySubtags(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"addLikelySubtags",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
@@ -276,7 +276,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::canonicalize(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"canonicalize",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -285,7 +285,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::createCanonical(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"createCanonical",
 			"(Ljava/lang/String;)Landroid/icu/util/ULocale;",
@@ -294,7 +294,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::forLanguageTag(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"forLanguageTag",
 			"(Ljava/lang/String;)Landroid/icu/util/ULocale;",
@@ -303,7 +303,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::forLocale(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"forLocale",
 			"(Ljava/util/Locale;)Landroid/icu/util/ULocale;",
@@ -312,7 +312,7 @@ namespace android::icu::util
 	}
 	jarray ULocale::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getAvailableLocales",
 			"()[Landroid/icu/util/ULocale;"
@@ -320,7 +320,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getBaseName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getBaseName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -329,7 +329,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getCountry(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getCountry",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -338,7 +338,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDefault",
 			"()Landroid/icu/util/ULocale;"
@@ -346,7 +346,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::getDefault(android::icu::util::ULocale_Category arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDefault",
 			"(Landroid/icu/util/ULocale$Category;)Landroid/icu/util/ULocale;",
@@ -355,7 +355,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayCountry(jstring arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayCountry",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -365,7 +365,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayCountry(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayCountry",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -375,7 +375,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayKeyword(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayKeyword",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -384,7 +384,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayKeyword(jstring arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayKeyword",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -394,7 +394,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayKeyword(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayKeyword",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -404,7 +404,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayKeywordValue(jstring arg0, jstring arg1, android::icu::util::ULocale arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayKeywordValue",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -415,7 +415,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayKeywordValue(jstring arg0, jstring arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayKeywordValue",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -426,7 +426,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayLanguage(jstring arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayLanguage",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -436,7 +436,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayLanguage(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayLanguage",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -446,7 +446,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayLanguageWithDialect(jstring arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayLanguageWithDialect",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -456,7 +456,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayLanguageWithDialect(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayLanguageWithDialect",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -466,7 +466,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayName(jstring arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayName",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -476,7 +476,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayName(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayName",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -486,7 +486,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayNameWithDialect(jstring arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayNameWithDialect",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -496,7 +496,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayNameWithDialect(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayNameWithDialect",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -506,7 +506,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayScript(jstring arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayScript",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -516,7 +516,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayScript(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayScript",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -526,7 +526,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayVariant(jstring arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayVariant",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
@@ -536,7 +536,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getDisplayVariant(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getDisplayVariant",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -546,7 +546,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getFallback(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getFallback",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -555,7 +555,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getISO3Country(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getISO3Country",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -564,7 +564,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getISO3Language(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getISO3Language",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -573,7 +573,7 @@ namespace android::icu::util
 	}
 	jarray ULocale::getISOCountries()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getISOCountries",
 			"()[Ljava/lang/String;"
@@ -581,7 +581,7 @@ namespace android::icu::util
 	}
 	jarray ULocale::getISOLanguages()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getISOLanguages",
 			"()[Ljava/lang/String;"
@@ -589,7 +589,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getKeywordValue(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getKeywordValue",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -599,7 +599,7 @@ namespace android::icu::util
 	}
 	__JniBaseClass ULocale::getKeywords(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getKeywords",
 			"(Ljava/lang/String;)Ljava/util/Iterator;",
@@ -608,7 +608,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getLanguage(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getLanguage",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -617,7 +617,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -626,7 +626,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getScript(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getScript",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -635,7 +635,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::getVariant(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"getVariant",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -644,7 +644,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale ULocale::minimizeSubtags(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"minimizeSubtags",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
@@ -653,7 +653,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::setKeywordValue(jstring arg0, jstring arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"setKeywordValue",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -664,7 +664,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::toLegacyKey(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"toLegacyKey",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -673,7 +673,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::toLegacyType(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"toLegacyType",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -683,7 +683,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::toUnicodeLocaleKey(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"toUnicodeLocaleKey",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -692,7 +692,7 @@ namespace android::icu::util
 	}
 	jstring ULocale::toUnicodeLocaleType(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale",
 			"toUnicodeLocaleType",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",

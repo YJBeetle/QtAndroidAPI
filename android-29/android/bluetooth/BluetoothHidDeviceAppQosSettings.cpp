@@ -6,7 +6,7 @@ namespace android::bluetooth
 	// Fields
 	__JniBaseClass BluetoothHidDeviceAppQosSettings::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,28 +14,28 @@ namespace android::bluetooth
 	}
 	jint BluetoothHidDeviceAppQosSettings::MAX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
 			"MAX"
 		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::SERVICE_BEST_EFFORT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
 			"SERVICE_BEST_EFFORT"
 		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::SERVICE_GUARANTEED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
 			"SERVICE_GUARANTEED"
 		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::SERVICE_NO_TRAFFIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
 			"SERVICE_NO_TRAFFIC"
 		);

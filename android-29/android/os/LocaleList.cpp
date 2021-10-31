@@ -8,7 +8,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass LocaleList::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.LocaleList",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -29,7 +29,7 @@ namespace android::os
 	// Methods
 	android::os::LocaleList LocaleList::forLanguageTags(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.LocaleList",
 			"forLanguageTags",
 			"(Ljava/lang/String;)Landroid/os/LocaleList;",
@@ -38,7 +38,7 @@ namespace android::os
 	}
 	android::os::LocaleList LocaleList::getAdjustedDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.LocaleList",
 			"getAdjustedDefault",
 			"()Landroid/os/LocaleList;"
@@ -46,7 +46,7 @@ namespace android::os
 	}
 	android::os::LocaleList LocaleList::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.LocaleList",
 			"getDefault",
 			"()Landroid/os/LocaleList;"
@@ -54,7 +54,7 @@ namespace android::os
 	}
 	android::os::LocaleList LocaleList::getEmptyLocaleList()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.LocaleList",
 			"getEmptyLocaleList",
 			"()Landroid/os/LocaleList;"
@@ -62,7 +62,7 @@ namespace android::os
 	}
 	jboolean LocaleList::isPseudoLocale(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.LocaleList",
 			"isPseudoLocale",
 			"(Landroid/icu/util/ULocale;)Z",
@@ -71,7 +71,7 @@ namespace android::os
 	}
 	void LocaleList::setDefault(android::os::LocaleList arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.LocaleList",
 			"setDefault",
 			"(Landroid/os/LocaleList;)V",

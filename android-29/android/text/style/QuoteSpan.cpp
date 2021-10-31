@@ -9,21 +9,21 @@ namespace android::text::style
 	// Fields
 	jint QuoteSpan::STANDARD_COLOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.QuoteSpan",
 			"STANDARD_COLOR"
 		);
 	}
 	jint QuoteSpan::STANDARD_GAP_WIDTH_PX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.QuoteSpan",
 			"STANDARD_GAP_WIDTH_PX"
 		);
 	}
 	jint QuoteSpan::STANDARD_STRIPE_WIDTH_PX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.QuoteSpan",
 			"STANDARD_STRIPE_WIDTH_PX"
 		);

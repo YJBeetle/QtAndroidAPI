@@ -6,7 +6,7 @@ namespace android::net::wifi::aware
 	// Fields
 	__JniBaseClass SubscribeConfig::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.aware.SubscribeConfig",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,14 +14,14 @@ namespace android::net::wifi::aware
 	}
 	jint SubscribeConfig::SUBSCRIBE_TYPE_ACTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.aware.SubscribeConfig",
 			"SUBSCRIBE_TYPE_ACTIVE"
 		);
 	}
 	jint SubscribeConfig::SUBSCRIBE_TYPE_PASSIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.aware.SubscribeConfig",
 			"SUBSCRIBE_TYPE_PASSIVE"
 		);

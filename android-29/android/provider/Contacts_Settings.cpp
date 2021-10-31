@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring Contacts_Settings::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Settings",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	android::net::Uri Contacts_Settings::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Settings",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	jstring Contacts_Settings::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Settings",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::provider
 	}
 	jstring Contacts_Settings::SYNC_EVERYTHING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Settings",
 			"SYNC_EVERYTHING",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::provider
 	// Methods
 	jstring Contacts_Settings::getSetting(android::content::ContentResolver arg0, jstring arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Contacts$Settings",
 			"getSetting",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -57,7 +57,7 @@ namespace android::provider
 	}
 	void Contacts_Settings::setSetting(android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.Contacts$Settings",
 			"setSetting",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",

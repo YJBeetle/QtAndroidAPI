@@ -14,7 +14,7 @@ namespace java::nio
 	// Methods
 	java::nio::LongBuffer LongBuffer::allocate(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.LongBuffer",
 			"allocate",
 			"(I)Ljava/nio/LongBuffer;",
@@ -23,7 +23,7 @@ namespace java::nio
 	}
 	java::nio::LongBuffer LongBuffer::wrap(jlongArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.LongBuffer",
 			"wrap",
 			"([J)Ljava/nio/LongBuffer;",
@@ -32,7 +32,7 @@ namespace java::nio
 	}
 	java::nio::LongBuffer LongBuffer::wrap(jlongArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.LongBuffer",
 			"wrap",
 			"([JII)Ljava/nio/LongBuffer;",

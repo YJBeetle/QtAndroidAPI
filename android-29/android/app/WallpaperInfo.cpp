@@ -13,7 +13,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass WallpaperInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.WallpaperInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

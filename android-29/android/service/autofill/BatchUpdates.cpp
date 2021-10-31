@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass BatchUpdates::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.BatchUpdates",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

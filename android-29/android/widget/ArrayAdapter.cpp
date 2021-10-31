@@ -66,7 +66,7 @@ namespace android::widget
 	// Methods
 	android::widget::ArrayAdapter ArrayAdapter::createFromResource(android::content::Context arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.ArrayAdapter",
 			"createFromResource",
 			"(Landroid/content/Context;II)Landroid/widget/ArrayAdapter;",

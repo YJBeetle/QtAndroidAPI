@@ -9,35 +9,35 @@ namespace android::icu::util
 	// Fields
 	jint JapaneseCalendar::CURRENT_ERA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.JapaneseCalendar",
 			"CURRENT_ERA"
 		);
 	}
 	jint JapaneseCalendar::HEISEI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.JapaneseCalendar",
 			"HEISEI"
 		);
 	}
 	jint JapaneseCalendar::MEIJI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.JapaneseCalendar",
 			"MEIJI"
 		);
 	}
 	jint JapaneseCalendar::SHOWA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.JapaneseCalendar",
 			"SHOWA"
 		);
 	}
 	jint JapaneseCalendar::TAISHO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.JapaneseCalendar",
 			"TAISHO"
 		);

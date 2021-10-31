@@ -6,105 +6,105 @@ namespace android::media::audiofx
 	// Fields
 	jint Visualizer::ALREADY_EXISTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"ALREADY_EXISTS"
 		);
 	}
 	jint Visualizer::ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"ERROR"
 		);
 	}
 	jint Visualizer::ERROR_BAD_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"ERROR_BAD_VALUE"
 		);
 	}
 	jint Visualizer::ERROR_DEAD_OBJECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"ERROR_DEAD_OBJECT"
 		);
 	}
 	jint Visualizer::ERROR_INVALID_OPERATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"ERROR_INVALID_OPERATION"
 		);
 	}
 	jint Visualizer::ERROR_NO_INIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"ERROR_NO_INIT"
 		);
 	}
 	jint Visualizer::ERROR_NO_MEMORY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"ERROR_NO_MEMORY"
 		);
 	}
 	jint Visualizer::MEASUREMENT_MODE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"MEASUREMENT_MODE_NONE"
 		);
 	}
 	jint Visualizer::MEASUREMENT_MODE_PEAK_RMS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"MEASUREMENT_MODE_PEAK_RMS"
 		);
 	}
 	jint Visualizer::SCALING_MODE_AS_PLAYED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"SCALING_MODE_AS_PLAYED"
 		);
 	}
 	jint Visualizer::SCALING_MODE_NORMALIZED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"SCALING_MODE_NORMALIZED"
 		);
 	}
 	jint Visualizer::STATE_ENABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"STATE_ENABLED"
 		);
 	}
 	jint Visualizer::STATE_INITIALIZED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"STATE_INITIALIZED"
 		);
 	}
 	jint Visualizer::STATE_UNINITIALIZED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"STATE_UNINITIALIZED"
 		);
 	}
 	jint Visualizer::SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Visualizer",
 			"SUCCESS"
 		);
@@ -124,7 +124,7 @@ namespace android::media::audiofx
 	// Methods
 	jintArray Visualizer::getCaptureSizeRange()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.audiofx.Visualizer",
 			"getCaptureSizeRange",
 			"()[I"
@@ -132,7 +132,7 @@ namespace android::media::audiofx
 	}
 	jint Visualizer::getMaxCaptureRate()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.audiofx.Visualizer",
 			"getMaxCaptureRate",
 			"()I"

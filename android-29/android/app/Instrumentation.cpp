@@ -22,7 +22,7 @@ namespace android::app
 	// Fields
 	jstring Instrumentation::REPORT_KEY_IDENTIFIER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Instrumentation",
 			"REPORT_KEY_IDENTIFIER",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::app
 	}
 	jstring Instrumentation::REPORT_KEY_STREAMRESULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Instrumentation",
 			"REPORT_KEY_STREAMRESULT",
 			"Ljava/lang/String;"
@@ -50,7 +50,7 @@ namespace android::app
 	// Methods
 	android::app::Application Instrumentation::newApplication(jclass arg0, android::content::Context arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.Instrumentation",
 			"newApplication",
 			"(Ljava/lang/Class;Landroid/content/Context;)Landroid/app/Application;",

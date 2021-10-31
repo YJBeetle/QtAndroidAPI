@@ -6,7 +6,7 @@ namespace android::content
 	// Fields
 	jint UriMatcher::NO_MATCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.UriMatcher",
 			"NO_MATCH"
 		);

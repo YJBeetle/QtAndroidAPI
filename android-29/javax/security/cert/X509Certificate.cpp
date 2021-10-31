@@ -20,7 +20,7 @@ namespace javax::security::cert
 	// Methods
 	javax::security::cert::X509Certificate X509Certificate::getInstance(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.security.cert.X509Certificate",
 			"getInstance",
 			"([B)Ljavax/security/cert/X509Certificate;",
@@ -29,7 +29,7 @@ namespace javax::security::cert
 	}
 	javax::security::cert::X509Certificate X509Certificate::getInstance(java::io::InputStream arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.security.cert.X509Certificate",
 			"getInstance",
 			"(Ljava/io/InputStream;)Ljavax/security/cert/X509Certificate;",

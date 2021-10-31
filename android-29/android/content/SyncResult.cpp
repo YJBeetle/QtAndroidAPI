@@ -7,7 +7,7 @@ namespace android::content
 	// Fields
 	android::content::SyncResult SyncResult::ALREADY_IN_PROGRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.SyncResult",
 			"ALREADY_IN_PROGRESS",
 			"Landroid/content/SyncResult;"
@@ -15,7 +15,7 @@ namespace android::content
 	}
 	__JniBaseClass SyncResult::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.SyncResult",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

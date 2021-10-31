@@ -21,7 +21,7 @@ namespace android::app::backup
 	// Methods
 	void BackupManager::dataChanged(jstring arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.app.backup.BackupManager",
 			"dataChanged",
 			"(Ljava/lang/String;)V",

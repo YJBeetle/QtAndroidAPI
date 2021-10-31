@@ -13,7 +13,7 @@ namespace android::speech::tts
 	// Fields
 	jstring TextToSpeech::ACTION_TTS_QUEUE_PROCESSING_COMPLETED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.speech.tts.TextToSpeech",
 			"ACTION_TTS_QUEUE_PROCESSING_COMPLETED",
 			"Ljava/lang/String;"
@@ -21,119 +21,119 @@ namespace android::speech::tts
 	}
 	jint TextToSpeech::ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"ERROR"
 		);
 	}
 	jint TextToSpeech::ERROR_INVALID_REQUEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"ERROR_INVALID_REQUEST"
 		);
 	}
 	jint TextToSpeech::ERROR_NETWORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"ERROR_NETWORK"
 		);
 	}
 	jint TextToSpeech::ERROR_NETWORK_TIMEOUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"ERROR_NETWORK_TIMEOUT"
 		);
 	}
 	jint TextToSpeech::ERROR_NOT_INSTALLED_YET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"ERROR_NOT_INSTALLED_YET"
 		);
 	}
 	jint TextToSpeech::ERROR_OUTPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"ERROR_OUTPUT"
 		);
 	}
 	jint TextToSpeech::ERROR_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"ERROR_SERVICE"
 		);
 	}
 	jint TextToSpeech::ERROR_SYNTHESIS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"ERROR_SYNTHESIS"
 		);
 	}
 	jint TextToSpeech::LANG_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"LANG_AVAILABLE"
 		);
 	}
 	jint TextToSpeech::LANG_COUNTRY_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"LANG_COUNTRY_AVAILABLE"
 		);
 	}
 	jint TextToSpeech::LANG_COUNTRY_VAR_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"LANG_COUNTRY_VAR_AVAILABLE"
 		);
 	}
 	jint TextToSpeech::LANG_MISSING_DATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"LANG_MISSING_DATA"
 		);
 	}
 	jint TextToSpeech::LANG_NOT_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"LANG_NOT_SUPPORTED"
 		);
 	}
 	jint TextToSpeech::QUEUE_ADD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"QUEUE_ADD"
 		);
 	}
 	jint TextToSpeech::QUEUE_FLUSH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"QUEUE_FLUSH"
 		);
 	}
 	jint TextToSpeech::STOPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"STOPPED"
 		);
 	}
 	jint TextToSpeech::SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
 			"SUCCESS"
 		);
@@ -162,7 +162,7 @@ namespace android::speech::tts
 	// Methods
 	jint TextToSpeech::getMaxSpeechInputLength()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.speech.tts.TextToSpeech",
 			"getMaxSpeechInputLength",
 			"()I"

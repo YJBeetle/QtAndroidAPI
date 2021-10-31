@@ -6,7 +6,7 @@ namespace android::animation
 	// Fields
 	jlong Animator::DURATION_INFINITE()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.animation.Animator",
 			"DURATION_INFINITE"
 		);

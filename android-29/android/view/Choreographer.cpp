@@ -13,7 +13,7 @@ namespace android::view
 	// Methods
 	android::view::Choreographer Choreographer::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.Choreographer",
 			"getInstance",
 			"()Landroid/view/Choreographer;"

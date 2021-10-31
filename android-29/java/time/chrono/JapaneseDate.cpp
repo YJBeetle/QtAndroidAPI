@@ -20,7 +20,7 @@ namespace java::time::chrono
 	// Methods
 	java::time::chrono::JapaneseDate JapaneseDate::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseDate",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/JapaneseDate;",
@@ -29,7 +29,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::JapaneseDate JapaneseDate::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseDate",
 			"now",
 			"()Ljava/time/chrono/JapaneseDate;"
@@ -37,7 +37,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::JapaneseDate JapaneseDate::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseDate",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/chrono/JapaneseDate;",
@@ -46,7 +46,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::JapaneseDate JapaneseDate::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseDate",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/chrono/JapaneseDate;",
@@ -55,7 +55,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::JapaneseDate JapaneseDate::of(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseDate",
 			"of",
 			"(III)Ljava/time/chrono/JapaneseDate;",
@@ -66,7 +66,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::JapaneseDate JapaneseDate::of(java::time::chrono::JapaneseEra arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseDate",
 			"of",
 			"(Ljava/time/chrono/JapaneseEra;III)Ljava/time/chrono/JapaneseDate;",

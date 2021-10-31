@@ -22,7 +22,7 @@ namespace android::text::method
 	// Methods
 	void TextKeyListener::clear(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.method.TextKeyListener",
 			"clear",
 			"(Landroid/text/Editable;)V",
@@ -31,7 +31,7 @@ namespace android::text::method
 	}
 	android::text::method::TextKeyListener TextKeyListener::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.TextKeyListener",
 			"getInstance",
 			"()Landroid/text/method/TextKeyListener;"
@@ -39,7 +39,7 @@ namespace android::text::method
 	}
 	android::text::method::TextKeyListener TextKeyListener::getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.TextKeyListener",
 			"getInstance",
 			"(ZLandroid/text/method/TextKeyListener$Capitalize;)Landroid/text/method/TextKeyListener;",
@@ -49,7 +49,7 @@ namespace android::text::method
 	}
 	jboolean TextKeyListener::shouldCap(android::text::method::TextKeyListener_Capitalize arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.method.TextKeyListener",
 			"shouldCap",
 			"(Landroid/text/method/TextKeyListener$Capitalize;Ljava/lang/CharSequence;I)Z",

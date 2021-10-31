@@ -11,343 +11,343 @@ namespace android::icu::util
 	// Fields
 	jint Calendar::AM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"AM"
 		);
 	}
 	jint Calendar::AM_PM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"AM_PM"
 		);
 	}
 	jint Calendar::APRIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"APRIL"
 		);
 	}
 	jint Calendar::AUGUST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"AUGUST"
 		);
 	}
 	jint Calendar::DATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"DATE"
 		);
 	}
 	jint Calendar::DAY_OF_MONTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"DAY_OF_MONTH"
 		);
 	}
 	jint Calendar::DAY_OF_WEEK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"DAY_OF_WEEK"
 		);
 	}
 	jint Calendar::DAY_OF_WEEK_IN_MONTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"DAY_OF_WEEK_IN_MONTH"
 		);
 	}
 	jint Calendar::DAY_OF_YEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"DAY_OF_YEAR"
 		);
 	}
 	jint Calendar::DECEMBER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"DECEMBER"
 		);
 	}
 	jint Calendar::DOW_LOCAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"DOW_LOCAL"
 		);
 	}
 	jint Calendar::DST_OFFSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"DST_OFFSET"
 		);
 	}
 	jint Calendar::ERA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"ERA"
 		);
 	}
 	jint Calendar::EXTENDED_YEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"EXTENDED_YEAR"
 		);
 	}
 	jint Calendar::FEBRUARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"FEBRUARY"
 		);
 	}
 	jint Calendar::FRIDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"FRIDAY"
 		);
 	}
 	jint Calendar::HOUR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"HOUR"
 		);
 	}
 	jint Calendar::HOUR_OF_DAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"HOUR_OF_DAY"
 		);
 	}
 	jint Calendar::IS_LEAP_MONTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"IS_LEAP_MONTH"
 		);
 	}
 	jint Calendar::JANUARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"JANUARY"
 		);
 	}
 	jint Calendar::JULIAN_DAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"JULIAN_DAY"
 		);
 	}
 	jint Calendar::JULY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"JULY"
 		);
 	}
 	jint Calendar::JUNE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"JUNE"
 		);
 	}
 	jint Calendar::MARCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"MARCH"
 		);
 	}
 	jint Calendar::MAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"MAY"
 		);
 	}
 	jint Calendar::MILLISECOND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"MILLISECOND"
 		);
 	}
 	jint Calendar::MILLISECONDS_IN_DAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"MILLISECONDS_IN_DAY"
 		);
 	}
 	jint Calendar::MINUTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"MINUTE"
 		);
 	}
 	jint Calendar::MONDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"MONDAY"
 		);
 	}
 	jint Calendar::MONTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"MONTH"
 		);
 	}
 	jint Calendar::NOVEMBER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"NOVEMBER"
 		);
 	}
 	jint Calendar::OCTOBER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"OCTOBER"
 		);
 	}
 	jint Calendar::PM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"PM"
 		);
 	}
 	jint Calendar::SATURDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"SATURDAY"
 		);
 	}
 	jint Calendar::SECOND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"SECOND"
 		);
 	}
 	jint Calendar::SEPTEMBER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"SEPTEMBER"
 		);
 	}
 	jint Calendar::SUNDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"SUNDAY"
 		);
 	}
 	jint Calendar::THURSDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"THURSDAY"
 		);
 	}
 	jint Calendar::TUESDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"TUESDAY"
 		);
 	}
 	jint Calendar::UNDECIMBER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"UNDECIMBER"
 		);
 	}
 	jint Calendar::WALLTIME_FIRST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"WALLTIME_FIRST"
 		);
 	}
 	jint Calendar::WALLTIME_LAST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"WALLTIME_LAST"
 		);
 	}
 	jint Calendar::WALLTIME_NEXT_VALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"WALLTIME_NEXT_VALID"
 		);
 	}
 	jint Calendar::WEDNESDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"WEDNESDAY"
 		);
 	}
 	jint Calendar::WEEK_OF_MONTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"WEEK_OF_MONTH"
 		);
 	}
 	jint Calendar::WEEK_OF_YEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"WEEK_OF_YEAR"
 		);
 	}
 	jint Calendar::YEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"YEAR"
 		);
 	}
 	jint Calendar::YEAR_WOY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"YEAR_WOY"
 		);
 	}
 	jint Calendar::ZONE_OFFSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Calendar",
 			"ZONE_OFFSET"
 		);
@@ -361,7 +361,7 @@ namespace android::icu::util
 	// Methods
 	jarray Calendar::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -369,7 +369,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Calendar Calendar::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getInstance",
 			"()Landroid/icu/util/Calendar;"
@@ -377,7 +377,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Calendar Calendar::getInstance(android::icu::util::TimeZone arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getInstance",
 			"(Landroid/icu/util/TimeZone;)Landroid/icu/util/Calendar;",
@@ -386,7 +386,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Calendar Calendar::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/Calendar;",
@@ -395,7 +395,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Calendar Calendar::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/util/Calendar;",
@@ -404,7 +404,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Calendar Calendar::getInstance(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getInstance",
 			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)Landroid/icu/util/Calendar;",
@@ -414,7 +414,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Calendar Calendar::getInstance(android::icu::util::TimeZone arg0, java::util::Locale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getInstance",
 			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)Landroid/icu/util/Calendar;",
@@ -424,7 +424,7 @@ namespace android::icu::util
 	}
 	jarray Calendar::getKeywordValuesForLocale(jstring arg0, android::icu::util::ULocale arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getKeywordValuesForLocale",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
@@ -435,7 +435,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Calendar_WeekData Calendar::getWeekDataForRegion(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getWeekDataForRegion",
 			"(Ljava/lang/String;)Landroid/icu/util/Calendar$WeekData;",

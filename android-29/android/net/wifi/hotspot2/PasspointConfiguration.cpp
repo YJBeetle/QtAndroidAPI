@@ -8,7 +8,7 @@ namespace android::net::wifi::hotspot2
 	// Fields
 	__JniBaseClass PasspointConfiguration::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.hotspot2.PasspointConfiguration",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

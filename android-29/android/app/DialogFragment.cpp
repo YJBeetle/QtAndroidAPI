@@ -13,28 +13,28 @@ namespace android::app
 	// Fields
 	jint DialogFragment::STYLE_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.DialogFragment",
 			"STYLE_NORMAL"
 		);
 	}
 	jint DialogFragment::STYLE_NO_FRAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.DialogFragment",
 			"STYLE_NO_FRAME"
 		);
 	}
 	jint DialogFragment::STYLE_NO_INPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.DialogFragment",
 			"STYLE_NO_INPUT"
 		);
 	}
 	jint DialogFragment::STYLE_NO_TITLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.DialogFragment",
 			"STYLE_NO_TITLE"
 		);

@@ -9,7 +9,7 @@ namespace android::text::style
 	// Fields
 	jstring SuggestionSpan::ACTION_SUGGESTION_PICKED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.style.SuggestionSpan",
 			"ACTION_SUGGESTION_PICKED",
 			"Ljava/lang/String;"
@@ -17,7 +17,7 @@ namespace android::text::style
 	}
 	__JniBaseClass SuggestionSpan::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.style.SuggestionSpan",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -25,35 +25,35 @@ namespace android::text::style
 	}
 	jint SuggestionSpan::FLAG_AUTO_CORRECTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.SuggestionSpan",
 			"FLAG_AUTO_CORRECTION"
 		);
 	}
 	jint SuggestionSpan::FLAG_EASY_CORRECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.SuggestionSpan",
 			"FLAG_EASY_CORRECT"
 		);
 	}
 	jint SuggestionSpan::FLAG_MISSPELLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.SuggestionSpan",
 			"FLAG_MISSPELLED"
 		);
 	}
 	jint SuggestionSpan::SUGGESTIONS_MAX_SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.SuggestionSpan",
 			"SUGGESTIONS_MAX_SIZE"
 		);
 	}
 	jstring SuggestionSpan::SUGGESTION_SPAN_PICKED_AFTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.style.SuggestionSpan",
 			"SUGGESTION_SPAN_PICKED_AFTER",
 			"Ljava/lang/String;"
@@ -61,7 +61,7 @@ namespace android::text::style
 	}
 	jstring SuggestionSpan::SUGGESTION_SPAN_PICKED_BEFORE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.style.SuggestionSpan",
 			"SUGGESTION_SPAN_PICKED_BEFORE",
 			"Ljava/lang/String;"
@@ -69,7 +69,7 @@ namespace android::text::style
 	}
 	jstring SuggestionSpan::SUGGESTION_SPAN_PICKED_HASHCODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.style.SuggestionSpan",
 			"SUGGESTION_SPAN_PICKED_HASHCODE",
 			"Ljava/lang/String;"

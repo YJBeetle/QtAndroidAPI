@@ -26,7 +26,7 @@ namespace java::text
 	// Methods
 	jarray DecimalFormatSymbols::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DecimalFormatSymbols",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -34,7 +34,7 @@ namespace java::text
 	}
 	java::text::DecimalFormatSymbols DecimalFormatSymbols::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DecimalFormatSymbols",
 			"getInstance",
 			"()Ljava/text/DecimalFormatSymbols;"
@@ -42,7 +42,7 @@ namespace java::text
 	}
 	java::text::DecimalFormatSymbols DecimalFormatSymbols::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DecimalFormatSymbols",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/text/DecimalFormatSymbols;",

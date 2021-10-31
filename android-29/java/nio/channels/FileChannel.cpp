@@ -16,7 +16,7 @@ namespace java::nio::channels
 	// Methods
 	java::nio::channels::FileChannel FileChannel::open(__JniBaseClass arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.FileChannel",
 			"open",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/FileChannel;",
@@ -26,7 +26,7 @@ namespace java::nio::channels
 	}
 	java::nio::channels::FileChannel FileChannel::open(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.FileChannel",
 			"open",
 			"(Ljava/nio/file/Path;Ljava/util/Set;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/FileChannel;",

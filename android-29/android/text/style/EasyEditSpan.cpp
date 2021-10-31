@@ -7,7 +7,7 @@ namespace android::text::style
 	// Fields
 	jstring EasyEditSpan::EXTRA_TEXT_CHANGED_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.style.EasyEditSpan",
 			"EXTRA_TEXT_CHANGED_TYPE",
 			"Ljava/lang/String;"
@@ -15,14 +15,14 @@ namespace android::text::style
 	}
 	jint EasyEditSpan::TEXT_DELETED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.EasyEditSpan",
 			"TEXT_DELETED"
 		);
 	}
 	jint EasyEditSpan::TEXT_MODIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.EasyEditSpan",
 			"TEXT_MODIFIED"
 		);

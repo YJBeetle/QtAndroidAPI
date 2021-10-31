@@ -18,7 +18,7 @@ namespace android::drm
 	// Methods
 	android::drm::DrmUtils_ExtendedMetadataParser DrmUtils::getExtendedMetadataParser(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.drm.DrmUtils",
 			"getExtendedMetadataParser",
 			"([B)Landroid/drm/DrmUtils$ExtendedMetadataParser;",

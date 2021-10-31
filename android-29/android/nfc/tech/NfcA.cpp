@@ -13,7 +13,7 @@ namespace android::nfc::tech
 	// Methods
 	android::nfc::tech::NfcA NfcA::get(android::nfc::Tag arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.tech.NfcA",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NfcA;",

@@ -15,7 +15,7 @@ namespace android::app
 	// Fields
 	android::media::AudioAttributes Notification::AUDIO_ATTRIBUTES_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"AUDIO_ATTRIBUTES_DEFAULT",
 			"Landroid/media/AudioAttributes;"
@@ -23,28 +23,28 @@ namespace android::app
 	}
 	jint Notification::BADGE_ICON_LARGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"BADGE_ICON_LARGE"
 		);
 	}
 	jint Notification::BADGE_ICON_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"BADGE_ICON_NONE"
 		);
 	}
 	jint Notification::BADGE_ICON_SMALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"BADGE_ICON_SMALL"
 		);
 	}
 	jstring Notification::CATEGORY_ALARM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_ALARM",
 			"Ljava/lang/String;"
@@ -52,7 +52,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_CALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_CALL",
 			"Ljava/lang/String;"
@@ -60,7 +60,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_EMAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_EMAIL",
 			"Ljava/lang/String;"
@@ -68,7 +68,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_ERROR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_ERROR",
 			"Ljava/lang/String;"
@@ -76,7 +76,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_EVENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_EVENT",
 			"Ljava/lang/String;"
@@ -84,7 +84,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_MESSAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_MESSAGE",
 			"Ljava/lang/String;"
@@ -92,7 +92,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_NAVIGATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_NAVIGATION",
 			"Ljava/lang/String;"
@@ -100,7 +100,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_PROGRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_PROGRESS",
 			"Ljava/lang/String;"
@@ -108,7 +108,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_PROMO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_PROMO",
 			"Ljava/lang/String;"
@@ -116,7 +116,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_RECOMMENDATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_RECOMMENDATION",
 			"Ljava/lang/String;"
@@ -124,7 +124,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_REMINDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_REMINDER",
 			"Ljava/lang/String;"
@@ -132,7 +132,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_SERVICE",
 			"Ljava/lang/String;"
@@ -140,7 +140,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_SOCIAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_SOCIAL",
 			"Ljava/lang/String;"
@@ -148,7 +148,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_STATUS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_STATUS",
 			"Ljava/lang/String;"
@@ -156,7 +156,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_SYSTEM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_SYSTEM",
 			"Ljava/lang/String;"
@@ -164,7 +164,7 @@ namespace android::app
 	}
 	jstring Notification::CATEGORY_TRANSPORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_TRANSPORT",
 			"Ljava/lang/String;"
@@ -172,14 +172,14 @@ namespace android::app
 	}
 	jint Notification::COLOR_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"COLOR_DEFAULT"
 		);
 	}
 	__JniBaseClass Notification::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -187,35 +187,35 @@ namespace android::app
 	}
 	jint Notification::DEFAULT_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"DEFAULT_ALL"
 		);
 	}
 	jint Notification::DEFAULT_LIGHTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"DEFAULT_LIGHTS"
 		);
 	}
 	jint Notification::DEFAULT_SOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"DEFAULT_SOUND"
 		);
 	}
 	jint Notification::DEFAULT_VIBRATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"DEFAULT_VIBRATE"
 		);
 	}
 	jstring Notification::EXTRA_AUDIO_CONTENTS_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_AUDIO_CONTENTS_URI",
 			"Ljava/lang/String;"
@@ -223,7 +223,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_BACKGROUND_IMAGE_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_BACKGROUND_IMAGE_URI",
 			"Ljava/lang/String;"
@@ -231,7 +231,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_BIG_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_BIG_TEXT",
 			"Ljava/lang/String;"
@@ -239,7 +239,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_CHANNEL_GROUP_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CHANNEL_GROUP_ID",
 			"Ljava/lang/String;"
@@ -247,7 +247,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_CHANNEL_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CHANNEL_ID",
 			"Ljava/lang/String;"
@@ -255,7 +255,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_CHRONOMETER_COUNT_DOWN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CHRONOMETER_COUNT_DOWN",
 			"Ljava/lang/String;"
@@ -263,7 +263,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_COLORIZED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_COLORIZED",
 			"Ljava/lang/String;"
@@ -271,7 +271,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_COMPACT_ACTIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_COMPACT_ACTIONS",
 			"Ljava/lang/String;"
@@ -279,7 +279,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_CONVERSATION_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CONVERSATION_TITLE",
 			"Ljava/lang/String;"
@@ -287,7 +287,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_HISTORIC_MESSAGES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_HISTORIC_MESSAGES",
 			"Ljava/lang/String;"
@@ -295,7 +295,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_INFO_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_INFO_TEXT",
 			"Ljava/lang/String;"
@@ -303,7 +303,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_IS_GROUP_CONVERSATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_IS_GROUP_CONVERSATION",
 			"Ljava/lang/String;"
@@ -311,7 +311,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_LARGE_ICON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_LARGE_ICON",
 			"Ljava/lang/String;"
@@ -319,7 +319,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_LARGE_ICON_BIG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_LARGE_ICON_BIG",
 			"Ljava/lang/String;"
@@ -327,7 +327,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_MEDIA_SESSION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_MEDIA_SESSION",
 			"Ljava/lang/String;"
@@ -335,7 +335,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_MESSAGES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_MESSAGES",
 			"Ljava/lang/String;"
@@ -343,7 +343,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_MESSAGING_PERSON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_MESSAGING_PERSON",
 			"Ljava/lang/String;"
@@ -351,7 +351,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_NOTIFICATION_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_NOTIFICATION_ID",
 			"Ljava/lang/String;"
@@ -359,7 +359,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_NOTIFICATION_TAG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_NOTIFICATION_TAG",
 			"Ljava/lang/String;"
@@ -367,7 +367,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_PEOPLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PEOPLE",
 			"Ljava/lang/String;"
@@ -375,7 +375,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_PEOPLE_LIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PEOPLE_LIST",
 			"Ljava/lang/String;"
@@ -383,7 +383,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_PICTURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PICTURE",
 			"Ljava/lang/String;"
@@ -391,7 +391,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_PROGRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PROGRESS",
 			"Ljava/lang/String;"
@@ -399,7 +399,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_PROGRESS_INDETERMINATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PROGRESS_INDETERMINATE",
 			"Ljava/lang/String;"
@@ -407,7 +407,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_PROGRESS_MAX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PROGRESS_MAX",
 			"Ljava/lang/String;"
@@ -415,7 +415,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_REMOTE_INPUT_DRAFT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_REMOTE_INPUT_DRAFT",
 			"Ljava/lang/String;"
@@ -423,7 +423,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_REMOTE_INPUT_HISTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_REMOTE_INPUT_HISTORY",
 			"Ljava/lang/String;"
@@ -431,7 +431,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_SELF_DISPLAY_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SELF_DISPLAY_NAME",
 			"Ljava/lang/String;"
@@ -439,7 +439,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_SHOW_CHRONOMETER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SHOW_CHRONOMETER",
 			"Ljava/lang/String;"
@@ -447,7 +447,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_SHOW_WHEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SHOW_WHEN",
 			"Ljava/lang/String;"
@@ -455,7 +455,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_SMALL_ICON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SMALL_ICON",
 			"Ljava/lang/String;"
@@ -463,7 +463,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_SUB_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SUB_TEXT",
 			"Ljava/lang/String;"
@@ -471,7 +471,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_SUMMARY_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SUMMARY_TEXT",
 			"Ljava/lang/String;"
@@ -479,7 +479,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_TEMPLATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TEMPLATE",
 			"Ljava/lang/String;"
@@ -487,7 +487,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TEXT",
 			"Ljava/lang/String;"
@@ -495,7 +495,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_TEXT_LINES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TEXT_LINES",
 			"Ljava/lang/String;"
@@ -503,7 +503,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TITLE",
 			"Ljava/lang/String;"
@@ -511,7 +511,7 @@ namespace android::app
 	}
 	jstring Notification::EXTRA_TITLE_BIG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TITLE_BIG",
 			"Ljava/lang/String;"
@@ -519,105 +519,105 @@ namespace android::app
 	}
 	jint Notification::FLAG_AUTO_CANCEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_AUTO_CANCEL"
 		);
 	}
 	jint Notification::FLAG_BUBBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_BUBBLE"
 		);
 	}
 	jint Notification::FLAG_FOREGROUND_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_FOREGROUND_SERVICE"
 		);
 	}
 	jint Notification::FLAG_GROUP_SUMMARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_GROUP_SUMMARY"
 		);
 	}
 	jint Notification::FLAG_HIGH_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_HIGH_PRIORITY"
 		);
 	}
 	jint Notification::FLAG_INSISTENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_INSISTENT"
 		);
 	}
 	jint Notification::FLAG_LOCAL_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_LOCAL_ONLY"
 		);
 	}
 	jint Notification::FLAG_NO_CLEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_NO_CLEAR"
 		);
 	}
 	jint Notification::FLAG_ONGOING_EVENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_ONGOING_EVENT"
 		);
 	}
 	jint Notification::FLAG_ONLY_ALERT_ONCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_ONLY_ALERT_ONCE"
 		);
 	}
 	jint Notification::FLAG_SHOW_LIGHTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"FLAG_SHOW_LIGHTS"
 		);
 	}
 	jint Notification::GROUP_ALERT_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"GROUP_ALERT_ALL"
 		);
 	}
 	jint Notification::GROUP_ALERT_CHILDREN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"GROUP_ALERT_CHILDREN"
 		);
 	}
 	jint Notification::GROUP_ALERT_SUMMARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"GROUP_ALERT_SUMMARY"
 		);
 	}
 	jstring Notification::INTENT_CATEGORY_NOTIFICATION_PREFERENCES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification",
 			"INTENT_CATEGORY_NOTIFICATION_PREFERENCES",
 			"Ljava/lang/String;"
@@ -625,63 +625,63 @@ namespace android::app
 	}
 	jint Notification::PRIORITY_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"PRIORITY_DEFAULT"
 		);
 	}
 	jint Notification::PRIORITY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"PRIORITY_HIGH"
 		);
 	}
 	jint Notification::PRIORITY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"PRIORITY_LOW"
 		);
 	}
 	jint Notification::PRIORITY_MAX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"PRIORITY_MAX"
 		);
 	}
 	jint Notification::PRIORITY_MIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"PRIORITY_MIN"
 		);
 	}
 	jint Notification::STREAM_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"STREAM_DEFAULT"
 		);
 	}
 	jint Notification::VISIBILITY_PRIVATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"VISIBILITY_PRIVATE"
 		);
 	}
 	jint Notification::VISIBILITY_PUBLIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"VISIBILITY_PUBLIC"
 		);
 	}
 	jint Notification::VISIBILITY_SECRET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification",
 			"VISIBILITY_SECRET"
 		);

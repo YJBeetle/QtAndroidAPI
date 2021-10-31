@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jarray SearchRecentSuggestions::QUERIES_PROJECTION_1LINE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.SearchRecentSuggestions",
 			"QUERIES_PROJECTION_1LINE",
 			"[Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	jarray SearchRecentSuggestions::QUERIES_PROJECTION_2LINE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.SearchRecentSuggestions",
 			"QUERIES_PROJECTION_2LINE",
 			"[Ljava/lang/String;"
@@ -23,28 +23,28 @@ namespace android::provider
 	}
 	jint SearchRecentSuggestions::QUERIES_PROJECTION_DATE_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.SearchRecentSuggestions",
 			"QUERIES_PROJECTION_DATE_INDEX"
 		);
 	}
 	jint SearchRecentSuggestions::QUERIES_PROJECTION_DISPLAY1_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.SearchRecentSuggestions",
 			"QUERIES_PROJECTION_DISPLAY1_INDEX"
 		);
 	}
 	jint SearchRecentSuggestions::QUERIES_PROJECTION_DISPLAY2_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.SearchRecentSuggestions",
 			"QUERIES_PROJECTION_DISPLAY2_INDEX"
 		);
 	}
 	jint SearchRecentSuggestions::QUERIES_PROJECTION_QUERY_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.SearchRecentSuggestions",
 			"QUERIES_PROJECTION_QUERY_INDEX"
 		);

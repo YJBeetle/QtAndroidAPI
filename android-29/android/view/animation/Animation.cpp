@@ -7,70 +7,70 @@ namespace android::view::animation
 	// Fields
 	jint Animation::ABSOLUTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Animation",
 			"ABSOLUTE"
 		);
 	}
 	jint Animation::INFINITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Animation",
 			"INFINITE"
 		);
 	}
 	jint Animation::RELATIVE_TO_PARENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Animation",
 			"RELATIVE_TO_PARENT"
 		);
 	}
 	jint Animation::RELATIVE_TO_SELF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Animation",
 			"RELATIVE_TO_SELF"
 		);
 	}
 	jint Animation::RESTART()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Animation",
 			"RESTART"
 		);
 	}
 	jint Animation::REVERSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Animation",
 			"REVERSE"
 		);
 	}
 	jint Animation::START_ON_FIRST_FRAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Animation",
 			"START_ON_FIRST_FRAME"
 		);
 	}
 	jint Animation::ZORDER_BOTTOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Animation",
 			"ZORDER_BOTTOM"
 		);
 	}
 	jint Animation::ZORDER_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Animation",
 			"ZORDER_NORMAL"
 		);
 	}
 	jint Animation::ZORDER_TOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Animation",
 			"ZORDER_TOP"
 		);

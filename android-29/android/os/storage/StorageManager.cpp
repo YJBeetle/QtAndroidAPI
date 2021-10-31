@@ -14,7 +14,7 @@ namespace android::os::storage
 	// Fields
 	jstring StorageManager::ACTION_MANAGE_STORAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.storage.StorageManager",
 			"ACTION_MANAGE_STORAGE",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::os::storage
 	}
 	jstring StorageManager::EXTRA_REQUESTED_BYTES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.storage.StorageManager",
 			"EXTRA_REQUESTED_BYTES",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::os::storage
 	}
 	jstring StorageManager::EXTRA_UUID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.storage.StorageManager",
 			"EXTRA_UUID",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::os::storage
 	}
 	java::util::UUID StorageManager::UUID_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.storage.StorageManager",
 			"UUID_DEFAULT",
 			"Ljava/util/UUID;"

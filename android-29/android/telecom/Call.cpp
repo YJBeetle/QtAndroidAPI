@@ -13,7 +13,7 @@ namespace android::telecom
 	// Fields
 	jstring Call::AVAILABLE_PHONE_ACCOUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Call",
 			"AVAILABLE_PHONE_ACCOUNTS",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::telecom
 	}
 	jstring Call::EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Call",
 			"EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::telecom
 	}
 	jstring Call::EXTRA_SILENT_RINGING_REQUESTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Call",
 			"EXTRA_SILENT_RINGING_REQUESTED",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::telecom
 	}
 	jstring Call::EXTRA_SUGGESTED_PHONE_ACCOUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Call",
 			"EXTRA_SUGGESTED_PHONE_ACCOUNTS",
 			"Ljava/lang/String;"
@@ -45,70 +45,70 @@ namespace android::telecom
 	}
 	jint Call::STATE_ACTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call",
 			"STATE_ACTIVE"
 		);
 	}
 	jint Call::STATE_CONNECTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call",
 			"STATE_CONNECTING"
 		);
 	}
 	jint Call::STATE_DIALING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call",
 			"STATE_DIALING"
 		);
 	}
 	jint Call::STATE_DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call",
 			"STATE_DISCONNECTED"
 		);
 	}
 	jint Call::STATE_DISCONNECTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call",
 			"STATE_DISCONNECTING"
 		);
 	}
 	jint Call::STATE_HOLDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call",
 			"STATE_HOLDING"
 		);
 	}
 	jint Call::STATE_NEW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call",
 			"STATE_NEW"
 		);
 	}
 	jint Call::STATE_PULLING_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call",
 			"STATE_PULLING_CALL"
 		);
 	}
 	jint Call::STATE_RINGING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call",
 			"STATE_RINGING"
 		);
 	}
 	jint Call::STATE_SELECT_PHONE_ACCOUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call",
 			"STATE_SELECT_PHONE_ACCOUNT"
 		);

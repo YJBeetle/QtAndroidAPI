@@ -6,7 +6,7 @@ namespace android::view::contentcapture
 	// Fields
 	__JniBaseClass ContentCaptureSessionId::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.contentcapture.ContentCaptureSessionId",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

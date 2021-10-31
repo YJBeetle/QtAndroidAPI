@@ -10,21 +10,21 @@ namespace android::renderscript
 	// Fields
 	jint RenderScript::CREATE_FLAG_LOW_LATENCY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.RenderScript",
 			"CREATE_FLAG_LOW_LATENCY"
 		);
 	}
 	jint RenderScript::CREATE_FLAG_LOW_POWER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.RenderScript",
 			"CREATE_FLAG_LOW_POWER"
 		);
 	}
 	jint RenderScript::CREATE_FLAG_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.RenderScript",
 			"CREATE_FLAG_NONE"
 		);
@@ -38,7 +38,7 @@ namespace android::renderscript
 	// Methods
 	android::renderscript::RenderScript RenderScript::create(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.RenderScript",
 			"create",
 			"(Landroid/content/Context;)Landroid/renderscript/RenderScript;",
@@ -47,7 +47,7 @@ namespace android::renderscript
 	}
 	android::renderscript::RenderScript RenderScript::create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.RenderScript",
 			"create",
 			"(Landroid/content/Context;Landroid/renderscript/RenderScript$ContextType;)Landroid/renderscript/RenderScript;",
@@ -57,7 +57,7 @@ namespace android::renderscript
 	}
 	android::renderscript::RenderScript RenderScript::create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.RenderScript",
 			"create",
 			"(Landroid/content/Context;Landroid/renderscript/RenderScript$ContextType;I)Landroid/renderscript/RenderScript;",
@@ -68,7 +68,7 @@ namespace android::renderscript
 	}
 	android::renderscript::RenderScript RenderScript::createMultiContext(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.RenderScript",
 			"createMultiContext",
 			"(Landroid/content/Context;Landroid/renderscript/RenderScript$ContextType;II)Landroid/renderscript/RenderScript;",
@@ -80,7 +80,7 @@ namespace android::renderscript
 	}
 	jlong RenderScript::getMinorVersion()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.renderscript.RenderScript",
 			"getMinorVersion",
 			"()J"
@@ -88,7 +88,7 @@ namespace android::renderscript
 	}
 	void RenderScript::releaseAllContexts()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.renderscript.RenderScript",
 			"releaseAllContexts",
 			"()V"

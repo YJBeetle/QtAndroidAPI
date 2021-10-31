@@ -5,49 +5,49 @@ namespace android::media
 	// Fields
 	jint SyncParams::AUDIO_ADJUST_MODE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.SyncParams",
 			"AUDIO_ADJUST_MODE_DEFAULT"
 		);
 	}
 	jint SyncParams::AUDIO_ADJUST_MODE_RESAMPLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.SyncParams",
 			"AUDIO_ADJUST_MODE_RESAMPLE"
 		);
 	}
 	jint SyncParams::AUDIO_ADJUST_MODE_STRETCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.SyncParams",
 			"AUDIO_ADJUST_MODE_STRETCH"
 		);
 	}
 	jint SyncParams::SYNC_SOURCE_AUDIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.SyncParams",
 			"SYNC_SOURCE_AUDIO"
 		);
 	}
 	jint SyncParams::SYNC_SOURCE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.SyncParams",
 			"SYNC_SOURCE_DEFAULT"
 		);
 	}
 	jint SyncParams::SYNC_SOURCE_SYSTEM_CLOCK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.SyncParams",
 			"SYNC_SOURCE_SYSTEM_CLOCK"
 		);
 	}
 	jint SyncParams::SYNC_SOURCE_VSYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.SyncParams",
 			"SYNC_SOURCE_VSYNC"
 		);

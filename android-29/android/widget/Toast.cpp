@@ -7,14 +7,14 @@ namespace android::widget
 	// Fields
 	jint Toast::LENGTH_LONG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.Toast",
 			"LENGTH_LONG"
 		);
 	}
 	jint Toast::LENGTH_SHORT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.Toast",
 			"LENGTH_SHORT"
 		);
@@ -34,7 +34,7 @@ namespace android::widget
 	// Methods
 	android::widget::Toast Toast::makeText(android::content::Context arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.Toast",
 			"makeText",
 			"(Landroid/content/Context;II)Landroid/widget/Toast;",
@@ -45,7 +45,7 @@ namespace android::widget
 	}
 	android::widget::Toast Toast::makeText(android::content::Context arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.Toast",
 			"makeText",
 			"(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;",

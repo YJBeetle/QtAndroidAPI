@@ -12,35 +12,35 @@ namespace android::widget
 	// Fields
 	jint GridView::AUTO_FIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.GridView",
 			"AUTO_FIT"
 		);
 	}
 	jint GridView::NO_STRETCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.GridView",
 			"NO_STRETCH"
 		);
 	}
 	jint GridView::STRETCH_COLUMN_WIDTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.GridView",
 			"STRETCH_COLUMN_WIDTH"
 		);
 	}
 	jint GridView::STRETCH_SPACING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.GridView",
 			"STRETCH_SPACING"
 		);
 	}
 	jint GridView::STRETCH_SPACING_UNIFORM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.GridView",
 			"STRETCH_SPACING_UNIFORM"
 		);

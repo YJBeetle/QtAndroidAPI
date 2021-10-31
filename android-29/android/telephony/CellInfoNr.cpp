@@ -8,7 +8,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass CellInfoNr::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.CellInfoNr",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

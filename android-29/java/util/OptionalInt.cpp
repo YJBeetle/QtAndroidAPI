@@ -12,7 +12,7 @@ namespace java::util
 	// Methods
 	java::util::OptionalInt OptionalInt::empty()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.OptionalInt",
 			"empty",
 			"()Ljava/util/OptionalInt;"
@@ -20,7 +20,7 @@ namespace java::util
 	}
 	java::util::OptionalInt OptionalInt::of(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.OptionalInt",
 			"of",
 			"(I)Ljava/util/OptionalInt;",

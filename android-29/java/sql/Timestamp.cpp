@@ -33,7 +33,7 @@ namespace java::sql
 	// Methods
 	java::sql::Timestamp Timestamp::from(java::time::Instant arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.Timestamp",
 			"from",
 			"(Ljava/time/Instant;)Ljava/sql/Timestamp;",
@@ -42,7 +42,7 @@ namespace java::sql
 	}
 	java::sql::Timestamp Timestamp::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.Timestamp",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Timestamp;",
@@ -51,7 +51,7 @@ namespace java::sql
 	}
 	java::sql::Timestamp Timestamp::valueOf(java::time::LocalDateTime arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.Timestamp",
 			"valueOf",
 			"(Ljava/time/LocalDateTime;)Ljava/sql/Timestamp;",

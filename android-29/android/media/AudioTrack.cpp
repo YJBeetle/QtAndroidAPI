@@ -17,126 +17,126 @@ namespace android::media
 	// Fields
 	jint AudioTrack::ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"ERROR"
 		);
 	}
 	jint AudioTrack::ERROR_BAD_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"ERROR_BAD_VALUE"
 		);
 	}
 	jint AudioTrack::ERROR_DEAD_OBJECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"ERROR_DEAD_OBJECT"
 		);
 	}
 	jint AudioTrack::ERROR_INVALID_OPERATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"ERROR_INVALID_OPERATION"
 		);
 	}
 	jint AudioTrack::MODE_STATIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"MODE_STATIC"
 		);
 	}
 	jint AudioTrack::MODE_STREAM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"MODE_STREAM"
 		);
 	}
 	jint AudioTrack::PERFORMANCE_MODE_LOW_LATENCY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"PERFORMANCE_MODE_LOW_LATENCY"
 		);
 	}
 	jint AudioTrack::PERFORMANCE_MODE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"PERFORMANCE_MODE_NONE"
 		);
 	}
 	jint AudioTrack::PERFORMANCE_MODE_POWER_SAVING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"PERFORMANCE_MODE_POWER_SAVING"
 		);
 	}
 	jint AudioTrack::PLAYSTATE_PAUSED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"PLAYSTATE_PAUSED"
 		);
 	}
 	jint AudioTrack::PLAYSTATE_PLAYING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"PLAYSTATE_PLAYING"
 		);
 	}
 	jint AudioTrack::PLAYSTATE_STOPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"PLAYSTATE_STOPPED"
 		);
 	}
 	jint AudioTrack::STATE_INITIALIZED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"STATE_INITIALIZED"
 		);
 	}
 	jint AudioTrack::STATE_NO_STATIC_DATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"STATE_NO_STATIC_DATA"
 		);
 	}
 	jint AudioTrack::STATE_UNINITIALIZED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"STATE_UNINITIALIZED"
 		);
 	}
 	jint AudioTrack::SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"SUCCESS"
 		);
 	}
 	jint AudioTrack::WRITE_BLOCKING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"WRITE_BLOCKING"
 		);
 	}
 	jint AudioTrack::WRITE_NON_BLOCKING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTrack",
 			"WRITE_NON_BLOCKING"
 		);
@@ -183,7 +183,7 @@ namespace android::media
 	// Methods
 	jfloat AudioTrack::getMaxVolume()
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.media.AudioTrack",
 			"getMaxVolume",
 			"()F"
@@ -191,7 +191,7 @@ namespace android::media
 	}
 	jint AudioTrack::getMinBufferSize(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.AudioTrack",
 			"getMinBufferSize",
 			"(III)I",
@@ -202,7 +202,7 @@ namespace android::media
 	}
 	jfloat AudioTrack::getMinVolume()
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.media.AudioTrack",
 			"getMinVolume",
 			"()F"
@@ -210,7 +210,7 @@ namespace android::media
 	}
 	jint AudioTrack::getNativeOutputSampleRate(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.AudioTrack",
 			"getNativeOutputSampleRate",
 			"(I)I",
@@ -219,7 +219,7 @@ namespace android::media
 	}
 	jboolean AudioTrack::isDirectPlaybackSupported(android::media::AudioFormat arg0, android::media::AudioAttributes arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.AudioTrack",
 			"isDirectPlaybackSupported",
 			"(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)Z",

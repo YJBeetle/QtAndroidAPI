@@ -31,7 +31,7 @@ namespace android::graphics::drawable
 	// Methods
 	jfloat AdaptiveIconDrawable::getExtraInsetFraction()
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.graphics.drawable.AdaptiveIconDrawable",
 			"getExtraInsetFraction",
 			"()F"

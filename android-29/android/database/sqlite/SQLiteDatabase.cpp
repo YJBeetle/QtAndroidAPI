@@ -11,91 +11,91 @@ namespace android::database::sqlite
 	// Fields
 	jint SQLiteDatabase::CONFLICT_ABORT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"CONFLICT_ABORT"
 		);
 	}
 	jint SQLiteDatabase::CONFLICT_FAIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"CONFLICT_FAIL"
 		);
 	}
 	jint SQLiteDatabase::CONFLICT_IGNORE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"CONFLICT_IGNORE"
 		);
 	}
 	jint SQLiteDatabase::CONFLICT_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"CONFLICT_NONE"
 		);
 	}
 	jint SQLiteDatabase::CONFLICT_REPLACE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"CONFLICT_REPLACE"
 		);
 	}
 	jint SQLiteDatabase::CONFLICT_ROLLBACK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"CONFLICT_ROLLBACK"
 		);
 	}
 	jint SQLiteDatabase::CREATE_IF_NECESSARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"CREATE_IF_NECESSARY"
 		);
 	}
 	jint SQLiteDatabase::ENABLE_WRITE_AHEAD_LOGGING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"ENABLE_WRITE_AHEAD_LOGGING"
 		);
 	}
 	jint SQLiteDatabase::MAX_SQL_CACHE_SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"MAX_SQL_CACHE_SIZE"
 		);
 	}
 	jint SQLiteDatabase::NO_LOCALIZED_COLLATORS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"NO_LOCALIZED_COLLATORS"
 		);
 	}
 	jint SQLiteDatabase::OPEN_READONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"OPEN_READONLY"
 		);
 	}
 	jint SQLiteDatabase::OPEN_READWRITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"OPEN_READWRITE"
 		);
 	}
 	jint SQLiteDatabase::SQLITE_MAX_LIKE_PATTERN_LENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"SQLITE_MAX_LIKE_PATTERN_LENGTH"
 		);
@@ -109,7 +109,7 @@ namespace android::database::sqlite
 	// Methods
 	android::database::sqlite::SQLiteDatabase SQLiteDatabase::create(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"create",
 			"(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
@@ -118,7 +118,7 @@ namespace android::database::sqlite
 	}
 	android::database::sqlite::SQLiteDatabase SQLiteDatabase::createInMemory(android::database::sqlite::SQLiteDatabase_OpenParams arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"createInMemory",
 			"(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)Landroid/database/sqlite/SQLiteDatabase;",
@@ -127,7 +127,7 @@ namespace android::database::sqlite
 	}
 	jboolean SQLiteDatabase::deleteDatabase(java::io::File arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.database.sqlite.SQLiteDatabase",
 			"deleteDatabase",
 			"(Ljava/io/File;)Z",
@@ -136,7 +136,7 @@ namespace android::database::sqlite
 	}
 	jstring SQLiteDatabase::findEditTable(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"findEditTable",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -145,7 +145,7 @@ namespace android::database::sqlite
 	}
 	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openDatabase(java::io::File arg0, android::database::sqlite::SQLiteDatabase_OpenParams arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"openDatabase",
 			"(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$OpenParams;)Landroid/database/sqlite/SQLiteDatabase;",
@@ -155,7 +155,7 @@ namespace android::database::sqlite
 	}
 	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openDatabase(jstring arg0, __JniBaseClass arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"openDatabase",
 			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)Landroid/database/sqlite/SQLiteDatabase;",
@@ -166,7 +166,7 @@ namespace android::database::sqlite
 	}
 	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openDatabase(jstring arg0, __JniBaseClass arg1, jint arg2, __JniBaseClass arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"openDatabase",
 			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;ILandroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;",
@@ -178,7 +178,7 @@ namespace android::database::sqlite
 	}
 	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openOrCreateDatabase(java::io::File arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"openOrCreateDatabase",
 			"(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
@@ -188,7 +188,7 @@ namespace android::database::sqlite
 	}
 	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openOrCreateDatabase(jstring arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"openOrCreateDatabase",
 			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
@@ -198,7 +198,7 @@ namespace android::database::sqlite
 	}
 	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openOrCreateDatabase(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"openOrCreateDatabase",
 			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;",
@@ -209,7 +209,7 @@ namespace android::database::sqlite
 	}
 	jint SQLiteDatabase::releaseMemory()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"releaseMemory",
 			"()I"

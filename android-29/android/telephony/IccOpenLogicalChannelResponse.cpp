@@ -6,7 +6,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass IccOpenLogicalChannelResponse::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.IccOpenLogicalChannelResponse",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,35 +14,35 @@ namespace android::telephony
 	}
 	jint IccOpenLogicalChannelResponse::INVALID_CHANNEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.IccOpenLogicalChannelResponse",
 			"INVALID_CHANNEL"
 		);
 	}
 	jint IccOpenLogicalChannelResponse::STATUS_MISSING_RESOURCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.IccOpenLogicalChannelResponse",
 			"STATUS_MISSING_RESOURCE"
 		);
 	}
 	jint IccOpenLogicalChannelResponse::STATUS_NO_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.IccOpenLogicalChannelResponse",
 			"STATUS_NO_ERROR"
 		);
 	}
 	jint IccOpenLogicalChannelResponse::STATUS_NO_SUCH_ELEMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.IccOpenLogicalChannelResponse",
 			"STATUS_NO_SUCH_ELEMENT"
 		);
 	}
 	jint IccOpenLogicalChannelResponse::STATUS_UNKNOWN_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.IccOpenLogicalChannelResponse",
 			"STATUS_UNKNOWN_ERROR"
 		);

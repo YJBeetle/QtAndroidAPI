@@ -5,14 +5,14 @@ namespace android::hardware
 	// Fields
 	jint Camera_CameraInfo::CAMERA_FACING_BACK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.Camera$CameraInfo",
 			"CAMERA_FACING_BACK"
 		);
 	}
 	jint Camera_CameraInfo::CAMERA_FACING_FRONT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.Camera$CameraInfo",
 			"CAMERA_FACING_FRONT"
 		);

@@ -8,21 +8,21 @@ namespace android::view
 	// Fields
 	jint ViewGroup_LayoutParams::FILL_PARENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup$LayoutParams",
 			"FILL_PARENT"
 		);
 	}
 	jint ViewGroup_LayoutParams::MATCH_PARENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup$LayoutParams",
 			"MATCH_PARENT"
 		);
 	}
 	jint ViewGroup_LayoutParams::WRAP_CONTENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup$LayoutParams",
 			"WRAP_CONTENT"
 		);

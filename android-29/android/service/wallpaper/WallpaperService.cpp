@@ -9,7 +9,7 @@ namespace android::service::wallpaper
 	// Fields
 	jstring WallpaperService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.wallpaper.WallpaperService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -17,7 +17,7 @@ namespace android::service::wallpaper
 	}
 	jstring WallpaperService::SERVICE_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.wallpaper.WallpaperService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"

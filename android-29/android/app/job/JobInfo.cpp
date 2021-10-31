@@ -11,21 +11,21 @@ namespace android::app::job
 	// Fields
 	jint JobInfo::BACKOFF_POLICY_EXPONENTIAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobInfo",
 			"BACKOFF_POLICY_EXPONENTIAL"
 		);
 	}
 	jint JobInfo::BACKOFF_POLICY_LINEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobInfo",
 			"BACKOFF_POLICY_LINEAR"
 		);
 	}
 	__JniBaseClass JobInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.job.JobInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -33,63 +33,63 @@ namespace android::app::job
 	}
 	jlong JobInfo::DEFAULT_INITIAL_BACKOFF_MILLIS()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.app.job.JobInfo",
 			"DEFAULT_INITIAL_BACKOFF_MILLIS"
 		);
 	}
 	jlong JobInfo::MAX_BACKOFF_DELAY_MILLIS()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.app.job.JobInfo",
 			"MAX_BACKOFF_DELAY_MILLIS"
 		);
 	}
 	jint JobInfo::NETWORK_BYTES_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobInfo",
 			"NETWORK_BYTES_UNKNOWN"
 		);
 	}
 	jint JobInfo::NETWORK_TYPE_ANY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobInfo",
 			"NETWORK_TYPE_ANY"
 		);
 	}
 	jint JobInfo::NETWORK_TYPE_CELLULAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobInfo",
 			"NETWORK_TYPE_CELLULAR"
 		);
 	}
 	jint JobInfo::NETWORK_TYPE_METERED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobInfo",
 			"NETWORK_TYPE_METERED"
 		);
 	}
 	jint JobInfo::NETWORK_TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobInfo",
 			"NETWORK_TYPE_NONE"
 		);
 	}
 	jint JobInfo::NETWORK_TYPE_NOT_ROAMING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobInfo",
 			"NETWORK_TYPE_NOT_ROAMING"
 		);
 	}
 	jint JobInfo::NETWORK_TYPE_UNMETERED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobInfo",
 			"NETWORK_TYPE_UNMETERED"
 		);
@@ -103,7 +103,7 @@ namespace android::app::job
 	// Methods
 	jlong JobInfo::getMinFlexMillis()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.app.job.JobInfo",
 			"getMinFlexMillis",
 			"()J"
@@ -111,7 +111,7 @@ namespace android::app::job
 	}
 	jlong JobInfo::getMinPeriodMillis()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.app.job.JobInfo",
 			"getMinPeriodMillis",
 			"()J"

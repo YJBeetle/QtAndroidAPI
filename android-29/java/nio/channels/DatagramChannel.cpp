@@ -16,7 +16,7 @@ namespace java::nio::channels
 	// Methods
 	java::nio::channels::DatagramChannel DatagramChannel::open()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.DatagramChannel",
 			"open",
 			"()Ljava/nio/channels/DatagramChannel;"
@@ -24,7 +24,7 @@ namespace java::nio::channels
 	}
 	java::nio::channels::DatagramChannel DatagramChannel::open(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.DatagramChannel",
 			"open",
 			"(Ljava/net/ProtocolFamily;)Ljava/nio/channels/DatagramChannel;",

@@ -27,7 +27,7 @@ namespace java::lang::invoke
 	// Methods
 	void MutableCallSite::syncAll(jarray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.invoke.MutableCallSite",
 			"syncAll",
 			"([Ljava/lang/invoke/MutableCallSite;)V",

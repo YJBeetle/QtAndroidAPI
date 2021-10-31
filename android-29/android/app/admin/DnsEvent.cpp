@@ -6,7 +6,7 @@ namespace android::app::admin
 	// Fields
 	__JniBaseClass DnsEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DnsEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -21,7 +21,7 @@ namespace android::app::admin
 	// Fields
 	jstring DevicePolicyManager::ACTION_ADD_DEVICE_ADMIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_ADD_DEVICE_ADMIN",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_ADMIN_POLICY_COMPLIANCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_ADMIN_POLICY_COMPLIANCE",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_APPLICATION_DELEGATION_SCOPES_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_APPLICATION_DELEGATION_SCOPES_CHANGED",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_DEVICE_ADMIN_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_DEVICE_ADMIN_SERVICE",
 			"Ljava/lang/String;"
@@ -53,7 +53,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_DEVICE_OWNER_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_DEVICE_OWNER_CHANGED",
 			"Ljava/lang/String;"
@@ -61,7 +61,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_GET_PROVISIONING_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_GET_PROVISIONING_MODE",
 			"Ljava/lang/String;"
@@ -69,7 +69,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_MANAGED_PROFILE_PROVISIONED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_MANAGED_PROFILE_PROVISIONED",
 			"Ljava/lang/String;"
@@ -77,7 +77,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_PROFILE_OWNER_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_PROFILE_OWNER_CHANGED",
 			"Ljava/lang/String;"
@@ -85,7 +85,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_PROVISIONING_SUCCESSFUL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_PROVISIONING_SUCCESSFUL",
 			"Ljava/lang/String;"
@@ -93,7 +93,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_PROVISION_MANAGED_DEVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_PROVISION_MANAGED_DEVICE",
 			"Ljava/lang/String;"
@@ -101,7 +101,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_PROVISION_MANAGED_PROFILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_PROVISION_MANAGED_PROFILE",
 			"Ljava/lang/String;"
@@ -109,7 +109,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_SET_NEW_PARENT_PROFILE_PASSWORD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_SET_NEW_PARENT_PROFILE_PASSWORD",
 			"Ljava/lang/String;"
@@ -117,7 +117,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_SET_NEW_PASSWORD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_SET_NEW_PASSWORD",
 			"Ljava/lang/String;"
@@ -125,7 +125,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_START_ENCRYPTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_START_ENCRYPTION",
 			"Ljava/lang/String;"
@@ -133,7 +133,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::ACTION_SYSTEM_UPDATE_POLICY_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"ACTION_SYSTEM_UPDATE_POLICY_CHANGED",
 			"Ljava/lang/String;"
@@ -141,7 +141,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::DELEGATION_APP_RESTRICTIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_APP_RESTRICTIONS",
 			"Ljava/lang/String;"
@@ -149,7 +149,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::DELEGATION_BLOCK_UNINSTALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_BLOCK_UNINSTALL",
 			"Ljava/lang/String;"
@@ -157,7 +157,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::DELEGATION_CERT_INSTALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_CERT_INSTALL",
 			"Ljava/lang/String;"
@@ -165,7 +165,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::DELEGATION_CERT_SELECTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_CERT_SELECTION",
 			"Ljava/lang/String;"
@@ -173,7 +173,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::DELEGATION_ENABLE_SYSTEM_APP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_ENABLE_SYSTEM_APP",
 			"Ljava/lang/String;"
@@ -181,7 +181,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::DELEGATION_INSTALL_EXISTING_PACKAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_INSTALL_EXISTING_PACKAGE",
 			"Ljava/lang/String;"
@@ -189,7 +189,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::DELEGATION_KEEP_UNINSTALLED_PACKAGES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_KEEP_UNINSTALLED_PACKAGES",
 			"Ljava/lang/String;"
@@ -197,7 +197,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::DELEGATION_NETWORK_LOGGING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_NETWORK_LOGGING",
 			"Ljava/lang/String;"
@@ -205,7 +205,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::DELEGATION_PACKAGE_ACCESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_PACKAGE_ACCESS",
 			"Ljava/lang/String;"
@@ -213,7 +213,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::DELEGATION_PERMISSION_GRANT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"DELEGATION_PERMISSION_GRANT",
 			"Ljava/lang/String;"
@@ -221,49 +221,49 @@ namespace android::app::admin
 	}
 	jint DevicePolicyManager::ENCRYPTION_STATUS_ACTIVATING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"ENCRYPTION_STATUS_ACTIVATING"
 		);
 	}
 	jint DevicePolicyManager::ENCRYPTION_STATUS_ACTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"ENCRYPTION_STATUS_ACTIVE"
 		);
 	}
 	jint DevicePolicyManager::ENCRYPTION_STATUS_ACTIVE_DEFAULT_KEY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"ENCRYPTION_STATUS_ACTIVE_DEFAULT_KEY"
 		);
 	}
 	jint DevicePolicyManager::ENCRYPTION_STATUS_ACTIVE_PER_USER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"ENCRYPTION_STATUS_ACTIVE_PER_USER"
 		);
 	}
 	jint DevicePolicyManager::ENCRYPTION_STATUS_INACTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"ENCRYPTION_STATUS_INACTIVE"
 		);
 	}
 	jint DevicePolicyManager::ENCRYPTION_STATUS_UNSUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"ENCRYPTION_STATUS_UNSUPPORTED"
 		);
 	}
 	jstring DevicePolicyManager::EXTRA_ADD_EXPLANATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_ADD_EXPLANATION",
 			"Ljava/lang/String;"
@@ -271,7 +271,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_DELEGATION_SCOPES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_DELEGATION_SCOPES",
 			"Ljava/lang/String;"
@@ -279,7 +279,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_DEVICE_ADMIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_DEVICE_ADMIN",
 			"Ljava/lang/String;"
@@ -287,7 +287,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PASSWORD_COMPLEXITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PASSWORD_COMPLEXITY",
 			"Ljava/lang/String;"
@@ -295,7 +295,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_ACCOUNT_TO_MIGRATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_ACCOUNT_TO_MIGRATE",
 			"Ljava/lang/String;"
@@ -303,7 +303,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_ADMIN_EXTRAS_BUNDLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_ADMIN_EXTRAS_BUNDLE",
 			"Ljava/lang/String;"
@@ -311,7 +311,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME",
 			"Ljava/lang/String;"
@@ -319,7 +319,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_MINIMUM_VERSION_CODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_MINIMUM_VERSION_CODE",
 			"Ljava/lang/String;"
@@ -327,7 +327,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM",
 			"Ljava/lang/String;"
@@ -335,7 +335,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_COOKIE_HEADER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_COOKIE_HEADER",
 			"Ljava/lang/String;"
@@ -343,7 +343,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION",
 			"Ljava/lang/String;"
@@ -351,7 +351,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME",
 			"Ljava/lang/String;"
@@ -359,7 +359,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM",
 			"Ljava/lang/String;"
@@ -367,7 +367,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_DISCLAIMERS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DISCLAIMERS",
 			"Ljava/lang/String;"
@@ -375,7 +375,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_DISCLAIMER_CONTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DISCLAIMER_CONTENT",
 			"Ljava/lang/String;"
@@ -383,7 +383,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_DISCLAIMER_HEADER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_DISCLAIMER_HEADER",
 			"Ljava/lang/String;"
@@ -391,7 +391,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_EMAIL_ADDRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_EMAIL_ADDRESS",
 			"Ljava/lang/String;"
@@ -399,7 +399,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_IMEI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_IMEI",
 			"Ljava/lang/String;"
@@ -407,7 +407,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_KEEP_ACCOUNT_ON_MIGRATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_KEEP_ACCOUNT_ON_MIGRATION",
 			"Ljava/lang/String;"
@@ -415,7 +415,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_LEAVE_ALL_SYSTEM_APPS_ENABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_LEAVE_ALL_SYSTEM_APPS_ENABLED",
 			"Ljava/lang/String;"
@@ -423,7 +423,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_LOCALE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_LOCALE",
 			"Ljava/lang/String;"
@@ -431,7 +431,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_LOCAL_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_LOCAL_TIME",
 			"Ljava/lang/String;"
@@ -439,7 +439,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_LOGO_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_LOGO_URI",
 			"Ljava/lang/String;"
@@ -447,7 +447,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_MAIN_COLOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_MAIN_COLOR",
 			"Ljava/lang/String;"
@@ -455,7 +455,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_MODE",
 			"Ljava/lang/String;"
@@ -463,7 +463,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_SERIAL_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_SERIAL_NUMBER",
 			"Ljava/lang/String;"
@@ -471,7 +471,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_SKIP_EDUCATION_SCREENS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_SKIP_EDUCATION_SCREENS",
 			"Ljava/lang/String;"
@@ -479,7 +479,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_SKIP_ENCRYPTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_SKIP_ENCRYPTION",
 			"Ljava/lang/String;"
@@ -487,7 +487,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_SKIP_USER_CONSENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_SKIP_USER_CONSENT",
 			"Ljava/lang/String;"
@@ -495,7 +495,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_TIME_ZONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_TIME_ZONE",
 			"Ljava/lang/String;"
@@ -503,7 +503,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_ANONYMOUS_IDENTITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_ANONYMOUS_IDENTITY",
 			"Ljava/lang/String;"
@@ -511,7 +511,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_CA_CERTIFICATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_CA_CERTIFICATE",
 			"Ljava/lang/String;"
@@ -519,7 +519,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_DOMAIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_DOMAIN",
 			"Ljava/lang/String;"
@@ -527,7 +527,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_EAP_METHOD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_EAP_METHOD",
 			"Ljava/lang/String;"
@@ -535,7 +535,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_HIDDEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_HIDDEN",
 			"Ljava/lang/String;"
@@ -543,7 +543,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_IDENTITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_IDENTITY",
 			"Ljava/lang/String;"
@@ -551,7 +551,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PAC_URL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PAC_URL",
 			"Ljava/lang/String;"
@@ -559,7 +559,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PASSWORD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PASSWORD",
 			"Ljava/lang/String;"
@@ -567,7 +567,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PHASE2_AUTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PHASE2_AUTH",
 			"Ljava/lang/String;"
@@ -575,7 +575,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PROXY_BYPASS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PROXY_BYPASS",
 			"Ljava/lang/String;"
@@ -583,7 +583,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PROXY_HOST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PROXY_HOST",
 			"Ljava/lang/String;"
@@ -591,7 +591,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_PROXY_PORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_PROXY_PORT",
 			"Ljava/lang/String;"
@@ -599,7 +599,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_SECURITY_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_SECURITY_TYPE",
 			"Ljava/lang/String;"
@@ -607,7 +607,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_SSID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_SSID",
 			"Ljava/lang/String;"
@@ -615,7 +615,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::EXTRA_PROVISIONING_WIFI_USER_CERTIFICATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"EXTRA_PROVISIONING_WIFI_USER_CERTIFICATE",
 			"Ljava/lang/String;"
@@ -623,217 +623,217 @@ namespace android::app::admin
 	}
 	jint DevicePolicyManager::FLAG_EVICT_CREDENTIAL_ENCRYPTION_KEY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"FLAG_EVICT_CREDENTIAL_ENCRYPTION_KEY"
 		);
 	}
 	jint DevicePolicyManager::FLAG_MANAGED_CAN_ACCESS_PARENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"FLAG_MANAGED_CAN_ACCESS_PARENT"
 		);
 	}
 	jint DevicePolicyManager::FLAG_PARENT_CAN_ACCESS_MANAGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"FLAG_PARENT_CAN_ACCESS_MANAGED"
 		);
 	}
 	jint DevicePolicyManager::ID_TYPE_BASE_INFO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"ID_TYPE_BASE_INFO"
 		);
 	}
 	jint DevicePolicyManager::ID_TYPE_IMEI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"ID_TYPE_IMEI"
 		);
 	}
 	jint DevicePolicyManager::ID_TYPE_MEID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"ID_TYPE_MEID"
 		);
 	}
 	jint DevicePolicyManager::ID_TYPE_SERIAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"ID_TYPE_SERIAL"
 		);
 	}
 	jint DevicePolicyManager::INSTALLKEY_REQUEST_CREDENTIALS_ACCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"INSTALLKEY_REQUEST_CREDENTIALS_ACCESS"
 		);
 	}
 	jint DevicePolicyManager::INSTALLKEY_SET_USER_SELECTABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"INSTALLKEY_SET_USER_SELECTABLE"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_BIOMETRICS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_BIOMETRICS"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_FACE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_FACE"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_FEATURES_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_FEATURES_ALL"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_FEATURES_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_FEATURES_NONE"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_FINGERPRINT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_FINGERPRINT"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_IRIS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_IRIS"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_REMOTE_INPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_REMOTE_INPUT"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_SECURE_CAMERA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_SECURE_CAMERA"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_SECURE_NOTIFICATIONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_SECURE_NOTIFICATIONS"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_TRUST_AGENTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_TRUST_AGENTS"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_UNREDACTED_NOTIFICATIONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_UNREDACTED_NOTIFICATIONS"
 		);
 	}
 	jint DevicePolicyManager::KEYGUARD_DISABLE_WIDGETS_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"KEYGUARD_DISABLE_WIDGETS_ALL"
 		);
 	}
 	jint DevicePolicyManager::LEAVE_ALL_SYSTEM_APPS_ENABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"LEAVE_ALL_SYSTEM_APPS_ENABLED"
 		);
 	}
 	jint DevicePolicyManager::LOCK_TASK_FEATURE_GLOBAL_ACTIONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"LOCK_TASK_FEATURE_GLOBAL_ACTIONS"
 		);
 	}
 	jint DevicePolicyManager::LOCK_TASK_FEATURE_HOME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"LOCK_TASK_FEATURE_HOME"
 		);
 	}
 	jint DevicePolicyManager::LOCK_TASK_FEATURE_KEYGUARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"LOCK_TASK_FEATURE_KEYGUARD"
 		);
 	}
 	jint DevicePolicyManager::LOCK_TASK_FEATURE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"LOCK_TASK_FEATURE_NONE"
 		);
 	}
 	jint DevicePolicyManager::LOCK_TASK_FEATURE_NOTIFICATIONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"LOCK_TASK_FEATURE_NOTIFICATIONS"
 		);
 	}
 	jint DevicePolicyManager::LOCK_TASK_FEATURE_OVERVIEW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"LOCK_TASK_FEATURE_OVERVIEW"
 		);
 	}
 	jint DevicePolicyManager::LOCK_TASK_FEATURE_SYSTEM_INFO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"LOCK_TASK_FEATURE_SYSTEM_INFO"
 		);
 	}
 	jint DevicePolicyManager::MAKE_USER_EPHEMERAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"MAKE_USER_EPHEMERAL"
 		);
 	}
 	jstring DevicePolicyManager::MIME_TYPE_PROVISIONING_NFC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"MIME_TYPE_PROVISIONING_NFC",
 			"Ljava/lang/String;"
@@ -841,133 +841,133 @@ namespace android::app::admin
 	}
 	jint DevicePolicyManager::PASSWORD_COMPLEXITY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_COMPLEXITY_HIGH"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_COMPLEXITY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_COMPLEXITY_LOW"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_COMPLEXITY_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_COMPLEXITY_MEDIUM"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_COMPLEXITY_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_COMPLEXITY_NONE"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_QUALITY_ALPHABETIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_QUALITY_ALPHABETIC"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_QUALITY_ALPHANUMERIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_QUALITY_ALPHANUMERIC"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_QUALITY_BIOMETRIC_WEAK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_QUALITY_BIOMETRIC_WEAK"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_QUALITY_COMPLEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_QUALITY_COMPLEX"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_QUALITY_NUMERIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_QUALITY_NUMERIC"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_QUALITY_NUMERIC_COMPLEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_QUALITY_NUMERIC_COMPLEX"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_QUALITY_SOMETHING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_QUALITY_SOMETHING"
 		);
 	}
 	jint DevicePolicyManager::PASSWORD_QUALITY_UNSPECIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PASSWORD_QUALITY_UNSPECIFIED"
 		);
 	}
 	jint DevicePolicyManager::PERMISSION_GRANT_STATE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PERMISSION_GRANT_STATE_DEFAULT"
 		);
 	}
 	jint DevicePolicyManager::PERMISSION_GRANT_STATE_DENIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PERMISSION_GRANT_STATE_DENIED"
 		);
 	}
 	jint DevicePolicyManager::PERMISSION_GRANT_STATE_GRANTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PERMISSION_GRANT_STATE_GRANTED"
 		);
 	}
 	jint DevicePolicyManager::PERMISSION_POLICY_AUTO_DENY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PERMISSION_POLICY_AUTO_DENY"
 		);
 	}
 	jint DevicePolicyManager::PERMISSION_POLICY_AUTO_GRANT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PERMISSION_POLICY_AUTO_GRANT"
 		);
 	}
 	jint DevicePolicyManager::PERMISSION_POLICY_PROMPT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PERMISSION_POLICY_PROMPT"
 		);
 	}
 	jstring DevicePolicyManager::POLICY_DISABLE_CAMERA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"POLICY_DISABLE_CAMERA",
 			"Ljava/lang/String;"
@@ -975,7 +975,7 @@ namespace android::app::admin
 	}
 	jstring DevicePolicyManager::POLICY_DISABLE_SCREEN_CAPTURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DevicePolicyManager",
 			"POLICY_DISABLE_SCREEN_CAPTURE",
 			"Ljava/lang/String;"
@@ -983,112 +983,112 @@ namespace android::app::admin
 	}
 	jint DevicePolicyManager::PRIVATE_DNS_MODE_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PRIVATE_DNS_MODE_OFF"
 		);
 	}
 	jint DevicePolicyManager::PRIVATE_DNS_MODE_OPPORTUNISTIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PRIVATE_DNS_MODE_OPPORTUNISTIC"
 		);
 	}
 	jint DevicePolicyManager::PRIVATE_DNS_MODE_PROVIDER_HOSTNAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PRIVATE_DNS_MODE_PROVIDER_HOSTNAME"
 		);
 	}
 	jint DevicePolicyManager::PRIVATE_DNS_MODE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PRIVATE_DNS_MODE_UNKNOWN"
 		);
 	}
 	jint DevicePolicyManager::PRIVATE_DNS_SET_ERROR_FAILURE_SETTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PRIVATE_DNS_SET_ERROR_FAILURE_SETTING"
 		);
 	}
 	jint DevicePolicyManager::PRIVATE_DNS_SET_ERROR_HOST_NOT_SERVING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PRIVATE_DNS_SET_ERROR_HOST_NOT_SERVING"
 		);
 	}
 	jint DevicePolicyManager::PRIVATE_DNS_SET_NO_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PRIVATE_DNS_SET_NO_ERROR"
 		);
 	}
 	jint DevicePolicyManager::PROVISIONING_MODE_FULLY_MANAGED_DEVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PROVISIONING_MODE_FULLY_MANAGED_DEVICE"
 		);
 	}
 	jint DevicePolicyManager::PROVISIONING_MODE_MANAGED_PROFILE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"PROVISIONING_MODE_MANAGED_PROFILE"
 		);
 	}
 	jint DevicePolicyManager::RESET_PASSWORD_DO_NOT_ASK_CREDENTIALS_ON_BOOT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"RESET_PASSWORD_DO_NOT_ASK_CREDENTIALS_ON_BOOT"
 		);
 	}
 	jint DevicePolicyManager::RESET_PASSWORD_REQUIRE_ENTRY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"RESET_PASSWORD_REQUIRE_ENTRY"
 		);
 	}
 	jint DevicePolicyManager::SKIP_SETUP_WIZARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"SKIP_SETUP_WIZARD"
 		);
 	}
 	jint DevicePolicyManager::WIPE_EUICC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"WIPE_EUICC"
 		);
 	}
 	jint DevicePolicyManager::WIPE_EXTERNAL_STORAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"WIPE_EXTERNAL_STORAGE"
 		);
 	}
 	jint DevicePolicyManager::WIPE_RESET_PROTECTION_DATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"WIPE_RESET_PROTECTION_DATA"
 		);
 	}
 	jint DevicePolicyManager::WIPE_SILENTLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager",
 			"WIPE_SILENTLY"
 		);

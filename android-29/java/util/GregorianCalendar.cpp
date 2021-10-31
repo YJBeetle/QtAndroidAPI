@@ -10,14 +10,14 @@ namespace java::util
 	// Fields
 	jint GregorianCalendar::AD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.GregorianCalendar",
 			"AD"
 		);
 	}
 	jint GregorianCalendar::BC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.GregorianCalendar",
 			"BC"
 		);
@@ -84,7 +84,7 @@ namespace java::util
 	// Methods
 	java::util::GregorianCalendar GregorianCalendar::from(java::time::ZonedDateTime arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.GregorianCalendar",
 			"from",
 			"(Ljava/time/ZonedDateTime;)Ljava/util/GregorianCalendar;",

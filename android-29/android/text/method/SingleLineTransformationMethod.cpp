@@ -17,7 +17,7 @@ namespace android::text::method
 	// Methods
 	android::text::method::SingleLineTransformationMethod SingleLineTransformationMethod::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.SingleLineTransformationMethod",
 			"getInstance",
 			"()Landroid/text/method/SingleLineTransformationMethod;"

@@ -33,7 +33,7 @@ namespace android::content
 	// Fields
 	jstring Context::ACCESSIBILITY_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"ACCESSIBILITY_SERVICE",
 			"Ljava/lang/String;"
@@ -41,7 +41,7 @@ namespace android::content
 	}
 	jstring Context::ACCOUNT_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"ACCOUNT_SERVICE",
 			"Ljava/lang/String;"
@@ -49,7 +49,7 @@ namespace android::content
 	}
 	jstring Context::ACTIVITY_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"ACTIVITY_SERVICE",
 			"Ljava/lang/String;"
@@ -57,7 +57,7 @@ namespace android::content
 	}
 	jstring Context::ALARM_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"ALARM_SERVICE",
 			"Ljava/lang/String;"
@@ -65,7 +65,7 @@ namespace android::content
 	}
 	jstring Context::APPWIDGET_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"APPWIDGET_SERVICE",
 			"Ljava/lang/String;"
@@ -73,7 +73,7 @@ namespace android::content
 	}
 	jstring Context::APP_OPS_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"APP_OPS_SERVICE",
 			"Ljava/lang/String;"
@@ -81,7 +81,7 @@ namespace android::content
 	}
 	jstring Context::AUDIO_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"AUDIO_SERVICE",
 			"Ljava/lang/String;"
@@ -89,7 +89,7 @@ namespace android::content
 	}
 	jstring Context::BATTERY_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"BATTERY_SERVICE",
 			"Ljava/lang/String;"
@@ -97,84 +97,84 @@ namespace android::content
 	}
 	jint Context::BIND_ABOVE_CLIENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_ABOVE_CLIENT"
 		);
 	}
 	jint Context::BIND_ADJUST_WITH_ACTIVITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_ADJUST_WITH_ACTIVITY"
 		);
 	}
 	jint Context::BIND_ALLOW_OOM_MANAGEMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_ALLOW_OOM_MANAGEMENT"
 		);
 	}
 	jint Context::BIND_AUTO_CREATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_AUTO_CREATE"
 		);
 	}
 	jint Context::BIND_DEBUG_UNBIND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_DEBUG_UNBIND"
 		);
 	}
 	jint Context::BIND_EXTERNAL_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_EXTERNAL_SERVICE"
 		);
 	}
 	jint Context::BIND_IMPORTANT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_IMPORTANT"
 		);
 	}
 	jint Context::BIND_INCLUDE_CAPABILITIES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_INCLUDE_CAPABILITIES"
 		);
 	}
 	jint Context::BIND_NOT_FOREGROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_NOT_FOREGROUND"
 		);
 	}
 	jint Context::BIND_NOT_PERCEPTIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_NOT_PERCEPTIBLE"
 		);
 	}
 	jint Context::BIND_WAIVE_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"BIND_WAIVE_PRIORITY"
 		);
 	}
 	jstring Context::BIOMETRIC_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"BIOMETRIC_SERVICE",
 			"Ljava/lang/String;"
@@ -182,7 +182,7 @@ namespace android::content
 	}
 	jstring Context::BLUETOOTH_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"BLUETOOTH_SERVICE",
 			"Ljava/lang/String;"
@@ -190,7 +190,7 @@ namespace android::content
 	}
 	jstring Context::CAMERA_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"CAMERA_SERVICE",
 			"Ljava/lang/String;"
@@ -198,7 +198,7 @@ namespace android::content
 	}
 	jstring Context::CAPTIONING_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"CAPTIONING_SERVICE",
 			"Ljava/lang/String;"
@@ -206,7 +206,7 @@ namespace android::content
 	}
 	jstring Context::CARRIER_CONFIG_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"CARRIER_CONFIG_SERVICE",
 			"Ljava/lang/String;"
@@ -214,7 +214,7 @@ namespace android::content
 	}
 	jstring Context::CLIPBOARD_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"CLIPBOARD_SERVICE",
 			"Ljava/lang/String;"
@@ -222,7 +222,7 @@ namespace android::content
 	}
 	jstring Context::COMPANION_DEVICE_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"COMPANION_DEVICE_SERVICE",
 			"Ljava/lang/String;"
@@ -230,7 +230,7 @@ namespace android::content
 	}
 	jstring Context::CONNECTIVITY_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"CONNECTIVITY_SERVICE",
 			"Ljava/lang/String;"
@@ -238,7 +238,7 @@ namespace android::content
 	}
 	jstring Context::CONSUMER_IR_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"CONSUMER_IR_SERVICE",
 			"Ljava/lang/String;"
@@ -246,28 +246,28 @@ namespace android::content
 	}
 	jint Context::CONTEXT_IGNORE_SECURITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"CONTEXT_IGNORE_SECURITY"
 		);
 	}
 	jint Context::CONTEXT_INCLUDE_CODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"CONTEXT_INCLUDE_CODE"
 		);
 	}
 	jint Context::CONTEXT_RESTRICTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"CONTEXT_RESTRICTED"
 		);
 	}
 	jstring Context::CROSS_PROFILE_APPS_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"CROSS_PROFILE_APPS_SERVICE",
 			"Ljava/lang/String;"
@@ -275,7 +275,7 @@ namespace android::content
 	}
 	jstring Context::DEVICE_POLICY_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"DEVICE_POLICY_SERVICE",
 			"Ljava/lang/String;"
@@ -283,7 +283,7 @@ namespace android::content
 	}
 	jstring Context::DISPLAY_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"DISPLAY_SERVICE",
 			"Ljava/lang/String;"
@@ -291,7 +291,7 @@ namespace android::content
 	}
 	jstring Context::DOWNLOAD_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"DOWNLOAD_SERVICE",
 			"Ljava/lang/String;"
@@ -299,7 +299,7 @@ namespace android::content
 	}
 	jstring Context::DROPBOX_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"DROPBOX_SERVICE",
 			"Ljava/lang/String;"
@@ -307,7 +307,7 @@ namespace android::content
 	}
 	jstring Context::EUICC_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"EUICC_SERVICE",
 			"Ljava/lang/String;"
@@ -315,7 +315,7 @@ namespace android::content
 	}
 	jstring Context::FINGERPRINT_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"FINGERPRINT_SERVICE",
 			"Ljava/lang/String;"
@@ -323,7 +323,7 @@ namespace android::content
 	}
 	jstring Context::HARDWARE_PROPERTIES_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"HARDWARE_PROPERTIES_SERVICE",
 			"Ljava/lang/String;"
@@ -331,7 +331,7 @@ namespace android::content
 	}
 	jstring Context::INPUT_METHOD_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"INPUT_METHOD_SERVICE",
 			"Ljava/lang/String;"
@@ -339,7 +339,7 @@ namespace android::content
 	}
 	jstring Context::INPUT_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"INPUT_SERVICE",
 			"Ljava/lang/String;"
@@ -347,7 +347,7 @@ namespace android::content
 	}
 	jstring Context::IPSEC_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"IPSEC_SERVICE",
 			"Ljava/lang/String;"
@@ -355,7 +355,7 @@ namespace android::content
 	}
 	jstring Context::JOB_SCHEDULER_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"JOB_SCHEDULER_SERVICE",
 			"Ljava/lang/String;"
@@ -363,7 +363,7 @@ namespace android::content
 	}
 	jstring Context::KEYGUARD_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"KEYGUARD_SERVICE",
 			"Ljava/lang/String;"
@@ -371,7 +371,7 @@ namespace android::content
 	}
 	jstring Context::LAUNCHER_APPS_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"LAUNCHER_APPS_SERVICE",
 			"Ljava/lang/String;"
@@ -379,7 +379,7 @@ namespace android::content
 	}
 	jstring Context::LAYOUT_INFLATER_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"LAYOUT_INFLATER_SERVICE",
 			"Ljava/lang/String;"
@@ -387,7 +387,7 @@ namespace android::content
 	}
 	jstring Context::LOCATION_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"LOCATION_SERVICE",
 			"Ljava/lang/String;"
@@ -395,7 +395,7 @@ namespace android::content
 	}
 	jstring Context::MEDIA_PROJECTION_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"MEDIA_PROJECTION_SERVICE",
 			"Ljava/lang/String;"
@@ -403,7 +403,7 @@ namespace android::content
 	}
 	jstring Context::MEDIA_ROUTER_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"MEDIA_ROUTER_SERVICE",
 			"Ljava/lang/String;"
@@ -411,7 +411,7 @@ namespace android::content
 	}
 	jstring Context::MEDIA_SESSION_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"MEDIA_SESSION_SERVICE",
 			"Ljava/lang/String;"
@@ -419,7 +419,7 @@ namespace android::content
 	}
 	jstring Context::MIDI_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"MIDI_SERVICE",
 			"Ljava/lang/String;"
@@ -427,56 +427,56 @@ namespace android::content
 	}
 	jint Context::MODE_APPEND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"MODE_APPEND"
 		);
 	}
 	jint Context::MODE_ENABLE_WRITE_AHEAD_LOGGING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"MODE_ENABLE_WRITE_AHEAD_LOGGING"
 		);
 	}
 	jint Context::MODE_MULTI_PROCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"MODE_MULTI_PROCESS"
 		);
 	}
 	jint Context::MODE_NO_LOCALIZED_COLLATORS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"MODE_NO_LOCALIZED_COLLATORS"
 		);
 	}
 	jint Context::MODE_PRIVATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"MODE_PRIVATE"
 		);
 	}
 	jint Context::MODE_WORLD_READABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"MODE_WORLD_READABLE"
 		);
 	}
 	jint Context::MODE_WORLD_WRITEABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"MODE_WORLD_WRITEABLE"
 		);
 	}
 	jstring Context::NETWORK_STATS_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"NETWORK_STATS_SERVICE",
 			"Ljava/lang/String;"
@@ -484,7 +484,7 @@ namespace android::content
 	}
 	jstring Context::NFC_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"NFC_SERVICE",
 			"Ljava/lang/String;"
@@ -492,7 +492,7 @@ namespace android::content
 	}
 	jstring Context::NOTIFICATION_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"NOTIFICATION_SERVICE",
 			"Ljava/lang/String;"
@@ -500,7 +500,7 @@ namespace android::content
 	}
 	jstring Context::NSD_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"NSD_SERVICE",
 			"Ljava/lang/String;"
@@ -508,7 +508,7 @@ namespace android::content
 	}
 	jstring Context::POWER_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"POWER_SERVICE",
 			"Ljava/lang/String;"
@@ -516,7 +516,7 @@ namespace android::content
 	}
 	jstring Context::PRINT_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"PRINT_SERVICE",
 			"Ljava/lang/String;"
@@ -524,14 +524,14 @@ namespace android::content
 	}
 	jint Context::RECEIVER_VISIBLE_TO_INSTANT_APPS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Context",
 			"RECEIVER_VISIBLE_TO_INSTANT_APPS"
 		);
 	}
 	jstring Context::RESTRICTIONS_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"RESTRICTIONS_SERVICE",
 			"Ljava/lang/String;"
@@ -539,7 +539,7 @@ namespace android::content
 	}
 	jstring Context::ROLE_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"ROLE_SERVICE",
 			"Ljava/lang/String;"
@@ -547,7 +547,7 @@ namespace android::content
 	}
 	jstring Context::SEARCH_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"SEARCH_SERVICE",
 			"Ljava/lang/String;"
@@ -555,7 +555,7 @@ namespace android::content
 	}
 	jstring Context::SENSOR_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"SENSOR_SERVICE",
 			"Ljava/lang/String;"
@@ -563,7 +563,7 @@ namespace android::content
 	}
 	jstring Context::SHORTCUT_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"SHORTCUT_SERVICE",
 			"Ljava/lang/String;"
@@ -571,7 +571,7 @@ namespace android::content
 	}
 	jstring Context::STORAGE_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"STORAGE_SERVICE",
 			"Ljava/lang/String;"
@@ -579,7 +579,7 @@ namespace android::content
 	}
 	jstring Context::STORAGE_STATS_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"STORAGE_STATS_SERVICE",
 			"Ljava/lang/String;"
@@ -587,7 +587,7 @@ namespace android::content
 	}
 	jstring Context::SYSTEM_HEALTH_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"SYSTEM_HEALTH_SERVICE",
 			"Ljava/lang/String;"
@@ -595,7 +595,7 @@ namespace android::content
 	}
 	jstring Context::TELECOM_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"TELECOM_SERVICE",
 			"Ljava/lang/String;"
@@ -603,7 +603,7 @@ namespace android::content
 	}
 	jstring Context::TELEPHONY_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"TELEPHONY_SERVICE",
 			"Ljava/lang/String;"
@@ -611,7 +611,7 @@ namespace android::content
 	}
 	jstring Context::TELEPHONY_SUBSCRIPTION_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"TELEPHONY_SUBSCRIPTION_SERVICE",
 			"Ljava/lang/String;"
@@ -619,7 +619,7 @@ namespace android::content
 	}
 	jstring Context::TEXT_CLASSIFICATION_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"TEXT_CLASSIFICATION_SERVICE",
 			"Ljava/lang/String;"
@@ -627,7 +627,7 @@ namespace android::content
 	}
 	jstring Context::TEXT_SERVICES_MANAGER_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"TEXT_SERVICES_MANAGER_SERVICE",
 			"Ljava/lang/String;"
@@ -635,7 +635,7 @@ namespace android::content
 	}
 	jstring Context::TV_INPUT_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"TV_INPUT_SERVICE",
 			"Ljava/lang/String;"
@@ -643,7 +643,7 @@ namespace android::content
 	}
 	jstring Context::UI_MODE_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"UI_MODE_SERVICE",
 			"Ljava/lang/String;"
@@ -651,7 +651,7 @@ namespace android::content
 	}
 	jstring Context::USAGE_STATS_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"USAGE_STATS_SERVICE",
 			"Ljava/lang/String;"
@@ -659,7 +659,7 @@ namespace android::content
 	}
 	jstring Context::USB_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"USB_SERVICE",
 			"Ljava/lang/String;"
@@ -667,7 +667,7 @@ namespace android::content
 	}
 	jstring Context::USER_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"USER_SERVICE",
 			"Ljava/lang/String;"
@@ -675,7 +675,7 @@ namespace android::content
 	}
 	jstring Context::VIBRATOR_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"VIBRATOR_SERVICE",
 			"Ljava/lang/String;"
@@ -683,7 +683,7 @@ namespace android::content
 	}
 	jstring Context::WALLPAPER_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"WALLPAPER_SERVICE",
 			"Ljava/lang/String;"
@@ -691,7 +691,7 @@ namespace android::content
 	}
 	jstring Context::WIFI_AWARE_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"WIFI_AWARE_SERVICE",
 			"Ljava/lang/String;"
@@ -699,7 +699,7 @@ namespace android::content
 	}
 	jstring Context::WIFI_P2P_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"WIFI_P2P_SERVICE",
 			"Ljava/lang/String;"
@@ -707,7 +707,7 @@ namespace android::content
 	}
 	jstring Context::WIFI_RTT_RANGING_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"WIFI_RTT_RANGING_SERVICE",
 			"Ljava/lang/String;"
@@ -715,7 +715,7 @@ namespace android::content
 	}
 	jstring Context::WIFI_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"WIFI_SERVICE",
 			"Ljava/lang/String;"
@@ -723,7 +723,7 @@ namespace android::content
 	}
 	jstring Context::WINDOW_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Context",
 			"WINDOW_SERVICE",
 			"Ljava/lang/String;"

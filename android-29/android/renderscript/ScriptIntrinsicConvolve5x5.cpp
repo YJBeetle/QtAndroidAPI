@@ -18,7 +18,7 @@ namespace android::renderscript
 	// Methods
 	android::renderscript::ScriptIntrinsicConvolve5x5 ScriptIntrinsicConvolve5x5::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicConvolve5x5",
 			"create",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicConvolve5x5;",

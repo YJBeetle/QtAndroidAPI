@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::MessagePattern_ApostropheMode MessagePattern_ApostropheMode::DOUBLE_OPTIONAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.MessagePattern$ApostropheMode",
 			"DOUBLE_OPTIONAL",
 			"Landroid/icu/text/MessagePattern$ApostropheMode;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MessagePattern_ApostropheMode MessagePattern_ApostropheMode::DOUBLE_REQUIRED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.MessagePattern$ApostropheMode",
 			"DOUBLE_REQUIRED",
 			"Landroid/icu/text/MessagePattern$ApostropheMode;"
@@ -28,7 +28,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::MessagePattern_ApostropheMode MessagePattern_ApostropheMode::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MessagePattern$ApostropheMode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$ApostropheMode;",
@@ -37,7 +37,7 @@ namespace android::icu::text
 	}
 	jarray MessagePattern_ApostropheMode::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MessagePattern$ApostropheMode",
 			"values",
 			"()[Landroid/icu/text/MessagePattern$ApostropheMode;"

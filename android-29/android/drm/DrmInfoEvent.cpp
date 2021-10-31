@@ -6,42 +6,42 @@ namespace android::drm
 	// Fields
 	jint DrmInfoEvent::TYPE_ACCOUNT_ALREADY_REGISTERED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoEvent",
 			"TYPE_ACCOUNT_ALREADY_REGISTERED"
 		);
 	}
 	jint DrmInfoEvent::TYPE_ALREADY_REGISTERED_BY_ANOTHER_ACCOUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoEvent",
 			"TYPE_ALREADY_REGISTERED_BY_ANOTHER_ACCOUNT"
 		);
 	}
 	jint DrmInfoEvent::TYPE_REMOVE_RIGHTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoEvent",
 			"TYPE_REMOVE_RIGHTS"
 		);
 	}
 	jint DrmInfoEvent::TYPE_RIGHTS_INSTALLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoEvent",
 			"TYPE_RIGHTS_INSTALLED"
 		);
 	}
 	jint DrmInfoEvent::TYPE_RIGHTS_REMOVED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoEvent",
 			"TYPE_RIGHTS_REMOVED"
 		);
 	}
 	jint DrmInfoEvent::TYPE_WAIT_FOR_RIGHTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoEvent",
 			"TYPE_WAIT_FOR_RIGHTS"
 		);

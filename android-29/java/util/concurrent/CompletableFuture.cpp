@@ -18,7 +18,7 @@ namespace java::util::concurrent
 	// Methods
 	java::util::concurrent::CompletableFuture CompletableFuture::allOf(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"allOf",
 			"([Ljava/util/concurrent/CompletableFuture;)Ljava/util/concurrent/CompletableFuture;",
@@ -27,7 +27,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::anyOf(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"anyOf",
 			"([Ljava/util/concurrent/CompletableFuture;)Ljava/util/concurrent/CompletableFuture;",
@@ -36,7 +36,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::completedFuture(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"completedFuture",
 			"(Ljava/lang/Object;)Ljava/util/concurrent/CompletableFuture;",
@@ -45,7 +45,7 @@ namespace java::util::concurrent
 	}
 	__JniBaseClass CompletableFuture::completedStage(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"completedStage",
 			"(Ljava/lang/Object;)Ljava/util/concurrent/CompletionStage;",
@@ -54,7 +54,7 @@ namespace java::util::concurrent
 	}
 	__JniBaseClass CompletableFuture::delayedExecutor(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"delayedExecutor",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/Executor;",
@@ -64,7 +64,7 @@ namespace java::util::concurrent
 	}
 	__JniBaseClass CompletableFuture::delayedExecutor(jlong arg0, java::util::concurrent::TimeUnit arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"delayedExecutor",
 			"(JLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;",
@@ -75,7 +75,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::failedFuture(jthrowable arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"failedFuture",
 			"(Ljava/lang/Throwable;)Ljava/util/concurrent/CompletableFuture;",
@@ -84,7 +84,7 @@ namespace java::util::concurrent
 	}
 	__JniBaseClass CompletableFuture::failedStage(jthrowable arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"failedStage",
 			"(Ljava/lang/Throwable;)Ljava/util/concurrent/CompletionStage;",
@@ -93,7 +93,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::runAsync(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"runAsync",
 			"(Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;",
@@ -102,7 +102,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::runAsync(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"runAsync",
 			"(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
@@ -112,7 +112,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::supplyAsync(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"supplyAsync",
 			"(Ljava/util/function/Supplier;)Ljava/util/concurrent/CompletableFuture;",
@@ -121,7 +121,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::CompletableFuture CompletableFuture::supplyAsync(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.CompletableFuture",
 			"supplyAsync",
 			"(Ljava/util/function/Supplier;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",

@@ -5,154 +5,154 @@ namespace android::net
 	// Fields
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_BUT_NUL_AND_ANGLE_BRACKETS_LEGAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"ALL_BUT_NUL_AND_ANGLE_BRACKETS_LEGAL"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_BUT_NUL_LEGAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"ALL_BUT_NUL_LEGAL"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_BUT_WHITESPACE_LEGAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"ALL_BUT_WHITESPACE_LEGAL"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_ILLEGAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"ALL_ILLEGAL"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"ALL_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_WHITESPACE_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"ALL_WHITESPACE_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::AMP_AND_SPACE_LEGAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"AMP_AND_SPACE_LEGAL"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::AMP_LEGAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"AMP_LEGAL"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::AMP_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"AMP_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::DQUOTE_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"DQUOTE_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::GT_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"GT_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::LT_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"LT_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::NON_7_BIT_ASCII_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"NON_7_BIT_ASCII_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::NUL_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"NUL_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::OTHER_WHITESPACE_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"OTHER_WHITESPACE_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::PCT_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"PCT_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::SCRIPT_URL_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"SCRIPT_URL_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::SPACE_LEGAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"SPACE_LEGAL"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::SPACE_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"SPACE_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::SQUOTE_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"SQUOTE_OK"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::URL_AND_SPACE_LEGAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"URL_AND_SPACE_LEGAL"
 		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::URL_LEGAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"URL_LEGAL"
 		);

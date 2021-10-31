@@ -13,14 +13,14 @@ namespace android::media
 	// Fields
 	jint MediaSync::MEDIASYNC_ERROR_AUDIOTRACK_FAIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaSync",
 			"MEDIASYNC_ERROR_AUDIOTRACK_FAIL"
 		);
 	}
 	jint MediaSync::MEDIASYNC_ERROR_SURFACE_FAIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaSync",
 			"MEDIASYNC_ERROR_SURFACE_FAIL"
 		);

@@ -5,7 +5,7 @@ namespace android::icu::util
 	// Fields
 	android::icu::util::ULocale_Category ULocale_Category::DISPLAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale$Category",
 			"DISPLAY",
 			"Landroid/icu/util/ULocale$Category;"
@@ -13,7 +13,7 @@ namespace android::icu::util
 	}
 	android::icu::util::ULocale_Category ULocale_Category::FORMAT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.ULocale$Category",
 			"FORMAT",
 			"Landroid/icu/util/ULocale$Category;"
@@ -28,7 +28,7 @@ namespace android::icu::util
 	// Methods
 	android::icu::util::ULocale_Category ULocale_Category::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale$Category",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/ULocale$Category;",
@@ -37,7 +37,7 @@ namespace android::icu::util
 	}
 	jarray ULocale_Category::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.ULocale$Category",
 			"values",
 			"()[Landroid/icu/util/ULocale$Category;"

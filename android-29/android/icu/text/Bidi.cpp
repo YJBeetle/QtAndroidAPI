@@ -7,203 +7,203 @@ namespace android::icu::text
 	// Fields
 	jint Bidi::DIRECTION_DEFAULT_LEFT_TO_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Bidi",
 			"DIRECTION_DEFAULT_LEFT_TO_RIGHT"
 		);
 	}
 	jint Bidi::DIRECTION_DEFAULT_RIGHT_TO_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Bidi",
 			"DIRECTION_DEFAULT_RIGHT_TO_LEFT"
 		);
 	}
 	jint Bidi::DIRECTION_LEFT_TO_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Bidi",
 			"DIRECTION_LEFT_TO_RIGHT"
 		);
 	}
 	jint Bidi::DIRECTION_RIGHT_TO_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Bidi",
 			"DIRECTION_RIGHT_TO_LEFT"
 		);
 	}
 	jshort Bidi::DO_MIRRORING()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"DO_MIRRORING"
 		);
 	}
 	jshort Bidi::INSERT_LRM_FOR_NUMERIC()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"INSERT_LRM_FOR_NUMERIC"
 		);
 	}
 	jshort Bidi::KEEP_BASE_COMBINING()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"KEEP_BASE_COMBINING"
 		);
 	}
 	jbyte Bidi::LEVEL_DEFAULT_LTR()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.icu.text.Bidi",
 			"LEVEL_DEFAULT_LTR"
 		);
 	}
 	jbyte Bidi::LEVEL_DEFAULT_RTL()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.icu.text.Bidi",
 			"LEVEL_DEFAULT_RTL"
 		);
 	}
 	jbyte Bidi::LEVEL_OVERRIDE()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.icu.text.Bidi",
 			"LEVEL_OVERRIDE"
 		);
 	}
 	jbyte Bidi::LTR()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.icu.text.Bidi",
 			"LTR"
 		);
 	}
 	jint Bidi::MAP_NOWHERE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Bidi",
 			"MAP_NOWHERE"
 		);
 	}
 	jbyte Bidi::MAX_EXPLICIT_LEVEL()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.icu.text.Bidi",
 			"MAX_EXPLICIT_LEVEL"
 		);
 	}
 	jbyte Bidi::MIXED()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.icu.text.Bidi",
 			"MIXED"
 		);
 	}
 	jbyte Bidi::NEUTRAL()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.icu.text.Bidi",
 			"NEUTRAL"
 		);
 	}
 	jint Bidi::OPTION_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Bidi",
 			"OPTION_DEFAULT"
 		);
 	}
 	jint Bidi::OPTION_INSERT_MARKS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Bidi",
 			"OPTION_INSERT_MARKS"
 		);
 	}
 	jint Bidi::OPTION_REMOVE_CONTROLS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Bidi",
 			"OPTION_REMOVE_CONTROLS"
 		);
 	}
 	jint Bidi::OPTION_STREAMING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Bidi",
 			"OPTION_STREAMING"
 		);
 	}
 	jshort Bidi::OUTPUT_REVERSE()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"OUTPUT_REVERSE"
 		);
 	}
 	jshort Bidi::REMOVE_BIDI_CONTROLS()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"REMOVE_BIDI_CONTROLS"
 		);
 	}
 	jshort Bidi::REORDER_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"REORDER_DEFAULT"
 		);
 	}
 	jshort Bidi::REORDER_GROUP_NUMBERS_WITH_R()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"REORDER_GROUP_NUMBERS_WITH_R"
 		);
 	}
 	jshort Bidi::REORDER_INVERSE_FOR_NUMBERS_SPECIAL()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"REORDER_INVERSE_FOR_NUMBERS_SPECIAL"
 		);
 	}
 	jshort Bidi::REORDER_INVERSE_LIKE_DIRECT()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"REORDER_INVERSE_LIKE_DIRECT"
 		);
 	}
 	jshort Bidi::REORDER_INVERSE_NUMBERS_AS_L()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"REORDER_INVERSE_NUMBERS_AS_L"
 		);
 	}
 	jshort Bidi::REORDER_NUMBERS_SPECIAL()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"REORDER_NUMBERS_SPECIAL"
 		);
 	}
 	jshort Bidi::REORDER_RUNS_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.icu.text.Bidi",
 			"REORDER_RUNS_ONLY"
 		);
 	}
 	jbyte Bidi::RTL()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.icu.text.Bidi",
 			"RTL"
 		);
@@ -253,7 +253,7 @@ namespace android::icu::text
 	// Methods
 	jbyte Bidi::getBaseDirection(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jbyte>(
+		return callStaticMethod<jbyte>(
 			"android.icu.text.Bidi",
 			"getBaseDirection",
 			"(Ljava/lang/CharSequence;)B",
@@ -262,7 +262,7 @@ namespace android::icu::text
 	}
 	jintArray Bidi::invertMap(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Bidi",
 			"invertMap",
 			"([I)[I",
@@ -271,7 +271,7 @@ namespace android::icu::text
 	}
 	jintArray Bidi::reorderLogical(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Bidi",
 			"reorderLogical",
 			"([B)[I",
@@ -280,7 +280,7 @@ namespace android::icu::text
 	}
 	jintArray Bidi::reorderVisual(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Bidi",
 			"reorderVisual",
 			"([B)[I",
@@ -289,7 +289,7 @@ namespace android::icu::text
 	}
 	void Bidi::reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.icu.text.Bidi",
 			"reorderVisually",
 			"([BI[Ljava/lang/Object;II)V",
@@ -302,7 +302,7 @@ namespace android::icu::text
 	}
 	jboolean Bidi::requiresBidi(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.text.Bidi",
 			"requiresBidi",
 			"([CII)Z",
@@ -313,7 +313,7 @@ namespace android::icu::text
 	}
 	jstring Bidi::writeReverse(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Bidi",
 			"writeReverse",
 			"(Ljava/lang/String;I)Ljava/lang/String;",

@@ -7,42 +7,42 @@ namespace android::app
 	// Fields
 	jint DownloadManager_Request::NETWORK_MOBILE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.DownloadManager$Request",
 			"NETWORK_MOBILE"
 		);
 	}
 	jint DownloadManager_Request::NETWORK_WIFI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.DownloadManager$Request",
 			"NETWORK_WIFI"
 		);
 	}
 	jint DownloadManager_Request::VISIBILITY_HIDDEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.DownloadManager$Request",
 			"VISIBILITY_HIDDEN"
 		);
 	}
 	jint DownloadManager_Request::VISIBILITY_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.DownloadManager$Request",
 			"VISIBILITY_VISIBLE"
 		);
 	}
 	jint DownloadManager_Request::VISIBILITY_VISIBLE_NOTIFY_COMPLETED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.DownloadManager$Request",
 			"VISIBILITY_VISIBLE_NOTIFY_COMPLETED"
 		);
 	}
 	jint DownloadManager_Request::VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.DownloadManager$Request",
 			"VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION"
 		);

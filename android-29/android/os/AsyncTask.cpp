@@ -7,7 +7,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass AsyncTask::SERIAL_EXECUTOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.AsyncTask",
 			"SERIAL_EXECUTOR",
 			"Ljava/util/concurrent/Executor;"
@@ -15,7 +15,7 @@ namespace android::os
 	}
 	__JniBaseClass AsyncTask::THREAD_POOL_EXECUTOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.AsyncTask",
 			"THREAD_POOL_EXECUTOR",
 			"Ljava/util/concurrent/Executor;"
@@ -35,7 +35,7 @@ namespace android::os
 	// Methods
 	void AsyncTask::execute(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.AsyncTask",
 			"execute",
 			"(Ljava/lang/Runnable;)V",

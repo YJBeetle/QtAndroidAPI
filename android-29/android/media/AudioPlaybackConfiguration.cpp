@@ -7,7 +7,7 @@ namespace android::media
 	// Fields
 	__JniBaseClass AudioPlaybackConfiguration::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioPlaybackConfiguration",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -15,7 +15,7 @@ namespace javax::crypto
 	// Methods
 	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.crypto.ExemptionMechanism",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/ExemptionMechanism;",
@@ -24,7 +24,7 @@ namespace javax::crypto
 	}
 	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.crypto.ExemptionMechanism",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/ExemptionMechanism;",
@@ -34,7 +34,7 @@ namespace javax::crypto
 	}
 	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.crypto.ExemptionMechanism",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/ExemptionMechanism;",

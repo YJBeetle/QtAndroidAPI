@@ -6,21 +6,21 @@ namespace android::media
 	// Fields
 	jint MediaMetadataEditor::BITMAP_KEY_ARTWORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataEditor",
 			"BITMAP_KEY_ARTWORK"
 		);
 	}
 	jint MediaMetadataEditor::RATING_KEY_BY_OTHERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataEditor",
 			"RATING_KEY_BY_OTHERS"
 		);
 	}
 	jint MediaMetadataEditor::RATING_KEY_BY_USER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaMetadataEditor",
 			"RATING_KEY_BY_USER"
 		);

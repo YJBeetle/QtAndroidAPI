@@ -7,14 +7,14 @@ namespace android::media
 	// Fields
 	jint MediaCodecList::ALL_CODECS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodecList",
 			"ALL_CODECS"
 		);
 	}
 	jint MediaCodecList::REGULAR_CODECS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodecList",
 			"REGULAR_CODECS"
 		);
@@ -34,7 +34,7 @@ namespace android::media
 	// Methods
 	jint MediaCodecList::getCodecCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.MediaCodecList",
 			"getCodecCount",
 			"()I"
@@ -42,7 +42,7 @@ namespace android::media
 	}
 	android::media::MediaCodecInfo MediaCodecList::getCodecInfoAt(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaCodecList",
 			"getCodecInfoAt",
 			"(I)Landroid/media/MediaCodecInfo;",

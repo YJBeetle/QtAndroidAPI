@@ -14,7 +14,7 @@ namespace java::nio
 	// Methods
 	java::nio::ShortBuffer ShortBuffer::allocate(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.ShortBuffer",
 			"allocate",
 			"(I)Ljava/nio/ShortBuffer;",
@@ -23,7 +23,7 @@ namespace java::nio
 	}
 	java::nio::ShortBuffer ShortBuffer::wrap(jshortArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.ShortBuffer",
 			"wrap",
 			"([S)Ljava/nio/ShortBuffer;",
@@ -32,7 +32,7 @@ namespace java::nio
 	}
 	java::nio::ShortBuffer ShortBuffer::wrap(jshortArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.ShortBuffer",
 			"wrap",
 			"([SII)Ljava/nio/ShortBuffer;",

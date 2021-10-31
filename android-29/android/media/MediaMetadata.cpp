@@ -10,7 +10,7 @@ namespace android::media
 	// Fields
 	__JniBaseClass MediaMetadata::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -18,7 +18,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_ALBUM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_ALBUM",
 			"Ljava/lang/String;"
@@ -26,7 +26,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_ALBUM_ART()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_ALBUM_ART",
 			"Ljava/lang/String;"
@@ -34,7 +34,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_ALBUM_ARTIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_ALBUM_ARTIST",
 			"Ljava/lang/String;"
@@ -42,7 +42,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_ALBUM_ART_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_ALBUM_ART_URI",
 			"Ljava/lang/String;"
@@ -50,7 +50,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_ART()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_ART",
 			"Ljava/lang/String;"
@@ -58,7 +58,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_ARTIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_ARTIST",
 			"Ljava/lang/String;"
@@ -66,7 +66,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_ART_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_ART_URI",
 			"Ljava/lang/String;"
@@ -74,7 +74,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_AUTHOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_AUTHOR",
 			"Ljava/lang/String;"
@@ -82,7 +82,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_BT_FOLDER_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_BT_FOLDER_TYPE",
 			"Ljava/lang/String;"
@@ -90,7 +90,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_COMPILATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_COMPILATION",
 			"Ljava/lang/String;"
@@ -98,7 +98,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_COMPOSER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_COMPOSER",
 			"Ljava/lang/String;"
@@ -106,7 +106,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_DATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_DATE",
 			"Ljava/lang/String;"
@@ -114,7 +114,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_DISC_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_DISC_NUMBER",
 			"Ljava/lang/String;"
@@ -122,7 +122,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_DISPLAY_DESCRIPTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_DISPLAY_DESCRIPTION",
 			"Ljava/lang/String;"
@@ -130,7 +130,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_DISPLAY_ICON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_DISPLAY_ICON",
 			"Ljava/lang/String;"
@@ -138,7 +138,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_DISPLAY_ICON_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_DISPLAY_ICON_URI",
 			"Ljava/lang/String;"
@@ -146,7 +146,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_DISPLAY_SUBTITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_DISPLAY_SUBTITLE",
 			"Ljava/lang/String;"
@@ -154,7 +154,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_DISPLAY_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_DISPLAY_TITLE",
 			"Ljava/lang/String;"
@@ -162,7 +162,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_DURATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_DURATION",
 			"Ljava/lang/String;"
@@ -170,7 +170,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_GENRE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_GENRE",
 			"Ljava/lang/String;"
@@ -178,7 +178,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_MEDIA_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_MEDIA_ID",
 			"Ljava/lang/String;"
@@ -186,7 +186,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_MEDIA_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_MEDIA_URI",
 			"Ljava/lang/String;"
@@ -194,7 +194,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_NUM_TRACKS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_NUM_TRACKS",
 			"Ljava/lang/String;"
@@ -202,7 +202,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_RATING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_RATING",
 			"Ljava/lang/String;"
@@ -210,7 +210,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_TITLE",
 			"Ljava/lang/String;"
@@ -218,7 +218,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_TRACK_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_TRACK_NUMBER",
 			"Ljava/lang/String;"
@@ -226,7 +226,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_USER_RATING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_USER_RATING",
 			"Ljava/lang/String;"
@@ -234,7 +234,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_WRITER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_WRITER",
 			"Ljava/lang/String;"
@@ -242,7 +242,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::METADATA_KEY_YEAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaMetadata",
 			"METADATA_KEY_YEAR",
 			"Ljava/lang/String;"

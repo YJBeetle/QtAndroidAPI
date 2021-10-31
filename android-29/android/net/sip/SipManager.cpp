@@ -13,7 +13,7 @@ namespace android::net::sip
 	// Fields
 	jstring SipManager::EXTRA_CALL_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.sip.SipManager",
 			"EXTRA_CALL_ID",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::net::sip
 	}
 	jstring SipManager::EXTRA_OFFER_SD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.sip.SipManager",
 			"EXTRA_OFFER_SD",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::net::sip
 	}
 	jint SipManager::INCOMING_CALL_RESULT_CODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.sip.SipManager",
 			"INCOMING_CALL_RESULT_CODE"
 		);
@@ -43,7 +43,7 @@ namespace android::net::sip
 	// Methods
 	jstring SipManager::getCallId(android::content::Intent arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.sip.SipManager",
 			"getCallId",
 			"(Landroid/content/Intent;)Ljava/lang/String;",
@@ -52,7 +52,7 @@ namespace android::net::sip
 	}
 	jstring SipManager::getOfferSessionDescription(android::content::Intent arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.sip.SipManager",
 			"getOfferSessionDescription",
 			"(Landroid/content/Intent;)Ljava/lang/String;",
@@ -61,7 +61,7 @@ namespace android::net::sip
 	}
 	jboolean SipManager::isApiSupported(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.net.sip.SipManager",
 			"isApiSupported",
 			"(Landroid/content/Context;)Z",
@@ -70,7 +70,7 @@ namespace android::net::sip
 	}
 	jboolean SipManager::isIncomingCallIntent(android::content::Intent arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.net.sip.SipManager",
 			"isIncomingCallIntent",
 			"(Landroid/content/Intent;)Z",
@@ -79,7 +79,7 @@ namespace android::net::sip
 	}
 	jboolean SipManager::isSipWifiOnly(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.net.sip.SipManager",
 			"isSipWifiOnly",
 			"(Landroid/content/Context;)Z",
@@ -88,7 +88,7 @@ namespace android::net::sip
 	}
 	jboolean SipManager::isVoipSupported(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.net.sip.SipManager",
 			"isVoipSupported",
 			"(Landroid/content/Context;)Z",
@@ -97,7 +97,7 @@ namespace android::net::sip
 	}
 	android::net::sip::SipManager SipManager::newInstance(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.sip.SipManager",
 			"newInstance",
 			"(Landroid/content/Context;)Landroid/net/sip/SipManager;",

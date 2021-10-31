@@ -20,7 +20,7 @@ namespace android::graphics
 	// Fields
 	jint Canvas::ALL_SAVE_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Canvas",
 			"ALL_SAVE_FLAG"
 		);

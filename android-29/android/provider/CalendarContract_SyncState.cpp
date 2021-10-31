@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri CalendarContract_SyncState::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$SyncState",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"

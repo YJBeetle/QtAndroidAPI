@@ -6,7 +6,7 @@ namespace android::widget
 	// Fields
 	jstring TextClock::DEFAULT_FORMAT_12_HOUR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.TextClock",
 			"DEFAULT_FORMAT_12_HOUR",
 			"Ljava/lang/CharSequence;"
@@ -14,7 +14,7 @@ namespace android::widget
 	}
 	jstring TextClock::DEFAULT_FORMAT_24_HOUR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.TextClock",
 			"DEFAULT_FORMAT_24_HOUR",
 			"Ljava/lang/CharSequence;"

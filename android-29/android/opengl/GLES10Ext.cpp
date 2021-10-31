@@ -18,7 +18,7 @@ namespace android::opengl
 	// Methods
 	jint GLES10Ext::glQueryMatrixxOES(java::nio::IntBuffer arg0, java::nio::IntBuffer arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.opengl.GLES10Ext",
 			"glQueryMatrixxOES",
 			"(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)I",
@@ -28,7 +28,7 @@ namespace android::opengl
 	}
 	jint GLES10Ext::glQueryMatrixxOES(jintArray arg0, jint arg1, jintArray arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.opengl.GLES10Ext",
 			"glQueryMatrixxOES",
 			"([II[II)I",

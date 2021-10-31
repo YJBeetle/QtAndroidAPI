@@ -6,7 +6,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass PackageStats::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageStats",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

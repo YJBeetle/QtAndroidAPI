@@ -5,14 +5,14 @@ namespace java::util
 	// Fields
 	jdouble Locale_LanguageRange::MAX_WEIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jdouble>(
+		return getStaticField<jdouble>(
 			"java.util.Locale$LanguageRange",
 			"MAX_WEIGHT"
 		);
 	}
 	jdouble Locale_LanguageRange::MIN_WEIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jdouble>(
+		return getStaticField<jdouble>(
 			"java.util.Locale$LanguageRange",
 			"MIN_WEIGHT"
 		);
@@ -39,7 +39,7 @@ namespace java::util
 	// Methods
 	__JniBaseClass Locale_LanguageRange::mapEquivalents(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",
 			"mapEquivalents",
 			"(Ljava/util/List;Ljava/util/Map;)Ljava/util/List;",
@@ -49,7 +49,7 @@ namespace java::util
 	}
 	__JniBaseClass Locale_LanguageRange::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/List;",
@@ -58,7 +58,7 @@ namespace java::util
 	}
 	__JniBaseClass Locale_LanguageRange::parse(jstring arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",
 			"parse",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/util/List;",

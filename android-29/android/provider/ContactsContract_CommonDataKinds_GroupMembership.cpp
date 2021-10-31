@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_CommonDataKinds_GroupMembership::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$GroupMembership",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_GroupMembership::EXTRA_ADDRESS_BOOK_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$GroupMembership",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_GroupMembership::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$GroupMembership",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_GroupMembership::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$GroupMembership",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_GroupMembership::GROUP_ROW_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$GroupMembership",
 			"GROUP_ROW_ID",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_GroupMembership::GROUP_SOURCE_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$GroupMembership",
 			"GROUP_SOURCE_ID",
 			"Ljava/lang/String;"

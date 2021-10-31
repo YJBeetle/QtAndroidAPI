@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_RawContacts_Entity::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts$Entity",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_RawContacts_Entity::DATA_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts$Entity",
 			"DATA_ID",
 			"Ljava/lang/String;"

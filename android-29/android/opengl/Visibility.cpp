@@ -17,7 +17,7 @@ namespace android::opengl
 	// Methods
 	void Visibility::computeBoundingSphere(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Visibility",
 			"computeBoundingSphere",
 			"([FII[FI)V",
@@ -30,7 +30,7 @@ namespace android::opengl
 	}
 	jint Visibility::frustumCullSpheres(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6, jint arg7)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.opengl.Visibility",
 			"frustumCullSpheres",
 			"([FI[FII[III)I",
@@ -46,7 +46,7 @@ namespace android::opengl
 	}
 	jint Visibility::visibilityTest(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jcharArray arg4, jint arg5, jint arg6)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.opengl.Visibility",
 			"visibilityTest",
 			"([FI[FI[CII)I",

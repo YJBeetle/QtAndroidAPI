@@ -11,7 +11,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass ClipData::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ClipData",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -47,7 +47,7 @@ namespace android::content
 	// Methods
 	android::content::ClipData ClipData::newHtmlText(jstring arg0, jstring arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ClipData",
 			"newHtmlText",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;)Landroid/content/ClipData;",
@@ -58,7 +58,7 @@ namespace android::content
 	}
 	android::content::ClipData ClipData::newIntent(jstring arg0, android::content::Intent arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ClipData",
 			"newIntent",
 			"(Ljava/lang/CharSequence;Landroid/content/Intent;)Landroid/content/ClipData;",
@@ -68,7 +68,7 @@ namespace android::content
 	}
 	android::content::ClipData ClipData::newPlainText(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ClipData",
 			"newPlainText",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;",
@@ -78,7 +78,7 @@ namespace android::content
 	}
 	android::content::ClipData ClipData::newRawUri(jstring arg0, android::net::Uri arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ClipData",
 			"newRawUri",
 			"(Ljava/lang/CharSequence;Landroid/net/Uri;)Landroid/content/ClipData;",
@@ -88,7 +88,7 @@ namespace android::content
 	}
 	android::content::ClipData ClipData::newUri(android::content::ContentResolver arg0, jstring arg1, android::net::Uri arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ClipData",
 			"newUri",
 			"(Landroid/content/ContentResolver;Ljava/lang/CharSequence;Landroid/net/Uri;)Landroid/content/ClipData;",

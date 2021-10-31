@@ -7,21 +7,21 @@ namespace android::view::textclassifier
 	// Fields
 	jint TextLinks::APPLY_STRATEGY_IGNORE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"APPLY_STRATEGY_IGNORE"
 		);
 	}
 	jint TextLinks::APPLY_STRATEGY_REPLACE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"APPLY_STRATEGY_REPLACE"
 		);
 	}
 	__JniBaseClass TextLinks::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextLinks",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -29,35 +29,35 @@ namespace android::view::textclassifier
 	}
 	jint TextLinks::STATUS_DIFFERENT_TEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"STATUS_DIFFERENT_TEXT"
 		);
 	}
 	jint TextLinks::STATUS_LINKS_APPLIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"STATUS_LINKS_APPLIED"
 		);
 	}
 	jint TextLinks::STATUS_NO_LINKS_APPLIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"STATUS_NO_LINKS_APPLIED"
 		);
 	}
 	jint TextLinks::STATUS_NO_LINKS_FOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"STATUS_NO_LINKS_FOUND"
 		);
 	}
 	jint TextLinks::STATUS_UNSUPPORTED_CHARACTER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"STATUS_UNSUPPORTED_CHARACTER"
 		);

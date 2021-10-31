@@ -8,133 +8,133 @@ namespace android::icu::text
 	// Fields
 	jint DateTimePatternGenerator::DAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"DAY"
 		);
 	}
 	jint DateTimePatternGenerator::DAYPERIOD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"DAYPERIOD"
 		);
 	}
 	jint DateTimePatternGenerator::DAY_OF_WEEK_IN_MONTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"DAY_OF_WEEK_IN_MONTH"
 		);
 	}
 	jint DateTimePatternGenerator::DAY_OF_YEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"DAY_OF_YEAR"
 		);
 	}
 	jint DateTimePatternGenerator::ERA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"ERA"
 		);
 	}
 	jint DateTimePatternGenerator::FRACTIONAL_SECOND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"FRACTIONAL_SECOND"
 		);
 	}
 	jint DateTimePatternGenerator::HOUR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"HOUR"
 		);
 	}
 	jint DateTimePatternGenerator::MATCH_ALL_FIELDS_LENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"MATCH_ALL_FIELDS_LENGTH"
 		);
 	}
 	jint DateTimePatternGenerator::MATCH_HOUR_FIELD_LENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"MATCH_HOUR_FIELD_LENGTH"
 		);
 	}
 	jint DateTimePatternGenerator::MATCH_NO_OPTIONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"MATCH_NO_OPTIONS"
 		);
 	}
 	jint DateTimePatternGenerator::MINUTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"MINUTE"
 		);
 	}
 	jint DateTimePatternGenerator::MONTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"MONTH"
 		);
 	}
 	jint DateTimePatternGenerator::QUARTER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"QUARTER"
 		);
 	}
 	jint DateTimePatternGenerator::SECOND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"SECOND"
 		);
 	}
 	jint DateTimePatternGenerator::WEEKDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"WEEKDAY"
 		);
 	}
 	jint DateTimePatternGenerator::WEEK_OF_MONTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"WEEK_OF_MONTH"
 		);
 	}
 	jint DateTimePatternGenerator::WEEK_OF_YEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"WEEK_OF_YEAR"
 		);
 	}
 	jint DateTimePatternGenerator::YEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"YEAR"
 		);
 	}
 	jint DateTimePatternGenerator::ZONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator",
 			"ZONE"
 		);
@@ -148,7 +148,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::getEmptyInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DateTimePatternGenerator",
 			"getEmptyInstance",
 			"()Landroid/icu/text/DateTimePatternGenerator;"
@@ -156,7 +156,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DateTimePatternGenerator",
 			"getInstance",
 			"()Landroid/icu/text/DateTimePatternGenerator;"
@@ -164,7 +164,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DateTimePatternGenerator",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/DateTimePatternGenerator;",
@@ -173,7 +173,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DateTimePatternGenerator",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/DateTimePatternGenerator;",

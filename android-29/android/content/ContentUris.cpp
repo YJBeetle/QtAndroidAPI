@@ -19,7 +19,7 @@ namespace android::content
 	// Methods
 	android::net::Uri_Builder ContentUris::appendId(android::net::Uri_Builder arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentUris",
 			"appendId",
 			"(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;",
@@ -29,7 +29,7 @@ namespace android::content
 	}
 	jlong ContentUris::parseId(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.content.ContentUris",
 			"parseId",
 			"(Landroid/net/Uri;)J",
@@ -38,7 +38,7 @@ namespace android::content
 	}
 	android::net::Uri ContentUris::removeId(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentUris",
 			"removeId",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
@@ -47,7 +47,7 @@ namespace android::content
 	}
 	android::net::Uri ContentUris::withAppendedId(android::net::Uri arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentUris",
 			"withAppendedId",
 			"(Landroid/net/Uri;J)Landroid/net/Uri;",

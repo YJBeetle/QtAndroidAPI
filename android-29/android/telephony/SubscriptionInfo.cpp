@@ -9,7 +9,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass SubscriptionInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

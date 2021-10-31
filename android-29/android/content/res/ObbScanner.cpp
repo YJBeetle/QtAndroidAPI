@@ -13,7 +13,7 @@ namespace android::content::res
 	// Methods
 	android::content::res::ObbInfo ObbScanner::getObbInfo(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.res.ObbScanner",
 			"getObbInfo",
 			"(Ljava/lang/String;)Landroid/content/res/ObbInfo;",

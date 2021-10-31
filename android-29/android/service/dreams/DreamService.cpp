@@ -17,7 +17,7 @@ namespace android::service::dreams
 	// Fields
 	jstring DreamService::DREAM_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.dreams.DreamService",
 			"DREAM_META_DATA",
 			"Ljava/lang/String;"
@@ -25,7 +25,7 @@ namespace android::service::dreams
 	}
 	jstring DreamService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.dreams.DreamService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

@@ -14,7 +14,7 @@ namespace android::net
 	// Fields
 	__JniBaseClass Network::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.Network",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -29,7 +29,7 @@ namespace android::net
 	// Methods
 	android::net::Network Network::fromNetworkHandle(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.Network",
 			"fromNetworkHandle",
 			"(J)Landroid/net/Network;",

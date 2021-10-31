@@ -19,7 +19,7 @@ namespace java::nio::charset
 	// Methods
 	__JniBaseClass Charset::availableCharsets()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.charset.Charset",
 			"availableCharsets",
 			"()Ljava/util/SortedMap;"
@@ -27,7 +27,7 @@ namespace java::nio::charset
 	}
 	java::nio::charset::Charset Charset::defaultCharset()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.charset.Charset",
 			"defaultCharset",
 			"()Ljava/nio/charset/Charset;"
@@ -35,7 +35,7 @@ namespace java::nio::charset
 	}
 	java::nio::charset::Charset Charset::forName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.charset.Charset",
 			"forName",
 			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
@@ -44,7 +44,7 @@ namespace java::nio::charset
 	}
 	jboolean Charset::isSupported(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.nio.charset.Charset",
 			"isSupported",
 			"(Ljava/lang/String;)Z",

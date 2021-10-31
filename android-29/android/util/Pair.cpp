@@ -33,7 +33,7 @@ namespace android::util
 	// Methods
 	android::util::Pair Pair::create(jobject arg0, jobject arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Pair",
 			"create",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;",

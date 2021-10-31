@@ -23,133 +23,133 @@ namespace android::view
 	// Fields
 	jint Window::DECOR_CAPTION_SHADE_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"DECOR_CAPTION_SHADE_AUTO"
 		);
 	}
 	jint Window::DECOR_CAPTION_SHADE_DARK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"DECOR_CAPTION_SHADE_DARK"
 		);
 	}
 	jint Window::DECOR_CAPTION_SHADE_LIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"DECOR_CAPTION_SHADE_LIGHT"
 		);
 	}
 	jint Window::FEATURE_ACTION_BAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_ACTION_BAR"
 		);
 	}
 	jint Window::FEATURE_ACTION_BAR_OVERLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_ACTION_BAR_OVERLAY"
 		);
 	}
 	jint Window::FEATURE_ACTION_MODE_OVERLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_ACTION_MODE_OVERLAY"
 		);
 	}
 	jint Window::FEATURE_ACTIVITY_TRANSITIONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_ACTIVITY_TRANSITIONS"
 		);
 	}
 	jint Window::FEATURE_CONTENT_TRANSITIONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_CONTENT_TRANSITIONS"
 		);
 	}
 	jint Window::FEATURE_CONTEXT_MENU()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_CONTEXT_MENU"
 		);
 	}
 	jint Window::FEATURE_CUSTOM_TITLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_CUSTOM_TITLE"
 		);
 	}
 	jint Window::FEATURE_INDETERMINATE_PROGRESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_INDETERMINATE_PROGRESS"
 		);
 	}
 	jint Window::FEATURE_LEFT_ICON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_LEFT_ICON"
 		);
 	}
 	jint Window::FEATURE_NO_TITLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_NO_TITLE"
 		);
 	}
 	jint Window::FEATURE_OPTIONS_PANEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_OPTIONS_PANEL"
 		);
 	}
 	jint Window::FEATURE_PROGRESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_PROGRESS"
 		);
 	}
 	jint Window::FEATURE_RIGHT_ICON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_RIGHT_ICON"
 		);
 	}
 	jint Window::FEATURE_SWIPE_TO_DISMISS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"FEATURE_SWIPE_TO_DISMISS"
 		);
 	}
 	jint Window::ID_ANDROID_CONTENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"ID_ANDROID_CONTENT"
 		);
 	}
 	jstring Window::NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.Window",
 			"NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME",
 			"Ljava/lang/String;"
@@ -157,63 +157,63 @@ namespace android::view
 	}
 	jint Window::PROGRESS_END()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"PROGRESS_END"
 		);
 	}
 	jint Window::PROGRESS_INDETERMINATE_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"PROGRESS_INDETERMINATE_OFF"
 		);
 	}
 	jint Window::PROGRESS_INDETERMINATE_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"PROGRESS_INDETERMINATE_ON"
 		);
 	}
 	jint Window::PROGRESS_SECONDARY_END()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"PROGRESS_SECONDARY_END"
 		);
 	}
 	jint Window::PROGRESS_SECONDARY_START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"PROGRESS_SECONDARY_START"
 		);
 	}
 	jint Window::PROGRESS_START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"PROGRESS_START"
 		);
 	}
 	jint Window::PROGRESS_VISIBILITY_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"PROGRESS_VISIBILITY_OFF"
 		);
 	}
 	jint Window::PROGRESS_VISIBILITY_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Window",
 			"PROGRESS_VISIBILITY_ON"
 		);
 	}
 	jstring Window::STATUS_BAR_BACKGROUND_TRANSITION_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.Window",
 			"STATUS_BAR_BACKGROUND_TRANSITION_NAME",
 			"Ljava/lang/String;"
@@ -234,7 +234,7 @@ namespace android::view
 	// Methods
 	jint Window::getDefaultFeatures(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.Window",
 			"getDefaultFeatures",
 			"(Landroid/content/Context;)I",

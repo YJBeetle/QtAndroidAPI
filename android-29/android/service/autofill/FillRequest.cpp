@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass FillRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.FillRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,14 +15,14 @@ namespace android::service::autofill
 	}
 	jint FillRequest::FLAG_COMPATIBILITY_MODE_REQUEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillRequest",
 			"FLAG_COMPATIBILITY_MODE_REQUEST"
 		);
 	}
 	jint FillRequest::FLAG_MANUAL_REQUEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillRequest",
 			"FLAG_MANUAL_REQUEST"
 		);

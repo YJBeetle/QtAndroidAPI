@@ -15,7 +15,7 @@ namespace java::security
 	// Methods
 	java::security::KeyPairGenerator KeyPairGenerator::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyPairGenerator",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/KeyPairGenerator;",
@@ -24,7 +24,7 @@ namespace java::security
 	}
 	java::security::KeyPairGenerator KeyPairGenerator::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyPairGenerator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyPairGenerator;",
@@ -34,7 +34,7 @@ namespace java::security
 	}
 	java::security::KeyPairGenerator KeyPairGenerator::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyPairGenerator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyPairGenerator;",

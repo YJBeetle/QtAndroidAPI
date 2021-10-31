@@ -10,7 +10,7 @@ namespace java::util
 	// Fields
 	__JniBaseClass ResourceBundle_Control::FORMAT_CLASS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.ResourceBundle$Control",
 			"FORMAT_CLASS",
 			"Ljava/util/List;"
@@ -18,7 +18,7 @@ namespace java::util
 	}
 	__JniBaseClass ResourceBundle_Control::FORMAT_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.ResourceBundle$Control",
 			"FORMAT_DEFAULT",
 			"Ljava/util/List;"
@@ -26,7 +26,7 @@ namespace java::util
 	}
 	__JniBaseClass ResourceBundle_Control::FORMAT_PROPERTIES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.ResourceBundle$Control",
 			"FORMAT_PROPERTIES",
 			"Ljava/util/List;"
@@ -34,14 +34,14 @@ namespace java::util
 	}
 	jlong ResourceBundle_Control::TTL_DONT_CACHE()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"java.util.ResourceBundle$Control",
 			"TTL_DONT_CACHE"
 		);
 	}
 	jlong ResourceBundle_Control::TTL_NO_EXPIRATION_CONTROL()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"java.util.ResourceBundle$Control",
 			"TTL_NO_EXPIRATION_CONTROL"
 		);
@@ -55,7 +55,7 @@ namespace java::util
 	// Methods
 	java::util::ResourceBundle_Control ResourceBundle_Control::getControl(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ResourceBundle$Control",
 			"getControl",
 			"(Ljava/util/List;)Ljava/util/ResourceBundle$Control;",
@@ -64,7 +64,7 @@ namespace java::util
 	}
 	java::util::ResourceBundle_Control ResourceBundle_Control::getNoFallbackControl(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ResourceBundle$Control",
 			"getNoFallbackControl",
 			"(Ljava/util/List;)Ljava/util/ResourceBundle$Control;",

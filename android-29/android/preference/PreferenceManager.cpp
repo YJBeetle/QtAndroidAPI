@@ -8,7 +8,7 @@ namespace android::preference
 	// Fields
 	jstring PreferenceManager::KEY_HAS_SET_DEFAULT_VALUES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.preference.PreferenceManager",
 			"KEY_HAS_SET_DEFAULT_VALUES",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::preference
 	}
 	jstring PreferenceManager::METADATA_KEY_PREFERENCES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.preference.PreferenceManager",
 			"METADATA_KEY_PREFERENCES",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::preference
 	// Methods
 	__JniBaseClass PreferenceManager::getDefaultSharedPreferences(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.preference.PreferenceManager",
 			"getDefaultSharedPreferences",
 			"(Landroid/content/Context;)Landroid/content/SharedPreferences;",
@@ -40,7 +40,7 @@ namespace android::preference
 	}
 	jstring PreferenceManager::getDefaultSharedPreferencesName(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.preference.PreferenceManager",
 			"getDefaultSharedPreferencesName",
 			"(Landroid/content/Context;)Ljava/lang/String;",
@@ -49,7 +49,7 @@ namespace android::preference
 	}
 	void PreferenceManager::setDefaultValues(android::content::Context arg0, jint arg1, jboolean arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.preference.PreferenceManager",
 			"setDefaultValues",
 			"(Landroid/content/Context;IZ)V",
@@ -60,7 +60,7 @@ namespace android::preference
 	}
 	void PreferenceManager::setDefaultValues(android::content::Context arg0, jstring arg1, jint arg2, jint arg3, jboolean arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.preference.PreferenceManager",
 			"setDefaultValues",
 			"(Landroid/content/Context;Ljava/lang/String;IIZ)V",

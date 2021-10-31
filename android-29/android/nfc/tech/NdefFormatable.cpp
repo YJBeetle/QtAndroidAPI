@@ -14,7 +14,7 @@ namespace android::nfc::tech
 	// Methods
 	android::nfc::tech::NdefFormatable NdefFormatable::get(android::nfc::Tag arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.tech.NdefFormatable",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NdefFormatable;",

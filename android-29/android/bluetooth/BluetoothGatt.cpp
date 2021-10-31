@@ -10,91 +10,91 @@ namespace android::bluetooth
 	// Fields
 	jint BluetoothGatt::CONNECTION_PRIORITY_BALANCED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"CONNECTION_PRIORITY_BALANCED"
 		);
 	}
 	jint BluetoothGatt::CONNECTION_PRIORITY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"CONNECTION_PRIORITY_HIGH"
 		);
 	}
 	jint BluetoothGatt::CONNECTION_PRIORITY_LOW_POWER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"CONNECTION_PRIORITY_LOW_POWER"
 		);
 	}
 	jint BluetoothGatt::GATT_CONNECTION_CONGESTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"GATT_CONNECTION_CONGESTED"
 		);
 	}
 	jint BluetoothGatt::GATT_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"GATT_FAILURE"
 		);
 	}
 	jint BluetoothGatt::GATT_INSUFFICIENT_AUTHENTICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"GATT_INSUFFICIENT_AUTHENTICATION"
 		);
 	}
 	jint BluetoothGatt::GATT_INSUFFICIENT_ENCRYPTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"GATT_INSUFFICIENT_ENCRYPTION"
 		);
 	}
 	jint BluetoothGatt::GATT_INVALID_ATTRIBUTE_LENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"GATT_INVALID_ATTRIBUTE_LENGTH"
 		);
 	}
 	jint BluetoothGatt::GATT_INVALID_OFFSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"GATT_INVALID_OFFSET"
 		);
 	}
 	jint BluetoothGatt::GATT_READ_NOT_PERMITTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"GATT_READ_NOT_PERMITTED"
 		);
 	}
 	jint BluetoothGatt::GATT_REQUEST_NOT_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"GATT_REQUEST_NOT_SUPPORTED"
 		);
 	}
 	jint BluetoothGatt::GATT_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"GATT_SUCCESS"
 		);
 	}
 	jint BluetoothGatt::GATT_WRITE_NOT_PERMITTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGatt",
 			"GATT_WRITE_NOT_PERMITTED"
 		);

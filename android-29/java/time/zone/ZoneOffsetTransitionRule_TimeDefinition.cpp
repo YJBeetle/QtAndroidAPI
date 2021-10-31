@@ -7,7 +7,7 @@ namespace java::time::zone
 	// Fields
 	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule_TimeDefinition::STANDARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
 			"STANDARD",
 			"Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
@@ -15,7 +15,7 @@ namespace java::time::zone
 	}
 	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule_TimeDefinition::UTC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
 			"UTC",
 			"Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
@@ -23,7 +23,7 @@ namespace java::time::zone
 	}
 	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule_TimeDefinition::WALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
 			"WALL",
 			"Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
@@ -38,7 +38,7 @@ namespace java::time::zone
 	// Methods
 	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule_TimeDefinition::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;",
@@ -47,7 +47,7 @@ namespace java::time::zone
 	}
 	jarray ZoneOffsetTransitionRule_TimeDefinition::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
 			"values",
 			"()[Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"

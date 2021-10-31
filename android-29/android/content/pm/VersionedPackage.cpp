@@ -6,7 +6,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass VersionedPackage::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.VersionedPackage",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

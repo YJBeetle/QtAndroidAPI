@@ -8,7 +8,7 @@ namespace android::media::tv
 	// Fields
 	jstring TvContract::ACTION_INITIALIZE_PROGRAMS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"ACTION_INITIALIZE_PROGRAMS",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::media::tv
 	}
 	jstring TvContract::ACTION_PREVIEW_PROGRAM_ADDED_TO_WATCH_NEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"ACTION_PREVIEW_PROGRAM_ADDED_TO_WATCH_NEXT",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::media::tv
 	}
 	jstring TvContract::ACTION_PREVIEW_PROGRAM_BROWSABLE_DISABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"ACTION_PREVIEW_PROGRAM_BROWSABLE_DISABLED",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace android::media::tv
 	}
 	jstring TvContract::ACTION_REQUEST_CHANNEL_BROWSABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"ACTION_REQUEST_CHANNEL_BROWSABLE",
 			"Ljava/lang/String;"
@@ -40,7 +40,7 @@ namespace android::media::tv
 	}
 	jstring TvContract::ACTION_WATCH_NEXT_PROGRAM_BROWSABLE_DISABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"ACTION_WATCH_NEXT_PROGRAM_BROWSABLE_DISABLED",
 			"Ljava/lang/String;"
@@ -48,7 +48,7 @@ namespace android::media::tv
 	}
 	jstring TvContract::AUTHORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"AUTHORITY",
 			"Ljava/lang/String;"
@@ -56,7 +56,7 @@ namespace android::media::tv
 	}
 	jstring TvContract::EXTRA_CHANNEL_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"EXTRA_CHANNEL_ID",
 			"Ljava/lang/String;"
@@ -64,7 +64,7 @@ namespace android::media::tv
 	}
 	jstring TvContract::EXTRA_PREVIEW_PROGRAM_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"EXTRA_PREVIEW_PROGRAM_ID",
 			"Ljava/lang/String;"
@@ -72,7 +72,7 @@ namespace android::media::tv
 	}
 	jstring TvContract::EXTRA_WATCH_NEXT_PROGRAM_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract",
 			"EXTRA_WATCH_NEXT_PROGRAM_ID",
 			"Ljava/lang/String;"
@@ -87,7 +87,7 @@ namespace android::media::tv
 	// Methods
 	android::net::Uri TvContract::buildChannelLogoUri(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildChannelLogoUri",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
@@ -96,7 +96,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildChannelLogoUri(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildChannelLogoUri",
 			"(J)Landroid/net/Uri;",
@@ -105,7 +105,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildChannelUri(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildChannelUri",
 			"(J)Landroid/net/Uri;",
@@ -114,7 +114,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildChannelUriForPassthroughInput(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildChannelUriForPassthroughInput",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
@@ -123,7 +123,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildChannelsUriForInput(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildChannelsUriForInput",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
@@ -132,7 +132,7 @@ namespace android::media::tv
 	}
 	jstring TvContract::buildInputId(android::content::ComponentName arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildInputId",
 			"(Landroid/content/ComponentName;)Ljava/lang/String;",
@@ -141,7 +141,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildPreviewProgramUri(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildPreviewProgramUri",
 			"(J)Landroid/net/Uri;",
@@ -150,7 +150,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildPreviewProgramsUriForChannel(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildPreviewProgramsUriForChannel",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
@@ -159,7 +159,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildPreviewProgramsUriForChannel(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildPreviewProgramsUriForChannel",
 			"(J)Landroid/net/Uri;",
@@ -168,7 +168,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildProgramUri(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildProgramUri",
 			"(J)Landroid/net/Uri;",
@@ -177,7 +177,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildProgramsUriForChannel(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildProgramsUriForChannel",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
@@ -186,7 +186,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildProgramsUriForChannel(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildProgramsUriForChannel",
 			"(J)Landroid/net/Uri;",
@@ -195,7 +195,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildProgramsUriForChannel(android::net::Uri arg0, jlong arg1, jlong arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildProgramsUriForChannel",
 			"(Landroid/net/Uri;JJ)Landroid/net/Uri;",
@@ -206,7 +206,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildProgramsUriForChannel(jlong arg0, jlong arg1, jlong arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildProgramsUriForChannel",
 			"(JJJ)Landroid/net/Uri;",
@@ -217,7 +217,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildRecordedProgramUri(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildRecordedProgramUri",
 			"(J)Landroid/net/Uri;",
@@ -226,7 +226,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract::buildWatchNextProgramUri(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract",
 			"buildWatchNextProgramUri",
 			"(J)Landroid/net/Uri;",
@@ -235,7 +235,7 @@ namespace android::media::tv
 	}
 	jboolean TvContract::isChannelUri(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.tv.TvContract",
 			"isChannelUri",
 			"(Landroid/net/Uri;)Z",
@@ -244,7 +244,7 @@ namespace android::media::tv
 	}
 	jboolean TvContract::isChannelUriForPassthroughInput(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.tv.TvContract",
 			"isChannelUriForPassthroughInput",
 			"(Landroid/net/Uri;)Z",
@@ -253,7 +253,7 @@ namespace android::media::tv
 	}
 	jboolean TvContract::isChannelUriForTunerInput(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.tv.TvContract",
 			"isChannelUriForTunerInput",
 			"(Landroid/net/Uri;)Z",
@@ -262,7 +262,7 @@ namespace android::media::tv
 	}
 	jboolean TvContract::isProgramUri(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.tv.TvContract",
 			"isProgramUri",
 			"(Landroid/net/Uri;)Z",
@@ -271,7 +271,7 @@ namespace android::media::tv
 	}
 	jboolean TvContract::isRecordedProgramUri(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.tv.TvContract",
 			"isRecordedProgramUri",
 			"(Landroid/net/Uri;)Z",
@@ -280,7 +280,7 @@ namespace android::media::tv
 	}
 	void TvContract::requestChannelBrowsable(android::content::Context arg0, jlong arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.media.tv.TvContract",
 			"requestChannelBrowsable",
 			"(Landroid/content/Context;J)V",

@@ -6,7 +6,7 @@ namespace android::bluetooth
 	// Fields
 	__JniBaseClass BluetoothClass::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothClass",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

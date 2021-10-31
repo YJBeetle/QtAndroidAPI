@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_Contacts_AggregationSuggestions::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Contacts$AggregationSuggestions",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"

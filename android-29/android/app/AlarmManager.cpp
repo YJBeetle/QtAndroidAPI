@@ -8,7 +8,7 @@ namespace android::app
 	// Fields
 	jstring AlarmManager::ACTION_NEXT_ALARM_CLOCK_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.AlarmManager",
 			"ACTION_NEXT_ALARM_CLOCK_CHANGED",
 			"Ljava/lang/String;"
@@ -16,63 +16,63 @@ namespace android::app
 	}
 	jint AlarmManager::ELAPSED_REALTIME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.AlarmManager",
 			"ELAPSED_REALTIME"
 		);
 	}
 	jint AlarmManager::ELAPSED_REALTIME_WAKEUP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.AlarmManager",
 			"ELAPSED_REALTIME_WAKEUP"
 		);
 	}
 	jlong AlarmManager::INTERVAL_DAY()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.app.AlarmManager",
 			"INTERVAL_DAY"
 		);
 	}
 	jlong AlarmManager::INTERVAL_FIFTEEN_MINUTES()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.app.AlarmManager",
 			"INTERVAL_FIFTEEN_MINUTES"
 		);
 	}
 	jlong AlarmManager::INTERVAL_HALF_DAY()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.app.AlarmManager",
 			"INTERVAL_HALF_DAY"
 		);
 	}
 	jlong AlarmManager::INTERVAL_HALF_HOUR()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.app.AlarmManager",
 			"INTERVAL_HALF_HOUR"
 		);
 	}
 	jlong AlarmManager::INTERVAL_HOUR()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.app.AlarmManager",
 			"INTERVAL_HOUR"
 		);
 	}
 	jint AlarmManager::RTC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.AlarmManager",
 			"RTC"
 		);
 	}
 	jint AlarmManager::RTC_WAKEUP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.AlarmManager",
 			"RTC_WAKEUP"
 		);

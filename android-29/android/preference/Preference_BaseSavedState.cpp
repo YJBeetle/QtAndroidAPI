@@ -6,7 +6,7 @@ namespace android::preference
 	// Fields
 	__JniBaseClass Preference_BaseSavedState::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.preference.Preference$BaseSavedState",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

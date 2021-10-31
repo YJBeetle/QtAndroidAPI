@@ -11,238 +11,238 @@ namespace android::telecom
 	// Fields
 	jint Call_Details::CAPABILITY_CANNOT_DOWNGRADE_VIDEO_TO_AUDIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_CANNOT_DOWNGRADE_VIDEO_TO_AUDIO"
 		);
 	}
 	jint Call_Details::CAPABILITY_CAN_PAUSE_VIDEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_CAN_PAUSE_VIDEO"
 		);
 	}
 	jint Call_Details::CAPABILITY_CAN_PULL_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_CAN_PULL_CALL"
 		);
 	}
 	jint Call_Details::CAPABILITY_DISCONNECT_FROM_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_DISCONNECT_FROM_CONFERENCE"
 		);
 	}
 	jint Call_Details::CAPABILITY_HOLD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_HOLD"
 		);
 	}
 	jint Call_Details::CAPABILITY_MANAGE_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_MANAGE_CONFERENCE"
 		);
 	}
 	jint Call_Details::CAPABILITY_MERGE_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_MERGE_CONFERENCE"
 		);
 	}
 	jint Call_Details::CAPABILITY_MUTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_MUTE"
 		);
 	}
 	jint Call_Details::CAPABILITY_RESPOND_VIA_TEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_RESPOND_VIA_TEXT"
 		);
 	}
 	jint Call_Details::CAPABILITY_SEPARATE_FROM_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_SEPARATE_FROM_CONFERENCE"
 		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_LOCAL_BIDIRECTIONAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_SUPPORTS_VT_LOCAL_BIDIRECTIONAL"
 		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_LOCAL_RX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_SUPPORTS_VT_LOCAL_RX"
 		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_LOCAL_TX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_SUPPORTS_VT_LOCAL_TX"
 		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_REMOTE_BIDIRECTIONAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_SUPPORTS_VT_REMOTE_BIDIRECTIONAL"
 		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_REMOTE_RX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_SUPPORTS_VT_REMOTE_RX"
 		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_REMOTE_TX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_SUPPORTS_VT_REMOTE_TX"
 		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORT_DEFLECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_SUPPORT_DEFLECT"
 		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORT_HOLD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_SUPPORT_HOLD"
 		);
 	}
 	jint Call_Details::CAPABILITY_SWAP_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"CAPABILITY_SWAP_CONFERENCE"
 		);
 	}
 	jint Call_Details::DIRECTION_INCOMING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"DIRECTION_INCOMING"
 		);
 	}
 	jint Call_Details::DIRECTION_OUTGOING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"DIRECTION_OUTGOING"
 		);
 	}
 	jint Call_Details::DIRECTION_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"DIRECTION_UNKNOWN"
 		);
 	}
 	jint Call_Details::PROPERTY_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_CONFERENCE"
 		);
 	}
 	jint Call_Details::PROPERTY_EMERGENCY_CALLBACK_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_EMERGENCY_CALLBACK_MODE"
 		);
 	}
 	jint Call_Details::PROPERTY_ENTERPRISE_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_ENTERPRISE_CALL"
 		);
 	}
 	jint Call_Details::PROPERTY_GENERIC_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_GENERIC_CONFERENCE"
 		);
 	}
 	jint Call_Details::PROPERTY_HAS_CDMA_VOICE_PRIVACY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_HAS_CDMA_VOICE_PRIVACY"
 		);
 	}
 	jint Call_Details::PROPERTY_HIGH_DEF_AUDIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_HIGH_DEF_AUDIO"
 		);
 	}
 	jint Call_Details::PROPERTY_IS_EXTERNAL_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_IS_EXTERNAL_CALL"
 		);
 	}
 	jint Call_Details::PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL"
 		);
 	}
 	jint Call_Details::PROPERTY_RTT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_RTT"
 		);
 	}
 	jint Call_Details::PROPERTY_SELF_MANAGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_SELF_MANAGED"
 		);
 	}
 	jint Call_Details::PROPERTY_VOIP_AUDIO_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_VOIP_AUDIO_MODE"
 		);
 	}
 	jint Call_Details::PROPERTY_WIFI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Details",
 			"PROPERTY_WIFI"
 		);
@@ -256,7 +256,7 @@ namespace android::telecom
 	// Methods
 	jboolean Call_Details::can(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.telecom.Call$Details",
 			"can",
 			"(II)Z",
@@ -266,7 +266,7 @@ namespace android::telecom
 	}
 	jstring Call_Details::capabilitiesToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telecom.Call$Details",
 			"capabilitiesToString",
 			"(I)Ljava/lang/String;",
@@ -275,7 +275,7 @@ namespace android::telecom
 	}
 	jboolean Call_Details::hasProperty(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.telecom.Call$Details",
 			"hasProperty",
 			"(II)Z",
@@ -285,7 +285,7 @@ namespace android::telecom
 	}
 	jstring Call_Details::propertiesToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telecom.Call$Details",
 			"propertiesToString",
 			"(I)Ljava/lang/String;",

@@ -6,7 +6,7 @@ namespace android::net
 	// Fields
 	__JniBaseClass CaptivePortal::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.CaptivePortal",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

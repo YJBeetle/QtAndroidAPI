@@ -6,7 +6,7 @@ namespace javax::xml::xpath
 	// Fields
 	jstring XPathFactory::DEFAULT_OBJECT_MODEL_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.xml.xpath.XPathFactory",
 			"DEFAULT_OBJECT_MODEL_URI",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace javax::xml::xpath
 	}
 	jstring XPathFactory::DEFAULT_PROPERTY_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.xml.xpath.XPathFactory",
 			"DEFAULT_PROPERTY_NAME",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace javax::xml::xpath
 	// Methods
 	javax::xml::xpath::XPathFactory XPathFactory::newDefaultInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
 			"newDefaultInstance",
 			"()Ljavax/xml/xpath/XPathFactory;"
@@ -37,7 +37,7 @@ namespace javax::xml::xpath
 	}
 	javax::xml::xpath::XPathFactory XPathFactory::newInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
 			"newInstance",
 			"()Ljavax/xml/xpath/XPathFactory;"
@@ -45,7 +45,7 @@ namespace javax::xml::xpath
 	}
 	javax::xml::xpath::XPathFactory XPathFactory::newInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
 			"newInstance",
 			"(Ljava/lang/String;)Ljavax/xml/xpath/XPathFactory;",
@@ -54,7 +54,7 @@ namespace javax::xml::xpath
 	}
 	javax::xml::xpath::XPathFactory XPathFactory::newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/xpath/XPathFactory;",

@@ -6,7 +6,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass SigningInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.SigningInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

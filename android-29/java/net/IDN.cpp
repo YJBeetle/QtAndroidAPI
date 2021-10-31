@@ -6,14 +6,14 @@ namespace java::net
 	// Fields
 	jint IDN::ALLOW_UNASSIGNED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.net.IDN",
 			"ALLOW_UNASSIGNED"
 		);
 	}
 	jint IDN::USE_STD3_ASCII_RULES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.net.IDN",
 			"USE_STD3_ASCII_RULES"
 		);
@@ -27,7 +27,7 @@ namespace java::net
 	// Methods
 	jstring IDN::toASCII(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.IDN",
 			"toASCII",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -36,7 +36,7 @@ namespace java::net
 	}
 	jstring IDN::toASCII(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.IDN",
 			"toASCII",
 			"(Ljava/lang/String;I)Ljava/lang/String;",
@@ -46,7 +46,7 @@ namespace java::net
 	}
 	jstring IDN::toUnicode(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.IDN",
 			"toUnicode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -55,7 +55,7 @@ namespace java::net
 	}
 	jstring IDN::toUnicode(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.IDN",
 			"toUnicode",
 			"(Ljava/lang/String;I)Ljava/lang/String;",

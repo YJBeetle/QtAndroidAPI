@@ -16,7 +16,7 @@ namespace android::transition
 	// Methods
 	android::transition::TransitionInflater TransitionInflater::from(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.transition.TransitionInflater",
 			"from",
 			"(Landroid/content/Context;)Landroid/transition/TransitionInflater;",

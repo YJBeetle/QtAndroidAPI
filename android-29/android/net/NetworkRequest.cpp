@@ -6,7 +6,7 @@ namespace android::net
 	// Fields
 	__JniBaseClass NetworkRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.NetworkRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

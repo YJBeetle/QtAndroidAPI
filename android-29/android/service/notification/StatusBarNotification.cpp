@@ -8,7 +8,7 @@ namespace android::service::notification
 	// Fields
 	__JniBaseClass StatusBarNotification::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.StatusBarNotification",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

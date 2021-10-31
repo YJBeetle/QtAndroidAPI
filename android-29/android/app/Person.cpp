@@ -8,7 +8,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass Person::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Person",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

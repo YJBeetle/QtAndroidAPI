@@ -12,7 +12,7 @@ namespace java::util
 	// Methods
 	java::util::OptionalLong OptionalLong::empty()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.OptionalLong",
 			"empty",
 			"()Ljava/util/OptionalLong;"
@@ -20,7 +20,7 @@ namespace java::util
 	}
 	java::util::OptionalLong OptionalLong::of(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.OptionalLong",
 			"of",
 			"(J)Ljava/util/OptionalLong;",

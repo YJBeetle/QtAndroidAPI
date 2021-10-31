@@ -6,7 +6,7 @@ namespace android::net::wifi::aware
 	// Fields
 	__JniBaseClass PublishConfig::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.aware.PublishConfig",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,14 +14,14 @@ namespace android::net::wifi::aware
 	}
 	jint PublishConfig::PUBLISH_TYPE_SOLICITED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.aware.PublishConfig",
 			"PUBLISH_TYPE_SOLICITED"
 		);
 	}
 	jint PublishConfig::PUBLISH_TYPE_UNSOLICITED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.aware.PublishConfig",
 			"PUBLISH_TYPE_UNSOLICITED"
 		);

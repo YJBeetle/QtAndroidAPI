@@ -7,63 +7,63 @@ namespace android::graphics
 	// Fields
 	jint Matrix::MPERSP_0()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Matrix",
 			"MPERSP_0"
 		);
 	}
 	jint Matrix::MPERSP_1()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Matrix",
 			"MPERSP_1"
 		);
 	}
 	jint Matrix::MPERSP_2()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Matrix",
 			"MPERSP_2"
 		);
 	}
 	jint Matrix::MSCALE_X()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Matrix",
 			"MSCALE_X"
 		);
 	}
 	jint Matrix::MSCALE_Y()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Matrix",
 			"MSCALE_Y"
 		);
 	}
 	jint Matrix::MSKEW_X()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Matrix",
 			"MSKEW_X"
 		);
 	}
 	jint Matrix::MSKEW_Y()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Matrix",
 			"MSKEW_Y"
 		);
 	}
 	jint Matrix::MTRANS_X()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Matrix",
 			"MTRANS_X"
 		);
 	}
 	jint Matrix::MTRANS_Y()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Matrix",
 			"MTRANS_Y"
 		);

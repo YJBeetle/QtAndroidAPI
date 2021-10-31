@@ -5,28 +5,28 @@ namespace android::provider
 	// Fields
 	jint FontsContract_FontFamilyResult::STATUS_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$FontFamilyResult",
 			"STATUS_OK"
 		);
 	}
 	jint FontsContract_FontFamilyResult::STATUS_REJECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$FontFamilyResult",
 			"STATUS_REJECTED"
 		);
 	}
 	jint FontsContract_FontFamilyResult::STATUS_UNEXPECTED_DATA_PROVIDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$FontFamilyResult",
 			"STATUS_UNEXPECTED_DATA_PROVIDED"
 		);
 	}
 	jint FontsContract_FontFamilyResult::STATUS_WRONG_CERTIFICATES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$FontFamilyResult",
 			"STATUS_WRONG_CERTIFICATES"
 		);

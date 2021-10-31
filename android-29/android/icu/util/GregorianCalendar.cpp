@@ -10,14 +10,14 @@ namespace android::icu::util
 	// Fields
 	jint GregorianCalendar::AD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.GregorianCalendar",
 			"AD"
 		);
 	}
 	jint GregorianCalendar::BC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.GregorianCalendar",
 			"BC"
 		);

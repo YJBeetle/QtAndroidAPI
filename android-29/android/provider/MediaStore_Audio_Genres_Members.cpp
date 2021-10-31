@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring MediaStore_Audio_Genres_Members::AUDIO_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres$Members",
 			"AUDIO_ID",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Genres_Members::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres$Members",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Genres_Members::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres$Members",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Genres_Members::GENRE_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres$Members",
 			"GENRE_ID",
 			"Ljava/lang/String;"
@@ -50,7 +50,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri MediaStore_Audio_Genres_Members::getContentUri(jstring arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Genres$Members",
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",

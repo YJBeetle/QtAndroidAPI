@@ -8,7 +8,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass VisualVoicemailSms::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.VisualVoicemailSms",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

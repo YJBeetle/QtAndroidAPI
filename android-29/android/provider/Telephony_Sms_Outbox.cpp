@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri Telephony_Sms_Outbox::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Outbox",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring Telephony_Sms_Outbox::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Outbox",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"

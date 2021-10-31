@@ -6,35 +6,35 @@ namespace java::lang
 	// Fields
 	jint Short::BYTES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Short",
 			"BYTES"
 		);
 	}
 	jshort Short::MAX_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"java.lang.Short",
 			"MAX_VALUE"
 		);
 	}
 	jshort Short::MIN_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"java.lang.Short",
 			"MIN_VALUE"
 		);
 	}
 	jint Short::SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.Short",
 			"SIZE"
 		);
 	}
 	jclass Short::TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.Short",
 			"TYPE",
 			"Ljava/lang/Class;"
@@ -61,7 +61,7 @@ namespace java::lang
 	// Methods
 	jint Short::compare(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Short",
 			"compare",
 			"(SS)I",
@@ -71,7 +71,7 @@ namespace java::lang
 	}
 	jint Short::compareUnsigned(jshort arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Short",
 			"compareUnsigned",
 			"(SS)I",
@@ -81,7 +81,7 @@ namespace java::lang
 	}
 	java::lang::Short Short::decode(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Short",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/Short;",
@@ -90,7 +90,7 @@ namespace java::lang
 	}
 	jint Short::hashCode(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Short",
 			"hashCode",
 			"(S)I",
@@ -99,7 +99,7 @@ namespace java::lang
 	}
 	jshort Short::parseShort(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"java.lang.Short",
 			"parseShort",
 			"(Ljava/lang/String;)S",
@@ -108,7 +108,7 @@ namespace java::lang
 	}
 	jshort Short::parseShort(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"java.lang.Short",
 			"parseShort",
 			"(Ljava/lang/String;I)S",
@@ -118,7 +118,7 @@ namespace java::lang
 	}
 	jshort Short::reverseBytes(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
+		return callStaticMethod<jshort>(
 			"java.lang.Short",
 			"reverseBytes",
 			"(S)S",
@@ -127,7 +127,7 @@ namespace java::lang
 	}
 	jstring Short::toString(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Short",
 			"toString",
 			"(S)Ljava/lang/String;",
@@ -136,7 +136,7 @@ namespace java::lang
 	}
 	jint Short::toUnsignedInt(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Short",
 			"toUnsignedInt",
 			"(S)I",
@@ -145,7 +145,7 @@ namespace java::lang
 	}
 	jlong Short::toUnsignedLong(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.Short",
 			"toUnsignedLong",
 			"(S)J",
@@ -154,7 +154,7 @@ namespace java::lang
 	}
 	java::lang::Short Short::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Short",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Short;",
@@ -163,7 +163,7 @@ namespace java::lang
 	}
 	java::lang::Short Short::valueOf(jshort arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Short",
 			"valueOf",
 			"(S)Ljava/lang/Short;",
@@ -172,7 +172,7 @@ namespace java::lang
 	}
 	java::lang::Short Short::valueOf(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Short",
 			"valueOf",
 			"(Ljava/lang/String;I)Ljava/lang/Short;",

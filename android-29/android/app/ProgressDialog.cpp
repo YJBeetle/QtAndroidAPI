@@ -9,14 +9,14 @@ namespace android::app
 	// Fields
 	jint ProgressDialog::STYLE_HORIZONTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ProgressDialog",
 			"STYLE_HORIZONTAL"
 		);
 	}
 	jint ProgressDialog::STYLE_SPINNER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ProgressDialog",
 			"STYLE_SPINNER"
 		);
@@ -43,7 +43,7 @@ namespace android::app
 	// Methods
 	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ProgressDialog",
 			"show",
 			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/app/ProgressDialog;",
@@ -54,7 +54,7 @@ namespace android::app
 	}
 	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ProgressDialog",
 			"show",
 			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/app/ProgressDialog;",
@@ -66,7 +66,7 @@ namespace android::app
 	}
 	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ProgressDialog",
 			"show",
 			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;",
@@ -79,7 +79,7 @@ namespace android::app
 	}
 	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __JniBaseClass arg5)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.ProgressDialog",
 			"show",
 			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZLandroid/content/DialogInterface$OnCancelListener;)Landroid/app/ProgressDialog;",

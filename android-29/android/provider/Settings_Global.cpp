@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring Settings_Global::ADB_ENABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"ADB_ENABLED",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::AIRPLANE_MODE_ON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"AIRPLANE_MODE_ON",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::AIRPLANE_MODE_RADIOS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"AIRPLANE_MODE_RADIOS",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::ALWAYS_FINISH_ACTIVITIES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"ALWAYS_FINISH_ACTIVITIES",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::ANIMATOR_DURATION_SCALE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"ANIMATOR_DURATION_SCALE",
 			"Ljava/lang/String;"
@@ -47,7 +47,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::APPLY_RAMPING_RINGER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"APPLY_RAMPING_RINGER",
 			"Ljava/lang/String;"
@@ -55,7 +55,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::AUTO_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"AUTO_TIME",
 			"Ljava/lang/String;"
@@ -63,7 +63,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::AUTO_TIME_ZONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"AUTO_TIME_ZONE",
 			"Ljava/lang/String;"
@@ -71,7 +71,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::BLUETOOTH_ON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"BLUETOOTH_ON",
 			"Ljava/lang/String;"
@@ -79,7 +79,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::BOOT_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"BOOT_COUNT",
 			"Ljava/lang/String;"
@@ -87,7 +87,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::CONTACT_METADATA_SYNC_ENABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"CONTACT_METADATA_SYNC_ENABLED",
 			"Ljava/lang/String;"
@@ -95,7 +95,7 @@ namespace android::provider
 	}
 	android::net::Uri Settings_Global::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -103,7 +103,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::DATA_ROAMING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"DATA_ROAMING",
 			"Ljava/lang/String;"
@@ -111,7 +111,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::DEBUG_APP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"DEBUG_APP",
 			"Ljava/lang/String;"
@@ -119,7 +119,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::DEVELOPMENT_SETTINGS_ENABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"DEVELOPMENT_SETTINGS_ENABLED",
 			"Ljava/lang/String;"
@@ -127,7 +127,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::DEVICE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"DEVICE_NAME",
 			"Ljava/lang/String;"
@@ -135,7 +135,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::DEVICE_PROVISIONED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"DEVICE_PROVISIONED",
 			"Ljava/lang/String;"
@@ -143,7 +143,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::HTTP_PROXY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"HTTP_PROXY",
 			"Ljava/lang/String;"
@@ -151,7 +151,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::INSTALL_NON_MARKET_APPS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"INSTALL_NON_MARKET_APPS",
 			"Ljava/lang/String;"
@@ -159,7 +159,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::MODE_RINGER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"MODE_RINGER",
 			"Ljava/lang/String;"
@@ -167,7 +167,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::NETWORK_PREFERENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"NETWORK_PREFERENCE",
 			"Ljava/lang/String;"
@@ -175,7 +175,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::RADIO_BLUETOOTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"RADIO_BLUETOOTH",
 			"Ljava/lang/String;"
@@ -183,7 +183,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::RADIO_CELL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"RADIO_CELL",
 			"Ljava/lang/String;"
@@ -191,7 +191,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::RADIO_NFC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"RADIO_NFC",
 			"Ljava/lang/String;"
@@ -199,7 +199,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::RADIO_WIFI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"RADIO_WIFI",
 			"Ljava/lang/String;"
@@ -207,7 +207,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::SHOW_PROCESSES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"SHOW_PROCESSES",
 			"Ljava/lang/String;"
@@ -215,7 +215,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::STAY_ON_WHILE_PLUGGED_IN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"STAY_ON_WHILE_PLUGGED_IN",
 			"Ljava/lang/String;"
@@ -223,7 +223,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::TRANSITION_ANIMATION_SCALE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"TRANSITION_ANIMATION_SCALE",
 			"Ljava/lang/String;"
@@ -231,7 +231,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::USB_MASS_STORAGE_ENABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"USB_MASS_STORAGE_ENABLED",
 			"Ljava/lang/String;"
@@ -239,7 +239,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::USE_GOOGLE_MAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"USE_GOOGLE_MAIL",
 			"Ljava/lang/String;"
@@ -247,7 +247,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::WAIT_FOR_DEBUGGER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WAIT_FOR_DEBUGGER",
 			"Ljava/lang/String;"
@@ -255,7 +255,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::WIFI_DEVICE_OWNER_CONFIGS_LOCKDOWN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_DEVICE_OWNER_CONFIGS_LOCKDOWN",
 			"Ljava/lang/String;"
@@ -263,7 +263,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::WIFI_MAX_DHCP_RETRY_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_MAX_DHCP_RETRY_COUNT",
 			"Ljava/lang/String;"
@@ -271,7 +271,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS",
 			"Ljava/lang/String;"
@@ -279,7 +279,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON",
 			"Ljava/lang/String;"
@@ -287,7 +287,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY",
 			"Ljava/lang/String;"
@@ -295,7 +295,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::WIFI_NUM_OPEN_NETWORKS_KEPT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_NUM_OPEN_NETWORKS_KEPT",
 			"Ljava/lang/String;"
@@ -303,7 +303,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::WIFI_ON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_ON",
 			"Ljava/lang/String;"
@@ -311,7 +311,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::WIFI_SLEEP_POLICY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_SLEEP_POLICY",
 			"Ljava/lang/String;"
@@ -319,28 +319,28 @@ namespace android::provider
 	}
 	jint Settings_Global::WIFI_SLEEP_POLICY_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Settings$Global",
 			"WIFI_SLEEP_POLICY_DEFAULT"
 		);
 	}
 	jint Settings_Global::WIFI_SLEEP_POLICY_NEVER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Settings$Global",
 			"WIFI_SLEEP_POLICY_NEVER"
 		);
 	}
 	jint Settings_Global::WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Settings$Global",
 			"WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED"
 		);
 	}
 	jstring Settings_Global::WIFI_WATCHDOG_ON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_WATCHDOG_ON",
 			"Ljava/lang/String;"
@@ -348,7 +348,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::WINDOW_ANIMATION_SCALE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WINDOW_ANIMATION_SCALE",
 			"Ljava/lang/String;"
@@ -368,7 +368,7 @@ namespace android::provider
 	// Methods
 	jfloat Settings_Global::getFloat(android::content::ContentResolver arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.provider.Settings$Global",
 			"getFloat",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)F",
@@ -378,7 +378,7 @@ namespace android::provider
 	}
 	jfloat Settings_Global::getFloat(android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.provider.Settings$Global",
 			"getFloat",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;F)F",
@@ -389,7 +389,7 @@ namespace android::provider
 	}
 	jint Settings_Global::getInt(android::content::ContentResolver arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.provider.Settings$Global",
 			"getInt",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)I",
@@ -399,7 +399,7 @@ namespace android::provider
 	}
 	jint Settings_Global::getInt(android::content::ContentResolver arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.provider.Settings$Global",
 			"getInt",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;I)I",
@@ -410,7 +410,7 @@ namespace android::provider
 	}
 	jlong Settings_Global::getLong(android::content::ContentResolver arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.provider.Settings$Global",
 			"getLong",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)J",
@@ -420,7 +420,7 @@ namespace android::provider
 	}
 	jlong Settings_Global::getLong(android::content::ContentResolver arg0, jstring arg1, jlong arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.provider.Settings$Global",
 			"getLong",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;J)J",
@@ -431,7 +431,7 @@ namespace android::provider
 	}
 	jstring Settings_Global::getString(android::content::ContentResolver arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Settings$Global",
 			"getString",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;",
@@ -441,7 +441,7 @@ namespace android::provider
 	}
 	android::net::Uri Settings_Global::getUriFor(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Settings$Global",
 			"getUriFor",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
@@ -450,7 +450,7 @@ namespace android::provider
 	}
 	jboolean Settings_Global::putFloat(android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.provider.Settings$Global",
 			"putFloat",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;F)Z",
@@ -461,7 +461,7 @@ namespace android::provider
 	}
 	jboolean Settings_Global::putInt(android::content::ContentResolver arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.provider.Settings$Global",
 			"putInt",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;I)Z",
@@ -472,7 +472,7 @@ namespace android::provider
 	}
 	jboolean Settings_Global::putLong(android::content::ContentResolver arg0, jstring arg1, jlong arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.provider.Settings$Global",
 			"putLong",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;J)Z",
@@ -483,7 +483,7 @@ namespace android::provider
 	}
 	jboolean Settings_Global::putString(android::content::ContentResolver arg0, jstring arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.provider.Settings$Global",
 			"putString",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z",

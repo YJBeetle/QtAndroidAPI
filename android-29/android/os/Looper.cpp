@@ -14,7 +14,7 @@ namespace android::os
 	// Methods
 	android::os::Looper Looper::getMainLooper()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Looper",
 			"getMainLooper",
 			"()Landroid/os/Looper;"
@@ -22,7 +22,7 @@ namespace android::os
 	}
 	void Looper::loop()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Looper",
 			"loop",
 			"()V"
@@ -30,7 +30,7 @@ namespace android::os
 	}
 	android::os::Looper Looper::myLooper()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Looper",
 			"myLooper",
 			"()Landroid/os/Looper;"
@@ -38,7 +38,7 @@ namespace android::os
 	}
 	android::os::MessageQueue Looper::myQueue()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Looper",
 			"myQueue",
 			"()Landroid/os/MessageQueue;"
@@ -46,7 +46,7 @@ namespace android::os
 	}
 	void Looper::prepare()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Looper",
 			"prepare",
 			"()V"
@@ -54,7 +54,7 @@ namespace android::os
 	}
 	void Looper::prepareMainLooper()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Looper",
 			"prepareMainLooper",
 			"()V"

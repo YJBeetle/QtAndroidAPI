@@ -6,49 +6,49 @@ namespace android::location
 	// Fields
 	jint GnssMeasurement::ADR_STATE_CYCLE_SLIP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"ADR_STATE_CYCLE_SLIP"
 		);
 	}
 	jint GnssMeasurement::ADR_STATE_HALF_CYCLE_REPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"ADR_STATE_HALF_CYCLE_REPORTED"
 		);
 	}
 	jint GnssMeasurement::ADR_STATE_HALF_CYCLE_RESOLVED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"ADR_STATE_HALF_CYCLE_RESOLVED"
 		);
 	}
 	jint GnssMeasurement::ADR_STATE_RESET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"ADR_STATE_RESET"
 		);
 	}
 	jint GnssMeasurement::ADR_STATE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"ADR_STATE_UNKNOWN"
 		);
 	}
 	jint GnssMeasurement::ADR_STATE_VALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"ADR_STATE_VALID"
 		);
 	}
 	__JniBaseClass GnssMeasurement::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.GnssMeasurement",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -56,147 +56,147 @@ namespace android::location
 	}
 	jint GnssMeasurement::MULTIPATH_INDICATOR_DETECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"MULTIPATH_INDICATOR_DETECTED"
 		);
 	}
 	jint GnssMeasurement::MULTIPATH_INDICATOR_NOT_DETECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"MULTIPATH_INDICATOR_NOT_DETECTED"
 		);
 	}
 	jint GnssMeasurement::MULTIPATH_INDICATOR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"MULTIPATH_INDICATOR_UNKNOWN"
 		);
 	}
 	jint GnssMeasurement::STATE_2ND_CODE_LOCK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_2ND_CODE_LOCK"
 		);
 	}
 	jint GnssMeasurement::STATE_BDS_D2_BIT_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_BDS_D2_BIT_SYNC"
 		);
 	}
 	jint GnssMeasurement::STATE_BDS_D2_SUBFRAME_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_BDS_D2_SUBFRAME_SYNC"
 		);
 	}
 	jint GnssMeasurement::STATE_BIT_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_BIT_SYNC"
 		);
 	}
 	jint GnssMeasurement::STATE_CODE_LOCK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_CODE_LOCK"
 		);
 	}
 	jint GnssMeasurement::STATE_GAL_E1BC_CODE_LOCK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_GAL_E1BC_CODE_LOCK"
 		);
 	}
 	jint GnssMeasurement::STATE_GAL_E1B_PAGE_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_GAL_E1B_PAGE_SYNC"
 		);
 	}
 	jint GnssMeasurement::STATE_GAL_E1C_2ND_CODE_LOCK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_GAL_E1C_2ND_CODE_LOCK"
 		);
 	}
 	jint GnssMeasurement::STATE_GLO_STRING_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_GLO_STRING_SYNC"
 		);
 	}
 	jint GnssMeasurement::STATE_GLO_TOD_DECODED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_GLO_TOD_DECODED"
 		);
 	}
 	jint GnssMeasurement::STATE_GLO_TOD_KNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_GLO_TOD_KNOWN"
 		);
 	}
 	jint GnssMeasurement::STATE_MSEC_AMBIGUOUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_MSEC_AMBIGUOUS"
 		);
 	}
 	jint GnssMeasurement::STATE_SBAS_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_SBAS_SYNC"
 		);
 	}
 	jint GnssMeasurement::STATE_SUBFRAME_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_SUBFRAME_SYNC"
 		);
 	}
 	jint GnssMeasurement::STATE_SYMBOL_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_SYMBOL_SYNC"
 		);
 	}
 	jint GnssMeasurement::STATE_TOW_DECODED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_TOW_DECODED"
 		);
 	}
 	jint GnssMeasurement::STATE_TOW_KNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_TOW_KNOWN"
 		);
 	}
 	jint GnssMeasurement::STATE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurement",
 			"STATE_UNKNOWN"
 		);

@@ -7,7 +7,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass Fragment_SavedState::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Fragment$SavedState",
 			"CREATOR",
 			"Landroid/os/Parcelable$ClassLoaderCreator;"

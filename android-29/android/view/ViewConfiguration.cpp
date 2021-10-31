@@ -18,7 +18,7 @@ namespace android::view
 	// Methods
 	android::view::ViewConfiguration ViewConfiguration::get(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.ViewConfiguration",
 			"get",
 			"(Landroid/content/Context;)Landroid/view/ViewConfiguration;",
@@ -27,7 +27,7 @@ namespace android::view
 	}
 	jfloat ViewConfiguration::getAmbiguousGestureMultiplier()
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.view.ViewConfiguration",
 			"getAmbiguousGestureMultiplier",
 			"()F"
@@ -35,7 +35,7 @@ namespace android::view
 	}
 	jlong ViewConfiguration::getDefaultActionModeHideDuration()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.view.ViewConfiguration",
 			"getDefaultActionModeHideDuration",
 			"()J"
@@ -43,7 +43,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getDoubleTapTimeout()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getDoubleTapTimeout",
 			"()I"
@@ -51,7 +51,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getEdgeSlop()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getEdgeSlop",
 			"()I"
@@ -59,7 +59,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getFadingEdgeLength()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getFadingEdgeLength",
 			"()I"
@@ -67,7 +67,7 @@ namespace android::view
 	}
 	jlong ViewConfiguration::getGlobalActionKeyTimeout()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.view.ViewConfiguration",
 			"getGlobalActionKeyTimeout",
 			"()J"
@@ -75,7 +75,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getJumpTapTimeout()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getJumpTapTimeout",
 			"()I"
@@ -83,7 +83,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getKeyRepeatDelay()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getKeyRepeatDelay",
 			"()I"
@@ -91,7 +91,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getKeyRepeatTimeout()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getKeyRepeatTimeout",
 			"()I"
@@ -99,7 +99,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getLongPressTimeout()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getLongPressTimeout",
 			"()I"
@@ -107,7 +107,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getMaximumDrawingCacheSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getMaximumDrawingCacheSize",
 			"()I"
@@ -115,7 +115,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getMaximumFlingVelocity()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getMaximumFlingVelocity",
 			"()I"
@@ -123,7 +123,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getMinimumFlingVelocity()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getMinimumFlingVelocity",
 			"()I"
@@ -131,7 +131,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getPressedStateDuration()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getPressedStateDuration",
 			"()I"
@@ -139,7 +139,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getScrollBarFadeDuration()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getScrollBarFadeDuration",
 			"()I"
@@ -147,7 +147,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getScrollBarSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getScrollBarSize",
 			"()I"
@@ -155,7 +155,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getScrollDefaultDelay()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getScrollDefaultDelay",
 			"()I"
@@ -163,7 +163,7 @@ namespace android::view
 	}
 	jfloat ViewConfiguration::getScrollFriction()
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.view.ViewConfiguration",
 			"getScrollFriction",
 			"()F"
@@ -171,7 +171,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getTapTimeout()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getTapTimeout",
 			"()I"
@@ -179,7 +179,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getTouchSlop()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getTouchSlop",
 			"()I"
@@ -187,7 +187,7 @@ namespace android::view
 	}
 	jint ViewConfiguration::getWindowTouchSlop()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getWindowTouchSlop",
 			"()I"
@@ -195,7 +195,7 @@ namespace android::view
 	}
 	jlong ViewConfiguration::getZoomControlsTimeout()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.view.ViewConfiguration",
 			"getZoomControlsTimeout",
 			"()J"

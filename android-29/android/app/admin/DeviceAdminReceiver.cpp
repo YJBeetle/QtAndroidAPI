@@ -12,7 +12,7 @@ namespace android::app::admin
 	// Fields
 	jstring DeviceAdminReceiver::ACTION_CHOOSE_PRIVATE_KEY_ALIAS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_CHOOSE_PRIVATE_KEY_ALIAS",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_DEVICE_ADMIN_DISABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_DEVICE_ADMIN_DISABLED",
 			"Ljava/lang/String;"
@@ -28,7 +28,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_DEVICE_ADMIN_DISABLE_REQUESTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_DEVICE_ADMIN_DISABLE_REQUESTED",
 			"Ljava/lang/String;"
@@ -36,7 +36,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_DEVICE_ADMIN_ENABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_DEVICE_ADMIN_ENABLED",
 			"Ljava/lang/String;"
@@ -44,7 +44,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_LOCK_TASK_ENTERING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_LOCK_TASK_ENTERING",
 			"Ljava/lang/String;"
@@ -52,7 +52,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_LOCK_TASK_EXITING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_LOCK_TASK_EXITING",
 			"Ljava/lang/String;"
@@ -60,7 +60,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_NETWORK_LOGS_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_NETWORK_LOGS_AVAILABLE",
 			"Ljava/lang/String;"
@@ -68,7 +68,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_PASSWORD_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_CHANGED",
 			"Ljava/lang/String;"
@@ -76,7 +76,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_PASSWORD_EXPIRING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_EXPIRING",
 			"Ljava/lang/String;"
@@ -84,7 +84,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_PASSWORD_FAILED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_FAILED",
 			"Ljava/lang/String;"
@@ -92,7 +92,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_PASSWORD_SUCCEEDED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_SUCCEEDED",
 			"Ljava/lang/String;"
@@ -100,7 +100,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::ACTION_PROFILE_PROVISIONING_COMPLETE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PROFILE_PROVISIONING_COMPLETE",
 			"Ljava/lang/String;"
@@ -108,21 +108,21 @@ namespace android::app::admin
 	}
 	jint DeviceAdminReceiver::BUGREPORT_FAILURE_FAILED_COMPLETING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminReceiver",
 			"BUGREPORT_FAILURE_FAILED_COMPLETING"
 		);
 	}
 	jint DeviceAdminReceiver::BUGREPORT_FAILURE_FILE_NO_LONGER_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.DeviceAdminReceiver",
 			"BUGREPORT_FAILURE_FILE_NO_LONGER_AVAILABLE"
 		);
 	}
 	jstring DeviceAdminReceiver::DEVICE_ADMIN_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"DEVICE_ADMIN_META_DATA",
 			"Ljava/lang/String;"
@@ -130,7 +130,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::EXTRA_DISABLE_WARNING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"EXTRA_DISABLE_WARNING",
 			"Ljava/lang/String;"
@@ -138,7 +138,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::EXTRA_LOCK_TASK_PACKAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"EXTRA_LOCK_TASK_PACKAGE",
 			"Ljava/lang/String;"
@@ -146,7 +146,7 @@ namespace android::app::admin
 	}
 	jstring DeviceAdminReceiver::EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE",
 			"Ljava/lang/String;"

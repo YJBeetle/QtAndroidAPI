@@ -8,7 +8,7 @@ namespace android::provider
 	// Fields
 	jstring MediaStore_Images_Media::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Media",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Images_Media::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Media",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Images_Media::EXTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Media",
 			"EXTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -32,7 +32,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Images_Media::INTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Images$Media",
 			"INTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -52,7 +52,7 @@ namespace android::provider
 	// Methods
 	android::graphics::Bitmap MediaStore_Images_Media::getBitmap(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
 			"getBitmap",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/graphics/Bitmap;",
@@ -62,7 +62,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Images_Media::getContentUri(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
@@ -71,7 +71,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Images_Media::insertImage(android::content::ContentResolver arg0, android::graphics::Bitmap arg1, jstring arg2, jstring arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
 			"insertImage",
 			"(Landroid/content/ContentResolver;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -83,7 +83,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Images_Media::insertImage(android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
 			"insertImage",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -95,7 +95,7 @@ namespace android::provider
 	}
 	__JniBaseClass MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
 			"query",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;",
@@ -106,7 +106,7 @@ namespace android::provider
 	}
 	__JniBaseClass MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jstring arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
 			"query",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
@@ -119,7 +119,7 @@ namespace android::provider
 	}
 	__JniBaseClass MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
 			"query",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",

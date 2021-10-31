@@ -7,7 +7,7 @@ namespace android::companion
 	// Fields
 	__JniBaseClass WifiDeviceFilter::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.companion.WifiDeviceFilter",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

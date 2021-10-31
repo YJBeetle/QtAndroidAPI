@@ -16,7 +16,7 @@ namespace android::location
 	// Fields
 	jstring LocationManager::EXTRA_PROVIDER_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.LocationManager",
 			"EXTRA_PROVIDER_NAME",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::location
 	}
 	jstring LocationManager::GPS_PROVIDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.LocationManager",
 			"GPS_PROVIDER",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace android::location
 	}
 	jstring LocationManager::KEY_LOCATION_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_LOCATION_CHANGED",
 			"Ljava/lang/String;"
@@ -40,7 +40,7 @@ namespace android::location
 	}
 	jstring LocationManager::KEY_PROVIDER_ENABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_PROVIDER_ENABLED",
 			"Ljava/lang/String;"
@@ -48,7 +48,7 @@ namespace android::location
 	}
 	jstring LocationManager::KEY_PROXIMITY_ENTERING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_PROXIMITY_ENTERING",
 			"Ljava/lang/String;"
@@ -56,7 +56,7 @@ namespace android::location
 	}
 	jstring LocationManager::KEY_STATUS_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_STATUS_CHANGED",
 			"Ljava/lang/String;"
@@ -64,7 +64,7 @@ namespace android::location
 	}
 	jstring LocationManager::MODE_CHANGED_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.LocationManager",
 			"MODE_CHANGED_ACTION",
 			"Ljava/lang/String;"
@@ -72,7 +72,7 @@ namespace android::location
 	}
 	jstring LocationManager::NETWORK_PROVIDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.LocationManager",
 			"NETWORK_PROVIDER",
 			"Ljava/lang/String;"
@@ -80,7 +80,7 @@ namespace android::location
 	}
 	jstring LocationManager::PASSIVE_PROVIDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.LocationManager",
 			"PASSIVE_PROVIDER",
 			"Ljava/lang/String;"
@@ -88,7 +88,7 @@ namespace android::location
 	}
 	jstring LocationManager::PROVIDERS_CHANGED_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.LocationManager",
 			"PROVIDERS_CHANGED_ACTION",
 			"Ljava/lang/String;"

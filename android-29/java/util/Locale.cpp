@@ -10,7 +10,7 @@ namespace java::util
 	// Fields
 	java::util::Locale Locale::CANADA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"CANADA",
 			"Ljava/util/Locale;"
@@ -18,7 +18,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::CANADA_FRENCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"CANADA_FRENCH",
 			"Ljava/util/Locale;"
@@ -26,7 +26,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::CHINA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"CHINA",
 			"Ljava/util/Locale;"
@@ -34,7 +34,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::CHINESE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"CHINESE",
 			"Ljava/util/Locale;"
@@ -42,7 +42,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::ENGLISH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"ENGLISH",
 			"Ljava/util/Locale;"
@@ -50,7 +50,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::FRANCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"FRANCE",
 			"Ljava/util/Locale;"
@@ -58,7 +58,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::FRENCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"FRENCH",
 			"Ljava/util/Locale;"
@@ -66,7 +66,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::GERMAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"GERMAN",
 			"Ljava/util/Locale;"
@@ -74,7 +74,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::GERMANY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"GERMANY",
 			"Ljava/util/Locale;"
@@ -82,7 +82,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::ITALIAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"ITALIAN",
 			"Ljava/util/Locale;"
@@ -90,7 +90,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::ITALY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"ITALY",
 			"Ljava/util/Locale;"
@@ -98,7 +98,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::JAPAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"JAPAN",
 			"Ljava/util/Locale;"
@@ -106,7 +106,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::JAPANESE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"JAPANESE",
 			"Ljava/util/Locale;"
@@ -114,7 +114,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::KOREA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"KOREA",
 			"Ljava/util/Locale;"
@@ -122,7 +122,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::KOREAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"KOREAN",
 			"Ljava/util/Locale;"
@@ -130,7 +130,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::PRC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"PRC",
 			"Ljava/util/Locale;"
@@ -138,14 +138,14 @@ namespace java::util
 	}
 	jchar Locale::PRIVATE_USE_EXTENSION()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"java.util.Locale",
 			"PRIVATE_USE_EXTENSION"
 		);
 	}
 	java::util::Locale Locale::ROOT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"ROOT",
 			"Ljava/util/Locale;"
@@ -153,7 +153,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::SIMPLIFIED_CHINESE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"SIMPLIFIED_CHINESE",
 			"Ljava/util/Locale;"
@@ -161,7 +161,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::TAIWAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"TAIWAN",
 			"Ljava/util/Locale;"
@@ -169,7 +169,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::TRADITIONAL_CHINESE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"TRADITIONAL_CHINESE",
 			"Ljava/util/Locale;"
@@ -177,7 +177,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::UK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"UK",
 			"Ljava/util/Locale;"
@@ -185,14 +185,14 @@ namespace java::util
 	}
 	jchar Locale::UNICODE_LOCALE_EXTENSION()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"java.util.Locale",
 			"UNICODE_LOCALE_EXTENSION"
 		);
 	}
 	java::util::Locale Locale::US()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale",
 			"US",
 			"Ljava/util/Locale;"
@@ -228,7 +228,7 @@ namespace java::util
 	// Methods
 	__JniBaseClass Locale::filter(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"filter",
 			"(Ljava/util/List;Ljava/util/Collection;)Ljava/util/List;",
@@ -238,7 +238,7 @@ namespace java::util
 	}
 	__JniBaseClass Locale::filter(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"filter",
 			"(Ljava/util/List;Ljava/util/Collection;Ljava/util/Locale$FilteringMode;)Ljava/util/List;",
@@ -249,7 +249,7 @@ namespace java::util
 	}
 	__JniBaseClass Locale::filterTags(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"filterTags",
 			"(Ljava/util/List;Ljava/util/Collection;)Ljava/util/List;",
@@ -259,7 +259,7 @@ namespace java::util
 	}
 	__JniBaseClass Locale::filterTags(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"filterTags",
 			"(Ljava/util/List;Ljava/util/Collection;Ljava/util/Locale$FilteringMode;)Ljava/util/List;",
@@ -270,7 +270,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::forLanguageTag(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"forLanguageTag",
 			"(Ljava/lang/String;)Ljava/util/Locale;",
@@ -279,7 +279,7 @@ namespace java::util
 	}
 	jarray Locale::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -287,7 +287,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"getDefault",
 			"()Ljava/util/Locale;"
@@ -295,7 +295,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::getDefault(java::util::Locale_Category arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"getDefault",
 			"(Ljava/util/Locale$Category;)Ljava/util/Locale;",
@@ -304,7 +304,7 @@ namespace java::util
 	}
 	jarray Locale::getISOCountries()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"getISOCountries",
 			"()[Ljava/lang/String;"
@@ -312,7 +312,7 @@ namespace java::util
 	}
 	__JniBaseClass Locale::getISOCountries(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"getISOCountries",
 			"(Ljava/util/Locale$IsoCountryCode;)Ljava/util/Set;",
@@ -321,7 +321,7 @@ namespace java::util
 	}
 	jarray Locale::getISOLanguages()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"getISOLanguages",
 			"()[Ljava/lang/String;"
@@ -329,7 +329,7 @@ namespace java::util
 	}
 	java::util::Locale Locale::lookup(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"lookup",
 			"(Ljava/util/List;Ljava/util/Collection;)Ljava/util/Locale;",
@@ -339,7 +339,7 @@ namespace java::util
 	}
 	jstring Locale::lookupTag(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale",
 			"lookupTag",
 			"(Ljava/util/List;Ljava/util/Collection;)Ljava/lang/String;",
@@ -349,7 +349,7 @@ namespace java::util
 	}
 	void Locale::setDefault(java::util::Locale arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Locale",
 			"setDefault",
 			"(Ljava/util/Locale;)V",
@@ -358,7 +358,7 @@ namespace java::util
 	}
 	void Locale::setDefault(java::util::Locale_Category arg0, java::util::Locale arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Locale",
 			"setDefault",
 			"(Ljava/util/Locale$Category;Ljava/util/Locale;)V",

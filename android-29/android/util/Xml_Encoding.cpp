@@ -5,7 +5,7 @@ namespace android::util
 	// Fields
 	android::util::Xml_Encoding Xml_Encoding::ISO_8859_1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Xml$Encoding",
 			"ISO_8859_1",
 			"Landroid/util/Xml$Encoding;"
@@ -13,7 +13,7 @@ namespace android::util
 	}
 	android::util::Xml_Encoding Xml_Encoding::US_ASCII()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Xml$Encoding",
 			"US_ASCII",
 			"Landroid/util/Xml$Encoding;"
@@ -21,7 +21,7 @@ namespace android::util
 	}
 	android::util::Xml_Encoding Xml_Encoding::UTF_16()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Xml$Encoding",
 			"UTF_16",
 			"Landroid/util/Xml$Encoding;"
@@ -29,7 +29,7 @@ namespace android::util
 	}
 	android::util::Xml_Encoding Xml_Encoding::UTF_8()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.Xml$Encoding",
 			"UTF_8",
 			"Landroid/util/Xml$Encoding;"
@@ -44,7 +44,7 @@ namespace android::util
 	// Methods
 	android::util::Xml_Encoding Xml_Encoding::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Xml$Encoding",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
@@ -53,7 +53,7 @@ namespace android::util
 	}
 	jarray Xml_Encoding::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Xml$Encoding",
 			"values",
 			"()[Landroid/util/Xml$Encoding;"

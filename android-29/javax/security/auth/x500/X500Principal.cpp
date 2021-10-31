@@ -8,7 +8,7 @@ namespace javax::security::auth::x500
 	// Fields
 	jstring X500Principal::CANONICAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.security.auth.x500.X500Principal",
 			"CANONICAL",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace javax::security::auth::x500
 	}
 	jstring X500Principal::RFC1779()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.security.auth.x500.X500Principal",
 			"RFC1779",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace javax::security::auth::x500
 	}
 	jstring X500Principal::RFC2253()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.security.auth.x500.X500Principal",
 			"RFC2253",
 			"Ljava/lang/String;"

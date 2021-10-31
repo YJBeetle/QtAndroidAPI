@@ -6,7 +6,7 @@ namespace javax::xml::transform::sax
 	// Fields
 	jstring SAXSource::FEATURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.xml.transform.sax.SAXSource",
 			"FEATURE",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace javax::xml::transform::sax
 	// Methods
 	org::xml::sax::InputSource SAXSource::sourceToInputSource(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.transform.sax.SAXSource",
 			"sourceToInputSource",
 			"(Ljavax/xml/transform/Source;)Lorg/xml/sax/InputSource;",

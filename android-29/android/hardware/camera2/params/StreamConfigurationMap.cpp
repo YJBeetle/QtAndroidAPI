@@ -15,7 +15,7 @@ namespace android::hardware::camera2::params
 	// Methods
 	jboolean StreamConfigurationMap::isOutputSupportedFor(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.hardware.camera2.params.StreamConfigurationMap",
 			"isOutputSupportedFor",
 			"(Ljava/lang/Class;)Z",

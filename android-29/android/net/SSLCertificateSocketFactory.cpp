@@ -23,7 +23,7 @@ namespace android::net
 	// Methods
 	javax::net::SocketFactory SSLCertificateSocketFactory::getDefault(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.SSLCertificateSocketFactory",
 			"getDefault",
 			"(I)Ljavax/net/SocketFactory;",
@@ -32,7 +32,7 @@ namespace android::net
 	}
 	javax::net::ssl::SSLSocketFactory SSLCertificateSocketFactory::getDefault(jint arg0, android::net::SSLSessionCache arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.SSLCertificateSocketFactory",
 			"getDefault",
 			"(ILandroid/net/SSLSessionCache;)Ljavax/net/ssl/SSLSocketFactory;",
@@ -42,7 +42,7 @@ namespace android::net
 	}
 	javax::net::ssl::SSLSocketFactory SSLCertificateSocketFactory::getInsecure(jint arg0, android::net::SSLSessionCache arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.SSLCertificateSocketFactory",
 			"getInsecure",
 			"(ILandroid/net/SSLSessionCache;)Ljavax/net/ssl/SSLSocketFactory;",

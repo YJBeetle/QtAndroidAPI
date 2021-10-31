@@ -17,7 +17,7 @@ namespace android::webkit
 	// Methods
 	android::webkit::WebIconDatabase WebIconDatabase::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.WebIconDatabase",
 			"getInstance",
 			"()Landroid/webkit/WebIconDatabase;"

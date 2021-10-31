@@ -6,7 +6,7 @@ namespace android::location
 	// Fields
 	__JniBaseClass GnssClock::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.GnssClock",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

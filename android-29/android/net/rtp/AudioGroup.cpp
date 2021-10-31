@@ -5,28 +5,28 @@ namespace android::net::rtp
 	// Fields
 	jint AudioGroup::MODE_ECHO_SUPPRESSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.rtp.AudioGroup",
 			"MODE_ECHO_SUPPRESSION"
 		);
 	}
 	jint AudioGroup::MODE_MUTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.rtp.AudioGroup",
 			"MODE_MUTED"
 		);
 	}
 	jint AudioGroup::MODE_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.rtp.AudioGroup",
 			"MODE_NORMAL"
 		);
 	}
 	jint AudioGroup::MODE_ON_HOLD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.rtp.AudioGroup",
 			"MODE_ON_HOLD"
 		);

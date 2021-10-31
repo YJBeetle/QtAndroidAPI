@@ -6,7 +6,7 @@ namespace android::companion
 	// Fields
 	__JniBaseClass BluetoothDeviceFilter::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.companion.BluetoothDeviceFilter",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

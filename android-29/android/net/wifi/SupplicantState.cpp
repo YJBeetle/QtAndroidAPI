@@ -6,7 +6,7 @@ namespace android::net::wifi
 	// Fields
 	android::net::wifi::SupplicantState SupplicantState::ASSOCIATED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"ASSOCIATED",
 			"Landroid/net/wifi/SupplicantState;"
@@ -14,7 +14,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::ASSOCIATING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"ASSOCIATING",
 			"Landroid/net/wifi/SupplicantState;"
@@ -22,7 +22,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::AUTHENTICATING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"AUTHENTICATING",
 			"Landroid/net/wifi/SupplicantState;"
@@ -30,7 +30,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::COMPLETED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"COMPLETED",
 			"Landroid/net/wifi/SupplicantState;"
@@ -38,7 +38,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"DISCONNECTED",
 			"Landroid/net/wifi/SupplicantState;"
@@ -46,7 +46,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::DORMANT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"DORMANT",
 			"Landroid/net/wifi/SupplicantState;"
@@ -54,7 +54,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::FOUR_WAY_HANDSHAKE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"FOUR_WAY_HANDSHAKE",
 			"Landroid/net/wifi/SupplicantState;"
@@ -62,7 +62,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::GROUP_HANDSHAKE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"GROUP_HANDSHAKE",
 			"Landroid/net/wifi/SupplicantState;"
@@ -70,7 +70,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::INACTIVE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"INACTIVE",
 			"Landroid/net/wifi/SupplicantState;"
@@ -78,7 +78,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::INTERFACE_DISABLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"INTERFACE_DISABLED",
 			"Landroid/net/wifi/SupplicantState;"
@@ -86,7 +86,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::INVALID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"INVALID",
 			"Landroid/net/wifi/SupplicantState;"
@@ -94,7 +94,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::SCANNING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"SCANNING",
 			"Landroid/net/wifi/SupplicantState;"
@@ -102,7 +102,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::UNINITIALIZED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"UNINITIALIZED",
 			"Landroid/net/wifi/SupplicantState;"
@@ -117,7 +117,7 @@ namespace android::net::wifi
 	// Methods
 	jboolean SupplicantState::isValidState(android::net::wifi::SupplicantState arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.net.wifi.SupplicantState",
 			"isValidState",
 			"(Landroid/net/wifi/SupplicantState;)Z",
@@ -126,7 +126,7 @@ namespace android::net::wifi
 	}
 	android::net::wifi::SupplicantState SupplicantState::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.wifi.SupplicantState",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/net/wifi/SupplicantState;",
@@ -135,7 +135,7 @@ namespace android::net::wifi
 	}
 	jarray SupplicantState::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.wifi.SupplicantState",
 			"values",
 			"()[Landroid/net/wifi/SupplicantState;"

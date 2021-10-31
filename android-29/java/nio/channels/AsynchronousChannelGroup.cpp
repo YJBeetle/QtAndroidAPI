@@ -14,7 +14,7 @@ namespace java::nio::channels
 	// Methods
 	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withCachedThreadPool(__JniBaseClass arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousChannelGroup",
 			"withCachedThreadPool",
 			"(Ljava/util/concurrent/ExecutorService;I)Ljava/nio/channels/AsynchronousChannelGroup;",
@@ -24,7 +24,7 @@ namespace java::nio::channels
 	}
 	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withFixedThreadPool(jint arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousChannelGroup",
 			"withFixedThreadPool",
 			"(ILjava/util/concurrent/ThreadFactory;)Ljava/nio/channels/AsynchronousChannelGroup;",
@@ -34,7 +34,7 @@ namespace java::nio::channels
 	}
 	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withThreadPool(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.AsynchronousChannelGroup",
 			"withThreadPool",
 			"(Ljava/util/concurrent/ExecutorService;)Ljava/nio/channels/AsynchronousChannelGroup;",

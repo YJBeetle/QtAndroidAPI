@@ -18,7 +18,7 @@ namespace java::time::chrono
 	// Fields
 	java::time::chrono::IsoChronology IsoChronology::INSTANCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.IsoChronology",
 			"INSTANCE",
 			"Ljava/time/chrono/IsoChronology;"

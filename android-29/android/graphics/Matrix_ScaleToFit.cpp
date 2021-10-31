@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::CENTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Matrix$ScaleToFit",
 			"CENTER",
 			"Landroid/graphics/Matrix$ScaleToFit;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::END()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Matrix$ScaleToFit",
 			"END",
 			"Landroid/graphics/Matrix$ScaleToFit;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::FILL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Matrix$ScaleToFit",
 			"FILL",
 			"Landroid/graphics/Matrix$ScaleToFit;"
@@ -29,7 +29,7 @@ namespace android::graphics
 	}
 	android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::START()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Matrix$ScaleToFit",
 			"START",
 			"Landroid/graphics/Matrix$ScaleToFit;"
@@ -44,7 +44,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Matrix$ScaleToFit",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Matrix$ScaleToFit;",
@@ -53,7 +53,7 @@ namespace android::graphics
 	}
 	jarray Matrix_ScaleToFit::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Matrix$ScaleToFit",
 			"values",
 			"()[Landroid/graphics/Matrix$ScaleToFit;"

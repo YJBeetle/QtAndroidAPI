@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri ContactsContract_DisplayPhoto::CONTENT_MAX_DIMENSIONS_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DisplayPhoto",
 			"CONTENT_MAX_DIMENSIONS_URI",
 			"Landroid/net/Uri;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_DisplayPhoto::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DisplayPhoto",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_DisplayPhoto::DISPLAY_MAX_DIM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DisplayPhoto",
 			"DISPLAY_MAX_DIM",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_DisplayPhoto::THUMBNAIL_MAX_DIM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DisplayPhoto",
 			"THUMBNAIL_MAX_DIM",
 			"Ljava/lang/String;"

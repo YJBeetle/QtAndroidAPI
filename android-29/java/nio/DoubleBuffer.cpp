@@ -14,7 +14,7 @@ namespace java::nio
 	// Methods
 	java::nio::DoubleBuffer DoubleBuffer::allocate(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.DoubleBuffer",
 			"allocate",
 			"(I)Ljava/nio/DoubleBuffer;",
@@ -23,7 +23,7 @@ namespace java::nio
 	}
 	java::nio::DoubleBuffer DoubleBuffer::wrap(jdoubleArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.DoubleBuffer",
 			"wrap",
 			"([D)Ljava/nio/DoubleBuffer;",
@@ -32,7 +32,7 @@ namespace java::nio
 	}
 	java::nio::DoubleBuffer DoubleBuffer::wrap(jdoubleArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.DoubleBuffer",
 			"wrap",
 			"([DII)Ljava/nio/DoubleBuffer;",

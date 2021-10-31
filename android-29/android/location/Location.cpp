@@ -7,7 +7,7 @@ namespace android::location
 	// Fields
 	__JniBaseClass Location::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.Location",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,21 +15,21 @@ namespace android::location
 	}
 	jint Location::FORMAT_DEGREES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Location",
 			"FORMAT_DEGREES"
 		);
 	}
 	jint Location::FORMAT_MINUTES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Location",
 			"FORMAT_MINUTES"
 		);
 	}
 	jint Location::FORMAT_SECONDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.Location",
 			"FORMAT_SECONDS"
 		);
@@ -55,7 +55,7 @@ namespace android::location
 	// Methods
 	jdouble Location::convert(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"android.location.Location",
 			"convert",
 			"(Ljava/lang/String;)D",
@@ -64,7 +64,7 @@ namespace android::location
 	}
 	jstring Location::convert(jdouble arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.location.Location",
 			"convert",
 			"(DI)Ljava/lang/String;",
@@ -74,7 +74,7 @@ namespace android::location
 	}
 	void Location::distanceBetween(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jfloatArray arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.location.Location",
 			"distanceBetween",
 			"(DDDD[F)V",

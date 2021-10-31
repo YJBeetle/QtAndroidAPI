@@ -12,7 +12,7 @@ namespace java::time
 	// Fields
 	java::time::Instant Instant::EPOCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Instant",
 			"EPOCH",
 			"Ljava/time/Instant;"
@@ -20,7 +20,7 @@ namespace java::time
 	}
 	java::time::Instant Instant::MAX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Instant",
 			"MAX",
 			"Ljava/time/Instant;"
@@ -28,7 +28,7 @@ namespace java::time
 	}
 	java::time::Instant Instant::MIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Instant",
 			"MIN",
 			"Ljava/time/Instant;"
@@ -43,7 +43,7 @@ namespace java::time
 	// Methods
 	java::time::Instant Instant::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Instant",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/Instant;",
@@ -52,7 +52,7 @@ namespace java::time
 	}
 	java::time::Instant Instant::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Instant",
 			"now",
 			"()Ljava/time/Instant;"
@@ -60,7 +60,7 @@ namespace java::time
 	}
 	java::time::Instant Instant::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Instant",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/Instant;",
@@ -69,7 +69,7 @@ namespace java::time
 	}
 	java::time::Instant Instant::ofEpochMilli(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Instant",
 			"ofEpochMilli",
 			"(J)Ljava/time/Instant;",
@@ -78,7 +78,7 @@ namespace java::time
 	}
 	java::time::Instant Instant::ofEpochSecond(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Instant",
 			"ofEpochSecond",
 			"(J)Ljava/time/Instant;",
@@ -87,7 +87,7 @@ namespace java::time
 	}
 	java::time::Instant Instant::ofEpochSecond(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Instant",
 			"ofEpochSecond",
 			"(JJ)Ljava/time/Instant;",
@@ -97,7 +97,7 @@ namespace java::time
 	}
 	java::time::Instant Instant::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Instant",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Instant;",

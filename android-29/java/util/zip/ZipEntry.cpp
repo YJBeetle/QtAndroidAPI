@@ -7,14 +7,14 @@ namespace java::util::zip
 	// Fields
 	jint ZipEntry::DEFLATED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.ZipEntry",
 			"DEFLATED"
 		);
 	}
 	jint ZipEntry::STORED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.ZipEntry",
 			"STORED"
 		);

@@ -8,7 +8,7 @@ namespace android::service::vr
 	// Fields
 	jstring VrListenerService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.vr.VrListenerService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -28,7 +28,7 @@ namespace android::service::vr
 	// Methods
 	jboolean VrListenerService::isVrModePackageEnabled(android::content::Context arg0, android::content::ComponentName arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.service.vr.VrListenerService",
 			"isVrModePackageEnabled",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)Z",

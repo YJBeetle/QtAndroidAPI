@@ -6,7 +6,7 @@ namespace android::view::inputmethod
 	// Fields
 	__JniBaseClass CompletionInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.inputmethod.CompletionInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

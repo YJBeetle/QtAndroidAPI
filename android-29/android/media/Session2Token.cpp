@@ -9,7 +9,7 @@ namespace android::media
 	// Fields
 	__JniBaseClass Session2Token::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.Session2Token",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -17,14 +17,14 @@ namespace android::media
 	}
 	jint Session2Token::TYPE_SESSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Session2Token",
 			"TYPE_SESSION"
 		);
 	}
 	jint Session2Token::TYPE_SESSION_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Session2Token",
 			"TYPE_SESSION_SERVICE"
 		);

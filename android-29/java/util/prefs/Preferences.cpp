@@ -8,21 +8,21 @@ namespace java::util::prefs
 	// Fields
 	jint Preferences::MAX_KEY_LENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.prefs.Preferences",
 			"MAX_KEY_LENGTH"
 		);
 	}
 	jint Preferences::MAX_NAME_LENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.prefs.Preferences",
 			"MAX_NAME_LENGTH"
 		);
 	}
 	jint Preferences::MAX_VALUE_LENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.prefs.Preferences",
 			"MAX_VALUE_LENGTH"
 		);
@@ -36,7 +36,7 @@ namespace java::util::prefs
 	// Methods
 	void Preferences::importPreferences(java::io::InputStream arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.prefs.Preferences",
 			"importPreferences",
 			"(Ljava/io/InputStream;)V",
@@ -45,7 +45,7 @@ namespace java::util::prefs
 	}
 	java::util::prefs::Preferences Preferences::systemNodeForPackage(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.prefs.Preferences",
 			"systemNodeForPackage",
 			"(Ljava/lang/Class;)Ljava/util/prefs/Preferences;",
@@ -54,7 +54,7 @@ namespace java::util::prefs
 	}
 	java::util::prefs::Preferences Preferences::systemRoot()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.prefs.Preferences",
 			"systemRoot",
 			"()Ljava/util/prefs/Preferences;"
@@ -62,7 +62,7 @@ namespace java::util::prefs
 	}
 	java::util::prefs::Preferences Preferences::userNodeForPackage(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.prefs.Preferences",
 			"userNodeForPackage",
 			"(Ljava/lang/Class;)Ljava/util/prefs/Preferences;",
@@ -71,7 +71,7 @@ namespace java::util::prefs
 	}
 	java::util::prefs::Preferences Preferences::userRoot()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.prefs.Preferences",
 			"userRoot",
 			"()Ljava/util/prefs/Preferences;"

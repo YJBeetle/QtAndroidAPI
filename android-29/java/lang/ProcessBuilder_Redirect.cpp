@@ -7,7 +7,7 @@ namespace java::lang
 	// Fields
 	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::DISCARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
 			"DISCARD",
 			"Ljava/lang/ProcessBuilder$Redirect;"
@@ -15,7 +15,7 @@ namespace java::lang
 	}
 	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::INHERIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
 			"INHERIT",
 			"Ljava/lang/ProcessBuilder$Redirect;"
@@ -23,7 +23,7 @@ namespace java::lang
 	}
 	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::PIPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
 			"PIPE",
 			"Ljava/lang/ProcessBuilder$Redirect;"
@@ -38,7 +38,7 @@ namespace java::lang
 	// Methods
 	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::appendTo(java::io::File arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect",
 			"appendTo",
 			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
@@ -47,7 +47,7 @@ namespace java::lang
 	}
 	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::from(java::io::File arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect",
 			"from",
 			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
@@ -56,7 +56,7 @@ namespace java::lang
 	}
 	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::to(java::io::File arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect",
 			"to",
 			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",

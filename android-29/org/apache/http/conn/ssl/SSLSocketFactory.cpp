@@ -9,7 +9,7 @@ namespace org::apache::http::conn::ssl
 	// Fields
 	__JniBaseClass SSLSocketFactory::ALLOW_ALL_HOSTNAME_VERIFIER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"ALLOW_ALL_HOSTNAME_VERIFIER",
 			"Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
@@ -17,7 +17,7 @@ namespace org::apache::http::conn::ssl
 	}
 	__JniBaseClass SSLSocketFactory::BROWSER_COMPATIBLE_HOSTNAME_VERIFIER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"BROWSER_COMPATIBLE_HOSTNAME_VERIFIER",
 			"Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
@@ -25,7 +25,7 @@ namespace org::apache::http::conn::ssl
 	}
 	jstring SSLSocketFactory::SSL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"SSL",
 			"Ljava/lang/String;"
@@ -33,7 +33,7 @@ namespace org::apache::http::conn::ssl
 	}
 	jstring SSLSocketFactory::SSLV2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"SSLV2",
 			"Ljava/lang/String;"
@@ -41,7 +41,7 @@ namespace org::apache::http::conn::ssl
 	}
 	__JniBaseClass SSLSocketFactory::STRICT_HOSTNAME_VERIFIER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"STRICT_HOSTNAME_VERIFIER",
 			"Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
@@ -49,7 +49,7 @@ namespace org::apache::http::conn::ssl
 	}
 	jstring SSLSocketFactory::TLS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"TLS",
 			"Ljava/lang/String;"
@@ -96,7 +96,7 @@ namespace org::apache::http::conn::ssl
 	// Methods
 	org::apache::http::conn::ssl::SSLSocketFactory SSLSocketFactory::getSocketFactory()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"getSocketFactory",
 			"()Lorg/apache/http/conn/ssl/SSLSocketFactory;"

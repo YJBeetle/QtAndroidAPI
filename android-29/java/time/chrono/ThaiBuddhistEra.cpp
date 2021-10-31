@@ -7,7 +7,7 @@ namespace java::time::chrono
 	// Fields
 	java::time::chrono::ThaiBuddhistEra ThaiBuddhistEra::BE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.ThaiBuddhistEra",
 			"BE",
 			"Ljava/time/chrono/ThaiBuddhistEra;"
@@ -15,7 +15,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::ThaiBuddhistEra ThaiBuddhistEra::BEFORE_BE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.ThaiBuddhistEra",
 			"BEFORE_BE",
 			"Ljava/time/chrono/ThaiBuddhistEra;"
@@ -30,7 +30,7 @@ namespace java::time::chrono
 	// Methods
 	java::time::chrono::ThaiBuddhistEra ThaiBuddhistEra::of(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistEra",
 			"of",
 			"(I)Ljava/time/chrono/ThaiBuddhistEra;",
@@ -39,7 +39,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::ThaiBuddhistEra ThaiBuddhistEra::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/ThaiBuddhistEra;",
@@ -48,7 +48,7 @@ namespace java::time::chrono
 	}
 	jarray ThaiBuddhistEra::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistEra",
 			"values",
 			"()[Ljava/time/chrono/ThaiBuddhistEra;"

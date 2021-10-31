@@ -16,7 +16,7 @@ namespace java::time::format
 	// Fields
 	java::time::format::DateTimeFormatter DateTimeFormatter::BASIC_ISO_DATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"BASIC_ISO_DATE",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -24,7 +24,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_DATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_DATE",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -32,7 +32,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_DATE_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_DATE_TIME",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -40,7 +40,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_INSTANT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_INSTANT",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -48,7 +48,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_LOCAL_DATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_LOCAL_DATE",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -56,7 +56,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_LOCAL_DATE_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_LOCAL_DATE_TIME",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -64,7 +64,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_LOCAL_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_LOCAL_TIME",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -72,7 +72,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_OFFSET_DATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_OFFSET_DATE",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -80,7 +80,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_OFFSET_DATE_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_OFFSET_DATE_TIME",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -88,7 +88,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_OFFSET_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_OFFSET_TIME",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -96,7 +96,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_ORDINAL_DATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_ORDINAL_DATE",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -104,7 +104,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_TIME",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -112,7 +112,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_WEEK_DATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_WEEK_DATE",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -120,7 +120,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ISO_ZONED_DATE_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"ISO_ZONED_DATE_TIME",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -128,7 +128,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::RFC_1123_DATE_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DateTimeFormatter",
 			"RFC_1123_DATE_TIME",
 			"Ljava/time/format/DateTimeFormatter;"
@@ -143,7 +143,7 @@ namespace java::time::format
 	// Methods
 	java::time::format::DateTimeFormatter DateTimeFormatter::ofLocalizedDate(java::time::format::FormatStyle arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
 			"ofLocalizedDate",
 			"(Ljava/time/format/FormatStyle;)Ljava/time/format/DateTimeFormatter;",
@@ -152,7 +152,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ofLocalizedDateTime(java::time::format::FormatStyle arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
 			"ofLocalizedDateTime",
 			"(Ljava/time/format/FormatStyle;)Ljava/time/format/DateTimeFormatter;",
@@ -161,7 +161,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ofLocalizedDateTime(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
 			"ofLocalizedDateTime",
 			"(Ljava/time/format/FormatStyle;Ljava/time/format/FormatStyle;)Ljava/time/format/DateTimeFormatter;",
@@ -171,7 +171,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ofLocalizedTime(java::time::format::FormatStyle arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
 			"ofLocalizedTime",
 			"(Ljava/time/format/FormatStyle;)Ljava/time/format/DateTimeFormatter;",
@@ -180,7 +180,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ofPattern(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
 			"ofPattern",
 			"(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;",
@@ -189,7 +189,7 @@ namespace java::time::format
 	}
 	java::time::format::DateTimeFormatter DateTimeFormatter::ofPattern(jstring arg0, java::util::Locale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
 			"ofPattern",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/time/format/DateTimeFormatter;",
@@ -199,7 +199,7 @@ namespace java::time::format
 	}
 	__JniBaseClass DateTimeFormatter::parsedExcessDays()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
 			"parsedExcessDays",
 			"()Ljava/time/temporal/TemporalQuery;"
@@ -207,7 +207,7 @@ namespace java::time::format
 	}
 	__JniBaseClass DateTimeFormatter::parsedLeapSecond()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatter",
 			"parsedLeapSecond",
 			"()Ljava/time/temporal/TemporalQuery;"

@@ -24,7 +24,7 @@ namespace android::app
 	// Methods
 	android::app::FragmentController FragmentController::createController(android::app::FragmentHostCallback arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.FragmentController",
 			"createController",
 			"(Landroid/app/FragmentHostCallback;)Landroid/app/FragmentController;",

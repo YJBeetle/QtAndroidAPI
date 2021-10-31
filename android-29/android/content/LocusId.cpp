@@ -6,7 +6,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass LocusId::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.LocusId",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

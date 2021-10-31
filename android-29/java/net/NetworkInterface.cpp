@@ -13,7 +13,7 @@ namespace java::net
 	// Methods
 	java::net::NetworkInterface NetworkInterface::getByIndex(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.NetworkInterface",
 			"getByIndex",
 			"(I)Ljava/net/NetworkInterface;",
@@ -22,7 +22,7 @@ namespace java::net
 	}
 	java::net::NetworkInterface NetworkInterface::getByInetAddress(java::net::InetAddress arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.NetworkInterface",
 			"getByInetAddress",
 			"(Ljava/net/InetAddress;)Ljava/net/NetworkInterface;",
@@ -31,7 +31,7 @@ namespace java::net
 	}
 	java::net::NetworkInterface NetworkInterface::getByName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.NetworkInterface",
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/NetworkInterface;",
@@ -40,7 +40,7 @@ namespace java::net
 	}
 	__JniBaseClass NetworkInterface::getNetworkInterfaces()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.NetworkInterface",
 			"getNetworkInterfaces",
 			"()Ljava/util/Enumeration;"
@@ -48,7 +48,7 @@ namespace java::net
 	}
 	__JniBaseClass NetworkInterface::networkInterfaces()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.NetworkInterface",
 			"networkInterfaces",
 			"()Ljava/util/stream/Stream;"

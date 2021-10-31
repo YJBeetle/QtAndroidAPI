@@ -5,7 +5,7 @@ namespace android::telephony::mbms
 	// Fields
 	jint StreamingServiceCallback::SIGNAL_STRENGTH_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.StreamingServiceCallback",
 			"SIGNAL_STRENGTH_UNAVAILABLE"
 		);

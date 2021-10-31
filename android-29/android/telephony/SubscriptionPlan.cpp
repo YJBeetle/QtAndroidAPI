@@ -6,21 +6,21 @@ namespace android::telephony
 	// Fields
 	jlong SubscriptionPlan::BYTES_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.telephony.SubscriptionPlan",
 			"BYTES_UNKNOWN"
 		);
 	}
 	jlong SubscriptionPlan::BYTES_UNLIMITED()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.telephony.SubscriptionPlan",
 			"BYTES_UNLIMITED"
 		);
 	}
 	__JniBaseClass SubscriptionPlan::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionPlan",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -28,35 +28,35 @@ namespace android::telephony
 	}
 	jint SubscriptionPlan::LIMIT_BEHAVIOR_BILLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionPlan",
 			"LIMIT_BEHAVIOR_BILLED"
 		);
 	}
 	jint SubscriptionPlan::LIMIT_BEHAVIOR_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionPlan",
 			"LIMIT_BEHAVIOR_DISABLED"
 		);
 	}
 	jint SubscriptionPlan::LIMIT_BEHAVIOR_THROTTLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionPlan",
 			"LIMIT_BEHAVIOR_THROTTLED"
 		);
 	}
 	jint SubscriptionPlan::LIMIT_BEHAVIOR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionPlan",
 			"LIMIT_BEHAVIOR_UNKNOWN"
 		);
 	}
 	jlong SubscriptionPlan::TIME_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.telephony.SubscriptionPlan",
 			"TIME_UNKNOWN"
 		);

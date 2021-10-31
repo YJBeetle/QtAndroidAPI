@@ -6,7 +6,7 @@ namespace android::webkit
 	// Fields
 	jstring PermissionRequest::RESOURCE_AUDIO_CAPTURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.PermissionRequest",
 			"RESOURCE_AUDIO_CAPTURE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::webkit
 	}
 	jstring PermissionRequest::RESOURCE_MIDI_SYSEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.PermissionRequest",
 			"RESOURCE_MIDI_SYSEX",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::webkit
 	}
 	jstring PermissionRequest::RESOURCE_PROTECTED_MEDIA_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.PermissionRequest",
 			"RESOURCE_PROTECTED_MEDIA_ID",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::webkit
 	}
 	jstring PermissionRequest::RESOURCE_VIDEO_CAPTURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.PermissionRequest",
 			"RESOURCE_VIDEO_CAPTURE",
 			"Ljava/lang/String;"

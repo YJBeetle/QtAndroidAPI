@@ -15,7 +15,7 @@ namespace javax::net::ssl
 	// Methods
 	__JniBaseClass HttpsURLConnection::getDefaultHostnameVerifier()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.HttpsURLConnection",
 			"getDefaultHostnameVerifier",
 			"()Ljavax/net/ssl/HostnameVerifier;"
@@ -23,7 +23,7 @@ namespace javax::net::ssl
 	}
 	javax::net::ssl::SSLSocketFactory HttpsURLConnection::getDefaultSSLSocketFactory()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.HttpsURLConnection",
 			"getDefaultSSLSocketFactory",
 			"()Ljavax/net/ssl/SSLSocketFactory;"
@@ -31,7 +31,7 @@ namespace javax::net::ssl
 	}
 	void HttpsURLConnection::setDefaultHostnameVerifier(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"javax.net.ssl.HttpsURLConnection",
 			"setDefaultHostnameVerifier",
 			"(Ljavax/net/ssl/HostnameVerifier;)V",
@@ -40,7 +40,7 @@ namespace javax::net::ssl
 	}
 	void HttpsURLConnection::setDefaultSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"javax.net.ssl.HttpsURLConnection",
 			"setDefaultSSLSocketFactory",
 			"(Ljavax/net/ssl/SSLSocketFactory;)V",

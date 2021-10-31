@@ -6,7 +6,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass ConfigurationInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.ConfigurationInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,21 +14,21 @@ namespace android::content::pm
 	}
 	jint ConfigurationInfo::GL_ES_VERSION_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ConfigurationInfo",
 			"GL_ES_VERSION_UNDEFINED"
 		);
 	}
 	jint ConfigurationInfo::INPUT_FEATURE_FIVE_WAY_NAV()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ConfigurationInfo",
 			"INPUT_FEATURE_FIVE_WAY_NAV"
 		);
 	}
 	jint ConfigurationInfo::INPUT_FEATURE_HARD_KEYBOARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ConfigurationInfo",
 			"INPUT_FEATURE_HARD_KEYBOARD"
 		);

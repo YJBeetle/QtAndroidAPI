@@ -15,7 +15,7 @@ namespace javax::net::ssl
 	// Methods
 	jstring KeyManagerFactory::getDefaultAlgorithm()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
 			"getDefaultAlgorithm",
 			"()Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace javax::net::ssl
 	}
 	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/net/ssl/KeyManagerFactory;",
@@ -32,7 +32,7 @@ namespace javax::net::ssl
 	}
 	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/KeyManagerFactory;",
@@ -42,7 +42,7 @@ namespace javax::net::ssl
 	}
 	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/KeyManagerFactory;",

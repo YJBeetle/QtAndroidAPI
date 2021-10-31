@@ -12,7 +12,7 @@ namespace java::util
 	// Methods
 	java::util::OptionalDouble OptionalDouble::empty()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.OptionalDouble",
 			"empty",
 			"()Ljava/util/OptionalDouble;"
@@ -20,7 +20,7 @@ namespace java::util
 	}
 	java::util::OptionalDouble OptionalDouble::of(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.OptionalDouble",
 			"of",
 			"(D)Ljava/util/OptionalDouble;",

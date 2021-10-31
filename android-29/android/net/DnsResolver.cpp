@@ -7,63 +7,63 @@ namespace android::net
 	// Fields
 	jint DnsResolver::CLASS_IN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.DnsResolver",
 			"CLASS_IN"
 		);
 	}
 	jint DnsResolver::ERROR_PARSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.DnsResolver",
 			"ERROR_PARSE"
 		);
 	}
 	jint DnsResolver::ERROR_SYSTEM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.DnsResolver",
 			"ERROR_SYSTEM"
 		);
 	}
 	jint DnsResolver::FLAG_EMPTY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.DnsResolver",
 			"FLAG_EMPTY"
 		);
 	}
 	jint DnsResolver::FLAG_NO_CACHE_LOOKUP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.DnsResolver",
 			"FLAG_NO_CACHE_LOOKUP"
 		);
 	}
 	jint DnsResolver::FLAG_NO_CACHE_STORE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.DnsResolver",
 			"FLAG_NO_CACHE_STORE"
 		);
 	}
 	jint DnsResolver::FLAG_NO_RETRY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.DnsResolver",
 			"FLAG_NO_RETRY"
 		);
 	}
 	jint DnsResolver::TYPE_A()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.DnsResolver",
 			"TYPE_A"
 		);
 	}
 	jint DnsResolver::TYPE_AAAA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.DnsResolver",
 			"TYPE_AAAA"
 		);
@@ -77,7 +77,7 @@ namespace android::net
 	// Methods
 	android::net::DnsResolver DnsResolver::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.DnsResolver",
 			"getInstance",
 			"()Landroid/net/DnsResolver;"

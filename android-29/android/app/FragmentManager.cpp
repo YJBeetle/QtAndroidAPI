@@ -12,7 +12,7 @@ namespace android::app
 	// Fields
 	jint FragmentManager::POP_BACK_STACK_INCLUSIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.FragmentManager",
 			"POP_BACK_STACK_INCLUSIVE"
 		);
@@ -31,7 +31,7 @@ namespace android::app
 	// Methods
 	void FragmentManager::enableDebugLogging(jboolean arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.app.FragmentManager",
 			"enableDebugLogging",
 			"(Z)V",

@@ -21,7 +21,7 @@ namespace android::graphics
 	// Methods
 	jint Typeface_CustomFallbackBuilder::getMaxCustomFallbackCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.graphics.Typeface$CustomFallbackBuilder",
 			"getMaxCustomFallbackCount",
 			"()I"

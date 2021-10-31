@@ -8,7 +8,7 @@ namespace android::print
 	// Fields
 	__JniBaseClass PrinterInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.print.PrinterInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,21 +16,21 @@ namespace android::print
 	}
 	jint PrinterInfo::STATUS_BUSY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrinterInfo",
 			"STATUS_BUSY"
 		);
 	}
 	jint PrinterInfo::STATUS_IDLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrinterInfo",
 			"STATUS_IDLE"
 		);
 	}
 	jint PrinterInfo::STATUS_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrinterInfo",
 			"STATUS_UNAVAILABLE"
 		);

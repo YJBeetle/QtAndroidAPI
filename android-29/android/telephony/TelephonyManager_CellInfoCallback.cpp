@@ -5,14 +5,14 @@ namespace android::telephony
 	// Fields
 	jint TelephonyManager_CellInfoCallback::ERROR_MODEM_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager$CellInfoCallback",
 			"ERROR_MODEM_ERROR"
 		);
 	}
 	jint TelephonyManager_CellInfoCallback::ERROR_TIMEOUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.TelephonyManager$CellInfoCallback",
 			"ERROR_TIMEOUT"
 		);

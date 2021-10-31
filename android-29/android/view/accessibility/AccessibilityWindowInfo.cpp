@@ -8,7 +8,7 @@ namespace android::view::accessibility
 	// Fields
 	__JniBaseClass AccessibilityWindowInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityWindowInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,35 +16,35 @@ namespace android::view::accessibility
 	}
 	jint AccessibilityWindowInfo::TYPE_ACCESSIBILITY_OVERLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityWindowInfo",
 			"TYPE_ACCESSIBILITY_OVERLAY"
 		);
 	}
 	jint AccessibilityWindowInfo::TYPE_APPLICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityWindowInfo",
 			"TYPE_APPLICATION"
 		);
 	}
 	jint AccessibilityWindowInfo::TYPE_INPUT_METHOD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityWindowInfo",
 			"TYPE_INPUT_METHOD"
 		);
 	}
 	jint AccessibilityWindowInfo::TYPE_SPLIT_SCREEN_DIVIDER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityWindowInfo",
 			"TYPE_SPLIT_SCREEN_DIVIDER"
 		);
 	}
 	jint AccessibilityWindowInfo::TYPE_SYSTEM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityWindowInfo",
 			"TYPE_SYSTEM"
 		);
@@ -58,7 +58,7 @@ namespace android::view::accessibility
 	// Methods
 	android::view::accessibility::AccessibilityWindowInfo AccessibilityWindowInfo::obtain()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityWindowInfo",
 			"obtain",
 			"()Landroid/view/accessibility/AccessibilityWindowInfo;"
@@ -66,7 +66,7 @@ namespace android::view::accessibility
 	}
 	android::view::accessibility::AccessibilityWindowInfo AccessibilityWindowInfo::obtain(android::view::accessibility::AccessibilityWindowInfo arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityWindowInfo",
 			"obtain",
 			"(Landroid/view/accessibility/AccessibilityWindowInfo;)Landroid/view/accessibility/AccessibilityWindowInfo;",

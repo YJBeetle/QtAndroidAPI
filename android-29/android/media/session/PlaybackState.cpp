@@ -7,133 +7,133 @@ namespace android::media::session
 	// Fields
 	jlong PlaybackState::ACTION_FAST_FORWARD()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_FAST_FORWARD"
 		);
 	}
 	jlong PlaybackState::ACTION_PAUSE()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_PAUSE"
 		);
 	}
 	jlong PlaybackState::ACTION_PLAY()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_PLAY"
 		);
 	}
 	jlong PlaybackState::ACTION_PLAY_FROM_MEDIA_ID()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_PLAY_FROM_MEDIA_ID"
 		);
 	}
 	jlong PlaybackState::ACTION_PLAY_FROM_SEARCH()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_PLAY_FROM_SEARCH"
 		);
 	}
 	jlong PlaybackState::ACTION_PLAY_FROM_URI()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_PLAY_FROM_URI"
 		);
 	}
 	jlong PlaybackState::ACTION_PLAY_PAUSE()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_PLAY_PAUSE"
 		);
 	}
 	jlong PlaybackState::ACTION_PREPARE()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_PREPARE"
 		);
 	}
 	jlong PlaybackState::ACTION_PREPARE_FROM_MEDIA_ID()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_PREPARE_FROM_MEDIA_ID"
 		);
 	}
 	jlong PlaybackState::ACTION_PREPARE_FROM_SEARCH()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_PREPARE_FROM_SEARCH"
 		);
 	}
 	jlong PlaybackState::ACTION_PREPARE_FROM_URI()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_PREPARE_FROM_URI"
 		);
 	}
 	jlong PlaybackState::ACTION_REWIND()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_REWIND"
 		);
 	}
 	jlong PlaybackState::ACTION_SEEK_TO()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_SEEK_TO"
 		);
 	}
 	jlong PlaybackState::ACTION_SET_RATING()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_SET_RATING"
 		);
 	}
 	jlong PlaybackState::ACTION_SKIP_TO_NEXT()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_SKIP_TO_NEXT"
 		);
 	}
 	jlong PlaybackState::ACTION_SKIP_TO_PREVIOUS()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_SKIP_TO_PREVIOUS"
 		);
 	}
 	jlong PlaybackState::ACTION_SKIP_TO_QUEUE_ITEM()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_SKIP_TO_QUEUE_ITEM"
 		);
 	}
 	jlong PlaybackState::ACTION_STOP()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"ACTION_STOP"
 		);
 	}
 	__JniBaseClass PlaybackState::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.session.PlaybackState",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -141,91 +141,91 @@ namespace android::media::session
 	}
 	jlong PlaybackState::PLAYBACK_POSITION_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.session.PlaybackState",
 			"PLAYBACK_POSITION_UNKNOWN"
 		);
 	}
 	jint PlaybackState::STATE_BUFFERING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_BUFFERING"
 		);
 	}
 	jint PlaybackState::STATE_CONNECTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_CONNECTING"
 		);
 	}
 	jint PlaybackState::STATE_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_ERROR"
 		);
 	}
 	jint PlaybackState::STATE_FAST_FORWARDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_FAST_FORWARDING"
 		);
 	}
 	jint PlaybackState::STATE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_NONE"
 		);
 	}
 	jint PlaybackState::STATE_PAUSED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_PAUSED"
 		);
 	}
 	jint PlaybackState::STATE_PLAYING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_PLAYING"
 		);
 	}
 	jint PlaybackState::STATE_REWINDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_REWINDING"
 		);
 	}
 	jint PlaybackState::STATE_SKIPPING_TO_NEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_SKIPPING_TO_NEXT"
 		);
 	}
 	jint PlaybackState::STATE_SKIPPING_TO_PREVIOUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_SKIPPING_TO_PREVIOUS"
 		);
 	}
 	jint PlaybackState::STATE_SKIPPING_TO_QUEUE_ITEM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_SKIPPING_TO_QUEUE_ITEM"
 		);
 	}
 	jint PlaybackState::STATE_STOPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.PlaybackState",
 			"STATE_STOPPED"
 		);

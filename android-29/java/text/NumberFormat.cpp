@@ -14,14 +14,14 @@ namespace java::text
 	// Fields
 	jint NumberFormat::FRACTION_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.NumberFormat",
 			"FRACTION_FIELD"
 		);
 	}
 	jint NumberFormat::INTEGER_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.NumberFormat",
 			"INTEGER_FIELD"
 		);
@@ -35,7 +35,7 @@ namespace java::text
 	// Methods
 	jarray NumberFormat::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -43,7 +43,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getCompactNumberInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getCompactNumberInstance",
 			"()Ljava/text/NumberFormat;"
@@ -51,7 +51,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getCompactNumberInstance(java::util::Locale arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getCompactNumberInstance",
 			"(Ljava/util/Locale;Ljava/text/NumberFormat$Style;)Ljava/text/NumberFormat;",
@@ -61,7 +61,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getCurrencyInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getCurrencyInstance",
 			"()Ljava/text/NumberFormat;"
@@ -69,7 +69,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getCurrencyInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getCurrencyInstance",
 			"(Ljava/util/Locale;)Ljava/text/NumberFormat;",
@@ -78,7 +78,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getInstance",
 			"()Ljava/text/NumberFormat;"
@@ -86,7 +86,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/text/NumberFormat;",
@@ -95,7 +95,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getIntegerInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getIntegerInstance",
 			"()Ljava/text/NumberFormat;"
@@ -103,7 +103,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getIntegerInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getIntegerInstance",
 			"(Ljava/util/Locale;)Ljava/text/NumberFormat;",
@@ -112,7 +112,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getNumberInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getNumberInstance",
 			"()Ljava/text/NumberFormat;"
@@ -120,7 +120,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getNumberInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getNumberInstance",
 			"(Ljava/util/Locale;)Ljava/text/NumberFormat;",
@@ -129,7 +129,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getPercentInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getPercentInstance",
 			"()Ljava/text/NumberFormat;"
@@ -137,7 +137,7 @@ namespace java::text
 	}
 	java::text::NumberFormat NumberFormat::getPercentInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.NumberFormat",
 			"getPercentInstance",
 			"(Ljava/util/Locale;)Ljava/text/NumberFormat;",

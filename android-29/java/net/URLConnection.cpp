@@ -19,7 +19,7 @@ namespace java::net
 	// Methods
 	jboolean URLConnection::getDefaultAllowUserInteraction()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.net.URLConnection",
 			"getDefaultAllowUserInteraction",
 			"()Z"
@@ -27,7 +27,7 @@ namespace java::net
 	}
 	jstring URLConnection::getDefaultRequestProperty(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.URLConnection",
 			"getDefaultRequestProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -36,7 +36,7 @@ namespace java::net
 	}
 	jboolean URLConnection::getDefaultUseCaches(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.net.URLConnection",
 			"getDefaultUseCaches",
 			"(Ljava/lang/String;)Z",
@@ -45,7 +45,7 @@ namespace java::net
 	}
 	__JniBaseClass URLConnection::getFileNameMap()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.URLConnection",
 			"getFileNameMap",
 			"()Ljava/net/FileNameMap;"
@@ -53,7 +53,7 @@ namespace java::net
 	}
 	jstring URLConnection::guessContentTypeFromName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.URLConnection",
 			"guessContentTypeFromName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -62,7 +62,7 @@ namespace java::net
 	}
 	jstring URLConnection::guessContentTypeFromStream(java::io::InputStream arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.URLConnection",
 			"guessContentTypeFromStream",
 			"(Ljava/io/InputStream;)Ljava/lang/String;",
@@ -71,7 +71,7 @@ namespace java::net
 	}
 	void URLConnection::setContentHandlerFactory(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.URLConnection",
 			"setContentHandlerFactory",
 			"(Ljava/net/ContentHandlerFactory;)V",
@@ -80,7 +80,7 @@ namespace java::net
 	}
 	void URLConnection::setDefaultAllowUserInteraction(jboolean arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.URLConnection",
 			"setDefaultAllowUserInteraction",
 			"(Z)V",
@@ -89,7 +89,7 @@ namespace java::net
 	}
 	void URLConnection::setDefaultRequestProperty(jstring arg0, jstring arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.URLConnection",
 			"setDefaultRequestProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
@@ -99,7 +99,7 @@ namespace java::net
 	}
 	void URLConnection::setDefaultUseCaches(jstring arg0, jboolean arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.URLConnection",
 			"setDefaultUseCaches",
 			"(Ljava/lang/String;Z)V",
@@ -109,7 +109,7 @@ namespace java::net
 	}
 	void URLConnection::setFileNameMap(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.URLConnection",
 			"setFileNameMap",
 			"(Ljava/net/FileNameMap;)V",

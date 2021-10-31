@@ -12,7 +12,7 @@ namespace android::webkit
 	// Methods
 	jstring MimeTypeMap::getFileExtensionFromUrl(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.MimeTypeMap",
 			"getFileExtensionFromUrl",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -21,7 +21,7 @@ namespace android::webkit
 	}
 	android::webkit::MimeTypeMap MimeTypeMap::getSingleton()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.MimeTypeMap",
 			"getSingleton",
 			"()Landroid/webkit/MimeTypeMap;"

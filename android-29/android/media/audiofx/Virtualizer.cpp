@@ -6,42 +6,42 @@ namespace android::media::audiofx
 	// Fields
 	jint Virtualizer::PARAM_STRENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
 			"PARAM_STRENGTH"
 		);
 	}
 	jint Virtualizer::PARAM_STRENGTH_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
 			"PARAM_STRENGTH_SUPPORTED"
 		);
 	}
 	jint Virtualizer::VIRTUALIZATION_MODE_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
 			"VIRTUALIZATION_MODE_AUTO"
 		);
 	}
 	jint Virtualizer::VIRTUALIZATION_MODE_BINAURAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
 			"VIRTUALIZATION_MODE_BINAURAL"
 		);
 	}
 	jint Virtualizer::VIRTUALIZATION_MODE_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
 			"VIRTUALIZATION_MODE_OFF"
 		);
 	}
 	jint Virtualizer::VIRTUALIZATION_MODE_TRANSAURAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
 			"VIRTUALIZATION_MODE_TRANSAURAL"
 		);

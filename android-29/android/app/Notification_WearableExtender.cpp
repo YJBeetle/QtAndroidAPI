@@ -10,63 +10,63 @@ namespace android::app
 	// Fields
 	jint Notification_WearableExtender::SCREEN_TIMEOUT_LONG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$WearableExtender",
 			"SCREEN_TIMEOUT_LONG"
 		);
 	}
 	jint Notification_WearableExtender::SCREEN_TIMEOUT_SHORT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$WearableExtender",
 			"SCREEN_TIMEOUT_SHORT"
 		);
 	}
 	jint Notification_WearableExtender::SIZE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$WearableExtender",
 			"SIZE_DEFAULT"
 		);
 	}
 	jint Notification_WearableExtender::SIZE_FULL_SCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$WearableExtender",
 			"SIZE_FULL_SCREEN"
 		);
 	}
 	jint Notification_WearableExtender::SIZE_LARGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$WearableExtender",
 			"SIZE_LARGE"
 		);
 	}
 	jint Notification_WearableExtender::SIZE_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$WearableExtender",
 			"SIZE_MEDIUM"
 		);
 	}
 	jint Notification_WearableExtender::SIZE_SMALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$WearableExtender",
 			"SIZE_SMALL"
 		);
 	}
 	jint Notification_WearableExtender::SIZE_XSMALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$WearableExtender",
 			"SIZE_XSMALL"
 		);
 	}
 	jint Notification_WearableExtender::UNSET_ACTION_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$WearableExtender",
 			"UNSET_ACTION_INDEX"
 		);

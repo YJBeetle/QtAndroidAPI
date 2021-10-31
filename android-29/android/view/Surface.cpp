@@ -10,7 +10,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass Surface::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.Surface",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -18,28 +18,28 @@ namespace android::view
 	}
 	jint Surface::ROTATION_0()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Surface",
 			"ROTATION_0"
 		);
 	}
 	jint Surface::ROTATION_180()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Surface",
 			"ROTATION_180"
 		);
 	}
 	jint Surface::ROTATION_270()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Surface",
 			"ROTATION_270"
 		);
 	}
 	jint Surface::ROTATION_90()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Surface",
 			"ROTATION_90"
 		);

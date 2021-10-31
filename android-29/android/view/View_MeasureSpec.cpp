@@ -5,21 +5,21 @@ namespace android::view
 	// Fields
 	jint View_MeasureSpec::AT_MOST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View$MeasureSpec",
 			"AT_MOST"
 		);
 	}
 	jint View_MeasureSpec::EXACTLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View$MeasureSpec",
 			"EXACTLY"
 		);
 	}
 	jint View_MeasureSpec::UNSPECIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.View$MeasureSpec",
 			"UNSPECIFIED"
 		);
@@ -38,7 +38,7 @@ namespace android::view
 	// Methods
 	jint View_MeasureSpec::getMode(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.View$MeasureSpec",
 			"getMode",
 			"(I)I",
@@ -47,7 +47,7 @@ namespace android::view
 	}
 	jint View_MeasureSpec::getSize(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.View$MeasureSpec",
 			"getSize",
 			"(I)I",
@@ -56,7 +56,7 @@ namespace android::view
 	}
 	jint View_MeasureSpec::makeMeasureSpec(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.View$MeasureSpec",
 			"makeMeasureSpec",
 			"(II)I",
@@ -66,7 +66,7 @@ namespace android::view
 	}
 	jstring View_MeasureSpec::toString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.View$MeasureSpec",
 			"toString",
 			"(I)Ljava/lang/String;",

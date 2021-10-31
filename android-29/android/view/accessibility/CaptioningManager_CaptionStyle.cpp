@@ -6,42 +6,42 @@ namespace android::view::accessibility
 	// Fields
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_DEPRESSED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
 			"EDGE_TYPE_DEPRESSED"
 		);
 	}
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_DROP_SHADOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
 			"EDGE_TYPE_DROP_SHADOW"
 		);
 	}
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
 			"EDGE_TYPE_NONE"
 		);
 	}
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_OUTLINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
 			"EDGE_TYPE_OUTLINE"
 		);
 	}
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_RAISED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
 			"EDGE_TYPE_RAISED"
 		);
 	}
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_UNSPECIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
 			"EDGE_TYPE_UNSPECIFIED"
 		);

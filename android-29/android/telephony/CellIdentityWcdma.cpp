@@ -6,7 +6,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass CellIdentityWcdma::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.CellIdentityWcdma",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_Settings::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Settings",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Settings::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Settings",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_Settings::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Settings",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"

@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring Browser::EXTRA_APPLICATION_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Browser",
 			"EXTRA_APPLICATION_ID",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring Browser::EXTRA_CREATE_NEW_TAB()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Browser",
 			"EXTRA_CREATE_NEW_TAB",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring Browser::EXTRA_HEADERS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Browser",
 			"EXTRA_HEADERS",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring Browser::INITIAL_ZOOM_LEVEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Browser",
 			"INITIAL_ZOOM_LEVEL",
 			"Ljava/lang/String;"
@@ -50,7 +50,7 @@ namespace android::provider
 	// Methods
 	void Browser::sendString(android::content::Context arg0, jstring arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.Browser",
 			"sendString",
 			"(Landroid/content/Context;Ljava/lang/String;)V",

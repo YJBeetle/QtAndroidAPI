@@ -8,7 +8,7 @@ namespace android::app::slice
 	// Fields
 	__JniBaseClass Slice::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,7 +16,7 @@ namespace android::app::slice
 	}
 	jstring Slice::EXTRA_RANGE_VALUE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"EXTRA_RANGE_VALUE",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::app::slice
 	}
 	jstring Slice::EXTRA_TOGGLE_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"EXTRA_TOGGLE_STATE",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_ACTIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_ACTIONS",
 			"Ljava/lang/String;"
@@ -40,7 +40,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_ERROR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_ERROR",
 			"Ljava/lang/String;"
@@ -48,7 +48,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_HORIZONTAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_HORIZONTAL",
 			"Ljava/lang/String;"
@@ -56,7 +56,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_KEYWORDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_KEYWORDS",
 			"Ljava/lang/String;"
@@ -64,7 +64,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_LARGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_LARGE",
 			"Ljava/lang/String;"
@@ -72,7 +72,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_LAST_UPDATED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_LAST_UPDATED",
 			"Ljava/lang/String;"
@@ -80,7 +80,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_LIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_LIST",
 			"Ljava/lang/String;"
@@ -88,7 +88,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_LIST_ITEM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_LIST_ITEM",
 			"Ljava/lang/String;"
@@ -96,7 +96,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_NO_TINT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_NO_TINT",
 			"Ljava/lang/String;"
@@ -104,7 +104,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_PARTIAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_PARTIAL",
 			"Ljava/lang/String;"
@@ -112,7 +112,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_PERMISSION_REQUEST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_PERMISSION_REQUEST",
 			"Ljava/lang/String;"
@@ -120,7 +120,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_SEE_MORE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_SEE_MORE",
 			"Ljava/lang/String;"
@@ -128,7 +128,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_SELECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_SELECTED",
 			"Ljava/lang/String;"
@@ -136,7 +136,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_SHORTCUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_SHORTCUT",
 			"Ljava/lang/String;"
@@ -144,7 +144,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_SUMMARY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_SUMMARY",
 			"Ljava/lang/String;"
@@ -152,7 +152,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_TITLE",
 			"Ljava/lang/String;"
@@ -160,7 +160,7 @@ namespace android::app::slice
 	}
 	jstring Slice::HINT_TTL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"HINT_TTL",
 			"Ljava/lang/String;"
@@ -168,7 +168,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_COLOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_COLOR",
 			"Ljava/lang/String;"
@@ -176,7 +176,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_CONTENT_DESCRIPTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_CONTENT_DESCRIPTION",
 			"Ljava/lang/String;"
@@ -184,7 +184,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_LAYOUT_DIRECTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_LAYOUT_DIRECTION",
 			"Ljava/lang/String;"
@@ -192,7 +192,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_MAX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_MAX",
 			"Ljava/lang/String;"
@@ -200,7 +200,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_MESSAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_MESSAGE",
 			"Ljava/lang/String;"
@@ -208,7 +208,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_MILLIS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_MILLIS",
 			"Ljava/lang/String;"
@@ -216,7 +216,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_PRIORITY",
 			"Ljava/lang/String;"
@@ -224,7 +224,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_RANGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_RANGE",
 			"Ljava/lang/String;"
@@ -232,7 +232,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_SOURCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_SOURCE",
 			"Ljava/lang/String;"
@@ -240,7 +240,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_TOGGLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_TOGGLE",
 			"Ljava/lang/String;"
@@ -248,7 +248,7 @@ namespace android::app::slice
 	}
 	jstring Slice::SUBTYPE_VALUE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.Slice",
 			"SUBTYPE_VALUE",
 			"Ljava/lang/String;"

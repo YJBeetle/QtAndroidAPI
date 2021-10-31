@@ -39,28 +39,28 @@ namespace android::webkit
 	// Fields
 	jint WebView::RENDERER_PRIORITY_BOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebView",
 			"RENDERER_PRIORITY_BOUND"
 		);
 	}
 	jint WebView::RENDERER_PRIORITY_IMPORTANT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebView",
 			"RENDERER_PRIORITY_IMPORTANT"
 		);
 	}
 	jint WebView::RENDERER_PRIORITY_WAIVED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebView",
 			"RENDERER_PRIORITY_WAIVED"
 		);
 	}
 	jstring WebView::SCHEME_GEO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.WebView",
 			"SCHEME_GEO",
 			"Ljava/lang/String;"
@@ -68,7 +68,7 @@ namespace android::webkit
 	}
 	jstring WebView::SCHEME_MAILTO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.WebView",
 			"SCHEME_MAILTO",
 			"Ljava/lang/String;"
@@ -76,7 +76,7 @@ namespace android::webkit
 	}
 	jstring WebView::SCHEME_TEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.webkit.WebView",
 			"SCHEME_TEL",
 			"Ljava/lang/String;"
@@ -130,7 +130,7 @@ namespace android::webkit
 	// Methods
 	void WebView::clearClientCertPreferences(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.webkit.WebView",
 			"clearClientCertPreferences",
 			"(Ljava/lang/Runnable;)V",
@@ -139,7 +139,7 @@ namespace android::webkit
 	}
 	void WebView::disableWebView()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.webkit.WebView",
 			"disableWebView",
 			"()V"
@@ -147,7 +147,7 @@ namespace android::webkit
 	}
 	void WebView::enableSlowWholeDocumentDraw()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.webkit.WebView",
 			"enableSlowWholeDocumentDraw",
 			"()V"
@@ -155,7 +155,7 @@ namespace android::webkit
 	}
 	jstring WebView::findAddress(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.WebView",
 			"findAddress",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -164,7 +164,7 @@ namespace android::webkit
 	}
 	android::content::pm::PackageInfo WebView::getCurrentWebViewPackage()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.WebView",
 			"getCurrentWebViewPackage",
 			"()Landroid/content/pm/PackageInfo;"
@@ -172,7 +172,7 @@ namespace android::webkit
 	}
 	android::net::Uri WebView::getSafeBrowsingPrivacyPolicyUrl()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.WebView",
 			"getSafeBrowsingPrivacyPolicyUrl",
 			"()Landroid/net/Uri;"
@@ -180,7 +180,7 @@ namespace android::webkit
 	}
 	java::lang::ClassLoader WebView::getWebViewClassLoader()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.WebView",
 			"getWebViewClassLoader",
 			"()Ljava/lang/ClassLoader;"
@@ -188,7 +188,7 @@ namespace android::webkit
 	}
 	void WebView::setDataDirectorySuffix(jstring arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.webkit.WebView",
 			"setDataDirectorySuffix",
 			"(Ljava/lang/String;)V",
@@ -197,7 +197,7 @@ namespace android::webkit
 	}
 	void WebView::setSafeBrowsingWhitelist(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.webkit.WebView",
 			"setSafeBrowsingWhitelist",
 			"(Ljava/util/List;Landroid/webkit/ValueCallback;)V",
@@ -207,7 +207,7 @@ namespace android::webkit
 	}
 	void WebView::setWebContentsDebuggingEnabled(jboolean arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.webkit.WebView",
 			"setWebContentsDebuggingEnabled",
 			"(Z)V",
@@ -216,7 +216,7 @@ namespace android::webkit
 	}
 	void WebView::startSafeBrowsing(android::content::Context arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.webkit.WebView",
 			"startSafeBrowsing",
 			"(Landroid/content/Context;Landroid/webkit/ValueCallback;)V",

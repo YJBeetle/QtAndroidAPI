@@ -18,7 +18,7 @@ namespace java::sql
 	// Methods
 	void DriverManager::deregisterDriver(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.sql.DriverManager",
 			"deregisterDriver",
 			"(Ljava/sql/Driver;)V",
@@ -27,7 +27,7 @@ namespace java::sql
 	}
 	__JniBaseClass DriverManager::drivers()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"drivers",
 			"()Ljava/util/stream/Stream;"
@@ -35,7 +35,7 @@ namespace java::sql
 	}
 	__JniBaseClass DriverManager::getConnection(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getConnection",
 			"(Ljava/lang/String;)Ljava/sql/Connection;",
@@ -44,7 +44,7 @@ namespace java::sql
 	}
 	__JniBaseClass DriverManager::getConnection(jstring arg0, java::util::Properties arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getConnection",
 			"(Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;",
@@ -54,7 +54,7 @@ namespace java::sql
 	}
 	__JniBaseClass DriverManager::getConnection(jstring arg0, jstring arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getConnection",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;",
@@ -65,7 +65,7 @@ namespace java::sql
 	}
 	__JniBaseClass DriverManager::getDriver(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getDriver",
 			"(Ljava/lang/String;)Ljava/sql/Driver;",
@@ -74,7 +74,7 @@ namespace java::sql
 	}
 	__JniBaseClass DriverManager::getDrivers()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getDrivers",
 			"()Ljava/util/Enumeration;"
@@ -82,7 +82,7 @@ namespace java::sql
 	}
 	java::io::PrintStream DriverManager::getLogStream()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getLogStream",
 			"()Ljava/io/PrintStream;"
@@ -90,7 +90,7 @@ namespace java::sql
 	}
 	java::io::PrintWriter DriverManager::getLogWriter()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.DriverManager",
 			"getLogWriter",
 			"()Ljava/io/PrintWriter;"
@@ -98,7 +98,7 @@ namespace java::sql
 	}
 	jint DriverManager::getLoginTimeout()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.sql.DriverManager",
 			"getLoginTimeout",
 			"()I"
@@ -106,7 +106,7 @@ namespace java::sql
 	}
 	void DriverManager::println(jstring arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.sql.DriverManager",
 			"println",
 			"(Ljava/lang/String;)V",
@@ -115,7 +115,7 @@ namespace java::sql
 	}
 	void DriverManager::registerDriver(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.sql.DriverManager",
 			"registerDriver",
 			"(Ljava/sql/Driver;)V",
@@ -124,7 +124,7 @@ namespace java::sql
 	}
 	void DriverManager::registerDriver(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.sql.DriverManager",
 			"registerDriver",
 			"(Ljava/sql/Driver;Ljava/sql/DriverAction;)V",
@@ -134,7 +134,7 @@ namespace java::sql
 	}
 	void DriverManager::setLogStream(java::io::PrintStream arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.sql.DriverManager",
 			"setLogStream",
 			"(Ljava/io/PrintStream;)V",
@@ -143,7 +143,7 @@ namespace java::sql
 	}
 	void DriverManager::setLogWriter(java::io::PrintWriter arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.sql.DriverManager",
 			"setLogWriter",
 			"(Ljava/io/PrintWriter;)V",
@@ -152,7 +152,7 @@ namespace java::sql
 	}
 	void DriverManager::setLoginTimeout(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.sql.DriverManager",
 			"setLoginTimeout",
 			"(I)V",

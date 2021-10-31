@@ -32,7 +32,7 @@ namespace android::text
 	// Methods
 	android::text::SpannableStringBuilder SpannableStringBuilder::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.SpannableStringBuilder",
 			"valueOf",
 			"(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",

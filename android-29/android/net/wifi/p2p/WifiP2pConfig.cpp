@@ -7,7 +7,7 @@ namespace android::net::wifi::p2p
 	// Fields
 	__JniBaseClass WifiP2pConfig::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pConfig",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,21 +15,21 @@ namespace android::net::wifi::p2p
 	}
 	jint WifiP2pConfig::GROUP_OWNER_BAND_2GHZ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pConfig",
 			"GROUP_OWNER_BAND_2GHZ"
 		);
 	}
 	jint WifiP2pConfig::GROUP_OWNER_BAND_5GHZ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pConfig",
 			"GROUP_OWNER_BAND_5GHZ"
 		);
 	}
 	jint WifiP2pConfig::GROUP_OWNER_BAND_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pConfig",
 			"GROUP_OWNER_BAND_AUTO"
 		);

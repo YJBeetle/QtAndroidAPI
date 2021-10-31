@@ -7,7 +7,7 @@ namespace android::telephony::mbms
 	// Fields
 	__JniBaseClass DownloadRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.mbms.DownloadRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -22,7 +22,7 @@ namespace android::telephony::mbms
 	// Methods
 	jint DownloadRequest::getMaxAppIntentSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.mbms.DownloadRequest",
 			"getMaxAppIntentSize",
 			"()I"
@@ -30,7 +30,7 @@ namespace android::telephony::mbms
 	}
 	jint DownloadRequest::getMaxDestinationUriSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.mbms.DownloadRequest",
 			"getMaxDestinationUriSize",
 			"()I"

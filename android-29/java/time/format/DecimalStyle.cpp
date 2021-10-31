@@ -6,7 +6,7 @@ namespace java::time::format
 	// Fields
 	java::time::format::DecimalStyle DecimalStyle::STANDARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.DecimalStyle",
 			"STANDARD",
 			"Ljava/time/format/DecimalStyle;"
@@ -21,7 +21,7 @@ namespace java::time::format
 	// Methods
 	__JniBaseClass DecimalStyle::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DecimalStyle",
 			"getAvailableLocales",
 			"()Ljava/util/Set;"
@@ -29,7 +29,7 @@ namespace java::time::format
 	}
 	java::time::format::DecimalStyle DecimalStyle::of(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DecimalStyle",
 			"of",
 			"(Ljava/util/Locale;)Ljava/time/format/DecimalStyle;",
@@ -38,7 +38,7 @@ namespace java::time::format
 	}
 	java::time::format::DecimalStyle DecimalStyle::ofDefaultLocale()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.DecimalStyle",
 			"ofDefaultLocale",
 			"()Ljava/time/format/DecimalStyle;"

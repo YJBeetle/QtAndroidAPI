@@ -6,42 +6,42 @@ namespace android::hardware::camera2::params
 	// Fields
 	jint TonemapCurve::CHANNEL_BLUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.TonemapCurve",
 			"CHANNEL_BLUE"
 		);
 	}
 	jint TonemapCurve::CHANNEL_GREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.TonemapCurve",
 			"CHANNEL_GREEN"
 		);
 	}
 	jint TonemapCurve::CHANNEL_RED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.TonemapCurve",
 			"CHANNEL_RED"
 		);
 	}
 	jfloat TonemapCurve::LEVEL_BLACK()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.camera2.params.TonemapCurve",
 			"LEVEL_BLACK"
 		);
 	}
 	jfloat TonemapCurve::LEVEL_WHITE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.camera2.params.TonemapCurve",
 			"LEVEL_WHITE"
 		);
 	}
 	jint TonemapCurve::POINT_SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.TonemapCurve",
 			"POINT_SIZE"
 		);

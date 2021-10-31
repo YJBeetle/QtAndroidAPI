@@ -8,7 +8,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass PeriodicSync::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.PeriodicSync",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

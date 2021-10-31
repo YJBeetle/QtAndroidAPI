@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri Telephony_Mms_Draft::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Mms$Draft",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring Telephony_Mms_Draft::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Mms$Draft",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"

@@ -6,7 +6,7 @@ namespace android::view::inputmethod
 	// Fields
 	__JniBaseClass ExtractedText::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.inputmethod.ExtractedText",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,14 +14,14 @@ namespace android::view::inputmethod
 	}
 	jint ExtractedText::FLAG_SELECTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.ExtractedText",
 			"FLAG_SELECTING"
 		);
 	}
 	jint ExtractedText::FLAG_SINGLE_LINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.ExtractedText",
 			"FLAG_SINGLE_LINE"
 		);

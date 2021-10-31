@@ -6,7 +6,7 @@ namespace android::telephony::euicc
 	// Fields
 	__JniBaseClass EuiccInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.euicc.EuiccInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

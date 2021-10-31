@@ -7,7 +7,7 @@ namespace android::media::browse
 	// Fields
 	__JniBaseClass MediaBrowser_MediaItem::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.browse.MediaBrowser$MediaItem",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,14 +15,14 @@ namespace android::media::browse
 	}
 	jint MediaBrowser_MediaItem::FLAG_BROWSABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.browse.MediaBrowser$MediaItem",
 			"FLAG_BROWSABLE"
 		);
 	}
 	jint MediaBrowser_MediaItem::FLAG_PLAYABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.browse.MediaBrowser$MediaItem",
 			"FLAG_PLAYABLE"
 		);

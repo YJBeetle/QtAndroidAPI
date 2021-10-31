@@ -5,14 +5,14 @@ namespace android::net::wifi::rtt
 	// Fields
 	jint RangingResultCallback::STATUS_CODE_FAIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.RangingResultCallback",
 			"STATUS_CODE_FAIL"
 		);
 	}
 	jint RangingResultCallback::STATUS_CODE_FAIL_RTT_NOT_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.RangingResultCallback",
 			"STATUS_CODE_FAIL_RTT_NOT_AVAILABLE"
 		);

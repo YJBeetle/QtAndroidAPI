@@ -9,7 +9,7 @@ namespace android::service::notification
 	// Fields
 	jstring ConditionProviderService::EXTRA_RULE_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.ConditionProviderService",
 			"EXTRA_RULE_ID",
 			"Ljava/lang/String;"
@@ -17,7 +17,7 @@ namespace android::service::notification
 	}
 	jstring ConditionProviderService::META_DATA_CONFIGURATION_ACTIVITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.ConditionProviderService",
 			"META_DATA_CONFIGURATION_ACTIVITY",
 			"Ljava/lang/String;"
@@ -25,7 +25,7 @@ namespace android::service::notification
 	}
 	jstring ConditionProviderService::META_DATA_RULE_INSTANCE_LIMIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.ConditionProviderService",
 			"META_DATA_RULE_INSTANCE_LIMIT",
 			"Ljava/lang/String;"
@@ -33,7 +33,7 @@ namespace android::service::notification
 	}
 	jstring ConditionProviderService::META_DATA_RULE_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.ConditionProviderService",
 			"META_DATA_RULE_TYPE",
 			"Ljava/lang/String;"
@@ -41,7 +41,7 @@ namespace android::service::notification
 	}
 	jstring ConditionProviderService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.ConditionProviderService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -61,7 +61,7 @@ namespace android::service::notification
 	// Methods
 	void ConditionProviderService::requestRebind(android::content::ComponentName arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.service.notification.ConditionProviderService",
 			"requestRebind",
 			"(Landroid/content/ComponentName;)V",

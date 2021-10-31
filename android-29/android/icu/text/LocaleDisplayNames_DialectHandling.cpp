@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::LocaleDisplayNames_DialectHandling LocaleDisplayNames_DialectHandling::DIALECT_NAMES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.LocaleDisplayNames$DialectHandling",
 			"DIALECT_NAMES",
 			"Landroid/icu/text/LocaleDisplayNames$DialectHandling;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::LocaleDisplayNames_DialectHandling LocaleDisplayNames_DialectHandling::STANDARD_NAMES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.LocaleDisplayNames$DialectHandling",
 			"STANDARD_NAMES",
 			"Landroid/icu/text/LocaleDisplayNames$DialectHandling;"
@@ -28,7 +28,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::LocaleDisplayNames_DialectHandling LocaleDisplayNames_DialectHandling::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames$DialectHandling",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/LocaleDisplayNames$DialectHandling;",
@@ -37,7 +37,7 @@ namespace android::icu::text
 	}
 	jarray LocaleDisplayNames_DialectHandling::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames$DialectHandling",
 			"values",
 			"()[Landroid/icu/text/LocaleDisplayNames$DialectHandling;"

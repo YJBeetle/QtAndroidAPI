@@ -6,56 +6,56 @@ namespace android::bluetooth::le
 	// Fields
 	jint AdvertiseSettings::ADVERTISE_MODE_BALANCED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseSettings",
 			"ADVERTISE_MODE_BALANCED"
 		);
 	}
 	jint AdvertiseSettings::ADVERTISE_MODE_LOW_LATENCY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseSettings",
 			"ADVERTISE_MODE_LOW_LATENCY"
 		);
 	}
 	jint AdvertiseSettings::ADVERTISE_MODE_LOW_POWER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseSettings",
 			"ADVERTISE_MODE_LOW_POWER"
 		);
 	}
 	jint AdvertiseSettings::ADVERTISE_TX_POWER_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseSettings",
 			"ADVERTISE_TX_POWER_HIGH"
 		);
 	}
 	jint AdvertiseSettings::ADVERTISE_TX_POWER_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseSettings",
 			"ADVERTISE_TX_POWER_LOW"
 		);
 	}
 	jint AdvertiseSettings::ADVERTISE_TX_POWER_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseSettings",
 			"ADVERTISE_TX_POWER_MEDIUM"
 		);
 	}
 	jint AdvertiseSettings::ADVERTISE_TX_POWER_ULTRA_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseSettings",
 			"ADVERTISE_TX_POWER_ULTRA_LOW"
 		);
 	}
 	__JniBaseClass AdvertiseSettings::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.le.AdvertiseSettings",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

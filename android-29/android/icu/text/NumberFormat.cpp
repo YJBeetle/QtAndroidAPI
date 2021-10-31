@@ -18,84 +18,84 @@ namespace android::icu::text
 	// Fields
 	jint NumberFormat::ACCOUNTINGCURRENCYSTYLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"ACCOUNTINGCURRENCYSTYLE"
 		);
 	}
 	jint NumberFormat::CASHCURRENCYSTYLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"CASHCURRENCYSTYLE"
 		);
 	}
 	jint NumberFormat::CURRENCYSTYLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"CURRENCYSTYLE"
 		);
 	}
 	jint NumberFormat::FRACTION_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"FRACTION_FIELD"
 		);
 	}
 	jint NumberFormat::INTEGERSTYLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"INTEGERSTYLE"
 		);
 	}
 	jint NumberFormat::INTEGER_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"INTEGER_FIELD"
 		);
 	}
 	jint NumberFormat::ISOCURRENCYSTYLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"ISOCURRENCYSTYLE"
 		);
 	}
 	jint NumberFormat::NUMBERSTYLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"NUMBERSTYLE"
 		);
 	}
 	jint NumberFormat::PERCENTSTYLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"PERCENTSTYLE"
 		);
 	}
 	jint NumberFormat::PLURALCURRENCYSTYLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"PLURALCURRENCYSTYLE"
 		);
 	}
 	jint NumberFormat::SCIENTIFICSTYLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"SCIENTIFICSTYLE"
 		);
 	}
 	jint NumberFormat::STANDARDCURRENCYSTYLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.NumberFormat",
 			"STANDARDCURRENCYSTYLE"
 		);
@@ -114,7 +114,7 @@ namespace android::icu::text
 	// Methods
 	jarray NumberFormat::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -122,7 +122,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getCurrencyInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getCurrencyInstance",
 			"()Landroid/icu/text/NumberFormat;"
@@ -130,7 +130,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getCurrencyInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getCurrencyInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/NumberFormat;",
@@ -139,7 +139,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getCurrencyInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getCurrencyInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;",
@@ -148,7 +148,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getInstance",
 			"()Landroid/icu/text/NumberFormat;"
@@ -156,7 +156,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/NumberFormat;",
@@ -165,7 +165,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getInstance(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getInstance",
 			"(I)Landroid/icu/text/NumberFormat;",
@@ -174,7 +174,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;",
@@ -183,7 +183,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getInstance(android::icu::util::ULocale arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;I)Landroid/icu/text/NumberFormat;",
@@ -193,7 +193,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getInstance(java::util::Locale arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getInstance",
 			"(Ljava/util/Locale;I)Landroid/icu/text/NumberFormat;",
@@ -203,7 +203,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getIntegerInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getIntegerInstance",
 			"()Landroid/icu/text/NumberFormat;"
@@ -211,7 +211,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getIntegerInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getIntegerInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/NumberFormat;",
@@ -220,7 +220,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getIntegerInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getIntegerInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;",
@@ -229,7 +229,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getNumberInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getNumberInstance",
 			"()Landroid/icu/text/NumberFormat;"
@@ -237,7 +237,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getNumberInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getNumberInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/NumberFormat;",
@@ -246,7 +246,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getNumberInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getNumberInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;",
@@ -255,7 +255,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getPercentInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getPercentInstance",
 			"()Landroid/icu/text/NumberFormat;"
@@ -263,7 +263,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getPercentInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getPercentInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/NumberFormat;",
@@ -272,7 +272,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getPercentInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getPercentInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;",
@@ -281,7 +281,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getScientificInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getScientificInstance",
 			"()Landroid/icu/text/NumberFormat;"
@@ -289,7 +289,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getScientificInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getScientificInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/NumberFormat;",
@@ -298,7 +298,7 @@ namespace android::icu::text
 	}
 	android::icu::text::NumberFormat NumberFormat::getScientificInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getScientificInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;",

@@ -5,168 +5,168 @@ namespace android::media
 	// Fields
 	jint CamcorderProfile::QUALITY_1080P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_1080P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_2160P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_2160P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_480P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_480P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_720P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_720P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_CIF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_CIF"
 		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_HIGH"
 		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_1080P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_HIGH_SPEED_1080P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_2160P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_HIGH_SPEED_2160P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_480P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_HIGH_SPEED_480P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_720P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_HIGH_SPEED_720P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_HIGH_SPEED_HIGH"
 		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_HIGH_SPEED_LOW"
 		);
 	}
 	jint CamcorderProfile::QUALITY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_LOW"
 		);
 	}
 	jint CamcorderProfile::QUALITY_QCIF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_QCIF"
 		);
 	}
 	jint CamcorderProfile::QUALITY_QVGA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_QVGA"
 		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_1080P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_TIME_LAPSE_1080P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_2160P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_TIME_LAPSE_2160P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_480P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_TIME_LAPSE_480P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_720P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_TIME_LAPSE_720P"
 		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_CIF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_TIME_LAPSE_CIF"
 		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_TIME_LAPSE_HIGH"
 		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_TIME_LAPSE_LOW"
 		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_QCIF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_TIME_LAPSE_QCIF"
 		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_QVGA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CamcorderProfile",
 			"QUALITY_TIME_LAPSE_QVGA"
 		);
@@ -252,7 +252,7 @@ namespace android::media
 	// Methods
 	android::media::CamcorderProfile CamcorderProfile::get(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.CamcorderProfile",
 			"get",
 			"(I)Landroid/media/CamcorderProfile;",
@@ -261,7 +261,7 @@ namespace android::media
 	}
 	android::media::CamcorderProfile CamcorderProfile::get(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.CamcorderProfile",
 			"get",
 			"(II)Landroid/media/CamcorderProfile;",
@@ -271,7 +271,7 @@ namespace android::media
 	}
 	jboolean CamcorderProfile::hasProfile(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.CamcorderProfile",
 			"hasProfile",
 			"(I)Z",
@@ -280,7 +280,7 @@ namespace android::media
 	}
 	jboolean CamcorderProfile::hasProfile(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.CamcorderProfile",
 			"hasProfile",
 			"(II)Z",

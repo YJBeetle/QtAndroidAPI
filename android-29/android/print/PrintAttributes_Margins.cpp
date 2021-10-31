@@ -5,7 +5,7 @@ namespace android::print
 	// Fields
 	android::print::PrintAttributes_Margins PrintAttributes_Margins::NO_MARGINS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.print.PrintAttributes$Margins",
 			"NO_MARGINS",
 			"Landroid/print/PrintAttributes$Margins;"

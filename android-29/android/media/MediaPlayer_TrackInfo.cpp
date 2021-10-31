@@ -7,42 +7,42 @@ namespace android::media
 	// Fields
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_AUDIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
 			"MEDIA_TRACK_TYPE_AUDIO"
 		);
 	}
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_METADATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
 			"MEDIA_TRACK_TYPE_METADATA"
 		);
 	}
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_SUBTITLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
 			"MEDIA_TRACK_TYPE_SUBTITLE"
 		);
 	}
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_TIMEDTEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
 			"MEDIA_TRACK_TYPE_TIMEDTEXT"
 		);
 	}
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
 			"MEDIA_TRACK_TYPE_UNKNOWN"
 		);
 	}
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_VIDEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
 			"MEDIA_TRACK_TYPE_VIDEO"
 		);

@@ -16,7 +16,7 @@ namespace android::gesture
 	// Methods
 	android::gesture::OrientedBoundingBox GestureUtils::computeOrientedBoundingBox(jfloatArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.gesture.GestureUtils",
 			"computeOrientedBoundingBox",
 			"([F)Landroid/gesture/OrientedBoundingBox;",
@@ -25,7 +25,7 @@ namespace android::gesture
 	}
 	android::gesture::OrientedBoundingBox GestureUtils::computeOrientedBoundingBox(java::util::ArrayList arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.gesture.GestureUtils",
 			"computeOrientedBoundingBox",
 			"(Ljava/util/ArrayList;)Landroid/gesture/OrientedBoundingBox;",
@@ -34,7 +34,7 @@ namespace android::gesture
 	}
 	jfloatArray GestureUtils::spatialSampling(android::gesture::Gesture arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.gesture.GestureUtils",
 			"spatialSampling",
 			"(Landroid/gesture/Gesture;I)[F",
@@ -44,7 +44,7 @@ namespace android::gesture
 	}
 	jfloatArray GestureUtils::spatialSampling(android::gesture::Gesture arg0, jint arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.gesture.GestureUtils",
 			"spatialSampling",
 			"(Landroid/gesture/Gesture;IZ)[F",
@@ -55,7 +55,7 @@ namespace android::gesture
 	}
 	jfloatArray GestureUtils::temporalSampling(android::gesture::GestureStroke arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.gesture.GestureUtils",
 			"temporalSampling",
 			"(Landroid/gesture/GestureStroke;I)[F",

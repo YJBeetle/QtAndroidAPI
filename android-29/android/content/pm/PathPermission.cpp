@@ -6,7 +6,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass PathPermission::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PathPermission",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

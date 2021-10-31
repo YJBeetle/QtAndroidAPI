@@ -5,7 +5,7 @@ namespace javax::xml::transform::dom
 	// Fields
 	jstring DOMResult::FEATURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.xml.transform.dom.DOMResult",
 			"FEATURE",
 			"Ljava/lang/String;"

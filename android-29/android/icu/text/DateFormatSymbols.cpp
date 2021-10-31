@@ -9,42 +9,42 @@ namespace android::icu::text
 	// Fields
 	jint DateFormatSymbols::ABBREVIATED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateFormatSymbols",
 			"ABBREVIATED"
 		);
 	}
 	jint DateFormatSymbols::FORMAT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateFormatSymbols",
 			"FORMAT"
 		);
 	}
 	jint DateFormatSymbols::NARROW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateFormatSymbols",
 			"NARROW"
 		);
 	}
 	jint DateFormatSymbols::SHORT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateFormatSymbols",
 			"SHORT"
 		);
 	}
 	jint DateFormatSymbols::STANDALONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateFormatSymbols",
 			"STANDALONE"
 		);
 	}
 	jint DateFormatSymbols::WIDE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DateFormatSymbols",
 			"WIDE"
 		);
@@ -117,7 +117,7 @@ namespace android::icu::text
 	// Methods
 	jarray DateFormatSymbols::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DateFormatSymbols",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -125,7 +125,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DateFormatSymbols DateFormatSymbols::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DateFormatSymbols",
 			"getInstance",
 			"()Landroid/icu/text/DateFormatSymbols;"
@@ -133,7 +133,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DateFormatSymbols DateFormatSymbols::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DateFormatSymbols",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/DateFormatSymbols;",
@@ -142,7 +142,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DateFormatSymbols DateFormatSymbols::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DateFormatSymbols",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/DateFormatSymbols;",

@@ -5,7 +5,7 @@ namespace android::util
 	// Fields
 	jintArray StateSet::NOTHING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.StateSet",
 			"NOTHING",
 			"[I"
@@ -13,7 +13,7 @@ namespace android::util
 	}
 	jintArray StateSet::WILD_CARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.util.StateSet",
 			"WILD_CARD",
 			"[I"
@@ -28,7 +28,7 @@ namespace android::util
 	// Methods
 	jstring StateSet::dump(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.StateSet",
 			"dump",
 			"([I)Ljava/lang/String;",
@@ -37,7 +37,7 @@ namespace android::util
 	}
 	jboolean StateSet::isWildCard(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.StateSet",
 			"isWildCard",
 			"([I)Z",
@@ -46,7 +46,7 @@ namespace android::util
 	}
 	jboolean StateSet::stateSetMatches(jintArray arg0, jintArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.StateSet",
 			"stateSetMatches",
 			"([I[I)Z",
@@ -56,7 +56,7 @@ namespace android::util
 	}
 	jboolean StateSet::stateSetMatches(jintArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.StateSet",
 			"stateSetMatches",
 			"([II)Z",
@@ -66,7 +66,7 @@ namespace android::util
 	}
 	jintArray StateSet::trimStateSet(jintArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.StateSet",
 			"trimStateSet",
 			"([II)[I",

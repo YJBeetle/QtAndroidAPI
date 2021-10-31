@@ -30,56 +30,56 @@ namespace android::service::voice
 	// Fields
 	jint VoiceInteractionSession::SHOW_SOURCE_ACTIVITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession",
 			"SHOW_SOURCE_ACTIVITY"
 		);
 	}
 	jint VoiceInteractionSession::SHOW_SOURCE_APPLICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession",
 			"SHOW_SOURCE_APPLICATION"
 		);
 	}
 	jint VoiceInteractionSession::SHOW_SOURCE_ASSIST_GESTURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession",
 			"SHOW_SOURCE_ASSIST_GESTURE"
 		);
 	}
 	jint VoiceInteractionSession::SHOW_SOURCE_AUTOMOTIVE_SYSTEM_UI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession",
 			"SHOW_SOURCE_AUTOMOTIVE_SYSTEM_UI"
 		);
 	}
 	jint VoiceInteractionSession::SHOW_SOURCE_NOTIFICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession",
 			"SHOW_SOURCE_NOTIFICATION"
 		);
 	}
 	jint VoiceInteractionSession::SHOW_SOURCE_PUSH_TO_TALK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession",
 			"SHOW_SOURCE_PUSH_TO_TALK"
 		);
 	}
 	jint VoiceInteractionSession::SHOW_WITH_ASSIST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession",
 			"SHOW_WITH_ASSIST"
 		);
 	}
 	jint VoiceInteractionSession::SHOW_WITH_SCREENSHOT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession",
 			"SHOW_WITH_SCREENSHOT"
 		);

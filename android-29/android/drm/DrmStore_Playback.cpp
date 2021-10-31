@@ -5,28 +5,28 @@ namespace android::drm
 	// Fields
 	jint DrmStore_Playback::PAUSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmStore$Playback",
 			"PAUSE"
 		);
 	}
 	jint DrmStore_Playback::RESUME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmStore$Playback",
 			"RESUME"
 		);
 	}
 	jint DrmStore_Playback::START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmStore$Playback",
 			"START"
 		);
 	}
 	jint DrmStore_Playback::STOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmStore$Playback",
 			"STOP"
 		);

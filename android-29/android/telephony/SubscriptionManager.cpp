@@ -11,7 +11,7 @@ namespace android::telephony
 	// Fields
 	jstring SubscriptionManager::ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED",
 			"Ljava/lang/String;"
@@ -19,7 +19,7 @@ namespace android::telephony
 	}
 	jstring SubscriptionManager::ACTION_DEFAULT_SUBSCRIPTION_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_DEFAULT_SUBSCRIPTION_CHANGED",
 			"Ljava/lang/String;"
@@ -27,7 +27,7 @@ namespace android::telephony
 	}
 	jstring SubscriptionManager::ACTION_MANAGE_SUBSCRIPTION_PLANS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_MANAGE_SUBSCRIPTION_PLANS",
 			"Ljava/lang/String;"
@@ -35,7 +35,7 @@ namespace android::telephony
 	}
 	jstring SubscriptionManager::ACTION_REFRESH_SUBSCRIPTION_PLANS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_REFRESH_SUBSCRIPTION_PLANS",
 			"Ljava/lang/String;"
@@ -43,28 +43,28 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::DATA_ROAMING_DISABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"DATA_ROAMING_DISABLE"
 		);
 	}
 	jint SubscriptionManager::DATA_ROAMING_ENABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"DATA_ROAMING_ENABLE"
 		);
 	}
 	jint SubscriptionManager::DEFAULT_SUBSCRIPTION_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"DEFAULT_SUBSCRIPTION_ID"
 		);
 	}
 	jstring SubscriptionManager::EXTRA_SUBSCRIPTION_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"EXTRA_SUBSCRIPTION_INDEX",
 			"Ljava/lang/String;"
@@ -72,28 +72,28 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::INVALID_SIM_SLOT_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"INVALID_SIM_SLOT_INDEX"
 		);
 	}
 	jint SubscriptionManager::INVALID_SUBSCRIPTION_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"INVALID_SUBSCRIPTION_ID"
 		);
 	}
 	jint SubscriptionManager::SUBSCRIPTION_TYPE_LOCAL_SIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"SUBSCRIPTION_TYPE_LOCAL_SIM"
 		);
 	}
 	jint SubscriptionManager::SUBSCRIPTION_TYPE_REMOTE_SIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"SUBSCRIPTION_TYPE_REMOTE_SIM"
 		);
@@ -107,7 +107,7 @@ namespace android::telephony
 	// Methods
 	android::telephony::SubscriptionManager SubscriptionManager::from(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.SubscriptionManager",
 			"from",
 			"(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;",
@@ -116,7 +116,7 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::getDefaultDataSubscriptionId()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
 			"getDefaultDataSubscriptionId",
 			"()I"
@@ -124,7 +124,7 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::getDefaultSmsSubscriptionId()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
 			"getDefaultSmsSubscriptionId",
 			"()I"
@@ -132,7 +132,7 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::getDefaultSubscriptionId()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
 			"getDefaultSubscriptionId",
 			"()I"
@@ -140,7 +140,7 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::getDefaultVoiceSubscriptionId()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
 			"getDefaultVoiceSubscriptionId",
 			"()I"
@@ -148,7 +148,7 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::getSlotIndex(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
 			"getSlotIndex",
 			"(I)I",
@@ -157,7 +157,7 @@ namespace android::telephony
 	}
 	jboolean SubscriptionManager::isUsableSubscriptionId(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.telephony.SubscriptionManager",
 			"isUsableSubscriptionId",
 			"(I)Z",
@@ -166,7 +166,7 @@ namespace android::telephony
 	}
 	jboolean SubscriptionManager::isValidSubscriptionId(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.telephony.SubscriptionManager",
 			"isValidSubscriptionId",
 			"(I)Z",

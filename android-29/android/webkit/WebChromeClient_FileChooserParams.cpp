@@ -6,21 +6,21 @@ namespace android::webkit
 	// Fields
 	jint WebChromeClient_FileChooserParams::MODE_OPEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebChromeClient$FileChooserParams",
 			"MODE_OPEN"
 		);
 	}
 	jint WebChromeClient_FileChooserParams::MODE_OPEN_MULTIPLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebChromeClient$FileChooserParams",
 			"MODE_OPEN_MULTIPLE"
 		);
 	}
 	jint WebChromeClient_FileChooserParams::MODE_SAVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebChromeClient$FileChooserParams",
 			"MODE_SAVE"
 		);
@@ -39,7 +39,7 @@ namespace android::webkit
 	// Methods
 	jarray WebChromeClient_FileChooserParams::parseResult(jint arg0, android::content::Intent arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.WebChromeClient$FileChooserParams",
 			"parseResult",
 			"(ILandroid/content/Intent;)[Landroid/net/Uri;",

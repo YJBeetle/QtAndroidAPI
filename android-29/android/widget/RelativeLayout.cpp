@@ -8,161 +8,161 @@ namespace android::widget
 	// Fields
 	jint RelativeLayout::ABOVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ABOVE"
 		);
 	}
 	jint RelativeLayout::ALIGN_BASELINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_BASELINE"
 		);
 	}
 	jint RelativeLayout::ALIGN_BOTTOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_BOTTOM"
 		);
 	}
 	jint RelativeLayout::ALIGN_END()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_END"
 		);
 	}
 	jint RelativeLayout::ALIGN_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_LEFT"
 		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_BOTTOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_PARENT_BOTTOM"
 		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_END()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_PARENT_END"
 		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_PARENT_LEFT"
 		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_PARENT_RIGHT"
 		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_PARENT_START"
 		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_TOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_PARENT_TOP"
 		);
 	}
 	jint RelativeLayout::ALIGN_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_RIGHT"
 		);
 	}
 	jint RelativeLayout::ALIGN_START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_START"
 		);
 	}
 	jint RelativeLayout::ALIGN_TOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"ALIGN_TOP"
 		);
 	}
 	jint RelativeLayout::BELOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"BELOW"
 		);
 	}
 	jint RelativeLayout::CENTER_HORIZONTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"CENTER_HORIZONTAL"
 		);
 	}
 	jint RelativeLayout::CENTER_IN_PARENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"CENTER_IN_PARENT"
 		);
 	}
 	jint RelativeLayout::CENTER_VERTICAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"CENTER_VERTICAL"
 		);
 	}
 	jint RelativeLayout::END_OF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"END_OF"
 		);
 	}
 	jint RelativeLayout::LEFT_OF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"LEFT_OF"
 		);
 	}
 	jint RelativeLayout::RIGHT_OF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"RIGHT_OF"
 		);
 	}
 	jint RelativeLayout::START_OF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"START_OF"
 		);
 	}
 	jint RelativeLayout::TRUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.RelativeLayout",
 			"TRUE"
 		);

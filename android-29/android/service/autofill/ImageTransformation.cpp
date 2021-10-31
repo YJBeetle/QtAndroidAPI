@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass ImageTransformation::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.ImageTransformation",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

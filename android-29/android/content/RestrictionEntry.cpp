@@ -7,7 +7,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass RestrictionEntry::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.RestrictionEntry",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,56 +15,56 @@ namespace android::content
 	}
 	jint RestrictionEntry::TYPE_BOOLEAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.RestrictionEntry",
 			"TYPE_BOOLEAN"
 		);
 	}
 	jint RestrictionEntry::TYPE_BUNDLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.RestrictionEntry",
 			"TYPE_BUNDLE"
 		);
 	}
 	jint RestrictionEntry::TYPE_BUNDLE_ARRAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.RestrictionEntry",
 			"TYPE_BUNDLE_ARRAY"
 		);
 	}
 	jint RestrictionEntry::TYPE_CHOICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.RestrictionEntry",
 			"TYPE_CHOICE"
 		);
 	}
 	jint RestrictionEntry::TYPE_INTEGER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.RestrictionEntry",
 			"TYPE_INTEGER"
 		);
 	}
 	jint RestrictionEntry::TYPE_MULTI_SELECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.RestrictionEntry",
 			"TYPE_MULTI_SELECT"
 		);
 	}
 	jint RestrictionEntry::TYPE_NULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.RestrictionEntry",
 			"TYPE_NULL"
 		);
 	}
 	jint RestrictionEntry::TYPE_STRING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.RestrictionEntry",
 			"TYPE_STRING"
 		);
@@ -119,7 +119,7 @@ namespace android::content
 	// Methods
 	android::content::RestrictionEntry RestrictionEntry::createBundleArrayEntry(jstring arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.RestrictionEntry",
 			"createBundleArrayEntry",
 			"(Ljava/lang/String;[Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;",
@@ -129,7 +129,7 @@ namespace android::content
 	}
 	android::content::RestrictionEntry RestrictionEntry::createBundleEntry(jstring arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.RestrictionEntry",
 			"createBundleEntry",
 			"(Ljava/lang/String;[Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;",

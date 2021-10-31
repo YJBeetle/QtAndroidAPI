@@ -8,7 +8,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::PluralRules PluralRules::DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"DEFAULT",
 			"Landroid/icu/text/PluralRules;"
@@ -16,7 +16,7 @@ namespace android::icu::text
 	}
 	jstring PluralRules::KEYWORD_FEW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_FEW",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::icu::text
 	}
 	jstring PluralRules::KEYWORD_MANY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_MANY",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace android::icu::text
 	}
 	jstring PluralRules::KEYWORD_ONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_ONE",
 			"Ljava/lang/String;"
@@ -40,7 +40,7 @@ namespace android::icu::text
 	}
 	jstring PluralRules::KEYWORD_OTHER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_OTHER",
 			"Ljava/lang/String;"
@@ -48,7 +48,7 @@ namespace android::icu::text
 	}
 	jstring PluralRules::KEYWORD_TWO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_TWO",
 			"Ljava/lang/String;"
@@ -56,7 +56,7 @@ namespace android::icu::text
 	}
 	jstring PluralRules::KEYWORD_ZERO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.PluralRules",
 			"KEYWORD_ZERO",
 			"Ljava/lang/String;"
@@ -64,7 +64,7 @@ namespace android::icu::text
 	}
 	jdouble PluralRules::NO_UNIQUE_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jdouble>(
+		return getStaticField<jdouble>(
 			"android.icu.text.PluralRules",
 			"NO_UNIQUE_VALUE"
 		);
@@ -78,7 +78,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::PluralRules PluralRules::createRules(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.PluralRules",
 			"createRules",
 			"(Ljava/lang/String;)Landroid/icu/text/PluralRules;",
@@ -87,7 +87,7 @@ namespace android::icu::text
 	}
 	android::icu::text::PluralRules PluralRules::forLocale(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.PluralRules",
 			"forLocale",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/PluralRules;",
@@ -96,7 +96,7 @@ namespace android::icu::text
 	}
 	android::icu::text::PluralRules PluralRules::forLocale(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.PluralRules",
 			"forLocale",
 			"(Ljava/util/Locale;)Landroid/icu/text/PluralRules;",
@@ -105,7 +105,7 @@ namespace android::icu::text
 	}
 	android::icu::text::PluralRules PluralRules::forLocale(android::icu::util::ULocale arg0, android::icu::text::PluralRules_PluralType arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.PluralRules",
 			"forLocale",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/PluralRules$PluralType;)Landroid/icu/text/PluralRules;",
@@ -115,7 +115,7 @@ namespace android::icu::text
 	}
 	android::icu::text::PluralRules PluralRules::forLocale(java::util::Locale arg0, android::icu::text::PluralRules_PluralType arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.PluralRules",
 			"forLocale",
 			"(Ljava/util/Locale;Landroid/icu/text/PluralRules$PluralType;)Landroid/icu/text/PluralRules;",
@@ -125,7 +125,7 @@ namespace android::icu::text
 	}
 	android::icu::text::PluralRules PluralRules::parseDescription(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.PluralRules",
 			"parseDescription",
 			"(Ljava/lang/String;)Landroid/icu/text/PluralRules;",

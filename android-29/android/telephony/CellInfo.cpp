@@ -6,35 +6,35 @@ namespace android::telephony
 	// Fields
 	jint CellInfo::CONNECTION_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.CellInfo",
 			"CONNECTION_NONE"
 		);
 	}
 	jint CellInfo::CONNECTION_PRIMARY_SERVING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.CellInfo",
 			"CONNECTION_PRIMARY_SERVING"
 		);
 	}
 	jint CellInfo::CONNECTION_SECONDARY_SERVING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.CellInfo",
 			"CONNECTION_SECONDARY_SERVING"
 		);
 	}
 	jint CellInfo::CONNECTION_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.CellInfo",
 			"CONNECTION_UNKNOWN"
 		);
 	}
 	__JniBaseClass CellInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.CellInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -42,14 +42,14 @@ namespace android::telephony
 	}
 	jint CellInfo::UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.CellInfo",
 			"UNAVAILABLE"
 		);
 	}
 	jlong CellInfo::UNAVAILABLE_LONG()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.telephony.CellInfo",
 			"UNAVAILABLE_LONG"
 		);

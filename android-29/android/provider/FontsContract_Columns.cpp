@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring FontsContract_Columns::FILE_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"FILE_ID",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::provider
 	}
 	jstring FontsContract_Columns::ITALIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"ITALIC",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::provider
 	}
 	jstring FontsContract_Columns::RESULT_CODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"RESULT_CODE",
 			"Ljava/lang/String;"
@@ -29,35 +29,35 @@ namespace android::provider
 	}
 	jint FontsContract_Columns::RESULT_CODE_FONT_NOT_FOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$Columns",
 			"RESULT_CODE_FONT_NOT_FOUND"
 		);
 	}
 	jint FontsContract_Columns::RESULT_CODE_FONT_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$Columns",
 			"RESULT_CODE_FONT_UNAVAILABLE"
 		);
 	}
 	jint FontsContract_Columns::RESULT_CODE_MALFORMED_QUERY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$Columns",
 			"RESULT_CODE_MALFORMED_QUERY"
 		);
 	}
 	jint FontsContract_Columns::RESULT_CODE_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.FontsContract$Columns",
 			"RESULT_CODE_OK"
 		);
 	}
 	jstring FontsContract_Columns::TTC_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"TTC_INDEX",
 			"Ljava/lang/String;"
@@ -65,7 +65,7 @@ namespace android::provider
 	}
 	jstring FontsContract_Columns::VARIATION_SETTINGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"VARIATION_SETTINGS",
 			"Ljava/lang/String;"
@@ -73,7 +73,7 @@ namespace android::provider
 	}
 	jstring FontsContract_Columns::WEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"WEIGHT",
 			"Ljava/lang/String;"

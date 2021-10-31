@@ -7,7 +7,7 @@ namespace android::bluetooth::le
 	// Fields
 	__JniBaseClass AdvertiseData::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.le.AdvertiseData",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -9,7 +9,7 @@ namespace android::companion
 	// Fields
 	jstring CompanionDeviceManager::EXTRA_DEVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.companion.CompanionDeviceManager",
 			"EXTRA_DEVICE",
 			"Ljava/lang/String;"

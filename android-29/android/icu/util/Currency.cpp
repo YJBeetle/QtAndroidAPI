@@ -10,21 +10,21 @@ namespace android::icu::util
 	// Fields
 	jint Currency::LONG_NAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Currency",
 			"LONG_NAME"
 		);
 	}
 	jint Currency::PLURAL_LONG_NAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Currency",
 			"PLURAL_LONG_NAME"
 		);
 	}
 	jint Currency::SYMBOL_NAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.Currency",
 			"SYMBOL_NAME"
 		);
@@ -38,7 +38,7 @@ namespace android::icu::util
 	// Methods
 	android::icu::util::Currency Currency::fromJavaCurrency(java::util::Currency arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"fromJavaCurrency",
 			"(Ljava/util/Currency;)Landroid/icu/util/Currency;",
@@ -47,7 +47,7 @@ namespace android::icu::util
 	}
 	__JniBaseClass Currency::getAvailableCurrencies()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"getAvailableCurrencies",
 			"()Ljava/util/Set;"
@@ -55,7 +55,7 @@ namespace android::icu::util
 	}
 	jarray Currency::getAvailableCurrencyCodes(android::icu::util::ULocale arg0, java::util::Date arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"getAvailableCurrencyCodes",
 			"(Landroid/icu/util/ULocale;Ljava/util/Date;)[Ljava/lang/String;",
@@ -65,7 +65,7 @@ namespace android::icu::util
 	}
 	jarray Currency::getAvailableCurrencyCodes(java::util::Locale arg0, java::util::Date arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"getAvailableCurrencyCodes",
 			"(Ljava/util/Locale;Ljava/util/Date;)[Ljava/lang/String;",
@@ -75,7 +75,7 @@ namespace android::icu::util
 	}
 	jarray Currency::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -83,7 +83,7 @@ namespace android::icu::util
 	}
 	jarray Currency::getAvailableULocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"getAvailableULocales",
 			"()[Landroid/icu/util/ULocale;"
@@ -91,7 +91,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Currency Currency::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/Currency;",
@@ -100,7 +100,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Currency Currency::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/util/Currency;",
@@ -109,7 +109,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Currency Currency::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/util/Currency;",
@@ -118,7 +118,7 @@ namespace android::icu::util
 	}
 	jarray Currency::getKeywordValuesForLocale(jstring arg0, android::icu::util::ULocale arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"getKeywordValuesForLocale",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
@@ -129,7 +129,7 @@ namespace android::icu::util
 	}
 	jboolean Currency::isAvailable(jstring arg0, java::util::Date arg1, java::util::Date arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.util.Currency",
 			"isAvailable",
 			"(Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;)Z",

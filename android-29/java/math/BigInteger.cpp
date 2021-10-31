@@ -9,7 +9,7 @@ namespace java::math
 	// Fields
 	java::math::BigInteger BigInteger::ONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.BigInteger",
 			"ONE",
 			"Ljava/math/BigInteger;"
@@ -17,7 +17,7 @@ namespace java::math
 	}
 	java::math::BigInteger BigInteger::TEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.BigInteger",
 			"TEN",
 			"Ljava/math/BigInteger;"
@@ -25,7 +25,7 @@ namespace java::math
 	}
 	java::math::BigInteger BigInteger::TWO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.BigInteger",
 			"TWO",
 			"Ljava/math/BigInteger;"
@@ -33,7 +33,7 @@ namespace java::math
 	}
 	java::math::BigInteger BigInteger::ZERO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.BigInteger",
 			"ZERO",
 			"Ljava/math/BigInteger;"
@@ -106,7 +106,7 @@ namespace java::math
 	// Methods
 	java::math::BigInteger BigInteger::probablePrime(jint arg0, java::util::Random arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.math.BigInteger",
 			"probablePrime",
 			"(ILjava/util/Random;)Ljava/math/BigInteger;",
@@ -116,7 +116,7 @@ namespace java::math
 	}
 	java::math::BigInteger BigInteger::valueOf(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.math.BigInteger",
 			"valueOf",
 			"(J)Ljava/math/BigInteger;",

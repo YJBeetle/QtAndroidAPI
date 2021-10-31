@@ -7,7 +7,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass UriPermission::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.UriPermission",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::content
 	}
 	jlong UriPermission::INVALID_TIME()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.content.UriPermission",
 			"INVALID_TIME"
 		);

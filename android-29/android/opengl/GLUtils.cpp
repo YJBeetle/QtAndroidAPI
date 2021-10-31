@@ -13,7 +13,7 @@ namespace android::opengl
 	// Methods
 	jstring GLUtils::getEGLErrorString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.opengl.GLUtils",
 			"getEGLErrorString",
 			"(I)Ljava/lang/String;",
@@ -22,7 +22,7 @@ namespace android::opengl
 	}
 	jint GLUtils::getInternalFormat(android::graphics::Bitmap arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.opengl.GLUtils",
 			"getInternalFormat",
 			"(Landroid/graphics/Bitmap;)I",
@@ -31,7 +31,7 @@ namespace android::opengl
 	}
 	jint GLUtils::getType(android::graphics::Bitmap arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.opengl.GLUtils",
 			"getType",
 			"(Landroid/graphics/Bitmap;)I",
@@ -40,7 +40,7 @@ namespace android::opengl
 	}
 	void GLUtils::texImage2D(jint arg0, jint arg1, android::graphics::Bitmap arg2, jint arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.GLUtils",
 			"texImage2D",
 			"(IILandroid/graphics/Bitmap;I)V",
@@ -52,7 +52,7 @@ namespace android::opengl
 	}
 	void GLUtils::texImage2D(jint arg0, jint arg1, jint arg2, android::graphics::Bitmap arg3, jint arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.GLUtils",
 			"texImage2D",
 			"(IIILandroid/graphics/Bitmap;I)V",
@@ -65,7 +65,7 @@ namespace android::opengl
 	}
 	void GLUtils::texImage2D(jint arg0, jint arg1, jint arg2, android::graphics::Bitmap arg3, jint arg4, jint arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.GLUtils",
 			"texImage2D",
 			"(IIILandroid/graphics/Bitmap;II)V",
@@ -79,7 +79,7 @@ namespace android::opengl
 	}
 	void GLUtils::texSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, android::graphics::Bitmap arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.GLUtils",
 			"texSubImage2D",
 			"(IIIILandroid/graphics/Bitmap;)V",
@@ -92,7 +92,7 @@ namespace android::opengl
 	}
 	void GLUtils::texSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, android::graphics::Bitmap arg4, jint arg5, jint arg6)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.GLUtils",
 			"texSubImage2D",
 			"(IIIILandroid/graphics/Bitmap;II)V",

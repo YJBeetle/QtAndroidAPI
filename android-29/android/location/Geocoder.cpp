@@ -27,7 +27,7 @@ namespace android::location
 	// Methods
 	jboolean Geocoder::isPresent()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.location.Geocoder",
 			"isPresent",
 			"()Z"

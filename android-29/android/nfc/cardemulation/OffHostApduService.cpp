@@ -6,7 +6,7 @@ namespace android::nfc::cardemulation
 	// Fields
 	jstring OffHostApduService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.cardemulation.OffHostApduService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::nfc::cardemulation
 	}
 	jstring OffHostApduService::SERVICE_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.cardemulation.OffHostApduService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"

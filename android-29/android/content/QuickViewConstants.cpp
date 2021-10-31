@@ -5,7 +5,7 @@ namespace android::content
 	// Fields
 	jstring QuickViewConstants::FEATURE_DELETE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_DELETE",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::content
 	}
 	jstring QuickViewConstants::FEATURE_DOWNLOAD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_DOWNLOAD",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::content
 	}
 	jstring QuickViewConstants::FEATURE_EDIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_EDIT",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::content
 	}
 	jstring QuickViewConstants::FEATURE_PRINT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_PRINT",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::content
 	}
 	jstring QuickViewConstants::FEATURE_SEND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_SEND",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::content
 	}
 	jstring QuickViewConstants::FEATURE_VIEW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_VIEW",
 			"Ljava/lang/String;"

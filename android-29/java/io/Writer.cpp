@@ -12,7 +12,7 @@ namespace java::io
 	// Methods
 	java::io::Writer Writer::nullWriter()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.io.Writer",
 			"nullWriter",
 			"()Ljava/io/Writer;"

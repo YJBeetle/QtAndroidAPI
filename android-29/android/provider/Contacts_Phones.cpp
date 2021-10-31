@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri Contacts_Phones::CONTENT_FILTER_URL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"CONTENT_FILTER_URL",
 			"Landroid/net/Uri;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	jstring Contacts_Phones::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	jstring Contacts_Phones::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::provider
 	}
 	android::net::Uri Contacts_Phones::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -39,7 +39,7 @@ namespace android::provider
 	}
 	jstring Contacts_Phones::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -47,7 +47,7 @@ namespace android::provider
 	}
 	jstring Contacts_Phones::PERSON_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"PERSON_ID",
 			"Ljava/lang/String;"
@@ -62,7 +62,7 @@ namespace android::provider
 	// Methods
 	jstring Contacts_Phones::getDisplayLabel(android::content::Context arg0, jint arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Contacts$Phones",
 			"getDisplayLabel",
 			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
@@ -73,7 +73,7 @@ namespace android::provider
 	}
 	jstring Contacts_Phones::getDisplayLabel(android::content::Context arg0, jint arg1, jstring arg2, jarray arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Contacts$Phones",
 			"getDisplayLabel",
 			"(Landroid/content/Context;ILjava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",

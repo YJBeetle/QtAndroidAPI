@@ -26,7 +26,7 @@ namespace dalvik::system
 	// Methods
 	jboolean DexFile::isDexOptNeeded(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"dalvik.system.DexFile",
 			"isDexOptNeeded",
 			"(Ljava/lang/String;)Z",
@@ -35,7 +35,7 @@ namespace dalvik::system
 	}
 	dalvik::system::DexFile DexFile::loadDex(jstring arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"dalvik.system.DexFile",
 			"loadDex",
 			"(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;",

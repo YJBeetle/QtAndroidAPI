@@ -5,7 +5,7 @@ namespace android::media
 	// Fields
 	jstring MediaCodec_MetricsConstants::CODEC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"CODEC",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::media
 	}
 	jstring MediaCodec_MetricsConstants::ENCODER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"ENCODER",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::media
 	}
 	jstring MediaCodec_MetricsConstants::HEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"HEIGHT",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::media
 	}
 	jstring MediaCodec_MetricsConstants::MIME_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"MIME_TYPE",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::media
 	}
 	jstring MediaCodec_MetricsConstants::MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"MODE",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::media
 	}
 	jstring MediaCodec_MetricsConstants::MODE_AUDIO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"MODE_AUDIO",
 			"Ljava/lang/String;"
@@ -53,7 +53,7 @@ namespace android::media
 	}
 	jstring MediaCodec_MetricsConstants::MODE_VIDEO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"MODE_VIDEO",
 			"Ljava/lang/String;"
@@ -61,7 +61,7 @@ namespace android::media
 	}
 	jstring MediaCodec_MetricsConstants::ROTATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"ROTATION",
 			"Ljava/lang/String;"
@@ -69,7 +69,7 @@ namespace android::media
 	}
 	jstring MediaCodec_MetricsConstants::SECURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"SECURE",
 			"Ljava/lang/String;"
@@ -77,7 +77,7 @@ namespace android::media
 	}
 	jstring MediaCodec_MetricsConstants::WIDTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"WIDTH",
 			"Ljava/lang/String;"

@@ -5,28 +5,28 @@ namespace android::location
 	// Fields
 	jint GpsStatus::GPS_EVENT_FIRST_FIX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GpsStatus",
 			"GPS_EVENT_FIRST_FIX"
 		);
 	}
 	jint GpsStatus::GPS_EVENT_SATELLITE_STATUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GpsStatus",
 			"GPS_EVENT_SATELLITE_STATUS"
 		);
 	}
 	jint GpsStatus::GPS_EVENT_STARTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GpsStatus",
 			"GPS_EVENT_STARTED"
 		);
 	}
 	jint GpsStatus::GPS_EVENT_STOPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GpsStatus",
 			"GPS_EVENT_STOPPED"
 		);

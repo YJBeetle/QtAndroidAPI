@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring UserDictionary::AUTHORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary",
 			"AUTHORITY",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri UserDictionary::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.UserDictionary",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"

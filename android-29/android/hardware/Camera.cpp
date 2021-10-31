@@ -8,7 +8,7 @@ namespace android::hardware
 	// Fields
 	jstring Camera::ACTION_NEW_PICTURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera",
 			"ACTION_NEW_PICTURE",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::hardware
 	}
 	jstring Camera::ACTION_NEW_VIDEO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.Camera",
 			"ACTION_NEW_VIDEO",
 			"Ljava/lang/String;"
@@ -24,21 +24,21 @@ namespace android::hardware
 	}
 	jint Camera::CAMERA_ERROR_EVICTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.Camera",
 			"CAMERA_ERROR_EVICTED"
 		);
 	}
 	jint Camera::CAMERA_ERROR_SERVER_DIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.Camera",
 			"CAMERA_ERROR_SERVER_DIED"
 		);
 	}
 	jint Camera::CAMERA_ERROR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.Camera",
 			"CAMERA_ERROR_UNKNOWN"
 		);
@@ -52,7 +52,7 @@ namespace android::hardware
 	// Methods
 	void Camera::getCameraInfo(jint arg0, android::hardware::Camera_CameraInfo arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.hardware.Camera",
 			"getCameraInfo",
 			"(ILandroid/hardware/Camera$CameraInfo;)V",
@@ -62,7 +62,7 @@ namespace android::hardware
 	}
 	jint Camera::getNumberOfCameras()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.hardware.Camera",
 			"getNumberOfCameras",
 			"()I"
@@ -70,7 +70,7 @@ namespace android::hardware
 	}
 	android::hardware::Camera Camera::open()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.hardware.Camera",
 			"open",
 			"()Landroid/hardware/Camera;"
@@ -78,7 +78,7 @@ namespace android::hardware
 	}
 	android::hardware::Camera Camera::open(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.hardware.Camera",
 			"open",
 			"(I)Landroid/hardware/Camera;",

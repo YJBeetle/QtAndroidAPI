@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri ContactsContract_DeletedContacts::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DeletedContacts",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jlong ContactsContract_DeletedContacts::DAYS_KEPT_MILLISECONDS()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.provider.ContactsContract$DeletedContacts",
 			"DAYS_KEPT_MILLISECONDS"
 		);

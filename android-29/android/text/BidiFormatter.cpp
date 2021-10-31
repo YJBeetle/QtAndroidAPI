@@ -13,7 +13,7 @@ namespace android::text
 	// Methods
 	android::text::BidiFormatter BidiFormatter::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.BidiFormatter",
 			"getInstance",
 			"()Landroid/text/BidiFormatter;"
@@ -21,7 +21,7 @@ namespace android::text
 	}
 	android::text::BidiFormatter BidiFormatter::getInstance(jboolean arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.BidiFormatter",
 			"getInstance",
 			"(Z)Landroid/text/BidiFormatter;",
@@ -30,7 +30,7 @@ namespace android::text
 	}
 	android::text::BidiFormatter BidiFormatter::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.BidiFormatter",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/text/BidiFormatter;",

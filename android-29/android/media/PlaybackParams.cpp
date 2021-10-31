@@ -6,28 +6,28 @@ namespace android::media
 	// Fields
 	jint PlaybackParams::AUDIO_FALLBACK_MODE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.PlaybackParams",
 			"AUDIO_FALLBACK_MODE_DEFAULT"
 		);
 	}
 	jint PlaybackParams::AUDIO_FALLBACK_MODE_FAIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.PlaybackParams",
 			"AUDIO_FALLBACK_MODE_FAIL"
 		);
 	}
 	jint PlaybackParams::AUDIO_FALLBACK_MODE_MUTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.PlaybackParams",
 			"AUDIO_FALLBACK_MODE_MUTE"
 		);
 	}
 	__JniBaseClass PlaybackParams::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.PlaybackParams",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::ColorSpace_Adaptation ColorSpace_Adaptation::BRADFORD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace$Adaptation",
 			"BRADFORD",
 			"Landroid/graphics/ColorSpace$Adaptation;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::ColorSpace_Adaptation ColorSpace_Adaptation::CIECAT02()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace$Adaptation",
 			"CIECAT02",
 			"Landroid/graphics/ColorSpace$Adaptation;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::ColorSpace_Adaptation ColorSpace_Adaptation::VON_KRIES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.ColorSpace$Adaptation",
 			"VON_KRIES",
 			"Landroid/graphics/ColorSpace$Adaptation;"
@@ -36,7 +36,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::ColorSpace_Adaptation ColorSpace_Adaptation::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ColorSpace$Adaptation",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Adaptation;",
@@ -45,7 +45,7 @@ namespace android::graphics
 	}
 	jarray ColorSpace_Adaptation::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.ColorSpace$Adaptation",
 			"values",
 			"()[Landroid/graphics/ColorSpace$Adaptation;"

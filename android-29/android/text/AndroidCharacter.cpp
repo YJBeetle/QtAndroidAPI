@@ -5,42 +5,42 @@ namespace android::text
 	// Fields
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_AMBIGUOUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.AndroidCharacter",
 			"EAST_ASIAN_WIDTH_AMBIGUOUS"
 		);
 	}
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_FULL_WIDTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.AndroidCharacter",
 			"EAST_ASIAN_WIDTH_FULL_WIDTH"
 		);
 	}
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_HALF_WIDTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.AndroidCharacter",
 			"EAST_ASIAN_WIDTH_HALF_WIDTH"
 		);
 	}
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_NARROW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.AndroidCharacter",
 			"EAST_ASIAN_WIDTH_NARROW"
 		);
 	}
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_NEUTRAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.AndroidCharacter",
 			"EAST_ASIAN_WIDTH_NEUTRAL"
 		);
 	}
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_WIDE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.AndroidCharacter",
 			"EAST_ASIAN_WIDTH_WIDE"
 		);
@@ -59,7 +59,7 @@ namespace android::text
 	// Methods
 	void AndroidCharacter::getDirectionalities(jcharArray arg0, jbyteArray arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.AndroidCharacter",
 			"getDirectionalities",
 			"([C[BI)V",
@@ -70,7 +70,7 @@ namespace android::text
 	}
 	jint AndroidCharacter::getEastAsianWidth(jchar arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.AndroidCharacter",
 			"getEastAsianWidth",
 			"(C)I",
@@ -79,7 +79,7 @@ namespace android::text
 	}
 	void AndroidCharacter::getEastAsianWidths(jcharArray arg0, jint arg1, jint arg2, jbyteArray arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.AndroidCharacter",
 			"getEastAsianWidths",
 			"([CII[B)V",
@@ -91,7 +91,7 @@ namespace android::text
 	}
 	jchar AndroidCharacter::getMirror(jchar arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jchar>(
+		return callStaticMethod<jchar>(
 			"android.text.AndroidCharacter",
 			"getMirror",
 			"(C)C",
@@ -100,7 +100,7 @@ namespace android::text
 	}
 	jboolean AndroidCharacter::mirror(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.AndroidCharacter",
 			"mirror",
 			"([CII)Z",

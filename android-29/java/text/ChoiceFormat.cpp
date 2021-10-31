@@ -30,7 +30,7 @@ namespace java::text
 	// Methods
 	jdouble ChoiceFormat::nextDouble(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.text.ChoiceFormat",
 			"nextDouble",
 			"(D)D",
@@ -39,7 +39,7 @@ namespace java::text
 	}
 	jdouble ChoiceFormat::nextDouble(jdouble arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.text.ChoiceFormat",
 			"nextDouble",
 			"(DZ)D",
@@ -49,7 +49,7 @@ namespace java::text
 	}
 	jdouble ChoiceFormat::previousDouble(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.text.ChoiceFormat",
 			"previousDouble",
 			"(D)D",

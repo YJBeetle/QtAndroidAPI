@@ -23,147 +23,147 @@ namespace android::media
 	// Fields
 	jint MediaPlayer::MEDIA_ERROR_IO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_ERROR_IO"
 		);
 	}
 	jint MediaPlayer::MEDIA_ERROR_MALFORMED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_ERROR_MALFORMED"
 		);
 	}
 	jint MediaPlayer::MEDIA_ERROR_NOT_VALID_FOR_PROGRESSIVE_PLAYBACK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_ERROR_NOT_VALID_FOR_PROGRESSIVE_PLAYBACK"
 		);
 	}
 	jint MediaPlayer::MEDIA_ERROR_SERVER_DIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_ERROR_SERVER_DIED"
 		);
 	}
 	jint MediaPlayer::MEDIA_ERROR_TIMED_OUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_ERROR_TIMED_OUT"
 		);
 	}
 	jint MediaPlayer::MEDIA_ERROR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_ERROR_UNKNOWN"
 		);
 	}
 	jint MediaPlayer::MEDIA_ERROR_UNSUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_ERROR_UNSUPPORTED"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_AUDIO_NOT_PLAYING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_AUDIO_NOT_PLAYING"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_BAD_INTERLEAVING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_BAD_INTERLEAVING"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_BUFFERING_END()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_BUFFERING_END"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_BUFFERING_START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_BUFFERING_START"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_METADATA_UPDATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_METADATA_UPDATE"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_NOT_SEEKABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_NOT_SEEKABLE"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_STARTED_AS_NEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_STARTED_AS_NEXT"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_SUBTITLE_TIMED_OUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_SUBTITLE_TIMED_OUT"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_UNKNOWN"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_UNSUPPORTED_SUBTITLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_UNSUPPORTED_SUBTITLE"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_VIDEO_NOT_PLAYING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_VIDEO_NOT_PLAYING"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_VIDEO_RENDERING_START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_VIDEO_RENDERING_START"
 		);
 	}
 	jint MediaPlayer::MEDIA_INFO_VIDEO_TRACK_LAGGING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"MEDIA_INFO_VIDEO_TRACK_LAGGING"
 		);
 	}
 	jstring MediaPlayer::MEDIA_MIMETYPE_TEXT_SUBRIP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaPlayer",
 			"MEDIA_MIMETYPE_TEXT_SUBRIP",
 			"Ljava/lang/String;"
@@ -171,70 +171,70 @@ namespace android::media
 	}
 	jint MediaPlayer::PREPARE_DRM_STATUS_PREPARATION_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"PREPARE_DRM_STATUS_PREPARATION_ERROR"
 		);
 	}
 	jint MediaPlayer::PREPARE_DRM_STATUS_PROVISIONING_NETWORK_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"PREPARE_DRM_STATUS_PROVISIONING_NETWORK_ERROR"
 		);
 	}
 	jint MediaPlayer::PREPARE_DRM_STATUS_PROVISIONING_SERVER_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"PREPARE_DRM_STATUS_PROVISIONING_SERVER_ERROR"
 		);
 	}
 	jint MediaPlayer::PREPARE_DRM_STATUS_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"PREPARE_DRM_STATUS_SUCCESS"
 		);
 	}
 	jint MediaPlayer::SEEK_CLOSEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"SEEK_CLOSEST"
 		);
 	}
 	jint MediaPlayer::SEEK_CLOSEST_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"SEEK_CLOSEST_SYNC"
 		);
 	}
 	jint MediaPlayer::SEEK_NEXT_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"SEEK_NEXT_SYNC"
 		);
 	}
 	jint MediaPlayer::SEEK_PREVIOUS_SYNC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"SEEK_PREVIOUS_SYNC"
 		);
 	}
 	jint MediaPlayer::VIDEO_SCALING_MODE_SCALE_TO_FIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"VIDEO_SCALING_MODE_SCALE_TO_FIT"
 		);
 	}
 	jint MediaPlayer::VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaPlayer",
 			"VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING"
 		);
@@ -253,7 +253,7 @@ namespace android::media
 	// Methods
 	android::media::MediaPlayer MediaPlayer::create(android::content::Context arg0, android::net::Uri arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaPlayer",
 			"create",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/media/MediaPlayer;",
@@ -263,7 +263,7 @@ namespace android::media
 	}
 	android::media::MediaPlayer MediaPlayer::create(android::content::Context arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaPlayer",
 			"create",
 			"(Landroid/content/Context;I)Landroid/media/MediaPlayer;",
@@ -273,7 +273,7 @@ namespace android::media
 	}
 	android::media::MediaPlayer MediaPlayer::create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaPlayer",
 			"create",
 			"(Landroid/content/Context;Landroid/net/Uri;Landroid/view/SurfaceHolder;)Landroid/media/MediaPlayer;",
@@ -284,7 +284,7 @@ namespace android::media
 	}
 	android::media::MediaPlayer MediaPlayer::create(android::content::Context arg0, jint arg1, android::media::AudioAttributes arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaPlayer",
 			"create",
 			"(Landroid/content/Context;ILandroid/media/AudioAttributes;I)Landroid/media/MediaPlayer;",
@@ -296,7 +296,7 @@ namespace android::media
 	}
 	android::media::MediaPlayer MediaPlayer::create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2, android::media::AudioAttributes arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaPlayer",
 			"create",
 			"(Landroid/content/Context;Landroid/net/Uri;Landroid/view/SurfaceHolder;Landroid/media/AudioAttributes;I)Landroid/media/MediaPlayer;",

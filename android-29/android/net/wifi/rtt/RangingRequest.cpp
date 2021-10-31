@@ -6,7 +6,7 @@ namespace android::net::wifi::rtt
 	// Fields
 	__JniBaseClass RangingRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.rtt.RangingRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -21,7 +21,7 @@ namespace android::net::wifi::rtt
 	// Methods
 	jint RangingRequest::getMaxPeers()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.net.wifi.rtt.RangingRequest",
 			"getMaxPeers",
 			"()I"

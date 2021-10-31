@@ -7,28 +7,28 @@ namespace java::nio::channels
 	// Fields
 	jint SelectionKey::OP_ACCEPT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.nio.channels.SelectionKey",
 			"OP_ACCEPT"
 		);
 	}
 	jint SelectionKey::OP_CONNECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.nio.channels.SelectionKey",
 			"OP_CONNECT"
 		);
 	}
 	jint SelectionKey::OP_READ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.nio.channels.SelectionKey",
 			"OP_READ"
 		);
 	}
 	jint SelectionKey::OP_WRITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.nio.channels.SelectionKey",
 			"OP_WRITE"
 		);

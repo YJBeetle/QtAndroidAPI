@@ -10,7 +10,7 @@ namespace java::time
 	// Fields
 	__JniBaseClass ZoneId::SHORT_IDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.ZoneId",
 			"SHORT_IDS",
 			"Ljava/util/Map;"
@@ -25,7 +25,7 @@ namespace java::time
 	// Methods
 	java::time::ZoneId ZoneId::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZoneId",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/ZoneId;",
@@ -34,7 +34,7 @@ namespace java::time
 	}
 	__JniBaseClass ZoneId::getAvailableZoneIds()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZoneId",
 			"getAvailableZoneIds",
 			"()Ljava/util/Set;"
@@ -42,7 +42,7 @@ namespace java::time
 	}
 	java::time::ZoneId ZoneId::of(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZoneId",
 			"of",
 			"(Ljava/lang/String;)Ljava/time/ZoneId;",
@@ -51,7 +51,7 @@ namespace java::time
 	}
 	java::time::ZoneId ZoneId::of(jstring arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZoneId",
 			"of",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/time/ZoneId;",
@@ -61,7 +61,7 @@ namespace java::time
 	}
 	java::time::ZoneId ZoneId::ofOffset(jstring arg0, java::time::ZoneOffset arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZoneId",
 			"ofOffset",
 			"(Ljava/lang/String;Ljava/time/ZoneOffset;)Ljava/time/ZoneId;",
@@ -71,7 +71,7 @@ namespace java::time
 	}
 	java::time::ZoneId ZoneId::systemDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZoneId",
 			"systemDefault",
 			"()Ljava/time/ZoneId;"

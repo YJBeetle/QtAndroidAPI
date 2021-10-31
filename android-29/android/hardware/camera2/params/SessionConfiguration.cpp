@@ -9,7 +9,7 @@ namespace android::hardware::camera2::params
 	// Fields
 	__JniBaseClass SessionConfiguration::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.params.SessionConfiguration",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -17,14 +17,14 @@ namespace android::hardware::camera2::params
 	}
 	jint SessionConfiguration::SESSION_HIGH_SPEED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.SessionConfiguration",
 			"SESSION_HIGH_SPEED"
 		);
 	}
 	jint SessionConfiguration::SESSION_REGULAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.SessionConfiguration",
 			"SESSION_REGULAR"
 		);

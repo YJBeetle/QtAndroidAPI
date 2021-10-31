@@ -24,7 +24,7 @@ namespace android::system
 	// Methods
 	android::system::StructTimeval StructTimeval::fromMillis(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.system.StructTimeval",
 			"fromMillis",
 			"(J)Landroid/system/StructTimeval;",

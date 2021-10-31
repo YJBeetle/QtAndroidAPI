@@ -9,14 +9,14 @@ namespace android::media
 	// Fields
 	jint RemoteController::POSITION_SYNCHRONIZATION_CHECK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteController",
 			"POSITION_SYNCHRONIZATION_CHECK"
 		);
 	}
 	jint RemoteController::POSITION_SYNCHRONIZATION_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteController",
 			"POSITION_SYNCHRONIZATION_NONE"
 		);

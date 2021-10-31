@@ -11,21 +11,21 @@ namespace android::net::wifi::p2p
 	// Fields
 	jint WifiP2pManager::BUSY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"BUSY"
 		);
 	}
 	jint WifiP2pManager::ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"ERROR"
 		);
 	}
 	jstring WifiP2pManager::EXTRA_DISCOVERY_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_DISCOVERY_STATE",
 			"Ljava/lang/String;"
@@ -33,7 +33,7 @@ namespace android::net::wifi::p2p
 	}
 	jstring WifiP2pManager::EXTRA_NETWORK_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_NETWORK_INFO",
 			"Ljava/lang/String;"
@@ -41,7 +41,7 @@ namespace android::net::wifi::p2p
 	}
 	jstring WifiP2pManager::EXTRA_P2P_DEVICE_LIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_P2P_DEVICE_LIST",
 			"Ljava/lang/String;"
@@ -49,7 +49,7 @@ namespace android::net::wifi::p2p
 	}
 	jstring WifiP2pManager::EXTRA_WIFI_P2P_DEVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_P2P_DEVICE",
 			"Ljava/lang/String;"
@@ -57,7 +57,7 @@ namespace android::net::wifi::p2p
 	}
 	jstring WifiP2pManager::EXTRA_WIFI_P2P_GROUP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_P2P_GROUP",
 			"Ljava/lang/String;"
@@ -65,7 +65,7 @@ namespace android::net::wifi::p2p
 	}
 	jstring WifiP2pManager::EXTRA_WIFI_P2P_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_P2P_INFO",
 			"Ljava/lang/String;"
@@ -73,7 +73,7 @@ namespace android::net::wifi::p2p
 	}
 	jstring WifiP2pManager::EXTRA_WIFI_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_STATE",
 			"Ljava/lang/String;"
@@ -81,21 +81,21 @@ namespace android::net::wifi::p2p
 	}
 	jint WifiP2pManager::NO_SERVICE_REQUESTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"NO_SERVICE_REQUESTS"
 		);
 	}
 	jint WifiP2pManager::P2P_UNSUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"P2P_UNSUPPORTED"
 		);
 	}
 	jstring WifiP2pManager::WIFI_P2P_CONNECTION_CHANGED_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_CONNECTION_CHANGED_ACTION",
 			"Ljava/lang/String;"
@@ -103,7 +103,7 @@ namespace android::net::wifi::p2p
 	}
 	jstring WifiP2pManager::WIFI_P2P_DISCOVERY_CHANGED_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_DISCOVERY_CHANGED_ACTION",
 			"Ljava/lang/String;"
@@ -111,21 +111,21 @@ namespace android::net::wifi::p2p
 	}
 	jint WifiP2pManager::WIFI_P2P_DISCOVERY_STARTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_DISCOVERY_STARTED"
 		);
 	}
 	jint WifiP2pManager::WIFI_P2P_DISCOVERY_STOPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_DISCOVERY_STOPPED"
 		);
 	}
 	jstring WifiP2pManager::WIFI_P2P_PEERS_CHANGED_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_PEERS_CHANGED_ACTION",
 			"Ljava/lang/String;"
@@ -133,7 +133,7 @@ namespace android::net::wifi::p2p
 	}
 	jstring WifiP2pManager::WIFI_P2P_STATE_CHANGED_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_STATE_CHANGED_ACTION",
 			"Ljava/lang/String;"
@@ -141,21 +141,21 @@ namespace android::net::wifi::p2p
 	}
 	jint WifiP2pManager::WIFI_P2P_STATE_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_STATE_DISABLED"
 		);
 	}
 	jint WifiP2pManager::WIFI_P2P_STATE_ENABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_STATE_ENABLED"
 		);
 	}
 	jstring WifiP2pManager::WIFI_P2P_THIS_DEVICE_CHANGED_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_THIS_DEVICE_CHANGED_ACTION",
 			"Ljava/lang/String;"

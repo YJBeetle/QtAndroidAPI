@@ -12,7 +12,7 @@ namespace java::util::stream
 	// Methods
 	__JniBaseClass StreamSupport::doubleStream(__JniBaseClass arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
 			"doubleStream",
 			"(Ljava/util/Spliterator$OfDouble;Z)Ljava/util/stream/DoubleStream;",
@@ -22,7 +22,7 @@ namespace java::util::stream
 	}
 	__JniBaseClass StreamSupport::doubleStream(__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
 			"doubleStream",
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/DoubleStream;",
@@ -33,7 +33,7 @@ namespace java::util::stream
 	}
 	__JniBaseClass StreamSupport::intStream(__JniBaseClass arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
 			"intStream",
 			"(Ljava/util/Spliterator$OfInt;Z)Ljava/util/stream/IntStream;",
@@ -43,7 +43,7 @@ namespace java::util::stream
 	}
 	__JniBaseClass StreamSupport::intStream(__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
 			"intStream",
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/IntStream;",
@@ -54,7 +54,7 @@ namespace java::util::stream
 	}
 	__JniBaseClass StreamSupport::longStream(__JniBaseClass arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
 			"longStream",
 			"(Ljava/util/Spliterator$OfLong;Z)Ljava/util/stream/LongStream;",
@@ -64,7 +64,7 @@ namespace java::util::stream
 	}
 	__JniBaseClass StreamSupport::longStream(__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
 			"longStream",
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/LongStream;",
@@ -75,7 +75,7 @@ namespace java::util::stream
 	}
 	__JniBaseClass StreamSupport::stream(__JniBaseClass arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
 			"stream",
 			"(Ljava/util/Spliterator;Z)Ljava/util/stream/Stream;",
@@ -85,7 +85,7 @@ namespace java::util::stream
 	}
 	__JniBaseClass StreamSupport::stream(__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
 			"stream",
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/Stream;",

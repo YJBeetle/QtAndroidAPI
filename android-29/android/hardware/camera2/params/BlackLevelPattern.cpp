@@ -5,7 +5,7 @@ namespace android::hardware::camera2::params
 	// Fields
 	jint BlackLevelPattern::COUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.BlackLevelPattern",
 			"COUNT"
 		);

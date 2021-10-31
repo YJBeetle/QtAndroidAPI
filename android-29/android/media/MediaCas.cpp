@@ -20,7 +20,7 @@ namespace android::media
 	// Methods
 	jarray MediaCas::enumeratePlugins()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaCas",
 			"enumeratePlugins",
 			"()[Landroid/media/MediaCas$PluginDescriptor;"
@@ -28,7 +28,7 @@ namespace android::media
 	}
 	jboolean MediaCas::isSystemIdSupported(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.MediaCas",
 			"isSystemIdSupported",
 			"(I)Z",

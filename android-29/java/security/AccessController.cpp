@@ -17,7 +17,7 @@ namespace java::security
 	// Methods
 	void AccessController::checkPermission(java::security::Permission arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.security.AccessController",
 			"checkPermission",
 			"(Ljava/security/Permission;)V",
@@ -26,7 +26,7 @@ namespace java::security
 	}
 	jobject AccessController::doPrivileged(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.AccessController",
 			"doPrivileged",
 			"(Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
@@ -35,7 +35,7 @@ namespace java::security
 	}
 	jobject AccessController::doPrivileged(__JniBaseClass arg0, java::security::AccessControlContext arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.AccessController",
 			"doPrivileged",
 			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;",
@@ -45,7 +45,7 @@ namespace java::security
 	}
 	jobject AccessController::doPrivileged(__JniBaseClass arg0, java::security::AccessControlContext arg1, jarray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.AccessController",
 			"doPrivileged",
 			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;[Ljava/security/Permission;)Ljava/lang/Object;",
@@ -56,7 +56,7 @@ namespace java::security
 	}
 	jobject AccessController::doPrivilegedWithCombiner(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.AccessController",
 			"doPrivilegedWithCombiner",
 			"(Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
@@ -65,7 +65,7 @@ namespace java::security
 	}
 	jobject AccessController::doPrivilegedWithCombiner(__JniBaseClass arg0, java::security::AccessControlContext arg1, jarray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.AccessController",
 			"doPrivilegedWithCombiner",
 			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;[Ljava/security/Permission;)Ljava/lang/Object;",
@@ -76,7 +76,7 @@ namespace java::security
 	}
 	java::security::AccessControlContext AccessController::getContext()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.AccessController",
 			"getContext",
 			"()Ljava/security/AccessControlContext;"

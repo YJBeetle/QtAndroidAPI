@@ -8,35 +8,35 @@ namespace android::media
 	// Fields
 	jbyte MediaDescrambler::SCRAMBLE_CONTROL_EVEN_KEY()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.media.MediaDescrambler",
 			"SCRAMBLE_CONTROL_EVEN_KEY"
 		);
 	}
 	jbyte MediaDescrambler::SCRAMBLE_CONTROL_ODD_KEY()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.media.MediaDescrambler",
 			"SCRAMBLE_CONTROL_ODD_KEY"
 		);
 	}
 	jbyte MediaDescrambler::SCRAMBLE_CONTROL_RESERVED()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.media.MediaDescrambler",
 			"SCRAMBLE_CONTROL_RESERVED"
 		);
 	}
 	jbyte MediaDescrambler::SCRAMBLE_CONTROL_UNSCRAMBLED()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.media.MediaDescrambler",
 			"SCRAMBLE_CONTROL_UNSCRAMBLED"
 		);
 	}
 	jbyte MediaDescrambler::SCRAMBLE_FLAG_PES_HEADER()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.media.MediaDescrambler",
 			"SCRAMBLE_FLAG_PES_HEADER"
 		);

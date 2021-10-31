@@ -8,63 +8,63 @@ namespace android::view::animation
 	// Fields
 	jint GridLayoutAnimationController::DIRECTION_BOTTOM_TO_TOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
 			"DIRECTION_BOTTOM_TO_TOP"
 		);
 	}
 	jint GridLayoutAnimationController::DIRECTION_HORIZONTAL_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
 			"DIRECTION_HORIZONTAL_MASK"
 		);
 	}
 	jint GridLayoutAnimationController::DIRECTION_LEFT_TO_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
 			"DIRECTION_LEFT_TO_RIGHT"
 		);
 	}
 	jint GridLayoutAnimationController::DIRECTION_RIGHT_TO_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
 			"DIRECTION_RIGHT_TO_LEFT"
 		);
 	}
 	jint GridLayoutAnimationController::DIRECTION_TOP_TO_BOTTOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
 			"DIRECTION_TOP_TO_BOTTOM"
 		);
 	}
 	jint GridLayoutAnimationController::DIRECTION_VERTICAL_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
 			"DIRECTION_VERTICAL_MASK"
 		);
 	}
 	jint GridLayoutAnimationController::PRIORITY_COLUMN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
 			"PRIORITY_COLUMN"
 		);
 	}
 	jint GridLayoutAnimationController::PRIORITY_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
 			"PRIORITY_NONE"
 		);
 	}
 	jint GridLayoutAnimationController::PRIORITY_ROW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
 			"PRIORITY_ROW"
 		);

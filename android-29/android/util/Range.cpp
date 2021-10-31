@@ -19,7 +19,7 @@ namespace android::util
 	// Methods
 	android::util::Range Range::create(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Range",
 			"create",
 			"(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;",

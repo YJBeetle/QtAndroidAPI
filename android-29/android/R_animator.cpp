@@ -5,14 +5,14 @@ namespace android
 	// Fields
 	jint R_animator::fade_in()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.R$animator",
 			"fade_in"
 		);
 	}
 	jint R_animator::fade_out()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.R$animator",
 			"fade_out"
 		);

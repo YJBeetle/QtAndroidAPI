@@ -18,7 +18,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri MediaStore_Files::getContentUri(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Files",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
@@ -27,7 +27,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Files::getContentUri(jstring arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Files",
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",

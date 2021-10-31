@@ -21,7 +21,7 @@ namespace android::database::sqlite
 	// Methods
 	void SQLiteQueryBuilder::appendColumns(java::lang::StringBuilder arg0, jarray arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.database.sqlite.SQLiteQueryBuilder",
 			"appendColumns",
 			"(Ljava/lang/StringBuilder;[Ljava/lang/String;)V",
@@ -31,7 +31,7 @@ namespace android::database::sqlite
 	}
 	jstring SQLiteQueryBuilder::buildQueryString(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteQueryBuilder",
 			"buildQueryString",
 			"(ZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",

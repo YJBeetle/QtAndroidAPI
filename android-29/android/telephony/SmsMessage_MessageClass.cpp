@@ -5,7 +5,7 @@ namespace android::telephony
 	// Fields
 	android::telephony::SmsMessage_MessageClass SmsMessage_MessageClass::CLASS_0()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SmsMessage$MessageClass",
 			"CLASS_0",
 			"Landroid/telephony/SmsMessage$MessageClass;"
@@ -13,7 +13,7 @@ namespace android::telephony
 	}
 	android::telephony::SmsMessage_MessageClass SmsMessage_MessageClass::CLASS_1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SmsMessage$MessageClass",
 			"CLASS_1",
 			"Landroid/telephony/SmsMessage$MessageClass;"
@@ -21,7 +21,7 @@ namespace android::telephony
 	}
 	android::telephony::SmsMessage_MessageClass SmsMessage_MessageClass::CLASS_2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SmsMessage$MessageClass",
 			"CLASS_2",
 			"Landroid/telephony/SmsMessage$MessageClass;"
@@ -29,7 +29,7 @@ namespace android::telephony
 	}
 	android::telephony::SmsMessage_MessageClass SmsMessage_MessageClass::CLASS_3()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SmsMessage$MessageClass",
 			"CLASS_3",
 			"Landroid/telephony/SmsMessage$MessageClass;"
@@ -37,7 +37,7 @@ namespace android::telephony
 	}
 	android::telephony::SmsMessage_MessageClass SmsMessage_MessageClass::UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SmsMessage$MessageClass",
 			"UNKNOWN",
 			"Landroid/telephony/SmsMessage$MessageClass;"
@@ -52,7 +52,7 @@ namespace android::telephony
 	// Methods
 	android::telephony::SmsMessage_MessageClass SmsMessage_MessageClass::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.SmsMessage$MessageClass",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/telephony/SmsMessage$MessageClass;",
@@ -61,7 +61,7 @@ namespace android::telephony
 	}
 	jarray SmsMessage_MessageClass::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.SmsMessage$MessageClass",
 			"values",
 			"()[Landroid/telephony/SmsMessage$MessageClass;"

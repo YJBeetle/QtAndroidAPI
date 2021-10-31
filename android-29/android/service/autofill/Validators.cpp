@@ -12,7 +12,7 @@ namespace android::service::autofill
 	// Methods
 	__JniBaseClass Validators::_and(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.service.autofill.Validators",
 			"and",
 			"([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
@@ -21,7 +21,7 @@ namespace android::service::autofill
 	}
 	__JniBaseClass Validators::_not(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.service.autofill.Validators",
 			"not",
 			"(Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
@@ -30,7 +30,7 @@ namespace android::service::autofill
 	}
 	__JniBaseClass Validators::_or(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.service.autofill.Validators",
 			"or",
 			"([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",

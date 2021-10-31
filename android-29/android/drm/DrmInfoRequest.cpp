@@ -5,7 +5,7 @@ namespace android::drm
 	// Fields
 	jstring DrmInfoRequest::ACCOUNT_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.drm.DrmInfoRequest",
 			"ACCOUNT_ID",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::drm
 	}
 	jstring DrmInfoRequest::SUBSCRIPTION_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.drm.DrmInfoRequest",
 			"SUBSCRIPTION_ID",
 			"Ljava/lang/String;"
@@ -21,28 +21,28 @@ namespace android::drm
 	}
 	jint DrmInfoRequest::TYPE_REGISTRATION_INFO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoRequest",
 			"TYPE_REGISTRATION_INFO"
 		);
 	}
 	jint DrmInfoRequest::TYPE_RIGHTS_ACQUISITION_INFO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoRequest",
 			"TYPE_RIGHTS_ACQUISITION_INFO"
 		);
 	}
 	jint DrmInfoRequest::TYPE_RIGHTS_ACQUISITION_PROGRESS_INFO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoRequest",
 			"TYPE_RIGHTS_ACQUISITION_PROGRESS_INFO"
 		);
 	}
 	jint DrmInfoRequest::TYPE_UNREGISTRATION_INFO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoRequest",
 			"TYPE_UNREGISTRATION_INFO"
 		);

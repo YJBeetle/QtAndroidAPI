@@ -9,84 +9,84 @@ namespace android::telecom
 	// Fields
 	jint Connection_VideoProvider::SESSION_EVENT_CAMERA_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_EVENT_CAMERA_FAILURE"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_EVENT_CAMERA_PERMISSION_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_EVENT_CAMERA_PERMISSION_ERROR"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_EVENT_CAMERA_READY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_EVENT_CAMERA_READY"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_EVENT_RX_PAUSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_EVENT_RX_PAUSE"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_EVENT_RX_RESUME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_EVENT_RX_RESUME"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_EVENT_TX_START()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_EVENT_TX_START"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_EVENT_TX_STOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_EVENT_TX_STOP"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_MODIFY_REQUEST_FAIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_MODIFY_REQUEST_FAIL"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_MODIFY_REQUEST_INVALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_MODIFY_REQUEST_INVALID"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_MODIFY_REQUEST_REJECTED_BY_REMOTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_MODIFY_REQUEST_REJECTED_BY_REMOTE"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_MODIFY_REQUEST_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_MODIFY_REQUEST_SUCCESS"
 		);
 	}
 	jint Connection_VideoProvider::SESSION_MODIFY_REQUEST_TIMED_OUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection$VideoProvider",
 			"SESSION_MODIFY_REQUEST_TIMED_OUT"
 		);

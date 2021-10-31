@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::Canvas_VertexMode Canvas_VertexMode::TRIANGLES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Canvas$VertexMode",
 			"TRIANGLES",
 			"Landroid/graphics/Canvas$VertexMode;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::Canvas_VertexMode Canvas_VertexMode::TRIANGLE_FAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Canvas$VertexMode",
 			"TRIANGLE_FAN",
 			"Landroid/graphics/Canvas$VertexMode;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::Canvas_VertexMode Canvas_VertexMode::TRIANGLE_STRIP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Canvas$VertexMode",
 			"TRIANGLE_STRIP",
 			"Landroid/graphics/Canvas$VertexMode;"
@@ -36,7 +36,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Canvas_VertexMode Canvas_VertexMode::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Canvas$VertexMode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Canvas$VertexMode;",
@@ -45,7 +45,7 @@ namespace android::graphics
 	}
 	jarray Canvas_VertexMode::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Canvas$VertexMode",
 			"values",
 			"()[Landroid/graphics/Canvas$VertexMode;"

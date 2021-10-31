@@ -5,7 +5,7 @@ namespace java::net
 	// Fields
 	java::net::StandardProtocolFamily StandardProtocolFamily::INET()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.net.StandardProtocolFamily",
 			"INET",
 			"Ljava/net/StandardProtocolFamily;"
@@ -13,7 +13,7 @@ namespace java::net
 	}
 	java::net::StandardProtocolFamily StandardProtocolFamily::INET6()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.net.StandardProtocolFamily",
 			"INET6",
 			"Ljava/net/StandardProtocolFamily;"
@@ -21,7 +21,7 @@ namespace java::net
 	}
 	java::net::StandardProtocolFamily StandardProtocolFamily::UNIX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.net.StandardProtocolFamily",
 			"UNIX",
 			"Ljava/net/StandardProtocolFamily;"
@@ -36,7 +36,7 @@ namespace java::net
 	// Methods
 	java::net::StandardProtocolFamily StandardProtocolFamily::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.StandardProtocolFamily",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/net/StandardProtocolFamily;",
@@ -45,7 +45,7 @@ namespace java::net
 	}
 	jarray StandardProtocolFamily::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.StandardProtocolFamily",
 			"values",
 			"()[Ljava/net/StandardProtocolFamily;"

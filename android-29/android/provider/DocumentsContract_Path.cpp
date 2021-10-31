@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	__JniBaseClass DocumentsContract_Path::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.DocumentsContract$Path",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

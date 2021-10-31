@@ -12,7 +12,7 @@ namespace java::util
 	// Methods
 	java::util::Optional Optional::empty()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Optional",
 			"empty",
 			"()Ljava/util/Optional;"
@@ -20,7 +20,7 @@ namespace java::util
 	}
 	java::util::Optional Optional::of(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Optional",
 			"of",
 			"(Ljava/lang/Object;)Ljava/util/Optional;",
@@ -29,7 +29,7 @@ namespace java::util
 	}
 	java::util::Optional Optional::ofNullable(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Optional",
 			"ofNullable",
 			"(Ljava/lang/Object;)Ljava/util/Optional;",

@@ -10,42 +10,42 @@ namespace android::widget
 	// Fields
 	jint LinearLayout::HORIZONTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.LinearLayout",
 			"HORIZONTAL"
 		);
 	}
 	jint LinearLayout::SHOW_DIVIDER_BEGINNING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.LinearLayout",
 			"SHOW_DIVIDER_BEGINNING"
 		);
 	}
 	jint LinearLayout::SHOW_DIVIDER_END()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.LinearLayout",
 			"SHOW_DIVIDER_END"
 		);
 	}
 	jint LinearLayout::SHOW_DIVIDER_MIDDLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.LinearLayout",
 			"SHOW_DIVIDER_MIDDLE"
 		);
 	}
 	jint LinearLayout::SHOW_DIVIDER_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.LinearLayout",
 			"SHOW_DIVIDER_NONE"
 		);
 	}
 	jint LinearLayout::VERTICAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.LinearLayout",
 			"VERTICAL"
 		);

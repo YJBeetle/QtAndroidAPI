@@ -13,35 +13,35 @@ namespace android::app
 	// Fields
 	jint AlertDialog::THEME_DEVICE_DEFAULT_DARK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.AlertDialog",
 			"THEME_DEVICE_DEFAULT_DARK"
 		);
 	}
 	jint AlertDialog::THEME_DEVICE_DEFAULT_LIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.AlertDialog",
 			"THEME_DEVICE_DEFAULT_LIGHT"
 		);
 	}
 	jint AlertDialog::THEME_HOLO_DARK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.AlertDialog",
 			"THEME_HOLO_DARK"
 		);
 	}
 	jint AlertDialog::THEME_HOLO_LIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.AlertDialog",
 			"THEME_HOLO_LIGHT"
 		);
 	}
 	jint AlertDialog::THEME_TRADITIONAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.AlertDialog",
 			"THEME_TRADITIONAL"
 		);

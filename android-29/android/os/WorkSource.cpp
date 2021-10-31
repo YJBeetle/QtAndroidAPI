@@ -6,7 +6,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass WorkSource::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.WorkSource",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

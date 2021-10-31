@@ -6,7 +6,7 @@ namespace javax::crypto::spec
 	// Fields
 	javax::crypto::spec::OAEPParameterSpec OAEPParameterSpec::DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.crypto.spec.OAEPParameterSpec",
 			"DEFAULT",
 			"Ljavax/crypto/spec/OAEPParameterSpec;"

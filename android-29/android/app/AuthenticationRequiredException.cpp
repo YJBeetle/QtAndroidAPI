@@ -7,7 +7,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass AuthenticationRequiredException::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.AuthenticationRequiredException",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

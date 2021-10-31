@@ -6,7 +6,7 @@ namespace android::app::admin
 	// Fields
 	__JniBaseClass SystemUpdatePolicy_ValidationFailedException::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,42 +14,42 @@ namespace android::app::admin
 	}
 	jint SystemUpdatePolicy_ValidationFailedException::ERROR_COMBINED_FREEZE_PERIOD_TOO_CLOSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
 			"ERROR_COMBINED_FREEZE_PERIOD_TOO_CLOSE"
 		);
 	}
 	jint SystemUpdatePolicy_ValidationFailedException::ERROR_COMBINED_FREEZE_PERIOD_TOO_LONG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
 			"ERROR_COMBINED_FREEZE_PERIOD_TOO_LONG"
 		);
 	}
 	jint SystemUpdatePolicy_ValidationFailedException::ERROR_DUPLICATE_OR_OVERLAP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
 			"ERROR_DUPLICATE_OR_OVERLAP"
 		);
 	}
 	jint SystemUpdatePolicy_ValidationFailedException::ERROR_NEW_FREEZE_PERIOD_TOO_CLOSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
 			"ERROR_NEW_FREEZE_PERIOD_TOO_CLOSE"
 		);
 	}
 	jint SystemUpdatePolicy_ValidationFailedException::ERROR_NEW_FREEZE_PERIOD_TOO_LONG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
 			"ERROR_NEW_FREEZE_PERIOD_TOO_LONG"
 		);
 	}
 	jint SystemUpdatePolicy_ValidationFailedException::ERROR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
 			"ERROR_UNKNOWN"
 		);

@@ -9,7 +9,7 @@ namespace android::graphics
 	// Fields
 	__JniBaseClass Region::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Region",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

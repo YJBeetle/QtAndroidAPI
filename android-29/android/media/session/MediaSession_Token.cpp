@@ -6,7 +6,7 @@ namespace android::media::session
 	// Fields
 	__JniBaseClass MediaSession_Token::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.session.MediaSession$Token",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

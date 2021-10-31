@@ -10,28 +10,28 @@ namespace android::app::backup
 	// Fields
 	jint BackupAgent::FLAG_CLIENT_SIDE_ENCRYPTION_ENABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.backup.BackupAgent",
 			"FLAG_CLIENT_SIDE_ENCRYPTION_ENABLED"
 		);
 	}
 	jint BackupAgent::FLAG_DEVICE_TO_DEVICE_TRANSFER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.backup.BackupAgent",
 			"FLAG_DEVICE_TO_DEVICE_TRANSFER"
 		);
 	}
 	jint BackupAgent::TYPE_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.backup.BackupAgent",
 			"TYPE_DIRECTORY"
 		);
 	}
 	jint BackupAgent::TYPE_FILE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.backup.BackupAgent",
 			"TYPE_FILE"
 		);

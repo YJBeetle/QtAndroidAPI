@@ -6,7 +6,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass FeatureInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.FeatureInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,14 +14,14 @@ namespace android::content::pm
 	}
 	jint FeatureInfo::FLAG_REQUIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.FeatureInfo",
 			"FLAG_REQUIRED"
 		);
 	}
 	jint FeatureInfo::GL_ES_VERSION_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.FeatureInfo",
 			"GL_ES_VERSION_UNDEFINED"
 		);

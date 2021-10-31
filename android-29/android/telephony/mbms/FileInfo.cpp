@@ -7,7 +7,7 @@ namespace android::telephony::mbms
 	// Fields
 	__JniBaseClass FileInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.mbms.FileInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

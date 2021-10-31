@@ -50,56 +50,56 @@ namespace android::app
 	// Fields
 	jint Activity::DEFAULT_KEYS_DIALER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Activity",
 			"DEFAULT_KEYS_DIALER"
 		);
 	}
 	jint Activity::DEFAULT_KEYS_DISABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Activity",
 			"DEFAULT_KEYS_DISABLE"
 		);
 	}
 	jint Activity::DEFAULT_KEYS_SEARCH_GLOBAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Activity",
 			"DEFAULT_KEYS_SEARCH_GLOBAL"
 		);
 	}
 	jint Activity::DEFAULT_KEYS_SEARCH_LOCAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Activity",
 			"DEFAULT_KEYS_SEARCH_LOCAL"
 		);
 	}
 	jint Activity::DEFAULT_KEYS_SHORTCUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Activity",
 			"DEFAULT_KEYS_SHORTCUT"
 		);
 	}
 	jint Activity::RESULT_CANCELED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Activity",
 			"RESULT_CANCELED"
 		);
 	}
 	jint Activity::RESULT_FIRST_USER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Activity",
 			"RESULT_FIRST_USER"
 		);
 	}
 	jint Activity::RESULT_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Activity",
 			"RESULT_OK"
 		);

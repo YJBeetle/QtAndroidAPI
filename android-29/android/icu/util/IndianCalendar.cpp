@@ -9,91 +9,91 @@ namespace android::icu::util
 	// Fields
 	jint IndianCalendar::AGRAHAYANA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"AGRAHAYANA"
 		);
 	}
 	jint IndianCalendar::ASADHA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"ASADHA"
 		);
 	}
 	jint IndianCalendar::ASVINA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"ASVINA"
 		);
 	}
 	jint IndianCalendar::BHADRA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"BHADRA"
 		);
 	}
 	jint IndianCalendar::CHAITRA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"CHAITRA"
 		);
 	}
 	jint IndianCalendar::IE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"IE"
 		);
 	}
 	jint IndianCalendar::JYAISTHA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"JYAISTHA"
 		);
 	}
 	jint IndianCalendar::KARTIKA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"KARTIKA"
 		);
 	}
 	jint IndianCalendar::MAGHA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"MAGHA"
 		);
 	}
 	jint IndianCalendar::PAUSA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"PAUSA"
 		);
 	}
 	jint IndianCalendar::PHALGUNA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"PHALGUNA"
 		);
 	}
 	jint IndianCalendar::SRAVANA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"SRAVANA"
 		);
 	}
 	jint IndianCalendar::VAISAKHA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
 			"VAISAKHA"
 		);

@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring Settings_Panel::ACTION_INTERNET_CONNECTIVITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Panel",
 			"ACTION_INTERNET_CONNECTIVITY",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::provider
 	}
 	jstring Settings_Panel::ACTION_NFC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Panel",
 			"ACTION_NFC",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::provider
 	}
 	jstring Settings_Panel::ACTION_VOLUME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Panel",
 			"ACTION_VOLUME",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::provider
 	}
 	jstring Settings_Panel::ACTION_WIFI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Settings$Panel",
 			"ACTION_WIFI",
 			"Ljava/lang/String;"

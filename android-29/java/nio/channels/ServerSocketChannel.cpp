@@ -16,7 +16,7 @@ namespace java::nio::channels
 	// Methods
 	java::nio::channels::ServerSocketChannel ServerSocketChannel::open()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.ServerSocketChannel",
 			"open",
 			"()Ljava/nio/channels/ServerSocketChannel;"
@@ -24,7 +24,7 @@ namespace java::nio::channels
 	}
 	java::nio::channels::ServerSocketChannel ServerSocketChannel::open(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.ServerSocketChannel",
 			"open",
 			"(Ljava/net/ProtocolFamily;)Ljava/nio/channels/ServerSocketChannel;",

@@ -19,7 +19,7 @@ namespace android::app
 	// Fields
 	jstring ActivityManager::ACTION_REPORT_HEAP_LIMIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.ActivityManager",
 			"ACTION_REPORT_HEAP_LIMIT",
 			"Ljava/lang/String;"
@@ -27,28 +27,28 @@ namespace android::app
 	}
 	jint ActivityManager::LOCK_TASK_MODE_LOCKED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager",
 			"LOCK_TASK_MODE_LOCKED"
 		);
 	}
 	jint ActivityManager::LOCK_TASK_MODE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager",
 			"LOCK_TASK_MODE_NONE"
 		);
 	}
 	jint ActivityManager::LOCK_TASK_MODE_PINNED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager",
 			"LOCK_TASK_MODE_PINNED"
 		);
 	}
 	jstring ActivityManager::META_HOME_ALTERNATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.ActivityManager",
 			"META_HOME_ALTERNATE",
 			"Ljava/lang/String;"
@@ -56,28 +56,28 @@ namespace android::app
 	}
 	jint ActivityManager::MOVE_TASK_NO_USER_ACTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager",
 			"MOVE_TASK_NO_USER_ACTION"
 		);
 	}
 	jint ActivityManager::MOVE_TASK_WITH_HOME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager",
 			"MOVE_TASK_WITH_HOME"
 		);
 	}
 	jint ActivityManager::RECENT_IGNORE_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager",
 			"RECENT_IGNORE_UNAVAILABLE"
 		);
 	}
 	jint ActivityManager::RECENT_WITH_EXCLUDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager",
 			"RECENT_WITH_EXCLUDED"
 		);
@@ -91,7 +91,7 @@ namespace android::app
 	// Methods
 	void ActivityManager::getMyMemoryState(android::app::ActivityManager_RunningAppProcessInfo arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.app.ActivityManager",
 			"getMyMemoryState",
 			"(Landroid/app/ActivityManager$RunningAppProcessInfo;)V",
@@ -100,7 +100,7 @@ namespace android::app
 	}
 	jboolean ActivityManager::isRunningInTestHarness()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.app.ActivityManager",
 			"isRunningInTestHarness",
 			"()Z"
@@ -108,7 +108,7 @@ namespace android::app
 	}
 	jboolean ActivityManager::isRunningInUserTestHarness()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.app.ActivityManager",
 			"isRunningInUserTestHarness",
 			"()Z"
@@ -116,7 +116,7 @@ namespace android::app
 	}
 	jboolean ActivityManager::isUserAMonkey()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.app.ActivityManager",
 			"isUserAMonkey",
 			"()Z"
@@ -124,7 +124,7 @@ namespace android::app
 	}
 	void ActivityManager::setVrThread(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.app.ActivityManager",
 			"setVrThread",
 			"(I)V",

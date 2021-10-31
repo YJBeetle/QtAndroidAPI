@@ -15,7 +15,7 @@ namespace android::text::method
 	// Methods
 	jint Touch::getInitialScrollX(android::widget::TextView arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.method.Touch",
 			"getInitialScrollX",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;)I",
@@ -25,7 +25,7 @@ namespace android::text::method
 	}
 	jint Touch::getInitialScrollY(android::widget::TextView arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.method.Touch",
 			"getInitialScrollY",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;)I",
@@ -35,7 +35,7 @@ namespace android::text::method
 	}
 	jboolean Touch::onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.method.Touch",
 			"onTouchEvent",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
@@ -46,7 +46,7 @@ namespace android::text::method
 	}
 	void Touch::scrollTo(android::widget::TextView arg0, android::text::Layout arg1, jint arg2, jint arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.method.Touch",
 			"scrollTo",
 			"(Landroid/widget/TextView;Landroid/text/Layout;II)V",

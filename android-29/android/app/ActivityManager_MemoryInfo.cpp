@@ -6,7 +6,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass ActivityManager_MemoryInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.ActivityManager$MemoryInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

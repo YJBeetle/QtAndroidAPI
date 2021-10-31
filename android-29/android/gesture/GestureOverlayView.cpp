@@ -11,28 +11,28 @@ namespace android::gesture
 	// Fields
 	jint GestureOverlayView::GESTURE_STROKE_TYPE_MULTIPLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.gesture.GestureOverlayView",
 			"GESTURE_STROKE_TYPE_MULTIPLE"
 		);
 	}
 	jint GestureOverlayView::GESTURE_STROKE_TYPE_SINGLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.gesture.GestureOverlayView",
 			"GESTURE_STROKE_TYPE_SINGLE"
 		);
 	}
 	jint GestureOverlayView::ORIENTATION_HORIZONTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.gesture.GestureOverlayView",
 			"ORIENTATION_HORIZONTAL"
 		);
 	}
 	jint GestureOverlayView::ORIENTATION_VERTICAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.gesture.GestureOverlayView",
 			"ORIENTATION_VERTICAL"
 		);

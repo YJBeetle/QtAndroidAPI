@@ -19,7 +19,7 @@ namespace java::security
 	// Methods
 	jstring KeyStore::getDefaultType()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getDefaultType",
 			"()Ljava/lang/String;"
@@ -27,7 +27,7 @@ namespace java::security
 	}
 	java::security::KeyStore KeyStore::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/KeyStore;",
@@ -36,7 +36,7 @@ namespace java::security
 	}
 	java::security::KeyStore KeyStore::getInstance(java::io::File arg0, jcharArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getInstance",
 			"(Ljava/io/File;[C)Ljava/security/KeyStore;",
@@ -46,7 +46,7 @@ namespace java::security
 	}
 	java::security::KeyStore KeyStore::getInstance(java::io::File arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getInstance",
 			"(Ljava/io/File;Ljava/security/KeyStore$LoadStoreParameter;)Ljava/security/KeyStore;",
@@ -56,7 +56,7 @@ namespace java::security
 	}
 	java::security::KeyStore KeyStore::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore;",
@@ -66,7 +66,7 @@ namespace java::security
 	}
 	java::security::KeyStore KeyStore::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.KeyStore",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyStore;",

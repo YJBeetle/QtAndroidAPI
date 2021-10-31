@@ -6,7 +6,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass ServiceState::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.ServiceState",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,56 +14,56 @@ namespace android::telephony
 	}
 	jint ServiceState::DUPLEX_MODE_FDD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.ServiceState",
 			"DUPLEX_MODE_FDD"
 		);
 	}
 	jint ServiceState::DUPLEX_MODE_TDD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.ServiceState",
 			"DUPLEX_MODE_TDD"
 		);
 	}
 	jint ServiceState::DUPLEX_MODE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.ServiceState",
 			"DUPLEX_MODE_UNKNOWN"
 		);
 	}
 	jint ServiceState::STATE_EMERGENCY_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.ServiceState",
 			"STATE_EMERGENCY_ONLY"
 		);
 	}
 	jint ServiceState::STATE_IN_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.ServiceState",
 			"STATE_IN_SERVICE"
 		);
 	}
 	jint ServiceState::STATE_OUT_OF_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.ServiceState",
 			"STATE_OUT_OF_SERVICE"
 		);
 	}
 	jint ServiceState::STATE_POWER_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.ServiceState",
 			"STATE_POWER_OFF"
 		);
 	}
 	jint ServiceState::UNKNOWN_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.ServiceState",
 			"UNKNOWN_ID"
 		);

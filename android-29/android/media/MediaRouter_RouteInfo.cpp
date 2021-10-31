@@ -10,56 +10,56 @@ namespace android::media
 	// Fields
 	jint MediaRouter_RouteInfo::DEVICE_TYPE_BLUETOOTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter$RouteInfo",
 			"DEVICE_TYPE_BLUETOOTH"
 		);
 	}
 	jint MediaRouter_RouteInfo::DEVICE_TYPE_SPEAKER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter$RouteInfo",
 			"DEVICE_TYPE_SPEAKER"
 		);
 	}
 	jint MediaRouter_RouteInfo::DEVICE_TYPE_TV()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter$RouteInfo",
 			"DEVICE_TYPE_TV"
 		);
 	}
 	jint MediaRouter_RouteInfo::DEVICE_TYPE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter$RouteInfo",
 			"DEVICE_TYPE_UNKNOWN"
 		);
 	}
 	jint MediaRouter_RouteInfo::PLAYBACK_TYPE_LOCAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter$RouteInfo",
 			"PLAYBACK_TYPE_LOCAL"
 		);
 	}
 	jint MediaRouter_RouteInfo::PLAYBACK_TYPE_REMOTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter$RouteInfo",
 			"PLAYBACK_TYPE_REMOTE"
 		);
 	}
 	jint MediaRouter_RouteInfo::PLAYBACK_VOLUME_FIXED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter$RouteInfo",
 			"PLAYBACK_VOLUME_FIXED"
 		);
 	}
 	jint MediaRouter_RouteInfo::PLAYBACK_VOLUME_VARIABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRouter$RouteInfo",
 			"PLAYBACK_VOLUME_VARIABLE"
 		);

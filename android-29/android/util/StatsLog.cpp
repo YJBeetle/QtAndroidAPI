@@ -12,7 +12,7 @@ namespace android::util
 	// Methods
 	jboolean StatsLog::logBinaryPushStateChanged(jstring arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.StatsLog",
 			"logBinaryPushStateChanged",
 			"(Ljava/lang/String;JII[J)Z",
@@ -25,7 +25,7 @@ namespace android::util
 	}
 	jboolean StatsLog::logEvent(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.StatsLog",
 			"logEvent",
 			"(I)Z",
@@ -34,7 +34,7 @@ namespace android::util
 	}
 	jboolean StatsLog::logStart(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.StatsLog",
 			"logStart",
 			"(I)Z",
@@ -43,7 +43,7 @@ namespace android::util
 	}
 	jboolean StatsLog::logStop(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.util.StatsLog",
 			"logStop",
 			"(I)Z",

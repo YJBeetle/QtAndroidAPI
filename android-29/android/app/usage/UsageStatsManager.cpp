@@ -6,63 +6,63 @@ namespace android::app::usage
 	// Fields
 	jint UsageStatsManager::INTERVAL_BEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
 			"INTERVAL_BEST"
 		);
 	}
 	jint UsageStatsManager::INTERVAL_DAILY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
 			"INTERVAL_DAILY"
 		);
 	}
 	jint UsageStatsManager::INTERVAL_MONTHLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
 			"INTERVAL_MONTHLY"
 		);
 	}
 	jint UsageStatsManager::INTERVAL_WEEKLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
 			"INTERVAL_WEEKLY"
 		);
 	}
 	jint UsageStatsManager::INTERVAL_YEARLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
 			"INTERVAL_YEARLY"
 		);
 	}
 	jint UsageStatsManager::STANDBY_BUCKET_ACTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
 			"STANDBY_BUCKET_ACTIVE"
 		);
 	}
 	jint UsageStatsManager::STANDBY_BUCKET_FREQUENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
 			"STANDBY_BUCKET_FREQUENT"
 		);
 	}
 	jint UsageStatsManager::STANDBY_BUCKET_RARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
 			"STANDBY_BUCKET_RARE"
 		);
 	}
 	jint UsageStatsManager::STANDBY_BUCKET_WORKING_SET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
 			"STANDBY_BUCKET_WORKING_SET"
 		);

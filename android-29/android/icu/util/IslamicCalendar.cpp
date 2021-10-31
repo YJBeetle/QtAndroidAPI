@@ -10,84 +10,84 @@ namespace android::icu::util
 	// Fields
 	jint IslamicCalendar::DHU_AL_HIJJAH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"DHU_AL_HIJJAH"
 		);
 	}
 	jint IslamicCalendar::DHU_AL_QIDAH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"DHU_AL_QIDAH"
 		);
 	}
 	jint IslamicCalendar::JUMADA_1()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"JUMADA_1"
 		);
 	}
 	jint IslamicCalendar::JUMADA_2()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"JUMADA_2"
 		);
 	}
 	jint IslamicCalendar::MUHARRAM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"MUHARRAM"
 		);
 	}
 	jint IslamicCalendar::RABI_1()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"RABI_1"
 		);
 	}
 	jint IslamicCalendar::RABI_2()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"RABI_2"
 		);
 	}
 	jint IslamicCalendar::RAJAB()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"RAJAB"
 		);
 	}
 	jint IslamicCalendar::RAMADAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"RAMADAN"
 		);
 	}
 	jint IslamicCalendar::SAFAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"SAFAR"
 		);
 	}
 	jint IslamicCalendar::SHABAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"SHABAN"
 		);
 	}
 	jint IslamicCalendar::SHAWWAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
 			"SHAWWAL"
 		);

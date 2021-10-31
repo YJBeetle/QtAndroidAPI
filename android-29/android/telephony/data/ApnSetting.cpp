@@ -9,35 +9,35 @@ namespace android::telephony::data
 	// Fields
 	jint ApnSetting::AUTH_TYPE_CHAP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"AUTH_TYPE_CHAP"
 		);
 	}
 	jint ApnSetting::AUTH_TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"AUTH_TYPE_NONE"
 		);
 	}
 	jint ApnSetting::AUTH_TYPE_PAP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"AUTH_TYPE_PAP"
 		);
 	}
 	jint ApnSetting::AUTH_TYPE_PAP_OR_CHAP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"AUTH_TYPE_PAP_OR_CHAP"
 		);
 	}
 	__JniBaseClass ApnSetting::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.data.ApnSetting",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -45,147 +45,147 @@ namespace android::telephony::data
 	}
 	jint ApnSetting::MVNO_TYPE_GID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"MVNO_TYPE_GID"
 		);
 	}
 	jint ApnSetting::MVNO_TYPE_ICCID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"MVNO_TYPE_ICCID"
 		);
 	}
 	jint ApnSetting::MVNO_TYPE_IMSI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"MVNO_TYPE_IMSI"
 		);
 	}
 	jint ApnSetting::MVNO_TYPE_SPN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"MVNO_TYPE_SPN"
 		);
 	}
 	jint ApnSetting::PROTOCOL_IP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"PROTOCOL_IP"
 		);
 	}
 	jint ApnSetting::PROTOCOL_IPV4V6()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"PROTOCOL_IPV4V6"
 		);
 	}
 	jint ApnSetting::PROTOCOL_IPV6()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"PROTOCOL_IPV6"
 		);
 	}
 	jint ApnSetting::PROTOCOL_NON_IP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"PROTOCOL_NON_IP"
 		);
 	}
 	jint ApnSetting::PROTOCOL_PPP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"PROTOCOL_PPP"
 		);
 	}
 	jint ApnSetting::PROTOCOL_UNSTRUCTURED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"PROTOCOL_UNSTRUCTURED"
 		);
 	}
 	jint ApnSetting::TYPE_CBS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_CBS"
 		);
 	}
 	jint ApnSetting::TYPE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_DEFAULT"
 		);
 	}
 	jint ApnSetting::TYPE_DUN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_DUN"
 		);
 	}
 	jint ApnSetting::TYPE_EMERGENCY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_EMERGENCY"
 		);
 	}
 	jint ApnSetting::TYPE_FOTA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_FOTA"
 		);
 	}
 	jint ApnSetting::TYPE_HIPRI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_HIPRI"
 		);
 	}
 	jint ApnSetting::TYPE_IA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_IA"
 		);
 	}
 	jint ApnSetting::TYPE_IMS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_IMS"
 		);
 	}
 	jint ApnSetting::TYPE_MCX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_MCX"
 		);
 	}
 	jint ApnSetting::TYPE_MMS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_MMS"
 		);
 	}
 	jint ApnSetting::TYPE_SUPL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.data.ApnSetting",
 			"TYPE_SUPL"
 		);

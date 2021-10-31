@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring Contacts_Photos::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Photos",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri Contacts_Photos::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Photos",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring Contacts_Photos::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Photos",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"

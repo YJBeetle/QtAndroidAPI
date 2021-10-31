@@ -9,21 +9,21 @@ namespace android::text::style
 	// Fields
 	jint DynamicDrawableSpan::ALIGN_BASELINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.DynamicDrawableSpan",
 			"ALIGN_BASELINE"
 		);
 	}
 	jint DynamicDrawableSpan::ALIGN_BOTTOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.DynamicDrawableSpan",
 			"ALIGN_BOTTOM"
 		);
 	}
 	jint DynamicDrawableSpan::ALIGN_CENTER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.DynamicDrawableSpan",
 			"ALIGN_CENTER"
 		);

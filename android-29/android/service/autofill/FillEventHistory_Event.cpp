@@ -8,35 +8,35 @@ namespace android::service::autofill
 	// Fields
 	jint FillEventHistory_Event::TYPE_AUTHENTICATION_SELECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillEventHistory$Event",
 			"TYPE_AUTHENTICATION_SELECTED"
 		);
 	}
 	jint FillEventHistory_Event::TYPE_CONTEXT_COMMITTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillEventHistory$Event",
 			"TYPE_CONTEXT_COMMITTED"
 		);
 	}
 	jint FillEventHistory_Event::TYPE_DATASET_AUTHENTICATION_SELECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillEventHistory$Event",
 			"TYPE_DATASET_AUTHENTICATION_SELECTED"
 		);
 	}
 	jint FillEventHistory_Event::TYPE_DATASET_SELECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillEventHistory$Event",
 			"TYPE_DATASET_SELECTED"
 		);
 	}
 	jint FillEventHistory_Event::TYPE_SAVE_SHOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillEventHistory$Event",
 			"TYPE_SAVE_SHOWN"
 		);

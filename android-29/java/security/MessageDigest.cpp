@@ -14,7 +14,7 @@ namespace java::security
 	// Methods
 	java::security::MessageDigest MessageDigest::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.MessageDigest",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/MessageDigest;",
@@ -23,7 +23,7 @@ namespace java::security
 	}
 	java::security::MessageDigest MessageDigest::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.MessageDigest",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/MessageDigest;",
@@ -33,7 +33,7 @@ namespace java::security
 	}
 	java::security::MessageDigest MessageDigest::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.MessageDigest",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/MessageDigest;",
@@ -43,7 +43,7 @@ namespace java::security
 	}
 	jboolean MessageDigest::isEqual(jbyteArray arg0, jbyteArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.security.MessageDigest",
 			"isEqual",
 			"([B[B)Z",

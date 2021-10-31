@@ -27,7 +27,7 @@ namespace java::util
 	// Methods
 	java::util::BitSet BitSet::valueOf(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.BitSet",
 			"valueOf",
 			"([B)Ljava/util/BitSet;",
@@ -36,7 +36,7 @@ namespace java::util
 	}
 	java::util::BitSet BitSet::valueOf(jlongArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.BitSet",
 			"valueOf",
 			"([J)Ljava/util/BitSet;",
@@ -45,7 +45,7 @@ namespace java::util
 	}
 	java::util::BitSet BitSet::valueOf(java::nio::ByteBuffer arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.BitSet",
 			"valueOf",
 			"(Ljava/nio/ByteBuffer;)Ljava/util/BitSet;",
@@ -54,7 +54,7 @@ namespace java::util
 	}
 	java::util::BitSet BitSet::valueOf(java::nio::LongBuffer arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.BitSet",
 			"valueOf",
 			"(Ljava/nio/LongBuffer;)Ljava/util/BitSet;",

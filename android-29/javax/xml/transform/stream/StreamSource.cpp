@@ -8,7 +8,7 @@ namespace javax::xml::transform::stream
 	// Fields
 	jstring StreamSource::FEATURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.xml.transform.stream.StreamSource",
 			"FEATURE",
 			"Ljava/lang/String;"

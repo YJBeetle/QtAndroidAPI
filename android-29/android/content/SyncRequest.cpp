@@ -6,7 +6,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass SyncRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.SyncRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

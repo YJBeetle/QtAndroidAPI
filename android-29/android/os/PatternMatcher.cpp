@@ -6,7 +6,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass PatternMatcher::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.PatternMatcher",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,28 +14,28 @@ namespace android::os
 	}
 	jint PatternMatcher::PATTERN_ADVANCED_GLOB()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.PatternMatcher",
 			"PATTERN_ADVANCED_GLOB"
 		);
 	}
 	jint PatternMatcher::PATTERN_LITERAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.PatternMatcher",
 			"PATTERN_LITERAL"
 		);
 	}
 	jint PatternMatcher::PATTERN_PREFIX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.PatternMatcher",
 			"PATTERN_PREFIX"
 		);
 	}
 	jint PatternMatcher::PATTERN_SIMPLE_GLOB()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.PatternMatcher",
 			"PATTERN_SIMPLE_GLOB"
 		);

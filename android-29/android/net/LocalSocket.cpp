@@ -10,21 +10,21 @@ namespace android::net
 	// Fields
 	jint LocalSocket::SOCKET_DGRAM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.LocalSocket",
 			"SOCKET_DGRAM"
 		);
 	}
 	jint LocalSocket::SOCKET_SEQPACKET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.LocalSocket",
 			"SOCKET_SEQPACKET"
 		);
 	}
 	jint LocalSocket::SOCKET_STREAM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.LocalSocket",
 			"SOCKET_STREAM"
 		);

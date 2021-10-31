@@ -19,7 +19,7 @@ namespace java::util
 	// Methods
 	java::util::ServiceLoader ServiceLoader::load(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ServiceLoader",
 			"load",
 			"(Ljava/lang/Class;)Ljava/util/ServiceLoader;",
@@ -28,7 +28,7 @@ namespace java::util
 	}
 	java::util::ServiceLoader ServiceLoader::load(jclass arg0, java::lang::ClassLoader arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ServiceLoader",
 			"load",
 			"(Ljava/lang/Class;Ljava/lang/ClassLoader;)Ljava/util/ServiceLoader;",
@@ -38,7 +38,7 @@ namespace java::util
 	}
 	java::util::ServiceLoader ServiceLoader::load(__JniBaseClass arg0, jclass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ServiceLoader",
 			"load",
 			"(Ljava/lang/ModuleLayer;Ljava/lang/Class;)Ljava/util/ServiceLoader;",
@@ -48,7 +48,7 @@ namespace java::util
 	}
 	java::util::ServiceLoader ServiceLoader::loadInstalled(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ServiceLoader",
 			"loadInstalled",
 			"(Ljava/lang/Class;)Ljava/util/ServiceLoader;",

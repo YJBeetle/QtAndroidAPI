@@ -11,21 +11,21 @@ namespace android::widget
 	// Fields
 	jint GridLayout::ALIGN_BOUNDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.GridLayout",
 			"ALIGN_BOUNDS"
 		);
 	}
 	jint GridLayout::ALIGN_MARGINS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.GridLayout",
 			"ALIGN_MARGINS"
 		);
 	}
 	android::widget::GridLayout_Alignment GridLayout::BASELINE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.GridLayout",
 			"BASELINE",
 			"Landroid/widget/GridLayout$Alignment;"
@@ -33,7 +33,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Alignment GridLayout::BOTTOM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.GridLayout",
 			"BOTTOM",
 			"Landroid/widget/GridLayout$Alignment;"
@@ -41,7 +41,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Alignment GridLayout::CENTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.GridLayout",
 			"CENTER",
 			"Landroid/widget/GridLayout$Alignment;"
@@ -49,7 +49,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Alignment GridLayout::END()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.GridLayout",
 			"END",
 			"Landroid/widget/GridLayout$Alignment;"
@@ -57,7 +57,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Alignment GridLayout::FILL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.GridLayout",
 			"FILL",
 			"Landroid/widget/GridLayout$Alignment;"
@@ -65,14 +65,14 @@ namespace android::widget
 	}
 	jint GridLayout::HORIZONTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.GridLayout",
 			"HORIZONTAL"
 		);
 	}
 	android::widget::GridLayout_Alignment GridLayout::LEFT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.GridLayout",
 			"LEFT",
 			"Landroid/widget/GridLayout$Alignment;"
@@ -80,7 +80,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Alignment GridLayout::RIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.GridLayout",
 			"RIGHT",
 			"Landroid/widget/GridLayout$Alignment;"
@@ -88,7 +88,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Alignment GridLayout::START()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.GridLayout",
 			"START",
 			"Landroid/widget/GridLayout$Alignment;"
@@ -96,7 +96,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Alignment GridLayout::TOP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.GridLayout",
 			"TOP",
 			"Landroid/widget/GridLayout$Alignment;"
@@ -104,14 +104,14 @@ namespace android::widget
 	}
 	jint GridLayout::UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.GridLayout",
 			"UNDEFINED"
 		);
 	}
 	jint GridLayout::VERTICAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.GridLayout",
 			"VERTICAL"
 		);
@@ -155,7 +155,7 @@ namespace android::widget
 	// Methods
 	android::widget::GridLayout_Spec GridLayout::spec(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.GridLayout",
 			"spec",
 			"(I)Landroid/widget/GridLayout$Spec;",
@@ -164,7 +164,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, android::widget::GridLayout_Alignment arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.GridLayout",
 			"spec",
 			"(ILandroid/widget/GridLayout$Alignment;)Landroid/widget/GridLayout$Spec;",
@@ -174,7 +174,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.GridLayout",
 			"spec",
 			"(IF)Landroid/widget/GridLayout$Spec;",
@@ -184,7 +184,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.GridLayout",
 			"spec",
 			"(II)Landroid/widget/GridLayout$Spec;",
@@ -194,7 +194,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, android::widget::GridLayout_Alignment arg1, jfloat arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.GridLayout",
 			"spec",
 			"(ILandroid/widget/GridLayout$Alignment;F)Landroid/widget/GridLayout$Spec;",
@@ -205,7 +205,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.GridLayout",
 			"spec",
 			"(IILandroid/widget/GridLayout$Alignment;)Landroid/widget/GridLayout$Spec;",
@@ -216,7 +216,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, jint arg1, jfloat arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.GridLayout",
 			"spec",
 			"(IIF)Landroid/widget/GridLayout$Spec;",
@@ -227,7 +227,7 @@ namespace android::widget
 	}
 	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2, jfloat arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.GridLayout",
 			"spec",
 			"(IILandroid/widget/GridLayout$Alignment;F)Landroid/widget/GridLayout$Spec;",

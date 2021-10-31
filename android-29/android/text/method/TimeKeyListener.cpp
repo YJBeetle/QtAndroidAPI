@@ -6,7 +6,7 @@ namespace android::text::method
 	// Fields
 	jcharArray TimeKeyListener::CHARACTERS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.method.TimeKeyListener",
 			"CHARACTERS",
 			"[C"
@@ -32,7 +32,7 @@ namespace android::text::method
 	// Methods
 	android::text::method::TimeKeyListener TimeKeyListener::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.TimeKeyListener",
 			"getInstance",
 			"()Landroid/text/method/TimeKeyListener;"
@@ -40,7 +40,7 @@ namespace android::text::method
 	}
 	android::text::method::TimeKeyListener TimeKeyListener::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.TimeKeyListener",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/text/method/TimeKeyListener;",

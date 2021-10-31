@@ -6,7 +6,7 @@ namespace android::service::carrier
 	// Fields
 	__JniBaseClass CarrierIdentifier::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.carrier.CarrierIdentifier",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

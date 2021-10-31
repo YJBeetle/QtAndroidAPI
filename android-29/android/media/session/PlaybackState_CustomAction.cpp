@@ -7,7 +7,7 @@ namespace android::media::session
 	// Fields
 	__JniBaseClass PlaybackState_CustomAction::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.session.PlaybackState$CustomAction",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

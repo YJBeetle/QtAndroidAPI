@@ -9,7 +9,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_QuickContact::ACTION_QUICK_CONTACT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$QuickContact",
 			"ACTION_QUICK_CONTACT",
 			"Ljava/lang/String;"
@@ -17,7 +17,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_QuickContact::EXTRA_EXCLUDE_MIMES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$QuickContact",
 			"EXTRA_EXCLUDE_MIMES",
 			"Ljava/lang/String;"
@@ -25,7 +25,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_QuickContact::EXTRA_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$QuickContact",
 			"EXTRA_MODE",
 			"Ljava/lang/String;"
@@ -33,7 +33,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_QuickContact::EXTRA_PRIORITIZED_MIMETYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$QuickContact",
 			"EXTRA_PRIORITIZED_MIMETYPE",
 			"Ljava/lang/String;"
@@ -41,21 +41,21 @@ namespace android::provider
 	}
 	jint ContactsContract_QuickContact::MODE_LARGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$QuickContact",
 			"MODE_LARGE"
 		);
 	}
 	jint ContactsContract_QuickContact::MODE_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$QuickContact",
 			"MODE_MEDIUM"
 		);
 	}
 	jint ContactsContract_QuickContact::MODE_SMALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$QuickContact",
 			"MODE_SMALL"
 		);
@@ -74,7 +74,7 @@ namespace android::provider
 	// Methods
 	void ContactsContract_QuickContact::showQuickContact(android::content::Context arg0, android::graphics::Rect arg1, android::net::Uri arg2, jarray arg3, jstring arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.ContactsContract$QuickContact",
 			"showQuickContact",
 			"(Landroid/content/Context;Landroid/graphics/Rect;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V",
@@ -87,7 +87,7 @@ namespace android::provider
 	}
 	void ContactsContract_QuickContact::showQuickContact(android::content::Context arg0, android::graphics::Rect arg1, android::net::Uri arg2, jint arg3, jarray arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.ContactsContract$QuickContact",
 			"showQuickContact",
 			"(Landroid/content/Context;Landroid/graphics/Rect;Landroid/net/Uri;I[Ljava/lang/String;)V",
@@ -100,7 +100,7 @@ namespace android::provider
 	}
 	void ContactsContract_QuickContact::showQuickContact(android::content::Context arg0, android::view::View arg1, android::net::Uri arg2, jarray arg3, jstring arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.ContactsContract$QuickContact",
 			"showQuickContact",
 			"(Landroid/content/Context;Landroid/view/View;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V",
@@ -113,7 +113,7 @@ namespace android::provider
 	}
 	void ContactsContract_QuickContact::showQuickContact(android::content::Context arg0, android::view::View arg1, android::net::Uri arg2, jint arg3, jarray arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.ContactsContract$QuickContact",
 			"showQuickContact",
 			"(Landroid/content/Context;Landroid/view/View;Landroid/net/Uri;I[Ljava/lang/String;)V",

@@ -6,7 +6,7 @@ namespace android::icu::text
 	// Fields
 	jint UCharacterIterator::DONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.UCharacterIterator",
 			"DONE"
 		);
@@ -20,7 +20,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(jcharArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"([C)Landroid/icu/text/UCharacterIterator;",
@@ -29,7 +29,7 @@ namespace android::icu::text
 	}
 	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"(Landroid/icu/text/Replaceable;)Landroid/icu/text/UCharacterIterator;",
@@ -38,7 +38,7 @@ namespace android::icu::text
 	}
 	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/text/UCharacterIterator;",
@@ -47,7 +47,7 @@ namespace android::icu::text
 	}
 	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(java::lang::StringBuffer arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"(Ljava/lang/StringBuffer;)Landroid/icu/text/UCharacterIterator;",
@@ -56,7 +56,7 @@ namespace android::icu::text
 	}
 	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"([CII)Landroid/icu/text/UCharacterIterator;",

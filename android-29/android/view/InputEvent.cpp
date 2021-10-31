@@ -6,7 +6,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass InputEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.InputEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

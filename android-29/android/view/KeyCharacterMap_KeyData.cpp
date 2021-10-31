@@ -5,7 +5,7 @@ namespace android::view
 	// Fields
 	jint KeyCharacterMap_KeyData::META_LENGTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap$KeyData",
 			"META_LENGTH"
 		);

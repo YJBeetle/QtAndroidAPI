@@ -5,35 +5,35 @@ namespace android::media
 	// Fields
 	jint MediaDrm_KeyRequest::REQUEST_TYPE_INITIAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm$KeyRequest",
 			"REQUEST_TYPE_INITIAL"
 		);
 	}
 	jint MediaDrm_KeyRequest::REQUEST_TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm$KeyRequest",
 			"REQUEST_TYPE_NONE"
 		);
 	}
 	jint MediaDrm_KeyRequest::REQUEST_TYPE_RELEASE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm$KeyRequest",
 			"REQUEST_TYPE_RELEASE"
 		);
 	}
 	jint MediaDrm_KeyRequest::REQUEST_TYPE_RENEWAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm$KeyRequest",
 			"REQUEST_TYPE_RENEWAL"
 		);
 	}
 	jint MediaDrm_KeyRequest::REQUEST_TYPE_UPDATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm$KeyRequest",
 			"REQUEST_TYPE_UPDATE"
 		);

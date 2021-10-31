@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::DisplayContext_Type DisplayContext_Type::CAPITALIZATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
 			"CAPITALIZATION",
 			"Landroid/icu/text/DisplayContext$Type;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext_Type DisplayContext_Type::DIALECT_HANDLING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
 			"DIALECT_HANDLING",
 			"Landroid/icu/text/DisplayContext$Type;"
@@ -21,7 +21,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext_Type DisplayContext_Type::DISPLAY_LENGTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
 			"DISPLAY_LENGTH",
 			"Landroid/icu/text/DisplayContext$Type;"
@@ -29,7 +29,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DisplayContext_Type DisplayContext_Type::SUBSTITUTE_HANDLING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
 			"SUBSTITUTE_HANDLING",
 			"Landroid/icu/text/DisplayContext$Type;"
@@ -44,7 +44,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::DisplayContext_Type DisplayContext_Type::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DisplayContext$Type",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/DisplayContext$Type;",
@@ -53,7 +53,7 @@ namespace android::icu::text
 	}
 	jarray DisplayContext_Type::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DisplayContext$Type",
 			"values",
 			"()[Landroid/icu/text/DisplayContext$Type;"

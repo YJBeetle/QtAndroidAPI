@@ -9,91 +9,91 @@ namespace android::icu::util
 	// Fields
 	jint HebrewCalendar::ADAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"ADAR"
 		);
 	}
 	jint HebrewCalendar::ADAR_1()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"ADAR_1"
 		);
 	}
 	jint HebrewCalendar::AV()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"AV"
 		);
 	}
 	jint HebrewCalendar::ELUL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"ELUL"
 		);
 	}
 	jint HebrewCalendar::HESHVAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"HESHVAN"
 		);
 	}
 	jint HebrewCalendar::IYAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"IYAR"
 		);
 	}
 	jint HebrewCalendar::KISLEV()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"KISLEV"
 		);
 	}
 	jint HebrewCalendar::NISAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"NISAN"
 		);
 	}
 	jint HebrewCalendar::SHEVAT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"SHEVAT"
 		);
 	}
 	jint HebrewCalendar::SIVAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"SIVAN"
 		);
 	}
 	jint HebrewCalendar::TAMUZ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"TAMUZ"
 		);
 	}
 	jint HebrewCalendar::TEVET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"TEVET"
 		);
 	}
 	jint HebrewCalendar::TISHRI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
 			"TISHRI"
 		);

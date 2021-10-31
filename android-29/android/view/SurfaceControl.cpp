@@ -6,7 +6,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass SurfaceControl::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.SurfaceControl",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

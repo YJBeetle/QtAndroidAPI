@@ -7,7 +7,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass AbsSavedState::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.AbsSavedState",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::view
 	}
 	android::view::AbsSavedState AbsSavedState::EMPTY_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.AbsSavedState",
 			"EMPTY_STATE",
 			"Landroid/view/AbsSavedState;"

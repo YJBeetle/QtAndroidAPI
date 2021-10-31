@@ -12,7 +12,7 @@ namespace android::os
 	// Methods
 	void Trace::beginAsyncSection(jstring arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Trace",
 			"beginAsyncSection",
 			"(Ljava/lang/String;I)V",
@@ -22,7 +22,7 @@ namespace android::os
 	}
 	void Trace::beginSection(jstring arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Trace",
 			"beginSection",
 			"(Ljava/lang/String;)V",
@@ -31,7 +31,7 @@ namespace android::os
 	}
 	void Trace::endAsyncSection(jstring arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Trace",
 			"endAsyncSection",
 			"(Ljava/lang/String;I)V",
@@ -41,7 +41,7 @@ namespace android::os
 	}
 	void Trace::endSection()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Trace",
 			"endSection",
 			"()V"
@@ -49,7 +49,7 @@ namespace android::os
 	}
 	jboolean Trace::isEnabled()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.Trace",
 			"isEnabled",
 			"()Z"
@@ -57,7 +57,7 @@ namespace android::os
 	}
 	void Trace::setCounter(jstring arg0, jlong arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Trace",
 			"setCounter",
 			"(Ljava/lang/String;J)V",

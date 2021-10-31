@@ -6,28 +6,28 @@ namespace android::location
 	// Fields
 	jint GnssMeasurementsEvent_Callback::STATUS_LOCATION_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurementsEvent$Callback",
 			"STATUS_LOCATION_DISABLED"
 		);
 	}
 	jint GnssMeasurementsEvent_Callback::STATUS_NOT_ALLOWED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurementsEvent$Callback",
 			"STATUS_NOT_ALLOWED"
 		);
 	}
 	jint GnssMeasurementsEvent_Callback::STATUS_NOT_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurementsEvent$Callback",
 			"STATUS_NOT_SUPPORTED"
 		);
 	}
 	jint GnssMeasurementsEvent_Callback::STATUS_READY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssMeasurementsEvent$Callback",
 			"STATUS_READY"
 		);

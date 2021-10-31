@@ -7,7 +7,7 @@ namespace android::app::job
 	// Fields
 	jstring JobService::PERMISSION_BIND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.job.JobService",
 			"PERMISSION_BIND",
 			"Ljava/lang/String;"

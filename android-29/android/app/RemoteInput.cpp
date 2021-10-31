@@ -8,7 +8,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass RemoteInput::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.RemoteInput",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,28 +16,28 @@ namespace android::app
 	}
 	jint RemoteInput::EDIT_CHOICES_BEFORE_SENDING_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.RemoteInput",
 			"EDIT_CHOICES_BEFORE_SENDING_AUTO"
 		);
 	}
 	jint RemoteInput::EDIT_CHOICES_BEFORE_SENDING_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.RemoteInput",
 			"EDIT_CHOICES_BEFORE_SENDING_DISABLED"
 		);
 	}
 	jint RemoteInput::EDIT_CHOICES_BEFORE_SENDING_ENABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.RemoteInput",
 			"EDIT_CHOICES_BEFORE_SENDING_ENABLED"
 		);
 	}
 	jstring RemoteInput::EXTRA_RESULTS_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.RemoteInput",
 			"EXTRA_RESULTS_DATA",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::app
 	}
 	jstring RemoteInput::RESULTS_CLIP_LABEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.RemoteInput",
 			"RESULTS_CLIP_LABEL",
 			"Ljava/lang/String;"
@@ -53,14 +53,14 @@ namespace android::app
 	}
 	jint RemoteInput::SOURCE_CHOICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.RemoteInput",
 			"SOURCE_CHOICE"
 		);
 	}
 	jint RemoteInput::SOURCE_FREE_FORM_INPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.RemoteInput",
 			"SOURCE_FREE_FORM_INPUT"
 		);
@@ -74,7 +74,7 @@ namespace android::app
 	// Methods
 	void RemoteInput::addDataResultToIntent(android::app::RemoteInput arg0, android::content::Intent arg1, __JniBaseClass arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.app.RemoteInput",
 			"addDataResultToIntent",
 			"(Landroid/app/RemoteInput;Landroid/content/Intent;Ljava/util/Map;)V",
@@ -85,7 +85,7 @@ namespace android::app
 	}
 	void RemoteInput::addResultsToIntent(jarray arg0, android::content::Intent arg1, android::os::Bundle arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.app.RemoteInput",
 			"addResultsToIntent",
 			"([Landroid/app/RemoteInput;Landroid/content/Intent;Landroid/os/Bundle;)V",
@@ -96,7 +96,7 @@ namespace android::app
 	}
 	__JniBaseClass RemoteInput::getDataResultsFromIntent(android::content::Intent arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.RemoteInput",
 			"getDataResultsFromIntent",
 			"(Landroid/content/Intent;Ljava/lang/String;)Ljava/util/Map;",
@@ -106,7 +106,7 @@ namespace android::app
 	}
 	android::os::Bundle RemoteInput::getResultsFromIntent(android::content::Intent arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.RemoteInput",
 			"getResultsFromIntent",
 			"(Landroid/content/Intent;)Landroid/os/Bundle;",
@@ -115,7 +115,7 @@ namespace android::app
 	}
 	jint RemoteInput::getResultsSource(android::content::Intent arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.app.RemoteInput",
 			"getResultsSource",
 			"(Landroid/content/Intent;)I",
@@ -124,7 +124,7 @@ namespace android::app
 	}
 	void RemoteInput::setResultsSource(android::content::Intent arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.app.RemoteInput",
 			"setResultsSource",
 			"(Landroid/content/Intent;I)V",

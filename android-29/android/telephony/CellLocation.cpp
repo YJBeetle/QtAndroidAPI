@@ -17,7 +17,7 @@ namespace android::telephony
 	// Methods
 	android::telephony::CellLocation CellLocation::getEmpty()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.CellLocation",
 			"getEmpty",
 			"()Landroid/telephony/CellLocation;"
@@ -25,7 +25,7 @@ namespace android::telephony
 	}
 	void CellLocation::requestLocationUpdate()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.telephony.CellLocation",
 			"requestLocationUpdate",
 			"()V"

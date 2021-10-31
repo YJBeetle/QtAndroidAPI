@@ -15,7 +15,7 @@ namespace java::lang
 	// Methods
 	java::lang::Runtime Runtime::getRuntime()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Runtime",
 			"getRuntime",
 			"()Ljava/lang/Runtime;"
@@ -23,7 +23,7 @@ namespace java::lang
 	}
 	__JniBaseClass Runtime::version()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Runtime",
 			"version",
 			"()Ljava/lang/Runtime$Version;"

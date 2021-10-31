@@ -9,21 +9,21 @@ namespace android::icu::text
 	// Fields
 	jint DecimalFormatSymbols::CURRENCY_SPC_CURRENCY_MATCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DecimalFormatSymbols",
 			"CURRENCY_SPC_CURRENCY_MATCH"
 		);
 	}
 	jint DecimalFormatSymbols::CURRENCY_SPC_INSERT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DecimalFormatSymbols",
 			"CURRENCY_SPC_INSERT"
 		);
 	}
 	jint DecimalFormatSymbols::CURRENCY_SPC_SURROUNDING_MATCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.DecimalFormatSymbols",
 			"CURRENCY_SPC_SURROUNDING_MATCH"
 		);
@@ -54,7 +54,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::DecimalFormatSymbols DecimalFormatSymbols::forNumberingSystem(android::icu::util::ULocale arg0, android::icu::text::NumberingSystem arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DecimalFormatSymbols",
 			"forNumberingSystem",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/NumberingSystem;)Landroid/icu/text/DecimalFormatSymbols;",
@@ -64,7 +64,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DecimalFormatSymbols DecimalFormatSymbols::forNumberingSystem(java::util::Locale arg0, android::icu::text::NumberingSystem arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DecimalFormatSymbols",
 			"forNumberingSystem",
 			"(Ljava/util/Locale;Landroid/icu/text/NumberingSystem;)Landroid/icu/text/DecimalFormatSymbols;",
@@ -74,7 +74,7 @@ namespace android::icu::text
 	}
 	jarray DecimalFormatSymbols::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DecimalFormatSymbols",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -82,7 +82,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DecimalFormatSymbols DecimalFormatSymbols::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DecimalFormatSymbols",
 			"getInstance",
 			"()Landroid/icu/text/DecimalFormatSymbols;"
@@ -90,7 +90,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DecimalFormatSymbols DecimalFormatSymbols::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DecimalFormatSymbols",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/DecimalFormatSymbols;",
@@ -99,7 +99,7 @@ namespace android::icu::text
 	}
 	android::icu::text::DecimalFormatSymbols DecimalFormatSymbols::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.DecimalFormatSymbols",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/DecimalFormatSymbols;",

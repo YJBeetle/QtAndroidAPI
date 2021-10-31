@@ -6,7 +6,7 @@ namespace android::graphics
 	// Fields
 	__JniBaseClass Rect::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Rect",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -65,7 +65,7 @@ namespace android::graphics
 	// Methods
 	jboolean Rect::intersects(android::graphics::Rect arg0, android::graphics::Rect arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.graphics.Rect",
 			"intersects",
 			"(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z",
@@ -75,7 +75,7 @@ namespace android::graphics
 	}
 	android::graphics::Rect Rect::unflattenFromString(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Rect",
 			"unflattenFromString",
 			"(Ljava/lang/String;)Landroid/graphics/Rect;",

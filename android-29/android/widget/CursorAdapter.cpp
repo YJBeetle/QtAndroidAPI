@@ -10,14 +10,14 @@ namespace android::widget
 	// Fields
 	jint CursorAdapter::FLAG_AUTO_REQUERY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.CursorAdapter",
 			"FLAG_AUTO_REQUERY"
 		);
 	}
 	jint CursorAdapter::FLAG_REGISTER_CONTENT_OBSERVER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.CursorAdapter",
 			"FLAG_REGISTER_CONTENT_OBSERVER"
 		);

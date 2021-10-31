@@ -14,28 +14,28 @@ namespace android::transition
 	// Fields
 	jint Transition::MATCH_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.transition.Transition",
 			"MATCH_ID"
 		);
 	}
 	jint Transition::MATCH_INSTANCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.transition.Transition",
 			"MATCH_INSTANCE"
 		);
 	}
 	jint Transition::MATCH_ITEM_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.transition.Transition",
 			"MATCH_ITEM_ID"
 		);
 	}
 	jint Transition::MATCH_NAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.transition.Transition",
 			"MATCH_NAME"
 		);

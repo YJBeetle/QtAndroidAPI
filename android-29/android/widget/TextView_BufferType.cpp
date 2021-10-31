@@ -5,7 +5,7 @@ namespace android::widget
 	// Fields
 	android::widget::TextView_BufferType TextView_BufferType::EDITABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.TextView$BufferType",
 			"EDITABLE",
 			"Landroid/widget/TextView$BufferType;"
@@ -13,7 +13,7 @@ namespace android::widget
 	}
 	android::widget::TextView_BufferType TextView_BufferType::NORMAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.TextView$BufferType",
 			"NORMAL",
 			"Landroid/widget/TextView$BufferType;"
@@ -21,7 +21,7 @@ namespace android::widget
 	}
 	android::widget::TextView_BufferType TextView_BufferType::SPANNABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.TextView$BufferType",
 			"SPANNABLE",
 			"Landroid/widget/TextView$BufferType;"
@@ -36,7 +36,7 @@ namespace android::widget
 	// Methods
 	android::widget::TextView_BufferType TextView_BufferType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.TextView$BufferType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/widget/TextView$BufferType;",
@@ -45,7 +45,7 @@ namespace android::widget
 	}
 	jarray TextView_BufferType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.widget.TextView$BufferType",
 			"values",
 			"()[Landroid/widget/TextView$BufferType;"

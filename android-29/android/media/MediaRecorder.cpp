@@ -15,49 +15,49 @@ namespace android::media
 	// Fields
 	jint MediaRecorder::MEDIA_ERROR_SERVER_DIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRecorder",
 			"MEDIA_ERROR_SERVER_DIED"
 		);
 	}
 	jint MediaRecorder::MEDIA_RECORDER_ERROR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRecorder",
 			"MEDIA_RECORDER_ERROR_UNKNOWN"
 		);
 	}
 	jint MediaRecorder::MEDIA_RECORDER_INFO_MAX_DURATION_REACHED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRecorder",
 			"MEDIA_RECORDER_INFO_MAX_DURATION_REACHED"
 		);
 	}
 	jint MediaRecorder::MEDIA_RECORDER_INFO_MAX_FILESIZE_APPROACHING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRecorder",
 			"MEDIA_RECORDER_INFO_MAX_FILESIZE_APPROACHING"
 		);
 	}
 	jint MediaRecorder::MEDIA_RECORDER_INFO_MAX_FILESIZE_REACHED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRecorder",
 			"MEDIA_RECORDER_INFO_MAX_FILESIZE_REACHED"
 		);
 	}
 	jint MediaRecorder::MEDIA_RECORDER_INFO_NEXT_OUTPUT_FILE_STARTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRecorder",
 			"MEDIA_RECORDER_INFO_NEXT_OUTPUT_FILE_STARTED"
 		);
 	}
 	jint MediaRecorder::MEDIA_RECORDER_INFO_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaRecorder",
 			"MEDIA_RECORDER_INFO_UNKNOWN"
 		);
@@ -76,7 +76,7 @@ namespace android::media
 	// Methods
 	jint MediaRecorder::getAudioSourceMax()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.MediaRecorder",
 			"getAudioSourceMax",
 			"()I"

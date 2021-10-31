@@ -6,28 +6,28 @@ namespace android::nfc::tech
 	// Fields
 	jint MifareUltralight::_PAGE_SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareUltralight",
 			"PAGE_SIZE"
 		);
 	}
 	jint MifareUltralight::TYPE_ULTRALIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareUltralight",
 			"TYPE_ULTRALIGHT"
 		);
 	}
 	jint MifareUltralight::TYPE_ULTRALIGHT_C()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareUltralight",
 			"TYPE_ULTRALIGHT_C"
 		);
 	}
 	jint MifareUltralight::TYPE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareUltralight",
 			"TYPE_UNKNOWN"
 		);
@@ -41,7 +41,7 @@ namespace android::nfc::tech
 	// Methods
 	android::nfc::tech::MifareUltralight MifareUltralight::get(android::nfc::Tag arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.tech.MifareUltralight",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/MifareUltralight;",

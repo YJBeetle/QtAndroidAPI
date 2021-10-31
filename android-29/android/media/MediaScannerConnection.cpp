@@ -21,7 +21,7 @@ namespace android::media
 	// Methods
 	void MediaScannerConnection::scanFile(android::content::Context arg0, jarray arg1, jarray arg2, __JniBaseClass arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.media.MediaScannerConnection",
 			"scanFile",
 			"(Landroid/content/Context;[Ljava/lang/String;[Ljava/lang/String;Landroid/media/MediaScannerConnection$OnScanCompletedListener;)V",

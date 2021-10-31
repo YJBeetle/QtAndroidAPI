@@ -9,14 +9,14 @@ namespace android::icu::text
 	// Fields
 	jint UnicodeSet::ADD_CASE_MAPPINGS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.UnicodeSet",
 			"ADD_CASE_MAPPINGS"
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::ALL_CODE_POINTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.UnicodeSet",
 			"ALL_CODE_POINTS",
 			"Landroid/icu/text/UnicodeSet;"
@@ -24,21 +24,21 @@ namespace android::icu::text
 	}
 	jint UnicodeSet::CASE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.UnicodeSet",
 			"CASE"
 		);
 	}
 	jint UnicodeSet::CASE_INSENSITIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.UnicodeSet",
 			"CASE_INSENSITIVE"
 		);
 	}
 	android::icu::text::UnicodeSet UnicodeSet::EMPTY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.UnicodeSet",
 			"EMPTY",
 			"Landroid/icu/text/UnicodeSet;"
@@ -46,21 +46,21 @@ namespace android::icu::text
 	}
 	jint UnicodeSet::IGNORE_SPACE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.UnicodeSet",
 			"IGNORE_SPACE"
 		);
 	}
 	jint UnicodeSet::MAX_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.UnicodeSet",
 			"MAX_VALUE"
 		);
 	}
 	jint UnicodeSet::MIN_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.UnicodeSet",
 			"MIN_VALUE"
 		);
@@ -135,7 +135,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::UnicodeSet UnicodeSet::from(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSet",
 			"from",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
@@ -144,7 +144,7 @@ namespace android::icu::text
 	}
 	android::icu::text::UnicodeSet UnicodeSet::fromAll(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSet",
 			"fromAll",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",

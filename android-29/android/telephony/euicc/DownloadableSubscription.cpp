@@ -6,7 +6,7 @@ namespace android::telephony::euicc
 	// Fields
 	__JniBaseClass DownloadableSubscription::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.euicc.DownloadableSubscription",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -21,7 +21,7 @@ namespace android::telephony::euicc
 	// Methods
 	android::telephony::euicc::DownloadableSubscription DownloadableSubscription::forActivationCode(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.euicc.DownloadableSubscription",
 			"forActivationCode",
 			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription;",

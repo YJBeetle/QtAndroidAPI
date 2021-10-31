@@ -6,7 +6,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass UiccCardInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.UiccCardInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

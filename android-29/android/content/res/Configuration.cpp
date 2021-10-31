@@ -8,77 +8,77 @@ namespace android::content::res
 	// Fields
 	jint Configuration::COLOR_MODE_HDR_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"COLOR_MODE_HDR_MASK"
 		);
 	}
 	jint Configuration::COLOR_MODE_HDR_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"COLOR_MODE_HDR_NO"
 		);
 	}
 	jint Configuration::COLOR_MODE_HDR_SHIFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"COLOR_MODE_HDR_SHIFT"
 		);
 	}
 	jint Configuration::COLOR_MODE_HDR_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"COLOR_MODE_HDR_UNDEFINED"
 		);
 	}
 	jint Configuration::COLOR_MODE_HDR_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"COLOR_MODE_HDR_YES"
 		);
 	}
 	jint Configuration::COLOR_MODE_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"COLOR_MODE_UNDEFINED"
 		);
 	}
 	jint Configuration::COLOR_MODE_WIDE_COLOR_GAMUT_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"COLOR_MODE_WIDE_COLOR_GAMUT_MASK"
 		);
 	}
 	jint Configuration::COLOR_MODE_WIDE_COLOR_GAMUT_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"COLOR_MODE_WIDE_COLOR_GAMUT_NO"
 		);
 	}
 	jint Configuration::COLOR_MODE_WIDE_COLOR_GAMUT_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"COLOR_MODE_WIDE_COLOR_GAMUT_UNDEFINED"
 		);
 	}
 	jint Configuration::COLOR_MODE_WIDE_COLOR_GAMUT_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"COLOR_MODE_WIDE_COLOR_GAMUT_YES"
 		);
 	}
 	__JniBaseClass Configuration::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.res.Configuration",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -86,448 +86,448 @@ namespace android::content::res
 	}
 	jint Configuration::DENSITY_DPI_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"DENSITY_DPI_UNDEFINED"
 		);
 	}
 	jint Configuration::HARDKEYBOARDHIDDEN_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"HARDKEYBOARDHIDDEN_NO"
 		);
 	}
 	jint Configuration::HARDKEYBOARDHIDDEN_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"HARDKEYBOARDHIDDEN_UNDEFINED"
 		);
 	}
 	jint Configuration::HARDKEYBOARDHIDDEN_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"HARDKEYBOARDHIDDEN_YES"
 		);
 	}
 	jint Configuration::KEYBOARDHIDDEN_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"KEYBOARDHIDDEN_NO"
 		);
 	}
 	jint Configuration::KEYBOARDHIDDEN_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"KEYBOARDHIDDEN_UNDEFINED"
 		);
 	}
 	jint Configuration::KEYBOARDHIDDEN_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"KEYBOARDHIDDEN_YES"
 		);
 	}
 	jint Configuration::KEYBOARD_12KEY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"KEYBOARD_12KEY"
 		);
 	}
 	jint Configuration::KEYBOARD_NOKEYS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"KEYBOARD_NOKEYS"
 		);
 	}
 	jint Configuration::KEYBOARD_QWERTY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"KEYBOARD_QWERTY"
 		);
 	}
 	jint Configuration::KEYBOARD_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"KEYBOARD_UNDEFINED"
 		);
 	}
 	jint Configuration::MNC_ZERO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"MNC_ZERO"
 		);
 	}
 	jint Configuration::NAVIGATIONHIDDEN_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"NAVIGATIONHIDDEN_NO"
 		);
 	}
 	jint Configuration::NAVIGATIONHIDDEN_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"NAVIGATIONHIDDEN_UNDEFINED"
 		);
 	}
 	jint Configuration::NAVIGATIONHIDDEN_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"NAVIGATIONHIDDEN_YES"
 		);
 	}
 	jint Configuration::NAVIGATION_DPAD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"NAVIGATION_DPAD"
 		);
 	}
 	jint Configuration::NAVIGATION_NONAV()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"NAVIGATION_NONAV"
 		);
 	}
 	jint Configuration::NAVIGATION_TRACKBALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"NAVIGATION_TRACKBALL"
 		);
 	}
 	jint Configuration::NAVIGATION_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"NAVIGATION_UNDEFINED"
 		);
 	}
 	jint Configuration::NAVIGATION_WHEEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"NAVIGATION_WHEEL"
 		);
 	}
 	jint Configuration::ORIENTATION_LANDSCAPE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"ORIENTATION_LANDSCAPE"
 		);
 	}
 	jint Configuration::ORIENTATION_PORTRAIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"ORIENTATION_PORTRAIT"
 		);
 	}
 	jint Configuration::ORIENTATION_SQUARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"ORIENTATION_SQUARE"
 		);
 	}
 	jint Configuration::ORIENTATION_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"ORIENTATION_UNDEFINED"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_LAYOUTDIR_LTR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_LAYOUTDIR_LTR"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_LAYOUTDIR_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_LAYOUTDIR_MASK"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_LAYOUTDIR_RTL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_LAYOUTDIR_RTL"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_LAYOUTDIR_SHIFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_LAYOUTDIR_SHIFT"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_LAYOUTDIR_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_LAYOUTDIR_UNDEFINED"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_LONG_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_LONG_MASK"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_LONG_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_LONG_NO"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_LONG_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_LONG_UNDEFINED"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_LONG_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_LONG_YES"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_ROUND_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_ROUND_MASK"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_ROUND_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_ROUND_NO"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_ROUND_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_ROUND_UNDEFINED"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_ROUND_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_ROUND_YES"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_LARGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_SIZE_LARGE"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_SIZE_MASK"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_SIZE_NORMAL"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_SMALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_SIZE_SMALL"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_SIZE_UNDEFINED"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_XLARGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_SIZE_XLARGE"
 		);
 	}
 	jint Configuration::SCREENLAYOUT_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREENLAYOUT_UNDEFINED"
 		);
 	}
 	jint Configuration::SCREEN_HEIGHT_DP_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREEN_HEIGHT_DP_UNDEFINED"
 		);
 	}
 	jint Configuration::SCREEN_WIDTH_DP_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SCREEN_WIDTH_DP_UNDEFINED"
 		);
 	}
 	jint Configuration::SMALLEST_SCREEN_WIDTH_DP_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"SMALLEST_SCREEN_WIDTH_DP_UNDEFINED"
 		);
 	}
 	jint Configuration::TOUCHSCREEN_FINGER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"TOUCHSCREEN_FINGER"
 		);
 	}
 	jint Configuration::TOUCHSCREEN_NOTOUCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"TOUCHSCREEN_NOTOUCH"
 		);
 	}
 	jint Configuration::TOUCHSCREEN_STYLUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"TOUCHSCREEN_STYLUS"
 		);
 	}
 	jint Configuration::TOUCHSCREEN_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"TOUCHSCREEN_UNDEFINED"
 		);
 	}
 	jint Configuration::UI_MODE_NIGHT_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_NIGHT_MASK"
 		);
 	}
 	jint Configuration::UI_MODE_NIGHT_NO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_NIGHT_NO"
 		);
 	}
 	jint Configuration::UI_MODE_NIGHT_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_NIGHT_UNDEFINED"
 		);
 	}
 	jint Configuration::UI_MODE_NIGHT_YES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_NIGHT_YES"
 		);
 	}
 	jint Configuration::UI_MODE_TYPE_APPLIANCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_TYPE_APPLIANCE"
 		);
 	}
 	jint Configuration::UI_MODE_TYPE_CAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_TYPE_CAR"
 		);
 	}
 	jint Configuration::UI_MODE_TYPE_DESK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_TYPE_DESK"
 		);
 	}
 	jint Configuration::UI_MODE_TYPE_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_TYPE_MASK"
 		);
 	}
 	jint Configuration::UI_MODE_TYPE_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_TYPE_NORMAL"
 		);
 	}
 	jint Configuration::UI_MODE_TYPE_TELEVISION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_TYPE_TELEVISION"
 		);
 	}
 	jint Configuration::UI_MODE_TYPE_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_TYPE_UNDEFINED"
 		);
 	}
 	jint Configuration::UI_MODE_TYPE_VR_HEADSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_TYPE_VR_HEADSET"
 		);
 	}
 	jint Configuration::UI_MODE_TYPE_WATCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Configuration",
 			"UI_MODE_TYPE_WATCH"
 		);
@@ -661,7 +661,7 @@ namespace android::content::res
 	// Methods
 	jboolean Configuration::needNewResources(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.content.res.Configuration",
 			"needNewResources",
 			"(II)Z",

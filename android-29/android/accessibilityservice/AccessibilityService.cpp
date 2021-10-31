@@ -17,182 +17,182 @@ namespace android::accessibilityservice
 	// Fields
 	jint AccessibilityService::GESTURE_SWIPE_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_DOWN"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_DOWN_AND_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_DOWN_AND_LEFT"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_DOWN_AND_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_DOWN_AND_RIGHT"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_DOWN_AND_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_DOWN_AND_UP"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_LEFT"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_LEFT_AND_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_LEFT_AND_DOWN"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_LEFT_AND_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_LEFT_AND_RIGHT"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_LEFT_AND_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_LEFT_AND_UP"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_RIGHT"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_RIGHT_AND_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_RIGHT_AND_DOWN"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_RIGHT_AND_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_RIGHT_AND_LEFT"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_RIGHT_AND_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_RIGHT_AND_UP"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_UP"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_UP_AND_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_UP_AND_DOWN"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_UP_AND_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_UP_AND_LEFT"
 		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_UP_AND_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GESTURE_SWIPE_UP_AND_RIGHT"
 		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_BACK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GLOBAL_ACTION_BACK"
 		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_HOME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GLOBAL_ACTION_HOME"
 		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_LOCK_SCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GLOBAL_ACTION_LOCK_SCREEN"
 		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_NOTIFICATIONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GLOBAL_ACTION_NOTIFICATIONS"
 		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_POWER_DIALOG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GLOBAL_ACTION_POWER_DIALOG"
 		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_QUICK_SETTINGS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GLOBAL_ACTION_QUICK_SETTINGS"
 		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_RECENTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GLOBAL_ACTION_RECENTS"
 		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_TAKE_SCREENSHOT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GLOBAL_ACTION_TAKE_SCREENSHOT"
 		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN"
 		);
 	}
 	jstring AccessibilityService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accessibilityservice.AccessibilityService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -200,7 +200,7 @@ namespace android::accessibilityservice
 	}
 	jstring AccessibilityService::SERVICE_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accessibilityservice.AccessibilityService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
@@ -208,21 +208,21 @@ namespace android::accessibilityservice
 	}
 	jint AccessibilityService::SHOW_MODE_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"SHOW_MODE_AUTO"
 		);
 	}
 	jint AccessibilityService::SHOW_MODE_HIDDEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"SHOW_MODE_HIDDEN"
 		);
 	}
 	jint AccessibilityService::SHOW_MODE_IGNORE_HARD_KEYBOARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
 			"SHOW_MODE_IGNORE_HARD_KEYBOARD"
 		);

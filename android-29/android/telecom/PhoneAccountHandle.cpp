@@ -8,7 +8,7 @@ namespace android::telecom
 	// Fields
 	__JniBaseClass PhoneAccountHandle::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccountHandle",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

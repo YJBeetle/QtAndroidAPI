@@ -8,7 +8,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass NotificationChannel::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationChannel",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,7 +16,7 @@ namespace android::app
 	}
 	jstring NotificationChannel::DEFAULT_CHANNEL_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationChannel",
 			"DEFAULT_CHANNEL_ID",
 			"Ljava/lang/String;"

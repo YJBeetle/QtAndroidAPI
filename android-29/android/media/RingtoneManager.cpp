@@ -10,7 +10,7 @@ namespace android::media
 	// Fields
 	jstring RingtoneManager::ACTION_RINGTONE_PICKER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"ACTION_RINGTONE_PICKER",
 			"Ljava/lang/String;"
@@ -18,7 +18,7 @@ namespace android::media
 	}
 	jstring RingtoneManager::EXTRA_RINGTONE_DEFAULT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_DEFAULT_URI",
 			"Ljava/lang/String;"
@@ -26,7 +26,7 @@ namespace android::media
 	}
 	jstring RingtoneManager::EXTRA_RINGTONE_EXISTING_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_EXISTING_URI",
 			"Ljava/lang/String;"
@@ -34,7 +34,7 @@ namespace android::media
 	}
 	jstring RingtoneManager::EXTRA_RINGTONE_INCLUDE_DRM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_INCLUDE_DRM",
 			"Ljava/lang/String;"
@@ -42,7 +42,7 @@ namespace android::media
 	}
 	jstring RingtoneManager::EXTRA_RINGTONE_PICKED_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_PICKED_URI",
 			"Ljava/lang/String;"
@@ -50,7 +50,7 @@ namespace android::media
 	}
 	jstring RingtoneManager::EXTRA_RINGTONE_SHOW_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_SHOW_DEFAULT",
 			"Ljava/lang/String;"
@@ -58,7 +58,7 @@ namespace android::media
 	}
 	jstring RingtoneManager::EXTRA_RINGTONE_SHOW_SILENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_SHOW_SILENT",
 			"Ljava/lang/String;"
@@ -66,7 +66,7 @@ namespace android::media
 	}
 	jstring RingtoneManager::EXTRA_RINGTONE_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_TITLE",
 			"Ljava/lang/String;"
@@ -74,7 +74,7 @@ namespace android::media
 	}
 	jstring RingtoneManager::EXTRA_RINGTONE_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_TYPE",
 			"Ljava/lang/String;"
@@ -82,49 +82,49 @@ namespace android::media
 	}
 	jint RingtoneManager::ID_COLUMN_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RingtoneManager",
 			"ID_COLUMN_INDEX"
 		);
 	}
 	jint RingtoneManager::TITLE_COLUMN_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RingtoneManager",
 			"TITLE_COLUMN_INDEX"
 		);
 	}
 	jint RingtoneManager::TYPE_ALARM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RingtoneManager",
 			"TYPE_ALARM"
 		);
 	}
 	jint RingtoneManager::TYPE_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RingtoneManager",
 			"TYPE_ALL"
 		);
 	}
 	jint RingtoneManager::TYPE_NOTIFICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RingtoneManager",
 			"TYPE_NOTIFICATION"
 		);
 	}
 	jint RingtoneManager::TYPE_RINGTONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RingtoneManager",
 			"TYPE_RINGTONE"
 		);
 	}
 	jint RingtoneManager::URI_COLUMN_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RingtoneManager",
 			"URI_COLUMN_INDEX"
 		);
@@ -150,7 +150,7 @@ namespace android::media
 	// Methods
 	android::net::Uri RingtoneManager::getActualDefaultRingtoneUri(android::content::Context arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.RingtoneManager",
 			"getActualDefaultRingtoneUri",
 			"(Landroid/content/Context;I)Landroid/net/Uri;",
@@ -160,7 +160,7 @@ namespace android::media
 	}
 	jint RingtoneManager::getDefaultType(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.RingtoneManager",
 			"getDefaultType",
 			"(Landroid/net/Uri;)I",
@@ -169,7 +169,7 @@ namespace android::media
 	}
 	android::net::Uri RingtoneManager::getDefaultUri(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.RingtoneManager",
 			"getDefaultUri",
 			"(I)Landroid/net/Uri;",
@@ -178,7 +178,7 @@ namespace android::media
 	}
 	android::media::Ringtone RingtoneManager::getRingtone(android::content::Context arg0, android::net::Uri arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.RingtoneManager",
 			"getRingtone",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/media/Ringtone;",
@@ -188,7 +188,7 @@ namespace android::media
 	}
 	android::net::Uri RingtoneManager::getValidRingtoneUri(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.RingtoneManager",
 			"getValidRingtoneUri",
 			"(Landroid/content/Context;)Landroid/net/Uri;",
@@ -197,7 +197,7 @@ namespace android::media
 	}
 	jboolean RingtoneManager::hasHapticChannels(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.RingtoneManager",
 			"hasHapticChannels",
 			"(Landroid/net/Uri;)Z",
@@ -206,7 +206,7 @@ namespace android::media
 	}
 	jboolean RingtoneManager::isDefault(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.RingtoneManager",
 			"isDefault",
 			"(Landroid/net/Uri;)Z",
@@ -215,7 +215,7 @@ namespace android::media
 	}
 	android::content::res::AssetFileDescriptor RingtoneManager::openDefaultRingtoneUri(android::content::Context arg0, android::net::Uri arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.RingtoneManager",
 			"openDefaultRingtoneUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/content/res/AssetFileDescriptor;",
@@ -225,7 +225,7 @@ namespace android::media
 	}
 	void RingtoneManager::setActualDefaultRingtoneUri(android::content::Context arg0, jint arg1, android::net::Uri arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.media.RingtoneManager",
 			"setActualDefaultRingtoneUri",
 			"(Landroid/content/Context;ILandroid/net/Uri;)V",

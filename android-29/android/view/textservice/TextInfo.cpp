@@ -6,7 +6,7 @@ namespace android::view::textservice
 	// Fields
 	__JniBaseClass TextInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textservice.TextInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

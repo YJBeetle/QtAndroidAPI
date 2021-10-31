@@ -13,7 +13,7 @@ namespace android::accessibilityservice
 	// Methods
 	jlong GestureDescription::getMaxGestureDuration()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.accessibilityservice.GestureDescription",
 			"getMaxGestureDuration",
 			"()J"
@@ -21,7 +21,7 @@ namespace android::accessibilityservice
 	}
 	jint GestureDescription::getMaxStrokeCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.accessibilityservice.GestureDescription",
 			"getMaxStrokeCount",
 			"()I"

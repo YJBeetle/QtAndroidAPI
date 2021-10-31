@@ -9,14 +9,14 @@ namespace android::icu::util
 	// Fields
 	jint TaiwanCalendar::BEFORE_MINGUO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.TaiwanCalendar",
 			"BEFORE_MINGUO"
 		);
 	}
 	jint TaiwanCalendar::MINGUO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.TaiwanCalendar",
 			"MINGUO"
 		);

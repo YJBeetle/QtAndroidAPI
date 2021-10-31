@@ -5,7 +5,7 @@ namespace java::lang
 	// Fields
 	jclass Void::TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.Void",
 			"TYPE",
 			"Ljava/lang/Class;"

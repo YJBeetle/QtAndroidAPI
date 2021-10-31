@@ -6,7 +6,7 @@ namespace android::app::admin
 	// Fields
 	__JniBaseClass SystemUpdateInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.SystemUpdateInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,21 +14,21 @@ namespace android::app::admin
 	}
 	jint SystemUpdateInfo::SECURITY_PATCH_STATE_FALSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdateInfo",
 			"SECURITY_PATCH_STATE_FALSE"
 		);
 	}
 	jint SystemUpdateInfo::SECURITY_PATCH_STATE_TRUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdateInfo",
 			"SECURITY_PATCH_STATE_TRUE"
 		);
 	}
 	jint SystemUpdateInfo::SECURITY_PATCH_STATE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdateInfo",
 			"SECURITY_PATCH_STATE_UNKNOWN"
 		);

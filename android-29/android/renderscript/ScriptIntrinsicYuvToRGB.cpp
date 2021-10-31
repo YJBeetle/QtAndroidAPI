@@ -17,7 +17,7 @@ namespace android::renderscript
 	// Methods
 	android::renderscript::ScriptIntrinsicYuvToRGB ScriptIntrinsicYuvToRGB::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicYuvToRGB",
 			"create",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicYuvToRGB;",

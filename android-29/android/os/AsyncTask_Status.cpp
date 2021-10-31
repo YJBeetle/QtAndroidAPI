@@ -5,7 +5,7 @@ namespace android::os
 	// Fields
 	android::os::AsyncTask_Status AsyncTask_Status::FINISHED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.AsyncTask$Status",
 			"FINISHED",
 			"Landroid/os/AsyncTask$Status;"
@@ -13,7 +13,7 @@ namespace android::os
 	}
 	android::os::AsyncTask_Status AsyncTask_Status::PENDING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.AsyncTask$Status",
 			"PENDING",
 			"Landroid/os/AsyncTask$Status;"
@@ -21,7 +21,7 @@ namespace android::os
 	}
 	android::os::AsyncTask_Status AsyncTask_Status::RUNNING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.AsyncTask$Status",
 			"RUNNING",
 			"Landroid/os/AsyncTask$Status;"
@@ -36,7 +36,7 @@ namespace android::os
 	// Methods
 	android::os::AsyncTask_Status AsyncTask_Status::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.AsyncTask$Status",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/os/AsyncTask$Status;",
@@ -45,7 +45,7 @@ namespace android::os
 	}
 	jarray AsyncTask_Status::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.AsyncTask$Status",
 			"values",
 			"()[Landroid/os/AsyncTask$Status;"

@@ -9,140 +9,140 @@ namespace android::icu::lang
 	// Fields
 	jint UCharacter::FOLD_CASE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"FOLD_CASE_DEFAULT"
 		);
 	}
 	jint UCharacter::FOLD_CASE_EXCLUDE_SPECIAL_I()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"FOLD_CASE_EXCLUDE_SPECIAL_I"
 		);
 	}
 	jint UCharacter::MAX_CODE_POINT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"MAX_CODE_POINT"
 		);
 	}
 	jchar UCharacter::MAX_HIGH_SURROGATE()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.icu.lang.UCharacter",
 			"MAX_HIGH_SURROGATE"
 		);
 	}
 	jchar UCharacter::MAX_LOW_SURROGATE()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.icu.lang.UCharacter",
 			"MAX_LOW_SURROGATE"
 		);
 	}
 	jint UCharacter::MAX_RADIX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"MAX_RADIX"
 		);
 	}
 	jchar UCharacter::MAX_SURROGATE()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.icu.lang.UCharacter",
 			"MAX_SURROGATE"
 		);
 	}
 	jint UCharacter::MAX_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"MAX_VALUE"
 		);
 	}
 	jint UCharacter::MIN_CODE_POINT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"MIN_CODE_POINT"
 		);
 	}
 	jchar UCharacter::MIN_HIGH_SURROGATE()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.icu.lang.UCharacter",
 			"MIN_HIGH_SURROGATE"
 		);
 	}
 	jchar UCharacter::MIN_LOW_SURROGATE()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.icu.lang.UCharacter",
 			"MIN_LOW_SURROGATE"
 		);
 	}
 	jint UCharacter::MIN_RADIX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"MIN_RADIX"
 		);
 	}
 	jint UCharacter::MIN_SUPPLEMENTARY_CODE_POINT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"MIN_SUPPLEMENTARY_CODE_POINT"
 		);
 	}
 	jchar UCharacter::MIN_SURROGATE()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.icu.lang.UCharacter",
 			"MIN_SURROGATE"
 		);
 	}
 	jint UCharacter::MIN_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"MIN_VALUE"
 		);
 	}
 	jdouble UCharacter::NO_NUMERIC_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jdouble>(
+		return getStaticField<jdouble>(
 			"android.icu.lang.UCharacter",
 			"NO_NUMERIC_VALUE"
 		);
 	}
 	jint UCharacter::REPLACEMENT_CHAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"REPLACEMENT_CHAR"
 		);
 	}
 	jint UCharacter::SUPPLEMENTARY_MIN_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"SUPPLEMENTARY_MIN_VALUE"
 		);
 	}
 	jint UCharacter::TITLECASE_NO_BREAK_ADJUSTMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"TITLECASE_NO_BREAK_ADJUSTMENT"
 		);
 	}
 	jint UCharacter::TITLECASE_NO_LOWERCASE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.lang.UCharacter",
 			"TITLECASE_NO_LOWERCASE"
 		);
@@ -156,7 +156,7 @@ namespace android::icu::lang
 	// Methods
 	jint UCharacter::charCount(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"charCount",
 			"(I)I",
@@ -165,7 +165,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::codePointAt(jcharArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"codePointAt",
 			"([CI)I",
@@ -175,7 +175,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::codePointAt(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"codePointAt",
 			"(Ljava/lang/CharSequence;I)I",
@@ -185,7 +185,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::codePointAt(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"codePointAt",
 			"([CII)I",
@@ -196,7 +196,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::codePointBefore(jcharArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"codePointBefore",
 			"([CI)I",
@@ -206,7 +206,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::codePointBefore(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"codePointBefore",
 			"(Ljava/lang/CharSequence;I)I",
@@ -216,7 +216,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::codePointBefore(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"codePointBefore",
 			"([CII)I",
@@ -227,7 +227,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::codePointCount(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"codePointCount",
 			"([CII)I",
@@ -238,7 +238,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::codePointCount(jstring arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"codePointCount",
 			"(Ljava/lang/CharSequence;II)I",
@@ -249,7 +249,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::digit(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"digit",
 			"(I)I",
@@ -258,7 +258,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::digit(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"digit",
 			"(II)I",
@@ -268,7 +268,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::foldCase(jint arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"foldCase",
 			"(IZ)I",
@@ -278,7 +278,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::foldCase(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"foldCase",
 			"(II)I",
@@ -288,7 +288,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::foldCase(jstring arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"foldCase",
 			"(Ljava/lang/String;Z)Ljava/lang/String;",
@@ -298,7 +298,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::foldCase(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"foldCase",
 			"(Ljava/lang/String;I)Ljava/lang/String;",
@@ -308,7 +308,7 @@ namespace android::icu::lang
 	}
 	jchar UCharacter::forDigit(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jchar>(
+		return callStaticMethod<jchar>(
 			"android.icu.lang.UCharacter",
 			"forDigit",
 			"(II)C",
@@ -318,7 +318,7 @@ namespace android::icu::lang
 	}
 	android::icu::util::VersionInfo UCharacter::getAge(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getAge",
 			"(I)Landroid/icu/util/VersionInfo;",
@@ -327,7 +327,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getBidiPairedBracket(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getBidiPairedBracket",
 			"(I)I",
@@ -336,7 +336,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getCharFromExtendedName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getCharFromExtendedName",
 			"(Ljava/lang/String;)I",
@@ -345,7 +345,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getCharFromName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getCharFromName",
 			"(Ljava/lang/String;)I",
@@ -354,7 +354,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getCharFromNameAlias(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getCharFromNameAlias",
 			"(Ljava/lang/String;)I",
@@ -363,7 +363,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getCodePoint(jchar arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getCodePoint",
 			"(C)I",
@@ -372,7 +372,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getCodePoint(jchar arg0, jchar arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getCodePoint",
 			"(CC)I",
@@ -382,7 +382,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getCombiningClass(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getCombiningClass",
 			"(I)I",
@@ -391,7 +391,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getDirection(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getDirection",
 			"(I)I",
@@ -400,7 +400,7 @@ namespace android::icu::lang
 	}
 	jbyte UCharacter::getDirectionality(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jbyte>(
+		return callStaticMethod<jbyte>(
 			"android.icu.lang.UCharacter",
 			"getDirectionality",
 			"(I)B",
@@ -409,7 +409,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::getExtendedName(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getExtendedName",
 			"(I)Ljava/lang/String;",
@@ -418,7 +418,7 @@ namespace android::icu::lang
 	}
 	__JniBaseClass UCharacter::getExtendedNameIterator()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getExtendedNameIterator",
 			"()Landroid/icu/util/ValueIterator;"
@@ -426,7 +426,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getHanNumericValue(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getHanNumericValue",
 			"(I)I",
@@ -435,7 +435,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getIntPropertyMaxValue(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getIntPropertyMaxValue",
 			"(I)I",
@@ -444,7 +444,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getIntPropertyMinValue(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getIntPropertyMinValue",
 			"(I)I",
@@ -453,7 +453,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getIntPropertyValue(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getIntPropertyValue",
 			"(II)I",
@@ -463,7 +463,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getMirror(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getMirror",
 			"(I)I",
@@ -472,7 +472,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::getName(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getName",
 			"(I)Ljava/lang/String;",
@@ -481,7 +481,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::getName(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getName",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -491,7 +491,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::getNameAlias(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getNameAlias",
 			"(I)Ljava/lang/String;",
@@ -500,7 +500,7 @@ namespace android::icu::lang
 	}
 	__JniBaseClass UCharacter::getNameIterator()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getNameIterator",
 			"()Landroid/icu/util/ValueIterator;"
@@ -508,7 +508,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getNumericValue(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getNumericValue",
 			"(I)I",
@@ -517,7 +517,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getPropertyEnum(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getPropertyEnum",
 			"(Ljava/lang/CharSequence;)I",
@@ -526,7 +526,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::getPropertyName(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getPropertyName",
 			"(II)Ljava/lang/String;",
@@ -536,7 +536,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getPropertyValueEnum(jint arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getPropertyValueEnum",
 			"(ILjava/lang/CharSequence;)I",
@@ -546,7 +546,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::getPropertyValueName(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getPropertyValueName",
 			"(III)Ljava/lang/String;",
@@ -557,7 +557,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::getType(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getType",
 			"(I)I",
@@ -566,7 +566,7 @@ namespace android::icu::lang
 	}
 	__JniBaseClass UCharacter::getTypeIterator()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getTypeIterator",
 			"()Landroid/icu/util/RangeValueIterator;"
@@ -574,7 +574,7 @@ namespace android::icu::lang
 	}
 	jdouble UCharacter::getUnicodeNumericValue(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"android.icu.lang.UCharacter",
 			"getUnicodeNumericValue",
 			"(I)D",
@@ -583,7 +583,7 @@ namespace android::icu::lang
 	}
 	android::icu::util::VersionInfo UCharacter::getUnicodeVersion()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"getUnicodeVersion",
 			"()Landroid/icu/util/VersionInfo;"
@@ -591,7 +591,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::hasBinaryProperty(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"hasBinaryProperty",
 			"(II)Z",
@@ -601,7 +601,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isBMP(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isBMP",
 			"(I)Z",
@@ -610,7 +610,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isBaseForm(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isBaseForm",
 			"(I)Z",
@@ -619,7 +619,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isDefined(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isDefined",
 			"(I)Z",
@@ -628,7 +628,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isDigit(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isDigit",
 			"(I)Z",
@@ -637,7 +637,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isHighSurrogate(jchar arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isHighSurrogate",
 			"(C)Z",
@@ -646,7 +646,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isISOControl(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isISOControl",
 			"(I)Z",
@@ -655,7 +655,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isIdentifierIgnorable(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isIdentifierIgnorable",
 			"(I)Z",
@@ -664,7 +664,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isJavaIdentifierPart(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isJavaIdentifierPart",
 			"(I)Z",
@@ -673,7 +673,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isJavaIdentifierStart(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isJavaIdentifierStart",
 			"(I)Z",
@@ -682,7 +682,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isLegal(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isLegal",
 			"(I)Z",
@@ -691,7 +691,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isLegal(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isLegal",
 			"(Ljava/lang/String;)Z",
@@ -700,7 +700,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isLetter(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isLetter",
 			"(I)Z",
@@ -709,7 +709,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isLetterOrDigit(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isLetterOrDigit",
 			"(I)Z",
@@ -718,7 +718,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isLowSurrogate(jchar arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isLowSurrogate",
 			"(C)Z",
@@ -727,7 +727,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isLowerCase(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isLowerCase",
 			"(I)Z",
@@ -736,7 +736,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isMirrored(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isMirrored",
 			"(I)Z",
@@ -745,7 +745,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isPrintable(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isPrintable",
 			"(I)Z",
@@ -754,7 +754,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isSpaceChar(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isSpaceChar",
 			"(I)Z",
@@ -763,7 +763,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isSupplementary(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isSupplementary",
 			"(I)Z",
@@ -772,7 +772,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isSupplementaryCodePoint(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isSupplementaryCodePoint",
 			"(I)Z",
@@ -781,7 +781,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isSurrogatePair(jchar arg0, jchar arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isSurrogatePair",
 			"(CC)Z",
@@ -791,7 +791,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isTitleCase(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isTitleCase",
 			"(I)Z",
@@ -800,7 +800,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isUAlphabetic(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isUAlphabetic",
 			"(I)Z",
@@ -809,7 +809,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isULowercase(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isULowercase",
 			"(I)Z",
@@ -818,7 +818,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isUUppercase(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isUUppercase",
 			"(I)Z",
@@ -827,7 +827,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isUWhiteSpace(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isUWhiteSpace",
 			"(I)Z",
@@ -836,7 +836,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isUnicodeIdentifierPart(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isUnicodeIdentifierPart",
 			"(I)Z",
@@ -845,7 +845,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isUnicodeIdentifierStart(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isUnicodeIdentifierStart",
 			"(I)Z",
@@ -854,7 +854,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isUpperCase(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isUpperCase",
 			"(I)Z",
@@ -863,7 +863,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isValidCodePoint(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isValidCodePoint",
 			"(I)Z",
@@ -872,7 +872,7 @@ namespace android::icu::lang
 	}
 	jboolean UCharacter::isWhitespace(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.icu.lang.UCharacter",
 			"isWhitespace",
 			"(I)Z",
@@ -881,7 +881,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::offsetByCodePoints(jstring arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"offsetByCodePoints",
 			"(Ljava/lang/CharSequence;II)I",
@@ -892,7 +892,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::offsetByCodePoints(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"offsetByCodePoints",
 			"([CIIII)I",
@@ -905,7 +905,7 @@ namespace android::icu::lang
 	}
 	jcharArray UCharacter::toChars(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toChars",
 			"(I)[C",
@@ -914,7 +914,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::toChars(jint arg0, jcharArray arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"toChars",
 			"(I[CI)I",
@@ -925,7 +925,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::toCodePoint(jchar arg0, jchar arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"toCodePoint",
 			"(CC)I",
@@ -935,7 +935,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::toLowerCase(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"toLowerCase",
 			"(I)I",
@@ -944,7 +944,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toLowerCase(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toLowerCase",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -953,7 +953,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toLowerCase(android::icu::util::ULocale arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toLowerCase",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;)Ljava/lang/String;",
@@ -963,7 +963,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toLowerCase(java::util::Locale arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toLowerCase",
 			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
@@ -973,7 +973,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toString",
 			"(I)Ljava/lang/String;",
@@ -982,7 +982,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::toTitleCase(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"toTitleCase",
 			"(I)I",
@@ -991,7 +991,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toTitleCase(jstring arg0, android::icu::text::BreakIterator arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toTitleCase",
 			"(Ljava/lang/String;Landroid/icu/text/BreakIterator;)Ljava/lang/String;",
@@ -1001,7 +1001,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toTitleCase(android::icu::util::ULocale arg0, jstring arg1, android::icu::text::BreakIterator arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toTitleCase",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;Landroid/icu/text/BreakIterator;)Ljava/lang/String;",
@@ -1012,7 +1012,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toTitleCase(java::util::Locale arg0, jstring arg1, android::icu::text::BreakIterator arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toTitleCase",
 			"(Ljava/util/Locale;Ljava/lang/String;Landroid/icu/text/BreakIterator;)Ljava/lang/String;",
@@ -1023,7 +1023,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toTitleCase(android::icu::util::ULocale arg0, jstring arg1, android::icu::text::BreakIterator arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toTitleCase",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;Landroid/icu/text/BreakIterator;I)Ljava/lang/String;",
@@ -1035,7 +1035,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toTitleCase(java::util::Locale arg0, jstring arg1, android::icu::text::BreakIterator arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toTitleCase",
 			"(Ljava/util/Locale;Ljava/lang/String;Landroid/icu/text/BreakIterator;I)Ljava/lang/String;",
@@ -1047,7 +1047,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter::toUpperCase(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"toUpperCase",
 			"(I)I",
@@ -1056,7 +1056,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toUpperCase(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toUpperCase",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -1065,7 +1065,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toUpperCase(android::icu::util::ULocale arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toUpperCase",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;)Ljava/lang/String;",
@@ -1075,7 +1075,7 @@ namespace android::icu::lang
 	}
 	jstring UCharacter::toUpperCase(java::util::Locale arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
 			"toUpperCase",
 			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",

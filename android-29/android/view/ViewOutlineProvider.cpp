@@ -7,7 +7,7 @@ namespace android::view
 	// Fields
 	android::view::ViewOutlineProvider ViewOutlineProvider::BACKGROUND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewOutlineProvider",
 			"BACKGROUND",
 			"Landroid/view/ViewOutlineProvider;"
@@ -15,7 +15,7 @@ namespace android::view
 	}
 	android::view::ViewOutlineProvider ViewOutlineProvider::BOUNDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewOutlineProvider",
 			"BOUNDS",
 			"Landroid/view/ViewOutlineProvider;"
@@ -23,7 +23,7 @@ namespace android::view
 	}
 	android::view::ViewOutlineProvider ViewOutlineProvider::PADDED_BOUNDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.ViewOutlineProvider",
 			"PADDED_BOUNDS",
 			"Landroid/view/ViewOutlineProvider;"

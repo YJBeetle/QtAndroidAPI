@@ -15,7 +15,7 @@ namespace java::io
 	// Fields
 	jarray ObjectStreamClass::NO_FIELDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.io.ObjectStreamClass",
 			"NO_FIELDS",
 			"[Ljava/io/ObjectStreamField;"
@@ -30,7 +30,7 @@ namespace java::io
 	// Methods
 	java::io::ObjectStreamClass ObjectStreamClass::lookup(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.io.ObjectStreamClass",
 			"lookup",
 			"(Ljava/lang/Class;)Ljava/io/ObjectStreamClass;",
@@ -39,7 +39,7 @@ namespace java::io
 	}
 	java::io::ObjectStreamClass ObjectStreamClass::lookupAny(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.io.ObjectStreamClass",
 			"lookupAny",
 			"(Ljava/lang/Class;)Ljava/io/ObjectStreamClass;",

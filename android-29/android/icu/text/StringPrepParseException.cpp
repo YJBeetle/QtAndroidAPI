@@ -5,84 +5,84 @@ namespace android::icu::text
 	// Fields
 	jint StringPrepParseException::ACE_PREFIX_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"ACE_PREFIX_ERROR"
 		);
 	}
 	jint StringPrepParseException::BUFFER_OVERFLOW_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"BUFFER_OVERFLOW_ERROR"
 		);
 	}
 	jint StringPrepParseException::CHECK_BIDI_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"CHECK_BIDI_ERROR"
 		);
 	}
 	jint StringPrepParseException::DOMAIN_NAME_TOO_LONG_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"DOMAIN_NAME_TOO_LONG_ERROR"
 		);
 	}
 	jint StringPrepParseException::ILLEGAL_CHAR_FOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"ILLEGAL_CHAR_FOUND"
 		);
 	}
 	jint StringPrepParseException::INVALID_CHAR_FOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"INVALID_CHAR_FOUND"
 		);
 	}
 	jint StringPrepParseException::LABEL_TOO_LONG_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"LABEL_TOO_LONG_ERROR"
 		);
 	}
 	jint StringPrepParseException::PROHIBITED_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"PROHIBITED_ERROR"
 		);
 	}
 	jint StringPrepParseException::STD3_ASCII_RULES_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"STD3_ASCII_RULES_ERROR"
 		);
 	}
 	jint StringPrepParseException::UNASSIGNED_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"UNASSIGNED_ERROR"
 		);
 	}
 	jint StringPrepParseException::VERIFICATION_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"VERIFICATION_ERROR"
 		);
 	}
 	jint StringPrepParseException::ZERO_LENGTH_LABEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
 			"ZERO_LENGTH_LABEL"
 		);

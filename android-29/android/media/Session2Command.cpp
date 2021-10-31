@@ -7,14 +7,14 @@ namespace android::media
 	// Fields
 	jint Session2Command::COMMAND_CODE_CUSTOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Session2Command",
 			"COMMAND_CODE_CUSTOM"
 		);
 	}
 	__JniBaseClass Session2Command::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.Session2Command",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -9,7 +9,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass RemoteAction::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.RemoteAction",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

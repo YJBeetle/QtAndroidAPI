@@ -21,7 +21,7 @@ namespace java::net
 	// Methods
 	java::net::ProxySelector ProxySelector::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.ProxySelector",
 			"getDefault",
 			"()Ljava/net/ProxySelector;"
@@ -29,7 +29,7 @@ namespace java::net
 	}
 	java::net::ProxySelector ProxySelector::of(java::net::InetSocketAddress arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.ProxySelector",
 			"of",
 			"(Ljava/net/InetSocketAddress;)Ljava/net/ProxySelector;",
@@ -38,7 +38,7 @@ namespace java::net
 	}
 	void ProxySelector::setDefault(java::net::ProxySelector arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.ProxySelector",
 			"setDefault",
 			"(Ljava/net/ProxySelector;)V",

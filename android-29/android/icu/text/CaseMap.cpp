@@ -16,7 +16,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::CaseMap_Fold CaseMap::fold()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"fold",
 			"()Landroid/icu/text/CaseMap$Fold;"
@@ -24,7 +24,7 @@ namespace android::icu::text
 	}
 	android::icu::text::CaseMap_Lower CaseMap::toLower()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"toLower",
 			"()Landroid/icu/text/CaseMap$Lower;"
@@ -32,7 +32,7 @@ namespace android::icu::text
 	}
 	android::icu::text::CaseMap_Title CaseMap::toTitle()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"toTitle",
 			"()Landroid/icu/text/CaseMap$Title;"
@@ -40,7 +40,7 @@ namespace android::icu::text
 	}
 	android::icu::text::CaseMap_Upper CaseMap::toUpper()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"toUpper",
 			"()Landroid/icu/text/CaseMap$Upper;"

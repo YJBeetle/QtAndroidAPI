@@ -11,7 +11,7 @@ namespace android::appwidget
 	// Fields
 	__JniBaseClass AppWidgetProviderInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.appwidget.AppWidgetProviderInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -19,63 +19,63 @@ namespace android::appwidget
 	}
 	jint AppWidgetProviderInfo::RESIZE_BOTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
 			"RESIZE_BOTH"
 		);
 	}
 	jint AppWidgetProviderInfo::RESIZE_HORIZONTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
 			"RESIZE_HORIZONTAL"
 		);
 	}
 	jint AppWidgetProviderInfo::RESIZE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
 			"RESIZE_NONE"
 		);
 	}
 	jint AppWidgetProviderInfo::RESIZE_VERTICAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
 			"RESIZE_VERTICAL"
 		);
 	}
 	jint AppWidgetProviderInfo::WIDGET_CATEGORY_HOME_SCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
 			"WIDGET_CATEGORY_HOME_SCREEN"
 		);
 	}
 	jint AppWidgetProviderInfo::WIDGET_CATEGORY_KEYGUARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
 			"WIDGET_CATEGORY_KEYGUARD"
 		);
 	}
 	jint AppWidgetProviderInfo::WIDGET_CATEGORY_SEARCHBOX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
 			"WIDGET_CATEGORY_SEARCHBOX"
 		);
 	}
 	jint AppWidgetProviderInfo::WIDGET_FEATURE_HIDE_FROM_PICKER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
 			"WIDGET_FEATURE_HIDE_FROM_PICKER"
 		);
 	}
 	jint AppWidgetProviderInfo::WIDGET_FEATURE_RECONFIGURABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
 			"WIDGET_FEATURE_RECONFIGURABLE"
 		);

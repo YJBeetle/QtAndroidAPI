@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri ContactsContract_Profile::CONTENT_RAW_CONTACTS_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Profile",
 			"CONTENT_RAW_CONTACTS_URI",
 			"Landroid/net/Uri;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_Profile::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Profile",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_Profile::CONTENT_VCARD_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Profile",
 			"CONTENT_VCARD_URI",
 			"Landroid/net/Uri;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jlong ContactsContract_Profile::MIN_ID()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.provider.ContactsContract$Profile",
 			"MIN_ID"
 		);

@@ -19,7 +19,7 @@ namespace java::lang::reflect
 	// Methods
 	__JniBaseClass Proxy::getInvocationHandler(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.reflect.Proxy",
 			"getInvocationHandler",
 			"(Ljava/lang/Object;)Ljava/lang/reflect/InvocationHandler;",
@@ -28,7 +28,7 @@ namespace java::lang::reflect
 	}
 	jclass Proxy::getProxyClass(java::lang::ClassLoader arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.reflect.Proxy",
 			"getProxyClass",
 			"(Ljava/lang/ClassLoader;[Ljava/lang/Class;)Ljava/lang/Class;",
@@ -38,7 +38,7 @@ namespace java::lang::reflect
 	}
 	jboolean Proxy::isProxyClass(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Proxy",
 			"isProxyClass",
 			"(Ljava/lang/Class;)Z",
@@ -47,7 +47,7 @@ namespace java::lang::reflect
 	}
 	jobject Proxy::newProxyInstance(java::lang::ClassLoader arg0, jarray arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.reflect.Proxy",
 			"newProxyInstance",
 			"(Ljava/lang/ClassLoader;[Ljava/lang/Class;Ljava/lang/reflect/InvocationHandler;)Ljava/lang/Object;",

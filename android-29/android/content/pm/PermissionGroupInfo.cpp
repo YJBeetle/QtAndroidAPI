@@ -7,7 +7,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass PermissionGroupInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PermissionGroupInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::content::pm
 	}
 	jint PermissionGroupInfo::FLAG_PERSONAL_INFO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PermissionGroupInfo",
 			"FLAG_PERSONAL_INFO"
 		);

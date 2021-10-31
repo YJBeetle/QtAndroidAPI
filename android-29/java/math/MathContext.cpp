@@ -7,7 +7,7 @@ namespace java::math
 	// Fields
 	java::math::MathContext MathContext::DECIMAL128()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.MathContext",
 			"DECIMAL128",
 			"Ljava/math/MathContext;"
@@ -15,7 +15,7 @@ namespace java::math
 	}
 	java::math::MathContext MathContext::DECIMAL32()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.MathContext",
 			"DECIMAL32",
 			"Ljava/math/MathContext;"
@@ -23,7 +23,7 @@ namespace java::math
 	}
 	java::math::MathContext MathContext::DECIMAL64()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.MathContext",
 			"DECIMAL64",
 			"Ljava/math/MathContext;"
@@ -31,7 +31,7 @@ namespace java::math
 	}
 	java::math::MathContext MathContext::UNLIMITED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.MathContext",
 			"UNLIMITED",
 			"Ljava/math/MathContext;"

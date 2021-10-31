@@ -10,21 +10,21 @@ namespace android::widget
 	// Fields
 	jint PopupWindow::INPUT_METHOD_FROM_FOCUSABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.PopupWindow",
 			"INPUT_METHOD_FROM_FOCUSABLE"
 		);
 	}
 	jint PopupWindow::INPUT_METHOD_NEEDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.PopupWindow",
 			"INPUT_METHOD_NEEDED"
 		);
 	}
 	jint PopupWindow::INPUT_METHOD_NOT_NEEDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.PopupWindow",
 			"INPUT_METHOD_NOT_NEEDED"
 		);

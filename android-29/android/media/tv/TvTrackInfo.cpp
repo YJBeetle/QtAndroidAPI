@@ -7,7 +7,7 @@ namespace android::media::tv
 	// Fields
 	__JniBaseClass TvTrackInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvTrackInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,21 +15,21 @@ namespace android::media::tv
 	}
 	jint TvTrackInfo::TYPE_AUDIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvTrackInfo",
 			"TYPE_AUDIO"
 		);
 	}
 	jint TvTrackInfo::TYPE_SUBTITLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvTrackInfo",
 			"TYPE_SUBTITLE"
 		);
 	}
 	jint TvTrackInfo::TYPE_VIDEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvTrackInfo",
 			"TYPE_VIDEO"
 		);

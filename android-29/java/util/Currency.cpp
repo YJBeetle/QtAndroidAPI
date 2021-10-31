@@ -18,7 +18,7 @@ namespace java::util
 	// Methods
 	__JniBaseClass Currency::getAvailableCurrencies()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Currency",
 			"getAvailableCurrencies",
 			"()Ljava/util/Set;"
@@ -26,7 +26,7 @@ namespace java::util
 	}
 	java::util::Currency Currency::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Currency",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/util/Currency;",
@@ -35,7 +35,7 @@ namespace java::util
 	}
 	java::util::Currency Currency::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Currency",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/util/Currency;",

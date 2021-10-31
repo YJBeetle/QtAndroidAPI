@@ -39,7 +39,7 @@ namespace android::app
 	// Methods
 	android::app::Notification_Builder Notification_Builder::recoverBuilder(android::content::Context arg0, android::app::Notification arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.Notification$Builder",
 			"recoverBuilder",
 			"(Landroid/content/Context;Landroid/app/Notification;)Landroid/app/Notification$Builder;",

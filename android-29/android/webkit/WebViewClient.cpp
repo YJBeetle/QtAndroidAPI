@@ -17,147 +17,147 @@ namespace android::webkit
 	// Fields
 	jint WebViewClient::ERROR_AUTHENTICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_AUTHENTICATION"
 		);
 	}
 	jint WebViewClient::ERROR_BAD_URL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_BAD_URL"
 		);
 	}
 	jint WebViewClient::ERROR_CONNECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_CONNECT"
 		);
 	}
 	jint WebViewClient::ERROR_FAILED_SSL_HANDSHAKE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_FAILED_SSL_HANDSHAKE"
 		);
 	}
 	jint WebViewClient::ERROR_FILE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_FILE"
 		);
 	}
 	jint WebViewClient::ERROR_FILE_NOT_FOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_FILE_NOT_FOUND"
 		);
 	}
 	jint WebViewClient::ERROR_HOST_LOOKUP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_HOST_LOOKUP"
 		);
 	}
 	jint WebViewClient::ERROR_IO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_IO"
 		);
 	}
 	jint WebViewClient::ERROR_PROXY_AUTHENTICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_PROXY_AUTHENTICATION"
 		);
 	}
 	jint WebViewClient::ERROR_REDIRECT_LOOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_REDIRECT_LOOP"
 		);
 	}
 	jint WebViewClient::ERROR_TIMEOUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_TIMEOUT"
 		);
 	}
 	jint WebViewClient::ERROR_TOO_MANY_REQUESTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_TOO_MANY_REQUESTS"
 		);
 	}
 	jint WebViewClient::ERROR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_UNKNOWN"
 		);
 	}
 	jint WebViewClient::ERROR_UNSAFE_RESOURCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_UNSAFE_RESOURCE"
 		);
 	}
 	jint WebViewClient::ERROR_UNSUPPORTED_AUTH_SCHEME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_UNSUPPORTED_AUTH_SCHEME"
 		);
 	}
 	jint WebViewClient::ERROR_UNSUPPORTED_SCHEME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"ERROR_UNSUPPORTED_SCHEME"
 		);
 	}
 	jint WebViewClient::SAFE_BROWSING_THREAT_BILLING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"SAFE_BROWSING_THREAT_BILLING"
 		);
 	}
 	jint WebViewClient::SAFE_BROWSING_THREAT_MALWARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"SAFE_BROWSING_THREAT_MALWARE"
 		);
 	}
 	jint WebViewClient::SAFE_BROWSING_THREAT_PHISHING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"SAFE_BROWSING_THREAT_PHISHING"
 		);
 	}
 	jint WebViewClient::SAFE_BROWSING_THREAT_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"SAFE_BROWSING_THREAT_UNKNOWN"
 		);
 	}
 	jint WebViewClient::SAFE_BROWSING_THREAT_UNWANTED_SOFTWARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebViewClient",
 			"SAFE_BROWSING_THREAT_UNWANTED_SOFTWARE"
 		);

@@ -6,21 +6,21 @@ namespace android::graphics
 	// Fields
 	jint ImageDecoder_DecodeException::SOURCE_EXCEPTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ImageDecoder$DecodeException",
 			"SOURCE_EXCEPTION"
 		);
 	}
 	jint ImageDecoder_DecodeException::SOURCE_INCOMPLETE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ImageDecoder$DecodeException",
 			"SOURCE_INCOMPLETE"
 		);
 	}
 	jint ImageDecoder_DecodeException::SOURCE_MALFORMED_DATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.ImageDecoder$DecodeException",
 			"SOURCE_MALFORMED_DATA"
 		);

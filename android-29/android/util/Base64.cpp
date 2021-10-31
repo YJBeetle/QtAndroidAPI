@@ -5,42 +5,42 @@ namespace android::util
 	// Fields
 	jint Base64::CRLF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.util.Base64",
 			"CRLF"
 		);
 	}
 	jint Base64::DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.util.Base64",
 			"DEFAULT"
 		);
 	}
 	jint Base64::NO_CLOSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.util.Base64",
 			"NO_CLOSE"
 		);
 	}
 	jint Base64::NO_PADDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.util.Base64",
 			"NO_PADDING"
 		);
 	}
 	jint Base64::NO_WRAP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.util.Base64",
 			"NO_WRAP"
 		);
 	}
 	jint Base64::URL_SAFE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.util.Base64",
 			"URL_SAFE"
 		);
@@ -54,7 +54,7 @@ namespace android::util
 	// Methods
 	jbyteArray Base64::decode(jbyteArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Base64",
 			"decode",
 			"([BI)[B",
@@ -64,7 +64,7 @@ namespace android::util
 	}
 	jbyteArray Base64::decode(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Base64",
 			"decode",
 			"(Ljava/lang/String;I)[B",
@@ -74,7 +74,7 @@ namespace android::util
 	}
 	jbyteArray Base64::decode(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Base64",
 			"decode",
 			"([BIII)[B",
@@ -86,7 +86,7 @@ namespace android::util
 	}
 	jbyteArray Base64::encode(jbyteArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Base64",
 			"encode",
 			"([BI)[B",
@@ -96,7 +96,7 @@ namespace android::util
 	}
 	jbyteArray Base64::encode(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Base64",
 			"encode",
 			"([BIII)[B",
@@ -108,7 +108,7 @@ namespace android::util
 	}
 	jstring Base64::encodeToString(jbyteArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Base64",
 			"encodeToString",
 			"([BI)Ljava/lang/String;",
@@ -118,7 +118,7 @@ namespace android::util
 	}
 	jstring Base64::encodeToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.util.Base64",
 			"encodeToString",
 			"([BIII)Ljava/lang/String;",

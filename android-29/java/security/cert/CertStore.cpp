@@ -15,7 +15,7 @@ namespace java::security::cert
 	// Methods
 	jstring CertStore::getDefaultType()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
 			"getDefaultType",
 			"()Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace java::security::cert
 	}
 	java::security::cert::CertStore CertStore::getInstance(jstring arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;)Ljava/security/cert/CertStore;",
@@ -33,7 +33,7 @@ namespace java::security::cert
 	}
 	java::security::cert::CertStore CertStore::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/lang/String;)Ljava/security/cert/CertStore;",
@@ -44,7 +44,7 @@ namespace java::security::cert
 	}
 	java::security::cert::CertStore CertStore::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/security/Provider;)Ljava/security/cert/CertStore;",

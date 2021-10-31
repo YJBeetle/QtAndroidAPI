@@ -15,7 +15,7 @@ namespace android::media
 	// Methods
 	android::media::ImageWriter ImageWriter::newInstance(android::view::Surface arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ImageWriter",
 			"newInstance",
 			"(Landroid/view/Surface;I)Landroid/media/ImageWriter;",
@@ -25,7 +25,7 @@ namespace android::media
 	}
 	android::media::ImageWriter ImageWriter::newInstance(android::view::Surface arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ImageWriter",
 			"newInstance",
 			"(Landroid/view/Surface;II)Landroid/media/ImageWriter;",

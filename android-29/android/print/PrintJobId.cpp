@@ -6,7 +6,7 @@ namespace android::print
 	// Fields
 	__JniBaseClass PrintJobId::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.print.PrintJobId",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

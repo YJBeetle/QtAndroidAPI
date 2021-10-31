@@ -5,7 +5,7 @@ namespace javax::crypto::spec
 	// Fields
 	jint DESKeySpec::DES_KEY_LEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"javax.crypto.spec.DESKeySpec",
 			"DES_KEY_LEN"
 		);
@@ -32,7 +32,7 @@ namespace javax::crypto::spec
 	// Methods
 	jboolean DESKeySpec::isParityAdjusted(jbyteArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"javax.crypto.spec.DESKeySpec",
 			"isParityAdjusted",
 			"([BI)Z",
@@ -42,7 +42,7 @@ namespace javax::crypto::spec
 	}
 	jboolean DESKeySpec::isWeak(jbyteArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"javax.crypto.spec.DESKeySpec",
 			"isWeak",
 			"([BI)Z",

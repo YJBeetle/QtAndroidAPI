@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri ContactsContract_CommonDataKinds_Contactables::CONTENT_FILTER_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"CONTENT_FILTER_URI",
 			"Landroid/net/Uri;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Contactables::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Contactables::EXTRA_ADDRESS_BOOK_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Contactables::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Contactables::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Contactables::VISIBLE_CONTACTS_ONLY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"VISIBLE_CONTACTS_ONLY",
 			"Ljava/lang/String;"

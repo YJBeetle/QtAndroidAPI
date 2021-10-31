@@ -5,7 +5,7 @@ namespace android::text::method
 	// Fields
 	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::CHARACTERS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
 			"CHARACTERS",
 			"Landroid/text/method/TextKeyListener$Capitalize;"
@@ -13,7 +13,7 @@ namespace android::text::method
 	}
 	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::NONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
 			"NONE",
 			"Landroid/text/method/TextKeyListener$Capitalize;"
@@ -21,7 +21,7 @@ namespace android::text::method
 	}
 	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::SENTENCES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
 			"SENTENCES",
 			"Landroid/text/method/TextKeyListener$Capitalize;"
@@ -29,7 +29,7 @@ namespace android::text::method
 	}
 	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::WORDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
 			"WORDS",
 			"Landroid/text/method/TextKeyListener$Capitalize;"
@@ -44,7 +44,7 @@ namespace android::text::method
 	// Methods
 	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.TextKeyListener$Capitalize",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/text/method/TextKeyListener$Capitalize;",
@@ -53,7 +53,7 @@ namespace android::text::method
 	}
 	jarray TextKeyListener_Capitalize::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.TextKeyListener$Capitalize",
 			"values",
 			"()[Landroid/text/method/TextKeyListener$Capitalize;"

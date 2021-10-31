@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri Telephony_Sms_Conversations::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring Telephony_Sms_Conversations::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring Telephony_Sms_Conversations::MESSAGE_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"MESSAGE_COUNT",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring Telephony_Sms_Conversations::SNIPPET()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"SNIPPET",
 			"Ljava/lang/String;"

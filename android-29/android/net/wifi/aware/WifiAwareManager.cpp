@@ -9,7 +9,7 @@ namespace android::net::wifi::aware
 	// Fields
 	jstring WifiAwareManager::ACTION_WIFI_AWARE_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.aware.WifiAwareManager",
 			"ACTION_WIFI_AWARE_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -17,14 +17,14 @@ namespace android::net::wifi::aware
 	}
 	jint WifiAwareManager::WIFI_AWARE_DATA_PATH_ROLE_INITIATOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.aware.WifiAwareManager",
 			"WIFI_AWARE_DATA_PATH_ROLE_INITIATOR"
 		);
 	}
 	jint WifiAwareManager::WIFI_AWARE_DATA_PATH_ROLE_RESPONDER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.aware.WifiAwareManager",
 			"WIFI_AWARE_DATA_PATH_ROLE_RESPONDER"
 		);

@@ -6,28 +6,28 @@ namespace android::opengl
 	// Fields
 	jint ETC1::DECODED_BLOCK_SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.ETC1",
 			"DECODED_BLOCK_SIZE"
 		);
 	}
 	jint ETC1::ENCODED_BLOCK_SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.ETC1",
 			"ENCODED_BLOCK_SIZE"
 		);
 	}
 	jint ETC1::ETC1_RGB8_OES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.ETC1",
 			"ETC1_RGB8_OES"
 		);
 	}
 	jint ETC1::ETC_PKM_HEADER_SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.ETC1",
 			"ETC_PKM_HEADER_SIZE"
 		);
@@ -46,7 +46,7 @@ namespace android::opengl
 	// Methods
 	void ETC1::decodeBlock(java::nio::Buffer arg0, java::nio::Buffer arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.ETC1",
 			"decodeBlock",
 			"(Ljava/nio/Buffer;Ljava/nio/Buffer;)V",
@@ -56,7 +56,7 @@ namespace android::opengl
 	}
 	void ETC1::decodeImage(java::nio::Buffer arg0, java::nio::Buffer arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.ETC1",
 			"decodeImage",
 			"(Ljava/nio/Buffer;Ljava/nio/Buffer;IIII)V",
@@ -70,7 +70,7 @@ namespace android::opengl
 	}
 	void ETC1::encodeBlock(java::nio::Buffer arg0, jint arg1, java::nio::Buffer arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.ETC1",
 			"encodeBlock",
 			"(Ljava/nio/Buffer;ILjava/nio/Buffer;)V",
@@ -81,7 +81,7 @@ namespace android::opengl
 	}
 	void ETC1::encodeImage(java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4, java::nio::Buffer arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.ETC1",
 			"encodeImage",
 			"(Ljava/nio/Buffer;IIIILjava/nio/Buffer;)V",
@@ -95,7 +95,7 @@ namespace android::opengl
 	}
 	void ETC1::formatHeader(java::nio::Buffer arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.ETC1",
 			"formatHeader",
 			"(Ljava/nio/Buffer;II)V",
@@ -106,7 +106,7 @@ namespace android::opengl
 	}
 	jint ETC1::getEncodedDataSize(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.opengl.ETC1",
 			"getEncodedDataSize",
 			"(II)I",
@@ -116,7 +116,7 @@ namespace android::opengl
 	}
 	jint ETC1::getHeight(java::nio::Buffer arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.opengl.ETC1",
 			"getHeight",
 			"(Ljava/nio/Buffer;)I",
@@ -125,7 +125,7 @@ namespace android::opengl
 	}
 	jint ETC1::getWidth(java::nio::Buffer arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.opengl.ETC1",
 			"getWidth",
 			"(Ljava/nio/Buffer;)I",
@@ -134,7 +134,7 @@ namespace android::opengl
 	}
 	jboolean ETC1::isValid(java::nio::Buffer arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.opengl.ETC1",
 			"isValid",
 			"(Ljava/nio/Buffer;)Z",

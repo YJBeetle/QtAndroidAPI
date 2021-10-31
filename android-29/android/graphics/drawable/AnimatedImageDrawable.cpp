@@ -10,7 +10,7 @@ namespace android::graphics::drawable
 	// Fields
 	jint AnimatedImageDrawable::REPEAT_INFINITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.AnimatedImageDrawable",
 			"REPEAT_INFINITE"
 		);

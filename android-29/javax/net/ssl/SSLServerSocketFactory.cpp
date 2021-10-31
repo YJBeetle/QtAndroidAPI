@@ -13,7 +13,7 @@ namespace javax::net::ssl
 	// Methods
 	javax::net::ServerSocketFactory SSLServerSocketFactory::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ssl.SSLServerSocketFactory",
 			"getDefault",
 			"()Ljavax/net/ServerSocketFactory;"

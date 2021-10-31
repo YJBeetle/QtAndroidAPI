@@ -5,7 +5,7 @@ namespace org::xml::sax::helpers
 	// Fields
 	jstring NamespaceSupport::NSDECL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"org.xml.sax.helpers.NamespaceSupport",
 			"NSDECL",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring NamespaceSupport::XMLNS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"org.xml.sax.helpers.NamespaceSupport",
 			"XMLNS",
 			"Ljava/lang/String;"

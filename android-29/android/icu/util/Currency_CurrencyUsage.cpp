@@ -5,7 +5,7 @@ namespace android::icu::util
 	// Fields
 	android::icu::util::Currency_CurrencyUsage Currency_CurrencyUsage::CASH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.Currency$CurrencyUsage",
 			"CASH",
 			"Landroid/icu/util/Currency$CurrencyUsage;"
@@ -13,7 +13,7 @@ namespace android::icu::util
 	}
 	android::icu::util::Currency_CurrencyUsage Currency_CurrencyUsage::STANDARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.Currency$CurrencyUsage",
 			"STANDARD",
 			"Landroid/icu/util/Currency$CurrencyUsage;"
@@ -28,7 +28,7 @@ namespace android::icu::util
 	// Methods
 	android::icu::util::Currency_CurrencyUsage Currency_CurrencyUsage::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency$CurrencyUsage",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/Currency$CurrencyUsage;",
@@ -37,7 +37,7 @@ namespace android::icu::util
 	}
 	jarray Currency_CurrencyUsage::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.Currency$CurrencyUsage",
 			"values",
 			"()[Landroid/icu/util/Currency$CurrencyUsage;"

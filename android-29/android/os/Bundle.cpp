@@ -13,7 +13,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass Bundle::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Bundle",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -21,7 +21,7 @@ namespace android::os
 	}
 	android::os::Bundle Bundle::EMPTY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Bundle",
 			"EMPTY",
 			"Landroid/os/Bundle;"

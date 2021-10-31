@@ -17,7 +17,7 @@ namespace android::renderscript
 	// Methods
 	android::renderscript::ScriptIntrinsicBlend ScriptIntrinsicBlend::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicBlend",
 			"create",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicBlend;",

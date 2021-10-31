@@ -14,7 +14,7 @@ namespace android::os
 	// Methods
 	android::os::StrictMode_ThreadPolicy StrictMode::allowThreadDiskReads()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.StrictMode",
 			"allowThreadDiskReads",
 			"()Landroid/os/StrictMode$ThreadPolicy;"
@@ -22,7 +22,7 @@ namespace android::os
 	}
 	android::os::StrictMode_ThreadPolicy StrictMode::allowThreadDiskWrites()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.StrictMode",
 			"allowThreadDiskWrites",
 			"()Landroid/os/StrictMode$ThreadPolicy;"
@@ -30,7 +30,7 @@ namespace android::os
 	}
 	void StrictMode::enableDefaults()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.StrictMode",
 			"enableDefaults",
 			"()V"
@@ -38,7 +38,7 @@ namespace android::os
 	}
 	android::os::StrictMode_ThreadPolicy StrictMode::getThreadPolicy()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.StrictMode",
 			"getThreadPolicy",
 			"()Landroid/os/StrictMode$ThreadPolicy;"
@@ -46,7 +46,7 @@ namespace android::os
 	}
 	android::os::StrictMode_VmPolicy StrictMode::getVmPolicy()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.StrictMode",
 			"getVmPolicy",
 			"()Landroid/os/StrictMode$VmPolicy;"
@@ -54,7 +54,7 @@ namespace android::os
 	}
 	void StrictMode::noteSlowCall(jstring arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.StrictMode",
 			"noteSlowCall",
 			"(Ljava/lang/String;)V",
@@ -63,7 +63,7 @@ namespace android::os
 	}
 	void StrictMode::setThreadPolicy(android::os::StrictMode_ThreadPolicy arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.StrictMode",
 			"setThreadPolicy",
 			"(Landroid/os/StrictMode$ThreadPolicy;)V",
@@ -72,7 +72,7 @@ namespace android::os
 	}
 	void StrictMode::setVmPolicy(android::os::StrictMode_VmPolicy arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.StrictMode",
 			"setVmPolicy",
 			"(Landroid/os/StrictMode$VmPolicy;)V",

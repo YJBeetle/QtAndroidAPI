@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring Contacts_ContactMethods::CONTENT_EMAIL_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"CONTENT_EMAIL_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::CONTENT_EMAIL_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"CONTENT_EMAIL_TYPE",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	android::net::Uri Contacts_ContactMethods::CONTENT_EMAIL_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"CONTENT_EMAIL_URI",
 			"Landroid/net/Uri;"
@@ -31,7 +31,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::CONTENT_IM_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"CONTENT_IM_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::CONTENT_POSTAL_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"CONTENT_POSTAL_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -47,7 +47,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::CONTENT_POSTAL_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"CONTENT_POSTAL_TYPE",
 			"Ljava/lang/String;"
@@ -55,7 +55,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -63,7 +63,7 @@ namespace android::provider
 	}
 	android::net::Uri Contacts_ContactMethods::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -71,7 +71,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -79,7 +79,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::PERSON_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"PERSON_ID",
 			"Ljava/lang/String;"
@@ -87,7 +87,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::POSTAL_LOCATION_LATITUDE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"POSTAL_LOCATION_LATITUDE",
 			"Ljava/lang/String;"
@@ -95,7 +95,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::POSTAL_LOCATION_LONGITUDE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
 			"POSTAL_LOCATION_LONGITUDE",
 			"Ljava/lang/String;"
@@ -103,56 +103,56 @@ namespace android::provider
 	}
 	jint Contacts_ContactMethods::PROTOCOL_AIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts$ContactMethods",
 			"PROTOCOL_AIM"
 		);
 	}
 	jint Contacts_ContactMethods::PROTOCOL_GOOGLE_TALK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts$ContactMethods",
 			"PROTOCOL_GOOGLE_TALK"
 		);
 	}
 	jint Contacts_ContactMethods::PROTOCOL_ICQ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts$ContactMethods",
 			"PROTOCOL_ICQ"
 		);
 	}
 	jint Contacts_ContactMethods::PROTOCOL_JABBER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts$ContactMethods",
 			"PROTOCOL_JABBER"
 		);
 	}
 	jint Contacts_ContactMethods::PROTOCOL_MSN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts$ContactMethods",
 			"PROTOCOL_MSN"
 		);
 	}
 	jint Contacts_ContactMethods::PROTOCOL_QQ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts$ContactMethods",
 			"PROTOCOL_QQ"
 		);
 	}
 	jint Contacts_ContactMethods::PROTOCOL_SKYPE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts$ContactMethods",
 			"PROTOCOL_SKYPE"
 		);
 	}
 	jint Contacts_ContactMethods::PROTOCOL_YAHOO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts$ContactMethods",
 			"PROTOCOL_YAHOO"
 		);
@@ -166,7 +166,7 @@ namespace android::provider
 	// Methods
 	jobject Contacts_ContactMethods::decodeImProtocol(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Contacts$ContactMethods",
 			"decodeImProtocol",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
@@ -175,7 +175,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::encodeCustomImProtocol(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Contacts$ContactMethods",
 			"encodeCustomImProtocol",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -184,7 +184,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::encodePredefinedImProtocol(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Contacts$ContactMethods",
 			"encodePredefinedImProtocol",
 			"(I)Ljava/lang/String;",
@@ -193,7 +193,7 @@ namespace android::provider
 	}
 	jstring Contacts_ContactMethods::getDisplayLabel(android::content::Context arg0, jint arg1, jint arg2, jstring arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Contacts$ContactMethods",
 			"getDisplayLabel",
 			"(Landroid/content/Context;IILjava/lang/CharSequence;)Ljava/lang/CharSequence;",

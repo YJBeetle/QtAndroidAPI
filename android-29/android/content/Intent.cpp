@@ -19,7 +19,7 @@ namespace android::content
 	// Fields
 	jstring Intent::ACTION_AIRPLANE_MODE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_AIRPLANE_MODE_CHANGED",
 			"Ljava/lang/String;"
@@ -27,7 +27,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_ALL_APPS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_ALL_APPS",
 			"Ljava/lang/String;"
@@ -35,7 +35,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_ANSWER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_ANSWER",
 			"Ljava/lang/String;"
@@ -43,7 +43,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_APPLICATION_PREFERENCES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_APPLICATION_PREFERENCES",
 			"Ljava/lang/String;"
@@ -51,7 +51,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_APPLICATION_RESTRICTIONS_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_APPLICATION_RESTRICTIONS_CHANGED",
 			"Ljava/lang/String;"
@@ -59,7 +59,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_APP_ERROR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_APP_ERROR",
 			"Ljava/lang/String;"
@@ -67,7 +67,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_ASSIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_ASSIST",
 			"Ljava/lang/String;"
@@ -75,7 +75,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_ATTACH_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_ATTACH_DATA",
 			"Ljava/lang/String;"
@@ -83,7 +83,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_BATTERY_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_BATTERY_CHANGED",
 			"Ljava/lang/String;"
@@ -91,7 +91,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_BATTERY_LOW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_BATTERY_LOW",
 			"Ljava/lang/String;"
@@ -99,7 +99,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_BATTERY_OKAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_BATTERY_OKAY",
 			"Ljava/lang/String;"
@@ -107,7 +107,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_BOOT_COMPLETED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_BOOT_COMPLETED",
 			"Ljava/lang/String;"
@@ -115,7 +115,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_BUG_REPORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_BUG_REPORT",
 			"Ljava/lang/String;"
@@ -123,7 +123,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_CALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_CALL",
 			"Ljava/lang/String;"
@@ -131,7 +131,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_CALL_BUTTON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_CALL_BUTTON",
 			"Ljava/lang/String;"
@@ -139,7 +139,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_CAMERA_BUTTON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_CAMERA_BUTTON",
 			"Ljava/lang/String;"
@@ -147,7 +147,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_CARRIER_SETUP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_CARRIER_SETUP",
 			"Ljava/lang/String;"
@@ -155,7 +155,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_CHOOSER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_CHOOSER",
 			"Ljava/lang/String;"
@@ -163,7 +163,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_CLOSE_SYSTEM_DIALOGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_CLOSE_SYSTEM_DIALOGS",
 			"Ljava/lang/String;"
@@ -171,7 +171,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_CONFIGURATION_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_CONFIGURATION_CHANGED",
 			"Ljava/lang/String;"
@@ -179,7 +179,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_CREATE_DOCUMENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_CREATE_DOCUMENT",
 			"Ljava/lang/String;"
@@ -187,7 +187,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_CREATE_SHORTCUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_CREATE_SHORTCUT",
 			"Ljava/lang/String;"
@@ -195,7 +195,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_DATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_DATE_CHANGED",
 			"Ljava/lang/String;"
@@ -203,7 +203,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_DEFAULT",
 			"Ljava/lang/String;"
@@ -211,7 +211,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_DEFINE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_DEFINE",
 			"Ljava/lang/String;"
@@ -219,7 +219,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_DELETE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_DELETE",
 			"Ljava/lang/String;"
@@ -227,7 +227,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_DEVICE_STORAGE_LOW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_DEVICE_STORAGE_LOW",
 			"Ljava/lang/String;"
@@ -235,7 +235,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_DEVICE_STORAGE_OK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_DEVICE_STORAGE_OK",
 			"Ljava/lang/String;"
@@ -243,7 +243,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_DIAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_DIAL",
 			"Ljava/lang/String;"
@@ -251,7 +251,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_DOCK_EVENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_DOCK_EVENT",
 			"Ljava/lang/String;"
@@ -259,7 +259,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_DREAMING_STARTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_DREAMING_STARTED",
 			"Ljava/lang/String;"
@@ -267,7 +267,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_DREAMING_STOPPED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_DREAMING_STOPPED",
 			"Ljava/lang/String;"
@@ -275,7 +275,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_EDIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_EDIT",
 			"Ljava/lang/String;"
@@ -283,7 +283,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_EXTERNAL_APPLICATIONS_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_EXTERNAL_APPLICATIONS_AVAILABLE",
 			"Ljava/lang/String;"
@@ -291,7 +291,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE",
 			"Ljava/lang/String;"
@@ -299,7 +299,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_FACTORY_TEST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_FACTORY_TEST",
 			"Ljava/lang/String;"
@@ -307,7 +307,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_GET_CONTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_GET_CONTENT",
 			"Ljava/lang/String;"
@@ -315,7 +315,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_GET_RESTRICTION_ENTRIES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_GET_RESTRICTION_ENTRIES",
 			"Ljava/lang/String;"
@@ -323,7 +323,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_GTALK_SERVICE_CONNECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_GTALK_SERVICE_CONNECTED",
 			"Ljava/lang/String;"
@@ -331,7 +331,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_GTALK_SERVICE_DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_GTALK_SERVICE_DISCONNECTED",
 			"Ljava/lang/String;"
@@ -339,7 +339,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_HEADSET_PLUG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_HEADSET_PLUG",
 			"Ljava/lang/String;"
@@ -347,7 +347,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_INPUT_METHOD_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_INPUT_METHOD_CHANGED",
 			"Ljava/lang/String;"
@@ -355,7 +355,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_INSERT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_INSERT",
 			"Ljava/lang/String;"
@@ -363,7 +363,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_INSERT_OR_EDIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_INSERT_OR_EDIT",
 			"Ljava/lang/String;"
@@ -371,7 +371,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_INSTALL_FAILURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_INSTALL_FAILURE",
 			"Ljava/lang/String;"
@@ -379,7 +379,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_INSTALL_PACKAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_INSTALL_PACKAGE",
 			"Ljava/lang/String;"
@@ -387,7 +387,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_LOCALE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_LOCALE_CHANGED",
 			"Ljava/lang/String;"
@@ -395,7 +395,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_LOCKED_BOOT_COMPLETED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_LOCKED_BOOT_COMPLETED",
 			"Ljava/lang/String;"
@@ -403,7 +403,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MAIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MAIN",
 			"Ljava/lang/String;"
@@ -411,7 +411,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MANAGED_PROFILE_ADDED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MANAGED_PROFILE_ADDED",
 			"Ljava/lang/String;"
@@ -419,7 +419,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MANAGED_PROFILE_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MANAGED_PROFILE_AVAILABLE",
 			"Ljava/lang/String;"
@@ -427,7 +427,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MANAGED_PROFILE_REMOVED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MANAGED_PROFILE_REMOVED",
 			"Ljava/lang/String;"
@@ -435,7 +435,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MANAGED_PROFILE_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MANAGED_PROFILE_UNAVAILABLE",
 			"Ljava/lang/String;"
@@ -443,7 +443,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MANAGED_PROFILE_UNLOCKED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MANAGED_PROFILE_UNLOCKED",
 			"Ljava/lang/String;"
@@ -451,7 +451,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MANAGE_NETWORK_USAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MANAGE_NETWORK_USAGE",
 			"Ljava/lang/String;"
@@ -459,7 +459,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MANAGE_PACKAGE_STORAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MANAGE_PACKAGE_STORAGE",
 			"Ljava/lang/String;"
@@ -467,7 +467,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_BAD_REMOVAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_BAD_REMOVAL",
 			"Ljava/lang/String;"
@@ -475,7 +475,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_BUTTON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_BUTTON",
 			"Ljava/lang/String;"
@@ -483,7 +483,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_CHECKING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_CHECKING",
 			"Ljava/lang/String;"
@@ -491,7 +491,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_EJECT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_EJECT",
 			"Ljava/lang/String;"
@@ -499,7 +499,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_MOUNTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_MOUNTED",
 			"Ljava/lang/String;"
@@ -507,7 +507,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_NOFS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_NOFS",
 			"Ljava/lang/String;"
@@ -515,7 +515,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_REMOVED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_REMOVED",
 			"Ljava/lang/String;"
@@ -523,7 +523,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_SCANNER_FINISHED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_SCANNER_FINISHED",
 			"Ljava/lang/String;"
@@ -531,7 +531,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_SCANNER_SCAN_FILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_SCANNER_SCAN_FILE",
 			"Ljava/lang/String;"
@@ -539,7 +539,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_SCANNER_STARTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_SCANNER_STARTED",
 			"Ljava/lang/String;"
@@ -547,7 +547,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_SHARED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_SHARED",
 			"Ljava/lang/String;"
@@ -555,7 +555,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_UNMOUNTABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_UNMOUNTABLE",
 			"Ljava/lang/String;"
@@ -563,7 +563,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MEDIA_UNMOUNTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MEDIA_UNMOUNTED",
 			"Ljava/lang/String;"
@@ -571,7 +571,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MY_PACKAGE_REPLACED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MY_PACKAGE_REPLACED",
 			"Ljava/lang/String;"
@@ -579,7 +579,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MY_PACKAGE_SUSPENDED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MY_PACKAGE_SUSPENDED",
 			"Ljava/lang/String;"
@@ -587,7 +587,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_MY_PACKAGE_UNSUSPENDED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_MY_PACKAGE_UNSUSPENDED",
 			"Ljava/lang/String;"
@@ -595,7 +595,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_NEW_OUTGOING_CALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_NEW_OUTGOING_CALL",
 			"Ljava/lang/String;"
@@ -603,7 +603,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_OPEN_DOCUMENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_OPEN_DOCUMENT",
 			"Ljava/lang/String;"
@@ -611,7 +611,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_OPEN_DOCUMENT_TREE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_OPEN_DOCUMENT_TREE",
 			"Ljava/lang/String;"
@@ -619,7 +619,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGES_SUSPENDED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGES_SUSPENDED",
 			"Ljava/lang/String;"
@@ -627,7 +627,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGES_UNSUSPENDED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGES_UNSUSPENDED",
 			"Ljava/lang/String;"
@@ -635,7 +635,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_ADDED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_ADDED",
 			"Ljava/lang/String;"
@@ -643,7 +643,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_CHANGED",
 			"Ljava/lang/String;"
@@ -651,7 +651,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_DATA_CLEARED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_DATA_CLEARED",
 			"Ljava/lang/String;"
@@ -659,7 +659,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_FIRST_LAUNCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_FIRST_LAUNCH",
 			"Ljava/lang/String;"
@@ -667,7 +667,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_FULLY_REMOVED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_FULLY_REMOVED",
 			"Ljava/lang/String;"
@@ -675,7 +675,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_INSTALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_INSTALL",
 			"Ljava/lang/String;"
@@ -683,7 +683,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_NEEDS_VERIFICATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_NEEDS_VERIFICATION",
 			"Ljava/lang/String;"
@@ -691,7 +691,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_REMOVED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_REMOVED",
 			"Ljava/lang/String;"
@@ -699,7 +699,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_REPLACED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_REPLACED",
 			"Ljava/lang/String;"
@@ -707,7 +707,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_RESTARTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_RESTARTED",
 			"Ljava/lang/String;"
@@ -715,7 +715,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PACKAGE_VERIFIED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PACKAGE_VERIFIED",
 			"Ljava/lang/String;"
@@ -723,7 +723,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PASTE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PASTE",
 			"Ljava/lang/String;"
@@ -731,7 +731,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PICK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PICK",
 			"Ljava/lang/String;"
@@ -739,7 +739,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PICK_ACTIVITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PICK_ACTIVITY",
 			"Ljava/lang/String;"
@@ -747,7 +747,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_POWER_CONNECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_POWER_CONNECTED",
 			"Ljava/lang/String;"
@@ -755,7 +755,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_POWER_DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_POWER_DISCONNECTED",
 			"Ljava/lang/String;"
@@ -763,7 +763,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_POWER_USAGE_SUMMARY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_POWER_USAGE_SUMMARY",
 			"Ljava/lang/String;"
@@ -771,7 +771,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PROCESS_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PROCESS_TEXT",
 			"Ljava/lang/String;"
@@ -779,7 +779,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_PROVIDER_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_PROVIDER_CHANGED",
 			"Ljava/lang/String;"
@@ -787,7 +787,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_QUICK_CLOCK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_QUICK_CLOCK",
 			"Ljava/lang/String;"
@@ -795,7 +795,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_QUICK_VIEW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_QUICK_VIEW",
 			"Ljava/lang/String;"
@@ -803,7 +803,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_REBOOT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_REBOOT",
 			"Ljava/lang/String;"
@@ -811,7 +811,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_RUN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_RUN",
 			"Ljava/lang/String;"
@@ -819,7 +819,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SCREEN_OFF()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SCREEN_OFF",
 			"Ljava/lang/String;"
@@ -827,7 +827,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SCREEN_ON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SCREEN_ON",
 			"Ljava/lang/String;"
@@ -835,7 +835,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SEARCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SEARCH",
 			"Ljava/lang/String;"
@@ -843,7 +843,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SEARCH_LONG_PRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SEARCH_LONG_PRESS",
 			"Ljava/lang/String;"
@@ -851,7 +851,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SEND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SEND",
 			"Ljava/lang/String;"
@@ -859,7 +859,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SENDTO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SENDTO",
 			"Ljava/lang/String;"
@@ -867,7 +867,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SEND_MULTIPLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SEND_MULTIPLE",
 			"Ljava/lang/String;"
@@ -875,7 +875,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SET_WALLPAPER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SET_WALLPAPER",
 			"Ljava/lang/String;"
@@ -883,7 +883,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SHOW_APP_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SHOW_APP_INFO",
 			"Ljava/lang/String;"
@@ -891,7 +891,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SHUTDOWN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SHUTDOWN",
 			"Ljava/lang/String;"
@@ -899,7 +899,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SYNC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SYNC",
 			"Ljava/lang/String;"
@@ -907,7 +907,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_SYSTEM_TUTORIAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_SYSTEM_TUTORIAL",
 			"Ljava/lang/String;"
@@ -915,7 +915,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_TIMEZONE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_TIMEZONE_CHANGED",
 			"Ljava/lang/String;"
@@ -923,7 +923,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_TIME_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_TIME_CHANGED",
 			"Ljava/lang/String;"
@@ -931,7 +931,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_TIME_TICK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_TIME_TICK",
 			"Ljava/lang/String;"
@@ -939,7 +939,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_TRANSLATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_TRANSLATE",
 			"Ljava/lang/String;"
@@ -947,7 +947,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_UID_REMOVED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_UID_REMOVED",
 			"Ljava/lang/String;"
@@ -955,7 +955,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_UMS_CONNECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_UMS_CONNECTED",
 			"Ljava/lang/String;"
@@ -963,7 +963,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_UMS_DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_UMS_DISCONNECTED",
 			"Ljava/lang/String;"
@@ -971,7 +971,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_UNINSTALL_PACKAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_UNINSTALL_PACKAGE",
 			"Ljava/lang/String;"
@@ -979,7 +979,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_USER_BACKGROUND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_USER_BACKGROUND",
 			"Ljava/lang/String;"
@@ -987,7 +987,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_USER_FOREGROUND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_USER_FOREGROUND",
 			"Ljava/lang/String;"
@@ -995,7 +995,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_USER_INITIALIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_USER_INITIALIZE",
 			"Ljava/lang/String;"
@@ -1003,7 +1003,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_USER_PRESENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_USER_PRESENT",
 			"Ljava/lang/String;"
@@ -1011,7 +1011,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_USER_UNLOCKED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_USER_UNLOCKED",
 			"Ljava/lang/String;"
@@ -1019,7 +1019,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_VIEW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_VIEW",
 			"Ljava/lang/String;"
@@ -1027,7 +1027,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_VIEW_LOCUS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_VIEW_LOCUS",
 			"Ljava/lang/String;"
@@ -1035,7 +1035,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_VIEW_PERMISSION_USAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_VIEW_PERMISSION_USAGE",
 			"Ljava/lang/String;"
@@ -1043,7 +1043,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_VOICE_COMMAND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_VOICE_COMMAND",
 			"Ljava/lang/String;"
@@ -1051,7 +1051,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_WALLPAPER_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_WALLPAPER_CHANGED",
 			"Ljava/lang/String;"
@@ -1059,7 +1059,7 @@ namespace android::content
 	}
 	jstring Intent::ACTION_WEB_SEARCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"ACTION_WEB_SEARCH",
 			"Ljava/lang/String;"
@@ -1067,7 +1067,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_ALTERNATIVE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_ALTERNATIVE",
 			"Ljava/lang/String;"
@@ -1075,7 +1075,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_BROWSER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_BROWSER",
 			"Ljava/lang/String;"
@@ -1083,7 +1083,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_CALCULATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_CALCULATOR",
 			"Ljava/lang/String;"
@@ -1091,7 +1091,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_CALENDAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_CALENDAR",
 			"Ljava/lang/String;"
@@ -1099,7 +1099,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_CONTACTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_CONTACTS",
 			"Ljava/lang/String;"
@@ -1107,7 +1107,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_EMAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_EMAIL",
 			"Ljava/lang/String;"
@@ -1115,7 +1115,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_FILES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_FILES",
 			"Ljava/lang/String;"
@@ -1123,7 +1123,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_GALLERY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_GALLERY",
 			"Ljava/lang/String;"
@@ -1131,7 +1131,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_MAPS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_MAPS",
 			"Ljava/lang/String;"
@@ -1139,7 +1139,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_MARKET()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_MARKET",
 			"Ljava/lang/String;"
@@ -1147,7 +1147,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_MESSAGING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_MESSAGING",
 			"Ljava/lang/String;"
@@ -1155,7 +1155,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_APP_MUSIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_APP_MUSIC",
 			"Ljava/lang/String;"
@@ -1163,7 +1163,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_BROWSABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_BROWSABLE",
 			"Ljava/lang/String;"
@@ -1171,7 +1171,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_CAR_DOCK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_CAR_DOCK",
 			"Ljava/lang/String;"
@@ -1179,7 +1179,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_CAR_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_CAR_MODE",
 			"Ljava/lang/String;"
@@ -1187,7 +1187,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_DEFAULT",
 			"Ljava/lang/String;"
@@ -1195,7 +1195,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_DESK_DOCK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_DESK_DOCK",
 			"Ljava/lang/String;"
@@ -1203,7 +1203,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_DEVELOPMENT_PREFERENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_DEVELOPMENT_PREFERENCE",
 			"Ljava/lang/String;"
@@ -1211,7 +1211,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_EMBED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_EMBED",
 			"Ljava/lang/String;"
@@ -1219,7 +1219,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_FRAMEWORK_INSTRUMENTATION_TEST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_FRAMEWORK_INSTRUMENTATION_TEST",
 			"Ljava/lang/String;"
@@ -1227,7 +1227,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_HE_DESK_DOCK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_HE_DESK_DOCK",
 			"Ljava/lang/String;"
@@ -1235,7 +1235,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_HOME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_HOME",
 			"Ljava/lang/String;"
@@ -1243,7 +1243,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_INFO",
 			"Ljava/lang/String;"
@@ -1251,7 +1251,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_LAUNCHER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_LAUNCHER",
 			"Ljava/lang/String;"
@@ -1259,7 +1259,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_LEANBACK_LAUNCHER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_LEANBACK_LAUNCHER",
 			"Ljava/lang/String;"
@@ -1267,7 +1267,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_LE_DESK_DOCK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_LE_DESK_DOCK",
 			"Ljava/lang/String;"
@@ -1275,7 +1275,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_MONKEY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_MONKEY",
 			"Ljava/lang/String;"
@@ -1283,7 +1283,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_OPENABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_OPENABLE",
 			"Ljava/lang/String;"
@@ -1291,7 +1291,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_PREFERENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_PREFERENCE",
 			"Ljava/lang/String;"
@@ -1299,7 +1299,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_SAMPLE_CODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_SAMPLE_CODE",
 			"Ljava/lang/String;"
@@ -1307,7 +1307,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_SECONDARY_HOME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_SECONDARY_HOME",
 			"Ljava/lang/String;"
@@ -1315,7 +1315,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_SELECTED_ALTERNATIVE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_SELECTED_ALTERNATIVE",
 			"Ljava/lang/String;"
@@ -1323,7 +1323,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_TAB()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_TAB",
 			"Ljava/lang/String;"
@@ -1331,7 +1331,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_TEST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_TEST",
 			"Ljava/lang/String;"
@@ -1339,7 +1339,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_TYPED_OPENABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_TYPED_OPENABLE",
 			"Ljava/lang/String;"
@@ -1347,7 +1347,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_UNIT_TEST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_UNIT_TEST",
 			"Ljava/lang/String;"
@@ -1355,7 +1355,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_VOICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_VOICE",
 			"Ljava/lang/String;"
@@ -1363,7 +1363,7 @@ namespace android::content
 	}
 	jstring Intent::CATEGORY_VR_HOME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CATEGORY_VR_HOME",
 			"Ljava/lang/String;"
@@ -1371,7 +1371,7 @@ namespace android::content
 	}
 	__JniBaseClass Intent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -1379,7 +1379,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_ALARM_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_ALARM_COUNT",
 			"Ljava/lang/String;"
@@ -1387,7 +1387,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_ALLOW_MULTIPLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_ALLOW_MULTIPLE",
 			"Ljava/lang/String;"
@@ -1395,7 +1395,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_ALLOW_REPLACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_ALLOW_REPLACE",
 			"Ljava/lang/String;"
@@ -1403,7 +1403,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_ALTERNATE_INTENTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_ALTERNATE_INTENTS",
 			"Ljava/lang/String;"
@@ -1411,7 +1411,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_ASSIST_CONTEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_ASSIST_CONTEXT",
 			"Ljava/lang/String;"
@@ -1419,7 +1419,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_ASSIST_INPUT_DEVICE_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_ASSIST_INPUT_DEVICE_ID",
 			"Ljava/lang/String;"
@@ -1427,7 +1427,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_ASSIST_INPUT_HINT_KEYBOARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_ASSIST_INPUT_HINT_KEYBOARD",
 			"Ljava/lang/String;"
@@ -1435,7 +1435,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_ASSIST_PACKAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_ASSIST_PACKAGE",
 			"Ljava/lang/String;"
@@ -1443,7 +1443,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_ASSIST_UID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_ASSIST_UID",
 			"Ljava/lang/String;"
@@ -1451,7 +1451,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_AUTO_LAUNCH_SINGLE_CHOICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_AUTO_LAUNCH_SINGLE_CHOICE",
 			"Ljava/lang/String;"
@@ -1459,7 +1459,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_BCC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_BCC",
 			"Ljava/lang/String;"
@@ -1467,7 +1467,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_BUG_REPORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_BUG_REPORT",
 			"Ljava/lang/String;"
@@ -1475,7 +1475,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CC",
 			"Ljava/lang/String;"
@@ -1483,7 +1483,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CHANGED_COMPONENT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CHANGED_COMPONENT_NAME",
 			"Ljava/lang/String;"
@@ -1491,7 +1491,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CHANGED_COMPONENT_NAME_LIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CHANGED_COMPONENT_NAME_LIST",
 			"Ljava/lang/String;"
@@ -1499,7 +1499,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CHANGED_PACKAGE_LIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CHANGED_PACKAGE_LIST",
 			"Ljava/lang/String;"
@@ -1507,7 +1507,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CHANGED_UID_LIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CHANGED_UID_LIST",
 			"Ljava/lang/String;"
@@ -1515,7 +1515,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CHOOSER_REFINEMENT_INTENT_SENDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CHOOSER_REFINEMENT_INTENT_SENDER",
 			"Ljava/lang/String;"
@@ -1523,7 +1523,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CHOOSER_TARGETS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CHOOSER_TARGETS",
 			"Ljava/lang/String;"
@@ -1531,7 +1531,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CHOSEN_COMPONENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CHOSEN_COMPONENT",
 			"Ljava/lang/String;"
@@ -1539,7 +1539,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CHOSEN_COMPONENT_INTENT_SENDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CHOSEN_COMPONENT_INTENT_SENDER",
 			"Ljava/lang/String;"
@@ -1547,7 +1547,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_COMPONENT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_COMPONENT_NAME",
 			"Ljava/lang/String;"
@@ -1555,7 +1555,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CONTENT_ANNOTATIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CONTENT_ANNOTATIONS",
 			"Ljava/lang/String;"
@@ -1563,7 +1563,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_CONTENT_QUERY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_CONTENT_QUERY",
 			"Ljava/lang/String;"
@@ -1571,7 +1571,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_DATA_REMOVED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_DATA_REMOVED",
 			"Ljava/lang/String;"
@@ -1579,7 +1579,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_DOCK_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_DOCK_STATE",
 			"Ljava/lang/String;"
@@ -1587,42 +1587,42 @@ namespace android::content
 	}
 	jint Intent::EXTRA_DOCK_STATE_CAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"EXTRA_DOCK_STATE_CAR"
 		);
 	}
 	jint Intent::EXTRA_DOCK_STATE_DESK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"EXTRA_DOCK_STATE_DESK"
 		);
 	}
 	jint Intent::EXTRA_DOCK_STATE_HE_DESK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"EXTRA_DOCK_STATE_HE_DESK"
 		);
 	}
 	jint Intent::EXTRA_DOCK_STATE_LE_DESK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"EXTRA_DOCK_STATE_LE_DESK"
 		);
 	}
 	jint Intent::EXTRA_DOCK_STATE_UNDOCKED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"EXTRA_DOCK_STATE_UNDOCKED"
 		);
 	}
 	jstring Intent::EXTRA_DONT_KILL_APP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_DONT_KILL_APP",
 			"Ljava/lang/String;"
@@ -1630,7 +1630,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_DURATION_MILLIS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_DURATION_MILLIS",
 			"Ljava/lang/String;"
@@ -1638,7 +1638,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_EMAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_EMAIL",
 			"Ljava/lang/String;"
@@ -1646,7 +1646,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_EXCLUDE_COMPONENTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_EXCLUDE_COMPONENTS",
 			"Ljava/lang/String;"
@@ -1654,7 +1654,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_FROM_STORAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_FROM_STORAGE",
 			"Ljava/lang/String;"
@@ -1662,7 +1662,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_HTML_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_HTML_TEXT",
 			"Ljava/lang/String;"
@@ -1670,7 +1670,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_INDEX",
 			"Ljava/lang/String;"
@@ -1678,7 +1678,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_INITIAL_INTENTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_INITIAL_INTENTS",
 			"Ljava/lang/String;"
@@ -1686,7 +1686,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_INSTALLER_PACKAGE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_INSTALLER_PACKAGE_NAME",
 			"Ljava/lang/String;"
@@ -1694,7 +1694,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_INTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_INTENT",
 			"Ljava/lang/String;"
@@ -1702,7 +1702,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_KEY_EVENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_KEY_EVENT",
 			"Ljava/lang/String;"
@@ -1710,7 +1710,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_LOCAL_ONLY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_LOCAL_ONLY",
 			"Ljava/lang/String;"
@@ -1718,7 +1718,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_LOCUS_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_LOCUS_ID",
 			"Ljava/lang/String;"
@@ -1726,7 +1726,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_MIME_TYPES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_MIME_TYPES",
 			"Ljava/lang/String;"
@@ -1734,7 +1734,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_NOT_UNKNOWN_SOURCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_NOT_UNKNOWN_SOURCE",
 			"Ljava/lang/String;"
@@ -1742,7 +1742,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_ORIGINATING_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_ORIGINATING_URI",
 			"Ljava/lang/String;"
@@ -1750,7 +1750,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_PACKAGE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_PACKAGE_NAME",
 			"Ljava/lang/String;"
@@ -1758,7 +1758,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_PHONE_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_PHONE_NUMBER",
 			"Ljava/lang/String;"
@@ -1766,7 +1766,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_PROCESS_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_PROCESS_TEXT",
 			"Ljava/lang/String;"
@@ -1774,7 +1774,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_PROCESS_TEXT_READONLY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_PROCESS_TEXT_READONLY",
 			"Ljava/lang/String;"
@@ -1782,7 +1782,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_QUICK_VIEW_FEATURES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_QUICK_VIEW_FEATURES",
 			"Ljava/lang/String;"
@@ -1790,7 +1790,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_QUIET_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_QUIET_MODE",
 			"Ljava/lang/String;"
@@ -1798,7 +1798,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_REFERRER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_REFERRER",
 			"Ljava/lang/String;"
@@ -1806,7 +1806,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_REFERRER_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_REFERRER_NAME",
 			"Ljava/lang/String;"
@@ -1814,7 +1814,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_REMOTE_INTENT_TOKEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_REMOTE_INTENT_TOKEN",
 			"Ljava/lang/String;"
@@ -1822,7 +1822,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_REPLACEMENT_EXTRAS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_REPLACEMENT_EXTRAS",
 			"Ljava/lang/String;"
@@ -1830,7 +1830,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_REPLACING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_REPLACING",
 			"Ljava/lang/String;"
@@ -1838,7 +1838,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_RESTRICTIONS_BUNDLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_RESTRICTIONS_BUNDLE",
 			"Ljava/lang/String;"
@@ -1846,7 +1846,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_RESTRICTIONS_INTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_RESTRICTIONS_INTENT",
 			"Ljava/lang/String;"
@@ -1854,7 +1854,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_RESTRICTIONS_LIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_RESTRICTIONS_LIST",
 			"Ljava/lang/String;"
@@ -1862,7 +1862,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_RESULT_RECEIVER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_RESULT_RECEIVER",
 			"Ljava/lang/String;"
@@ -1870,7 +1870,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_RETURN_RESULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_RETURN_RESULT",
 			"Ljava/lang/String;"
@@ -1878,7 +1878,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_SHORTCUT_ICON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_SHORTCUT_ICON",
 			"Ljava/lang/String;"
@@ -1886,7 +1886,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_SHORTCUT_ICON_RESOURCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_SHORTCUT_ICON_RESOURCE",
 			"Ljava/lang/String;"
@@ -1894,7 +1894,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_SHORTCUT_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_SHORTCUT_ID",
 			"Ljava/lang/String;"
@@ -1902,7 +1902,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_SHORTCUT_INTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_SHORTCUT_INTENT",
 			"Ljava/lang/String;"
@@ -1910,7 +1910,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_SHORTCUT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_SHORTCUT_NAME",
 			"Ljava/lang/String;"
@@ -1918,7 +1918,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_SHUTDOWN_USERSPACE_ONLY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_SHUTDOWN_USERSPACE_ONLY",
 			"Ljava/lang/String;"
@@ -1926,7 +1926,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_SPLIT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_SPLIT_NAME",
 			"Ljava/lang/String;"
@@ -1934,7 +1934,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_STREAM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_STREAM",
 			"Ljava/lang/String;"
@@ -1942,7 +1942,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_SUBJECT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_SUBJECT",
 			"Ljava/lang/String;"
@@ -1950,7 +1950,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_SUSPENDED_PACKAGE_EXTRAS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_SUSPENDED_PACKAGE_EXTRAS",
 			"Ljava/lang/String;"
@@ -1958,7 +1958,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_TEMPLATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_TEMPLATE",
 			"Ljava/lang/String;"
@@ -1966,7 +1966,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_TEXT",
 			"Ljava/lang/String;"
@@ -1974,7 +1974,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_TITLE",
 			"Ljava/lang/String;"
@@ -1982,7 +1982,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_UID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_UID",
 			"Ljava/lang/String;"
@@ -1990,7 +1990,7 @@ namespace android::content
 	}
 	jstring Intent::EXTRA_USER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"EXTRA_USER",
 			"Ljava/lang/String;"
@@ -1998,315 +1998,315 @@ namespace android::content
 	}
 	jint Intent::FILL_IN_ACTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FILL_IN_ACTION"
 		);
 	}
 	jint Intent::FILL_IN_CATEGORIES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FILL_IN_CATEGORIES"
 		);
 	}
 	jint Intent::FILL_IN_CLIP_DATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FILL_IN_CLIP_DATA"
 		);
 	}
 	jint Intent::FILL_IN_COMPONENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FILL_IN_COMPONENT"
 		);
 	}
 	jint Intent::FILL_IN_DATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FILL_IN_DATA"
 		);
 	}
 	jint Intent::FILL_IN_IDENTIFIER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FILL_IN_IDENTIFIER"
 		);
 	}
 	jint Intent::FILL_IN_PACKAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FILL_IN_PACKAGE"
 		);
 	}
 	jint Intent::FILL_IN_SELECTOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FILL_IN_SELECTOR"
 		);
 	}
 	jint Intent::FILL_IN_SOURCE_BOUNDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FILL_IN_SOURCE_BOUNDS"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_BROUGHT_TO_FRONT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_BROUGHT_TO_FRONT"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_CLEAR_TASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_CLEAR_TASK"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_CLEAR_TOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_CLEAR_TOP"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_FORWARD_RESULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_FORWARD_RESULT"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_LAUNCH_ADJACENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_LAUNCH_ADJACENT"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_MATCH_EXTERNAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_MATCH_EXTERNAL"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_MULTIPLE_TASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_MULTIPLE_TASK"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_NEW_DOCUMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_NEW_DOCUMENT"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_NEW_TASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_NEW_TASK"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_NO_ANIMATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_NO_ANIMATION"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_NO_HISTORY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_NO_HISTORY"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_NO_USER_ACTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_NO_USER_ACTION"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_PREVIOUS_IS_TOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_PREVIOUS_IS_TOP"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_REORDER_TO_FRONT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_REORDER_TO_FRONT"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_RESET_TASK_IF_NEEDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_RESET_TASK_IF_NEEDED"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_RETAIN_IN_RECENTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_RETAIN_IN_RECENTS"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_SINGLE_TOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_SINGLE_TOP"
 		);
 	}
 	jint Intent::FLAG_ACTIVITY_TASK_ON_HOME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_ACTIVITY_TASK_ON_HOME"
 		);
 	}
 	jint Intent::FLAG_DEBUG_LOG_RESOLUTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_DEBUG_LOG_RESOLUTION"
 		);
 	}
 	jint Intent::FLAG_DIRECT_BOOT_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_DIRECT_BOOT_AUTO"
 		);
 	}
 	jint Intent::FLAG_EXCLUDE_STOPPED_PACKAGES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_EXCLUDE_STOPPED_PACKAGES"
 		);
 	}
 	jint Intent::FLAG_FROM_BACKGROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_FROM_BACKGROUND"
 		);
 	}
 	jint Intent::FLAG_GRANT_PERSISTABLE_URI_PERMISSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_GRANT_PERSISTABLE_URI_PERMISSION"
 		);
 	}
 	jint Intent::FLAG_GRANT_PREFIX_URI_PERMISSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_GRANT_PREFIX_URI_PERMISSION"
 		);
 	}
 	jint Intent::FLAG_GRANT_READ_URI_PERMISSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_GRANT_READ_URI_PERMISSION"
 		);
 	}
 	jint Intent::FLAG_GRANT_WRITE_URI_PERMISSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_GRANT_WRITE_URI_PERMISSION"
 		);
 	}
 	jint Intent::FLAG_INCLUDE_STOPPED_PACKAGES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_INCLUDE_STOPPED_PACKAGES"
 		);
 	}
 	jint Intent::FLAG_RECEIVER_FOREGROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_RECEIVER_FOREGROUND"
 		);
 	}
 	jint Intent::FLAG_RECEIVER_NO_ABORT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_RECEIVER_NO_ABORT"
 		);
 	}
 	jint Intent::FLAG_RECEIVER_REGISTERED_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_RECEIVER_REGISTERED_ONLY"
 		);
 	}
 	jint Intent::FLAG_RECEIVER_REPLACE_PENDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_RECEIVER_REPLACE_PENDING"
 		);
 	}
 	jint Intent::FLAG_RECEIVER_VISIBLE_TO_INSTANT_APPS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"FLAG_RECEIVER_VISIBLE_TO_INSTANT_APPS"
 		);
 	}
 	jstring Intent::METADATA_DOCK_HOME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.Intent",
 			"METADATA_DOCK_HOME",
 			"Ljava/lang/String;"
@@ -2314,21 +2314,21 @@ namespace android::content
 	}
 	jint Intent::URI_ALLOW_UNSAFE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"URI_ALLOW_UNSAFE"
 		);
 	}
 	jint Intent::URI_ANDROID_APP_SCHEME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"URI_ANDROID_APP_SCHEME"
 		);
 	}
 	jint Intent::URI_INTENT_SCHEME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.Intent",
 			"URI_INTENT_SCHEME"
 		);
@@ -2382,7 +2382,7 @@ namespace android::content
 	// Methods
 	android::content::Intent Intent::createChooser(android::content::Intent arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent",
 			"createChooser",
 			"(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;",
@@ -2392,7 +2392,7 @@ namespace android::content
 	}
 	android::content::Intent Intent::createChooser(android::content::Intent arg0, jstring arg1, android::content::IntentSender arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent",
 			"createChooser",
 			"(Landroid/content/Intent;Ljava/lang/CharSequence;Landroid/content/IntentSender;)Landroid/content/Intent;",
@@ -2403,7 +2403,7 @@ namespace android::content
 	}
 	android::content::Intent Intent::getIntent(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent",
 			"getIntent",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
@@ -2412,7 +2412,7 @@ namespace android::content
 	}
 	android::content::Intent Intent::getIntentOld(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent",
 			"getIntentOld",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
@@ -2421,7 +2421,7 @@ namespace android::content
 	}
 	android::content::Intent Intent::makeMainActivity(android::content::ComponentName arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent",
 			"makeMainActivity",
 			"(Landroid/content/ComponentName;)Landroid/content/Intent;",
@@ -2430,7 +2430,7 @@ namespace android::content
 	}
 	android::content::Intent Intent::makeMainSelectorActivity(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent",
 			"makeMainSelectorActivity",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;",
@@ -2440,7 +2440,7 @@ namespace android::content
 	}
 	android::content::Intent Intent::makeRestartActivityTask(android::content::ComponentName arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent",
 			"makeRestartActivityTask",
 			"(Landroid/content/ComponentName;)Landroid/content/Intent;",
@@ -2449,7 +2449,7 @@ namespace android::content
 	}
 	jstring Intent::normalizeMimeType(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent",
 			"normalizeMimeType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -2458,7 +2458,7 @@ namespace android::content
 	}
 	android::content::Intent Intent::parseIntent(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent",
 			"parseIntent",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Landroid/content/Intent;",
@@ -2469,7 +2469,7 @@ namespace android::content
 	}
 	android::content::Intent Intent::parseUri(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.Intent",
 			"parseUri",
 			"(Ljava/lang/String;I)Landroid/content/Intent;",

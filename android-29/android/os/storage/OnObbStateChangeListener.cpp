@@ -5,56 +5,56 @@ namespace android::os::storage
 	// Fields
 	jint OnObbStateChangeListener::ERROR_ALREADY_MOUNTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
 			"ERROR_ALREADY_MOUNTED"
 		);
 	}
 	jint OnObbStateChangeListener::ERROR_COULD_NOT_MOUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
 			"ERROR_COULD_NOT_MOUNT"
 		);
 	}
 	jint OnObbStateChangeListener::ERROR_COULD_NOT_UNMOUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
 			"ERROR_COULD_NOT_UNMOUNT"
 		);
 	}
 	jint OnObbStateChangeListener::ERROR_INTERNAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
 			"ERROR_INTERNAL"
 		);
 	}
 	jint OnObbStateChangeListener::ERROR_NOT_MOUNTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
 			"ERROR_NOT_MOUNTED"
 		);
 	}
 	jint OnObbStateChangeListener::ERROR_PERMISSION_DENIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
 			"ERROR_PERMISSION_DENIED"
 		);
 	}
 	jint OnObbStateChangeListener::MOUNTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
 			"MOUNTED"
 		);
 	}
 	jint OnObbStateChangeListener::UNMOUNTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
 			"UNMOUNTED"
 		);

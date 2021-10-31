@@ -7,7 +7,7 @@ namespace java::time::chrono
 	// Fields
 	java::time::chrono::MinguoEra MinguoEra::BEFORE_ROC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.MinguoEra",
 			"BEFORE_ROC",
 			"Ljava/time/chrono/MinguoEra;"
@@ -15,7 +15,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::MinguoEra MinguoEra::ROC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.MinguoEra",
 			"ROC",
 			"Ljava/time/chrono/MinguoEra;"
@@ -30,7 +30,7 @@ namespace java::time::chrono
 	// Methods
 	java::time::chrono::MinguoEra MinguoEra::of(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.MinguoEra",
 			"of",
 			"(I)Ljava/time/chrono/MinguoEra;",
@@ -39,7 +39,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::MinguoEra MinguoEra::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.MinguoEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/MinguoEra;",
@@ -48,7 +48,7 @@ namespace java::time::chrono
 	}
 	jarray MinguoEra::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.MinguoEra",
 			"values",
 			"()[Ljava/time/chrono/MinguoEra;"

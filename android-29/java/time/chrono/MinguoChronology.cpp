@@ -14,7 +14,7 @@ namespace java::time::chrono
 	// Fields
 	java::time::chrono::MinguoChronology MinguoChronology::INSTANCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.MinguoChronology",
 			"INSTANCE",
 			"Ljava/time/chrono/MinguoChronology;"

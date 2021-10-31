@@ -7,7 +7,7 @@ namespace android::location
 	// Fields
 	jstring SettingInjectorService::ACTION_INJECTED_SETTING_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"ACTION_INJECTED_SETTING_CHANGED",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::location
 	}
 	jstring SettingInjectorService::ACTION_SERVICE_INTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"ACTION_SERVICE_INTENT",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::location
 	}
 	jstring SettingInjectorService::ATTRIBUTES_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"ATTRIBUTES_NAME",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::location
 	}
 	jstring SettingInjectorService::META_DATA_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"META_DATA_NAME",
 			"Ljava/lang/String;"
@@ -52,7 +52,7 @@ namespace android::location
 	// Methods
 	void SettingInjectorService::refreshSettings(android::content::Context arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.location.SettingInjectorService",
 			"refreshSettings",
 			"(Landroid/content/Context;)V",

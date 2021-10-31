@@ -6,7 +6,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass PictureInPictureParams::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.PictureInPictureParams",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

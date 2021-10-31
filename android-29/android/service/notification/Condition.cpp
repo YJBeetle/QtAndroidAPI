@@ -9,7 +9,7 @@ namespace android::service::notification
 	// Fields
 	__JniBaseClass Condition::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.Condition",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -17,21 +17,21 @@ namespace android::service::notification
 	}
 	jint Condition::FLAG_RELEVANT_ALWAYS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.Condition",
 			"FLAG_RELEVANT_ALWAYS"
 		);
 	}
 	jint Condition::FLAG_RELEVANT_NOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.Condition",
 			"FLAG_RELEVANT_NOW"
 		);
 	}
 	jstring Condition::SCHEME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.Condition",
 			"SCHEME",
 			"Ljava/lang/String;"
@@ -39,28 +39,28 @@ namespace android::service::notification
 	}
 	jint Condition::STATE_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.Condition",
 			"STATE_ERROR"
 		);
 	}
 	jint Condition::STATE_FALSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.Condition",
 			"STATE_FALSE"
 		);
 	}
 	jint Condition::STATE_TRUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.Condition",
 			"STATE_TRUE"
 		);
 	}
 	jint Condition::STATE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.Condition",
 			"STATE_UNKNOWN"
 		);
@@ -146,7 +146,7 @@ namespace android::service::notification
 	// Methods
 	jboolean Condition::isValidId(android::net::Uri arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.service.notification.Condition",
 			"isValidId",
 			"(Landroid/net/Uri;Ljava/lang/String;)Z",
@@ -156,7 +156,7 @@ namespace android::service::notification
 	}
 	android::net::Uri_Builder Condition::newId(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.service.notification.Condition",
 			"newId",
 			"(Landroid/content/Context;)Landroid/net/Uri$Builder;",
@@ -165,7 +165,7 @@ namespace android::service::notification
 	}
 	jstring Condition::relevanceToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.service.notification.Condition",
 			"relevanceToString",
 			"(I)Ljava/lang/String;",
@@ -174,7 +174,7 @@ namespace android::service::notification
 	}
 	jstring Condition::stateToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.service.notification.Condition",
 			"stateToString",
 			"(I)Ljava/lang/String;",

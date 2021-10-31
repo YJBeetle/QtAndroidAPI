@@ -18,7 +18,7 @@ namespace android::text::format
 	// Methods
 	jstring Formatter::formatFileSize(android::content::Context arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.Formatter",
 			"formatFileSize",
 			"(Landroid/content/Context;J)Ljava/lang/String;",
@@ -28,7 +28,7 @@ namespace android::text::format
 	}
 	jstring Formatter::formatIpAddress(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.Formatter",
 			"formatIpAddress",
 			"(I)Ljava/lang/String;",
@@ -37,7 +37,7 @@ namespace android::text::format
 	}
 	jstring Formatter::formatShortFileSize(android::content::Context arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.Formatter",
 			"formatShortFileSize",
 			"(Landroid/content/Context;J)Ljava/lang/String;",

@@ -22,7 +22,7 @@ namespace android::content::pm
 	// Fields
 	jstring LauncherApps::ACTION_CONFIRM_PIN_APPWIDGET()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.LauncherApps",
 			"ACTION_CONFIRM_PIN_APPWIDGET",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::content::pm
 	}
 	jstring LauncherApps::ACTION_CONFIRM_PIN_SHORTCUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.LauncherApps",
 			"ACTION_CONFIRM_PIN_SHORTCUT",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::content::pm
 	}
 	jstring LauncherApps::EXTRA_PIN_ITEM_REQUEST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.LauncherApps",
 			"EXTRA_PIN_ITEM_REQUEST",
 			"Ljava/lang/String;"

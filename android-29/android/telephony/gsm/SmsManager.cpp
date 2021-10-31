@@ -7,63 +7,63 @@ namespace android::telephony::gsm
 	// Fields
 	jint SmsManager::RESULT_ERROR_GENERIC_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
 			"RESULT_ERROR_GENERIC_FAILURE"
 		);
 	}
 	jint SmsManager::RESULT_ERROR_NO_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
 			"RESULT_ERROR_NO_SERVICE"
 		);
 	}
 	jint SmsManager::RESULT_ERROR_NULL_PDU()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
 			"RESULT_ERROR_NULL_PDU"
 		);
 	}
 	jint SmsManager::RESULT_ERROR_RADIO_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
 			"RESULT_ERROR_RADIO_OFF"
 		);
 	}
 	jint SmsManager::STATUS_ON_SIM_FREE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
 			"STATUS_ON_SIM_FREE"
 		);
 	}
 	jint SmsManager::STATUS_ON_SIM_READ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
 			"STATUS_ON_SIM_READ"
 		);
 	}
 	jint SmsManager::STATUS_ON_SIM_SENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
 			"STATUS_ON_SIM_SENT"
 		);
 	}
 	jint SmsManager::STATUS_ON_SIM_UNREAD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
 			"STATUS_ON_SIM_UNREAD"
 		);
 	}
 	jint SmsManager::STATUS_ON_SIM_UNSENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
 			"STATUS_ON_SIM_UNSENT"
 		);
@@ -77,7 +77,7 @@ namespace android::telephony::gsm
 	// Methods
 	android::telephony::gsm::SmsManager SmsManager::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.gsm.SmsManager",
 			"getDefault",
 			"()Landroid/telephony/gsm/SmsManager;"

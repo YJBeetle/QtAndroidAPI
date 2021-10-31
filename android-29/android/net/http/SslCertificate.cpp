@@ -40,7 +40,7 @@ namespace android::net::http
 	// Methods
 	android::net::http::SslCertificate SslCertificate::restoreState(android::os::Bundle arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.http.SslCertificate",
 			"restoreState",
 			"(Landroid/os/Bundle;)Landroid/net/http/SslCertificate;",
@@ -49,7 +49,7 @@ namespace android::net::http
 	}
 	android::os::Bundle SslCertificate::saveState(android::net::http::SslCertificate arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.http.SslCertificate",
 			"saveState",
 			"(Landroid/net/http/SslCertificate;)Landroid/os/Bundle;",

@@ -6,21 +6,21 @@ namespace android::view::autofill
 	// Fields
 	jint AutofillManager_AutofillCallback::EVENT_INPUT_HIDDEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.autofill.AutofillManager$AutofillCallback",
 			"EVENT_INPUT_HIDDEN"
 		);
 	}
 	jint AutofillManager_AutofillCallback::EVENT_INPUT_SHOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.autofill.AutofillManager$AutofillCallback",
 			"EVENT_INPUT_SHOWN"
 		);
 	}
 	jint AutofillManager_AutofillCallback::EVENT_INPUT_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.autofill.AutofillManager$AutofillCallback",
 			"EVENT_INPUT_UNAVAILABLE"
 		);

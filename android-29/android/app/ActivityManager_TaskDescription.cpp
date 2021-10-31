@@ -7,7 +7,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass ActivityManager_TaskDescription::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.ActivityManager$TaskDescription",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

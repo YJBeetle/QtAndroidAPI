@@ -12,7 +12,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass ShortcutInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.ShortcutInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -20,63 +20,63 @@ namespace android::content::pm
 	}
 	jint ShortcutInfo::DISABLED_REASON_APP_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_APP_CHANGED"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_BACKUP_NOT_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_BACKUP_NOT_SUPPORTED"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_BY_APP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_BY_APP"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_NOT_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_NOT_DISABLED"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_OTHER_RESTORE_ISSUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_OTHER_RESTORE_ISSUE"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_SIGNATURE_MISMATCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_SIGNATURE_MISMATCH"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_UNKNOWN"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_VERSION_LOWER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_VERSION_LOWER"
 		);
 	}
 	jstring ShortcutInfo::SHORTCUT_CATEGORY_CONVERSATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.ShortcutInfo",
 			"SHORTCUT_CATEGORY_CONVERSATION",
 			"Ljava/lang/String;"

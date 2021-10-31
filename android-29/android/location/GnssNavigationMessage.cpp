@@ -6,7 +6,7 @@ namespace android::location
 	// Fields
 	__JniBaseClass GnssNavigationMessage::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.location.GnssNavigationMessage",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,91 +14,91 @@ namespace android::location
 	}
 	jint GnssNavigationMessage::STATUS_PARITY_PASSED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"STATUS_PARITY_PASSED"
 		);
 	}
 	jint GnssNavigationMessage::STATUS_PARITY_REBUILT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"STATUS_PARITY_REBUILT"
 		);
 	}
 	jint GnssNavigationMessage::STATUS_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"STATUS_UNKNOWN"
 		);
 	}
 	jint GnssNavigationMessage::TYPE_BDS_D1()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"TYPE_BDS_D1"
 		);
 	}
 	jint GnssNavigationMessage::TYPE_BDS_D2()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"TYPE_BDS_D2"
 		);
 	}
 	jint GnssNavigationMessage::TYPE_GAL_F()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"TYPE_GAL_F"
 		);
 	}
 	jint GnssNavigationMessage::TYPE_GAL_I()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"TYPE_GAL_I"
 		);
 	}
 	jint GnssNavigationMessage::TYPE_GLO_L1CA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"TYPE_GLO_L1CA"
 		);
 	}
 	jint GnssNavigationMessage::TYPE_GPS_CNAV2()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"TYPE_GPS_CNAV2"
 		);
 	}
 	jint GnssNavigationMessage::TYPE_GPS_L1CA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"TYPE_GPS_L1CA"
 		);
 	}
 	jint GnssNavigationMessage::TYPE_GPS_L2CNAV()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"TYPE_GPS_L2CNAV"
 		);
 	}
 	jint GnssNavigationMessage::TYPE_GPS_L5CNAV()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"TYPE_GPS_L5CNAV"
 		);
 	}
 	jint GnssNavigationMessage::TYPE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
 			"TYPE_UNKNOWN"
 		);

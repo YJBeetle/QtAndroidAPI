@@ -7,28 +7,28 @@ namespace android::accessibilityservice
 	// Fields
 	jint FingerprintGestureController::FINGERPRINT_GESTURE_SWIPE_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.FingerprintGestureController",
 			"FINGERPRINT_GESTURE_SWIPE_DOWN"
 		);
 	}
 	jint FingerprintGestureController::FINGERPRINT_GESTURE_SWIPE_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.FingerprintGestureController",
 			"FINGERPRINT_GESTURE_SWIPE_LEFT"
 		);
 	}
 	jint FingerprintGestureController::FINGERPRINT_GESTURE_SWIPE_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.FingerprintGestureController",
 			"FINGERPRINT_GESTURE_SWIPE_RIGHT"
 		);
 	}
 	jint FingerprintGestureController::FINGERPRINT_GESTURE_SWIPE_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.accessibilityservice.FingerprintGestureController",
 			"FINGERPRINT_GESTURE_SWIPE_UP"
 		);

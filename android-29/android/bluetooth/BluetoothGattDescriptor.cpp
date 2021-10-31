@@ -8,7 +8,7 @@ namespace android::bluetooth
 	// Fields
 	__JniBaseClass BluetoothGattDescriptor::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,7 +16,7 @@ namespace android::bluetooth
 	}
 	jbyteArray BluetoothGattDescriptor::DISABLE_NOTIFICATION_VALUE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"DISABLE_NOTIFICATION_VALUE",
 			"[B"
@@ -24,7 +24,7 @@ namespace android::bluetooth
 	}
 	jbyteArray BluetoothGattDescriptor::ENABLE_INDICATION_VALUE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"ENABLE_INDICATION_VALUE",
 			"[B"
@@ -32,7 +32,7 @@ namespace android::bluetooth
 	}
 	jbyteArray BluetoothGattDescriptor::ENABLE_NOTIFICATION_VALUE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"ENABLE_NOTIFICATION_VALUE",
 			"[B"
@@ -40,56 +40,56 @@ namespace android::bluetooth
 	}
 	jint BluetoothGattDescriptor::PERMISSION_READ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"PERMISSION_READ"
 		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_READ_ENCRYPTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"PERMISSION_READ_ENCRYPTED"
 		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_READ_ENCRYPTED_MITM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"PERMISSION_READ_ENCRYPTED_MITM"
 		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_WRITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"PERMISSION_WRITE"
 		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_WRITE_ENCRYPTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"PERMISSION_WRITE_ENCRYPTED"
 		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_WRITE_ENCRYPTED_MITM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"PERMISSION_WRITE_ENCRYPTED_MITM"
 		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_WRITE_SIGNED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"PERMISSION_WRITE_SIGNED"
 		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_WRITE_SIGNED_MITM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"PERMISSION_WRITE_SIGNED_MITM"
 		);

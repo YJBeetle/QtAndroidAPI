@@ -50,7 +50,7 @@ namespace android::icu::text
 	// Methods
 	__JniBaseClass LocaleDisplayNames_UiListItem::getComparator(__JniBaseClass arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames$UiListItem",
 			"getComparator",
 			"(Ljava/util/Comparator;Z)Ljava/util/Comparator;",

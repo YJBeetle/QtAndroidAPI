@@ -6,91 +6,91 @@ namespace android::os
 	// Fields
 	jint FileObserver::ACCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"ACCESS"
 		);
 	}
 	jint FileObserver::ALL_EVENTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"ALL_EVENTS"
 		);
 	}
 	jint FileObserver::ATTRIB()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"ATTRIB"
 		);
 	}
 	jint FileObserver::CLOSE_NOWRITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"CLOSE_NOWRITE"
 		);
 	}
 	jint FileObserver::CLOSE_WRITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"CLOSE_WRITE"
 		);
 	}
 	jint FileObserver::CREATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"CREATE"
 		);
 	}
 	jint FileObserver::DELETE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"DELETE"
 		);
 	}
 	jint FileObserver::DELETE_SELF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"DELETE_SELF"
 		);
 	}
 	jint FileObserver::MODIFY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"MODIFY"
 		);
 	}
 	jint FileObserver::MOVED_FROM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"MOVED_FROM"
 		);
 	}
 	jint FileObserver::MOVED_TO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"MOVED_TO"
 		);
 	}
 	jint FileObserver::MOVE_SELF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"MOVE_SELF"
 		);
 	}
 	jint FileObserver::OPEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.FileObserver",
 			"OPEN"
 		);

@@ -5,7 +5,7 @@ namespace java::text
 	// Fields
 	java::text::AttributedCharacterIterator_Attribute AttributedCharacterIterator_Attribute::INPUT_METHOD_SEGMENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.text.AttributedCharacterIterator$Attribute",
 			"INPUT_METHOD_SEGMENT",
 			"Ljava/text/AttributedCharacterIterator$Attribute;"
@@ -13,7 +13,7 @@ namespace java::text
 	}
 	java::text::AttributedCharacterIterator_Attribute AttributedCharacterIterator_Attribute::LANGUAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.text.AttributedCharacterIterator$Attribute",
 			"LANGUAGE",
 			"Ljava/text/AttributedCharacterIterator$Attribute;"
@@ -21,7 +21,7 @@ namespace java::text
 	}
 	java::text::AttributedCharacterIterator_Attribute AttributedCharacterIterator_Attribute::READING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.text.AttributedCharacterIterator$Attribute",
 			"READING",
 			"Ljava/text/AttributedCharacterIterator$Attribute;"

@@ -10,7 +10,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass LauncherApps_PinItemRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.LauncherApps$PinItemRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -18,14 +18,14 @@ namespace android::content::pm
 	}
 	jint LauncherApps_PinItemRequest::REQUEST_TYPE_APPWIDGET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.LauncherApps$PinItemRequest",
 			"REQUEST_TYPE_APPWIDGET"
 		);
 	}
 	jint LauncherApps_PinItemRequest::REQUEST_TYPE_SHORTCUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.LauncherApps$PinItemRequest",
 			"REQUEST_TYPE_SHORTCUT"
 		);

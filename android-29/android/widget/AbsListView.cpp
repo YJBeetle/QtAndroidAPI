@@ -21,49 +21,49 @@ namespace android::widget
 	// Fields
 	jint AbsListView::CHOICE_MODE_MULTIPLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.AbsListView",
 			"CHOICE_MODE_MULTIPLE"
 		);
 	}
 	jint AbsListView::CHOICE_MODE_MULTIPLE_MODAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.AbsListView",
 			"CHOICE_MODE_MULTIPLE_MODAL"
 		);
 	}
 	jint AbsListView::CHOICE_MODE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.AbsListView",
 			"CHOICE_MODE_NONE"
 		);
 	}
 	jint AbsListView::CHOICE_MODE_SINGLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.AbsListView",
 			"CHOICE_MODE_SINGLE"
 		);
 	}
 	jint AbsListView::TRANSCRIPT_MODE_ALWAYS_SCROLL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.AbsListView",
 			"TRANSCRIPT_MODE_ALWAYS_SCROLL"
 		);
 	}
 	jint AbsListView::TRANSCRIPT_MODE_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.AbsListView",
 			"TRANSCRIPT_MODE_DISABLED"
 		);
 	}
 	jint AbsListView::TRANSCRIPT_MODE_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.AbsListView",
 			"TRANSCRIPT_MODE_NORMAL"
 		);

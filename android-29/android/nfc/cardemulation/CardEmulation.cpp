@@ -8,7 +8,7 @@ namespace android::nfc::cardemulation
 	// Fields
 	jstring CardEmulation::ACTION_CHANGE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"ACTION_CHANGE_DEFAULT",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::nfc::cardemulation
 	}
 	jstring CardEmulation::CATEGORY_OTHER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"CATEGORY_OTHER",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::nfc::cardemulation
 	}
 	jstring CardEmulation::CATEGORY_PAYMENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"CATEGORY_PAYMENT",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace android::nfc::cardemulation
 	}
 	jstring CardEmulation::EXTRA_CATEGORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"EXTRA_CATEGORY",
 			"Ljava/lang/String;"
@@ -40,7 +40,7 @@ namespace android::nfc::cardemulation
 	}
 	jstring CardEmulation::EXTRA_SERVICE_COMPONENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"EXTRA_SERVICE_COMPONENT",
 			"Ljava/lang/String;"
@@ -48,21 +48,21 @@ namespace android::nfc::cardemulation
 	}
 	jint CardEmulation::SELECTION_MODE_ALWAYS_ASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.cardemulation.CardEmulation",
 			"SELECTION_MODE_ALWAYS_ASK"
 		);
 	}
 	jint CardEmulation::SELECTION_MODE_ASK_IF_CONFLICT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.cardemulation.CardEmulation",
 			"SELECTION_MODE_ASK_IF_CONFLICT"
 		);
 	}
 	jint CardEmulation::SELECTION_MODE_PREFER_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.cardemulation.CardEmulation",
 			"SELECTION_MODE_PREFER_DEFAULT"
 		);
@@ -76,7 +76,7 @@ namespace android::nfc::cardemulation
 	// Methods
 	android::nfc::cardemulation::CardEmulation CardEmulation::getInstance(android::nfc::NfcAdapter arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.cardemulation.CardEmulation",
 			"getInstance",
 			"(Landroid/nfc/NfcAdapter;)Landroid/nfc/cardemulation/CardEmulation;",

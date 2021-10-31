@@ -5,7 +5,7 @@ namespace java::sql
 	// Fields
 	java::sql::ClientInfoStatus ClientInfoStatus::REASON_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.sql.ClientInfoStatus",
 			"REASON_UNKNOWN",
 			"Ljava/sql/ClientInfoStatus;"
@@ -13,7 +13,7 @@ namespace java::sql
 	}
 	java::sql::ClientInfoStatus ClientInfoStatus::REASON_UNKNOWN_PROPERTY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.sql.ClientInfoStatus",
 			"REASON_UNKNOWN_PROPERTY",
 			"Ljava/sql/ClientInfoStatus;"
@@ -21,7 +21,7 @@ namespace java::sql
 	}
 	java::sql::ClientInfoStatus ClientInfoStatus::REASON_VALUE_INVALID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.sql.ClientInfoStatus",
 			"REASON_VALUE_INVALID",
 			"Ljava/sql/ClientInfoStatus;"
@@ -29,7 +29,7 @@ namespace java::sql
 	}
 	java::sql::ClientInfoStatus ClientInfoStatus::REASON_VALUE_TRUNCATED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.sql.ClientInfoStatus",
 			"REASON_VALUE_TRUNCATED",
 			"Ljava/sql/ClientInfoStatus;"
@@ -44,7 +44,7 @@ namespace java::sql
 	// Methods
 	java::sql::ClientInfoStatus ClientInfoStatus::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.ClientInfoStatus",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/ClientInfoStatus;",
@@ -53,7 +53,7 @@ namespace java::sql
 	}
 	jarray ClientInfoStatus::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.ClientInfoStatus",
 			"values",
 			"()[Ljava/sql/ClientInfoStatus;"

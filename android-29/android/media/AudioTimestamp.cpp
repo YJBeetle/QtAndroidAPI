@@ -5,14 +5,14 @@ namespace android::media
 	// Fields
 	jint AudioTimestamp::TIMEBASE_BOOTTIME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTimestamp",
 			"TIMEBASE_BOOTTIME"
 		);
 	}
 	jint AudioTimestamp::TIMEBASE_MONOTONIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioTimestamp",
 			"TIMEBASE_MONOTONIC"
 		);

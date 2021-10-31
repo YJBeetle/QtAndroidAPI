@@ -13,161 +13,161 @@ namespace java::text
 	// Fields
 	jint DateFormat::AM_PM_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"AM_PM_FIELD"
 		);
 	}
 	jint DateFormat::DATE_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"DATE_FIELD"
 		);
 	}
 	jint DateFormat::DAY_OF_WEEK_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"DAY_OF_WEEK_FIELD"
 		);
 	}
 	jint DateFormat::DAY_OF_WEEK_IN_MONTH_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"DAY_OF_WEEK_IN_MONTH_FIELD"
 		);
 	}
 	jint DateFormat::DAY_OF_YEAR_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"DAY_OF_YEAR_FIELD"
 		);
 	}
 	jint DateFormat::DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"DEFAULT"
 		);
 	}
 	jint DateFormat::ERA_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"ERA_FIELD"
 		);
 	}
 	jint DateFormat::FULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"FULL"
 		);
 	}
 	jint DateFormat::HOUR0_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"HOUR0_FIELD"
 		);
 	}
 	jint DateFormat::HOUR1_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"HOUR1_FIELD"
 		);
 	}
 	jint DateFormat::HOUR_OF_DAY0_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"HOUR_OF_DAY0_FIELD"
 		);
 	}
 	jint DateFormat::HOUR_OF_DAY1_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"HOUR_OF_DAY1_FIELD"
 		);
 	}
 	jint DateFormat::LONG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"LONG"
 		);
 	}
 	jint DateFormat::MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"MEDIUM"
 		);
 	}
 	jint DateFormat::MILLISECOND_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"MILLISECOND_FIELD"
 		);
 	}
 	jint DateFormat::MINUTE_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"MINUTE_FIELD"
 		);
 	}
 	jint DateFormat::MONTH_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"MONTH_FIELD"
 		);
 	}
 	jint DateFormat::SECOND_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"SECOND_FIELD"
 		);
 	}
 	jint DateFormat::SHORT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"SHORT"
 		);
 	}
 	jint DateFormat::TIMEZONE_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"TIMEZONE_FIELD"
 		);
 	}
 	jint DateFormat::WEEK_OF_MONTH_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"WEEK_OF_MONTH_FIELD"
 		);
 	}
 	jint DateFormat::WEEK_OF_YEAR_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"WEEK_OF_YEAR_FIELD"
 		);
 	}
 	jint DateFormat::YEAR_FIELD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.DateFormat",
 			"YEAR_FIELD"
 		);
@@ -181,7 +181,7 @@ namespace java::text
 	// Methods
 	jarray DateFormat::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -189,7 +189,7 @@ namespace java::text
 	}
 	java::text::DateFormat DateFormat::getDateInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getDateInstance",
 			"()Ljava/text/DateFormat;"
@@ -197,7 +197,7 @@ namespace java::text
 	}
 	java::text::DateFormat DateFormat::getDateInstance(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getDateInstance",
 			"(I)Ljava/text/DateFormat;",
@@ -206,7 +206,7 @@ namespace java::text
 	}
 	java::text::DateFormat DateFormat::getDateInstance(jint arg0, java::util::Locale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getDateInstance",
 			"(ILjava/util/Locale;)Ljava/text/DateFormat;",
@@ -216,7 +216,7 @@ namespace java::text
 	}
 	java::text::DateFormat DateFormat::getDateTimeInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getDateTimeInstance",
 			"()Ljava/text/DateFormat;"
@@ -224,7 +224,7 @@ namespace java::text
 	}
 	java::text::DateFormat DateFormat::getDateTimeInstance(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getDateTimeInstance",
 			"(II)Ljava/text/DateFormat;",
@@ -234,7 +234,7 @@ namespace java::text
 	}
 	java::text::DateFormat DateFormat::getDateTimeInstance(jint arg0, jint arg1, java::util::Locale arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getDateTimeInstance",
 			"(IILjava/util/Locale;)Ljava/text/DateFormat;",
@@ -245,7 +245,7 @@ namespace java::text
 	}
 	java::text::DateFormat DateFormat::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getInstance",
 			"()Ljava/text/DateFormat;"
@@ -253,7 +253,7 @@ namespace java::text
 	}
 	java::text::DateFormat DateFormat::getTimeInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getTimeInstance",
 			"()Ljava/text/DateFormat;"
@@ -261,7 +261,7 @@ namespace java::text
 	}
 	java::text::DateFormat DateFormat::getTimeInstance(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getTimeInstance",
 			"(I)Ljava/text/DateFormat;",
@@ -270,7 +270,7 @@ namespace java::text
 	}
 	java::text::DateFormat DateFormat::getTimeInstance(jint arg0, java::util::Locale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.DateFormat",
 			"getTimeInstance",
 			"(ILjava/util/Locale;)Ljava/text/DateFormat;",

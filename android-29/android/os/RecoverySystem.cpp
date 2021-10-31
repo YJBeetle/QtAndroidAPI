@@ -14,7 +14,7 @@ namespace android::os
 	// Methods
 	void RecoverySystem::installPackage(android::content::Context arg0, java::io::File arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.RecoverySystem",
 			"installPackage",
 			"(Landroid/content/Context;Ljava/io/File;)V",
@@ -24,7 +24,7 @@ namespace android::os
 	}
 	void RecoverySystem::rebootWipeCache(android::content::Context arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.RecoverySystem",
 			"rebootWipeCache",
 			"(Landroid/content/Context;)V",
@@ -33,7 +33,7 @@ namespace android::os
 	}
 	void RecoverySystem::rebootWipeUserData(android::content::Context arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.RecoverySystem",
 			"rebootWipeUserData",
 			"(Landroid/content/Context;)V",
@@ -42,7 +42,7 @@ namespace android::os
 	}
 	void RecoverySystem::verifyPackage(java::io::File arg0, __JniBaseClass arg1, java::io::File arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.RecoverySystem",
 			"verifyPackage",
 			"(Ljava/io/File;Landroid/os/RecoverySystem$ProgressListener;Ljava/io/File;)V",

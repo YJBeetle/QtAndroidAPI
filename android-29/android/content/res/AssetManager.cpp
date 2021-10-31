@@ -7,28 +7,28 @@ namespace android::content::res
 	// Fields
 	jint AssetManager::ACCESS_BUFFER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.AssetManager",
 			"ACCESS_BUFFER"
 		);
 	}
 	jint AssetManager::ACCESS_RANDOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.AssetManager",
 			"ACCESS_RANDOM"
 		);
 	}
 	jint AssetManager::ACCESS_STREAMING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.AssetManager",
 			"ACCESS_STREAMING"
 		);
 	}
 	jint AssetManager::ACCESS_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.AssetManager",
 			"ACCESS_UNKNOWN"
 		);

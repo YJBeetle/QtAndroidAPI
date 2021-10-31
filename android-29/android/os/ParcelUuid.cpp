@@ -7,7 +7,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass ParcelUuid::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.ParcelUuid",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -28,7 +28,7 @@ namespace android::os
 	// Methods
 	android::os::ParcelUuid ParcelUuid::fromString(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.ParcelUuid",
 			"fromString",
 			"(Ljava/lang/String;)Landroid/os/ParcelUuid;",

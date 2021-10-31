@@ -14,7 +14,7 @@ namespace android::service::voice
 	// Fields
 	jstring VoiceInteractionService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.voice.VoiceInteractionService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::service::voice
 	}
 	jstring VoiceInteractionService::SERVICE_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.voice.VoiceInteractionService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"
@@ -42,7 +42,7 @@ namespace android::service::voice
 	// Methods
 	jboolean VoiceInteractionService::isActiveService(android::content::Context arg0, android::content::ComponentName arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.service.voice.VoiceInteractionService",
 			"isActiveService",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)Z",

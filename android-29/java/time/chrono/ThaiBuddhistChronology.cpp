@@ -15,7 +15,7 @@ namespace java::time::chrono
 	// Fields
 	java::time::chrono::ThaiBuddhistChronology ThaiBuddhistChronology::INSTANCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.ThaiBuddhistChronology",
 			"INSTANCE",
 			"Ljava/time/chrono/ThaiBuddhistChronology;"

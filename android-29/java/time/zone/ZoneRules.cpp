@@ -18,7 +18,7 @@ namespace java::time::zone
 	// Methods
 	java::time::zone::ZoneRules ZoneRules::of(java::time::ZoneOffset arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.zone.ZoneRules",
 			"of",
 			"(Ljava/time/ZoneOffset;)Ljava/time/zone/ZoneRules;",
@@ -27,7 +27,7 @@ namespace java::time::zone
 	}
 	java::time::zone::ZoneRules ZoneRules::of(java::time::ZoneOffset arg0, java::time::ZoneOffset arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.zone.ZoneRules",
 			"of",
 			"(Ljava/time/ZoneOffset;Ljava/time/ZoneOffset;Ljava/util/List;Ljava/util/List;Ljava/util/List;)Ljava/time/zone/ZoneRules;",

@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::Paint_Align Paint_Align::CENTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Paint$Align",
 			"CENTER",
 			"Landroid/graphics/Paint$Align;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::Paint_Align Paint_Align::LEFT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Paint$Align",
 			"LEFT",
 			"Landroid/graphics/Paint$Align;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::Paint_Align Paint_Align::RIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Paint$Align",
 			"RIGHT",
 			"Landroid/graphics/Paint$Align;"
@@ -36,7 +36,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Paint_Align Paint_Align::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Paint$Align",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Align;",
@@ -45,7 +45,7 @@ namespace android::graphics
 	}
 	jarray Paint_Align::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Paint$Align",
 			"values",
 			"()[Landroid/graphics/Paint$Align;"

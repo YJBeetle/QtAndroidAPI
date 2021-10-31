@@ -12,14 +12,14 @@ namespace android::media::audiofx
 	// Fields
 	jint DynamicsProcessing::VARIANT_FAVOR_FREQUENCY_RESOLUTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.DynamicsProcessing",
 			"VARIANT_FAVOR_FREQUENCY_RESOLUTION"
 		);
 	}
 	jint DynamicsProcessing::VARIANT_FAVOR_TIME_RESOLUTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.audiofx.DynamicsProcessing",
 			"VARIANT_FAVOR_TIME_RESOLUTION"
 		);

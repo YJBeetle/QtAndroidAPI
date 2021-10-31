@@ -12,7 +12,7 @@ namespace java::lang::reflect
 	// Methods
 	void AccessibleObject::setAccessible(jarray arg0, jboolean arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.reflect.AccessibleObject",
 			"setAccessible",
 			"([Ljava/lang/reflect/AccessibleObject;Z)V",

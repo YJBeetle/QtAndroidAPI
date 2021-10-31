@@ -7,7 +7,7 @@ namespace android::speech::tts
 	// Fields
 	__JniBaseClass Voice::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.speech.tts.Voice",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,70 +15,70 @@ namespace android::speech::tts
 	}
 	jint Voice::LATENCY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.Voice",
 			"LATENCY_HIGH"
 		);
 	}
 	jint Voice::LATENCY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.Voice",
 			"LATENCY_LOW"
 		);
 	}
 	jint Voice::LATENCY_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.Voice",
 			"LATENCY_NORMAL"
 		);
 	}
 	jint Voice::LATENCY_VERY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.Voice",
 			"LATENCY_VERY_HIGH"
 		);
 	}
 	jint Voice::LATENCY_VERY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.Voice",
 			"LATENCY_VERY_LOW"
 		);
 	}
 	jint Voice::QUALITY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.Voice",
 			"QUALITY_HIGH"
 		);
 	}
 	jint Voice::QUALITY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.Voice",
 			"QUALITY_LOW"
 		);
 	}
 	jint Voice::QUALITY_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.Voice",
 			"QUALITY_NORMAL"
 		);
 	}
 	jint Voice::QUALITY_VERY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.Voice",
 			"QUALITY_VERY_HIGH"
 		);
 	}
 	jint Voice::QUALITY_VERY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.speech.tts.Voice",
 			"QUALITY_VERY_LOW"
 		);

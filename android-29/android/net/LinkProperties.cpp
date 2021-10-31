@@ -8,7 +8,7 @@ namespace android::net
 	// Fields
 	__JniBaseClass LinkProperties::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.LinkProperties",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

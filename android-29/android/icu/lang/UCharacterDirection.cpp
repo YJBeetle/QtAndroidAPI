@@ -12,7 +12,7 @@ namespace android::icu::lang
 	// Methods
 	jstring UCharacterDirection::toString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.lang.UCharacterDirection",
 			"toString",
 			"(I)Ljava/lang/String;",

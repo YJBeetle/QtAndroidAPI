@@ -7,7 +7,7 @@ namespace android::nfc
 	// Fields
 	__JniBaseClass NdefRecord::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::nfc
 	}
 	jbyteArray NdefRecord::RTD_ALTERNATIVE_CARRIER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_ALTERNATIVE_CARRIER",
 			"[B"
@@ -23,7 +23,7 @@ namespace android::nfc
 	}
 	jbyteArray NdefRecord::RTD_HANDOVER_CARRIER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_HANDOVER_CARRIER",
 			"[B"
@@ -31,7 +31,7 @@ namespace android::nfc
 	}
 	jbyteArray NdefRecord::RTD_HANDOVER_REQUEST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_HANDOVER_REQUEST",
 			"[B"
@@ -39,7 +39,7 @@ namespace android::nfc
 	}
 	jbyteArray NdefRecord::RTD_HANDOVER_SELECT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_HANDOVER_SELECT",
 			"[B"
@@ -47,7 +47,7 @@ namespace android::nfc
 	}
 	jbyteArray NdefRecord::RTD_SMART_POSTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_SMART_POSTER",
 			"[B"
@@ -55,7 +55,7 @@ namespace android::nfc
 	}
 	jbyteArray NdefRecord::RTD_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_TEXT",
 			"[B"
@@ -63,7 +63,7 @@ namespace android::nfc
 	}
 	jbyteArray NdefRecord::RTD_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_URI",
 			"[B"
@@ -71,49 +71,49 @@ namespace android::nfc
 	}
 	jshort NdefRecord::TNF_ABSOLUTE_URI()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.nfc.NdefRecord",
 			"TNF_ABSOLUTE_URI"
 		);
 	}
 	jshort NdefRecord::TNF_EMPTY()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.nfc.NdefRecord",
 			"TNF_EMPTY"
 		);
 	}
 	jshort NdefRecord::TNF_EXTERNAL_TYPE()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.nfc.NdefRecord",
 			"TNF_EXTERNAL_TYPE"
 		);
 	}
 	jshort NdefRecord::TNF_MIME_MEDIA()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.nfc.NdefRecord",
 			"TNF_MIME_MEDIA"
 		);
 	}
 	jshort NdefRecord::TNF_UNCHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.nfc.NdefRecord",
 			"TNF_UNCHANGED"
 		);
 	}
 	jshort NdefRecord::TNF_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.nfc.NdefRecord",
 			"TNF_UNKNOWN"
 		);
 	}
 	jshort NdefRecord::TNF_WELL_KNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"android.nfc.NdefRecord",
 			"TNF_WELL_KNOWN"
 		);
@@ -142,7 +142,7 @@ namespace android::nfc
 	// Methods
 	android::nfc::NdefRecord NdefRecord::createApplicationRecord(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createApplicationRecord",
 			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",
@@ -151,7 +151,7 @@ namespace android::nfc
 	}
 	android::nfc::NdefRecord NdefRecord::createExternal(jstring arg0, jstring arg1, jbyteArray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createExternal",
 			"(Ljava/lang/String;Ljava/lang/String;[B)Landroid/nfc/NdefRecord;",
@@ -162,7 +162,7 @@ namespace android::nfc
 	}
 	android::nfc::NdefRecord NdefRecord::createMime(jstring arg0, jbyteArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createMime",
 			"(Ljava/lang/String;[B)Landroid/nfc/NdefRecord;",
@@ -172,7 +172,7 @@ namespace android::nfc
 	}
 	android::nfc::NdefRecord NdefRecord::createTextRecord(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createTextRecord",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/nfc/NdefRecord;",
@@ -182,7 +182,7 @@ namespace android::nfc
 	}
 	android::nfc::NdefRecord NdefRecord::createUri(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createUri",
 			"(Landroid/net/Uri;)Landroid/nfc/NdefRecord;",
@@ -191,7 +191,7 @@ namespace android::nfc
 	}
 	android::nfc::NdefRecord NdefRecord::createUri(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.NdefRecord",
 			"createUri",
 			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",

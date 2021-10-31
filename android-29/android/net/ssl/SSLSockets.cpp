@@ -13,7 +13,7 @@ namespace android::net::ssl
 	// Methods
 	jboolean SSLSockets::isSupportedSocket(javax::net::ssl::SSLSocket arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.net.ssl.SSLSockets",
 			"isSupportedSocket",
 			"(Ljavax/net/ssl/SSLSocket;)Z",
@@ -22,7 +22,7 @@ namespace android::net::ssl
 	}
 	void SSLSockets::setUseSessionTickets(javax::net::ssl::SSLSocket arg0, jboolean arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.ssl.SSLSockets",
 			"setUseSessionTickets",
 			"(Ljavax/net/ssl/SSLSocket;Z)V",

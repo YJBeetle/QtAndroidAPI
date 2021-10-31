@@ -7,7 +7,7 @@ namespace android::media::midi
 	// Fields
 	__JniBaseClass MidiDeviceInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::media::midi
 	}
 	jstring MidiDeviceInfo::PROPERTY_BLUETOOTH_DEVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_BLUETOOTH_DEVICE",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::media::midi
 	}
 	jstring MidiDeviceInfo::PROPERTY_MANUFACTURER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_MANUFACTURER",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::media::midi
 	}
 	jstring MidiDeviceInfo::PROPERTY_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_NAME",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::media::midi
 	}
 	jstring MidiDeviceInfo::PROPERTY_PRODUCT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_PRODUCT",
 			"Ljava/lang/String;"
@@ -47,7 +47,7 @@ namespace android::media::midi
 	}
 	jstring MidiDeviceInfo::PROPERTY_SERIAL_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_SERIAL_NUMBER",
 			"Ljava/lang/String;"
@@ -55,7 +55,7 @@ namespace android::media::midi
 	}
 	jstring MidiDeviceInfo::PROPERTY_USB_DEVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_USB_DEVICE",
 			"Ljava/lang/String;"
@@ -63,7 +63,7 @@ namespace android::media::midi
 	}
 	jstring MidiDeviceInfo::PROPERTY_VERSION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_VERSION",
 			"Ljava/lang/String;"
@@ -71,21 +71,21 @@ namespace android::media::midi
 	}
 	jint MidiDeviceInfo::TYPE_BLUETOOTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.midi.MidiDeviceInfo",
 			"TYPE_BLUETOOTH"
 		);
 	}
 	jint MidiDeviceInfo::TYPE_USB()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.midi.MidiDeviceInfo",
 			"TYPE_USB"
 		);
 	}
 	jint MidiDeviceInfo::TYPE_VIRTUAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.midi.MidiDeviceInfo",
 			"TYPE_VIRTUAL"
 		);

@@ -8,7 +8,7 @@ namespace android::telecom
 	// Fields
 	jstring CallRedirectionService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.CallRedirectionService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

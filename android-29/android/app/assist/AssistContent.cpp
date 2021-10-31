@@ -10,7 +10,7 @@ namespace android::app::assist
 	// Fields
 	__JniBaseClass AssistContent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.assist.AssistContent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

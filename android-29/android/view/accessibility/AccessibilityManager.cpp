@@ -8,21 +8,21 @@ namespace android::view::accessibility
 	// Fields
 	jint AccessibilityManager::FLAG_CONTENT_CONTROLS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityManager",
 			"FLAG_CONTENT_CONTROLS"
 		);
 	}
 	jint AccessibilityManager::FLAG_CONTENT_ICONS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityManager",
 			"FLAG_CONTENT_ICONS"
 		);
 	}
 	jint AccessibilityManager::FLAG_CONTENT_TEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityManager",
 			"FLAG_CONTENT_TEXT"
 		);
@@ -36,7 +36,7 @@ namespace android::view::accessibility
 	// Methods
 	jboolean AccessibilityManager::isAccessibilityButtonSupported()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.view.accessibility.AccessibilityManager",
 			"isAccessibilityButtonSupported",
 			"()Z"

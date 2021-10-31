@@ -7,7 +7,7 @@ namespace android::telecom
 	// Fields
 	__JniBaseClass PhoneAccountSuggestion::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccountSuggestion",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,35 +15,35 @@ namespace android::telecom
 	}
 	jint PhoneAccountSuggestion::REASON_FREQUENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccountSuggestion",
 			"REASON_FREQUENT"
 		);
 	}
 	jint PhoneAccountSuggestion::REASON_INTRA_CARRIER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccountSuggestion",
 			"REASON_INTRA_CARRIER"
 		);
 	}
 	jint PhoneAccountSuggestion::REASON_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccountSuggestion",
 			"REASON_NONE"
 		);
 	}
 	jint PhoneAccountSuggestion::REASON_OTHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccountSuggestion",
 			"REASON_OTHER"
 		);
 	}
 	jint PhoneAccountSuggestion::REASON_USER_SET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccountSuggestion",
 			"REASON_USER_SET"
 		);

@@ -6,28 +6,28 @@ namespace android::view::animation
 	// Fields
 	jint Transformation::TYPE_ALPHA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Transformation",
 			"TYPE_ALPHA"
 		);
 	}
 	jint Transformation::TYPE_BOTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Transformation",
 			"TYPE_BOTH"
 		);
 	}
 	jint Transformation::TYPE_IDENTITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Transformation",
 			"TYPE_IDENTITY"
 		);
 	}
 	jint Transformation::TYPE_MATRIX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.animation.Transformation",
 			"TYPE_MATRIX"
 		);

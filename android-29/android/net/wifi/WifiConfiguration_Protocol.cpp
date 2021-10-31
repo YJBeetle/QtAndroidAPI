@@ -5,21 +5,21 @@ namespace android::net::wifi
 	// Fields
 	jint WifiConfiguration_Protocol::RSN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$Protocol",
 			"RSN"
 		);
 	}
 	jint WifiConfiguration_Protocol::WPA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$Protocol",
 			"WPA"
 		);
 	}
 	jarray WifiConfiguration_Protocol::strings()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$Protocol",
 			"strings",
 			"[Ljava/lang/String;"
@@ -27,7 +27,7 @@ namespace android::net::wifi
 	}
 	jstring WifiConfiguration_Protocol::varName()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$Protocol",
 			"varName",
 			"Ljava/lang/String;"

@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring SyncStateContract_Constants::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.SyncStateContract$Constants",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"

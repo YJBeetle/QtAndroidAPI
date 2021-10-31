@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_CommonDataKinds_Email::ADDRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"ADDRESS",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Email::CONTENT_FILTER_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_FILTER_URI",
 			"Landroid/net/Uri;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Email::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Email::CONTENT_LOOKUP_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_LOOKUP_URI",
 			"Landroid/net/Uri;"
@@ -39,7 +39,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Email::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -47,7 +47,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Email::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -55,7 +55,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Email::DISPLAY_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"DISPLAY_NAME",
 			"Ljava/lang/String;"
@@ -63,7 +63,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Email::ENTERPRISE_CONTENT_FILTER_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"ENTERPRISE_CONTENT_FILTER_URI",
 			"Landroid/net/Uri;"
@@ -71,7 +71,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_Email::ENTERPRISE_CONTENT_LOOKUP_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"ENTERPRISE_CONTENT_LOOKUP_URI",
 			"Landroid/net/Uri;"
@@ -79,7 +79,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
@@ -87,7 +87,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
@@ -95,7 +95,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
@@ -103,28 +103,28 @@ namespace android::provider
 	}
 	jint ContactsContract_CommonDataKinds_Email::TYPE_HOME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"TYPE_HOME"
 		);
 	}
 	jint ContactsContract_CommonDataKinds_Email::TYPE_MOBILE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"TYPE_MOBILE"
 		);
 	}
 	jint ContactsContract_CommonDataKinds_Email::TYPE_OTHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"TYPE_OTHER"
 		);
 	}
 	jint ContactsContract_CommonDataKinds_Email::TYPE_WORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"TYPE_WORK"
 		);
@@ -138,7 +138,7 @@ namespace android::provider
 	// Methods
 	jstring ContactsContract_CommonDataKinds_Email::getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"getTypeLabel",
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
@@ -149,7 +149,7 @@ namespace android::provider
 	}
 	jint ContactsContract_CommonDataKinds_Email::getTypeLabelResource(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"getTypeLabelResource",
 			"(I)I",

@@ -6,7 +6,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass TextClassificationSessionId::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextClassificationSessionId",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

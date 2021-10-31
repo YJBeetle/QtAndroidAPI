@@ -8,7 +8,7 @@ namespace android::widget
 	// Fields
 	jint FrameLayout_LayoutParams::UNSPECIFIED_GRAVITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.FrameLayout$LayoutParams",
 			"UNSPECIFIED_GRAVITY"
 		);

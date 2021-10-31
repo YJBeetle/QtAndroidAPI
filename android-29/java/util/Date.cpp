@@ -62,7 +62,7 @@ namespace java::util
 	// Methods
 	jlong Date::UTC(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.util.Date",
 			"UTC",
 			"(IIIIII)J",
@@ -76,7 +76,7 @@ namespace java::util
 	}
 	java::util::Date Date::from(java::time::Instant arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Date",
 			"from",
 			"(Ljava/time/Instant;)Ljava/util/Date;",
@@ -85,7 +85,7 @@ namespace java::util
 	}
 	jlong Date::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.util.Date",
 			"parse",
 			"(Ljava/lang/String;)J",

@@ -5,35 +5,35 @@ namespace android::hardware::camera2
 	// Fields
 	jint CameraAccessException::CAMERA_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraAccessException",
 			"CAMERA_DISABLED"
 		);
 	}
 	jint CameraAccessException::CAMERA_DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraAccessException",
 			"CAMERA_DISCONNECTED"
 		);
 	}
 	jint CameraAccessException::CAMERA_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraAccessException",
 			"CAMERA_ERROR"
 		);
 	}
 	jint CameraAccessException::CAMERA_IN_USE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraAccessException",
 			"CAMERA_IN_USE"
 		);
 	}
 	jint CameraAccessException::MAX_CAMERAS_IN_USE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraAccessException",
 			"MAX_CAMERAS_IN_USE"
 		);

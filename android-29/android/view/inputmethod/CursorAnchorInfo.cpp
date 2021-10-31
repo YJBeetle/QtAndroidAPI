@@ -8,7 +8,7 @@ namespace android::view::inputmethod
 	// Fields
 	__JniBaseClass CursorAnchorInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.inputmethod.CursorAnchorInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,21 +16,21 @@ namespace android::view::inputmethod
 	}
 	jint CursorAnchorInfo::FLAG_HAS_INVISIBLE_REGION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.CursorAnchorInfo",
 			"FLAG_HAS_INVISIBLE_REGION"
 		);
 	}
 	jint CursorAnchorInfo::FLAG_HAS_VISIBLE_REGION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.CursorAnchorInfo",
 			"FLAG_HAS_VISIBLE_REGION"
 		);
 	}
 	jint CursorAnchorInfo::FLAG_IS_RTL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.CursorAnchorInfo",
 			"FLAG_IS_RTL"
 		);

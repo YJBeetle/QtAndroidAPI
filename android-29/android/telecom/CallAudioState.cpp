@@ -7,7 +7,7 @@ namespace android::telecom
 	// Fields
 	__JniBaseClass CallAudioState::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.CallAudioState",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,35 +15,35 @@ namespace android::telecom
 	}
 	jint CallAudioState::ROUTE_BLUETOOTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.CallAudioState",
 			"ROUTE_BLUETOOTH"
 		);
 	}
 	jint CallAudioState::ROUTE_EARPIECE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.CallAudioState",
 			"ROUTE_EARPIECE"
 		);
 	}
 	jint CallAudioState::ROUTE_SPEAKER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.CallAudioState",
 			"ROUTE_SPEAKER"
 		);
 	}
 	jint CallAudioState::ROUTE_WIRED_HEADSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.CallAudioState",
 			"ROUTE_WIRED_HEADSET"
 		);
 	}
 	jint CallAudioState::ROUTE_WIRED_OR_EARPIECE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.CallAudioState",
 			"ROUTE_WIRED_OR_EARPIECE"
 		);
@@ -65,7 +65,7 @@ namespace android::telecom
 	// Methods
 	jstring CallAudioState::audioRouteToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telecom.CallAudioState",
 			"audioRouteToString",
 			"(I)Ljava/lang/String;",

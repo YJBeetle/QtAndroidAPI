@@ -19,7 +19,7 @@ namespace org::apache::http::conn::ssl
 	// Methods
 	jboolean AbstractVerifier::acceptableCountryWildcard(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"acceptableCountryWildcard",
 			"(Ljava/lang/String;)Z",
@@ -28,7 +28,7 @@ namespace org::apache::http::conn::ssl
 	}
 	jint AbstractVerifier::countDots(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"countDots",
 			"(Ljava/lang/String;)I",
@@ -37,7 +37,7 @@ namespace org::apache::http::conn::ssl
 	}
 	jarray AbstractVerifier::getCNs(java::security::cert::X509Certificate arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"getCNs",
 			"(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;",
@@ -46,7 +46,7 @@ namespace org::apache::http::conn::ssl
 	}
 	jarray AbstractVerifier::getDNSSubjectAlts(java::security::cert::X509Certificate arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"getDNSSubjectAlts",
 			"(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;",

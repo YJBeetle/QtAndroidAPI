@@ -8,7 +8,7 @@ namespace android::bluetooth::le
 	// Fields
 	__JniBaseClass ScanFilter::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.le.ScanFilter",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

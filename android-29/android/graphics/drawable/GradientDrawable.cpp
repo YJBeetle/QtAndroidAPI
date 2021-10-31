@@ -17,49 +17,49 @@ namespace android::graphics::drawable
 	// Fields
 	jint GradientDrawable::LINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.GradientDrawable",
 			"LINE"
 		);
 	}
 	jint GradientDrawable::LINEAR_GRADIENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.GradientDrawable",
 			"LINEAR_GRADIENT"
 		);
 	}
 	jint GradientDrawable::OVAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.GradientDrawable",
 			"OVAL"
 		);
 	}
 	jint GradientDrawable::RADIAL_GRADIENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.GradientDrawable",
 			"RADIAL_GRADIENT"
 		);
 	}
 	jint GradientDrawable::RECTANGLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.GradientDrawable",
 			"RECTANGLE"
 		);
 	}
 	jint GradientDrawable::RING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.GradientDrawable",
 			"RING"
 		);
 	}
 	jint GradientDrawable::SWEEP_GRADIENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.GradientDrawable",
 			"SWEEP_GRADIENT"
 		);

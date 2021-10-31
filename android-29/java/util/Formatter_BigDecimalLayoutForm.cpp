@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	java::util::Formatter_BigDecimalLayoutForm Formatter_BigDecimalLayoutForm::DECIMAL_FLOAT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Formatter$BigDecimalLayoutForm",
 			"DECIMAL_FLOAT",
 			"Ljava/util/Formatter$BigDecimalLayoutForm;"
@@ -13,7 +13,7 @@ namespace java::util
 	}
 	java::util::Formatter_BigDecimalLayoutForm Formatter_BigDecimalLayoutForm::SCIENTIFIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Formatter$BigDecimalLayoutForm",
 			"SCIENTIFIC",
 			"Ljava/util/Formatter$BigDecimalLayoutForm;"
@@ -28,7 +28,7 @@ namespace java::util
 	// Methods
 	java::util::Formatter_BigDecimalLayoutForm Formatter_BigDecimalLayoutForm::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Formatter$BigDecimalLayoutForm",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/Formatter$BigDecimalLayoutForm;",
@@ -37,7 +37,7 @@ namespace java::util
 	}
 	jarray Formatter_BigDecimalLayoutForm::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Formatter$BigDecimalLayoutForm",
 			"values",
 			"()[Ljava/util/Formatter$BigDecimalLayoutForm;"

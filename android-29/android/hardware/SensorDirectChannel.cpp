@@ -7,42 +7,42 @@ namespace android::hardware
 	// Fields
 	jint SensorDirectChannel::RATE_FAST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
 			"RATE_FAST"
 		);
 	}
 	jint SensorDirectChannel::RATE_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
 			"RATE_NORMAL"
 		);
 	}
 	jint SensorDirectChannel::RATE_STOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
 			"RATE_STOP"
 		);
 	}
 	jint SensorDirectChannel::RATE_VERY_FAST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
 			"RATE_VERY_FAST"
 		);
 	}
 	jint SensorDirectChannel::TYPE_HARDWARE_BUFFER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
 			"TYPE_HARDWARE_BUFFER"
 		);
 	}
 	jint SensorDirectChannel::TYPE_MEMORY_FILE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
 			"TYPE_MEMORY_FILE"
 		);

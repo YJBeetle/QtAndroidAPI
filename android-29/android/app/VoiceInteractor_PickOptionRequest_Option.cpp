@@ -7,7 +7,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass VoiceInteractor_PickOptionRequest_Option::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.VoiceInteractor$PickOptionRequest$Option",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

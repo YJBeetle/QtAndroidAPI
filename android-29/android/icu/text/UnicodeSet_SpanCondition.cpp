@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::CONDITION_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"CONDITION_COUNT",
 			"Landroid/icu/text/UnicodeSet$SpanCondition;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::CONTAINED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"CONTAINED",
 			"Landroid/icu/text/UnicodeSet$SpanCondition;"
@@ -21,7 +21,7 @@ namespace android::icu::text
 	}
 	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::NOT_CONTAINED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"NOT_CONTAINED",
 			"Landroid/icu/text/UnicodeSet$SpanCondition;"
@@ -29,7 +29,7 @@ namespace android::icu::text
 	}
 	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::SIMPLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"SIMPLE",
 			"Landroid/icu/text/UnicodeSet$SpanCondition;"
@@ -44,7 +44,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet$SpanCondition;",
@@ -53,7 +53,7 @@ namespace android::icu::text
 	}
 	jarray UnicodeSet_SpanCondition::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"values",
 			"()[Landroid/icu/text/UnicodeSet$SpanCondition;"

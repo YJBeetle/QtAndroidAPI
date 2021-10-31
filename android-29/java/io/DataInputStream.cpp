@@ -19,7 +19,7 @@ namespace java::io
 	// Methods
 	jstring DataInputStream::readUTF(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.io.DataInputStream",
 			"readUTF",
 			"(Ljava/io/DataInput;)Ljava/lang/String;",

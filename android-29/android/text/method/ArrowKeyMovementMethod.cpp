@@ -20,7 +20,7 @@ namespace android::text::method
 	// Methods
 	__JniBaseClass ArrowKeyMovementMethod::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.ArrowKeyMovementMethod",
 			"getInstance",
 			"()Landroid/text/method/MovementMethod;"

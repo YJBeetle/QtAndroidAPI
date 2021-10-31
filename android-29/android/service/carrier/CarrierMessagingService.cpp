@@ -8,77 +8,77 @@ namespace android::service::carrier
 	// Fields
 	jint CarrierMessagingService::DOWNLOAD_STATUS_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.carrier.CarrierMessagingService",
 			"DOWNLOAD_STATUS_ERROR"
 		);
 	}
 	jint CarrierMessagingService::DOWNLOAD_STATUS_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.carrier.CarrierMessagingService",
 			"DOWNLOAD_STATUS_OK"
 		);
 	}
 	jint CarrierMessagingService::DOWNLOAD_STATUS_RETRY_ON_CARRIER_NETWORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.carrier.CarrierMessagingService",
 			"DOWNLOAD_STATUS_RETRY_ON_CARRIER_NETWORK"
 		);
 	}
 	jint CarrierMessagingService::RECEIVE_OPTIONS_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.carrier.CarrierMessagingService",
 			"RECEIVE_OPTIONS_DEFAULT"
 		);
 	}
 	jint CarrierMessagingService::RECEIVE_OPTIONS_DROP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.carrier.CarrierMessagingService",
 			"RECEIVE_OPTIONS_DROP"
 		);
 	}
 	jint CarrierMessagingService::RECEIVE_OPTIONS_SKIP_NOTIFY_WHEN_CREDENTIAL_PROTECTED_STORAGE_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.carrier.CarrierMessagingService",
 			"RECEIVE_OPTIONS_SKIP_NOTIFY_WHEN_CREDENTIAL_PROTECTED_STORAGE_UNAVAILABLE"
 		);
 	}
 	jint CarrierMessagingService::SEND_FLAG_REQUEST_DELIVERY_STATUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.carrier.CarrierMessagingService",
 			"SEND_FLAG_REQUEST_DELIVERY_STATUS"
 		);
 	}
 	jint CarrierMessagingService::SEND_STATUS_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.carrier.CarrierMessagingService",
 			"SEND_STATUS_ERROR"
 		);
 	}
 	jint CarrierMessagingService::SEND_STATUS_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.carrier.CarrierMessagingService",
 			"SEND_STATUS_OK"
 		);
 	}
 	jint CarrierMessagingService::SEND_STATUS_RETRY_ON_CARRIER_NETWORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.carrier.CarrierMessagingService",
 			"SEND_STATUS_RETRY_ON_CARRIER_NETWORK"
 		);
 	}
 	jstring CarrierMessagingService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.carrier.CarrierMessagingService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

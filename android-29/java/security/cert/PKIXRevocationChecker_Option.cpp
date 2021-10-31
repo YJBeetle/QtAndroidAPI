@@ -5,7 +5,7 @@ namespace java::security::cert
 	// Fields
 	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::NO_FALLBACK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"NO_FALLBACK",
 			"Ljava/security/cert/PKIXRevocationChecker$Option;"
@@ -13,7 +13,7 @@ namespace java::security::cert
 	}
 	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::ONLY_END_ENTITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"ONLY_END_ENTITY",
 			"Ljava/security/cert/PKIXRevocationChecker$Option;"
@@ -21,7 +21,7 @@ namespace java::security::cert
 	}
 	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::PREFER_CRLS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"PREFER_CRLS",
 			"Ljava/security/cert/PKIXRevocationChecker$Option;"
@@ -29,7 +29,7 @@ namespace java::security::cert
 	}
 	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::SOFT_FAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"SOFT_FAIL",
 			"Ljava/security/cert/PKIXRevocationChecker$Option;"
@@ -44,7 +44,7 @@ namespace java::security::cert
 	// Methods
 	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/cert/PKIXRevocationChecker$Option;",
@@ -53,7 +53,7 @@ namespace java::security::cert
 	}
 	jarray PKIXRevocationChecker_Option::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"values",
 			"()[Ljava/security/cert/PKIXRevocationChecker$Option;"

@@ -19,7 +19,7 @@ namespace java::time
 	// Methods
 	java::time::MonthDay MonthDay::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.MonthDay",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/MonthDay;",
@@ -28,7 +28,7 @@ namespace java::time
 	}
 	java::time::MonthDay MonthDay::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.MonthDay",
 			"now",
 			"()Ljava/time/MonthDay;"
@@ -36,7 +36,7 @@ namespace java::time
 	}
 	java::time::MonthDay MonthDay::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.MonthDay",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/MonthDay;",
@@ -45,7 +45,7 @@ namespace java::time
 	}
 	java::time::MonthDay MonthDay::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.MonthDay",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/MonthDay;",
@@ -54,7 +54,7 @@ namespace java::time
 	}
 	java::time::MonthDay MonthDay::of(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.MonthDay",
 			"of",
 			"(II)Ljava/time/MonthDay;",
@@ -64,7 +64,7 @@ namespace java::time
 	}
 	java::time::MonthDay MonthDay::of(java::time::Month arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.MonthDay",
 			"of",
 			"(Ljava/time/Month;I)Ljava/time/MonthDay;",
@@ -74,7 +74,7 @@ namespace java::time
 	}
 	java::time::MonthDay MonthDay::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.MonthDay",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/MonthDay;",
@@ -83,7 +83,7 @@ namespace java::time
 	}
 	java::time::MonthDay MonthDay::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.MonthDay",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/MonthDay;",

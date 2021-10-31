@@ -8,7 +8,7 @@ namespace java::time
 	// Fields
 	java::time::Month Month::APRIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"APRIL",
 			"Ljava/time/Month;"
@@ -16,7 +16,7 @@ namespace java::time
 	}
 	java::time::Month Month::AUGUST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"AUGUST",
 			"Ljava/time/Month;"
@@ -24,7 +24,7 @@ namespace java::time
 	}
 	java::time::Month Month::DECEMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"DECEMBER",
 			"Ljava/time/Month;"
@@ -32,7 +32,7 @@ namespace java::time
 	}
 	java::time::Month Month::FEBRUARY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"FEBRUARY",
 			"Ljava/time/Month;"
@@ -40,7 +40,7 @@ namespace java::time
 	}
 	java::time::Month Month::JANUARY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"JANUARY",
 			"Ljava/time/Month;"
@@ -48,7 +48,7 @@ namespace java::time
 	}
 	java::time::Month Month::JULY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"JULY",
 			"Ljava/time/Month;"
@@ -56,7 +56,7 @@ namespace java::time
 	}
 	java::time::Month Month::JUNE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"JUNE",
 			"Ljava/time/Month;"
@@ -64,7 +64,7 @@ namespace java::time
 	}
 	java::time::Month Month::MARCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"MARCH",
 			"Ljava/time/Month;"
@@ -72,7 +72,7 @@ namespace java::time
 	}
 	java::time::Month Month::MAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"MAY",
 			"Ljava/time/Month;"
@@ -80,7 +80,7 @@ namespace java::time
 	}
 	java::time::Month Month::NOVEMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"NOVEMBER",
 			"Ljava/time/Month;"
@@ -88,7 +88,7 @@ namespace java::time
 	}
 	java::time::Month Month::OCTOBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"OCTOBER",
 			"Ljava/time/Month;"
@@ -96,7 +96,7 @@ namespace java::time
 	}
 	java::time::Month Month::SEPTEMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Month",
 			"SEPTEMBER",
 			"Ljava/time/Month;"
@@ -111,7 +111,7 @@ namespace java::time
 	// Methods
 	java::time::Month Month::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Month",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/Month;",
@@ -120,7 +120,7 @@ namespace java::time
 	}
 	java::time::Month Month::of(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Month",
 			"of",
 			"(I)Ljava/time/Month;",
@@ -129,7 +129,7 @@ namespace java::time
 	}
 	java::time::Month Month::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Month",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/Month;",
@@ -138,7 +138,7 @@ namespace java::time
 	}
 	jarray Month::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Month",
 			"values",
 			"()[Ljava/time/Month;"

@@ -8,21 +8,21 @@ namespace android::hardware::camera2::params
 	// Fields
 	jint MeteringRectangle::METERING_WEIGHT_DONT_CARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.MeteringRectangle",
 			"METERING_WEIGHT_DONT_CARE"
 		);
 	}
 	jint MeteringRectangle::METERING_WEIGHT_MAX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.MeteringRectangle",
 			"METERING_WEIGHT_MAX"
 		);
 	}
 	jint MeteringRectangle::METERING_WEIGHT_MIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.MeteringRectangle",
 			"METERING_WEIGHT_MIN"
 		);

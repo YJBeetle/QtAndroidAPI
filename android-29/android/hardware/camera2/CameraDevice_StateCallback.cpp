@@ -6,35 +6,35 @@ namespace android::hardware::camera2
 	// Fields
 	jint CameraDevice_StateCallback::ERROR_CAMERA_DEVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice$StateCallback",
 			"ERROR_CAMERA_DEVICE"
 		);
 	}
 	jint CameraDevice_StateCallback::ERROR_CAMERA_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice$StateCallback",
 			"ERROR_CAMERA_DISABLED"
 		);
 	}
 	jint CameraDevice_StateCallback::ERROR_CAMERA_IN_USE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice$StateCallback",
 			"ERROR_CAMERA_IN_USE"
 		);
 	}
 	jint CameraDevice_StateCallback::ERROR_CAMERA_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice$StateCallback",
 			"ERROR_CAMERA_SERVICE"
 		);
 	}
 	jint CameraDevice_StateCallback::ERROR_MAX_CAMERAS_IN_USE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice$StateCallback",
 			"ERROR_MAX_CAMERAS_IN_USE"
 		);

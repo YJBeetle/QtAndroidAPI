@@ -5,7 +5,7 @@ namespace java::time::format
 	// Fields
 	java::time::format::FormatStyle FormatStyle::FULL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.FormatStyle",
 			"FULL",
 			"Ljava/time/format/FormatStyle;"
@@ -13,7 +13,7 @@ namespace java::time::format
 	}
 	java::time::format::FormatStyle FormatStyle::LONG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.FormatStyle",
 			"LONG",
 			"Ljava/time/format/FormatStyle;"
@@ -21,7 +21,7 @@ namespace java::time::format
 	}
 	java::time::format::FormatStyle FormatStyle::MEDIUM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.FormatStyle",
 			"MEDIUM",
 			"Ljava/time/format/FormatStyle;"
@@ -29,7 +29,7 @@ namespace java::time::format
 	}
 	java::time::format::FormatStyle FormatStyle::SHORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.FormatStyle",
 			"SHORT",
 			"Ljava/time/format/FormatStyle;"
@@ -44,7 +44,7 @@ namespace java::time::format
 	// Methods
 	java::time::format::FormatStyle FormatStyle::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.FormatStyle",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/format/FormatStyle;",
@@ -53,7 +53,7 @@ namespace java::time::format
 	}
 	jarray FormatStyle::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.FormatStyle",
 			"values",
 			"()[Ljava/time/format/FormatStyle;"

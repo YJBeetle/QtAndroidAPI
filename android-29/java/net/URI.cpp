@@ -62,7 +62,7 @@ namespace java::net
 	// Methods
 	java::net::URI URI::create(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.URI",
 			"create",
 			"(Ljava/lang/String;)Ljava/net/URI;",

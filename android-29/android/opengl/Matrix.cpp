@@ -17,7 +17,7 @@ namespace android::opengl
 	// Methods
 	void Matrix::frustumM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"frustumM",
 			"([FIFFFFFF)V",
@@ -33,7 +33,7 @@ namespace android::opengl
 	}
 	jboolean Matrix::invertM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.opengl.Matrix",
 			"invertM",
 			"([FI[FI)Z",
@@ -45,7 +45,7 @@ namespace android::opengl
 	}
 	jfloat Matrix::length(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.opengl.Matrix",
 			"length",
 			"(FFF)F",
@@ -56,7 +56,7 @@ namespace android::opengl
 	}
 	void Matrix::multiplyMM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jfloatArray arg4, jint arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"multiplyMM",
 			"([FI[FI[FI)V",
@@ -70,7 +70,7 @@ namespace android::opengl
 	}
 	void Matrix::multiplyMV(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jfloatArray arg4, jint arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"multiplyMV",
 			"([FI[FI[FI)V",
@@ -84,7 +84,7 @@ namespace android::opengl
 	}
 	void Matrix::orthoM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"orthoM",
 			"([FIFFFFFF)V",
@@ -100,7 +100,7 @@ namespace android::opengl
 	}
 	void Matrix::perspectiveM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"perspectiveM",
 			"([FIFFFF)V",
@@ -114,7 +114,7 @@ namespace android::opengl
 	}
 	void Matrix::rotateM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"rotateM",
 			"([FIFFFF)V",
@@ -128,7 +128,7 @@ namespace android::opengl
 	}
 	void Matrix::rotateM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"rotateM",
 			"([FI[FIFFFF)V",
@@ -144,7 +144,7 @@ namespace android::opengl
 	}
 	void Matrix::scaleM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"scaleM",
 			"([FIFFF)V",
@@ -157,7 +157,7 @@ namespace android::opengl
 	}
 	void Matrix::scaleM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"scaleM",
 			"([FI[FIFFF)V",
@@ -172,7 +172,7 @@ namespace android::opengl
 	}
 	void Matrix::setIdentityM(jfloatArray arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"setIdentityM",
 			"([FI)V",
@@ -182,7 +182,7 @@ namespace android::opengl
 	}
 	void Matrix::setLookAtM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jfloat arg8, jfloat arg9, jfloat arg10)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"setLookAtM",
 			"([FIFFFFFFFFF)V",
@@ -201,7 +201,7 @@ namespace android::opengl
 	}
 	void Matrix::setRotateEulerM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"setRotateEulerM",
 			"([FIFFF)V",
@@ -214,7 +214,7 @@ namespace android::opengl
 	}
 	void Matrix::setRotateM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"setRotateM",
 			"([FIFFFF)V",
@@ -228,7 +228,7 @@ namespace android::opengl
 	}
 	void Matrix::translateM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"translateM",
 			"([FIFFF)V",
@@ -241,7 +241,7 @@ namespace android::opengl
 	}
 	void Matrix::translateM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"translateM",
 			"([FI[FIFFF)V",
@@ -256,7 +256,7 @@ namespace android::opengl
 	}
 	void Matrix::transposeM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.opengl.Matrix",
 			"transposeM",
 			"([FI[FI)V",

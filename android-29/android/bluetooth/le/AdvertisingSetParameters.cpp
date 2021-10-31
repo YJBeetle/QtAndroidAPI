@@ -6,7 +6,7 @@ namespace android::bluetooth::le
 	// Fields
 	__JniBaseClass AdvertisingSetParameters::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,77 +14,77 @@ namespace android::bluetooth::le
 	}
 	jint AdvertisingSetParameters::INTERVAL_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"INTERVAL_HIGH"
 		);
 	}
 	jint AdvertisingSetParameters::INTERVAL_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"INTERVAL_LOW"
 		);
 	}
 	jint AdvertisingSetParameters::INTERVAL_MAX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"INTERVAL_MAX"
 		);
 	}
 	jint AdvertisingSetParameters::INTERVAL_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"INTERVAL_MEDIUM"
 		);
 	}
 	jint AdvertisingSetParameters::INTERVAL_MIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"INTERVAL_MIN"
 		);
 	}
 	jint AdvertisingSetParameters::TX_POWER_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"TX_POWER_HIGH"
 		);
 	}
 	jint AdvertisingSetParameters::TX_POWER_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"TX_POWER_LOW"
 		);
 	}
 	jint AdvertisingSetParameters::TX_POWER_MAX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"TX_POWER_MAX"
 		);
 	}
 	jint AdvertisingSetParameters::TX_POWER_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"TX_POWER_MEDIUM"
 		);
 	}
 	jint AdvertisingSetParameters::TX_POWER_MIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"TX_POWER_MIN"
 		);
 	}
 	jint AdvertisingSetParameters::TX_POWER_ULTRA_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetParameters",
 			"TX_POWER_ULTRA_LOW"
 		);

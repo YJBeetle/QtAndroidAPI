@@ -9,84 +9,84 @@ namespace android::bluetooth
 	// Fields
 	jint BluetoothHealth::APP_CONFIG_REGISTRATION_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"APP_CONFIG_REGISTRATION_FAILURE"
 		);
 	}
 	jint BluetoothHealth::APP_CONFIG_REGISTRATION_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"APP_CONFIG_REGISTRATION_SUCCESS"
 		);
 	}
 	jint BluetoothHealth::APP_CONFIG_UNREGISTRATION_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"APP_CONFIG_UNREGISTRATION_FAILURE"
 		);
 	}
 	jint BluetoothHealth::APP_CONFIG_UNREGISTRATION_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"APP_CONFIG_UNREGISTRATION_SUCCESS"
 		);
 	}
 	jint BluetoothHealth::CHANNEL_TYPE_RELIABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"CHANNEL_TYPE_RELIABLE"
 		);
 	}
 	jint BluetoothHealth::CHANNEL_TYPE_STREAMING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"CHANNEL_TYPE_STREAMING"
 		);
 	}
 	jint BluetoothHealth::SINK_ROLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"SINK_ROLE"
 		);
 	}
 	jint BluetoothHealth::SOURCE_ROLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"SOURCE_ROLE"
 		);
 	}
 	jint BluetoothHealth::STATE_CHANNEL_CONNECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"STATE_CHANNEL_CONNECTED"
 		);
 	}
 	jint BluetoothHealth::STATE_CHANNEL_CONNECTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"STATE_CHANNEL_CONNECTING"
 		);
 	}
 	jint BluetoothHealth::STATE_CHANNEL_DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"STATE_CHANNEL_DISCONNECTED"
 		);
 	}
 	jint BluetoothHealth::STATE_CHANNEL_DISCONNECTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
 			"STATE_CHANNEL_DISCONNECTING"
 		);

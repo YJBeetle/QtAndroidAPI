@@ -9,7 +9,7 @@ namespace android::view::contentcapture
 	// Fields
 	__JniBaseClass ContentCaptureContext::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.contentcapture.ContentCaptureContext",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -24,7 +24,7 @@ namespace android::view::contentcapture
 	// Methods
 	android::view::contentcapture::ContentCaptureContext ContentCaptureContext::forLocusId(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.contentcapture.ContentCaptureContext",
 			"forLocusId",
 			"(Ljava/lang/String;)Landroid/view/contentcapture/ContentCaptureContext;",

@@ -7,7 +7,7 @@ namespace android::graphics
 	// Fields
 	__JniBaseClass Insets::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Insets",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::graphics
 	}
 	android::graphics::Insets Insets::NONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Insets",
 			"NONE",
 			"Landroid/graphics/Insets;"
@@ -54,7 +54,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Insets Insets::add(android::graphics::Insets arg0, android::graphics::Insets arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Insets",
 			"add",
 			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",
@@ -64,7 +64,7 @@ namespace android::graphics
 	}
 	android::graphics::Insets Insets::max(android::graphics::Insets arg0, android::graphics::Insets arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Insets",
 			"max",
 			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",
@@ -74,7 +74,7 @@ namespace android::graphics
 	}
 	android::graphics::Insets Insets::min(android::graphics::Insets arg0, android::graphics::Insets arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Insets",
 			"min",
 			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",
@@ -84,7 +84,7 @@ namespace android::graphics
 	}
 	android::graphics::Insets Insets::of(android::graphics::Rect arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Insets",
 			"of",
 			"(Landroid/graphics/Rect;)Landroid/graphics/Insets;",
@@ -93,7 +93,7 @@ namespace android::graphics
 	}
 	android::graphics::Insets Insets::of(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Insets",
 			"of",
 			"(IIII)Landroid/graphics/Insets;",
@@ -105,7 +105,7 @@ namespace android::graphics
 	}
 	android::graphics::Insets Insets::subtract(android::graphics::Insets arg0, android::graphics::Insets arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Insets",
 			"subtract",
 			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",

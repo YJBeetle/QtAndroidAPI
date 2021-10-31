@@ -13,7 +13,7 @@ namespace android::content::pm
 	// Fields
 	jstring PackageInstaller::ACTION_SESSION_COMMITTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"ACTION_SESSION_COMMITTED",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::ACTION_SESSION_DETAILS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"ACTION_SESSION_DETAILS",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::ACTION_SESSION_UPDATED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"ACTION_SESSION_UPDATED",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_OTHER_PACKAGE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_OTHER_PACKAGE_NAME",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_PACKAGE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_PACKAGE_NAME",
 			"Ljava/lang/String;"
@@ -53,7 +53,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_SESSION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_SESSION",
 			"Ljava/lang/String;"
@@ -61,7 +61,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_SESSION_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_SESSION_ID",
 			"Ljava/lang/String;"
@@ -69,7 +69,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_STATUS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_STATUS",
 			"Ljava/lang/String;"
@@ -77,7 +77,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_STATUS_MESSAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_STATUS_MESSAGE",
 			"Ljava/lang/String;"
@@ -85,7 +85,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_STORAGE_PATH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_STORAGE_PATH",
 			"Ljava/lang/String;"
@@ -93,63 +93,63 @@ namespace android::content::pm
 	}
 	jint PackageInstaller::STATUS_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_ABORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_ABORTED"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_BLOCKED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_BLOCKED"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_CONFLICT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_CONFLICT"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_INCOMPATIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_INCOMPATIBLE"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_INVALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_INVALID"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_STORAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_STORAGE"
 		);
 	}
 	jint PackageInstaller::STATUS_PENDING_USER_ACTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_PENDING_USER_ACTION"
 		);
 	}
 	jint PackageInstaller::STATUS_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_SUCCESS"
 		);

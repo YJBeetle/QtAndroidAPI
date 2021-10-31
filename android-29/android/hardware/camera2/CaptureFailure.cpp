@@ -6,14 +6,14 @@ namespace android::hardware::camera2
 	// Fields
 	jint CaptureFailure::REASON_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CaptureFailure",
 			"REASON_ERROR"
 		);
 	}
 	jint CaptureFailure::REASON_FLUSHED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CaptureFailure",
 			"REASON_FLUSHED"
 		);

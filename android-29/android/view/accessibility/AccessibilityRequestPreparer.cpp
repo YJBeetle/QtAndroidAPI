@@ -8,7 +8,7 @@ namespace android::view::accessibility
 	// Fields
 	jint AccessibilityRequestPreparer::REQUEST_TYPE_EXTRA_DATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityRequestPreparer",
 			"REQUEST_TYPE_EXTRA_DATA"
 		);

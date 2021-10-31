@@ -7,7 +7,7 @@ namespace android::view::accessibility
 	// Fields
 	jint AccessibilityNodeProvider::HOST_VIEW_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeProvider",
 			"HOST_VIEW_ID"
 		);

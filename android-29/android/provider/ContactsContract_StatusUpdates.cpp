@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_StatusUpdates::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_StatusUpdates::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_StatusUpdates::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_StatusUpdates::PROFILE_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
 			"PROFILE_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -45,7 +45,7 @@ namespace android::provider
 	// Methods
 	jint ContactsContract_StatusUpdates::getPresenceIconResourceId(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.provider.ContactsContract$StatusUpdates",
 			"getPresenceIconResourceId",
 			"(I)I",
@@ -54,7 +54,7 @@ namespace android::provider
 	}
 	jint ContactsContract_StatusUpdates::getPresencePrecedence(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.provider.ContactsContract$StatusUpdates",
 			"getPresencePrecedence",
 			"(I)I",

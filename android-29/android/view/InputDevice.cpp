@@ -9,7 +9,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass InputDevice::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.InputDevice",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -17,245 +17,245 @@ namespace android::view
 	}
 	jint InputDevice::KEYBOARD_TYPE_ALPHABETIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"KEYBOARD_TYPE_ALPHABETIC"
 		);
 	}
 	jint InputDevice::KEYBOARD_TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"KEYBOARD_TYPE_NONE"
 		);
 	}
 	jint InputDevice::KEYBOARD_TYPE_NON_ALPHABETIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"KEYBOARD_TYPE_NON_ALPHABETIC"
 		);
 	}
 	jint InputDevice::MOTION_RANGE_ORIENTATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"MOTION_RANGE_ORIENTATION"
 		);
 	}
 	jint InputDevice::MOTION_RANGE_PRESSURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"MOTION_RANGE_PRESSURE"
 		);
 	}
 	jint InputDevice::MOTION_RANGE_SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"MOTION_RANGE_SIZE"
 		);
 	}
 	jint InputDevice::MOTION_RANGE_TOOL_MAJOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"MOTION_RANGE_TOOL_MAJOR"
 		);
 	}
 	jint InputDevice::MOTION_RANGE_TOOL_MINOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"MOTION_RANGE_TOOL_MINOR"
 		);
 	}
 	jint InputDevice::MOTION_RANGE_TOUCH_MAJOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"MOTION_RANGE_TOUCH_MAJOR"
 		);
 	}
 	jint InputDevice::MOTION_RANGE_TOUCH_MINOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"MOTION_RANGE_TOUCH_MINOR"
 		);
 	}
 	jint InputDevice::MOTION_RANGE_X()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"MOTION_RANGE_X"
 		);
 	}
 	jint InputDevice::MOTION_RANGE_Y()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"MOTION_RANGE_Y"
 		);
 	}
 	jint InputDevice::SOURCE_ANY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_ANY"
 		);
 	}
 	jint InputDevice::SOURCE_BLUETOOTH_STYLUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_BLUETOOTH_STYLUS"
 		);
 	}
 	jint InputDevice::SOURCE_CLASS_BUTTON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_CLASS_BUTTON"
 		);
 	}
 	jint InputDevice::SOURCE_CLASS_JOYSTICK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_CLASS_JOYSTICK"
 		);
 	}
 	jint InputDevice::SOURCE_CLASS_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_CLASS_MASK"
 		);
 	}
 	jint InputDevice::SOURCE_CLASS_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_CLASS_NONE"
 		);
 	}
 	jint InputDevice::SOURCE_CLASS_POINTER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_CLASS_POINTER"
 		);
 	}
 	jint InputDevice::SOURCE_CLASS_POSITION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_CLASS_POSITION"
 		);
 	}
 	jint InputDevice::SOURCE_CLASS_TRACKBALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_CLASS_TRACKBALL"
 		);
 	}
 	jint InputDevice::SOURCE_DPAD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_DPAD"
 		);
 	}
 	jint InputDevice::SOURCE_GAMEPAD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_GAMEPAD"
 		);
 	}
 	jint InputDevice::SOURCE_HDMI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_HDMI"
 		);
 	}
 	jint InputDevice::SOURCE_JOYSTICK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_JOYSTICK"
 		);
 	}
 	jint InputDevice::SOURCE_KEYBOARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_KEYBOARD"
 		);
 	}
 	jint InputDevice::SOURCE_MOUSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_MOUSE"
 		);
 	}
 	jint InputDevice::SOURCE_MOUSE_RELATIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_MOUSE_RELATIVE"
 		);
 	}
 	jint InputDevice::SOURCE_ROTARY_ENCODER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_ROTARY_ENCODER"
 		);
 	}
 	jint InputDevice::SOURCE_STYLUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_STYLUS"
 		);
 	}
 	jint InputDevice::SOURCE_TOUCHPAD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_TOUCHPAD"
 		);
 	}
 	jint InputDevice::SOURCE_TOUCHSCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_TOUCHSCREEN"
 		);
 	}
 	jint InputDevice::SOURCE_TOUCH_NAVIGATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_TOUCH_NAVIGATION"
 		);
 	}
 	jint InputDevice::SOURCE_TRACKBALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_TRACKBALL"
 		);
 	}
 	jint InputDevice::SOURCE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.InputDevice",
 			"SOURCE_UNKNOWN"
 		);
@@ -269,7 +269,7 @@ namespace android::view
 	// Methods
 	android::view::InputDevice InputDevice::getDevice(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.InputDevice",
 			"getDevice",
 			"(I)Landroid/view/InputDevice;",
@@ -278,7 +278,7 @@ namespace android::view
 	}
 	jintArray InputDevice::getDeviceIds()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.InputDevice",
 			"getDeviceIds",
 			"()[I"

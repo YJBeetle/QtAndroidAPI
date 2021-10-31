@@ -5,42 +5,42 @@ namespace android::telephony
 	// Fields
 	jint AccessNetworkConstants_AccessNetworkType::CDMA2000()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
 			"CDMA2000"
 		);
 	}
 	jint AccessNetworkConstants_AccessNetworkType::EUTRAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
 			"EUTRAN"
 		);
 	}
 	jint AccessNetworkConstants_AccessNetworkType::GERAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
 			"GERAN"
 		);
 	}
 	jint AccessNetworkConstants_AccessNetworkType::IWLAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
 			"IWLAN"
 		);
 	}
 	jint AccessNetworkConstants_AccessNetworkType::UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
 			"UNKNOWN"
 		);
 	}
 	jint AccessNetworkConstants_AccessNetworkType::UTRAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
 			"UTRAN"
 		);

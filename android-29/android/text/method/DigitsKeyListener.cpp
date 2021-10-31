@@ -39,7 +39,7 @@ namespace android::text::method
 	// Methods
 	android::text::method::DigitsKeyListener DigitsKeyListener::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.DigitsKeyListener",
 			"getInstance",
 			"()Landroid/text/method/DigitsKeyListener;"
@@ -47,7 +47,7 @@ namespace android::text::method
 	}
 	android::text::method::DigitsKeyListener DigitsKeyListener::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.DigitsKeyListener",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/text/method/DigitsKeyListener;",
@@ -56,7 +56,7 @@ namespace android::text::method
 	}
 	android::text::method::DigitsKeyListener DigitsKeyListener::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.DigitsKeyListener",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/text/method/DigitsKeyListener;",
@@ -65,7 +65,7 @@ namespace android::text::method
 	}
 	android::text::method::DigitsKeyListener DigitsKeyListener::getInstance(jboolean arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.DigitsKeyListener",
 			"getInstance",
 			"(ZZ)Landroid/text/method/DigitsKeyListener;",
@@ -75,7 +75,7 @@ namespace android::text::method
 	}
 	android::text::method::DigitsKeyListener DigitsKeyListener::getInstance(java::util::Locale arg0, jboolean arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.DigitsKeyListener",
 			"getInstance",
 			"(Ljava/util/Locale;ZZ)Landroid/text/method/DigitsKeyListener;",

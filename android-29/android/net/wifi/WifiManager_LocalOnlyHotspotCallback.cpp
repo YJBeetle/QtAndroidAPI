@@ -6,28 +6,28 @@ namespace android::net::wifi
 	// Fields
 	jint WifiManager_LocalOnlyHotspotCallback::ERROR_GENERIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
 			"ERROR_GENERIC"
 		);
 	}
 	jint WifiManager_LocalOnlyHotspotCallback::ERROR_INCOMPATIBLE_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
 			"ERROR_INCOMPATIBLE_MODE"
 		);
 	}
 	jint WifiManager_LocalOnlyHotspotCallback::ERROR_NO_CHANNEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
 			"ERROR_NO_CHANNEL"
 		);
 	}
 	jint WifiManager_LocalOnlyHotspotCallback::ERROR_TETHERING_DISALLOWED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
 			"ERROR_TETHERING_DISALLOWED"
 		);

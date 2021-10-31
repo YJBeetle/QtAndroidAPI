@@ -5,7 +5,7 @@ namespace java::text
 	// Fields
 	java::text::MessageFormat_Field MessageFormat_Field::ARGUMENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.text.MessageFormat$Field",
 			"ARGUMENT",
 			"Ljava/text/MessageFormat$Field;"

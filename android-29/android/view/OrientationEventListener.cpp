@@ -6,7 +6,7 @@ namespace android::view
 	// Fields
 	jint OrientationEventListener::ORIENTATION_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.OrientationEventListener",
 			"ORIENTATION_UNKNOWN"
 		);

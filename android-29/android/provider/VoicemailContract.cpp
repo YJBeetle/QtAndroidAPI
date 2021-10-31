@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring VoicemailContract::ACTION_FETCH_VOICEMAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"ACTION_FETCH_VOICEMAIL",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract::ACTION_NEW_VOICEMAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"ACTION_NEW_VOICEMAIL",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract::ACTION_SYNC_VOICEMAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"ACTION_SYNC_VOICEMAIL",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract::AUTHORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"AUTHORITY",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract::EXTRA_PHONE_ACCOUNT_HANDLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"EXTRA_PHONE_ACCOUNT_HANDLE",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract::EXTRA_SELF_CHANGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"EXTRA_SELF_CHANGE",
 			"Ljava/lang/String;"
@@ -53,7 +53,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract::PARAM_KEY_SOURCE_PACKAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"PARAM_KEY_SOURCE_PACKAGE",
 			"Ljava/lang/String;"

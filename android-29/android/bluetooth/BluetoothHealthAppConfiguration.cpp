@@ -6,7 +6,7 @@ namespace android::bluetooth
 	// Fields
 	__JniBaseClass BluetoothHealthAppConfiguration::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothHealthAppConfiguration",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

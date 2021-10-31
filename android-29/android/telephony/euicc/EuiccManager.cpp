@@ -11,7 +11,7 @@ namespace android::telephony::euicc
 	// Fields
 	jstring EuiccManager::ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS",
 			"Ljava/lang/String;"
@@ -19,7 +19,7 @@ namespace android::telephony::euicc
 	}
 	jstring EuiccManager::ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE",
 			"Ljava/lang/String;"
@@ -27,28 +27,28 @@ namespace android::telephony::euicc
 	}
 	jint EuiccManager::EMBEDDED_SUBSCRIPTION_RESULT_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.euicc.EuiccManager",
 			"EMBEDDED_SUBSCRIPTION_RESULT_ERROR"
 		);
 	}
 	jint EuiccManager::EMBEDDED_SUBSCRIPTION_RESULT_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.euicc.EuiccManager",
 			"EMBEDDED_SUBSCRIPTION_RESULT_OK"
 		);
 	}
 	jint EuiccManager::EMBEDDED_SUBSCRIPTION_RESULT_RESOLVABLE_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.euicc.EuiccManager",
 			"EMBEDDED_SUBSCRIPTION_RESULT_RESOLVABLE_ERROR"
 		);
 	}
 	jstring EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE",
 			"Ljava/lang/String;"
@@ -56,7 +56,7 @@ namespace android::telephony::euicc
 	}
 	jstring EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION",
 			"Ljava/lang/String;"
@@ -64,7 +64,7 @@ namespace android::telephony::euicc
 	}
 	jstring EuiccManager::META_DATA_CARRIER_ICON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.euicc.EuiccManager",
 			"META_DATA_CARRIER_ICON",
 			"Ljava/lang/String;"

@@ -9,56 +9,56 @@ namespace android::media
 	// Fields
 	jlong MediaDescription::BT_FOLDER_TYPE_ALBUMS()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.MediaDescription",
 			"BT_FOLDER_TYPE_ALBUMS"
 		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_ARTISTS()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.MediaDescription",
 			"BT_FOLDER_TYPE_ARTISTS"
 		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_GENRES()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.MediaDescription",
 			"BT_FOLDER_TYPE_GENRES"
 		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_MIXED()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.MediaDescription",
 			"BT_FOLDER_TYPE_MIXED"
 		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_PLAYLISTS()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.MediaDescription",
 			"BT_FOLDER_TYPE_PLAYLISTS"
 		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_TITLES()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.MediaDescription",
 			"BT_FOLDER_TYPE_TITLES"
 		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_YEARS()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.media.MediaDescription",
 			"BT_FOLDER_TYPE_YEARS"
 		);
 	}
 	__JniBaseClass MediaDescription::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaDescription",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -66,7 +66,7 @@ namespace android::media
 	}
 	jstring MediaDescription::EXTRA_BT_FOLDER_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaDescription",
 			"EXTRA_BT_FOLDER_TYPE",
 			"Ljava/lang/String;"

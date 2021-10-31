@@ -5,7 +5,7 @@ namespace android::net
 	// Fields
 	jstring MailTo::MAILTO_SCHEME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.MailTo",
 			"MAILTO_SCHEME",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace android::net
 	// Methods
 	jboolean MailTo::isMailTo(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.net.MailTo",
 			"isMailTo",
 			"(Ljava/lang/String;)Z",
@@ -29,7 +29,7 @@ namespace android::net
 	}
 	android::net::MailTo MailTo::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.MailTo",
 			"parse",
 			"(Ljava/lang/String;)Landroid/net/MailTo;",

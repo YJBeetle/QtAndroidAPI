@@ -8,7 +8,7 @@ namespace android::media::tv
 	// Fields
 	jstring TvInputService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvInputService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::media::tv
 	}
 	jstring TvInputService::SERVICE_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvInputService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"

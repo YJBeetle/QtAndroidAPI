@@ -18,7 +18,7 @@ namespace java::net
 	// Methods
 	jstring URLDecoder::decode(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.URLDecoder",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -27,7 +27,7 @@ namespace java::net
 	}
 	jstring URLDecoder::decode(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.URLDecoder",
 			"decode",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -37,7 +37,7 @@ namespace java::net
 	}
 	jstring URLDecoder::decode(jstring arg0, java::nio::charset::Charset arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.URLDecoder",
 			"decode",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;",

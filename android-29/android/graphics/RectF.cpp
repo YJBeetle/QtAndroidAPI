@@ -7,7 +7,7 @@ namespace android::graphics
 	// Fields
 	__JniBaseClass RectF::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.RectF",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -72,7 +72,7 @@ namespace android::graphics
 	// Methods
 	jboolean RectF::intersects(android::graphics::RectF arg0, android::graphics::RectF arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.graphics.RectF",
 			"intersects",
 			"(Landroid/graphics/RectF;Landroid/graphics/RectF;)Z",

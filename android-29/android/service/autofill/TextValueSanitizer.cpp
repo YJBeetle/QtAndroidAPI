@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass TextValueSanitizer::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.TextValueSanitizer",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

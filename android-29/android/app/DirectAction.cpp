@@ -8,7 +8,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass DirectAction::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.DirectAction",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

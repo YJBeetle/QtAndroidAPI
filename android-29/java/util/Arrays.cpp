@@ -13,7 +13,7 @@ namespace java::util
 	// Methods
 	__JniBaseClass Arrays::asList(jobjectArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"asList",
 			"([Ljava/lang/Object;)Ljava/util/List;",
@@ -22,7 +22,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jbyteArray arg0, jbyte arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([BB)I",
@@ -32,7 +32,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jcharArray arg0, jchar arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([CC)I",
@@ -42,7 +42,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jdoubleArray arg0, jdouble arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([DD)I",
@@ -52,7 +52,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jfloatArray arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([FF)I",
@@ -62,7 +62,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jintArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([II)I",
@@ -72,7 +72,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jlongArray arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([JJ)I",
@@ -82,7 +82,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jobjectArray arg0, jobject arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([Ljava/lang/Object;Ljava/lang/Object;)I",
@@ -92,7 +92,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jshortArray arg0, jshort arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([SS)I",
@@ -102,7 +102,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jobjectArray arg0, jobject arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)I",
@@ -113,7 +113,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jbyteArray arg0, jint arg1, jint arg2, jbyte arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([BIIB)I",
@@ -125,7 +125,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jcharArray arg0, jint arg1, jint arg2, jchar arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([CIIC)I",
@@ -137,7 +137,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jdoubleArray arg0, jint arg1, jint arg2, jdouble arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([DIID)I",
@@ -149,7 +149,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jfloatArray arg0, jint arg1, jint arg2, jfloat arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([FIIF)I",
@@ -161,7 +161,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jintArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([IIII)I",
@@ -173,7 +173,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jlongArray arg0, jint arg1, jint arg2, jlong arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([JIIJ)I",
@@ -185,7 +185,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jobjectArray arg0, jint arg1, jint arg2, jobject arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([Ljava/lang/Object;IILjava/lang/Object;)I",
@@ -197,7 +197,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jshortArray arg0, jint arg1, jint arg2, jshort arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([SIIS)I",
@@ -209,7 +209,7 @@ namespace java::util
 	}
 	jint Arrays::binarySearch(jobjectArray arg0, jint arg1, jint arg2, jobject arg3, __JniBaseClass arg4)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"binarySearch",
 			"([Ljava/lang/Object;IILjava/lang/Object;Ljava/util/Comparator;)I",
@@ -222,7 +222,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jbyteArray arg0, jbyteArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([B[B)I",
@@ -232,7 +232,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jcharArray arg0, jcharArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([C[C)I",
@@ -242,7 +242,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jdoubleArray arg0, jdoubleArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([D[D)I",
@@ -252,7 +252,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jfloatArray arg0, jfloatArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([F[F)I",
@@ -262,7 +262,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jintArray arg0, jintArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([I[I)I",
@@ -272,7 +272,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jlongArray arg0, jlongArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([J[J)I",
@@ -282,7 +282,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jarray arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I",
@@ -292,7 +292,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jshortArray arg0, jshortArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([S[S)I",
@@ -302,7 +302,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jbooleanArray arg0, jbooleanArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([Z[Z)I",
@@ -312,7 +312,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jobjectArray arg0, jobjectArray arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([Ljava/lang/Object;[Ljava/lang/Object;Ljava/util/Comparator;)I",
@@ -323,7 +323,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([BII[BII)I",
@@ -337,7 +337,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([CII[CII)I",
@@ -351,7 +351,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jdoubleArray arg0, jint arg1, jint arg2, jdoubleArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([DII[DII)I",
@@ -365,7 +365,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([FII[FII)I",
@@ -379,7 +379,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jintArray arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([III[III)I",
@@ -393,7 +393,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jlongArray arg0, jint arg1, jint arg2, jlongArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([JII[JII)I",
@@ -407,7 +407,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jarray arg0, jint arg1, jint arg2, jarray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([Ljava/lang/Comparable;II[Ljava/lang/Comparable;II)I",
@@ -421,7 +421,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jshortArray arg0, jint arg1, jint arg2, jshortArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([SII[SII)I",
@@ -435,7 +435,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jbooleanArray arg0, jint arg1, jint arg2, jbooleanArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([ZII[ZII)I",
@@ -449,7 +449,7 @@ namespace java::util
 	}
 	jint Arrays::compare(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, __JniBaseClass arg6)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compare",
 			"([Ljava/lang/Object;II[Ljava/lang/Object;IILjava/util/Comparator;)I",
@@ -464,7 +464,7 @@ namespace java::util
 	}
 	jint Arrays::compareUnsigned(jbyteArray arg0, jbyteArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compareUnsigned",
 			"([B[B)I",
@@ -474,7 +474,7 @@ namespace java::util
 	}
 	jint Arrays::compareUnsigned(jintArray arg0, jintArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compareUnsigned",
 			"([I[I)I",
@@ -484,7 +484,7 @@ namespace java::util
 	}
 	jint Arrays::compareUnsigned(jlongArray arg0, jlongArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compareUnsigned",
 			"([J[J)I",
@@ -494,7 +494,7 @@ namespace java::util
 	}
 	jint Arrays::compareUnsigned(jshortArray arg0, jshortArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compareUnsigned",
 			"([S[S)I",
@@ -504,7 +504,7 @@ namespace java::util
 	}
 	jint Arrays::compareUnsigned(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compareUnsigned",
 			"([BII[BII)I",
@@ -518,7 +518,7 @@ namespace java::util
 	}
 	jint Arrays::compareUnsigned(jintArray arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compareUnsigned",
 			"([III[III)I",
@@ -532,7 +532,7 @@ namespace java::util
 	}
 	jint Arrays::compareUnsigned(jlongArray arg0, jint arg1, jint arg2, jlongArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compareUnsigned",
 			"([JII[JII)I",
@@ -546,7 +546,7 @@ namespace java::util
 	}
 	jint Arrays::compareUnsigned(jshortArray arg0, jint arg1, jint arg2, jshortArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"compareUnsigned",
 			"([SII[SII)I",
@@ -560,7 +560,7 @@ namespace java::util
 	}
 	jbyteArray Arrays::copyOf(jbyteArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOf",
 			"([BI)[B",
@@ -570,7 +570,7 @@ namespace java::util
 	}
 	jcharArray Arrays::copyOf(jcharArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOf",
 			"([CI)[C",
@@ -580,7 +580,7 @@ namespace java::util
 	}
 	jdoubleArray Arrays::copyOf(jdoubleArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOf",
 			"([DI)[D",
@@ -590,7 +590,7 @@ namespace java::util
 	}
 	jfloatArray Arrays::copyOf(jfloatArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOf",
 			"([FI)[F",
@@ -600,7 +600,7 @@ namespace java::util
 	}
 	jintArray Arrays::copyOf(jintArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOf",
 			"([II)[I",
@@ -610,7 +610,7 @@ namespace java::util
 	}
 	jlongArray Arrays::copyOf(jlongArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOf",
 			"([JI)[J",
@@ -620,7 +620,7 @@ namespace java::util
 	}
 	jobjectArray Arrays::copyOf(jobjectArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOf",
 			"([Ljava/lang/Object;I)[Ljava/lang/Object;",
@@ -630,7 +630,7 @@ namespace java::util
 	}
 	jobjectArray Arrays::copyOf(jobjectArray arg0, jint arg1, jclass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOf",
 			"([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object;",
@@ -641,7 +641,7 @@ namespace java::util
 	}
 	jshortArray Arrays::copyOf(jshortArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOf",
 			"([SI)[S",
@@ -651,7 +651,7 @@ namespace java::util
 	}
 	jbooleanArray Arrays::copyOf(jbooleanArray arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOf",
 			"([ZI)[Z",
@@ -661,7 +661,7 @@ namespace java::util
 	}
 	jbyteArray Arrays::copyOfRange(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOfRange",
 			"([BII)[B",
@@ -672,7 +672,7 @@ namespace java::util
 	}
 	jcharArray Arrays::copyOfRange(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOfRange",
 			"([CII)[C",
@@ -683,7 +683,7 @@ namespace java::util
 	}
 	jdoubleArray Arrays::copyOfRange(jdoubleArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOfRange",
 			"([DII)[D",
@@ -694,7 +694,7 @@ namespace java::util
 	}
 	jfloatArray Arrays::copyOfRange(jfloatArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOfRange",
 			"([FII)[F",
@@ -705,7 +705,7 @@ namespace java::util
 	}
 	jintArray Arrays::copyOfRange(jintArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOfRange",
 			"([III)[I",
@@ -716,7 +716,7 @@ namespace java::util
 	}
 	jlongArray Arrays::copyOfRange(jlongArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOfRange",
 			"([JII)[J",
@@ -727,7 +727,7 @@ namespace java::util
 	}
 	jobjectArray Arrays::copyOfRange(jobjectArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOfRange",
 			"([Ljava/lang/Object;II)[Ljava/lang/Object;",
@@ -738,7 +738,7 @@ namespace java::util
 	}
 	jobjectArray Arrays::copyOfRange(jobjectArray arg0, jint arg1, jint arg2, jclass arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOfRange",
 			"([Ljava/lang/Object;IILjava/lang/Class;)[Ljava/lang/Object;",
@@ -750,7 +750,7 @@ namespace java::util
 	}
 	jshortArray Arrays::copyOfRange(jshortArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOfRange",
 			"([SII)[S",
@@ -761,7 +761,7 @@ namespace java::util
 	}
 	jbooleanArray Arrays::copyOfRange(jbooleanArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"copyOfRange",
 			"([ZII)[Z",
@@ -772,7 +772,7 @@ namespace java::util
 	}
 	jboolean Arrays::deepEquals(jobjectArray arg0, jobjectArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"deepEquals",
 			"([Ljava/lang/Object;[Ljava/lang/Object;)Z",
@@ -782,7 +782,7 @@ namespace java::util
 	}
 	jint Arrays::deepHashCode(jobjectArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"deepHashCode",
 			"([Ljava/lang/Object;)I",
@@ -791,7 +791,7 @@ namespace java::util
 	}
 	jstring Arrays::deepToString(jobjectArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"deepToString",
 			"([Ljava/lang/Object;)Ljava/lang/String;",
@@ -800,7 +800,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jbyteArray arg0, jbyteArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([B[B)Z",
@@ -810,7 +810,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jcharArray arg0, jcharArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([C[C)Z",
@@ -820,7 +820,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jdoubleArray arg0, jdoubleArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([D[D)Z",
@@ -830,7 +830,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jfloatArray arg0, jfloatArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([F[F)Z",
@@ -840,7 +840,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jintArray arg0, jintArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([I[I)Z",
@@ -850,7 +850,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jlongArray arg0, jlongArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([J[J)Z",
@@ -860,7 +860,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jobjectArray arg0, jobjectArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([Ljava/lang/Object;[Ljava/lang/Object;)Z",
@@ -870,7 +870,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jshortArray arg0, jshortArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([S[S)Z",
@@ -880,7 +880,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jbooleanArray arg0, jbooleanArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([Z[Z)Z",
@@ -890,7 +890,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jobjectArray arg0, jobjectArray arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([Ljava/lang/Object;[Ljava/lang/Object;Ljava/util/Comparator;)Z",
@@ -901,7 +901,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([BII[BII)Z",
@@ -915,7 +915,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([CII[CII)Z",
@@ -929,7 +929,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jdoubleArray arg0, jint arg1, jint arg2, jdoubleArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([DII[DII)Z",
@@ -943,7 +943,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([FII[FII)Z",
@@ -957,7 +957,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jintArray arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([III[III)Z",
@@ -971,7 +971,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jlongArray arg0, jint arg1, jint arg2, jlongArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([JII[JII)Z",
@@ -985,7 +985,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([Ljava/lang/Object;II[Ljava/lang/Object;II)Z",
@@ -999,7 +999,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jshortArray arg0, jint arg1, jint arg2, jshortArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([SII[SII)Z",
@@ -1013,7 +1013,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jbooleanArray arg0, jint arg1, jint arg2, jbooleanArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([ZII[ZII)Z",
@@ -1027,7 +1027,7 @@ namespace java::util
 	}
 	jboolean Arrays::equals(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, __JniBaseClass arg6)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.Arrays",
 			"equals",
 			"([Ljava/lang/Object;II[Ljava/lang/Object;IILjava/util/Comparator;)Z",
@@ -1042,7 +1042,7 @@ namespace java::util
 	}
 	void Arrays::fill(jbyteArray arg0, jbyte arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([BB)V",
@@ -1052,7 +1052,7 @@ namespace java::util
 	}
 	void Arrays::fill(jcharArray arg0, jchar arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([CC)V",
@@ -1062,7 +1062,7 @@ namespace java::util
 	}
 	void Arrays::fill(jdoubleArray arg0, jdouble arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([DD)V",
@@ -1072,7 +1072,7 @@ namespace java::util
 	}
 	void Arrays::fill(jfloatArray arg0, jfloat arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([FF)V",
@@ -1082,7 +1082,7 @@ namespace java::util
 	}
 	void Arrays::fill(jintArray arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([II)V",
@@ -1092,7 +1092,7 @@ namespace java::util
 	}
 	void Arrays::fill(jlongArray arg0, jlong arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([JJ)V",
@@ -1102,7 +1102,7 @@ namespace java::util
 	}
 	void Arrays::fill(jobjectArray arg0, jobject arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([Ljava/lang/Object;Ljava/lang/Object;)V",
@@ -1112,7 +1112,7 @@ namespace java::util
 	}
 	void Arrays::fill(jshortArray arg0, jshort arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([SS)V",
@@ -1122,7 +1122,7 @@ namespace java::util
 	}
 	void Arrays::fill(jbooleanArray arg0, jboolean arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([ZZ)V",
@@ -1132,7 +1132,7 @@ namespace java::util
 	}
 	void Arrays::fill(jbyteArray arg0, jint arg1, jint arg2, jbyte arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([BIIB)V",
@@ -1144,7 +1144,7 @@ namespace java::util
 	}
 	void Arrays::fill(jcharArray arg0, jint arg1, jint arg2, jchar arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([CIIC)V",
@@ -1156,7 +1156,7 @@ namespace java::util
 	}
 	void Arrays::fill(jdoubleArray arg0, jint arg1, jint arg2, jdouble arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([DIID)V",
@@ -1168,7 +1168,7 @@ namespace java::util
 	}
 	void Arrays::fill(jfloatArray arg0, jint arg1, jint arg2, jfloat arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([FIIF)V",
@@ -1180,7 +1180,7 @@ namespace java::util
 	}
 	void Arrays::fill(jintArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([IIII)V",
@@ -1192,7 +1192,7 @@ namespace java::util
 	}
 	void Arrays::fill(jlongArray arg0, jint arg1, jint arg2, jlong arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([JIIJ)V",
@@ -1204,7 +1204,7 @@ namespace java::util
 	}
 	void Arrays::fill(jobjectArray arg0, jint arg1, jint arg2, jobject arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([Ljava/lang/Object;IILjava/lang/Object;)V",
@@ -1216,7 +1216,7 @@ namespace java::util
 	}
 	void Arrays::fill(jshortArray arg0, jint arg1, jint arg2, jshort arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([SIIS)V",
@@ -1228,7 +1228,7 @@ namespace java::util
 	}
 	void Arrays::fill(jbooleanArray arg0, jint arg1, jint arg2, jboolean arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"fill",
 			"([ZIIZ)V",
@@ -1240,7 +1240,7 @@ namespace java::util
 	}
 	jint Arrays::hashCode(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"hashCode",
 			"([B)I",
@@ -1249,7 +1249,7 @@ namespace java::util
 	}
 	jint Arrays::hashCode(jcharArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"hashCode",
 			"([C)I",
@@ -1258,7 +1258,7 @@ namespace java::util
 	}
 	jint Arrays::hashCode(jdoubleArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"hashCode",
 			"([D)I",
@@ -1267,7 +1267,7 @@ namespace java::util
 	}
 	jint Arrays::hashCode(jfloatArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"hashCode",
 			"([F)I",
@@ -1276,7 +1276,7 @@ namespace java::util
 	}
 	jint Arrays::hashCode(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"hashCode",
 			"([I)I",
@@ -1285,7 +1285,7 @@ namespace java::util
 	}
 	jint Arrays::hashCode(jlongArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"hashCode",
 			"([J)I",
@@ -1294,7 +1294,7 @@ namespace java::util
 	}
 	jint Arrays::hashCode(jobjectArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"hashCode",
 			"([Ljava/lang/Object;)I",
@@ -1303,7 +1303,7 @@ namespace java::util
 	}
 	jint Arrays::hashCode(jshortArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"hashCode",
 			"([S)I",
@@ -1312,7 +1312,7 @@ namespace java::util
 	}
 	jint Arrays::hashCode(jbooleanArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"hashCode",
 			"([Z)I",
@@ -1321,7 +1321,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jbyteArray arg0, jbyteArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([B[B)I",
@@ -1331,7 +1331,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jcharArray arg0, jcharArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([C[C)I",
@@ -1341,7 +1341,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jdoubleArray arg0, jdoubleArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([D[D)I",
@@ -1351,7 +1351,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jfloatArray arg0, jfloatArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([F[F)I",
@@ -1361,7 +1361,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jintArray arg0, jintArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([I[I)I",
@@ -1371,7 +1371,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jlongArray arg0, jlongArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([J[J)I",
@@ -1381,7 +1381,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jobjectArray arg0, jobjectArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([Ljava/lang/Object;[Ljava/lang/Object;)I",
@@ -1391,7 +1391,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jshortArray arg0, jshortArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([S[S)I",
@@ -1401,7 +1401,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jbooleanArray arg0, jbooleanArray arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([Z[Z)I",
@@ -1411,7 +1411,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jobjectArray arg0, jobjectArray arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([Ljava/lang/Object;[Ljava/lang/Object;Ljava/util/Comparator;)I",
@@ -1422,7 +1422,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([BII[BII)I",
@@ -1436,7 +1436,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([CII[CII)I",
@@ -1450,7 +1450,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jdoubleArray arg0, jint arg1, jint arg2, jdoubleArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([DII[DII)I",
@@ -1464,7 +1464,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([FII[FII)I",
@@ -1478,7 +1478,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jintArray arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([III[III)I",
@@ -1492,7 +1492,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jlongArray arg0, jint arg1, jint arg2, jlongArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([JII[JII)I",
@@ -1506,7 +1506,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([Ljava/lang/Object;II[Ljava/lang/Object;II)I",
@@ -1520,7 +1520,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jshortArray arg0, jint arg1, jint arg2, jshortArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([SII[SII)I",
@@ -1534,7 +1534,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jbooleanArray arg0, jint arg1, jint arg2, jbooleanArray arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([ZII[ZII)I",
@@ -1548,7 +1548,7 @@ namespace java::util
 	}
 	jint Arrays::mismatch(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, __JniBaseClass arg6)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.Arrays",
 			"mismatch",
 			"([Ljava/lang/Object;II[Ljava/lang/Object;IILjava/util/Comparator;)I",
@@ -1563,7 +1563,7 @@ namespace java::util
 	}
 	void Arrays::parallelPrefix(jdoubleArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelPrefix",
 			"([DLjava/util/function/DoubleBinaryOperator;)V",
@@ -1573,7 +1573,7 @@ namespace java::util
 	}
 	void Arrays::parallelPrefix(jintArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelPrefix",
 			"([ILjava/util/function/IntBinaryOperator;)V",
@@ -1583,7 +1583,7 @@ namespace java::util
 	}
 	void Arrays::parallelPrefix(jlongArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelPrefix",
 			"([JLjava/util/function/LongBinaryOperator;)V",
@@ -1593,7 +1593,7 @@ namespace java::util
 	}
 	void Arrays::parallelPrefix(jobjectArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelPrefix",
 			"([Ljava/lang/Object;Ljava/util/function/BinaryOperator;)V",
@@ -1603,7 +1603,7 @@ namespace java::util
 	}
 	void Arrays::parallelPrefix(jdoubleArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelPrefix",
 			"([DIILjava/util/function/DoubleBinaryOperator;)V",
@@ -1615,7 +1615,7 @@ namespace java::util
 	}
 	void Arrays::parallelPrefix(jintArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelPrefix",
 			"([IIILjava/util/function/IntBinaryOperator;)V",
@@ -1627,7 +1627,7 @@ namespace java::util
 	}
 	void Arrays::parallelPrefix(jlongArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelPrefix",
 			"([JIILjava/util/function/LongBinaryOperator;)V",
@@ -1639,7 +1639,7 @@ namespace java::util
 	}
 	void Arrays::parallelPrefix(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelPrefix",
 			"([Ljava/lang/Object;IILjava/util/function/BinaryOperator;)V",
@@ -1651,7 +1651,7 @@ namespace java::util
 	}
 	void Arrays::parallelSetAll(jdoubleArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSetAll",
 			"([DLjava/util/function/IntToDoubleFunction;)V",
@@ -1661,7 +1661,7 @@ namespace java::util
 	}
 	void Arrays::parallelSetAll(jintArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSetAll",
 			"([ILjava/util/function/IntUnaryOperator;)V",
@@ -1671,7 +1671,7 @@ namespace java::util
 	}
 	void Arrays::parallelSetAll(jlongArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSetAll",
 			"([JLjava/util/function/IntToLongFunction;)V",
@@ -1681,7 +1681,7 @@ namespace java::util
 	}
 	void Arrays::parallelSetAll(jobjectArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSetAll",
 			"([Ljava/lang/Object;Ljava/util/function/IntFunction;)V",
@@ -1691,7 +1691,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jbyteArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([B)V",
@@ -1700,7 +1700,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jcharArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([C)V",
@@ -1709,7 +1709,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jdoubleArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([D)V",
@@ -1718,7 +1718,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jfloatArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([F)V",
@@ -1727,7 +1727,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jintArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([I)V",
@@ -1736,7 +1736,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jlongArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([J)V",
@@ -1745,7 +1745,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jarray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([Ljava/lang/Comparable;)V",
@@ -1754,7 +1754,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jshortArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([S)V",
@@ -1763,7 +1763,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jobjectArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([Ljava/lang/Object;Ljava/util/Comparator;)V",
@@ -1773,7 +1773,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([BII)V",
@@ -1784,7 +1784,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jcharArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([CII)V",
@@ -1795,7 +1795,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jdoubleArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([DII)V",
@@ -1806,7 +1806,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jfloatArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([FII)V",
@@ -1817,7 +1817,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jintArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([III)V",
@@ -1828,7 +1828,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jlongArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([JII)V",
@@ -1839,7 +1839,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jarray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([Ljava/lang/Comparable;II)V",
@@ -1850,7 +1850,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jshortArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([SII)V",
@@ -1861,7 +1861,7 @@ namespace java::util
 	}
 	void Arrays::parallelSort(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"parallelSort",
 			"([Ljava/lang/Object;IILjava/util/Comparator;)V",
@@ -1873,7 +1873,7 @@ namespace java::util
 	}
 	void Arrays::setAll(jdoubleArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"setAll",
 			"([DLjava/util/function/IntToDoubleFunction;)V",
@@ -1883,7 +1883,7 @@ namespace java::util
 	}
 	void Arrays::setAll(jintArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"setAll",
 			"([ILjava/util/function/IntUnaryOperator;)V",
@@ -1893,7 +1893,7 @@ namespace java::util
 	}
 	void Arrays::setAll(jlongArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"setAll",
 			"([JLjava/util/function/IntToLongFunction;)V",
@@ -1903,7 +1903,7 @@ namespace java::util
 	}
 	void Arrays::setAll(jobjectArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"setAll",
 			"([Ljava/lang/Object;Ljava/util/function/IntFunction;)V",
@@ -1913,7 +1913,7 @@ namespace java::util
 	}
 	void Arrays::sort(jbyteArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([B)V",
@@ -1922,7 +1922,7 @@ namespace java::util
 	}
 	void Arrays::sort(jcharArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([C)V",
@@ -1931,7 +1931,7 @@ namespace java::util
 	}
 	void Arrays::sort(jdoubleArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([D)V",
@@ -1940,7 +1940,7 @@ namespace java::util
 	}
 	void Arrays::sort(jfloatArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([F)V",
@@ -1949,7 +1949,7 @@ namespace java::util
 	}
 	void Arrays::sort(jintArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([I)V",
@@ -1958,7 +1958,7 @@ namespace java::util
 	}
 	void Arrays::sort(jlongArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([J)V",
@@ -1967,7 +1967,7 @@ namespace java::util
 	}
 	void Arrays::sort(jobjectArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([Ljava/lang/Object;)V",
@@ -1976,7 +1976,7 @@ namespace java::util
 	}
 	void Arrays::sort(jshortArray arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([S)V",
@@ -1985,7 +1985,7 @@ namespace java::util
 	}
 	void Arrays::sort(jobjectArray arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([Ljava/lang/Object;Ljava/util/Comparator;)V",
@@ -1995,7 +1995,7 @@ namespace java::util
 	}
 	void Arrays::sort(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([BII)V",
@@ -2006,7 +2006,7 @@ namespace java::util
 	}
 	void Arrays::sort(jcharArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([CII)V",
@@ -2017,7 +2017,7 @@ namespace java::util
 	}
 	void Arrays::sort(jdoubleArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([DII)V",
@@ -2028,7 +2028,7 @@ namespace java::util
 	}
 	void Arrays::sort(jfloatArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([FII)V",
@@ -2039,7 +2039,7 @@ namespace java::util
 	}
 	void Arrays::sort(jintArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([III)V",
@@ -2050,7 +2050,7 @@ namespace java::util
 	}
 	void Arrays::sort(jlongArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([JII)V",
@@ -2061,7 +2061,7 @@ namespace java::util
 	}
 	void Arrays::sort(jobjectArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([Ljava/lang/Object;II)V",
@@ -2072,7 +2072,7 @@ namespace java::util
 	}
 	void Arrays::sort(jshortArray arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([SII)V",
@@ -2083,7 +2083,7 @@ namespace java::util
 	}
 	void Arrays::sort(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.Arrays",
 			"sort",
 			"([Ljava/lang/Object;IILjava/util/Comparator;)V",
@@ -2095,7 +2095,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::spliterator(jobjectArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"spliterator",
 			"([Ljava/lang/Object;)Ljava/util/Spliterator;",
@@ -2104,7 +2104,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::spliterator(jobjectArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"spliterator",
 			"([Ljava/lang/Object;II)Ljava/util/Spliterator;",
@@ -2115,7 +2115,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::spliterator(jdoubleArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"spliterator",
 			"([D)Ljava/util/Spliterator$OfDouble;",
@@ -2124,7 +2124,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::spliterator(jdoubleArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"spliterator",
 			"([DII)Ljava/util/Spliterator$OfDouble;",
@@ -2135,7 +2135,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::spliterator(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"spliterator",
 			"([I)Ljava/util/Spliterator$OfInt;",
@@ -2144,7 +2144,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::spliterator(jintArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"spliterator",
 			"([III)Ljava/util/Spliterator$OfInt;",
@@ -2155,7 +2155,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::spliterator(jlongArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"spliterator",
 			"([J)Ljava/util/Spliterator$OfLong;",
@@ -2164,7 +2164,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::spliterator(jlongArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"spliterator",
 			"([JII)Ljava/util/Spliterator$OfLong;",
@@ -2175,7 +2175,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::stream(jdoubleArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"stream",
 			"([D)Ljava/util/stream/DoubleStream;",
@@ -2184,7 +2184,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::stream(jdoubleArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"stream",
 			"([DII)Ljava/util/stream/DoubleStream;",
@@ -2195,7 +2195,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::stream(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"stream",
 			"([I)Ljava/util/stream/IntStream;",
@@ -2204,7 +2204,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::stream(jintArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"stream",
 			"([III)Ljava/util/stream/IntStream;",
@@ -2215,7 +2215,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::stream(jlongArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"stream",
 			"([J)Ljava/util/stream/LongStream;",
@@ -2224,7 +2224,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::stream(jlongArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"stream",
 			"([JII)Ljava/util/stream/LongStream;",
@@ -2235,7 +2235,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::stream(jobjectArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"stream",
 			"([Ljava/lang/Object;)Ljava/util/stream/Stream;",
@@ -2244,7 +2244,7 @@ namespace java::util
 	}
 	__JniBaseClass Arrays::stream(jobjectArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"stream",
 			"([Ljava/lang/Object;II)Ljava/util/stream/Stream;",
@@ -2255,7 +2255,7 @@ namespace java::util
 	}
 	jstring Arrays::toString(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"toString",
 			"([B)Ljava/lang/String;",
@@ -2264,7 +2264,7 @@ namespace java::util
 	}
 	jstring Arrays::toString(jcharArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"toString",
 			"([C)Ljava/lang/String;",
@@ -2273,7 +2273,7 @@ namespace java::util
 	}
 	jstring Arrays::toString(jdoubleArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"toString",
 			"([D)Ljava/lang/String;",
@@ -2282,7 +2282,7 @@ namespace java::util
 	}
 	jstring Arrays::toString(jfloatArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"toString",
 			"([F)Ljava/lang/String;",
@@ -2291,7 +2291,7 @@ namespace java::util
 	}
 	jstring Arrays::toString(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"toString",
 			"([I)Ljava/lang/String;",
@@ -2300,7 +2300,7 @@ namespace java::util
 	}
 	jstring Arrays::toString(jlongArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"toString",
 			"([J)Ljava/lang/String;",
@@ -2309,7 +2309,7 @@ namespace java::util
 	}
 	jstring Arrays::toString(jobjectArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"toString",
 			"([Ljava/lang/Object;)Ljava/lang/String;",
@@ -2318,7 +2318,7 @@ namespace java::util
 	}
 	jstring Arrays::toString(jshortArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"toString",
 			"([S)Ljava/lang/String;",
@@ -2327,7 +2327,7 @@ namespace java::util
 	}
 	jstring Arrays::toString(jbooleanArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Arrays",
 			"toString",
 			"([Z)Ljava/lang/String;",

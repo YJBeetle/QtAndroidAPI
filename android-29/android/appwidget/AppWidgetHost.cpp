@@ -24,7 +24,7 @@ namespace android::appwidget
 	// Methods
 	void AppWidgetHost::deleteAllHosts()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.appwidget.AppWidgetHost",
 			"deleteAllHosts",
 			"()V"

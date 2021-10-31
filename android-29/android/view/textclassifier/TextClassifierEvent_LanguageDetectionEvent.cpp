@@ -6,7 +6,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass TextClassifierEvent_LanguageDetectionEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextClassifierEvent$LanguageDetectionEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

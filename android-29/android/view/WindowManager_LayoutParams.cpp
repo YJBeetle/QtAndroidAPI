@@ -6,42 +6,42 @@ namespace android::view
 	// Fields
 	jint WindowManager_LayoutParams::ALPHA_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"ALPHA_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::ANIMATION_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"ANIMATION_CHANGED"
 		);
 	}
 	jfloat WindowManager_LayoutParams::BRIGHTNESS_OVERRIDE_FULL()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.view.WindowManager$LayoutParams",
 			"BRIGHTNESS_OVERRIDE_FULL"
 		);
 	}
 	jfloat WindowManager_LayoutParams::BRIGHTNESS_OVERRIDE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.view.WindowManager$LayoutParams",
 			"BRIGHTNESS_OVERRIDE_NONE"
 		);
 	}
 	jfloat WindowManager_LayoutParams::BRIGHTNESS_OVERRIDE_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.view.WindowManager$LayoutParams",
 			"BRIGHTNESS_OVERRIDE_OFF"
 		);
 	}
 	__JniBaseClass WindowManager_LayoutParams::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.WindowManager$LayoutParams",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -49,679 +49,679 @@ namespace android::view
 	}
 	jint WindowManager_LayoutParams::DIM_AMOUNT_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"DIM_AMOUNT_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::FIRST_APPLICATION_WINDOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FIRST_APPLICATION_WINDOW"
 		);
 	}
 	jint WindowManager_LayoutParams::FIRST_SUB_WINDOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FIRST_SUB_WINDOW"
 		);
 	}
 	jint WindowManager_LayoutParams::FIRST_SYSTEM_WINDOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FIRST_SYSTEM_WINDOW"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAGS_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAGS_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_ALLOW_LOCK_WHILE_SCREEN_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_ALLOW_LOCK_WHILE_SCREEN_ON"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_ALT_FOCUSABLE_IM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_ALT_FOCUSABLE_IM"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_BLUR_BEHIND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_BLUR_BEHIND"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_DIM_BEHIND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_DIM_BEHIND"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_DISMISS_KEYGUARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_DISMISS_KEYGUARD"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_DITHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_DITHER"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_FORCE_NOT_FULLSCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_FORCE_NOT_FULLSCREEN"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_FULLSCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_FULLSCREEN"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_HARDWARE_ACCELERATED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_HARDWARE_ACCELERATED"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_IGNORE_CHEEK_PRESSES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_IGNORE_CHEEK_PRESSES"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_KEEP_SCREEN_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_KEEP_SCREEN_ON"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_LAYOUT_ATTACHED_IN_DECOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_LAYOUT_ATTACHED_IN_DECOR"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_LAYOUT_INSET_DECOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_LAYOUT_INSET_DECOR"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_LAYOUT_IN_OVERSCAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_LAYOUT_IN_OVERSCAN"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_LAYOUT_IN_SCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_LAYOUT_IN_SCREEN"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_LAYOUT_NO_LIMITS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_LAYOUT_NO_LIMITS"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_LOCAL_FOCUS_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_LOCAL_FOCUS_MODE"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_NOT_FOCUSABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_NOT_FOCUSABLE"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_NOT_TOUCHABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_NOT_TOUCHABLE"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_NOT_TOUCH_MODAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_NOT_TOUCH_MODAL"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_SCALED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_SCALED"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_SECURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_SECURE"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_SHOW_WALLPAPER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_SHOW_WALLPAPER"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_SHOW_WHEN_LOCKED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_SHOW_WHEN_LOCKED"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_SPLIT_TOUCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_SPLIT_TOUCH"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_TOUCHABLE_WHEN_WAKING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_TOUCHABLE_WHEN_WAKING"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_TRANSLUCENT_NAVIGATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_TRANSLUCENT_NAVIGATION"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_TRANSLUCENT_STATUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_TRANSLUCENT_STATUS"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_TURN_SCREEN_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_TURN_SCREEN_ON"
 		);
 	}
 	jint WindowManager_LayoutParams::FLAG_WATCH_OUTSIDE_TOUCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FLAG_WATCH_OUTSIDE_TOUCH"
 		);
 	}
 	jint WindowManager_LayoutParams::FORMAT_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"FORMAT_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::LAST_APPLICATION_WINDOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"LAST_APPLICATION_WINDOW"
 		);
 	}
 	jint WindowManager_LayoutParams::LAST_SUB_WINDOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"LAST_SUB_WINDOW"
 		);
 	}
 	jint WindowManager_LayoutParams::LAST_SYSTEM_WINDOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"LAST_SYSTEM_WINDOW"
 		);
 	}
 	jint WindowManager_LayoutParams::LAYOUT_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"LAYOUT_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT"
 		);
 	}
 	jint WindowManager_LayoutParams::LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER"
 		);
 	}
 	jint WindowManager_LayoutParams::LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES"
 		);
 	}
 	jint WindowManager_LayoutParams::MEMORY_TYPE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"MEMORY_TYPE_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::MEMORY_TYPE_GPU()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"MEMORY_TYPE_GPU"
 		);
 	}
 	jint WindowManager_LayoutParams::MEMORY_TYPE_HARDWARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"MEMORY_TYPE_HARDWARE"
 		);
 	}
 	jint WindowManager_LayoutParams::MEMORY_TYPE_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"MEMORY_TYPE_NORMAL"
 		);
 	}
 	jint WindowManager_LayoutParams::MEMORY_TYPE_PUSH_BUFFERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"MEMORY_TYPE_PUSH_BUFFERS"
 		);
 	}
 	jint WindowManager_LayoutParams::ROTATION_ANIMATION_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"ROTATION_ANIMATION_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::ROTATION_ANIMATION_CROSSFADE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"ROTATION_ANIMATION_CROSSFADE"
 		);
 	}
 	jint WindowManager_LayoutParams::ROTATION_ANIMATION_JUMPCUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"ROTATION_ANIMATION_JUMPCUT"
 		);
 	}
 	jint WindowManager_LayoutParams::ROTATION_ANIMATION_ROTATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"ROTATION_ANIMATION_ROTATE"
 		);
 	}
 	jint WindowManager_LayoutParams::ROTATION_ANIMATION_SEAMLESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"ROTATION_ANIMATION_SEAMLESS"
 		);
 	}
 	jint WindowManager_LayoutParams::SCREEN_BRIGHTNESS_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SCREEN_BRIGHTNESS_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::SCREEN_ORIENTATION_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SCREEN_ORIENTATION_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_ADJUST_NOTHING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_ADJUST_NOTHING"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_ADJUST_PAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_ADJUST_PAN"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_ADJUST_RESIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_ADJUST_RESIZE"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_ADJUST_UNSPECIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_ADJUST_UNSPECIFIED"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_IS_FORWARD_NAVIGATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_IS_FORWARD_NAVIGATION"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_MASK_ADJUST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_MASK_ADJUST"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_MASK_STATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_MASK_STATE"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_MODE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_MODE_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_STATE_ALWAYS_HIDDEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_STATE_ALWAYS_HIDDEN"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_STATE_ALWAYS_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_STATE_ALWAYS_VISIBLE"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_STATE_HIDDEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_STATE_HIDDEN"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_STATE_UNCHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_STATE_UNCHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_STATE_UNSPECIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_STATE_UNSPECIFIED"
 		);
 	}
 	jint WindowManager_LayoutParams::SOFT_INPUT_STATE_VISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"SOFT_INPUT_STATE_VISIBLE"
 		);
 	}
 	jint WindowManager_LayoutParams::TITLE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TITLE_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_ACCESSIBILITY_OVERLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_ACCESSIBILITY_OVERLAY"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_APPLICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_APPLICATION"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_APPLICATION_ATTACHED_DIALOG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_APPLICATION_ATTACHED_DIALOG"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_APPLICATION_MEDIA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_APPLICATION_MEDIA"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_APPLICATION_OVERLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_APPLICATION_OVERLAY"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_APPLICATION_PANEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_APPLICATION_PANEL"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_APPLICATION_STARTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_APPLICATION_STARTING"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_APPLICATION_SUB_PANEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_APPLICATION_SUB_PANEL"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_BASE_APPLICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_BASE_APPLICATION"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_CHANGED"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_DRAWN_APPLICATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_DRAWN_APPLICATION"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_INPUT_METHOD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_INPUT_METHOD"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_INPUT_METHOD_DIALOG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_INPUT_METHOD_DIALOG"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_KEYGUARD_DIALOG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_KEYGUARD_DIALOG"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_PHONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_PHONE"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_PRIORITY_PHONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_PRIORITY_PHONE"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_PRIVATE_PRESENTATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_PRIVATE_PRESENTATION"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_SEARCH_BAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_SEARCH_BAR"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_STATUS_BAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_STATUS_BAR"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_STATUS_BAR_PANEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_STATUS_BAR_PANEL"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_SYSTEM_ALERT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_SYSTEM_ALERT"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_SYSTEM_DIALOG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_SYSTEM_DIALOG"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_SYSTEM_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_SYSTEM_ERROR"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_SYSTEM_OVERLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_SYSTEM_OVERLAY"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_TOAST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_TOAST"
 		);
 	}
 	jint WindowManager_LayoutParams::TYPE_WALLPAPER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.WindowManager$LayoutParams",
 			"TYPE_WALLPAPER"
 		);
@@ -941,7 +941,7 @@ namespace android::view
 	// Methods
 	jboolean WindowManager_LayoutParams::mayUseInputMethod(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.view.WindowManager$LayoutParams",
 			"mayUseInputMethod",
 			"(I)Z",

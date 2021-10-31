@@ -6,7 +6,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass Display_HdrCapabilities::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.Display$HdrCapabilities",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,35 +14,35 @@ namespace android::view
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_DOLBY_VISION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
 			"HDR_TYPE_DOLBY_VISION"
 		);
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_HDR10()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
 			"HDR_TYPE_HDR10"
 		);
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_HDR10_PLUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
 			"HDR_TYPE_HDR10_PLUS"
 		);
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_HLG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
 			"HDR_TYPE_HLG"
 		);
 	}
 	jfloat Display_HdrCapabilities::INVALID_LUMINANCE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.view.Display$HdrCapabilities",
 			"INVALID_LUMINANCE"
 		);

@@ -6,7 +6,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass InstrumentationInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.InstrumentationInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

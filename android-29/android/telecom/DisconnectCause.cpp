@@ -6,42 +6,42 @@ namespace android::telecom
 	// Fields
 	jint DisconnectCause::ANSWERED_ELSEWHERE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"ANSWERED_ELSEWHERE"
 		);
 	}
 	jint DisconnectCause::BUSY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"BUSY"
 		);
 	}
 	jint DisconnectCause::CALL_PULLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"CALL_PULLED"
 		);
 	}
 	jint DisconnectCause::CANCELED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"CANCELED"
 		);
 	}
 	jint DisconnectCause::CONNECTION_MANAGER_NOT_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"CONNECTION_MANAGER_NOT_SUPPORTED"
 		);
 	}
 	__JniBaseClass DisconnectCause::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.DisconnectCause",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -49,56 +49,56 @@ namespace android::telecom
 	}
 	jint DisconnectCause::ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"ERROR"
 		);
 	}
 	jint DisconnectCause::LOCAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"LOCAL"
 		);
 	}
 	jint DisconnectCause::MISSED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"MISSED"
 		);
 	}
 	jint DisconnectCause::OTHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"OTHER"
 		);
 	}
 	jint DisconnectCause::REJECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"REJECTED"
 		);
 	}
 	jint DisconnectCause::REMOTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"REMOTE"
 		);
 	}
 	jint DisconnectCause::RESTRICTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"RESTRICTED"
 		);
 	}
 	jint DisconnectCause::UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.DisconnectCause",
 			"UNKNOWN"
 		);

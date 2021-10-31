@@ -14,7 +14,7 @@ namespace java::nio::file::attribute
 	// Methods
 	java::nio::file::attribute::AclEntry_Builder AclEntry::newBuilder()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntry",
 			"newBuilder",
 			"()Ljava/nio/file/attribute/AclEntry$Builder;"
@@ -22,7 +22,7 @@ namespace java::nio::file::attribute
 	}
 	java::nio::file::attribute::AclEntry_Builder AclEntry::newBuilder(java::nio::file::attribute::AclEntry arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntry",
 			"newBuilder",
 			"(Ljava/nio/file/attribute/AclEntry;)Ljava/nio/file/attribute/AclEntry$Builder;",

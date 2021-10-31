@@ -15,7 +15,7 @@ namespace java::time
 	// Fields
 	java::time::OffsetTime OffsetTime::MAX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.OffsetTime",
 			"MAX",
 			"Ljava/time/OffsetTime;"
@@ -23,7 +23,7 @@ namespace java::time
 	}
 	java::time::OffsetTime OffsetTime::MIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.OffsetTime",
 			"MIN",
 			"Ljava/time/OffsetTime;"
@@ -38,7 +38,7 @@ namespace java::time
 	// Methods
 	java::time::OffsetTime OffsetTime::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.OffsetTime",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/OffsetTime;",
@@ -47,7 +47,7 @@ namespace java::time
 	}
 	java::time::OffsetTime OffsetTime::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.OffsetTime",
 			"now",
 			"()Ljava/time/OffsetTime;"
@@ -55,7 +55,7 @@ namespace java::time
 	}
 	java::time::OffsetTime OffsetTime::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.OffsetTime",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/OffsetTime;",
@@ -64,7 +64,7 @@ namespace java::time
 	}
 	java::time::OffsetTime OffsetTime::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.OffsetTime",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/OffsetTime;",
@@ -73,7 +73,7 @@ namespace java::time
 	}
 	java::time::OffsetTime OffsetTime::of(java::time::LocalTime arg0, java::time::ZoneOffset arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.OffsetTime",
 			"of",
 			"(Ljava/time/LocalTime;Ljava/time/ZoneOffset;)Ljava/time/OffsetTime;",
@@ -83,7 +83,7 @@ namespace java::time
 	}
 	java::time::OffsetTime OffsetTime::of(jint arg0, jint arg1, jint arg2, jint arg3, java::time::ZoneOffset arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.OffsetTime",
 			"of",
 			"(IIIILjava/time/ZoneOffset;)Ljava/time/OffsetTime;",
@@ -96,7 +96,7 @@ namespace java::time
 	}
 	java::time::OffsetTime OffsetTime::ofInstant(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.OffsetTime",
 			"ofInstant",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/OffsetTime;",
@@ -106,7 +106,7 @@ namespace java::time
 	}
 	java::time::OffsetTime OffsetTime::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.OffsetTime",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/OffsetTime;",
@@ -115,7 +115,7 @@ namespace java::time
 	}
 	java::time::OffsetTime OffsetTime::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.OffsetTime",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/OffsetTime;",

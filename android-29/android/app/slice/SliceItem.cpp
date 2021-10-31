@@ -11,7 +11,7 @@ namespace android::app::slice
 	// Fields
 	__JniBaseClass SliceItem::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -19,7 +19,7 @@ namespace android::app::slice
 	}
 	jstring SliceItem::FORMAT_ACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_ACTION",
 			"Ljava/lang/String;"
@@ -27,7 +27,7 @@ namespace android::app::slice
 	}
 	jstring SliceItem::FORMAT_BUNDLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_BUNDLE",
 			"Ljava/lang/String;"
@@ -35,7 +35,7 @@ namespace android::app::slice
 	}
 	jstring SliceItem::FORMAT_IMAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_IMAGE",
 			"Ljava/lang/String;"
@@ -43,7 +43,7 @@ namespace android::app::slice
 	}
 	jstring SliceItem::FORMAT_INT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_INT",
 			"Ljava/lang/String;"
@@ -51,7 +51,7 @@ namespace android::app::slice
 	}
 	jstring SliceItem::FORMAT_LONG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_LONG",
 			"Ljava/lang/String;"
@@ -59,7 +59,7 @@ namespace android::app::slice
 	}
 	jstring SliceItem::FORMAT_REMOTE_INPUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_REMOTE_INPUT",
 			"Ljava/lang/String;"
@@ -67,7 +67,7 @@ namespace android::app::slice
 	}
 	jstring SliceItem::FORMAT_SLICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_SLICE",
 			"Ljava/lang/String;"
@@ -75,7 +75,7 @@ namespace android::app::slice
 	}
 	jstring SliceItem::FORMAT_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_TEXT",
 			"Ljava/lang/String;"

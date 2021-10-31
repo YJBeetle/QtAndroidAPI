@@ -9,7 +9,7 @@ namespace android::os
 	// Fields
 	jstring UserManager::ALLOW_PARENT_PROFILE_APP_LINKING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"ALLOW_PARENT_PROFILE_APP_LINKING",
 			"Ljava/lang/String;"
@@ -17,7 +17,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_ADD_MANAGED_PROFILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_ADD_MANAGED_PROFILE",
 			"Ljava/lang/String;"
@@ -25,7 +25,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_ADD_USER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_ADD_USER",
 			"Ljava/lang/String;"
@@ -33,7 +33,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_ADJUST_VOLUME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_ADJUST_VOLUME",
 			"Ljava/lang/String;"
@@ -41,7 +41,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_AIRPLANE_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_AIRPLANE_MODE",
 			"Ljava/lang/String;"
@@ -49,7 +49,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_AMBIENT_DISPLAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_AMBIENT_DISPLAY",
 			"Ljava/lang/String;"
@@ -57,7 +57,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_APPS_CONTROL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_APPS_CONTROL",
 			"Ljava/lang/String;"
@@ -65,7 +65,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_AUTOFILL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_AUTOFILL",
 			"Ljava/lang/String;"
@@ -73,7 +73,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_BLUETOOTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_BLUETOOTH",
 			"Ljava/lang/String;"
@@ -81,7 +81,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_BLUETOOTH_SHARING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_BLUETOOTH_SHARING",
 			"Ljava/lang/String;"
@@ -89,7 +89,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_BLUETOOTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_BLUETOOTH",
 			"Ljava/lang/String;"
@@ -97,7 +97,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_BRIGHTNESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_BRIGHTNESS",
 			"Ljava/lang/String;"
@@ -105,7 +105,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_CELL_BROADCASTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_CELL_BROADCASTS",
 			"Ljava/lang/String;"
@@ -113,7 +113,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_CREDENTIALS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_CREDENTIALS",
 			"Ljava/lang/String;"
@@ -121,7 +121,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_DATE_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_DATE_TIME",
 			"Ljava/lang/String;"
@@ -129,7 +129,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_LOCALE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_LOCALE",
 			"Ljava/lang/String;"
@@ -137,7 +137,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_LOCATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_LOCATION",
 			"Ljava/lang/String;"
@@ -145,7 +145,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_MOBILE_NETWORKS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_MOBILE_NETWORKS",
 			"Ljava/lang/String;"
@@ -153,7 +153,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_PRIVATE_DNS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_PRIVATE_DNS",
 			"Ljava/lang/String;"
@@ -161,7 +161,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_SCREEN_TIMEOUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_SCREEN_TIMEOUT",
 			"Ljava/lang/String;"
@@ -169,7 +169,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_TETHERING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_TETHERING",
 			"Ljava/lang/String;"
@@ -177,7 +177,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_VPN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_VPN",
 			"Ljava/lang/String;"
@@ -185,7 +185,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONFIG_WIFI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONFIG_WIFI",
 			"Ljava/lang/String;"
@@ -193,7 +193,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONTENT_CAPTURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONTENT_CAPTURE",
 			"Ljava/lang/String;"
@@ -201,7 +201,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CONTENT_SUGGESTIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CONTENT_SUGGESTIONS",
 			"Ljava/lang/String;"
@@ -209,7 +209,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CREATE_WINDOWS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CREATE_WINDOWS",
 			"Ljava/lang/String;"
@@ -217,7 +217,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_CROSS_PROFILE_COPY_PASTE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_CROSS_PROFILE_COPY_PASTE",
 			"Ljava/lang/String;"
@@ -225,7 +225,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_DATA_ROAMING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_DATA_ROAMING",
 			"Ljava/lang/String;"
@@ -233,7 +233,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_DEBUGGING_FEATURES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_DEBUGGING_FEATURES",
 			"Ljava/lang/String;"
@@ -241,7 +241,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_FACTORY_RESET()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_FACTORY_RESET",
 			"Ljava/lang/String;"
@@ -249,7 +249,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_FUN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_FUN",
 			"Ljava/lang/String;"
@@ -257,7 +257,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_INSTALL_APPS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_INSTALL_APPS",
 			"Ljava/lang/String;"
@@ -265,7 +265,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_INSTALL_UNKNOWN_SOURCES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_INSTALL_UNKNOWN_SOURCES",
 			"Ljava/lang/String;"
@@ -273,7 +273,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_INSTALL_UNKNOWN_SOURCES_GLOBALLY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_INSTALL_UNKNOWN_SOURCES_GLOBALLY",
 			"Ljava/lang/String;"
@@ -281,7 +281,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_MODIFY_ACCOUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_MODIFY_ACCOUNTS",
 			"Ljava/lang/String;"
@@ -289,7 +289,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_MOUNT_PHYSICAL_MEDIA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_MOUNT_PHYSICAL_MEDIA",
 			"Ljava/lang/String;"
@@ -297,7 +297,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_NETWORK_RESET()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_NETWORK_RESET",
 			"Ljava/lang/String;"
@@ -305,7 +305,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_OUTGOING_BEAM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_OUTGOING_BEAM",
 			"Ljava/lang/String;"
@@ -313,7 +313,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_OUTGOING_CALLS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_OUTGOING_CALLS",
 			"Ljava/lang/String;"
@@ -321,7 +321,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_PRINTING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_PRINTING",
 			"Ljava/lang/String;"
@@ -329,7 +329,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_REMOVE_MANAGED_PROFILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_REMOVE_MANAGED_PROFILE",
 			"Ljava/lang/String;"
@@ -337,7 +337,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_REMOVE_USER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_REMOVE_USER",
 			"Ljava/lang/String;"
@@ -345,7 +345,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_SAFE_BOOT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SAFE_BOOT",
 			"Ljava/lang/String;"
@@ -353,7 +353,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_SET_USER_ICON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SET_USER_ICON",
 			"Ljava/lang/String;"
@@ -361,7 +361,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_SET_WALLPAPER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SET_WALLPAPER",
 			"Ljava/lang/String;"
@@ -369,7 +369,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_SHARE_INTO_MANAGED_PROFILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SHARE_INTO_MANAGED_PROFILE",
 			"Ljava/lang/String;"
@@ -377,7 +377,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_SHARE_LOCATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SHARE_LOCATION",
 			"Ljava/lang/String;"
@@ -385,7 +385,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_SMS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SMS",
 			"Ljava/lang/String;"
@@ -393,7 +393,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_SYSTEM_ERROR_DIALOGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_SYSTEM_ERROR_DIALOGS",
 			"Ljava/lang/String;"
@@ -401,7 +401,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_UNIFIED_PASSWORD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_UNIFIED_PASSWORD",
 			"Ljava/lang/String;"
@@ -409,7 +409,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_UNINSTALL_APPS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_UNINSTALL_APPS",
 			"Ljava/lang/String;"
@@ -417,7 +417,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_UNMUTE_MICROPHONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_UNMUTE_MICROPHONE",
 			"Ljava/lang/String;"
@@ -425,7 +425,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_USB_FILE_TRANSFER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_USB_FILE_TRANSFER",
 			"Ljava/lang/String;"
@@ -433,7 +433,7 @@ namespace android::os
 	}
 	jstring UserManager::DISALLOW_USER_SWITCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"DISALLOW_USER_SWITCH",
 			"Ljava/lang/String;"
@@ -441,7 +441,7 @@ namespace android::os
 	}
 	jstring UserManager::ENSURE_VERIFY_APPS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"ENSURE_VERIFY_APPS",
 			"Ljava/lang/String;"
@@ -449,7 +449,7 @@ namespace android::os
 	}
 	jstring UserManager::KEY_RESTRICTIONS_PENDING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserManager",
 			"KEY_RESTRICTIONS_PENDING",
 			"Ljava/lang/String;"
@@ -457,63 +457,63 @@ namespace android::os
 	}
 	jint UserManager::USER_CREATION_FAILED_NOT_PERMITTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.UserManager",
 			"USER_CREATION_FAILED_NOT_PERMITTED"
 		);
 	}
 	jint UserManager::USER_CREATION_FAILED_NO_MORE_USERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.UserManager",
 			"USER_CREATION_FAILED_NO_MORE_USERS"
 		);
 	}
 	jint UserManager::USER_OPERATION_ERROR_CURRENT_USER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.UserManager",
 			"USER_OPERATION_ERROR_CURRENT_USER"
 		);
 	}
 	jint UserManager::USER_OPERATION_ERROR_LOW_STORAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.UserManager",
 			"USER_OPERATION_ERROR_LOW_STORAGE"
 		);
 	}
 	jint UserManager::USER_OPERATION_ERROR_MANAGED_PROFILE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.UserManager",
 			"USER_OPERATION_ERROR_MANAGED_PROFILE"
 		);
 	}
 	jint UserManager::USER_OPERATION_ERROR_MAX_RUNNING_USERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.UserManager",
 			"USER_OPERATION_ERROR_MAX_RUNNING_USERS"
 		);
 	}
 	jint UserManager::USER_OPERATION_ERROR_MAX_USERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.UserManager",
 			"USER_OPERATION_ERROR_MAX_USERS"
 		);
 	}
 	jint UserManager::USER_OPERATION_ERROR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.UserManager",
 			"USER_OPERATION_ERROR_UNKNOWN"
 		);
 	}
 	jint UserManager::USER_OPERATION_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.UserManager",
 			"USER_OPERATION_SUCCESS"
 		);
@@ -527,7 +527,7 @@ namespace android::os
 	// Methods
 	android::content::Intent UserManager::createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, android::os::PersistableBundle arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.UserManager",
 			"createUserCreationIntent",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)Landroid/content/Intent;",
@@ -539,7 +539,7 @@ namespace android::os
 	}
 	jboolean UserManager::supportsMultipleUsers()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.UserManager",
 			"supportsMultipleUsers",
 			"()Z"

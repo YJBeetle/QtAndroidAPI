@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::Shader_TileMode Shader_TileMode::CLAMP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Shader$TileMode",
 			"CLAMP",
 			"Landroid/graphics/Shader$TileMode;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::Shader_TileMode Shader_TileMode::MIRROR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Shader$TileMode",
 			"MIRROR",
 			"Landroid/graphics/Shader$TileMode;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::Shader_TileMode Shader_TileMode::REPEAT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Shader$TileMode",
 			"REPEAT",
 			"Landroid/graphics/Shader$TileMode;"
@@ -36,7 +36,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Shader_TileMode Shader_TileMode::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Shader$TileMode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Shader$TileMode;",
@@ -45,7 +45,7 @@ namespace android::graphics
 	}
 	jarray Shader_TileMode::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Shader$TileMode",
 			"values",
 			"()[Landroid/graphics/Shader$TileMode;"

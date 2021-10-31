@@ -7,7 +7,7 @@ namespace android::speech
 	// Fields
 	jstring RecognitionService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.speech.RecognitionService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::speech
 	}
 	jstring RecognitionService::SERVICE_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.speech.RecognitionService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"

@@ -14,154 +14,154 @@ namespace android::telecom
 	// Fields
 	jint Connection::CAPABILITY_CANNOT_DOWNGRADE_VIDEO_TO_AUDIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_CANNOT_DOWNGRADE_VIDEO_TO_AUDIO"
 		);
 	}
 	jint Connection::CAPABILITY_CAN_PAUSE_VIDEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_CAN_PAUSE_VIDEO"
 		);
 	}
 	jint Connection::CAPABILITY_CAN_PULL_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_CAN_PULL_CALL"
 		);
 	}
 	jint Connection::CAPABILITY_CAN_SEND_RESPONSE_VIA_CONNECTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_CAN_SEND_RESPONSE_VIA_CONNECTION"
 		);
 	}
 	jint Connection::CAPABILITY_CAN_UPGRADE_TO_VIDEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_CAN_UPGRADE_TO_VIDEO"
 		);
 	}
 	jint Connection::CAPABILITY_DISCONNECT_FROM_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_DISCONNECT_FROM_CONFERENCE"
 		);
 	}
 	jint Connection::CAPABILITY_HOLD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_HOLD"
 		);
 	}
 	jint Connection::CAPABILITY_MANAGE_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_MANAGE_CONFERENCE"
 		);
 	}
 	jint Connection::CAPABILITY_MERGE_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_MERGE_CONFERENCE"
 		);
 	}
 	jint Connection::CAPABILITY_MUTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_MUTE"
 		);
 	}
 	jint Connection::CAPABILITY_RESPOND_VIA_TEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_RESPOND_VIA_TEXT"
 		);
 	}
 	jint Connection::CAPABILITY_SEPARATE_FROM_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_SEPARATE_FROM_CONFERENCE"
 		);
 	}
 	jint Connection::CAPABILITY_SUPPORTS_VT_LOCAL_BIDIRECTIONAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_SUPPORTS_VT_LOCAL_BIDIRECTIONAL"
 		);
 	}
 	jint Connection::CAPABILITY_SUPPORTS_VT_LOCAL_RX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_SUPPORTS_VT_LOCAL_RX"
 		);
 	}
 	jint Connection::CAPABILITY_SUPPORTS_VT_LOCAL_TX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_SUPPORTS_VT_LOCAL_TX"
 		);
 	}
 	jint Connection::CAPABILITY_SUPPORTS_VT_REMOTE_BIDIRECTIONAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_SUPPORTS_VT_REMOTE_BIDIRECTIONAL"
 		);
 	}
 	jint Connection::CAPABILITY_SUPPORTS_VT_REMOTE_RX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_SUPPORTS_VT_REMOTE_RX"
 		);
 	}
 	jint Connection::CAPABILITY_SUPPORTS_VT_REMOTE_TX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_SUPPORTS_VT_REMOTE_TX"
 		);
 	}
 	jint Connection::CAPABILITY_SUPPORT_DEFLECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_SUPPORT_DEFLECT"
 		);
 	}
 	jint Connection::CAPABILITY_SUPPORT_HOLD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_SUPPORT_HOLD"
 		);
 	}
 	jint Connection::CAPABILITY_SWAP_CONFERENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"CAPABILITY_SWAP_CONFERENCE"
 		);
 	}
 	jstring Connection::EVENT_CALL_MERGE_FAILED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_CALL_MERGE_FAILED",
 			"Ljava/lang/String;"
@@ -169,7 +169,7 @@ namespace android::telecom
 	}
 	jstring Connection::EVENT_CALL_PULL_FAILED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_CALL_PULL_FAILED",
 			"Ljava/lang/String;"
@@ -177,7 +177,7 @@ namespace android::telecom
 	}
 	jstring Connection::EVENT_RTT_AUDIO_INDICATION_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EVENT_RTT_AUDIO_INDICATION_CHANGED",
 			"Ljava/lang/String;"
@@ -185,7 +185,7 @@ namespace android::telecom
 	}
 	jstring Connection::EXTRA_ANSWERING_DROPS_FG_CALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_ANSWERING_DROPS_FG_CALL",
 			"Ljava/lang/String;"
@@ -193,7 +193,7 @@ namespace android::telecom
 	}
 	jstring Connection::EXTRA_ANSWERING_DROPS_FG_CALL_APP_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_ANSWERING_DROPS_FG_CALL_APP_NAME",
 			"Ljava/lang/String;"
@@ -201,7 +201,7 @@ namespace android::telecom
 	}
 	jstring Connection::EXTRA_CALL_SUBJECT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_CALL_SUBJECT",
 			"Ljava/lang/String;"
@@ -209,7 +209,7 @@ namespace android::telecom
 	}
 	jstring Connection::EXTRA_CHILD_ADDRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_CHILD_ADDRESS",
 			"Ljava/lang/String;"
@@ -217,7 +217,7 @@ namespace android::telecom
 	}
 	jstring Connection::EXTRA_IS_RTT_AUDIO_PRESENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_IS_RTT_AUDIO_PRESENT",
 			"Ljava/lang/String;"
@@ -225,7 +225,7 @@ namespace android::telecom
 	}
 	jstring Connection::EXTRA_LAST_FORWARDED_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_LAST_FORWARDED_NUMBER",
 			"Ljava/lang/String;"
@@ -233,7 +233,7 @@ namespace android::telecom
 	}
 	jstring Connection::EXTRA_SIP_INVITE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.Connection",
 			"EXTRA_SIP_INVITE",
 			"Ljava/lang/String;"
@@ -241,84 +241,84 @@ namespace android::telecom
 	}
 	jint Connection::PROPERTY_HAS_CDMA_VOICE_PRIVACY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"PROPERTY_HAS_CDMA_VOICE_PRIVACY"
 		);
 	}
 	jint Connection::PROPERTY_IS_EXTERNAL_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"PROPERTY_IS_EXTERNAL_CALL"
 		);
 	}
 	jint Connection::PROPERTY_IS_RTT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"PROPERTY_IS_RTT"
 		);
 	}
 	jint Connection::PROPERTY_SELF_MANAGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"PROPERTY_SELF_MANAGED"
 		);
 	}
 	jint Connection::STATE_ACTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"STATE_ACTIVE"
 		);
 	}
 	jint Connection::STATE_DIALING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"STATE_DIALING"
 		);
 	}
 	jint Connection::STATE_DISCONNECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"STATE_DISCONNECTED"
 		);
 	}
 	jint Connection::STATE_HOLDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"STATE_HOLDING"
 		);
 	}
 	jint Connection::STATE_INITIALIZING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"STATE_INITIALIZING"
 		);
 	}
 	jint Connection::STATE_NEW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"STATE_NEW"
 		);
 	}
 	jint Connection::STATE_PULLING_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"STATE_PULLING_CALL"
 		);
 	}
 	jint Connection::STATE_RINGING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Connection",
 			"STATE_RINGING"
 		);
@@ -337,7 +337,7 @@ namespace android::telecom
 	// Methods
 	jstring Connection::capabilitiesToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telecom.Connection",
 			"capabilitiesToString",
 			"(I)Ljava/lang/String;",
@@ -346,7 +346,7 @@ namespace android::telecom
 	}
 	android::telecom::Connection Connection::createCanceledConnection()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telecom.Connection",
 			"createCanceledConnection",
 			"()Landroid/telecom/Connection;"
@@ -354,7 +354,7 @@ namespace android::telecom
 	}
 	android::telecom::Connection Connection::createFailedConnection(android::telecom::DisconnectCause arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telecom.Connection",
 			"createFailedConnection",
 			"(Landroid/telecom/DisconnectCause;)Landroid/telecom/Connection;",
@@ -363,7 +363,7 @@ namespace android::telecom
 	}
 	jstring Connection::propertiesToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telecom.Connection",
 			"propertiesToString",
 			"(I)Ljava/lang/String;",
@@ -372,7 +372,7 @@ namespace android::telecom
 	}
 	jstring Connection::stateToString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telecom.Connection",
 			"stateToString",
 			"(I)Ljava/lang/String;",

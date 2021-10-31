@@ -16,7 +16,7 @@ namespace android::text
 	// Methods
 	android::text::StaticLayout_Builder StaticLayout_Builder::obtain(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.StaticLayout$Builder",
 			"obtain",
 			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;",

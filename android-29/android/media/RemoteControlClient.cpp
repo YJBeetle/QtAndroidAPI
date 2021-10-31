@@ -9,133 +9,133 @@ namespace android::media
 	// Fields
 	jint RemoteControlClient::FLAG_KEY_MEDIA_FAST_FORWARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"FLAG_KEY_MEDIA_FAST_FORWARD"
 		);
 	}
 	jint RemoteControlClient::FLAG_KEY_MEDIA_NEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"FLAG_KEY_MEDIA_NEXT"
 		);
 	}
 	jint RemoteControlClient::FLAG_KEY_MEDIA_PAUSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"FLAG_KEY_MEDIA_PAUSE"
 		);
 	}
 	jint RemoteControlClient::FLAG_KEY_MEDIA_PLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"FLAG_KEY_MEDIA_PLAY"
 		);
 	}
 	jint RemoteControlClient::FLAG_KEY_MEDIA_PLAY_PAUSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"FLAG_KEY_MEDIA_PLAY_PAUSE"
 		);
 	}
 	jint RemoteControlClient::FLAG_KEY_MEDIA_POSITION_UPDATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"FLAG_KEY_MEDIA_POSITION_UPDATE"
 		);
 	}
 	jint RemoteControlClient::FLAG_KEY_MEDIA_PREVIOUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"FLAG_KEY_MEDIA_PREVIOUS"
 		);
 	}
 	jint RemoteControlClient::FLAG_KEY_MEDIA_RATING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"FLAG_KEY_MEDIA_RATING"
 		);
 	}
 	jint RemoteControlClient::FLAG_KEY_MEDIA_REWIND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"FLAG_KEY_MEDIA_REWIND"
 		);
 	}
 	jint RemoteControlClient::FLAG_KEY_MEDIA_STOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"FLAG_KEY_MEDIA_STOP"
 		);
 	}
 	jint RemoteControlClient::PLAYSTATE_BUFFERING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"PLAYSTATE_BUFFERING"
 		);
 	}
 	jint RemoteControlClient::PLAYSTATE_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"PLAYSTATE_ERROR"
 		);
 	}
 	jint RemoteControlClient::PLAYSTATE_FAST_FORWARDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"PLAYSTATE_FAST_FORWARDING"
 		);
 	}
 	jint RemoteControlClient::PLAYSTATE_PAUSED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"PLAYSTATE_PAUSED"
 		);
 	}
 	jint RemoteControlClient::PLAYSTATE_PLAYING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"PLAYSTATE_PLAYING"
 		);
 	}
 	jint RemoteControlClient::PLAYSTATE_REWINDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"PLAYSTATE_REWINDING"
 		);
 	}
 	jint RemoteControlClient::PLAYSTATE_SKIPPING_BACKWARDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"PLAYSTATE_SKIPPING_BACKWARDS"
 		);
 	}
 	jint RemoteControlClient::PLAYSTATE_SKIPPING_FORWARDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"PLAYSTATE_SKIPPING_FORWARDS"
 		);
 	}
 	jint RemoteControlClient::PLAYSTATE_STOPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient",
 			"PLAYSTATE_STOPPED"
 		);

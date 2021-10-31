@@ -8,7 +8,7 @@ namespace android::app::slice
 	// Fields
 	jstring SliceManager::CATEGORY_SLICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceManager",
 			"CATEGORY_SLICE",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::app::slice
 	}
 	jstring SliceManager::SLICE_METADATA_KEY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceManager",
 			"SLICE_METADATA_KEY",
 			"Ljava/lang/String;"

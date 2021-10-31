@@ -12,7 +12,7 @@ namespace android::telecom
 	// Fields
 	jlong Conference::CONNECT_TIME_NOT_SPECIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.telecom.Conference",
 			"CONNECT_TIME_NOT_SPECIFIED"
 		);

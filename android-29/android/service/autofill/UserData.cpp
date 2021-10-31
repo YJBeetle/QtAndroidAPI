@@ -7,7 +7,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass UserData::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.UserData",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -22,7 +22,7 @@ namespace android::service::autofill
 	// Methods
 	jint UserData::getMaxCategoryCount()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.service.autofill.UserData",
 			"getMaxCategoryCount",
 			"()I"
@@ -30,7 +30,7 @@ namespace android::service::autofill
 	}
 	jint UserData::getMaxFieldClassificationIdsSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.service.autofill.UserData",
 			"getMaxFieldClassificationIdsSize",
 			"()I"
@@ -38,7 +38,7 @@ namespace android::service::autofill
 	}
 	jint UserData::getMaxUserDataSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.service.autofill.UserData",
 			"getMaxUserDataSize",
 			"()I"
@@ -46,7 +46,7 @@ namespace android::service::autofill
 	}
 	jint UserData::getMaxValueLength()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.service.autofill.UserData",
 			"getMaxValueLength",
 			"()I"
@@ -54,7 +54,7 @@ namespace android::service::autofill
 	}
 	jint UserData::getMinValueLength()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.service.autofill.UserData",
 			"getMinValueLength",
 			"()I"

@@ -10,28 +10,28 @@ namespace android::widget
 	// Fields
 	jint AdapterView::INVALID_POSITION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.AdapterView",
 			"INVALID_POSITION"
 		);
 	}
 	jlong AdapterView::INVALID_ROW_ID()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.widget.AdapterView",
 			"INVALID_ROW_ID"
 		);
 	}
 	jint AdapterView::ITEM_VIEW_TYPE_HEADER_OR_FOOTER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.AdapterView",
 			"ITEM_VIEW_TYPE_HEADER_OR_FOOTER"
 		);
 	}
 	jint AdapterView::ITEM_VIEW_TYPE_IGNORE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.AdapterView",
 			"ITEM_VIEW_TYPE_IGNORE"
 		);

@@ -19,7 +19,7 @@ namespace java::util::concurrent::locks
 	// Methods
 	jboolean StampedLock::isLockStamp(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.concurrent.locks.StampedLock",
 			"isLockStamp",
 			"(J)Z",
@@ -28,7 +28,7 @@ namespace java::util::concurrent::locks
 	}
 	jboolean StampedLock::isOptimisticReadStamp(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.concurrent.locks.StampedLock",
 			"isOptimisticReadStamp",
 			"(J)Z",
@@ -37,7 +37,7 @@ namespace java::util::concurrent::locks
 	}
 	jboolean StampedLock::isReadLockStamp(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.concurrent.locks.StampedLock",
 			"isReadLockStamp",
 			"(J)Z",
@@ -46,7 +46,7 @@ namespace java::util::concurrent::locks
 	}
 	jboolean StampedLock::isWriteLockStamp(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.concurrent.locks.StampedLock",
 			"isWriteLockStamp",
 			"(J)Z",

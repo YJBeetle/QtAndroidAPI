@@ -6,7 +6,7 @@ namespace android::net
 	// Fields
 	jstring IpSecAlgorithm::AUTH_CRYPT_AES_GCM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_CRYPT_AES_GCM",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::net
 	}
 	jstring IpSecAlgorithm::AUTH_HMAC_MD5()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_HMAC_MD5",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::net
 	}
 	jstring IpSecAlgorithm::AUTH_HMAC_SHA1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_HMAC_SHA1",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::net
 	}
 	jstring IpSecAlgorithm::AUTH_HMAC_SHA256()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_HMAC_SHA256",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::net
 	}
 	jstring IpSecAlgorithm::AUTH_HMAC_SHA384()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_HMAC_SHA384",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::net
 	}
 	jstring IpSecAlgorithm::AUTH_HMAC_SHA512()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_HMAC_SHA512",
 			"Ljava/lang/String;"
@@ -54,7 +54,7 @@ namespace android::net
 	}
 	__JniBaseClass IpSecAlgorithm::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -62,7 +62,7 @@ namespace android::net
 	}
 	jstring IpSecAlgorithm::CRYPT_AES_CBC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"CRYPT_AES_CBC",
 			"Ljava/lang/String;"

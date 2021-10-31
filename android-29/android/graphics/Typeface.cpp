@@ -7,21 +7,21 @@ namespace android::graphics
 	// Fields
 	jint Typeface::BOLD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Typeface",
 			"BOLD"
 		);
 	}
 	jint Typeface::BOLD_ITALIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Typeface",
 			"BOLD_ITALIC"
 		);
 	}
 	android::graphics::Typeface Typeface::DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Typeface",
 			"DEFAULT",
 			"Landroid/graphics/Typeface;"
@@ -29,7 +29,7 @@ namespace android::graphics
 	}
 	android::graphics::Typeface Typeface::DEFAULT_BOLD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Typeface",
 			"DEFAULT_BOLD",
 			"Landroid/graphics/Typeface;"
@@ -37,14 +37,14 @@ namespace android::graphics
 	}
 	jint Typeface::ITALIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Typeface",
 			"ITALIC"
 		);
 	}
 	android::graphics::Typeface Typeface::MONOSPACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Typeface",
 			"MONOSPACE",
 			"Landroid/graphics/Typeface;"
@@ -52,14 +52,14 @@ namespace android::graphics
 	}
 	jint Typeface::NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.Typeface",
 			"NORMAL"
 		);
 	}
 	android::graphics::Typeface Typeface::SANS_SERIF()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Typeface",
 			"SANS_SERIF",
 			"Landroid/graphics/Typeface;"
@@ -67,7 +67,7 @@ namespace android::graphics
 	}
 	android::graphics::Typeface Typeface::SERIF()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Typeface",
 			"SERIF",
 			"Landroid/graphics/Typeface;"
@@ -82,7 +82,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Typeface Typeface::create(android::graphics::Typeface arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Typeface",
 			"create",
 			"(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;",
@@ -92,7 +92,7 @@ namespace android::graphics
 	}
 	android::graphics::Typeface Typeface::create(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Typeface",
 			"create",
 			"(Ljava/lang/String;I)Landroid/graphics/Typeface;",
@@ -102,7 +102,7 @@ namespace android::graphics
 	}
 	android::graphics::Typeface Typeface::create(android::graphics::Typeface arg0, jint arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Typeface",
 			"create",
 			"(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;",
@@ -113,7 +113,7 @@ namespace android::graphics
 	}
 	android::graphics::Typeface Typeface::createFromAsset(android::content::res::AssetManager arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Typeface",
 			"createFromAsset",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;",
@@ -123,7 +123,7 @@ namespace android::graphics
 	}
 	android::graphics::Typeface Typeface::createFromFile(java::io::File arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Typeface",
 			"createFromFile",
 			"(Ljava/io/File;)Landroid/graphics/Typeface;",
@@ -132,7 +132,7 @@ namespace android::graphics
 	}
 	android::graphics::Typeface Typeface::createFromFile(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Typeface",
 			"createFromFile",
 			"(Ljava/lang/String;)Landroid/graphics/Typeface;",
@@ -141,7 +141,7 @@ namespace android::graphics
 	}
 	android::graphics::Typeface Typeface::defaultFromStyle(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Typeface",
 			"defaultFromStyle",
 			"(I)Landroid/graphics/Typeface;",

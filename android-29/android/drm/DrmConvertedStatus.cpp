@@ -5,21 +5,21 @@ namespace android::drm
 	// Fields
 	jint DrmConvertedStatus::STATUS_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmConvertedStatus",
 			"STATUS_ERROR"
 		);
 	}
 	jint DrmConvertedStatus::STATUS_INPUTDATA_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmConvertedStatus",
 			"STATUS_INPUTDATA_ERROR"
 		);
 	}
 	jint DrmConvertedStatus::STATUS_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmConvertedStatus",
 			"STATUS_OK"
 		);

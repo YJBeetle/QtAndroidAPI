@@ -13,7 +13,7 @@ namespace android::net::wifi::hotspot2::omadm
 	// Methods
 	android::net::wifi::hotspot2::PasspointConfiguration PpsMoParser::parseMoText(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.wifi.hotspot2.omadm.PpsMoParser",
 			"parseMoText",
 			"(Ljava/lang/String;)Landroid/net/wifi/hotspot2/PasspointConfiguration;",

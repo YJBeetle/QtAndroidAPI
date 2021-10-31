@@ -21,7 +21,7 @@ namespace java::net
 	// Methods
 	java::net::ResponseCache ResponseCache::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.ResponseCache",
 			"getDefault",
 			"()Ljava/net/ResponseCache;"
@@ -29,7 +29,7 @@ namespace java::net
 	}
 	void ResponseCache::setDefault(java::net::ResponseCache arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.ResponseCache",
 			"setDefault",
 			"(Ljava/net/ResponseCache;)V",

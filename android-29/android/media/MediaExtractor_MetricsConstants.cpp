@@ -5,7 +5,7 @@ namespace android::media
 	// Fields
 	jstring MediaExtractor_MetricsConstants::FORMAT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaExtractor$MetricsConstants",
 			"FORMAT",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::media
 	}
 	jstring MediaExtractor_MetricsConstants::MIME_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaExtractor$MetricsConstants",
 			"MIME_TYPE",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::media
 	}
 	jstring MediaExtractor_MetricsConstants::TRACKS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaExtractor$MetricsConstants",
 			"TRACKS",
 			"Ljava/lang/String;"

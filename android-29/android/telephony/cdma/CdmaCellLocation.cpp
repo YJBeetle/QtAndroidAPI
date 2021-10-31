@@ -24,7 +24,7 @@ namespace android::telephony::cdma
 	// Methods
 	jdouble CdmaCellLocation::convertQuartSecToDecDegrees(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"android.telephony.cdma.CdmaCellLocation",
 			"convertQuartSecToDecDegrees",
 			"(I)D",

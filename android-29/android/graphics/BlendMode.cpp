@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::BlendMode BlendMode::CLEAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"CLEAR",
 			"Landroid/graphics/BlendMode;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::COLOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"COLOR",
 			"Landroid/graphics/BlendMode;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::COLOR_BURN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"COLOR_BURN",
 			"Landroid/graphics/BlendMode;"
@@ -29,7 +29,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::COLOR_DODGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"COLOR_DODGE",
 			"Landroid/graphics/BlendMode;"
@@ -37,7 +37,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::DARKEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"DARKEN",
 			"Landroid/graphics/BlendMode;"
@@ -45,7 +45,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::DIFFERENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"DIFFERENCE",
 			"Landroid/graphics/BlendMode;"
@@ -53,7 +53,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::DST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"DST",
 			"Landroid/graphics/BlendMode;"
@@ -61,7 +61,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::DST_ATOP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"DST_ATOP",
 			"Landroid/graphics/BlendMode;"
@@ -69,7 +69,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::DST_IN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"DST_IN",
 			"Landroid/graphics/BlendMode;"
@@ -77,7 +77,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::DST_OUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"DST_OUT",
 			"Landroid/graphics/BlendMode;"
@@ -85,7 +85,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::DST_OVER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"DST_OVER",
 			"Landroid/graphics/BlendMode;"
@@ -93,7 +93,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::EXCLUSION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"EXCLUSION",
 			"Landroid/graphics/BlendMode;"
@@ -101,7 +101,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::HARD_LIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"HARD_LIGHT",
 			"Landroid/graphics/BlendMode;"
@@ -109,7 +109,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::HUE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"HUE",
 			"Landroid/graphics/BlendMode;"
@@ -117,7 +117,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::LIGHTEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"LIGHTEN",
 			"Landroid/graphics/BlendMode;"
@@ -125,7 +125,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::LUMINOSITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"LUMINOSITY",
 			"Landroid/graphics/BlendMode;"
@@ -133,7 +133,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::MODULATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"MODULATE",
 			"Landroid/graphics/BlendMode;"
@@ -141,7 +141,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::MULTIPLY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"MULTIPLY",
 			"Landroid/graphics/BlendMode;"
@@ -149,7 +149,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::OVERLAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"OVERLAY",
 			"Landroid/graphics/BlendMode;"
@@ -157,7 +157,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::PLUS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"PLUS",
 			"Landroid/graphics/BlendMode;"
@@ -165,7 +165,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::SATURATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"SATURATION",
 			"Landroid/graphics/BlendMode;"
@@ -173,7 +173,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::SCREEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"SCREEN",
 			"Landroid/graphics/BlendMode;"
@@ -181,7 +181,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::SOFT_LIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"SOFT_LIGHT",
 			"Landroid/graphics/BlendMode;"
@@ -189,7 +189,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::SRC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"SRC",
 			"Landroid/graphics/BlendMode;"
@@ -197,7 +197,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::SRC_ATOP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"SRC_ATOP",
 			"Landroid/graphics/BlendMode;"
@@ -205,7 +205,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::SRC_IN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"SRC_IN",
 			"Landroid/graphics/BlendMode;"
@@ -213,7 +213,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::SRC_OUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"SRC_OUT",
 			"Landroid/graphics/BlendMode;"
@@ -221,7 +221,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::SRC_OVER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"SRC_OVER",
 			"Landroid/graphics/BlendMode;"
@@ -229,7 +229,7 @@ namespace android::graphics
 	}
 	android::graphics::BlendMode BlendMode::XOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlendMode",
 			"XOR",
 			"Landroid/graphics/BlendMode;"
@@ -244,7 +244,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::BlendMode BlendMode::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.BlendMode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/BlendMode;",
@@ -253,7 +253,7 @@ namespace android::graphics
 	}
 	jarray BlendMode::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.BlendMode",
 			"values",
 			"()[Landroid/graphics/BlendMode;"

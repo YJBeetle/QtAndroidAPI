@@ -8,14 +8,14 @@ namespace java::util
 	// Fields
 	jint TimeZone::LONG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.TimeZone",
 			"LONG"
 		);
 	}
 	jint TimeZone::SHORT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.TimeZone",
 			"SHORT"
 		);
@@ -34,7 +34,7 @@ namespace java::util
 	// Methods
 	jarray TimeZone::getAvailableIDs()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.TimeZone",
 			"getAvailableIDs",
 			"()[Ljava/lang/String;"
@@ -42,7 +42,7 @@ namespace java::util
 	}
 	jarray TimeZone::getAvailableIDs(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.TimeZone",
 			"getAvailableIDs",
 			"(I)[Ljava/lang/String;",
@@ -51,7 +51,7 @@ namespace java::util
 	}
 	java::util::TimeZone TimeZone::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.TimeZone",
 			"getDefault",
 			"()Ljava/util/TimeZone;"
@@ -59,7 +59,7 @@ namespace java::util
 	}
 	java::util::TimeZone TimeZone::getTimeZone(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.TimeZone",
 			"getTimeZone",
 			"(Ljava/lang/String;)Ljava/util/TimeZone;",
@@ -68,7 +68,7 @@ namespace java::util
 	}
 	java::util::TimeZone TimeZone::getTimeZone(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.TimeZone",
 			"getTimeZone",
 			"(Ljava/time/ZoneId;)Ljava/util/TimeZone;",
@@ -77,7 +77,7 @@ namespace java::util
 	}
 	void TimeZone::setDefault(java::util::TimeZone arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.TimeZone",
 			"setDefault",
 			"(Ljava/util/TimeZone;)V",

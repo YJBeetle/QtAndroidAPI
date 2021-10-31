@@ -14,7 +14,7 @@ namespace java::lang
 	// Methods
 	java::lang::Package Package::getPackage(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Package",
 			"getPackage",
 			"(Ljava/lang/String;)Ljava/lang/Package;",
@@ -23,7 +23,7 @@ namespace java::lang
 	}
 	jarray Package::getPackages()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Package",
 			"getPackages",
 			"()[Ljava/lang/Package;"

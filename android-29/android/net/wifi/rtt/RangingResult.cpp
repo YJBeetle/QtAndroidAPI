@@ -9,7 +9,7 @@ namespace android::net::wifi::rtt
 	// Fields
 	__JniBaseClass RangingResult::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.rtt.RangingResult",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -17,21 +17,21 @@ namespace android::net::wifi::rtt
 	}
 	jint RangingResult::STATUS_FAIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.RangingResult",
 			"STATUS_FAIL"
 		);
 	}
 	jint RangingResult::STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.RangingResult",
 			"STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC"
 		);
 	}
 	jint RangingResult::STATUS_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.rtt.RangingResult",
 			"STATUS_SUCCESS"
 		);

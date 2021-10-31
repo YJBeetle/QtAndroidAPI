@@ -14,7 +14,7 @@ namespace java::util::jar
 	// Fields
 	jstring JarFile::MANIFEST_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.jar.JarFile",
 			"MANIFEST_NAME",
 			"Ljava/lang/String;"
@@ -72,7 +72,7 @@ namespace java::util::jar
 	// Methods
 	__JniBaseClass JarFile::baseVersion()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.jar.JarFile",
 			"baseVersion",
 			"()Ljava/lang/Runtime$Version;"
@@ -80,7 +80,7 @@ namespace java::util::jar
 	}
 	__JniBaseClass JarFile::runtimeVersion()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.jar.JarFile",
 			"runtimeVersion",
 			"()Ljava/lang/Runtime$Version;"

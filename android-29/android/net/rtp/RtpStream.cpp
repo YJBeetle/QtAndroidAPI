@@ -6,21 +6,21 @@ namespace android::net::rtp
 	// Fields
 	jint RtpStream::MODE_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.rtp.RtpStream",
 			"MODE_NORMAL"
 		);
 	}
 	jint RtpStream::MODE_RECEIVE_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.rtp.RtpStream",
 			"MODE_RECEIVE_ONLY"
 		);
 	}
 	jint RtpStream::MODE_SEND_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.rtp.RtpStream",
 			"MODE_SEND_ONLY"
 		);

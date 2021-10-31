@@ -9,7 +9,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass DropBoxManager_Entry::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.DropBoxManager$Entry",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -12,7 +12,7 @@ namespace android::text
 	// Methods
 	android::text::AlteredCharSequence AlteredCharSequence::make(jstring arg0, jcharArray arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.AlteredCharSequence",
 			"make",
 			"(Ljava/lang/CharSequence;[CII)Landroid/text/AlteredCharSequence;",

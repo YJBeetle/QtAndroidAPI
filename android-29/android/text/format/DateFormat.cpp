@@ -22,7 +22,7 @@ namespace android::text::format
 	// Methods
 	jstring DateFormat::format(jstring arg0, java::util::Calendar arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"format",
 			"(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;",
@@ -32,7 +32,7 @@ namespace android::text::format
 	}
 	jstring DateFormat::format(jstring arg0, java::util::Date arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"format",
 			"(Ljava/lang/CharSequence;Ljava/util/Date;)Ljava/lang/CharSequence;",
@@ -42,7 +42,7 @@ namespace android::text::format
 	}
 	jstring DateFormat::format(jstring arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"format",
 			"(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;",
@@ -52,7 +52,7 @@ namespace android::text::format
 	}
 	jstring DateFormat::getBestDateTimePattern(java::util::Locale arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"getBestDateTimePattern",
 			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
@@ -62,7 +62,7 @@ namespace android::text::format
 	}
 	java::text::DateFormat DateFormat::getDateFormat(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"getDateFormat",
 			"(Landroid/content/Context;)Ljava/text/DateFormat;",
@@ -71,7 +71,7 @@ namespace android::text::format
 	}
 	jcharArray DateFormat::getDateFormatOrder(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"getDateFormatOrder",
 			"(Landroid/content/Context;)[C",
@@ -80,7 +80,7 @@ namespace android::text::format
 	}
 	java::text::DateFormat DateFormat::getLongDateFormat(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"getLongDateFormat",
 			"(Landroid/content/Context;)Ljava/text/DateFormat;",
@@ -89,7 +89,7 @@ namespace android::text::format
 	}
 	java::text::DateFormat DateFormat::getMediumDateFormat(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"getMediumDateFormat",
 			"(Landroid/content/Context;)Ljava/text/DateFormat;",
@@ -98,7 +98,7 @@ namespace android::text::format
 	}
 	java::text::DateFormat DateFormat::getTimeFormat(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"getTimeFormat",
 			"(Landroid/content/Context;)Ljava/text/DateFormat;",
@@ -107,7 +107,7 @@ namespace android::text::format
 	}
 	jboolean DateFormat::is24HourFormat(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.format.DateFormat",
 			"is24HourFormat",
 			"(Landroid/content/Context;)Z",

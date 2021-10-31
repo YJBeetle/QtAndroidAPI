@@ -5,21 +5,21 @@ namespace android::telecom
 	// Fields
 	jint Call_RttCall::RTT_MODE_FULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$RttCall",
 			"RTT_MODE_FULL"
 		);
 	}
 	jint Call_RttCall::RTT_MODE_HCO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$RttCall",
 			"RTT_MODE_HCO"
 		);
 	}
 	jint Call_RttCall::RTT_MODE_VCO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$RttCall",
 			"RTT_MODE_VCO"
 		);

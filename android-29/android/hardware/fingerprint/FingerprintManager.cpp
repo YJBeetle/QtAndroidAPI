@@ -9,119 +9,119 @@ namespace android::hardware::fingerprint
 	// Fields
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_GOOD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ACQUIRED_GOOD"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_IMAGER_DIRTY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ACQUIRED_IMAGER_DIRTY"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_INSUFFICIENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ACQUIRED_INSUFFICIENT"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_PARTIAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ACQUIRED_PARTIAL"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_TOO_FAST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ACQUIRED_TOO_FAST"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_TOO_SLOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ACQUIRED_TOO_SLOW"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_CANCELED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_CANCELED"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_HW_NOT_PRESENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_HW_NOT_PRESENT"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_HW_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_HW_UNAVAILABLE"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_LOCKOUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_LOCKOUT"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_LOCKOUT_PERMANENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_LOCKOUT_PERMANENT"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_NO_FINGERPRINTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_NO_FINGERPRINTS"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_NO_SPACE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_NO_SPACE"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_TIMEOUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_TIMEOUT"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_UNABLE_TO_PROCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_UNABLE_TO_PROCESS"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_USER_CANCELED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_USER_CANCELED"
 		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_VENDOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
 			"FINGERPRINT_ERROR_VENDOR"
 		);

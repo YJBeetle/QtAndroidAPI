@@ -11,7 +11,7 @@ namespace android::view::textservice
 	// Fields
 	__JniBaseClass SpellCheckerInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textservice.SpellCheckerInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

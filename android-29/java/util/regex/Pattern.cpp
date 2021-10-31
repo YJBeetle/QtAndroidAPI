@@ -9,63 +9,63 @@ namespace java::util::regex
 	// Fields
 	jint Pattern::CANON_EQ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.regex.Pattern",
 			"CANON_EQ"
 		);
 	}
 	jint Pattern::CASE_INSENSITIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.regex.Pattern",
 			"CASE_INSENSITIVE"
 		);
 	}
 	jint Pattern::COMMENTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.regex.Pattern",
 			"COMMENTS"
 		);
 	}
 	jint Pattern::DOTALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.regex.Pattern",
 			"DOTALL"
 		);
 	}
 	jint Pattern::LITERAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.regex.Pattern",
 			"LITERAL"
 		);
 	}
 	jint Pattern::MULTILINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.regex.Pattern",
 			"MULTILINE"
 		);
 	}
 	jint Pattern::UNICODE_CASE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.regex.Pattern",
 			"UNICODE_CASE"
 		);
 	}
 	jint Pattern::UNICODE_CHARACTER_CLASS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.regex.Pattern",
 			"UNICODE_CHARACTER_CLASS"
 		);
 	}
 	jint Pattern::UNIX_LINES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.regex.Pattern",
 			"UNIX_LINES"
 		);
@@ -79,7 +79,7 @@ namespace java::util::regex
 	// Methods
 	java::util::regex::Pattern Pattern::compile(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.regex.Pattern",
 			"compile",
 			"(Ljava/lang/String;)Ljava/util/regex/Pattern;",
@@ -88,7 +88,7 @@ namespace java::util::regex
 	}
 	java::util::regex::Pattern Pattern::compile(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.regex.Pattern",
 			"compile",
 			"(Ljava/lang/String;I)Ljava/util/regex/Pattern;",
@@ -98,7 +98,7 @@ namespace java::util::regex
 	}
 	jboolean Pattern::matches(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.util.regex.Pattern",
 			"matches",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)Z",
@@ -108,7 +108,7 @@ namespace java::util::regex
 	}
 	jstring Pattern::quote(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.regex.Pattern",
 			"quote",
 			"(Ljava/lang/String;)Ljava/lang/String;",

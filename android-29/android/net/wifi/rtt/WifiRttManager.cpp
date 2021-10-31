@@ -7,7 +7,7 @@ namespace android::net::wifi::rtt
 	// Fields
 	jstring WifiRttManager::ACTION_WIFI_RTT_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.rtt.WifiRttManager",
 			"ACTION_WIFI_RTT_STATE_CHANGED",
 			"Ljava/lang/String;"

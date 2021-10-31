@@ -6,28 +6,28 @@ namespace android::net::wifi::p2p::nsd
 	// Fields
 	jint WifiP2pServiceInfo::SERVICE_TYPE_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.nsd.WifiP2pServiceInfo",
 			"SERVICE_TYPE_ALL"
 		);
 	}
 	jint WifiP2pServiceInfo::SERVICE_TYPE_BONJOUR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.nsd.WifiP2pServiceInfo",
 			"SERVICE_TYPE_BONJOUR"
 		);
 	}
 	jint WifiP2pServiceInfo::SERVICE_TYPE_UPNP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.nsd.WifiP2pServiceInfo",
 			"SERVICE_TYPE_UPNP"
 		);
 	}
 	jint WifiP2pServiceInfo::SERVICE_TYPE_VENDOR_SPECIFIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.p2p.nsd.WifiP2pServiceInfo",
 			"SERVICE_TYPE_VENDOR_SPECIFIC"
 		);

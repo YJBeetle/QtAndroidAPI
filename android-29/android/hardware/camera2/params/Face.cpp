@@ -7,21 +7,21 @@ namespace android::hardware::camera2::params
 	// Fields
 	jint Face::ID_UNSUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.Face",
 			"ID_UNSUPPORTED"
 		);
 	}
 	jint Face::SCORE_MAX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.Face",
 			"SCORE_MAX"
 		);
 	}
 	jint Face::SCORE_MIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.Face",
 			"SCORE_MIN"
 		);

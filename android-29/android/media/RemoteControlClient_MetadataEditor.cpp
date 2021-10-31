@@ -8,7 +8,7 @@ namespace android::media
 	// Fields
 	jint RemoteControlClient_MetadataEditor::BITMAP_KEY_ARTWORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.RemoteControlClient$MetadataEditor",
 			"BITMAP_KEY_ARTWORK"
 		);

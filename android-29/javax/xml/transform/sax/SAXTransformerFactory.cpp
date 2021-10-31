@@ -5,7 +5,7 @@ namespace javax::xml::transform::sax
 	// Fields
 	jstring SAXTransformerFactory::FEATURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.xml.transform.sax.SAXTransformerFactory",
 			"FEATURE",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace javax::xml::transform::sax
 	}
 	jstring SAXTransformerFactory::FEATURE_XMLFILTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.xml.transform.sax.SAXTransformerFactory",
 			"FEATURE_XMLFILTER",
 			"Ljava/lang/String;"

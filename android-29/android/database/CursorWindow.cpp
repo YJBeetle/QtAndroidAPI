@@ -7,7 +7,7 @@ namespace android::database
 	// Fields
 	__JniBaseClass CursorWindow::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.database.CursorWindow",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -41,7 +41,7 @@ namespace android::database
 	// Methods
 	android::database::CursorWindow CursorWindow::newFromParcel(android::os::Parcel arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.database.CursorWindow",
 			"newFromParcel",
 			"(Landroid/os/Parcel;)Landroid/database/CursorWindow;",

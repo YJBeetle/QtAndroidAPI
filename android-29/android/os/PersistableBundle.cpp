@@ -6,7 +6,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass PersistableBundle::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.PersistableBundle",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,7 +14,7 @@ namespace android::os
 	}
 	android::os::PersistableBundle PersistableBundle::EMPTY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.PersistableBundle",
 			"EMPTY",
 			"Landroid/os/PersistableBundle;"

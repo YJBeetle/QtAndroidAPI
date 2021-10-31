@@ -6,21 +6,21 @@ namespace android::animation
 	// Fields
 	jint ValueAnimator::INFINITE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.animation.ValueAnimator",
 			"INFINITE"
 		);
 	}
 	jint ValueAnimator::RESTART()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.animation.ValueAnimator",
 			"RESTART"
 		);
 	}
 	jint ValueAnimator::REVERSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.animation.ValueAnimator",
 			"REVERSE"
 		);
@@ -39,7 +39,7 @@ namespace android::animation
 	// Methods
 	jboolean ValueAnimator::areAnimatorsEnabled()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.animation.ValueAnimator",
 			"areAnimatorsEnabled",
 			"()Z"
@@ -47,7 +47,7 @@ namespace android::animation
 	}
 	jlong ValueAnimator::getFrameDelay()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.animation.ValueAnimator",
 			"getFrameDelay",
 			"()J"
@@ -55,7 +55,7 @@ namespace android::animation
 	}
 	android::animation::ValueAnimator ValueAnimator::ofArgb(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
 			"ofArgb",
 			"([I)Landroid/animation/ValueAnimator;",
@@ -64,7 +64,7 @@ namespace android::animation
 	}
 	android::animation::ValueAnimator ValueAnimator::ofFloat(jfloatArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
 			"ofFloat",
 			"([F)Landroid/animation/ValueAnimator;",
@@ -73,7 +73,7 @@ namespace android::animation
 	}
 	android::animation::ValueAnimator ValueAnimator::ofInt(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
 			"ofInt",
 			"([I)Landroid/animation/ValueAnimator;",
@@ -82,7 +82,7 @@ namespace android::animation
 	}
 	android::animation::ValueAnimator ValueAnimator::ofObject(__JniBaseClass arg0, jobjectArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
 			"ofObject",
 			"(Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ValueAnimator;",
@@ -92,7 +92,7 @@ namespace android::animation
 	}
 	android::animation::ValueAnimator ValueAnimator::ofPropertyValuesHolder(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
 			"ofPropertyValuesHolder",
 			"([Landroid/animation/PropertyValuesHolder;)Landroid/animation/ValueAnimator;",
@@ -101,7 +101,7 @@ namespace android::animation
 	}
 	void ValueAnimator::setFrameDelay(jlong arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.animation.ValueAnimator",
 			"setFrameDelay",
 			"(J)V",

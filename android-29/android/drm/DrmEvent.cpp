@@ -6,7 +6,7 @@ namespace android::drm
 	// Fields
 	jstring DrmEvent::DRM_INFO_OBJECT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.drm.DrmEvent",
 			"DRM_INFO_OBJECT",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::drm
 	}
 	jstring DrmEvent::DRM_INFO_STATUS_OBJECT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.drm.DrmEvent",
 			"DRM_INFO_STATUS_OBJECT",
 			"Ljava/lang/String;"
@@ -22,14 +22,14 @@ namespace android::drm
 	}
 	jint DrmEvent::TYPE_ALL_RIGHTS_REMOVED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmEvent",
 			"TYPE_ALL_RIGHTS_REMOVED"
 		);
 	}
 	jint DrmEvent::TYPE_DRM_INFO_PROCESSED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmEvent",
 			"TYPE_DRM_INFO_PROCESSED"
 		);

@@ -6,7 +6,7 @@ namespace android::view::autofill
 	// Fields
 	__JniBaseClass AutofillId::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.autofill.AutofillId",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

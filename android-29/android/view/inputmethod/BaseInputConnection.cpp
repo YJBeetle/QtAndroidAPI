@@ -28,7 +28,7 @@ namespace android::view::inputmethod
 	// Methods
 	jint BaseInputConnection::getComposingSpanEnd(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.inputmethod.BaseInputConnection",
 			"getComposingSpanEnd",
 			"(Landroid/text/Spannable;)I",
@@ -37,7 +37,7 @@ namespace android::view::inputmethod
 	}
 	jint BaseInputConnection::getComposingSpanStart(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.inputmethod.BaseInputConnection",
 			"getComposingSpanStart",
 			"(Landroid/text/Spannable;)I",
@@ -46,7 +46,7 @@ namespace android::view::inputmethod
 	}
 	void BaseInputConnection::removeComposingSpans(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.view.inputmethod.BaseInputConnection",
 			"removeComposingSpans",
 			"(Landroid/text/Spannable;)V",
@@ -55,7 +55,7 @@ namespace android::view::inputmethod
 	}
 	void BaseInputConnection::setComposingSpans(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.view.inputmethod.BaseInputConnection",
 			"setComposingSpans",
 			"(Landroid/text/Spannable;)V",

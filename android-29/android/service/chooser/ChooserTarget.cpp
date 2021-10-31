@@ -9,7 +9,7 @@ namespace android::service::chooser
 	// Fields
 	__JniBaseClass ChooserTarget::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.chooser.ChooserTarget",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -8,7 +8,7 @@ namespace android::service::carrier
 	// Fields
 	jstring CarrierService::CARRIER_SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.carrier.CarrierService",
 			"CARRIER_SERVICE_INTERFACE",
 			"Ljava/lang/String;"

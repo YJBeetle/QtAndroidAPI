@@ -5,7 +5,7 @@ namespace java::nio::file
 	// Fields
 	java::nio::file::LinkOption LinkOption::NOFOLLOW_LINKS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.LinkOption",
 			"NOFOLLOW_LINKS",
 			"Ljava/nio/file/LinkOption;"
@@ -20,7 +20,7 @@ namespace java::nio::file
 	// Methods
 	java::nio::file::LinkOption LinkOption::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.LinkOption",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/LinkOption;",
@@ -29,7 +29,7 @@ namespace java::nio::file
 	}
 	jarray LinkOption::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.file.LinkOption",
 			"values",
 			"()[Ljava/nio/file/LinkOption;"

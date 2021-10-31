@@ -8,21 +8,21 @@ namespace android::bluetooth
 	// Fields
 	jint BluetoothSocket::TYPE_L2CAP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothSocket",
 			"TYPE_L2CAP"
 		);
 	}
 	jint BluetoothSocket::TYPE_RFCOMM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothSocket",
 			"TYPE_RFCOMM"
 		);
 	}
 	jint BluetoothSocket::TYPE_SCO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.BluetoothSocket",
 			"TYPE_SCO"
 		);

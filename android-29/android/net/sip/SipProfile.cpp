@@ -6,7 +6,7 @@ namespace android::net::sip
 	// Fields
 	__JniBaseClass SipProfile::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.sip.SipProfile",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

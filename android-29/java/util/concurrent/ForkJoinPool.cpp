@@ -11,7 +11,7 @@ namespace java::util::concurrent
 	// Fields
 	__JniBaseClass ForkJoinPool::defaultForkJoinWorkerThreadFactory()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.concurrent.ForkJoinPool",
 			"defaultForkJoinWorkerThreadFactory",
 			"Ljava/util/concurrent/ForkJoinPool$ForkJoinWorkerThreadFactory;"
@@ -61,7 +61,7 @@ namespace java::util::concurrent
 	// Methods
 	java::util::concurrent::ForkJoinPool ForkJoinPool::commonPool()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinPool",
 			"commonPool",
 			"()Ljava/util/concurrent/ForkJoinPool;"
@@ -69,7 +69,7 @@ namespace java::util::concurrent
 	}
 	jint ForkJoinPool::getCommonPoolParallelism()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.util.concurrent.ForkJoinPool",
 			"getCommonPoolParallelism",
 			"()I"
@@ -77,7 +77,7 @@ namespace java::util::concurrent
 	}
 	void ForkJoinPool::managedBlock(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.concurrent.ForkJoinPool",
 			"managedBlock",
 			"(Ljava/util/concurrent/ForkJoinPool$ManagedBlocker;)V",

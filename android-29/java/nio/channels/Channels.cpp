@@ -20,7 +20,7 @@ namespace java::nio::channels
 	// Methods
 	__JniBaseClass Channels::newChannel(java::io::InputStream arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newChannel",
 			"(Ljava/io/InputStream;)Ljava/nio/channels/ReadableByteChannel;",
@@ -29,7 +29,7 @@ namespace java::nio::channels
 	}
 	__JniBaseClass Channels::newChannel(java::io::OutputStream arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newChannel",
 			"(Ljava/io/OutputStream;)Ljava/nio/channels/WritableByteChannel;",
@@ -38,7 +38,7 @@ namespace java::nio::channels
 	}
 	java::io::InputStream Channels::newInputStream(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newInputStream",
 			"(Ljava/nio/channels/AsynchronousByteChannel;)Ljava/io/InputStream;",
@@ -47,7 +47,7 @@ namespace java::nio::channels
 	}
 	java::io::OutputStream Channels::newOutputStream(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newOutputStream",
 			"(Ljava/nio/channels/AsynchronousByteChannel;)Ljava/io/OutputStream;",
@@ -56,7 +56,7 @@ namespace java::nio::channels
 	}
 	java::io::Reader Channels::newReader(__JniBaseClass arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newReader",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)Ljava/io/Reader;",
@@ -66,7 +66,7 @@ namespace java::nio::channels
 	}
 	java::io::Reader Channels::newReader(__JniBaseClass arg0, java::nio::charset::Charset arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newReader",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/nio/charset/Charset;)Ljava/io/Reader;",
@@ -76,7 +76,7 @@ namespace java::nio::channels
 	}
 	java::io::Reader Channels::newReader(__JniBaseClass arg0, java::nio::charset::CharsetDecoder arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newReader",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/nio/charset/CharsetDecoder;I)Ljava/io/Reader;",
@@ -87,7 +87,7 @@ namespace java::nio::channels
 	}
 	java::io::Writer Channels::newWriter(__JniBaseClass arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newWriter",
 			"(Ljava/nio/channels/WritableByteChannel;Ljava/lang/String;)Ljava/io/Writer;",
@@ -97,7 +97,7 @@ namespace java::nio::channels
 	}
 	java::io::Writer Channels::newWriter(__JniBaseClass arg0, java::nio::charset::Charset arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newWriter",
 			"(Ljava/nio/channels/WritableByteChannel;Ljava/nio/charset/Charset;)Ljava/io/Writer;",
@@ -107,7 +107,7 @@ namespace java::nio::channels
 	}
 	java::io::Writer Channels::newWriter(__JniBaseClass arg0, java::nio::charset::CharsetEncoder arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Channels",
 			"newWriter",
 			"(Ljava/nio/channels/WritableByteChannel;Ljava/nio/charset/CharsetEncoder;I)Ljava/io/Writer;",

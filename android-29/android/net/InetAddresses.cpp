@@ -13,7 +13,7 @@ namespace android::net
 	// Methods
 	jboolean InetAddresses::isNumericAddress(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.net.InetAddresses",
 			"isNumericAddress",
 			"(Ljava/lang/String;)Z",
@@ -22,7 +22,7 @@ namespace android::net
 	}
 	java::net::InetAddress InetAddresses::parseNumericAddress(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.InetAddresses",
 			"parseNumericAddress",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",

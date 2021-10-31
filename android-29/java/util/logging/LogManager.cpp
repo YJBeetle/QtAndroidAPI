@@ -17,7 +17,7 @@ namespace java::util::logging
 	// Fields
 	jstring LogManager::LOGGING_MXBEAN_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.logging.LogManager",
 			"LOGGING_MXBEAN_NAME",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace java::util::logging
 	// Methods
 	java::util::logging::LogManager LogManager::getLogManager()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.logging.LogManager",
 			"getLogManager",
 			"()Ljava/util/logging/LogManager;"
@@ -40,7 +40,7 @@ namespace java::util::logging
 	}
 	__JniBaseClass LogManager::getLoggingMXBean()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.logging.LogManager",
 			"getLoggingMXBean",
 			"()Ljava/util/logging/LoggingMXBean;"

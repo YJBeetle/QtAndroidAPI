@@ -6,7 +6,7 @@ namespace android::telephony::emergency
 	// Fields
 	__JniBaseClass EmergencyNumber::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.emergency.EmergencyNumber",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,112 +14,112 @@ namespace android::telephony::emergency
 	}
 	jint EmergencyNumber::EMERGENCY_CALL_ROUTING_EMERGENCY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_CALL_ROUTING_EMERGENCY"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_CALL_ROUTING_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_CALL_ROUTING_NORMAL"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_CALL_ROUTING_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_CALL_ROUTING_UNKNOWN"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_NUMBER_SOURCE_DATABASE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_NUMBER_SOURCE_DATABASE"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_NUMBER_SOURCE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_NUMBER_SOURCE_DEFAULT"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_NUMBER_SOURCE_MODEM_CONFIG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_NUMBER_SOURCE_MODEM_CONFIG"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_NUMBER_SOURCE_NETWORK_SIGNALING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_NUMBER_SOURCE_NETWORK_SIGNALING"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_NUMBER_SOURCE_SIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_NUMBER_SOURCE_SIM"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_AIEC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_SERVICE_CATEGORY_AIEC"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_AMBULANCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_SERVICE_CATEGORY_AMBULANCE"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_FIRE_BRIGADE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_SERVICE_CATEGORY_FIRE_BRIGADE"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_MARINE_GUARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_SERVICE_CATEGORY_MARINE_GUARD"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_MIEC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_SERVICE_CATEGORY_MIEC"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_MOUNTAIN_RESCUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_SERVICE_CATEGORY_MOUNTAIN_RESCUE"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_POLICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_SERVICE_CATEGORY_POLICE"
 		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_UNSPECIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
 			"EMERGENCY_SERVICE_CATEGORY_UNSPECIFIED"
 		);

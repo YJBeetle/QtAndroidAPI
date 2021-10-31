@@ -39,7 +39,7 @@ namespace android::icu::text
 	// Methods
 	jstring MessageFormat::autoQuoteApostrophe(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MessageFormat",
 			"autoQuoteApostrophe",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -48,7 +48,7 @@ namespace android::icu::text
 	}
 	jstring MessageFormat::format(jstring arg0, jobjectArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MessageFormat",
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
@@ -58,7 +58,7 @@ namespace android::icu::text
 	}
 	jstring MessageFormat::format(jstring arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MessageFormat",
 			"format",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;",

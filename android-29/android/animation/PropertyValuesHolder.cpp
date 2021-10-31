@@ -15,7 +15,7 @@ namespace android::animation
 	// Methods
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofFloat(android::util::Property arg0, jfloatArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofFloat",
 			"(Landroid/util/Property;[F)Landroid/animation/PropertyValuesHolder;",
@@ -25,7 +25,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofFloat(jstring arg0, jfloatArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofFloat",
 			"(Ljava/lang/String;[F)Landroid/animation/PropertyValuesHolder;",
@@ -35,7 +35,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofInt(android::util::Property arg0, jintArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofInt",
 			"(Landroid/util/Property;[I)Landroid/animation/PropertyValuesHolder;",
@@ -45,7 +45,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofInt(jstring arg0, jintArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofInt",
 			"(Ljava/lang/String;[I)Landroid/animation/PropertyValuesHolder;",
@@ -55,7 +55,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofKeyframe(android::util::Property arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofKeyframe",
 			"(Landroid/util/Property;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
@@ -65,7 +65,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofKeyframe(jstring arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofKeyframe",
 			"(Ljava/lang/String;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
@@ -75,7 +75,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiFloat",
 			"(Ljava/lang/String;[[F)Landroid/animation/PropertyValuesHolder;",
@@ -85,7 +85,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, android::graphics::Path arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiFloat",
 			"(Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
@@ -95,7 +95,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jarray arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiFloat",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
@@ -107,7 +107,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jobjectArray arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiFloat",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
@@ -119,7 +119,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiInt",
 			"(Ljava/lang/String;[[I)Landroid/animation/PropertyValuesHolder;",
@@ -129,7 +129,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, android::graphics::Path arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiInt",
 			"(Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
@@ -139,7 +139,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jarray arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiInt",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
@@ -151,7 +151,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jobjectArray arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofMultiInt",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
@@ -163,7 +163,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, android::animation::TypeConverter arg1, android::graphics::Path arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
 			"(Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
@@ -174,7 +174,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, __JniBaseClass arg1, jobjectArray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
 			"(Landroid/util/Property;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
@@ -185,7 +185,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(jstring arg0, android::animation::TypeConverter arg1, android::graphics::Path arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
@@ -196,7 +196,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(jstring arg0, __JniBaseClass arg1, jobjectArray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
 			"(Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
@@ -207,7 +207,7 @@ namespace android::animation
 	}
 	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jobjectArray arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
 			"(Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",

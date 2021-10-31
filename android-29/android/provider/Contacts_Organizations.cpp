@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring Contacts_Organizations::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Organizations",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	android::net::Uri Contacts_Organizations::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Organizations",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	jstring Contacts_Organizations::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Organizations",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	// Methods
 	jstring Contacts_Organizations::getDisplayLabel(android::content::Context arg0, jint arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.Contacts$Organizations",
 			"getDisplayLabel",
 			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",

@@ -5,7 +5,7 @@ namespace android::media
 	// Fields
 	jstring AudioRecord_MetricsConstants::CHANNELS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioRecord$MetricsConstants",
 			"CHANNELS",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::media
 	}
 	jstring AudioRecord_MetricsConstants::ENCODING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioRecord$MetricsConstants",
 			"ENCODING",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::media
 	}
 	jstring AudioRecord_MetricsConstants::LATENCY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioRecord$MetricsConstants",
 			"LATENCY",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::media
 	}
 	jstring AudioRecord_MetricsConstants::SAMPLERATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioRecord$MetricsConstants",
 			"SAMPLERATE",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::media
 	}
 	jstring AudioRecord_MetricsConstants::SOURCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioRecord$MetricsConstants",
 			"SOURCE",
 			"Ljava/lang/String;"

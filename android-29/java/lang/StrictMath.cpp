@@ -5,14 +5,14 @@ namespace java::lang
 	// Fields
 	jdouble StrictMath::E()
 	{
-		return QAndroidJniObject::getStaticField<jdouble>(
+		return getStaticField<jdouble>(
 			"java.lang.StrictMath",
 			"E"
 		);
 	}
 	jdouble StrictMath::PI()
 	{
-		return QAndroidJniObject::getStaticField<jdouble>(
+		return getStaticField<jdouble>(
 			"java.lang.StrictMath",
 			"PI"
 		);
@@ -26,7 +26,7 @@ namespace java::lang
 	// Methods
 	jdouble StrictMath::IEEEremainder(jdouble arg0, jdouble arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"IEEEremainder",
 			"(DD)D",
@@ -36,7 +36,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::abs(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"abs",
 			"(D)D",
@@ -45,7 +45,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::abs(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"abs",
 			"(F)F",
@@ -54,7 +54,7 @@ namespace java::lang
 	}
 	jint StrictMath::abs(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"abs",
 			"(I)I",
@@ -63,7 +63,7 @@ namespace java::lang
 	}
 	jlong StrictMath::abs(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"abs",
 			"(J)J",
@@ -72,7 +72,7 @@ namespace java::lang
 	}
 	jint StrictMath::absExact(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"absExact",
 			"(I)I",
@@ -81,7 +81,7 @@ namespace java::lang
 	}
 	jlong StrictMath::absExact(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"absExact",
 			"(J)J",
@@ -90,7 +90,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::acos(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"acos",
 			"(D)D",
@@ -99,7 +99,7 @@ namespace java::lang
 	}
 	jint StrictMath::addExact(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"addExact",
 			"(II)I",
@@ -109,7 +109,7 @@ namespace java::lang
 	}
 	jlong StrictMath::addExact(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"addExact",
 			"(JJ)J",
@@ -119,7 +119,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::asin(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"asin",
 			"(D)D",
@@ -128,7 +128,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::atan(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"atan",
 			"(D)D",
@@ -137,7 +137,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::atan2(jdouble arg0, jdouble arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"atan2",
 			"(DD)D",
@@ -147,7 +147,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::cbrt(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"cbrt",
 			"(D)D",
@@ -156,7 +156,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::ceil(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"ceil",
 			"(D)D",
@@ -165,7 +165,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::copySign(jdouble arg0, jdouble arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"copySign",
 			"(DD)D",
@@ -175,7 +175,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::copySign(jfloat arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"copySign",
 			"(FF)F",
@@ -185,7 +185,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::cos(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"cos",
 			"(D)D",
@@ -194,7 +194,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::cosh(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"cosh",
 			"(D)D",
@@ -203,7 +203,7 @@ namespace java::lang
 	}
 	jint StrictMath::decrementExact(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"decrementExact",
 			"(I)I",
@@ -212,7 +212,7 @@ namespace java::lang
 	}
 	jlong StrictMath::decrementExact(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"decrementExact",
 			"(J)J",
@@ -221,7 +221,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::exp(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"exp",
 			"(D)D",
@@ -230,7 +230,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::expm1(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"expm1",
 			"(D)D",
@@ -239,7 +239,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::floor(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"floor",
 			"(D)D",
@@ -248,7 +248,7 @@ namespace java::lang
 	}
 	jint StrictMath::floorDiv(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"floorDiv",
 			"(II)I",
@@ -258,7 +258,7 @@ namespace java::lang
 	}
 	jlong StrictMath::floorDiv(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"floorDiv",
 			"(JI)J",
@@ -268,7 +268,7 @@ namespace java::lang
 	}
 	jlong StrictMath::floorDiv(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"floorDiv",
 			"(JJ)J",
@@ -278,7 +278,7 @@ namespace java::lang
 	}
 	jint StrictMath::floorMod(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"floorMod",
 			"(II)I",
@@ -288,7 +288,7 @@ namespace java::lang
 	}
 	jint StrictMath::floorMod(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"floorMod",
 			"(JI)I",
@@ -298,7 +298,7 @@ namespace java::lang
 	}
 	jlong StrictMath::floorMod(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"floorMod",
 			"(JJ)J",
@@ -308,7 +308,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::fma(jdouble arg0, jdouble arg1, jdouble arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"fma",
 			"(DDD)D",
@@ -319,7 +319,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::fma(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"fma",
 			"(FFF)F",
@@ -330,7 +330,7 @@ namespace java::lang
 	}
 	jint StrictMath::getExponent(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"getExponent",
 			"(D)I",
@@ -339,7 +339,7 @@ namespace java::lang
 	}
 	jint StrictMath::getExponent(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"getExponent",
 			"(F)I",
@@ -348,7 +348,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::hypot(jdouble arg0, jdouble arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"hypot",
 			"(DD)D",
@@ -358,7 +358,7 @@ namespace java::lang
 	}
 	jint StrictMath::incrementExact(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"incrementExact",
 			"(I)I",
@@ -367,7 +367,7 @@ namespace java::lang
 	}
 	jlong StrictMath::incrementExact(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"incrementExact",
 			"(J)J",
@@ -376,7 +376,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::log(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"log",
 			"(D)D",
@@ -385,7 +385,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::log10(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"log10",
 			"(D)D",
@@ -394,7 +394,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::log1p(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"log1p",
 			"(D)D",
@@ -403,7 +403,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::max(jdouble arg0, jdouble arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"max",
 			"(DD)D",
@@ -413,7 +413,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::max(jfloat arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"max",
 			"(FF)F",
@@ -423,7 +423,7 @@ namespace java::lang
 	}
 	jint StrictMath::max(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"max",
 			"(II)I",
@@ -433,7 +433,7 @@ namespace java::lang
 	}
 	jlong StrictMath::max(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"max",
 			"(JJ)J",
@@ -443,7 +443,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::min(jdouble arg0, jdouble arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"min",
 			"(DD)D",
@@ -453,7 +453,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::min(jfloat arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"min",
 			"(FF)F",
@@ -463,7 +463,7 @@ namespace java::lang
 	}
 	jint StrictMath::min(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"min",
 			"(II)I",
@@ -473,7 +473,7 @@ namespace java::lang
 	}
 	jlong StrictMath::min(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"min",
 			"(JJ)J",
@@ -483,7 +483,7 @@ namespace java::lang
 	}
 	jint StrictMath::multiplyExact(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"multiplyExact",
 			"(II)I",
@@ -493,7 +493,7 @@ namespace java::lang
 	}
 	jlong StrictMath::multiplyExact(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"multiplyExact",
 			"(JI)J",
@@ -503,7 +503,7 @@ namespace java::lang
 	}
 	jlong StrictMath::multiplyExact(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"multiplyExact",
 			"(JJ)J",
@@ -513,7 +513,7 @@ namespace java::lang
 	}
 	jlong StrictMath::multiplyFull(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"multiplyFull",
 			"(II)J",
@@ -523,7 +523,7 @@ namespace java::lang
 	}
 	jlong StrictMath::multiplyHigh(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"multiplyHigh",
 			"(JJ)J",
@@ -533,7 +533,7 @@ namespace java::lang
 	}
 	jint StrictMath::negateExact(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"negateExact",
 			"(I)I",
@@ -542,7 +542,7 @@ namespace java::lang
 	}
 	jlong StrictMath::negateExact(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"negateExact",
 			"(J)J",
@@ -551,7 +551,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::nextAfter(jdouble arg0, jdouble arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"nextAfter",
 			"(DD)D",
@@ -561,7 +561,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::nextAfter(jfloat arg0, jdouble arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"nextAfter",
 			"(FD)F",
@@ -571,7 +571,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::nextDown(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"nextDown",
 			"(D)D",
@@ -580,7 +580,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::nextDown(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"nextDown",
 			"(F)F",
@@ -589,7 +589,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::nextUp(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"nextUp",
 			"(D)D",
@@ -598,7 +598,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::nextUp(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"nextUp",
 			"(F)F",
@@ -607,7 +607,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::pow(jdouble arg0, jdouble arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"pow",
 			"(DD)D",
@@ -617,7 +617,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::random()
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"random",
 			"()D"
@@ -625,7 +625,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::rint(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"rint",
 			"(D)D",
@@ -634,7 +634,7 @@ namespace java::lang
 	}
 	jint StrictMath::round(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"round",
 			"(F)I",
@@ -643,7 +643,7 @@ namespace java::lang
 	}
 	jlong StrictMath::round(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"round",
 			"(D)J",
@@ -652,7 +652,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::scalb(jdouble arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"scalb",
 			"(DI)D",
@@ -662,7 +662,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::scalb(jfloat arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"scalb",
 			"(FI)F",
@@ -672,7 +672,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::signum(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"signum",
 			"(D)D",
@@ -681,7 +681,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::signum(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"signum",
 			"(F)F",
@@ -690,7 +690,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::sin(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"sin",
 			"(D)D",
@@ -699,7 +699,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::sinh(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"sinh",
 			"(D)D",
@@ -708,7 +708,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::sqrt(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"sqrt",
 			"(D)D",
@@ -717,7 +717,7 @@ namespace java::lang
 	}
 	jint StrictMath::subtractExact(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"subtractExact",
 			"(II)I",
@@ -727,7 +727,7 @@ namespace java::lang
 	}
 	jlong StrictMath::subtractExact(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.StrictMath",
 			"subtractExact",
 			"(JJ)J",
@@ -737,7 +737,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::tan(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"tan",
 			"(D)D",
@@ -746,7 +746,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::tanh(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"tanh",
 			"(D)D",
@@ -755,7 +755,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::toDegrees(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"toDegrees",
 			"(D)D",
@@ -764,7 +764,7 @@ namespace java::lang
 	}
 	jint StrictMath::toIntExact(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.StrictMath",
 			"toIntExact",
 			"(J)I",
@@ -773,7 +773,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::toRadians(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"toRadians",
 			"(D)D",
@@ -782,7 +782,7 @@ namespace java::lang
 	}
 	jdouble StrictMath::ulp(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
+		return callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"ulp",
 			"(D)D",
@@ -791,7 +791,7 @@ namespace java::lang
 	}
 	jfloat StrictMath::ulp(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"java.lang.StrictMath",
 			"ulp",
 			"(F)F",

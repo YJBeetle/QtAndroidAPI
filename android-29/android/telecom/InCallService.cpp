@@ -10,7 +10,7 @@ namespace android::telecom
 	// Fields
 	jstring InCallService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.InCallService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

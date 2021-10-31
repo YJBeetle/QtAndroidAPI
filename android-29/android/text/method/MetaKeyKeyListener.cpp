@@ -7,42 +7,42 @@ namespace android::text::method
 	// Fields
 	jint MetaKeyKeyListener::META_ALT_LOCKED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"META_ALT_LOCKED"
 		);
 	}
 	jint MetaKeyKeyListener::META_ALT_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"META_ALT_ON"
 		);
 	}
 	jint MetaKeyKeyListener::META_CAP_LOCKED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"META_CAP_LOCKED"
 		);
 	}
 	jint MetaKeyKeyListener::META_SHIFT_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"META_SHIFT_ON"
 		);
 	}
 	jint MetaKeyKeyListener::META_SYM_LOCKED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"META_SYM_LOCKED"
 		);
 	}
 	jint MetaKeyKeyListener::META_SYM_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"META_SYM_ON"
 		);
@@ -61,7 +61,7 @@ namespace android::text::method
 	// Methods
 	jlong MetaKeyKeyListener::adjustMetaAfterKeypress(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.text.method.MetaKeyKeyListener",
 			"adjustMetaAfterKeypress",
 			"(J)J",
@@ -70,7 +70,7 @@ namespace android::text::method
 	}
 	void MetaKeyKeyListener::adjustMetaAfterKeypress(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.method.MetaKeyKeyListener",
 			"adjustMetaAfterKeypress",
 			"(Landroid/text/Spannable;)V",
@@ -79,7 +79,7 @@ namespace android::text::method
 	}
 	void MetaKeyKeyListener::clearMetaKeyState(__JniBaseClass arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.method.MetaKeyKeyListener",
 			"clearMetaKeyState",
 			"(Landroid/text/Editable;I)V",
@@ -89,7 +89,7 @@ namespace android::text::method
 	}
 	jint MetaKeyKeyListener::getMetaState(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"getMetaState",
 			"(Ljava/lang/CharSequence;)I",
@@ -98,7 +98,7 @@ namespace android::text::method
 	}
 	jint MetaKeyKeyListener::getMetaState(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"getMetaState",
 			"(J)I",
@@ -107,7 +107,7 @@ namespace android::text::method
 	}
 	jint MetaKeyKeyListener::getMetaState(jstring arg0, android::view::KeyEvent arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"getMetaState",
 			"(Ljava/lang/CharSequence;Landroid/view/KeyEvent;)I",
@@ -117,7 +117,7 @@ namespace android::text::method
 	}
 	jint MetaKeyKeyListener::getMetaState(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"getMetaState",
 			"(Ljava/lang/CharSequence;I)I",
@@ -127,7 +127,7 @@ namespace android::text::method
 	}
 	jint MetaKeyKeyListener::getMetaState(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"getMetaState",
 			"(JI)I",
@@ -137,7 +137,7 @@ namespace android::text::method
 	}
 	jint MetaKeyKeyListener::getMetaState(jstring arg0, jint arg1, android::view::KeyEvent arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.method.MetaKeyKeyListener",
 			"getMetaState",
 			"(Ljava/lang/CharSequence;ILandroid/view/KeyEvent;)I",
@@ -148,7 +148,7 @@ namespace android::text::method
 	}
 	jlong MetaKeyKeyListener::handleKeyDown(jlong arg0, jint arg1, android::view::KeyEvent arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.text.method.MetaKeyKeyListener",
 			"handleKeyDown",
 			"(JILandroid/view/KeyEvent;)J",
@@ -159,7 +159,7 @@ namespace android::text::method
 	}
 	jlong MetaKeyKeyListener::handleKeyUp(jlong arg0, jint arg1, android::view::KeyEvent arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.text.method.MetaKeyKeyListener",
 			"handleKeyUp",
 			"(JILandroid/view/KeyEvent;)J",
@@ -170,7 +170,7 @@ namespace android::text::method
 	}
 	jboolean MetaKeyKeyListener::isMetaTracker(jstring arg0, jobject arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.method.MetaKeyKeyListener",
 			"isMetaTracker",
 			"(Ljava/lang/CharSequence;Ljava/lang/Object;)Z",
@@ -180,7 +180,7 @@ namespace android::text::method
 	}
 	jboolean MetaKeyKeyListener::isSelectingMetaTracker(jstring arg0, jobject arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.method.MetaKeyKeyListener",
 			"isSelectingMetaTracker",
 			"(Ljava/lang/CharSequence;Ljava/lang/Object;)Z",
@@ -190,7 +190,7 @@ namespace android::text::method
 	}
 	jlong MetaKeyKeyListener::resetLockedMeta(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.text.method.MetaKeyKeyListener",
 			"resetLockedMeta",
 			"(J)J",
@@ -199,7 +199,7 @@ namespace android::text::method
 	}
 	void MetaKeyKeyListener::resetMetaState(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.method.MetaKeyKeyListener",
 			"resetMetaState",
 			"(Landroid/text/Spannable;)V",

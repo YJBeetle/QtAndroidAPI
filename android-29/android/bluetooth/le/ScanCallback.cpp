@@ -6,28 +6,28 @@ namespace android::bluetooth::le
 	// Fields
 	jint ScanCallback::SCAN_FAILED_ALREADY_STARTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanCallback",
 			"SCAN_FAILED_ALREADY_STARTED"
 		);
 	}
 	jint ScanCallback::SCAN_FAILED_APPLICATION_REGISTRATION_FAILED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanCallback",
 			"SCAN_FAILED_APPLICATION_REGISTRATION_FAILED"
 		);
 	}
 	jint ScanCallback::SCAN_FAILED_FEATURE_UNSUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanCallback",
 			"SCAN_FAILED_FEATURE_UNSUPPORTED"
 		);
 	}
 	jint ScanCallback::SCAN_FAILED_INTERNAL_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanCallback",
 			"SCAN_FAILED_INTERNAL_ERROR"
 		);

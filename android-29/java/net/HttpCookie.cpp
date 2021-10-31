@@ -20,7 +20,7 @@ namespace java::net
 	// Methods
 	jboolean HttpCookie::domainMatches(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.net.HttpCookie",
 			"domainMatches",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
@@ -30,7 +30,7 @@ namespace java::net
 	}
 	__JniBaseClass HttpCookie::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.HttpCookie",
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/List;",

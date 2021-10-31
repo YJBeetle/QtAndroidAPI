@@ -16,7 +16,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::Normalizer2 Normalizer2::getInstance(java::io::InputStream arg0, jstring arg1, android::icu::text::Normalizer2_Mode arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
 			"getInstance",
 			"(Ljava/io/InputStream;Ljava/lang/String;Landroid/icu/text/Normalizer2$Mode;)Landroid/icu/text/Normalizer2;",
@@ -27,7 +27,7 @@ namespace android::icu::text
 	}
 	android::icu::text::Normalizer2 Normalizer2::getNFCInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
 			"getNFCInstance",
 			"()Landroid/icu/text/Normalizer2;"
@@ -35,7 +35,7 @@ namespace android::icu::text
 	}
 	android::icu::text::Normalizer2 Normalizer2::getNFDInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
 			"getNFDInstance",
 			"()Landroid/icu/text/Normalizer2;"
@@ -43,7 +43,7 @@ namespace android::icu::text
 	}
 	android::icu::text::Normalizer2 Normalizer2::getNFKCCasefoldInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
 			"getNFKCCasefoldInstance",
 			"()Landroid/icu/text/Normalizer2;"
@@ -51,7 +51,7 @@ namespace android::icu::text
 	}
 	android::icu::text::Normalizer2 Normalizer2::getNFKCInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
 			"getNFKCInstance",
 			"()Landroid/icu/text/Normalizer2;"
@@ -59,7 +59,7 @@ namespace android::icu::text
 	}
 	android::icu::text::Normalizer2 Normalizer2::getNFKDInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
 			"getNFKDInstance",
 			"()Landroid/icu/text/Normalizer2;"

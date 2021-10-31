@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring MediaStore_Audio_Genres::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Genres::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Genres::ENTRY_CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres",
 			"ENTRY_CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Audio_Genres::EXTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres",
 			"EXTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Audio_Genres::INTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres",
 			"INTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -58,7 +58,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri MediaStore_Audio_Genres::getContentUri(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Genres",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
@@ -67,7 +67,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Audio_Genres::getContentUriForAudioId(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Genres",
 			"getContentUriForAudioId",
 			"(Ljava/lang/String;I)Landroid/net/Uri;",

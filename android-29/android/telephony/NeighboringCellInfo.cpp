@@ -6,7 +6,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass NeighboringCellInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.NeighboringCellInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,14 +14,14 @@ namespace android::telephony
 	}
 	jint NeighboringCellInfo::UNKNOWN_CID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.NeighboringCellInfo",
 			"UNKNOWN_CID"
 		);
 	}
 	jint NeighboringCellInfo::UNKNOWN_RSSI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.NeighboringCellInfo",
 			"UNKNOWN_RSSI"
 		);

@@ -6,7 +6,7 @@ namespace android::app::usage
 	// Fields
 	__JniBaseClass StorageStats::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.usage.StorageStats",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

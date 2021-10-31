@@ -19,91 +19,91 @@ namespace android::media
 	// Fields
 	jint MediaCodec::BUFFER_FLAG_CODEC_CONFIG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"BUFFER_FLAG_CODEC_CONFIG"
 		);
 	}
 	jint MediaCodec::BUFFER_FLAG_END_OF_STREAM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"BUFFER_FLAG_END_OF_STREAM"
 		);
 	}
 	jint MediaCodec::BUFFER_FLAG_KEY_FRAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"BUFFER_FLAG_KEY_FRAME"
 		);
 	}
 	jint MediaCodec::BUFFER_FLAG_PARTIAL_FRAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"BUFFER_FLAG_PARTIAL_FRAME"
 		);
 	}
 	jint MediaCodec::BUFFER_FLAG_SYNC_FRAME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"BUFFER_FLAG_SYNC_FRAME"
 		);
 	}
 	jint MediaCodec::CONFIGURE_FLAG_ENCODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"CONFIGURE_FLAG_ENCODE"
 		);
 	}
 	jint MediaCodec::CRYPTO_MODE_AES_CBC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"CRYPTO_MODE_AES_CBC"
 		);
 	}
 	jint MediaCodec::CRYPTO_MODE_AES_CTR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"CRYPTO_MODE_AES_CTR"
 		);
 	}
 	jint MediaCodec::CRYPTO_MODE_UNENCRYPTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"CRYPTO_MODE_UNENCRYPTED"
 		);
 	}
 	jint MediaCodec::INFO_OUTPUT_BUFFERS_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"INFO_OUTPUT_BUFFERS_CHANGED"
 		);
 	}
 	jint MediaCodec::INFO_OUTPUT_FORMAT_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"INFO_OUTPUT_FORMAT_CHANGED"
 		);
 	}
 	jint MediaCodec::INFO_TRY_AGAIN_LATER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"INFO_TRY_AGAIN_LATER"
 		);
 	}
 	jstring MediaCodec::PARAMETER_KEY_HDR10_PLUS_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_HDR10_PLUS_INFO",
 			"Ljava/lang/String;"
@@ -111,7 +111,7 @@ namespace android::media
 	}
 	jstring MediaCodec::PARAMETER_KEY_OFFSET_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_OFFSET_TIME",
 			"Ljava/lang/String;"
@@ -119,7 +119,7 @@ namespace android::media
 	}
 	jstring MediaCodec::PARAMETER_KEY_REQUEST_SYNC_FRAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_REQUEST_SYNC_FRAME",
 			"Ljava/lang/String;"
@@ -127,7 +127,7 @@ namespace android::media
 	}
 	jstring MediaCodec::PARAMETER_KEY_SUSPEND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_SUSPEND",
 			"Ljava/lang/String;"
@@ -135,7 +135,7 @@ namespace android::media
 	}
 	jstring MediaCodec::PARAMETER_KEY_SUSPEND_TIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_SUSPEND_TIME",
 			"Ljava/lang/String;"
@@ -143,7 +143,7 @@ namespace android::media
 	}
 	jstring MediaCodec::PARAMETER_KEY_VIDEO_BITRATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_VIDEO_BITRATE",
 			"Ljava/lang/String;"
@@ -151,14 +151,14 @@ namespace android::media
 	}
 	jint MediaCodec::VIDEO_SCALING_MODE_SCALE_TO_FIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"VIDEO_SCALING_MODE_SCALE_TO_FIT"
 		);
 	}
 	jint MediaCodec::VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaCodec",
 			"VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING"
 		);
@@ -172,7 +172,7 @@ namespace android::media
 	// Methods
 	android::media::MediaCodec MediaCodec::createByCodecName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaCodec",
 			"createByCodecName",
 			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
@@ -181,7 +181,7 @@ namespace android::media
 	}
 	android::media::MediaCodec MediaCodec::createDecoderByType(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaCodec",
 			"createDecoderByType",
 			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
@@ -190,7 +190,7 @@ namespace android::media
 	}
 	android::media::MediaCodec MediaCodec::createEncoderByType(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaCodec",
 			"createEncoderByType",
 			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
@@ -199,7 +199,7 @@ namespace android::media
 	}
 	android::view::Surface MediaCodec::createPersistentInputSurface()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaCodec",
 			"createPersistentInputSurface",
 			"()Landroid/view/Surface;"

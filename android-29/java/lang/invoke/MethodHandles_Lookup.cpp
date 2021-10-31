@@ -13,49 +13,49 @@ namespace java::lang::invoke
 	// Fields
 	jint MethodHandles_Lookup::MODULE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
 			"MODULE"
 		);
 	}
 	jint MethodHandles_Lookup::ORIGINAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
 			"ORIGINAL"
 		);
 	}
 	jint MethodHandles_Lookup::PACKAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
 			"PACKAGE"
 		);
 	}
 	jint MethodHandles_Lookup::PRIVATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
 			"PRIVATE"
 		);
 	}
 	jint MethodHandles_Lookup::PROTECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
 			"PROTECTED"
 		);
 	}
 	jint MethodHandles_Lookup::PUBLIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
 			"PUBLIC"
 		);
 	}
 	jint MethodHandles_Lookup::UNCONDITIONAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
 			"UNCONDITIONAL"
 		);

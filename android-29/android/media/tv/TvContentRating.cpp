@@ -5,7 +5,7 @@ namespace android::media::tv
 	// Fields
 	android::media::tv::TvContentRating TvContentRating::UNRATED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContentRating",
 			"UNRATED",
 			"Landroid/media/tv/TvContentRating;"
@@ -20,7 +20,7 @@ namespace android::media::tv
 	// Methods
 	android::media::tv::TvContentRating TvContentRating::createRating(jstring arg0, jstring arg1, jstring arg2, jarray arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContentRating",
 			"createRating",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Landroid/media/tv/TvContentRating;",
@@ -32,7 +32,7 @@ namespace android::media::tv
 	}
 	android::media::tv::TvContentRating TvContentRating::unflattenFromString(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContentRating",
 			"unflattenFromString",
 			"(Ljava/lang/String;)Landroid/media/tv/TvContentRating;",

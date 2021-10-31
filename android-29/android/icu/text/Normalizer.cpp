@@ -6,42 +6,42 @@ namespace android::icu::text
 	// Fields
 	jint Normalizer::COMPARE_CODE_POINT_ORDER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Normalizer",
 			"COMPARE_CODE_POINT_ORDER"
 		);
 	}
 	jint Normalizer::COMPARE_IGNORE_CASE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Normalizer",
 			"COMPARE_IGNORE_CASE"
 		);
 	}
 	jint Normalizer::FOLD_CASE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Normalizer",
 			"FOLD_CASE_DEFAULT"
 		);
 	}
 	jint Normalizer::FOLD_CASE_EXCLUDE_SPECIAL_I()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Normalizer",
 			"FOLD_CASE_EXCLUDE_SPECIAL_I"
 		);
 	}
 	jint Normalizer::INPUT_IS_FCD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.Normalizer",
 			"INPUT_IS_FCD"
 		);
 	}
 	android::icu::text::Normalizer_QuickCheckResult Normalizer::MAYBE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.Normalizer",
 			"MAYBE",
 			"Landroid/icu/text/Normalizer$QuickCheckResult;"
@@ -49,7 +49,7 @@ namespace android::icu::text
 	}
 	android::icu::text::Normalizer_QuickCheckResult Normalizer::NO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.Normalizer",
 			"NO",
 			"Landroid/icu/text/Normalizer$QuickCheckResult;"
@@ -57,7 +57,7 @@ namespace android::icu::text
 	}
 	android::icu::text::Normalizer_QuickCheckResult Normalizer::YES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.Normalizer",
 			"YES",
 			"Landroid/icu/text/Normalizer$QuickCheckResult;"
@@ -72,7 +72,7 @@ namespace android::icu::text
 	// Methods
 	jint Normalizer::compare(jcharArray arg0, jcharArray arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.text.Normalizer",
 			"compare",
 			"([C[CI)I",
@@ -83,7 +83,7 @@ namespace android::icu::text
 	}
 	jint Normalizer::compare(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.text.Normalizer",
 			"compare",
 			"(III)I",
@@ -94,7 +94,7 @@ namespace android::icu::text
 	}
 	jint Normalizer::compare(jint arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.text.Normalizer",
 			"compare",
 			"(ILjava/lang/String;I)I",
@@ -105,7 +105,7 @@ namespace android::icu::text
 	}
 	jint Normalizer::compare(jstring arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.text.Normalizer",
 			"compare",
 			"(Ljava/lang/String;Ljava/lang/String;I)I",
@@ -116,7 +116,7 @@ namespace android::icu::text
 	}
 	jint Normalizer::compare(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5, jint arg6)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.icu.text.Normalizer",
 			"compare",
 			"([CII[CIII)I",

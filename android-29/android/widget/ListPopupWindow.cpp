@@ -11,49 +11,49 @@ namespace android::widget
 	// Fields
 	jint ListPopupWindow::INPUT_METHOD_FROM_FOCUSABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ListPopupWindow",
 			"INPUT_METHOD_FROM_FOCUSABLE"
 		);
 	}
 	jint ListPopupWindow::INPUT_METHOD_NEEDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ListPopupWindow",
 			"INPUT_METHOD_NEEDED"
 		);
 	}
 	jint ListPopupWindow::INPUT_METHOD_NOT_NEEDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ListPopupWindow",
 			"INPUT_METHOD_NOT_NEEDED"
 		);
 	}
 	jint ListPopupWindow::MATCH_PARENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ListPopupWindow",
 			"MATCH_PARENT"
 		);
 	}
 	jint ListPopupWindow::POSITION_PROMPT_ABOVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ListPopupWindow",
 			"POSITION_PROMPT_ABOVE"
 		);
 	}
 	jint ListPopupWindow::POSITION_PROMPT_BELOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ListPopupWindow",
 			"POSITION_PROMPT_BELOW"
 		);
 	}
 	jint ListPopupWindow::WRAP_CONTENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.ListPopupWindow",
 			"WRAP_CONTENT"
 		);

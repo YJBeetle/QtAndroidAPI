@@ -5,28 +5,28 @@ namespace android::media
 	// Fields
 	jint MediaActionSound::FOCUS_COMPLETE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaActionSound",
 			"FOCUS_COMPLETE"
 		);
 	}
 	jint MediaActionSound::SHUTTER_CLICK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaActionSound",
 			"SHUTTER_CLICK"
 		);
 	}
 	jint MediaActionSound::START_VIDEO_RECORDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaActionSound",
 			"START_VIDEO_RECORDING"
 		);
 	}
 	jint MediaActionSound::STOP_VIDEO_RECORDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaActionSound",
 			"STOP_VIDEO_RECORDING"
 		);

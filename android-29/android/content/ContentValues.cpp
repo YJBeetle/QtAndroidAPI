@@ -13,7 +13,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass ContentValues::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentValues",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -21,7 +21,7 @@ namespace android::content
 	}
 	jstring ContentValues::TAG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentValues",
 			"TAG",
 			"Ljava/lang/String;"

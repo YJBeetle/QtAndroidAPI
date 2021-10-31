@@ -9,7 +9,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass ConversationActions_Message::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Message",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -17,7 +17,7 @@ namespace android::view::textclassifier
 	}
 	android::app::Person ConversationActions_Message::PERSON_USER_OTHERS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Message",
 			"PERSON_USER_OTHERS",
 			"Landroid/app/Person;"
@@ -25,7 +25,7 @@ namespace android::view::textclassifier
 	}
 	android::app::Person ConversationActions_Message::PERSON_USER_SELF()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Message",
 			"PERSON_USER_SELF",
 			"Landroid/app/Person;"

@@ -12,7 +12,7 @@ namespace java::lang
 	// Fields
 	java::io::PrintStream System::err()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.System",
 			"err",
 			"Ljava/io/PrintStream;"
@@ -20,7 +20,7 @@ namespace java::lang
 	}
 	java::io::InputStream System::in()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.System",
 			"in",
 			"Ljava/io/InputStream;"
@@ -28,7 +28,7 @@ namespace java::lang
 	}
 	java::io::PrintStream System::out()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.System",
 			"out",
 			"Ljava/io/PrintStream;"
@@ -43,7 +43,7 @@ namespace java::lang
 	// Methods
 	void System::arraycopy(jobject arg0, jint arg1, jobject arg2, jint arg3, jint arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"arraycopy",
 			"(Ljava/lang/Object;ILjava/lang/Object;II)V",
@@ -56,7 +56,7 @@ namespace java::lang
 	}
 	jstring System::clearProperty(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"clearProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -65,7 +65,7 @@ namespace java::lang
 	}
 	java::io::Console System::console()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"console",
 			"()Ljava/io/Console;"
@@ -73,7 +73,7 @@ namespace java::lang
 	}
 	jlong System::currentTimeMillis()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.System",
 			"currentTimeMillis",
 			"()J"
@@ -81,7 +81,7 @@ namespace java::lang
 	}
 	void System::exit(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"exit",
 			"(I)V",
@@ -90,7 +90,7 @@ namespace java::lang
 	}
 	void System::gc()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"gc",
 			"()V"
@@ -98,7 +98,7 @@ namespace java::lang
 	}
 	__JniBaseClass System::getLogger(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"getLogger",
 			"(Ljava/lang/String;)Ljava/lang/System$Logger;",
@@ -107,7 +107,7 @@ namespace java::lang
 	}
 	__JniBaseClass System::getLogger(jstring arg0, java::util::ResourceBundle arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"getLogger",
 			"(Ljava/lang/String;Ljava/util/ResourceBundle;)Ljava/lang/System$Logger;",
@@ -117,7 +117,7 @@ namespace java::lang
 	}
 	java::util::Properties System::getProperties()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"getProperties",
 			"()Ljava/util/Properties;"
@@ -125,7 +125,7 @@ namespace java::lang
 	}
 	jstring System::getProperty(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -134,7 +134,7 @@ namespace java::lang
 	}
 	jstring System::getProperty(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"getProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -144,7 +144,7 @@ namespace java::lang
 	}
 	java::lang::SecurityManager System::getSecurityManager()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"getSecurityManager",
 			"()Ljava/lang/SecurityManager;"
@@ -152,7 +152,7 @@ namespace java::lang
 	}
 	jstring System::getenv(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"getenv",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -161,7 +161,7 @@ namespace java::lang
 	}
 	__JniBaseClass System::getenv()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"getenv",
 			"()Ljava/util/Map;"
@@ -169,7 +169,7 @@ namespace java::lang
 	}
 	jint System::identityHashCode(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.System",
 			"identityHashCode",
 			"(Ljava/lang/Object;)I",
@@ -178,7 +178,7 @@ namespace java::lang
 	}
 	__JniBaseClass System::inheritedChannel()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"inheritedChannel",
 			"()Ljava/nio/channels/Channel;"
@@ -186,7 +186,7 @@ namespace java::lang
 	}
 	jstring System::lineSeparator()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"lineSeparator",
 			"()Ljava/lang/String;"
@@ -194,7 +194,7 @@ namespace java::lang
 	}
 	void System::load(jstring arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"load",
 			"(Ljava/lang/String;)V",
@@ -203,7 +203,7 @@ namespace java::lang
 	}
 	void System::loadLibrary(jstring arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"loadLibrary",
 			"(Ljava/lang/String;)V",
@@ -212,7 +212,7 @@ namespace java::lang
 	}
 	jstring System::mapLibraryName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"mapLibraryName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -221,7 +221,7 @@ namespace java::lang
 	}
 	jlong System::nanoTime()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"java.lang.System",
 			"nanoTime",
 			"()J"
@@ -229,7 +229,7 @@ namespace java::lang
 	}
 	void System::runFinalization()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"runFinalization",
 			"()V"
@@ -237,7 +237,7 @@ namespace java::lang
 	}
 	void System::setErr(java::io::PrintStream arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"setErr",
 			"(Ljava/io/PrintStream;)V",
@@ -246,7 +246,7 @@ namespace java::lang
 	}
 	void System::setIn(java::io::InputStream arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"setIn",
 			"(Ljava/io/InputStream;)V",
@@ -255,7 +255,7 @@ namespace java::lang
 	}
 	void System::setOut(java::io::PrintStream arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"setOut",
 			"(Ljava/io/PrintStream;)V",
@@ -264,7 +264,7 @@ namespace java::lang
 	}
 	void System::setProperties(java::util::Properties arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"setProperties",
 			"(Ljava/util/Properties;)V",
@@ -273,7 +273,7 @@ namespace java::lang
 	}
 	jstring System::setProperty(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.System",
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
@@ -283,7 +283,7 @@ namespace java::lang
 	}
 	void System::setSecurityManager(java::lang::SecurityManager arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.System",
 			"setSecurityManager",
 			"(Ljava/lang/SecurityManager;)V",

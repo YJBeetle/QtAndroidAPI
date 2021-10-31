@@ -32,7 +32,7 @@ namespace java::text
 	// Methods
 	jstring MessageFormat::format(jstring arg0, jobjectArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.MessageFormat",
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",

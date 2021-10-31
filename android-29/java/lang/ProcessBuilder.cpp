@@ -27,7 +27,7 @@ namespace java::lang
 	// Methods
 	__JniBaseClass ProcessBuilder::startPipeline(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ProcessBuilder",
 			"startPipeline",
 			"(Ljava/util/List;)Ljava/util/List;",

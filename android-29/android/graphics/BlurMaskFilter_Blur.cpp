@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::INNER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
 			"INNER",
 			"Landroid/graphics/BlurMaskFilter$Blur;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::NORMAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
 			"NORMAL",
 			"Landroid/graphics/BlurMaskFilter$Blur;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::OUTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
 			"OUTER",
 			"Landroid/graphics/BlurMaskFilter$Blur;"
@@ -29,7 +29,7 @@ namespace android::graphics
 	}
 	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::SOLID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
 			"SOLID",
 			"Landroid/graphics/BlurMaskFilter$Blur;"
@@ -44,7 +44,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.BlurMaskFilter$Blur",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/BlurMaskFilter$Blur;",
@@ -53,7 +53,7 @@ namespace android::graphics
 	}
 	jarray BlurMaskFilter_Blur::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.BlurMaskFilter$Blur",
 			"values",
 			"()[Landroid/graphics/BlurMaskFilter$Blur;"

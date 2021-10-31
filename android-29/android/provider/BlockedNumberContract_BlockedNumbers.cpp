@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring BlockedNumberContract_BlockedNumbers::COLUMN_E164_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.BlockedNumberContract$BlockedNumbers",
 			"COLUMN_E164_NUMBER",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring BlockedNumberContract_BlockedNumbers::COLUMN_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.BlockedNumberContract$BlockedNumbers",
 			"COLUMN_ID",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring BlockedNumberContract_BlockedNumbers::COLUMN_ORIGINAL_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.BlockedNumberContract$BlockedNumbers",
 			"COLUMN_ORIGINAL_NUMBER",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring BlockedNumberContract_BlockedNumbers::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.BlockedNumberContract$BlockedNumbers",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	jstring BlockedNumberContract_BlockedNumbers::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.BlockedNumberContract$BlockedNumbers",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::provider
 	}
 	android::net::Uri BlockedNumberContract_BlockedNumbers::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.BlockedNumberContract$BlockedNumbers",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"

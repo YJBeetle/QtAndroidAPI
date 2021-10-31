@@ -6,7 +6,7 @@ namespace android::view::inputmethod
 	// Fields
 	__JniBaseClass ExtractedTextRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.inputmethod.ExtractedTextRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -14,7 +14,7 @@ namespace java::nio::channels
 	// Methods
 	java::nio::channels::Pipe Pipe::open()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Pipe",
 			"open",
 			"()Ljava/nio/channels/Pipe;"

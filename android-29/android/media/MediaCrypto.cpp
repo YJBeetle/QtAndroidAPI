@@ -20,7 +20,7 @@ namespace android::media
 	// Methods
 	jboolean MediaCrypto::isCryptoSchemeSupported(java::util::UUID arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.MediaCrypto",
 			"isCryptoSchemeSupported",
 			"(Ljava/util/UUID;)Z",

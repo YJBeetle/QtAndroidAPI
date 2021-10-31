@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract::AUTHORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"AUTHORITY",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract::AUTHORITY_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"AUTHORITY_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring ContactsContract::CALLER_IS_SYNCADAPTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"CALLER_IS_SYNCADAPTER",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring ContactsContract::DEFERRED_SNIPPETING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"DEFERRED_SNIPPETING",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	jstring ContactsContract::DEFERRED_SNIPPETING_QUERY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"DEFERRED_SNIPPETING_QUERY",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::provider
 	}
 	jstring ContactsContract::DIRECTORY_PARAM_KEY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"DIRECTORY_PARAM_KEY",
 			"Ljava/lang/String;"
@@ -54,7 +54,7 @@ namespace android::provider
 	}
 	jstring ContactsContract::LIMIT_PARAM_KEY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"LIMIT_PARAM_KEY",
 			"Ljava/lang/String;"
@@ -62,7 +62,7 @@ namespace android::provider
 	}
 	jstring ContactsContract::PRIMARY_ACCOUNT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"PRIMARY_ACCOUNT_NAME",
 			"Ljava/lang/String;"
@@ -70,7 +70,7 @@ namespace android::provider
 	}
 	jstring ContactsContract::PRIMARY_ACCOUNT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"PRIMARY_ACCOUNT_TYPE",
 			"Ljava/lang/String;"
@@ -78,7 +78,7 @@ namespace android::provider
 	}
 	jstring ContactsContract::REMOVE_DUPLICATE_ENTRIES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"REMOVE_DUPLICATE_ENTRIES",
 			"Ljava/lang/String;"
@@ -86,7 +86,7 @@ namespace android::provider
 	}
 	jstring ContactsContract::STREQUENT_PHONE_ONLY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract",
 			"STREQUENT_PHONE_ONLY",
 			"Ljava/lang/String;"
@@ -106,7 +106,7 @@ namespace android::provider
 	// Methods
 	jboolean ContactsContract::isProfileId(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.provider.ContactsContract",
 			"isProfileId",
 			"(J)Z",

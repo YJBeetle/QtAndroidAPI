@@ -9,7 +9,7 @@ namespace java::io
 	// Fields
 	jstring File::pathSeparator()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.io.File",
 			"pathSeparator",
 			"Ljava/lang/String;"
@@ -17,14 +17,14 @@ namespace java::io
 	}
 	jchar File::pathSeparatorChar()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"java.io.File",
 			"pathSeparatorChar"
 		);
 	}
 	jstring File::separator()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.io.File",
 			"separator",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace java::io
 	}
 	jchar File::separatorChar()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"java.io.File",
 			"separatorChar"
 		);
@@ -72,7 +72,7 @@ namespace java::io
 	// Methods
 	java::io::File File::createTempFile(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.io.File",
 			"createTempFile",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;",
@@ -82,7 +82,7 @@ namespace java::io
 	}
 	java::io::File File::createTempFile(jstring arg0, jstring arg1, java::io::File arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.io.File",
 			"createTempFile",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;",
@@ -93,7 +93,7 @@ namespace java::io
 	}
 	jarray File::listRoots()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.io.File",
 			"listRoots",
 			"()[Ljava/io/File;"

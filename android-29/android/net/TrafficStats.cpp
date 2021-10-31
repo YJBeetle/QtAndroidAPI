@@ -8,7 +8,7 @@ namespace android::net
 	// Fields
 	jint TrafficStats::UNSUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.TrafficStats",
 			"UNSUPPORTED"
 		);
@@ -27,7 +27,7 @@ namespace android::net
 	// Methods
 	void TrafficStats::clearThreadStatsTag()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"clearThreadStatsTag",
 			"()V"
@@ -35,7 +35,7 @@ namespace android::net
 	}
 	void TrafficStats::clearThreadStatsUid()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"clearThreadStatsUid",
 			"()V"
@@ -43,7 +43,7 @@ namespace android::net
 	}
 	jint TrafficStats::getAndSetThreadStatsTag(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.net.TrafficStats",
 			"getAndSetThreadStatsTag",
 			"(I)I",
@@ -52,7 +52,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getMobileRxBytes()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getMobileRxBytes",
 			"()J"
@@ -60,7 +60,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getMobileRxPackets()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getMobileRxPackets",
 			"()J"
@@ -68,7 +68,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getMobileTxBytes()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getMobileTxBytes",
 			"()J"
@@ -76,7 +76,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getMobileTxPackets()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getMobileTxPackets",
 			"()J"
@@ -84,7 +84,7 @@ namespace android::net
 	}
 	jint TrafficStats::getThreadStatsTag()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.net.TrafficStats",
 			"getThreadStatsTag",
 			"()I"
@@ -92,7 +92,7 @@ namespace android::net
 	}
 	jint TrafficStats::getThreadStatsUid()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.net.TrafficStats",
 			"getThreadStatsUid",
 			"()I"
@@ -100,7 +100,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getTotalRxBytes()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getTotalRxBytes",
 			"()J"
@@ -108,7 +108,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getTotalRxPackets()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getTotalRxPackets",
 			"()J"
@@ -116,7 +116,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getTotalTxBytes()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getTotalTxBytes",
 			"()J"
@@ -124,7 +124,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getTotalTxPackets()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getTotalTxPackets",
 			"()J"
@@ -132,7 +132,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidRxBytes(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidRxBytes",
 			"(I)J",
@@ -141,7 +141,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidRxPackets(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidRxPackets",
 			"(I)J",
@@ -150,7 +150,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidTcpRxBytes(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidTcpRxBytes",
 			"(I)J",
@@ -159,7 +159,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidTcpRxSegments(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidTcpRxSegments",
 			"(I)J",
@@ -168,7 +168,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidTcpTxBytes(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidTcpTxBytes",
 			"(I)J",
@@ -177,7 +177,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidTcpTxSegments(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidTcpTxSegments",
 			"(I)J",
@@ -186,7 +186,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidTxBytes(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidTxBytes",
 			"(I)J",
@@ -195,7 +195,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidTxPackets(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidTxPackets",
 			"(I)J",
@@ -204,7 +204,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidUdpRxBytes(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidUdpRxBytes",
 			"(I)J",
@@ -213,7 +213,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidUdpRxPackets(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidUdpRxPackets",
 			"(I)J",
@@ -222,7 +222,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidUdpTxBytes(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidUdpTxBytes",
 			"(I)J",
@@ -231,7 +231,7 @@ namespace android::net
 	}
 	jlong TrafficStats::getUidUdpTxPackets(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getUidUdpTxPackets",
 			"(I)J",
@@ -240,7 +240,7 @@ namespace android::net
 	}
 	void TrafficStats::incrementOperationCount(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"incrementOperationCount",
 			"(I)V",
@@ -249,7 +249,7 @@ namespace android::net
 	}
 	void TrafficStats::incrementOperationCount(jint arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"incrementOperationCount",
 			"(II)V",
@@ -259,7 +259,7 @@ namespace android::net
 	}
 	void TrafficStats::setThreadStatsTag(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"setThreadStatsTag",
 			"(I)V",
@@ -268,7 +268,7 @@ namespace android::net
 	}
 	void TrafficStats::setThreadStatsUid(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"setThreadStatsUid",
 			"(I)V",
@@ -277,7 +277,7 @@ namespace android::net
 	}
 	void TrafficStats::tagDatagramSocket(java::net::DatagramSocket arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"tagDatagramSocket",
 			"(Ljava/net/DatagramSocket;)V",
@@ -286,7 +286,7 @@ namespace android::net
 	}
 	void TrafficStats::tagFileDescriptor(java::io::FileDescriptor arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"tagFileDescriptor",
 			"(Ljava/io/FileDescriptor;)V",
@@ -295,7 +295,7 @@ namespace android::net
 	}
 	void TrafficStats::tagSocket(java::net::Socket arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"tagSocket",
 			"(Ljava/net/Socket;)V",
@@ -304,7 +304,7 @@ namespace android::net
 	}
 	void TrafficStats::untagDatagramSocket(java::net::DatagramSocket arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"untagDatagramSocket",
 			"(Ljava/net/DatagramSocket;)V",
@@ -313,7 +313,7 @@ namespace android::net
 	}
 	void TrafficStats::untagFileDescriptor(java::io::FileDescriptor arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"untagFileDescriptor",
 			"(Ljava/io/FileDescriptor;)V",
@@ -322,7 +322,7 @@ namespace android::net
 	}
 	void TrafficStats::untagSocket(java::net::Socket arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"untagSocket",
 			"(Ljava/net/Socket;)V",

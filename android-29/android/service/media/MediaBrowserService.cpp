@@ -13,7 +13,7 @@ namespace android::service::media
 	// Fields
 	jstring MediaBrowserService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.media.MediaBrowserService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

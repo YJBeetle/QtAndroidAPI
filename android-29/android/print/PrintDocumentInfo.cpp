@@ -6,28 +6,28 @@ namespace android::print
 	// Fields
 	jint PrintDocumentInfo::CONTENT_TYPE_DOCUMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintDocumentInfo",
 			"CONTENT_TYPE_DOCUMENT"
 		);
 	}
 	jint PrintDocumentInfo::CONTENT_TYPE_PHOTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintDocumentInfo",
 			"CONTENT_TYPE_PHOTO"
 		);
 	}
 	jint PrintDocumentInfo::CONTENT_TYPE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintDocumentInfo",
 			"CONTENT_TYPE_UNKNOWN"
 		);
 	}
 	__JniBaseClass PrintDocumentInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.print.PrintDocumentInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -35,7 +35,7 @@ namespace android::print
 	}
 	jint PrintDocumentInfo::PAGE_COUNT_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.print.PrintDocumentInfo",
 			"PAGE_COUNT_UNKNOWN"
 		);

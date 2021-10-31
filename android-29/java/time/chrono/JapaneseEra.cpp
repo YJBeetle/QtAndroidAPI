@@ -10,7 +10,7 @@ namespace java::time::chrono
 	// Fields
 	java::time::chrono::JapaneseEra JapaneseEra::HEISEI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
 			"HEISEI",
 			"Ljava/time/chrono/JapaneseEra;"
@@ -18,7 +18,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::JapaneseEra JapaneseEra::MEIJI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
 			"MEIJI",
 			"Ljava/time/chrono/JapaneseEra;"
@@ -26,7 +26,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::JapaneseEra JapaneseEra::REIWA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
 			"REIWA",
 			"Ljava/time/chrono/JapaneseEra;"
@@ -34,7 +34,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::JapaneseEra JapaneseEra::SHOWA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
 			"SHOWA",
 			"Ljava/time/chrono/JapaneseEra;"
@@ -42,7 +42,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::JapaneseEra JapaneseEra::TAISHO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
 			"TAISHO",
 			"Ljava/time/chrono/JapaneseEra;"
@@ -57,7 +57,7 @@ namespace java::time::chrono
 	// Methods
 	java::time::chrono::JapaneseEra JapaneseEra::of(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseEra",
 			"of",
 			"(I)Ljava/time/chrono/JapaneseEra;",
@@ -66,7 +66,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::JapaneseEra JapaneseEra::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/JapaneseEra;",
@@ -75,7 +75,7 @@ namespace java::time::chrono
 	}
 	jarray JapaneseEra::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseEra",
 			"values",
 			"()[Ljava/time/chrono/JapaneseEra;"

@@ -5,7 +5,7 @@ namespace java::lang
 	// Fields
 	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::APPEND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
 			"APPEND",
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
@@ -13,7 +13,7 @@ namespace java::lang
 	}
 	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::INHERIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
 			"INHERIT",
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
@@ -21,7 +21,7 @@ namespace java::lang
 	}
 	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::PIPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
 			"PIPE",
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
@@ -29,7 +29,7 @@ namespace java::lang
 	}
 	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::READ()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
 			"READ",
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
@@ -37,7 +37,7 @@ namespace java::lang
 	}
 	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::WRITE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
 			"WRITE",
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
@@ -52,7 +52,7 @@ namespace java::lang
 	// Methods
 	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect$Type",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/ProcessBuilder$Redirect$Type;",
@@ -61,7 +61,7 @@ namespace java::lang
 	}
 	jarray ProcessBuilder_Redirect_Type::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect$Type",
 			"values",
 			"()[Ljava/lang/ProcessBuilder$Redirect$Type;"

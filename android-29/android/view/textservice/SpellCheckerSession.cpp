@@ -8,7 +8,7 @@ namespace android::view::textservice
 	// Fields
 	jstring SpellCheckerSession::SERVICE_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textservice.SpellCheckerSession",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"

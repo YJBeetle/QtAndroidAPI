@@ -6,21 +6,21 @@ namespace android::service::notification
 	// Fields
 	jint NotificationListenerService_Ranking::USER_SENTIMENT_NEGATIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService$Ranking",
 			"USER_SENTIMENT_NEGATIVE"
 		);
 	}
 	jint NotificationListenerService_Ranking::USER_SENTIMENT_NEUTRAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService$Ranking",
 			"USER_SENTIMENT_NEUTRAL"
 		);
 	}
 	jint NotificationListenerService_Ranking::USER_SENTIMENT_POSITIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService$Ranking",
 			"USER_SENTIMENT_POSITIVE"
 		);

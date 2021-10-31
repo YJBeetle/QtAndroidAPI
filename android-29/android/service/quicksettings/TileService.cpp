@@ -10,7 +10,7 @@ namespace android::service::quicksettings
 	// Fields
 	jstring TileService::ACTION_QS_TILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.quicksettings.TileService",
 			"ACTION_QS_TILE",
 			"Ljava/lang/String;"
@@ -18,7 +18,7 @@ namespace android::service::quicksettings
 	}
 	jstring TileService::ACTION_QS_TILE_PREFERENCES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.quicksettings.TileService",
 			"ACTION_QS_TILE_PREFERENCES",
 			"Ljava/lang/String;"
@@ -26,7 +26,7 @@ namespace android::service::quicksettings
 	}
 	jstring TileService::META_DATA_ACTIVE_TILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.quicksettings.TileService",
 			"META_DATA_ACTIVE_TILE",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::service::quicksettings
 	// Methods
 	void TileService::requestListeningState(android::content::Context arg0, android::content::ComponentName arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.service.quicksettings.TileService",
 			"requestListeningState",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)V",

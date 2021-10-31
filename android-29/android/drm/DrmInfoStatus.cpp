@@ -6,14 +6,14 @@ namespace android::drm
 	// Fields
 	jint DrmInfoStatus::STATUS_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoStatus",
 			"STATUS_ERROR"
 		);
 	}
 	jint DrmInfoStatus::STATUS_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmInfoStatus",
 			"STATUS_OK"
 		);

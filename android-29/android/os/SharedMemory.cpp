@@ -8,7 +8,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass SharedMemory::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.SharedMemory",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -23,7 +23,7 @@ namespace android::os
 	// Methods
 	android::os::SharedMemory SharedMemory::create(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.SharedMemory",
 			"create",
 			"(Ljava/lang/String;I)Landroid/os/SharedMemory;",
@@ -33,7 +33,7 @@ namespace android::os
 	}
 	void SharedMemory::unmap(java::nio::ByteBuffer arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.SharedMemory",
 			"unmap",
 			"(Ljava/nio/ByteBuffer;)V",

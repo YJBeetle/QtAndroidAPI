@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri CalendarContract_CalendarEntity::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$CalendarEntity",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -21,7 +21,7 @@ namespace android::provider
 	// Methods
 	__JniBaseClass CalendarContract_CalendarEntity::newEntityIterator(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.CalendarContract$CalendarEntity",
 			"newEntityIterator",
 			"(Landroid/database/Cursor;)Landroid/content/EntityIterator;",

@@ -6,7 +6,7 @@ namespace android::nfc
 	// Fields
 	__JniBaseClass Tag::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.Tag",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

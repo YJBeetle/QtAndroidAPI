@@ -7,7 +7,7 @@ namespace android::view::contentcapture
 	// Fields
 	__JniBaseClass DataRemovalRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.contentcapture.DataRemovalRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::view::contentcapture
 	}
 	jint DataRemovalRequest::FLAG_IS_PREFIX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.contentcapture.DataRemovalRequest",
 			"FLAG_IS_PREFIX"
 		);

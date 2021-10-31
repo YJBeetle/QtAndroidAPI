@@ -5,14 +5,14 @@ namespace android::media
 	// Fields
 	jint MediaDrm_SessionException::ERROR_RESOURCE_CONTENTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm$SessionException",
 			"ERROR_RESOURCE_CONTENTION"
 		);
 	}
 	jint MediaDrm_SessionException::ERROR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaDrm$SessionException",
 			"ERROR_UNKNOWN"
 		);

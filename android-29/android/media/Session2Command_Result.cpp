@@ -6,21 +6,21 @@ namespace android::media
 	// Fields
 	jint Session2Command_Result::RESULT_ERROR_UNKNOWN_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Session2Command$Result",
 			"RESULT_ERROR_UNKNOWN_ERROR"
 		);
 	}
 	jint Session2Command_Result::RESULT_INFO_SKIPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Session2Command$Result",
 			"RESULT_INFO_SKIPPED"
 		);
 	}
 	jint Session2Command_Result::RESULT_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Session2Command$Result",
 			"RESULT_SUCCESS"
 		);

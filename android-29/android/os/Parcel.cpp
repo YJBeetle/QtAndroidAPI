@@ -18,7 +18,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass Parcel::STRING_CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Parcel",
 			"STRING_CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -33,7 +33,7 @@ namespace android::os
 	// Methods
 	android::os::Parcel Parcel::obtain()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Parcel",
 			"obtain",
 			"()Landroid/os/Parcel;"

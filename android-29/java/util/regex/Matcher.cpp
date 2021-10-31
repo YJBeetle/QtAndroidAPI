@@ -15,7 +15,7 @@ namespace java::util::regex
 	// Methods
 	jstring Matcher::quoteReplacement(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.regex.Matcher",
 			"quoteReplacement",
 			"(Ljava/lang/String;)Ljava/lang/String;",

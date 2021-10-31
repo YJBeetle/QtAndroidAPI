@@ -8,7 +8,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass Messenger::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.Messenger",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -35,7 +35,7 @@ namespace android::os
 	// Methods
 	android::os::Messenger Messenger::readMessengerOrNullFromParcel(android::os::Parcel arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Messenger",
 			"readMessengerOrNullFromParcel",
 			"(Landroid/os/Parcel;)Landroid/os/Messenger;",
@@ -44,7 +44,7 @@ namespace android::os
 	}
 	void Messenger::writeMessengerOrNullToParcel(android::os::Messenger arg0, android::os::Parcel arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Messenger",
 			"writeMessengerOrNullToParcel",
 			"(Landroid/os/Messenger;Landroid/os/Parcel;)V",

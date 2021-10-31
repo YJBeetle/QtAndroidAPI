@@ -5,7 +5,7 @@ namespace java::lang::annotation
 	// Fields
 	java::lang::annotation::RetentionPolicy RetentionPolicy::CLASS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.annotation.RetentionPolicy",
 			"CLASS",
 			"Ljava/lang/annotation/RetentionPolicy;"
@@ -13,7 +13,7 @@ namespace java::lang::annotation
 	}
 	java::lang::annotation::RetentionPolicy RetentionPolicy::RUNTIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.annotation.RetentionPolicy",
 			"RUNTIME",
 			"Ljava/lang/annotation/RetentionPolicy;"
@@ -21,7 +21,7 @@ namespace java::lang::annotation
 	}
 	java::lang::annotation::RetentionPolicy RetentionPolicy::SOURCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.annotation.RetentionPolicy",
 			"SOURCE",
 			"Ljava/lang/annotation/RetentionPolicy;"
@@ -36,7 +36,7 @@ namespace java::lang::annotation
 	// Methods
 	java::lang::annotation::RetentionPolicy RetentionPolicy::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.annotation.RetentionPolicy",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/annotation/RetentionPolicy;",
@@ -45,7 +45,7 @@ namespace java::lang::annotation
 	}
 	jarray RetentionPolicy::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.annotation.RetentionPolicy",
 			"values",
 			"()[Ljava/lang/annotation/RetentionPolicy;"

@@ -11,7 +11,7 @@ namespace android::gesture
 	// Fields
 	__JniBaseClass Gesture::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.gesture.Gesture",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

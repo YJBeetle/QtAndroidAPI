@@ -7,7 +7,7 @@ namespace android::media
 	// Fields
 	__JniBaseClass Session2CommandGroup::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.Session2CommandGroup",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -12,14 +12,14 @@ namespace android::drm
 	// Fields
 	jint DrmManagerClient::ERROR_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmManagerClient",
 			"ERROR_NONE"
 		);
 	}
 	jint DrmManagerClient::ERROR_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmManagerClient",
 			"ERROR_UNKNOWN"
 		);

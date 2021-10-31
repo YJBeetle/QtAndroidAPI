@@ -26,7 +26,7 @@ namespace java::security
 	// Methods
 	java::security::IdentityScope IdentityScope::getSystemScope()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.IdentityScope",
 			"getSystemScope",
 			"()Ljava/security/IdentityScope;"

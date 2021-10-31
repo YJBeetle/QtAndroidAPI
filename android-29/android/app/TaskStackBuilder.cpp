@@ -18,7 +18,7 @@ namespace android::app
 	// Methods
 	android::app::TaskStackBuilder TaskStackBuilder::create(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.TaskStackBuilder",
 			"create",
 			"(Landroid/content/Context;)Landroid/app/TaskStackBuilder;",

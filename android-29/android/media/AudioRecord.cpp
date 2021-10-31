@@ -14,77 +14,77 @@ namespace android::media
 	// Fields
 	jint AudioRecord::ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"ERROR"
 		);
 	}
 	jint AudioRecord::ERROR_BAD_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"ERROR_BAD_VALUE"
 		);
 	}
 	jint AudioRecord::ERROR_DEAD_OBJECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"ERROR_DEAD_OBJECT"
 		);
 	}
 	jint AudioRecord::ERROR_INVALID_OPERATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"ERROR_INVALID_OPERATION"
 		);
 	}
 	jint AudioRecord::READ_BLOCKING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"READ_BLOCKING"
 		);
 	}
 	jint AudioRecord::READ_NON_BLOCKING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"READ_NON_BLOCKING"
 		);
 	}
 	jint AudioRecord::RECORDSTATE_RECORDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"RECORDSTATE_RECORDING"
 		);
 	}
 	jint AudioRecord::RECORDSTATE_STOPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"RECORDSTATE_STOPPED"
 		);
 	}
 	jint AudioRecord::STATE_INITIALIZED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"STATE_INITIALIZED"
 		);
 	}
 	jint AudioRecord::STATE_UNINITIALIZED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"STATE_UNINITIALIZED"
 		);
 	}
 	jint AudioRecord::SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioRecord",
 			"SUCCESS"
 		);
@@ -108,7 +108,7 @@ namespace android::media
 	// Methods
 	jint AudioRecord::getMinBufferSize(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.AudioRecord",
 			"getMinBufferSize",
 			"(III)I",

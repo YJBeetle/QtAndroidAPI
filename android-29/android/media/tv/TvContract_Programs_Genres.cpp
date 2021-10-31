@@ -5,7 +5,7 @@ namespace android::media::tv
 	// Fields
 	jstring TvContract_Programs_Genres::ANIMAL_WILDLIFE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"ANIMAL_WILDLIFE",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::ARTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"ARTS",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::COMEDY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"COMEDY",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::DRAMA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"DRAMA",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::EDUCATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"EDUCATION",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::ENTERTAINMENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"ENTERTAINMENT",
 			"Ljava/lang/String;"
@@ -53,7 +53,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::FAMILY_KIDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"FAMILY_KIDS",
 			"Ljava/lang/String;"
@@ -61,7 +61,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::GAMING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"GAMING",
 			"Ljava/lang/String;"
@@ -69,7 +69,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::LIFE_STYLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"LIFE_STYLE",
 			"Ljava/lang/String;"
@@ -77,7 +77,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::MOVIES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"MOVIES",
 			"Ljava/lang/String;"
@@ -85,7 +85,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::MUSIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"MUSIC",
 			"Ljava/lang/String;"
@@ -93,7 +93,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::NEWS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"NEWS",
 			"Ljava/lang/String;"
@@ -101,7 +101,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::PREMIER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"PREMIER",
 			"Ljava/lang/String;"
@@ -109,7 +109,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::SHOPPING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"SHOPPING",
 			"Ljava/lang/String;"
@@ -117,7 +117,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::SPORTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"SPORTS",
 			"Ljava/lang/String;"
@@ -125,7 +125,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::TECH_SCIENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"TECH_SCIENCE",
 			"Ljava/lang/String;"
@@ -133,7 +133,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::TRAVEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"TRAVEL",
 			"Ljava/lang/String;"
@@ -148,7 +148,7 @@ namespace android::media::tv
 	// Methods
 	jarray TvContract_Programs_Genres::decode(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract$Programs$Genres",
 			"decode",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
@@ -157,7 +157,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs_Genres::encode(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.tv.TvContract$Programs$Genres",
 			"encode",
 			"([Ljava/lang/String;)Ljava/lang/String;",
@@ -166,7 +166,7 @@ namespace android::media::tv
 	}
 	jboolean TvContract_Programs_Genres::isCanonical(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.tv.TvContract$Programs$Genres",
 			"isCanonical",
 			"(Ljava/lang/String;)Z",

@@ -7,7 +7,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass TextLanguage_Request::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextLanguage$Request",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

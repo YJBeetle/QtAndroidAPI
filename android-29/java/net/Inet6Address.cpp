@@ -15,7 +15,7 @@ namespace java::net
 	// Methods
 	java::net::Inet6Address Inet6Address::getByAddress(jstring arg0, jbyteArray arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.Inet6Address",
 			"getByAddress",
 			"(Ljava/lang/String;[BI)Ljava/net/Inet6Address;",
@@ -26,7 +26,7 @@ namespace java::net
 	}
 	java::net::Inet6Address Inet6Address::getByAddress(jstring arg0, jbyteArray arg1, java::net::NetworkInterface arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.Inet6Address",
 			"getByAddress",
 			"(Ljava/lang/String;[BLjava/net/NetworkInterface;)Ljava/net/Inet6Address;",

@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring MediaStore_Downloads::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Downloads",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Downloads::EXTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Downloads",
 			"EXTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Downloads::INTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Downloads",
 			"INTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -37,7 +37,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri MediaStore_Downloads::getContentUri(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Downloads",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",

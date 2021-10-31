@@ -22,7 +22,7 @@ namespace java::util
 	// Methods
 	void ResourceBundle::clearCache()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.ResourceBundle",
 			"clearCache",
 			"()V"
@@ -30,7 +30,7 @@ namespace java::util
 	}
 	void ResourceBundle::clearCache(java::lang::ClassLoader arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.util.ResourceBundle",
 			"clearCache",
 			"(Ljava/lang/ClassLoader;)V",
@@ -39,7 +39,7 @@ namespace java::util
 	}
 	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;)Ljava/util/ResourceBundle;",
@@ -48,7 +48,7 @@ namespace java::util
 	}
 	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/lang/Module;)Ljava/util/ResourceBundle;",
@@ -58,7 +58,7 @@ namespace java::util
 	}
 	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/ResourceBundle;",
@@ -68,7 +68,7 @@ namespace java::util
 	}
 	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::ResourceBundle_Control arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
@@ -78,7 +78,7 @@ namespace java::util
 	}
 	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/ClassLoader;)Ljava/util/ResourceBundle;",
@@ -89,7 +89,7 @@ namespace java::util
 	}
 	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/Module;)Ljava/util/ResourceBundle;",
@@ -100,7 +100,7 @@ namespace java::util
 	}
 	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, java::util::ResourceBundle_Control arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
@@ -111,7 +111,7 @@ namespace java::util
 	}
 	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2, java::util::ResourceBundle_Control arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/ClassLoader;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",

@@ -11,42 +11,42 @@ namespace android::hardware::camera2
 	// Fields
 	jint CameraDevice::TEMPLATE_MANUAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice",
 			"TEMPLATE_MANUAL"
 		);
 	}
 	jint CameraDevice::TEMPLATE_PREVIEW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice",
 			"TEMPLATE_PREVIEW"
 		);
 	}
 	jint CameraDevice::TEMPLATE_RECORD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice",
 			"TEMPLATE_RECORD"
 		);
 	}
 	jint CameraDevice::TEMPLATE_STILL_CAPTURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice",
 			"TEMPLATE_STILL_CAPTURE"
 		);
 	}
 	jint CameraDevice::TEMPLATE_VIDEO_SNAPSHOT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice",
 			"TEMPLATE_VIDEO_SNAPSHOT"
 		);
 	}
 	jint CameraDevice::TEMPLATE_ZERO_SHUTTER_LAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice",
 			"TEMPLATE_ZERO_SHUTTER_LAG"
 		);

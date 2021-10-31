@@ -6,7 +6,7 @@ namespace android::net::nsd
 	// Fields
 	jstring NsdManager::ACTION_NSD_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.nsd.NsdManager",
 			"ACTION_NSD_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::net::nsd
 	}
 	jstring NsdManager::EXTRA_NSD_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.nsd.NsdManager",
 			"EXTRA_NSD_STATE",
 			"Ljava/lang/String;"
@@ -22,42 +22,42 @@ namespace android::net::nsd
 	}
 	jint NsdManager::FAILURE_ALREADY_ACTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.nsd.NsdManager",
 			"FAILURE_ALREADY_ACTIVE"
 		);
 	}
 	jint NsdManager::FAILURE_INTERNAL_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.nsd.NsdManager",
 			"FAILURE_INTERNAL_ERROR"
 		);
 	}
 	jint NsdManager::FAILURE_MAX_LIMIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.nsd.NsdManager",
 			"FAILURE_MAX_LIMIT"
 		);
 	}
 	jint NsdManager::NSD_STATE_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.nsd.NsdManager",
 			"NSD_STATE_DISABLED"
 		);
 	}
 	jint NsdManager::NSD_STATE_ENABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.nsd.NsdManager",
 			"NSD_STATE_ENABLED"
 		);
 	}
 	jint NsdManager::PROTOCOL_DNS_SD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.nsd.NsdManager",
 			"PROTOCOL_DNS_SD"
 		);

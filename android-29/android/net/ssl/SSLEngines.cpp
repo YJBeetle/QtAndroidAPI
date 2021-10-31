@@ -13,7 +13,7 @@ namespace android::net::ssl
 	// Methods
 	jboolean SSLEngines::isSupportedEngine(javax::net::ssl::SSLEngine arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.net.ssl.SSLEngines",
 			"isSupportedEngine",
 			"(Ljavax/net/ssl/SSLEngine;)Z",
@@ -22,7 +22,7 @@ namespace android::net::ssl
 	}
 	void SSLEngines::setUseSessionTickets(javax::net::ssl::SSLEngine arg0, jboolean arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.net.ssl.SSLEngines",
 			"setUseSessionTickets",
 			"(Ljavax/net/ssl/SSLEngine;Z)V",

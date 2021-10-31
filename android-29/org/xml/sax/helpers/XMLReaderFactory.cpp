@@ -13,7 +13,7 @@ namespace org::xml::sax::helpers
 	// Methods
 	__JniBaseClass XMLReaderFactory::createXMLReader()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"org.xml.sax.helpers.XMLReaderFactory",
 			"createXMLReader",
 			"()Lorg/xml/sax/XMLReader;"
@@ -21,7 +21,7 @@ namespace org::xml::sax::helpers
 	}
 	__JniBaseClass XMLReaderFactory::createXMLReader(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"org.xml.sax.helpers.XMLReaderFactory",
 			"createXMLReader",
 			"(Ljava/lang/String;)Lorg/xml/sax/XMLReader;",

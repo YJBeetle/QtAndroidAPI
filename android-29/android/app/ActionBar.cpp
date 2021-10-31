@@ -10,56 +10,56 @@ namespace android::app
 	// Fields
 	jint ActionBar::DISPLAY_HOME_AS_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActionBar",
 			"DISPLAY_HOME_AS_UP"
 		);
 	}
 	jint ActionBar::DISPLAY_SHOW_CUSTOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActionBar",
 			"DISPLAY_SHOW_CUSTOM"
 		);
 	}
 	jint ActionBar::DISPLAY_SHOW_HOME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActionBar",
 			"DISPLAY_SHOW_HOME"
 		);
 	}
 	jint ActionBar::DISPLAY_SHOW_TITLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActionBar",
 			"DISPLAY_SHOW_TITLE"
 		);
 	}
 	jint ActionBar::DISPLAY_USE_LOGO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActionBar",
 			"DISPLAY_USE_LOGO"
 		);
 	}
 	jint ActionBar::NAVIGATION_MODE_LIST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActionBar",
 			"NAVIGATION_MODE_LIST"
 		);
 	}
 	jint ActionBar::NAVIGATION_MODE_STANDARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActionBar",
 			"NAVIGATION_MODE_STANDARD"
 		);
 	}
 	jint ActionBar::NAVIGATION_MODE_TABS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActionBar",
 			"NAVIGATION_MODE_TABS"
 		);

@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::INFLOW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"INFLOW",
 			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::NORMAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"NORMAL",
 			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
@@ -21,7 +21,7 @@ namespace android::icu::text
 	}
 	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::OVERFLOW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"OVERFLOW",
 			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
@@ -29,7 +29,7 @@ namespace android::icu::text
 	}
 	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::UNDERFLOW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"UNDERFLOW",
 			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
@@ -44,7 +44,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;",
@@ -53,7 +53,7 @@ namespace android::icu::text
 	}
 	jarray AlphabeticIndex_Bucket_LabelType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"values",
 			"()[Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"

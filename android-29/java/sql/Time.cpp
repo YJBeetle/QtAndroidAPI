@@ -28,7 +28,7 @@ namespace java::sql
 	// Methods
 	java::sql::Time Time::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.Time",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Time;",
@@ -37,7 +37,7 @@ namespace java::sql
 	}
 	java::sql::Time Time::valueOf(java::time::LocalTime arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.Time",
 			"valueOf",
 			"(Ljava/time/LocalTime;)Ljava/sql/Time;",

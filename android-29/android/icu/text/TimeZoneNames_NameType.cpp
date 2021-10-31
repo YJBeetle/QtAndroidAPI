@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::TimeZoneNames_NameType TimeZoneNames_NameType::EXEMPLAR_LOCATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneNames$NameType",
 			"EXEMPLAR_LOCATION",
 			"Landroid/icu/text/TimeZoneNames$NameType;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneNames_NameType TimeZoneNames_NameType::LONG_DAYLIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneNames$NameType",
 			"LONG_DAYLIGHT",
 			"Landroid/icu/text/TimeZoneNames$NameType;"
@@ -21,7 +21,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneNames_NameType TimeZoneNames_NameType::LONG_GENERIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneNames$NameType",
 			"LONG_GENERIC",
 			"Landroid/icu/text/TimeZoneNames$NameType;"
@@ -29,7 +29,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneNames_NameType TimeZoneNames_NameType::LONG_STANDARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneNames$NameType",
 			"LONG_STANDARD",
 			"Landroid/icu/text/TimeZoneNames$NameType;"
@@ -37,7 +37,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneNames_NameType TimeZoneNames_NameType::SHORT_DAYLIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneNames$NameType",
 			"SHORT_DAYLIGHT",
 			"Landroid/icu/text/TimeZoneNames$NameType;"
@@ -45,7 +45,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneNames_NameType TimeZoneNames_NameType::SHORT_GENERIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneNames$NameType",
 			"SHORT_GENERIC",
 			"Landroid/icu/text/TimeZoneNames$NameType;"
@@ -53,7 +53,7 @@ namespace android::icu::text
 	}
 	android::icu::text::TimeZoneNames_NameType TimeZoneNames_NameType::SHORT_STANDARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.TimeZoneNames$NameType",
 			"SHORT_STANDARD",
 			"Landroid/icu/text/TimeZoneNames$NameType;"
@@ -68,7 +68,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::TimeZoneNames_NameType TimeZoneNames_NameType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneNames$NameType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneNames$NameType;",
@@ -77,7 +77,7 @@ namespace android::icu::text
 	}
 	jarray TimeZoneNames_NameType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.TimeZoneNames$NameType",
 			"values",
 			"()[Landroid/icu/text/TimeZoneNames$NameType;"

@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	java::util::Locale_FilteringMode Locale_FilteringMode::AUTOSELECT_FILTERING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale$FilteringMode",
 			"AUTOSELECT_FILTERING",
 			"Ljava/util/Locale$FilteringMode;"
@@ -13,7 +13,7 @@ namespace java::util
 	}
 	java::util::Locale_FilteringMode Locale_FilteringMode::EXTENDED_FILTERING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale$FilteringMode",
 			"EXTENDED_FILTERING",
 			"Ljava/util/Locale$FilteringMode;"
@@ -21,7 +21,7 @@ namespace java::util
 	}
 	java::util::Locale_FilteringMode Locale_FilteringMode::IGNORE_EXTENDED_RANGES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale$FilteringMode",
 			"IGNORE_EXTENDED_RANGES",
 			"Ljava/util/Locale$FilteringMode;"
@@ -29,7 +29,7 @@ namespace java::util
 	}
 	java::util::Locale_FilteringMode Locale_FilteringMode::MAP_EXTENDED_RANGES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale$FilteringMode",
 			"MAP_EXTENDED_RANGES",
 			"Ljava/util/Locale$FilteringMode;"
@@ -37,7 +37,7 @@ namespace java::util
 	}
 	java::util::Locale_FilteringMode Locale_FilteringMode::REJECT_EXTENDED_RANGES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.Locale$FilteringMode",
 			"REJECT_EXTENDED_RANGES",
 			"Ljava/util/Locale$FilteringMode;"
@@ -52,7 +52,7 @@ namespace java::util
 	// Methods
 	java::util::Locale_FilteringMode Locale_FilteringMode::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale$FilteringMode",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/Locale$FilteringMode;",
@@ -61,7 +61,7 @@ namespace java::util
 	}
 	jarray Locale_FilteringMode::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.Locale$FilteringMode",
 			"values",
 			"()[Ljava/util/Locale$FilteringMode;"

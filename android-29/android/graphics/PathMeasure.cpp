@@ -7,14 +7,14 @@ namespace android::graphics
 	// Fields
 	jint PathMeasure::POSITION_MATRIX_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.PathMeasure",
 			"POSITION_MATRIX_FLAG"
 		);
 	}
 	jint PathMeasure::TANGENT_MATRIX_FLAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.PathMeasure",
 			"TANGENT_MATRIX_FLAG"
 		);

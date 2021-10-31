@@ -7,35 +7,35 @@ namespace android::opengl
 	// Fields
 	jint EGLExt::EGL_CONTEXT_FLAGS_KHR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.EGLExt",
 			"EGL_CONTEXT_FLAGS_KHR"
 		);
 	}
 	jint EGLExt::EGL_CONTEXT_MAJOR_VERSION_KHR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.EGLExt",
 			"EGL_CONTEXT_MAJOR_VERSION_KHR"
 		);
 	}
 	jint EGLExt::EGL_CONTEXT_MINOR_VERSION_KHR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.EGLExt",
 			"EGL_CONTEXT_MINOR_VERSION_KHR"
 		);
 	}
 	jint EGLExt::EGL_OPENGL_ES3_BIT_KHR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.EGLExt",
 			"EGL_OPENGL_ES3_BIT_KHR"
 		);
 	}
 	jint EGLExt::EGL_RECORDABLE_ANDROID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.EGLExt",
 			"EGL_RECORDABLE_ANDROID"
 		);
@@ -54,7 +54,7 @@ namespace android::opengl
 	// Methods
 	jboolean EGLExt::eglPresentationTimeANDROID(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, jlong arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.opengl.EGLExt",
 			"eglPresentationTimeANDROID",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z",

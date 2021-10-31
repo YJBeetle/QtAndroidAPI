@@ -5,84 +5,84 @@ namespace java::lang::reflect
 	// Fields
 	jint Modifier::ABSTRACT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"ABSTRACT"
 		);
 	}
 	jint Modifier::FINAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"FINAL"
 		);
 	}
 	jint Modifier::INTERFACE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"INTERFACE"
 		);
 	}
 	jint Modifier::NATIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"NATIVE"
 		);
 	}
 	jint Modifier::PRIVATE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"PRIVATE"
 		);
 	}
 	jint Modifier::PROTECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"PROTECTED"
 		);
 	}
 	jint Modifier::PUBLIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"PUBLIC"
 		);
 	}
 	jint Modifier::STATIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"STATIC"
 		);
 	}
 	jint Modifier::STRICT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"STRICT"
 		);
 	}
 	jint Modifier::SYNCHRONIZED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"SYNCHRONIZED"
 		);
 	}
 	jint Modifier::TRANSIENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"TRANSIENT"
 		);
 	}
 	jint Modifier::VOLATILE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.lang.reflect.Modifier",
 			"VOLATILE"
 		);
@@ -96,7 +96,7 @@ namespace java::lang::reflect
 	// Methods
 	jint Modifier::classModifiers()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"classModifiers",
 			"()I"
@@ -104,7 +104,7 @@ namespace java::lang::reflect
 	}
 	jint Modifier::constructorModifiers()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"constructorModifiers",
 			"()I"
@@ -112,7 +112,7 @@ namespace java::lang::reflect
 	}
 	jint Modifier::fieldModifiers()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"fieldModifiers",
 			"()I"
@@ -120,7 +120,7 @@ namespace java::lang::reflect
 	}
 	jint Modifier::interfaceModifiers()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"interfaceModifiers",
 			"()I"
@@ -128,7 +128,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isAbstract(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isAbstract",
 			"(I)Z",
@@ -137,7 +137,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isFinal(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isFinal",
 			"(I)Z",
@@ -146,7 +146,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isInterface(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isInterface",
 			"(I)Z",
@@ -155,7 +155,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isNative(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isNative",
 			"(I)Z",
@@ -164,7 +164,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isPrivate(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isPrivate",
 			"(I)Z",
@@ -173,7 +173,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isProtected(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isProtected",
 			"(I)Z",
@@ -182,7 +182,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isPublic(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isPublic",
 			"(I)Z",
@@ -191,7 +191,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isStatic(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isStatic",
 			"(I)Z",
@@ -200,7 +200,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isStrict(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isStrict",
 			"(I)Z",
@@ -209,7 +209,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isSynchronized(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isSynchronized",
 			"(I)Z",
@@ -218,7 +218,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isTransient(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isTransient",
 			"(I)Z",
@@ -227,7 +227,7 @@ namespace java::lang::reflect
 	}
 	jboolean Modifier::isVolatile(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.reflect.Modifier",
 			"isVolatile",
 			"(I)Z",
@@ -236,7 +236,7 @@ namespace java::lang::reflect
 	}
 	jint Modifier::methodModifiers()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"methodModifiers",
 			"()I"
@@ -244,7 +244,7 @@ namespace java::lang::reflect
 	}
 	jint Modifier::parameterModifiers()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"parameterModifiers",
 			"()I"
@@ -252,7 +252,7 @@ namespace java::lang::reflect
 	}
 	jstring Modifier::toString(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.reflect.Modifier",
 			"toString",
 			"(I)Ljava/lang/String;",

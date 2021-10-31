@@ -11,7 +11,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass IntentFilter::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.IntentFilter",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -19,112 +19,112 @@ namespace android::content
 	}
 	jint IntentFilter::MATCH_ADJUSTMENT_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"MATCH_ADJUSTMENT_MASK"
 		);
 	}
 	jint IntentFilter::MATCH_ADJUSTMENT_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"MATCH_ADJUSTMENT_NORMAL"
 		);
 	}
 	jint IntentFilter::MATCH_CATEGORY_EMPTY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"MATCH_CATEGORY_EMPTY"
 		);
 	}
 	jint IntentFilter::MATCH_CATEGORY_HOST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"MATCH_CATEGORY_HOST"
 		);
 	}
 	jint IntentFilter::MATCH_CATEGORY_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"MATCH_CATEGORY_MASK"
 		);
 	}
 	jint IntentFilter::MATCH_CATEGORY_PATH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"MATCH_CATEGORY_PATH"
 		);
 	}
 	jint IntentFilter::MATCH_CATEGORY_PORT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"MATCH_CATEGORY_PORT"
 		);
 	}
 	jint IntentFilter::MATCH_CATEGORY_SCHEME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"MATCH_CATEGORY_SCHEME"
 		);
 	}
 	jint IntentFilter::MATCH_CATEGORY_SCHEME_SPECIFIC_PART()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"MATCH_CATEGORY_SCHEME_SPECIFIC_PART"
 		);
 	}
 	jint IntentFilter::MATCH_CATEGORY_TYPE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"MATCH_CATEGORY_TYPE"
 		);
 	}
 	jint IntentFilter::NO_MATCH_ACTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"NO_MATCH_ACTION"
 		);
 	}
 	jint IntentFilter::NO_MATCH_CATEGORY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"NO_MATCH_CATEGORY"
 		);
 	}
 	jint IntentFilter::NO_MATCH_DATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"NO_MATCH_DATA"
 		);
 	}
 	jint IntentFilter::NO_MATCH_TYPE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"NO_MATCH_TYPE"
 		);
 	}
 	jint IntentFilter::SYSTEM_HIGH_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"SYSTEM_HIGH_PRIORITY"
 		);
 	}
 	jint IntentFilter::SYSTEM_LOW_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.IntentFilter",
 			"SYSTEM_LOW_PRIORITY"
 		);
@@ -162,7 +162,7 @@ namespace android::content
 	// Methods
 	android::content::IntentFilter IntentFilter::create(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.IntentFilter",
 			"create",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/IntentFilter;",

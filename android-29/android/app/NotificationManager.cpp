@@ -14,7 +14,7 @@ namespace android::app
 	// Fields
 	jstring NotificationManager::ACTION_APP_BLOCK_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_APP_BLOCK_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::app
 	}
 	jstring NotificationManager::ACTION_AUTOMATIC_ZEN_RULE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_AUTOMATIC_ZEN_RULE",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::app
 	}
 	jstring NotificationManager::ACTION_INTERRUPTION_FILTER_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_INTERRUPTION_FILTER_CHANGED",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::app
 	}
 	jstring NotificationManager::ACTION_NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::app
 	}
 	jstring NotificationManager::ACTION_NOTIFICATION_CHANNEL_GROUP_BLOCK_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_NOTIFICATION_CHANNEL_GROUP_BLOCK_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -54,7 +54,7 @@ namespace android::app
 	}
 	jstring NotificationManager::ACTION_NOTIFICATION_POLICY_ACCESS_GRANTED_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_NOTIFICATION_POLICY_ACCESS_GRANTED_CHANGED",
 			"Ljava/lang/String;"
@@ -62,7 +62,7 @@ namespace android::app
 	}
 	jstring NotificationManager::ACTION_NOTIFICATION_POLICY_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"ACTION_NOTIFICATION_POLICY_CHANGED",
 			"Ljava/lang/String;"
@@ -70,7 +70,7 @@ namespace android::app
 	}
 	jstring NotificationManager::EXTRA_AUTOMATIC_RULE_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"EXTRA_AUTOMATIC_RULE_ID",
 			"Ljava/lang/String;"
@@ -78,7 +78,7 @@ namespace android::app
 	}
 	jstring NotificationManager::EXTRA_BLOCKED_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"EXTRA_BLOCKED_STATE",
 			"Ljava/lang/String;"
@@ -86,7 +86,7 @@ namespace android::app
 	}
 	jstring NotificationManager::EXTRA_NOTIFICATION_CHANNEL_GROUP_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"EXTRA_NOTIFICATION_CHANNEL_GROUP_ID",
 			"Ljava/lang/String;"
@@ -94,7 +94,7 @@ namespace android::app
 	}
 	jstring NotificationManager::EXTRA_NOTIFICATION_CHANNEL_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"EXTRA_NOTIFICATION_CHANNEL_ID",
 			"Ljava/lang/String;"
@@ -102,91 +102,91 @@ namespace android::app
 	}
 	jint NotificationManager::IMPORTANCE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"IMPORTANCE_DEFAULT"
 		);
 	}
 	jint NotificationManager::IMPORTANCE_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"IMPORTANCE_HIGH"
 		);
 	}
 	jint NotificationManager::IMPORTANCE_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"IMPORTANCE_LOW"
 		);
 	}
 	jint NotificationManager::IMPORTANCE_MAX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"IMPORTANCE_MAX"
 		);
 	}
 	jint NotificationManager::IMPORTANCE_MIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"IMPORTANCE_MIN"
 		);
 	}
 	jint NotificationManager::IMPORTANCE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"IMPORTANCE_NONE"
 		);
 	}
 	jint NotificationManager::IMPORTANCE_UNSPECIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"IMPORTANCE_UNSPECIFIED"
 		);
 	}
 	jint NotificationManager::INTERRUPTION_FILTER_ALARMS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"INTERRUPTION_FILTER_ALARMS"
 		);
 	}
 	jint NotificationManager::INTERRUPTION_FILTER_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"INTERRUPTION_FILTER_ALL"
 		);
 	}
 	jint NotificationManager::INTERRUPTION_FILTER_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"INTERRUPTION_FILTER_NONE"
 		);
 	}
 	jint NotificationManager::INTERRUPTION_FILTER_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"INTERRUPTION_FILTER_PRIORITY"
 		);
 	}
 	jint NotificationManager::INTERRUPTION_FILTER_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.NotificationManager",
 			"INTERRUPTION_FILTER_UNKNOWN"
 		);
 	}
 	jstring NotificationManager::META_DATA_AUTOMATIC_RULE_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"META_DATA_AUTOMATIC_RULE_TYPE",
 			"Ljava/lang/String;"
@@ -194,7 +194,7 @@ namespace android::app
 	}
 	jstring NotificationManager::META_DATA_RULE_INSTANCE_LIMIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.NotificationManager",
 			"META_DATA_RULE_INSTANCE_LIMIT",
 			"Ljava/lang/String;"

@@ -9,7 +9,7 @@ namespace android::telephony
 	// Fields
 	jstring VisualVoicemailService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.VisualVoicemailService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

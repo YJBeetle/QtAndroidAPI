@@ -7,7 +7,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass AlarmManager_AlarmClockInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.AlarmManager$AlarmClockInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

@@ -13,7 +13,7 @@ namespace android::net::wifi::hotspot2
 	// Methods
 	android::net::wifi::hotspot2::PasspointConfiguration ConfigParser::parsePasspointConfig(jstring arg0, jbyteArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.wifi.hotspot2.ConfigParser",
 			"parsePasspointConfig",
 			"(Ljava/lang/String;[B)Landroid/net/wifi/hotspot2/PasspointConfiguration;",

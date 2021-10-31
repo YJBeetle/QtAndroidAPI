@@ -5,91 +5,91 @@ namespace android::text::format
 	// Fields
 	jint Time::EPOCH_JULIAN_DAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"EPOCH_JULIAN_DAY"
 		);
 	}
 	jint Time::FRIDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"FRIDAY"
 		);
 	}
 	jint Time::HOUR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"HOUR"
 		);
 	}
 	jint Time::MINUTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"MINUTE"
 		);
 	}
 	jint Time::MONDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"MONDAY"
 		);
 	}
 	jint Time::MONDAY_BEFORE_JULIAN_EPOCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"MONDAY_BEFORE_JULIAN_EPOCH"
 		);
 	}
 	jint Time::MONTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"MONTH"
 		);
 	}
 	jint Time::MONTH_DAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"MONTH_DAY"
 		);
 	}
 	jint Time::SATURDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"SATURDAY"
 		);
 	}
 	jint Time::SECOND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"SECOND"
 		);
 	}
 	jint Time::SUNDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"SUNDAY"
 		);
 	}
 	jint Time::THURSDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"THURSDAY"
 		);
 	}
 	jstring Time::TIMEZONE_UTC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.format.Time",
 			"TIMEZONE_UTC",
 			"Ljava/lang/String;"
@@ -97,42 +97,42 @@ namespace android::text::format
 	}
 	jint Time::TUESDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"TUESDAY"
 		);
 	}
 	jint Time::WEDNESDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"WEDNESDAY"
 		);
 	}
 	jint Time::WEEK_DAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"WEEK_DAY"
 		);
 	}
 	jint Time::WEEK_NUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"WEEK_NUM"
 		);
 	}
 	jint Time::YEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"YEAR"
 		);
 	}
 	jint Time::YEAR_DAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.format.Time",
 			"YEAR_DAY"
 		);
@@ -236,7 +236,7 @@ namespace android::text::format
 	// Methods
 	jint Time::compare(android::text::format::Time arg0, android::text::format::Time arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.format.Time",
 			"compare",
 			"(Landroid/text/format/Time;Landroid/text/format/Time;)I",
@@ -246,7 +246,7 @@ namespace android::text::format
 	}
 	jstring Time::getCurrentTimezone()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.format.Time",
 			"getCurrentTimezone",
 			"()Ljava/lang/String;"
@@ -254,7 +254,7 @@ namespace android::text::format
 	}
 	jint Time::getJulianDay(jlong arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.format.Time",
 			"getJulianDay",
 			"(JJ)I",
@@ -264,7 +264,7 @@ namespace android::text::format
 	}
 	jint Time::getJulianMondayFromWeeksSinceEpoch(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.format.Time",
 			"getJulianMondayFromWeeksSinceEpoch",
 			"(I)I",
@@ -273,7 +273,7 @@ namespace android::text::format
 	}
 	jint Time::getWeeksSinceEpochFromJulianDay(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.format.Time",
 			"getWeeksSinceEpochFromJulianDay",
 			"(II)I",
@@ -283,7 +283,7 @@ namespace android::text::format
 	}
 	jboolean Time::isEpoch(android::text::format::Time arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.format.Time",
 			"isEpoch",
 			"(Landroid/text/format/Time;)Z",

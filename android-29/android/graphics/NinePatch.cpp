@@ -33,7 +33,7 @@ namespace android::graphics
 	// Methods
 	jboolean NinePatch::isNinePatchChunk(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.graphics.NinePatch",
 			"isNinePatchChunk",
 			"([B)Z",

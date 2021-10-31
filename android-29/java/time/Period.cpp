@@ -9,7 +9,7 @@ namespace java::time
 	// Fields
 	java::time::Period Period::ZERO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.Period",
 			"ZERO",
 			"Ljava/time/Period;"
@@ -24,7 +24,7 @@ namespace java::time
 	// Methods
 	java::time::Period Period::between(java::time::LocalDate arg0, java::time::LocalDate arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Period",
 			"between",
 			"(Ljava/time/LocalDate;Ljava/time/LocalDate;)Ljava/time/Period;",
@@ -34,7 +34,7 @@ namespace java::time
 	}
 	java::time::Period Period::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Period",
 			"from",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Period;",
@@ -43,7 +43,7 @@ namespace java::time
 	}
 	java::time::Period Period::of(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Period",
 			"of",
 			"(III)Ljava/time/Period;",
@@ -54,7 +54,7 @@ namespace java::time
 	}
 	java::time::Period Period::ofDays(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Period",
 			"ofDays",
 			"(I)Ljava/time/Period;",
@@ -63,7 +63,7 @@ namespace java::time
 	}
 	java::time::Period Period::ofMonths(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Period",
 			"ofMonths",
 			"(I)Ljava/time/Period;",
@@ -72,7 +72,7 @@ namespace java::time
 	}
 	java::time::Period Period::ofWeeks(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Period",
 			"ofWeeks",
 			"(I)Ljava/time/Period;",
@@ -81,7 +81,7 @@ namespace java::time
 	}
 	java::time::Period Period::ofYears(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Period",
 			"ofYears",
 			"(I)Ljava/time/Period;",
@@ -90,7 +90,7 @@ namespace java::time
 	}
 	java::time::Period Period::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Period",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Period;",

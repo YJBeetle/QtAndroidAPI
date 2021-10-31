@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring CallLog::AUTHORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CallLog",
 			"AUTHORITY",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri CallLog::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CallLog",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"

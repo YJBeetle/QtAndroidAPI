@@ -11,28 +11,28 @@ namespace android::text
 	// Fields
 	jint TextUtils::CAP_MODE_CHARACTERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.TextUtils",
 			"CAP_MODE_CHARACTERS"
 		);
 	}
 	jint TextUtils::CAP_MODE_SENTENCES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.TextUtils",
 			"CAP_MODE_SENTENCES"
 		);
 	}
 	jint TextUtils::CAP_MODE_WORDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.TextUtils",
 			"CAP_MODE_WORDS"
 		);
 	}
 	__JniBaseClass TextUtils::CHAR_SEQUENCE_CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.TextUtils",
 			"CHAR_SEQUENCE_CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -40,21 +40,21 @@ namespace android::text
 	}
 	jint TextUtils::SAFE_STRING_FLAG_FIRST_LINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.TextUtils",
 			"SAFE_STRING_FLAG_FIRST_LINE"
 		);
 	}
 	jint TextUtils::SAFE_STRING_FLAG_SINGLE_LINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.TextUtils",
 			"SAFE_STRING_FLAG_SINGLE_LINE"
 		);
 	}
 	jint TextUtils::SAFE_STRING_FLAG_TRIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.TextUtils",
 			"SAFE_STRING_FLAG_TRIM"
 		);
@@ -68,7 +68,7 @@ namespace android::text
 	// Methods
 	jstring TextUtils::commaEllipsize(jstring arg0, android::text::TextPaint arg1, jfloat arg2, jstring arg3, jstring arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"commaEllipsize",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLjava/lang/String;Ljava/lang/String;)Ljava/lang/CharSequence;",
@@ -81,7 +81,7 @@ namespace android::text
 	}
 	jstring TextUtils::concat(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"concat",
 			"([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
@@ -90,7 +90,7 @@ namespace android::text
 	}
 	void TextUtils::copySpansFrom(__JniBaseClass arg0, jint arg1, jint arg2, jclass arg3, __JniBaseClass arg4, jint arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.TextUtils",
 			"copySpansFrom",
 			"(Landroid/text/Spanned;IILjava/lang/Class;Landroid/text/Spannable;I)V",
@@ -104,7 +104,7 @@ namespace android::text
 	}
 	void TextUtils::dumpSpans(jstring arg0, __JniBaseClass arg1, jstring arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.TextUtils",
 			"dumpSpans",
 			"(Ljava/lang/CharSequence;Landroid/util/Printer;Ljava/lang/String;)V",
@@ -115,7 +115,7 @@ namespace android::text
 	}
 	jstring TextUtils::ellipsize(jstring arg0, android::text::TextPaint arg1, jfloat arg2, android::text::TextUtils_TruncateAt arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"ellipsize",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;",
@@ -127,7 +127,7 @@ namespace android::text
 	}
 	jstring TextUtils::ellipsize(jstring arg0, android::text::TextPaint arg1, jfloat arg2, android::text::TextUtils_TruncateAt arg3, jboolean arg4, __JniBaseClass arg5)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"ellipsize",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;ZLandroid/text/TextUtils$EllipsizeCallback;)Ljava/lang/CharSequence;",
@@ -141,7 +141,7 @@ namespace android::text
 	}
 	jboolean TextUtils::equals(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"equals",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z",
@@ -151,7 +151,7 @@ namespace android::text
 	}
 	jstring TextUtils::expandTemplate(jstring arg0, jarray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"expandTemplate",
 			"(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
@@ -161,7 +161,7 @@ namespace android::text
 	}
 	jint TextUtils::getCapsMode(jstring arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"getCapsMode",
 			"(Ljava/lang/CharSequence;II)I",
@@ -172,7 +172,7 @@ namespace android::text
 	}
 	void TextUtils::getChars(jstring arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.TextUtils",
 			"getChars",
 			"(Ljava/lang/CharSequence;II[CI)V",
@@ -185,7 +185,7 @@ namespace android::text
 	}
 	jint TextUtils::getLayoutDirectionFromLocale(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"getLayoutDirectionFromLocale",
 			"(Ljava/util/Locale;)I",
@@ -194,7 +194,7 @@ namespace android::text
 	}
 	jint TextUtils::getOffsetAfter(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"getOffsetAfter",
 			"(Ljava/lang/CharSequence;I)I",
@@ -204,7 +204,7 @@ namespace android::text
 	}
 	jint TextUtils::getOffsetBefore(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"getOffsetBefore",
 			"(Ljava/lang/CharSequence;I)I",
@@ -214,7 +214,7 @@ namespace android::text
 	}
 	jstring TextUtils::getReverse(jstring arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"getReverse",
 			"(Ljava/lang/CharSequence;II)Ljava/lang/CharSequence;",
@@ -225,7 +225,7 @@ namespace android::text
 	}
 	jint TextUtils::getTrimmedLength(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"getTrimmedLength",
 			"(Ljava/lang/CharSequence;)I",
@@ -234,7 +234,7 @@ namespace android::text
 	}
 	jstring TextUtils::htmlEncode(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"htmlEncode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -243,7 +243,7 @@ namespace android::text
 	}
 	jint TextUtils::indexOf(jstring arg0, jchar arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;C)I",
@@ -253,7 +253,7 @@ namespace android::text
 	}
 	jint TextUtils::indexOf(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I",
@@ -263,7 +263,7 @@ namespace android::text
 	}
 	jint TextUtils::indexOf(jstring arg0, jchar arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;CI)I",
@@ -274,7 +274,7 @@ namespace android::text
 	}
 	jint TextUtils::indexOf(jstring arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)I",
@@ -285,7 +285,7 @@ namespace android::text
 	}
 	jint TextUtils::indexOf(jstring arg0, jchar arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;CII)I",
@@ -297,7 +297,7 @@ namespace android::text
 	}
 	jint TextUtils::indexOf(jstring arg0, jstring arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"indexOf",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;II)I",
@@ -309,7 +309,7 @@ namespace android::text
 	}
 	jboolean TextUtils::isDigitsOnly(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"isDigitsOnly",
 			"(Ljava/lang/CharSequence;)Z",
@@ -318,7 +318,7 @@ namespace android::text
 	}
 	jboolean TextUtils::isEmpty(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"isEmpty",
 			"(Ljava/lang/CharSequence;)Z",
@@ -327,7 +327,7 @@ namespace android::text
 	}
 	jboolean TextUtils::isGraphic(jchar arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"isGraphic",
 			"(C)Z",
@@ -336,7 +336,7 @@ namespace android::text
 	}
 	jboolean TextUtils::isGraphic(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"isGraphic",
 			"(Ljava/lang/CharSequence;)Z",
@@ -345,7 +345,7 @@ namespace android::text
 	}
 	jstring TextUtils::join(jstring arg0, jobjectArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"join",
 			"(Ljava/lang/CharSequence;[Ljava/lang/Object;)Ljava/lang/String;",
@@ -355,7 +355,7 @@ namespace android::text
 	}
 	jstring TextUtils::join(jstring arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"join",
 			"(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;",
@@ -365,7 +365,7 @@ namespace android::text
 	}
 	jint TextUtils::lastIndexOf(jstring arg0, jchar arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"lastIndexOf",
 			"(Ljava/lang/CharSequence;C)I",
@@ -375,7 +375,7 @@ namespace android::text
 	}
 	jint TextUtils::lastIndexOf(jstring arg0, jchar arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"lastIndexOf",
 			"(Ljava/lang/CharSequence;CI)I",
@@ -386,7 +386,7 @@ namespace android::text
 	}
 	jint TextUtils::lastIndexOf(jstring arg0, jchar arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.TextUtils",
 			"lastIndexOf",
 			"(Ljava/lang/CharSequence;CII)I",
@@ -398,7 +398,7 @@ namespace android::text
 	}
 	jstring TextUtils::listEllipsize(android::content::Context arg0, __JniBaseClass arg1, jstring arg2, android::text::TextPaint arg3, jfloat arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"listEllipsize",
 			"(Landroid/content/Context;Ljava/util/List;Ljava/lang/String;Landroid/text/TextPaint;FI)Ljava/lang/CharSequence;",
@@ -412,7 +412,7 @@ namespace android::text
 	}
 	jstring TextUtils::makeSafeForPresentation(jstring arg0, jint arg1, jfloat arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"makeSafeForPresentation",
 			"(Ljava/lang/String;IFI)Ljava/lang/CharSequence;",
@@ -424,7 +424,7 @@ namespace android::text
 	}
 	jboolean TextUtils::regionMatches(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.TextUtils",
 			"regionMatches",
 			"(Ljava/lang/CharSequence;ILjava/lang/CharSequence;II)Z",
@@ -437,7 +437,7 @@ namespace android::text
 	}
 	jstring TextUtils::replace(jstring arg0, jarray arg1, jarray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"replace",
 			"(Ljava/lang/CharSequence;[Ljava/lang/String;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
@@ -448,7 +448,7 @@ namespace android::text
 	}
 	jarray TextUtils::split(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"split",
 			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
@@ -458,7 +458,7 @@ namespace android::text
 	}
 	jarray TextUtils::split(jstring arg0, java::util::regex::Pattern arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"split",
 			"(Ljava/lang/String;Ljava/util/regex/Pattern;)[Ljava/lang/String;",
@@ -468,7 +468,7 @@ namespace android::text
 	}
 	jstring TextUtils::stringOrSpannedString(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"stringOrSpannedString",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
@@ -477,7 +477,7 @@ namespace android::text
 	}
 	jstring TextUtils::substring(jstring arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.TextUtils",
 			"substring",
 			"(Ljava/lang/CharSequence;II)Ljava/lang/String;",
@@ -488,7 +488,7 @@ namespace android::text
 	}
 	void TextUtils::writeToParcel(jstring arg0, android::os::Parcel arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.TextUtils",
 			"writeToParcel",
 			"(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V",

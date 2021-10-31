@@ -7,7 +7,7 @@ namespace android::app::job
 	// Fields
 	__JniBaseClass JobInfo_TriggerContentUri::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.job.JobInfo$TriggerContentUri",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::app::job
 	}
 	jint JobInfo_TriggerContentUri::FLAG_NOTIFY_FOR_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobInfo$TriggerContentUri",
 			"FLAG_NOTIFY_FOR_DESCENDANTS"
 		);

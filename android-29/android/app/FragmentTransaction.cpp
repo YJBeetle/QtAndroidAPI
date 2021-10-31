@@ -7,49 +7,49 @@ namespace android::app
 	// Fields
 	jint FragmentTransaction::TRANSIT_ENTER_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.FragmentTransaction",
 			"TRANSIT_ENTER_MASK"
 		);
 	}
 	jint FragmentTransaction::TRANSIT_EXIT_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.FragmentTransaction",
 			"TRANSIT_EXIT_MASK"
 		);
 	}
 	jint FragmentTransaction::TRANSIT_FRAGMENT_CLOSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.FragmentTransaction",
 			"TRANSIT_FRAGMENT_CLOSE"
 		);
 	}
 	jint FragmentTransaction::TRANSIT_FRAGMENT_FADE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.FragmentTransaction",
 			"TRANSIT_FRAGMENT_FADE"
 		);
 	}
 	jint FragmentTransaction::TRANSIT_FRAGMENT_OPEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.FragmentTransaction",
 			"TRANSIT_FRAGMENT_OPEN"
 		);
 	}
 	jint FragmentTransaction::TRANSIT_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.FragmentTransaction",
 			"TRANSIT_NONE"
 		);
 	}
 	jint FragmentTransaction::TRANSIT_UNSET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.FragmentTransaction",
 			"TRANSIT_UNSET"
 		);

@@ -7,42 +7,42 @@ namespace android::text::util
 	// Fields
 	jint Linkify::ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.util.Linkify",
 			"ALL"
 		);
 	}
 	jint Linkify::EMAIL_ADDRESSES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.util.Linkify",
 			"EMAIL_ADDRESSES"
 		);
 	}
 	jint Linkify::MAP_ADDRESSES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.util.Linkify",
 			"MAP_ADDRESSES"
 		);
 	}
 	jint Linkify::PHONE_NUMBERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.util.Linkify",
 			"PHONE_NUMBERS"
 		);
 	}
 	jint Linkify::WEB_URLS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.util.Linkify",
 			"WEB_URLS"
 		);
 	}
 	__JniBaseClass Linkify::sPhoneNumberMatchFilter()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.util.Linkify",
 			"sPhoneNumberMatchFilter",
 			"Landroid/text/util/Linkify$MatchFilter;"
@@ -50,7 +50,7 @@ namespace android::text::util
 	}
 	__JniBaseClass Linkify::sPhoneNumberTransformFilter()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.util.Linkify",
 			"sPhoneNumberTransformFilter",
 			"Landroid/text/util/Linkify$TransformFilter;"
@@ -58,7 +58,7 @@ namespace android::text::util
 	}
 	__JniBaseClass Linkify::sUrlMatchFilter()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.util.Linkify",
 			"sUrlMatchFilter",
 			"Landroid/text/util/Linkify$MatchFilter;"
@@ -78,7 +78,7 @@ namespace android::text::util
 	// Methods
 	jboolean Linkify::addLinks(__JniBaseClass arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;I)Z",
@@ -88,7 +88,7 @@ namespace android::text::util
 	}
 	jboolean Linkify::addLinks(android::widget::TextView arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/widget/TextView;I)Z",
@@ -98,7 +98,7 @@ namespace android::text::util
 	}
 	jboolean Linkify::addLinks(__JniBaseClass arg0, jint arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;ILjava/util/function/Function;)Z",
@@ -109,7 +109,7 @@ namespace android::text::util
 	}
 	jboolean Linkify::addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;)Z",
@@ -120,7 +120,7 @@ namespace android::text::util
 	}
 	jboolean Linkify::addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2, __JniBaseClass arg3, __JniBaseClass arg4)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z",
@@ -133,7 +133,7 @@ namespace android::text::util
 	}
 	jboolean Linkify::addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z",
@@ -147,7 +147,7 @@ namespace android::text::util
 	}
 	jboolean Linkify::addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5, __JniBaseClass arg6)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;Ljava/util/function/Function;)Z",
@@ -162,7 +162,7 @@ namespace android::text::util
 	}
 	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;)V",
@@ -173,7 +173,7 @@ namespace android::text::util
 	}
 	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, __JniBaseClass arg3, __JniBaseClass arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V",
@@ -186,7 +186,7 @@ namespace android::text::util
 	}
 	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V",

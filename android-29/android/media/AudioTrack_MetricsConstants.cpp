@@ -5,7 +5,7 @@ namespace android::media
 	// Fields
 	jstring AudioTrack_MetricsConstants::CHANNELMASK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"CHANNELMASK",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::media
 	}
 	jstring AudioTrack_MetricsConstants::CONTENTTYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"CONTENTTYPE",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::media
 	}
 	jstring AudioTrack_MetricsConstants::SAMPLERATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"SAMPLERATE",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::media
 	}
 	jstring AudioTrack_MetricsConstants::STREAMTYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"STREAMTYPE",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::media
 	}
 	jstring AudioTrack_MetricsConstants::USAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"USAGE",
 			"Ljava/lang/String;"

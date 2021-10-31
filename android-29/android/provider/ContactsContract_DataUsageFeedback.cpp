@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri ContactsContract_DataUsageFeedback::DELETE_USAGE_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"DELETE_USAGE_URI",
 			"Landroid/net/Uri;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_DataUsageFeedback::FEEDBACK_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"FEEDBACK_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_CALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE_CALL",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_LONG_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE_LONG_TEXT",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_SHORT_TEXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE_SHORT_TEXT",
 			"Ljava/lang/String;"

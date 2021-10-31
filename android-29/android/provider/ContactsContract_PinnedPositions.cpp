@@ -6,14 +6,14 @@ namespace android::provider
 	// Fields
 	jint ContactsContract_PinnedPositions::DEMOTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$PinnedPositions",
 			"DEMOTED"
 		);
 	}
 	jint ContactsContract_PinnedPositions::UNPINNED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$PinnedPositions",
 			"UNPINNED"
 		);
@@ -32,7 +32,7 @@ namespace android::provider
 	// Methods
 	void ContactsContract_PinnedPositions::pin(android::content::ContentResolver arg0, jlong arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.ContactsContract$PinnedPositions",
 			"pin",
 			"(Landroid/content/ContentResolver;JI)V",
@@ -43,7 +43,7 @@ namespace android::provider
 	}
 	void ContactsContract_PinnedPositions::undemote(android::content::ContentResolver arg0, jlong arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.ContactsContract$PinnedPositions",
 			"undemote",
 			"(Landroid/content/ContentResolver;J)V",

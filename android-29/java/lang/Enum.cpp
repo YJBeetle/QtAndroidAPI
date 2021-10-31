@@ -14,7 +14,7 @@ namespace java::lang
 	// Methods
 	java::lang::Enum Enum::valueOf(jclass arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Enum",
 			"valueOf",
 			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;",

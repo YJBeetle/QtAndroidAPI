@@ -16,7 +16,7 @@ namespace java::nio::channels::spi
 	// Methods
 	java::nio::channels::spi::AsynchronousChannelProvider AsynchronousChannelProvider::provider()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.spi.AsynchronousChannelProvider",
 			"provider",
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"

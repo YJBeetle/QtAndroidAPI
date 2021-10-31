@@ -11,105 +11,105 @@ namespace android::webkit
 	// Fields
 	jint WebSettings::FORCE_DARK_AUTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"FORCE_DARK_AUTO"
 		);
 	}
 	jint WebSettings::FORCE_DARK_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"FORCE_DARK_OFF"
 		);
 	}
 	jint WebSettings::FORCE_DARK_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"FORCE_DARK_ON"
 		);
 	}
 	jint WebSettings::LOAD_CACHE_ELSE_NETWORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"LOAD_CACHE_ELSE_NETWORK"
 		);
 	}
 	jint WebSettings::LOAD_CACHE_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"LOAD_CACHE_ONLY"
 		);
 	}
 	jint WebSettings::LOAD_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"LOAD_DEFAULT"
 		);
 	}
 	jint WebSettings::LOAD_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"LOAD_NORMAL"
 		);
 	}
 	jint WebSettings::LOAD_NO_CACHE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"LOAD_NO_CACHE"
 		);
 	}
 	jint WebSettings::MENU_ITEM_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"MENU_ITEM_NONE"
 		);
 	}
 	jint WebSettings::MENU_ITEM_PROCESS_TEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"MENU_ITEM_PROCESS_TEXT"
 		);
 	}
 	jint WebSettings::MENU_ITEM_SHARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"MENU_ITEM_SHARE"
 		);
 	}
 	jint WebSettings::MENU_ITEM_WEB_SEARCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"MENU_ITEM_WEB_SEARCH"
 		);
 	}
 	jint WebSettings::MIXED_CONTENT_ALWAYS_ALLOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"MIXED_CONTENT_ALWAYS_ALLOW"
 		);
 	}
 	jint WebSettings::MIXED_CONTENT_COMPATIBILITY_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"MIXED_CONTENT_COMPATIBILITY_MODE"
 		);
 	}
 	jint WebSettings::MIXED_CONTENT_NEVER_ALLOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.webkit.WebSettings",
 			"MIXED_CONTENT_NEVER_ALLOW"
 		);
@@ -128,7 +128,7 @@ namespace android::webkit
 	// Methods
 	jstring WebSettings::getDefaultUserAgent(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.WebSettings",
 			"getDefaultUserAgent",
 			"(Landroid/content/Context;)Ljava/lang/String;",

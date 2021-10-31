@@ -22,7 +22,7 @@ namespace android::text::method
 	// Methods
 	android::text::method::QwertyKeyListener QwertyKeyListener::getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.QwertyKeyListener",
 			"getInstance",
 			"(ZLandroid/text/method/TextKeyListener$Capitalize;)Landroid/text/method/QwertyKeyListener;",
@@ -32,7 +32,7 @@ namespace android::text::method
 	}
 	android::text::method::QwertyKeyListener QwertyKeyListener::getInstanceForFullKeyboard()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.QwertyKeyListener",
 			"getInstanceForFullKeyboard",
 			"()Landroid/text/method/QwertyKeyListener;"
@@ -40,7 +40,7 @@ namespace android::text::method
 	}
 	void QwertyKeyListener::markAsReplaced(__JniBaseClass arg0, jint arg1, jint arg2, jstring arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.method.QwertyKeyListener",
 			"markAsReplaced",
 			"(Landroid/text/Spannable;IILjava/lang/String;)V",

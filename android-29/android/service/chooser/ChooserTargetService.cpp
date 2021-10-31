@@ -8,7 +8,7 @@ namespace android::service::chooser
 	// Fields
 	jstring ChooserTargetService::BIND_PERMISSION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.chooser.ChooserTargetService",
 			"BIND_PERMISSION",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::service::chooser
 	}
 	jstring ChooserTargetService::META_DATA_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.chooser.ChooserTargetService",
 			"META_DATA_NAME",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::service::chooser
 	}
 	jstring ChooserTargetService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.chooser.ChooserTargetService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

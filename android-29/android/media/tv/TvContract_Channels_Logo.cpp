@@ -5,7 +5,7 @@ namespace android::media::tv
 	// Fields
 	jstring TvContract_Channels_Logo::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Channels$Logo",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"

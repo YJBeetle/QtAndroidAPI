@@ -17,7 +17,7 @@ namespace android::text::util
 	// Methods
 	jarray Rfc822Tokenizer::tokenize(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.util.Rfc822Tokenizer",
 			"tokenize",
 			"(Ljava/lang/CharSequence;)[Landroid/text/util/Rfc822Token;",
@@ -26,7 +26,7 @@ namespace android::text::util
 	}
 	void Rfc822Tokenizer::tokenize(jstring arg0, __JniBaseClass arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.util.Rfc822Tokenizer",
 			"tokenize",
 			"(Ljava/lang/CharSequence;Ljava/util/Collection;)V",

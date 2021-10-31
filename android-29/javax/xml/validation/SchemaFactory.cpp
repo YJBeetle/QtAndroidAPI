@@ -16,7 +16,7 @@ namespace javax::xml::validation
 	// Methods
 	javax::xml::validation::SchemaFactory SchemaFactory::newDefaultInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.validation.SchemaFactory",
 			"newDefaultInstance",
 			"()Ljavax/xml/validation/SchemaFactory;"
@@ -24,7 +24,7 @@ namespace javax::xml::validation
 	}
 	javax::xml::validation::SchemaFactory SchemaFactory::newInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.validation.SchemaFactory",
 			"newInstance",
 			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
@@ -33,7 +33,7 @@ namespace javax::xml::validation
 	}
 	javax::xml::validation::SchemaFactory SchemaFactory::newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.validation.SchemaFactory",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/validation/SchemaFactory;",

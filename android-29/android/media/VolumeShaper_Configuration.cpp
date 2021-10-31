@@ -6,7 +6,7 @@ namespace android::media
 	// Fields
 	__JniBaseClass VolumeShaper_Configuration::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,7 +14,7 @@ namespace android::media
 	}
 	android::media::VolumeShaper_Configuration VolumeShaper_Configuration::CUBIC_RAMP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",
 			"CUBIC_RAMP",
 			"Landroid/media/VolumeShaper$Configuration;"
@@ -22,35 +22,35 @@ namespace android::media
 	}
 	jint VolumeShaper_Configuration::INTERPOLATOR_TYPE_CUBIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.VolumeShaper$Configuration",
 			"INTERPOLATOR_TYPE_CUBIC"
 		);
 	}
 	jint VolumeShaper_Configuration::INTERPOLATOR_TYPE_CUBIC_MONOTONIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.VolumeShaper$Configuration",
 			"INTERPOLATOR_TYPE_CUBIC_MONOTONIC"
 		);
 	}
 	jint VolumeShaper_Configuration::INTERPOLATOR_TYPE_LINEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.VolumeShaper$Configuration",
 			"INTERPOLATOR_TYPE_LINEAR"
 		);
 	}
 	jint VolumeShaper_Configuration::INTERPOLATOR_TYPE_STEP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.VolumeShaper$Configuration",
 			"INTERPOLATOR_TYPE_STEP"
 		);
 	}
 	android::media::VolumeShaper_Configuration VolumeShaper_Configuration::LINEAR_RAMP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",
 			"LINEAR_RAMP",
 			"Landroid/media/VolumeShaper$Configuration;"
@@ -58,7 +58,7 @@ namespace android::media
 	}
 	android::media::VolumeShaper_Configuration VolumeShaper_Configuration::SCURVE_RAMP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",
 			"SCURVE_RAMP",
 			"Landroid/media/VolumeShaper$Configuration;"
@@ -66,7 +66,7 @@ namespace android::media
 	}
 	android::media::VolumeShaper_Configuration VolumeShaper_Configuration::SINE_RAMP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",
 			"SINE_RAMP",
 			"Landroid/media/VolumeShaper$Configuration;"
@@ -81,7 +81,7 @@ namespace android::media
 	// Methods
 	jint VolumeShaper_Configuration::getMaximumCurvePoints()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.VolumeShaper$Configuration",
 			"getMaximumCurvePoints",
 			"()I"

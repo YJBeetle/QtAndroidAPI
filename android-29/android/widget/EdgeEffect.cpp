@@ -8,7 +8,7 @@ namespace android::widget
 	// Fields
 	android::graphics::BlendMode EdgeEffect::DEFAULT_BLEND_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.EdgeEffect",
 			"DEFAULT_BLEND_MODE",
 			"Landroid/graphics/BlendMode;"

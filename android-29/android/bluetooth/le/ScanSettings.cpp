@@ -6,28 +6,28 @@ namespace android::bluetooth::le
 	// Fields
 	jint ScanSettings::CALLBACK_TYPE_ALL_MATCHES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"CALLBACK_TYPE_ALL_MATCHES"
 		);
 	}
 	jint ScanSettings::CALLBACK_TYPE_FIRST_MATCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"CALLBACK_TYPE_FIRST_MATCH"
 		);
 	}
 	jint ScanSettings::CALLBACK_TYPE_MATCH_LOST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"CALLBACK_TYPE_MATCH_LOST"
 		);
 	}
 	__JniBaseClass ScanSettings::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.le.ScanSettings",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -35,70 +35,70 @@ namespace android::bluetooth::le
 	}
 	jint ScanSettings::MATCH_MODE_AGGRESSIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"MATCH_MODE_AGGRESSIVE"
 		);
 	}
 	jint ScanSettings::MATCH_MODE_STICKY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"MATCH_MODE_STICKY"
 		);
 	}
 	jint ScanSettings::MATCH_NUM_FEW_ADVERTISEMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"MATCH_NUM_FEW_ADVERTISEMENT"
 		);
 	}
 	jint ScanSettings::MATCH_NUM_MAX_ADVERTISEMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"MATCH_NUM_MAX_ADVERTISEMENT"
 		);
 	}
 	jint ScanSettings::MATCH_NUM_ONE_ADVERTISEMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"MATCH_NUM_ONE_ADVERTISEMENT"
 		);
 	}
 	jint ScanSettings::PHY_LE_ALL_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"PHY_LE_ALL_SUPPORTED"
 		);
 	}
 	jint ScanSettings::SCAN_MODE_BALANCED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"SCAN_MODE_BALANCED"
 		);
 	}
 	jint ScanSettings::SCAN_MODE_LOW_LATENCY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"SCAN_MODE_LOW_LATENCY"
 		);
 	}
 	jint ScanSettings::SCAN_MODE_LOW_POWER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"SCAN_MODE_LOW_POWER"
 		);
 	}
 	jint ScanSettings::SCAN_MODE_OPPORTUNISTIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.ScanSettings",
 			"SCAN_MODE_OPPORTUNISTIC"
 		);

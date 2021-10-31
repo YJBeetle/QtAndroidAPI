@@ -7,140 +7,140 @@ namespace java::awt::font
 	// Fields
 	jint NumericShaper::ALL_RANGES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"ALL_RANGES"
 		);
 	}
 	jint NumericShaper::ARABIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"ARABIC"
 		);
 	}
 	jint NumericShaper::BENGALI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"BENGALI"
 		);
 	}
 	jint NumericShaper::DEVANAGARI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"DEVANAGARI"
 		);
 	}
 	jint NumericShaper::EASTERN_ARABIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"EASTERN_ARABIC"
 		);
 	}
 	jint NumericShaper::ETHIOPIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"ETHIOPIC"
 		);
 	}
 	jint NumericShaper::EUROPEAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"EUROPEAN"
 		);
 	}
 	jint NumericShaper::GUJARATI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"GUJARATI"
 		);
 	}
 	jint NumericShaper::GURMUKHI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"GURMUKHI"
 		);
 	}
 	jint NumericShaper::KANNADA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"KANNADA"
 		);
 	}
 	jint NumericShaper::KHMER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"KHMER"
 		);
 	}
 	jint NumericShaper::LAO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"LAO"
 		);
 	}
 	jint NumericShaper::MALAYALAM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"MALAYALAM"
 		);
 	}
 	jint NumericShaper::MONGOLIAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"MONGOLIAN"
 		);
 	}
 	jint NumericShaper::MYANMAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"MYANMAR"
 		);
 	}
 	jint NumericShaper::ORIYA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"ORIYA"
 		);
 	}
 	jint NumericShaper::TAMIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"TAMIL"
 		);
 	}
 	jint NumericShaper::TELUGU()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"TELUGU"
 		);
 	}
 	jint NumericShaper::THAI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"THAI"
 		);
 	}
 	jint NumericShaper::TIBETAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.awt.font.NumericShaper",
 			"TIBETAN"
 		);
@@ -154,7 +154,7 @@ namespace java::awt::font
 	// Methods
 	java::awt::font::NumericShaper NumericShaper::getContextualShaper(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.awt.font.NumericShaper",
 			"getContextualShaper",
 			"(I)Ljava/awt/font/NumericShaper;",
@@ -163,7 +163,7 @@ namespace java::awt::font
 	}
 	java::awt::font::NumericShaper NumericShaper::getContextualShaper(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.awt.font.NumericShaper",
 			"getContextualShaper",
 			"(Ljava/util/Set;)Ljava/awt/font/NumericShaper;",
@@ -172,7 +172,7 @@ namespace java::awt::font
 	}
 	java::awt::font::NumericShaper NumericShaper::getContextualShaper(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.awt.font.NumericShaper",
 			"getContextualShaper",
 			"(II)Ljava/awt/font/NumericShaper;",
@@ -182,7 +182,7 @@ namespace java::awt::font
 	}
 	java::awt::font::NumericShaper NumericShaper::getContextualShaper(__JniBaseClass arg0, java::awt::font::NumericShaper_Range arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.awt.font.NumericShaper",
 			"getContextualShaper",
 			"(Ljava/util/Set;Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;",
@@ -192,7 +192,7 @@ namespace java::awt::font
 	}
 	java::awt::font::NumericShaper NumericShaper::getShaper(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.awt.font.NumericShaper",
 			"getShaper",
 			"(I)Ljava/awt/font/NumericShaper;",
@@ -201,7 +201,7 @@ namespace java::awt::font
 	}
 	java::awt::font::NumericShaper NumericShaper::getShaper(java::awt::font::NumericShaper_Range arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.awt.font.NumericShaper",
 			"getShaper",
 			"(Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;",

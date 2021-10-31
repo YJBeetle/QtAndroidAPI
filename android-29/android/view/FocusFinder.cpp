@@ -15,7 +15,7 @@ namespace android::view
 	// Methods
 	android::view::FocusFinder FocusFinder::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.FocusFinder",
 			"getInstance",
 			"()Landroid/view/FocusFinder;"

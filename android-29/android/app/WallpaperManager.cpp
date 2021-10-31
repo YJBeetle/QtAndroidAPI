@@ -17,7 +17,7 @@ namespace android::app
 	// Fields
 	jstring WallpaperManager::ACTION_CHANGE_LIVE_WALLPAPER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"ACTION_CHANGE_LIVE_WALLPAPER",
 			"Ljava/lang/String;"
@@ -25,7 +25,7 @@ namespace android::app
 	}
 	jstring WallpaperManager::ACTION_CROP_AND_SET_WALLPAPER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"ACTION_CROP_AND_SET_WALLPAPER",
 			"Ljava/lang/String;"
@@ -33,7 +33,7 @@ namespace android::app
 	}
 	jstring WallpaperManager::ACTION_LIVE_WALLPAPER_CHOOSER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"ACTION_LIVE_WALLPAPER_CHOOSER",
 			"Ljava/lang/String;"
@@ -41,7 +41,7 @@ namespace android::app
 	}
 	jstring WallpaperManager::COMMAND_DROP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"COMMAND_DROP",
 			"Ljava/lang/String;"
@@ -49,7 +49,7 @@ namespace android::app
 	}
 	jstring WallpaperManager::COMMAND_SECONDARY_TAP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"COMMAND_SECONDARY_TAP",
 			"Ljava/lang/String;"
@@ -57,7 +57,7 @@ namespace android::app
 	}
 	jstring WallpaperManager::COMMAND_TAP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"COMMAND_TAP",
 			"Ljava/lang/String;"
@@ -65,7 +65,7 @@ namespace android::app
 	}
 	jstring WallpaperManager::EXTRA_LIVE_WALLPAPER_COMPONENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"EXTRA_LIVE_WALLPAPER_COMPONENT",
 			"Ljava/lang/String;"
@@ -73,21 +73,21 @@ namespace android::app
 	}
 	jint WallpaperManager::FLAG_LOCK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.WallpaperManager",
 			"FLAG_LOCK"
 		);
 	}
 	jint WallpaperManager::FLAG_SYSTEM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.WallpaperManager",
 			"FLAG_SYSTEM"
 		);
 	}
 	jstring WallpaperManager::WALLPAPER_PREVIEW_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.WallpaperManager",
 			"WALLPAPER_PREVIEW_META_DATA",
 			"Ljava/lang/String;"
@@ -102,7 +102,7 @@ namespace android::app
 	// Methods
 	android::app::WallpaperManager WallpaperManager::getInstance(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.WallpaperManager",
 			"getInstance",
 			"(Landroid/content/Context;)Landroid/app/WallpaperManager;",

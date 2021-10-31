@@ -18,7 +18,7 @@ namespace android::text::style
 	// Methods
 	android::text::style::CharacterStyle CharacterStyle::wrap(android::text::style::CharacterStyle arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.style.CharacterStyle",
 			"wrap",
 			"(Landroid/text/style/CharacterStyle;)Landroid/text/style/CharacterStyle;",

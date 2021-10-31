@@ -15,7 +15,7 @@ namespace android::graphics::drawable
 	// Fields
 	__JniBaseClass Icon::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.drawable.Icon",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -23,35 +23,35 @@ namespace android::graphics::drawable
 	}
 	jint Icon::TYPE_ADAPTIVE_BITMAP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.Icon",
 			"TYPE_ADAPTIVE_BITMAP"
 		);
 	}
 	jint Icon::TYPE_BITMAP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.Icon",
 			"TYPE_BITMAP"
 		);
 	}
 	jint Icon::TYPE_DATA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.Icon",
 			"TYPE_DATA"
 		);
 	}
 	jint Icon::TYPE_RESOURCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.Icon",
 			"TYPE_RESOURCE"
 		);
 	}
 	jint Icon::TYPE_URI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.Icon",
 			"TYPE_URI"
 		);
@@ -65,7 +65,7 @@ namespace android::graphics::drawable
 	// Methods
 	android::graphics::drawable::Icon Icon::createWithAdaptiveBitmap(android::graphics::Bitmap arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithAdaptiveBitmap",
 			"(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;",
@@ -74,7 +74,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Icon Icon::createWithBitmap(android::graphics::Bitmap arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithBitmap",
 			"(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;",
@@ -83,7 +83,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Icon Icon::createWithContentUri(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithContentUri",
 			"(Landroid/net/Uri;)Landroid/graphics/drawable/Icon;",
@@ -92,7 +92,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Icon Icon::createWithContentUri(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithContentUri",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/Icon;",
@@ -101,7 +101,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Icon Icon::createWithData(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithData",
 			"([BII)Landroid/graphics/drawable/Icon;",
@@ -112,7 +112,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Icon Icon::createWithFilePath(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithFilePath",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/Icon;",
@@ -121,7 +121,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Icon Icon::createWithResource(android::content::Context arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithResource",
 			"(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;",
@@ -131,7 +131,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Icon Icon::createWithResource(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
 			"createWithResource",
 			"(Ljava/lang/String;I)Landroid/graphics/drawable/Icon;",

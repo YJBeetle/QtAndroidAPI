@@ -18,7 +18,7 @@ namespace java::security::cert
 	// Methods
 	java::security::cert::CertificateFactory CertificateFactory::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertificateFactory",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/cert/CertificateFactory;",
@@ -27,7 +27,7 @@ namespace java::security::cert
 	}
 	java::security::cert::CertificateFactory CertificateFactory::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertificateFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/cert/CertificateFactory;",
@@ -37,7 +37,7 @@ namespace java::security::cert
 	}
 	java::security::cert::CertificateFactory CertificateFactory::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.CertificateFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertificateFactory;",

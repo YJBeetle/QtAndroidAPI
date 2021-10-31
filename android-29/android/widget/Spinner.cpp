@@ -10,14 +10,14 @@ namespace android::widget
 	// Fields
 	jint Spinner::MODE_DIALOG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.Spinner",
 			"MODE_DIALOG"
 		);
 	}
 	jint Spinner::MODE_DROPDOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.Spinner",
 			"MODE_DROPDOWN"
 		);

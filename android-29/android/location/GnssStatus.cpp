@@ -5,56 +5,56 @@ namespace android::location
 	// Fields
 	jint GnssStatus::CONSTELLATION_BEIDOU()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_BEIDOU"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_GALILEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_GALILEO"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_GLONASS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_GLONASS"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_GPS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_GPS"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_IRNSS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_IRNSS"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_QZSS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_QZSS"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_SBAS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_SBAS"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_UNKNOWN"
 		);

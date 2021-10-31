@@ -19,7 +19,7 @@ namespace java::lang
 	// Methods
 	java::lang::ThreadLocal ThreadLocal::withInitial(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ThreadLocal",
 			"withInitial",
 			"(Ljava/util/function/Supplier;)Ljava/lang/ThreadLocal;",

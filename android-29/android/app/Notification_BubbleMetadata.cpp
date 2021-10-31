@@ -8,7 +8,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass Notification_BubbleMetadata::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.Notification$BubbleMetadata",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

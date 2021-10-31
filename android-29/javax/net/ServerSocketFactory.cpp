@@ -14,7 +14,7 @@ namespace javax::net
 	// Methods
 	javax::net::ServerSocketFactory ServerSocketFactory::getDefault()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.net.ServerSocketFactory",
 			"getDefault",
 			"()Ljavax/net/ServerSocketFactory;"

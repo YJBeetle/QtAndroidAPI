@@ -11,7 +11,7 @@ namespace android::content
 	// Fields
 	__JniBaseClass ContentProviderOperation::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentProviderOperation",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -26,7 +26,7 @@ namespace android::content
 	// Methods
 	android::content::ContentProviderOperation_Builder ContentProviderOperation::newAssertQuery(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentProviderOperation",
 			"newAssertQuery",
 			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
@@ -35,7 +35,7 @@ namespace android::content
 	}
 	android::content::ContentProviderOperation_Builder ContentProviderOperation::newDelete(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentProviderOperation",
 			"newDelete",
 			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
@@ -44,7 +44,7 @@ namespace android::content
 	}
 	android::content::ContentProviderOperation_Builder ContentProviderOperation::newInsert(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentProviderOperation",
 			"newInsert",
 			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
@@ -53,7 +53,7 @@ namespace android::content
 	}
 	android::content::ContentProviderOperation_Builder ContentProviderOperation::newUpdate(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentProviderOperation",
 			"newUpdate",
 			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",

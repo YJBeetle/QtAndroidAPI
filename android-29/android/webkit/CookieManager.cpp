@@ -18,7 +18,7 @@ namespace android::webkit
 	// Methods
 	jboolean CookieManager::allowFileSchemeCookies()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.webkit.CookieManager",
 			"allowFileSchemeCookies",
 			"()Z"
@@ -26,7 +26,7 @@ namespace android::webkit
 	}
 	android::webkit::CookieManager CookieManager::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.CookieManager",
 			"getInstance",
 			"()Landroid/webkit/CookieManager;"
@@ -34,7 +34,7 @@ namespace android::webkit
 	}
 	void CookieManager::setAcceptFileSchemeCookies(jboolean arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.webkit.CookieManager",
 			"setAcceptFileSchemeCookies",
 			"(Z)V",

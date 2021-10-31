@@ -7,21 +7,21 @@ namespace android::view
 	// Fields
 	jint ActionMode::DEFAULT_HIDE_DURATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ActionMode",
 			"DEFAULT_HIDE_DURATION"
 		);
 	}
 	jint ActionMode::TYPE_FLOATING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ActionMode",
 			"TYPE_FLOATING"
 		);
 	}
 	jint ActionMode::TYPE_PRIMARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ActionMode",
 			"TYPE_PRIMARY"
 		);

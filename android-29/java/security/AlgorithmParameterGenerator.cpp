@@ -16,7 +16,7 @@ namespace java::security
 	// Methods
 	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/AlgorithmParameterGenerator;",
@@ -25,7 +25,7 @@ namespace java::security
 	}
 	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/AlgorithmParameterGenerator;",
@@ -35,7 +35,7 @@ namespace java::security
 	}
 	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(jstring arg0, java::security::Provider arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameterGenerator;",

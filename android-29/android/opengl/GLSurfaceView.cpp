@@ -6,28 +6,28 @@ namespace android::opengl
 	// Fields
 	jint GLSurfaceView::DEBUG_CHECK_GL_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.GLSurfaceView",
 			"DEBUG_CHECK_GL_ERROR"
 		);
 	}
 	jint GLSurfaceView::DEBUG_LOG_GL_CALLS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.GLSurfaceView",
 			"DEBUG_LOG_GL_CALLS"
 		);
 	}
 	jint GLSurfaceView::RENDERMODE_CONTINUOUSLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.GLSurfaceView",
 			"RENDERMODE_CONTINUOUSLY"
 		);
 	}
 	jint GLSurfaceView::RENDERMODE_WHEN_DIRTY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.opengl.GLSurfaceView",
 			"RENDERMODE_WHEN_DIRTY"
 		);

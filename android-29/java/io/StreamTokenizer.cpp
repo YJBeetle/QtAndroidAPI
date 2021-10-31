@@ -7,28 +7,28 @@ namespace java::io
 	// Fields
 	jint StreamTokenizer::TT_EOF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.io.StreamTokenizer",
 			"TT_EOF"
 		);
 	}
 	jint StreamTokenizer::TT_EOL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.io.StreamTokenizer",
 			"TT_EOL"
 		);
 	}
 	jint StreamTokenizer::TT_NUMBER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.io.StreamTokenizer",
 			"TT_NUMBER"
 		);
 	}
 	jint StreamTokenizer::TT_WORD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.io.StreamTokenizer",
 			"TT_WORD"
 		);

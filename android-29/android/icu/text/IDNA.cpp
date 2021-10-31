@@ -7,49 +7,49 @@ namespace android::icu::text
 	// Fields
 	jint IDNA::CHECK_BIDI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.IDNA",
 			"CHECK_BIDI"
 		);
 	}
 	jint IDNA::CHECK_CONTEXTJ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.IDNA",
 			"CHECK_CONTEXTJ"
 		);
 	}
 	jint IDNA::CHECK_CONTEXTO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.IDNA",
 			"CHECK_CONTEXTO"
 		);
 	}
 	jint IDNA::DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.IDNA",
 			"DEFAULT"
 		);
 	}
 	jint IDNA::NONTRANSITIONAL_TO_ASCII()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.IDNA",
 			"NONTRANSITIONAL_TO_ASCII"
 		);
 	}
 	jint IDNA::NONTRANSITIONAL_TO_UNICODE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.IDNA",
 			"NONTRANSITIONAL_TO_UNICODE"
 		);
 	}
 	jint IDNA::USE_STD3_RULES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.text.IDNA",
 			"USE_STD3_RULES"
 		);
@@ -63,7 +63,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::IDNA IDNA::getUTS46Instance(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.IDNA",
 			"getUTS46Instance",
 			"(I)Landroid/icu/text/IDNA;",

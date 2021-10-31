@@ -5,7 +5,7 @@ namespace javax::xml::transform::sax
 	// Fields
 	jstring SAXResult::FEATURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"javax.xml.transform.sax.SAXResult",
 			"FEATURE",
 			"Ljava/lang/String;"

@@ -8,7 +8,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass PackageInstaller_SessionParams::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller$SessionParams",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,21 +16,21 @@ namespace android::content::pm
 	}
 	jint PackageInstaller_SessionParams::MODE_FULL_INSTALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller$SessionParams",
 			"MODE_FULL_INSTALL"
 		);
 	}
 	jint PackageInstaller_SessionParams::MODE_INHERIT_EXISTING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller$SessionParams",
 			"MODE_INHERIT_EXISTING"
 		);
 	}
 	__JniBaseClass PackageInstaller_SessionParams::RESTRICTED_PERMISSIONS_ALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller$SessionParams",
 			"RESTRICTED_PERMISSIONS_ALL",
 			"Ljava/util/Set;"

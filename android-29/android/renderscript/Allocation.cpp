@@ -14,56 +14,56 @@ namespace android::renderscript
 	// Fields
 	jint Allocation::USAGE_GRAPHICS_CONSTANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.Allocation",
 			"USAGE_GRAPHICS_CONSTANTS"
 		);
 	}
 	jint Allocation::USAGE_GRAPHICS_RENDER_TARGET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.Allocation",
 			"USAGE_GRAPHICS_RENDER_TARGET"
 		);
 	}
 	jint Allocation::USAGE_GRAPHICS_TEXTURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.Allocation",
 			"USAGE_GRAPHICS_TEXTURE"
 		);
 	}
 	jint Allocation::USAGE_GRAPHICS_VERTEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.Allocation",
 			"USAGE_GRAPHICS_VERTEX"
 		);
 	}
 	jint Allocation::USAGE_IO_INPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.Allocation",
 			"USAGE_IO_INPUT"
 		);
 	}
 	jint Allocation::USAGE_IO_OUTPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.Allocation",
 			"USAGE_IO_OUTPUT"
 		);
 	}
 	jint Allocation::USAGE_SCRIPT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.Allocation",
 			"USAGE_SCRIPT"
 		);
 	}
 	jint Allocation::USAGE_SHARED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.Allocation",
 			"USAGE_SHARED"
 		);
@@ -77,7 +77,7 @@ namespace android::renderscript
 	// Methods
 	jarray Allocation::createAllocations(android::renderscript::RenderScript arg0, android::renderscript::Type arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createAllocations",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;II)[Landroid/renderscript/Allocation;",
@@ -89,7 +89,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createCubemapFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createCubemapFromBitmap",
 			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;",
@@ -99,7 +99,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createCubemapFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::renderscript::Allocation_MipmapControl arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createCubemapFromBitmap",
 			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;",
@@ -111,7 +111,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createCubemapFromCubeFaces(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::graphics::Bitmap arg2, android::graphics::Bitmap arg3, android::graphics::Bitmap arg4, android::graphics::Bitmap arg5, android::graphics::Bitmap arg6)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createCubemapFromCubeFaces",
 			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;",
@@ -126,7 +126,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createCubemapFromCubeFaces(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::graphics::Bitmap arg2, android::graphics::Bitmap arg3, android::graphics::Bitmap arg4, android::graphics::Bitmap arg5, android::graphics::Bitmap arg6, android::renderscript::Allocation_MipmapControl arg7, jint arg8)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createCubemapFromCubeFaces",
 			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;",
@@ -143,7 +143,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createFromBitmap",
 			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;",
@@ -153,7 +153,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::renderscript::Allocation_MipmapControl arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createFromBitmap",
 			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;",
@@ -165,7 +165,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createFromBitmapResource(android::renderscript::RenderScript arg0, android::content::res::Resources arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createFromBitmapResource",
 			"(Landroid/renderscript/RenderScript;Landroid/content/res/Resources;I)Landroid/renderscript/Allocation;",
@@ -176,7 +176,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createFromBitmapResource(android::renderscript::RenderScript arg0, android::content::res::Resources arg1, jint arg2, android::renderscript::Allocation_MipmapControl arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createFromBitmapResource",
 			"(Landroid/renderscript/RenderScript;Landroid/content/res/Resources;ILandroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;",
@@ -189,7 +189,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createFromString(android::renderscript::RenderScript arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createFromString",
 			"(Landroid/renderscript/RenderScript;Ljava/lang/String;I)Landroid/renderscript/Allocation;",
@@ -200,7 +200,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createSized(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createSized",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;I)Landroid/renderscript/Allocation;",
@@ -211,7 +211,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createSized(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createSized",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;II)Landroid/renderscript/Allocation;",
@@ -223,7 +223,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createTyped(android::renderscript::RenderScript arg0, android::renderscript::Type arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createTyped",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;)Landroid/renderscript/Allocation;",
@@ -233,7 +233,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createTyped(android::renderscript::RenderScript arg0, android::renderscript::Type arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createTyped",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;I)Landroid/renderscript/Allocation;",
@@ -244,7 +244,7 @@ namespace android::renderscript
 	}
 	android::renderscript::Allocation Allocation::createTyped(android::renderscript::RenderScript arg0, android::renderscript::Type arg1, android::renderscript::Allocation_MipmapControl arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.Allocation",
 			"createTyped",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;",

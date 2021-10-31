@@ -5,14 +5,14 @@ namespace android::os::health
 	// Fields
 	jint PackageHealthStats::MEASUREMENTS_WAKEUP_ALARMS_COUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.health.PackageHealthStats",
 			"MEASUREMENTS_WAKEUP_ALARMS_COUNT"
 		);
 	}
 	jint PackageHealthStats::STATS_SERVICES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.health.PackageHealthStats",
 			"STATS_SERVICES"
 		);

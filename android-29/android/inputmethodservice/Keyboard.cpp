@@ -9,70 +9,70 @@ namespace android::inputmethodservice
 	// Fields
 	jint Keyboard::EDGE_BOTTOM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
 			"EDGE_BOTTOM"
 		);
 	}
 	jint Keyboard::EDGE_LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
 			"EDGE_LEFT"
 		);
 	}
 	jint Keyboard::EDGE_RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
 			"EDGE_RIGHT"
 		);
 	}
 	jint Keyboard::EDGE_TOP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
 			"EDGE_TOP"
 		);
 	}
 	jint Keyboard::KEYCODE_ALT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
 			"KEYCODE_ALT"
 		);
 	}
 	jint Keyboard::KEYCODE_CANCEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
 			"KEYCODE_CANCEL"
 		);
 	}
 	jint Keyboard::KEYCODE_DELETE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
 			"KEYCODE_DELETE"
 		);
 	}
 	jint Keyboard::KEYCODE_DONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
 			"KEYCODE_DONE"
 		);
 	}
 	jint Keyboard::KEYCODE_MODE_CHANGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
 			"KEYCODE_MODE_CHANGE"
 		);
 	}
 	jint Keyboard::KEYCODE_SHIFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
 			"KEYCODE_SHIFT"
 		);

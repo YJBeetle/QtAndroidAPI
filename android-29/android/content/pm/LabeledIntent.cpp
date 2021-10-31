@@ -9,7 +9,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass LabeledIntent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.LabeledIntent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

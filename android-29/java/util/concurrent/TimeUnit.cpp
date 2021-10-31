@@ -8,7 +8,7 @@ namespace java::util::concurrent
 	// Fields
 	java::util::concurrent::TimeUnit TimeUnit::DAYS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"DAYS",
 			"Ljava/util/concurrent/TimeUnit;"
@@ -16,7 +16,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::TimeUnit TimeUnit::HOURS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"HOURS",
 			"Ljava/util/concurrent/TimeUnit;"
@@ -24,7 +24,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::TimeUnit TimeUnit::MICROSECONDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"MICROSECONDS",
 			"Ljava/util/concurrent/TimeUnit;"
@@ -32,7 +32,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::TimeUnit TimeUnit::MILLISECONDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"MILLISECONDS",
 			"Ljava/util/concurrent/TimeUnit;"
@@ -40,7 +40,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::TimeUnit TimeUnit::MINUTES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"MINUTES",
 			"Ljava/util/concurrent/TimeUnit;"
@@ -48,7 +48,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::TimeUnit TimeUnit::NANOSECONDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"NANOSECONDS",
 			"Ljava/util/concurrent/TimeUnit;"
@@ -56,7 +56,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::TimeUnit TimeUnit::SECONDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"SECONDS",
 			"Ljava/util/concurrent/TimeUnit;"
@@ -71,7 +71,7 @@ namespace java::util::concurrent
 	// Methods
 	java::util::concurrent::TimeUnit TimeUnit::of(java::time::temporal::ChronoUnit arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.TimeUnit",
 			"of",
 			"(Ljava/time/temporal/ChronoUnit;)Ljava/util/concurrent/TimeUnit;",
@@ -80,7 +80,7 @@ namespace java::util::concurrent
 	}
 	java::util::concurrent::TimeUnit TimeUnit::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.TimeUnit",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/concurrent/TimeUnit;",
@@ -89,7 +89,7 @@ namespace java::util::concurrent
 	}
 	jarray TimeUnit::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.concurrent.TimeUnit",
 			"values",
 			"()[Ljava/util/concurrent/TimeUnit;"

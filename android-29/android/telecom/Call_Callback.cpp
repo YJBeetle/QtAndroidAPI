@@ -10,35 +10,35 @@ namespace android::telecom
 	// Fields
 	jint Call_Callback::HANDOVER_FAILURE_DEST_APP_REJECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Callback",
 			"HANDOVER_FAILURE_DEST_APP_REJECTED"
 		);
 	}
 	jint Call_Callback::HANDOVER_FAILURE_NOT_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Callback",
 			"HANDOVER_FAILURE_NOT_SUPPORTED"
 		);
 	}
 	jint Call_Callback::HANDOVER_FAILURE_ONGOING_EMERGENCY_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Callback",
 			"HANDOVER_FAILURE_ONGOING_EMERGENCY_CALL"
 		);
 	}
 	jint Call_Callback::HANDOVER_FAILURE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Callback",
 			"HANDOVER_FAILURE_UNKNOWN"
 		);
 	}
 	jint Call_Callback::HANDOVER_FAILURE_USER_REJECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.Call$Callback",
 			"HANDOVER_FAILURE_USER_REJECTED"
 		);

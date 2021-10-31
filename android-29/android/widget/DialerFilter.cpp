@@ -8,35 +8,35 @@ namespace android::widget
 	// Fields
 	jint DialerFilter::DIGITS_AND_LETTERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.DialerFilter",
 			"DIGITS_AND_LETTERS"
 		);
 	}
 	jint DialerFilter::DIGITS_AND_LETTERS_NO_DIGITS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.DialerFilter",
 			"DIGITS_AND_LETTERS_NO_DIGITS"
 		);
 	}
 	jint DialerFilter::DIGITS_AND_LETTERS_NO_LETTERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.DialerFilter",
 			"DIGITS_AND_LETTERS_NO_LETTERS"
 		);
 	}
 	jint DialerFilter::DIGITS_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.DialerFilter",
 			"DIGITS_ONLY"
 		);
 	}
 	jint DialerFilter::LETTERS_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.DialerFilter",
 			"LETTERS_ONLY"
 		);

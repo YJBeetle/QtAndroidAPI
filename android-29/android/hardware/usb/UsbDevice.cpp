@@ -8,7 +8,7 @@ namespace android::hardware::usb
 	// Fields
 	__JniBaseClass UsbDevice::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.usb.UsbDevice",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -23,7 +23,7 @@ namespace android::hardware::usb
 	// Methods
 	jint UsbDevice::getDeviceId(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.hardware.usb.UsbDevice",
 			"getDeviceId",
 			"(Ljava/lang/String;)I",
@@ -32,7 +32,7 @@ namespace android::hardware::usb
 	}
 	jstring UsbDevice::getDeviceName(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.hardware.usb.UsbDevice",
 			"getDeviceName",
 			"(I)Ljava/lang/String;",

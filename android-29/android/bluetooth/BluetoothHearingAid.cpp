@@ -7,7 +7,7 @@ namespace android::bluetooth
 	// Fields
 	jstring BluetoothHearingAid::ACTION_CONNECTION_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothHearingAid",
 			"ACTION_CONNECTION_STATE_CHANGED",
 			"Ljava/lang/String;"

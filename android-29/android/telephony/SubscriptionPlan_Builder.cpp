@@ -15,7 +15,7 @@ namespace android::telephony
 	// Methods
 	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::createNonrecurring(java::time::ZonedDateTime arg0, java::time::ZonedDateTime arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.SubscriptionPlan$Builder",
 			"createNonrecurring",
 			"(Ljava/time/ZonedDateTime;Ljava/time/ZonedDateTime;)Landroid/telephony/SubscriptionPlan$Builder;",
@@ -25,7 +25,7 @@ namespace android::telephony
 	}
 	android::telephony::SubscriptionPlan_Builder SubscriptionPlan_Builder::createRecurring(java::time::ZonedDateTime arg0, java::time::Period arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.SubscriptionPlan$Builder",
 			"createRecurring",
 			"(Ljava/time/ZonedDateTime;Ljava/time/Period;)Landroid/telephony/SubscriptionPlan$Builder;",

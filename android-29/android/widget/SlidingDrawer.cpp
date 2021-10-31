@@ -9,14 +9,14 @@ namespace android::widget
 	// Fields
 	jint SlidingDrawer::ORIENTATION_HORIZONTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.SlidingDrawer",
 			"ORIENTATION_HORIZONTAL"
 		);
 	}
 	jint SlidingDrawer::ORIENTATION_VERTICAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.SlidingDrawer",
 			"ORIENTATION_VERTICAL"
 		);

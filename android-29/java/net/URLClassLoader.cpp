@@ -59,7 +59,7 @@ namespace java::net
 	// Methods
 	java::net::URLClassLoader URLClassLoader::newInstance(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.URLClassLoader",
 			"newInstance",
 			"([Ljava/net/URL;)Ljava/net/URLClassLoader;",
@@ -68,7 +68,7 @@ namespace java::net
 	}
 	java::net::URLClassLoader URLClassLoader::newInstance(jarray arg0, java::lang::ClassLoader arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.net.URLClassLoader",
 			"newInstance",
 			"([Ljava/net/URL;Ljava/lang/ClassLoader;)Ljava/net/URLClassLoader;",

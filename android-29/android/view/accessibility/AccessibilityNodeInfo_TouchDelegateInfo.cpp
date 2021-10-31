@@ -8,7 +8,7 @@ namespace android::view::accessibility
 	// Fields
 	__JniBaseClass AccessibilityNodeInfo_TouchDelegateInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$TouchDelegateInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

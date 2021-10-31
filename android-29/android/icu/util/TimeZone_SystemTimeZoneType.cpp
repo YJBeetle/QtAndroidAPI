@@ -5,7 +5,7 @@ namespace android::icu::util
 	// Fields
 	android::icu::util::TimeZone_SystemTimeZoneType TimeZone_SystemTimeZoneType::ANY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.TimeZone$SystemTimeZoneType",
 			"ANY",
 			"Landroid/icu/util/TimeZone$SystemTimeZoneType;"
@@ -13,7 +13,7 @@ namespace android::icu::util
 	}
 	android::icu::util::TimeZone_SystemTimeZoneType TimeZone_SystemTimeZoneType::CANONICAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.TimeZone$SystemTimeZoneType",
 			"CANONICAL",
 			"Landroid/icu/util/TimeZone$SystemTimeZoneType;"
@@ -21,7 +21,7 @@ namespace android::icu::util
 	}
 	android::icu::util::TimeZone_SystemTimeZoneType TimeZone_SystemTimeZoneType::CANONICAL_LOCATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.util.TimeZone$SystemTimeZoneType",
 			"CANONICAL_LOCATION",
 			"Landroid/icu/util/TimeZone$SystemTimeZoneType;"
@@ -36,7 +36,7 @@ namespace android::icu::util
 	// Methods
 	android::icu::util::TimeZone_SystemTimeZoneType TimeZone_SystemTimeZoneType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.TimeZone$SystemTimeZoneType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/TimeZone$SystemTimeZoneType;",
@@ -45,7 +45,7 @@ namespace android::icu::util
 	}
 	jarray TimeZone_SystemTimeZoneType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.TimeZone$SystemTimeZoneType",
 			"values",
 			"()[Landroid/icu/util/TimeZone$SystemTimeZoneType;"

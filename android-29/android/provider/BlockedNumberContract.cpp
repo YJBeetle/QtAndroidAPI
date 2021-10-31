@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring BlockedNumberContract::AUTHORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.BlockedNumberContract",
 			"AUTHORITY",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	android::net::Uri BlockedNumberContract::AUTHORITY_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.BlockedNumberContract",
 			"AUTHORITY_URI",
 			"Landroid/net/Uri;"
@@ -30,7 +30,7 @@ namespace android::provider
 	// Methods
 	jboolean BlockedNumberContract::canCurrentUserBlockNumbers(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.provider.BlockedNumberContract",
 			"canCurrentUserBlockNumbers",
 			"(Landroid/content/Context;)Z",
@@ -39,7 +39,7 @@ namespace android::provider
 	}
 	jboolean BlockedNumberContract::isBlocked(android::content::Context arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.provider.BlockedNumberContract",
 			"isBlocked",
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
@@ -49,7 +49,7 @@ namespace android::provider
 	}
 	jint BlockedNumberContract::unblock(android::content::Context arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.provider.BlockedNumberContract",
 			"unblock",
 			"(Landroid/content/Context;Ljava/lang/String;)I",

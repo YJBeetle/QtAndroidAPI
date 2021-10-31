@@ -7,7 +7,7 @@ namespace android::app
 	// Fields
 	jint Notification_MessagingStyle::MAXIMUM_RETAINED_MESSAGES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Notification$MessagingStyle",
 			"MAXIMUM_RETAINED_MESSAGES"
 		);

@@ -36,7 +36,7 @@ namespace android::app
 	// Methods
 	android::app::Fragment Fragment::instantiate(android::content::Context arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.Fragment",
 			"instantiate",
 			"(Landroid/content/Context;Ljava/lang/String;)Landroid/app/Fragment;",
@@ -46,7 +46,7 @@ namespace android::app
 	}
 	android::app::Fragment Fragment::instantiate(android::content::Context arg0, jstring arg1, android::os::Bundle arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.Fragment",
 			"instantiate",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/app/Fragment;",

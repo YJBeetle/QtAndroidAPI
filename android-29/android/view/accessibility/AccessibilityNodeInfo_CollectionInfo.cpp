@@ -5,21 +5,21 @@ namespace android::view::accessibility
 	// Fields
 	jint AccessibilityNodeInfo_CollectionInfo::SELECTION_MODE_MULTIPLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
 			"SELECTION_MODE_MULTIPLE"
 		);
 	}
 	jint AccessibilityNodeInfo_CollectionInfo::SELECTION_MODE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
 			"SELECTION_MODE_NONE"
 		);
 	}
 	jint AccessibilityNodeInfo_CollectionInfo::SELECTION_MODE_SINGLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
 			"SELECTION_MODE_SINGLE"
 		);
@@ -33,7 +33,7 @@ namespace android::view::accessibility
 	// Methods
 	android::view::accessibility::AccessibilityNodeInfo_CollectionInfo AccessibilityNodeInfo_CollectionInfo::obtain(jint arg0, jint arg1, jboolean arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
 			"obtain",
 			"(IIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;",
@@ -44,7 +44,7 @@ namespace android::view::accessibility
 	}
 	android::view::accessibility::AccessibilityNodeInfo_CollectionInfo AccessibilityNodeInfo_CollectionInfo::obtain(jint arg0, jint arg1, jboolean arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
 			"obtain",
 			"(IIZI)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;",

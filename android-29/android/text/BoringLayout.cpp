@@ -48,7 +48,7 @@ namespace android::text
 	// Methods
 	android::text::BoringLayout_Metrics BoringLayout::isBoring(jstring arg0, android::text::TextPaint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.BoringLayout",
 			"isBoring",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)Landroid/text/BoringLayout$Metrics;",
@@ -58,7 +58,7 @@ namespace android::text
 	}
 	android::text::BoringLayout_Metrics BoringLayout::isBoring(jstring arg0, android::text::TextPaint arg1, android::text::BoringLayout_Metrics arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.BoringLayout",
 			"isBoring",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;Landroid/text/BoringLayout$Metrics;)Landroid/text/BoringLayout$Metrics;",
@@ -69,7 +69,7 @@ namespace android::text
 	}
 	android::text::BoringLayout BoringLayout::make(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.BoringLayout",
 			"make",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;Z)Landroid/text/BoringLayout;",
@@ -85,7 +85,7 @@ namespace android::text
 	}
 	android::text::BoringLayout BoringLayout::make(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.BoringLayout",
 			"make",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;I)Landroid/text/BoringLayout;",

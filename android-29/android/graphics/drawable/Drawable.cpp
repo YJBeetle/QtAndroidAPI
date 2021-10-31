@@ -32,7 +32,7 @@ namespace android::graphics::drawable
 	// Methods
 	android::graphics::drawable::Drawable Drawable::createFromPath(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
 			"createFromPath",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
@@ -41,7 +41,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Drawable Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
 			"createFromResourceStream",
 			"(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
@@ -53,7 +53,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Drawable Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3, android::graphics::BitmapFactory_Options arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
 			"createFromResourceStream",
 			"(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/drawable/Drawable;",
@@ -66,7 +66,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Drawable Drawable::createFromStream(java::io::InputStream arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
 			"createFromStream",
 			"(Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
@@ -76,7 +76,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Drawable Drawable::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
 			"createFromXml",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;)Landroid/graphics/drawable/Drawable;",
@@ -86,7 +86,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Drawable Drawable::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
 			"createFromXml",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;",
@@ -97,7 +97,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Drawable Drawable::createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
 			"createFromXmlInner",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Landroid/graphics/drawable/Drawable;",
@@ -108,7 +108,7 @@ namespace android::graphics::drawable
 	}
 	android::graphics::drawable::Drawable Drawable::createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
 			"createFromXmlInner",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;",
@@ -120,7 +120,7 @@ namespace android::graphics::drawable
 	}
 	jint Drawable::resolveOpacity(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.graphics.drawable.Drawable",
 			"resolveOpacity",
 			"(II)I",

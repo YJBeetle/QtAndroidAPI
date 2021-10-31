@@ -5,7 +5,7 @@ namespace java::security::spec
 	// Fields
 	java::security::spec::PSSParameterSpec PSSParameterSpec::DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.spec.PSSParameterSpec",
 			"DEFAULT",
 			"Ljava/security/spec/PSSParameterSpec;"
@@ -13,7 +13,7 @@ namespace java::security::spec
 	}
 	jint PSSParameterSpec::TRAILER_FIELD_BC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.security.spec.PSSParameterSpec",
 			"TRAILER_FIELD_BC"
 		);

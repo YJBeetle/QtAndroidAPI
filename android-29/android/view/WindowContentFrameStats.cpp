@@ -6,7 +6,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass WindowContentFrameStats::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.WindowContentFrameStats",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

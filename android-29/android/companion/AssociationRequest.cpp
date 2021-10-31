@@ -6,7 +6,7 @@ namespace android::companion
 	// Fields
 	__JniBaseClass AssociationRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.companion.AssociationRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

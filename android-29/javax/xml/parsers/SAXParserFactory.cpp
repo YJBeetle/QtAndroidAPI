@@ -15,7 +15,7 @@ namespace javax::xml::parsers
 	// Methods
 	javax::xml::parsers::SAXParserFactory SAXParserFactory::newDefaultInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
 			"newDefaultInstance",
 			"()Ljavax/xml/parsers/SAXParserFactory;"
@@ -23,7 +23,7 @@ namespace javax::xml::parsers
 	}
 	javax::xml::parsers::SAXParserFactory SAXParserFactory::newDefaultNSInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
 			"newDefaultNSInstance",
 			"()Ljavax/xml/parsers/SAXParserFactory;"
@@ -31,7 +31,7 @@ namespace javax::xml::parsers
 	}
 	javax::xml::parsers::SAXParserFactory SAXParserFactory::newInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
 			"newInstance",
 			"()Ljavax/xml/parsers/SAXParserFactory;"
@@ -39,7 +39,7 @@ namespace javax::xml::parsers
 	}
 	javax::xml::parsers::SAXParserFactory SAXParserFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/SAXParserFactory;",
@@ -49,7 +49,7 @@ namespace javax::xml::parsers
 	}
 	javax::xml::parsers::SAXParserFactory SAXParserFactory::newNSInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
 			"newNSInstance",
 			"()Ljavax/xml/parsers/SAXParserFactory;"
@@ -57,7 +57,7 @@ namespace javax::xml::parsers
 	}
 	javax::xml::parsers::SAXParserFactory SAXParserFactory::newNSInstance(jstring arg0, java::lang::ClassLoader arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
 			"newNSInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/SAXParserFactory;",

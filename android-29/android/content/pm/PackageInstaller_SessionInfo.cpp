@@ -10,7 +10,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass PackageInstaller_SessionInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller$SessionInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -18,35 +18,35 @@ namespace android::content::pm
 	}
 	jint PackageInstaller_SessionInfo::INVALID_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller$SessionInfo",
 			"INVALID_ID"
 		);
 	}
 	jint PackageInstaller_SessionInfo::STAGED_SESSION_ACTIVATION_FAILED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller$SessionInfo",
 			"STAGED_SESSION_ACTIVATION_FAILED"
 		);
 	}
 	jint PackageInstaller_SessionInfo::STAGED_SESSION_NO_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller$SessionInfo",
 			"STAGED_SESSION_NO_ERROR"
 		);
 	}
 	jint PackageInstaller_SessionInfo::STAGED_SESSION_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller$SessionInfo",
 			"STAGED_SESSION_UNKNOWN"
 		);
 	}
 	jint PackageInstaller_SessionInfo::STAGED_SESSION_VERIFICATION_FAILED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller$SessionInfo",
 			"STAGED_SESSION_VERIFICATION_FAILED"
 		);

@@ -20,7 +20,7 @@ namespace java::time::chrono
 	// Methods
 	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistDate",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ThaiBuddhistDate;",
@@ -29,7 +29,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistDate",
 			"now",
 			"()Ljava/time/chrono/ThaiBuddhistDate;"
@@ -37,7 +37,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistDate",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/chrono/ThaiBuddhistDate;",
@@ -46,7 +46,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistDate",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/chrono/ThaiBuddhistDate;",
@@ -55,7 +55,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::ThaiBuddhistDate ThaiBuddhistDate::of(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistDate",
 			"of",
 			"(III)Ljava/time/chrono/ThaiBuddhistDate;",

@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring Contacts::AUTHORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts",
 			"AUTHORITY",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri Contacts::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -22,35 +22,35 @@ namespace android::provider
 	}
 	jint Contacts::KIND_EMAIL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts",
 			"KIND_EMAIL"
 		);
 	}
 	jint Contacts::KIND_IM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts",
 			"KIND_IM"
 		);
 	}
 	jint Contacts::KIND_ORGANIZATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts",
 			"KIND_ORGANIZATION"
 		);
 	}
 	jint Contacts::KIND_PHONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts",
 			"KIND_PHONE"
 		);
 	}
 	jint Contacts::KIND_POSTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.Contacts",
 			"KIND_POSTAL"
 		);

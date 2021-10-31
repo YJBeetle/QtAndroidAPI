@@ -6,7 +6,7 @@ namespace android::accounts
 	// Fields
 	__JniBaseClass AuthenticatorDescription::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AuthenticatorDescription",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -88,7 +88,7 @@ namespace android::accounts
 	// Methods
 	android::accounts::AuthenticatorDescription AuthenticatorDescription::newKey(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.accounts.AuthenticatorDescription",
 			"newKey",
 			"(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;",

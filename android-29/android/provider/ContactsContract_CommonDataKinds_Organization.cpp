@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_CommonDataKinds_Organization::COMPANY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"COMPANY",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::DEPARTMENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"DEPARTMENT",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
@@ -54,7 +54,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::JOB_DESCRIPTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"JOB_DESCRIPTION",
 			"Ljava/lang/String;"
@@ -62,7 +62,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::OFFICE_LOCATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"OFFICE_LOCATION",
 			"Ljava/lang/String;"
@@ -70,7 +70,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::PHONETIC_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"PHONETIC_NAME",
 			"Ljava/lang/String;"
@@ -78,7 +78,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::PHONETIC_NAME_STYLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"PHONETIC_NAME_STYLE",
 			"Ljava/lang/String;"
@@ -86,7 +86,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::SYMBOL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"SYMBOL",
 			"Ljava/lang/String;"
@@ -94,7 +94,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Organization::TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"TITLE",
 			"Ljava/lang/String;"
@@ -102,14 +102,14 @@ namespace android::provider
 	}
 	jint ContactsContract_CommonDataKinds_Organization::TYPE_OTHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"TYPE_OTHER"
 		);
 	}
 	jint ContactsContract_CommonDataKinds_Organization::TYPE_WORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"TYPE_WORK"
 		);
@@ -123,7 +123,7 @@ namespace android::provider
 	// Methods
 	jstring ContactsContract_CommonDataKinds_Organization::getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"getTypeLabel",
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
@@ -134,7 +134,7 @@ namespace android::provider
 	}
 	jint ContactsContract_CommonDataKinds_Organization::getTypeLabelResource(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"getTypeLabelResource",
 			"(I)I",

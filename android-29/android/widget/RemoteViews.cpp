@@ -16,7 +16,7 @@ namespace android::widget
 	// Fields
 	__JniBaseClass RemoteViews::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.RemoteViews",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -24,7 +24,7 @@ namespace android::widget
 	}
 	jstring RemoteViews::EXTRA_SHARED_ELEMENT_BOUNDS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.RemoteViews",
 			"EXTRA_SHARED_ELEMENT_BOUNDS",
 			"Ljava/lang/String;"

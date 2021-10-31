@@ -9,7 +9,7 @@ namespace android::provider
 	// Fields
 	jstring MediaStore_Video_Thumbnails::DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"DATA",
 			"Ljava/lang/String;"
@@ -17,7 +17,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Video_Thumbnails::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -25,7 +25,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Video_Thumbnails::EXTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"EXTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -33,14 +33,14 @@ namespace android::provider
 	}
 	jint MediaStore_Video_Thumbnails::FULL_SCREEN_KIND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"FULL_SCREEN_KIND"
 		);
 	}
 	jstring MediaStore_Video_Thumbnails::HEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"HEIGHT",
 			"Ljava/lang/String;"
@@ -48,7 +48,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Video_Thumbnails::INTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"INTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -56,7 +56,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Video_Thumbnails::KIND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"KIND",
 			"Ljava/lang/String;"
@@ -64,21 +64,21 @@ namespace android::provider
 	}
 	jint MediaStore_Video_Thumbnails::MICRO_KIND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"MICRO_KIND"
 		);
 	}
 	jint MediaStore_Video_Thumbnails::MINI_KIND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"MINI_KIND"
 		);
 	}
 	jstring MediaStore_Video_Thumbnails::VIDEO_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"VIDEO_ID",
 			"Ljava/lang/String;"
@@ -86,7 +86,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Video_Thumbnails::WIDTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"WIDTH",
 			"Ljava/lang/String;"
@@ -106,7 +106,7 @@ namespace android::provider
 	// Methods
 	void MediaStore_Video_Thumbnails::cancelThumbnailRequest(android::content::ContentResolver arg0, jlong arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"cancelThumbnailRequest",
 			"(Landroid/content/ContentResolver;J)V",
@@ -116,7 +116,7 @@ namespace android::provider
 	}
 	void MediaStore_Video_Thumbnails::cancelThumbnailRequest(android::content::ContentResolver arg0, jlong arg1, jlong arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"cancelThumbnailRequest",
 			"(Landroid/content/ContentResolver;JJ)V",
@@ -127,7 +127,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Video_Thumbnails::getContentUri(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
@@ -136,7 +136,7 @@ namespace android::provider
 	}
 	android::graphics::Bitmap MediaStore_Video_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"getThumbnail",
 			"(Landroid/content/ContentResolver;JILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
@@ -148,7 +148,7 @@ namespace android::provider
 	}
 	android::graphics::Bitmap MediaStore_Video_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, android::graphics::BitmapFactory_Options arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"getThumbnail",
 			"(Landroid/content/ContentResolver;JJILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",

@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::CITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"CITY",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_CommonDataKinds_StructuredPostal::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -39,7 +39,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::COUNTRY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"COUNTRY",
 			"Ljava/lang/String;"
@@ -47,7 +47,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::EXTRA_ADDRESS_BOOK_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
@@ -55,7 +55,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
@@ -63,7 +63,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
@@ -71,7 +71,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::FORMATTED_ADDRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"FORMATTED_ADDRESS",
 			"Ljava/lang/String;"
@@ -79,7 +79,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::NEIGHBORHOOD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"NEIGHBORHOOD",
 			"Ljava/lang/String;"
@@ -87,7 +87,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::POBOX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"POBOX",
 			"Ljava/lang/String;"
@@ -95,7 +95,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::POSTCODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"POSTCODE",
 			"Ljava/lang/String;"
@@ -103,7 +103,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::REGION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"REGION",
 			"Ljava/lang/String;"
@@ -111,7 +111,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::STREET()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"STREET",
 			"Ljava/lang/String;"
@@ -119,21 +119,21 @@ namespace android::provider
 	}
 	jint ContactsContract_CommonDataKinds_StructuredPostal::TYPE_HOME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"TYPE_HOME"
 		);
 	}
 	jint ContactsContract_CommonDataKinds_StructuredPostal::TYPE_OTHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"TYPE_OTHER"
 		);
 	}
 	jint ContactsContract_CommonDataKinds_StructuredPostal::TYPE_WORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"TYPE_WORK"
 		);
@@ -147,7 +147,7 @@ namespace android::provider
 	// Methods
 	jstring ContactsContract_CommonDataKinds_StructuredPostal::getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"getTypeLabel",
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
@@ -158,7 +158,7 @@ namespace android::provider
 	}
 	jint ContactsContract_CommonDataKinds_StructuredPostal::getTypeLabelResource(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
 			"getTypeLabelResource",
 			"(I)I",

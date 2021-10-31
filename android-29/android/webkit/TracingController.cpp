@@ -19,7 +19,7 @@ namespace android::webkit
 	// Methods
 	android::webkit::TracingController TracingController::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.TracingController",
 			"getInstance",
 			"()Landroid/webkit/TracingController;"

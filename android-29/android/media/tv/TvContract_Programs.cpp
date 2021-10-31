@@ -6,7 +6,7 @@ namespace android::media::tv
 	// Fields
 	jstring TvContract_Programs::COLUMN_AUDIO_LANGUAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_AUDIO_LANGUAGE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_BROADCAST_GENRE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_BROADCAST_GENRE",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_CANONICAL_GENRE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_CANONICAL_GENRE",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_CHANNEL_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_CHANNEL_ID",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_CONTENT_RATING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_CONTENT_RATING",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_END_TIME_UTC_MILLIS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_END_TIME_UTC_MILLIS",
 			"Ljava/lang/String;"
@@ -54,7 +54,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_EPISODE_DISPLAY_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_EPISODE_DISPLAY_NUMBER",
 			"Ljava/lang/String;"
@@ -62,7 +62,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_EPISODE_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_EPISODE_NUMBER",
 			"Ljava/lang/String;"
@@ -70,7 +70,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_EPISODE_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_EPISODE_TITLE",
 			"Ljava/lang/String;"
@@ -78,7 +78,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_INTERNAL_PROVIDER_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_INTERNAL_PROVIDER_DATA",
 			"Ljava/lang/String;"
@@ -86,7 +86,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_INTERNAL_PROVIDER_FLAG1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_INTERNAL_PROVIDER_FLAG1",
 			"Ljava/lang/String;"
@@ -94,7 +94,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_INTERNAL_PROVIDER_FLAG2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_INTERNAL_PROVIDER_FLAG2",
 			"Ljava/lang/String;"
@@ -102,7 +102,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_INTERNAL_PROVIDER_FLAG3()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_INTERNAL_PROVIDER_FLAG3",
 			"Ljava/lang/String;"
@@ -110,7 +110,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_INTERNAL_PROVIDER_FLAG4()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_INTERNAL_PROVIDER_FLAG4",
 			"Ljava/lang/String;"
@@ -118,7 +118,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_LONG_DESCRIPTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_LONG_DESCRIPTION",
 			"Ljava/lang/String;"
@@ -126,7 +126,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_POSTER_ART_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_POSTER_ART_URI",
 			"Ljava/lang/String;"
@@ -134,7 +134,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_RECORDING_PROHIBITED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_RECORDING_PROHIBITED",
 			"Ljava/lang/String;"
@@ -142,7 +142,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_REVIEW_RATING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_REVIEW_RATING",
 			"Ljava/lang/String;"
@@ -150,7 +150,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_REVIEW_RATING_STYLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_REVIEW_RATING_STYLE",
 			"Ljava/lang/String;"
@@ -158,7 +158,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_SEARCHABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_SEARCHABLE",
 			"Ljava/lang/String;"
@@ -166,7 +166,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_SEASON_DISPLAY_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_SEASON_DISPLAY_NUMBER",
 			"Ljava/lang/String;"
@@ -174,7 +174,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_SEASON_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_SEASON_NUMBER",
 			"Ljava/lang/String;"
@@ -182,7 +182,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_SEASON_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_SEASON_TITLE",
 			"Ljava/lang/String;"
@@ -190,7 +190,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_SERIES_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_SERIES_ID",
 			"Ljava/lang/String;"
@@ -198,7 +198,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_SHORT_DESCRIPTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_SHORT_DESCRIPTION",
 			"Ljava/lang/String;"
@@ -206,7 +206,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_START_TIME_UTC_MILLIS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_START_TIME_UTC_MILLIS",
 			"Ljava/lang/String;"
@@ -214,7 +214,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_THUMBNAIL_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_THUMBNAIL_URI",
 			"Ljava/lang/String;"
@@ -222,7 +222,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_TITLE",
 			"Ljava/lang/String;"
@@ -230,7 +230,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_VERSION_NUMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_VERSION_NUMBER",
 			"Ljava/lang/String;"
@@ -238,7 +238,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_VIDEO_HEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_VIDEO_HEIGHT",
 			"Ljava/lang/String;"
@@ -246,7 +246,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::COLUMN_VIDEO_WIDTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"COLUMN_VIDEO_WIDTH",
 			"Ljava/lang/String;"
@@ -254,7 +254,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -262,7 +262,7 @@ namespace android::media::tv
 	}
 	jstring TvContract_Programs::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -270,7 +270,7 @@ namespace android::media::tv
 	}
 	android::net::Uri TvContract_Programs::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.tv.TvContract$Programs",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -278,21 +278,21 @@ namespace android::media::tv
 	}
 	jint TvContract_Programs::REVIEW_RATING_STYLE_PERCENTAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvContract$Programs",
 			"REVIEW_RATING_STYLE_PERCENTAGE"
 		);
 	}
 	jint TvContract_Programs::REVIEW_RATING_STYLE_STARS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvContract$Programs",
 			"REVIEW_RATING_STYLE_STARS"
 		);
 	}
 	jint TvContract_Programs::REVIEW_RATING_STYLE_THUMBS_UP_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.tv.TvContract$Programs",
 			"REVIEW_RATING_STYLE_THUMBS_UP_DOWN"
 		);

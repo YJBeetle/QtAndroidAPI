@@ -21,7 +21,7 @@ namespace android::app
 	// Methods
 	void LoaderManager::enableDebugLogging(jboolean arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.app.LoaderManager",
 			"enableDebugLogging",
 			"(Z)V",

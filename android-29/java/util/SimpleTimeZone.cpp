@@ -9,21 +9,21 @@ namespace java::util
 	// Fields
 	jint SimpleTimeZone::STANDARD_TIME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.SimpleTimeZone",
 			"STANDARD_TIME"
 		);
 	}
 	jint SimpleTimeZone::UTC_TIME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.SimpleTimeZone",
 			"UTC_TIME"
 		);
 	}
 	jint SimpleTimeZone::WALL_TIME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.SimpleTimeZone",
 			"WALL_TIME"
 		);

@@ -11,77 +11,77 @@ namespace android::telecom
 	// Fields
 	jint PhoneAccount::CAPABILITY_CALL_PROVIDER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"CAPABILITY_CALL_PROVIDER"
 		);
 	}
 	jint PhoneAccount::CAPABILITY_CALL_SUBJECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"CAPABILITY_CALL_SUBJECT"
 		);
 	}
 	jint PhoneAccount::CAPABILITY_CONNECTION_MANAGER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"CAPABILITY_CONNECTION_MANAGER"
 		);
 	}
 	jint PhoneAccount::CAPABILITY_PLACE_EMERGENCY_CALLS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"CAPABILITY_PLACE_EMERGENCY_CALLS"
 		);
 	}
 	jint PhoneAccount::CAPABILITY_RTT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"CAPABILITY_RTT"
 		);
 	}
 	jint PhoneAccount::CAPABILITY_SELF_MANAGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"CAPABILITY_SELF_MANAGED"
 		);
 	}
 	jint PhoneAccount::CAPABILITY_SIM_SUBSCRIPTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"CAPABILITY_SIM_SUBSCRIPTION"
 		);
 	}
 	jint PhoneAccount::CAPABILITY_SUPPORTS_VIDEO_CALLING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"CAPABILITY_SUPPORTS_VIDEO_CALLING"
 		);
 	}
 	jint PhoneAccount::CAPABILITY_VIDEO_CALLING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"CAPABILITY_VIDEO_CALLING"
 		);
 	}
 	jint PhoneAccount::CAPABILITY_VIDEO_CALLING_RELIES_ON_PRESENCE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"CAPABILITY_VIDEO_CALLING_RELIES_ON_PRESENCE"
 		);
 	}
 	__JniBaseClass PhoneAccount::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -89,7 +89,7 @@ namespace android::telecom
 	}
 	jstring PhoneAccount::EXTRA_CALL_SUBJECT_CHARACTER_ENCODING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_CALL_SUBJECT_CHARACTER_ENCODING",
 			"Ljava/lang/String;"
@@ -97,7 +97,7 @@ namespace android::telecom
 	}
 	jstring PhoneAccount::EXTRA_CALL_SUBJECT_MAX_LENGTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_CALL_SUBJECT_MAX_LENGTH",
 			"Ljava/lang/String;"
@@ -105,7 +105,7 @@ namespace android::telecom
 	}
 	jstring PhoneAccount::EXTRA_LOG_SELF_MANAGED_CALLS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_LOG_SELF_MANAGED_CALLS",
 			"Ljava/lang/String;"
@@ -113,7 +113,7 @@ namespace android::telecom
 	}
 	jstring PhoneAccount::EXTRA_SUPPORTS_HANDOVER_FROM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_SUPPORTS_HANDOVER_FROM",
 			"Ljava/lang/String;"
@@ -121,7 +121,7 @@ namespace android::telecom
 	}
 	jstring PhoneAccount::EXTRA_SUPPORTS_HANDOVER_TO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_SUPPORTS_HANDOVER_TO",
 			"Ljava/lang/String;"
@@ -129,21 +129,21 @@ namespace android::telecom
 	}
 	jint PhoneAccount::NO_HIGHLIGHT_COLOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"NO_HIGHLIGHT_COLOR"
 		);
 	}
 	jint PhoneAccount::NO_RESOURCE_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telecom.PhoneAccount",
 			"NO_RESOURCE_ID"
 		);
 	}
 	jstring PhoneAccount::SCHEME_SIP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"SCHEME_SIP",
 			"Ljava/lang/String;"
@@ -151,7 +151,7 @@ namespace android::telecom
 	}
 	jstring PhoneAccount::SCHEME_TEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"SCHEME_TEL",
 			"Ljava/lang/String;"
@@ -159,7 +159,7 @@ namespace android::telecom
 	}
 	jstring PhoneAccount::SCHEME_VOICEMAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"SCHEME_VOICEMAIL",
 			"Ljava/lang/String;"
@@ -174,7 +174,7 @@ namespace android::telecom
 	// Methods
 	android::telecom::PhoneAccount_Builder PhoneAccount::builder(android::telecom::PhoneAccountHandle arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telecom.PhoneAccount",
 			"builder",
 			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)Landroid/telecom/PhoneAccount$Builder;",

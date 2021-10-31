@@ -20,7 +20,7 @@ namespace java::time::chrono
 	// Methods
 	java::time::chrono::MinguoDate MinguoDate::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/MinguoDate;",
@@ -29,7 +29,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::MinguoDate MinguoDate::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
 			"now",
 			"()Ljava/time/chrono/MinguoDate;"
@@ -37,7 +37,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::MinguoDate MinguoDate::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/chrono/MinguoDate;",
@@ -46,7 +46,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::MinguoDate MinguoDate::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/chrono/MinguoDate;",
@@ -55,7 +55,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::MinguoDate MinguoDate::of(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
 			"of",
 			"(III)Ljava/time/chrono/MinguoDate;",

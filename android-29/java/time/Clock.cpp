@@ -15,7 +15,7 @@ namespace java::time
 	// Methods
 	java::time::Clock Clock::fixed(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Clock",
 			"fixed",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/Clock;",
@@ -25,7 +25,7 @@ namespace java::time
 	}
 	java::time::Clock Clock::offset(java::time::Clock arg0, java::time::Duration arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Clock",
 			"offset",
 			"(Ljava/time/Clock;Ljava/time/Duration;)Ljava/time/Clock;",
@@ -35,7 +35,7 @@ namespace java::time
 	}
 	java::time::Clock Clock::system(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Clock",
 			"system",
 			"(Ljava/time/ZoneId;)Ljava/time/Clock;",
@@ -44,7 +44,7 @@ namespace java::time
 	}
 	java::time::Clock Clock::systemDefaultZone()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Clock",
 			"systemDefaultZone",
 			"()Ljava/time/Clock;"
@@ -52,7 +52,7 @@ namespace java::time
 	}
 	java::time::Clock Clock::systemUTC()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Clock",
 			"systemUTC",
 			"()Ljava/time/Clock;"
@@ -60,7 +60,7 @@ namespace java::time
 	}
 	java::time::Clock Clock::tick(java::time::Clock arg0, java::time::Duration arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Clock",
 			"tick",
 			"(Ljava/time/Clock;Ljava/time/Duration;)Ljava/time/Clock;",
@@ -70,7 +70,7 @@ namespace java::time
 	}
 	java::time::Clock Clock::tickMillis(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Clock",
 			"tickMillis",
 			"(Ljava/time/ZoneId;)Ljava/time/Clock;",
@@ -79,7 +79,7 @@ namespace java::time
 	}
 	java::time::Clock Clock::tickMinutes(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Clock",
 			"tickMinutes",
 			"(Ljava/time/ZoneId;)Ljava/time/Clock;",
@@ -88,7 +88,7 @@ namespace java::time
 	}
 	java::time::Clock Clock::tickSeconds(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Clock",
 			"tickSeconds",
 			"(Ljava/time/ZoneId;)Ljava/time/Clock;",

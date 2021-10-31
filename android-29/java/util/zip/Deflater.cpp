@@ -6,77 +6,77 @@ namespace java::util::zip
 	// Fields
 	jint Deflater::BEST_COMPRESSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"BEST_COMPRESSION"
 		);
 	}
 	jint Deflater::BEST_SPEED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"BEST_SPEED"
 		);
 	}
 	jint Deflater::DEFAULT_COMPRESSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"DEFAULT_COMPRESSION"
 		);
 	}
 	jint Deflater::DEFAULT_STRATEGY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"DEFAULT_STRATEGY"
 		);
 	}
 	jint Deflater::DEFLATED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"DEFLATED"
 		);
 	}
 	jint Deflater::FILTERED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"FILTERED"
 		);
 	}
 	jint Deflater::FULL_FLUSH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"FULL_FLUSH"
 		);
 	}
 	jint Deflater::HUFFMAN_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"HUFFMAN_ONLY"
 		);
 	}
 	jint Deflater::NO_COMPRESSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"NO_COMPRESSION"
 		);
 	}
 	jint Deflater::NO_FLUSH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"NO_FLUSH"
 		);
 	}
 	jint Deflater::SYNC_FLUSH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.Deflater",
 			"SYNC_FLUSH"
 		);

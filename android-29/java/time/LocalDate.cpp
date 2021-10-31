@@ -22,7 +22,7 @@ namespace java::time
 	// Fields
 	java::time::LocalDate LocalDate::EPOCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.LocalDate",
 			"EPOCH",
 			"Ljava/time/LocalDate;"
@@ -30,7 +30,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::MAX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.LocalDate",
 			"MAX",
 			"Ljava/time/LocalDate;"
@@ -38,7 +38,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::MIN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.LocalDate",
 			"MIN",
 			"Ljava/time/LocalDate;"
@@ -53,7 +53,7 @@ namespace java::time
 	// Methods
 	java::time::LocalDate LocalDate::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/LocalDate;",
@@ -62,7 +62,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"now",
 			"()Ljava/time/LocalDate;"
@@ -70,7 +70,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/LocalDate;",
@@ -79,7 +79,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/LocalDate;",
@@ -88,7 +88,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::of(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"of",
 			"(III)Ljava/time/LocalDate;",
@@ -99,7 +99,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::of(jint arg0, java::time::Month arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"of",
 			"(ILjava/time/Month;I)Ljava/time/LocalDate;",
@@ -110,7 +110,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::ofEpochDay(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"ofEpochDay",
 			"(J)Ljava/time/LocalDate;",
@@ -119,7 +119,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::ofInstant(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"ofInstant",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/LocalDate;",
@@ -129,7 +129,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::ofYearDay(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"ofYearDay",
 			"(II)Ljava/time/LocalDate;",
@@ -139,7 +139,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/LocalDate;",
@@ -148,7 +148,7 @@ namespace java::time
 	}
 	java::time::LocalDate LocalDate::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.LocalDate",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalDate;",

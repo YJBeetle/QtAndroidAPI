@@ -9,91 +9,91 @@ namespace android::icu::util
 	// Fields
 	jint EthiopicCalendar::GENBOT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"GENBOT"
 		);
 	}
 	jint EthiopicCalendar::HAMLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"HAMLE"
 		);
 	}
 	jint EthiopicCalendar::HEDAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"HEDAR"
 		);
 	}
 	jint EthiopicCalendar::MEGABIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"MEGABIT"
 		);
 	}
 	jint EthiopicCalendar::MESKEREM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"MESKEREM"
 		);
 	}
 	jint EthiopicCalendar::MIAZIA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"MIAZIA"
 		);
 	}
 	jint EthiopicCalendar::NEHASSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"NEHASSE"
 		);
 	}
 	jint EthiopicCalendar::PAGUMEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"PAGUMEN"
 		);
 	}
 	jint EthiopicCalendar::SENE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"SENE"
 		);
 	}
 	jint EthiopicCalendar::TAHSAS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"TAHSAS"
 		);
 	}
 	jint EthiopicCalendar::TEKEMT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"TEKEMT"
 		);
 	}
 	jint EthiopicCalendar::TER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"TER"
 		);
 	}
 	jint EthiopicCalendar::YEKATIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
 			"YEKATIT"
 		);

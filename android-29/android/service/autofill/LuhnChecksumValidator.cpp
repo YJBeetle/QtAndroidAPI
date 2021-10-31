@@ -6,7 +6,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass LuhnChecksumValidator::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.LuhnChecksumValidator",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

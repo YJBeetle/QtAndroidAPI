@@ -8,7 +8,7 @@ namespace android::net::wifi
 	// Fields
 	jstring WifiInfo::FREQUENCY_UNITS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.WifiInfo",
 			"FREQUENCY_UNITS",
 			"Ljava/lang/String;"
@@ -16,7 +16,7 @@ namespace android::net::wifi
 	}
 	jstring WifiInfo::LINK_SPEED_UNITS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.WifiInfo",
 			"LINK_SPEED_UNITS",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::net::wifi
 	}
 	jint WifiInfo::LINK_SPEED_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WifiInfo",
 			"LINK_SPEED_UNKNOWN"
 		);
@@ -38,7 +38,7 @@ namespace android::net::wifi
 	// Methods
 	android::net::NetworkInfo_DetailedState WifiInfo::getDetailedStateOf(android::net::wifi::SupplicantState arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.wifi.WifiInfo",
 			"getDetailedStateOf",
 			"(Landroid/net/wifi/SupplicantState;)Landroid/net/NetworkInfo$DetailedState;",

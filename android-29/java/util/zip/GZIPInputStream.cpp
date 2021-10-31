@@ -7,7 +7,7 @@ namespace java::util::zip
 	// Fields
 	jint GZIPInputStream::GZIP_MAGIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.util.zip.GZIPInputStream",
 			"GZIP_MAGIC"
 		);

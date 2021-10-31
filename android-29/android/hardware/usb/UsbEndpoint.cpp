@@ -6,7 +6,7 @@ namespace android::hardware::usb
 	// Fields
 	__JniBaseClass UsbEndpoint::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.usb.UsbEndpoint",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

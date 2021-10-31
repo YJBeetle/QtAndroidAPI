@@ -8,7 +8,7 @@ namespace android::hardware::camera2::params
 	// Fields
 	__JniBaseClass OutputConfiguration::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.params.OutputConfiguration",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,7 +16,7 @@ namespace android::hardware::camera2::params
 	}
 	jint OutputConfiguration::SURFACE_GROUP_ID_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.OutputConfiguration",
 			"SURFACE_GROUP_ID_NONE"
 		);

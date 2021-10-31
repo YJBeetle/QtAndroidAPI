@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::SearchIterator_ElementComparisonType SearchIterator_ElementComparisonType::ANY_BASE_WEIGHT_IS_WILDCARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"ANY_BASE_WEIGHT_IS_WILDCARD",
 			"Landroid/icu/text/SearchIterator$ElementComparisonType;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::SearchIterator_ElementComparisonType SearchIterator_ElementComparisonType::PATTERN_BASE_WEIGHT_IS_WILDCARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"PATTERN_BASE_WEIGHT_IS_WILDCARD",
 			"Landroid/icu/text/SearchIterator$ElementComparisonType;"
@@ -21,7 +21,7 @@ namespace android::icu::text
 	}
 	android::icu::text::SearchIterator_ElementComparisonType SearchIterator_ElementComparisonType::STANDARD_ELEMENT_COMPARISON()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"STANDARD_ELEMENT_COMPARISON",
 			"Landroid/icu/text/SearchIterator$ElementComparisonType;"
@@ -36,7 +36,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::SearchIterator_ElementComparisonType SearchIterator_ElementComparisonType::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/SearchIterator$ElementComparisonType;",
@@ -45,7 +45,7 @@ namespace android::icu::text
 	}
 	jarray SearchIterator_ElementComparisonType::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"values",
 			"()[Landroid/icu/text/SearchIterator$ElementComparisonType;"

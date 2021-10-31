@@ -6,7 +6,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass VoiceInteractor_Prompt::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.VoiceInteractor$Prompt",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

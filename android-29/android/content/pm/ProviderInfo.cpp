@@ -6,7 +6,7 @@ namespace android::content::pm
 	// Fields
 	__JniBaseClass ProviderInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.ProviderInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,7 +14,7 @@ namespace android::content::pm
 	}
 	jint ProviderInfo::FLAG_SINGLE_USER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ProviderInfo",
 			"FLAG_SINGLE_USER"
 		);

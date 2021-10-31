@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_CommonDataKinds_SipAddress::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$SipAddress",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_SipAddress::EXTRA_ADDRESS_BOOK_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$SipAddress",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_SipAddress::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$SipAddress",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_SipAddress::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$SipAddress",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_SipAddress::SIP_ADDRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$SipAddress",
 			"SIP_ADDRESS",
 			"Ljava/lang/String;"
@@ -46,21 +46,21 @@ namespace android::provider
 	}
 	jint ContactsContract_CommonDataKinds_SipAddress::TYPE_HOME()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$SipAddress",
 			"TYPE_HOME"
 		);
 	}
 	jint ContactsContract_CommonDataKinds_SipAddress::TYPE_OTHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$SipAddress",
 			"TYPE_OTHER"
 		);
 	}
 	jint ContactsContract_CommonDataKinds_SipAddress::TYPE_WORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$SipAddress",
 			"TYPE_WORK"
 		);
@@ -74,7 +74,7 @@ namespace android::provider
 	// Methods
 	jstring ContactsContract_CommonDataKinds_SipAddress::getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$SipAddress",
 			"getTypeLabel",
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
@@ -85,7 +85,7 @@ namespace android::provider
 	}
 	jint ContactsContract_CommonDataKinds_SipAddress::getTypeLabelResource(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$SipAddress",
 			"getTypeLabelResource",
 			"(I)I",

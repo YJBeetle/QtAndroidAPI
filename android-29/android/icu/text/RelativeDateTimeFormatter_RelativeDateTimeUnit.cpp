@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::DAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"DAY",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::FRIDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"FRIDAY",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -21,7 +21,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::HOUR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"HOUR",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -29,7 +29,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::MINUTE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"MINUTE",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -37,7 +37,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::MONDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"MONDAY",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -45,7 +45,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::MONTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"MONTH",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -53,7 +53,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::QUARTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"QUARTER",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -61,7 +61,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::SATURDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"SATURDAY",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -69,7 +69,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::SECOND()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"SECOND",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -77,7 +77,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::SUNDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"SUNDAY",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -85,7 +85,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::THURSDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"THURSDAY",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -93,7 +93,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::TUESDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"TUESDAY",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -101,7 +101,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::WEDNESDAY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"WEDNESDAY",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -109,7 +109,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::WEEK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"WEEK",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -117,7 +117,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::YEAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"YEAR",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
@@ -132,7 +132,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;",
@@ -141,7 +141,7 @@ namespace android::icu::text
 	}
 	jarray RelativeDateTimeFormatter_RelativeDateTimeUnit::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"values",
 			"()[Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"

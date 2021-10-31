@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri CalendarContract_Attendees::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$Attendees",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	// Methods
 	__JniBaseClass CalendarContract_Attendees::query(android::content::ContentResolver arg0, jlong arg1, jarray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.CalendarContract$Attendees",
 			"query",
 			"(Landroid/content/ContentResolver;J[Ljava/lang/String;)Landroid/database/Cursor;",

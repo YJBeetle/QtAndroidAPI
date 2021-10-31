@@ -7,14 +7,14 @@ namespace android::app::job
 	// Fields
 	jint JobScheduler::RESULT_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobScheduler",
 			"RESULT_FAILURE"
 		);
 	}
 	jint JobScheduler::RESULT_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.job.JobScheduler",
 			"RESULT_SUCCESS"
 		);

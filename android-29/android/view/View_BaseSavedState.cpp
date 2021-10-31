@@ -7,7 +7,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass View_BaseSavedState::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.View$BaseSavedState",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

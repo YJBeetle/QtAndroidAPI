@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_Directory::ACCOUNT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"ACCOUNT_NAME",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Directory::ACCOUNT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"ACCOUNT_TYPE",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Directory::CALLER_PACKAGE_PARAM_KEY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"CALLER_PACKAGE_PARAM_KEY",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Directory::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Directory::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -47,7 +47,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_Directory::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -55,14 +55,14 @@ namespace android::provider
 	}
 	jlong ContactsContract_Directory::DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.provider.ContactsContract$Directory",
 			"DEFAULT"
 		);
 	}
 	jstring ContactsContract_Directory::DIRECTORY_AUTHORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"DIRECTORY_AUTHORITY",
 			"Ljava/lang/String;"
@@ -70,7 +70,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Directory::DISPLAY_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"DISPLAY_NAME",
 			"Ljava/lang/String;"
@@ -78,7 +78,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_Directory::ENTERPRISE_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"ENTERPRISE_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -86,21 +86,21 @@ namespace android::provider
 	}
 	jlong ContactsContract_Directory::ENTERPRISE_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.provider.ContactsContract$Directory",
 			"ENTERPRISE_DEFAULT"
 		);
 	}
 	jlong ContactsContract_Directory::ENTERPRISE_LOCAL_INVISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.provider.ContactsContract$Directory",
 			"ENTERPRISE_LOCAL_INVISIBLE"
 		);
 	}
 	jstring ContactsContract_Directory::EXPORT_SUPPORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"EXPORT_SUPPORT",
 			"Ljava/lang/String;"
@@ -108,35 +108,35 @@ namespace android::provider
 	}
 	jint ContactsContract_Directory::EXPORT_SUPPORT_ANY_ACCOUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$Directory",
 			"EXPORT_SUPPORT_ANY_ACCOUNT"
 		);
 	}
 	jint ContactsContract_Directory::EXPORT_SUPPORT_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$Directory",
 			"EXPORT_SUPPORT_NONE"
 		);
 	}
 	jint ContactsContract_Directory::EXPORT_SUPPORT_SAME_ACCOUNT_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$Directory",
 			"EXPORT_SUPPORT_SAME_ACCOUNT_ONLY"
 		);
 	}
 	jlong ContactsContract_Directory::LOCAL_INVISIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jlong>(
+		return getStaticField<jlong>(
 			"android.provider.ContactsContract$Directory",
 			"LOCAL_INVISIBLE"
 		);
 	}
 	jstring ContactsContract_Directory::PACKAGE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"PACKAGE_NAME",
 			"Ljava/lang/String;"
@@ -144,7 +144,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Directory::PHOTO_SUPPORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"PHOTO_SUPPORT",
 			"Ljava/lang/String;"
@@ -152,35 +152,35 @@ namespace android::provider
 	}
 	jint ContactsContract_Directory::PHOTO_SUPPORT_FULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$Directory",
 			"PHOTO_SUPPORT_FULL"
 		);
 	}
 	jint ContactsContract_Directory::PHOTO_SUPPORT_FULL_SIZE_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$Directory",
 			"PHOTO_SUPPORT_FULL_SIZE_ONLY"
 		);
 	}
 	jint ContactsContract_Directory::PHOTO_SUPPORT_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$Directory",
 			"PHOTO_SUPPORT_NONE"
 		);
 	}
 	jint ContactsContract_Directory::PHOTO_SUPPORT_THUMBNAIL_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$Directory",
 			"PHOTO_SUPPORT_THUMBNAIL_ONLY"
 		);
 	}
 	jstring ContactsContract_Directory::SHORTCUT_SUPPORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"SHORTCUT_SUPPORT",
 			"Ljava/lang/String;"
@@ -188,28 +188,28 @@ namespace android::provider
 	}
 	jint ContactsContract_Directory::SHORTCUT_SUPPORT_DATA_ITEMS_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$Directory",
 			"SHORTCUT_SUPPORT_DATA_ITEMS_ONLY"
 		);
 	}
 	jint ContactsContract_Directory::SHORTCUT_SUPPORT_FULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$Directory",
 			"SHORTCUT_SUPPORT_FULL"
 		);
 	}
 	jint ContactsContract_Directory::SHORTCUT_SUPPORT_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$Directory",
 			"SHORTCUT_SUPPORT_NONE"
 		);
 	}
 	jstring ContactsContract_Directory::TYPE_RESOURCE_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"TYPE_RESOURCE_ID",
 			"Ljava/lang/String;"
@@ -224,7 +224,7 @@ namespace android::provider
 	// Methods
 	jboolean ContactsContract_Directory::isEnterpriseDirectoryId(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.provider.ContactsContract$Directory",
 			"isEnterpriseDirectoryId",
 			"(J)Z",
@@ -233,7 +233,7 @@ namespace android::provider
 	}
 	jboolean ContactsContract_Directory::isRemoteDirectoryId(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.provider.ContactsContract$Directory",
 			"isRemoteDirectoryId",
 			"(J)Z",
@@ -242,7 +242,7 @@ namespace android::provider
 	}
 	void ContactsContract_Directory::notifyDirectoryChange(android::content::ContentResolver arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.ContactsContract$Directory",
 			"notifyDirectoryChange",
 			"(Landroid/content/ContentResolver;)V",

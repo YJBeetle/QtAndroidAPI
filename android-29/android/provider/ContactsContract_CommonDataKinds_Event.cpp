@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_CommonDataKinds_Event::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Event::EXTRA_ADDRESS_BOOK_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"EXTRA_ADDRESS_BOOK_INDEX",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Event::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Event::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_CommonDataKinds_Event::START_DATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"START_DATE",
 			"Ljava/lang/String;"
@@ -47,21 +47,21 @@ namespace android::provider
 	}
 	jint ContactsContract_CommonDataKinds_Event::TYPE_ANNIVERSARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"TYPE_ANNIVERSARY"
 		);
 	}
 	jint ContactsContract_CommonDataKinds_Event::TYPE_BIRTHDAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"TYPE_BIRTHDAY"
 		);
 	}
 	jint ContactsContract_CommonDataKinds_Event::TYPE_OTHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"TYPE_OTHER"
 		);
@@ -75,7 +75,7 @@ namespace android::provider
 	// Methods
 	jstring ContactsContract_CommonDataKinds_Event::getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"getTypeLabel",
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
@@ -86,7 +86,7 @@ namespace android::provider
 	}
 	jint ContactsContract_CommonDataKinds_Event::getTypeResource(java::lang::Integer arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"getTypeResource",
 			"(Ljava/lang/Integer;)I",

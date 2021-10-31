@@ -24,7 +24,7 @@ namespace android::content
 	// Fields
 	jstring ContentResolver::ANY_CURSOR_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"ANY_CURSOR_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace android::content
 	}
 	jstring ContentResolver::CURSOR_DIR_BASE_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"CURSOR_DIR_BASE_TYPE",
 			"Ljava/lang/String;"
@@ -40,7 +40,7 @@ namespace android::content
 	}
 	jstring ContentResolver::CURSOR_ITEM_BASE_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"CURSOR_ITEM_BASE_TYPE",
 			"Ljava/lang/String;"
@@ -48,7 +48,7 @@ namespace android::content
 	}
 	jstring ContentResolver::EXTRA_HONORED_ARGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"EXTRA_HONORED_ARGS",
 			"Ljava/lang/String;"
@@ -56,7 +56,7 @@ namespace android::content
 	}
 	jstring ContentResolver::EXTRA_REFRESH_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"EXTRA_REFRESH_SUPPORTED",
 			"Ljava/lang/String;"
@@ -64,7 +64,7 @@ namespace android::content
 	}
 	jstring ContentResolver::EXTRA_SIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"EXTRA_SIZE",
 			"Ljava/lang/String;"
@@ -72,7 +72,7 @@ namespace android::content
 	}
 	jstring ContentResolver::EXTRA_TOTAL_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"EXTRA_TOTAL_COUNT",
 			"Ljava/lang/String;"
@@ -80,21 +80,21 @@ namespace android::content
 	}
 	jint ContentResolver::NOTIFY_SKIP_NOTIFY_FOR_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.ContentResolver",
 			"NOTIFY_SKIP_NOTIFY_FOR_DESCENDANTS"
 		);
 	}
 	jint ContentResolver::NOTIFY_SYNC_TO_NETWORK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.ContentResolver",
 			"NOTIFY_SYNC_TO_NETWORK"
 		);
 	}
 	jstring ContentResolver::QUERY_ARG_LIMIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_LIMIT",
 			"Ljava/lang/String;"
@@ -102,7 +102,7 @@ namespace android::content
 	}
 	jstring ContentResolver::QUERY_ARG_OFFSET()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_OFFSET",
 			"Ljava/lang/String;"
@@ -110,7 +110,7 @@ namespace android::content
 	}
 	jstring ContentResolver::QUERY_ARG_SORT_COLLATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SORT_COLLATION",
 			"Ljava/lang/String;"
@@ -118,7 +118,7 @@ namespace android::content
 	}
 	jstring ContentResolver::QUERY_ARG_SORT_COLUMNS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SORT_COLUMNS",
 			"Ljava/lang/String;"
@@ -126,7 +126,7 @@ namespace android::content
 	}
 	jstring ContentResolver::QUERY_ARG_SORT_DIRECTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SORT_DIRECTION",
 			"Ljava/lang/String;"
@@ -134,7 +134,7 @@ namespace android::content
 	}
 	jstring ContentResolver::QUERY_ARG_SQL_SELECTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SQL_SELECTION",
 			"Ljava/lang/String;"
@@ -142,7 +142,7 @@ namespace android::content
 	}
 	jstring ContentResolver::QUERY_ARG_SQL_SELECTION_ARGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SQL_SELECTION_ARGS",
 			"Ljava/lang/String;"
@@ -150,7 +150,7 @@ namespace android::content
 	}
 	jstring ContentResolver::QUERY_ARG_SQL_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"QUERY_ARG_SQL_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -158,21 +158,21 @@ namespace android::content
 	}
 	jint ContentResolver::QUERY_SORT_DIRECTION_ASCENDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.ContentResolver",
 			"QUERY_SORT_DIRECTION_ASCENDING"
 		);
 	}
 	jint ContentResolver::QUERY_SORT_DIRECTION_DESCENDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.ContentResolver",
 			"QUERY_SORT_DIRECTION_DESCENDING"
 		);
 	}
 	jstring ContentResolver::SCHEME_ANDROID_RESOURCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SCHEME_ANDROID_RESOURCE",
 			"Ljava/lang/String;"
@@ -180,7 +180,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SCHEME_CONTENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SCHEME_CONTENT",
 			"Ljava/lang/String;"
@@ -188,7 +188,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SCHEME_FILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SCHEME_FILE",
 			"Ljava/lang/String;"
@@ -196,7 +196,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_ACCOUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_ACCOUNT",
 			"Ljava/lang/String;"
@@ -204,7 +204,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS",
 			"Ljava/lang/String;"
@@ -212,7 +212,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_DO_NOT_RETRY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_DO_NOT_RETRY",
 			"Ljava/lang/String;"
@@ -220,7 +220,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_EXPEDITED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_EXPEDITED",
 			"Ljava/lang/String;"
@@ -228,7 +228,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_FORCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_FORCE",
 			"Ljava/lang/String;"
@@ -236,7 +236,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_IGNORE_BACKOFF()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_IGNORE_BACKOFF",
 			"Ljava/lang/String;"
@@ -244,7 +244,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_IGNORE_SETTINGS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_IGNORE_SETTINGS",
 			"Ljava/lang/String;"
@@ -252,7 +252,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_INITIALIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_INITIALIZE",
 			"Ljava/lang/String;"
@@ -260,7 +260,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_MANUAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_MANUAL",
 			"Ljava/lang/String;"
@@ -268,7 +268,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS",
 			"Ljava/lang/String;"
@@ -276,7 +276,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_REQUIRE_CHARGING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_REQUIRE_CHARGING",
 			"Ljava/lang/String;"
@@ -284,7 +284,7 @@ namespace android::content
 	}
 	jstring ContentResolver::SYNC_EXTRAS_UPLOAD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.ContentResolver",
 			"SYNC_EXTRAS_UPLOAD",
 			"Ljava/lang/String;"
@@ -292,21 +292,21 @@ namespace android::content
 	}
 	jint ContentResolver::SYNC_OBSERVER_TYPE_ACTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.ContentResolver",
 			"SYNC_OBSERVER_TYPE_ACTIVE"
 		);
 	}
 	jint ContentResolver::SYNC_OBSERVER_TYPE_PENDING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.ContentResolver",
 			"SYNC_OBSERVER_TYPE_PENDING"
 		);
 	}
 	jint ContentResolver::SYNC_OBSERVER_TYPE_SETTINGS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.ContentResolver",
 			"SYNC_OBSERVER_TYPE_SETTINGS"
 		);
@@ -326,7 +326,7 @@ namespace android::content
 	// Methods
 	void ContentResolver::addPeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jlong arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"addPeriodicSync",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
@@ -338,7 +338,7 @@ namespace android::content
 	}
 	jobject ContentResolver::addStatusChangeListener(jint arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentResolver",
 			"addStatusChangeListener",
 			"(ILandroid/content/SyncStatusObserver;)Ljava/lang/Object;",
@@ -348,7 +348,7 @@ namespace android::content
 	}
 	void ContentResolver::cancelSync(android::content::SyncRequest arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"cancelSync",
 			"(Landroid/content/SyncRequest;)V",
@@ -357,7 +357,7 @@ namespace android::content
 	}
 	void ContentResolver::cancelSync(android::accounts::Account arg0, jstring arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"cancelSync",
 			"(Landroid/accounts/Account;Ljava/lang/String;)V",
@@ -367,7 +367,7 @@ namespace android::content
 	}
 	android::content::SyncInfo ContentResolver::getCurrentSync()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentResolver",
 			"getCurrentSync",
 			"()Landroid/content/SyncInfo;"
@@ -375,7 +375,7 @@ namespace android::content
 	}
 	__JniBaseClass ContentResolver::getCurrentSyncs()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentResolver",
 			"getCurrentSyncs",
 			"()Ljava/util/List;"
@@ -383,7 +383,7 @@ namespace android::content
 	}
 	jint ContentResolver::getIsSyncable(android::accounts::Account arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.content.ContentResolver",
 			"getIsSyncable",
 			"(Landroid/accounts/Account;Ljava/lang/String;)I",
@@ -393,7 +393,7 @@ namespace android::content
 	}
 	jboolean ContentResolver::getMasterSyncAutomatically()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.content.ContentResolver",
 			"getMasterSyncAutomatically",
 			"()Z"
@@ -401,7 +401,7 @@ namespace android::content
 	}
 	__JniBaseClass ContentResolver::getPeriodicSyncs(android::accounts::Account arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentResolver",
 			"getPeriodicSyncs",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Ljava/util/List;",
@@ -411,7 +411,7 @@ namespace android::content
 	}
 	jarray ContentResolver::getSyncAdapterTypes()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentResolver",
 			"getSyncAdapterTypes",
 			"()[Landroid/content/SyncAdapterType;"
@@ -419,7 +419,7 @@ namespace android::content
 	}
 	jboolean ContentResolver::getSyncAutomatically(android::accounts::Account arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.content.ContentResolver",
 			"getSyncAutomatically",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
@@ -429,7 +429,7 @@ namespace android::content
 	}
 	jboolean ContentResolver::isSyncActive(android::accounts::Account arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.content.ContentResolver",
 			"isSyncActive",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
@@ -439,7 +439,7 @@ namespace android::content
 	}
 	jboolean ContentResolver::isSyncPending(android::accounts::Account arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.content.ContentResolver",
 			"isSyncPending",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
@@ -449,7 +449,7 @@ namespace android::content
 	}
 	void ContentResolver::removePeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"removePeriodicSync",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
@@ -460,7 +460,7 @@ namespace android::content
 	}
 	void ContentResolver::removeStatusChangeListener(jobject arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"removeStatusChangeListener",
 			"(Ljava/lang/Object;)V",
@@ -469,7 +469,7 @@ namespace android::content
 	}
 	void ContentResolver::requestSync(android::content::SyncRequest arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"requestSync",
 			"(Landroid/content/SyncRequest;)V",
@@ -478,7 +478,7 @@ namespace android::content
 	}
 	void ContentResolver::requestSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"requestSync",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
@@ -489,7 +489,7 @@ namespace android::content
 	}
 	void ContentResolver::setIsSyncable(android::accounts::Account arg0, jstring arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"setIsSyncable",
 			"(Landroid/accounts/Account;Ljava/lang/String;I)V",
@@ -500,7 +500,7 @@ namespace android::content
 	}
 	void ContentResolver::setMasterSyncAutomatically(jboolean arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"setMasterSyncAutomatically",
 			"(Z)V",
@@ -509,7 +509,7 @@ namespace android::content
 	}
 	void ContentResolver::setSyncAutomatically(android::accounts::Account arg0, jstring arg1, jboolean arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"setSyncAutomatically",
 			"(Landroid/accounts/Account;Ljava/lang/String;Z)V",
@@ -520,7 +520,7 @@ namespace android::content
 	}
 	void ContentResolver::validateSyncExtrasBundle(android::os::Bundle arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.content.ContentResolver",
 			"validateSyncExtrasBundle",
 			"(Landroid/os/Bundle;)V",
@@ -529,7 +529,7 @@ namespace android::content
 	}
 	android::content::ContentResolver ContentResolver::wrap(android::content::ContentProvider arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentResolver",
 			"wrap",
 			"(Landroid/content/ContentProvider;)Landroid/content/ContentResolver;",
@@ -538,7 +538,7 @@ namespace android::content
 	}
 	android::content::ContentResolver ContentResolver::wrap(android::content::ContentProviderClient arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.ContentResolver",
 			"wrap",
 			"(Landroid/content/ContentProviderClient;)Landroid/content/ContentResolver;",

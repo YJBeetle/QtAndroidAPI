@@ -6,7 +6,7 @@ namespace android::media
 	// Fields
 	__JniBaseClass Rating::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.Rating",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,49 +14,49 @@ namespace android::media
 	}
 	jint Rating::RATING_3_STARS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Rating",
 			"RATING_3_STARS"
 		);
 	}
 	jint Rating::RATING_4_STARS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Rating",
 			"RATING_4_STARS"
 		);
 	}
 	jint Rating::RATING_5_STARS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Rating",
 			"RATING_5_STARS"
 		);
 	}
 	jint Rating::RATING_HEART()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Rating",
 			"RATING_HEART"
 		);
 	}
 	jint Rating::RATING_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Rating",
 			"RATING_NONE"
 		);
 	}
 	jint Rating::RATING_PERCENTAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Rating",
 			"RATING_PERCENTAGE"
 		);
 	}
 	jint Rating::RATING_THUMB_UP_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.Rating",
 			"RATING_THUMB_UP_DOWN"
 		);
@@ -70,7 +70,7 @@ namespace android::media
 	// Methods
 	android::media::Rating Rating::newHeartRating(jboolean arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.Rating",
 			"newHeartRating",
 			"(Z)Landroid/media/Rating;",
@@ -79,7 +79,7 @@ namespace android::media
 	}
 	android::media::Rating Rating::newPercentageRating(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.Rating",
 			"newPercentageRating",
 			"(F)Landroid/media/Rating;",
@@ -88,7 +88,7 @@ namespace android::media
 	}
 	android::media::Rating Rating::newStarRating(jint arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.Rating",
 			"newStarRating",
 			"(IF)Landroid/media/Rating;",
@@ -98,7 +98,7 @@ namespace android::media
 	}
 	android::media::Rating Rating::newThumbRating(jboolean arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.Rating",
 			"newThumbRating",
 			"(Z)Landroid/media/Rating;",
@@ -107,7 +107,7 @@ namespace android::media
 	}
 	android::media::Rating Rating::newUnratedRating(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.Rating",
 			"newUnratedRating",
 			"(I)Landroid/media/Rating;",

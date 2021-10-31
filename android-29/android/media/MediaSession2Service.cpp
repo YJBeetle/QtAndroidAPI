@@ -9,7 +9,7 @@ namespace android::media
 	// Fields
 	jstring MediaSession2Service::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaSession2Service",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

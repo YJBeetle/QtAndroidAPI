@@ -9,7 +9,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass WallpaperColors::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.WallpaperColors",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -38,7 +38,7 @@ namespace android::app
 	// Methods
 	android::app::WallpaperColors WallpaperColors::fromBitmap(android::graphics::Bitmap arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.WallpaperColors",
 			"fromBitmap",
 			"(Landroid/graphics/Bitmap;)Landroid/app/WallpaperColors;",
@@ -47,7 +47,7 @@ namespace android::app
 	}
 	android::app::WallpaperColors WallpaperColors::fromDrawable(android::graphics::drawable::Drawable arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.WallpaperColors",
 			"fromDrawable",
 			"(Landroid/graphics/drawable/Drawable;)Landroid/app/WallpaperColors;",

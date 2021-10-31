@@ -14,7 +14,7 @@ namespace java::util::logging
 	// Fields
 	jstring Logger::GLOBAL_LOGGER_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.logging.Logger",
 			"GLOBAL_LOGGER_NAME",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace java::util::logging
 	}
 	java::util::logging::Logger Logger::global()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.util.logging.Logger",
 			"global",
 			"Ljava/util/logging/Logger;"
@@ -37,7 +37,7 @@ namespace java::util::logging
 	// Methods
 	java::util::logging::Logger Logger::getAnonymousLogger()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.logging.Logger",
 			"getAnonymousLogger",
 			"()Ljava/util/logging/Logger;"
@@ -45,7 +45,7 @@ namespace java::util::logging
 	}
 	java::util::logging::Logger Logger::getAnonymousLogger(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.logging.Logger",
 			"getAnonymousLogger",
 			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
@@ -54,7 +54,7 @@ namespace java::util::logging
 	}
 	java::util::logging::Logger Logger::getGlobal()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.logging.Logger",
 			"getGlobal",
 			"()Ljava/util/logging/Logger;"
@@ -62,7 +62,7 @@ namespace java::util::logging
 	}
 	java::util::logging::Logger Logger::getLogger(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.logging.Logger",
 			"getLogger",
 			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
@@ -71,7 +71,7 @@ namespace java::util::logging
 	}
 	java::util::logging::Logger Logger::getLogger(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.util.logging.Logger",
 			"getLogger",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/logging/Logger;",

@@ -38,7 +38,7 @@ namespace android::os
 	// Methods
 	android::os::Handler Handler::createAsync(android::os::Looper arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Handler",
 			"createAsync",
 			"(Landroid/os/Looper;)Landroid/os/Handler;",
@@ -47,7 +47,7 @@ namespace android::os
 	}
 	android::os::Handler Handler::createAsync(android::os::Looper arg0, __JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Handler",
 			"createAsync",
 			"(Landroid/os/Looper;Landroid/os/Handler$Callback;)Landroid/os/Handler;",

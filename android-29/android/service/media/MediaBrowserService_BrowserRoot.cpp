@@ -6,7 +6,7 @@ namespace android::service::media
 	// Fields
 	jstring MediaBrowserService_BrowserRoot::EXTRA_OFFLINE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.media.MediaBrowserService$BrowserRoot",
 			"EXTRA_OFFLINE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::service::media
 	}
 	jstring MediaBrowserService_BrowserRoot::EXTRA_RECENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.media.MediaBrowserService$BrowserRoot",
 			"EXTRA_RECENT",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::service::media
 	}
 	jstring MediaBrowserService_BrowserRoot::EXTRA_SUGGESTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.media.MediaBrowserService$BrowserRoot",
 			"EXTRA_SUGGESTED",
 			"Ljava/lang/String;"

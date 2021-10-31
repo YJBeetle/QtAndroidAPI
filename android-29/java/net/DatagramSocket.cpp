@@ -43,7 +43,7 @@ namespace java::net
 	// Methods
 	void DatagramSocket::setDatagramSocketImplFactory(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.DatagramSocket",
 			"setDatagramSocketImplFactory",
 			"(Ljava/net/DatagramSocketImplFactory;)V",

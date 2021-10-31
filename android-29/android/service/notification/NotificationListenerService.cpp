@@ -13,217 +13,217 @@ namespace android::service::notification
 	// Fields
 	jint NotificationListenerService::HINT_HOST_DISABLE_CALL_EFFECTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"HINT_HOST_DISABLE_CALL_EFFECTS"
 		);
 	}
 	jint NotificationListenerService::HINT_HOST_DISABLE_EFFECTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"HINT_HOST_DISABLE_EFFECTS"
 		);
 	}
 	jint NotificationListenerService::HINT_HOST_DISABLE_NOTIFICATION_EFFECTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"HINT_HOST_DISABLE_NOTIFICATION_EFFECTS"
 		);
 	}
 	jint NotificationListenerService::INTERRUPTION_FILTER_ALARMS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"INTERRUPTION_FILTER_ALARMS"
 		);
 	}
 	jint NotificationListenerService::INTERRUPTION_FILTER_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"INTERRUPTION_FILTER_ALL"
 		);
 	}
 	jint NotificationListenerService::INTERRUPTION_FILTER_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"INTERRUPTION_FILTER_NONE"
 		);
 	}
 	jint NotificationListenerService::INTERRUPTION_FILTER_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"INTERRUPTION_FILTER_PRIORITY"
 		);
 	}
 	jint NotificationListenerService::INTERRUPTION_FILTER_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"INTERRUPTION_FILTER_UNKNOWN"
 		);
 	}
 	jint NotificationListenerService::NOTIFICATION_CHANNEL_OR_GROUP_ADDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"NOTIFICATION_CHANNEL_OR_GROUP_ADDED"
 		);
 	}
 	jint NotificationListenerService::NOTIFICATION_CHANNEL_OR_GROUP_DELETED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"NOTIFICATION_CHANNEL_OR_GROUP_DELETED"
 		);
 	}
 	jint NotificationListenerService::NOTIFICATION_CHANNEL_OR_GROUP_UPDATED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"NOTIFICATION_CHANNEL_OR_GROUP_UPDATED"
 		);
 	}
 	jint NotificationListenerService::REASON_APP_CANCEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_APP_CANCEL"
 		);
 	}
 	jint NotificationListenerService::REASON_APP_CANCEL_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_APP_CANCEL_ALL"
 		);
 	}
 	jint NotificationListenerService::REASON_CANCEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_CANCEL"
 		);
 	}
 	jint NotificationListenerService::REASON_CANCEL_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_CANCEL_ALL"
 		);
 	}
 	jint NotificationListenerService::REASON_CHANNEL_BANNED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_CHANNEL_BANNED"
 		);
 	}
 	jint NotificationListenerService::REASON_CLICK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_CLICK"
 		);
 	}
 	jint NotificationListenerService::REASON_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_ERROR"
 		);
 	}
 	jint NotificationListenerService::REASON_GROUP_OPTIMIZATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_GROUP_OPTIMIZATION"
 		);
 	}
 	jint NotificationListenerService::REASON_GROUP_SUMMARY_CANCELED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_GROUP_SUMMARY_CANCELED"
 		);
 	}
 	jint NotificationListenerService::REASON_LISTENER_CANCEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_LISTENER_CANCEL"
 		);
 	}
 	jint NotificationListenerService::REASON_LISTENER_CANCEL_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_LISTENER_CANCEL_ALL"
 		);
 	}
 	jint NotificationListenerService::REASON_PACKAGE_BANNED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_PACKAGE_BANNED"
 		);
 	}
 	jint NotificationListenerService::REASON_PACKAGE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_PACKAGE_CHANGED"
 		);
 	}
 	jint NotificationListenerService::REASON_PACKAGE_SUSPENDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_PACKAGE_SUSPENDED"
 		);
 	}
 	jint NotificationListenerService::REASON_PROFILE_TURNED_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_PROFILE_TURNED_OFF"
 		);
 	}
 	jint NotificationListenerService::REASON_SNOOZED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_SNOOZED"
 		);
 	}
 	jint NotificationListenerService::REASON_TIMEOUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_TIMEOUT"
 		);
 	}
 	jint NotificationListenerService::REASON_UNAUTOBUNDLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_UNAUTOBUNDLED"
 		);
 	}
 	jint NotificationListenerService::REASON_USER_STOPPED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"REASON_USER_STOPPED"
 		);
 	}
 	jstring NotificationListenerService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.NotificationListenerService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -231,14 +231,14 @@ namespace android::service::notification
 	}
 	jint NotificationListenerService::SUPPRESSED_EFFECT_SCREEN_OFF()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"SUPPRESSED_EFFECT_SCREEN_OFF"
 		);
 	}
 	jint NotificationListenerService::SUPPRESSED_EFFECT_SCREEN_ON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.notification.NotificationListenerService",
 			"SUPPRESSED_EFFECT_SCREEN_ON"
 		);
@@ -257,7 +257,7 @@ namespace android::service::notification
 	// Methods
 	void NotificationListenerService::requestRebind(android::content::ComponentName arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.service.notification.NotificationListenerService",
 			"requestRebind",
 			"(Landroid/content/ComponentName;)V",

@@ -7,7 +7,7 @@ namespace android::net::nsd
 	// Fields
 	__JniBaseClass NsdServiceInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.nsd.NsdServiceInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

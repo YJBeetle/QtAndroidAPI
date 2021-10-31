@@ -21,7 +21,7 @@ namespace java::lang
 	// Methods
 	java::lang::ClassLoader ClassLoader::getPlatformClassLoader()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ClassLoader",
 			"getPlatformClassLoader",
 			"()Ljava/lang/ClassLoader;"
@@ -29,7 +29,7 @@ namespace java::lang
 	}
 	java::lang::ClassLoader ClassLoader::getSystemClassLoader()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ClassLoader",
 			"getSystemClassLoader",
 			"()Ljava/lang/ClassLoader;"
@@ -37,7 +37,7 @@ namespace java::lang
 	}
 	java::net::URL ClassLoader::getSystemResource(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ClassLoader",
 			"getSystemResource",
 			"(Ljava/lang/String;)Ljava/net/URL;",
@@ -46,7 +46,7 @@ namespace java::lang
 	}
 	java::io::InputStream ClassLoader::getSystemResourceAsStream(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ClassLoader",
 			"getSystemResourceAsStream",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
@@ -55,7 +55,7 @@ namespace java::lang
 	}
 	__JniBaseClass ClassLoader::getSystemResources(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.ClassLoader",
 			"getSystemResources",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",

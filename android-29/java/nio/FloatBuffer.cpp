@@ -14,7 +14,7 @@ namespace java::nio
 	// Methods
 	java::nio::FloatBuffer FloatBuffer::allocate(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.FloatBuffer",
 			"allocate",
 			"(I)Ljava/nio/FloatBuffer;",
@@ -23,7 +23,7 @@ namespace java::nio
 	}
 	java::nio::FloatBuffer FloatBuffer::wrap(jfloatArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.FloatBuffer",
 			"wrap",
 			"([F)Ljava/nio/FloatBuffer;",
@@ -32,7 +32,7 @@ namespace java::nio
 	}
 	java::nio::FloatBuffer FloatBuffer::wrap(jfloatArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.FloatBuffer",
 			"wrap",
 			"([FII)Ljava/nio/FloatBuffer;",

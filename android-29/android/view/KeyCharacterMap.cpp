@@ -7,35 +7,35 @@ namespace android::view
 	// Fields
 	jint KeyCharacterMap::ALPHA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"ALPHA"
 		);
 	}
 	jint KeyCharacterMap::BUILT_IN_KEYBOARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"BUILT_IN_KEYBOARD"
 		);
 	}
 	jint KeyCharacterMap::COMBINING_ACCENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"COMBINING_ACCENT"
 		);
 	}
 	jint KeyCharacterMap::COMBINING_ACCENT_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"COMBINING_ACCENT_MASK"
 		);
 	}
 	__JniBaseClass KeyCharacterMap::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.KeyCharacterMap",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -43,63 +43,63 @@ namespace android::view
 	}
 	jint KeyCharacterMap::FULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"FULL"
 		);
 	}
 	jchar KeyCharacterMap::HEX_INPUT()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.view.KeyCharacterMap",
 			"HEX_INPUT"
 		);
 	}
 	jint KeyCharacterMap::MODIFIER_BEHAVIOR_CHORDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"MODIFIER_BEHAVIOR_CHORDED"
 		);
 	}
 	jint KeyCharacterMap::MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED"
 		);
 	}
 	jint KeyCharacterMap::NUMERIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"NUMERIC"
 		);
 	}
 	jchar KeyCharacterMap::PICKER_DIALOG_INPUT()
 	{
-		return QAndroidJniObject::getStaticField<jchar>(
+		return getStaticField<jchar>(
 			"android.view.KeyCharacterMap",
 			"PICKER_DIALOG_INPUT"
 		);
 	}
 	jint KeyCharacterMap::PREDICTIVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"PREDICTIVE"
 		);
 	}
 	jint KeyCharacterMap::SPECIAL_FUNCTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"SPECIAL_FUNCTION"
 		);
 	}
 	jint KeyCharacterMap::VIRTUAL_KEYBOARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.KeyCharacterMap",
 			"VIRTUAL_KEYBOARD"
 		);
@@ -113,7 +113,7 @@ namespace android::view
 	// Methods
 	jboolean KeyCharacterMap::deviceHasKey(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.view.KeyCharacterMap",
 			"deviceHasKey",
 			"(I)Z",
@@ -122,7 +122,7 @@ namespace android::view
 	}
 	jbooleanArray KeyCharacterMap::deviceHasKeys(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.KeyCharacterMap",
 			"deviceHasKeys",
 			"([I)[Z",
@@ -131,7 +131,7 @@ namespace android::view
 	}
 	jint KeyCharacterMap::getDeadChar(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.KeyCharacterMap",
 			"getDeadChar",
 			"(II)I",
@@ -141,7 +141,7 @@ namespace android::view
 	}
 	android::view::KeyCharacterMap KeyCharacterMap::load(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.KeyCharacterMap",
 			"load",
 			"(I)Landroid/view/KeyCharacterMap;",

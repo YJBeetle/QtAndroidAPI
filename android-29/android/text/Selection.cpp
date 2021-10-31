@@ -6,7 +6,7 @@ namespace android::text
 	// Fields
 	jobject Selection::SELECTION_END()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.Selection",
 			"SELECTION_END",
 			"Ljava/lang/Object;"
@@ -14,7 +14,7 @@ namespace android::text
 	}
 	jobject Selection::SELECTION_START()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.text.Selection",
 			"SELECTION_START",
 			"Ljava/lang/Object;"
@@ -29,7 +29,7 @@ namespace android::text
 	// Methods
 	jboolean Selection::extendDown(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"extendDown",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -39,7 +39,7 @@ namespace android::text
 	}
 	jboolean Selection::extendLeft(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"extendLeft",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -49,7 +49,7 @@ namespace android::text
 	}
 	jboolean Selection::extendRight(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"extendRight",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -59,7 +59,7 @@ namespace android::text
 	}
 	void Selection::extendSelection(__JniBaseClass arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.Selection",
 			"extendSelection",
 			"(Landroid/text/Spannable;I)V",
@@ -69,7 +69,7 @@ namespace android::text
 	}
 	jboolean Selection::extendToLeftEdge(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"extendToLeftEdge",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -79,7 +79,7 @@ namespace android::text
 	}
 	jboolean Selection::extendToRightEdge(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"extendToRightEdge",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -89,7 +89,7 @@ namespace android::text
 	}
 	jboolean Selection::extendUp(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"extendUp",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -99,7 +99,7 @@ namespace android::text
 	}
 	jint Selection::getSelectionEnd(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.Selection",
 			"getSelectionEnd",
 			"(Ljava/lang/CharSequence;)I",
@@ -108,7 +108,7 @@ namespace android::text
 	}
 	jint Selection::getSelectionStart(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.Selection",
 			"getSelectionStart",
 			"(Ljava/lang/CharSequence;)I",
@@ -117,7 +117,7 @@ namespace android::text
 	}
 	jboolean Selection::moveDown(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"moveDown",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -127,7 +127,7 @@ namespace android::text
 	}
 	jboolean Selection::moveLeft(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"moveLeft",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -137,7 +137,7 @@ namespace android::text
 	}
 	jboolean Selection::moveRight(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"moveRight",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -147,7 +147,7 @@ namespace android::text
 	}
 	jboolean Selection::moveToLeftEdge(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"moveToLeftEdge",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -157,7 +157,7 @@ namespace android::text
 	}
 	jboolean Selection::moveToRightEdge(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"moveToRightEdge",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -167,7 +167,7 @@ namespace android::text
 	}
 	jboolean Selection::moveUp(__JniBaseClass arg0, android::text::Layout arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.text.Selection",
 			"moveUp",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
@@ -177,7 +177,7 @@ namespace android::text
 	}
 	void Selection::removeSelection(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.Selection",
 			"removeSelection",
 			"(Landroid/text/Spannable;)V",
@@ -186,7 +186,7 @@ namespace android::text
 	}
 	void Selection::selectAll(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.Selection",
 			"selectAll",
 			"(Landroid/text/Spannable;)V",
@@ -195,7 +195,7 @@ namespace android::text
 	}
 	void Selection::setSelection(__JniBaseClass arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.Selection",
 			"setSelection",
 			"(Landroid/text/Spannable;I)V",
@@ -205,7 +205,7 @@ namespace android::text
 	}
 	void Selection::setSelection(__JniBaseClass arg0, jint arg1, jint arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.text.Selection",
 			"setSelection",
 			"(Landroid/text/Spannable;II)V",

@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	android::net::Uri CalendarContract_Events::CONTENT_EXCEPTION_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$Events",
 			"CONTENT_EXCEPTION_URI",
 			"Landroid/net/Uri;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri CalendarContract_Events::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$Events",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	android::net::Uri CalendarContract_Events::ENTERPRISE_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.CalendarContract$Events",
 			"ENTERPRISE_CONTENT_URI",
 			"Landroid/net/Uri;"

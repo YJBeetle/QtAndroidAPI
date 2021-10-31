@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring MediaStore_Audio_Radio::ENTRY_CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Radio",
 			"ENTRY_CONTENT_TYPE",
 			"Ljava/lang/String;"

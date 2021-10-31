@@ -12,7 +12,7 @@ namespace android::media::browse
 	// Fields
 	jstring MediaBrowser::EXTRA_PAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.browse.MediaBrowser",
 			"EXTRA_PAGE",
 			"Ljava/lang/String;"
@@ -20,7 +20,7 @@ namespace android::media::browse
 	}
 	jstring MediaBrowser::EXTRA_PAGE_SIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.browse.MediaBrowser",
 			"EXTRA_PAGE_SIZE",
 			"Ljava/lang/String;"

@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring Contacts_Groups::CONTENT_ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring Contacts_Groups::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	android::net::Uri Contacts_Groups::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring Contacts_Groups::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	android::net::Uri Contacts_Groups::DELETED_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"DELETED_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -46,7 +46,7 @@ namespace android::provider
 	}
 	jstring Contacts_Groups::GROUP_ANDROID_STARRED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"GROUP_ANDROID_STARRED",
 			"Ljava/lang/String;"
@@ -54,7 +54,7 @@ namespace android::provider
 	}
 	jstring Contacts_Groups::GROUP_MY_CONTACTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"GROUP_MY_CONTACTS",
 			"Ljava/lang/String;"

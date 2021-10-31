@@ -6,7 +6,7 @@ namespace android::os
 	// Fields
 	__JniBaseClass UserHandle::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.os.UserHandle",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -27,7 +27,7 @@ namespace android::os
 	// Methods
 	android::os::UserHandle UserHandle::getUserHandleForUid(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.UserHandle",
 			"getUserHandleForUid",
 			"(I)Landroid/os/UserHandle;",
@@ -36,7 +36,7 @@ namespace android::os
 	}
 	android::os::UserHandle UserHandle::readFromParcel(android::os::Parcel arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.UserHandle",
 			"readFromParcel",
 			"(Landroid/os/Parcel;)Landroid/os/UserHandle;",
@@ -45,7 +45,7 @@ namespace android::os
 	}
 	void UserHandle::writeToParcel(android::os::UserHandle arg0, android::os::Parcel arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.UserHandle",
 			"writeToParcel",
 			"(Landroid/os/UserHandle;Landroid/os/Parcel;)V",

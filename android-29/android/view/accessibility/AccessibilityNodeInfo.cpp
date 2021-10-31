@@ -15,14 +15,14 @@ namespace android::view::accessibility
 	// Fields
 	jint AccessibilityNodeInfo::ACTION_ACCESSIBILITY_FOCUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ACCESSIBILITY_FOCUS"
 		);
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_COLUMN_INT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_COLUMN_INT",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN",
 			"Ljava/lang/String;"
@@ -38,7 +38,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_HTML_ELEMENT_STRING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_HTML_ELEMENT_STRING",
 			"Ljava/lang/String;"
@@ -46,7 +46,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT",
 			"Ljava/lang/String;"
@@ -54,7 +54,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_MOVE_WINDOW_X()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_MOVE_WINDOW_X",
 			"Ljava/lang/String;"
@@ -62,7 +62,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_MOVE_WINDOW_Y()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_MOVE_WINDOW_Y",
 			"Ljava/lang/String;"
@@ -70,7 +70,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_PROGRESS_VALUE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_PROGRESS_VALUE",
 			"Ljava/lang/String;"
@@ -78,7 +78,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_ROW_INT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_ROW_INT",
 			"Ljava/lang/String;"
@@ -86,7 +86,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_SELECTION_END_INT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_SELECTION_END_INT",
 			"Ljava/lang/String;"
@@ -94,7 +94,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_SELECTION_START_INT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_SELECTION_START_INT",
 			"Ljava/lang/String;"
@@ -102,7 +102,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE",
 			"Ljava/lang/String;"
@@ -110,154 +110,154 @@ namespace android::view::accessibility
 	}
 	jint AccessibilityNodeInfo::ACTION_CLEAR_ACCESSIBILITY_FOCUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_CLEAR_ACCESSIBILITY_FOCUS"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_CLEAR_FOCUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_CLEAR_FOCUS"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_CLEAR_SELECTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_CLEAR_SELECTION"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_CLICK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_CLICK"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_COLLAPSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_COLLAPSE"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_COPY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_COPY"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_CUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_CUT"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_DISMISS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_DISMISS"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_EXPAND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_EXPAND"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_FOCUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_FOCUS"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_LONG_CLICK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_LONG_CLICK"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_NEXT_AT_MOVEMENT_GRANULARITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_NEXT_AT_MOVEMENT_GRANULARITY"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_NEXT_HTML_ELEMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_NEXT_HTML_ELEMENT"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_PASTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_PASTE"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_PREVIOUS_HTML_ELEMENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_PREVIOUS_HTML_ELEMENT"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_SCROLL_BACKWARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_SCROLL_BACKWARD"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_SCROLL_FORWARD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_SCROLL_FORWARD"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_SELECT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_SELECT"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_SET_SELECTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_SET_SELECTION"
 		);
 	}
 	jint AccessibilityNodeInfo::ACTION_SET_TEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"ACTION_SET_TEXT"
 		);
 	}
 	__JniBaseClass AccessibilityNodeInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -265,7 +265,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH",
 			"Ljava/lang/String;"
@@ -273,7 +273,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX",
 			"Ljava/lang/String;"
@@ -281,7 +281,7 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"EXTRA_DATA_TEXT_CHARACTER_LOCATION_KEY",
 			"Ljava/lang/String;"
@@ -289,49 +289,49 @@ namespace android::view::accessibility
 	}
 	jint AccessibilityNodeInfo::FOCUS_ACCESSIBILITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"FOCUS_ACCESSIBILITY"
 		);
 	}
 	jint AccessibilityNodeInfo::FOCUS_INPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"FOCUS_INPUT"
 		);
 	}
 	jint AccessibilityNodeInfo::MOVEMENT_GRANULARITY_CHARACTER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"MOVEMENT_GRANULARITY_CHARACTER"
 		);
 	}
 	jint AccessibilityNodeInfo::MOVEMENT_GRANULARITY_LINE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"MOVEMENT_GRANULARITY_LINE"
 		);
 	}
 	jint AccessibilityNodeInfo::MOVEMENT_GRANULARITY_PAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"MOVEMENT_GRANULARITY_PAGE"
 		);
 	}
 	jint AccessibilityNodeInfo::MOVEMENT_GRANULARITY_PARAGRAPH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"MOVEMENT_GRANULARITY_PARAGRAPH"
 		);
 	}
 	jint AccessibilityNodeInfo::MOVEMENT_GRANULARITY_WORD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"MOVEMENT_GRANULARITY_WORD"
 		);
@@ -345,7 +345,7 @@ namespace android::view::accessibility
 	// Methods
 	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::obtain()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"obtain",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
@@ -353,7 +353,7 @@ namespace android::view::accessibility
 	}
 	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::obtain(android::view::View arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"obtain",
 			"(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeInfo;",
@@ -362,7 +362,7 @@ namespace android::view::accessibility
 	}
 	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::obtain(android::view::accessibility::AccessibilityNodeInfo arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"obtain",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo;)Landroid/view/accessibility/AccessibilityNodeInfo;",
@@ -371,7 +371,7 @@ namespace android::view::accessibility
 	}
 	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::obtain(android::view::View arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"obtain",
 			"(Landroid/view/View;I)Landroid/view/accessibility/AccessibilityNodeInfo;",

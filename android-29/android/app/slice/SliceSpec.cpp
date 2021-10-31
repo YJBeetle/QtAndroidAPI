@@ -6,7 +6,7 @@ namespace android::app::slice
 	// Fields
 	__JniBaseClass SliceSpec::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.slice.SliceSpec",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

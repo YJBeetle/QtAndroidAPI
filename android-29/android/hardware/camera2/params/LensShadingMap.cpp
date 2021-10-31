@@ -6,7 +6,7 @@ namespace android::hardware::camera2::params
 	// Fields
 	jfloat LensShadingMap::MINIMUM_GAIN_FACTOR()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.hardware.camera2.params.LensShadingMap",
 			"MINIMUM_GAIN_FACTOR"
 		);

@@ -71,7 +71,7 @@ namespace java::net
 	// Methods
 	void URL::setURLStreamHandlerFactory(__JniBaseClass arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.net.URL",
 			"setURLStreamHandlerFactory",
 			"(Ljava/net/URLStreamHandlerFactory;)V",

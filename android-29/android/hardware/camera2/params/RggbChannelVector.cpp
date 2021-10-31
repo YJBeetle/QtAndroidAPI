@@ -5,35 +5,35 @@ namespace android::hardware::camera2::params
 	// Fields
 	jint RggbChannelVector::BLUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RggbChannelVector",
 			"BLUE"
 		);
 	}
 	jint RggbChannelVector::COUNT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RggbChannelVector",
 			"COUNT"
 		);
 	}
 	jint RggbChannelVector::GREEN_EVEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RggbChannelVector",
 			"GREEN_EVEN"
 		);
 	}
 	jint RggbChannelVector::GREEN_ODD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RggbChannelVector",
 			"GREEN_ODD"
 		);
 	}
 	jint RggbChannelVector::RED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.params.RggbChannelVector",
 			"RED"
 		);

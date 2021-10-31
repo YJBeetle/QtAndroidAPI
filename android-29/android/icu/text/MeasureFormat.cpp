@@ -22,7 +22,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::MeasureFormat MeasureFormat::getCurrencyFormat()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
 			"getCurrencyFormat",
 			"()Landroid/icu/text/MeasureFormat;"
@@ -30,7 +30,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MeasureFormat MeasureFormat::getCurrencyFormat(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
 			"getCurrencyFormat",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/MeasureFormat;",
@@ -39,7 +39,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MeasureFormat MeasureFormat::getCurrencyFormat(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
 			"getCurrencyFormat",
 			"(Ljava/util/Locale;)Landroid/icu/text/MeasureFormat;",
@@ -48,7 +48,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MeasureFormat MeasureFormat::getInstance(android::icu::util::ULocale arg0, android::icu::text::MeasureFormat_FormatWidth arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/MeasureFormat$FormatWidth;)Landroid/icu/text/MeasureFormat;",
@@ -58,7 +58,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MeasureFormat MeasureFormat::getInstance(java::util::Locale arg0, android::icu::text::MeasureFormat_FormatWidth arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
 			"getInstance",
 			"(Ljava/util/Locale;Landroid/icu/text/MeasureFormat$FormatWidth;)Landroid/icu/text/MeasureFormat;",
@@ -68,7 +68,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MeasureFormat MeasureFormat::getInstance(android::icu::util::ULocale arg0, android::icu::text::MeasureFormat_FormatWidth arg1, android::icu::text::NumberFormat arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/MeasureFormat$FormatWidth;Landroid/icu/text/NumberFormat;)Landroid/icu/text/MeasureFormat;",
@@ -79,7 +79,7 @@ namespace android::icu::text
 	}
 	android::icu::text::MeasureFormat MeasureFormat::getInstance(java::util::Locale arg0, android::icu::text::MeasureFormat_FormatWidth arg1, android::icu::text::NumberFormat arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
 			"getInstance",
 			"(Ljava/util/Locale;Landroid/icu/text/MeasureFormat$FormatWidth;Landroid/icu/text/NumberFormat;)Landroid/icu/text/MeasureFormat;",

@@ -5,7 +5,7 @@ namespace java::sql
 	// Fields
 	java::sql::RowIdLifetime RowIdLifetime::ROWID_UNSUPPORTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.sql.RowIdLifetime",
 			"ROWID_UNSUPPORTED",
 			"Ljava/sql/RowIdLifetime;"
@@ -13,7 +13,7 @@ namespace java::sql
 	}
 	java::sql::RowIdLifetime RowIdLifetime::ROWID_VALID_FOREVER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.sql.RowIdLifetime",
 			"ROWID_VALID_FOREVER",
 			"Ljava/sql/RowIdLifetime;"
@@ -21,7 +21,7 @@ namespace java::sql
 	}
 	java::sql::RowIdLifetime RowIdLifetime::ROWID_VALID_OTHER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.sql.RowIdLifetime",
 			"ROWID_VALID_OTHER",
 			"Ljava/sql/RowIdLifetime;"
@@ -29,7 +29,7 @@ namespace java::sql
 	}
 	java::sql::RowIdLifetime RowIdLifetime::ROWID_VALID_SESSION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.sql.RowIdLifetime",
 			"ROWID_VALID_SESSION",
 			"Ljava/sql/RowIdLifetime;"
@@ -37,7 +37,7 @@ namespace java::sql
 	}
 	java::sql::RowIdLifetime RowIdLifetime::ROWID_VALID_TRANSACTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.sql.RowIdLifetime",
 			"ROWID_VALID_TRANSACTION",
 			"Ljava/sql/RowIdLifetime;"
@@ -52,7 +52,7 @@ namespace java::sql
 	// Methods
 	java::sql::RowIdLifetime RowIdLifetime::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.RowIdLifetime",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/RowIdLifetime;",
@@ -61,7 +61,7 @@ namespace java::sql
 	}
 	jarray RowIdLifetime::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.sql.RowIdLifetime",
 			"values",
 			"()[Ljava/sql/RowIdLifetime;"

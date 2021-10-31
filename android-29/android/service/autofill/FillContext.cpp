@@ -8,7 +8,7 @@ namespace android::service::autofill
 	// Fields
 	__JniBaseClass FillContext::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.FillContext",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

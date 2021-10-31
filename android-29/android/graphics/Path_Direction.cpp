@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::Path_Direction Path_Direction::CCW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$Direction",
 			"CCW",
 			"Landroid/graphics/Path$Direction;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::Path_Direction Path_Direction::CW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$Direction",
 			"CW",
 			"Landroid/graphics/Path$Direction;"
@@ -28,7 +28,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Path_Direction Path_Direction::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Path$Direction",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Path$Direction;",
@@ -37,7 +37,7 @@ namespace android::graphics
 	}
 	jarray Path_Direction::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Path$Direction",
 			"values",
 			"()[Landroid/graphics/Path$Direction;"

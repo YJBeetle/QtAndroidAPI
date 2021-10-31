@@ -18,7 +18,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri MediaStore_Audio_Artists_Albums::getContentUri(jstring arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Artists$Albums",
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",

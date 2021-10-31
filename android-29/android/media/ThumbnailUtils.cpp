@@ -9,7 +9,7 @@ namespace android::media
 	// Fields
 	jint ThumbnailUtils::OPTIONS_RECYCLE_INPUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.ThumbnailUtils",
 			"OPTIONS_RECYCLE_INPUT"
 		);
@@ -28,7 +28,7 @@ namespace android::media
 	// Methods
 	android::graphics::Bitmap ThumbnailUtils::createAudioThumbnail(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"createAudioThumbnail",
 			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
@@ -38,7 +38,7 @@ namespace android::media
 	}
 	android::graphics::Bitmap ThumbnailUtils::createAudioThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"createAudioThumbnail",
 			"(Ljava/io/File;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
@@ -49,7 +49,7 @@ namespace android::media
 	}
 	android::graphics::Bitmap ThumbnailUtils::createImageThumbnail(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"createImageThumbnail",
 			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
@@ -59,7 +59,7 @@ namespace android::media
 	}
 	android::graphics::Bitmap ThumbnailUtils::createImageThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"createImageThumbnail",
 			"(Ljava/io/File;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
@@ -70,7 +70,7 @@ namespace android::media
 	}
 	android::graphics::Bitmap ThumbnailUtils::createVideoThumbnail(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"createVideoThumbnail",
 			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
@@ -80,7 +80,7 @@ namespace android::media
 	}
 	android::graphics::Bitmap ThumbnailUtils::createVideoThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"createVideoThumbnail",
 			"(Ljava/io/File;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
@@ -91,7 +91,7 @@ namespace android::media
 	}
 	android::graphics::Bitmap ThumbnailUtils::extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"extractThumbnail",
 			"(Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;",
@@ -102,7 +102,7 @@ namespace android::media
 	}
 	android::graphics::Bitmap ThumbnailUtils::extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
 			"extractThumbnail",
 			"(Landroid/graphics/Bitmap;III)Landroid/graphics/Bitmap;",

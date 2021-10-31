@@ -5,126 +5,126 @@ namespace android::mtp
 	// Fields
 	jint MtpEvent::EVENT_CANCEL_TRANSACTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_CANCEL_TRANSACTION"
 		);
 	}
 	jint MtpEvent::EVENT_CAPTURE_COMPLETE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_CAPTURE_COMPLETE"
 		);
 	}
 	jint MtpEvent::EVENT_DEVICE_INFO_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_DEVICE_INFO_CHANGED"
 		);
 	}
 	jint MtpEvent::EVENT_DEVICE_PROP_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_DEVICE_PROP_CHANGED"
 		);
 	}
 	jint MtpEvent::EVENT_DEVICE_RESET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_DEVICE_RESET"
 		);
 	}
 	jint MtpEvent::EVENT_OBJECT_ADDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_OBJECT_ADDED"
 		);
 	}
 	jint MtpEvent::EVENT_OBJECT_INFO_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_OBJECT_INFO_CHANGED"
 		);
 	}
 	jint MtpEvent::EVENT_OBJECT_PROP_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_OBJECT_PROP_CHANGED"
 		);
 	}
 	jint MtpEvent::EVENT_OBJECT_PROP_DESC_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_OBJECT_PROP_DESC_CHANGED"
 		);
 	}
 	jint MtpEvent::EVENT_OBJECT_REFERENCES_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_OBJECT_REFERENCES_CHANGED"
 		);
 	}
 	jint MtpEvent::EVENT_OBJECT_REMOVED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_OBJECT_REMOVED"
 		);
 	}
 	jint MtpEvent::EVENT_REQUEST_OBJECT_TRANSFER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_REQUEST_OBJECT_TRANSFER"
 		);
 	}
 	jint MtpEvent::EVENT_STORAGE_INFO_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_STORAGE_INFO_CHANGED"
 		);
 	}
 	jint MtpEvent::EVENT_STORE_ADDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_STORE_ADDED"
 		);
 	}
 	jint MtpEvent::EVENT_STORE_FULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_STORE_FULL"
 		);
 	}
 	jint MtpEvent::EVENT_STORE_REMOVED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_STORE_REMOVED"
 		);
 	}
 	jint MtpEvent::EVENT_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_UNDEFINED"
 		);
 	}
 	jint MtpEvent::EVENT_UNREPORTED_STATUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.mtp.MtpEvent",
 			"EVENT_UNREPORTED_STATUS"
 		);

@@ -10,7 +10,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_SyncState::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$SyncState",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"
@@ -18,7 +18,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_SyncState::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$SyncState",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -33,7 +33,7 @@ namespace android::provider
 	// Methods
 	jbyteArray ContactsContract_SyncState::get(android::content::ContentProviderClient arg0, android::accounts::Account arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.ContactsContract$SyncState",
 			"get",
 			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)[B",
@@ -43,7 +43,7 @@ namespace android::provider
 	}
 	android::util::Pair ContactsContract_SyncState::getWithUri(android::content::ContentProviderClient arg0, android::accounts::Account arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.ContactsContract$SyncState",
 			"getWithUri",
 			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)Landroid/util/Pair;",
@@ -53,7 +53,7 @@ namespace android::provider
 	}
 	android::content::ContentProviderOperation ContactsContract_SyncState::newSetOperation(android::accounts::Account arg0, jbyteArray arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.ContactsContract$SyncState",
 			"newSetOperation",
 			"(Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;",
@@ -63,7 +63,7 @@ namespace android::provider
 	}
 	void ContactsContract_SyncState::set(android::content::ContentProviderClient arg0, android::accounts::Account arg1, jbyteArray arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.provider.ContactsContract$SyncState",
 			"set",
 			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;[B)V",

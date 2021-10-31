@@ -11,63 +11,63 @@ namespace android::app
 	// Fields
 	jint Service::START_CONTINUATION_MASK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Service",
 			"START_CONTINUATION_MASK"
 		);
 	}
 	jint Service::START_FLAG_REDELIVERY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Service",
 			"START_FLAG_REDELIVERY"
 		);
 	}
 	jint Service::START_FLAG_RETRY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Service",
 			"START_FLAG_RETRY"
 		);
 	}
 	jint Service::START_NOT_STICKY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Service",
 			"START_NOT_STICKY"
 		);
 	}
 	jint Service::START_REDELIVER_INTENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Service",
 			"START_REDELIVER_INTENT"
 		);
 	}
 	jint Service::START_STICKY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Service",
 			"START_STICKY"
 		);
 	}
 	jint Service::START_STICKY_COMPATIBILITY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Service",
 			"START_STICKY_COMPATIBILITY"
 		);
 	}
 	jint Service::STOP_FOREGROUND_DETACH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Service",
 			"STOP_FOREGROUND_DETACH"
 		);
 	}
 	jint Service::STOP_FOREGROUND_REMOVE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.Service",
 			"STOP_FOREGROUND_REMOVE"
 		);

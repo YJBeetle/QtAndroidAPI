@@ -14,7 +14,7 @@ namespace javax::xml::transform
 	// Methods
 	javax::xml::transform::TransformerFactory TransformerFactory::newDefaultInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.transform.TransformerFactory",
 			"newDefaultInstance",
 			"()Ljavax/xml/transform/TransformerFactory;"
@@ -22,7 +22,7 @@ namespace javax::xml::transform
 	}
 	javax::xml::transform::TransformerFactory TransformerFactory::newInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.transform.TransformerFactory",
 			"newInstance",
 			"()Ljavax/xml/transform/TransformerFactory;"
@@ -30,7 +30,7 @@ namespace javax::xml::transform
 	}
 	javax::xml::transform::TransformerFactory TransformerFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"javax.xml.transform.TransformerFactory",
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/transform/TransformerFactory;",

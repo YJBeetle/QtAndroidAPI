@@ -11,7 +11,7 @@ namespace android::print
 	// Fields
 	jstring PrintDocumentAdapter::EXTRA_PRINT_PREVIEW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.print.PrintDocumentAdapter",
 			"EXTRA_PRINT_PREVIEW",
 			"Ljava/lang/String;"

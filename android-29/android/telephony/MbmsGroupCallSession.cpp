@@ -14,7 +14,7 @@ namespace android::telephony
 	// Methods
 	android::telephony::MbmsGroupCallSession MbmsGroupCallSession::create(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.MbmsGroupCallSession",
 			"create",
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/MbmsGroupCallSessionCallback;)Landroid/telephony/MbmsGroupCallSession;",
@@ -25,7 +25,7 @@ namespace android::telephony
 	}
 	android::telephony::MbmsGroupCallSession MbmsGroupCallSession::create(android::content::Context arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.MbmsGroupCallSession",
 			"create",
 			"(Landroid/content/Context;ILjava/util/concurrent/Executor;Landroid/telephony/mbms/MbmsGroupCallSessionCallback;)Landroid/telephony/MbmsGroupCallSession;",

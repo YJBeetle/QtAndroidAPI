@@ -5,7 +5,7 @@ namespace java::time::format
 	// Fields
 	java::time::format::TextStyle TextStyle::FULL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.TextStyle",
 			"FULL",
 			"Ljava/time/format/TextStyle;"
@@ -13,7 +13,7 @@ namespace java::time::format
 	}
 	java::time::format::TextStyle TextStyle::FULL_STANDALONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.TextStyle",
 			"FULL_STANDALONE",
 			"Ljava/time/format/TextStyle;"
@@ -21,7 +21,7 @@ namespace java::time::format
 	}
 	java::time::format::TextStyle TextStyle::NARROW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.TextStyle",
 			"NARROW",
 			"Ljava/time/format/TextStyle;"
@@ -29,7 +29,7 @@ namespace java::time::format
 	}
 	java::time::format::TextStyle TextStyle::NARROW_STANDALONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.TextStyle",
 			"NARROW_STANDALONE",
 			"Ljava/time/format/TextStyle;"
@@ -37,7 +37,7 @@ namespace java::time::format
 	}
 	java::time::format::TextStyle TextStyle::SHORT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.TextStyle",
 			"SHORT",
 			"Ljava/time/format/TextStyle;"
@@ -45,7 +45,7 @@ namespace java::time::format
 	}
 	java::time::format::TextStyle TextStyle::SHORT_STANDALONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.format.TextStyle",
 			"SHORT_STANDALONE",
 			"Ljava/time/format/TextStyle;"
@@ -60,7 +60,7 @@ namespace java::time::format
 	// Methods
 	java::time::format::TextStyle TextStyle::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.TextStyle",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/format/TextStyle;",
@@ -69,7 +69,7 @@ namespace java::time::format
 	}
 	jarray TextStyle::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.format.TextStyle",
 			"values",
 			"()[Ljava/time/format/TextStyle;"

@@ -8,7 +8,7 @@ namespace android::view::inputmethod
 	// Fields
 	__JniBaseClass EditorInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.inputmethod.EditorInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,126 +16,126 @@ namespace android::view::inputmethod
 	}
 	jint EditorInfo::IME_ACTION_DONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_ACTION_DONE"
 		);
 	}
 	jint EditorInfo::IME_ACTION_GO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_ACTION_GO"
 		);
 	}
 	jint EditorInfo::IME_ACTION_NEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_ACTION_NEXT"
 		);
 	}
 	jint EditorInfo::IME_ACTION_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_ACTION_NONE"
 		);
 	}
 	jint EditorInfo::IME_ACTION_PREVIOUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_ACTION_PREVIOUS"
 		);
 	}
 	jint EditorInfo::IME_ACTION_SEARCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_ACTION_SEARCH"
 		);
 	}
 	jint EditorInfo::IME_ACTION_SEND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_ACTION_SEND"
 		);
 	}
 	jint EditorInfo::IME_ACTION_UNSPECIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_ACTION_UNSPECIFIED"
 		);
 	}
 	jint EditorInfo::IME_FLAG_FORCE_ASCII()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_FLAG_FORCE_ASCII"
 		);
 	}
 	jint EditorInfo::IME_FLAG_NAVIGATE_NEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_FLAG_NAVIGATE_NEXT"
 		);
 	}
 	jint EditorInfo::IME_FLAG_NAVIGATE_PREVIOUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_FLAG_NAVIGATE_PREVIOUS"
 		);
 	}
 	jint EditorInfo::IME_FLAG_NO_ACCESSORY_ACTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_FLAG_NO_ACCESSORY_ACTION"
 		);
 	}
 	jint EditorInfo::IME_FLAG_NO_ENTER_ACTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_FLAG_NO_ENTER_ACTION"
 		);
 	}
 	jint EditorInfo::IME_FLAG_NO_EXTRACT_UI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_FLAG_NO_EXTRACT_UI"
 		);
 	}
 	jint EditorInfo::IME_FLAG_NO_FULLSCREEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_FLAG_NO_FULLSCREEN"
 		);
 	}
 	jint EditorInfo::IME_FLAG_NO_PERSONALIZED_LEARNING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_FLAG_NO_PERSONALIZED_LEARNING"
 		);
 	}
 	jint EditorInfo::IME_MASK_ACTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_MASK_ACTION"
 		);
 	}
 	jint EditorInfo::IME_NULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.inputmethod.EditorInfo",
 			"IME_NULL"
 		);

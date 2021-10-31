@@ -12,7 +12,7 @@ namespace java::lang
 	// Methods
 	jobject Compiler::command(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Compiler",
 			"command",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
@@ -21,7 +21,7 @@ namespace java::lang
 	}
 	jboolean Compiler::compileClass(jclass arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Compiler",
 			"compileClass",
 			"(Ljava/lang/Class;)Z",
@@ -30,7 +30,7 @@ namespace java::lang
 	}
 	jboolean Compiler::compileClasses(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Compiler",
 			"compileClasses",
 			"(Ljava/lang/String;)Z",
@@ -39,7 +39,7 @@ namespace java::lang
 	}
 	void Compiler::disable()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.Compiler",
 			"disable",
 			"()V"
@@ -47,7 +47,7 @@ namespace java::lang
 	}
 	void Compiler::enable()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"java.lang.Compiler",
 			"enable",
 			"()V"

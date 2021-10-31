@@ -5,7 +5,7 @@ namespace android::graphics
 	// Fields
 	android::graphics::Path_Op Path_Op::DIFFERENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$Op",
 			"DIFFERENCE",
 			"Landroid/graphics/Path$Op;"
@@ -13,7 +13,7 @@ namespace android::graphics
 	}
 	android::graphics::Path_Op Path_Op::INTERSECT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$Op",
 			"INTERSECT",
 			"Landroid/graphics/Path$Op;"
@@ -21,7 +21,7 @@ namespace android::graphics
 	}
 	android::graphics::Path_Op Path_Op::REVERSE_DIFFERENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$Op",
 			"REVERSE_DIFFERENCE",
 			"Landroid/graphics/Path$Op;"
@@ -29,7 +29,7 @@ namespace android::graphics
 	}
 	android::graphics::Path_Op Path_Op::UNION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$Op",
 			"UNION",
 			"Landroid/graphics/Path$Op;"
@@ -37,7 +37,7 @@ namespace android::graphics
 	}
 	android::graphics::Path_Op Path_Op::XOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.Path$Op",
 			"XOR",
 			"Landroid/graphics/Path$Op;"
@@ -52,7 +52,7 @@ namespace android::graphics
 	// Methods
 	android::graphics::Path_Op Path_Op::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Path$Op",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Path$Op;",
@@ -61,7 +61,7 @@ namespace android::graphics
 	}
 	jarray Path_Op::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.graphics.Path$Op",
 			"values",
 			"()[Landroid/graphics/Path$Op;"

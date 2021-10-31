@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring VoicemailContract_Status::CONFIGURATION_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"CONFIGURATION_STATE",
 			"Ljava/lang/String;"
@@ -14,49 +14,49 @@ namespace android::provider
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_CAN_BE_CONFIGURED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"CONFIGURATION_STATE_CAN_BE_CONFIGURED"
 		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_CONFIGURING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"CONFIGURATION_STATE_CONFIGURING"
 		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"CONFIGURATION_STATE_DISABLED"
 		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_FAILED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"CONFIGURATION_STATE_FAILED"
 		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_NOT_CONFIGURED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"CONFIGURATION_STATE_NOT_CONFIGURED"
 		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"CONFIGURATION_STATE_OK"
 		);
 	}
 	android::net::Uri VoicemailContract_Status::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -64,7 +64,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract_Status::DATA_CHANNEL_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"DATA_CHANNEL_STATE",
 			"Ljava/lang/String;"
@@ -72,56 +72,56 @@ namespace android::provider
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_BAD_CONFIGURATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"DATA_CHANNEL_STATE_BAD_CONFIGURATION"
 		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_COMMUNICATION_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"DATA_CHANNEL_STATE_COMMUNICATION_ERROR"
 		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_NO_CONNECTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"DATA_CHANNEL_STATE_NO_CONNECTION"
 		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_NO_CONNECTION_CELLULAR_REQUIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"DATA_CHANNEL_STATE_NO_CONNECTION_CELLULAR_REQUIRED"
 		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"DATA_CHANNEL_STATE_OK"
 		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_SERVER_CONNECTION_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"DATA_CHANNEL_STATE_SERVER_CONNECTION_ERROR"
 		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_SERVER_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"DATA_CHANNEL_STATE_SERVER_ERROR"
 		);
 	}
 	jstring VoicemailContract_Status::DIR_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"DIR_TYPE",
 			"Ljava/lang/String;"
@@ -129,7 +129,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract_Status::ITEM_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"ITEM_TYPE",
 			"Ljava/lang/String;"
@@ -137,7 +137,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"NOTIFICATION_CHANNEL_STATE",
 			"Ljava/lang/String;"
@@ -145,28 +145,28 @@ namespace android::provider
 	}
 	jint VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE_MESSAGE_WAITING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"NOTIFICATION_CHANNEL_STATE_MESSAGE_WAITING"
 		);
 	}
 	jint VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE_NO_CONNECTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"NOTIFICATION_CHANNEL_STATE_NO_CONNECTION"
 		);
 	}
 	jint VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE_OK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"NOTIFICATION_CHANNEL_STATE_OK"
 		);
 	}
 	jstring VoicemailContract_Status::PHONE_ACCOUNT_COMPONENT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"PHONE_ACCOUNT_COMPONENT_NAME",
 			"Ljava/lang/String;"
@@ -174,7 +174,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract_Status::PHONE_ACCOUNT_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"PHONE_ACCOUNT_ID",
 			"Ljava/lang/String;"
@@ -182,7 +182,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract_Status::QUOTA_OCCUPIED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"QUOTA_OCCUPIED",
 			"Ljava/lang/String;"
@@ -190,7 +190,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract_Status::QUOTA_TOTAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"QUOTA_TOTAL",
 			"Ljava/lang/String;"
@@ -198,14 +198,14 @@ namespace android::provider
 	}
 	jint VoicemailContract_Status::QUOTA_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
 			"QUOTA_UNAVAILABLE"
 		);
 	}
 	jstring VoicemailContract_Status::SETTINGS_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"SETTINGS_URI",
 			"Ljava/lang/String;"
@@ -213,7 +213,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract_Status::SOURCE_PACKAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"SOURCE_PACKAGE",
 			"Ljava/lang/String;"
@@ -221,7 +221,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract_Status::SOURCE_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"SOURCE_TYPE",
 			"Ljava/lang/String;"
@@ -229,7 +229,7 @@ namespace android::provider
 	}
 	jstring VoicemailContract_Status::VOICEMAIL_ACCESS_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"VOICEMAIL_ACCESS_URI",
 			"Ljava/lang/String;"
@@ -244,7 +244,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri VoicemailContract_Status::buildSourceUri(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.VoicemailContract$Status",
 			"buildSourceUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",

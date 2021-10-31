@@ -6,7 +6,7 @@ namespace android::app::admin
 	// Fields
 	__JniBaseClass SystemUpdatePolicy::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.admin.SystemUpdatePolicy",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,21 +14,21 @@ namespace android::app::admin
 	}
 	jint SystemUpdatePolicy::TYPE_INSTALL_AUTOMATIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy",
 			"TYPE_INSTALL_AUTOMATIC"
 		);
 	}
 	jint SystemUpdatePolicy::TYPE_INSTALL_WINDOWED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy",
 			"TYPE_INSTALL_WINDOWED"
 		);
 	}
 	jint SystemUpdatePolicy::TYPE_POSTPONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy",
 			"TYPE_POSTPONE"
 		);
@@ -42,7 +42,7 @@ namespace android::app::admin
 	// Methods
 	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::createAutomaticInstallPolicy()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.admin.SystemUpdatePolicy",
 			"createAutomaticInstallPolicy",
 			"()Landroid/app/admin/SystemUpdatePolicy;"
@@ -50,7 +50,7 @@ namespace android::app::admin
 	}
 	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::createPostponeInstallPolicy()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.admin.SystemUpdatePolicy",
 			"createPostponeInstallPolicy",
 			"()Landroid/app/admin/SystemUpdatePolicy;"
@@ -58,7 +58,7 @@ namespace android::app::admin
 	}
 	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::createWindowedInstallPolicy(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.admin.SystemUpdatePolicy",
 			"createWindowedInstallPolicy",
 			"(II)Landroid/app/admin/SystemUpdatePolicy;",

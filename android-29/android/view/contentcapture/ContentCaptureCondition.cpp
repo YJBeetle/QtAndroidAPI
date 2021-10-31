@@ -7,7 +7,7 @@ namespace android::view::contentcapture
 	// Fields
 	__JniBaseClass ContentCaptureCondition::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.contentcapture.ContentCaptureCondition",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::view::contentcapture
 	}
 	jint ContentCaptureCondition::FLAG_IS_REGEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.contentcapture.ContentCaptureCondition",
 			"FLAG_IS_REGEX"
 		);

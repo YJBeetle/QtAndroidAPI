@@ -25,7 +25,7 @@ namespace java::time
 	// Methods
 	java::time::ZonedDateTime ZonedDateTime::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/ZonedDateTime;",
@@ -34,7 +34,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"now",
 			"()Ljava/time/ZonedDateTime;"
@@ -42,7 +42,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/ZonedDateTime;",
@@ -51,7 +51,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
@@ -60,7 +60,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::of(java::time::LocalDateTime arg0, java::time::ZoneId arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"of",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
@@ -70,7 +70,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::of(java::time::LocalDate arg0, java::time::LocalTime arg1, java::time::ZoneId arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"of",
 			"(Ljava/time/LocalDate;Ljava/time/LocalTime;Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
@@ -81,7 +81,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::of(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, java::time::ZoneId arg7)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"of",
 			"(IIIIIIILjava/time/ZoneId;)Ljava/time/ZonedDateTime;",
@@ -97,7 +97,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::ofInstant(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"ofInstant",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
@@ -107,7 +107,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::ofInstant(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneId arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"ofInstant",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneOffset;Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
@@ -118,7 +118,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::ofLocal(java::time::LocalDateTime arg0, java::time::ZoneId arg1, java::time::ZoneOffset arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"ofLocal",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneId;Ljava/time/ZoneOffset;)Ljava/time/ZonedDateTime;",
@@ -129,7 +129,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::ofStrict(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneId arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"ofStrict",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneOffset;Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
@@ -140,7 +140,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/ZonedDateTime;",
@@ -149,7 +149,7 @@ namespace java::time
 	}
 	java::time::ZonedDateTime ZonedDateTime::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/ZonedDateTime;",

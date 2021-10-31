@@ -5,63 +5,63 @@ namespace android::os
 	// Fields
 	jint HardwarePropertiesManager::DEVICE_TEMPERATURE_BATTERY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
 			"DEVICE_TEMPERATURE_BATTERY"
 		);
 	}
 	jint HardwarePropertiesManager::DEVICE_TEMPERATURE_CPU()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
 			"DEVICE_TEMPERATURE_CPU"
 		);
 	}
 	jint HardwarePropertiesManager::DEVICE_TEMPERATURE_GPU()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
 			"DEVICE_TEMPERATURE_GPU"
 		);
 	}
 	jint HardwarePropertiesManager::DEVICE_TEMPERATURE_SKIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
 			"DEVICE_TEMPERATURE_SKIN"
 		);
 	}
 	jint HardwarePropertiesManager::TEMPERATURE_CURRENT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
 			"TEMPERATURE_CURRENT"
 		);
 	}
 	jint HardwarePropertiesManager::TEMPERATURE_SHUTDOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
 			"TEMPERATURE_SHUTDOWN"
 		);
 	}
 	jint HardwarePropertiesManager::TEMPERATURE_THROTTLING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
 			"TEMPERATURE_THROTTLING"
 		);
 	}
 	jint HardwarePropertiesManager::TEMPERATURE_THROTTLING_BELOW_VR_MIN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
 			"TEMPERATURE_THROTTLING_BELOW_VR_MIN"
 		);
 	}
 	jfloat HardwarePropertiesManager::UNDEFINED_TEMPERATURE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.os.HardwarePropertiesManager",
 			"UNDEFINED_TEMPERATURE"
 		);

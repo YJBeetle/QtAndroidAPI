@@ -20,7 +20,7 @@ namespace android::text::util
 	// Methods
 	jstring Rfc822Token::quoteComment(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.util.Rfc822Token",
 			"quoteComment",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -29,7 +29,7 @@ namespace android::text::util
 	}
 	jstring Rfc822Token::quoteName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.util.Rfc822Token",
 			"quoteName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
@@ -38,7 +38,7 @@ namespace android::text::util
 	}
 	jstring Rfc822Token::quoteNameIfNecessary(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.util.Rfc822Token",
 			"quoteNameIfNecessary",
 			"(Ljava/lang/String;)Ljava/lang/String;",

@@ -14,7 +14,7 @@ namespace java::nio
 	// Methods
 	java::nio::IntBuffer IntBuffer::allocate(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.IntBuffer",
 			"allocate",
 			"(I)Ljava/nio/IntBuffer;",
@@ -23,7 +23,7 @@ namespace java::nio
 	}
 	java::nio::IntBuffer IntBuffer::wrap(jintArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.IntBuffer",
 			"wrap",
 			"([I)Ljava/nio/IntBuffer;",
@@ -32,7 +32,7 @@ namespace java::nio
 	}
 	java::nio::IntBuffer IntBuffer::wrap(jintArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.IntBuffer",
 			"wrap",
 			"([III)Ljava/nio/IntBuffer;",

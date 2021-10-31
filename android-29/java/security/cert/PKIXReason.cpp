@@ -5,7 +5,7 @@ namespace java::security::cert
 	// Fields
 	java::security::cert::PKIXReason PKIXReason::INVALID_KEY_USAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXReason",
 			"INVALID_KEY_USAGE",
 			"Ljava/security/cert/PKIXReason;"
@@ -13,7 +13,7 @@ namespace java::security::cert
 	}
 	java::security::cert::PKIXReason PKIXReason::INVALID_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXReason",
 			"INVALID_NAME",
 			"Ljava/security/cert/PKIXReason;"
@@ -21,7 +21,7 @@ namespace java::security::cert
 	}
 	java::security::cert::PKIXReason PKIXReason::INVALID_POLICY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXReason",
 			"INVALID_POLICY",
 			"Ljava/security/cert/PKIXReason;"
@@ -29,7 +29,7 @@ namespace java::security::cert
 	}
 	java::security::cert::PKIXReason PKIXReason::NAME_CHAINING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXReason",
 			"NAME_CHAINING",
 			"Ljava/security/cert/PKIXReason;"
@@ -37,7 +37,7 @@ namespace java::security::cert
 	}
 	java::security::cert::PKIXReason PKIXReason::NOT_CA_CERT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXReason",
 			"NOT_CA_CERT",
 			"Ljava/security/cert/PKIXReason;"
@@ -45,7 +45,7 @@ namespace java::security::cert
 	}
 	java::security::cert::PKIXReason PKIXReason::NO_TRUST_ANCHOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXReason",
 			"NO_TRUST_ANCHOR",
 			"Ljava/security/cert/PKIXReason;"
@@ -53,7 +53,7 @@ namespace java::security::cert
 	}
 	java::security::cert::PKIXReason PKIXReason::PATH_TOO_LONG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXReason",
 			"PATH_TOO_LONG",
 			"Ljava/security/cert/PKIXReason;"
@@ -61,7 +61,7 @@ namespace java::security::cert
 	}
 	java::security::cert::PKIXReason PKIXReason::UNRECOGNIZED_CRIT_EXT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.security.cert.PKIXReason",
 			"UNRECOGNIZED_CRIT_EXT",
 			"Ljava/security/cert/PKIXReason;"
@@ -76,7 +76,7 @@ namespace java::security::cert
 	// Methods
 	java::security::cert::PKIXReason PKIXReason::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.PKIXReason",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/cert/PKIXReason;",
@@ -85,7 +85,7 @@ namespace java::security::cert
 	}
 	jarray PKIXReason::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.security.cert.PKIXReason",
 			"values",
 			"()[Ljava/security/cert/PKIXReason;"

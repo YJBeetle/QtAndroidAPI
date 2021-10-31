@@ -9,84 +9,84 @@ namespace android::view::textclassifier
 	// Fields
 	jint SelectionEvent::ACTION_ABANDON()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_ABANDON"
 		);
 	}
 	jint SelectionEvent::ACTION_COPY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_COPY"
 		);
 	}
 	jint SelectionEvent::ACTION_CUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_CUT"
 		);
 	}
 	jint SelectionEvent::ACTION_DRAG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_DRAG"
 		);
 	}
 	jint SelectionEvent::ACTION_OTHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_OTHER"
 		);
 	}
 	jint SelectionEvent::ACTION_OVERTYPE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_OVERTYPE"
 		);
 	}
 	jint SelectionEvent::ACTION_PASTE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_PASTE"
 		);
 	}
 	jint SelectionEvent::ACTION_RESET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_RESET"
 		);
 	}
 	jint SelectionEvent::ACTION_SELECT_ALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_SELECT_ALL"
 		);
 	}
 	jint SelectionEvent::ACTION_SHARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_SHARE"
 		);
 	}
 	jint SelectionEvent::ACTION_SMART_SHARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"ACTION_SMART_SHARE"
 		);
 	}
 	__JniBaseClass SelectionEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.SelectionEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -94,56 +94,56 @@ namespace android::view::textclassifier
 	}
 	jint SelectionEvent::EVENT_AUTO_SELECTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"EVENT_AUTO_SELECTION"
 		);
 	}
 	jint SelectionEvent::EVENT_SELECTION_MODIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"EVENT_SELECTION_MODIFIED"
 		);
 	}
 	jint SelectionEvent::EVENT_SELECTION_STARTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"EVENT_SELECTION_STARTED"
 		);
 	}
 	jint SelectionEvent::EVENT_SMART_SELECTION_MULTI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"EVENT_SMART_SELECTION_MULTI"
 		);
 	}
 	jint SelectionEvent::EVENT_SMART_SELECTION_SINGLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"EVENT_SMART_SELECTION_SINGLE"
 		);
 	}
 	jint SelectionEvent::INVOCATION_LINK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"INVOCATION_LINK"
 		);
 	}
 	jint SelectionEvent::INVOCATION_MANUAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"INVOCATION_MANUAL"
 		);
 	}
 	jint SelectionEvent::INVOCATION_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
 			"INVOCATION_UNKNOWN"
 		);
@@ -157,7 +157,7 @@ namespace android::view::textclassifier
 	// Methods
 	android::view::textclassifier::SelectionEvent SelectionEvent::createSelectionActionEvent(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.textclassifier.SelectionEvent",
 			"createSelectionActionEvent",
 			"(III)Landroid/view/textclassifier/SelectionEvent;",
@@ -168,7 +168,7 @@ namespace android::view::textclassifier
 	}
 	android::view::textclassifier::SelectionEvent SelectionEvent::createSelectionActionEvent(jint arg0, jint arg1, jint arg2, android::view::textclassifier::TextClassification arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.textclassifier.SelectionEvent",
 			"createSelectionActionEvent",
 			"(IIILandroid/view/textclassifier/TextClassification;)Landroid/view/textclassifier/SelectionEvent;",
@@ -180,7 +180,7 @@ namespace android::view::textclassifier
 	}
 	android::view::textclassifier::SelectionEvent SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.textclassifier.SelectionEvent",
 			"createSelectionModifiedEvent",
 			"(II)Landroid/view/textclassifier/SelectionEvent;",
@@ -190,7 +190,7 @@ namespace android::view::textclassifier
 	}
 	android::view::textclassifier::SelectionEvent SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1, android::view::textclassifier::TextClassification arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.textclassifier.SelectionEvent",
 			"createSelectionModifiedEvent",
 			"(IILandroid/view/textclassifier/TextClassification;)Landroid/view/textclassifier/SelectionEvent;",
@@ -201,7 +201,7 @@ namespace android::view::textclassifier
 	}
 	android::view::textclassifier::SelectionEvent SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1, android::view::textclassifier::TextSelection arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.textclassifier.SelectionEvent",
 			"createSelectionModifiedEvent",
 			"(IILandroid/view/textclassifier/TextSelection;)Landroid/view/textclassifier/SelectionEvent;",
@@ -212,7 +212,7 @@ namespace android::view::textclassifier
 	}
 	android::view::textclassifier::SelectionEvent SelectionEvent::createSelectionStartedEvent(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.textclassifier.SelectionEvent",
 			"createSelectionStartedEvent",
 			"(II)Landroid/view/textclassifier/SelectionEvent;",
@@ -222,7 +222,7 @@ namespace android::view::textclassifier
 	}
 	jboolean SelectionEvent::isTerminal(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.view.textclassifier.SelectionEvent",
 			"isTerminal",
 			"(I)Z",

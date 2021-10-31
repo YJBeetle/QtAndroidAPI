@@ -7,7 +7,7 @@ namespace android::app
 	// Fields
 	__JniBaseClass ActivityManager_RunningServiceInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.ActivityManager$RunningServiceInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,28 +15,28 @@ namespace android::app
 	}
 	jint ActivityManager_RunningServiceInfo::FLAG_FOREGROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningServiceInfo",
 			"FLAG_FOREGROUND"
 		);
 	}
 	jint ActivityManager_RunningServiceInfo::FLAG_PERSISTENT_PROCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningServiceInfo",
 			"FLAG_PERSISTENT_PROCESS"
 		);
 	}
 	jint ActivityManager_RunningServiceInfo::FLAG_STARTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningServiceInfo",
 			"FLAG_STARTED"
 		);
 	}
 	jint ActivityManager_RunningServiceInfo::FLAG_SYSTEM_PROCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.app.ActivityManager$RunningServiceInfo",
 			"FLAG_SYSTEM_PROCESS"
 		);

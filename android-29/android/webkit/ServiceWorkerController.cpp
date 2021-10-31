@@ -19,7 +19,7 @@ namespace android::webkit
 	// Methods
 	android::webkit::ServiceWorkerController ServiceWorkerController::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.webkit.ServiceWorkerController",
 			"getInstance",
 			"()Landroid/webkit/ServiceWorkerController;"

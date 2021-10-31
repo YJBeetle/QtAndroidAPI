@@ -24,7 +24,7 @@ namespace android::icu::text
 	// Methods
 	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
 			"getInstance",
 			"()Landroid/icu/text/RelativeDateTimeFormatter;"
@@ -32,7 +32,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance(android::icu::util::ULocale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/RelativeDateTimeFormatter;",
@@ -41,7 +41,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/RelativeDateTimeFormatter;",
@@ -50,7 +50,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance(android::icu::util::ULocale arg0, android::icu::text::NumberFormat arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/NumberFormat;)Landroid/icu/text/RelativeDateTimeFormatter;",
@@ -60,7 +60,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance(java::util::Locale arg0, android::icu::text::NumberFormat arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
 			"getInstance",
 			"(Ljava/util/Locale;Landroid/icu/text/NumberFormat;)Landroid/icu/text/RelativeDateTimeFormatter;",
@@ -70,7 +70,7 @@ namespace android::icu::text
 	}
 	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance(android::icu::util::ULocale arg0, android::icu::text::NumberFormat arg1, android::icu::text::RelativeDateTimeFormatter_Style arg2, android::icu::text::DisplayContext arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/NumberFormat;Landroid/icu/text/RelativeDateTimeFormatter$Style;Landroid/icu/text/DisplayContext;)Landroid/icu/text/RelativeDateTimeFormatter;",

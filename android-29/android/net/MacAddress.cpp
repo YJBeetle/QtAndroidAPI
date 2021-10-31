@@ -6,7 +6,7 @@ namespace android::net
 	// Fields
 	android::net::MacAddress MacAddress::BROADCAST_ADDRESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.MacAddress",
 			"BROADCAST_ADDRESS",
 			"Landroid/net/MacAddress;"
@@ -14,7 +14,7 @@ namespace android::net
 	}
 	__JniBaseClass MacAddress::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.MacAddress",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -22,21 +22,21 @@ namespace android::net
 	}
 	jint MacAddress::TYPE_BROADCAST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.MacAddress",
 			"TYPE_BROADCAST"
 		);
 	}
 	jint MacAddress::TYPE_MULTICAST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.MacAddress",
 			"TYPE_MULTICAST"
 		);
 	}
 	jint MacAddress::TYPE_UNICAST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.MacAddress",
 			"TYPE_UNICAST"
 		);
@@ -50,7 +50,7 @@ namespace android::net
 	// Methods
 	android::net::MacAddress MacAddress::fromBytes(jbyteArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.MacAddress",
 			"fromBytes",
 			"([B)Landroid/net/MacAddress;",
@@ -59,7 +59,7 @@ namespace android::net
 	}
 	android::net::MacAddress MacAddress::fromString(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.MacAddress",
 			"fromString",
 			"(Ljava/lang/String;)Landroid/net/MacAddress;",

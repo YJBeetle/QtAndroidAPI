@@ -18,7 +18,7 @@ namespace android::content::res
 	// Fields
 	jint Resources::ID_NULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.Resources",
 			"ID_NULL"
 		);
@@ -40,7 +40,7 @@ namespace android::content::res
 	// Methods
 	jint Resources::getAttributeSetSourceResId(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.content.res.Resources",
 			"getAttributeSetSourceResId",
 			"(Landroid/util/AttributeSet;)I",
@@ -49,7 +49,7 @@ namespace android::content::res
 	}
 	android::content::res::Resources Resources::getSystem()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.content.res.Resources",
 			"getSystem",
 			"()Landroid/content/res/Resources;"

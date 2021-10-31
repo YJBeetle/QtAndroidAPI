@@ -6,42 +6,42 @@ namespace android::bluetooth::le
 	// Fields
 	jint AdvertisingSetCallback::ADVERTISE_FAILED_ALREADY_STARTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetCallback",
 			"ADVERTISE_FAILED_ALREADY_STARTED"
 		);
 	}
 	jint AdvertisingSetCallback::ADVERTISE_FAILED_DATA_TOO_LARGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetCallback",
 			"ADVERTISE_FAILED_DATA_TOO_LARGE"
 		);
 	}
 	jint AdvertisingSetCallback::ADVERTISE_FAILED_FEATURE_UNSUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetCallback",
 			"ADVERTISE_FAILED_FEATURE_UNSUPPORTED"
 		);
 	}
 	jint AdvertisingSetCallback::ADVERTISE_FAILED_INTERNAL_ERROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetCallback",
 			"ADVERTISE_FAILED_INTERNAL_ERROR"
 		);
 	}
 	jint AdvertisingSetCallback::ADVERTISE_FAILED_TOO_MANY_ADVERTISERS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetCallback",
 			"ADVERTISE_FAILED_TOO_MANY_ADVERTISERS"
 		);
 	}
 	jint AdvertisingSetCallback::ADVERTISE_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.bluetooth.le.AdvertisingSetCallback",
 			"ADVERTISE_SUCCESS"
 		);

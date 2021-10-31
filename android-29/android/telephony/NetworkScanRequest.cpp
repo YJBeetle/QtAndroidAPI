@@ -7,7 +7,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass NetworkScanRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.NetworkScanRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,14 +15,14 @@ namespace android::telephony
 	}
 	jint NetworkScanRequest::SCAN_TYPE_ONE_SHOT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.NetworkScanRequest",
 			"SCAN_TYPE_ONE_SHOT"
 		);
 	}
 	jint NetworkScanRequest::SCAN_TYPE_PERIODIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.NetworkScanRequest",
 			"SCAN_TYPE_PERIODIC"
 		);

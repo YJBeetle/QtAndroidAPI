@@ -6,7 +6,7 @@ namespace android::telecom
 	// Fields
 	__JniBaseClass VideoProfile_CameraCapabilities::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.VideoProfile$CameraCapabilities",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

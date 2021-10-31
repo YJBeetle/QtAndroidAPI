@@ -7,7 +7,7 @@ namespace android::nfc::tech
 	// Fields
 	jstring Ndef::MIFARE_CLASSIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"MIFARE_CLASSIC",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::nfc::tech
 	}
 	jstring Ndef::NFC_FORUM_TYPE_1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_1",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::nfc::tech
 	}
 	jstring Ndef::NFC_FORUM_TYPE_2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_2",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::nfc::tech
 	}
 	jstring Ndef::NFC_FORUM_TYPE_3()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_3",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::nfc::tech
 	}
 	jstring Ndef::NFC_FORUM_TYPE_4()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_4",
 			"Ljava/lang/String;"
@@ -54,7 +54,7 @@ namespace android::nfc::tech
 	// Methods
 	android::nfc::tech::Ndef Ndef::get(android::nfc::Tag arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.tech.Ndef",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/Ndef;",

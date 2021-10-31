@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_ProviderStatus::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$ProviderStatus",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	android::net::Uri ContactsContract_ProviderStatus::CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$ProviderStatus",
 			"CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_ProviderStatus::DATABASE_CREATION_TIMESTAMP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$ProviderStatus",
 			"DATABASE_CREATION_TIMESTAMP",
 			"Ljava/lang/String;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_ProviderStatus::STATUS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$ProviderStatus",
 			"STATUS",
 			"Ljava/lang/String;"
@@ -38,21 +38,21 @@ namespace android::provider
 	}
 	jint ContactsContract_ProviderStatus::STATUS_BUSY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$ProviderStatus",
 			"STATUS_BUSY"
 		);
 	}
 	jint ContactsContract_ProviderStatus::STATUS_EMPTY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$ProviderStatus",
 			"STATUS_EMPTY"
 		);
 	}
 	jint ContactsContract_ProviderStatus::STATUS_NORMAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.provider.ContactsContract$ProviderStatus",
 			"STATUS_NORMAL"
 		);

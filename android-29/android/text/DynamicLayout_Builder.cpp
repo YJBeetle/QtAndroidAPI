@@ -16,7 +16,7 @@ namespace android::text
 	// Methods
 	android::text::DynamicLayout_Builder DynamicLayout_Builder::obtain(jstring arg0, android::text::TextPaint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.DynamicLayout$Builder",
 			"obtain",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;I)Landroid/text/DynamicLayout$Builder;",

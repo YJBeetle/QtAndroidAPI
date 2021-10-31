@@ -7,77 +7,77 @@ namespace android::media
 	// Fields
 	jint MediaFormat::COLOR_RANGE_FULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"COLOR_RANGE_FULL"
 		);
 	}
 	jint MediaFormat::COLOR_RANGE_LIMITED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"COLOR_RANGE_LIMITED"
 		);
 	}
 	jint MediaFormat::COLOR_STANDARD_BT2020()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"COLOR_STANDARD_BT2020"
 		);
 	}
 	jint MediaFormat::COLOR_STANDARD_BT601_NTSC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"COLOR_STANDARD_BT601_NTSC"
 		);
 	}
 	jint MediaFormat::COLOR_STANDARD_BT601_PAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"COLOR_STANDARD_BT601_PAL"
 		);
 	}
 	jint MediaFormat::COLOR_STANDARD_BT709()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"COLOR_STANDARD_BT709"
 		);
 	}
 	jint MediaFormat::COLOR_TRANSFER_HLG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"COLOR_TRANSFER_HLG"
 		);
 	}
 	jint MediaFormat::COLOR_TRANSFER_LINEAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"COLOR_TRANSFER_LINEAR"
 		);
 	}
 	jint MediaFormat::COLOR_TRANSFER_SDR_VIDEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"COLOR_TRANSFER_SDR_VIDEO"
 		);
 	}
 	jint MediaFormat::COLOR_TRANSFER_ST2084()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"COLOR_TRANSFER_ST2084"
 		);
 	}
 	jstring MediaFormat::KEY_AAC_DRC_ATTENUATION_FACTOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_AAC_DRC_ATTENUATION_FACTOR",
 			"Ljava/lang/String;"
@@ -85,7 +85,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_AAC_DRC_BOOST_FACTOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_AAC_DRC_BOOST_FACTOR",
 			"Ljava/lang/String;"
@@ -93,7 +93,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_AAC_DRC_EFFECT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_AAC_DRC_EFFECT_TYPE",
 			"Ljava/lang/String;"
@@ -101,7 +101,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_AAC_DRC_HEAVY_COMPRESSION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_AAC_DRC_HEAVY_COMPRESSION",
 			"Ljava/lang/String;"
@@ -109,7 +109,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_AAC_DRC_TARGET_REFERENCE_LEVEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_AAC_DRC_TARGET_REFERENCE_LEVEL",
 			"Ljava/lang/String;"
@@ -117,7 +117,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_AAC_ENCODED_TARGET_LEVEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_AAC_ENCODED_TARGET_LEVEL",
 			"Ljava/lang/String;"
@@ -125,7 +125,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_AAC_MAX_OUTPUT_CHANNEL_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_AAC_MAX_OUTPUT_CHANNEL_COUNT",
 			"Ljava/lang/String;"
@@ -133,7 +133,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_AAC_PROFILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_AAC_PROFILE",
 			"Ljava/lang/String;"
@@ -141,7 +141,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_AAC_SBR_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_AAC_SBR_MODE",
 			"Ljava/lang/String;"
@@ -149,7 +149,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_AUDIO_SESSION_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_AUDIO_SESSION_ID",
 			"Ljava/lang/String;"
@@ -157,7 +157,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_BITRATE_MODE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_BITRATE_MODE",
 			"Ljava/lang/String;"
@@ -165,7 +165,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_BIT_RATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_BIT_RATE",
 			"Ljava/lang/String;"
@@ -173,7 +173,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_CAPTURE_RATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_CAPTURE_RATE",
 			"Ljava/lang/String;"
@@ -181,7 +181,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_CHANNEL_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_CHANNEL_COUNT",
 			"Ljava/lang/String;"
@@ -189,7 +189,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_CHANNEL_MASK()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_CHANNEL_MASK",
 			"Ljava/lang/String;"
@@ -197,7 +197,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_COLOR_FORMAT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_COLOR_FORMAT",
 			"Ljava/lang/String;"
@@ -205,7 +205,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_COLOR_RANGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_COLOR_RANGE",
 			"Ljava/lang/String;"
@@ -213,7 +213,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_COLOR_STANDARD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_COLOR_STANDARD",
 			"Ljava/lang/String;"
@@ -221,7 +221,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_COLOR_TRANSFER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_COLOR_TRANSFER",
 			"Ljava/lang/String;"
@@ -229,7 +229,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_COMPLEXITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_COMPLEXITY",
 			"Ljava/lang/String;"
@@ -237,7 +237,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_CREATE_INPUT_SURFACE_SUSPENDED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_CREATE_INPUT_SURFACE_SUSPENDED",
 			"Ljava/lang/String;"
@@ -245,7 +245,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_DURATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_DURATION",
 			"Ljava/lang/String;"
@@ -253,7 +253,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_FLAC_COMPRESSION_LEVEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_FLAC_COMPRESSION_LEVEL",
 			"Ljava/lang/String;"
@@ -261,7 +261,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_FRAME_RATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_FRAME_RATE",
 			"Ljava/lang/String;"
@@ -269,7 +269,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_GRID_COLUMNS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_GRID_COLUMNS",
 			"Ljava/lang/String;"
@@ -277,7 +277,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_GRID_ROWS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_GRID_ROWS",
 			"Ljava/lang/String;"
@@ -285,7 +285,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_HAPTIC_CHANNEL_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_HAPTIC_CHANNEL_COUNT",
 			"Ljava/lang/String;"
@@ -293,7 +293,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_HDR10_PLUS_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_HDR10_PLUS_INFO",
 			"Ljava/lang/String;"
@@ -301,7 +301,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_HDR_STATIC_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_HDR_STATIC_INFO",
 			"Ljava/lang/String;"
@@ -309,7 +309,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_HEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_HEIGHT",
 			"Ljava/lang/String;"
@@ -317,7 +317,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_INTRA_REFRESH_PERIOD()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_INTRA_REFRESH_PERIOD",
 			"Ljava/lang/String;"
@@ -325,7 +325,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_IS_ADTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_IS_ADTS",
 			"Ljava/lang/String;"
@@ -333,7 +333,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_IS_AUTOSELECT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_IS_AUTOSELECT",
 			"Ljava/lang/String;"
@@ -341,7 +341,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_IS_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_IS_DEFAULT",
 			"Ljava/lang/String;"
@@ -349,7 +349,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_IS_FORCED_SUBTITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_IS_FORCED_SUBTITLE",
 			"Ljava/lang/String;"
@@ -357,7 +357,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_I_FRAME_INTERVAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_I_FRAME_INTERVAL",
 			"Ljava/lang/String;"
@@ -365,7 +365,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_LANGUAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_LANGUAGE",
 			"Ljava/lang/String;"
@@ -373,7 +373,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_LATENCY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_LATENCY",
 			"Ljava/lang/String;"
@@ -381,7 +381,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_LEVEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_LEVEL",
 			"Ljava/lang/String;"
@@ -389,7 +389,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_MAX_B_FRAMES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_MAX_B_FRAMES",
 			"Ljava/lang/String;"
@@ -397,7 +397,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_MAX_FPS_TO_ENCODER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_MAX_FPS_TO_ENCODER",
 			"Ljava/lang/String;"
@@ -405,7 +405,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_MAX_HEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_MAX_HEIGHT",
 			"Ljava/lang/String;"
@@ -413,7 +413,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_MAX_INPUT_SIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_MAX_INPUT_SIZE",
 			"Ljava/lang/String;"
@@ -421,7 +421,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_MAX_PTS_GAP_TO_ENCODER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_MAX_PTS_GAP_TO_ENCODER",
 			"Ljava/lang/String;"
@@ -429,7 +429,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_MAX_WIDTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_MAX_WIDTH",
 			"Ljava/lang/String;"
@@ -437,7 +437,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_MIME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_MIME",
 			"Ljava/lang/String;"
@@ -445,7 +445,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_OPERATING_RATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_OPERATING_RATE",
 			"Ljava/lang/String;"
@@ -453,7 +453,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_OUTPUT_REORDER_DEPTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_OUTPUT_REORDER_DEPTH",
 			"Ljava/lang/String;"
@@ -461,7 +461,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_PCM_ENCODING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_PCM_ENCODING",
 			"Ljava/lang/String;"
@@ -469,7 +469,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_PREPEND_HEADER_TO_SYNC_FRAMES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_PREPEND_HEADER_TO_SYNC_FRAMES",
 			"Ljava/lang/String;"
@@ -477,7 +477,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_PRIORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_PRIORITY",
 			"Ljava/lang/String;"
@@ -485,7 +485,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_PROFILE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_PROFILE",
 			"Ljava/lang/String;"
@@ -493,7 +493,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_PUSH_BLANK_BUFFERS_ON_STOP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_PUSH_BLANK_BUFFERS_ON_STOP",
 			"Ljava/lang/String;"
@@ -501,7 +501,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_QUALITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_QUALITY",
 			"Ljava/lang/String;"
@@ -509,7 +509,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_REPEAT_PREVIOUS_FRAME_AFTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_REPEAT_PREVIOUS_FRAME_AFTER",
 			"Ljava/lang/String;"
@@ -517,7 +517,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_ROTATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_ROTATION",
 			"Ljava/lang/String;"
@@ -525,7 +525,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_SAMPLE_RATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_SAMPLE_RATE",
 			"Ljava/lang/String;"
@@ -533,7 +533,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_SLICE_HEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_SLICE_HEIGHT",
 			"Ljava/lang/String;"
@@ -541,7 +541,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_STRIDE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_STRIDE",
 			"Ljava/lang/String;"
@@ -549,7 +549,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_TEMPORAL_LAYERING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_TEMPORAL_LAYERING",
 			"Ljava/lang/String;"
@@ -557,7 +557,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_TILE_HEIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_TILE_HEIGHT",
 			"Ljava/lang/String;"
@@ -565,7 +565,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_TILE_WIDTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_TILE_WIDTH",
 			"Ljava/lang/String;"
@@ -573,7 +573,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_TRACK_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_TRACK_ID",
 			"Ljava/lang/String;"
@@ -581,7 +581,7 @@ namespace android::media
 	}
 	jstring MediaFormat::KEY_WIDTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"KEY_WIDTH",
 			"Ljava/lang/String;"
@@ -589,7 +589,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_AAC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_AAC",
 			"Ljava/lang/String;"
@@ -597,7 +597,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_AC3()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_AC3",
 			"Ljava/lang/String;"
@@ -605,7 +605,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_AC4()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_AC4",
 			"Ljava/lang/String;"
@@ -613,7 +613,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_AMR_NB()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_AMR_NB",
 			"Ljava/lang/String;"
@@ -621,7 +621,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_AMR_WB()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_AMR_WB",
 			"Ljava/lang/String;"
@@ -629,7 +629,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_EAC3()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_EAC3",
 			"Ljava/lang/String;"
@@ -637,7 +637,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_EAC3_JOC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_EAC3_JOC",
 			"Ljava/lang/String;"
@@ -645,7 +645,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_FLAC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_FLAC",
 			"Ljava/lang/String;"
@@ -653,7 +653,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_G711_ALAW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_G711_ALAW",
 			"Ljava/lang/String;"
@@ -661,7 +661,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_G711_MLAW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_G711_MLAW",
 			"Ljava/lang/String;"
@@ -669,7 +669,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_MPEG()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_MPEG",
 			"Ljava/lang/String;"
@@ -677,7 +677,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_MSGSM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_MSGSM",
 			"Ljava/lang/String;"
@@ -685,7 +685,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_OPUS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_OPUS",
 			"Ljava/lang/String;"
@@ -693,7 +693,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_QCELP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_QCELP",
 			"Ljava/lang/String;"
@@ -701,7 +701,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_RAW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_RAW",
 			"Ljava/lang/String;"
@@ -709,7 +709,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_SCRAMBLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_SCRAMBLED",
 			"Ljava/lang/String;"
@@ -717,7 +717,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_AUDIO_VORBIS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_AUDIO_VORBIS",
 			"Ljava/lang/String;"
@@ -725,7 +725,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_IMAGE_ANDROID_HEIC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_IMAGE_ANDROID_HEIC",
 			"Ljava/lang/String;"
@@ -733,7 +733,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_TEXT_CEA_608()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_TEXT_CEA_608",
 			"Ljava/lang/String;"
@@ -741,7 +741,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_TEXT_CEA_708()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_TEXT_CEA_708",
 			"Ljava/lang/String;"
@@ -749,7 +749,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_TEXT_SUBRIP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_TEXT_SUBRIP",
 			"Ljava/lang/String;"
@@ -757,7 +757,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_TEXT_VTT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_TEXT_VTT",
 			"Ljava/lang/String;"
@@ -765,7 +765,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_AV1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_AV1",
 			"Ljava/lang/String;"
@@ -773,7 +773,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_AVC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_AVC",
 			"Ljava/lang/String;"
@@ -781,7 +781,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_DOLBY_VISION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_DOLBY_VISION",
 			"Ljava/lang/String;"
@@ -789,7 +789,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_H263()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_H263",
 			"Ljava/lang/String;"
@@ -797,7 +797,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_HEVC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_HEVC",
 			"Ljava/lang/String;"
@@ -805,7 +805,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_MPEG2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_MPEG2",
 			"Ljava/lang/String;"
@@ -813,7 +813,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_MPEG4()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_MPEG4",
 			"Ljava/lang/String;"
@@ -821,7 +821,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_RAW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_RAW",
 			"Ljava/lang/String;"
@@ -829,7 +829,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_SCRAMBLED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_SCRAMBLED",
 			"Ljava/lang/String;"
@@ -837,7 +837,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_VP8()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_VP8",
 			"Ljava/lang/String;"
@@ -845,7 +845,7 @@ namespace android::media
 	}
 	jstring MediaFormat::MIMETYPE_VIDEO_VP9()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.MediaFormat",
 			"MIMETYPE_VIDEO_VP9",
 			"Ljava/lang/String;"
@@ -853,42 +853,42 @@ namespace android::media
 	}
 	jint MediaFormat::TYPE_BYTE_BUFFER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"TYPE_BYTE_BUFFER"
 		);
 	}
 	jint MediaFormat::TYPE_FLOAT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"TYPE_FLOAT"
 		);
 	}
 	jint MediaFormat::TYPE_INTEGER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"TYPE_INTEGER"
 		);
 	}
 	jint MediaFormat::TYPE_LONG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"TYPE_LONG"
 		);
 	}
 	jint MediaFormat::TYPE_NULL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"TYPE_NULL"
 		);
 	}
 	jint MediaFormat::TYPE_STRING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.MediaFormat",
 			"TYPE_STRING"
 		);
@@ -913,7 +913,7 @@ namespace android::media
 	// Methods
 	android::media::MediaFormat MediaFormat::createAudioFormat(jstring arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaFormat",
 			"createAudioFormat",
 			"(Ljava/lang/String;II)Landroid/media/MediaFormat;",
@@ -924,7 +924,7 @@ namespace android::media
 	}
 	android::media::MediaFormat MediaFormat::createSubtitleFormat(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaFormat",
 			"createSubtitleFormat",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaFormat;",
@@ -934,7 +934,7 @@ namespace android::media
 	}
 	android::media::MediaFormat MediaFormat::createVideoFormat(jstring arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.MediaFormat",
 			"createVideoFormat",
 			"(Ljava/lang/String;II)Landroid/media/MediaFormat;",

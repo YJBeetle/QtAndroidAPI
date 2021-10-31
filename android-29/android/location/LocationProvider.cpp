@@ -6,21 +6,21 @@ namespace android::location
 	// Fields
 	jint LocationProvider::AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.LocationProvider",
 			"AVAILABLE"
 		);
 	}
 	jint LocationProvider::OUT_OF_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.LocationProvider",
 			"OUT_OF_SERVICE"
 		);
 	}
 	jint LocationProvider::TEMPORARILY_UNAVAILABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.LocationProvider",
 			"TEMPORARILY_UNAVAILABLE"
 		);

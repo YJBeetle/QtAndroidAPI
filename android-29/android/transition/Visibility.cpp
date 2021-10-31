@@ -10,14 +10,14 @@ namespace android::transition
 	// Fields
 	jint Visibility::MODE_IN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.transition.Visibility",
 			"MODE_IN"
 		);
 	}
 	jint Visibility::MODE_OUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.transition.Visibility",
 			"MODE_OUT"
 		);

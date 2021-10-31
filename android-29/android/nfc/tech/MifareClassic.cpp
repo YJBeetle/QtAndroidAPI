@@ -6,14 +6,14 @@ namespace android::nfc::tech
 	// Fields
 	jint MifareClassic::BLOCK_SIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareClassic",
 			"BLOCK_SIZE"
 		);
 	}
 	jbyteArray MifareClassic::KEY_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.tech.MifareClassic",
 			"KEY_DEFAULT",
 			"[B"
@@ -21,7 +21,7 @@ namespace android::nfc::tech
 	}
 	jbyteArray MifareClassic::KEY_MIFARE_APPLICATION_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.tech.MifareClassic",
 			"KEY_MIFARE_APPLICATION_DIRECTORY",
 			"[B"
@@ -29,7 +29,7 @@ namespace android::nfc::tech
 	}
 	jbyteArray MifareClassic::KEY_NFC_FORUM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.tech.MifareClassic",
 			"KEY_NFC_FORUM",
 			"[B"
@@ -37,56 +37,56 @@ namespace android::nfc::tech
 	}
 	jint MifareClassic::SIZE_1K()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareClassic",
 			"SIZE_1K"
 		);
 	}
 	jint MifareClassic::SIZE_2K()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareClassic",
 			"SIZE_2K"
 		);
 	}
 	jint MifareClassic::SIZE_4K()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareClassic",
 			"SIZE_4K"
 		);
 	}
 	jint MifareClassic::SIZE_MINI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareClassic",
 			"SIZE_MINI"
 		);
 	}
 	jint MifareClassic::TYPE_CLASSIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareClassic",
 			"TYPE_CLASSIC"
 		);
 	}
 	jint MifareClassic::TYPE_PLUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareClassic",
 			"TYPE_PLUS"
 		);
 	}
 	jint MifareClassic::TYPE_PRO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareClassic",
 			"TYPE_PRO"
 		);
 	}
 	jint MifareClassic::TYPE_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.tech.MifareClassic",
 			"TYPE_UNKNOWN"
 		);
@@ -100,7 +100,7 @@ namespace android::nfc::tech
 	// Methods
 	android::nfc::tech::MifareClassic MifareClassic::get(android::nfc::Tag arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.nfc.tech.MifareClassic",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/MifareClassic;",

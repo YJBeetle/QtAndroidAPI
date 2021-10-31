@@ -5,7 +5,7 @@ namespace java::time::chrono
 	// Fields
 	java::time::chrono::IsoEra IsoEra::BCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.IsoEra",
 			"BCE",
 			"Ljava/time/chrono/IsoEra;"
@@ -13,7 +13,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::IsoEra IsoEra::CE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.time.chrono.IsoEra",
 			"CE",
 			"Ljava/time/chrono/IsoEra;"
@@ -28,7 +28,7 @@ namespace java::time::chrono
 	// Methods
 	java::time::chrono::IsoEra IsoEra::of(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.IsoEra",
 			"of",
 			"(I)Ljava/time/chrono/IsoEra;",
@@ -37,7 +37,7 @@ namespace java::time::chrono
 	}
 	java::time::chrono::IsoEra IsoEra::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.IsoEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/IsoEra;",
@@ -46,7 +46,7 @@ namespace java::time::chrono
 	}
 	jarray IsoEra::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.chrono.IsoEra",
 			"values",
 			"()[Ljava/time/chrono/IsoEra;"

@@ -14,7 +14,7 @@ namespace android::view
 	// Methods
 	android::animation::Animator ViewAnimationUtils::createCircularReveal(android::view::View arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.ViewAnimationUtils",
 			"createCircularReveal",
 			"(Landroid/view/View;IIFF)Landroid/animation/Animator;",

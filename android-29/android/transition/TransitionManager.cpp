@@ -20,7 +20,7 @@ namespace android::transition
 	// Methods
 	void TransitionManager::beginDelayedTransition(android::view::ViewGroup arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.transition.TransitionManager",
 			"beginDelayedTransition",
 			"(Landroid/view/ViewGroup;)V",
@@ -29,7 +29,7 @@ namespace android::transition
 	}
 	void TransitionManager::beginDelayedTransition(android::view::ViewGroup arg0, android::transition::Transition arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.transition.TransitionManager",
 			"beginDelayedTransition",
 			"(Landroid/view/ViewGroup;Landroid/transition/Transition;)V",
@@ -39,7 +39,7 @@ namespace android::transition
 	}
 	void TransitionManager::endTransitions(android::view::ViewGroup arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.transition.TransitionManager",
 			"endTransitions",
 			"(Landroid/view/ViewGroup;)V",
@@ -48,7 +48,7 @@ namespace android::transition
 	}
 	void TransitionManager::go(android::transition::Scene arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.transition.TransitionManager",
 			"go",
 			"(Landroid/transition/Scene;)V",
@@ -57,7 +57,7 @@ namespace android::transition
 	}
 	void TransitionManager::go(android::transition::Scene arg0, android::transition::Transition arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.transition.TransitionManager",
 			"go",
 			"(Landroid/transition/Scene;Landroid/transition/Transition;)V",

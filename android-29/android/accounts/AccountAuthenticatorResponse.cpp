@@ -7,7 +7,7 @@ namespace android::accounts
 	// Fields
 	__JniBaseClass AccountAuthenticatorResponse::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.accounts.AccountAuthenticatorResponse",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

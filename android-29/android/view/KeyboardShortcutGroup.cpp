@@ -7,7 +7,7 @@ namespace android::view
 	// Fields
 	__JniBaseClass KeyboardShortcutGroup::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.KeyboardShortcutGroup",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

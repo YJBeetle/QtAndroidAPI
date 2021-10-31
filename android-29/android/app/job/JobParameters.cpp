@@ -11,7 +11,7 @@ namespace android::app::job
 	// Fields
 	__JniBaseClass JobParameters::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.app.job.JobParameters",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

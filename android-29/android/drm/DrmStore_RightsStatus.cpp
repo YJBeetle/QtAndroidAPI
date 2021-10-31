@@ -5,28 +5,28 @@ namespace android::drm
 	// Fields
 	jint DrmStore_RightsStatus::RIGHTS_EXPIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmStore$RightsStatus",
 			"RIGHTS_EXPIRED"
 		);
 	}
 	jint DrmStore_RightsStatus::RIGHTS_INVALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmStore$RightsStatus",
 			"RIGHTS_INVALID"
 		);
 	}
 	jint DrmStore_RightsStatus::RIGHTS_NOT_ACQUIRED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmStore$RightsStatus",
 			"RIGHTS_NOT_ACQUIRED"
 		);
 	}
 	jint DrmStore_RightsStatus::RIGHTS_VALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.drm.DrmStore$RightsStatus",
 			"RIGHTS_VALID"
 		);

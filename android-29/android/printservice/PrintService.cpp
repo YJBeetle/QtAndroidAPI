@@ -10,7 +10,7 @@ namespace android::printservice
 	// Fields
 	jstring PrintService::EXTRA_CAN_SELECT_PRINTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.printservice.PrintService",
 			"EXTRA_CAN_SELECT_PRINTER",
 			"Ljava/lang/String;"
@@ -18,7 +18,7 @@ namespace android::printservice
 	}
 	jstring PrintService::EXTRA_PRINTER_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.printservice.PrintService",
 			"EXTRA_PRINTER_INFO",
 			"Ljava/lang/String;"
@@ -26,7 +26,7 @@ namespace android::printservice
 	}
 	jstring PrintService::EXTRA_PRINT_DOCUMENT_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.printservice.PrintService",
 			"EXTRA_PRINT_DOCUMENT_INFO",
 			"Ljava/lang/String;"
@@ -34,7 +34,7 @@ namespace android::printservice
 	}
 	jstring PrintService::EXTRA_PRINT_JOB_INFO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.printservice.PrintService",
 			"EXTRA_PRINT_JOB_INFO",
 			"Ljava/lang/String;"
@@ -42,7 +42,7 @@ namespace android::printservice
 	}
 	jstring PrintService::EXTRA_SELECT_PRINTER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.printservice.PrintService",
 			"EXTRA_SELECT_PRINTER",
 			"Ljava/lang/String;"
@@ -50,7 +50,7 @@ namespace android::printservice
 	}
 	jstring PrintService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.printservice.PrintService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -58,7 +58,7 @@ namespace android::printservice
 	}
 	jstring PrintService::SERVICE_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.printservice.PrintService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"

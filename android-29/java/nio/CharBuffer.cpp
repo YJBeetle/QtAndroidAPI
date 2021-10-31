@@ -14,7 +14,7 @@ namespace java::nio
 	// Methods
 	java::nio::CharBuffer CharBuffer::allocate(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.CharBuffer",
 			"allocate",
 			"(I)Ljava/nio/CharBuffer;",
@@ -23,7 +23,7 @@ namespace java::nio
 	}
 	java::nio::CharBuffer CharBuffer::wrap(jcharArray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.CharBuffer",
 			"wrap",
 			"([C)Ljava/nio/CharBuffer;",
@@ -32,7 +32,7 @@ namespace java::nio
 	}
 	java::nio::CharBuffer CharBuffer::wrap(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.CharBuffer",
 			"wrap",
 			"(Ljava/lang/CharSequence;)Ljava/nio/CharBuffer;",
@@ -41,7 +41,7 @@ namespace java::nio
 	}
 	java::nio::CharBuffer CharBuffer::wrap(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.CharBuffer",
 			"wrap",
 			"([CII)Ljava/nio/CharBuffer;",
@@ -52,7 +52,7 @@ namespace java::nio
 	}
 	java::nio::CharBuffer CharBuffer::wrap(jstring arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.CharBuffer",
 			"wrap",
 			"(Ljava/lang/CharSequence;II)Ljava/nio/CharBuffer;",

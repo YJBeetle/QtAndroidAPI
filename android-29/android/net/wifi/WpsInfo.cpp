@@ -13,7 +13,7 @@ namespace android::net::wifi
 	}
 	__JniBaseClass WpsInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.wifi.WpsInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -21,35 +21,35 @@ namespace android::net::wifi
 	}
 	jint WpsInfo::DISPLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WpsInfo",
 			"DISPLAY"
 		);
 	}
 	jint WpsInfo::INVALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WpsInfo",
 			"INVALID"
 		);
 	}
 	jint WpsInfo::KEYPAD()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WpsInfo",
 			"KEYPAD"
 		);
 	}
 	jint WpsInfo::LABEL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WpsInfo",
 			"LABEL"
 		);
 	}
 	jint WpsInfo::PBC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.WpsInfo",
 			"PBC"
 		);

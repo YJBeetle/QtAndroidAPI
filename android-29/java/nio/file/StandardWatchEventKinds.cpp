@@ -5,7 +5,7 @@ namespace java::nio::file
 	// Fields
 	__JniBaseClass StandardWatchEventKinds::ENTRY_CREATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardWatchEventKinds",
 			"ENTRY_CREATE",
 			"Ljava/nio/file/WatchEvent$Kind;"
@@ -13,7 +13,7 @@ namespace java::nio::file
 	}
 	__JniBaseClass StandardWatchEventKinds::ENTRY_DELETE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardWatchEventKinds",
 			"ENTRY_DELETE",
 			"Ljava/nio/file/WatchEvent$Kind;"
@@ -21,7 +21,7 @@ namespace java::nio::file
 	}
 	__JniBaseClass StandardWatchEventKinds::ENTRY_MODIFY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardWatchEventKinds",
 			"ENTRY_MODIFY",
 			"Ljava/nio/file/WatchEvent$Kind;"
@@ -29,7 +29,7 @@ namespace java::nio::file
 	}
 	__JniBaseClass StandardWatchEventKinds::OVERFLOW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.nio.file.StandardWatchEventKinds",
 			"OVERFLOW",
 			"Ljava/nio/file/WatchEvent$Kind;"

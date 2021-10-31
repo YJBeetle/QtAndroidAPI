@@ -5,7 +5,7 @@ namespace android
 	// Fields
 	jint R_mipmap::sym_def_app_icon()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.R$mipmap",
 			"sym_def_app_icon"
 		);

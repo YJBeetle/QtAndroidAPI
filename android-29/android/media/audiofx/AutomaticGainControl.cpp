@@ -12,7 +12,7 @@ namespace android::media::audiofx
 	// Methods
 	android::media::audiofx::AutomaticGainControl AutomaticGainControl::create(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.audiofx.AutomaticGainControl",
 			"create",
 			"(I)Landroid/media/audiofx/AutomaticGainControl;",
@@ -21,7 +21,7 @@ namespace android::media::audiofx
 	}
 	jboolean AutomaticGainControl::isAvailable()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.audiofx.AutomaticGainControl",
 			"isAvailable",
 			"()Z"

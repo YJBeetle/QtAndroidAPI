@@ -14,7 +14,7 @@ namespace java::nio::channels
 	// Methods
 	java::nio::channels::Selector Selector::open()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.nio.channels.Selector",
 			"open",
 			"()Ljava/nio/channels/Selector;"

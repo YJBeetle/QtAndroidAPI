@@ -17,7 +17,7 @@ namespace android::animation
 	// Methods
 	android::animation::Keyframe Keyframe::ofFloat(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.Keyframe",
 			"ofFloat",
 			"(F)Landroid/animation/Keyframe;",
@@ -26,7 +26,7 @@ namespace android::animation
 	}
 	android::animation::Keyframe Keyframe::ofFloat(jfloat arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.Keyframe",
 			"ofFloat",
 			"(FF)Landroid/animation/Keyframe;",
@@ -36,7 +36,7 @@ namespace android::animation
 	}
 	android::animation::Keyframe Keyframe::ofInt(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.Keyframe",
 			"ofInt",
 			"(F)Landroid/animation/Keyframe;",
@@ -45,7 +45,7 @@ namespace android::animation
 	}
 	android::animation::Keyframe Keyframe::ofInt(jfloat arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.Keyframe",
 			"ofInt",
 			"(FI)Landroid/animation/Keyframe;",
@@ -55,7 +55,7 @@ namespace android::animation
 	}
 	android::animation::Keyframe Keyframe::ofObject(jfloat arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.Keyframe",
 			"ofObject",
 			"(F)Landroid/animation/Keyframe;",
@@ -64,7 +64,7 @@ namespace android::animation
 	}
 	android::animation::Keyframe Keyframe::ofObject(jfloat arg0, jobject arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.animation.Keyframe",
 			"ofObject",
 			"(FLjava/lang/Object;)Landroid/animation/Keyframe;",

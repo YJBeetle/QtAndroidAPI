@@ -7,7 +7,7 @@ namespace android::service::textservice
 	// Fields
 	jstring SpellCheckerService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.textservice.SpellCheckerService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

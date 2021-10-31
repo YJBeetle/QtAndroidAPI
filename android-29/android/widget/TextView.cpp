@@ -39,14 +39,14 @@ namespace android::widget
 	// Fields
 	jint TextView::AUTO_SIZE_TEXT_TYPE_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.TextView",
 			"AUTO_SIZE_TEXT_TYPE_NONE"
 		);
 	}
 	jint TextView::AUTO_SIZE_TEXT_TYPE_UNIFORM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.widget.TextView",
 			"AUTO_SIZE_TEXT_TYPE_UNIFORM"
 		);

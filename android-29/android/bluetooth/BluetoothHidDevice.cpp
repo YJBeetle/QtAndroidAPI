@@ -10,7 +10,7 @@ namespace android::bluetooth
 	// Fields
 	jstring BluetoothHidDevice::ACTION_CONNECTION_STATE_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.bluetooth.BluetoothHidDevice",
 			"ACTION_CONNECTION_STATE_CHANGED",
 			"Ljava/lang/String;"
@@ -18,154 +18,154 @@ namespace android::bluetooth
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_INVALID_PARAM()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"ERROR_RSP_INVALID_PARAM"
 		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_INVALID_RPT_ID()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"ERROR_RSP_INVALID_RPT_ID"
 		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_NOT_READY()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"ERROR_RSP_NOT_READY"
 		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"ERROR_RSP_SUCCESS"
 		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"ERROR_RSP_UNKNOWN"
 		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_UNSUPPORTED_REQ()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"ERROR_RSP_UNSUPPORTED_REQ"
 		);
 	}
 	jbyte BluetoothHidDevice::PROTOCOL_BOOT_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"PROTOCOL_BOOT_MODE"
 		);
 	}
 	jbyte BluetoothHidDevice::PROTOCOL_REPORT_MODE()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"PROTOCOL_REPORT_MODE"
 		);
 	}
 	jbyte BluetoothHidDevice::REPORT_TYPE_FEATURE()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"REPORT_TYPE_FEATURE"
 		);
 	}
 	jbyte BluetoothHidDevice::REPORT_TYPE_INPUT()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"REPORT_TYPE_INPUT"
 		);
 	}
 	jbyte BluetoothHidDevice::REPORT_TYPE_OUTPUT()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"REPORT_TYPE_OUTPUT"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS1_COMBO()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS1_COMBO"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS1_KEYBOARD()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS1_KEYBOARD"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS1_MOUSE()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS1_MOUSE"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS1_NONE()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS1_NONE"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_CARD_READER()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS2_CARD_READER"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_DIGITIZER_TABLET()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS2_DIGITIZER_TABLET"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_GAMEPAD()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS2_GAMEPAD"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_JOYSTICK()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS2_JOYSTICK"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_REMOTE_CONTROL()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS2_REMOTE_CONTROL"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_SENSING_DEVICE()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS2_SENSING_DEVICE"
 		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_UNCATEGORIZED()
 	{
-		return QAndroidJniObject::getStaticField<jbyte>(
+		return getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
 			"SUBCLASS2_UNCATEGORIZED"
 		);

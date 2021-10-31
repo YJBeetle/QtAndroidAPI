@@ -8,7 +8,7 @@ namespace android::widget
 	// Fields
 	jstring ShareActionProvider::DEFAULT_SHARE_HISTORY_FILE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.widget.ShareActionProvider",
 			"DEFAULT_SHARE_HISTORY_FILE_NAME",
 			"Ljava/lang/String;"

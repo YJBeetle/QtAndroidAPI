@@ -8,14 +8,14 @@ namespace android::view
 	// Fields
 	jboolean ViewDebug::TRACE_HIERARCHY()
 	{
-		return QAndroidJniObject::getStaticField<jboolean>(
+		return getStaticField<jboolean>(
 			"android.view.ViewDebug",
 			"TRACE_HIERARCHY"
 		);
 	}
 	jboolean ViewDebug::TRACE_RECYCLER()
 	{
-		return QAndroidJniObject::getStaticField<jboolean>(
+		return getStaticField<jboolean>(
 			"android.view.ViewDebug",
 			"TRACE_RECYCLER"
 		);
@@ -34,7 +34,7 @@ namespace android::view
 	// Methods
 	void ViewDebug::dumpCapturedView(jstring arg0, jobject arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.view.ViewDebug",
 			"dumpCapturedView",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
@@ -44,7 +44,7 @@ namespace android::view
 	}
 	void ViewDebug::startHierarchyTracing(jstring arg0, android::view::View arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.view.ViewDebug",
 			"startHierarchyTracing",
 			"(Ljava/lang/String;Landroid/view/View;)V",
@@ -54,7 +54,7 @@ namespace android::view
 	}
 	void ViewDebug::startRecyclerTracing(jstring arg0, android::view::View arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.view.ViewDebug",
 			"startRecyclerTracing",
 			"(Ljava/lang/String;Landroid/view/View;)V",
@@ -64,7 +64,7 @@ namespace android::view
 	}
 	void ViewDebug::stopHierarchyTracing()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.view.ViewDebug",
 			"stopHierarchyTracing",
 			"()V"
@@ -72,7 +72,7 @@ namespace android::view
 	}
 	void ViewDebug::stopRecyclerTracing()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.view.ViewDebug",
 			"stopRecyclerTracing",
 			"()V"
@@ -80,7 +80,7 @@ namespace android::view
 	}
 	void ViewDebug::trace(android::view::View arg0, android::view::ViewDebug_HierarchyTraceType arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.view.ViewDebug",
 			"trace",
 			"(Landroid/view/View;Landroid/view/ViewDebug$HierarchyTraceType;)V",
@@ -90,7 +90,7 @@ namespace android::view
 	}
 	void ViewDebug::trace(android::view::View arg0, android::view::ViewDebug_RecyclerTraceType arg1, jintArray arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.view.ViewDebug",
 			"trace",
 			"(Landroid/view/View;Landroid/view/ViewDebug$RecyclerTraceType;[I)V",

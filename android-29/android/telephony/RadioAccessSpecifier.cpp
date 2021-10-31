@@ -6,7 +6,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass RadioAccessSpecifier::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.RadioAccessSpecifier",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

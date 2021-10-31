@@ -7,7 +7,7 @@ namespace android::service::notification
 	// Fields
 	__JniBaseClass NotificationListenerService_RankingMap::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.notification.NotificationListenerService$RankingMap",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

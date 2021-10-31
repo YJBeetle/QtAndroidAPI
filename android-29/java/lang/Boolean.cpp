@@ -6,7 +6,7 @@ namespace java::lang
 	// Fields
 	java::lang::Boolean Boolean::FALSE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.Boolean",
 			"FALSE",
 			"Ljava/lang/Boolean;"
@@ -14,7 +14,7 @@ namespace java::lang
 	}
 	java::lang::Boolean Boolean::TRUE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.Boolean",
 			"TRUE",
 			"Ljava/lang/Boolean;"
@@ -22,7 +22,7 @@ namespace java::lang
 	}
 	jclass Boolean::TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.lang.Boolean",
 			"TYPE",
 			"Ljava/lang/Class;"
@@ -49,7 +49,7 @@ namespace java::lang
 	// Methods
 	jint Boolean::compare(jboolean arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Boolean",
 			"compare",
 			"(ZZ)I",
@@ -59,7 +59,7 @@ namespace java::lang
 	}
 	jboolean Boolean::getBoolean(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Boolean",
 			"getBoolean",
 			"(Ljava/lang/String;)Z",
@@ -68,7 +68,7 @@ namespace java::lang
 	}
 	jint Boolean::hashCode(jboolean arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"java.lang.Boolean",
 			"hashCode",
 			"(Z)I",
@@ -77,7 +77,7 @@ namespace java::lang
 	}
 	jboolean Boolean::logicalAnd(jboolean arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Boolean",
 			"logicalAnd",
 			"(ZZ)Z",
@@ -87,7 +87,7 @@ namespace java::lang
 	}
 	jboolean Boolean::logicalOr(jboolean arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Boolean",
 			"logicalOr",
 			"(ZZ)Z",
@@ -97,7 +97,7 @@ namespace java::lang
 	}
 	jboolean Boolean::logicalXor(jboolean arg0, jboolean arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Boolean",
 			"logicalXor",
 			"(ZZ)Z",
@@ -107,7 +107,7 @@ namespace java::lang
 	}
 	jboolean Boolean::parseBoolean(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.lang.Boolean",
 			"parseBoolean",
 			"(Ljava/lang/String;)Z",
@@ -116,7 +116,7 @@ namespace java::lang
 	}
 	jstring Boolean::toString(jboolean arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Boolean",
 			"toString",
 			"(Z)Ljava/lang/String;",
@@ -125,7 +125,7 @@ namespace java::lang
 	}
 	java::lang::Boolean Boolean::valueOf(jboolean arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Boolean",
 			"valueOf",
 			"(Z)Ljava/lang/Boolean;",
@@ -134,7 +134,7 @@ namespace java::lang
 	}
 	java::lang::Boolean Boolean::valueOf(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.lang.Boolean",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Boolean;",

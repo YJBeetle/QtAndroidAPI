@@ -15,21 +15,21 @@ namespace android::graphics::drawable
 	// Fields
 	jint LayerDrawable::INSET_UNDEFINED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.LayerDrawable",
 			"INSET_UNDEFINED"
 		);
 	}
 	jint LayerDrawable::PADDING_MODE_NEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.LayerDrawable",
 			"PADDING_MODE_NEST"
 		);
 	}
 	jint LayerDrawable::PADDING_MODE_STACK()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.graphics.drawable.LayerDrawable",
 			"PADDING_MODE_STACK"
 		);

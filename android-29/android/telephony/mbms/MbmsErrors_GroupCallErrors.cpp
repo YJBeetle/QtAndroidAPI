@@ -5,14 +5,14 @@ namespace android::telephony::mbms
 	// Fields
 	jint MbmsErrors_GroupCallErrors::ERROR_DUPLICATE_START_GROUP_CALL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors$GroupCallErrors",
 			"ERROR_DUPLICATE_START_GROUP_CALL"
 		);
 	}
 	jint MbmsErrors_GroupCallErrors::ERROR_UNABLE_TO_START_SERVICE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors$GroupCallErrors",
 			"ERROR_UNABLE_TO_START_SERVICE"
 		);

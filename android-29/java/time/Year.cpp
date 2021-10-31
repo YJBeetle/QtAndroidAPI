@@ -14,14 +14,14 @@ namespace java::time
 	// Fields
 	jint Year::MAX_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.time.Year",
 			"MAX_VALUE"
 		);
 	}
 	jint Year::MIN_VALUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.time.Year",
 			"MIN_VALUE"
 		);
@@ -35,7 +35,7 @@ namespace java::time
 	// Methods
 	java::time::Year Year::from(__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Year",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/Year;",
@@ -44,7 +44,7 @@ namespace java::time
 	}
 	jboolean Year::isLeap(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"java.time.Year",
 			"isLeap",
 			"(J)Z",
@@ -53,7 +53,7 @@ namespace java::time
 	}
 	java::time::Year Year::now()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Year",
 			"now",
 			"()Ljava/time/Year;"
@@ -61,7 +61,7 @@ namespace java::time
 	}
 	java::time::Year Year::now(java::time::Clock arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Year",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/Year;",
@@ -70,7 +70,7 @@ namespace java::time
 	}
 	java::time::Year Year::now(java::time::ZoneId arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Year",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/Year;",
@@ -79,7 +79,7 @@ namespace java::time
 	}
 	java::time::Year Year::of(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Year",
 			"of",
 			"(I)Ljava/time/Year;",
@@ -88,7 +88,7 @@ namespace java::time
 	}
 	java::time::Year Year::parse(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Year",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Year;",
@@ -97,7 +97,7 @@ namespace java::time
 	}
 	java::time::Year Year::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.time.Year",
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/Year;",

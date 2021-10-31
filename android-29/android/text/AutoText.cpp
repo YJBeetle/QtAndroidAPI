@@ -14,7 +14,7 @@ namespace android::text
 	// Methods
 	jstring AutoText::get(jstring arg0, jint arg1, jint arg2, android::view::View arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.AutoText",
 			"get",
 			"(Ljava/lang/CharSequence;IILandroid/view/View;)Ljava/lang/String;",
@@ -26,7 +26,7 @@ namespace android::text
 	}
 	jint AutoText::getSize(android::view::View arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.text.AutoText",
 			"getSize",
 			"(Landroid/view/View;)I",

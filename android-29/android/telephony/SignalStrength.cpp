@@ -6,7 +6,7 @@ namespace android::telephony
 	// Fields
 	jint SignalStrength::INVALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SignalStrength",
 			"INVALID"
 		);

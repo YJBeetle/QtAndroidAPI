@@ -9,63 +9,63 @@ namespace android::renderscript
 	// Fields
 	jint ScriptIntrinsicBLAS::CONJ_TRANSPOSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"CONJ_TRANSPOSE"
 		);
 	}
 	jint ScriptIntrinsicBLAS::LEFT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"LEFT"
 		);
 	}
 	jint ScriptIntrinsicBLAS::LOWER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"LOWER"
 		);
 	}
 	jint ScriptIntrinsicBLAS::NON_UNIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"NON_UNIT"
 		);
 	}
 	jint ScriptIntrinsicBLAS::NO_TRANSPOSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"NO_TRANSPOSE"
 		);
 	}
 	jint ScriptIntrinsicBLAS::RIGHT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"RIGHT"
 		);
 	}
 	jint ScriptIntrinsicBLAS::TRANSPOSE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"TRANSPOSE"
 		);
 	}
 	jint ScriptIntrinsicBLAS::UNIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"UNIT"
 		);
 	}
 	jint ScriptIntrinsicBLAS::UPPER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"UPPER"
 		);
@@ -79,7 +79,7 @@ namespace android::renderscript
 	// Methods
 	android::renderscript::ScriptIntrinsicBLAS ScriptIntrinsicBLAS::create(android::renderscript::RenderScript arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"create",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/ScriptIntrinsicBLAS;",

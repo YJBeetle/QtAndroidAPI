@@ -10,7 +10,7 @@ namespace java::math
 	// Fields
 	java::math::BigDecimal BigDecimal::ONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.BigDecimal",
 			"ONE",
 			"Ljava/math/BigDecimal;"
@@ -18,63 +18,63 @@ namespace java::math
 	}
 	jint BigDecimal::ROUND_CEILING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.math.BigDecimal",
 			"ROUND_CEILING"
 		);
 	}
 	jint BigDecimal::ROUND_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.math.BigDecimal",
 			"ROUND_DOWN"
 		);
 	}
 	jint BigDecimal::ROUND_FLOOR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.math.BigDecimal",
 			"ROUND_FLOOR"
 		);
 	}
 	jint BigDecimal::ROUND_HALF_DOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.math.BigDecimal",
 			"ROUND_HALF_DOWN"
 		);
 	}
 	jint BigDecimal::ROUND_HALF_EVEN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.math.BigDecimal",
 			"ROUND_HALF_EVEN"
 		);
 	}
 	jint BigDecimal::ROUND_HALF_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.math.BigDecimal",
 			"ROUND_HALF_UP"
 		);
 	}
 	jint BigDecimal::ROUND_UNNECESSARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.math.BigDecimal",
 			"ROUND_UNNECESSARY"
 		);
 	}
 	jint BigDecimal::ROUND_UP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.math.BigDecimal",
 			"ROUND_UP"
 		);
 	}
 	java::math::BigDecimal BigDecimal::TEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.BigDecimal",
 			"TEN",
 			"Ljava/math/BigDecimal;"
@@ -82,7 +82,7 @@ namespace java::math
 	}
 	java::math::BigDecimal BigDecimal::ZERO()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.math.BigDecimal",
 			"ZERO",
 			"Ljava/math/BigDecimal;"
@@ -207,7 +207,7 @@ namespace java::math
 	// Methods
 	java::math::BigDecimal BigDecimal::valueOf(jdouble arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.math.BigDecimal",
 			"valueOf",
 			"(D)Ljava/math/BigDecimal;",
@@ -216,7 +216,7 @@ namespace java::math
 	}
 	java::math::BigDecimal BigDecimal::valueOf(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.math.BigDecimal",
 			"valueOf",
 			"(J)Ljava/math/BigDecimal;",
@@ -225,7 +225,7 @@ namespace java::math
 	}
 	java::math::BigDecimal BigDecimal::valueOf(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.math.BigDecimal",
 			"valueOf",
 			"(JI)Ljava/math/BigDecimal;",

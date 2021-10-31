@@ -5,21 +5,21 @@ namespace android::telephony::mbms
 	// Fields
 	jint MbmsErrors_InitializationErrors::ERROR_APP_PERMISSIONS_NOT_GRANTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors$InitializationErrors",
 			"ERROR_APP_PERMISSIONS_NOT_GRANTED"
 		);
 	}
 	jint MbmsErrors_InitializationErrors::ERROR_DUPLICATE_INITIALIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors$InitializationErrors",
 			"ERROR_DUPLICATE_INITIALIZE"
 		);
 	}
 	jint MbmsErrors_InitializationErrors::ERROR_UNABLE_TO_INITIALIZE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors$InitializationErrors",
 			"ERROR_UNABLE_TO_INITIALIZE"
 		);

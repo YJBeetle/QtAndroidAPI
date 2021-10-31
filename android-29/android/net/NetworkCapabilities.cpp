@@ -6,7 +6,7 @@ namespace android::net
 	// Fields
 	__JniBaseClass NetworkCapabilities::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.NetworkCapabilities",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,217 +14,217 @@ namespace android::net
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_CAPTIVE_PORTAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_CAPTIVE_PORTAL"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_CBS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_CBS"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_DUN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_DUN"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_EIMS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_EIMS"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_FOREGROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_FOREGROUND"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_FOTA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_FOTA"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_IA()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_IA"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_IMS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_IMS"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_INTERNET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_INTERNET"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_MCX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_MCX"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_MMS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_MMS"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_CONGESTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_NOT_CONGESTED"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_METERED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_NOT_METERED"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_RESTRICTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_NOT_RESTRICTED"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_ROAMING()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_NOT_ROAMING"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_SUSPENDED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_NOT_SUSPENDED"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_VPN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_NOT_VPN"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_RCS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_RCS"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_SUPL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_SUPL"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_TRUSTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_TRUSTED"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_VALIDATED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_VALIDATED"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_WIFI_P2P()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_WIFI_P2P"
 		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_XCAP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"NET_CAPABILITY_XCAP"
 		);
 	}
 	jint NetworkCapabilities::SIGNAL_STRENGTH_UNSPECIFIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"SIGNAL_STRENGTH_UNSPECIFIED"
 		);
 	}
 	jint NetworkCapabilities::TRANSPORT_BLUETOOTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"TRANSPORT_BLUETOOTH"
 		);
 	}
 	jint NetworkCapabilities::TRANSPORT_CELLULAR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"TRANSPORT_CELLULAR"
 		);
 	}
 	jint NetworkCapabilities::TRANSPORT_ETHERNET()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"TRANSPORT_ETHERNET"
 		);
 	}
 	jint NetworkCapabilities::TRANSPORT_LOWPAN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"TRANSPORT_LOWPAN"
 		);
 	}
 	jint NetworkCapabilities::TRANSPORT_VPN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"TRANSPORT_VPN"
 		);
 	}
 	jint NetworkCapabilities::TRANSPORT_WIFI()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"TRANSPORT_WIFI"
 		);
 	}
 	jint NetworkCapabilities::TRANSPORT_WIFI_AWARE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.NetworkCapabilities",
 			"TRANSPORT_WIFI_AWARE"
 		);

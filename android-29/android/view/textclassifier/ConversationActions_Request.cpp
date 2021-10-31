@@ -8,7 +8,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass ConversationActions_Request::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Request",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,7 +16,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationActions_Request::HINT_FOR_IN_APP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Request",
 			"HINT_FOR_IN_APP",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationActions_Request::HINT_FOR_NOTIFICATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Request",
 			"HINT_FOR_NOTIFICATION",
 			"Ljava/lang/String;"

@@ -6,7 +6,7 @@ namespace android::telephony
 	// Fields
 	__JniBaseClass AvailableNetworkInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.AvailableNetworkInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,21 +14,21 @@ namespace android::telephony
 	}
 	jint AvailableNetworkInfo::PRIORITY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.AvailableNetworkInfo",
 			"PRIORITY_HIGH"
 		);
 	}
 	jint AvailableNetworkInfo::PRIORITY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.AvailableNetworkInfo",
 			"PRIORITY_LOW"
 		);
 	}
 	jint AvailableNetworkInfo::PRIORITY_MED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.AvailableNetworkInfo",
 			"PRIORITY_MED"
 		);

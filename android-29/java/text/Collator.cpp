@@ -7,49 +7,49 @@ namespace java::text
 	// Fields
 	jint Collator::CANONICAL_DECOMPOSITION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Collator",
 			"CANONICAL_DECOMPOSITION"
 		);
 	}
 	jint Collator::FULL_DECOMPOSITION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Collator",
 			"FULL_DECOMPOSITION"
 		);
 	}
 	jint Collator::IDENTICAL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Collator",
 			"IDENTICAL"
 		);
 	}
 	jint Collator::NO_DECOMPOSITION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Collator",
 			"NO_DECOMPOSITION"
 		);
 	}
 	jint Collator::PRIMARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Collator",
 			"PRIMARY"
 		);
 	}
 	jint Collator::SECONDARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Collator",
 			"SECONDARY"
 		);
 	}
 	jint Collator::TERTIARY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"java.text.Collator",
 			"TERTIARY"
 		);
@@ -63,7 +63,7 @@ namespace java::text
 	// Methods
 	jarray Collator::getAvailableLocales()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.Collator",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
@@ -71,7 +71,7 @@ namespace java::text
 	}
 	java::text::Collator Collator::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.Collator",
 			"getInstance",
 			"()Ljava/text/Collator;"
@@ -79,7 +79,7 @@ namespace java::text
 	}
 	java::text::Collator Collator::getInstance(java::util::Locale arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"java.text.Collator",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/text/Collator;",

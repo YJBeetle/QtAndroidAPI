@@ -6,7 +6,7 @@ namespace android::provider
 	// Fields
 	jstring MediaStore_Video_Media::CONTENT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Media",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Video_Media::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Media",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Video_Media::EXTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Media",
 			"EXTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	android::net::Uri MediaStore_Video_Media::INTERNAL_CONTENT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Video$Media",
 			"INTERNAL_CONTENT_URI",
 			"Landroid/net/Uri;"
@@ -50,7 +50,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri MediaStore_Video_Media::getContentUri(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Video$Media",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",

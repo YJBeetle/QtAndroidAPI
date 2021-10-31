@@ -18,7 +18,7 @@ namespace android::app
 	// Methods
 	jstring Application::getProcessName()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.app.Application",
 			"getProcessName",
 			"()Ljava/lang/String;"

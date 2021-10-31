@@ -7,35 +7,35 @@ namespace android::media
 	// Fields
 	jint AudioPresentation::MASTERED_FOR_3D()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioPresentation",
 			"MASTERED_FOR_3D"
 		);
 	}
 	jint AudioPresentation::MASTERED_FOR_HEADPHONE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioPresentation",
 			"MASTERED_FOR_HEADPHONE"
 		);
 	}
 	jint AudioPresentation::MASTERED_FOR_STEREO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioPresentation",
 			"MASTERED_FOR_STEREO"
 		);
 	}
 	jint AudioPresentation::MASTERED_FOR_SURROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioPresentation",
 			"MASTERED_FOR_SURROUND"
 		);
 	}
 	jint AudioPresentation::MASTERING_NOT_INDICATED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.AudioPresentation",
 			"MASTERING_NOT_INDICATED"
 		);

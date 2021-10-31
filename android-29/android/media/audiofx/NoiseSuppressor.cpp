@@ -12,7 +12,7 @@ namespace android::media::audiofx
 	// Methods
 	android::media::audiofx::NoiseSuppressor NoiseSuppressor::create(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.media.audiofx.NoiseSuppressor",
 			"create",
 			"(I)Landroid/media/audiofx/NoiseSuppressor;",
@@ -21,7 +21,7 @@ namespace android::media::audiofx
 	}
 	jboolean NoiseSuppressor::isAvailable()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.media.audiofx.NoiseSuppressor",
 			"isAvailable",
 			"()Z"

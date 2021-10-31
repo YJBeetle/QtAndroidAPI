@@ -12,7 +12,7 @@ namespace android::icu::util
 	// Methods
 	jarray TimeUnit::values()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.util.TimeUnit",
 			"values",
 			"()[Landroid/icu/util/TimeUnit;"

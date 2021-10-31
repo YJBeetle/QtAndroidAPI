@@ -13,35 +13,35 @@ namespace android::net::wifi
 	}
 	jint ScanResult::CHANNEL_WIDTH_160MHZ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.ScanResult",
 			"CHANNEL_WIDTH_160MHZ"
 		);
 	}
 	jint ScanResult::CHANNEL_WIDTH_20MHZ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.ScanResult",
 			"CHANNEL_WIDTH_20MHZ"
 		);
 	}
 	jint ScanResult::CHANNEL_WIDTH_40MHZ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.ScanResult",
 			"CHANNEL_WIDTH_40MHZ"
 		);
 	}
 	jint ScanResult::CHANNEL_WIDTH_80MHZ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.ScanResult",
 			"CHANNEL_WIDTH_80MHZ"
 		);
 	}
 	jint ScanResult::CHANNEL_WIDTH_80MHZ_PLUS_MHZ()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.net.wifi.ScanResult",
 			"CHANNEL_WIDTH_80MHZ_PLUS_MHZ"
 		);

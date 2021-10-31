@@ -7,7 +7,7 @@ namespace android::view::textservice
 	// Fields
 	__JniBaseClass SentenceSuggestionsInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textservice.SentenceSuggestionsInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

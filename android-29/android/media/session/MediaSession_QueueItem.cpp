@@ -7,7 +7,7 @@ namespace android::media::session
 	// Fields
 	__JniBaseClass MediaSession_QueueItem::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.session.MediaSession$QueueItem",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,7 +15,7 @@ namespace android::media::session
 	}
 	jint MediaSession_QueueItem::UNKNOWN_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.session.MediaSession$QueueItem",
 			"UNKNOWN_ID"
 		);

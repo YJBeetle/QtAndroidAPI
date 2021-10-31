@@ -7,7 +7,7 @@ namespace android::graphics
 	// Fields
 	__JniBaseClass PointF::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.graphics.PointF",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -52,7 +52,7 @@ namespace android::graphics
 	// Methods
 	jfloat PointF::length(jfloat arg0, jfloat arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return callStaticMethod<jfloat>(
 			"android.graphics.PointF",
 			"length",
 			"(FF)F",

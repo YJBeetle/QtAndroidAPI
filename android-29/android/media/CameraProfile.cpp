@@ -5,21 +5,21 @@ namespace android::media
 	// Fields
 	jint CameraProfile::QUALITY_HIGH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CameraProfile",
 			"QUALITY_HIGH"
 		);
 	}
 	jint CameraProfile::QUALITY_LOW()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CameraProfile",
 			"QUALITY_LOW"
 		);
 	}
 	jint CameraProfile::QUALITY_MEDIUM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.CameraProfile",
 			"QUALITY_MEDIUM"
 		);
@@ -38,7 +38,7 @@ namespace android::media
 	// Methods
 	jint CameraProfile::getJpegEncodingQualityParameter(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.CameraProfile",
 			"getJpegEncodingQualityParameter",
 			"(I)I",
@@ -47,7 +47,7 @@ namespace android::media
 	}
 	jint CameraProfile::getJpegEncodingQualityParameter(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.media.CameraProfile",
 			"getJpegEncodingQualityParameter",
 			"(II)I",

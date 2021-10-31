@@ -10,7 +10,7 @@ namespace android::telecom
 	// Fields
 	__JniBaseClass ConnectionRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telecom.ConnectionRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

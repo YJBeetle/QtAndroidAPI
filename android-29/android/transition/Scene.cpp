@@ -35,7 +35,7 @@ namespace android::transition
 	// Methods
 	android::transition::Scene Scene::getCurrentScene(android::view::ViewGroup arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.transition.Scene",
 			"getCurrentScene",
 			"(Landroid/view/ViewGroup;)Landroid/transition/Scene;",
@@ -44,7 +44,7 @@ namespace android::transition
 	}
 	android::transition::Scene Scene::getSceneForLayout(android::view::ViewGroup arg0, jint arg1, android::content::Context arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.transition.Scene",
 			"getSceneForLayout",
 			"(Landroid/view/ViewGroup;ILandroid/content/Context;)Landroid/transition/Scene;",

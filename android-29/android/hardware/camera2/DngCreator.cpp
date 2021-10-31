@@ -14,7 +14,7 @@ namespace android::hardware::camera2
 	// Fields
 	jint DngCreator::MAX_THUMBNAIL_DIMENSION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.camera2.DngCreator",
 			"MAX_THUMBNAIL_DIMENSION"
 		);

@@ -16,7 +16,7 @@ namespace android::renderscript
 	// Methods
 	android::renderscript::AllocationAdapter AllocationAdapter::create1D(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.AllocationAdapter",
 			"create1D",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Allocation;)Landroid/renderscript/AllocationAdapter;",
@@ -26,7 +26,7 @@ namespace android::renderscript
 	}
 	android::renderscript::AllocationAdapter AllocationAdapter::create2D(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.AllocationAdapter",
 			"create2D",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Allocation;)Landroid/renderscript/AllocationAdapter;",
@@ -36,7 +36,7 @@ namespace android::renderscript
 	}
 	android::renderscript::AllocationAdapter AllocationAdapter::createTyped(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1, android::renderscript::Type arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.renderscript.AllocationAdapter",
 			"createTyped",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Allocation;Landroid/renderscript/Type;)Landroid/renderscript/AllocationAdapter;",

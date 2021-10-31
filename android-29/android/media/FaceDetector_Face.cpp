@@ -7,28 +7,28 @@ namespace android::media
 	// Fields
 	jfloat FaceDetector_Face::CONFIDENCE_THRESHOLD()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.media.FaceDetector$Face",
 			"CONFIDENCE_THRESHOLD"
 		);
 	}
 	jint FaceDetector_Face::EULER_X()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.FaceDetector$Face",
 			"EULER_X"
 		);
 	}
 	jint FaceDetector_Face::EULER_Y()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.FaceDetector$Face",
 			"EULER_Y"
 		);
 	}
 	jint FaceDetector_Face::EULER_Z()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.media.FaceDetector$Face",
 			"EULER_Z"
 		);

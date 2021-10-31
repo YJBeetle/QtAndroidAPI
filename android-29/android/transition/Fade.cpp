@@ -10,14 +10,14 @@ namespace android::transition
 	// Fields
 	jint Fade::IN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.transition.Fade",
 			"IN"
 		);
 	}
 	jint Fade::OUT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.transition.Fade",
 			"OUT"
 		);

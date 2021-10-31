@@ -7,21 +7,21 @@ namespace android::nfc::cardemulation
 	// Fields
 	jint HostApduService::DEACTIVATION_DESELECTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.cardemulation.HostApduService",
 			"DEACTIVATION_DESELECTED"
 		);
 	}
 	jint HostApduService::DEACTIVATION_LINK_LOSS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.nfc.cardemulation.HostApduService",
 			"DEACTIVATION_LINK_LOSS"
 		);
 	}
 	jstring HostApduService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.cardemulation.HostApduService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::nfc::cardemulation
 	}
 	jstring HostApduService::SERVICE_META_DATA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.nfc.cardemulation.HostApduService",
 			"SERVICE_META_DATA",
 			"Ljava/lang/String;"

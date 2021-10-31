@@ -6,35 +6,35 @@ namespace android::content::pm
 	// Fields
 	jint LauncherApps_ShortcutQuery::FLAG_GET_KEY_FIELDS_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.LauncherApps$ShortcutQuery",
 			"FLAG_GET_KEY_FIELDS_ONLY"
 		);
 	}
 	jint LauncherApps_ShortcutQuery::FLAG_MATCH_DYNAMIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.LauncherApps$ShortcutQuery",
 			"FLAG_MATCH_DYNAMIC"
 		);
 	}
 	jint LauncherApps_ShortcutQuery::FLAG_MATCH_MANIFEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.LauncherApps$ShortcutQuery",
 			"FLAG_MATCH_MANIFEST"
 		);
 	}
 	jint LauncherApps_ShortcutQuery::FLAG_MATCH_PINNED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.LauncherApps$ShortcutQuery",
 			"FLAG_MATCH_PINNED"
 		);
 	}
 	jint LauncherApps_ShortcutQuery::FLAG_MATCH_PINNED_BY_ANY_LAUNCHER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.LauncherApps$ShortcutQuery",
 			"FLAG_MATCH_PINNED_BY_ANY_LAUNCHER"
 		);

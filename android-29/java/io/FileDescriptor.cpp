@@ -5,7 +5,7 @@ namespace java::io
 	// Fields
 	java::io::FileDescriptor FileDescriptor::err()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.io.FileDescriptor",
 			"err",
 			"Ljava/io/FileDescriptor;"
@@ -13,7 +13,7 @@ namespace java::io
 	}
 	java::io::FileDescriptor FileDescriptor::in()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.io.FileDescriptor",
 			"in",
 			"Ljava/io/FileDescriptor;"
@@ -21,7 +21,7 @@ namespace java::io
 	}
 	java::io::FileDescriptor FileDescriptor::out()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"java.io.FileDescriptor",
 			"out",
 			"Ljava/io/FileDescriptor;"

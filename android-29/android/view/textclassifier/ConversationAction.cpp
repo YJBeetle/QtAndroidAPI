@@ -8,7 +8,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass ConversationAction::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -16,7 +16,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationAction::TYPE_CALL_PHONE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_CALL_PHONE",
 			"Ljava/lang/String;"
@@ -24,7 +24,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationAction::TYPE_CREATE_REMINDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_CREATE_REMINDER",
 			"Ljava/lang/String;"
@@ -32,7 +32,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationAction::TYPE_OPEN_URL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_OPEN_URL",
 			"Ljava/lang/String;"
@@ -40,7 +40,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationAction::TYPE_SEND_EMAIL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_SEND_EMAIL",
 			"Ljava/lang/String;"
@@ -48,7 +48,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationAction::TYPE_SEND_SMS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_SEND_SMS",
 			"Ljava/lang/String;"
@@ -56,7 +56,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationAction::TYPE_SHARE_LOCATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_SHARE_LOCATION",
 			"Ljava/lang/String;"
@@ -64,7 +64,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationAction::TYPE_TEXT_REPLY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_TEXT_REPLY",
 			"Ljava/lang/String;"
@@ -72,7 +72,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationAction::TYPE_TRACK_FLIGHT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_TRACK_FLIGHT",
 			"Ljava/lang/String;"
@@ -80,7 +80,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationAction::TYPE_VIEW_CALENDAR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_VIEW_CALENDAR",
 			"Ljava/lang/String;"
@@ -88,7 +88,7 @@ namespace android::view::textclassifier
 	}
 	jstring ConversationAction::TYPE_VIEW_MAP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
 			"TYPE_VIEW_MAP",
 			"Ljava/lang/String;"

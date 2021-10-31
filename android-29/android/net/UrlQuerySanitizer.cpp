@@ -23,7 +23,7 @@ namespace android::net
 	// Methods
 	__JniBaseClass UrlQuerySanitizer::getAllButNulAndAngleBracketsLegal()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
 			"getAllButNulAndAngleBracketsLegal",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
@@ -31,7 +31,7 @@ namespace android::net
 	}
 	__JniBaseClass UrlQuerySanitizer::getAllButNulLegal()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
 			"getAllButNulLegal",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
@@ -39,7 +39,7 @@ namespace android::net
 	}
 	__JniBaseClass UrlQuerySanitizer::getAllButWhitespaceLegal()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
 			"getAllButWhitespaceLegal",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
@@ -47,7 +47,7 @@ namespace android::net
 	}
 	__JniBaseClass UrlQuerySanitizer::getAllIllegal()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
 			"getAllIllegal",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
@@ -55,7 +55,7 @@ namespace android::net
 	}
 	__JniBaseClass UrlQuerySanitizer::getAmpAndSpaceLegal()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
 			"getAmpAndSpaceLegal",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
@@ -63,7 +63,7 @@ namespace android::net
 	}
 	__JniBaseClass UrlQuerySanitizer::getAmpLegal()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
 			"getAmpLegal",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
@@ -71,7 +71,7 @@ namespace android::net
 	}
 	__JniBaseClass UrlQuerySanitizer::getSpaceLegal()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
 			"getSpaceLegal",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
@@ -79,7 +79,7 @@ namespace android::net
 	}
 	__JniBaseClass UrlQuerySanitizer::getUrlAndSpaceLegal()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
 			"getUrlAndSpaceLegal",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
@@ -87,7 +87,7 @@ namespace android::net
 	}
 	__JniBaseClass UrlQuerySanitizer::getUrlLegal()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
 			"getUrlLegal",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"

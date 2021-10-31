@@ -6,7 +6,7 @@ namespace android::content::res
 	// Fields
 	__JniBaseClass ObbInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.res.ObbInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,7 +14,7 @@ namespace android::content::res
 	}
 	jint ObbInfo::OBB_OVERLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.res.ObbInfo",
 			"OBB_OVERLAY"
 		);

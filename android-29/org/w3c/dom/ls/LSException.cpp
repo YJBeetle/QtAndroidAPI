@@ -5,14 +5,14 @@ namespace org::w3c::dom::ls
 	// Fields
 	jshort LSException::PARSE_ERR()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"org.w3c.dom.ls.LSException",
 			"PARSE_ERR"
 		);
 	}
 	jshort LSException::SERIALIZE_ERR()
 	{
-		return QAndroidJniObject::getStaticField<jshort>(
+		return getStaticField<jshort>(
 			"org.w3c.dom.ls.LSException",
 			"SERIALIZE_ERR"
 		);

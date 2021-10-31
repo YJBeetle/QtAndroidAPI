@@ -8,7 +8,7 @@ namespace android::media::midi
 	// Fields
 	jstring MidiDeviceService::SERVICE_INTERFACE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.media.midi.MidiDeviceService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"

@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	jstring ContactsContract_Intents::ACTION_VOICE_SEND_MESSAGE_TO_CONTACTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"ACTION_VOICE_SEND_MESSAGE_TO_CONTACTS",
 			"Ljava/lang/String;"
@@ -13,7 +13,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::ATTACH_IMAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"ATTACH_IMAGE",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::CONTACTS_DATABASE_CREATED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"CONTACTS_DATABASE_CREATED",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::EXTRA_CREATE_DESCRIPTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"EXTRA_CREATE_DESCRIPTION",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::EXTRA_FORCE_CREATE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"EXTRA_FORCE_CREATE",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::EXTRA_RECIPIENT_CONTACT_CHAT_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"EXTRA_RECIPIENT_CONTACT_CHAT_ID",
 			"Ljava/lang/String;"
@@ -53,7 +53,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::EXTRA_RECIPIENT_CONTACT_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"EXTRA_RECIPIENT_CONTACT_NAME",
 			"Ljava/lang/String;"
@@ -61,7 +61,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::EXTRA_RECIPIENT_CONTACT_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"EXTRA_RECIPIENT_CONTACT_URI",
 			"Ljava/lang/String;"
@@ -69,7 +69,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::INVITE_CONTACT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"INVITE_CONTACT",
 			"Ljava/lang/String;"
@@ -77,7 +77,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::METADATA_ACCOUNT_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"METADATA_ACCOUNT_TYPE",
 			"Ljava/lang/String;"
@@ -85,7 +85,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::METADATA_MIMETYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"METADATA_MIMETYPE",
 			"Ljava/lang/String;"
@@ -93,7 +93,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::SEARCH_SUGGESTION_CLICKED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"SEARCH_SUGGESTION_CLICKED",
 			"Ljava/lang/String;"
@@ -101,7 +101,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED",
 			"Ljava/lang/String;"
@@ -109,7 +109,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED",
 			"Ljava/lang/String;"
@@ -117,7 +117,7 @@ namespace android::provider
 	}
 	jstring ContactsContract_Intents::SHOW_OR_CREATE_CONTACT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.ContactsContract$Intents",
 			"SHOW_OR_CREATE_CONTACT",
 			"Ljava/lang/String;"

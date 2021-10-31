@@ -11,7 +11,7 @@ namespace android::hardware::display
 	// Fields
 	jstring DisplayManager::DISPLAY_CATEGORY_PRESENTATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.display.DisplayManager",
 			"DISPLAY_CATEGORY_PRESENTATION",
 			"Ljava/lang/String;"
@@ -19,35 +19,35 @@ namespace android::hardware::display
 	}
 	jint DisplayManager::VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.display.DisplayManager",
 			"VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR"
 		);
 	}
 	jint DisplayManager::VIRTUAL_DISPLAY_FLAG_OWN_CONTENT_ONLY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.display.DisplayManager",
 			"VIRTUAL_DISPLAY_FLAG_OWN_CONTENT_ONLY"
 		);
 	}
 	jint DisplayManager::VIRTUAL_DISPLAY_FLAG_PRESENTATION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.display.DisplayManager",
 			"VIRTUAL_DISPLAY_FLAG_PRESENTATION"
 		);
 	}
 	jint DisplayManager::VIRTUAL_DISPLAY_FLAG_PUBLIC()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.display.DisplayManager",
 			"VIRTUAL_DISPLAY_FLAG_PUBLIC"
 		);
 	}
 	jint DisplayManager::VIRTUAL_DISPLAY_FLAG_SECURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.hardware.display.DisplayManager",
 			"VIRTUAL_DISPLAY_FLAG_SECURE"
 		);

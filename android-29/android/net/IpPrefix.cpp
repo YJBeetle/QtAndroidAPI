@@ -7,7 +7,7 @@ namespace android::net
 	// Fields
 	__JniBaseClass IpPrefix::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.net.IpPrefix",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

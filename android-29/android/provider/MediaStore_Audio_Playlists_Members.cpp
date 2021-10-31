@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring MediaStore_Audio_Playlists_Members::AUDIO_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"AUDIO_ID",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Playlists_Members::CONTENT_DIRECTORY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"CONTENT_DIRECTORY",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Playlists_Members::DEFAULT_SORT_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Playlists_Members::PLAYLIST_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"PLAYLIST_ID",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Playlists_Members::PLAY_ORDER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"PLAY_ORDER",
 			"Ljava/lang/String;"
@@ -47,7 +47,7 @@ namespace android::provider
 	}
 	jstring MediaStore_Audio_Playlists_Members::_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"_ID",
 			"Ljava/lang/String;"
@@ -67,7 +67,7 @@ namespace android::provider
 	// Methods
 	android::net::Uri MediaStore_Audio_Playlists_Members::getContentUri(jstring arg0, jlong arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",
@@ -77,7 +77,7 @@ namespace android::provider
 	}
 	jboolean MediaStore_Audio_Playlists_Members::moveItem(android::content::ContentResolver arg0, jlong arg1, jint arg2, jint arg3)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"moveItem",
 			"(Landroid/content/ContentResolver;JII)Z",

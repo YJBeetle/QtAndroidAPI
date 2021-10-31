@@ -7,7 +7,7 @@ namespace android::view::textclassifier
 	// Fields
 	__JniBaseClass TextSelection::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextSelection",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"

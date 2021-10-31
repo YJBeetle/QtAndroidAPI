@@ -9,7 +9,7 @@ namespace android::text::style
 	// Fields
 	jint BulletSpan::STANDARD_GAP_WIDTH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.text.style.BulletSpan",
 			"STANDARD_GAP_WIDTH"
 		);

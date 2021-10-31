@@ -19,7 +19,7 @@ namespace android::text::method
 	// Methods
 	android::text::method::PasswordTransformationMethod PasswordTransformationMethod::getInstance()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.text.method.PasswordTransformationMethod",
 			"getInstance",
 			"()Landroid/text/method/PasswordTransformationMethod;"
