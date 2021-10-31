@@ -25,6 +25,8 @@ file(GLOB_RECURSE SRC_LIST
 
 add_subdirectory(../../android-29 QtAndroidAPI)
 
-add_library(${PROJECT_NAME} SHARED ${SRC_LIST})
+qt_add_executable(${PROJECT_NAME} MANUAL_FINALIZATION ${SRC_LIST})
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
 target_link_libraries(${PROJECT_NAME} PRIVATE QtAndroidAPI)
+
+qt_finalize_executable(${PROJECT_NAME})
