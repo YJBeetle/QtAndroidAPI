@@ -27,9 +27,9 @@ namespace android::net
 		static jint TYPE_A();
 		static jint TYPE_AAAA();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DnsResolver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DnsResolver(QAndroidJniObject obj);
+		DnsResolver(QJniObject obj);
 		
 		// Constructors
 		

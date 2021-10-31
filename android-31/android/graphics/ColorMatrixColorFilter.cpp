@@ -5,8 +5,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ColorMatrixColorFilter::ColorMatrixColorFilter(QAndroidJniObject obj) : android::graphics::ColorFilter(obj) {}
+	// QJniObject forward
+	ColorMatrixColorFilter::ColorMatrixColorFilter(QJniObject obj) : android::graphics::ColorFilter(obj) {}
 	
 	// Constructors
 	ColorMatrixColorFilter::ColorMatrixColorFilter(jfloatArray arg0)

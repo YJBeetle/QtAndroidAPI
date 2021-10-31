@@ -10,9 +10,9 @@ namespace android::telephony::ims::feature
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MmTelFeature(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MmTelFeature(QAndroidJniObject obj);
+		MmTelFeature(QJniObject obj);
 		
 		// Constructors
 		

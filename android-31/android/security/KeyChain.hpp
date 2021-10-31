@@ -40,9 +40,9 @@ namespace android::security
 		static jstring EXTRA_PKCS12();
 		static jstring KEY_ALIAS_SELECTION_DENIED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyChain(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyChain(QAndroidJniObject obj);
+		KeyChain(QJniObject obj);
 		
 		// Constructors
 		KeyChain();

@@ -30,9 +30,9 @@ namespace android::media::metrics
 		static jint TRACK_TYPE_TEXT();
 		static jint TRACK_TYPE_VIDEO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TrackChangeEvent(const char *className, const char *sig, Ts...agv) : android::media::metrics::Event(className, sig, std::forward<Ts>(agv)...) {}
-		TrackChangeEvent(QAndroidJniObject obj);
+		TrackChangeEvent(QJniObject obj);
 		
 		// Constructors
 		

@@ -21,9 +21,9 @@ namespace android::media
 		static __JniBaseClass KEY_PROGRAM_ID();
 		static __JniBaseClass KEY_SAMPLE_RATE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AudioMetadata_Format(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AudioMetadata_Format(QAndroidJniObject obj);
+		AudioMetadata_Format(QJniObject obj);
 		
 		// Constructors
 		

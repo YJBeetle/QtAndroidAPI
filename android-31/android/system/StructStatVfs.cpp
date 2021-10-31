@@ -70,8 +70,8 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StructStatVfs::StructStatVfs(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StructStatVfs::StructStatVfs(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StructStatVfs::StructStatVfs(jlong arg0, jlong arg1, jlong arg2, jlong arg3, jlong arg4, jlong arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10)

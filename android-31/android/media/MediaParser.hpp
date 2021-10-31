@@ -59,9 +59,9 @@ namespace android::media
 		static jint SAMPLE_FLAG_KEY_FRAME();
 		static jint SAMPLE_FLAG_LAST_SAMPLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaParser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaParser(QAndroidJniObject obj);
+		MediaParser(QJniObject obj);
 		
 		// Constructors
 		

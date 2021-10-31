@@ -19,8 +19,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_PinnedPositions::ContactsContract_PinnedPositions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_PinnedPositions::ContactsContract_PinnedPositions(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ContactsContract_PinnedPositions::ContactsContract_PinnedPositions()

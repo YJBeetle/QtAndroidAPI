@@ -6,8 +6,8 @@ namespace android::icu::number
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CurrencyPrecision::CurrencyPrecision(QAndroidJniObject obj) : android::icu::number::Precision(obj) {}
+	// QJniObject forward
+	CurrencyPrecision::CurrencyPrecision(QJniObject obj) : android::icu::number::Precision(obj) {}
 	
 	// Constructors
 	

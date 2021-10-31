@@ -15,9 +15,9 @@ namespace android::bluetooth
 		// Fields
 		static jstring ACTION_CONNECTION_STATE_CHANGED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothHearingAid(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothHearingAid(QAndroidJniObject obj);
+		BluetoothHearingAid(QJniObject obj);
 		
 		// Constructors
 		

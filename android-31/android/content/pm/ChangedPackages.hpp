@@ -15,9 +15,9 @@ namespace android::content::pm
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ChangedPackages(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ChangedPackages(QAndroidJniObject obj);
+		ChangedPackages(QJniObject obj);
 		
 		// Constructors
 		ChangedPackages(jint arg0, __JniBaseClass arg1);

@@ -57,8 +57,8 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ScanResult::ScanResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ScanResult::ScanResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ScanResult::ScanResult(android::bluetooth::BluetoothDevice arg0, android::bluetooth::le::ScanRecord arg1, jint arg2, jlong arg3)

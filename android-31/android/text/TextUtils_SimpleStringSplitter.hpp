@@ -10,9 +10,9 @@ namespace android::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextUtils_SimpleStringSplitter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TextUtils_SimpleStringSplitter(QAndroidJniObject obj);
+		TextUtils_SimpleStringSplitter(QJniObject obj);
 		
 		// Constructors
 		TextUtils_SimpleStringSplitter(jchar arg0);

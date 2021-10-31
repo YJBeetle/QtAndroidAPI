@@ -5,8 +5,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Paths::Paths(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Paths::Paths(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

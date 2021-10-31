@@ -32,8 +32,8 @@ namespace android::drm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DrmStore_RightsStatus::DrmStore_RightsStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DrmStore_RightsStatus::DrmStore_RightsStatus(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DrmStore_RightsStatus::DrmStore_RightsStatus()

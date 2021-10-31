@@ -14,9 +14,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GestureDetector_SimpleOnGestureListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GestureDetector_SimpleOnGestureListener(QAndroidJniObject obj);
+		GestureDetector_SimpleOnGestureListener(QJniObject obj);
 		
 		// Constructors
 		GestureDetector_SimpleOnGestureListener();

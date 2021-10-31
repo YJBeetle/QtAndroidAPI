@@ -11,9 +11,9 @@ namespace android::telephony::mbms
 		// Fields
 		static jint SIGNAL_STRENGTH_UNAVAILABLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StreamingServiceCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StreamingServiceCallback(QAndroidJniObject obj);
+		StreamingServiceCallback(QJniObject obj);
 		
 		// Constructors
 		StreamingServiceCallback();

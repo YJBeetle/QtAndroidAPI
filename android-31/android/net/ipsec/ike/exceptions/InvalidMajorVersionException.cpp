@@ -4,8 +4,8 @@ namespace android::net::ipsec::ike::exceptions
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvalidMajorVersionException::InvalidMajorVersionException(QAndroidJniObject obj) : android::net::ipsec::ike::exceptions::IkeProtocolException(obj) {}
+	// QJniObject forward
+	InvalidMajorVersionException::InvalidMajorVersionException(QJniObject obj) : android::net::ipsec::ike::exceptions::IkeProtocolException(obj) {}
 	
 	// Constructors
 	InvalidMajorVersionException::InvalidMajorVersionException(jbyte arg0)

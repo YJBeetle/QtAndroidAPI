@@ -18,8 +18,8 @@ namespace android::util
 		).object<jobject>();
 	}
 	
-	// QAndroidJniObject forward
-	Pair::Pair(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Pair::Pair(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Pair::Pair(jobject arg0, jobject arg1)

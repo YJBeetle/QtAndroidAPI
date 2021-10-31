@@ -4,8 +4,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SocketTimeoutException::SocketTimeoutException(QAndroidJniObject obj) : java::io::InterruptedIOException(obj) {}
+	// QJniObject forward
+	SocketTimeoutException::SocketTimeoutException(QJniObject obj) : java::io::InterruptedIOException(obj) {}
 	
 	// Constructors
 	SocketTimeoutException::SocketTimeoutException()

@@ -20,9 +20,9 @@ namespace android::widget::inline
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InlineContentView(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		InlineContentView(QAndroidJniObject obj);
+		InlineContentView(QJniObject obj);
 		
 		// Constructors
 		

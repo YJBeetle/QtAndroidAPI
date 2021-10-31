@@ -10,9 +10,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PackageIdentifier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PackageIdentifier(QAndroidJniObject obj);
+		PackageIdentifier(QJniObject obj);
 		
 		// Constructors
 		PackageIdentifier(jstring arg0, jbyteArray arg1);

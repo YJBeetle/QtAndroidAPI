@@ -13,8 +13,8 @@ namespace android::view::translation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TranslationRequestValue::TranslationRequestValue(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TranslationRequestValue::TranslationRequestValue(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

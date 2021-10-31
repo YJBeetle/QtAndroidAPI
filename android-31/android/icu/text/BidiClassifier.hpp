@@ -10,9 +10,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BidiClassifier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BidiClassifier(QAndroidJniObject obj);
+		BidiClassifier(QJniObject obj);
 		
 		// Constructors
 		BidiClassifier(jobject arg0);

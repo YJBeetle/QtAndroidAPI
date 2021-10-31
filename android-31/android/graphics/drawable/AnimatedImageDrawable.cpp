@@ -17,8 +17,8 @@ namespace android::graphics::drawable
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AnimatedImageDrawable::AnimatedImageDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
+	// QJniObject forward
+	AnimatedImageDrawable::AnimatedImageDrawable(QJniObject obj) : android::graphics::drawable::Drawable(obj) {}
 	
 	// Constructors
 	AnimatedImageDrawable::AnimatedImageDrawable()

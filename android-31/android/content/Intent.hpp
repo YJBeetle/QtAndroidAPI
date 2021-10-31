@@ -378,9 +378,9 @@ namespace android::content
 		static jint URI_ANDROID_APP_SCHEME();
 		static jint URI_INTENT_SCHEME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Intent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Intent(QAndroidJniObject obj);
+		Intent(QJniObject obj);
 		
 		// Constructors
 		Intent();

@@ -11,8 +11,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaRouter2::MediaRouter2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaRouter2::MediaRouter2(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -51,9 +51,9 @@ namespace java::io
 		// Fields
 		static jarray NO_FIELDS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ObjectStreamClass(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ObjectStreamClass(QAndroidJniObject obj);
+		ObjectStreamClass(QJniObject obj);
 		
 		// Constructors
 		

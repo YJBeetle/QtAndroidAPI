@@ -20,9 +20,9 @@ namespace android::provider
 		static jstring LATITUDE();
 		static jstring LONGITUDE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CallLog_Locations(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CallLog_Locations(QAndroidJniObject obj);
+		CallLog_Locations(QJniObject obj);
 		
 		// Constructors
 		

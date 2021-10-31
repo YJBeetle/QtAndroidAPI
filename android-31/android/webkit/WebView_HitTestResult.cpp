@@ -74,8 +74,8 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WebView_HitTestResult::WebView_HitTestResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebView_HitTestResult::WebView_HitTestResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

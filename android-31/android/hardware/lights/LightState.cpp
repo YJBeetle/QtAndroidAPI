@@ -13,8 +13,8 @@ namespace android::hardware::lights
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LightState::LightState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LightState::LightState(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

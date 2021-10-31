@@ -6,8 +6,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_Action_WearableExtender::Notification_Action_WearableExtender(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Notification_Action_WearableExtender::Notification_Action_WearableExtender(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Notification_Action_WearableExtender::Notification_Action_WearableExtender()

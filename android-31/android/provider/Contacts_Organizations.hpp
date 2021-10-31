@@ -21,9 +21,9 @@ namespace android::provider
 		static android::net::Uri CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Contacts_Organizations(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Organizations(QAndroidJniObject obj);
+		Contacts_Organizations(QJniObject obj);
 		
 		// Constructors
 		

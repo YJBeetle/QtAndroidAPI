@@ -14,9 +14,9 @@ namespace android::telephony::euicc
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DownloadableSubscription_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DownloadableSubscription_Builder(QAndroidJniObject obj);
+		DownloadableSubscription_Builder(QJniObject obj);
 		
 		// Constructors
 		DownloadableSubscription_Builder(android::telephony::euicc::DownloadableSubscription arg0);

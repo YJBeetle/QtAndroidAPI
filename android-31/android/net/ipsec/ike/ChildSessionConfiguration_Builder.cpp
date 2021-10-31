@@ -5,8 +5,8 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ChildSessionConfiguration_Builder::ChildSessionConfiguration_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ChildSessionConfiguration_Builder::ChildSessionConfiguration_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ChildSessionConfiguration_Builder::ChildSessionConfiguration_Builder(__JniBaseClass arg0, __JniBaseClass arg1)

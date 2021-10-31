@@ -19,9 +19,9 @@ namespace android::provider
 		static jint SDN_EF_TYPE();
 		static jint UNKNOWN_EF_TYPE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_SimAccount(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_SimAccount(QAndroidJniObject obj);
+		ContactsContract_SimAccount(QJniObject obj);
 		
 		// Constructors
 		

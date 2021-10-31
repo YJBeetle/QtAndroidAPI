@@ -47,9 +47,9 @@ namespace android::telephony
 		static jstring KEY_SUPPORTED_INTEGRITY_ALGORITHMS_INT_ARRAY();
 		static jstring KEY_SUPPORTED_PRF_ALGORITHMS_INT_ARRAY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager_Iwlan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager_Iwlan(QAndroidJniObject obj);
+		CarrierConfigManager_Iwlan(QJniObject obj);
 		
 		// Constructors
 		

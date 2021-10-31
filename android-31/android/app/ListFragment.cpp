@@ -9,8 +9,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ListFragment::ListFragment(QAndroidJniObject obj) : android::app::Fragment(obj) {}
+	// QJniObject forward
+	ListFragment::ListFragment(QJniObject obj) : android::app::Fragment(obj) {}
 	
 	// Constructors
 	ListFragment::ListFragment()

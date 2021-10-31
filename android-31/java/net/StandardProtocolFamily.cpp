@@ -28,8 +28,8 @@ namespace java::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StandardProtocolFamily::StandardProtocolFamily(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	StandardProtocolFamily::StandardProtocolFamily(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

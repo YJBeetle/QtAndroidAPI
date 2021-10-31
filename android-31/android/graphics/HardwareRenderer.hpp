@@ -27,9 +27,9 @@ namespace android::graphics
 		static jint SYNC_OK();
 		static jint SYNC_REDRAW_REQUESTED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HardwareRenderer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		HardwareRenderer(QAndroidJniObject obj);
+		HardwareRenderer(QJniObject obj);
 		
 		// Constructors
 		HardwareRenderer();

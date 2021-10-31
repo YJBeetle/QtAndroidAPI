@@ -15,8 +15,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Messenger::Messenger(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Messenger::Messenger(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Messenger::Messenger(android::os::Handler arg0)

@@ -6,8 +6,8 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IkeSessionConnectionInfo::IkeSessionConnectionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IkeSessionConnectionInfo::IkeSessionConnectionInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	IkeSessionConnectionInfo::IkeSessionConnectionInfo(java::net::InetAddress arg0, java::net::InetAddress arg1, android::net::Network arg2)

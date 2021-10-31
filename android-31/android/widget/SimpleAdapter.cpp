@@ -11,8 +11,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SimpleAdapter::SimpleAdapter(QAndroidJniObject obj) : android::widget::BaseAdapter(obj) {}
+	// QJniObject forward
+	SimpleAdapter::SimpleAdapter(QJniObject obj) : android::widget::BaseAdapter(obj) {}
 	
 	// Constructors
 	SimpleAdapter::SimpleAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4)

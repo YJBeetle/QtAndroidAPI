@@ -326,8 +326,8 @@ namespace android::text::format
 		).object<jintArray>();
 	}
 	
-	// QAndroidJniObject forward
-	DateUtils::DateUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DateUtils::DateUtils(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DateUtils::DateUtils()

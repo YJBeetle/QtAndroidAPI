@@ -121,8 +121,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ApplicationErrorReport::ApplicationErrorReport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ApplicationErrorReport::ApplicationErrorReport(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ApplicationErrorReport::ApplicationErrorReport()

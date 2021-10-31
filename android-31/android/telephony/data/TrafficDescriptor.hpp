@@ -15,9 +15,9 @@ namespace android::telephony::data
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TrafficDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TrafficDescriptor(QAndroidJniObject obj);
+		TrafficDescriptor(QJniObject obj);
 		
 		// Constructors
 		

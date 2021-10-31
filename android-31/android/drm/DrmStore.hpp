@@ -10,9 +10,9 @@ namespace android::drm
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DrmStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DrmStore(QAndroidJniObject obj);
+		DrmStore(QJniObject obj);
 		
 		// Constructors
 		DrmStore();

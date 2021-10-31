@@ -6,8 +6,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VpnManager::VpnManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VpnManager::VpnManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

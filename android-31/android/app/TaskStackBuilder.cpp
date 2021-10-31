@@ -10,8 +10,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TaskStackBuilder::TaskStackBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TaskStackBuilder::TaskStackBuilder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

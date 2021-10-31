@@ -6,8 +6,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyPairGeneratorSpi::KeyPairGeneratorSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyPairGeneratorSpi::KeyPairGeneratorSpi(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyPairGeneratorSpi::KeyPairGeneratorSpi()

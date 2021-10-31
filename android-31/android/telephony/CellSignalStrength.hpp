@@ -15,9 +15,9 @@ namespace android::telephony
 		static jint SIGNAL_STRENGTH_NONE_OR_UNKNOWN();
 		static jint SIGNAL_STRENGTH_POOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CellSignalStrength(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CellSignalStrength(QAndroidJniObject obj);
+		CellSignalStrength(QJniObject obj);
 		
 		// Constructors
 		

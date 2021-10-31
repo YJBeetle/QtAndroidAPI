@@ -18,9 +18,9 @@ namespace android::system
 		jshort revents();
 		jobject userData();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StructPollfd(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StructPollfd(QAndroidJniObject obj);
+		StructPollfd(QJniObject obj);
 		
 		// Constructors
 		StructPollfd();

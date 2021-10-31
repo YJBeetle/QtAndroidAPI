@@ -21,8 +21,8 @@ namespace android::text
 		).object<jobject>();
 	}
 	
-	// QAndroidJniObject forward
-	Selection::Selection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Selection::Selection(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

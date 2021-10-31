@@ -108,8 +108,8 @@ namespace java::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumberFormat_Field::NumberFormat_Field(QAndroidJniObject obj) : java::text::Format_Field(obj) {}
+	// QJniObject forward
+	NumberFormat_Field::NumberFormat_Field(QJniObject obj) : java::text::Format_Field(obj) {}
 	
 	// Constructors
 	

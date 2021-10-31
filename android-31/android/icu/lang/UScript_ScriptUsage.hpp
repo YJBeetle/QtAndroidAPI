@@ -17,9 +17,9 @@ namespace android::icu::lang
 		static android::icu::lang::UScript_ScriptUsage RECOMMENDED();
 		static android::icu::lang::UScript_ScriptUsage UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UScript_ScriptUsage(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		UScript_ScriptUsage(QAndroidJniObject obj);
+		UScript_ScriptUsage(QJniObject obj);
 		
 		// Constructors
 		

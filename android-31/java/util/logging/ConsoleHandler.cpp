@@ -5,8 +5,8 @@ namespace java::util::logging
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConsoleHandler::ConsoleHandler(QAndroidJniObject obj) : java::util::logging::StreamHandler(obj) {}
+	// QJniObject forward
+	ConsoleHandler::ConsoleHandler(QJniObject obj) : java::util::logging::StreamHandler(obj) {}
 	
 	// Constructors
 	ConsoleHandler::ConsoleHandler()

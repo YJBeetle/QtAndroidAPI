@@ -13,8 +13,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PictureInPictureUiState::PictureInPictureUiState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PictureInPictureUiState::PictureInPictureUiState(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

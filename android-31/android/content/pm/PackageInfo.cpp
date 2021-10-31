@@ -239,8 +239,8 @@ namespace android::content::pm
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	PackageInfo::PackageInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PackageInfo::PackageInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PackageInfo::PackageInfo()

@@ -11,9 +11,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EmbossMaskFilter(const char *className, const char *sig, Ts...agv) : android::graphics::MaskFilter(className, sig, std::forward<Ts>(agv)...) {}
-		EmbossMaskFilter(QAndroidJniObject obj);
+		EmbossMaskFilter(QJniObject obj);
 		
 		// Constructors
 		EmbossMaskFilter(jfloatArray arg0, jfloat arg1, jfloat arg2, jfloat arg3);

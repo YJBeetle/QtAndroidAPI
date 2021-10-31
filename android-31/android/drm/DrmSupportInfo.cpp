@@ -4,8 +4,8 @@ namespace android::drm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DrmSupportInfo::DrmSupportInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DrmSupportInfo::DrmSupportInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DrmSupportInfo::DrmSupportInfo()

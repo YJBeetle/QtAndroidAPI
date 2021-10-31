@@ -61,8 +61,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PendingIntent::PendingIntent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PendingIntent::PendingIntent(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

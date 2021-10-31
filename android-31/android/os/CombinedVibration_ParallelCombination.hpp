@@ -18,9 +18,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CombinedVibration_ParallelCombination(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CombinedVibration_ParallelCombination(QAndroidJniObject obj);
+		CombinedVibration_ParallelCombination(QJniObject obj);
 		
 		// Constructors
 		

@@ -10,9 +10,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IpSecManager_SecurityParameterIndex(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecManager_SecurityParameterIndex(QAndroidJniObject obj);
+		IpSecManager_SecurityParameterIndex(QJniObject obj);
 		
 		// Constructors
 		

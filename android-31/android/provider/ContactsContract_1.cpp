@@ -4,8 +4,8 @@ namespace android::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContactsContract_1::ContactsContract_1(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_1::ContactsContract_1(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

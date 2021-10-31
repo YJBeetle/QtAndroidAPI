@@ -4,8 +4,8 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SubscriptionManager_OnOpportunisticSubscriptionsChangedListener::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SubscriptionManager_OnOpportunisticSubscriptionsChangedListener::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SubscriptionManager_OnOpportunisticSubscriptionsChangedListener::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener()

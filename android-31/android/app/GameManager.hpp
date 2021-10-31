@@ -14,9 +14,9 @@ namespace android::app
 		static jint GAME_MODE_STANDARD();
 		static jint GAME_MODE_UNSUPPORTED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GameManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GameManager(QAndroidJniObject obj);
+		GameManager(QJniObject obj);
 		
 		// Constructors
 		

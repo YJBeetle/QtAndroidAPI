@@ -22,9 +22,9 @@ namespace android::telephony
 		static jint ERROR_REMOTE_END_CLOSED();
 		static jint ERROR_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TelephonyManager_CallComposerException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_CallComposerException(QAndroidJniObject obj);
+		TelephonyManager_CallComposerException(QJniObject obj);
 		
 		// Constructors
 		TelephonyManager_CallComposerException(jint arg0, java::io::IOException arg1);

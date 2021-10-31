@@ -6,8 +6,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnderlineSpan::UnderlineSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
+	// QJniObject forward
+	UnderlineSpan::UnderlineSpan(QJniObject obj) : android::text::style::CharacterStyle(obj) {}
 	
 	// Constructors
 	UnderlineSpan::UnderlineSpan()

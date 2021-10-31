@@ -37,9 +37,9 @@ namespace android::os
 		static jint THREAD_PRIORITY_VIDEO();
 		static jint WIFI_UID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Process(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Process(QAndroidJniObject obj);
+		Process(QJniObject obj);
 		
 		// Constructors
 		Process();

@@ -13,8 +13,8 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LuhnChecksumValidator::LuhnChecksumValidator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LuhnChecksumValidator::LuhnChecksumValidator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LuhnChecksumValidator::LuhnChecksumValidator(jarray arg0)

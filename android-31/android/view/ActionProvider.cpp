@@ -6,8 +6,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ActionProvider::ActionProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ActionProvider::ActionProvider(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ActionProvider::ActionProvider(android::content::Context arg0)

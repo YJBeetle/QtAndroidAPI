@@ -22,9 +22,9 @@ namespace android::view::textclassifier
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConversationAction_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConversationAction_Builder(QAndroidJniObject obj);
+		ConversationAction_Builder(QJniObject obj);
 		
 		// Constructors
 		ConversationAction_Builder(jstring arg0);

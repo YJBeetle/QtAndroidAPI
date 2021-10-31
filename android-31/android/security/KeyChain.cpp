@@ -89,8 +89,8 @@ namespace android::security
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	KeyChain::KeyChain(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyChain::KeyChain(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyChain::KeyChain()

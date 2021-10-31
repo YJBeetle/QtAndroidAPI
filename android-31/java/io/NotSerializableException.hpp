@@ -13,9 +13,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NotSerializableException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		NotSerializableException(QAndroidJniObject obj);
+		NotSerializableException(QJniObject obj);
 		
 		// Constructors
 		NotSerializableException();

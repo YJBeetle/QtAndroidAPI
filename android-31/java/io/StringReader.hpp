@@ -11,9 +11,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StringReader(const char *className, const char *sig, Ts...agv) : java::io::Reader(className, sig, std::forward<Ts>(agv)...) {}
-		StringReader(QAndroidJniObject obj);
+		StringReader(QJniObject obj);
 		
 		// Constructors
 		StringReader(jstring arg0);

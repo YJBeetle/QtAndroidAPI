@@ -26,9 +26,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Instrumentation_ActivityMonitor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Instrumentation_ActivityMonitor(QAndroidJniObject obj);
+		Instrumentation_ActivityMonitor(QJniObject obj);
 		
 		// Constructors
 		Instrumentation_ActivityMonitor();

@@ -7,8 +7,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrivilegedActionException::PrivilegedActionException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	PrivilegedActionException::PrivilegedActionException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	PrivilegedActionException::PrivilegedActionException(java::lang::Exception arg0)

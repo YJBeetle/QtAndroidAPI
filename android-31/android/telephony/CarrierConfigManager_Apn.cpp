@@ -52,8 +52,8 @@ namespace android::telephony
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	CarrierConfigManager_Apn::CarrierConfigManager_Apn(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CarrierConfigManager_Apn::CarrierConfigManager_Apn(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

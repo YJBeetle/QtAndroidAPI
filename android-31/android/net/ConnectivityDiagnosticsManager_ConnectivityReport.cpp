@@ -104,8 +104,8 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ConnectivityDiagnosticsManager_ConnectivityReport::ConnectivityDiagnosticsManager_ConnectivityReport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConnectivityDiagnosticsManager_ConnectivityReport::ConnectivityDiagnosticsManager_ConnectivityReport(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ConnectivityDiagnosticsManager_ConnectivityReport::ConnectivityDiagnosticsManager_ConnectivityReport(android::net::Network arg0, jlong arg1, android::net::LinkProperties arg2, android::net::NetworkCapabilities arg3, android::os::PersistableBundle arg4)

@@ -26,9 +26,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FileUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FileUtils(QAndroidJniObject obj);
+		FileUtils(QJniObject obj);
 		
 		// Constructors
 		

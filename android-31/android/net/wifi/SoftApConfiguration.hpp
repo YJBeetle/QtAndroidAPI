@@ -23,9 +23,9 @@ namespace android::net::wifi
 		static jint SECURITY_TYPE_WPA3_SAE();
 		static jint SECURITY_TYPE_WPA3_SAE_TRANSITION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SoftApConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SoftApConfiguration(QAndroidJniObject obj);
+		SoftApConfiguration(QJniObject obj);
 		
 		// Constructors
 		

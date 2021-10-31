@@ -32,9 +32,9 @@ namespace android::view
 		static jint SPECIAL_FUNCTION();
 		static jint VIRTUAL_KEYBOARD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyCharacterMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyCharacterMap(QAndroidJniObject obj);
+		KeyCharacterMap(QJniObject obj);
 		
 		// Constructors
 		

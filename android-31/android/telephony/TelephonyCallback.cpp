@@ -4,8 +4,8 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TelephonyCallback::TelephonyCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TelephonyCallback::TelephonyCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TelephonyCallback::TelephonyCallback()

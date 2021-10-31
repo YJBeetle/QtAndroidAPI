@@ -12,8 +12,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SyncStateContract_Constants::SyncStateContract_Constants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SyncStateContract_Constants::SyncStateContract_Constants(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SyncStateContract_Constants::SyncStateContract_Constants()

@@ -24,9 +24,9 @@ namespace java::lang
 		static jint SIZE();
 		static jclass TYPE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Integer(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Integer(QAndroidJniObject obj);
+		Integer(QJniObject obj);
 		
 		// Constructors
 		Integer(jint arg0);

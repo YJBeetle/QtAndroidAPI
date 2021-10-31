@@ -163,8 +163,8 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WebViewClient::WebViewClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebViewClient::WebViewClient(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebViewClient::WebViewClient()

@@ -15,9 +15,9 @@ namespace android::telephony
 		static jstring KEY_PREFIX();
 		static jstring KEY_SHOW_VOWIFI_WEBVIEW_BOOL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager_ImsServiceEntitlement(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager_ImsServiceEntitlement(QAndroidJniObject obj);
+		CarrierConfigManager_ImsServiceEntitlement(QJniObject obj);
 		
 		// Constructors
 		

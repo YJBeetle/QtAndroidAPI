@@ -30,9 +30,9 @@ namespace java::lang
 		static jint SIZE();
 		static jclass TYPE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Float(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Float(QAndroidJniObject obj);
+		Float(QJniObject obj);
 		
 		// Constructors
 		Float(jdouble arg0);

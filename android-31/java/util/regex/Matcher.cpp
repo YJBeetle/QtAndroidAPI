@@ -7,8 +7,8 @@ namespace java::util::regex
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Matcher::Matcher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Matcher::Matcher(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

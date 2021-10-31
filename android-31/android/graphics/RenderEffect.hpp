@@ -34,9 +34,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RenderEffect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RenderEffect(QAndroidJniObject obj);
+		RenderEffect(QJniObject obj);
 		
 		// Constructors
 		

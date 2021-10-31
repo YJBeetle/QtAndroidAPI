@@ -31,9 +31,9 @@ namespace android::media::tv
 		static jstring EXTRA_PREVIEW_PROGRAM_ID();
 		static jstring EXTRA_WATCH_NEXT_PROGRAM_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TvContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TvContract(QAndroidJniObject obj);
+		TvContract(QJniObject obj);
 		
 		// Constructors
 		

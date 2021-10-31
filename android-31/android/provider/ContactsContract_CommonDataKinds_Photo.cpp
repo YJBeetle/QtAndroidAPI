@@ -52,8 +52,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_CommonDataKinds_Photo::ContactsContract_CommonDataKinds_Photo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_CommonDataKinds_Photo::ContactsContract_CommonDataKinds_Photo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

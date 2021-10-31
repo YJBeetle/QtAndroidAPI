@@ -33,9 +33,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScriptIntrinsic3DLUT(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptIntrinsic3DLUT(QAndroidJniObject obj);
+		ScriptIntrinsic3DLUT(QJniObject obj);
 		
 		// Constructors
 		

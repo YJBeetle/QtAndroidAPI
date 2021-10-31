@@ -22,9 +22,9 @@ namespace android::content::pm::verify::domain
 		static jint DOMAIN_STATE_SELECTED();
 		static jint DOMAIN_STATE_VERIFIED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DomainVerificationUserState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DomainVerificationUserState(QAndroidJniObject obj);
+		DomainVerificationUserState(QJniObject obj);
 		
 		// Constructors
 		

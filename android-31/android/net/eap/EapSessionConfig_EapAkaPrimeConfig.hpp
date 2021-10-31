@@ -12,9 +12,9 @@ namespace android::net::eap
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EapSessionConfig_EapAkaPrimeConfig(const char *className, const char *sig, Ts...agv) : android::net::eap::EapSessionConfig_EapAkaConfig(className, sig, std::forward<Ts>(agv)...) {}
-		EapSessionConfig_EapAkaPrimeConfig(QAndroidJniObject obj);
+		EapSessionConfig_EapAkaPrimeConfig(QJniObject obj);
 		
 		// Constructors
 		

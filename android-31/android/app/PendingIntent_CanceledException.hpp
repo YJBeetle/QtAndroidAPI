@@ -16,9 +16,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PendingIntent_CanceledException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		PendingIntent_CanceledException(QAndroidJniObject obj);
+		PendingIntent_CanceledException(QJniObject obj);
 		
 		// Constructors
 		PendingIntent_CanceledException();

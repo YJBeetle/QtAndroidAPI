@@ -8,8 +8,8 @@ namespace dalvik::system
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BaseDexClassLoader::BaseDexClassLoader(QAndroidJniObject obj) : java::lang::ClassLoader(obj) {}
+	// QJniObject forward
+	BaseDexClassLoader::BaseDexClassLoader(QJniObject obj) : java::lang::ClassLoader(obj) {}
 	
 	// Constructors
 	BaseDexClassLoader::BaseDexClassLoader(jstring arg0, java::io::File arg1, jstring arg2, java::lang::ClassLoader arg3)

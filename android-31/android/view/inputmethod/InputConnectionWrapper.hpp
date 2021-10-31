@@ -46,9 +46,9 @@ namespace android::view::inputmethod
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InputConnectionWrapper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		InputConnectionWrapper(QAndroidJniObject obj);
+		InputConnectionWrapper(QJniObject obj);
 		
 		// Constructors
 		InputConnectionWrapper(__JniBaseClass arg0, jboolean arg1);

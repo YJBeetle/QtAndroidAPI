@@ -35,8 +35,8 @@ namespace android::net::ipsec::ike
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IkeSessionParams::IkeSessionParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IkeSessionParams::IkeSessionParams(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

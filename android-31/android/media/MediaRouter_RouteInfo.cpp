@@ -65,8 +65,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaRouter_RouteInfo::MediaRouter_RouteInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaRouter_RouteInfo::MediaRouter_RouteInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

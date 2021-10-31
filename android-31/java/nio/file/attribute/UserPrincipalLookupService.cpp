@@ -4,8 +4,8 @@ namespace java::nio::file::attribute
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UserPrincipalLookupService::UserPrincipalLookupService(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UserPrincipalLookupService::UserPrincipalLookupService(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

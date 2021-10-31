@@ -84,8 +84,8 @@ namespace android::media::metrics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TrackChangeEvent::TrackChangeEvent(QAndroidJniObject obj) : android::media::metrics::Event(obj) {}
+	// QJniObject forward
+	TrackChangeEvent::TrackChangeEvent(QJniObject obj) : android::media::metrics::Event(obj) {}
 	
 	// Constructors
 	

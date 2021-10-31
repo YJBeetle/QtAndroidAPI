@@ -23,8 +23,8 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OutputConfiguration::OutputConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	OutputConfiguration::OutputConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	OutputConfiguration::OutputConfiguration(android::view::Surface arg0)

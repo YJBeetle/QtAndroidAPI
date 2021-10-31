@@ -4,8 +4,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaDrmException::MediaDrmException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	MediaDrmException::MediaDrmException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	MediaDrmException::MediaDrmException(jstring arg0)

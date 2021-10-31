@@ -14,9 +14,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ApplicationMediaCapabilities_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationMediaCapabilities_Builder(QAndroidJniObject obj);
+		ApplicationMediaCapabilities_Builder(QJniObject obj);
 		
 		// Constructors
 		ApplicationMediaCapabilities_Builder();

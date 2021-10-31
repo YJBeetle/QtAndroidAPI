@@ -4,8 +4,8 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvocationTargetException::InvocationTargetException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
+	// QJniObject forward
+	InvocationTargetException::InvocationTargetException(QJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
 	
 	// Constructors
 	InvocationTargetException::InvocationTargetException(jthrowable arg0)

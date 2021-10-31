@@ -44,9 +44,9 @@ namespace android::media
 		static jint ERROR_UNSUPPORTED_OPERATION();
 		static jint ERROR_ZERO_SUBSAMPLES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaDrm_ErrorCodes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_ErrorCodes(QAndroidJniObject obj);
+		MediaDrm_ErrorCodes(QJniObject obj);
 		
 		// Constructors
 		

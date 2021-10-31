@@ -25,9 +25,9 @@ namespace android::provider
 		static jstring REMOVE_DUPLICATE_ENTRIES();
 		static jstring STREQUENT_PHONE_ONLY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract(QAndroidJniObject obj);
+		ContactsContract(QJniObject obj);
 		
 		// Constructors
 		ContactsContract();

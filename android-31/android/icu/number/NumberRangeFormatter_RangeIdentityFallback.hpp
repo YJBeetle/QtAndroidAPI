@@ -15,9 +15,9 @@ namespace android::icu::number
 		static android::icu::number::NumberRangeFormatter_RangeIdentityFallback RANGE();
 		static android::icu::number::NumberRangeFormatter_RangeIdentityFallback SINGLE_VALUE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NumberRangeFormatter_RangeIdentityFallback(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberRangeFormatter_RangeIdentityFallback(QAndroidJniObject obj);
+		NumberRangeFormatter_RangeIdentityFallback(QJniObject obj);
 		
 		// Constructors
 		

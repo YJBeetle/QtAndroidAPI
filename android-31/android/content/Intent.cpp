@@ -2460,8 +2460,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Intent::Intent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Intent::Intent(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Intent::Intent()

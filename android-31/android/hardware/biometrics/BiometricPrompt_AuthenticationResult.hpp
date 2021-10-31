@@ -14,9 +14,9 @@ namespace android::hardware::biometrics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BiometricPrompt_AuthenticationResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricPrompt_AuthenticationResult(QAndroidJniObject obj);
+		BiometricPrompt_AuthenticationResult(QJniObject obj);
 		
 		// Constructors
 		

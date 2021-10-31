@@ -22,9 +22,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TestLooperManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TestLooperManager(QAndroidJniObject obj);
+		TestLooperManager(QJniObject obj);
 		
 		// Constructors
 		

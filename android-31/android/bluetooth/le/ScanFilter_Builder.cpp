@@ -6,8 +6,8 @@ namespace android::bluetooth::le
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScanFilter_Builder::ScanFilter_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ScanFilter_Builder::ScanFilter_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ScanFilter_Builder::ScanFilter_Builder()

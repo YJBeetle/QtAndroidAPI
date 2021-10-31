@@ -75,8 +75,8 @@ namespace android::content
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ClipDescription::ClipDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ClipDescription::ClipDescription(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ClipDescription::ClipDescription(android::content::ClipDescription &arg0)

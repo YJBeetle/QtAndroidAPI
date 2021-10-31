@@ -15,9 +15,9 @@ namespace android::view::inputmethod
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SurroundingText(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SurroundingText(QAndroidJniObject obj);
+		SurroundingText(QJniObject obj);
 		
 		// Constructors
 		SurroundingText(jstring arg0, jint arg1, jint arg2, jint arg3);

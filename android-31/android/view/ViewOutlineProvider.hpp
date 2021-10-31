@@ -21,9 +21,9 @@ namespace android::view
 		static android::view::ViewOutlineProvider BOUNDS();
 		static android::view::ViewOutlineProvider PADDED_BOUNDS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ViewOutlineProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ViewOutlineProvider(QAndroidJniObject obj);
+		ViewOutlineProvider(QJniObject obj);
 		
 		// Constructors
 		ViewOutlineProvider();

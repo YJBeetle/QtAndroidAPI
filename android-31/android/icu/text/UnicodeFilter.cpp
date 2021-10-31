@@ -4,8 +4,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnicodeFilter::UnicodeFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UnicodeFilter::UnicodeFilter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

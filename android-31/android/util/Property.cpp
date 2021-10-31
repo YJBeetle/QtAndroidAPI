@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Property::Property(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Property::Property(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Property::Property(jclass arg0, jstring arg1)

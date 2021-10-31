@@ -4,8 +4,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StatusBarManager::StatusBarManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StatusBarManager::StatusBarManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

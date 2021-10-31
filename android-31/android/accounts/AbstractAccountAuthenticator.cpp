@@ -16,8 +16,8 @@ namespace android::accounts
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	AbstractAccountAuthenticator::AbstractAccountAuthenticator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AbstractAccountAuthenticator::AbstractAccountAuthenticator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AbstractAccountAuthenticator::AbstractAccountAuthenticator(android::content::Context arg0)

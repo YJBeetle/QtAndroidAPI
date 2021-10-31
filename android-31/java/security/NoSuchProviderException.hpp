@@ -12,9 +12,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NoSuchProviderException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchProviderException(QAndroidJniObject obj);
+		NoSuchProviderException(QJniObject obj);
 		
 		// Constructors
 		NoSuchProviderException();

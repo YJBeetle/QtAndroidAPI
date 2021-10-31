@@ -14,9 +14,9 @@ namespace android::graphics
 		static android::graphics::Paint_Style FILL_AND_STROKE();
 		static android::graphics::Paint_Style STROKE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Paint_Style(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_Style(QAndroidJniObject obj);
+		Paint_Style(QJniObject obj);
 		
 		// Constructors
 		

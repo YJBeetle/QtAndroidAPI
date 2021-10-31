@@ -14,8 +14,8 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TrafficStats::TrafficStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TrafficStats::TrafficStats(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TrafficStats::TrafficStats()

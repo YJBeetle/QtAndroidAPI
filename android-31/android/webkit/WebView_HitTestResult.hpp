@@ -20,9 +20,9 @@ namespace android::webkit
 		static jint SRC_IMAGE_ANCHOR_TYPE();
 		static jint UNKNOWN_TYPE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WebView_HitTestResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WebView_HitTestResult(QAndroidJniObject obj);
+		WebView_HitTestResult(QJniObject obj);
 		
 		// Constructors
 		

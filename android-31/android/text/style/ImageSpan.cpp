@@ -8,8 +8,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ImageSpan::ImageSpan(QAndroidJniObject obj) : android::text::style::DynamicDrawableSpan(obj) {}
+	// QJniObject forward
+	ImageSpan::ImageSpan(QJniObject obj) : android::text::style::DynamicDrawableSpan(obj) {}
 	
 	// Constructors
 	ImageSpan::ImageSpan(android::graphics::Bitmap arg0)

@@ -22,9 +22,9 @@ namespace android::text::style
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LineBackgroundSpan_Standard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LineBackgroundSpan_Standard(QAndroidJniObject obj);
+		LineBackgroundSpan_Standard(QJniObject obj);
 		
 		// Constructors
 		LineBackgroundSpan_Standard(android::os::Parcel arg0);

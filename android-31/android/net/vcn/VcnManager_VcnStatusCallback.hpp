@@ -10,9 +10,9 @@ namespace android::net::vcn
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VcnManager_VcnStatusCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VcnManager_VcnStatusCallback(QAndroidJniObject obj);
+		VcnManager_VcnStatusCallback(QJniObject obj);
 		
 		// Constructors
 		VcnManager_VcnStatusCallback();

@@ -11,9 +11,9 @@ namespace android::hardware::camera2::params
 		// Fields
 		static jint COUNT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BlackLevelPattern(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BlackLevelPattern(QAndroidJniObject obj);
+		BlackLevelPattern(QJniObject obj);
 		
 		// Constructors
 		

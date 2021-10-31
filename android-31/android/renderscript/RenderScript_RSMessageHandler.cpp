@@ -4,8 +4,8 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RenderScript_RSMessageHandler::RenderScript_RSMessageHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RenderScript_RSMessageHandler::RenderScript_RSMessageHandler(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RenderScript_RSMessageHandler::RenderScript_RSMessageHandler()

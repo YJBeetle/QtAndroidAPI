@@ -765,8 +765,8 @@ namespace android::print
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PrintAttributes_MediaSize::PrintAttributes_MediaSize(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PrintAttributes_MediaSize::PrintAttributes_MediaSize(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PrintAttributes_MediaSize::PrintAttributes_MediaSize(jstring arg0, jstring arg1, jint arg2, jint arg3)

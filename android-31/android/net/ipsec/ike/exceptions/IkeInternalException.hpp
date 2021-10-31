@@ -13,9 +13,9 @@ namespace android::net::ipsec::ike::exceptions
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeInternalException(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::exceptions::IkeNonProtocolException(className, sig, std::forward<Ts>(agv)...) {}
-		IkeInternalException(QAndroidJniObject obj);
+		IkeInternalException(QJniObject obj);
 		
 		// Constructors
 		IkeInternalException(jthrowable arg0);

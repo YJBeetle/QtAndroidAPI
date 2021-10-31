@@ -14,9 +14,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MissingFormatArgumentException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
-		MissingFormatArgumentException(QAndroidJniObject obj);
+		MissingFormatArgumentException(QJniObject obj);
 		
 		// Constructors
 		MissingFormatArgumentException(jstring arg0);

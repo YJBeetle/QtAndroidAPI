@@ -18,9 +18,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppSearchBatchResult_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchBatchResult_Builder(QAndroidJniObject obj);
+		AppSearchBatchResult_Builder(QJniObject obj);
 		
 		// Constructors
 		AppSearchBatchResult_Builder();

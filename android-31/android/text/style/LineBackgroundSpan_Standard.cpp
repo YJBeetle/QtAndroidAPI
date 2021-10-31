@@ -7,8 +7,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(android::os::Parcel arg0)

@@ -11,8 +11,8 @@ namespace java::time::chrono
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HijrahDate::HijrahDate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	HijrahDate::HijrahDate(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

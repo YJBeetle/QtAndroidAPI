@@ -19,9 +19,9 @@ namespace android::text::style
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MaskFilterSpan(const char *className, const char *sig, Ts...agv) : android::text::style::CharacterStyle(className, sig, std::forward<Ts>(agv)...) {}
-		MaskFilterSpan(QAndroidJniObject obj);
+		MaskFilterSpan(QJniObject obj);
 		
 		// Constructors
 		MaskFilterSpan(android::graphics::MaskFilter arg0);

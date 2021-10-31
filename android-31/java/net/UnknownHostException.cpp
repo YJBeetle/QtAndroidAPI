@@ -4,8 +4,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnknownHostException::UnknownHostException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	UnknownHostException::UnknownHostException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	UnknownHostException::UnknownHostException()

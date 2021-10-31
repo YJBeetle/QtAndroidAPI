@@ -5,8 +5,8 @@ namespace org::xmlpull::v1::sax2
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Driver::Driver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Driver::Driver(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Driver::Driver()

@@ -14,9 +14,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ReportSystemUsageRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ReportSystemUsageRequest_Builder(QAndroidJniObject obj);
+		ReportSystemUsageRequest_Builder(QJniObject obj);
 		
 		// Constructors
 		ReportSystemUsageRequest_Builder(jstring arg0, jstring arg1, jstring arg2, jstring arg3);

@@ -5,8 +5,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PorterDuffXfermode::PorterDuffXfermode(QAndroidJniObject obj) : android::graphics::Xfermode(obj) {}
+	// QJniObject forward
+	PorterDuffXfermode::PorterDuffXfermode(QJniObject obj) : android::graphics::Xfermode(obj) {}
 	
 	// Constructors
 	PorterDuffXfermode::PorterDuffXfermode(android::graphics::PorterDuff_Mode arg0)

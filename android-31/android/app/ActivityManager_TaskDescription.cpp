@@ -14,8 +14,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ActivityManager_TaskDescription::ActivityManager_TaskDescription()

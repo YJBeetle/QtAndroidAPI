@@ -13,9 +13,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NumberFormatException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormatException(QAndroidJniObject obj);
+		NumberFormatException(QJniObject obj);
 		
 		// Constructors
 		NumberFormatException();

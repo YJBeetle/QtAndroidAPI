@@ -30,9 +30,9 @@ namespace android::telecom
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PhoneAccount_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PhoneAccount_Builder(QAndroidJniObject obj);
+		PhoneAccount_Builder(QJniObject obj);
 		
 		// Constructors
 		PhoneAccount_Builder(android::telecom::PhoneAccount arg0);

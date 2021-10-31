@@ -14,9 +14,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Scroller(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Scroller(QAndroidJniObject obj);
+		Scroller(QJniObject obj);
 		
 		// Constructors
 		Scroller(android::content::Context arg0);

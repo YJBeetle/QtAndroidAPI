@@ -5,8 +5,8 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DigitsKeyListener::DigitsKeyListener(QAndroidJniObject obj) : android::text::method::NumberKeyListener(obj) {}
+	// QJniObject forward
+	DigitsKeyListener::DigitsKeyListener(QJniObject obj) : android::text::method::NumberKeyListener(obj) {}
 	
 	// Constructors
 	DigitsKeyListener::DigitsKeyListener()

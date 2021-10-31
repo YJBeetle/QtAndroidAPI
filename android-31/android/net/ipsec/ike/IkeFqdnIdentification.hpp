@@ -12,9 +12,9 @@ namespace android::net::ipsec::ike
 		// Fields
 		jstring fqdn();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeFqdnIdentification(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeIdentification(className, sig, std::forward<Ts>(agv)...) {}
-		IkeFqdnIdentification(QAndroidJniObject obj);
+		IkeFqdnIdentification(QJniObject obj);
 		
 		// Constructors
 		IkeFqdnIdentification(jstring arg0);

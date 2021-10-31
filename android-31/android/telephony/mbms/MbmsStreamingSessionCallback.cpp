@@ -4,8 +4,8 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MbmsStreamingSessionCallback::MbmsStreamingSessionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MbmsStreamingSessionCallback::MbmsStreamingSessionCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MbmsStreamingSessionCallback::MbmsStreamingSessionCallback()

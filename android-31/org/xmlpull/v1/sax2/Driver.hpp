@@ -14,9 +14,9 @@ namespace org::xmlpull::v1::sax2
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Driver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Driver(QAndroidJniObject obj);
+		Driver(QJniObject obj);
 		
 		// Constructors
 		Driver();

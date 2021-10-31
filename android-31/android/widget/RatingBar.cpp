@@ -5,8 +5,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RatingBar::RatingBar(QAndroidJniObject obj) : android::widget::AbsSeekBar(obj) {}
+	// QJniObject forward
+	RatingBar::RatingBar(QJniObject obj) : android::widget::AbsSeekBar(obj) {}
 	
 	// Constructors
 	RatingBar::RatingBar(android::content::Context arg0)

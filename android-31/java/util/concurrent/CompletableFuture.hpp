@@ -14,9 +14,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CompletableFuture(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CompletableFuture(QAndroidJniObject obj);
+		CompletableFuture(QJniObject obj);
 		
 		// Constructors
 		CompletableFuture();

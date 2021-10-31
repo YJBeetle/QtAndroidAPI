@@ -19,9 +19,9 @@ namespace java::lang::invoke
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConstantCallSite(const char *className, const char *sig, Ts...agv) : java::lang::invoke::CallSite(className, sig, std::forward<Ts>(agv)...) {}
-		ConstantCallSite(QAndroidJniObject obj);
+		ConstantCallSite(QJniObject obj);
 		
 		// Constructors
 		ConstantCallSite(java::lang::invoke::MethodHandle arg0);

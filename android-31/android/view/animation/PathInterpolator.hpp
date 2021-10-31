@@ -19,9 +19,9 @@ namespace android::view::animation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PathInterpolator(const char *className, const char *sig, Ts...agv) : android::view::animation::BaseInterpolator(className, sig, std::forward<Ts>(agv)...) {}
-		PathInterpolator(QAndroidJniObject obj);
+		PathInterpolator(QJniObject obj);
 		
 		// Constructors
 		PathInterpolator(android::graphics::Path arg0);

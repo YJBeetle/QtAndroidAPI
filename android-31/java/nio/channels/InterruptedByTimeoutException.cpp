@@ -4,8 +4,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InterruptedByTimeoutException::InterruptedByTimeoutException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	InterruptedByTimeoutException::InterruptedByTimeoutException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	InterruptedByTimeoutException::InterruptedByTimeoutException()

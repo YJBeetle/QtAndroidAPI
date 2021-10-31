@@ -4,8 +4,8 @@ namespace android::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContactsContract_Presence::ContactsContract_Presence(QAndroidJniObject obj) : android::provider::ContactsContract_StatusUpdates(obj) {}
+	// QJniObject forward
+	ContactsContract_Presence::ContactsContract_Presence(QJniObject obj) : android::provider::ContactsContract_StatusUpdates(obj) {}
 	
 	// Constructors
 	ContactsContract_Presence::ContactsContract_Presence()

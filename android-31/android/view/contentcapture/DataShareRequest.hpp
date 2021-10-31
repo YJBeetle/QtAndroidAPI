@@ -19,9 +19,9 @@ namespace android::view::contentcapture
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DataShareRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DataShareRequest(QAndroidJniObject obj);
+		DataShareRequest(QJniObject obj);
 		
 		// Constructors
 		DataShareRequest(android::content::LocusId arg0, jstring arg1);

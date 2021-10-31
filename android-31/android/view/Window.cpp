@@ -220,8 +220,8 @@ namespace android::view
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Window::Window(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Window::Window(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Window::Window(android::content::Context arg0)

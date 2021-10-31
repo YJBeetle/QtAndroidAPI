@@ -35,8 +35,8 @@ namespace android::media::tv
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TvTrackInfo::TvTrackInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TvTrackInfo::TvTrackInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

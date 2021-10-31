@@ -14,9 +14,9 @@ namespace android::telephony
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VisualVoicemailSmsFilterSettings_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VisualVoicemailSmsFilterSettings_Builder(QAndroidJniObject obj);
+		VisualVoicemailSmsFilterSettings_Builder(QJniObject obj);
 		
 		// Constructors
 		VisualVoicemailSmsFilterSettings_Builder();

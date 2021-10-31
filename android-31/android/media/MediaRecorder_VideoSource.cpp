@@ -26,8 +26,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaRecorder_VideoSource::MediaRecorder_VideoSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaRecorder_VideoSource::MediaRecorder_VideoSource(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

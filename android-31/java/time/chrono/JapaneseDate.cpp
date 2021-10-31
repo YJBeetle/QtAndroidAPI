@@ -12,8 +12,8 @@ namespace java::time::chrono
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JapaneseDate::JapaneseDate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JapaneseDate::JapaneseDate(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

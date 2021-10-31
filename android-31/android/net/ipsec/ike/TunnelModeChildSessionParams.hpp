@@ -11,9 +11,9 @@ namespace android::net::ipsec::ike
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TunnelModeChildSessionParams(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::ChildSessionParams(className, sig, std::forward<Ts>(agv)...) {}
-		TunnelModeChildSessionParams(QAndroidJniObject obj);
+		TunnelModeChildSessionParams(QJniObject obj);
 		
 		// Constructors
 		

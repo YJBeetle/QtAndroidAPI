@@ -12,9 +12,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HttpRetryException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		HttpRetryException(QAndroidJniObject obj);
+		HttpRetryException(QJniObject obj);
 		
 		// Constructors
 		HttpRetryException(jstring arg0, jint arg1);

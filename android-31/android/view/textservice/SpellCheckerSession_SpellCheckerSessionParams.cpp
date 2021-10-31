@@ -6,8 +6,8 @@ namespace android::view::textservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SpellCheckerSession_SpellCheckerSessionParams::SpellCheckerSession_SpellCheckerSessionParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SpellCheckerSession_SpellCheckerSessionParams::SpellCheckerSession_SpellCheckerSessionParams(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

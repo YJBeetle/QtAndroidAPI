@@ -32,8 +32,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Bitmap::Bitmap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Bitmap::Bitmap(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

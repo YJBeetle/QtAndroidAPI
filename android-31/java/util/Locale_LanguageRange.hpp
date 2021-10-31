@@ -12,9 +12,9 @@ namespace java::util
 		static jdouble MAX_WEIGHT();
 		static jdouble MIN_WEIGHT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Locale_LanguageRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Locale_LanguageRange(QAndroidJniObject obj);
+		Locale_LanguageRange(QJniObject obj);
 		
 		// Constructors
 		Locale_LanguageRange(jstring arg0);

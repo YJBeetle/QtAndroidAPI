@@ -47,9 +47,9 @@ namespace android::hardware::camera2
 		// Fields
 		static jint MAX_THUMBNAIL_DIMENSION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DngCreator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DngCreator(QAndroidJniObject obj);
+		DngCreator(QJniObject obj);
 		
 		// Constructors
 		DngCreator(android::hardware::camera2::CameraCharacteristics arg0, android::hardware::camera2::CaptureResult arg1);

@@ -6,8 +6,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RecoverySystem::RecoverySystem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RecoverySystem::RecoverySystem(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

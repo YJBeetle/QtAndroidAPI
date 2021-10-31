@@ -16,9 +16,9 @@ namespace android::webkit
 		static android::webkit::WebSettings_TextSize SMALLER();
 		static android::webkit::WebSettings_TextSize SMALLEST();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WebSettings_TextSize(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		WebSettings_TextSize(QAndroidJniObject obj);
+		WebSettings_TextSize(QJniObject obj);
 		
 		// Constructors
 		

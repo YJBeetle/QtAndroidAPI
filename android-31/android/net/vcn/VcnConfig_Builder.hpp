@@ -22,9 +22,9 @@ namespace android::net::vcn
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VcnConfig_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VcnConfig_Builder(QAndroidJniObject obj);
+		VcnConfig_Builder(QJniObject obj);
 		
 		// Constructors
 		VcnConfig_Builder(android::content::Context arg0);

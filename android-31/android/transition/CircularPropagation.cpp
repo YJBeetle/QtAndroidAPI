@@ -7,8 +7,8 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CircularPropagation::CircularPropagation(QAndroidJniObject obj) : android::transition::VisibilityPropagation(obj) {}
+	// QJniObject forward
+	CircularPropagation::CircularPropagation(QJniObject obj) : android::transition::VisibilityPropagation(obj) {}
 	
 	// Constructors
 	CircularPropagation::CircularPropagation()

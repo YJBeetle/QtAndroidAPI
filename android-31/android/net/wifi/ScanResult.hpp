@@ -42,9 +42,9 @@ namespace android::net::wifi
 		jlong timestamp();
 		jstring venueName();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScanResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ScanResult(QAndroidJniObject obj);
+		ScanResult(QJniObject obj);
 		
 		// Constructors
 		ScanResult();

@@ -60,8 +60,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkScan::NetworkScan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NetworkScan::NetworkScan(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

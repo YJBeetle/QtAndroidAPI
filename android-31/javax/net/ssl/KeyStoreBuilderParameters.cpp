@@ -5,8 +5,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyStoreBuilderParameters::KeyStoreBuilderParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyStoreBuilderParameters::KeyStoreBuilderParameters(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyStoreBuilderParameters::KeyStoreBuilderParameters(java::security::KeyStore_Builder arg0)

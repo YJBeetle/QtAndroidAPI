@@ -8,8 +8,8 @@ namespace android::media::tv
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TvInputInfo_Builder::TvInputInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TvInputInfo_Builder::TvInputInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TvInputInfo_Builder::TvInputInfo_Builder(android::content::Context arg0, android::content::ComponentName arg1)

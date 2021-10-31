@@ -13,8 +13,8 @@ namespace android::companion
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BluetoothDeviceFilter::BluetoothDeviceFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BluetoothDeviceFilter::BluetoothDeviceFilter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

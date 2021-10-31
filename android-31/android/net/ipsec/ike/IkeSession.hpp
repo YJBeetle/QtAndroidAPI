@@ -22,9 +22,9 @@ namespace android::net::ipsec::ike
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSession(QAndroidJniObject obj);
+		IkeSession(QJniObject obj);
 		
 		// Constructors
 		IkeSession(android::content::Context arg0, android::net::ipsec::ike::IkeSessionParams arg1, android::net::ipsec::ike::ChildSessionParams arg2, __JniBaseClass arg3, __JniBaseClass arg4, __JniBaseClass arg5);

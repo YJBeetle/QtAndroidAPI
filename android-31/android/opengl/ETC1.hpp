@@ -18,9 +18,9 @@ namespace android::opengl
 		static jint ETC1_RGB8_OES();
 		static jint ETC_PKM_HEADER_SIZE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ETC1(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ETC1(QAndroidJniObject obj);
+		ETC1(QJniObject obj);
 		
 		// Constructors
 		ETC1();

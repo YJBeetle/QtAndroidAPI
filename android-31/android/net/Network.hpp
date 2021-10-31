@@ -47,9 +47,9 @@ namespace android::net
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Network(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Network(QAndroidJniObject obj);
+		Network(QJniObject obj);
 		
 		// Constructors
 		

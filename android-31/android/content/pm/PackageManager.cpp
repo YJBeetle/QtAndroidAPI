@@ -1486,8 +1486,8 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PackageManager::PackageManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PackageManager::PackageManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PackageManager::PackageManager()

@@ -32,9 +32,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Toolbar(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		Toolbar(QAndroidJniObject obj);
+		Toolbar(QJniObject obj);
 		
 		// Constructors
 		Toolbar(android::content::Context arg0);

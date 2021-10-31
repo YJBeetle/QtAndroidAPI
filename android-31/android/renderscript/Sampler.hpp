@@ -19,9 +19,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Sampler(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
-		Sampler(QAndroidJniObject obj);
+		Sampler(QJniObject obj);
 		
 		// Constructors
 		

@@ -13,9 +13,9 @@ namespace android::net
 		// Fields
 		jstring response();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ParseException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ParseException(QAndroidJniObject obj);
+		ParseException(QJniObject obj);
 		
 		// Constructors
 		ParseException(jstring arg0);

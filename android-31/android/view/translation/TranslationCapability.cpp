@@ -42,8 +42,8 @@ namespace android::view::translation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TranslationCapability::TranslationCapability(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TranslationCapability::TranslationCapability(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

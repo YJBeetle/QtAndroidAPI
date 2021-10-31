@@ -13,8 +13,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocusId::LocusId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocusId::LocusId(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LocusId::LocusId(jstring arg0)

@@ -16,9 +16,9 @@ namespace android::bluetooth
 		static jint ERROR_UNKNOWN();
 		static jint SUCCESS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothStatusCodes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothStatusCodes(QAndroidJniObject obj);
+		BluetoothStatusCodes(QJniObject obj);
 		
 		// Constructors
 		

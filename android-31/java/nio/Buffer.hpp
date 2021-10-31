@@ -14,9 +14,9 @@ namespace java::nio
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Buffer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Buffer(QAndroidJniObject obj);
+		Buffer(QJniObject obj);
 		
 		// Constructors
 		

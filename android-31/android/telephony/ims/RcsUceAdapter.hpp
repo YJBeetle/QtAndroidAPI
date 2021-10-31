@@ -10,9 +10,9 @@ namespace android::telephony::ims
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RcsUceAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RcsUceAdapter(QAndroidJniObject obj);
+		RcsUceAdapter(QJniObject obj);
 		
 		// Constructors
 		

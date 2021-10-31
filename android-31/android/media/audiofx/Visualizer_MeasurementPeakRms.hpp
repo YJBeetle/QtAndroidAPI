@@ -12,9 +12,9 @@ namespace android::media::audiofx
 		jint mPeak();
 		jint mRms();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Visualizer_MeasurementPeakRms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Visualizer_MeasurementPeakRms(QAndroidJniObject obj);
+		Visualizer_MeasurementPeakRms(QJniObject obj);
 		
 		// Constructors
 		Visualizer_MeasurementPeakRms();

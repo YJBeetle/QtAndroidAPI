@@ -8,8 +8,8 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClipData_Item::ClipData_Item(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ClipData_Item::ClipData_Item(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ClipData_Item::ClipData_Item(android::content::Intent arg0)

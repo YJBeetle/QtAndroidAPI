@@ -5,8 +5,8 @@ namespace android::net::ipsec::ike::exceptions
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IkeNetworkLostException::IkeNetworkLostException(QAndroidJniObject obj) : android::net::ipsec::ike::exceptions::IkeNonProtocolException(obj) {}
+	// QJniObject forward
+	IkeNetworkLostException::IkeNetworkLostException(QJniObject obj) : android::net::ipsec::ike::exceptions::IkeNonProtocolException(obj) {}
 	
 	// Constructors
 	IkeNetworkLostException::IkeNetworkLostException(android::net::Network arg0)

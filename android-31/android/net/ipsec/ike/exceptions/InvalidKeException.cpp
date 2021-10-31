@@ -4,8 +4,8 @@ namespace android::net::ipsec::ike::exceptions
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvalidKeException::InvalidKeException(QAndroidJniObject obj) : android::net::ipsec::ike::exceptions::IkeProtocolException(obj) {}
+	// QJniObject forward
+	InvalidKeException::InvalidKeException(QJniObject obj) : android::net::ipsec::ike::exceptions::IkeProtocolException(obj) {}
 	
 	// Constructors
 	InvalidKeException::InvalidKeException(jint arg0)

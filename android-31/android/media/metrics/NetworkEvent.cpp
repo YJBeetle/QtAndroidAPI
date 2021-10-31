@@ -84,8 +84,8 @@ namespace android::media::metrics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkEvent::NetworkEvent(QAndroidJniObject obj) : android::media::metrics::Event(obj) {}
+	// QJniObject forward
+	NetworkEvent::NetworkEvent(QJniObject obj) : android::media::metrics::Event(obj) {}
 	
 	// Constructors
 	

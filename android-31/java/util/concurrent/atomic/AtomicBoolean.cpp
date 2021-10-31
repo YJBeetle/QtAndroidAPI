@@ -4,8 +4,8 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicBoolean::AtomicBoolean(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AtomicBoolean::AtomicBoolean(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AtomicBoolean::AtomicBoolean()

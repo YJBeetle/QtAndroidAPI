@@ -5,8 +5,8 @@ namespace android::service::controls::templates
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ThumbnailTemplate::ThumbnailTemplate(QAndroidJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
+	// QJniObject forward
+	ThumbnailTemplate::ThumbnailTemplate(QJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
 	
 	// Constructors
 	ThumbnailTemplate::ThumbnailTemplate(jstring arg0, jboolean arg1, android::graphics::drawable::Icon arg2, jstring arg3)

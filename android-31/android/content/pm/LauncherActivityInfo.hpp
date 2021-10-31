@@ -30,9 +30,9 @@ namespace android::content::pm
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LauncherActivityInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherActivityInfo(QAndroidJniObject obj);
+		LauncherActivityInfo(QJniObject obj);
 		
 		// Constructors
 		

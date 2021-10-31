@@ -12,8 +12,8 @@ namespace javax::xml::transform::dom
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	DOMResult::DOMResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DOMResult::DOMResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DOMResult::DOMResult()

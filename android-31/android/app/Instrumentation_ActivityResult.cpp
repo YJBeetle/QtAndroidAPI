@@ -5,8 +5,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Instrumentation_ActivityResult::Instrumentation_ActivityResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Instrumentation_ActivityResult::Instrumentation_ActivityResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Instrumentation_ActivityResult::Instrumentation_ActivityResult(jint arg0, android::content::Intent arg1)

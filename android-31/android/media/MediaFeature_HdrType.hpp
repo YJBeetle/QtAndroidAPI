@@ -14,9 +14,9 @@ namespace android::media
 		static jstring HDR10_PLUS();
 		static jstring HLG();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaFeature_HdrType(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaFeature_HdrType(QAndroidJniObject obj);
+		MediaFeature_HdrType(QJniObject obj);
 		
 		// Constructors
 		

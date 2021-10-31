@@ -35,9 +35,9 @@ namespace android::net::wifi::aware
 		static jint WIFI_AWARE_DISCOVERY_LOST_REASON_PEER_NOT_VISIBLE();
 		static jint WIFI_AWARE_DISCOVERY_LOST_REASON_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiAwareManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiAwareManager(QAndroidJniObject obj);
+		WifiAwareManager(QJniObject obj);
 		
 		// Constructors
 		

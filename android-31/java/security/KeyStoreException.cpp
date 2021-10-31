@@ -4,8 +4,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyStoreException::KeyStoreException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	// QJniObject forward
+	KeyStoreException::KeyStoreException(QJniObject obj) : java::security::GeneralSecurityException(obj) {}
 	
 	// Constructors
 	KeyStoreException::KeyStoreException()

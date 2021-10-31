@@ -13,9 +13,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NoSuchFileException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchFileException(QAndroidJniObject obj);
+		NoSuchFileException(QJniObject obj);
 		
 		// Constructors
 		NoSuchFileException(jstring arg0);

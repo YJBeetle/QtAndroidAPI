@@ -33,8 +33,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaCodecInfo_EncoderCapabilities::MediaCodecInfo_EncoderCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaCodecInfo_EncoderCapabilities::MediaCodecInfo_EncoderCapabilities(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

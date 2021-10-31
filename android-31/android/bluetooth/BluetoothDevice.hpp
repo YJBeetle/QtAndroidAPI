@@ -86,9 +86,9 @@ namespace android::bluetooth
 		static jint TRANSPORT_BREDR();
 		static jint TRANSPORT_LE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothDevice(QAndroidJniObject obj);
+		BluetoothDevice(QJniObject obj);
 		
 		// Constructors
 		

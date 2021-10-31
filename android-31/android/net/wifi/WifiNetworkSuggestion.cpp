@@ -30,8 +30,8 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiNetworkSuggestion::WifiNetworkSuggestion(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiNetworkSuggestion::WifiNetworkSuggestion(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

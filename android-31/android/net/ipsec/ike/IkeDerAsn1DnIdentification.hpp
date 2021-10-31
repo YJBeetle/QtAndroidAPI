@@ -16,9 +16,9 @@ namespace android::net::ipsec::ike
 		// Fields
 		javax::security::auth::x500::X500Principal derAsn1Dn();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeDerAsn1DnIdentification(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeIdentification(className, sig, std::forward<Ts>(agv)...) {}
-		IkeDerAsn1DnIdentification(QAndroidJniObject obj);
+		IkeDerAsn1DnIdentification(QJniObject obj);
 		
 		// Constructors
 		IkeDerAsn1DnIdentification(javax::security::auth::x500::X500Principal arg0);

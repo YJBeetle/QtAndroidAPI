@@ -22,9 +22,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VibratorManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VibratorManager(QAndroidJniObject obj);
+		VibratorManager(QJniObject obj);
 		
 		// Constructors
 		

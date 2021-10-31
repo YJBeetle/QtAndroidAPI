@@ -8,8 +8,8 @@ namespace android::icu::number
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Precision::Precision(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Precision::Precision(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -23,9 +23,9 @@ namespace android::view
 		static jint POSITION_TOP_LEFT();
 		static jint POSITION_TOP_RIGHT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RoundedCorner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RoundedCorner(QAndroidJniObject obj);
+		RoundedCorner(QJniObject obj);
 		
 		// Constructors
 		RoundedCorner(jint arg0, jint arg1, jint arg2, jint arg3);

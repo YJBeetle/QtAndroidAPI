@@ -5,8 +5,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteViewsService::RemoteViewsService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	RemoteViewsService::RemoteViewsService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	RemoteViewsService::RemoteViewsService()

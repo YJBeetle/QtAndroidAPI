@@ -12,9 +12,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CharConversionException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		CharConversionException(QAndroidJniObject obj);
+		CharConversionException(QJniObject obj);
 		
 		// Constructors
 		CharConversionException();

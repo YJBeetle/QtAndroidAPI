@@ -12,8 +12,8 @@ namespace android::print
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PrintAttributes_Margins::PrintAttributes_Margins(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PrintAttributes_Margins::PrintAttributes_Margins(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PrintAttributes_Margins::PrintAttributes_Margins(jint arg0, jint arg1, jint arg2, jint arg3)

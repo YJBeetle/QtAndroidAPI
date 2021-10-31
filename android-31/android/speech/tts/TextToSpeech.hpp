@@ -68,9 +68,9 @@ namespace android::speech::tts
 		static jint STOPPED();
 		static jint SUCCESS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextToSpeech(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TextToSpeech(QAndroidJniObject obj);
+		TextToSpeech(QJniObject obj);
 		
 		// Constructors
 		TextToSpeech(android::content::Context arg0, __JniBaseClass arg1);

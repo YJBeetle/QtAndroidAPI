@@ -14,8 +14,8 @@ namespace android::view::displayhash
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VerifiedDisplayHash::VerifiedDisplayHash(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VerifiedDisplayHash::VerifiedDisplayHash(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	VerifiedDisplayHash::VerifiedDisplayHash(jlong arg0, android::graphics::Rect arg1, jstring arg2, jbyteArray arg3)

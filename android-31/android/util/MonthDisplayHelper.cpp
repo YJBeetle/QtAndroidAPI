@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MonthDisplayHelper::MonthDisplayHelper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MonthDisplayHelper::MonthDisplayHelper(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MonthDisplayHelper::MonthDisplayHelper(jint arg0, jint arg1)

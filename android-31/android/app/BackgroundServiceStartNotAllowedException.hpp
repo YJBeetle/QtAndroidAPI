@@ -19,9 +19,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BackgroundServiceStartNotAllowedException(const char *className, const char *sig, Ts...agv) : android::app::ServiceStartNotAllowedException(className, sig, std::forward<Ts>(agv)...) {}
-		BackgroundServiceStartNotAllowedException(QAndroidJniObject obj);
+		BackgroundServiceStartNotAllowedException(QJniObject obj);
 		
 		// Constructors
 		BackgroundServiceStartNotAllowedException(jstring arg0);

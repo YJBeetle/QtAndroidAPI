@@ -4,8 +4,8 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PackageIdentifier::PackageIdentifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PackageIdentifier::PackageIdentifier(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PackageIdentifier::PackageIdentifier(jstring arg0, jbyteArray arg1)

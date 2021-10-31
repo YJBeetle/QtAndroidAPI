@@ -72,9 +72,9 @@ namespace android::telephony::euicc
 		static jint OPERATION_SWITCH();
 		static jint OPERATION_SYSTEM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EuiccManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EuiccManager(QAndroidJniObject obj);
+		EuiccManager(QJniObject obj);
 		
 		// Constructors
 		

@@ -13,9 +13,9 @@ namespace android::media::audiofx
 		jshort curPreset();
 		jshort numBands();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Equalizer_Settings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Equalizer_Settings(QAndroidJniObject obj);
+		Equalizer_Settings(QJniObject obj);
 		
 		// Constructors
 		Equalizer_Settings();

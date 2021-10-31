@@ -23,9 +23,9 @@ namespace android::view
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SurfaceControl_Transaction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceControl_Transaction(QAndroidJniObject obj);
+		SurfaceControl_Transaction(QJniObject obj);
 		
 		// Constructors
 		SurfaceControl_Transaction();

@@ -7,8 +7,8 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BaseMovementMethod::BaseMovementMethod(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BaseMovementMethod::BaseMovementMethod(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	BaseMovementMethod::BaseMovementMethod()

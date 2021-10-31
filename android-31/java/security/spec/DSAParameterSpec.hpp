@@ -14,9 +14,9 @@ namespace java::security::spec
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DSAParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DSAParameterSpec(QAndroidJniObject obj);
+		DSAParameterSpec(QJniObject obj);
 		
 		// Constructors
 		DSAParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);

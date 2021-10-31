@@ -24,9 +24,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DatePickerDialog(const char *className, const char *sig, Ts...agv) : android::app::AlertDialog(className, sig, std::forward<Ts>(agv)...) {}
-		DatePickerDialog(QAndroidJniObject obj);
+		DatePickerDialog(QJniObject obj);
 		
 		// Constructors
 		DatePickerDialog(android::content::Context arg0);

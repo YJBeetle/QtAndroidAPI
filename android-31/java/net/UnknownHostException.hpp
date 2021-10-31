@@ -12,9 +12,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnknownHostException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		UnknownHostException(QAndroidJniObject obj);
+		UnknownHostException(QJniObject obj);
 		
 		// Constructors
 		UnknownHostException();

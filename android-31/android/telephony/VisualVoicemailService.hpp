@@ -30,9 +30,9 @@ namespace android::telephony
 		// Fields
 		static jstring SERVICE_INTERFACE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VisualVoicemailService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		VisualVoicemailService(QAndroidJniObject obj);
+		VisualVoicemailService(QJniObject obj);
 		
 		// Constructors
 		VisualVoicemailService();

@@ -15,9 +15,9 @@ namespace android::net
 		// Fields
 		static jstring PROXY_CHANGE_ACTION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Proxy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Proxy(QAndroidJniObject obj);
+		Proxy(QJniObject obj);
 		
 		// Constructors
 		Proxy();

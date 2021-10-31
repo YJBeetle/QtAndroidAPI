@@ -4,8 +4,8 @@ namespace android::hardware::camera2::params
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MultiResolutionStreamInfo::MultiResolutionStreamInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MultiResolutionStreamInfo::MultiResolutionStreamInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MultiResolutionStreamInfo::MultiResolutionStreamInfo(jint arg0, jint arg1, jstring arg2)

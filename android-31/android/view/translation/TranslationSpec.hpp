@@ -20,9 +20,9 @@ namespace android::view::translation
 		static __JniBaseClass CREATOR();
 		static jint DATA_FORMAT_TEXT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TranslationSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TranslationSpec(QAndroidJniObject obj);
+		TranslationSpec(QJniObject obj);
 		
 		// Constructors
 		TranslationSpec(android::icu::util::ULocale arg0, jint arg1);

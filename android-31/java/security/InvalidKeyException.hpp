@@ -13,9 +13,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InvalidKeyException(const char *className, const char *sig, Ts...agv) : java::security::KeyException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidKeyException(QAndroidJniObject obj);
+		InvalidKeyException(QJniObject obj);
 		
 		// Constructors
 		InvalidKeyException();

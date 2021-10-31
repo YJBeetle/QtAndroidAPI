@@ -13,8 +13,8 @@ namespace android::view::contentcapture
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContentCaptureSessionId::ContentCaptureSessionId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContentCaptureSessionId::ContentCaptureSessionId(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

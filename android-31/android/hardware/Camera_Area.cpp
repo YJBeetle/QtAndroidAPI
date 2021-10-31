@@ -18,8 +18,8 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Camera_Area::Camera_Area(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Camera_Area::Camera_Area(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Camera_Area::Camera_Area(android::graphics::Rect arg0, jint arg1)

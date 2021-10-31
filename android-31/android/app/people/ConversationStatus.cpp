@@ -105,8 +105,8 @@ namespace android::app::people
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ConversationStatus::ConversationStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConversationStatus::ConversationStatus(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

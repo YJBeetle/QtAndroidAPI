@@ -39,9 +39,9 @@ namespace android::service::voice
 		static jstring SERVICE_INTERFACE();
 		static jstring SERVICE_META_DATA();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VoiceInteractionService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionService(QAndroidJniObject obj);
+		VoiceInteractionService(QJniObject obj);
 		
 		// Constructors
 		VoiceInteractionService();

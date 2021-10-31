@@ -14,8 +14,8 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateValueSanitizer::DateValueSanitizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DateValueSanitizer::DateValueSanitizer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DateValueSanitizer::DateValueSanitizer(android::icu::text::DateFormat arg0)

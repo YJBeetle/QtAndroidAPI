@@ -10,9 +10,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaFeature(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaFeature(QAndroidJniObject obj);
+		MediaFeature(QJniObject obj);
 		
 		// Constructors
 		MediaFeature();

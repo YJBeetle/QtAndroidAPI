@@ -9,8 +9,8 @@ namespace android::view::textservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextServicesManager::TextServicesManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextServicesManager::TextServicesManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

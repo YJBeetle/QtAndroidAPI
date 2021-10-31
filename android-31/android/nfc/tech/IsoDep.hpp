@@ -14,9 +14,9 @@ namespace android::nfc::tech
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IsoDep(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IsoDep(QAndroidJniObject obj);
+		IsoDep(QJniObject obj);
 		
 		// Constructors
 		

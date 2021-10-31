@@ -5,8 +5,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RadialGradient::RadialGradient(QAndroidJniObject obj) : android::graphics::Shader(obj) {}
+	// QJniObject forward
+	RadialGradient::RadialGradient(QJniObject obj) : android::graphics::Shader(obj) {}
 	
 	// Constructors
 	RadialGradient::RadialGradient(jfloat arg0, jfloat arg1, jfloat arg2, jintArray arg3, jfloatArray arg4, android::graphics::Shader_TileMode arg5)

@@ -170,8 +170,8 @@ namespace android::bluetooth
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BluetoothHidDevice::BluetoothHidDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BluetoothHidDevice::BluetoothHidDevice(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

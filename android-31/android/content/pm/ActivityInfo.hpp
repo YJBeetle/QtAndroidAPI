@@ -103,9 +103,9 @@ namespace android::content::pm
 		jint uiOptions();
 		android::content::pm::ActivityInfo_WindowLayout windowLayout();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActivityInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::ComponentInfo(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityInfo(QAndroidJniObject obj);
+		ActivityInfo(QJniObject obj);
 		
 		// Constructors
 		ActivityInfo();

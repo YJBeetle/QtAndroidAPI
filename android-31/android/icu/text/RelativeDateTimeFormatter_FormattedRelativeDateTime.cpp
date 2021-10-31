@@ -5,8 +5,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RelativeDateTimeFormatter_FormattedRelativeDateTime::RelativeDateTimeFormatter_FormattedRelativeDateTime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RelativeDateTimeFormatter_FormattedRelativeDateTime::RelativeDateTimeFormatter_FormattedRelativeDateTime(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

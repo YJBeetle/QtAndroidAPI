@@ -20,8 +20,8 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NinePatchDrawable::NinePatchDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
+	// QJniObject forward
+	NinePatchDrawable::NinePatchDrawable(QJniObject obj) : android::graphics::drawable::Drawable(obj) {}
 	
 	// Constructors
 	NinePatchDrawable::NinePatchDrawable(android::graphics::NinePatch arg0)

@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebStorage::WebStorage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebStorage::WebStorage(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

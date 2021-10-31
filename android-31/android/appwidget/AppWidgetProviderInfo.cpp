@@ -224,8 +224,8 @@ namespace android::appwidget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AppWidgetProviderInfo::AppWidgetProviderInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AppWidgetProviderInfo::AppWidgetProviderInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AppWidgetProviderInfo::AppWidgetProviderInfo()

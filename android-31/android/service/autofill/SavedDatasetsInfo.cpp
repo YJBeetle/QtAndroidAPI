@@ -20,8 +20,8 @@ namespace android::service::autofill
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SavedDatasetsInfo::SavedDatasetsInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SavedDatasetsInfo::SavedDatasetsInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SavedDatasetsInfo::SavedDatasetsInfo(jstring arg0, jint arg1)

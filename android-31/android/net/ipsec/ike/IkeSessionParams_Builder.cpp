@@ -10,8 +10,8 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IkeSessionParams_Builder::IkeSessionParams_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IkeSessionParams_Builder::IkeSessionParams_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	IkeSessionParams_Builder::IkeSessionParams_Builder()

@@ -39,8 +39,8 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RggbChannelVector::RggbChannelVector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RggbChannelVector::RggbChannelVector(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RggbChannelVector::RggbChannelVector(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)

@@ -6,8 +6,8 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AppSearchSchema_Builder::AppSearchSchema_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AppSearchSchema_Builder::AppSearchSchema_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AppSearchSchema_Builder::AppSearchSchema_Builder(jstring arg0)

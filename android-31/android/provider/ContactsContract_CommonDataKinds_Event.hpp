@@ -26,9 +26,9 @@ namespace android::provider
 		static jint TYPE_BIRTHDAY();
 		static jint TYPE_OTHER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Event(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_Event(QAndroidJniObject obj);
+		ContactsContract_CommonDataKinds_Event(QJniObject obj);
 		
 		// Constructors
 		

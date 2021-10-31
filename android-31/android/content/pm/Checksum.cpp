@@ -62,8 +62,8 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Checksum::Checksum(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Checksum::Checksum(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Checksum::Checksum(jint arg0, jbyteArray arg1)

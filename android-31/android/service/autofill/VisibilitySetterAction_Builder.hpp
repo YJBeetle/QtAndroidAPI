@@ -14,9 +14,9 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VisibilitySetterAction_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VisibilitySetterAction_Builder(QAndroidJniObject obj);
+		VisibilitySetterAction_Builder(QJniObject obj);
 		
 		// Constructors
 		VisibilitySetterAction_Builder(jint arg0, jint arg1);

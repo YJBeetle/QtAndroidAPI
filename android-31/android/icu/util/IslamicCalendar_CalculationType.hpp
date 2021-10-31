@@ -15,9 +15,9 @@ namespace android::icu::util
 		static android::icu::util::IslamicCalendar_CalculationType ISLAMIC_TBLA();
 		static android::icu::util::IslamicCalendar_CalculationType ISLAMIC_UMALQURA();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IslamicCalendar_CalculationType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		IslamicCalendar_CalculationType(QAndroidJniObject obj);
+		IslamicCalendar_CalculationType(QJniObject obj);
 		
 		// Constructors
 		

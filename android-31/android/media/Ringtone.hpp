@@ -18,9 +18,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Ringtone(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Ringtone(QAndroidJniObject obj);
+		Ringtone(QJniObject obj);
 		
 		// Constructors
 		

@@ -5,8 +5,8 @@ namespace android::app::admin
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FactoryResetProtectionPolicy_Builder::FactoryResetProtectionPolicy_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FactoryResetProtectionPolicy_Builder::FactoryResetProtectionPolicy_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	FactoryResetProtectionPolicy_Builder::FactoryResetProtectionPolicy_Builder()

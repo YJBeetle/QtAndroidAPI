@@ -5,8 +5,8 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VisualVoicemailSmsFilterSettings_Builder::VisualVoicemailSmsFilterSettings_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VisualVoicemailSmsFilterSettings_Builder::VisualVoicemailSmsFilterSettings_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	VisualVoicemailSmsFilterSettings_Builder::VisualVoicemailSmsFilterSettings_Builder()

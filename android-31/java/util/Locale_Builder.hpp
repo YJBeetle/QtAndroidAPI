@@ -14,9 +14,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Locale_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Locale_Builder(QAndroidJniObject obj);
+		Locale_Builder(QJniObject obj);
 		
 		// Constructors
 		Locale_Builder();

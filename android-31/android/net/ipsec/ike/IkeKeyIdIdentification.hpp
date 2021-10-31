@@ -12,9 +12,9 @@ namespace android::net::ipsec::ike
 		// Fields
 		jbyteArray keyId();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeKeyIdIdentification(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeIdentification(className, sig, std::forward<Ts>(agv)...) {}
-		IkeKeyIdIdentification(QAndroidJniObject obj);
+		IkeKeyIdIdentification(QJniObject obj);
 		
 		// Constructors
 		IkeKeyIdIdentification(jbyteArray arg0);

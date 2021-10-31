@@ -23,9 +23,9 @@ namespace android::view::textservice
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SpellCheckerSubtype(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SpellCheckerSubtype(QAndroidJniObject obj);
+		SpellCheckerSubtype(QJniObject obj);
 		
 		// Constructors
 		SpellCheckerSubtype(jint arg0, jstring arg1, jstring arg2);

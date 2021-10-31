@@ -61,8 +61,8 @@ namespace java::lang::invoke
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MethodHandles_Lookup::MethodHandles_Lookup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MethodHandles_Lookup::MethodHandles_Lookup(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

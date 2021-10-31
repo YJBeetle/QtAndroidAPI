@@ -22,9 +22,9 @@ namespace android::security::keystore
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyGenParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyGenParameterSpec(QAndroidJniObject obj);
+		KeyGenParameterSpec(QJniObject obj);
 		
 		// Constructors
 		

@@ -27,9 +27,9 @@ namespace java::nio::channels::spi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbstractSelector(const char *className, const char *sig, Ts...agv) : java::nio::channels::Selector(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractSelector(QAndroidJniObject obj);
+		AbstractSelector(QJniObject obj);
 		
 		// Constructors
 		

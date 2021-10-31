@@ -221,8 +221,8 @@ namespace android::net::ipsec::ike
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SaProposal::SaProposal(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SaProposal::SaProposal(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

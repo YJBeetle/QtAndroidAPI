@@ -23,8 +23,8 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StructCmsghdr::StructCmsghdr(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StructCmsghdr::StructCmsghdr(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StructCmsghdr::StructCmsghdr(jint arg0, jint arg1, jbyteArray arg2)

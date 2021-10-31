@@ -25,9 +25,9 @@ namespace android::net::http
 		static jint SSL_NOTYETVALID();
 		static jint SSL_UNTRUSTED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SslError(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SslError(QAndroidJniObject obj);
+		SslError(QJniObject obj);
 		
 		// Constructors
 		SslError(jint arg0, android::net::http::SslCertificate arg1);

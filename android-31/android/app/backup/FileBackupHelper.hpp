@@ -26,9 +26,9 @@ namespace android::app::backup
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FileBackupHelper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FileBackupHelper(QAndroidJniObject obj);
+		FileBackupHelper(QJniObject obj);
 		
 		// Constructors
 		FileBackupHelper(android::content::Context arg0, jarray arg1);

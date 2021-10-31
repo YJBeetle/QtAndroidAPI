@@ -22,9 +22,9 @@ namespace android::media
 		static jint RATING_PERCENTAGE();
 		static jint RATING_THUMB_UP_DOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Rating(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Rating(QAndroidJniObject obj);
+		Rating(QJniObject obj);
 		
 		// Constructors
 		

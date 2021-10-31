@@ -5,8 +5,8 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PaintDrawable::PaintDrawable(QAndroidJniObject obj) : android::graphics::drawable::ShapeDrawable(obj) {}
+	// QJniObject forward
+	PaintDrawable::PaintDrawable(QJniObject obj) : android::graphics::drawable::ShapeDrawable(obj) {}
 	
 	// Constructors
 	PaintDrawable::PaintDrawable()

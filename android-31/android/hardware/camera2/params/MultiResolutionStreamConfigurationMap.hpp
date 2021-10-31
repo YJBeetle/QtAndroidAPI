@@ -10,9 +10,9 @@ namespace android::hardware::camera2::params
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MultiResolutionStreamConfigurationMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MultiResolutionStreamConfigurationMap(QAndroidJniObject obj);
+		MultiResolutionStreamConfigurationMap(QJniObject obj);
 		
 		// Constructors
 		

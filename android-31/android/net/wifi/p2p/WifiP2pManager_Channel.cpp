@@ -4,8 +4,8 @@ namespace android::net::wifi::p2p
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WifiP2pManager_Channel::WifiP2pManager_Channel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiP2pManager_Channel::WifiP2pManager_Channel(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

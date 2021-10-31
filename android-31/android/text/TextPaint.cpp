@@ -48,8 +48,8 @@ namespace android::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextPaint::TextPaint(QAndroidJniObject obj) : android::graphics::Paint(obj) {}
+	// QJniObject forward
+	TextPaint::TextPaint(QJniObject obj) : android::graphics::Paint(obj) {}
 	
 	// Constructors
 	TextPaint::TextPaint()

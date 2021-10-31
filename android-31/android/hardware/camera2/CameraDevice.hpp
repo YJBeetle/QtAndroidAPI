@@ -47,9 +47,9 @@ namespace android::hardware::camera2
 		static jint TEMPLATE_VIDEO_SNAPSHOT();
 		static jint TEMPLATE_ZERO_SHUTTER_LAG();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CameraDevice(QAndroidJniObject obj);
+		CameraDevice(QJniObject obj);
 		
 		// Constructors
 		

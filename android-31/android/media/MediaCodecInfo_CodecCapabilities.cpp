@@ -466,8 +466,8 @@ namespace android::media
 		).object<jarray>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities()

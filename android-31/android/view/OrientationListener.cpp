@@ -12,8 +12,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OrientationListener::OrientationListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	OrientationListener::OrientationListener(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	OrientationListener::OrientationListener(android::content::Context arg0)

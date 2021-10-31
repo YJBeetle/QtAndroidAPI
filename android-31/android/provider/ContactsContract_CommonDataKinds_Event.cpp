@@ -67,8 +67,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_CommonDataKinds_Event::ContactsContract_CommonDataKinds_Event(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_CommonDataKinds_Event::ContactsContract_CommonDataKinds_Event(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

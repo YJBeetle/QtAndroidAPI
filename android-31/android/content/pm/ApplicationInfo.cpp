@@ -605,8 +605,8 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ApplicationInfo::ApplicationInfo(QAndroidJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
+	// QJniObject forward
+	ApplicationInfo::ApplicationInfo(QJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
 	
 	// Constructors
 	ApplicationInfo::ApplicationInfo()

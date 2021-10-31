@@ -6,8 +6,8 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SearchResult_MatchInfo_Builder::SearchResult_MatchInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SearchResult_MatchInfo_Builder::SearchResult_MatchInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SearchResult_MatchInfo_Builder::SearchResult_MatchInfo_Builder(jstring arg0)

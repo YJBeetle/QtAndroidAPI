@@ -12,8 +12,8 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LensShadingMap::LensShadingMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LensShadingMap::LensShadingMap(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -25,9 +25,9 @@ namespace android::net::wifi
 		static jstring WAPI_AS_CERTIFICATE();
 		static jstring WAPI_USER_CERTIFICATE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiEnterpriseConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiEnterpriseConfig(QAndroidJniObject obj);
+		WifiEnterpriseConfig(QJniObject obj);
 		
 		// Constructors
 		WifiEnterpriseConfig();

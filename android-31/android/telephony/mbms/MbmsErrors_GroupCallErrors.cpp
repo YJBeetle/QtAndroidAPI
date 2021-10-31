@@ -18,8 +18,8 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MbmsErrors_GroupCallErrors::MbmsErrors_GroupCallErrors(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MbmsErrors_GroupCallErrors::MbmsErrors_GroupCallErrors(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

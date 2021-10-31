@@ -38,9 +38,9 @@ namespace android::icu::text
 		static jint SECONDARY();
 		static jint TERTIARY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Collator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Collator(QAndroidJniObject obj);
+		Collator(QJniObject obj);
 		
 		// Constructors
 		

@@ -26,9 +26,9 @@ namespace android::nfc::tech
 		static jint TYPE_PRO();
 		static jint TYPE_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MifareClassic(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MifareClassic(QAndroidJniObject obj);
+		MifareClassic(QJniObject obj);
 		
 		// Constructors
 		

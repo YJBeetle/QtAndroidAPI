@@ -5,8 +5,8 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CheckedOutputStream::CheckedOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
+	// QJniObject forward
+	CheckedOutputStream::CheckedOutputStream(QJniObject obj) : java::io::FilterOutputStream(obj) {}
 	
 	// Constructors
 	CheckedOutputStream::CheckedOutputStream(java::io::OutputStream arg0, __JniBaseClass arg1)

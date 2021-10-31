@@ -7,8 +7,8 @@ namespace android::net::rtp
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AudioStream::AudioStream(QAndroidJniObject obj) : android::net::rtp::RtpStream(obj) {}
+	// QJniObject forward
+	AudioStream::AudioStream(QJniObject obj) : android::net::rtp::RtpStream(obj) {}
 	
 	// Constructors
 	AudioStream::AudioStream(java::net::InetAddress arg0)

@@ -15,9 +15,9 @@ namespace android::os::health
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TimerStat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TimerStat(QAndroidJniObject obj);
+		TimerStat(QJniObject obj);
 		
 		// Constructors
 		TimerStat();

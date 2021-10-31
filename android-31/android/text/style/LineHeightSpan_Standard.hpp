@@ -18,9 +18,9 @@ namespace android::text::style
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LineHeightSpan_Standard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LineHeightSpan_Standard(QAndroidJniObject obj);
+		LineHeightSpan_Standard(QJniObject obj);
 		
 		// Constructors
 		LineHeightSpan_Standard(android::os::Parcel arg0);

@@ -15,9 +15,9 @@ namespace java::nio::file
 		static java::nio::file::FileVisitResult SKIP_SUBTREE();
 		static java::nio::file::FileVisitResult TERMINATE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FileVisitResult(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		FileVisitResult(QAndroidJniObject obj);
+		FileVisitResult(QJniObject obj);
 		
 		// Constructors
 		

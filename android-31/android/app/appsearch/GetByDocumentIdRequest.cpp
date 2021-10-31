@@ -12,8 +12,8 @@ namespace android::app::appsearch
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	GetByDocumentIdRequest::GetByDocumentIdRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GetByDocumentIdRequest::GetByDocumentIdRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

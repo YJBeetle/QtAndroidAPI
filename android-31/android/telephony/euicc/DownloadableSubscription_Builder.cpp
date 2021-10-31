@@ -5,8 +5,8 @@ namespace android::telephony::euicc
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DownloadableSubscription_Builder::DownloadableSubscription_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DownloadableSubscription_Builder::DownloadableSubscription_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DownloadableSubscription_Builder::DownloadableSubscription_Builder(android::telephony::euicc::DownloadableSubscription arg0)

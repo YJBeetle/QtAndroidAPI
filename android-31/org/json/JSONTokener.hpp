@@ -14,9 +14,9 @@ namespace org::json
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JSONTokener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		JSONTokener(QAndroidJniObject obj);
+		JSONTokener(QJniObject obj);
 		
 		// Constructors
 		JSONTokener(jstring arg0);

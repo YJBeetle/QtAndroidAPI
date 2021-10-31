@@ -18,9 +18,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContextParams_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContextParams_Builder(QAndroidJniObject obj);
+		ContextParams_Builder(QJniObject obj);
 		
 		// Constructors
 		ContextParams_Builder();

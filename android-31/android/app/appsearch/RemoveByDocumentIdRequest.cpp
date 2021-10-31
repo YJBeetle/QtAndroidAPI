@@ -4,8 +4,8 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoveByDocumentIdRequest::RemoveByDocumentIdRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RemoveByDocumentIdRequest::RemoveByDocumentIdRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

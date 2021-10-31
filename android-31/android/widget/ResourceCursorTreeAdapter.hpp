@@ -24,9 +24,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ResourceCursorTreeAdapter(const char *className, const char *sig, Ts...agv) : android::widget::CursorTreeAdapter(className, sig, std::forward<Ts>(agv)...) {}
-		ResourceCursorTreeAdapter(QAndroidJniObject obj);
+		ResourceCursorTreeAdapter(QJniObject obj);
 		
 		// Constructors
 		ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);

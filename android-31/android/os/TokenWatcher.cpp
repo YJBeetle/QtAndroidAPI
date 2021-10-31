@@ -6,8 +6,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TokenWatcher::TokenWatcher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TokenWatcher::TokenWatcher(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TokenWatcher::TokenWatcher(android::os::Handler arg0, jstring arg1)

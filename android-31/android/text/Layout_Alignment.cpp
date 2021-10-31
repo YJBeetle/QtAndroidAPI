@@ -28,8 +28,8 @@ namespace android::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Layout_Alignment::Layout_Alignment(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Layout_Alignment::Layout_Alignment(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

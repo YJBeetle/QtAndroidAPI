@@ -4,8 +4,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LoginFilter_UsernameFilterGMail::LoginFilter_UsernameFilterGMail(QAndroidJniObject obj) : android::text::LoginFilter(obj) {}
+	// QJniObject forward
+	LoginFilter_UsernameFilterGMail::LoginFilter_UsernameFilterGMail(QJniObject obj) : android::text::LoginFilter(obj) {}
 	
 	// Constructors
 	LoginFilter_UsernameFilterGMail::LoginFilter_UsernameFilterGMail()

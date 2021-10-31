@@ -23,9 +23,9 @@ namespace android::view::translation
 		static jint STATE_NOT_AVAILABLE();
 		static jint STATE_ON_DEVICE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TranslationCapability(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TranslationCapability(QAndroidJniObject obj);
+		TranslationCapability(QJniObject obj);
 		
 		// Constructors
 		

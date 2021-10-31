@@ -23,9 +23,9 @@ namespace android::view
 		jint rightMargin();
 		jint topMargin();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ViewGroup_MarginLayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		ViewGroup_MarginLayoutParams(QAndroidJniObject obj);
+		ViewGroup_MarginLayoutParams(QJniObject obj);
 		
 		// Constructors
 		ViewGroup_MarginLayoutParams(android::view::ViewGroup_LayoutParams arg0);

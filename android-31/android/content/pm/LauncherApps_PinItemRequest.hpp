@@ -33,9 +33,9 @@ namespace android::content::pm
 		static jint REQUEST_TYPE_APPWIDGET();
 		static jint REQUEST_TYPE_SHORTCUT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LauncherApps_PinItemRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherApps_PinItemRequest(QAndroidJniObject obj);
+		LauncherApps_PinItemRequest(QJniObject obj);
 		
 		// Constructors
 		

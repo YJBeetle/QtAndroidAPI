@@ -22,9 +22,9 @@ namespace android::icu::number
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Notation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Notation(QAndroidJniObject obj);
+		Notation(QJniObject obj);
 		
 		// Constructors
 		

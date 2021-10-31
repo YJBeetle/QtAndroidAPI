@@ -25,9 +25,9 @@ namespace android::view::inputmethod
 		jint startOffset();
 		jstring text();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ExtractedText(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ExtractedText(QAndroidJniObject obj);
+		ExtractedText(QJniObject obj);
 		
 		// Constructors
 		ExtractedText();

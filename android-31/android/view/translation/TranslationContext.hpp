@@ -22,9 +22,9 @@ namespace android::view::translation
 		static jint FLAG_LOW_LATENCY();
 		static jint FLAG_TRANSLITERATION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TranslationContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TranslationContext(QAndroidJniObject obj);
+		TranslationContext(QJniObject obj);
 		
 		// Constructors
 		

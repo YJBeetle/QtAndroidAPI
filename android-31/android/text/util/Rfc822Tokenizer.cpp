@@ -4,8 +4,8 @@ namespace android::text::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Rfc822Tokenizer::Rfc822Tokenizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Rfc822Tokenizer::Rfc822Tokenizer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Rfc822Tokenizer::Rfc822Tokenizer()

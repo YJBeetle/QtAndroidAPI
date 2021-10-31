@@ -43,9 +43,9 @@ namespace android::os
 		static jint MODE_WORLD_WRITEABLE();
 		static jint MODE_WRITE_ONLY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ParcelFileDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ParcelFileDescriptor(QAndroidJniObject obj);
+		ParcelFileDescriptor(QJniObject obj);
 		
 		// Constructors
 		ParcelFileDescriptor(android::os::ParcelFileDescriptor &arg0);

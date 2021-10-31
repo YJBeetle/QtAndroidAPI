@@ -23,9 +23,9 @@ namespace android::service::autofill
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InlinePresentation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		InlinePresentation(QAndroidJniObject obj);
+		InlinePresentation(QJniObject obj);
 		
 		// Constructors
 		InlinePresentation(android::app::slice::Slice arg0, android::widget::inline::InlinePresentationSpec arg1, jboolean arg2);

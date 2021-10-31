@@ -13,8 +13,8 @@ namespace android::security
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AppUriAuthenticationPolicy::AppUriAuthenticationPolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AppUriAuthenticationPolicy::AppUriAuthenticationPolicy(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

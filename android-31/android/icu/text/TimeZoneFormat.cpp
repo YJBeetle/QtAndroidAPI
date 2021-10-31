@@ -15,8 +15,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimeZoneFormat::TimeZoneFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
+	// QJniObject forward
+	TimeZoneFormat::TimeZoneFormat(QJniObject obj) : android::icu::text::UFormat(obj) {}
 	
 	// Constructors
 	

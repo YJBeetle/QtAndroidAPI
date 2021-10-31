@@ -38,8 +38,8 @@ namespace android::location
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SettingInjectorService::SettingInjectorService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	SettingInjectorService::SettingInjectorService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	SettingInjectorService::SettingInjectorService(jstring arg0)

@@ -14,9 +14,9 @@ namespace android::printservice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CustomPrinterIconCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CustomPrinterIconCallback(QAndroidJniObject obj);
+		CustomPrinterIconCallback(QJniObject obj);
 		
 		// Constructors
 		

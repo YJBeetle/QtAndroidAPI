@@ -12,9 +12,9 @@ namespace android::accounts
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OperationCanceledException(const char *className, const char *sig, Ts...agv) : android::accounts::AccountsException(className, sig, std::forward<Ts>(agv)...) {}
-		OperationCanceledException(QAndroidJniObject obj);
+		OperationCanceledException(QJniObject obj);
 		
 		// Constructors
 		OperationCanceledException();

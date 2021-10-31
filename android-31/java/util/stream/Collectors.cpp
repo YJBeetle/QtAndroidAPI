@@ -17,8 +17,8 @@ namespace java::util::stream
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Collectors::Collectors(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Collectors::Collectors(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

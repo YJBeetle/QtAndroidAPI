@@ -5,8 +5,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HandlerThread::HandlerThread(QAndroidJniObject obj) : java::lang::Thread(obj) {}
+	// QJniObject forward
+	HandlerThread::HandlerThread(QJniObject obj) : java::lang::Thread(obj) {}
 	
 	// Constructors
 	HandlerThread::HandlerThread(jstring arg0)

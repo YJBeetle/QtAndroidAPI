@@ -5,8 +5,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ViewConfiguration::ViewConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ViewConfiguration::ViewConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ViewConfiguration::ViewConfiguration()

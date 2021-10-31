@@ -101,8 +101,8 @@ namespace android::net
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	IpSecAlgorithm::IpSecAlgorithm(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IpSecAlgorithm::IpSecAlgorithm(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	IpSecAlgorithm::IpSecAlgorithm(jstring arg0, jbyteArray arg1)

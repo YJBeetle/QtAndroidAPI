@@ -101,8 +101,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumberFormat::NumberFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
+	// QJniObject forward
+	NumberFormat::NumberFormat(QJniObject obj) : android::icu::text::UFormat(obj) {}
 	
 	// Constructors
 	NumberFormat::NumberFormat()

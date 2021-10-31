@@ -22,9 +22,9 @@ namespace android::media
 		static jstring PLAYING();
 		static jstring WIDTH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaPlayer_MetricsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaPlayer_MetricsConstants(QAndroidJniObject obj);
+		MediaPlayer_MetricsConstants(QJniObject obj);
 		
 		// Constructors
 		

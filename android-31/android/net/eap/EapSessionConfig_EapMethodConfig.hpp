@@ -15,9 +15,9 @@ namespace android::net::eap
 		static jint EAP_TYPE_SIM();
 		static jint EAP_TYPE_TTLS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EapSessionConfig_EapMethodConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EapSessionConfig_EapMethodConfig(QAndroidJniObject obj);
+		EapSessionConfig_EapMethodConfig(QJniObject obj);
 		
 		// Constructors
 		

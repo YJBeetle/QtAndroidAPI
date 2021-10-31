@@ -12,9 +12,9 @@ namespace java::nio
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BufferUnderflowException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		BufferUnderflowException(QAndroidJniObject obj);
+		BufferUnderflowException(QJniObject obj);
 		
 		// Constructors
 		BufferUnderflowException();

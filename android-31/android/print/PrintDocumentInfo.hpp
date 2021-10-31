@@ -19,9 +19,9 @@ namespace android::print
 		static __JniBaseClass CREATOR();
 		static jint PAGE_COUNT_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PrintDocumentInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PrintDocumentInfo(QAndroidJniObject obj);
+		PrintDocumentInfo(QJniObject obj);
 		
 		// Constructors
 		

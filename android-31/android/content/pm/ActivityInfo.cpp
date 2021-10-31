@@ -577,8 +577,8 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActivityInfo::ActivityInfo(QAndroidJniObject obj) : android::content::pm::ComponentInfo(obj) {}
+	// QJniObject forward
+	ActivityInfo::ActivityInfo(QJniObject obj) : android::content::pm::ComponentInfo(obj) {}
 	
 	// Constructors
 	ActivityInfo::ActivityInfo()

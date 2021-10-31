@@ -36,8 +36,8 @@ namespace java::security::cert
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PKIXRevocationChecker_Option::PKIXRevocationChecker_Option(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	PKIXRevocationChecker_Option::PKIXRevocationChecker_Option(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

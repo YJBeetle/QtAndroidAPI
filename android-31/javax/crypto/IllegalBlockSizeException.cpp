@@ -4,8 +4,8 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalBlockSizeException::IllegalBlockSizeException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	// QJniObject forward
+	IllegalBlockSizeException::IllegalBlockSizeException(QJniObject obj) : java::security::GeneralSecurityException(obj) {}
 	
 	// Constructors
 	IllegalBlockSizeException::IllegalBlockSizeException()

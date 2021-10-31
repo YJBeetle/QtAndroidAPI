@@ -15,9 +15,9 @@ namespace android::service::controls::templates
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ControlButton(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ControlButton(QAndroidJniObject obj);
+		ControlButton(QJniObject obj);
 		
 		// Constructors
 		ControlButton(jboolean arg0, jstring arg1);

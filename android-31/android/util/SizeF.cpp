@@ -13,8 +13,8 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SizeF::SizeF(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SizeF::SizeF(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SizeF::SizeF(jfloat arg0, jfloat arg1)

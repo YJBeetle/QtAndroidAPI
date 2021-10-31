@@ -7,8 +7,8 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GlobalSearchSession::GlobalSearchSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GlobalSearchSession::GlobalSearchSession(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

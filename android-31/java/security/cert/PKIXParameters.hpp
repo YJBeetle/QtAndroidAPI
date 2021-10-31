@@ -26,9 +26,9 @@ namespace java::security::cert
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PKIXParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PKIXParameters(QAndroidJniObject obj);
+		PKIXParameters(QJniObject obj);
 		
 		// Constructors
 		PKIXParameters(java::security::KeyStore arg0);

@@ -5,8 +5,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FloatProperty::FloatProperty(QAndroidJniObject obj) : android::util::Property(obj) {}
+	// QJniObject forward
+	FloatProperty::FloatProperty(QJniObject obj) : android::util::Property(obj) {}
 	
 	// Constructors
 	FloatProperty::FloatProperty(jstring arg0)

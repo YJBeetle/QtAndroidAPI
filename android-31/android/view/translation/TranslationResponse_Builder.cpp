@@ -8,8 +8,8 @@ namespace android::view::translation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TranslationResponse_Builder::TranslationResponse_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TranslationResponse_Builder::TranslationResponse_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TranslationResponse_Builder::TranslationResponse_Builder(jint arg0)

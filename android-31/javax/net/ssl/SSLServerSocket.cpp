@@ -6,8 +6,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLServerSocket::SSLServerSocket(QAndroidJniObject obj) : java::net::ServerSocket(obj) {}
+	// QJniObject forward
+	SSLServerSocket::SSLServerSocket(QJniObject obj) : java::net::ServerSocket(obj) {}
 	
 	// Constructors
 	

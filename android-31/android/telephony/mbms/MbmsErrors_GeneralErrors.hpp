@@ -17,9 +17,9 @@ namespace android::telephony::mbms
 		static jint ERROR_OUT_OF_MEMORY();
 		static jint ERROR_UNABLE_TO_READ_SIM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MbmsErrors_GeneralErrors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsErrors_GeneralErrors(QAndroidJniObject obj);
+		MbmsErrors_GeneralErrors(QJniObject obj);
 		
 		// Constructors
 		

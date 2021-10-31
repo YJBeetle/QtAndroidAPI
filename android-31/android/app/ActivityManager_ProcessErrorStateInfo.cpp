@@ -94,8 +94,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActivityManager_ProcessErrorStateInfo::ActivityManager_ProcessErrorStateInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ActivityManager_ProcessErrorStateInfo::ActivityManager_ProcessErrorStateInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ActivityManager_ProcessErrorStateInfo::ActivityManager_ProcessErrorStateInfo()

@@ -26,9 +26,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProxySelector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ProxySelector(QAndroidJniObject obj);
+		ProxySelector(QJniObject obj);
 		
 		// Constructors
 		ProxySelector();

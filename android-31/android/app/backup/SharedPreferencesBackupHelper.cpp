@@ -8,8 +8,8 @@ namespace android::app::backup
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SharedPreferencesBackupHelper::SharedPreferencesBackupHelper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SharedPreferencesBackupHelper::SharedPreferencesBackupHelper(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SharedPreferencesBackupHelper::SharedPreferencesBackupHelper(android::content::Context arg0, jarray arg1)

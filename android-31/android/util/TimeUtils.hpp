@@ -18,9 +18,9 @@ namespace android::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TimeUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TimeUtils(QAndroidJniObject obj);
+		TimeUtils(QJniObject obj);
 		
 		// Constructors
 		

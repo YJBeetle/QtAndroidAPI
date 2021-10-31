@@ -11,9 +11,9 @@ namespace org::xml::sax::ext
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Attributes2Impl(const char *className, const char *sig, Ts...agv) : org::xml::sax::helpers::AttributesImpl(className, sig, std::forward<Ts>(agv)...) {}
-		Attributes2Impl(QAndroidJniObject obj);
+		Attributes2Impl(QJniObject obj);
 		
 		// Constructors
 		Attributes2Impl();

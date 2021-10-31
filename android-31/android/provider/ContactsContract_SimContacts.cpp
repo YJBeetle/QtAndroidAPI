@@ -13,8 +13,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_SimContacts::ContactsContract_SimContacts(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_SimContacts::ContactsContract_SimContacts(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

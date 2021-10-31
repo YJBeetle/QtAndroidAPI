@@ -15,9 +15,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VoiceInteractor_Prompt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor_Prompt(QAndroidJniObject obj);
+		VoiceInteractor_Prompt(QJniObject obj);
 		
 		// Constructors
 		VoiceInteractor_Prompt(jstring arg0);

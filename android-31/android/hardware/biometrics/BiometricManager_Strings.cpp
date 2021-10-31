@@ -4,8 +4,8 @@ namespace android::hardware::biometrics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BiometricManager_Strings::BiometricManager_Strings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BiometricManager_Strings::BiometricManager_Strings(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

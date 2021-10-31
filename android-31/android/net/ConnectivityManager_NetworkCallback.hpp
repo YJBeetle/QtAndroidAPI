@@ -23,9 +23,9 @@ namespace android::net
 		// Fields
 		static jint FLAG_INCLUDE_LOCATION_INFO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConnectivityManager_NetworkCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectivityManager_NetworkCallback(QAndroidJniObject obj);
+		ConnectivityManager_NetworkCallback(QJniObject obj);
 		
 		// Constructors
 		ConnectivityManager_NetworkCallback();

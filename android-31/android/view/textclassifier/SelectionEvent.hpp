@@ -46,9 +46,9 @@ namespace android::view::textclassifier
 		static jint INVOCATION_MANUAL();
 		static jint INVOCATION_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SelectionEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SelectionEvent(QAndroidJniObject obj);
+		SelectionEvent(QJniObject obj);
 		
 		// Constructors
 		

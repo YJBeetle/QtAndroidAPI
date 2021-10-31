@@ -122,9 +122,9 @@ namespace android::net::wifi
 		static jint WPS_TKIP_ONLY_PROHIBITED();
 		static jint WPS_WEP_PROHIBITED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager(QAndroidJniObject obj);
+		WifiManager(QJniObject obj);
 		
 		// Constructors
 		

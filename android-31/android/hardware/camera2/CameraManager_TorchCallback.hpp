@@ -10,9 +10,9 @@ namespace android::hardware::camera2
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraManager_TorchCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CameraManager_TorchCallback(QAndroidJniObject obj);
+		CameraManager_TorchCallback(QJniObject obj);
 		
 		// Constructors
 		CameraManager_TorchCallback();

@@ -28,9 +28,9 @@ namespace android::content::pm
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LabeledIntent(const char *className, const char *sig, Ts...agv) : android::content::Intent(className, sig, std::forward<Ts>(agv)...) {}
-		LabeledIntent(QAndroidJniObject obj);
+		LabeledIntent(QJniObject obj);
 		
 		// Constructors
 		LabeledIntent(jstring arg0, jint arg1, jint arg2);

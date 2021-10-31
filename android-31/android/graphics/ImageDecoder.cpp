@@ -57,8 +57,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImageDecoder::ImageDecoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ImageDecoder::ImageDecoder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

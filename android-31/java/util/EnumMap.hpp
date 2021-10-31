@@ -23,9 +23,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EnumMap(const char *className, const char *sig, Ts...agv) : java::util::AbstractMap(className, sig, std::forward<Ts>(agv)...) {}
-		EnumMap(QAndroidJniObject obj);
+		EnumMap(QJniObject obj);
 		
 		// Constructors
 		EnumMap(jclass arg0);

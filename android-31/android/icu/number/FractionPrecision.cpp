@@ -5,8 +5,8 @@ namespace android::icu::number
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FractionPrecision::FractionPrecision(QAndroidJniObject obj) : android::icu::number::Precision(obj) {}
+	// QJniObject forward
+	FractionPrecision::FractionPrecision(QJniObject obj) : android::icu::number::Precision(obj) {}
 	
 	// Constructors
 	

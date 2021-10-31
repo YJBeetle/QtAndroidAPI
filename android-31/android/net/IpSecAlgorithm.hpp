@@ -26,9 +26,9 @@ namespace android::net
 		static jstring CRYPT_AES_CBC();
 		static jstring CRYPT_AES_CTR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IpSecAlgorithm(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecAlgorithm(QAndroidJniObject obj);
+		IpSecAlgorithm(QJniObject obj);
 		
 		// Constructors
 		IpSecAlgorithm(jstring arg0, jbyteArray arg1);

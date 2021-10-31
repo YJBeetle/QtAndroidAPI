@@ -15,9 +15,9 @@ namespace android::media::midi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MidiOutputPort(const char *className, const char *sig, Ts...agv) : android::media::midi::MidiSender(className, sig, std::forward<Ts>(agv)...) {}
-		MidiOutputPort(QAndroidJniObject obj);
+		MidiOutputPort(QJniObject obj);
 		
 		// Constructors
 		

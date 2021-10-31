@@ -11,9 +11,9 @@ namespace android::media::audiofx
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HapticGenerator(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		HapticGenerator(QAndroidJniObject obj);
+		HapticGenerator(QJniObject obj);
 		
 		// Constructors
 		

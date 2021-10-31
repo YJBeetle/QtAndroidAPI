@@ -34,8 +34,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DrmInitData_SchemeInitData::DrmInitData_SchemeInitData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DrmInitData_SchemeInitData::DrmInitData_SchemeInitData(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DrmInitData_SchemeInitData::DrmInitData_SchemeInitData(java::util::UUID arg0, jstring arg1, jbyteArray arg2)

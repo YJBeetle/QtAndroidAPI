@@ -8,8 +8,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyguardManager::KeyguardManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyguardManager::KeyguardManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

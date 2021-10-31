@@ -28,9 +28,9 @@ namespace android::net::wifi
 		jint networkId();
 		jint statusCode();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiManager_AddNetworkResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_AddNetworkResult(QAndroidJniObject obj);
+		WifiManager_AddNetworkResult(QJniObject obj);
 		
 		// Constructors
 		WifiManager_AddNetworkResult(jint arg0, jint arg1);

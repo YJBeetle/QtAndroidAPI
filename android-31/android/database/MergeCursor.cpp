@@ -6,8 +6,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MergeCursor::MergeCursor(QAndroidJniObject obj) : android::database::AbstractCursor(obj) {}
+	// QJniObject forward
+	MergeCursor::MergeCursor(QJniObject obj) : android::database::AbstractCursor(obj) {}
 	
 	// Constructors
 	MergeCursor::MergeCursor(jarray arg0)

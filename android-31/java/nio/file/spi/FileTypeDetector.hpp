@@ -14,9 +14,9 @@ namespace java::nio::file::spi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FileTypeDetector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FileTypeDetector(QAndroidJniObject obj);
+		FileTypeDetector(QJniObject obj);
 		
 		// Constructors
 		

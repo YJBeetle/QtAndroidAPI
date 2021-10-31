@@ -22,9 +22,9 @@ namespace android::app::role
 		static jstring ROLE_HOME();
 		static jstring ROLE_SMS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RoleManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RoleManager(QAndroidJniObject obj);
+		RoleManager(QJniObject obj);
 		
 		// Constructors
 		

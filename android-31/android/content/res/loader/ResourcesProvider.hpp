@@ -18,9 +18,9 @@ namespace android::content::res::loader
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ResourcesProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ResourcesProvider(QAndroidJniObject obj);
+		ResourcesProvider(QJniObject obj);
 		
 		// Constructors
 		

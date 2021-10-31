@@ -14,9 +14,9 @@ namespace android::telephony
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SignalStrengthUpdateRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SignalStrengthUpdateRequest_Builder(QAndroidJniObject obj);
+		SignalStrengthUpdateRequest_Builder(QJniObject obj);
 		
 		// Constructors
 		SignalStrengthUpdateRequest_Builder();

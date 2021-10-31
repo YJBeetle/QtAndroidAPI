@@ -4,8 +4,8 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyExpiredException::KeyExpiredException(QAndroidJniObject obj) : java::security::InvalidKeyException(obj) {}
+	// QJniObject forward
+	KeyExpiredException::KeyExpiredException(QJniObject obj) : java::security::InvalidKeyException(obj) {}
 	
 	// Constructors
 	KeyExpiredException::KeyExpiredException()

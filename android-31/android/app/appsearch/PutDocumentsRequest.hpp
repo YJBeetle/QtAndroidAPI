@@ -10,9 +10,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PutDocumentsRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PutDocumentsRequest(QAndroidJniObject obj);
+		PutDocumentsRequest(QJniObject obj);
 		
 		// Constructors
 		

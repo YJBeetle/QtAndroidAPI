@@ -4,8 +4,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaDataSource::MediaDataSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaDataSource::MediaDataSource(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaDataSource::MediaDataSource()

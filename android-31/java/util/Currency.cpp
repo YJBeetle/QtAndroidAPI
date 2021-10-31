@@ -10,8 +10,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Currency::Currency(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Currency::Currency(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

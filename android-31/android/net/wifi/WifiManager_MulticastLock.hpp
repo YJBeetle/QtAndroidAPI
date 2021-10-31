@@ -14,9 +14,9 @@ namespace android::net::wifi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiManager_MulticastLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_MulticastLock(QAndroidJniObject obj);
+		WifiManager_MulticastLock(QJniObject obj);
 		
 		// Constructors
 		

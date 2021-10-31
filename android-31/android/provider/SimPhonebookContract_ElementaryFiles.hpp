@@ -28,9 +28,9 @@ namespace android::provider
 		static jstring SLOT_INDEX();
 		static jstring SUBSCRIPTION_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SimPhonebookContract_ElementaryFiles(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SimPhonebookContract_ElementaryFiles(QAndroidJniObject obj);
+		SimPhonebookContract_ElementaryFiles(QJniObject obj);
 		
 		// Constructors
 		

@@ -7,8 +7,8 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Loader::Loader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Loader::Loader(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Loader::Loader(android::content::Context arg0)

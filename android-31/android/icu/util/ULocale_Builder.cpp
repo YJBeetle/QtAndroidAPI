@@ -5,8 +5,8 @@ namespace android::icu::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ULocale_Builder::ULocale_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ULocale_Builder::ULocale_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ULocale_Builder::ULocale_Builder()

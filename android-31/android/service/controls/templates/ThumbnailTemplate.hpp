@@ -15,9 +15,9 @@ namespace android::service::controls::templates
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ThumbnailTemplate(const char *className, const char *sig, Ts...agv) : android::service::controls::templates::ControlTemplate(className, sig, std::forward<Ts>(agv)...) {}
-		ThumbnailTemplate(QAndroidJniObject obj);
+		ThumbnailTemplate(QJniObject obj);
 		
 		// Constructors
 		ThumbnailTemplate(jstring arg0, jboolean arg1, android::graphics::drawable::Icon arg2, jstring arg3);

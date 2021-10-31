@@ -132,8 +132,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ColorSpace_Named::ColorSpace_Named(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ColorSpace_Named::ColorSpace_Named(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

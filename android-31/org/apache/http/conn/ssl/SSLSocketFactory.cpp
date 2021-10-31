@@ -56,8 +56,8 @@ namespace org::apache::http::conn::ssl
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SSLSocketFactory::SSLSocketFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SSLSocketFactory::SSLSocketFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0)

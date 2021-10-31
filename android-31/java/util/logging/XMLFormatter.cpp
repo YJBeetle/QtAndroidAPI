@@ -8,8 +8,8 @@ namespace java::util::logging
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	XMLFormatter::XMLFormatter(QAndroidJniObject obj) : java::util::logging::Formatter(obj) {}
+	// QJniObject forward
+	XMLFormatter::XMLFormatter(QJniObject obj) : java::util::logging::Formatter(obj) {}
 	
 	// Constructors
 	XMLFormatter::XMLFormatter()

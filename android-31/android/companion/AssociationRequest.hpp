@@ -16,9 +16,9 @@ namespace android::companion
 		static __JniBaseClass CREATOR();
 		static jstring DEVICE_PROFILE_WATCH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AssociationRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AssociationRequest(QAndroidJniObject obj);
+		AssociationRequest(QJniObject obj);
 		
 		// Constructors
 		

@@ -10,8 +10,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	View_AccessibilityDelegate::View_AccessibilityDelegate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	View_AccessibilityDelegate::View_AccessibilityDelegate(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	View_AccessibilityDelegate::View_AccessibilityDelegate()

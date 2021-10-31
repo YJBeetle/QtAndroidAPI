@@ -12,9 +12,9 @@ namespace android::security::identity
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MessageDecryptionException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		MessageDecryptionException(QAndroidJniObject obj);
+		MessageDecryptionException(QJniObject obj);
 		
 		// Constructors
 		MessageDecryptionException(jstring arg0);

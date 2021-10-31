@@ -29,9 +29,9 @@ namespace android::net::wifi
 		static jint RANDOMIZATION_NON_PERSISTENT();
 		static jint RANDOMIZATION_PERSISTENT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiNetworkSuggestion(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiNetworkSuggestion(QAndroidJniObject obj);
+		WifiNetworkSuggestion(QJniObject obj);
 		
 		// Constructors
 		

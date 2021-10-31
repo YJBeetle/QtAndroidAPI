@@ -12,9 +12,9 @@ namespace android::net::ipsec::ike
 		// Fields
 		jstring rfc822Name();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeRfc822AddrIdentification(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeIdentification(className, sig, std::forward<Ts>(agv)...) {}
-		IkeRfc822AddrIdentification(QAndroidJniObject obj);
+		IkeRfc822AddrIdentification(QJniObject obj);
 		
 		// Constructors
 		IkeRfc822AddrIdentification(jstring arg0);

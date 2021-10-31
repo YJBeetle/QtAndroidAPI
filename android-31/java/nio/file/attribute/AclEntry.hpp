@@ -18,9 +18,9 @@ namespace java::nio::file::attribute
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AclEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AclEntry(QAndroidJniObject obj);
+		AclEntry(QJniObject obj);
 		
 		// Constructors
 		

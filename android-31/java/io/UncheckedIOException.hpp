@@ -20,9 +20,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UncheckedIOException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		UncheckedIOException(QAndroidJniObject obj);
+		UncheckedIOException(QJniObject obj);
 		
 		// Constructors
 		UncheckedIOException(java::io::IOException arg0);

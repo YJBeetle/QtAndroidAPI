@@ -4,8 +4,8 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoAuthenticationKeyAvailableException::NoAuthenticationKeyAvailableException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
+	// QJniObject forward
+	NoAuthenticationKeyAvailableException::NoAuthenticationKeyAvailableException(QJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 	
 	// Constructors
 	NoAuthenticationKeyAvailableException::NoAuthenticationKeyAvailableException(jstring arg0)

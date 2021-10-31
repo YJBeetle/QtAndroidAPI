@@ -10,9 +10,9 @@ namespace android::security::identity
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessControlProfile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessControlProfile(QAndroidJniObject obj);
+		AccessControlProfile(QJniObject obj);
 		
 		// Constructors
 		

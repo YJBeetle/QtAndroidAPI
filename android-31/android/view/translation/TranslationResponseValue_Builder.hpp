@@ -18,9 +18,9 @@ namespace android::view::translation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TranslationResponseValue_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TranslationResponseValue_Builder(QAndroidJniObject obj);
+		TranslationResponseValue_Builder(QJniObject obj);
 		
 		// Constructors
 		TranslationResponseValue_Builder(jint arg0);

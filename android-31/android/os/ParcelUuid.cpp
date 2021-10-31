@@ -14,8 +14,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ParcelUuid::ParcelUuid(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ParcelUuid::ParcelUuid(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ParcelUuid::ParcelUuid(java::util::UUID arg0)

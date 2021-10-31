@@ -7,8 +7,8 @@ namespace java::lang::invoke
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CallSite::CallSite(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CallSite::CallSite(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

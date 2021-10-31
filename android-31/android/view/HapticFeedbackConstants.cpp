@@ -109,8 +109,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HapticFeedbackConstants::HapticFeedbackConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	HapticFeedbackConstants::HapticFeedbackConstants(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

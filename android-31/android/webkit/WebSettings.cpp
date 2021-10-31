@@ -115,8 +115,8 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WebSettings::WebSettings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebSettings::WebSettings(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebSettings::WebSettings()

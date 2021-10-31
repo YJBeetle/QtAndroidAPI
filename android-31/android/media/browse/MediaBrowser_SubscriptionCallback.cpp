@@ -5,8 +5,8 @@ namespace android::media::browse
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaBrowser_SubscriptionCallback::MediaBrowser_SubscriptionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaBrowser_SubscriptionCallback::MediaBrowser_SubscriptionCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaBrowser_SubscriptionCallback::MediaBrowser_SubscriptionCallback()

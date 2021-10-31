@@ -16,8 +16,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Region::Region(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Region::Region(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Region::Region()

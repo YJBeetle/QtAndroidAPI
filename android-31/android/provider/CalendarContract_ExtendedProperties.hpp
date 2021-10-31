@@ -15,9 +15,9 @@ namespace android::provider
 		// Fields
 		static android::net::Uri CONTENT_URI();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CalendarContract_ExtendedProperties(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_ExtendedProperties(QAndroidJniObject obj);
+		CalendarContract_ExtendedProperties(QJniObject obj);
 		
 		// Constructors
 		

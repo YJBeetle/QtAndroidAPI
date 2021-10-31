@@ -14,9 +14,9 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Animatable2_AnimationCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Animatable2_AnimationCallback(QAndroidJniObject obj);
+		Animatable2_AnimationCallback(QJniObject obj);
 		
 		// Constructors
 		Animatable2_AnimationCallback();

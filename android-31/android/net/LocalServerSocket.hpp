@@ -22,9 +22,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocalServerSocket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LocalServerSocket(QAndroidJniObject obj);
+		LocalServerSocket(QJniObject obj);
 		
 		// Constructors
 		LocalServerSocket(java::io::FileDescriptor arg0);

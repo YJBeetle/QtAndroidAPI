@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebView_VisualStateCallback::WebView_VisualStateCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebView_VisualStateCallback::WebView_VisualStateCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebView_VisualStateCallback::WebView_VisualStateCallback()

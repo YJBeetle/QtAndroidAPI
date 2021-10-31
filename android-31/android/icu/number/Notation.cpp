@@ -7,8 +7,8 @@ namespace android::icu::number
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notation::Notation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Notation::Notation(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

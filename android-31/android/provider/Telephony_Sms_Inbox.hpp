@@ -16,9 +16,9 @@ namespace android::provider
 		static android::net::Uri CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Telephony_Sms_Inbox(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Sms_Inbox(QAndroidJniObject obj);
+		Telephony_Sms_Inbox(QJniObject obj);
 		
 		// Constructors
 		

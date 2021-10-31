@@ -6,8 +6,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FragmentBreadCrumbs::FragmentBreadCrumbs(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
+	// QJniObject forward
+	FragmentBreadCrumbs::FragmentBreadCrumbs(QJniObject obj) : android::view::ViewGroup(obj) {}
 	
 	// Constructors
 	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context arg0)

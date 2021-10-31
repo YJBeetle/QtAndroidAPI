@@ -4,8 +4,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaParser_UnrecognizedInputFormatException::MediaParser_UnrecognizedInputFormatException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	MediaParser_UnrecognizedInputFormatException::MediaParser_UnrecognizedInputFormatException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	

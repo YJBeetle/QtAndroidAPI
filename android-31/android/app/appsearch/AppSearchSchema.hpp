@@ -10,9 +10,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppSearchSchema(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema(QAndroidJniObject obj);
+		AppSearchSchema(QJniObject obj);
 		
 		// Constructors
 		

@@ -6,8 +6,8 @@ namespace android::app::job
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JobServiceEngine::JobServiceEngine(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JobServiceEngine::JobServiceEngine(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	JobServiceEngine::JobServiceEngine(android::app::Service arg0)

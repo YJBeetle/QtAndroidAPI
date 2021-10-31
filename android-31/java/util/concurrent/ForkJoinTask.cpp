@@ -10,8 +10,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ForkJoinTask::ForkJoinTask(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ForkJoinTask::ForkJoinTask(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ForkJoinTask::ForkJoinTask()

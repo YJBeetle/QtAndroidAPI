@@ -17,9 +17,9 @@ namespace android::accounts
 		jstring name();
 		jstring type();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Account(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Account(QAndroidJniObject obj);
+		Account(QJniObject obj);
 		
 		// Constructors
 		Account(android::os::Parcel arg0);

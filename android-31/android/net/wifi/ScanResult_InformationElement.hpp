@@ -19,9 +19,9 @@ namespace android::net::wifi
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScanResult_InformationElement(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ScanResult_InformationElement(QAndroidJniObject obj);
+		ScanResult_InformationElement(QJniObject obj);
 		
 		// Constructors
 		ScanResult_InformationElement(android::net::wifi::ScanResult_InformationElement &arg0);

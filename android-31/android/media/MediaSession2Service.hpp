@@ -30,9 +30,9 @@ namespace android::media
 		// Fields
 		static jstring SERVICE_INTERFACE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaSession2Service(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSession2Service(QAndroidJniObject obj);
+		MediaSession2Service(QJniObject obj);
 		
 		// Constructors
 		MediaSession2Service();

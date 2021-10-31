@@ -14,9 +14,9 @@ namespace android::security::identity
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WritableIdentityCredential(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WritableIdentityCredential(QAndroidJniObject obj);
+		WritableIdentityCredential(QJniObject obj);
 		
 		// Constructors
 		

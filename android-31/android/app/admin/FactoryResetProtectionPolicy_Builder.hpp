@@ -14,9 +14,9 @@ namespace android::app::admin
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FactoryResetProtectionPolicy_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FactoryResetProtectionPolicy_Builder(QAndroidJniObject obj);
+		FactoryResetProtectionPolicy_Builder(QJniObject obj);
 		
 		// Constructors
 		FactoryResetProtectionPolicy_Builder();

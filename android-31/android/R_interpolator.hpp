@@ -27,9 +27,9 @@ namespace android
 		static jint linear_out_slow_in();
 		static jint overshoot();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit R_interpolator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		R_interpolator(QAndroidJniObject obj);
+		R_interpolator(QJniObject obj);
 		
 		// Constructors
 		R_interpolator();

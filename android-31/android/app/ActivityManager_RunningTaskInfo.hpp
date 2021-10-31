@@ -24,9 +24,9 @@ namespace android::app
 		jint numRunning();
 		android::graphics::Bitmap thumbnail();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActivityManager_RunningTaskInfo(const char *className, const char *sig, Ts...agv) : android::app::TaskInfo(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_RunningTaskInfo(QAndroidJniObject obj);
+		ActivityManager_RunningTaskInfo(QJniObject obj);
 		
 		// Constructors
 		ActivityManager_RunningTaskInfo();

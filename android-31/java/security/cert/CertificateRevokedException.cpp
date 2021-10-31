@@ -9,8 +9,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CertificateRevokedException::CertificateRevokedException(QAndroidJniObject obj) : java::security::cert::CertificateException(obj) {}
+	// QJniObject forward
+	CertificateRevokedException::CertificateRevokedException(QJniObject obj) : java::security::cert::CertificateException(obj) {}
 	
 	// Constructors
 	CertificateRevokedException::CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, __JniBaseClass arg3)

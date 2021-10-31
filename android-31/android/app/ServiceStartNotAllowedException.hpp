@@ -13,9 +13,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ServiceStartNotAllowedException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceStartNotAllowedException(QAndroidJniObject obj);
+		ServiceStartNotAllowedException(QJniObject obj);
 		
 		// Constructors
 		

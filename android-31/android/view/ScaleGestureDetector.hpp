@@ -22,9 +22,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScaleGestureDetector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ScaleGestureDetector(QAndroidJniObject obj);
+		ScaleGestureDetector(QJniObject obj);
 		
 		// Constructors
 		ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1);

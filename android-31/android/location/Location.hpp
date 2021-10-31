@@ -22,9 +22,9 @@ namespace android::location
 		static jint FORMAT_MINUTES();
 		static jint FORMAT_SECONDS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Location(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Location(QAndroidJniObject obj);
+		Location(QJniObject obj);
 		
 		// Constructors
 		Location(android::location::Location &arg0);

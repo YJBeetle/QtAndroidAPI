@@ -8,8 +8,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileChannel::FileChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractInterruptibleChannel(obj) {}
+	// QJniObject forward
+	FileChannel::FileChannel(QJniObject obj) : java::nio::channels::spi::AbstractInterruptibleChannel(obj) {}
 	
 	// Constructors
 	

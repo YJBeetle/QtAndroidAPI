@@ -4,8 +4,8 @@ namespace android::hardware::lights
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LightsRequest::LightsRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LightsRequest::LightsRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

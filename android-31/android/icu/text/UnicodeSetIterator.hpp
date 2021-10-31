@@ -18,9 +18,9 @@ namespace android::icu::text
 		jint codepointEnd();
 		jstring string();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnicodeSetIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSetIterator(QAndroidJniObject obj);
+		UnicodeSetIterator(QJniObject obj);
 		
 		// Constructors
 		UnicodeSetIterator();

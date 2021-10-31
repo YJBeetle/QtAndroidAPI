@@ -11,9 +11,9 @@ namespace android::hardware::camera2
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraOfflineSession(const char *className, const char *sig, Ts...agv) : android::hardware::camera2::CameraCaptureSession(className, sig, std::forward<Ts>(agv)...) {}
-		CameraOfflineSession(QAndroidJniObject obj);
+		CameraOfflineSession(QJniObject obj);
 		
 		// Constructors
 		CameraOfflineSession();

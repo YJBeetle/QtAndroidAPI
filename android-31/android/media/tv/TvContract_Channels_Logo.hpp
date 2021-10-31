@@ -11,9 +11,9 @@ namespace android::media::tv
 		// Fields
 		static jstring CONTENT_DIRECTORY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TvContract_Channels_Logo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TvContract_Channels_Logo(QAndroidJniObject obj);
+		TvContract_Channels_Logo(QJniObject obj);
 		
 		// Constructors
 		

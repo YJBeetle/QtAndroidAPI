@@ -42,8 +42,8 @@ namespace android::animation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LayoutTransition::LayoutTransition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LayoutTransition::LayoutTransition(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LayoutTransition::LayoutTransition()

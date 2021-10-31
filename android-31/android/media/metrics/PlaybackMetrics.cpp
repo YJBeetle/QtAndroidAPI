@@ -189,8 +189,8 @@ namespace android::media::metrics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PlaybackMetrics::PlaybackMetrics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PlaybackMetrics::PlaybackMetrics(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

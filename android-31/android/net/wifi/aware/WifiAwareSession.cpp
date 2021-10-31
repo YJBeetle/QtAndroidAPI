@@ -9,8 +9,8 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WifiAwareSession::WifiAwareSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiAwareSession::WifiAwareSession(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

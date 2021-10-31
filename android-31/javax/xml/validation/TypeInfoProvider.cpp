@@ -4,8 +4,8 @@ namespace javax::xml::validation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TypeInfoProvider::TypeInfoProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TypeInfoProvider::TypeInfoProvider(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -16,9 +16,9 @@ namespace android::telephony
 		static jstring PROTOCOL_IPV4V6();
 		static jstring PROTOCOL_IPV6();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager_Apn(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager_Apn(QAndroidJniObject obj);
+		CarrierConfigManager_Apn(QJniObject obj);
 		
 		// Constructors
 		

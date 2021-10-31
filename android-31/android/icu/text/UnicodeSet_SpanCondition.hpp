@@ -15,9 +15,9 @@ namespace android::icu::text
 		static android::icu::text::UnicodeSet_SpanCondition NOT_CONTAINED();
 		static android::icu::text::UnicodeSet_SpanCondition SIMPLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnicodeSet_SpanCondition(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSet_SpanCondition(QAndroidJniObject obj);
+		UnicodeSet_SpanCondition(QJniObject obj);
 		
 		// Constructors
 		

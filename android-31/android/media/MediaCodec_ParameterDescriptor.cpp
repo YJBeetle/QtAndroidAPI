@@ -4,8 +4,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCodec_ParameterDescriptor::MediaCodec_ParameterDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaCodec_ParameterDescriptor::MediaCodec_ParameterDescriptor(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

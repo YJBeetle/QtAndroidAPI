@@ -133,9 +133,9 @@ namespace android::opengl
 		static jint GL_WEIGHT_ARRAY_TYPE_OES();
 		static jint GL_WRITE_ONLY_OES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GLES11Ext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GLES11Ext(QAndroidJniObject obj);
+		GLES11Ext(QJniObject obj);
 		
 		// Constructors
 		GLES11Ext();

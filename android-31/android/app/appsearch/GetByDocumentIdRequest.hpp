@@ -11,9 +11,9 @@ namespace android::app::appsearch
 		// Fields
 		static jstring PROJECTION_SCHEMA_TYPE_WILDCARD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GetByDocumentIdRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GetByDocumentIdRequest(QAndroidJniObject obj);
+		GetByDocumentIdRequest(QJniObject obj);
 		
 		// Constructors
 		

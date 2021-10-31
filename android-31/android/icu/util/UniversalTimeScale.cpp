@@ -131,8 +131,8 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UniversalTimeScale::UniversalTimeScale(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UniversalTimeScale::UniversalTimeScale(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

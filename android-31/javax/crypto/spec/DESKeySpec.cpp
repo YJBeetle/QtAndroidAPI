@@ -11,8 +11,8 @@ namespace javax::crypto::spec
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DESKeySpec::DESKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DESKeySpec::DESKeySpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DESKeySpec::DESKeySpec(jbyteArray arg0)

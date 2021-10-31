@@ -13,9 +13,9 @@ namespace android::database
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CursorIndexOutOfBoundsException(const char *className, const char *sig, Ts...agv) : java::lang::IndexOutOfBoundsException(className, sig, std::forward<Ts>(agv)...) {}
-		CursorIndexOutOfBoundsException(QAndroidJniObject obj);
+		CursorIndexOutOfBoundsException(QJniObject obj);
 		
 		// Constructors
 		CursorIndexOutOfBoundsException(jstring arg0);

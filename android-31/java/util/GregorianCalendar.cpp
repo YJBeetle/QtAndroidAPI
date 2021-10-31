@@ -23,8 +23,8 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GregorianCalendar::GregorianCalendar(QAndroidJniObject obj) : java::util::Calendar(obj) {}
+	// QJniObject forward
+	GregorianCalendar::GregorianCalendar(QJniObject obj) : java::util::Calendar(obj) {}
 	
 	// Constructors
 	GregorianCalendar::GregorianCalendar()

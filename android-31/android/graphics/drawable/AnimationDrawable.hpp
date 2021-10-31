@@ -28,9 +28,9 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AnimationDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::DrawableContainer(className, sig, std::forward<Ts>(agv)...) {}
-		AnimationDrawable(QAndroidJniObject obj);
+		AnimationDrawable(QJniObject obj);
 		
 		// Constructors
 		AnimationDrawable();

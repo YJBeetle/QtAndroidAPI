@@ -18,9 +18,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DatagramPacket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DatagramPacket(QAndroidJniObject obj);
+		DatagramPacket(QJniObject obj);
 		
 		// Constructors
 		DatagramPacket(jbyteArray arg0, jint arg1);

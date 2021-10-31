@@ -4,8 +4,8 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLWarning::SQLWarning(QAndroidJniObject obj) : java::sql::SQLException(obj) {}
+	// QJniObject forward
+	SQLWarning::SQLWarning(QJniObject obj) : java::sql::SQLException(obj) {}
 	
 	// Constructors
 	SQLWarning::SQLWarning()

@@ -24,8 +24,8 @@ namespace android::service::wallpaper
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	WallpaperService::WallpaperService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	WallpaperService::WallpaperService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	WallpaperService::WallpaperService()

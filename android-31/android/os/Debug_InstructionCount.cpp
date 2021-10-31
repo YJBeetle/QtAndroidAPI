@@ -4,8 +4,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Debug_InstructionCount::Debug_InstructionCount(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Debug_InstructionCount::Debug_InstructionCount(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Debug_InstructionCount::Debug_InstructionCount()

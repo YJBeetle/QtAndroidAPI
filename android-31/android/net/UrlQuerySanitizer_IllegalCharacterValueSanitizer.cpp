@@ -158,8 +158,8 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint arg0)

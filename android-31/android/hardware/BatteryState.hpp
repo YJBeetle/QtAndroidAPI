@@ -15,9 +15,9 @@ namespace android::hardware
 		static jint STATUS_NOT_CHARGING();
 		static jint STATUS_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BatteryState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BatteryState(QAndroidJniObject obj);
+		BatteryState(QJniObject obj);
 		
 		// Constructors
 		BatteryState();

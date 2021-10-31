@@ -11,9 +11,9 @@ namespace android::service::controls::actions
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ModeAction(const char *className, const char *sig, Ts...agv) : android::service::controls::actions::ControlAction(className, sig, std::forward<Ts>(agv)...) {}
-		ModeAction(QAndroidJniObject obj);
+		ModeAction(QJniObject obj);
 		
 		// Constructors
 		ModeAction(jstring arg0, jint arg1);

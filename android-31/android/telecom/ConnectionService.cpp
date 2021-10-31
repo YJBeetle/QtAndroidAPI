@@ -19,8 +19,8 @@ namespace android::telecom
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ConnectionService::ConnectionService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	ConnectionService::ConnectionService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	ConnectionService::ConnectionService()

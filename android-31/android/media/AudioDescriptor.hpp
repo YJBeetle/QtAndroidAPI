@@ -12,9 +12,9 @@ namespace android::media
 		static jint STANDARD_EDID();
 		static jint STANDARD_NONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AudioDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AudioDescriptor(QAndroidJniObject obj);
+		AudioDescriptor(QJniObject obj);
 		
 		// Constructors
 		

@@ -10,9 +10,9 @@ namespace android::net::ipsec::ike
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeIdentification(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IkeIdentification(QAndroidJniObject obj);
+		IkeIdentification(QJniObject obj);
 		
 		// Constructors
 		

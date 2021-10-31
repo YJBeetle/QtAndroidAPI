@@ -199,8 +199,8 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Locale::Locale(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Locale::Locale(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Locale::Locale(jstring arg0)

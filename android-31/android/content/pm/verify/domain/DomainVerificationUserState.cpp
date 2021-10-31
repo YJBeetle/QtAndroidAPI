@@ -35,8 +35,8 @@ namespace android::content::pm::verify::domain
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DomainVerificationUserState::DomainVerificationUserState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DomainVerificationUserState::DomainVerificationUserState(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

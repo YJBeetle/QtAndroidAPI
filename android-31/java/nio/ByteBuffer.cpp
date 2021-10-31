@@ -12,8 +12,8 @@ namespace java::nio
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ByteBuffer::ByteBuffer(QAndroidJniObject obj) : java::nio::Buffer(obj) {}
+	// QJniObject forward
+	ByteBuffer::ByteBuffer(QJniObject obj) : java::nio::Buffer(obj) {}
 	
 	// Constructors
 	

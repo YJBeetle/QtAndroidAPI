@@ -9,8 +9,8 @@ namespace android::graphics::drawable::shapes
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RectShape::RectShape(QAndroidJniObject obj) : android::graphics::drawable::shapes::Shape(obj) {}
+	// QJniObject forward
+	RectShape::RectShape(QJniObject obj) : android::graphics::drawable::shapes::Shape(obj) {}
 	
 	// Constructors
 	RectShape::RectShape()

@@ -39,8 +39,8 @@ namespace android::telephony::ims::feature
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MmTelFeature_MmTelCapabilities::MmTelFeature_MmTelCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MmTelFeature_MmTelCapabilities::MmTelFeature_MmTelCapabilities(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

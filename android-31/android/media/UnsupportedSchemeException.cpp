@@ -4,8 +4,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsupportedSchemeException::UnsupportedSchemeException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
+	// QJniObject forward
+	UnsupportedSchemeException::UnsupportedSchemeException(QJniObject obj) : android::media::MediaDrmException(obj) {}
 	
 	// Constructors
 	UnsupportedSchemeException::UnsupportedSchemeException(jstring arg0)

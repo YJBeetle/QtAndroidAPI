@@ -37,9 +37,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScriptIntrinsicConvolve3x3(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptIntrinsicConvolve3x3(QAndroidJniObject obj);
+		ScriptIntrinsicConvolve3x3(QJniObject obj);
 		
 		// Constructors
 		

@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NullPointerException::NullPointerException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	NullPointerException::NullPointerException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	NullPointerException::NullPointerException()

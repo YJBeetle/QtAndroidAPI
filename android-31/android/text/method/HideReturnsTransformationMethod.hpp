@@ -11,9 +11,9 @@ namespace android::text::method
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HideReturnsTransformationMethod(const char *className, const char *sig, Ts...agv) : android::text::method::ReplacementTransformationMethod(className, sig, std::forward<Ts>(agv)...) {}
-		HideReturnsTransformationMethod(QAndroidJniObject obj);
+		HideReturnsTransformationMethod(QJniObject obj);
 		
 		// Constructors
 		HideReturnsTransformationMethod();

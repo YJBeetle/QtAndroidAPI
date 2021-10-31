@@ -19,9 +19,9 @@ namespace android::media::midi
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MidiDeviceStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MidiDeviceStatus(QAndroidJniObject obj);
+		MidiDeviceStatus(QJniObject obj);
 		
 		// Constructors
 		

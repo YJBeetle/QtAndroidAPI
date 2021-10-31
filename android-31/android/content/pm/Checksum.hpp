@@ -22,9 +22,9 @@ namespace android::content::pm
 		static jint TYPE_WHOLE_SHA256();
 		static jint TYPE_WHOLE_SHA512();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Checksum(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Checksum(QAndroidJniObject obj);
+		Checksum(QJniObject obj);
 		
 		// Constructors
 		Checksum(jint arg0, jbyteArray arg1);

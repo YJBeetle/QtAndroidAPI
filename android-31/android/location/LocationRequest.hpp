@@ -19,9 +19,9 @@ namespace android::location
 		static jint QUALITY_HIGH_ACCURACY();
 		static jint QUALITY_LOW_POWER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocationRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LocationRequest(QAndroidJniObject obj);
+		LocationRequest(QJniObject obj);
 		
 		// Constructors
 		

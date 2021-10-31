@@ -5,8 +5,8 @@ namespace android::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLSockets::SSLSockets(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SSLSockets::SSLSockets(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

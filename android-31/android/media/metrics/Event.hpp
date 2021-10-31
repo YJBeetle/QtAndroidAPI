@@ -14,9 +14,9 @@ namespace android::media::metrics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Event(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Event(QAndroidJniObject obj);
+		Event(QJniObject obj);
 		
 		// Constructors
 		

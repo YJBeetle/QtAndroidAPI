@@ -24,9 +24,9 @@ namespace android::view
 		static jint UNKNOWN_DELAY_DURATION();
 		static jint VSYNC_TIMESTAMP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FrameMetrics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FrameMetrics(QAndroidJniObject obj);
+		FrameMetrics(QJniObject obj);
 		
 		// Constructors
 		FrameMetrics(android::view::FrameMetrics &arg0);

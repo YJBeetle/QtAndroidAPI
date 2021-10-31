@@ -14,9 +14,9 @@ namespace android::graphics::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PositionedGlyphs(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PositionedGlyphs(QAndroidJniObject obj);
+		PositionedGlyphs(QJniObject obj);
 		
 		// Constructors
 		

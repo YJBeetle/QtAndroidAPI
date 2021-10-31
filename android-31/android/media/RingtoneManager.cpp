@@ -130,8 +130,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RingtoneManager::RingtoneManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RingtoneManager::RingtoneManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RingtoneManager::RingtoneManager(android::app::Activity arg0)

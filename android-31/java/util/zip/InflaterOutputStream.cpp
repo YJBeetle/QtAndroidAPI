@@ -6,8 +6,8 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InflaterOutputStream::InflaterOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
+	// QJniObject forward
+	InflaterOutputStream::InflaterOutputStream(QJniObject obj) : java::io::FilterOutputStream(obj) {}
 	
 	// Constructors
 	InflaterOutputStream::InflaterOutputStream(java::io::OutputStream arg0)

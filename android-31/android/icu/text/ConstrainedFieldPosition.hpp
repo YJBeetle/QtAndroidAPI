@@ -14,9 +14,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConstrainedFieldPosition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConstrainedFieldPosition(QAndroidJniObject obj);
+		ConstrainedFieldPosition(QJniObject obj);
 		
 		// Constructors
 		ConstrainedFieldPosition();

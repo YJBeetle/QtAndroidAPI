@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnknownFormatFlagsException::UnknownFormatFlagsException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
+	// QJniObject forward
+	UnknownFormatFlagsException::UnknownFormatFlagsException(QJniObject obj) : java::util::IllegalFormatException(obj) {}
 	
 	// Constructors
 	UnknownFormatFlagsException::UnknownFormatFlagsException(jstring arg0)

@@ -15,9 +15,9 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Executable(const char *className, const char *sig, Ts...agv) : java::lang::reflect::AccessibleObject(className, sig, std::forward<Ts>(agv)...) {}
-		Executable(QAndroidJniObject obj);
+		Executable(QJniObject obj);
 		
 		// Constructors
 		

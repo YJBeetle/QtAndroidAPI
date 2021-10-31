@@ -48,8 +48,8 @@ namespace android::hardware::lights
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Light::Light(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Light::Light(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

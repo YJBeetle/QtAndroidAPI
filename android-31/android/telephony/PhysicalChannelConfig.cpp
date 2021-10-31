@@ -76,8 +76,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PhysicalChannelConfig::PhysicalChannelConfig(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PhysicalChannelConfig::PhysicalChannelConfig(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

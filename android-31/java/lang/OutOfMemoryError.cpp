@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OutOfMemoryError::OutOfMemoryError(QAndroidJniObject obj) : java::lang::VirtualMachineError(obj) {}
+	// QJniObject forward
+	OutOfMemoryError::OutOfMemoryError(QJniObject obj) : java::lang::VirtualMachineError(obj) {}
 	
 	// Constructors
 	OutOfMemoryError::OutOfMemoryError()

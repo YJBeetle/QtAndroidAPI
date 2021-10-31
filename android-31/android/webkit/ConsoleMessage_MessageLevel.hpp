@@ -16,9 +16,9 @@ namespace android::webkit
 		static android::webkit::ConsoleMessage_MessageLevel TIP();
 		static android::webkit::ConsoleMessage_MessageLevel WARNING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConsoleMessage_MessageLevel(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ConsoleMessage_MessageLevel(QAndroidJniObject obj);
+		ConsoleMessage_MessageLevel(QJniObject obj);
 		
 		// Constructors
 		

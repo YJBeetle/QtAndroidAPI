@@ -6,8 +6,8 @@ namespace android::media::metrics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PlaybackMetrics_Builder::PlaybackMetrics_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PlaybackMetrics_Builder::PlaybackMetrics_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PlaybackMetrics_Builder::PlaybackMetrics_Builder()

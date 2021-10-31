@@ -17,9 +17,9 @@ namespace android::content::pm
 		jint width();
 		jfloat widthFraction();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActivityInfo_WindowLayout(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityInfo_WindowLayout(QAndroidJniObject obj);
+		ActivityInfo_WindowLayout(QJniObject obj);
 		
 		// Constructors
 		ActivityInfo_WindowLayout(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jint arg5, jint arg6);

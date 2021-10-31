@@ -14,9 +14,9 @@ namespace android::telephony::ims
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImsMmTelManager_CapabilityCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ImsMmTelManager_CapabilityCallback(QAndroidJniObject obj);
+		ImsMmTelManager_CapabilityCallback(QJniObject obj);
 		
 		// Constructors
 		ImsMmTelManager_CapabilityCallback();

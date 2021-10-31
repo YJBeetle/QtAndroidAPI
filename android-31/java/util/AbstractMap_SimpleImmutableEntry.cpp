@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractMap_SimpleImmutableEntry::AbstractMap_SimpleImmutableEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AbstractMap_SimpleImmutableEntry::AbstractMap_SimpleImmutableEntry(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AbstractMap_SimpleImmutableEntry::AbstractMap_SimpleImmutableEntry(__JniBaseClass arg0)

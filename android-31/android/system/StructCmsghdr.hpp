@@ -13,9 +13,9 @@ namespace android::system
 		jint cmsg_level();
 		jint cmsg_type();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StructCmsghdr(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StructCmsghdr(QAndroidJniObject obj);
+		StructCmsghdr(QJniObject obj);
 		
 		// Constructors
 		StructCmsghdr(jint arg0, jint arg1, jbyteArray arg2);

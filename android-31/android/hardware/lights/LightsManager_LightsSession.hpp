@@ -14,9 +14,9 @@ namespace android::hardware::lights
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LightsManager_LightsSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LightsManager_LightsSession(QAndroidJniObject obj);
+		LightsManager_LightsSession(QJniObject obj);
 		
 		// Constructors
 		

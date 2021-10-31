@@ -32,8 +32,8 @@ namespace android::telephony::ims
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImsException::ImsException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	ImsException::ImsException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	

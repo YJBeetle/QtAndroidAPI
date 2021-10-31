@@ -4,8 +4,8 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ParsePosition::ParsePosition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ParsePosition::ParsePosition(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ParsePosition::ParsePosition(jint arg0)

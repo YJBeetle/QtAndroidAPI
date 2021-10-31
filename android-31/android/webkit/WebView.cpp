@@ -86,8 +86,8 @@ namespace android::webkit
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	WebView::WebView(QAndroidJniObject obj) : android::widget::AbsoluteLayout(obj) {}
+	// QJniObject forward
+	WebView::WebView(QJniObject obj) : android::widget::AbsoluteLayout(obj) {}
 	
 	// Constructors
 	WebView::WebView(android::content::Context arg0)

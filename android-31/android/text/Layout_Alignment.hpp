@@ -14,9 +14,9 @@ namespace android::text
 		static android::text::Layout_Alignment ALIGN_NORMAL();
 		static android::text::Layout_Alignment ALIGN_OPPOSITE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Layout_Alignment(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Layout_Alignment(QAndroidJniObject obj);
+		Layout_Alignment(QJniObject obj);
 		
 		// Constructors
 		

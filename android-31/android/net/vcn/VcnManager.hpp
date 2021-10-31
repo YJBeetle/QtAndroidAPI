@@ -29,9 +29,9 @@ namespace android::net::vcn
 		static jint VCN_STATUS_CODE_NOT_CONFIGURED();
 		static jint VCN_STATUS_CODE_SAFE_MODE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VcnManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VcnManager(QAndroidJniObject obj);
+		VcnManager(QJniObject obj);
 		
 		// Constructors
 		

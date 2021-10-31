@@ -228,8 +228,8 @@ namespace android::net::wifi::rtt
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CivicLocationKeys::CivicLocationKeys(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CivicLocationKeys::CivicLocationKeys(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

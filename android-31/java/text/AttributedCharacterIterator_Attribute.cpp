@@ -28,8 +28,8 @@ namespace java::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AttributedCharacterIterator_Attribute::AttributedCharacterIterator_Attribute(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AttributedCharacterIterator_Attribute::AttributedCharacterIterator_Attribute(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

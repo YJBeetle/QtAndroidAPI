@@ -10,9 +10,9 @@ namespace java::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StringCharacterIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StringCharacterIterator(QAndroidJniObject obj);
+		StringCharacterIterator(QJniObject obj);
 		
 		// Constructors
 		StringCharacterIterator(jstring arg0);

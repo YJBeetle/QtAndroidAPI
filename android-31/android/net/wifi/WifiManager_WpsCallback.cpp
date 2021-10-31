@@ -4,8 +4,8 @@ namespace android::net::wifi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WifiManager_WpsCallback::WifiManager_WpsCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiManager_WpsCallback::WifiManager_WpsCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WifiManager_WpsCallback::WifiManager_WpsCallback()

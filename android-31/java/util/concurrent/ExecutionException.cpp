@@ -4,8 +4,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ExecutionException::ExecutionException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	ExecutionException::ExecutionException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	ExecutionException::ExecutionException(jthrowable arg0)

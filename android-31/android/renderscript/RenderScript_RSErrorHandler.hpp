@@ -10,9 +10,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RenderScript_RSErrorHandler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RenderScript_RSErrorHandler(QAndroidJniObject obj);
+		RenderScript_RSErrorHandler(QJniObject obj);
 		
 		// Constructors
 		RenderScript_RSErrorHandler();

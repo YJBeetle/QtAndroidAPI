@@ -15,9 +15,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SyncNotedAppOp(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SyncNotedAppOp(QAndroidJniObject obj);
+		SyncNotedAppOp(QJniObject obj);
 		
 		// Constructors
 		SyncNotedAppOp(jint arg0, jstring arg1);

@@ -12,9 +12,9 @@ namespace android::security::identity
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InvalidReaderSignatureException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidReaderSignatureException(QAndroidJniObject obj);
+		InvalidReaderSignatureException(QJniObject obj);
 		
 		// Constructors
 		InvalidReaderSignatureException(jstring arg0);

@@ -80,8 +80,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	FontsContract_Columns::FontsContract_Columns(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FontsContract_Columns::FontsContract_Columns(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

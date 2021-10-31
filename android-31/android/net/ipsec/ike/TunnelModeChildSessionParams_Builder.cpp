@@ -9,8 +9,8 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TunnelModeChildSessionParams_Builder::TunnelModeChildSessionParams_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TunnelModeChildSessionParams_Builder::TunnelModeChildSessionParams_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TunnelModeChildSessionParams_Builder::TunnelModeChildSessionParams_Builder()

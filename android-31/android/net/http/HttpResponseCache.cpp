@@ -9,8 +9,8 @@ namespace android::net::http
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HttpResponseCache::HttpResponseCache(QAndroidJniObject obj) : java::net::ResponseCache(obj) {}
+	// QJniObject forward
+	HttpResponseCache::HttpResponseCache(QJniObject obj) : java::net::ResponseCache(obj) {}
 	
 	// Constructors
 	

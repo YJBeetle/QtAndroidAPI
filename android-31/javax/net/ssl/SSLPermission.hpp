@@ -12,9 +12,9 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SSLPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		SSLPermission(QAndroidJniObject obj);
+		SSLPermission(QJniObject obj);
 		
 		// Constructors
 		SSLPermission(jstring arg0);

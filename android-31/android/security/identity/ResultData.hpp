@@ -17,9 +17,9 @@ namespace android::security::identity
 		static jint STATUS_READER_AUTHENTICATION_FAILED();
 		static jint STATUS_USER_AUTHENTICATION_FAILED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ResultData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ResultData(QAndroidJniObject obj);
+		ResultData(QJniObject obj);
 		
 		// Constructors
 		

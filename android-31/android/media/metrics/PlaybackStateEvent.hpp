@@ -35,9 +35,9 @@ namespace android::media::metrics
 		static jint STATE_SUPPRESSED();
 		static jint STATE_SUPPRESSED_BUFFERING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PlaybackStateEvent(const char *className, const char *sig, Ts...agv) : android::media::metrics::Event(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackStateEvent(QAndroidJniObject obj);
+		PlaybackStateEvent(QJniObject obj);
 		
 		// Constructors
 		

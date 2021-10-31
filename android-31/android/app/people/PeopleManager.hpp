@@ -14,9 +14,9 @@ namespace android::app::people
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PeopleManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PeopleManager(QAndroidJniObject obj);
+		PeopleManager(QJniObject obj);
 		
 		// Constructors
 		

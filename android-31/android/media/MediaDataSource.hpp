@@ -10,9 +10,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaDataSource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDataSource(QAndroidJniObject obj);
+		MediaDataSource(QJniObject obj);
 		
 		// Constructors
 		MediaDataSource();

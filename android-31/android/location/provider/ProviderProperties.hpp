@@ -20,9 +20,9 @@ namespace android::location::provider
 		static jint POWER_USAGE_LOW();
 		static jint POWER_USAGE_MEDIUM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProviderProperties(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ProviderProperties(QAndroidJniObject obj);
+		ProviderProperties(QJniObject obj);
 		
 		// Constructors
 		

@@ -10,9 +10,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WebView_VisualStateCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WebView_VisualStateCallback(QAndroidJniObject obj);
+		WebView_VisualStateCallback(QJniObject obj);
 		
 		// Constructors
 		WebView_VisualStateCallback();

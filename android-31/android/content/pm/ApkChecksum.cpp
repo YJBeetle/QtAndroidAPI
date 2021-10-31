@@ -14,8 +14,8 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ApkChecksum::ApkChecksum(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ApkChecksum::ApkChecksum(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

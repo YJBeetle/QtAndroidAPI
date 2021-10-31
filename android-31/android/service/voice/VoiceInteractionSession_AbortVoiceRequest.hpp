@@ -19,9 +19,9 @@ namespace android::service::voice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VoiceInteractionSession_AbortVoiceRequest(const char *className, const char *sig, Ts...agv) : android::service::voice::VoiceInteractionSession_Request(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_AbortVoiceRequest(QAndroidJniObject obj);
+		VoiceInteractionSession_AbortVoiceRequest(QJniObject obj);
 		
 		// Constructors
 		

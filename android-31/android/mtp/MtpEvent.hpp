@@ -28,9 +28,9 @@ namespace android::mtp
 		static jint EVENT_UNDEFINED();
 		static jint EVENT_UNREPORTED_STATUS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MtpEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MtpEvent(QAndroidJniObject obj);
+		MtpEvent(QJniObject obj);
 		
 		// Constructors
 		

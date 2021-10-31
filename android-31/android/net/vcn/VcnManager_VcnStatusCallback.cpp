@@ -4,8 +4,8 @@ namespace android::net::vcn
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VcnManager_VcnStatusCallback::VcnManager_VcnStatusCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VcnManager_VcnStatusCallback::VcnManager_VcnStatusCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	VcnManager_VcnStatusCallback::VcnManager_VcnStatusCallback()

@@ -15,9 +15,9 @@ namespace android::graphics
 		static android::graphics::Path_FillType INVERSE_WINDING();
 		static android::graphics::Path_FillType WINDING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Path_FillType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Path_FillType(QAndroidJniObject obj);
+		Path_FillType(QJniObject obj);
 		
 		// Constructors
 		

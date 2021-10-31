@@ -24,8 +24,8 @@ namespace org::w3c::dom::ls
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LSException::LSException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	LSException::LSException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	LSException::LSException(jshort arg0, jstring arg1)

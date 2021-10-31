@@ -28,9 +28,9 @@ namespace android::hardware::camera2::params
 		static __JniBaseClass CREATOR();
 		static jint SURFACE_GROUP_ID_NONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OutputConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		OutputConfiguration(QAndroidJniObject obj);
+		OutputConfiguration(QJniObject obj);
 		
 		// Constructors
 		OutputConfiguration(android::view::Surface arg0);

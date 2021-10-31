@@ -38,9 +38,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppSearchSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSession(QAndroidJniObject obj);
+		AppSearchSession(QJniObject obj);
 		
 		// Constructors
 		

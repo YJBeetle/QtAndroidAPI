@@ -8,8 +8,8 @@ namespace android::media::midi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MidiDevice::MidiDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MidiDevice::MidiDevice(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

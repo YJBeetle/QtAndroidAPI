@@ -15,9 +15,9 @@ namespace android::view::inputmethod
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CompletionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CompletionInfo(QAndroidJniObject obj);
+		CompletionInfo(QJniObject obj);
 		
 		// Constructors
 		CompletionInfo(jlong arg0, jint arg1, jstring arg2);

@@ -13,8 +13,8 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SurroundingText::SurroundingText(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SurroundingText::SurroundingText(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SurroundingText::SurroundingText(jstring arg0, jint arg1, jint arg2, jint arg3)

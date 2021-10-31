@@ -22,9 +22,9 @@ namespace android
 		static jstring SMS();
 		static jstring STORAGE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Manifest_permission_group(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Manifest_permission_group(QAndroidJniObject obj);
+		Manifest_permission_group(QJniObject obj);
 		
 		// Constructors
 		Manifest_permission_group();

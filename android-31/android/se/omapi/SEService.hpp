@@ -21,9 +21,9 @@ namespace android::se::omapi
 		static jstring EXTRA_READER_NAME();
 		static jstring EXTRA_READER_STATE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SEService(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SEService(QAndroidJniObject obj);
+		SEService(QJniObject obj);
 		
 		// Constructors
 		SEService(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2);

@@ -10,9 +10,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SearchResult_MatchRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SearchResult_MatchRange(QAndroidJniObject obj);
+		SearchResult_MatchRange(QJniObject obj);
 		
 		// Constructors
 		SearchResult_MatchRange(jint arg0, jint arg1);

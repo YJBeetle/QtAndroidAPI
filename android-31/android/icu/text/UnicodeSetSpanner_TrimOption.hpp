@@ -14,9 +14,9 @@ namespace android::icu::text
 		static android::icu::text::UnicodeSetSpanner_TrimOption LEADING();
 		static android::icu::text::UnicodeSetSpanner_TrimOption TRAILING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnicodeSetSpanner_TrimOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSetSpanner_TrimOption(QAndroidJniObject obj);
+		UnicodeSetSpanner_TrimOption(QJniObject obj);
 		
 		// Constructors
 		

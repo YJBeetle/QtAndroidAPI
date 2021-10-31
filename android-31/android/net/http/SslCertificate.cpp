@@ -8,8 +8,8 @@ namespace android::net::http
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SslCertificate::SslCertificate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SslCertificate::SslCertificate(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SslCertificate::SslCertificate(java::security::cert::X509Certificate arg0)

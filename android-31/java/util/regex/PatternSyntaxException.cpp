@@ -4,8 +4,8 @@ namespace java::util::regex
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PatternSyntaxException::PatternSyntaxException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	// QJniObject forward
+	PatternSyntaxException::PatternSyntaxException(QJniObject obj) : java::lang::IllegalArgumentException(obj) {}
 	
 	// Constructors
 	PatternSyntaxException::PatternSyntaxException(jstring arg0, jstring arg1, jint arg2)

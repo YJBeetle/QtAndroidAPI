@@ -16,9 +16,9 @@ namespace android::print
 		static android::print::PageRange ALL_PAGES();
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PageRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PageRange(QAndroidJniObject obj);
+		PageRange(QJniObject obj);
 		
 		// Constructors
 		PageRange(jint arg0, jint arg1);

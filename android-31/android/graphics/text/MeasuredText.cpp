@@ -5,8 +5,8 @@ namespace android::graphics::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MeasuredText::MeasuredText(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MeasuredText::MeasuredText(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

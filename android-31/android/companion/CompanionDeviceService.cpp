@@ -13,8 +13,8 @@ namespace android::companion
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	CompanionDeviceService::CompanionDeviceService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	CompanionDeviceService::CompanionDeviceService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	CompanionDeviceService::CompanionDeviceService()

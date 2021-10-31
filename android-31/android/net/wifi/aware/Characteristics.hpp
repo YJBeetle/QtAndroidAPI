@@ -17,9 +17,9 @@ namespace android::net::wifi::aware
 		static jint WIFI_AWARE_CIPHER_SUITE_NCS_SK_128();
 		static jint WIFI_AWARE_CIPHER_SUITE_NCS_SK_256();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Characteristics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Characteristics(QAndroidJniObject obj);
+		Characteristics(QJniObject obj);
 		
 		// Constructors
 		

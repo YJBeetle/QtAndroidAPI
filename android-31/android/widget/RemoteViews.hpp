@@ -75,9 +75,9 @@ namespace android::widget
 		static jint MARGIN_START();
 		static jint MARGIN_TOP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RemoteViews(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteViews(QAndroidJniObject obj);
+		RemoteViews(QJniObject obj);
 		
 		// Constructors
 		RemoteViews(android::os::Parcel arg0);

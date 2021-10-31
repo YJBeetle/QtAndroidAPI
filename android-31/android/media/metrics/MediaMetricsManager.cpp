@@ -13,8 +13,8 @@ namespace android::media::metrics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaMetricsManager::MediaMetricsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaMetricsManager::MediaMetricsManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

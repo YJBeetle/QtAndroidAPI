@@ -6,8 +6,8 @@ namespace org::json
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JSONArray::JSONArray(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JSONArray::JSONArray(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	JSONArray::JSONArray()

@@ -5,8 +5,8 @@ namespace dalvik::system
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DexClassLoader::DexClassLoader(QAndroidJniObject obj) : dalvik::system::BaseDexClassLoader(obj) {}
+	// QJniObject forward
+	DexClassLoader::DexClassLoader(QJniObject obj) : dalvik::system::BaseDexClassLoader(obj) {}
 	
 	// Constructors
 	DexClassLoader::DexClassLoader(jstring arg0, jstring arg1, jstring arg2, java::lang::ClassLoader arg3)

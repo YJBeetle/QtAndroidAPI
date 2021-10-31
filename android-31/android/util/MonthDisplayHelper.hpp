@@ -10,9 +10,9 @@ namespace android::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MonthDisplayHelper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MonthDisplayHelper(QAndroidJniObject obj);
+		MonthDisplayHelper(QJniObject obj);
 		
 		// Constructors
 		MonthDisplayHelper(jint arg0, jint arg1);

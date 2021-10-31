@@ -9,8 +9,8 @@ namespace android::bluetooth
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BluetoothManager::BluetoothManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BluetoothManager::BluetoothManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

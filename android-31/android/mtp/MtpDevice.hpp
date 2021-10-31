@@ -42,9 +42,9 @@ namespace android::mtp
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MtpDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MtpDevice(QAndroidJniObject obj);
+		MtpDevice(QJniObject obj);
 		
 		// Constructors
 		MtpDevice(android::hardware::usb::UsbDevice arg0);

@@ -11,9 +11,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppSearchSchema_DocumentPropertyConfig(const char *className, const char *sig, Ts...agv) : android::app::appsearch::AppSearchSchema_PropertyConfig(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_DocumentPropertyConfig(QAndroidJniObject obj);
+		AppSearchSchema_DocumentPropertyConfig(QJniObject obj);
 		
 		// Constructors
 		

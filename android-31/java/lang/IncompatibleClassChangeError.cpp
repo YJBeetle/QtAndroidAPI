@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IncompatibleClassChangeError::IncompatibleClassChangeError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
+	// QJniObject forward
+	IncompatibleClassChangeError::IncompatibleClassChangeError(QJniObject obj) : java::lang::LinkageError(obj) {}
 	
 	// Constructors
 	IncompatibleClassChangeError::IncompatibleClassChangeError()

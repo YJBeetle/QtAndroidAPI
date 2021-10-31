@@ -12,9 +12,9 @@ namespace android::hardware
 		static jint CAMERA();
 		static jint MICROPHONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SensorPrivacyManager_Sensors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SensorPrivacyManager_Sensors(QAndroidJniObject obj);
+		SensorPrivacyManager_Sensors(QJniObject obj);
 		
 		// Constructors
 		

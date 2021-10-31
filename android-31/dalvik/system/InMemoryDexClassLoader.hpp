@@ -20,9 +20,9 @@ namespace dalvik::system
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InMemoryDexClassLoader(const char *className, const char *sig, Ts...agv) : dalvik::system::BaseDexClassLoader(className, sig, std::forward<Ts>(agv)...) {}
-		InMemoryDexClassLoader(QAndroidJniObject obj);
+		InMemoryDexClassLoader(QJniObject obj);
 		
 		// Constructors
 		InMemoryDexClassLoader(jarray arg0, java::lang::ClassLoader arg1);

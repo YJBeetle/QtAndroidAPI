@@ -4,8 +4,8 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Matrix3f::Matrix3f(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Matrix3f::Matrix3f(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Matrix3f::Matrix3f()

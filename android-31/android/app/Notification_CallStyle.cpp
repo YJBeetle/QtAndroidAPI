@@ -7,8 +7,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_CallStyle::Notification_CallStyle(QAndroidJniObject obj) : android::app::Notification_Style(obj) {}
+	// QJniObject forward
+	Notification_CallStyle::Notification_CallStyle(QJniObject obj) : android::app::Notification_Style(obj) {}
 	
 	// Constructors
 	

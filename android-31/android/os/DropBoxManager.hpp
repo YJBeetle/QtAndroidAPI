@@ -25,9 +25,9 @@ namespace android::os
 		static jint IS_GZIPPED();
 		static jint IS_TEXT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DropBoxManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DropBoxManager(QAndroidJniObject obj);
+		DropBoxManager(QJniObject obj);
 		
 		// Constructors
 		

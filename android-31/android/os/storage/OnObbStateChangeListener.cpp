@@ -60,8 +60,8 @@ namespace android::os::storage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OnObbStateChangeListener::OnObbStateChangeListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	OnObbStateChangeListener::OnObbStateChangeListener(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	OnObbStateChangeListener::OnObbStateChangeListener()

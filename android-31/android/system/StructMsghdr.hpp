@@ -18,9 +18,9 @@ namespace android::system
 		jarray msg_iov();
 		java::net::SocketAddress msg_name();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StructMsghdr(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StructMsghdr(QAndroidJniObject obj);
+		StructMsghdr(QJniObject obj);
 		
 		// Constructors
 		StructMsghdr(java::net::SocketAddress arg0, jarray arg1, jarray arg2, jint arg3);

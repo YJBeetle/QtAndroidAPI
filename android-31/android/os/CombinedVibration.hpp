@@ -19,9 +19,9 @@ namespace android::os
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CombinedVibration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CombinedVibration(QAndroidJniObject obj);
+		CombinedVibration(QJniObject obj);
 		
 		// Constructors
 		

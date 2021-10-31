@@ -4,8 +4,8 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ExemptionMechanismException::ExemptionMechanismException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	// QJniObject forward
+	ExemptionMechanismException::ExemptionMechanismException(QJniObject obj) : java::security::GeneralSecurityException(obj) {}
 	
 	// Constructors
 	ExemptionMechanismException::ExemptionMechanismException()

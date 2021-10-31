@@ -14,9 +14,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RelativeDateTimeFormatter_FormattedRelativeDateTime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RelativeDateTimeFormatter_FormattedRelativeDateTime(QAndroidJniObject obj);
+		RelativeDateTimeFormatter_FormattedRelativeDateTime(QJniObject obj);
 		
 		// Constructors
 		

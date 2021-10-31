@@ -13,8 +13,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ForegroundServiceStartNotAllowedException::ForegroundServiceStartNotAllowedException(QAndroidJniObject obj) : android::app::ServiceStartNotAllowedException(obj) {}
+	// QJniObject forward
+	ForegroundServiceStartNotAllowedException::ForegroundServiceStartNotAllowedException(QJniObject obj) : android::app::ServiceStartNotAllowedException(obj) {}
 	
 	// Constructors
 	ForegroundServiceStartNotAllowedException::ForegroundServiceStartNotAllowedException(jstring arg0)

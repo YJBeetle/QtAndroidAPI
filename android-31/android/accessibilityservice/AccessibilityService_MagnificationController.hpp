@@ -18,9 +18,9 @@ namespace android::accessibilityservice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessibilityService_MagnificationController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityService_MagnificationController(QAndroidJniObject obj);
+		AccessibilityService_MagnificationController(QJniObject obj);
 		
 		// Constructors
 		

@@ -25,8 +25,8 @@ namespace java::time::chrono
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IsoChronology::IsoChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
+	// QJniObject forward
+	IsoChronology::IsoChronology(QJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
 	
 	// Constructors
 	

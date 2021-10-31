@@ -34,9 +34,9 @@ namespace android::view
 		static jint SOURCE_INPUT_METHOD();
 		static jint SOURCE_PROCESS_TEXT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContentInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContentInfo(QAndroidJniObject obj);
+		ContentInfo(QJniObject obj);
 		
 		// Constructors
 		

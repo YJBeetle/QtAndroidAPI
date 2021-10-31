@@ -11,8 +11,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TabHost::TabHost(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
+	// QJniObject forward
+	TabHost::TabHost(QJniObject obj) : android::widget::FrameLayout(obj) {}
 	
 	// Constructors
 	TabHost::TabHost(android::content::Context arg0)

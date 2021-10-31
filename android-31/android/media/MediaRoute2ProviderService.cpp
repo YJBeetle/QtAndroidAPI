@@ -58,8 +58,8 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaRoute2ProviderService::MediaRoute2ProviderService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	MediaRoute2ProviderService::MediaRoute2ProviderService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	MediaRoute2ProviderService::MediaRoute2ProviderService()

@@ -53,8 +53,8 @@ namespace android::inputmethodservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InputMethodService::InputMethodService(QAndroidJniObject obj) : android::inputmethodservice::AbstractInputMethodService(obj) {}
+	// QJniObject forward
+	InputMethodService::InputMethodService(QJniObject obj) : android::inputmethodservice::AbstractInputMethodService(obj) {}
 	
 	// Constructors
 	InputMethodService::InputMethodService()

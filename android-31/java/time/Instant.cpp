@@ -35,8 +35,8 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Instant::Instant(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Instant::Instant(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

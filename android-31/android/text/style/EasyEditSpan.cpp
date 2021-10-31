@@ -28,8 +28,8 @@ namespace android::text::style
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EasyEditSpan::EasyEditSpan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EasyEditSpan::EasyEditSpan(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	EasyEditSpan::EasyEditSpan()

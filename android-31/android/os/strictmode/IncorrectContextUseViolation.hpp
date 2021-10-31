@@ -11,9 +11,9 @@ namespace android::os::strictmode
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IncorrectContextUseViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		IncorrectContextUseViolation(QAndroidJniObject obj);
+		IncorrectContextUseViolation(QJniObject obj);
 		
 		// Constructors
 		IncorrectContextUseViolation(jstring arg0, jthrowable arg1);

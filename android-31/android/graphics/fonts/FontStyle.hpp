@@ -23,9 +23,9 @@ namespace android::graphics::fonts
 		static jint FONT_WEIGHT_SEMI_BOLD();
 		static jint FONT_WEIGHT_THIN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FontStyle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FontStyle(QAndroidJniObject obj);
+		FontStyle(QJniObject obj);
 		
 		// Constructors
 		FontStyle();

@@ -23,9 +23,9 @@ namespace android::icu::number
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnlocalizedNumberRangeFormatter(const char *className, const char *sig, Ts...agv) : android::icu::number::NumberRangeFormatterSettings(className, sig, std::forward<Ts>(agv)...) {}
-		UnlocalizedNumberRangeFormatter(QAndroidJniObject obj);
+		UnlocalizedNumberRangeFormatter(QJniObject obj);
 		
 		// Constructors
 		

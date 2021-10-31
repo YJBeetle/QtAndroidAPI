@@ -6,8 +6,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaSync_Callback::MediaSync_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaSync_Callback::MediaSync_Callback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaSync_Callback::MediaSync_Callback()

@@ -32,9 +32,9 @@ namespace android::os::storage
 		static __JniBaseClass CREATOR();
 		static jstring EXTRA_STORAGE_VOLUME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StorageVolume(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StorageVolume(QAndroidJniObject obj);
+		StorageVolume(QJniObject obj);
 		
 		// Constructors
 		

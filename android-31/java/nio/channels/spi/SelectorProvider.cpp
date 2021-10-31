@@ -10,8 +10,8 @@ namespace java::nio::channels::spi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SelectorProvider::SelectorProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SelectorProvider::SelectorProvider(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

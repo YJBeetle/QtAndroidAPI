@@ -15,8 +15,8 @@ namespace android::widget::inline
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InlinePresentationSpec::InlinePresentationSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InlinePresentationSpec::InlinePresentationSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

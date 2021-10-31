@@ -10,9 +10,9 @@ namespace android::app::backup
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BackupDataOutput(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BackupDataOutput(QAndroidJniObject obj);
+		BackupDataOutput(QJniObject obj);
 		
 		// Constructors
 		

@@ -6,8 +6,8 @@ namespace android::net::vcn
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VcnGatewayConnectionConfig_Builder::VcnGatewayConnectionConfig_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VcnGatewayConnectionConfig_Builder::VcnGatewayConnectionConfig_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	VcnGatewayConnectionConfig_Builder::VcnGatewayConnectionConfig_Builder(jstring arg0, android::net::ipsec::ike::IkeTunnelConnectionParams arg1)

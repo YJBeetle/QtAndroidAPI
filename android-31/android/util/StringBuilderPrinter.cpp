@@ -5,8 +5,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringBuilderPrinter::StringBuilderPrinter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StringBuilderPrinter::StringBuilderPrinter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StringBuilderPrinter::StringBuilderPrinter(java::lang::StringBuilder arg0)

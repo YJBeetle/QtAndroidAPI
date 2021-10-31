@@ -19,9 +19,9 @@ namespace android::view
 		static jint NAVIGATION_RIGHT();
 		static jint NAVIGATION_UP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SoundEffectConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SoundEffectConstants(QAndroidJniObject obj);
+		SoundEffectConstants(QJniObject obj);
 		
 		// Constructors
 		

@@ -18,9 +18,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit YuvImage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		YuvImage(QAndroidJniObject obj);
+		YuvImage(QJniObject obj);
 		
 		// Constructors
 		YuvImage(jbyteArray arg0, jint arg1, jint arg2, jint arg3, jintArray arg4);

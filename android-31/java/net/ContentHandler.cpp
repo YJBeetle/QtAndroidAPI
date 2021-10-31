@@ -5,8 +5,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContentHandler::ContentHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContentHandler::ContentHandler(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ContentHandler::ContentHandler()

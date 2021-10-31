@@ -5,8 +5,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScaleGestureDetector_SimpleOnScaleGestureListener::ScaleGestureDetector_SimpleOnScaleGestureListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ScaleGestureDetector_SimpleOnScaleGestureListener::ScaleGestureDetector_SimpleOnScaleGestureListener(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ScaleGestureDetector_SimpleOnScaleGestureListener::ScaleGestureDetector_SimpleOnScaleGestureListener()

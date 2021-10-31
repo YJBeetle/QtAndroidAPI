@@ -37,9 +37,9 @@ namespace android
 		static jint untitled();
 		static jint yes();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit R_string(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		R_string(QAndroidJniObject obj);
+		R_string(QJniObject obj);
 		
 		// Constructors
 		R_string();

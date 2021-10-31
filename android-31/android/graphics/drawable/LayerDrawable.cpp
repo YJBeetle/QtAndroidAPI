@@ -35,8 +35,8 @@ namespace android::graphics::drawable
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LayerDrawable::LayerDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
+	// QJniObject forward
+	LayerDrawable::LayerDrawable(QJniObject obj) : android::graphics::drawable::Drawable(obj) {}
 	
 	// Constructors
 	LayerDrawable::LayerDrawable(jarray arg0)

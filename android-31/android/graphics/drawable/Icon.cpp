@@ -64,8 +64,8 @@ namespace android::graphics::drawable
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Icon::Icon(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Icon::Icon(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

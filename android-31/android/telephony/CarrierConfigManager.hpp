@@ -297,9 +297,9 @@ namespace android::telephony
 		static jint USSD_OVER_IMS_ONLY();
 		static jint USSD_OVER_IMS_PREFERRED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager(QAndroidJniObject obj);
+		CarrierConfigManager(QJniObject obj);
 		
 		// Constructors
 		

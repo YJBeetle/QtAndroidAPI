@@ -22,9 +22,9 @@ namespace android::service::notification
 		static jint USER_SENTIMENT_POSITIVE();
 		static jint VISIBILITY_NO_OVERRIDE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NotificationListenerService_Ranking(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationListenerService_Ranking(QAndroidJniObject obj);
+		NotificationListenerService_Ranking(QJniObject obj);
 		
 		// Constructors
 		NotificationListenerService_Ranking();

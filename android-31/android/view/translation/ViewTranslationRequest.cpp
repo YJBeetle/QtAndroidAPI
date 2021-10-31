@@ -23,8 +23,8 @@ namespace android::view::translation
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ViewTranslationRequest::ViewTranslationRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ViewTranslationRequest::ViewTranslationRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

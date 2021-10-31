@@ -19,8 +19,8 @@ namespace android::graphics::drawable
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RippleDrawable::RippleDrawable(QAndroidJniObject obj) : android::graphics::drawable::LayerDrawable(obj) {}
+	// QJniObject forward
+	RippleDrawable::RippleDrawable(QJniObject obj) : android::graphics::drawable::LayerDrawable(obj) {}
 	
 	// Constructors
 	RippleDrawable::RippleDrawable(android::content::res::ColorStateList arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2)

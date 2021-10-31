@@ -8,8 +8,8 @@ namespace android::net::wifi::rtt
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RangingRequest_Builder::RangingRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RangingRequest_Builder::RangingRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RangingRequest_Builder::RangingRequest_Builder()

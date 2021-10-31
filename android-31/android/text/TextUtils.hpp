@@ -41,9 +41,9 @@ namespace android::text
 		static jint SAFE_STRING_FLAG_SINGLE_LINE();
 		static jint SAFE_STRING_FLAG_TRIM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TextUtils(QAndroidJniObject obj);
+		TextUtils(QJniObject obj);
 		
 		// Constructors
 		

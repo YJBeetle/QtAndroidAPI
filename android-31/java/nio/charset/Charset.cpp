@@ -11,8 +11,8 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Charset::Charset(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Charset::Charset(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

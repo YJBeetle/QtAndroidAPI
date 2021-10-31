@@ -7,8 +7,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaMetadata_Builder::MediaMetadata_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaMetadata_Builder::MediaMetadata_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaMetadata_Builder::MediaMetadata_Builder()

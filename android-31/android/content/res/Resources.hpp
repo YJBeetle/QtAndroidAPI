@@ -63,9 +63,9 @@ namespace android::content::res
 		// Fields
 		static jint ID_NULL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Resources(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Resources(QAndroidJniObject obj);
+		Resources(QJniObject obj);
 		
 		// Constructors
 		Resources(android::content::res::AssetManager arg0, android::util::DisplayMetrics arg1, android::content::res::Configuration arg2);

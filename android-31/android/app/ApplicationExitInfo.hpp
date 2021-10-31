@@ -37,9 +37,9 @@ namespace android::app
 		static jint REASON_USER_REQUESTED();
 		static jint REASON_USER_STOPPED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ApplicationExitInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationExitInfo(QAndroidJniObject obj);
+		ApplicationExitInfo(QJniObject obj);
 		
 		// Constructors
 		

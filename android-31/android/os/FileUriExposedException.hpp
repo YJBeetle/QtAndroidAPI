@@ -12,9 +12,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FileUriExposedException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		FileUriExposedException(QAndroidJniObject obj);
+		FileUriExposedException(QJniObject obj);
 		
 		// Constructors
 		FileUriExposedException(jstring arg0);

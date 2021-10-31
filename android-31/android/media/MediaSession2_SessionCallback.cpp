@@ -10,8 +10,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaSession2_SessionCallback::MediaSession2_SessionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaSession2_SessionCallback::MediaSession2_SessionCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaSession2_SessionCallback::MediaSession2_SessionCallback()

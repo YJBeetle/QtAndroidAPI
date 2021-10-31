@@ -22,9 +22,9 @@ namespace android::accessibilityservice
 		static jint FINGERPRINT_GESTURE_SWIPE_RIGHT();
 		static jint FINGERPRINT_GESTURE_SWIPE_UP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FingerprintGestureController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FingerprintGestureController(QAndroidJniObject obj);
+		FingerprintGestureController(QJniObject obj);
 		
 		// Constructors
 		

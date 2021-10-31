@@ -18,9 +18,9 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AsynchronousFileChannel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AsynchronousFileChannel(QAndroidJniObject obj);
+		AsynchronousFileChannel(QJniObject obj);
 		
 		// Constructors
 		

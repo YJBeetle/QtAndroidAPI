@@ -19,9 +19,9 @@ namespace android::view::displayhash
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VerifiedDisplayHash(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VerifiedDisplayHash(QAndroidJniObject obj);
+		VerifiedDisplayHash(QJniObject obj);
 		
 		// Constructors
 		VerifiedDisplayHash(jlong arg0, android::graphics::Rect arg1, jstring arg2, jbyteArray arg3);

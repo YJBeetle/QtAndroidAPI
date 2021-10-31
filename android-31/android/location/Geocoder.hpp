@@ -18,9 +18,9 @@ namespace android::location
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Geocoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Geocoder(QAndroidJniObject obj);
+		Geocoder(QJniObject obj);
 		
 		// Constructors
 		Geocoder(android::content::Context arg0);

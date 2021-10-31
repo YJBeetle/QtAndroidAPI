@@ -26,9 +26,9 @@ namespace android::service::carrier
 		// Fields
 		static jstring CARRIER_SERVICE_INTERFACE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CarrierService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierService(QAndroidJniObject obj);
+		CarrierService(QJniObject obj);
 		
 		// Constructors
 		CarrierService();

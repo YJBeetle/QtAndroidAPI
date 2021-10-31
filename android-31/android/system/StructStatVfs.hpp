@@ -21,9 +21,9 @@ namespace android::system
 		jlong f_fsid();
 		jlong f_namemax();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StructStatVfs(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StructStatVfs(QAndroidJniObject obj);
+		StructStatVfs(QJniObject obj);
 		
 		// Constructors
 		StructStatVfs(jlong arg0, jlong arg1, jlong arg2, jlong arg3, jlong arg4, jlong arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10);

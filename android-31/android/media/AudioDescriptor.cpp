@@ -18,8 +18,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioDescriptor::AudioDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AudioDescriptor::AudioDescriptor(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

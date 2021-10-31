@@ -20,8 +20,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MessagePattern_ApostropheMode::MessagePattern_ApostropheMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	MessagePattern_ApostropheMode::MessagePattern_ApostropheMode(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

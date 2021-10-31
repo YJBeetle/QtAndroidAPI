@@ -20,9 +20,9 @@ namespace android::database
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CursorWindow(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteClosable(className, sig, std::forward<Ts>(agv)...) {}
-		CursorWindow(QAndroidJniObject obj);
+		CursorWindow(QJniObject obj);
 		
 		// Constructors
 		CursorWindow(jboolean arg0);

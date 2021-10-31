@@ -10,9 +10,9 @@ namespace android::net::vcn
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VcnGatewayConnectionConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VcnGatewayConnectionConfig(QAndroidJniObject obj);
+		VcnGatewayConnectionConfig(QJniObject obj);
 		
 		// Constructors
 		

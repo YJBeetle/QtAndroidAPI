@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InterruptedException::InterruptedException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	InterruptedException::InterruptedException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	InterruptedException::InterruptedException()

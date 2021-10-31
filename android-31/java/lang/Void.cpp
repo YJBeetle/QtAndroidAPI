@@ -12,8 +12,8 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	// QAndroidJniObject forward
-	Void::Void(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Void::Void(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -19,9 +19,9 @@ namespace android::widget
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RemoteViews_RemoteCollectionItems(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteViews_RemoteCollectionItems(QAndroidJniObject obj);
+		RemoteViews_RemoteCollectionItems(QJniObject obj);
 		
 		// Constructors
 		

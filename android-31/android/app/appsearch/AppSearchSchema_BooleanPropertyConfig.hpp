@@ -11,9 +11,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppSearchSchema_BooleanPropertyConfig(const char *className, const char *sig, Ts...agv) : android::app::appsearch::AppSearchSchema_PropertyConfig(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_BooleanPropertyConfig(QAndroidJniObject obj);
+		AppSearchSchema_BooleanPropertyConfig(QJniObject obj);
 		
 		// Constructors
 		

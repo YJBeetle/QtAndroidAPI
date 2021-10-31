@@ -36,8 +36,8 @@ namespace java::nio::file
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FileVisitResult::FileVisitResult(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	FileVisitResult::FileVisitResult(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

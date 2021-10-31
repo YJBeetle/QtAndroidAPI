@@ -8,8 +8,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Date::Date(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Date::Date(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Date::Date()

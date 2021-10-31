@@ -16,9 +16,9 @@ namespace org::xml::sax
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SAXParseException(const char *className, const char *sig, Ts...agv) : org::xml::sax::SAXException(className, sig, std::forward<Ts>(agv)...) {}
-		SAXParseException(QAndroidJniObject obj);
+		SAXParseException(QJniObject obj);
 		
 		// Constructors
 		SAXParseException(jstring arg0, __JniBaseClass arg1);

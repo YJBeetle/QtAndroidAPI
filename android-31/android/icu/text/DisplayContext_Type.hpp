@@ -15,9 +15,9 @@ namespace android::icu::text
 		static android::icu::text::DisplayContext_Type DISPLAY_LENGTH();
 		static android::icu::text::DisplayContext_Type SUBSTITUTE_HANDLING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DisplayContext_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		DisplayContext_Type(QAndroidJniObject obj);
+		DisplayContext_Type(QJniObject obj);
 		
 		// Constructors
 		

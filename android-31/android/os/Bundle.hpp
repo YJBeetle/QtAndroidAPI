@@ -45,9 +45,9 @@ namespace android::os
 		static __JniBaseClass CREATOR();
 		static android::os::Bundle EMPTY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Bundle(const char *className, const char *sig, Ts...agv) : android::os::BaseBundle(className, sig, std::forward<Ts>(agv)...) {}
-		Bundle(QAndroidJniObject obj);
+		Bundle(QJniObject obj);
 		
 		// Constructors
 		Bundle();

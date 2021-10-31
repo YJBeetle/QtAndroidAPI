@@ -4,8 +4,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaParser_ParsingException::MediaParser_ParsingException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	MediaParser_ParsingException::MediaParser_ParsingException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	

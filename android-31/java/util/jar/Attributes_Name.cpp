@@ -148,8 +148,8 @@ namespace java::util::jar
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Attributes_Name::Attributes_Name(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Attributes_Name::Attributes_Name(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Attributes_Name::Attributes_Name(jstring arg0)

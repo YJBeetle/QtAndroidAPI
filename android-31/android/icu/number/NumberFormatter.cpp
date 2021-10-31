@@ -8,8 +8,8 @@ namespace android::icu::number
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NumberFormatter::NumberFormatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NumberFormatter::NumberFormatter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

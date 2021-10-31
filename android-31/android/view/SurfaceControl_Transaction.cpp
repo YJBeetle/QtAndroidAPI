@@ -15,8 +15,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SurfaceControl_Transaction::SurfaceControl_Transaction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SurfaceControl_Transaction::SurfaceControl_Transaction(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SurfaceControl_Transaction::SurfaceControl_Transaction()

@@ -16,9 +16,9 @@ namespace java::time::format
 		static java::time::format::SignStyle NORMAL();
 		static java::time::format::SignStyle NOT_NEGATIVE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SignStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		SignStyle(QAndroidJniObject obj);
+		SignStyle(QJniObject obj);
 		
 		// Constructors
 		

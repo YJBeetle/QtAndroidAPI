@@ -15,9 +15,9 @@ namespace android::os::strictmode
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnsafeIntentLaunchViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		UnsafeIntentLaunchViolation(QAndroidJniObject obj);
+		UnsafeIntentLaunchViolation(QJniObject obj);
 		
 		// Constructors
 		UnsafeIntentLaunchViolation(android::content::Intent arg0);

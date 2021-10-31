@@ -10,9 +10,9 @@ namespace android::net::wifi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiManager_SubsystemRestartTrackingCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_SubsystemRestartTrackingCallback(QAndroidJniObject obj);
+		WifiManager_SubsystemRestartTrackingCallback(QJniObject obj);
 		
 		// Constructors
 		WifiManager_SubsystemRestartTrackingCallback();

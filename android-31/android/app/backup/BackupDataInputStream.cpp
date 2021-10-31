@@ -4,8 +4,8 @@ namespace android::app::backup
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BackupDataInputStream::BackupDataInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
+	// QJniObject forward
+	BackupDataInputStream::BackupDataInputStream(QJniObject obj) : java::io::InputStream(obj) {}
 	
 	// Constructors
 	

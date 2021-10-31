@@ -15,9 +15,9 @@ namespace android::os
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UserHandle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UserHandle(QAndroidJniObject obj);
+		UserHandle(QJniObject obj);
 		
 		// Constructors
 		UserHandle(android::os::Parcel arg0);

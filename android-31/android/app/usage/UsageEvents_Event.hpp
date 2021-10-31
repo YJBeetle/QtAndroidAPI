@@ -32,9 +32,9 @@ namespace android::app::usage
 		static jint STANDBY_BUCKET_CHANGED();
 		static jint USER_INTERACTION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UsageEvents_Event(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UsageEvents_Event(QAndroidJniObject obj);
+		UsageEvents_Event(QJniObject obj);
 		
 		// Constructors
 		UsageEvents_Event();

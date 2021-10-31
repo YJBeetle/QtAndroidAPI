@@ -5,8 +5,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FragmentContainer::FragmentContainer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FragmentContainer::FragmentContainer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	FragmentContainer::FragmentContainer()

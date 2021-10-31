@@ -20,8 +20,8 @@ namespace org::xml::sax::helpers
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	NamespaceSupport::NamespaceSupport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NamespaceSupport::NamespaceSupport(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	NamespaceSupport::NamespaceSupport()

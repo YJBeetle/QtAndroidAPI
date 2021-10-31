@@ -10,9 +10,9 @@ namespace javax::crypto::spec
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SecretKeySpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SecretKeySpec(QAndroidJniObject obj);
+		SecretKeySpec(QJniObject obj);
 		
 		// Constructors
 		SecretKeySpec(jbyteArray arg0, jstring arg1);

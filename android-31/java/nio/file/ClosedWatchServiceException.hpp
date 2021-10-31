@@ -13,9 +13,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ClosedWatchServiceException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		ClosedWatchServiceException(QAndroidJniObject obj);
+		ClosedWatchServiceException(QJniObject obj);
 		
 		// Constructors
 		ClosedWatchServiceException();

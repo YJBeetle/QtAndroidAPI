@@ -74,8 +74,8 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CameraDevice::CameraDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CameraDevice::CameraDevice(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

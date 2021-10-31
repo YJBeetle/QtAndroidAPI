@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Error::Error(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Error::Error(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Error::Error()

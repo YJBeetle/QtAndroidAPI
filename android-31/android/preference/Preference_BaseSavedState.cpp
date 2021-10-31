@@ -13,8 +13,8 @@ namespace android::preference
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Preference_BaseSavedState::Preference_BaseSavedState(QAndroidJniObject obj) : android::view::AbsSavedState(obj) {}
+	// QJniObject forward
+	Preference_BaseSavedState::Preference_BaseSavedState(QJniObject obj) : android::view::AbsSavedState(obj) {}
 	
 	// Constructors
 	Preference_BaseSavedState::Preference_BaseSavedState(android::os::Parcel arg0)

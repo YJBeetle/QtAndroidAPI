@@ -11,8 +11,8 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BlackLevelPattern::BlackLevelPattern(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BlackLevelPattern::BlackLevelPattern(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

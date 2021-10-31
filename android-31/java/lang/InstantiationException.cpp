@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InstantiationException::InstantiationException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
+	// QJniObject forward
+	InstantiationException::InstantiationException(QJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
 	
 	// Constructors
 	InstantiationException::InstantiationException()

@@ -18,11 +18,11 @@ namespace android::system
 	{
 	public:
 		// Fields
-		jint errno();
+		jint _errno();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ErrnoException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ErrnoException(QAndroidJniObject obj);
+		ErrnoException(QJniObject obj);
 		
 		// Constructors
 		ErrnoException(jstring arg0, jint arg1);

@@ -6,8 +6,8 @@ namespace android::speech::tts
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextToSpeechService::TextToSpeechService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	TextToSpeechService::TextToSpeechService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	TextToSpeechService::TextToSpeechService()

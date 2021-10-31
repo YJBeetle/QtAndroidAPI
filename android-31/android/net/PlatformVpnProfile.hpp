@@ -13,9 +13,9 @@ namespace android::net
 		static jint TYPE_IKEV2_IPSEC_RSA();
 		static jint TYPE_IKEV2_IPSEC_USER_PASS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PlatformVpnProfile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PlatformVpnProfile(QAndroidJniObject obj);
+		PlatformVpnProfile(QJniObject obj);
 		
 		// Constructors
 		

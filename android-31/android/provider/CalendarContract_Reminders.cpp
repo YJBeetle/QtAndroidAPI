@@ -14,8 +14,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CalendarContract_Reminders::CalendarContract_Reminders(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CalendarContract_Reminders::CalendarContract_Reminders(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

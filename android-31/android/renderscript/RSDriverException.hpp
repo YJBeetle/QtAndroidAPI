@@ -13,9 +13,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RSDriverException(const char *className, const char *sig, Ts...agv) : android::renderscript::RSRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		RSDriverException(QAndroidJniObject obj);
+		RSDriverException(QJniObject obj);
 		
 		// Constructors
 		RSDriverException(jstring arg0);

@@ -7,8 +7,8 @@ namespace android::telecom
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteConnection_VideoProvider_Callback::RemoteConnection_VideoProvider_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RemoteConnection_VideoProvider_Callback::RemoteConnection_VideoProvider_Callback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RemoteConnection_VideoProvider_Callback::RemoteConnection_VideoProvider_Callback()

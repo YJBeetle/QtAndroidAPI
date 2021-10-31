@@ -4,8 +4,8 @@ namespace org::apache::http::conn
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConnectTimeoutException::ConnectTimeoutException(QAndroidJniObject obj) : java::io::InterruptedIOException(obj) {}
+	// QJniObject forward
+	ConnectTimeoutException::ConnectTimeoutException(QJniObject obj) : java::io::InterruptedIOException(obj) {}
 	
 	// Constructors
 	ConnectTimeoutException::ConnectTimeoutException()

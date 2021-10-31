@@ -13,8 +13,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VoiceInteractor_Prompt::VoiceInteractor_Prompt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VoiceInteractor_Prompt::VoiceInteractor_Prompt(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	VoiceInteractor_Prompt::VoiceInteractor_Prompt(jstring arg0)

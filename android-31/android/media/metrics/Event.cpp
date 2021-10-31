@@ -5,8 +5,8 @@ namespace android::media::metrics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Event::Event(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Event::Event(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -6,8 +6,8 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DownloadStatusListener::DownloadStatusListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DownloadStatusListener::DownloadStatusListener(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DownloadStatusListener::DownloadStatusListener()

@@ -22,9 +22,9 @@ namespace android::view::translation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ViewTranslationRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ViewTranslationRequest_Builder(QAndroidJniObject obj);
+		ViewTranslationRequest_Builder(QJniObject obj);
 		
 		// Constructors
 		ViewTranslationRequest_Builder(android::view::autofill::AutofillId arg0);

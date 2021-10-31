@@ -4,8 +4,8 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteAccessPermException::SQLiteAccessPermException(QAndroidJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
+	// QJniObject forward
+	SQLiteAccessPermException::SQLiteAccessPermException(QJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
 	
 	// Constructors
 	SQLiteAccessPermException::SQLiteAccessPermException()

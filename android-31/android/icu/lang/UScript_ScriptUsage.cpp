@@ -52,8 +52,8 @@ namespace android::icu::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UScript_ScriptUsage::UScript_ScriptUsage(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	UScript_ScriptUsage::UScript_ScriptUsage(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

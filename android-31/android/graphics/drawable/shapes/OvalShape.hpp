@@ -32,9 +32,9 @@ namespace android::graphics::drawable::shapes
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OvalShape(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::shapes::RectShape(className, sig, std::forward<Ts>(agv)...) {}
-		OvalShape(QAndroidJniObject obj);
+		OvalShape(QJniObject obj);
 		
 		// Constructors
 		OvalShape();

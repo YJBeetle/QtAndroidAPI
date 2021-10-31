@@ -39,9 +39,9 @@ namespace android::net::wifi
 		static jint SECURITY_TYPE_WAPI_PSK();
 		static jint SECURITY_TYPE_WEP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiInfo(QAndroidJniObject obj);
+		WifiInfo(QJniObject obj);
 		
 		// Constructors
 		

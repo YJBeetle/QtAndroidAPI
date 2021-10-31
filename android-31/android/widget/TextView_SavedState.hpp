@@ -17,9 +17,9 @@ namespace android::widget
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextView_SavedState(const char *className, const char *sig, Ts...agv) : android::view::View_BaseSavedState(className, sig, std::forward<Ts>(agv)...) {}
-		TextView_SavedState(QAndroidJniObject obj);
+		TextView_SavedState(QJniObject obj);
 		
 		// Constructors
 		

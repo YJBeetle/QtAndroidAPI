@@ -12,9 +12,9 @@ namespace javax::xml::xpath
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit XPathExpressionException(const char *className, const char *sig, Ts...agv) : javax::xml::xpath::XPathException(className, sig, std::forward<Ts>(agv)...) {}
-		XPathExpressionException(QAndroidJniObject obj);
+		XPathExpressionException(QJniObject obj);
 		
 		// Constructors
 		XPathExpressionException(jstring arg0);

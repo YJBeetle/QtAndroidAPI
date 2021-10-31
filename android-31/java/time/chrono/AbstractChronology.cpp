@@ -9,8 +9,8 @@ namespace java::time::chrono
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractChronology::AbstractChronology(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AbstractChronology::AbstractChronology(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

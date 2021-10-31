@@ -28,8 +28,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateTimePatternGenerator_DisplayWidth::DateTimePatternGenerator_DisplayWidth(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	DateTimePatternGenerator_DisplayWidth::DateTimePatternGenerator_DisplayWidth(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

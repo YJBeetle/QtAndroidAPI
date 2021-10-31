@@ -11,9 +11,9 @@ namespace android::util
 		// Fields
 		jshort value();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MutableShort(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MutableShort(QAndroidJniObject obj);
+		MutableShort(QJniObject obj);
 		
 		// Constructors
 		MutableShort(jshort arg0);

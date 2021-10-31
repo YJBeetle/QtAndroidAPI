@@ -26,9 +26,9 @@ namespace android::telephony::data
 		static jint SLICE_STATUS_REJECTED_NOT_AVAILABLE_IN_REGISTERED_AREA();
 		static jint SLICE_STATUS_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NetworkSliceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkSliceInfo(QAndroidJniObject obj);
+		NetworkSliceInfo(QJniObject obj);
 		
 		// Constructors
 		

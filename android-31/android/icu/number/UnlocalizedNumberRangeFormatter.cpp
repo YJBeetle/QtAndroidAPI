@@ -7,8 +7,8 @@ namespace android::icu::number
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnlocalizedNumberRangeFormatter::UnlocalizedNumberRangeFormatter(QAndroidJniObject obj) : android::icu::number::NumberRangeFormatterSettings(obj) {}
+	// QJniObject forward
+	UnlocalizedNumberRangeFormatter::UnlocalizedNumberRangeFormatter(QJniObject obj) : android::icu::number::NumberRangeFormatterSettings(obj) {}
 	
 	// Constructors
 	

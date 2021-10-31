@@ -13,8 +13,8 @@ namespace android::net::wifi::aware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AwareResources::AwareResources(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AwareResources::AwareResources(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AwareResources::AwareResources(jint arg0, jint arg1, jint arg2)

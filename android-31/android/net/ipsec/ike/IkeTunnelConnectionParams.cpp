@@ -6,8 +6,8 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IkeTunnelConnectionParams::IkeTunnelConnectionParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IkeTunnelConnectionParams::IkeTunnelConnectionParams(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	IkeTunnelConnectionParams::IkeTunnelConnectionParams(android::net::ipsec::ike::IkeSessionParams arg0, android::net::ipsec::ike::TunnelModeChildSessionParams arg1)

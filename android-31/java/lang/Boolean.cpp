@@ -29,8 +29,8 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	// QAndroidJniObject forward
-	Boolean::Boolean(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Boolean::Boolean(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Boolean::Boolean(jboolean arg0)

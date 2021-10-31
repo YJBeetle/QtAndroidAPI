@@ -22,9 +22,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScrollCaptureTarget(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ScrollCaptureTarget(QAndroidJniObject obj);
+		ScrollCaptureTarget(QJniObject obj);
 		
 		// Constructors
 		ScrollCaptureTarget(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2, __JniBaseClass arg3);

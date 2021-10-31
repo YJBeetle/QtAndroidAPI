@@ -627,8 +627,8 @@ namespace android::text::style
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TtsSpan::TtsSpan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TtsSpan::TtsSpan(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TtsSpan::TtsSpan(android::os::Parcel arg0)

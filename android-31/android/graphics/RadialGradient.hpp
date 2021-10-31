@@ -15,9 +15,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RadialGradient(const char *className, const char *sig, Ts...agv) : android::graphics::Shader(className, sig, std::forward<Ts>(agv)...) {}
-		RadialGradient(QAndroidJniObject obj);
+		RadialGradient(QJniObject obj);
 		
 		// Constructors
 		RadialGradient(jfloat arg0, jfloat arg1, jfloat arg2, jintArray arg3, jfloatArray arg4, android::graphics::Shader_TileMode arg5);

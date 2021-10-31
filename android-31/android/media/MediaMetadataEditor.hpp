@@ -17,9 +17,9 @@ namespace android::media
 		static jint RATING_KEY_BY_OTHERS();
 		static jint RATING_KEY_BY_USER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaMetadataEditor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaMetadataEditor(QAndroidJniObject obj);
+		MediaMetadataEditor(QJniObject obj);
 		
 		// Constructors
 		

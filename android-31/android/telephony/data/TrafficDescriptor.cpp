@@ -13,8 +13,8 @@ namespace android::telephony::data
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TrafficDescriptor::TrafficDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TrafficDescriptor::TrafficDescriptor(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

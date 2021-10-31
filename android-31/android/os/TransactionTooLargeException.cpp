@@ -4,8 +4,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TransactionTooLargeException::TransactionTooLargeException(QAndroidJniObject obj) : android::os::RemoteException(obj) {}
+	// QJniObject forward
+	TransactionTooLargeException::TransactionTooLargeException(QJniObject obj) : android::os::RemoteException(obj) {}
 	
 	// Constructors
 	TransactionTooLargeException::TransactionTooLargeException()

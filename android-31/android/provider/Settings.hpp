@@ -126,9 +126,9 @@ namespace android::provider
 		static jstring INTENT_CATEGORY_USAGE_ACCESS_CONFIG();
 		static jstring METADATA_USAGE_ACCESS_REASON();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Settings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Settings(QAndroidJniObject obj);
+		Settings(QJniObject obj);
 		
 		// Constructors
 		Settings();

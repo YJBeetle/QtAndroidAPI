@@ -23,9 +23,9 @@ namespace android::print
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PrinterCapabilitiesInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PrinterCapabilitiesInfo(QAndroidJniObject obj);
+		PrinterCapabilitiesInfo(QJniObject obj);
 		
 		// Constructors
 		

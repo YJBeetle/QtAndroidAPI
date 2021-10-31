@@ -36,8 +36,8 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaFeature_HdrType::MediaFeature_HdrType(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaFeature_HdrType::MediaFeature_HdrType(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

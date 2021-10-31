@@ -32,9 +32,9 @@ namespace android::print
 		static jint DUPLEX_MODE_NONE();
 		static jint DUPLEX_MODE_SHORT_EDGE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PrintAttributes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PrintAttributes(QAndroidJniObject obj);
+		PrintAttributes(QJniObject obj);
 		
 		// Constructors
 		

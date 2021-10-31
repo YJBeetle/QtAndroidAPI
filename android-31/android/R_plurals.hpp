@@ -10,9 +10,9 @@ namespace android
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit R_plurals(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		R_plurals(QAndroidJniObject obj);
+		R_plurals(QJniObject obj);
 		
 		// Constructors
 		R_plurals();

@@ -18,8 +18,8 @@ namespace android::content::pm
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	CrossProfileApps::CrossProfileApps(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CrossProfileApps::CrossProfileApps(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -20,9 +20,9 @@ namespace android::app::job
 		static jint RESULT_FAILURE();
 		static jint RESULT_SUCCESS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JobScheduler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		JobScheduler(QAndroidJniObject obj);
+		JobScheduler(QJniObject obj);
 		
 		// Constructors
 		JobScheduler();

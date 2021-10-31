@@ -22,8 +22,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RemoteController::RemoteController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RemoteController::RemoteController(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RemoteController::RemoteController(android::content::Context arg0, __JniBaseClass arg1)

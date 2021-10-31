@@ -12,9 +12,9 @@ namespace android::service::autofill
 		static jstring TYPE_OTHER();
 		static jstring TYPE_PASSWORDS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SavedDatasetsInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SavedDatasetsInfo(QAndroidJniObject obj);
+		SavedDatasetsInfo(QJniObject obj);
 		
 		// Constructors
 		SavedDatasetsInfo(jstring arg0, jint arg1);

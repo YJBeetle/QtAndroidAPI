@@ -11,9 +11,9 @@ namespace android::media::metrics
 		// Fields
 		static android::media::metrics::LogSessionId LOG_SESSION_ID_NONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LogSessionId(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LogSessionId(QAndroidJniObject obj);
+		LogSessionId(QJniObject obj);
 		
 		// Constructors
 		

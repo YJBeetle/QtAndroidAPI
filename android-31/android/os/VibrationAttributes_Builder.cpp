@@ -5,8 +5,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VibrationAttributes_Builder::VibrationAttributes_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VibrationAttributes_Builder::VibrationAttributes_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	VibrationAttributes_Builder::VibrationAttributes_Builder()

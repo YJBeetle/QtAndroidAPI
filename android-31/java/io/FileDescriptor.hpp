@@ -13,9 +13,9 @@ namespace java::io
 		static java::io::FileDescriptor in();
 		static java::io::FileDescriptor out();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FileDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FileDescriptor(QAndroidJniObject obj);
+		FileDescriptor(QJniObject obj);
 		
 		// Constructors
 		FileDescriptor();

@@ -8,8 +8,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	X509Certificate::X509Certificate(QAndroidJniObject obj) : java::security::cert::Certificate(obj) {}
+	// QJniObject forward
+	X509Certificate::X509Certificate(QJniObject obj) : java::security::cert::Certificate(obj) {}
 	
 	// Constructors
 	

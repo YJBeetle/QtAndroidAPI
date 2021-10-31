@@ -23,9 +23,9 @@ namespace android::provider
 		// Fields
 		static android::net::Uri CONTENT_URI();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CalendarContract_EventsEntity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_EventsEntity(QAndroidJniObject obj);
+		CalendarContract_EventsEntity(QJniObject obj);
 		
 		// Constructors
 		

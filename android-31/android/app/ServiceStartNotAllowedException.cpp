@@ -4,8 +4,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ServiceStartNotAllowedException::ServiceStartNotAllowedException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	ServiceStartNotAllowedException::ServiceStartNotAllowedException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	

@@ -12,9 +12,9 @@ namespace android::companion
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DeviceNotAssociatedException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceNotAssociatedException(QAndroidJniObject obj);
+		DeviceNotAssociatedException(QJniObject obj);
 		
 		// Constructors
 		

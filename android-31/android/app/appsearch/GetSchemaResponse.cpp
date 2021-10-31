@@ -4,8 +4,8 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GetSchemaResponse::GetSchemaResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GetSchemaResponse::GetSchemaResponse(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

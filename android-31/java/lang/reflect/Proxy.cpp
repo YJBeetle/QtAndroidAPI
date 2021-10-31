@@ -11,8 +11,8 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Proxy::Proxy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Proxy::Proxy(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -4,8 +4,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ImageDecoder_Source::ImageDecoder_Source(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ImageDecoder_Source::ImageDecoder_Source(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -46,9 +46,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Files(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Files(QAndroidJniObject obj);
+		Files(QJniObject obj);
 		
 		// Constructors
 		

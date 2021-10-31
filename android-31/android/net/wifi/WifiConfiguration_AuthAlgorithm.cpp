@@ -48,8 +48,8 @@ namespace android::net::wifi
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	WifiConfiguration_AuthAlgorithm::WifiConfiguration_AuthAlgorithm(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiConfiguration_AuthAlgorithm::WifiConfiguration_AuthAlgorithm(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

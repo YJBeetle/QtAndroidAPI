@@ -4,8 +4,8 @@ namespace android::net::ipsec::ike::exceptions
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvalidSelectorsException::InvalidSelectorsException(QAndroidJniObject obj) : android::net::ipsec::ike::exceptions::IkeProtocolException(obj) {}
+	// QJniObject forward
+	InvalidSelectorsException::InvalidSelectorsException(QJniObject obj) : android::net::ipsec::ike::exceptions::IkeProtocolException(obj) {}
 	
 	// Constructors
 	InvalidSelectorsException::InvalidSelectorsException(jint arg0, jbyteArray arg1)

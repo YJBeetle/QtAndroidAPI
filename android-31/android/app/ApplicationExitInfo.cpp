@@ -113,8 +113,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ApplicationExitInfo::ApplicationExitInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ApplicationExitInfo::ApplicationExitInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

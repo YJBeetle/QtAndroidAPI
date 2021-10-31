@@ -15,8 +15,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EdgeEffect::EdgeEffect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EdgeEffect::EdgeEffect(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	EdgeEffect::EdgeEffect(android::content::Context arg0)

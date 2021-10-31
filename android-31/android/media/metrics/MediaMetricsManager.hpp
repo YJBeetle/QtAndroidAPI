@@ -19,9 +19,9 @@ namespace android::media::metrics
 		// Fields
 		static jlong INVALID_TIMESTAMP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaMetricsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaMetricsManager(QAndroidJniObject obj);
+		MediaMetricsManager(QJniObject obj);
 		
 		// Constructors
 		

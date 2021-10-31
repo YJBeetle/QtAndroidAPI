@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsupportedOperationException::UnsupportedOperationException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	UnsupportedOperationException::UnsupportedOperationException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	UnsupportedOperationException::UnsupportedOperationException()

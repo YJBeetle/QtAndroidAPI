@@ -5,8 +5,8 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Migrator::Migrator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Migrator::Migrator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Migrator::Migrator()

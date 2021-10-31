@@ -10,9 +10,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EventListenerProxy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EventListenerProxy(QAndroidJniObject obj);
+		EventListenerProxy(QJniObject obj);
 		
 		// Constructors
 		EventListenerProxy(__JniBaseClass arg0);

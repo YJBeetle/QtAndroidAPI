@@ -4,8 +4,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StatFs::StatFs(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StatFs::StatFs(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StatFs::StatFs(jstring arg0)

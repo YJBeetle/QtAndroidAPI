@@ -10,9 +10,9 @@ namespace android::icu::number
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IntegerWidth(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IntegerWidth(QAndroidJniObject obj);
+		IntegerWidth(QJniObject obj);
 		
 		// Constructors
 		

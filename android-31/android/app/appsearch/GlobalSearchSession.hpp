@@ -22,9 +22,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GlobalSearchSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GlobalSearchSession(QAndroidJniObject obj);
+		GlobalSearchSession(QJniObject obj);
 		
 		// Constructors
 		

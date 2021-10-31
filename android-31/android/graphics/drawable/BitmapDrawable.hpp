@@ -75,9 +75,9 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BitmapDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
-		BitmapDrawable(QAndroidJniObject obj);
+		BitmapDrawable(QJniObject obj);
 		
 		// Constructors
 		BitmapDrawable();

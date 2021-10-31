@@ -15,9 +15,9 @@ namespace android::view::textclassifier
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextClassificationSessionId(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassificationSessionId(QAndroidJniObject obj);
+		TextClassificationSessionId(QJniObject obj);
 		
 		// Constructors
 		

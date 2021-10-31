@@ -14,9 +14,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VibrationAttributes_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VibrationAttributes_Builder(QAndroidJniObject obj);
+		VibrationAttributes_Builder(QJniObject obj);
 		
 		// Constructors
 		VibrationAttributes_Builder();

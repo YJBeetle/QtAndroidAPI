@@ -8,8 +8,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Normalizer2::Normalizer2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Normalizer2::Normalizer2(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

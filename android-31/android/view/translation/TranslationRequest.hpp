@@ -19,9 +19,9 @@ namespace android::view::translation
 		static jint FLAG_TRANSLATION_RESULT();
 		static jint FLAG_TRANSLITERATION_RESULT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TranslationRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TranslationRequest(QAndroidJniObject obj);
+		TranslationRequest(QJniObject obj);
 		
 		// Constructors
 		

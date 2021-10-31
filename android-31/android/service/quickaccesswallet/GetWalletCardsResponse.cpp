@@ -13,8 +13,8 @@ namespace android::service::quickaccesswallet
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GetWalletCardsResponse::GetWalletCardsResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GetWalletCardsResponse::GetWalletCardsResponse(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GetWalletCardsResponse::GetWalletCardsResponse(__JniBaseClass arg0, jint arg1)

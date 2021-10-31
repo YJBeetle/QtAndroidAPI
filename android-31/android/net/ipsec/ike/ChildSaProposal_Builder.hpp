@@ -14,9 +14,9 @@ namespace android::net::ipsec::ike
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ChildSaProposal_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ChildSaProposal_Builder(QAndroidJniObject obj);
+		ChildSaProposal_Builder(QJniObject obj);
 		
 		// Constructors
 		ChildSaProposal_Builder();

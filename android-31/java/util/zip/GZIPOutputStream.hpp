@@ -21,9 +21,9 @@ namespace java::util::zip
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GZIPOutputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::DeflaterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		GZIPOutputStream(QAndroidJniObject obj);
+		GZIPOutputStream(QJniObject obj);
 		
 		// Constructors
 		GZIPOutputStream(java::io::OutputStream arg0);

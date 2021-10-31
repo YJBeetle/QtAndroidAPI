@@ -66,9 +66,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContentProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContentProvider(QAndroidJniObject obj);
+		ContentProvider(QJniObject obj);
 		
 		// Constructors
 		ContentProvider();

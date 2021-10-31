@@ -30,9 +30,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AlphabeticIndex(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabeticIndex(QAndroidJniObject obj);
+		AlphabeticIndex(QJniObject obj);
 		
 		// Constructors
 		AlphabeticIndex(android::icu::text::RuleBasedCollator arg0);

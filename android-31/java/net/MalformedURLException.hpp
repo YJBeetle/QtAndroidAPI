@@ -12,9 +12,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MalformedURLException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		MalformedURLException(QAndroidJniObject obj);
+		MalformedURLException(QJniObject obj);
 		
 		// Constructors
 		MalformedURLException();

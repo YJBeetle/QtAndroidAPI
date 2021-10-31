@@ -4,8 +4,8 @@ namespace android::graphics::fonts
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SystemFonts::SystemFonts(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SystemFonts::SystemFonts(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

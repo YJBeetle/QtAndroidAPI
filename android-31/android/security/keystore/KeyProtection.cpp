@@ -5,8 +5,8 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyProtection::KeyProtection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyProtection::KeyProtection(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

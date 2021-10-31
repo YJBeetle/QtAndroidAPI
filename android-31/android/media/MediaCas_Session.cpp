@@ -5,8 +5,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCas_Session::MediaCas_Session(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaCas_Session::MediaCas_Session(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

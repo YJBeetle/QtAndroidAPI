@@ -14,9 +14,9 @@ namespace android::telephony::data
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NetworkSliceInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkSliceInfo_Builder(QAndroidJniObject obj);
+		NetworkSliceInfo_Builder(QJniObject obj);
 		
 		// Constructors
 		NetworkSliceInfo_Builder();

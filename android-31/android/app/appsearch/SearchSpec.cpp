@@ -110,8 +110,8 @@ namespace android::app::appsearch
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SearchSpec::SearchSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SearchSpec::SearchSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

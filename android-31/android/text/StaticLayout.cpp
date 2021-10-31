@@ -8,8 +8,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StaticLayout::StaticLayout(QAndroidJniObject obj) : android::text::Layout(obj) {}
+	// QJniObject forward
+	StaticLayout::StaticLayout(QJniObject obj) : android::text::Layout(obj) {}
 	
 	// Constructors
 	StaticLayout::StaticLayout(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)

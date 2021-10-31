@@ -4,8 +4,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCasException_DeniedByServerException::MediaCasException_DeniedByServerException(QAndroidJniObject obj) : android::media::MediaCasException(obj) {}
+	// QJniObject forward
+	MediaCasException_DeniedByServerException::MediaCasException_DeniedByServerException(QJniObject obj) : android::media::MediaCasException(obj) {}
 	
 	// Constructors
 	

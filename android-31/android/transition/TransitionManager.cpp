@@ -7,8 +7,8 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TransitionManager::TransitionManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TransitionManager::TransitionManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TransitionManager::TransitionManager()

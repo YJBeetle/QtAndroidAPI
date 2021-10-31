@@ -12,9 +12,9 @@ namespace android::animation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TimeAnimator(const char *className, const char *sig, Ts...agv) : android::animation::ValueAnimator(className, sig, std::forward<Ts>(agv)...) {}
-		TimeAnimator(QAndroidJniObject obj);
+		TimeAnimator(QJniObject obj);
 		
 		// Constructors
 		TimeAnimator();

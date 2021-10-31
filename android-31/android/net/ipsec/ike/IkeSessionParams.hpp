@@ -26,9 +26,9 @@ namespace android::net::ipsec::ike
 		static jint IKE_OPTION_FORCE_PORT_4500();
 		static jint IKE_OPTION_MOBIKE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeSessionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionParams(QAndroidJniObject obj);
+		IkeSessionParams(QJniObject obj);
 		
 		// Constructors
 		

@@ -31,9 +31,9 @@ namespace java::math
 		static java::math::BigInteger TWO();
 		static java::math::BigInteger ZERO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BigInteger(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		BigInteger(QAndroidJniObject obj);
+		BigInteger(QJniObject obj);
 		
 		// Constructors
 		BigInteger(jbyteArray arg0);

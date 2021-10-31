@@ -21,9 +21,9 @@ namespace android::telephony::ims
 		static jint WIFI_MODE_WIFI_ONLY();
 		static jint WIFI_MODE_WIFI_PREFERRED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImsMmTelManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ImsMmTelManager(QAndroidJniObject obj);
+		ImsMmTelManager(QJniObject obj);
 		
 		// Constructors
 		

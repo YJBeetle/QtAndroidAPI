@@ -15,9 +15,9 @@ namespace android::media
 		// Fields
 		static jint UNKNOWN_DURATION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaParser_SeekMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaParser_SeekMap(QAndroidJniObject obj);
+		MediaParser_SeekMap(QJniObject obj);
 		
 		// Constructors
 		

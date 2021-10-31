@@ -56,9 +56,9 @@ namespace android::content::pm
 		jint versionCode();
 		jstring versionName();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PackageInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PackageInfo(QAndroidJniObject obj);
+		PackageInfo(QJniObject obj);
 		
 		// Constructors
 		PackageInfo();

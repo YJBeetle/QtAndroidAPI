@@ -277,8 +277,8 @@ namespace java::sql
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Types::Types(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Types::Types(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -31,9 +31,9 @@ namespace android::app
 		static jstring EDIT_VIBRATION();
 		static jstring EDIT_ZEN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NotificationChannel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationChannel(QAndroidJniObject obj);
+		NotificationChannel(QJniObject obj);
 		
 		// Constructors
 		NotificationChannel(jstring arg0, jstring arg1, jint arg2);

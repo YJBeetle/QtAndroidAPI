@@ -7,8 +7,8 @@ namespace android::media::metrics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PlaybackErrorEvent_Builder::PlaybackErrorEvent_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PlaybackErrorEvent_Builder::PlaybackErrorEvent_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PlaybackErrorEvent_Builder::PlaybackErrorEvent_Builder()

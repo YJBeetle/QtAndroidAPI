@@ -33,9 +33,9 @@ namespace android::location
 		static jint TYPE_SBS();
 		static jint TYPE_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GnssNavigationMessage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GnssNavigationMessage(QAndroidJniObject obj);
+		GnssNavigationMessage(QJniObject obj);
 		
 		// Constructors
 		

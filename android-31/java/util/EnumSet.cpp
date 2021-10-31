@@ -6,8 +6,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EnumSet::EnumSet(QAndroidJniObject obj) : java::util::AbstractSet(obj) {}
+	// QJniObject forward
+	EnumSet::EnumSet(QJniObject obj) : java::util::AbstractSet(obj) {}
 	
 	// Constructors
 	

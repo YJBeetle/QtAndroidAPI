@@ -9,8 +9,8 @@ namespace android::service::controls
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Control_StatefulBuilder::Control_StatefulBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Control_StatefulBuilder::Control_StatefulBuilder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Control_StatefulBuilder::Control_StatefulBuilder(android::service::controls::Control arg0)

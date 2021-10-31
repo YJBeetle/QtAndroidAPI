@@ -14,9 +14,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AttributionSource_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AttributionSource_Builder(QAndroidJniObject obj);
+		AttributionSource_Builder(QJniObject obj);
 		
 		// Constructors
 		AttributionSource_Builder(jint arg0);

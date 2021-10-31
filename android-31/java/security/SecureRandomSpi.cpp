@@ -4,8 +4,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecureRandomSpi::SecureRandomSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SecureRandomSpi::SecureRandomSpi(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SecureRandomSpi::SecureRandomSpi()

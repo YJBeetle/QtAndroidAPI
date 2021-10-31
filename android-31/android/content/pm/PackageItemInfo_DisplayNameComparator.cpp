@@ -6,8 +6,8 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PackageItemInfo_DisplayNameComparator::PackageItemInfo_DisplayNameComparator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PackageItemInfo_DisplayNameComparator::PackageItemInfo_DisplayNameComparator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PackageItemInfo_DisplayNameComparator::PackageItemInfo_DisplayNameComparator(android::content::pm::PackageManager arg0)

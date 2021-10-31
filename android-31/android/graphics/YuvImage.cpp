@@ -6,8 +6,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	YuvImage::YuvImage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	YuvImage::YuvImage(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	YuvImage::YuvImage(jbyteArray arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)

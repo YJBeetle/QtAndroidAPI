@@ -14,9 +14,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyStore_PrivateKeyEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStore_PrivateKeyEntry(QAndroidJniObject obj);
+		KeyStore_PrivateKeyEntry(QJniObject obj);
 		
 		// Constructors
 		KeyStore_PrivateKeyEntry(__JniBaseClass arg0, jarray arg1);

@@ -112,8 +112,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkRegistrationInfo::NetworkRegistrationInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NetworkRegistrationInfo::NetworkRegistrationInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

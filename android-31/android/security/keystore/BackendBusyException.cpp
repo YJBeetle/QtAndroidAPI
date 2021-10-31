@@ -4,8 +4,8 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BackendBusyException::BackendBusyException(QAndroidJniObject obj) : java::security::ProviderException(obj) {}
+	// QJniObject forward
+	BackendBusyException::BackendBusyException(QJniObject obj) : java::security::ProviderException(obj) {}
 	
 	// Constructors
 	BackendBusyException::BackendBusyException(jlong arg0)

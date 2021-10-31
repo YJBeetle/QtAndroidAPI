@@ -56,9 +56,9 @@ namespace android::media::metrics
 		static jint ERROR_RUNTIME();
 		static jint ERROR_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PlaybackErrorEvent(const char *className, const char *sig, Ts...agv) : android::media::metrics::Event(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackErrorEvent(QAndroidJniObject obj);
+		PlaybackErrorEvent(QJniObject obj);
 		
 		// Constructors
 		

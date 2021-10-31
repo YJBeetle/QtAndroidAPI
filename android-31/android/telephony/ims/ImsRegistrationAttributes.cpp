@@ -20,8 +20,8 @@ namespace android::telephony::ims
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImsRegistrationAttributes::ImsRegistrationAttributes(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ImsRegistrationAttributes::ImsRegistrationAttributes(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

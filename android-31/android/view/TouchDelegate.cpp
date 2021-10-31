@@ -36,8 +36,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TouchDelegate::TouchDelegate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TouchDelegate::TouchDelegate(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TouchDelegate::TouchDelegate(android::graphics::Rect arg0, android::view::View arg1)

@@ -11,9 +11,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ListResourceBundle(const char *className, const char *sig, Ts...agv) : java::util::ResourceBundle(className, sig, std::forward<Ts>(agv)...) {}
-		ListResourceBundle(QAndroidJniObject obj);
+		ListResourceBundle(QJniObject obj);
 		
 		// Constructors
 		ListResourceBundle();

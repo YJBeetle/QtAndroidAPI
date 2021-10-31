@@ -24,8 +24,8 @@ namespace android::net
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	VpnService::VpnService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	VpnService::VpnService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	VpnService::VpnService()

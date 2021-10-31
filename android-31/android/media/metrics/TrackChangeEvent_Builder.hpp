@@ -18,9 +18,9 @@ namespace android::media::metrics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TrackChangeEvent_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TrackChangeEvent_Builder(QAndroidJniObject obj);
+		TrackChangeEvent_Builder(QJniObject obj);
 		
 		// Constructors
 		TrackChangeEvent_Builder(jint arg0);

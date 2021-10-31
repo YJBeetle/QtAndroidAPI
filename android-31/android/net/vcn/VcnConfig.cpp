@@ -13,8 +13,8 @@ namespace android::net::vcn
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VcnConfig::VcnConfig(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VcnConfig::VcnConfig(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

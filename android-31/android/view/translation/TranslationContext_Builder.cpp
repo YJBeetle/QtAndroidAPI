@@ -6,8 +6,8 @@ namespace android::view::translation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TranslationContext_Builder::TranslationContext_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TranslationContext_Builder::TranslationContext_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TranslationContext_Builder::TranslationContext_Builder(android::view::translation::TranslationSpec arg0, android::view::translation::TranslationSpec arg1)

@@ -13,8 +13,8 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TelephonyNetworkSpecifier::TelephonyNetworkSpecifier(QAndroidJniObject obj) : android::net::NetworkSpecifier(obj) {}
+	// QJniObject forward
+	TelephonyNetworkSpecifier::TelephonyNetworkSpecifier(QJniObject obj) : android::net::NetworkSpecifier(obj) {}
 	
 	// Constructors
 	

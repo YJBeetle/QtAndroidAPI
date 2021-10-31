@@ -11,8 +11,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintStream::PrintStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
+	// QJniObject forward
+	PrintStream::PrintStream(QJniObject obj) : java::io::FilterOutputStream(obj) {}
 	
 	// Constructors
 	PrintStream::PrintStream(java::io::File arg0)

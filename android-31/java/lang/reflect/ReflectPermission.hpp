@@ -12,9 +12,9 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ReflectPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		ReflectPermission(QAndroidJniObject obj);
+		ReflectPermission(QJniObject obj);
 		
 		// Constructors
 		ReflectPermission(jstring arg0);

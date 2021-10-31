@@ -15,9 +15,9 @@ namespace android::net::ipsec::ike
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeSessionParams_IkeAuthEapConfig(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionParams_IkeAuthEapConfig(QAndroidJniObject obj);
+		IkeSessionParams_IkeAuthEapConfig(QJniObject obj);
 		
 		// Constructors
 		

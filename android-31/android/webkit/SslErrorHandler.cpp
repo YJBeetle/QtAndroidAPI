@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SslErrorHandler::SslErrorHandler(QAndroidJniObject obj) : android::os::Handler(obj) {}
+	// QJniObject forward
+	SslErrorHandler::SslErrorHandler(QJniObject obj) : android::os::Handler(obj) {}
 	
 	// Constructors
 	

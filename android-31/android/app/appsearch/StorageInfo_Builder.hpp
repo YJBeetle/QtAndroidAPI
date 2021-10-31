@@ -14,9 +14,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StorageInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StorageInfo_Builder(QAndroidJniObject obj);
+		StorageInfo_Builder(QJniObject obj);
 		
 		// Constructors
 		StorageInfo_Builder();

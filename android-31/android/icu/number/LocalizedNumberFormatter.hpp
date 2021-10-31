@@ -27,9 +27,9 @@ namespace android::icu::number
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocalizedNumberFormatter(const char *className, const char *sig, Ts...agv) : android::icu::number::NumberFormatterSettings(className, sig, std::forward<Ts>(agv)...) {}
-		LocalizedNumberFormatter(QAndroidJniObject obj);
+		LocalizedNumberFormatter(QJniObject obj);
 		
 		// Constructors
 		

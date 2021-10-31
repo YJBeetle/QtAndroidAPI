@@ -28,8 +28,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MessagePattern::MessagePattern(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MessagePattern::MessagePattern(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MessagePattern::MessagePattern()

@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	URLUtil::URLUtil(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	URLUtil::URLUtil(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	URLUtil::URLUtil()

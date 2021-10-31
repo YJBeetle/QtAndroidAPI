@@ -4,8 +4,8 @@ namespace java::util::prefs
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BackingStoreException::BackingStoreException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	BackingStoreException::BackingStoreException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	BackingStoreException::BackingStoreException(jstring arg0)

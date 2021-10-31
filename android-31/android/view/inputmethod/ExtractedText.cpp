@@ -77,8 +77,8 @@ namespace android::view::inputmethod
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ExtractedText::ExtractedText(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ExtractedText::ExtractedText(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ExtractedText::ExtractedText()

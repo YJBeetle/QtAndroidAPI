@@ -173,8 +173,8 @@ namespace java::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateFormat::DateFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
+	// QJniObject forward
+	DateFormat::DateFormat(QJniObject obj) : java::text::Format(obj) {}
 	
 	// Constructors
 	

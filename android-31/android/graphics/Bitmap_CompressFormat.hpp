@@ -16,9 +16,9 @@ namespace android::graphics
 		static android::graphics::Bitmap_CompressFormat WEBP_LOSSLESS();
 		static android::graphics::Bitmap_CompressFormat WEBP_LOSSY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Bitmap_CompressFormat(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Bitmap_CompressFormat(QAndroidJniObject obj);
+		Bitmap_CompressFormat(QJniObject obj);
 		
 		// Constructors
 		

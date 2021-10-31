@@ -8,8 +8,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LocalActivityManager::LocalActivityManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocalActivityManager::LocalActivityManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LocalActivityManager::LocalActivityManager(android::app::Activity arg0, jboolean arg1)

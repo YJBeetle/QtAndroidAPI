@@ -13,8 +13,8 @@ namespace android::net::sip
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SipProfile::SipProfile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SipProfile::SipProfile(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

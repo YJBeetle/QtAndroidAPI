@@ -5,8 +5,8 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IkeSessionParams_IkeAuthDigitalSignLocalConfig::IkeSessionParams_IkeAuthDigitalSignLocalConfig(QAndroidJniObject obj) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(obj) {}
+	// QJniObject forward
+	IkeSessionParams_IkeAuthDigitalSignLocalConfig::IkeSessionParams_IkeAuthDigitalSignLocalConfig(QJniObject obj) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(obj) {}
 	
 	// Constructors
 	

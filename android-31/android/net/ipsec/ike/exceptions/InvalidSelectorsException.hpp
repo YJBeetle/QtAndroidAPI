@@ -13,9 +13,9 @@ namespace android::net::ipsec::ike::exceptions
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InvalidSelectorsException(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::exceptions::IkeProtocolException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidSelectorsException(QAndroidJniObject obj);
+		InvalidSelectorsException(QJniObject obj);
 		
 		// Constructors
 		InvalidSelectorsException(jint arg0, jbyteArray arg1);

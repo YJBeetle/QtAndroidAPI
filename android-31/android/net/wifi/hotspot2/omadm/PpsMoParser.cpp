@@ -5,8 +5,8 @@ namespace android::net::wifi::hotspot2::omadm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PpsMoParser::PpsMoParser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PpsMoParser::PpsMoParser(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

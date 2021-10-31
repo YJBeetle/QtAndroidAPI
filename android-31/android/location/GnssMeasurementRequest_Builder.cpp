@@ -5,8 +5,8 @@ namespace android::location
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GnssMeasurementRequest_Builder::GnssMeasurementRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GnssMeasurementRequest_Builder::GnssMeasurementRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GnssMeasurementRequest_Builder::GnssMeasurementRequest_Builder()

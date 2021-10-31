@@ -82,8 +82,8 @@ namespace android::content::pm
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ShortcutInfo::ShortcutInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ShortcutInfo::ShortcutInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

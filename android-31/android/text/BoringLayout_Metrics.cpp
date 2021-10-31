@@ -10,8 +10,8 @@ namespace android::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BoringLayout_Metrics::BoringLayout_Metrics(QAndroidJniObject obj) : android::graphics::Paint_FontMetricsInt(obj) {}
+	// QJniObject forward
+	BoringLayout_Metrics::BoringLayout_Metrics(QJniObject obj) : android::graphics::Paint_FontMetricsInt(obj) {}
 	
 	// Constructors
 	BoringLayout_Metrics::BoringLayout_Metrics()

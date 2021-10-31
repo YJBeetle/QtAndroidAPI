@@ -7,8 +7,8 @@ namespace android::preference
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PreferenceGroup::PreferenceGroup(QAndroidJniObject obj) : android::preference::Preference(obj) {}
+	// QJniObject forward
+	PreferenceGroup::PreferenceGroup(QJniObject obj) : android::preference::Preference(obj) {}
 	
 	// Constructors
 	PreferenceGroup::PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1)

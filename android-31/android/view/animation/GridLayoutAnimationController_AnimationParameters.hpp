@@ -15,9 +15,9 @@ namespace android::view::animation
 		jint row();
 		jint rowsCount();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GridLayoutAnimationController_AnimationParameters(const char *className, const char *sig, Ts...agv) : android::view::animation::LayoutAnimationController_AnimationParameters(className, sig, std::forward<Ts>(agv)...) {}
-		GridLayoutAnimationController_AnimationParameters(QAndroidJniObject obj);
+		GridLayoutAnimationController_AnimationParameters(QJniObject obj);
 		
 		// Constructors
 		GridLayoutAnimationController_AnimationParameters();

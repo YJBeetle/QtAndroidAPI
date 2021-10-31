@@ -118,9 +118,9 @@ namespace android::service::voice
 		static jint SHOW_WITH_ASSIST();
 		static jint SHOW_WITH_SCREENSHOT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VoiceInteractionSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession(QAndroidJniObject obj);
+		VoiceInteractionSession(QJniObject obj);
 		
 		// Constructors
 		VoiceInteractionSession(android::content::Context arg0);

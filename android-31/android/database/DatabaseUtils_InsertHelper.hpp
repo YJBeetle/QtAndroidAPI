@@ -18,9 +18,9 @@ namespace android::database
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DatabaseUtils_InsertHelper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DatabaseUtils_InsertHelper(QAndroidJniObject obj);
+		DatabaseUtils_InsertHelper(QJniObject obj);
 		
 		// Constructors
 		DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase arg0, jstring arg1);

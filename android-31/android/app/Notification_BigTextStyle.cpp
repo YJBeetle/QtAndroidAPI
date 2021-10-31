@@ -5,8 +5,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_BigTextStyle::Notification_BigTextStyle(QAndroidJniObject obj) : android::app::Notification_Style(obj) {}
+	// QJniObject forward
+	Notification_BigTextStyle::Notification_BigTextStyle(QJniObject obj) : android::app::Notification_Style(obj) {}
 	
 	// Constructors
 	Notification_BigTextStyle::Notification_BigTextStyle()

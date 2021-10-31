@@ -13,8 +13,8 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CustomDescription::CustomDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CustomDescription::CustomDescription(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

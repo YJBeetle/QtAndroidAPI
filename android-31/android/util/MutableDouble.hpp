@@ -11,9 +11,9 @@ namespace android::util
 		// Fields
 		jdouble value();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MutableDouble(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MutableDouble(QAndroidJniObject obj);
+		MutableDouble(QJniObject obj);
 		
 		// Constructors
 		MutableDouble(jdouble arg0);

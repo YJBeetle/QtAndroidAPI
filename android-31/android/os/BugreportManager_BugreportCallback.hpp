@@ -15,9 +15,9 @@ namespace android::os
 		static jint BUGREPORT_ERROR_USER_CONSENT_TIMED_OUT();
 		static jint BUGREPORT_ERROR_USER_DENIED_CONSENT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BugreportManager_BugreportCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BugreportManager_BugreportCallback(QAndroidJniObject obj);
+		BugreportManager_BugreportCallback(QJniObject obj);
 		
 		// Constructors
 		BugreportManager_BugreportCallback();

@@ -4,8 +4,8 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AccessControlProfileId::AccessControlProfileId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessControlProfileId::AccessControlProfileId(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AccessControlProfileId::AccessControlProfileId(jint arg0)

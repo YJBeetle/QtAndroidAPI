@@ -19,9 +19,9 @@ namespace android::app::appsearch
 		static jint RESULT_SECURITY_ERROR();
 		static jint RESULT_UNKNOWN_ERROR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppSearchResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchResult(QAndroidJniObject obj);
+		AppSearchResult(QJniObject obj);
 		
 		// Constructors
 		

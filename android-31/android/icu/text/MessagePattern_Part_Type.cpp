@@ -116,8 +116,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MessagePattern_Part_Type::MessagePattern_Part_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	MessagePattern_Part_Type::MessagePattern_Part_Type(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

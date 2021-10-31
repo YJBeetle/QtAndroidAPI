@@ -5,8 +5,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CrossProcessCursorWrapper::CrossProcessCursorWrapper(QAndroidJniObject obj) : android::database::CursorWrapper(obj) {}
+	// QJniObject forward
+	CrossProcessCursorWrapper::CrossProcessCursorWrapper(QJniObject obj) : android::database::CursorWrapper(obj) {}
 	
 	// Constructors
 	CrossProcessCursorWrapper::CrossProcessCursorWrapper(__JniBaseClass arg0)

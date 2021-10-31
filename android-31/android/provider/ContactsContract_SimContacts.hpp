@@ -15,9 +15,9 @@ namespace android::provider
 		// Fields
 		static jstring ACTION_SIM_ACCOUNTS_CHANGED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_SimContacts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_SimContacts(QAndroidJniObject obj);
+		ContactsContract_SimContacts(QJniObject obj);
 		
 		// Constructors
 		

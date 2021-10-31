@@ -23,9 +23,9 @@ namespace android::media
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AudioPlaybackConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AudioPlaybackConfiguration(QAndroidJniObject obj);
+		AudioPlaybackConfiguration(QJniObject obj);
 		
 		// Constructors
 		

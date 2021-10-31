@@ -15,8 +15,8 @@ namespace android::service::carrier
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	CarrierService::CarrierService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	CarrierService::CarrierService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	CarrierService::CarrierService()

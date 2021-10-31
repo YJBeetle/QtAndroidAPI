@@ -7,8 +7,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Provider_Service::Provider_Service(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Provider_Service::Provider_Service(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Provider_Service::Provider_Service(java::security::Provider arg0, jstring arg1, jstring arg2, jstring arg3, __JniBaseClass arg4, __JniBaseClass arg5)

@@ -6,8 +6,8 @@ namespace javax::security::auth
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SubjectDomainCombiner::SubjectDomainCombiner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SubjectDomainCombiner::SubjectDomainCombiner(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SubjectDomainCombiner::SubjectDomainCombiner(javax::security::auth::Subject arg0)

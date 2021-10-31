@@ -5,8 +5,8 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SignalThresholdInfo_Builder::SignalThresholdInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SignalThresholdInfo_Builder::SignalThresholdInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SignalThresholdInfo_Builder::SignalThresholdInfo_Builder()

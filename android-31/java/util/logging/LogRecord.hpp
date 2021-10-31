@@ -34,9 +34,9 @@ namespace java::util::logging
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LogRecord(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LogRecord(QAndroidJniObject obj);
+		LogRecord(QJniObject obj);
 		
 		// Constructors
 		LogRecord(java::util::logging::Level arg0, jstring arg1);

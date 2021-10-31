@@ -16,9 +16,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PushbackReader(const char *className, const char *sig, Ts...agv) : java::io::FilterReader(className, sig, std::forward<Ts>(agv)...) {}
-		PushbackReader(QAndroidJniObject obj);
+		PushbackReader(QJniObject obj);
 		
 		// Constructors
 		PushbackReader(java::io::Reader arg0);

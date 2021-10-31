@@ -51,9 +51,9 @@ namespace android::telephony::data
 		static jint TYPE_VSIM();
 		static jint TYPE_XCAP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ApnSetting(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ApnSetting(QAndroidJniObject obj);
+		ApnSetting(QJniObject obj);
 		
 		// Constructors
 		

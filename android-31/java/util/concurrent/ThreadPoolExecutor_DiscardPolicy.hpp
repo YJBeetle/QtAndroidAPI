@@ -14,9 +14,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ThreadPoolExecutor_DiscardPolicy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ThreadPoolExecutor_DiscardPolicy(QAndroidJniObject obj);
+		ThreadPoolExecutor_DiscardPolicy(QJniObject obj);
 		
 		// Constructors
 		ThreadPoolExecutor_DiscardPolicy();

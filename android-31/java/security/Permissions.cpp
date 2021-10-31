@@ -9,8 +9,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Permissions::Permissions(QAndroidJniObject obj) : java::security::PermissionCollection(obj) {}
+	// QJniObject forward
+	Permissions::Permissions(QJniObject obj) : java::security::PermissionCollection(obj) {}
 	
 	// Constructors
 	Permissions::Permissions()

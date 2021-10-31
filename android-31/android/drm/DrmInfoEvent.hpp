@@ -21,9 +21,9 @@ namespace android::drm
 		static jint TYPE_RIGHTS_REMOVED();
 		static jint TYPE_WAIT_FOR_RIGHTS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DrmInfoEvent(const char *className, const char *sig, Ts...agv) : android::drm::DrmEvent(className, sig, std::forward<Ts>(agv)...) {}
-		DrmInfoEvent(QAndroidJniObject obj);
+		DrmInfoEvent(QJniObject obj);
 		
 		// Constructors
 		DrmInfoEvent(jint arg0, jint arg1, jstring arg2);

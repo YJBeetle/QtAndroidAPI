@@ -19,9 +19,9 @@ namespace android::hardware::display
 		static jint CONNECTION_TO_SINK_UNKNOWN();
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DeviceProductInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceProductInfo(QAndroidJniObject obj);
+		DeviceProductInfo(QJniObject obj);
 		
 		// Constructors
 		DeviceProductInfo(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4);

@@ -33,9 +33,9 @@ namespace android::net::wifi::p2p
 		static jint PREFERRED_CONNECTIVITY_P2P();
 		static jint PREFERRED_CONNECTIVITY_TDLS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiP2pWfdInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pWfdInfo(QAndroidJniObject obj);
+		WifiP2pWfdInfo(QJniObject obj);
 		
 		// Constructors
 		WifiP2pWfdInfo();

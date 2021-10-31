@@ -4,8 +4,8 @@ namespace android::icu::number
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CompactNotation::CompactNotation(QAndroidJniObject obj) : android::icu::number::Notation(obj) {}
+	// QJniObject forward
+	CompactNotation::CompactNotation(QJniObject obj) : android::icu::number::Notation(obj) {}
 	
 	// Constructors
 	

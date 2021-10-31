@@ -31,8 +31,8 @@ namespace android::service::chooser
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ChooserTargetService::ChooserTargetService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	ChooserTargetService::ChooserTargetService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	ChooserTargetService::ChooserTargetService()

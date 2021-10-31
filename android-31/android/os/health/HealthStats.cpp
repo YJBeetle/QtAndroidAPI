@@ -5,8 +5,8 @@ namespace android::os::health
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HealthStats::HealthStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	HealthStats::HealthStats(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

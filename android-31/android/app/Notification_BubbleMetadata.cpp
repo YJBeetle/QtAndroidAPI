@@ -15,8 +15,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Notification_BubbleMetadata::Notification_BubbleMetadata(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Notification_BubbleMetadata::Notification_BubbleMetadata(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

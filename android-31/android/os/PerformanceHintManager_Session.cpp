@@ -4,8 +4,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PerformanceHintManager_Session::PerformanceHintManager_Session(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PerformanceHintManager_Session::PerformanceHintManager_Session(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

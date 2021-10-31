@@ -10,9 +10,9 @@ namespace android::provider
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SyncStateContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SyncStateContract(QAndroidJniObject obj);
+		SyncStateContract(QJniObject obj);
 		
 		// Constructors
 		SyncStateContract();

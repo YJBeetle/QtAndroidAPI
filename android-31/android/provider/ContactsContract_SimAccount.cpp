@@ -41,8 +41,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_SimAccount::ContactsContract_SimAccount(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_SimAccount::ContactsContract_SimAccount(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -13,8 +13,8 @@ namespace android::accessibilityservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessibilityGestureEvent::AccessibilityGestureEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessibilityGestureEvent::AccessibilityGestureEvent(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

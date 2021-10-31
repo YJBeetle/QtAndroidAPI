@@ -14,9 +14,9 @@ namespace java::util::stream
 		static java::util::stream::Collector_Characteristics IDENTITY_FINISH();
 		static java::util::stream::Collector_Characteristics UNORDERED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Collector_Characteristics(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Collector_Characteristics(QAndroidJniObject obj);
+		Collector_Characteristics(QJniObject obj);
 		
 		// Constructors
 		

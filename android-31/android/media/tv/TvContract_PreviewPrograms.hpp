@@ -95,9 +95,9 @@ namespace android::media::tv
 		static jint TYPE_TV_SEASON();
 		static jint TYPE_TV_SERIES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TvContract_PreviewPrograms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TvContract_PreviewPrograms(QAndroidJniObject obj);
+		TvContract_PreviewPrograms(QJniObject obj);
 		
 		// Constructors
 		

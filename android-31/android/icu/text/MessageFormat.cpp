@@ -11,8 +11,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MessageFormat::MessageFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
+	// QJniObject forward
+	MessageFormat::MessageFormat(QJniObject obj) : android::icu::text::UFormat(obj) {}
 	
 	// Constructors
 	MessageFormat::MessageFormat(jstring arg0)

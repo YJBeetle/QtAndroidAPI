@@ -13,8 +13,8 @@ namespace android::telephony::data
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UrspRule::UrspRule(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UrspRule::UrspRule(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

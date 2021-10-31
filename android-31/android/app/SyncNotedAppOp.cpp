@@ -13,8 +13,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SyncNotedAppOp::SyncNotedAppOp(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SyncNotedAppOp::SyncNotedAppOp(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SyncNotedAppOp::SyncNotedAppOp(jint arg0, jstring arg1)

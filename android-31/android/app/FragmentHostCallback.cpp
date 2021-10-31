@@ -14,8 +14,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FragmentHostCallback::FragmentHostCallback(QAndroidJniObject obj) : android::app::FragmentContainer(obj) {}
+	// QJniObject forward
+	FragmentHostCallback::FragmentHostCallback(QJniObject obj) : android::app::FragmentContainer(obj) {}
 	
 	// Constructors
 	FragmentHostCallback::FragmentHostCallback(android::content::Context arg0, android::os::Handler arg1, jint arg2)

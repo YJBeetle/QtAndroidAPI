@@ -14,9 +14,9 @@ namespace android::telecom
 		static jint CALL_COMPOSER_ATTACHMENT_PRIORITY();
 		static jint CALL_COMPOSER_ATTACHMENT_SUBJECT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CallScreeningService_CallResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CallScreeningService_CallResponse(QAndroidJniObject obj);
+		CallScreeningService_CallResponse(QJniObject obj);
 		
 		// Constructors
 		

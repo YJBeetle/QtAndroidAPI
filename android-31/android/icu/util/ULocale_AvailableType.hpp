@@ -14,9 +14,9 @@ namespace android::icu::util
 		static android::icu::util::ULocale_AvailableType ONLY_LEGACY_ALIASES();
 		static android::icu::util::ULocale_AvailableType WITH_LEGACY_ALIASES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ULocale_AvailableType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ULocale_AvailableType(QAndroidJniObject obj);
+		ULocale_AvailableType(QJniObject obj);
 		
 		// Constructors
 		

@@ -68,9 +68,9 @@ namespace android::media
 		static jint SEEK_TO_NEXT_SYNC();
 		static jint SEEK_TO_PREVIOUS_SYNC();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaExtractor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaExtractor(QAndroidJniObject obj);
+		MediaExtractor(QJniObject obj);
 		
 		// Constructors
 		MediaExtractor();

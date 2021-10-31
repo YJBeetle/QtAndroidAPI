@@ -40,9 +40,9 @@ namespace android::telecom
 		// Fields
 		static jlong CONNECT_TIME_NOT_SPECIFIED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Conference(const char *className, const char *sig, Ts...agv) : android::telecom::Conferenceable(className, sig, std::forward<Ts>(agv)...) {}
-		Conference(QAndroidJniObject obj);
+		Conference(QJniObject obj);
 		
 		// Constructors
 		Conference(android::telecom::PhoneAccountHandle arg0);

@@ -22,9 +22,9 @@ namespace android::telephony
 		static jint LIMIT_BEHAVIOR_UNKNOWN();
 		static jlong TIME_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SubscriptionPlan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SubscriptionPlan(QAndroidJniObject obj);
+		SubscriptionPlan(QJniObject obj);
 		
 		// Constructors
 		

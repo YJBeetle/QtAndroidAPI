@@ -22,9 +22,9 @@ namespace android::media::metrics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PlaybackErrorEvent_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackErrorEvent_Builder(QAndroidJniObject obj);
+		PlaybackErrorEvent_Builder(QJniObject obj);
 		
 		// Constructors
 		PlaybackErrorEvent_Builder();

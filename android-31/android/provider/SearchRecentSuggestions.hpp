@@ -24,9 +24,9 @@ namespace android::provider
 		static jint QUERIES_PROJECTION_DISPLAY2_INDEX();
 		static jint QUERIES_PROJECTION_QUERY_INDEX();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SearchRecentSuggestions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SearchRecentSuggestions(QAndroidJniObject obj);
+		SearchRecentSuggestions(QJniObject obj);
 		
 		// Constructors
 		SearchRecentSuggestions(android::content::Context arg0, jstring arg1, jint arg2);

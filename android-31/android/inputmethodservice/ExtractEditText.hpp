@@ -21,9 +21,9 @@ namespace android::inputmethodservice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ExtractEditText(const char *className, const char *sig, Ts...agv) : android::widget::EditText(className, sig, std::forward<Ts>(agv)...) {}
-		ExtractEditText(QAndroidJniObject obj);
+		ExtractEditText(QJniObject obj);
 		
 		// Constructors
 		ExtractEditText(android::content::Context arg0);

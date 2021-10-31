@@ -14,8 +14,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CombinedVibration::CombinedVibration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CombinedVibration::CombinedVibration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

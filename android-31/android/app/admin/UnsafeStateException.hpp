@@ -18,9 +18,9 @@ namespace android::app::admin
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnsafeStateException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		UnsafeStateException(QAndroidJniObject obj);
+		UnsafeStateException(QJniObject obj);
 		
 		// Constructors
 		

@@ -7,8 +7,8 @@ namespace android::net::vcn
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VcnConfig_Builder::VcnConfig_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VcnConfig_Builder::VcnConfig_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	VcnConfig_Builder::VcnConfig_Builder(android::content::Context arg0)

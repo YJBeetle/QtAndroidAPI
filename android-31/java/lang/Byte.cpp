@@ -41,8 +41,8 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	// QAndroidJniObject forward
-	Byte::Byte(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	// QJniObject forward
+	Byte::Byte(QJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
 	Byte::Byte(jbyte arg0)

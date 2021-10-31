@@ -41,9 +41,9 @@ namespace android::net::ipsec::ike
 		static jint PSEUDORANDOM_FUNCTION_SHA2_384();
 		static jint PSEUDORANDOM_FUNCTION_SHA2_512();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SaProposal(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SaProposal(QAndroidJniObject obj);
+		SaProposal(QJniObject obj);
 		
 		// Constructors
 		

@@ -6,8 +6,8 @@ namespace android::telephony::ims
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RegistrationManager_RegistrationCallback::RegistrationManager_RegistrationCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RegistrationManager_RegistrationCallback::RegistrationManager_RegistrationCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RegistrationManager_RegistrationCallback::RegistrationManager_RegistrationCallback()

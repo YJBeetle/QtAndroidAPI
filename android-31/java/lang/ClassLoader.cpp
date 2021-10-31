@@ -13,8 +13,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClassLoader::ClassLoader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ClassLoader::ClassLoader(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

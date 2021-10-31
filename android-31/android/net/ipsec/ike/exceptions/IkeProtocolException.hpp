@@ -28,9 +28,9 @@ namespace android::net::ipsec::ike::exceptions
 		static jint ERROR_TYPE_TS_UNACCEPTABLE();
 		static jint ERROR_TYPE_UNSUPPORTED_CRITICAL_PAYLOAD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeProtocolException(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::exceptions::IkeException(className, sig, std::forward<Ts>(agv)...) {}
-		IkeProtocolException(QAndroidJniObject obj);
+		IkeProtocolException(QJniObject obj);
 		
 		// Constructors
 		

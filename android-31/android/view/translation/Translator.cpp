@@ -6,8 +6,8 @@ namespace android::view::translation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Translator::Translator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Translator::Translator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -24,9 +24,9 @@ namespace android::telephony
 		static jint PHYSICAL_CELL_ID_MAXIMUM_VALUE();
 		static jint PHYSICAL_CELL_ID_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PhysicalChannelConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PhysicalChannelConfig(QAndroidJniObject obj);
+		PhysicalChannelConfig(QJniObject obj);
 		
 		// Constructors
 		

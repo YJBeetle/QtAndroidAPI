@@ -4,8 +4,8 @@ namespace android::text::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Rfc822Token::Rfc822Token(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Rfc822Token::Rfc822Token(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Rfc822Token::Rfc822Token(jstring arg0, jstring arg1, jstring arg2)

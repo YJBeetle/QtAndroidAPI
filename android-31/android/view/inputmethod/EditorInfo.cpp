@@ -247,8 +247,8 @@ namespace android::view::inputmethod
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	EditorInfo::EditorInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EditorInfo::EditorInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	EditorInfo::EditorInfo()

@@ -15,9 +15,9 @@ namespace android::net::wifi::hotspot2::pps
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HomeSp(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		HomeSp(QAndroidJniObject obj);
+		HomeSp(QJniObject obj);
 		
 		// Constructors
 		HomeSp();

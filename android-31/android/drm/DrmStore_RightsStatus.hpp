@@ -14,9 +14,9 @@ namespace android::drm
 		static jint RIGHTS_NOT_ACQUIRED();
 		static jint RIGHTS_VALID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DrmStore_RightsStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DrmStore_RightsStatus(QAndroidJniObject obj);
+		DrmStore_RightsStatus(QJniObject obj);
 		
 		// Constructors
 		DrmStore_RightsStatus();

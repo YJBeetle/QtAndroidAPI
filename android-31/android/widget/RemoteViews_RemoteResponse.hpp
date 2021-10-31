@@ -18,9 +18,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RemoteViews_RemoteResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteViews_RemoteResponse(QAndroidJniObject obj);
+		RemoteViews_RemoteResponse(QJniObject obj);
 		
 		// Constructors
 		RemoteViews_RemoteResponse();

@@ -46,9 +46,9 @@ namespace android::app::job
 		static jint NETWORK_TYPE_NOT_ROAMING();
 		static jint NETWORK_TYPE_UNMETERED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JobInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		JobInfo(QAndroidJniObject obj);
+		JobInfo(QJniObject obj);
 		
 		// Constructors
 		

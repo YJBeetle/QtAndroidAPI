@@ -7,8 +7,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicFile::AtomicFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AtomicFile::AtomicFile(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AtomicFile::AtomicFile(java::io::File arg0)

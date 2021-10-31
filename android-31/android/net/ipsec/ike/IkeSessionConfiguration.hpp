@@ -16,9 +16,9 @@ namespace android::net::ipsec::ike
 		static jint EXTENSION_TYPE_FRAGMENTATION();
 		static jint EXTENSION_TYPE_MOBIKE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IkeSessionConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionConfiguration(QAndroidJniObject obj);
+		IkeSessionConfiguration(QJniObject obj);
 		
 		// Constructors
 		

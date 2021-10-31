@@ -146,8 +146,8 @@ namespace java::awt::font
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumericShaper::NumericShaper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NumericShaper::NumericShaper(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

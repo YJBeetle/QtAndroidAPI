@@ -6,8 +6,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClassNotFoundException::ClassNotFoundException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
+	// QJniObject forward
+	ClassNotFoundException::ClassNotFoundException(QJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
 	
 	// Constructors
 	ClassNotFoundException::ClassNotFoundException()

@@ -21,9 +21,9 @@ namespace android::telephony::data
 		static jint SESSION_TYPE_IPV4V6();
 		static jint SESSION_TYPE_IPV6();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RouteSelectionDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RouteSelectionDescriptor(QAndroidJniObject obj);
+		RouteSelectionDescriptor(QJniObject obj);
 		
 		// Constructors
 		

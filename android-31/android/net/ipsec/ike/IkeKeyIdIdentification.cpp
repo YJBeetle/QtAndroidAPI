@@ -11,8 +11,8 @@ namespace android::net::ipsec::ike
 		).object<jbyteArray>();
 	}
 	
-	// QAndroidJniObject forward
-	IkeKeyIdIdentification::IkeKeyIdIdentification(QAndroidJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
+	// QJniObject forward
+	IkeKeyIdIdentification::IkeKeyIdIdentification(QJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
 	
 	// Constructors
 	IkeKeyIdIdentification::IkeKeyIdIdentification(jbyteArray arg0)

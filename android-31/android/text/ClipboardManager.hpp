@@ -10,9 +10,9 @@ namespace android::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ClipboardManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ClipboardManager(QAndroidJniObject obj);
+		ClipboardManager(QJniObject obj);
 		
 		// Constructors
 		ClipboardManager();

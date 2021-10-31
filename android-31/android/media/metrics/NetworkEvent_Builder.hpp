@@ -18,9 +18,9 @@ namespace android::media::metrics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NetworkEvent_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkEvent_Builder(QAndroidJniObject obj);
+		NetworkEvent_Builder(QJniObject obj);
 		
 		// Constructors
 		NetworkEvent_Builder();

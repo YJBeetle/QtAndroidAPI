@@ -5,8 +5,8 @@ namespace android::app::blob
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BlobStoreManager_Session::BlobStoreManager_Session(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BlobStoreManager_Session::BlobStoreManager_Session(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

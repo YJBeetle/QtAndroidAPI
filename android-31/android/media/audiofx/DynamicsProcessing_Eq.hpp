@@ -16,9 +16,9 @@ namespace android::media::audiofx
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DynamicsProcessing_Eq(const char *className, const char *sig, Ts...agv) : android::media::audiofx::DynamicsProcessing_BandStage(className, sig, std::forward<Ts>(agv)...) {}
-		DynamicsProcessing_Eq(QAndroidJniObject obj);
+		DynamicsProcessing_Eq(QJniObject obj);
 		
 		// Constructors
 		DynamicsProcessing_Eq(android::media::audiofx::DynamicsProcessing_Eq &arg0);

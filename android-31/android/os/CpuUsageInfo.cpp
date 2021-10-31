@@ -13,8 +13,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CpuUsageInfo::CpuUsageInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CpuUsageInfo::CpuUsageInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

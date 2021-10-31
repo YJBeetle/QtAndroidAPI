@@ -14,8 +14,8 @@ namespace android::net::nsd
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NsdServiceInfo::NsdServiceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NsdServiceInfo::NsdServiceInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	NsdServiceInfo::NsdServiceInfo()

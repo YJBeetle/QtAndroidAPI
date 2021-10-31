@@ -4,8 +4,8 @@ namespace java::util::stream
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StreamSupport::StreamSupport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StreamSupport::StreamSupport(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

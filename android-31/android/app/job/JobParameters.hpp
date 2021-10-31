@@ -50,9 +50,9 @@ namespace android::app::job
 		static jint STOP_REASON_UNDEFINED();
 		static jint STOP_REASON_USER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JobParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		JobParameters(QAndroidJniObject obj);
+		JobParameters(QJniObject obj);
 		
 		// Constructors
 		

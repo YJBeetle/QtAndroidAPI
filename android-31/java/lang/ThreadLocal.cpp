@@ -6,8 +6,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ThreadLocal::ThreadLocal(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ThreadLocal::ThreadLocal(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ThreadLocal::ThreadLocal()

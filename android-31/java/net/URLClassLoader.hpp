@@ -48,9 +48,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit URLClassLoader(const char *className, const char *sig, Ts...agv) : java::security::SecureClassLoader(className, sig, std::forward<Ts>(agv)...) {}
-		URLClassLoader(QAndroidJniObject obj);
+		URLClassLoader(QJniObject obj);
 		
 		// Constructors
 		URLClassLoader(jarray arg0);

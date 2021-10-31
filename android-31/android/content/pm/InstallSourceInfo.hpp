@@ -19,9 +19,9 @@ namespace android::content::pm
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InstallSourceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		InstallSourceInfo(QAndroidJniObject obj);
+		InstallSourceInfo(QJniObject obj);
 		
 		// Constructors
 		

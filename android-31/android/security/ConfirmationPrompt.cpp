@@ -6,8 +6,8 @@ namespace android::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConfirmationPrompt::ConfirmationPrompt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConfirmationPrompt::ConfirmationPrompt(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

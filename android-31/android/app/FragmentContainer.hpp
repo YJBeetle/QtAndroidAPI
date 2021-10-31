@@ -14,9 +14,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FragmentContainer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FragmentContainer(QAndroidJniObject obj);
+		FragmentContainer(QJniObject obj);
 		
 		// Constructors
 		FragmentContainer();

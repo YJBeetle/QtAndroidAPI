@@ -8,8 +8,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SurfaceControlViewHost::SurfaceControlViewHost(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SurfaceControlViewHost::SurfaceControlViewHost(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SurfaceControlViewHost::SurfaceControlViewHost(android::content::Context arg0, android::view::Display arg1, __JniBaseClass arg2)

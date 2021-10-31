@@ -14,9 +14,9 @@ namespace android::icu::number
 		static android::icu::number::NumberRangeFormatter_RangeIdentityResult EQUAL_BEFORE_ROUNDING();
 		static android::icu::number::NumberRangeFormatter_RangeIdentityResult NOT_EQUAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NumberRangeFormatter_RangeIdentityResult(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberRangeFormatter_RangeIdentityResult(QAndroidJniObject obj);
+		NumberRangeFormatter_RangeIdentityResult(QJniObject obj);
 		
 		// Constructors
 		

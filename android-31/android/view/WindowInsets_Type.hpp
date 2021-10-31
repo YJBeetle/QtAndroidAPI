@@ -10,9 +10,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WindowInsets_Type(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsets_Type(QAndroidJniObject obj);
+		WindowInsets_Type(QJniObject obj);
 		
 		// Constructors
 		

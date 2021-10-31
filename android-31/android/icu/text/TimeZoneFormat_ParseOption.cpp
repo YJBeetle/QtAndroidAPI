@@ -20,8 +20,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TimeZoneFormat_ParseOption::TimeZoneFormat_ParseOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	TimeZoneFormat_ParseOption::TimeZoneFormat_ParseOption(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

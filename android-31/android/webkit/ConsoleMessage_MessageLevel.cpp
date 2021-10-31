@@ -44,8 +44,8 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ConsoleMessage_MessageLevel::ConsoleMessage_MessageLevel(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ConsoleMessage_MessageLevel::ConsoleMessage_MessageLevel(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

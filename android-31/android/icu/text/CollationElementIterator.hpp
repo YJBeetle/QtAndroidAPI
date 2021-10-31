@@ -16,9 +16,9 @@ namespace android::icu::text
 		static jint IGNORABLE();
 		static jint NULLORDER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CollationElementIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CollationElementIterator(QAndroidJniObject obj);
+		CollationElementIterator(QJniObject obj);
 		
 		// Constructors
 		

@@ -28,8 +28,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Canvas::Canvas(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Canvas::Canvas(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Canvas::Canvas()

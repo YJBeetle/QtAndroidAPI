@@ -12,9 +12,9 @@ namespace android::security::identity
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NoAuthenticationKeyAvailableException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		NoAuthenticationKeyAvailableException(QAndroidJniObject obj);
+		NoAuthenticationKeyAvailableException(QJniObject obj);
 		
 		// Constructors
 		NoAuthenticationKeyAvailableException(jstring arg0);

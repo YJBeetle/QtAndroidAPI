@@ -13,8 +13,8 @@ namespace android::view::displayhash
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DisplayHash::DisplayHash(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DisplayHash::DisplayHash(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

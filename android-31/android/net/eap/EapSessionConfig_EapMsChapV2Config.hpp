@@ -11,9 +11,9 @@ namespace android::net::eap
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EapSessionConfig_EapMsChapV2Config(const char *className, const char *sig, Ts...agv) : android::net::eap::EapSessionConfig_EapMethodConfig(className, sig, std::forward<Ts>(agv)...) {}
-		EapSessionConfig_EapMsChapV2Config(QAndroidJniObject obj);
+		EapSessionConfig_EapMsChapV2Config(QJniObject obj);
 		
 		// Constructors
 		

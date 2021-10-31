@@ -19,9 +19,9 @@ namespace android::service::notification
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NotificationListenerService_RankingMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationListenerService_RankingMap(QAndroidJniObject obj);
+		NotificationListenerService_RankingMap(QJniObject obj);
 		
 		// Constructors
 		

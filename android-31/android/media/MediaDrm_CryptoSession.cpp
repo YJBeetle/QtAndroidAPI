@@ -5,8 +5,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaDrm_CryptoSession::MediaDrm_CryptoSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaDrm_CryptoSession::MediaDrm_CryptoSession(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

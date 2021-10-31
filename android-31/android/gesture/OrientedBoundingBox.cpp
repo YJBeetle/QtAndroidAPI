@@ -40,8 +40,8 @@ namespace android::gesture
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OrientedBoundingBox::OrientedBoundingBox(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	OrientedBoundingBox::OrientedBoundingBox(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

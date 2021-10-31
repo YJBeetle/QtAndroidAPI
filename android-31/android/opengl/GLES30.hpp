@@ -336,9 +336,9 @@ namespace android::opengl
 		static jint GL_VERTEX_ATTRIB_ARRAY_INTEGER();
 		static jint GL_WAIT_FAILED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GLES30(const char *className, const char *sig, Ts...agv) : android::opengl::GLES20(className, sig, std::forward<Ts>(agv)...) {}
-		GLES30(QAndroidJniObject obj);
+		GLES30(QJniObject obj);
 		
 		// Constructors
 		GLES30();

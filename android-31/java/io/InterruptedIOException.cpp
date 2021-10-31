@@ -10,8 +10,8 @@ namespace java::io
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InterruptedIOException::InterruptedIOException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	InterruptedIOException::InterruptedIOException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	InterruptedIOException::InterruptedIOException()

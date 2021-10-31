@@ -20,9 +20,9 @@ namespace android::text::style
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbsoluteSizeSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
-		AbsoluteSizeSpan(QAndroidJniObject obj);
+		AbsoluteSizeSpan(QJniObject obj);
 		
 		// Constructors
 		AbsoluteSizeSpan(android::os::Parcel arg0);

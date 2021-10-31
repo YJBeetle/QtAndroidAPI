@@ -24,9 +24,9 @@ namespace android::telephony
 		static jint SIGNAL_MEASUREMENT_TYPE_SSSINR();
 		static jint SIGNAL_MEASUREMENT_TYPE_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SignalThresholdInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SignalThresholdInfo(QAndroidJniObject obj);
+		SignalThresholdInfo(QJniObject obj);
 		
 		// Constructors
 		

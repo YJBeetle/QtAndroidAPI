@@ -48,8 +48,8 @@ namespace android::view::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SuggestionsInfo::SuggestionsInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SuggestionsInfo::SuggestionsInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SuggestionsInfo::SuggestionsInfo(android::os::Parcel arg0)

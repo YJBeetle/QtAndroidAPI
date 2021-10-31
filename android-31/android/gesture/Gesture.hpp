@@ -35,9 +35,9 @@ namespace android::gesture
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Gesture(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Gesture(QAndroidJniObject obj);
+		Gesture(QJniObject obj);
 		
 		// Constructors
 		Gesture();

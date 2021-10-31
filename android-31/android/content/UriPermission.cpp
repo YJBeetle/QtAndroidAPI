@@ -21,8 +21,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UriPermission::UriPermission(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UriPermission::UriPermission(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

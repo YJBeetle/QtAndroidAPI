@@ -4,8 +4,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProviderNotFoundException::ProviderNotFoundException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	ProviderNotFoundException::ProviderNotFoundException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	ProviderNotFoundException::ProviderNotFoundException()

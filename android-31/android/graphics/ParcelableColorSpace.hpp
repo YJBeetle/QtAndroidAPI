@@ -19,9 +19,9 @@ namespace android::graphics
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ParcelableColorSpace(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ParcelableColorSpace(QAndroidJniObject obj);
+		ParcelableColorSpace(QJniObject obj);
 		
 		// Constructors
 		ParcelableColorSpace(android::graphics::ColorSpace arg0);

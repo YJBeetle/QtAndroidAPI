@@ -113,8 +113,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SimPhonebookContract_ElementaryFiles::SimPhonebookContract_ElementaryFiles(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SimPhonebookContract_ElementaryFiles::SimPhonebookContract_ElementaryFiles(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

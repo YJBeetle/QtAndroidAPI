@@ -4,8 +4,8 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyPermanentlyInvalidatedException::KeyPermanentlyInvalidatedException(QAndroidJniObject obj) : java::security::InvalidKeyException(obj) {}
+	// QJniObject forward
+	KeyPermanentlyInvalidatedException::KeyPermanentlyInvalidatedException(QJniObject obj) : java::security::InvalidKeyException(obj) {}
 	
 	// Constructors
 	KeyPermanentlyInvalidatedException::KeyPermanentlyInvalidatedException()

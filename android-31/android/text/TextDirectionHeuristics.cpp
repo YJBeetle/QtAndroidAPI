@@ -52,8 +52,8 @@ namespace android::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextDirectionHeuristics::TextDirectionHeuristics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextDirectionHeuristics::TextDirectionHeuristics(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TextDirectionHeuristics::TextDirectionHeuristics()

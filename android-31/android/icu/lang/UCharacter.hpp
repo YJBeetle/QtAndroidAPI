@@ -46,9 +46,9 @@ namespace android::icu::lang
 		static jint TITLECASE_NO_BREAK_ADJUSTMENT();
 		static jint TITLECASE_NO_LOWERCASE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UCharacter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UCharacter(QAndroidJniObject obj);
+		UCharacter(QJniObject obj);
 		
 		// Constructors
 		

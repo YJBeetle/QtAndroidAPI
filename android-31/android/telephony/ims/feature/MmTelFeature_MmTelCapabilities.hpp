@@ -15,9 +15,9 @@ namespace android::telephony::ims::feature
 		static jint CAPABILITY_TYPE_VIDEO();
 		static jint CAPABILITY_TYPE_VOICE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MmTelFeature_MmTelCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MmTelFeature_MmTelCapabilities(QAndroidJniObject obj);
+		MmTelFeature_MmTelCapabilities(QJniObject obj);
 		
 		// Constructors
 		

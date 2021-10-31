@@ -15,9 +15,9 @@ namespace android::icu::text
 		jstring conflictingPattern();
 		jint status();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateTimePatternGenerator_PatternInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DateTimePatternGenerator_PatternInfo(QAndroidJniObject obj);
+		DateTimePatternGenerator_PatternInfo(QJniObject obj);
 		
 		// Constructors
 		DateTimePatternGenerator_PatternInfo();

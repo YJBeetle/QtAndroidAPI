@@ -10,9 +10,9 @@ namespace android::service::carrier
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CarrierMessagingService_SendMmsResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierMessagingService_SendMmsResult(QAndroidJniObject obj);
+		CarrierMessagingService_SendMmsResult(QJniObject obj);
 		
 		// Constructors
 		CarrierMessagingService_SendMmsResult(jint arg0, jbyteArray arg1);

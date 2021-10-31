@@ -10,9 +10,9 @@ namespace android::security::keystore
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WrappedKeyEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WrappedKeyEntry(QAndroidJniObject obj);
+		WrappedKeyEntry(QJniObject obj);
 		
 		// Constructors
 		WrappedKeyEntry(jbyteArray arg0, jstring arg1, jstring arg2, __JniBaseClass arg3);

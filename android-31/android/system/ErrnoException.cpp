@@ -5,15 +5,15 @@
 namespace android::system
 {
 	// Fields
-	jint ErrnoException::errno()
+	jint ErrnoException::_errno()
 	{
 		return getField<jint>(
 			"errno"
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ErrnoException::ErrnoException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	ErrnoException::ErrnoException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	ErrnoException::ErrnoException(jstring arg0, jint arg1)

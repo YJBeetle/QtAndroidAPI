@@ -14,9 +14,9 @@ namespace android::graphics
 		static android::graphics::Paint_Align LEFT();
 		static android::graphics::Paint_Align RIGHT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Paint_Align(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_Align(QAndroidJniObject obj);
+		Paint_Align(QJniObject obj);
 		
 		// Constructors
 		

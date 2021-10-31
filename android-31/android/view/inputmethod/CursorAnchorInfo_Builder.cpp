@@ -6,8 +6,8 @@ namespace android::view::inputmethod
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CursorAnchorInfo_Builder::CursorAnchorInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CursorAnchorInfo_Builder::CursorAnchorInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CursorAnchorInfo_Builder::CursorAnchorInfo_Builder()

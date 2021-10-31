@@ -54,8 +54,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Message::Message(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Message::Message(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Message::Message()

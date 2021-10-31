@@ -31,9 +31,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AnalogClock(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		AnalogClock(QAndroidJniObject obj);
+		AnalogClock(QJniObject obj);
 		
 		// Constructors
 		AnalogClock(android::content::Context arg0);

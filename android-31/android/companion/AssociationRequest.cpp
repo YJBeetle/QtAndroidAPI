@@ -21,8 +21,8 @@ namespace android::companion
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	AssociationRequest::AssociationRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AssociationRequest::AssociationRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

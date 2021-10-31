@@ -15,9 +15,9 @@ namespace android::telephony::ims
 		static jint CODE_ERROR_UNSPECIFIED();
 		static jint CODE_ERROR_UNSUPPORTED_OPERATION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImsException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ImsException(QAndroidJniObject obj);
+		ImsException(QJniObject obj);
 		
 		// Constructors
 		

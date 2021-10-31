@@ -37,9 +37,9 @@ namespace android::speech
 		static jint ERROR_TOO_MANY_REQUESTS();
 		static jstring RESULTS_RECOGNITION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SpeechRecognizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SpeechRecognizer(QAndroidJniObject obj);
+		SpeechRecognizer(QJniObject obj);
 		
 		// Constructors
 		

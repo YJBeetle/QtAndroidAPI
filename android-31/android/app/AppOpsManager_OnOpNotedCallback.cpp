@@ -6,8 +6,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AppOpsManager_OnOpNotedCallback::AppOpsManager_OnOpNotedCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AppOpsManager_OnOpNotedCallback::AppOpsManager_OnOpNotedCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AppOpsManager_OnOpNotedCallback::AppOpsManager_OnOpNotedCallback()

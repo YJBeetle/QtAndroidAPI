@@ -14,9 +14,9 @@ namespace android::telephony
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SignalThresholdInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SignalThresholdInfo_Builder(QAndroidJniObject obj);
+		SignalThresholdInfo_Builder(QJniObject obj);
 		
 		// Constructors
 		SignalThresholdInfo_Builder();

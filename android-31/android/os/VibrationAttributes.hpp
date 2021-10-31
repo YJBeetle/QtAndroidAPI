@@ -28,9 +28,9 @@ namespace android::os
 		static jint USAGE_TOUCH();
 		static jint USAGE_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VibrationAttributes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VibrationAttributes(QAndroidJniObject obj);
+		VibrationAttributes(QJniObject obj);
 		
 		// Constructors
 		

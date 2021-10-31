@@ -15,9 +15,9 @@ namespace android::media
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RouteDiscoveryPreference(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RouteDiscoveryPreference(QAndroidJniObject obj);
+		RouteDiscoveryPreference(QJniObject obj);
 		
 		// Constructors
 		

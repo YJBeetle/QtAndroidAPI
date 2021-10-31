@@ -20,8 +20,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Path_Direction::Path_Direction(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Path_Direction::Path_Direction(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

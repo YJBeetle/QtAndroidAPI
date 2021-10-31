@@ -104,8 +104,8 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ScanSettings::ScanSettings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ScanSettings::ScanSettings(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

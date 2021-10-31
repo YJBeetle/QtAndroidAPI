@@ -6,8 +6,8 @@ namespace dalvik::system
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DexFile::DexFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DexFile::DexFile(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DexFile::DexFile(java::io::File arg0)

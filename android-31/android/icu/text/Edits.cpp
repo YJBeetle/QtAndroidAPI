@@ -5,8 +5,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Edits::Edits(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Edits::Edits(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Edits::Edits()

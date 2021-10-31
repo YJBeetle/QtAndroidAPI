@@ -43,9 +43,9 @@ namespace android::view::autofill
 		static jstring EXTRA_CLIENT_STATE();
 		static jstring EXTRA_INLINE_SUGGESTIONS_REQUEST();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AutofillManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AutofillManager(QAndroidJniObject obj);
+		AutofillManager(QJniObject obj);
 		
 		// Constructors
 		

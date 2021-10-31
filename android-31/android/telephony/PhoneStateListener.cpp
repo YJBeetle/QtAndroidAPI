@@ -152,8 +152,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PhoneStateListener::PhoneStateListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PhoneStateListener::PhoneStateListener(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PhoneStateListener::PhoneStateListener()

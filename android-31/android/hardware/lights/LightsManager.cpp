@@ -7,8 +7,8 @@ namespace android::hardware::lights
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LightsManager::LightsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LightsManager::LightsManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

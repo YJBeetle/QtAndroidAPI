@@ -10,9 +10,9 @@ namespace android::hardware
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConsumerIrManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConsumerIrManager(QAndroidJniObject obj);
+		ConsumerIrManager(QJniObject obj);
 		
 		// Constructors
 		

@@ -25,9 +25,9 @@ namespace android::app::appsearch
 		static jint TERM_MATCH_EXACT_ONLY();
 		static jint TERM_MATCH_PREFIX();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SearchSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SearchSpec(QAndroidJniObject obj);
+		SearchSpec(QJniObject obj);
 		
 		// Constructors
 		

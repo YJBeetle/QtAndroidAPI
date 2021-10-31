@@ -21,8 +21,8 @@ namespace java::security::spec
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1)

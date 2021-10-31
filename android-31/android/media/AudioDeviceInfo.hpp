@@ -39,9 +39,9 @@ namespace android::media
 		static jint TYPE_WIRED_HEADPHONES();
 		static jint TYPE_WIRED_HEADSET();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AudioDeviceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AudioDeviceInfo(QAndroidJniObject obj);
+		AudioDeviceInfo(QJniObject obj);
 		
 		// Constructors
 		

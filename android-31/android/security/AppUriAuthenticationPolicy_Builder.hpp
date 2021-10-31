@@ -18,9 +18,9 @@ namespace android::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppUriAuthenticationPolicy_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AppUriAuthenticationPolicy_Builder(QAndroidJniObject obj);
+		AppUriAuthenticationPolicy_Builder(QJniObject obj);
 		
 		// Constructors
 		AppUriAuthenticationPolicy_Builder();

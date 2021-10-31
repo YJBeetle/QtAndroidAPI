@@ -18,9 +18,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConnectivityDiagnosticsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectivityDiagnosticsManager(QAndroidJniObject obj);
+		ConnectivityDiagnosticsManager(QJniObject obj);
 		
 		// Constructors
 		

@@ -13,8 +13,8 @@ namespace android::app::usage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StorageStats::StorageStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StorageStats::StorageStats(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

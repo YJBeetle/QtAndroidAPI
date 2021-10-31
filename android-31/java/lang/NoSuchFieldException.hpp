@@ -12,9 +12,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NoSuchFieldException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchFieldException(QAndroidJniObject obj);
+		NoSuchFieldException(QJniObject obj);
 		
 		// Constructors
 		NoSuchFieldException();

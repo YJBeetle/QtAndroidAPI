@@ -60,8 +60,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TaskInfo::TaskInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TaskInfo::TaskInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

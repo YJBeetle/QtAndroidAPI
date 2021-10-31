@@ -4,8 +4,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalBlockingModeException::IllegalBlockingModeException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	IllegalBlockingModeException::IllegalBlockingModeException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	IllegalBlockingModeException::IllegalBlockingModeException()

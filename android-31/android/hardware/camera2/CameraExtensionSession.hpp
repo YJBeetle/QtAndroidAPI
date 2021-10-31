@@ -22,9 +22,9 @@ namespace android::hardware::camera2
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraExtensionSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CameraExtensionSession(QAndroidJniObject obj);
+		CameraExtensionSession(QJniObject obj);
 		
 		// Constructors
 		

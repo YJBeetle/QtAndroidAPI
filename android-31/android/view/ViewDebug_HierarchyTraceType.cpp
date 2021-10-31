@@ -68,8 +68,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ViewDebug_HierarchyTraceType::ViewDebug_HierarchyTraceType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ViewDebug_HierarchyTraceType::ViewDebug_HierarchyTraceType(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

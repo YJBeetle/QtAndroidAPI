@@ -30,9 +30,9 @@ namespace android::media::metrics
 		static jint NETWORK_TYPE_UNKNOWN();
 		static jint NETWORK_TYPE_WIFI();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NetworkEvent(const char *className, const char *sig, Ts...agv) : android::media::metrics::Event(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkEvent(QAndroidJniObject obj);
+		NetworkEvent(QJniObject obj);
 		
 		// Constructors
 		

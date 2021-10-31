@@ -42,9 +42,9 @@ namespace android::media
 		static jint SESSION_USAGE_RECORD();
 		static jint SESSION_USAGE_TIMESHIFT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCas(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCas(QAndroidJniObject obj);
+		MediaCas(QJniObject obj);
 		
 		// Constructors
 		MediaCas(jint arg0);

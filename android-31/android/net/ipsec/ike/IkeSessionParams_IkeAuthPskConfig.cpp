@@ -4,8 +4,8 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IkeSessionParams_IkeAuthPskConfig::IkeSessionParams_IkeAuthPskConfig(QAndroidJniObject obj) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(obj) {}
+	// QJniObject forward
+	IkeSessionParams_IkeAuthPskConfig::IkeSessionParams_IkeAuthPskConfig(QJniObject obj) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(obj) {}
 	
 	// Constructors
 	

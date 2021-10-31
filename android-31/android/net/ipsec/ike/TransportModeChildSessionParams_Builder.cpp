@@ -7,8 +7,8 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TransportModeChildSessionParams_Builder::TransportModeChildSessionParams_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TransportModeChildSessionParams_Builder::TransportModeChildSessionParams_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TransportModeChildSessionParams_Builder::TransportModeChildSessionParams_Builder()

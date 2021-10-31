@@ -44,8 +44,8 @@ namespace android::telephony
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	CarrierConfigManager_ImsServiceEntitlement::CarrierConfigManager_ImsServiceEntitlement(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CarrierConfigManager_ImsServiceEntitlement::CarrierConfigManager_ImsServiceEntitlement(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

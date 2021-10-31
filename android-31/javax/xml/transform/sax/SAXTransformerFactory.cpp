@@ -20,8 +20,8 @@ namespace javax::xml::transform::sax
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SAXTransformerFactory::SAXTransformerFactory(QAndroidJniObject obj) : javax::xml::transform::TransformerFactory(obj) {}
+	// QJniObject forward
+	SAXTransformerFactory::SAXTransformerFactory(QJniObject obj) : javax::xml::transform::TransformerFactory(obj) {}
 	
 	// Constructors
 	

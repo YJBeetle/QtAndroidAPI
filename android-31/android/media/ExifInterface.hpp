@@ -182,9 +182,9 @@ namespace android::media
 		static jint WHITEBALANCE_AUTO();
 		static jint WHITEBALANCE_MANUAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ExifInterface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ExifInterface(QAndroidJniObject obj);
+		ExifInterface(QJniObject obj);
 		
 		// Constructors
 		ExifInterface(java::io::File arg0);

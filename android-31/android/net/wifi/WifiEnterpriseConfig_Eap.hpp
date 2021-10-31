@@ -20,9 +20,9 @@ namespace android::net::wifi
 		static jint UNAUTH_TLS();
 		static jint WAPI_CERT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiEnterpriseConfig_Eap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiEnterpriseConfig_Eap(QAndroidJniObject obj);
+		WifiEnterpriseConfig_Eap(QJniObject obj);
 		
 		// Constructors
 		

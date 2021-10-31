@@ -10,9 +10,9 @@ namespace android::app::usage
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NetworkStatsManager_UsageCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkStatsManager_UsageCallback(QAndroidJniObject obj);
+		NetworkStatsManager_UsageCallback(QJniObject obj);
 		
 		// Constructors
 		NetworkStatsManager_UsageCallback();

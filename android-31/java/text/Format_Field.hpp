@@ -11,9 +11,9 @@ namespace java::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Format_Field(const char *className, const char *sig, Ts...agv) : java::text::AttributedCharacterIterator_Attribute(className, sig, std::forward<Ts>(agv)...) {}
-		Format_Field(QAndroidJniObject obj);
+		Format_Field(QJniObject obj);
 		
 		// Constructors
 		

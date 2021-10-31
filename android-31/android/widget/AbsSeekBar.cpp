@@ -12,8 +12,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbsSeekBar::AbsSeekBar(QAndroidJniObject obj) : android::widget::ProgressBar(obj) {}
+	// QJniObject forward
+	AbsSeekBar::AbsSeekBar(QJniObject obj) : android::widget::ProgressBar(obj) {}
 	
 	// Constructors
 	AbsSeekBar::AbsSeekBar(android::content::Context arg0)

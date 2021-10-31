@@ -132,9 +132,9 @@ namespace android::telecom
 		static jint VERIFICATION_STATUS_NOT_VERIFIED();
 		static jint VERIFICATION_STATUS_PASSED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Connection(const char *className, const char *sig, Ts...agv) : android::telecom::Conferenceable(className, sig, std::forward<Ts>(agv)...) {}
-		Connection(QAndroidJniObject obj);
+		Connection(QJniObject obj);
 		
 		// Constructors
 		Connection();

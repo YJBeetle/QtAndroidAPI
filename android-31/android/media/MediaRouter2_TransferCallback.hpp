@@ -18,9 +18,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaRouter2_TransferCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter2_TransferCallback(QAndroidJniObject obj);
+		MediaRouter2_TransferCallback(QJniObject obj);
 		
 		// Constructors
 		MediaRouter2_TransferCallback();

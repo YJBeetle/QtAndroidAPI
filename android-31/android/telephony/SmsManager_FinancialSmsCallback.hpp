@@ -14,9 +14,9 @@ namespace android::telephony
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SmsManager_FinancialSmsCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SmsManager_FinancialSmsCallback(QAndroidJniObject obj);
+		SmsManager_FinancialSmsCallback(QJniObject obj);
 		
 		// Constructors
 		SmsManager_FinancialSmsCallback();

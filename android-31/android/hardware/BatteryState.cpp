@@ -39,8 +39,8 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BatteryState::BatteryState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BatteryState::BatteryState(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	BatteryState::BatteryState()

@@ -16,9 +16,9 @@ namespace android::telephony
 		static __JniBaseClass CREATOR();
 		static jint INVALID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SignalStrength(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SignalStrength(QAndroidJniObject obj);
+		SignalStrength(QJniObject obj);
 		
 		// Constructors
 		SignalStrength(android::telephony::SignalStrength &arg0);

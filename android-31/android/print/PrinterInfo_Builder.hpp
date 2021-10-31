@@ -26,9 +26,9 @@ namespace android::print
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PrinterInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PrinterInfo_Builder(QAndroidJniObject obj);
+		PrinterInfo_Builder(QJniObject obj);
 		
 		// Constructors
 		PrinterInfo_Builder(android::print::PrinterInfo arg0);

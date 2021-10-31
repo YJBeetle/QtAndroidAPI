@@ -4,8 +4,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GridLayout_Spec::GridLayout_Spec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GridLayout_Spec::GridLayout_Spec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -76,8 +76,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SignalThresholdInfo::SignalThresholdInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SignalThresholdInfo::SignalThresholdInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

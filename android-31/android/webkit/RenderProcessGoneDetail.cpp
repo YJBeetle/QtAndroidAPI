@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RenderProcessGoneDetail::RenderProcessGoneDetail(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RenderProcessGoneDetail::RenderProcessGoneDetail(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RenderProcessGoneDetail::RenderProcessGoneDetail()

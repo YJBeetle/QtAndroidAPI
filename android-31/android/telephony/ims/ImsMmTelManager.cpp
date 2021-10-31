@@ -27,8 +27,8 @@ namespace android::telephony::ims
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImsMmTelManager::ImsMmTelManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ImsMmTelManager::ImsMmTelManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -16,9 +16,9 @@ namespace android::telephony
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TelephonyManager_TimeoutException(const char *className, const char *sig, Ts...agv) : android::telephony::TelephonyManager_NetworkSlicingException(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_TimeoutException(QAndroidJniObject obj);
+		TelephonyManager_TimeoutException(QJniObject obj);
 		
 		// Constructors
 		

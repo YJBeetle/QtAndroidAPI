@@ -20,9 +20,9 @@ namespace android::media::session
 		static __JniBaseClass CREATOR();
 		static jint UNKNOWN_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaSession_QueueItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSession_QueueItem(QAndroidJniObject obj);
+		MediaSession_QueueItem(QJniObject obj);
 		
 		// Constructors
 		MediaSession_QueueItem(android::media::MediaDescription arg0, jlong arg1);

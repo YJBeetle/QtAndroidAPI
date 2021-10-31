@@ -15,8 +15,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DirectAction::DirectAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DirectAction::DirectAction(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

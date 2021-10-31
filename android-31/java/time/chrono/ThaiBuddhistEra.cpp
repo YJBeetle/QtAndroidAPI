@@ -22,8 +22,8 @@ namespace java::time::chrono
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ThaiBuddhistEra::ThaiBuddhistEra(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ThaiBuddhistEra::ThaiBuddhistEra(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

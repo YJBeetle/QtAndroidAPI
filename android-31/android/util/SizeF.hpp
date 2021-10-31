@@ -15,9 +15,9 @@ namespace android::util
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SizeF(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SizeF(QAndroidJniObject obj);
+		SizeF(QJniObject obj);
 		
 		// Constructors
 		SizeF(jfloat arg0, jfloat arg1);

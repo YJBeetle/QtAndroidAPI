@@ -4,8 +4,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SocketAddress::SocketAddress(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SocketAddress::SocketAddress(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SocketAddress::SocketAddress()

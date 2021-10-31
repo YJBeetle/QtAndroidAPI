@@ -10,8 +10,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CertificateFactory::CertificateFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CertificateFactory::CertificateFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

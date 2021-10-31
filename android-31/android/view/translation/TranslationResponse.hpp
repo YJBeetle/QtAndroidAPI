@@ -22,9 +22,9 @@ namespace android::view::translation
 		static jint TRANSLATION_STATUS_SUCCESS();
 		static jint TRANSLATION_STATUS_UNKNOWN_ERROR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TranslationResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TranslationResponse(QAndroidJniObject obj);
+		TranslationResponse(QJniObject obj);
 		
 		// Constructors
 		

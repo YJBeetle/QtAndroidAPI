@@ -13,9 +13,9 @@ namespace android::app::appsearch
 		static jint CARDINALITY_REPEATED();
 		static jint CARDINALITY_REQUIRED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppSearchSchema_PropertyConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_PropertyConfig(QAndroidJniObject obj);
+		AppSearchSchema_PropertyConfig(QJniObject obj);
 		
 		// Constructors
 		

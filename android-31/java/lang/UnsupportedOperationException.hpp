@@ -12,9 +12,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnsupportedOperationException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		UnsupportedOperationException(QAndroidJniObject obj);
+		UnsupportedOperationException(QJniObject obj);
 		
 		// Constructors
 		UnsupportedOperationException();

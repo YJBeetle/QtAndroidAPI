@@ -119,8 +119,8 @@ namespace android::nfc
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NdefRecord::NdefRecord(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NdefRecord::NdefRecord(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	NdefRecord::NdefRecord(jbyteArray arg0)

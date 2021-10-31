@@ -22,9 +22,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SyncRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SyncRequest_Builder(QAndroidJniObject obj);
+		SyncRequest_Builder(QJniObject obj);
 		
 		// Constructors
 		SyncRequest_Builder();

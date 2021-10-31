@@ -8,8 +8,8 @@ namespace android::net::wifi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WifiNetworkSpecifier_Builder::WifiNetworkSpecifier_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiNetworkSpecifier_Builder::WifiNetworkSpecifier_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WifiNetworkSpecifier_Builder::WifiNetworkSpecifier_Builder()

@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LogPrinter::LogPrinter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LogPrinter::LogPrinter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LogPrinter::LogPrinter(jint arg0, jstring arg1)

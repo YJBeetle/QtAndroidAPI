@@ -13,8 +13,8 @@ namespace android::app::usage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ExternalStorageStats::ExternalStorageStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ExternalStorageStats::ExternalStorageStats(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

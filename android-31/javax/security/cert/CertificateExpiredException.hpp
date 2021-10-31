@@ -12,9 +12,9 @@ namespace javax::security::cert
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CertificateExpiredException(const char *className, const char *sig, Ts...agv) : javax::security::cert::CertificateException(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateExpiredException(QAndroidJniObject obj);
+		CertificateExpiredException(QJniObject obj);
 		
 		// Constructors
 		CertificateExpiredException();

@@ -67,9 +67,9 @@ namespace android::appwidget
 		static jstring OPTION_APPWIDGET_RESTORE_COMPLETED();
 		static jstring OPTION_APPWIDGET_SIZES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppWidgetManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AppWidgetManager(QAndroidJniObject obj);
+		AppWidgetManager(QJniObject obj);
 		
 		// Constructors
 		

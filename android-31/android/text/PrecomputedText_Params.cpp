@@ -5,8 +5,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrecomputedText_Params::PrecomputedText_Params(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PrecomputedText_Params::PrecomputedText_Params(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

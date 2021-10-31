@@ -45,9 +45,9 @@ namespace android::graphics
 		static jint MAX_ID();
 		static jint MIN_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ColorSpace(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace(QAndroidJniObject obj);
+		ColorSpace(QJniObject obj);
 		
 		// Constructors
 		

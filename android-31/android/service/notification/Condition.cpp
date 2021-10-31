@@ -112,8 +112,8 @@ namespace android::service::notification
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Condition::Condition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Condition::Condition(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Condition::Condition(android::os::Parcel arg0)

@@ -46,8 +46,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DecimalFormat::DecimalFormat(QAndroidJniObject obj) : android::icu::text::NumberFormat(obj) {}
+	// QJniObject forward
+	DecimalFormat::DecimalFormat(QJniObject obj) : android::icu::text::NumberFormat(obj) {}
 	
 	// Constructors
 	DecimalFormat::DecimalFormat()

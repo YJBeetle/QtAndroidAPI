@@ -4,8 +4,8 @@ namespace android::hardware::camera2
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CameraManager_TorchCallback::CameraManager_TorchCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CameraManager_TorchCallback::CameraManager_TorchCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CameraManager_TorchCallback::CameraManager_TorchCallback()

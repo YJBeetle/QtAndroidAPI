@@ -50,9 +50,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Switch(const char *className, const char *sig, Ts...agv) : android::widget::CompoundButton(className, sig, std::forward<Ts>(agv)...) {}
-		Switch(QAndroidJniObject obj);
+		Switch(QJniObject obj);
 		
 		// Constructors
 		Switch(android::content::Context arg0);

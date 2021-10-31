@@ -6,8 +6,8 @@ namespace android::view::accessibility
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AccessibilityRecord::AccessibilityRecord(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessibilityRecord::AccessibilityRecord(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AccessibilityRecord::AccessibilityRecord()

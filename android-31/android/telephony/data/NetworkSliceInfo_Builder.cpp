@@ -5,8 +5,8 @@ namespace android::telephony::data
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NetworkSliceInfo_Builder::NetworkSliceInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NetworkSliceInfo_Builder::NetworkSliceInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	NetworkSliceInfo_Builder::NetworkSliceInfo_Builder()

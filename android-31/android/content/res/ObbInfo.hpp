@@ -20,9 +20,9 @@ namespace android::content::res
 		jstring packageName();
 		jint version();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ObbInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ObbInfo(QAndroidJniObject obj);
+		ObbInfo(QJniObject obj);
 		
 		// Constructors
 		

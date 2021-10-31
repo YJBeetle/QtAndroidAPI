@@ -10,9 +10,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ViewTreeObserver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ViewTreeObserver(QAndroidJniObject obj);
+		ViewTreeObserver(QJniObject obj);
 		
 		// Constructors
 		

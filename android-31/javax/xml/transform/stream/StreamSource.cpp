@@ -15,8 +15,8 @@ namespace javax::xml::transform::stream
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	StreamSource::StreamSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StreamSource::StreamSource(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StreamSource::StreamSource()

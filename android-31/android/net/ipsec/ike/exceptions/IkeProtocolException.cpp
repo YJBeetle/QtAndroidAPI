@@ -116,8 +116,8 @@ namespace android::net::ipsec::ike::exceptions
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IkeProtocolException::IkeProtocolException(QAndroidJniObject obj) : android::net::ipsec::ike::exceptions::IkeException(obj) {}
+	// QJniObject forward
+	IkeProtocolException::IkeProtocolException(QJniObject obj) : android::net::ipsec::ike::exceptions::IkeException(obj) {}
 	
 	// Constructors
 	

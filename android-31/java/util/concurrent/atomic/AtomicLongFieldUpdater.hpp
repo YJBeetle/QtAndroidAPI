@@ -14,9 +14,9 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AtomicLongFieldUpdater(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicLongFieldUpdater(QAndroidJniObject obj);
+		AtomicLongFieldUpdater(QJniObject obj);
 		
 		// Constructors
 		

@@ -30,9 +30,9 @@ namespace android::icu::util
 		static jint BEFORE_MINGUO();
 		static jint MINGUO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TaiwanCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::GregorianCalendar(className, sig, std::forward<Ts>(agv)...) {}
-		TaiwanCalendar(QAndroidJniObject obj);
+		TaiwanCalendar(QJniObject obj);
 		
 		// Constructors
 		TaiwanCalendar();

@@ -32,9 +32,9 @@ namespace android::icu::text
 		static jint STANDALONE();
 		static jint WIDE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateFormatSymbols(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormatSymbols(QAndroidJniObject obj);
+		DateFormatSymbols(QJniObject obj);
 		
 		// Constructors
 		DateFormatSymbols();

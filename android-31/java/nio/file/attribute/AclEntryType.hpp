@@ -15,9 +15,9 @@ namespace java::nio::file::attribute
 		static java::nio::file::attribute::AclEntryType AUDIT();
 		static java::nio::file::attribute::AclEntryType DENY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AclEntryType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		AclEntryType(QAndroidJniObject obj);
+		AclEntryType(QJniObject obj);
 		
 		// Constructors
 		

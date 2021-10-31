@@ -37,8 +37,8 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Currency::Currency(QAndroidJniObject obj) : android::icu::util::MeasureUnit(obj) {}
+	// QJniObject forward
+	Currency::Currency(QJniObject obj) : android::icu::util::MeasureUnit(obj) {}
 	
 	// Constructors
 	

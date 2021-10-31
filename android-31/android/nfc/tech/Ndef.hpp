@@ -23,9 +23,9 @@ namespace android::nfc::tech
 		static jstring NFC_FORUM_TYPE_3();
 		static jstring NFC_FORUM_TYPE_4();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Ndef(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Ndef(QAndroidJniObject obj);
+		Ndef(QJniObject obj);
 		
 		// Constructors
 		

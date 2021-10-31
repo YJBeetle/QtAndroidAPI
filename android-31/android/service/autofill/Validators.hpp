@@ -10,9 +10,9 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Validators(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Validators(QAndroidJniObject obj);
+		Validators(QJniObject obj);
 		
 		// Constructors
 		

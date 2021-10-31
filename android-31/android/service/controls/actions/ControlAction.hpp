@@ -21,9 +21,9 @@ namespace android::service::controls::actions
 		static jint TYPE_FLOAT();
 		static jint TYPE_MODE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ControlAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ControlAction(QAndroidJniObject obj);
+		ControlAction(QJniObject obj);
 		
 		// Constructors
 		

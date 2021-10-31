@@ -10,9 +10,9 @@ namespace android::hardware::biometrics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BiometricManager_Strings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricManager_Strings(QAndroidJniObject obj);
+		BiometricManager_Strings(QJniObject obj);
 		
 		// Constructors
 		

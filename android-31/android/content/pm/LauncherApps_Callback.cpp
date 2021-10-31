@@ -6,8 +6,8 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LauncherApps_Callback::LauncherApps_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LauncherApps_Callback::LauncherApps_Callback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LauncherApps_Callback::LauncherApps_Callback()

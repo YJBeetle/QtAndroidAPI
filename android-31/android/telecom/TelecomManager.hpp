@@ -89,9 +89,9 @@ namespace android::telecom
 		static jint PRIORITY_NORMAL();
 		static jint PRIORITY_URGENT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TelecomManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TelecomManager(QAndroidJniObject obj);
+		TelecomManager(QJniObject obj);
 		
 		// Constructors
 		

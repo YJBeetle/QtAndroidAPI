@@ -14,9 +14,9 @@ namespace android::icu::text
 		static android::icu::text::DateTimePatternGenerator_DisplayWidth NARROW();
 		static android::icu::text::DateTimePatternGenerator_DisplayWidth WIDE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateTimePatternGenerator_DisplayWidth(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		DateTimePatternGenerator_DisplayWidth(QAndroidJniObject obj);
+		DateTimePatternGenerator_DisplayWidth(QJniObject obj);
 		
 		// Constructors
 		

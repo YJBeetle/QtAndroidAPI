@@ -18,9 +18,9 @@ namespace android::app::people
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConversationStatus_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConversationStatus_Builder(QAndroidJniObject obj);
+		ConversationStatus_Builder(QJniObject obj);
 		
 		// Constructors
 		ConversationStatus_Builder(jstring arg0, jint arg1);

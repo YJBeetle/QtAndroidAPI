@@ -7,8 +7,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_CarExtender_Builder::Notification_CarExtender_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Notification_CarExtender_Builder::Notification_CarExtender_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Notification_CarExtender_Builder::Notification_CarExtender_Builder(jstring arg0)

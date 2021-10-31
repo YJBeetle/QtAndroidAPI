@@ -29,9 +29,9 @@ namespace android::icu::text
 		static jint CURRENCY_SPC_INSERT();
 		static jint CURRENCY_SPC_SURROUNDING_MATCH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DecimalFormatSymbols(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DecimalFormatSymbols(QAndroidJniObject obj);
+		DecimalFormatSymbols(QJniObject obj);
 		
 		// Constructors
 		DecimalFormatSymbols();

@@ -12,9 +12,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UserManager_UserOperationException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		UserManager_UserOperationException(QAndroidJniObject obj);
+		UserManager_UserOperationException(QJniObject obj);
 		
 		// Constructors
 		

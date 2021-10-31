@@ -14,9 +14,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PKCS12Attribute(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PKCS12Attribute(QAndroidJniObject obj);
+		PKCS12Attribute(QJniObject obj);
 		
 		// Constructors
 		PKCS12Attribute(jbyteArray arg0);

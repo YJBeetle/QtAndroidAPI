@@ -15,9 +15,9 @@ namespace android::icu::number
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScientificNotation(const char *className, const char *sig, Ts...agv) : android::icu::number::Notation(className, sig, std::forward<Ts>(agv)...) {}
-		ScientificNotation(QAndroidJniObject obj);
+		ScientificNotation(QJniObject obj);
 		
 		// Constructors
 		

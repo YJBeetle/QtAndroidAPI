@@ -18,9 +18,9 @@ namespace android::security::identity
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PersonalizationData_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PersonalizationData_Builder(QAndroidJniObject obj);
+		PersonalizationData_Builder(QJniObject obj);
 		
 		// Constructors
 		PersonalizationData_Builder();

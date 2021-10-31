@@ -20,9 +20,9 @@ namespace android::hardware::lights
 		static jint LIGHT_TYPE_MICROPHONE();
 		static jint LIGHT_TYPE_PLAYER_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Light(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Light(QAndroidJniObject obj);
+		Light(QJniObject obj);
 		
 		// Constructors
 		

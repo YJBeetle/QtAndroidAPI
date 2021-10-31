@@ -6,8 +6,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArrayDeque::ArrayDeque(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
+	// QJniObject forward
+	ArrayDeque::ArrayDeque(QJniObject obj) : java::util::AbstractCollection(obj) {}
 	
 	// Constructors
 	ArrayDeque::ArrayDeque()

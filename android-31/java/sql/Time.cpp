@@ -6,8 +6,8 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Time::Time(QAndroidJniObject obj) : java::util::Date(obj) {}
+	// QJniObject forward
+	Time::Time(QJniObject obj) : java::util::Date(obj) {}
 	
 	// Constructors
 	Time::Time(jlong arg0)

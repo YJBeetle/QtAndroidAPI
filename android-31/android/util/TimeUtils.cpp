@@ -6,8 +6,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimeUtils::TimeUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TimeUtils::TimeUtils(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

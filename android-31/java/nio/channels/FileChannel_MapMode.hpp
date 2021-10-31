@@ -13,9 +13,9 @@ namespace java::nio::channels
 		static java::nio::channels::FileChannel_MapMode READ_ONLY();
 		static java::nio::channels::FileChannel_MapMode READ_WRITE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FileChannel_MapMode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FileChannel_MapMode(QAndroidJniObject obj);
+		FileChannel_MapMode(QJniObject obj);
 		
 		// Constructors
 		

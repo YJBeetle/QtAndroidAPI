@@ -10,9 +10,9 @@ namespace android::hardware
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SensorPrivacyManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SensorPrivacyManager(QAndroidJniObject obj);
+		SensorPrivacyManager(QJniObject obj);
 		
 		// Constructors
 		

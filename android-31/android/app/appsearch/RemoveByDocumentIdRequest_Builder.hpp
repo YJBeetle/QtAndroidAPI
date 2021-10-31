@@ -14,9 +14,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RemoveByDocumentIdRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RemoveByDocumentIdRequest_Builder(QAndroidJniObject obj);
+		RemoveByDocumentIdRequest_Builder(QJniObject obj);
 		
 		// Constructors
 		RemoveByDocumentIdRequest_Builder(jstring arg0);

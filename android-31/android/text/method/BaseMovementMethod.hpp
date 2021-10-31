@@ -22,9 +22,9 @@ namespace android::text::method
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BaseMovementMethod(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BaseMovementMethod(QAndroidJniObject obj);
+		BaseMovementMethod(QJniObject obj);
 		
 		// Constructors
 		BaseMovementMethod();

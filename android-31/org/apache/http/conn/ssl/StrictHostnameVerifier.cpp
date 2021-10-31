@@ -4,8 +4,8 @@ namespace org::apache::http::conn::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StrictHostnameVerifier::StrictHostnameVerifier(QAndroidJniObject obj) : org::apache::http::conn::ssl::AbstractVerifier(obj) {}
+	// QJniObject forward
+	StrictHostnameVerifier::StrictHostnameVerifier(QJniObject obj) : org::apache::http::conn::ssl::AbstractVerifier(obj) {}
 	
 	// Constructors
 	StrictHostnameVerifier::StrictHostnameVerifier()

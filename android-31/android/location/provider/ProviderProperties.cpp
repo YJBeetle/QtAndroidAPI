@@ -48,8 +48,8 @@ namespace android::location::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ProviderProperties::ProviderProperties(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ProviderProperties::ProviderProperties(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

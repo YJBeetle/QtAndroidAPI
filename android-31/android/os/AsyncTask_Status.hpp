@@ -14,9 +14,9 @@ namespace android::os
 		static android::os::AsyncTask_Status PENDING();
 		static android::os::AsyncTask_Status RUNNING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AsyncTask_Status(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		AsyncTask_Status(QAndroidJniObject obj);
+		AsyncTask_Status(QJniObject obj);
 		
 		// Constructors
 		

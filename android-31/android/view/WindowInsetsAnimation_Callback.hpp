@@ -24,9 +24,9 @@ namespace android::view
 		static jint DISPATCH_MODE_CONTINUE_ON_SUBTREE();
 		static jint DISPATCH_MODE_STOP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WindowInsetsAnimation_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsetsAnimation_Callback(QAndroidJniObject obj);
+		WindowInsetsAnimation_Callback(QJniObject obj);
 		
 		// Constructors
 		WindowInsetsAnimation_Callback(jint arg0);

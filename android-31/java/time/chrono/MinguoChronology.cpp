@@ -21,8 +21,8 @@ namespace java::time::chrono
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MinguoChronology::MinguoChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
+	// QJniObject forward
+	MinguoChronology::MinguoChronology(QJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
 	
 	// Constructors
 	

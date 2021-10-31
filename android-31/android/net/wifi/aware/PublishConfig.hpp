@@ -17,9 +17,9 @@ namespace android::net::wifi::aware
 		static jint PUBLISH_TYPE_SOLICITED();
 		static jint PUBLISH_TYPE_UNSOLICITED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PublishConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PublishConfig(QAndroidJniObject obj);
+		PublishConfig(QJniObject obj);
 		
 		// Constructors
 		

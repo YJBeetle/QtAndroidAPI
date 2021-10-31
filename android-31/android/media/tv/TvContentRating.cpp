@@ -12,8 +12,8 @@ namespace android::media::tv
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TvContentRating::TvContentRating(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TvContentRating::TvContentRating(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

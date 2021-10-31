@@ -20,8 +20,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UnicodeSetSpanner_CountMethod::UnicodeSetSpanner_CountMethod(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	UnicodeSetSpanner_CountMethod::UnicodeSetSpanner_CountMethod(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

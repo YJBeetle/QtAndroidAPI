@@ -37,8 +37,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaStore_Video_Media::MediaStore_Video_Media(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaStore_Video_Media::MediaStore_Video_Media(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaStore_Video_Media::MediaStore_Video_Media()

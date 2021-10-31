@@ -8,8 +8,8 @@ namespace android::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyPairGeneratorSpec::KeyPairGeneratorSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyPairGeneratorSpec::KeyPairGeneratorSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

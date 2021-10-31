@@ -14,9 +14,9 @@ namespace android::hardware::lights
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LightState_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LightState_Builder(QAndroidJniObject obj);
+		LightState_Builder(QJniObject obj);
 		
 		// Constructors
 		LightState_Builder();

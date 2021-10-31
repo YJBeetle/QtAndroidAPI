@@ -26,9 +26,9 @@ namespace android::provider
 		static jstring RECORD_NUMBER();
 		static jstring SUBSCRIPTION_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SimPhonebookContract_SimRecords(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SimPhonebookContract_SimRecords(QAndroidJniObject obj);
+		SimPhonebookContract_SimRecords(QJniObject obj);
 		
 		// Constructors
 		

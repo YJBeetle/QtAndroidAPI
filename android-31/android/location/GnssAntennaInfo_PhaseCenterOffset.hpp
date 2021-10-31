@@ -15,9 +15,9 @@ namespace android::location
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GnssAntennaInfo_PhaseCenterOffset(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GnssAntennaInfo_PhaseCenterOffset(QAndroidJniObject obj);
+		GnssAntennaInfo_PhaseCenterOffset(QJniObject obj);
 		
 		// Constructors
 		GnssAntennaInfo_PhaseCenterOffset(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);

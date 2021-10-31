@@ -29,9 +29,9 @@ namespace android::net::wifi::p2p
 		jstring secondaryDeviceType();
 		jint status();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiP2pDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pDevice(QAndroidJniObject obj);
+		WifiP2pDevice(QJniObject obj);
 		
 		// Constructors
 		WifiP2pDevice();

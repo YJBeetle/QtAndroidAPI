@@ -13,8 +13,8 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GnssAntennaInfo_PhaseCenterOffset::GnssAntennaInfo_PhaseCenterOffset(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GnssAntennaInfo_PhaseCenterOffset::GnssAntennaInfo_PhaseCenterOffset(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GnssAntennaInfo_PhaseCenterOffset::GnssAntennaInfo_PhaseCenterOffset(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)

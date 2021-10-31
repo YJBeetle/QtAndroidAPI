@@ -33,9 +33,9 @@ namespace java::lang
 		static jint MIN_PRIORITY();
 		static jint NORM_PRIORITY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Thread(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Thread(QAndroidJniObject obj);
+		Thread(QJniObject obj);
 		
 		// Constructors
 		Thread();

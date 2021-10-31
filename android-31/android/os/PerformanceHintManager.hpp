@@ -14,9 +14,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PerformanceHintManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PerformanceHintManager(QAndroidJniObject obj);
+		PerformanceHintManager(QJniObject obj);
 		
 		// Constructors
 		

@@ -32,9 +32,9 @@ namespace android::service::autofill
 		static jint SAVE_DATA_TYPE_PAYMENT_CARD();
 		static jint SAVE_DATA_TYPE_USERNAME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SaveInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SaveInfo(QAndroidJniObject obj);
+		SaveInfo(QJniObject obj);
 		
 		// Constructors
 		

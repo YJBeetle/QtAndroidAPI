@@ -120,9 +120,9 @@ namespace android::hardware::camera2
 		static android::hardware::camera2::CameraCharacteristics_Key TONEMAP_AVAILABLE_TONE_MAP_MODES();
 		static android::hardware::camera2::CameraCharacteristics_Key TONEMAP_MAX_CURVE_POINTS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraCharacteristics(const char *className, const char *sig, Ts...agv) : android::hardware::camera2::CameraMetadata(className, sig, std::forward<Ts>(agv)...) {}
-		CameraCharacteristics(QAndroidJniObject obj);
+		CameraCharacteristics(QJniObject obj);
 		
 		// Constructors
 		

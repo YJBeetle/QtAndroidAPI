@@ -24,9 +24,9 @@ namespace android::net::wifi
 		static jint EASY_CONNECT_EVENT_FAILURE_TIMEOUT();
 		static jint EASY_CONNECT_EVENT_FAILURE_URI_GENERATION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EasyConnectStatusCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EasyConnectStatusCallback(QAndroidJniObject obj);
+		EasyConnectStatusCallback(QJniObject obj);
 		
 		// Constructors
 		

@@ -5,8 +5,8 @@ namespace android::drm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DrmUtils::DrmUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DrmUtils::DrmUtils(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DrmUtils::DrmUtils()

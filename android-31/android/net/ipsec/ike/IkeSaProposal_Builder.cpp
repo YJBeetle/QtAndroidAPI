@@ -5,8 +5,8 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IkeSaProposal_Builder::IkeSaProposal_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IkeSaProposal_Builder::IkeSaProposal_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	IkeSaProposal_Builder::IkeSaProposal_Builder()

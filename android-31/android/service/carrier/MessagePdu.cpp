@@ -13,8 +13,8 @@ namespace android::service::carrier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MessagePdu::MessagePdu(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MessagePdu::MessagePdu(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MessagePdu::MessagePdu(__JniBaseClass arg0)

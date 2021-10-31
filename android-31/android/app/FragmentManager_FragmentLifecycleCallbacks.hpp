@@ -30,9 +30,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FragmentManager_FragmentLifecycleCallbacks(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FragmentManager_FragmentLifecycleCallbacks(QAndroidJniObject obj);
+		FragmentManager_FragmentLifecycleCallbacks(QJniObject obj);
 		
 		// Constructors
 		FragmentManager_FragmentLifecycleCallbacks();

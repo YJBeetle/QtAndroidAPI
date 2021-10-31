@@ -4,8 +4,8 @@ namespace android::companion
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DeviceNotAssociatedException::DeviceNotAssociatedException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	DeviceNotAssociatedException::DeviceNotAssociatedException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	

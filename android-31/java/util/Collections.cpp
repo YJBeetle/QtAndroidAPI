@@ -30,8 +30,8 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Collections::Collections(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Collections::Collections(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

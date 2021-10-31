@@ -62,9 +62,9 @@ namespace android::bluetooth
 		static jint WRITE_TYPE_NO_RESPONSE();
 		static jint WRITE_TYPE_SIGNED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothGattCharacteristic(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothGattCharacteristic(QAndroidJniObject obj);
+		BluetoothGattCharacteristic(QJniObject obj);
 		
 		// Constructors
 		BluetoothGattCharacteristic(java::util::UUID arg0, jint arg1, jint arg2);

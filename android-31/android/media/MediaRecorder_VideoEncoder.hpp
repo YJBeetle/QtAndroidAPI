@@ -20,9 +20,9 @@ namespace android::media
 		static jint MPEG_4_SP();
 		static jint VP8();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaRecorder_VideoEncoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRecorder_VideoEncoder(QAndroidJniObject obj);
+		MediaRecorder_VideoEncoder(QJniObject obj);
 		
 		// Constructors
 		

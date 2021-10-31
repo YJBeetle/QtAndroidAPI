@@ -13,9 +13,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LinkedHashSet(const char *className, const char *sig, Ts...agv) : java::util::HashSet(className, sig, std::forward<Ts>(agv)...) {}
-		LinkedHashSet(QAndroidJniObject obj);
+		LinkedHashSet(QJniObject obj);
 		
 		// Constructors
 		LinkedHashSet();

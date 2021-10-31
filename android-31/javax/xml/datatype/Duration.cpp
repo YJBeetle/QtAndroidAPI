@@ -10,8 +10,8 @@ namespace javax::xml::datatype
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Duration::Duration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Duration::Duration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Duration::Duration()

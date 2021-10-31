@@ -14,9 +14,9 @@ namespace android::location::provider
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProviderProperties_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ProviderProperties_Builder(QAndroidJniObject obj);
+		ProviderProperties_Builder(QJniObject obj);
 		
 		// Constructors
 		ProviderProperties_Builder();

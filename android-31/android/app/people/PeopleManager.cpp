@@ -5,8 +5,8 @@ namespace android::app::people
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PeopleManager::PeopleManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PeopleManager::PeopleManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

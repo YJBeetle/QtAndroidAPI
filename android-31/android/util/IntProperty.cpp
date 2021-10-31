@@ -5,8 +5,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IntProperty::IntProperty(QAndroidJniObject obj) : android::util::Property(obj) {}
+	// QJniObject forward
+	IntProperty::IntProperty(QJniObject obj) : android::util::Property(obj) {}
 	
 	// Constructors
 	IntProperty::IntProperty(jstring arg0)

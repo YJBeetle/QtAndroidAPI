@@ -14,9 +14,9 @@ namespace android::provider
 		static jstring PHOTO();
 		static jstring PHOTO_FILE_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_Contacts_Photo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Contacts_Photo(QAndroidJniObject obj);
+		ContactsContract_Contacts_Photo(QJniObject obj);
 		
 		// Constructors
 		

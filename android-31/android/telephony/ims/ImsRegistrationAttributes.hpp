@@ -16,9 +16,9 @@ namespace android::telephony::ims
 		static jint ATTR_EPDG_OVER_CELL_INTERNET();
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImsRegistrationAttributes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ImsRegistrationAttributes(QAndroidJniObject obj);
+		ImsRegistrationAttributes(QJniObject obj);
 		
 		// Constructors
 		

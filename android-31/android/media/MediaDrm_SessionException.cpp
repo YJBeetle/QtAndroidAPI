@@ -18,8 +18,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaDrm_SessionException::MediaDrm_SessionException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	MediaDrm_SessionException::MediaDrm_SessionException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	MediaDrm_SessionException::MediaDrm_SessionException(jint arg0, jstring arg1)

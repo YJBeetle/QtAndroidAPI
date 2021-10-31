@@ -18,9 +18,9 @@ namespace android::provider
 		static android::net::Uri REPORT_REQUEST_URI();
 		static android::net::Uri REPORT_STATUS_URI();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Telephony_Mms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Mms(QAndroidJniObject obj);
+		Telephony_Mms(QJniObject obj);
 		
 		// Constructors
 		

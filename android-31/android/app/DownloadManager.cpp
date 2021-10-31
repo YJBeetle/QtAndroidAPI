@@ -288,8 +288,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DownloadManager::DownloadManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DownloadManager::DownloadManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

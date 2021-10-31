@@ -4,8 +4,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StaleDataException::StaleDataException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	StaleDataException::StaleDataException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	StaleDataException::StaleDataException()

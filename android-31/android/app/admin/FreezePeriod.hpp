@@ -14,9 +14,9 @@ namespace android::app::admin
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FreezePeriod(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FreezePeriod(QAndroidJniObject obj);
+		FreezePeriod(QJniObject obj);
 		
 		// Constructors
 		FreezePeriod(java::time::MonthDay arg0, java::time::MonthDay arg1);

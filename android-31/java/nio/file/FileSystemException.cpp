@@ -4,8 +4,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileSystemException::FileSystemException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	FileSystemException::FileSystemException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	FileSystemException::FileSystemException(jstring arg0)

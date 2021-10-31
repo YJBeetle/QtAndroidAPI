@@ -45,9 +45,9 @@ namespace android::icu::text
 		static jint YEAR();
 		static jint ZONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateTimePatternGenerator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DateTimePatternGenerator(QAndroidJniObject obj);
+		DateTimePatternGenerator(QJniObject obj);
 		
 		// Constructors
 		

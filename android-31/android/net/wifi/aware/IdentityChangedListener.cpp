@@ -4,8 +4,8 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IdentityChangedListener::IdentityChangedListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IdentityChangedListener::IdentityChangedListener(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	IdentityChangedListener::IdentityChangedListener()

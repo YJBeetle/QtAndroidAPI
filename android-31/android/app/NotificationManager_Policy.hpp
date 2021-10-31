@@ -44,9 +44,9 @@ namespace android::app
 		jint priorityMessageSenders();
 		jint suppressedVisualEffects();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NotificationManager_Policy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationManager_Policy(QAndroidJniObject obj);
+		NotificationManager_Policy(QJniObject obj);
 		
 		// Constructors
 		NotificationManager_Policy(jint arg0, jint arg1, jint arg2);

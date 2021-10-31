@@ -21,9 +21,9 @@ namespace android::speech::tts
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextToSpeechService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		TextToSpeechService(QAndroidJniObject obj);
+		TextToSpeechService(QJniObject obj);
 		
 		// Constructors
 		TextToSpeechService();

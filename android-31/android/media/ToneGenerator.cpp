@@ -711,8 +711,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ToneGenerator::ToneGenerator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ToneGenerator::ToneGenerator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ToneGenerator::ToneGenerator(jint arg0, jint arg1)

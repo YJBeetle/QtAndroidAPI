@@ -16,9 +16,9 @@ namespace android::drm
 		jint offset();
 		jint statusCode();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DrmConvertedStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DrmConvertedStatus(QAndroidJniObject obj);
+		DrmConvertedStatus(QJniObject obj);
 		
 		// Constructors
 		DrmConvertedStatus(jint arg0, jbyteArray arg1, jint arg2);

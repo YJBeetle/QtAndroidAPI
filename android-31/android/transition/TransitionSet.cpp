@@ -25,8 +25,8 @@ namespace android::transition
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TransitionSet::TransitionSet(QAndroidJniObject obj) : android::transition::Transition(obj) {}
+	// QJniObject forward
+	TransitionSet::TransitionSet(QJniObject obj) : android::transition::Transition(obj) {}
 	
 	// Constructors
 	TransitionSet::TransitionSet()

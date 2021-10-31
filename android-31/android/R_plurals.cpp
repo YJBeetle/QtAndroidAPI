@@ -4,8 +4,8 @@ namespace android
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	R_plurals::R_plurals(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	R_plurals::R_plurals(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	R_plurals::R_plurals()

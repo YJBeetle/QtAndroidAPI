@@ -7,8 +7,8 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteCursor::SQLiteCursor(QAndroidJniObject obj) : android::database::AbstractWindowedCursor(obj) {}
+	// QJniObject forward
+	SQLiteCursor::SQLiteCursor(QJniObject obj) : android::database::AbstractWindowedCursor(obj) {}
 	
 	// Constructors
 	SQLiteCursor::SQLiteCursor(__JniBaseClass arg0, jstring arg1, android::database::sqlite::SQLiteQuery arg2)

@@ -66,9 +66,9 @@ namespace java::text
 		static jint WEEK_OF_YEAR_FIELD();
 		static jint YEAR_FIELD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateFormat(const char *className, const char *sig, Ts...agv) : java::text::Format(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormat(QAndroidJniObject obj);
+		DateFormat(QJniObject obj);
 		
 		// Constructors
 		

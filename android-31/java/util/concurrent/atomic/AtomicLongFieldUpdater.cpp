@@ -5,8 +5,8 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicLongFieldUpdater::AtomicLongFieldUpdater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AtomicLongFieldUpdater::AtomicLongFieldUpdater(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

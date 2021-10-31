@@ -12,9 +12,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IntentFilter_MalformedMimeTypeException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		IntentFilter_MalformedMimeTypeException(QAndroidJniObject obj);
+		IntentFilter_MalformedMimeTypeException(QJniObject obj);
 		
 		// Constructors
 		IntentFilter_MalformedMimeTypeException();

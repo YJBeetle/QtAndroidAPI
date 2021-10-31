@@ -9,8 +9,8 @@ namespace android::text::format
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DateFormat::DateFormat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DateFormat::DateFormat(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DateFormat::DateFormat()

@@ -4,8 +4,8 @@ namespace android::hardware::camera2::params
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MandatoryStreamCombination_MandatoryStreamInformation::MandatoryStreamCombination_MandatoryStreamInformation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MandatoryStreamCombination_MandatoryStreamInformation::MandatoryStreamCombination_MandatoryStreamInformation(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

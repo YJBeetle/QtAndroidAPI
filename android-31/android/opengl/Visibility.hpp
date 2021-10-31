@@ -10,9 +10,9 @@ namespace android::opengl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Visibility(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Visibility(QAndroidJniObject obj);
+		Visibility(QJniObject obj);
 		
 		// Constructors
 		Visibility();

@@ -28,9 +28,9 @@ namespace android::view::inputmethod
 		static __JniBaseClass CREATOR();
 		static jint SUGGESTION_COUNT_UNLIMITED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InlineSuggestionsRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		InlineSuggestionsRequest(QAndroidJniObject obj);
+		InlineSuggestionsRequest(QJniObject obj);
 		
 		// Constructors
 		

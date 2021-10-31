@@ -14,9 +14,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TelephonyNetworkSpecifier_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyNetworkSpecifier_Builder(QAndroidJniObject obj);
+		TelephonyNetworkSpecifier_Builder(QJniObject obj);
 		
 		// Constructors
 		TelephonyNetworkSpecifier_Builder();

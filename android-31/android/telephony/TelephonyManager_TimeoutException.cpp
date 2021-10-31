@@ -5,8 +5,8 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TelephonyManager_TimeoutException::TelephonyManager_TimeoutException(QAndroidJniObject obj) : android::telephony::TelephonyManager_NetworkSlicingException(obj) {}
+	// QJniObject forward
+	TelephonyManager_TimeoutException::TelephonyManager_TimeoutException(QJniObject obj) : android::telephony::TelephonyManager_NetworkSlicingException(obj) {}
 	
 	// Constructors
 	

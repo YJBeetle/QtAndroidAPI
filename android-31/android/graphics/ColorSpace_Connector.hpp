@@ -18,9 +18,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ColorSpace_Connector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_Connector(QAndroidJniObject obj);
+		ColorSpace_Connector(QJniObject obj);
 		
 		// Constructors
 		

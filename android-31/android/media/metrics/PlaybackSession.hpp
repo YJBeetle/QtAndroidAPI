@@ -34,9 +34,9 @@ namespace android::media::metrics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PlaybackSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackSession(QAndroidJniObject obj);
+		PlaybackSession(QJniObject obj);
 		
 		// Constructors
 		

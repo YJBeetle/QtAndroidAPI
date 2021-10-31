@@ -4,8 +4,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Choreographer::Choreographer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Choreographer::Choreographer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -12,9 +12,9 @@ namespace android::telephony
 		static jint TRANSPORT_TYPE_WLAN();
 		static jint TRANSPORT_TYPE_WWAN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessNetworkConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessNetworkConstants(QAndroidJniObject obj);
+		AccessNetworkConstants(QJniObject obj);
 		
 		// Constructors
 		

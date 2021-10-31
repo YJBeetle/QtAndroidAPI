@@ -90,8 +90,8 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AdvertisingSetParameters::AdvertisingSetParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AdvertisingSetParameters::AdvertisingSetParameters(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

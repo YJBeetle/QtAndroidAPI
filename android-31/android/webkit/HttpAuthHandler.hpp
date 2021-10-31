@@ -11,9 +11,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HttpAuthHandler(const char *className, const char *sig, Ts...agv) : android::os::Handler(className, sig, std::forward<Ts>(agv)...) {}
-		HttpAuthHandler(QAndroidJniObject obj);
+		HttpAuthHandler(QJniObject obj);
 		
 		// Constructors
 		

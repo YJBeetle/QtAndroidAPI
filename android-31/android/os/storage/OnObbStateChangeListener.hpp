@@ -18,9 +18,9 @@ namespace android::os::storage
 		static jint MOUNTED();
 		static jint UNMOUNTED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OnObbStateChangeListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		OnObbStateChangeListener(QAndroidJniObject obj);
+		OnObbStateChangeListener(QJniObject obj);
 		
 		// Constructors
 		OnObbStateChangeListener();

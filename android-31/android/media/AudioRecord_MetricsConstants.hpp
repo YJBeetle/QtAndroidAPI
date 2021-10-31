@@ -15,9 +15,9 @@ namespace android::media
 		static jstring SAMPLERATE();
 		static jstring SOURCE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AudioRecord_MetricsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AudioRecord_MetricsConstants(QAndroidJniObject obj);
+		AudioRecord_MetricsConstants(QJniObject obj);
 		
 		// Constructors
 		

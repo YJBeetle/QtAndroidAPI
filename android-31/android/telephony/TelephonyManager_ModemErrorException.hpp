@@ -16,9 +16,9 @@ namespace android::telephony
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TelephonyManager_ModemErrorException(const char *className, const char *sig, Ts...agv) : android::telephony::TelephonyManager_NetworkSlicingException(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_ModemErrorException(QAndroidJniObject obj);
+		TelephonyManager_ModemErrorException(QJniObject obj);
 		
 		// Constructors
 		

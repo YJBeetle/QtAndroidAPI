@@ -16,9 +16,9 @@ namespace android::transition
 		__JniBaseClass values();
 		android::view::View view();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TransitionValues(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TransitionValues(QAndroidJniObject obj);
+		TransitionValues(QJniObject obj);
 		
 		// Constructors
 		TransitionValues();

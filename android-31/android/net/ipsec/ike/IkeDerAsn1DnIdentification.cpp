@@ -12,8 +12,8 @@ namespace android::net::ipsec::ike
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IkeDerAsn1DnIdentification::IkeDerAsn1DnIdentification(QAndroidJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
+	// QJniObject forward
+	IkeDerAsn1DnIdentification::IkeDerAsn1DnIdentification(QJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
 	
 	// Constructors
 	IkeDerAsn1DnIdentification::IkeDerAsn1DnIdentification(javax::security::auth::x500::X500Principal arg0)

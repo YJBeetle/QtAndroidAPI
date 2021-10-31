@@ -4,8 +4,8 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher()

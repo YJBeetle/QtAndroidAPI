@@ -37,9 +37,9 @@ namespace android::service::quicksettings
 		static jstring META_DATA_ACTIVE_TILE();
 		static jstring META_DATA_TOGGLEABLE_TILE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TileService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		TileService(QAndroidJniObject obj);
+		TileService(QJniObject obj);
 		
 		// Constructors
 		TileService();

@@ -23,9 +23,9 @@ namespace android::hardware::camera2
 		static jint EXTENSION_HDR();
 		static jint EXTENSION_NIGHT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraExtensionCharacteristics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CameraExtensionCharacteristics(QAndroidJniObject obj);
+		CameraExtensionCharacteristics(QJniObject obj);
 		
 		// Constructors
 		

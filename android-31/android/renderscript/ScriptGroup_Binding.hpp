@@ -14,9 +14,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScriptGroup_Binding(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptGroup_Binding(QAndroidJniObject obj);
+		ScriptGroup_Binding(QJniObject obj);
 		
 		// Constructors
 		ScriptGroup_Binding(android::renderscript::Script_FieldID arg0, jobject arg1);

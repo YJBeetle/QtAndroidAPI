@@ -24,9 +24,9 @@ namespace android::hardware
 		android::graphics::Point rightEye();
 		jint score();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Camera_Face(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Camera_Face(QAndroidJniObject obj);
+		Camera_Face(QJniObject obj);
 		
 		// Constructors
 		Camera_Face();

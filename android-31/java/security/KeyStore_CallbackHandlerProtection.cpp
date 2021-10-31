@@ -4,8 +4,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyStore_CallbackHandlerProtection::KeyStore_CallbackHandlerProtection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyStore_CallbackHandlerProtection::KeyStore_CallbackHandlerProtection(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyStore_CallbackHandlerProtection::KeyStore_CallbackHandlerProtection(__JniBaseClass arg0)

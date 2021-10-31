@@ -5,8 +5,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextShaper::TextShaper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextShaper::TextShaper(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

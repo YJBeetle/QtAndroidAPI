@@ -8,8 +8,8 @@ namespace java::util::jar
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Manifest::Manifest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Manifest::Manifest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Manifest::Manifest()

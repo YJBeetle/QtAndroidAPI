@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecurityException::SecurityException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	SecurityException::SecurityException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	SecurityException::SecurityException()

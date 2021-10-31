@@ -18,9 +18,9 @@ namespace android::app::appsearch
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SetSchemaResponse_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SetSchemaResponse_Builder(QAndroidJniObject obj);
+		SetSchemaResponse_Builder(QJniObject obj);
 		
 		// Constructors
 		SetSchemaResponse_Builder();
