@@ -54,7 +54,7 @@ void MainWindow::on_showProgressDialogSpinner_clicked()
         progressDialog->setMessage(JSTRING(message));
 
         progressDialog->Dialog::show();
-    });
+    }).waitForFinished();
 
     QTimer::singleShot(1000, [progressDialog]() {
         progressDialog->cancel();
@@ -79,24 +79,24 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
         progressDialog->setMax(PROGRESS_DIALOG_MAX);
 
         progressDialog->Dialog::show();
-    }).then([&progressDialog, this](){
-        static int i;
-        i = 0;
-        QTimer *timer = new QTimer(this);
-        connect(timer, &QTimer::timeout, [progressDialog, timer]() {
-            if (i < PROGRESS_DIALOG_MAX)
-            {
-                i += PROGRESS_DIALOG_MAX / 500;
-                progressDialog->setProgress(i);
-            }
-            else
-            {
-                progressDialog->cancel();
-                delete timer;
-            }
-        });
-        timer->start(10);
+    }).waitForFinished();
+
+    static int i;
+    i = 0;
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, [progressDialog, timer]() {
+        if (i < PROGRESS_DIALOG_MAX)
+        {
+            i += PROGRESS_DIALOG_MAX / 500;
+            progressDialog->setProgress(i);
+        }
+        else
+        {
+            progressDialog->cancel();
+            delete timer;
+        }
     });
+    timer->start(10);
 }
 
 void MainWindow::on_OpenFile_clicked() // WIP
