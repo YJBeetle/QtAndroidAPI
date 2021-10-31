@@ -6,6 +6,7 @@
 #include <QTimer>
 
 #include <QtAndroidExtras/QtAndroid>
+#include <__JniUtils.hpp>
 #include <android/widget/Toast.hpp>
 #include <android/app/ProgressDialog.hpp>
 #include <android/content/Context.hpp>
@@ -33,7 +34,7 @@ void MainWindow::on_showToast_clicked()
 	auto message = ui->toastText->text();
 	QtAndroid::runOnAndroidThreadSync([message] {
 		Toast toast = Toast::makeText(android::content::Context(QtAndroid::androidContext()),
-									  QAndroidJniObject::fromString(message).object<jstring>(),
+									  toJString(message),
 									  0);
 		toast.show();
 	});
@@ -50,8 +51,8 @@ void MainWindow::on_showProgressDialogSpinner_clicked()
 		progressDialog = std::make_shared<ProgressDialog>(android::content::Context(QtAndroid::androidActivity()));
 
 		progressDialog->setCancelable(false);
-		progressDialog->setTitle(QAndroidJniObject::fromString(title).object<jstring>());
-		progressDialog->setMessage(QAndroidJniObject::fromString(message).object<jstring>());
+		progressDialog->setTitle(toJString(title));
+		progressDialog->setMessage(toJString(message));
 
 		progressDialog->Dialog::show();
 	});
@@ -72,8 +73,8 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
 		progressDialog = std::make_shared<ProgressDialog>(android::content::Context(QtAndroid::androidActivity()));
 
 		progressDialog->setCancelable(false);
-		progressDialog->setTitle(QAndroidJniObject::fromString(title).object<jstring>());
-		progressDialog->setMessage(QAndroidJniObject::fromString(message).object<jstring>());
+		progressDialog->setTitle(toJString(title));
+		progressDialog->setMessage(toJString(message));
 
 		progressDialog->setProgressStyle(ProgressDialog::STYLE_HORIZONTAL());
 		progressDialog->setMax(PROGRESS_DIALOG_MAX);
@@ -103,7 +104,7 @@ void MainWindow::on_OpenFile_clicked()
 {
 	QtAndroid::runOnAndroidThreadSync([] {
 		Intent intent = Intent(Intent::ACTION_GET_CONTENT());
-		intent.setType("image/*");
+		intent.setType(toJString("image/*"));
 
 
 //			if (intent.resolveActivity(getPackageManager()) != null) {
