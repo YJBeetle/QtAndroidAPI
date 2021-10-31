@@ -28,8 +28,8 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Allocation_MipmapControl::Allocation_MipmapControl(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Allocation_MipmapControl::Allocation_MipmapControl(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

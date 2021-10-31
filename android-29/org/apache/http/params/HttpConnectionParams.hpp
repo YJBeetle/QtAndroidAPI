@@ -10,9 +10,9 @@ namespace org::apache::http::params
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HttpConnectionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		HttpConnectionParams(QAndroidJniObject obj);
+		HttpConnectionParams(QJniObject obj);
 		
 		// Constructors
 		

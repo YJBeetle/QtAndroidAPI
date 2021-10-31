@@ -25,8 +25,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	View_MeasureSpec::View_MeasureSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	View_MeasureSpec::View_MeasureSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	View_MeasureSpec::View_MeasureSpec()

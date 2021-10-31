@@ -34,9 +34,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NinePatch(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NinePatch(QAndroidJniObject obj);
+		NinePatch(QJniObject obj);
 		
 		// Constructors
 		NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1);

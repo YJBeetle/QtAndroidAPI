@@ -16,9 +16,9 @@ namespace android::os
 		static jint EFFECT_HEAVY_CLICK();
 		static jint EFFECT_TICK();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VibrationEffect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VibrationEffect(QAndroidJniObject obj);
+		VibrationEffect(QJniObject obj);
 		
 		// Constructors
 		

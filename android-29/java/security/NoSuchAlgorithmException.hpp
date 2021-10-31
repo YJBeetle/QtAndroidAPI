@@ -12,9 +12,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NoSuchAlgorithmException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchAlgorithmException(QAndroidJniObject obj);
+		NoSuchAlgorithmException(QJniObject obj);
 		
 		// Constructors
 		NoSuchAlgorithmException();

@@ -14,9 +14,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PermissionCollection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PermissionCollection(QAndroidJniObject obj);
+		PermissionCollection(QJniObject obj);
 		
 		// Constructors
 		PermissionCollection();

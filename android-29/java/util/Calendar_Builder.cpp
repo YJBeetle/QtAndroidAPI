@@ -8,8 +8,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Calendar_Builder::Calendar_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Calendar_Builder::Calendar_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Calendar_Builder::Calendar_Builder()

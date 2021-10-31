@@ -10,9 +10,9 @@ namespace javax::microedition::khronos::egl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EGLDisplay(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EGLDisplay(QAndroidJniObject obj);
+		EGLDisplay(QJniObject obj);
 		
 		// Constructors
 		EGLDisplay();

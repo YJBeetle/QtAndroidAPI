@@ -10,8 +10,8 @@ namespace java::util::logging
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Handler::Handler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Handler::Handler(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -48,8 +48,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaPlayer_TrackInfo::MediaPlayer_TrackInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaPlayer_TrackInfo::MediaPlayer_TrackInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

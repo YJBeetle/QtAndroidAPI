@@ -28,8 +28,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Transliterator_Position::Transliterator_Position(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Transliterator_Position::Transliterator_Position(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Transliterator_Position::Transliterator_Position()

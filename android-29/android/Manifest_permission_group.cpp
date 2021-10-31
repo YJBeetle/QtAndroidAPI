@@ -92,8 +92,8 @@ namespace android
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Manifest_permission_group::Manifest_permission_group(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Manifest_permission_group::Manifest_permission_group(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Manifest_permission_group::Manifest_permission_group()

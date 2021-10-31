@@ -26,9 +26,9 @@ namespace android::service::voice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VoiceInteractionSession_AssistState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_AssistState(QAndroidJniObject obj);
+		VoiceInteractionSession_AssistState(QJniObject obj);
 		
 		// Constructors
 		

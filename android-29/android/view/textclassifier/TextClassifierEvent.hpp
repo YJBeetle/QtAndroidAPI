@@ -55,9 +55,9 @@ namespace android::view::textclassifier
 		static jint TYPE_SMART_SELECTION_MULTI();
 		static jint TYPE_SMART_SELECTION_SINGLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextClassifierEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassifierEvent(QAndroidJniObject obj);
+		TextClassifierEvent(QJniObject obj);
 		
 		// Constructors
 		

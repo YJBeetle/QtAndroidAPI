@@ -12,9 +12,9 @@ namespace android::opengl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GLException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		GLException(QAndroidJniObject obj);
+		GLException(QJniObject obj);
 		
 		// Constructors
 		GLException(jint arg0);

@@ -778,8 +778,8 @@ namespace android::telephony
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	TelephonyManager::TelephonyManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TelephonyManager::TelephonyManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

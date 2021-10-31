@@ -62,9 +62,9 @@ namespace java::time
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ZonedDateTime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ZonedDateTime(QAndroidJniObject obj);
+		ZonedDateTime(QJniObject obj);
 		
 		// Constructors
 		

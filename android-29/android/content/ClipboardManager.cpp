@@ -6,8 +6,8 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClipboardManager::ClipboardManager(QAndroidJniObject obj) : android::text::ClipboardManager(obj) {}
+	// QJniObject forward
+	ClipboardManager::ClipboardManager(QJniObject obj) : android::text::ClipboardManager(obj) {}
 	
 	// Constructors
 	

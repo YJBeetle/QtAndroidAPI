@@ -19,9 +19,9 @@ namespace java::sql
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Time(const char *className, const char *sig, Ts...agv) : java::util::Date(className, sig, std::forward<Ts>(agv)...) {}
-		Time(QAndroidJniObject obj);
+		Time(QJniObject obj);
 		
 		// Constructors
 		Time(jlong arg0);

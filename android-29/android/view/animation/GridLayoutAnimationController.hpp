@@ -32,9 +32,9 @@ namespace android::view::animation
 		static jint PRIORITY_NONE();
 		static jint PRIORITY_ROW();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GridLayoutAnimationController(const char *className, const char *sig, Ts...agv) : android::view::animation::LayoutAnimationController(className, sig, std::forward<Ts>(agv)...) {}
-		GridLayoutAnimationController(QAndroidJniObject obj);
+		GridLayoutAnimationController(QJniObject obj);
 		
 		// Constructors
 		GridLayoutAnimationController(android::view::animation::Animation arg0);

@@ -12,8 +12,8 @@ namespace java::nio::file
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LinkOption::LinkOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	LinkOption::LinkOption(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

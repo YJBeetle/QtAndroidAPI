@@ -32,9 +32,9 @@ namespace android::transition
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Explode(const char *className, const char *sig, Ts...agv) : android::transition::Visibility(className, sig, std::forward<Ts>(agv)...) {}
-		Explode(QAndroidJniObject obj);
+		Explode(QJniObject obj);
 		
 		// Constructors
 		Explode();

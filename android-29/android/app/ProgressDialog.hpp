@@ -30,9 +30,9 @@ namespace android::app
 		static jint STYLE_HORIZONTAL();
 		static jint STYLE_SPINNER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProgressDialog(const char *className, const char *sig, Ts...agv) : android::app::AlertDialog(className, sig, std::forward<Ts>(agv)...) {}
-		ProgressDialog(QAndroidJniObject obj);
+		ProgressDialog(QJniObject obj);
 		
 		// Constructors
 		ProgressDialog(android::content::Context arg0);

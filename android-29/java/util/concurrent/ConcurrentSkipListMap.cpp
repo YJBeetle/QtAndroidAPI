@@ -8,8 +8,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConcurrentSkipListMap::ConcurrentSkipListMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
+	// QJniObject forward
+	ConcurrentSkipListMap::ConcurrentSkipListMap(QJniObject obj) : java::util::AbstractMap(obj) {}
 	
 	// Constructors
 	ConcurrentSkipListMap::ConcurrentSkipListMap()

@@ -27,9 +27,9 @@ namespace android::hardware
 		static jint CAMERA_ERROR_SERVER_DIED();
 		static jint CAMERA_ERROR_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Camera(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Camera(QAndroidJniObject obj);
+		Camera(QJniObject obj);
 		
 		// Constructors
 		

@@ -20,9 +20,9 @@ namespace android::app::admin
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConnectEvent(const char *className, const char *sig, Ts...agv) : android::app::admin::NetworkEvent(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectEvent(QAndroidJniObject obj);
+		ConnectEvent(QJniObject obj);
 		
 		// Constructors
 		

@@ -34,9 +34,9 @@ namespace android::bluetooth
 		static jstring VENDOR_RESULT_CODE_COMMAND_ANDROID();
 		static jstring VENDOR_SPECIFIC_HEADSET_EVENT_COMPANY_ID_CATEGORY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothHeadset(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothHeadset(QAndroidJniObject obj);
+		BluetoothHeadset(QJniObject obj);
 		
 		// Constructors
 		

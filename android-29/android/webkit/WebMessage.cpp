@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebMessage::WebMessage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebMessage::WebMessage(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebMessage::WebMessage(jstring arg0)

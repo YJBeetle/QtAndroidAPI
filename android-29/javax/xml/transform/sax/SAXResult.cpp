@@ -12,8 +12,8 @@ namespace javax::xml::transform::sax
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SAXResult::SAXResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SAXResult::SAXResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SAXResult::SAXResult()

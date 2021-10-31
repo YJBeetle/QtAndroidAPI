@@ -68,9 +68,9 @@ namespace java::time
 		static java::time::OffsetDateTime MAX();
 		static java::time::OffsetDateTime MIN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OffsetDateTime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		OffsetDateTime(QAndroidJniObject obj);
+		OffsetDateTime(QJniObject obj);
 		
 		// Constructors
 		

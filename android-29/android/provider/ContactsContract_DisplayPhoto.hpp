@@ -18,9 +18,9 @@ namespace android::provider
 		static jstring DISPLAY_MAX_DIM();
 		static jstring THUMBNAIL_MAX_DIM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_DisplayPhoto(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_DisplayPhoto(QAndroidJniObject obj);
+		ContactsContract_DisplayPhoto(QJniObject obj);
 		
 		// Constructors
 		

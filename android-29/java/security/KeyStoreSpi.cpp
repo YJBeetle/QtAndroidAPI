@@ -8,8 +8,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyStoreSpi::KeyStoreSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyStoreSpi::KeyStoreSpi(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyStoreSpi::KeyStoreSpi()

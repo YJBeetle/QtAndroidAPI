@@ -23,9 +23,9 @@ namespace java::util::prefs
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PreferenceChangeEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		PreferenceChangeEvent(QAndroidJniObject obj);
+		PreferenceChangeEvent(QJniObject obj);
 		
 		// Constructors
 		PreferenceChangeEvent(java::util::prefs::Preferences arg0, jstring arg1, jstring arg2);

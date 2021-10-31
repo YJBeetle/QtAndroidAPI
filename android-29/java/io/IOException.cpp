@@ -4,8 +4,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IOException::IOException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	IOException::IOException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	IOException::IOException()

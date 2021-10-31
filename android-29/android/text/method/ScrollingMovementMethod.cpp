@@ -6,8 +6,8 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScrollingMovementMethod::ScrollingMovementMethod(QAndroidJniObject obj) : android::text::method::BaseMovementMethod(obj) {}
+	// QJniObject forward
+	ScrollingMovementMethod::ScrollingMovementMethod(QJniObject obj) : android::text::method::BaseMovementMethod(obj) {}
 	
 	// Constructors
 	ScrollingMovementMethod::ScrollingMovementMethod()

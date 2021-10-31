@@ -8,8 +8,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SocketPermission::SocketPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
+	// QJniObject forward
+	SocketPermission::SocketPermission(QJniObject obj) : java::security::Permission(obj) {}
 	
 	// Constructors
 	SocketPermission::SocketPermission(jstring arg0, jstring arg1)

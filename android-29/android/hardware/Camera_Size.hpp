@@ -16,9 +16,9 @@ namespace android::hardware
 		jint height();
 		jint width();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Camera_Size(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Camera_Size(QAndroidJniObject obj);
+		Camera_Size(QJniObject obj);
 		
 		// Constructors
 		Camera_Size(android::hardware::Camera arg0, jint arg1, jint arg2);

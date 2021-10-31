@@ -21,9 +21,9 @@ namespace android::text::style
 		static jint TEXT_DELETED();
 		static jint TEXT_MODIFIED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EasyEditSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EasyEditSpan(QAndroidJniObject obj);
+		EasyEditSpan(QJniObject obj);
 		
 		// Constructors
 		EasyEditSpan();

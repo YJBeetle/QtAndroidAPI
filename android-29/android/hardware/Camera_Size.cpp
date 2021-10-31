@@ -17,8 +17,8 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Camera_Size::Camera_Size(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Camera_Size::Camera_Size(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Camera_Size::Camera_Size(android::hardware::Camera arg0, jint arg1, jint arg2)

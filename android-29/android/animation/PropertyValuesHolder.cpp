@@ -7,8 +7,8 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PropertyValuesHolder::PropertyValuesHolder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PropertyValuesHolder::PropertyValuesHolder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

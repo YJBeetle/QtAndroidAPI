@@ -4,8 +4,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClosedWatchServiceException::ClosedWatchServiceException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	ClosedWatchServiceException::ClosedWatchServiceException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	ClosedWatchServiceException::ClosedWatchServiceException()

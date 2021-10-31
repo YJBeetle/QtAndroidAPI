@@ -22,9 +22,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Random(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Random(QAndroidJniObject obj);
+		Random(QJniObject obj);
 		
 		// Constructors
 		Random();

@@ -6,8 +6,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VoiceInteractor_AbortVoiceRequest::VoiceInteractor_AbortVoiceRequest(QAndroidJniObject obj) : android::app::VoiceInteractor_Request(obj) {}
+	// QJniObject forward
+	VoiceInteractor_AbortVoiceRequest::VoiceInteractor_AbortVoiceRequest(QJniObject obj) : android::app::VoiceInteractor_Request(obj) {}
 	
 	// Constructors
 	VoiceInteractor_AbortVoiceRequest::VoiceInteractor_AbortVoiceRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1)

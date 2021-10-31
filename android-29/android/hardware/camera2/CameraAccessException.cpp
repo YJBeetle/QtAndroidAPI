@@ -39,8 +39,8 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CameraAccessException::CameraAccessException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
+	// QJniObject forward
+	CameraAccessException::CameraAccessException(QJniObject obj) : android::util::AndroidException(obj) {}
 	
 	// Constructors
 	CameraAccessException::CameraAccessException(jint arg0)

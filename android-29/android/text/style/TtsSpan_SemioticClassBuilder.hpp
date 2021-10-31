@@ -11,9 +11,9 @@ namespace android::text::style
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TtsSpan_SemioticClassBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_Builder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_SemioticClassBuilder(QAndroidJniObject obj);
+		TtsSpan_SemioticClassBuilder(QJniObject obj);
 		
 		// Constructors
 		TtsSpan_SemioticClassBuilder(jstring arg0);

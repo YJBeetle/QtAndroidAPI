@@ -10,9 +10,9 @@ namespace android::icu::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocaleData_PaperSize(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleData_PaperSize(QAndroidJniObject obj);
+		LocaleData_PaperSize(QJniObject obj);
 		
 		// Constructors
 		

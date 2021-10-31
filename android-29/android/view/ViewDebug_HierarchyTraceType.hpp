@@ -19,9 +19,9 @@ namespace android::view
 		static android::view::ViewDebug_HierarchyTraceType ON_MEASURE();
 		static android::view::ViewDebug_HierarchyTraceType REQUEST_LAYOUT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ViewDebug_HierarchyTraceType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ViewDebug_HierarchyTraceType(QAndroidJniObject obj);
+		ViewDebug_HierarchyTraceType(QJniObject obj);
 		
 		// Constructors
 		

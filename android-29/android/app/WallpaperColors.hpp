@@ -27,9 +27,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WallpaperColors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WallpaperColors(QAndroidJniObject obj);
+		WallpaperColors(QJniObject obj);
 		
 		// Constructors
 		WallpaperColors(android::os::Parcel arg0);

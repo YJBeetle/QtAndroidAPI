@@ -7,8 +7,8 @@ namespace java::util::prefs
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NodeChangeEvent::NodeChangeEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
+	// QJniObject forward
+	NodeChangeEvent::NodeChangeEvent(QJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
 	NodeChangeEvent::NodeChangeEvent(java::util::prefs::Preferences arg0, java::util::prefs::Preferences arg1)

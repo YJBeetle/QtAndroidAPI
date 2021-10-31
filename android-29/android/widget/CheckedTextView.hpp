@@ -36,9 +36,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CheckedTextView(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
-		CheckedTextView(QAndroidJniObject obj);
+		CheckedTextView(QJniObject obj);
 		
 		// Constructors
 		CheckedTextView(android::content::Context arg0);

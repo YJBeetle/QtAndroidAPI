@@ -7,8 +7,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Magnifier_Builder::Magnifier_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Magnifier_Builder::Magnifier_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Magnifier_Builder::Magnifier_Builder(android::view::View arg0)

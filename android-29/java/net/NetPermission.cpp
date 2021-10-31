@@ -4,8 +4,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NetPermission::NetPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	// QJniObject forward
+	NetPermission::NetPermission(QJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
 	NetPermission::NetPermission(jstring arg0)

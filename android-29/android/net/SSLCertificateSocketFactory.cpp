@@ -9,8 +9,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLCertificateSocketFactory::SSLCertificateSocketFactory(QAndroidJniObject obj) : javax::net::ssl::SSLSocketFactory(obj) {}
+	// QJniObject forward
+	SSLCertificateSocketFactory::SSLCertificateSocketFactory(QJniObject obj) : javax::net::ssl::SSLSocketFactory(obj) {}
 	
 	// Constructors
 	SSLCertificateSocketFactory::SSLCertificateSocketFactory(jint arg0)

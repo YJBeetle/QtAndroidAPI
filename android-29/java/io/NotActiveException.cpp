@@ -4,8 +4,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NotActiveException::NotActiveException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
+	// QJniObject forward
+	NotActiveException::NotActiveException(QJniObject obj) : java::io::ObjectStreamException(obj) {}
 	
 	// Constructors
 	NotActiveException::NotActiveException()

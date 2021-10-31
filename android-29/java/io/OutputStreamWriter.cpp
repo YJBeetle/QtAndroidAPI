@@ -8,8 +8,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OutputStreamWriter::OutputStreamWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
+	// QJniObject forward
+	OutputStreamWriter::OutputStreamWriter(QJniObject obj) : java::io::Writer(obj) {}
 	
 	// Constructors
 	OutputStreamWriter::OutputStreamWriter(java::io::OutputStream arg0)

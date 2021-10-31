@@ -16,8 +16,8 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Visualizer_MeasurementPeakRms::Visualizer_MeasurementPeakRms(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Visualizer_MeasurementPeakRms::Visualizer_MeasurementPeakRms(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Visualizer_MeasurementPeakRms::Visualizer_MeasurementPeakRms()

@@ -12,9 +12,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DeniedByServerException(const char *className, const char *sig, Ts...agv) : android::media::MediaDrmException(className, sig, std::forward<Ts>(agv)...) {}
-		DeniedByServerException(QAndroidJniObject obj);
+		DeniedByServerException(QJniObject obj);
 		
 		// Constructors
 		DeniedByServerException(jstring arg0);

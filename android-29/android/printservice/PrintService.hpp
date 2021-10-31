@@ -40,9 +40,9 @@ namespace android::printservice
 		static jstring SERVICE_INTERFACE();
 		static jstring SERVICE_META_DATA();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PrintService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		PrintService(QAndroidJniObject obj);
+		PrintService(QJniObject obj);
 		
 		// Constructors
 		PrintService();

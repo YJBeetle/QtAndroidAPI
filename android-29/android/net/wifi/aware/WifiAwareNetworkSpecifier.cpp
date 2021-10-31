@@ -13,8 +13,8 @@ namespace android::net::wifi::aware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiAwareNetworkSpecifier::WifiAwareNetworkSpecifier(QAndroidJniObject obj) : android::net::NetworkSpecifier(obj) {}
+	// QJniObject forward
+	WifiAwareNetworkSpecifier::WifiAwareNetworkSpecifier(QJniObject obj) : android::net::NetworkSpecifier(obj) {}
 	
 	// Constructors
 	

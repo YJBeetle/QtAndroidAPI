@@ -14,8 +14,8 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextClassifierEvent_TextSelectionEvent::TextClassifierEvent_TextSelectionEvent(QAndroidJniObject obj) : android::view::textclassifier::TextClassifierEvent(obj) {}
+	// QJniObject forward
+	TextClassifierEvent_TextSelectionEvent::TextClassifierEvent_TextSelectionEvent(QJniObject obj) : android::view::textclassifier::TextClassifierEvent(obj) {}
 	
 	// Constructors
 	

@@ -11,9 +11,9 @@ namespace android::os
 		// Fields
 		static android::os::StrictMode_ThreadPolicy LAX();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StrictMode_ThreadPolicy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StrictMode_ThreadPolicy(QAndroidJniObject obj);
+		StrictMode_ThreadPolicy(QJniObject obj);
 		
 		// Constructors
 		

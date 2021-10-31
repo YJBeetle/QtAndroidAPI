@@ -27,9 +27,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CursorTreeAdapter(const char *className, const char *sig, Ts...agv) : android::widget::BaseExpandableListAdapter(className, sig, std::forward<Ts>(agv)...) {}
-		CursorTreeAdapter(QAndroidJniObject obj);
+		CursorTreeAdapter(QJniObject obj);
 		
 		// Constructors
 		CursorTreeAdapter(__JniBaseClass arg0, android::content::Context arg1);

@@ -50,9 +50,9 @@ namespace android::transition
 		static jint MATCH_ITEM_ID();
 		static jint MATCH_NAME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Transition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Transition(QAndroidJniObject obj);
+		Transition(QJniObject obj);
 		
 		// Constructors
 		Transition();

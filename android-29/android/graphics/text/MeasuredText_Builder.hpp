@@ -18,9 +18,9 @@ namespace android::graphics::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MeasuredText_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MeasuredText_Builder(QAndroidJniObject obj);
+		MeasuredText_Builder(QJniObject obj);
 		
 		// Constructors
 		MeasuredText_Builder(jcharArray arg0);

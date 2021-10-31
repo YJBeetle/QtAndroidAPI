@@ -19,9 +19,9 @@ namespace java::util::jar
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JarEntry(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipEntry(className, sig, std::forward<Ts>(agv)...) {}
-		JarEntry(QAndroidJniObject obj);
+		JarEntry(QJniObject obj);
 		
 		// Constructors
 		JarEntry(jstring arg0);

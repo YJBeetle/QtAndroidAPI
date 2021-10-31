@@ -65,8 +65,8 @@ namespace android::printservice
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	PrintService::PrintService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	PrintService::PrintService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	PrintService::PrintService()

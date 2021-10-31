@@ -13,9 +13,9 @@ namespace android::os::health
 		static jint MEASUREMENT_WAKE_START_MS();
 		static jint MEASUREMENT_WAKE_SUM_MS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PidHealthStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PidHealthStats(QAndroidJniObject obj);
+		PidHealthStats(QJniObject obj);
 		
 		// Constructors
 		

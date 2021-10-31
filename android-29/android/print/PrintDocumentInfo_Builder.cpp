@@ -5,8 +5,8 @@ namespace android::print
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(jstring arg0)

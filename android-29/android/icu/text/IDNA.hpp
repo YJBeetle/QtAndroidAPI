@@ -25,9 +25,9 @@ namespace android::icu::text
 		static jint NONTRANSITIONAL_TO_UNICODE();
 		static jint USE_STD3_RULES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IDNA(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IDNA(QAndroidJniObject obj);
+		IDNA(QJniObject obj);
 		
 		// Constructors
 		

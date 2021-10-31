@@ -7,8 +7,8 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextClassifierEvent_Builder::TextClassifierEvent_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextClassifierEvent_Builder::TextClassifierEvent_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

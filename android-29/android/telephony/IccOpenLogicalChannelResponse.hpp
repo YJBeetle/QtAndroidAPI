@@ -20,9 +20,9 @@ namespace android::telephony
 		static jint STATUS_NO_SUCH_ELEMENT();
 		static jint STATUS_UNKNOWN_ERROR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IccOpenLogicalChannelResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IccOpenLogicalChannelResponse(QAndroidJniObject obj);
+		IccOpenLogicalChannelResponse(QJniObject obj);
 		
 		// Constructors
 		

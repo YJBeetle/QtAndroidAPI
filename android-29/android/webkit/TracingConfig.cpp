@@ -74,8 +74,8 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TracingConfig::TracingConfig(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TracingConfig::TracingConfig(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

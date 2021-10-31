@@ -30,9 +30,9 @@ namespace java::io
 		static jstring separator();
 		static jchar separatorChar();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit File(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		File(QAndroidJniObject obj);
+		File(QJniObject obj);
 		
 		// Constructors
 		File(jstring arg0);

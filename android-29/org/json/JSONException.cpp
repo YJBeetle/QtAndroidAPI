@@ -4,8 +4,8 @@ namespace org::json
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JSONException::JSONException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	JSONException::JSONException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	JSONException::JSONException(jstring arg0)

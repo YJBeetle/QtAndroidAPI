@@ -4,8 +4,8 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Script_LaunchOptions::Script_LaunchOptions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Script_LaunchOptions::Script_LaunchOptions(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Script_LaunchOptions::Script_LaunchOptions()

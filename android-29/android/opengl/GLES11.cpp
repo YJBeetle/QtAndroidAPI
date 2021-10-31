@@ -861,8 +861,8 @@ namespace android::opengl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GLES11::GLES11(QAndroidJniObject obj) : android::opengl::GLES10(obj) {}
+	// QJniObject forward
+	GLES11::GLES11(QJniObject obj) : android::opengl::GLES10(obj) {}
 	
 	// Constructors
 	GLES11::GLES11()

@@ -19,9 +19,9 @@ namespace java::lang::invoke
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VolatileCallSite(const char *className, const char *sig, Ts...agv) : java::lang::invoke::CallSite(className, sig, std::forward<Ts>(agv)...) {}
-		VolatileCallSite(QAndroidJniObject obj);
+		VolatileCallSite(QJniObject obj);
 		
 		// Constructors
 		VolatileCallSite(java::lang::invoke::MethodHandle arg0);

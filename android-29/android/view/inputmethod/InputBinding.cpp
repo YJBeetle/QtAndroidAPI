@@ -13,8 +13,8 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InputBinding::InputBinding(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InputBinding::InputBinding(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	InputBinding::InputBinding(__JniBaseClass arg0, android::view::inputmethod::InputBinding &arg1)

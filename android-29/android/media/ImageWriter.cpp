@@ -7,8 +7,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ImageWriter::ImageWriter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ImageWriter::ImageWriter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

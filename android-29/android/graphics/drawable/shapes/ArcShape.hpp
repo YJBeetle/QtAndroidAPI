@@ -32,9 +32,9 @@ namespace android::graphics::drawable::shapes
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ArcShape(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::shapes::RectShape(className, sig, std::forward<Ts>(agv)...) {}
-		ArcShape(QAndroidJniObject obj);
+		ArcShape(QJniObject obj);
 		
 		// Constructors
 		ArcShape(jfloat arg0, jfloat arg1);

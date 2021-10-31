@@ -18,8 +18,8 @@ namespace android::view::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SpellCheckerInfo::SpellCheckerInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SpellCheckerInfo::SpellCheckerInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

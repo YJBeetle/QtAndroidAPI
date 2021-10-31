@@ -1085,8 +1085,8 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MeasureUnit::MeasureUnit(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MeasureUnit::MeasureUnit(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

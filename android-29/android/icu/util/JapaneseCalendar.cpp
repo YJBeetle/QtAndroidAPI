@@ -43,8 +43,8 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JapaneseCalendar::JapaneseCalendar(QAndroidJniObject obj) : android::icu::util::GregorianCalendar(obj) {}
+	// QJniObject forward
+	JapaneseCalendar::JapaneseCalendar(QJniObject obj) : android::icu::util::GregorianCalendar(obj) {}
 	
 	// Constructors
 	JapaneseCalendar::JapaneseCalendar()

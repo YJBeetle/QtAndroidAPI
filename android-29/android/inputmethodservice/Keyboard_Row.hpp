@@ -24,9 +24,9 @@ namespace android::inputmethodservice
 		jint rowEdgeFlags();
 		jint verticalGap();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Keyboard_Row(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Keyboard_Row(QAndroidJniObject obj);
+		Keyboard_Row(QJniObject obj);
 		
 		// Constructors
 		Keyboard_Row(android::inputmethodservice::Keyboard arg0);

@@ -8,8 +8,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LocaleSpan::LocaleSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
+	// QJniObject forward
+	LocaleSpan::LocaleSpan(QJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
 	
 	// Constructors
 	LocaleSpan::LocaleSpan(android::os::LocaleList arg0)

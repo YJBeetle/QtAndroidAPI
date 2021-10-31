@@ -28,8 +28,8 @@ namespace android::content
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Intent_ShortcutIconResource::Intent_ShortcutIconResource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Intent_ShortcutIconResource::Intent_ShortcutIconResource(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Intent_ShortcutIconResource::Intent_ShortcutIconResource()

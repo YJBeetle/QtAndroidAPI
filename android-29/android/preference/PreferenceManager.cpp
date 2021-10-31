@@ -23,8 +23,8 @@ namespace android::preference
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	PreferenceManager::PreferenceManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PreferenceManager::PreferenceManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

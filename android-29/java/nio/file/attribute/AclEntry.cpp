@@ -6,8 +6,8 @@ namespace java::nio::file::attribute
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AclEntry::AclEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AclEntry::AclEntry(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -10,8 +10,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CompactDecimalFormat::CompactDecimalFormat(QAndroidJniObject obj) : android::icu::text::DecimalFormat(obj) {}
+	// QJniObject forward
+	CompactDecimalFormat::CompactDecimalFormat(QJniObject obj) : android::icu::text::DecimalFormat(obj) {}
 	
 	// Constructors
 	

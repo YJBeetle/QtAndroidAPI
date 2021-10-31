@@ -14,9 +14,9 @@ namespace android::renderscript
 		static android::renderscript::RenderScript_ContextType NORMAL();
 		static android::renderscript::RenderScript_ContextType PROFILE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RenderScript_ContextType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RenderScript_ContextType(QAndroidJniObject obj);
+		RenderScript_ContextType(QJniObject obj);
 		
 		// Constructors
 		

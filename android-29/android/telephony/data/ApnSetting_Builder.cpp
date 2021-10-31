@@ -7,8 +7,8 @@ namespace android::telephony::data
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ApnSetting_Builder::ApnSetting_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ApnSetting_Builder::ApnSetting_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ApnSetting_Builder::ApnSetting_Builder()

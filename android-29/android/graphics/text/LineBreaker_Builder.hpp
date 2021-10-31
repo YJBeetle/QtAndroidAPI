@@ -14,9 +14,9 @@ namespace android::graphics::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LineBreaker_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LineBreaker_Builder(QAndroidJniObject obj);
+		LineBreaker_Builder(QJniObject obj);
 		
 		// Constructors
 		LineBreaker_Builder();

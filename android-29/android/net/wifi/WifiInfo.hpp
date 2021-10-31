@@ -25,9 +25,9 @@ namespace android::net::wifi
 		static jstring LINK_SPEED_UNITS();
 		static jint LINK_SPEED_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiInfo(QAndroidJniObject obj);
+		WifiInfo(QJniObject obj);
 		
 		// Constructors
 		

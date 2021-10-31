@@ -40,8 +40,8 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioEffect_Descriptor::AudioEffect_Descriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AudioEffect_Descriptor::AudioEffect_Descriptor(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AudioEffect_Descriptor::AudioEffect_Descriptor()

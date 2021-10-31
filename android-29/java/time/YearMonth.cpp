@@ -11,8 +11,8 @@ namespace java::time
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	YearMonth::YearMonth(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	YearMonth::YearMonth(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

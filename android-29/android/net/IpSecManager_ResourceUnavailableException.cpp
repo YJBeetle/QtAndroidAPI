@@ -4,8 +4,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IpSecManager_ResourceUnavailableException::IpSecManager_ResourceUnavailableException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
+	// QJniObject forward
+	IpSecManager_ResourceUnavailableException::IpSecManager_ResourceUnavailableException(QJniObject obj) : android::util::AndroidException(obj) {}
 	
 	// Constructors
 	

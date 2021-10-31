@@ -4,8 +4,8 @@ namespace android::view::inspector
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IntFlagMapping::IntFlagMapping(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IntFlagMapping::IntFlagMapping(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	IntFlagMapping::IntFlagMapping()

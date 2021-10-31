@@ -28,9 +28,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AllocationAdapter(const char *className, const char *sig, Ts...agv) : android::renderscript::Allocation(className, sig, std::forward<Ts>(agv)...) {}
-		AllocationAdapter(QAndroidJniObject obj);
+		AllocationAdapter(QJniObject obj);
 		
 		// Constructors
 		

@@ -14,9 +14,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WebView_WebViewTransport(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WebView_WebViewTransport(QAndroidJniObject obj);
+		WebView_WebViewTransport(QJniObject obj);
 		
 		// Constructors
 		WebView_WebViewTransport(android::webkit::WebView arg0);

@@ -18,9 +18,9 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AsynchronousChannelGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AsynchronousChannelGroup(QAndroidJniObject obj);
+		AsynchronousChannelGroup(QJniObject obj);
 		
 		// Constructors
 		

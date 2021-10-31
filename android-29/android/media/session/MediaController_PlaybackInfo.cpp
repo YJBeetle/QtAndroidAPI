@@ -28,8 +28,8 @@ namespace android::media::session
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaController_PlaybackInfo::MediaController_PlaybackInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaController_PlaybackInfo::MediaController_PlaybackInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

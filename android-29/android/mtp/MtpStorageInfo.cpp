@@ -4,8 +4,8 @@ namespace android::mtp
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MtpStorageInfo::MtpStorageInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MtpStorageInfo::MtpStorageInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

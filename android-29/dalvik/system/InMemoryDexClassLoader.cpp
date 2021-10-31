@@ -6,8 +6,8 @@ namespace dalvik::system
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InMemoryDexClassLoader::InMemoryDexClassLoader(QAndroidJniObject obj) : dalvik::system::BaseDexClassLoader(obj) {}
+	// QJniObject forward
+	InMemoryDexClassLoader::InMemoryDexClassLoader(QJniObject obj) : dalvik::system::BaseDexClassLoader(obj) {}
 	
 	// Constructors
 	InMemoryDexClassLoader::InMemoryDexClassLoader(jarray arg0, java::lang::ClassLoader arg1)

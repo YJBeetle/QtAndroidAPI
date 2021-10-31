@@ -10,8 +10,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	X509CRL::X509CRL(QAndroidJniObject obj) : java::security::cert::CRL(obj) {}
+	// QJniObject forward
+	X509CRL::X509CRL(QJniObject obj) : java::security::cert::CRL(obj) {}
 	
 	// Constructors
 	

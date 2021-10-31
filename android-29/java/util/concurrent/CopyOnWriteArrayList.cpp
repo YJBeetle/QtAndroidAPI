@@ -7,8 +7,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CopyOnWriteArrayList::CopyOnWriteArrayList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CopyOnWriteArrayList::CopyOnWriteArrayList(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CopyOnWriteArrayList::CopyOnWriteArrayList()

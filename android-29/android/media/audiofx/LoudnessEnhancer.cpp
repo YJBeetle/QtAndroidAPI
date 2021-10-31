@@ -11,8 +11,8 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LoudnessEnhancer::LoudnessEnhancer(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
+	// QJniObject forward
+	LoudnessEnhancer::LoudnessEnhancer(QJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
 	
 	// Constructors
 	LoudnessEnhancer::LoudnessEnhancer(jint arg0)

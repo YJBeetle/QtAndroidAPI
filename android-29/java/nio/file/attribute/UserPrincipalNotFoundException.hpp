@@ -12,9 +12,9 @@ namespace java::nio::file::attribute
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UserPrincipalNotFoundException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		UserPrincipalNotFoundException(QAndroidJniObject obj);
+		UserPrincipalNotFoundException(QJniObject obj);
 		
 		// Constructors
 		UserPrincipalNotFoundException(jstring arg0);

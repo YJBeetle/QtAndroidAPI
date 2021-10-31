@@ -68,8 +68,8 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InputMethodManager::InputMethodManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InputMethodManager::InputMethodManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

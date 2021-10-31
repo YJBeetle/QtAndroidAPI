@@ -17,9 +17,9 @@ namespace android::graphics
 		static android::graphics::Region_Op UNION();
 		static android::graphics::Region_Op XOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Region_Op(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Region_Op(QAndroidJniObject obj);
+		Region_Op(QJniObject obj);
 		
 		// Constructors
 		

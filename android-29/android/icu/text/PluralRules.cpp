@@ -70,8 +70,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PluralRules::PluralRules(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PluralRules::PluralRules(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

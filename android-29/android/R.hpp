@@ -10,9 +10,9 @@ namespace android
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit R(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		R(QAndroidJniObject obj);
+		R(QJniObject obj);
 		
 		// Constructors
 		R();

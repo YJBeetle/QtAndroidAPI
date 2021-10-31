@@ -15,9 +15,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IdentityScope(const char *className, const char *sig, Ts...agv) : java::security::Identity(className, sig, std::forward<Ts>(agv)...) {}
-		IdentityScope(QAndroidJniObject obj);
+		IdentityScope(QJniObject obj);
 		
 		// Constructors
 		IdentityScope(jstring arg0);

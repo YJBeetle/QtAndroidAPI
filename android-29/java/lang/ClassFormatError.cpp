@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClassFormatError::ClassFormatError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
+	// QJniObject forward
+	ClassFormatError::ClassFormatError(QJniObject obj) : java::lang::LinkageError(obj) {}
 	
 	// Constructors
 	ClassFormatError::ClassFormatError()

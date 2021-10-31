@@ -15,8 +15,8 @@ namespace android::telecom
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	CallRedirectionService::CallRedirectionService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	CallRedirectionService::CallRedirectionService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	CallRedirectionService::CallRedirectionService()

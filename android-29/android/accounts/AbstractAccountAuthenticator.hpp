@@ -27,9 +27,9 @@ namespace android::accounts
 		// Fields
 		static jstring KEY_CUSTOM_TOKEN_EXPIRY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbstractAccountAuthenticator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractAccountAuthenticator(QAndroidJniObject obj);
+		AbstractAccountAuthenticator(QJniObject obj);
 		
 		// Constructors
 		AbstractAccountAuthenticator(android::content::Context arg0);

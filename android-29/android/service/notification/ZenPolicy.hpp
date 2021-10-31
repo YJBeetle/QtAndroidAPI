@@ -23,9 +23,9 @@ namespace android::service::notification
 		static jint STATE_DISALLOW();
 		static jint STATE_UNSET();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ZenPolicy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ZenPolicy(QAndroidJniObject obj);
+		ZenPolicy(QJniObject obj);
 		
 		// Constructors
 		

@@ -36,9 +36,9 @@ namespace android::app::backup
 		static jint TYPE_DIRECTORY();
 		static jint TYPE_FILE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BackupAgent(const char *className, const char *sig, Ts...agv) : android::content::ContextWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		BackupAgent(QAndroidJniObject obj);
+		BackupAgent(QJniObject obj);
 		
 		// Constructors
 		BackupAgent();

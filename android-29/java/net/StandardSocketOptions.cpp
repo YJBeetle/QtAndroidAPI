@@ -100,8 +100,8 @@ namespace java::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StandardSocketOptions::StandardSocketOptions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StandardSocketOptions::StandardSocketOptions(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

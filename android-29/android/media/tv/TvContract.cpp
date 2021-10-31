@@ -79,8 +79,8 @@ namespace android::media::tv
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	TvContract::TvContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TvContract::TvContract(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

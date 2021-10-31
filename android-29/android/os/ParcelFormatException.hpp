@@ -12,9 +12,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ParcelFormatException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ParcelFormatException(QAndroidJniObject obj);
+		ParcelFormatException(QJniObject obj);
 		
 		// Constructors
 		ParcelFormatException();

@@ -33,9 +33,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NumberPicker(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
-		NumberPicker(QAndroidJniObject obj);
+		NumberPicker(QJniObject obj);
 		
 		// Constructors
 		NumberPicker(android::content::Context arg0);

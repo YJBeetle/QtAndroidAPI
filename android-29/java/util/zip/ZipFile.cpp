@@ -23,8 +23,8 @@ namespace java::util::zip
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ZipFile::ZipFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ZipFile::ZipFile(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ZipFile::ZipFile(java::io::File arg0)

@@ -4,8 +4,8 @@ namespace android::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException()

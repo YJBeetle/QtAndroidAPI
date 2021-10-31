@@ -36,9 +36,9 @@ namespace android::os
 		static jint THREAD_PRIORITY_URGENT_DISPLAY();
 		static jint THREAD_PRIORITY_VIDEO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Process(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Process(QAndroidJniObject obj);
+		Process(QJniObject obj);
 		
 		// Constructors
 		Process();

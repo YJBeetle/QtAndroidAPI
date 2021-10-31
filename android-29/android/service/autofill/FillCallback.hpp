@@ -14,9 +14,9 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FillCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FillCallback(QAndroidJniObject obj);
+		FillCallback(QJniObject obj);
 		
 		// Constructors
 		

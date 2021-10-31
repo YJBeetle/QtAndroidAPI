@@ -22,9 +22,9 @@ namespace java::net
 		static __JniBaseClass SO_SNDBUF();
 		static __JniBaseClass TCP_NODELAY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StandardSocketOptions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StandardSocketOptions(QAndroidJniObject obj);
+		StandardSocketOptions(QJniObject obj);
 		
 		// Constructors
 		

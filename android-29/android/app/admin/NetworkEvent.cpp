@@ -13,8 +13,8 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkEvent::NetworkEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NetworkEvent::NetworkEvent(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

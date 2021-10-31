@@ -57,8 +57,8 @@ namespace android::accounts
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	AuthenticatorDescription::AuthenticatorDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AuthenticatorDescription::AuthenticatorDescription(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AuthenticatorDescription::AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5)

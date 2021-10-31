@@ -21,9 +21,9 @@ namespace java::util
 		static __JniBaseClass EMPTY_MAP();
 		static __JniBaseClass EMPTY_SET();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Collections(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Collections(QAndroidJniObject obj);
+		Collections(QJniObject obj);
 		
 		// Constructors
 		

@@ -4,8 +4,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputFilter_LengthFilter::InputFilter_LengthFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InputFilter_LengthFilter::InputFilter_LengthFilter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	InputFilter_LengthFilter::InputFilter_LengthFilter(jint arg0)

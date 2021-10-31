@@ -703,8 +703,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioManager::AudioManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AudioManager::AudioManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -21,9 +21,9 @@ namespace dalvik::system
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DelegateLastClassLoader(const char *className, const char *sig, Ts...agv) : dalvik::system::PathClassLoader(className, sig, std::forward<Ts>(agv)...) {}
-		DelegateLastClassLoader(QAndroidJniObject obj);
+		DelegateLastClassLoader(QJniObject obj);
 		
 		// Constructors
 		DelegateLastClassLoader(jstring arg0, java::lang::ClassLoader arg1);

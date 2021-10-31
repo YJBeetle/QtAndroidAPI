@@ -5,8 +5,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Locale_Builder::Locale_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Locale_Builder::Locale_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Locale_Builder::Locale_Builder()

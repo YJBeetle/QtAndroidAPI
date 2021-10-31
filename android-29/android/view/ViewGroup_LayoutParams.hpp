@@ -28,9 +28,9 @@ namespace android::view
 		android::view::animation::LayoutAnimationController_AnimationParameters layoutAnimationParameters();
 		jint width();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ViewGroup_LayoutParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ViewGroup_LayoutParams(QAndroidJniObject obj);
+		ViewGroup_LayoutParams(QJniObject obj);
 		
 		// Constructors
 		ViewGroup_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);

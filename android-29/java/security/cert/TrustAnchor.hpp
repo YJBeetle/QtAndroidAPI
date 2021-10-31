@@ -18,9 +18,9 @@ namespace java::security::cert
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TrustAnchor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TrustAnchor(QAndroidJniObject obj);
+		TrustAnchor(QJniObject obj);
 		
 		// Constructors
 		TrustAnchor(java::security::cert::X509Certificate arg0, jbyteArray arg1);

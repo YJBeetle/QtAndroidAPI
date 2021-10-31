@@ -13,9 +13,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ArrayIndexOutOfBoundsException(const char *className, const char *sig, Ts...agv) : java::lang::IndexOutOfBoundsException(className, sig, std::forward<Ts>(agv)...) {}
-		ArrayIndexOutOfBoundsException(QAndroidJniObject obj);
+		ArrayIndexOutOfBoundsException(QJniObject obj);
 		
 		// Constructors
 		ArrayIndexOutOfBoundsException();

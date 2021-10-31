@@ -14,9 +14,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AlphabeticIndex_ImmutableIndex(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabeticIndex_ImmutableIndex(QAndroidJniObject obj);
+		AlphabeticIndex_ImmutableIndex(QJniObject obj);
 		
 		// Constructors
 		

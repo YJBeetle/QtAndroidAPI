@@ -20,8 +20,8 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ULocale_Category::ULocale_Category(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ULocale_Category::ULocale_Category(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

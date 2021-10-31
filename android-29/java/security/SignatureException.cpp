@@ -4,8 +4,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SignatureException::SignatureException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	// QJniObject forward
+	SignatureException::SignatureException(QJniObject obj) : java::security::GeneralSecurityException(obj) {}
 	
 	// Constructors
 	SignatureException::SignatureException()

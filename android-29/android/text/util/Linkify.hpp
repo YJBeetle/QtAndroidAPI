@@ -26,9 +26,9 @@ namespace android::text::util
 		static __JniBaseClass sPhoneNumberTransformFilter();
 		static __JniBaseClass sUrlMatchFilter();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Linkify(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Linkify(QAndroidJniObject obj);
+		Linkify(QJniObject obj);
 		
 		// Constructors
 		Linkify();

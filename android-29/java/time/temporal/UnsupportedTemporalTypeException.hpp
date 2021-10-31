@@ -13,9 +13,9 @@ namespace java::time::temporal
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnsupportedTemporalTypeException(const char *className, const char *sig, Ts...agv) : java::time::DateTimeException(className, sig, std::forward<Ts>(agv)...) {}
-		UnsupportedTemporalTypeException(QAndroidJniObject obj);
+		UnsupportedTemporalTypeException(QJniObject obj);
 		
 		// Constructors
 		UnsupportedTemporalTypeException(jstring arg0);

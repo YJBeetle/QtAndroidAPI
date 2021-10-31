@@ -36,8 +36,8 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CursorAnchorInfo::CursorAnchorInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CursorAnchorInfo::CursorAnchorInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CursorAnchorInfo::CursorAnchorInfo(android::os::Parcel arg0)

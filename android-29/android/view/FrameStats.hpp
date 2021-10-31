@@ -11,9 +11,9 @@ namespace android::view
 		// Fields
 		static jlong UNDEFINED_TIME_NANO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FrameStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FrameStats(QAndroidJniObject obj);
+		FrameStats(QJniObject obj);
 		
 		// Constructors
 		FrameStats();

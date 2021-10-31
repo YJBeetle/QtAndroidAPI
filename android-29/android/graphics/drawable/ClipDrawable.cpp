@@ -22,8 +22,8 @@ namespace android::graphics::drawable
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ClipDrawable::ClipDrawable(QAndroidJniObject obj) : android::graphics::drawable::DrawableWrapper(obj) {}
+	// QJniObject forward
+	ClipDrawable::ClipDrawable(QJniObject obj) : android::graphics::drawable::DrawableWrapper(obj) {}
 	
 	// Constructors
 	ClipDrawable::ClipDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jint arg2)

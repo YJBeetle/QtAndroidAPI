@@ -7,8 +7,8 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConversationAction_Builder::ConversationAction_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConversationAction_Builder::ConversationAction_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ConversationAction_Builder::ConversationAction_Builder(jstring arg0)

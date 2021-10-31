@@ -29,8 +29,8 @@ namespace android::text::style
 		);
 	}
 	
-	// QAndroidJniObject forward
-	QuoteSpan::QuoteSpan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	QuoteSpan::QuoteSpan(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	QuoteSpan::QuoteSpan()

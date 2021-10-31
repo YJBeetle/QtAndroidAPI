@@ -6,8 +6,8 @@ namespace android::service::voice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VoiceInteractionSession_ConfirmationRequest::VoiceInteractionSession_ConfirmationRequest(QAndroidJniObject obj) : android::service::voice::VoiceInteractionSession_Request(obj) {}
+	// QJniObject forward
+	VoiceInteractionSession_ConfirmationRequest::VoiceInteractionSession_ConfirmationRequest(QJniObject obj) : android::service::voice::VoiceInteractionSession_Request(obj) {}
 	
 	// Constructors
 	

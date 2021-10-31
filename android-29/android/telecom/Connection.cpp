@@ -324,8 +324,8 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Connection::Connection(QAndroidJniObject obj) : android::telecom::Conferenceable(obj) {}
+	// QJniObject forward
+	Connection::Connection(QJniObject obj) : android::telecom::Conferenceable(obj) {}
 	
 	// Constructors
 	Connection::Connection()

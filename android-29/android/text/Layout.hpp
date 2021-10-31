@@ -50,9 +50,9 @@ namespace android::text
 		static jint JUSTIFICATION_MODE_INTER_WORD();
 		static jint JUSTIFICATION_MODE_NONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Layout(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Layout(QAndroidJniObject obj);
+		Layout(QJniObject obj);
 		
 		// Constructors
 		

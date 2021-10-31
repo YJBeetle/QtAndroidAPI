@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OptionalDouble::OptionalDouble(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	OptionalDouble::OptionalDouble(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

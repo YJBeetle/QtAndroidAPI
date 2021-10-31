@@ -6,8 +6,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UncheckedIOException::UncheckedIOException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	UncheckedIOException::UncheckedIOException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	UncheckedIOException::UncheckedIOException(java::io::IOException arg0)

@@ -26,9 +26,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodec_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_Callback(QAndroidJniObject obj);
+		MediaCodec_Callback(QJniObject obj);
 		
 		// Constructors
 		MediaCodec_Callback();

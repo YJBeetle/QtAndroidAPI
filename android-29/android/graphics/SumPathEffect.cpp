@@ -5,8 +5,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SumPathEffect::SumPathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
+	// QJniObject forward
+	SumPathEffect::SumPathEffect(QJniObject obj) : android::graphics::PathEffect(obj) {}
 	
 	// Constructors
 	SumPathEffect::SumPathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1)

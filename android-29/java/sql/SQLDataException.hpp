@@ -13,9 +13,9 @@ namespace java::sql
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SQLDataException(const char *className, const char *sig, Ts...agv) : java::sql::SQLNonTransientException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLDataException(QAndroidJniObject obj);
+		SQLDataException(QJniObject obj);
 		
 		// Constructors
 		SQLDataException();

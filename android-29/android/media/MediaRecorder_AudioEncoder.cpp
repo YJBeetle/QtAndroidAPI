@@ -61,8 +61,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaRecorder_AudioEncoder::MediaRecorder_AudioEncoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaRecorder_AudioEncoder::MediaRecorder_AudioEncoder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

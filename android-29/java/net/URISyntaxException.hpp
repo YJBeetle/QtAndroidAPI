@@ -11,9 +11,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit URISyntaxException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		URISyntaxException(QAndroidJniObject obj);
+		URISyntaxException(QJniObject obj);
 		
 		// Constructors
 		URISyntaxException(jstring arg0, jstring arg1);

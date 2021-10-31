@@ -13,8 +13,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InputEvent::InputEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InputEvent::InputEvent(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

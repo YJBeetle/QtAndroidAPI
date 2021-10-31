@@ -9,8 +9,8 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ObjectAnimator::ObjectAnimator(QAndroidJniObject obj) : android::animation::ValueAnimator(obj) {}
+	// QJniObject forward
+	ObjectAnimator::ObjectAnimator(QJniObject obj) : android::animation::ValueAnimator(obj) {}
 	
 	// Constructors
 	ObjectAnimator::ObjectAnimator()

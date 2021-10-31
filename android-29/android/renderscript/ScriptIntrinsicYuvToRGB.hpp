@@ -33,9 +33,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScriptIntrinsicYuvToRGB(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptIntrinsicYuvToRGB(QAndroidJniObject obj);
+		ScriptIntrinsicYuvToRGB(QJniObject obj);
 		
 		// Constructors
 		

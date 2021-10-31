@@ -23,9 +23,9 @@ namespace android::media
 		static jint MASTERED_FOR_SURROUND();
 		static jint MASTERING_NOT_INDICATED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AudioPresentation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AudioPresentation(QAndroidJniObject obj);
+		AudioPresentation(QJniObject obj);
 		
 		// Constructors
 		

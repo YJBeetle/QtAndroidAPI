@@ -4,8 +4,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CancellationException::CancellationException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	CancellationException::CancellationException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	CancellationException::CancellationException()

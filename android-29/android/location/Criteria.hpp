@@ -24,9 +24,9 @@ namespace android::location
 		static jint POWER_LOW();
 		static jint POWER_MEDIUM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Criteria(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Criteria(QAndroidJniObject obj);
+		Criteria(QJniObject obj);
 		
 		// Constructors
 		Criteria();

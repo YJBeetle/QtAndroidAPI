@@ -4,8 +4,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCas_PluginDescriptor::MediaCas_PluginDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaCas_PluginDescriptor::MediaCas_PluginDescriptor(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

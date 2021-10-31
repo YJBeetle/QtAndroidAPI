@@ -14,9 +14,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContentResolver_MimeTypeInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContentResolver_MimeTypeInfo(QAndroidJniObject obj);
+		ContentResolver_MimeTypeInfo(QJniObject obj);
 		
 		// Constructors
 		

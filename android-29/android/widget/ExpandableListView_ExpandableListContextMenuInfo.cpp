@@ -24,8 +24,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ExpandableListView_ExpandableListContextMenuInfo::ExpandableListView_ExpandableListContextMenuInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ExpandableListView_ExpandableListContextMenuInfo::ExpandableListView_ExpandableListContextMenuInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ExpandableListView_ExpandableListContextMenuInfo::ExpandableListView_ExpandableListContextMenuInfo(android::view::View arg0, jlong arg1, jlong arg2)

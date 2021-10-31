@@ -10,9 +10,9 @@ namespace java::time::temporal
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TemporalQueries(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TemporalQueries(QAndroidJniObject obj);
+		TemporalQueries(QJniObject obj);
 		
 		// Constructors
 		

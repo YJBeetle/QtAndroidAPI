@@ -133,8 +133,8 @@ namespace java::time::temporal
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ChronoUnit::ChronoUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ChronoUnit::ChronoUnit(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

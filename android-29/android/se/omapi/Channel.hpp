@@ -14,9 +14,9 @@ namespace android::se::omapi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Channel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Channel(QAndroidJniObject obj);
+		Channel(QJniObject obj);
 		
 		// Constructors
 		

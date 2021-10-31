@@ -5,8 +5,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaExtractor_CasInfo::MediaExtractor_CasInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaExtractor_CasInfo::MediaExtractor_CasInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

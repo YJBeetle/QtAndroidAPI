@@ -22,9 +22,9 @@ namespace android::icu::text
 		static android::icu::text::Normalizer_QuickCheckResult NO();
 		static android::icu::text::Normalizer_QuickCheckResult YES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Normalizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Normalizer(QAndroidJniObject obj);
+		Normalizer(QJniObject obj);
 		
 		// Constructors
 		

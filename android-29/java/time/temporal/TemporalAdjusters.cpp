@@ -5,8 +5,8 @@ namespace java::time::temporal
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TemporalAdjusters::TemporalAdjusters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TemporalAdjusters::TemporalAdjusters(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

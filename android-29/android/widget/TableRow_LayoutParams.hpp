@@ -31,9 +31,9 @@ namespace android::widget
 		jint column();
 		jint span();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TableRow_LayoutParams(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		TableRow_LayoutParams(QAndroidJniObject obj);
+		TableRow_LayoutParams(QJniObject obj);
 		
 		// Constructors
 		TableRow_LayoutParams();

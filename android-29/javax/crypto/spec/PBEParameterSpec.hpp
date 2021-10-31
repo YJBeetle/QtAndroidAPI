@@ -10,9 +10,9 @@ namespace javax::crypto::spec
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PBEParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PBEParameterSpec(QAndroidJniObject obj);
+		PBEParameterSpec(QJniObject obj);
 		
 		// Constructors
 		PBEParameterSpec(jbyteArray arg0, jint arg1);

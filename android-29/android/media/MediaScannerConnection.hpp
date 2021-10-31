@@ -18,9 +18,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaScannerConnection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaScannerConnection(QAndroidJniObject obj);
+		MediaScannerConnection(QJniObject obj);
 		
 		// Constructors
 		MediaScannerConnection(android::content::Context arg0, __JniBaseClass arg1);

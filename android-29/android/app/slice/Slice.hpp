@@ -53,9 +53,9 @@ namespace android::app::slice
 		static jstring SUBTYPE_TOGGLE();
 		static jstring SUBTYPE_VALUE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Slice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Slice(QAndroidJniObject obj);
+		Slice(QJniObject obj);
 		
 		// Constructors
 		

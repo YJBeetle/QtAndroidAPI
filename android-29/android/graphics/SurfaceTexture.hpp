@@ -14,9 +14,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SurfaceTexture(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceTexture(QAndroidJniObject obj);
+		SurfaceTexture(QJniObject obj);
 		
 		// Constructors
 		SurfaceTexture(jboolean arg0);

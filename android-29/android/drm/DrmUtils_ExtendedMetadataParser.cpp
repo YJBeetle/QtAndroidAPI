@@ -4,8 +4,8 @@ namespace android::drm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DrmUtils_ExtendedMetadataParser::DrmUtils_ExtendedMetadataParser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DrmUtils_ExtendedMetadataParser::DrmUtils_ExtendedMetadataParser(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

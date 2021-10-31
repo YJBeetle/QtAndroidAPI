@@ -18,9 +18,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ListFormatter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ListFormatter(QAndroidJniObject obj);
+		ListFormatter(QJniObject obj);
 		
 		// Constructors
 		

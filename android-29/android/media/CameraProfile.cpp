@@ -25,8 +25,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CameraProfile::CameraProfile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CameraProfile::CameraProfile(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CameraProfile::CameraProfile()

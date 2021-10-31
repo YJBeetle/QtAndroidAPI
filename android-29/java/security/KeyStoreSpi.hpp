@@ -26,9 +26,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyStoreSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStoreSpi(QAndroidJniObject obj);
+		KeyStoreSpi(QJniObject obj);
 		
 		// Constructors
 		KeyStoreSpi();

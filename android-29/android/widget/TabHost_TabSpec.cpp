@@ -8,8 +8,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TabHost_TabSpec::TabHost_TabSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TabHost_TabSpec::TabHost_TabSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

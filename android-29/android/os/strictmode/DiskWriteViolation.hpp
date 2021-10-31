@@ -11,9 +11,9 @@ namespace android::os::strictmode
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DiskWriteViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		DiskWriteViolation(QAndroidJniObject obj);
+		DiskWriteViolation(QJniObject obj);
 		
 		// Constructors
 		

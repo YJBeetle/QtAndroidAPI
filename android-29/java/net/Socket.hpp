@@ -42,9 +42,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Socket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Socket(QAndroidJniObject obj);
+		Socket(QJniObject obj);
 		
 		// Constructors
 		Socket();

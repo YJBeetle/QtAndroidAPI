@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EnumConstantNotPresentException::EnumConstantNotPresentException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	EnumConstantNotPresentException::EnumConstantNotPresentException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	EnumConstantNotPresentException::EnumConstantNotPresentException(jclass arg0, jstring arg1)

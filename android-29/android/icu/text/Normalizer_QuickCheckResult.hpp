@@ -10,9 +10,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Normalizer_QuickCheckResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Normalizer_QuickCheckResult(QAndroidJniObject obj);
+		Normalizer_QuickCheckResult(QJniObject obj);
 		
 		// Constructors
 		

@@ -6,8 +6,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VoiceInteractor_PickOptionRequest::VoiceInteractor_PickOptionRequest(QAndroidJniObject obj) : android::app::VoiceInteractor_Request(obj) {}
+	// QJniObject forward
+	VoiceInteractor_PickOptionRequest::VoiceInteractor_PickOptionRequest(QJniObject obj) : android::app::VoiceInteractor_Request(obj) {}
 	
 	// Constructors
 	VoiceInteractor_PickOptionRequest::VoiceInteractor_PickOptionRequest(android::app::VoiceInteractor_Prompt arg0, jarray arg1, android::os::Bundle arg2)

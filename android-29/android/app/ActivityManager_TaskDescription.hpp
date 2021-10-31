@@ -19,9 +19,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActivityManager_TaskDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_TaskDescription(QAndroidJniObject obj);
+		ActivityManager_TaskDescription(QJniObject obj);
 		
 		// Constructors
 		ActivityManager_TaskDescription();

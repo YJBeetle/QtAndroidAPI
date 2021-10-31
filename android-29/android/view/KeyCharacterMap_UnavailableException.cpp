@@ -4,8 +4,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyCharacterMap_UnavailableException::KeyCharacterMap_UnavailableException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
+	// QJniObject forward
+	KeyCharacterMap_UnavailableException::KeyCharacterMap_UnavailableException(QJniObject obj) : android::util::AndroidRuntimeException(obj) {}
 	
 	// Constructors
 	KeyCharacterMap_UnavailableException::KeyCharacterMap_UnavailableException(jstring arg0)

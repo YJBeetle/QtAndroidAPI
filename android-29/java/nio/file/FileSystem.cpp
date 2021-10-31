@@ -6,8 +6,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileSystem::FileSystem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FileSystem::FileSystem(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

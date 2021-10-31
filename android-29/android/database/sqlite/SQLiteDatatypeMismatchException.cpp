@@ -4,8 +4,8 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteDatatypeMismatchException::SQLiteDatatypeMismatchException(QAndroidJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
+	// QJniObject forward
+	SQLiteDatatypeMismatchException::SQLiteDatatypeMismatchException(QJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
 	
 	// Constructors
 	SQLiteDatatypeMismatchException::SQLiteDatatypeMismatchException()

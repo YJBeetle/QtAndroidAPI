@@ -25,8 +25,8 @@ namespace android::view::accessibility
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessibilityNodeInfo_CollectionInfo::AccessibilityNodeInfo_CollectionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessibilityNodeInfo_CollectionInfo::AccessibilityNodeInfo_CollectionInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

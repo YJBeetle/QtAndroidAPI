@@ -19,9 +19,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Gallery_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		Gallery_LayoutParams(QAndroidJniObject obj);
+		Gallery_LayoutParams(QJniObject obj);
 		
 		// Constructors
 		Gallery_LayoutParams(android::view::ViewGroup_LayoutParams arg0);

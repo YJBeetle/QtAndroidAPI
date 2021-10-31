@@ -29,9 +29,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ViewAnimator(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		ViewAnimator(QAndroidJniObject obj);
+		ViewAnimator(QJniObject obj);
 		
 		// Constructors
 		ViewAnimator(android::content::Context arg0);

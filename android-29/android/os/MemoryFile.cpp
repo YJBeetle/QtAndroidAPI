@@ -6,8 +6,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MemoryFile::MemoryFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MemoryFile::MemoryFile(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MemoryFile::MemoryFile(jstring arg0, jint arg1)

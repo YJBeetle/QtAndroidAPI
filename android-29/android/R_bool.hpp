@@ -10,9 +10,9 @@ namespace android
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit R_bool(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		R_bool(QAndroidJniObject obj);
+		R_bool(QJniObject obj);
 		
 		// Constructors
 		R_bool();

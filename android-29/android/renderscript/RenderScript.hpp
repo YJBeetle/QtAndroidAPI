@@ -33,9 +33,9 @@ namespace android::renderscript
 		static jint CREATE_FLAG_LOW_POWER();
 		static jint CREATE_FLAG_NONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RenderScript(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RenderScript(QAndroidJniObject obj);
+		RenderScript(QJniObject obj);
 		
 		// Constructors
 		

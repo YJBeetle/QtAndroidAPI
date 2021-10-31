@@ -36,8 +36,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UnicodeSet_SpanCondition::UnicodeSet_SpanCondition(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	UnicodeSet_SpanCondition::UnicodeSet_SpanCondition(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

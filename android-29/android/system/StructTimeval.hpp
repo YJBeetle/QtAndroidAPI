@@ -12,9 +12,9 @@ namespace android::system
 		jlong tv_sec();
 		jlong tv_usec();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StructTimeval(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StructTimeval(QAndroidJniObject obj);
+		StructTimeval(QJniObject obj);
 		
 		// Constructors
 		

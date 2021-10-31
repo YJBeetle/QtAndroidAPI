@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Spliterators::Spliterators(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Spliterators::Spliterators(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

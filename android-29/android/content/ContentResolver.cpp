@@ -312,8 +312,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContentResolver::ContentResolver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContentResolver::ContentResolver(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ContentResolver::ContentResolver(android::content::Context arg0)

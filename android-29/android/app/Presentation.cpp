@@ -7,8 +7,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Presentation::Presentation(QAndroidJniObject obj) : android::app::Dialog(obj) {}
+	// QJniObject forward
+	Presentation::Presentation(QJniObject obj) : android::app::Dialog(obj) {}
 	
 	// Constructors
 	Presentation::Presentation(android::content::Context arg0, android::view::Display arg1)

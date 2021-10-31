@@ -54,9 +54,9 @@ namespace java::util
 		static jchar UNICODE_LOCALE_EXTENSION();
 		static java::util::Locale US();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Locale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Locale(QAndroidJniObject obj);
+		Locale(QJniObject obj);
 		
 		// Constructors
 		Locale(jstring arg0);

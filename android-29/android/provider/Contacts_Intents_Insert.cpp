@@ -220,8 +220,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Contacts_Intents_Insert::Contacts_Intents_Insert(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Contacts_Intents_Insert::Contacts_Intents_Insert(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Contacts_Intents_Insert::Contacts_Intents_Insert()

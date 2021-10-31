@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebIconDatabase::WebIconDatabase(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebIconDatabase::WebIconDatabase(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebIconDatabase::WebIconDatabase()

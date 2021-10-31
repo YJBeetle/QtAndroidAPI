@@ -6,8 +6,8 @@ namespace android::media::midi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MidiManager_DeviceCallback::MidiManager_DeviceCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MidiManager_DeviceCallback::MidiManager_DeviceCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MidiManager_DeviceCallback::MidiManager_DeviceCallback()

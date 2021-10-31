@@ -14,9 +14,9 @@ namespace android::accessibilityservice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GestureDescription_StrokeDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GestureDescription_StrokeDescription(QAndroidJniObject obj);
+		GestureDescription_StrokeDescription(QJniObject obj);
 		
 		// Constructors
 		GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2);

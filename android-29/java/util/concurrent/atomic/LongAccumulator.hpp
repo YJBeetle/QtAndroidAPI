@@ -14,9 +14,9 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LongAccumulator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LongAccumulator(QAndroidJniObject obj);
+		LongAccumulator(QJniObject obj);
 		
 		// Constructors
 		LongAccumulator(__JniBaseClass arg0, jlong arg1);

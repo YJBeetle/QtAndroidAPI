@@ -21,8 +21,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UserDictionary::UserDictionary(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UserDictionary::UserDictionary(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	UserDictionary::UserDictionary()

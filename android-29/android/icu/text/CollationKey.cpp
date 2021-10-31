@@ -4,8 +4,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CollationKey::CollationKey(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CollationKey::CollationKey(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CollationKey::CollationKey(jstring arg0, jbyteArray arg1)

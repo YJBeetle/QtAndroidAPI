@@ -10,9 +10,9 @@ namespace android::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InputFilter_LengthFilter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		InputFilter_LengthFilter(QAndroidJniObject obj);
+		InputFilter_LengthFilter(QJniObject obj);
 		
 		// Constructors
 		InputFilter_LengthFilter(jint arg0);

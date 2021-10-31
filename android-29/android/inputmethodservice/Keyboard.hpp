@@ -36,9 +36,9 @@ namespace android::inputmethodservice
 		static jint KEYCODE_MODE_CHANGE();
 		static jint KEYCODE_SHIFT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Keyboard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Keyboard(QAndroidJniObject obj);
+		Keyboard(QJniObject obj);
 		
 		// Constructors
 		Keyboard(android::content::Context arg0, jint arg1);

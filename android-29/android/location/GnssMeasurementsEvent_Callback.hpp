@@ -18,9 +18,9 @@ namespace android::location
 		static jint STATUS_NOT_SUPPORTED();
 		static jint STATUS_READY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GnssMeasurementsEvent_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GnssMeasurementsEvent_Callback(QAndroidJniObject obj);
+		GnssMeasurementsEvent_Callback(QJniObject obj);
 		
 		// Constructors
 		GnssMeasurementsEvent_Callback();

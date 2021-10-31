@@ -140,8 +140,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateTimePatternGenerator::DateTimePatternGenerator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DateTimePatternGenerator::DateTimePatternGenerator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

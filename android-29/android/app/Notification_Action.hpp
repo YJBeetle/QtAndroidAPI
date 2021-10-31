@@ -41,9 +41,9 @@ namespace android::app
 		jint icon();
 		jstring title();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Notification_Action(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_Action(QAndroidJniObject obj);
+		Notification_Action(QJniObject obj);
 		
 		// Constructors
 		Notification_Action(jint arg0, jstring arg1, android::app::PendingIntent arg2);

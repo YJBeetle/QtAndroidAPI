@@ -17,9 +17,9 @@ namespace android
 		static jint thumbnail_height();
 		static jint thumbnail_width();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit R_dimen(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		R_dimen(QAndroidJniObject obj);
+		R_dimen(QJniObject obj);
 		
 		// Constructors
 		R_dimen();

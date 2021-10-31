@@ -4,8 +4,8 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RC5ParameterSpec::RC5ParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RC5ParameterSpec::RC5ParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2)

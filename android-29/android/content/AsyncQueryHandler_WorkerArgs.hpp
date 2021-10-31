@@ -31,9 +31,9 @@ namespace android::content
 		android::net::Uri uri();
 		android::content::ContentValues values();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AsyncQueryHandler_WorkerArgs(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AsyncQueryHandler_WorkerArgs(QAndroidJniObject obj);
+		AsyncQueryHandler_WorkerArgs(QJniObject obj);
 		
 		// Constructors
 		

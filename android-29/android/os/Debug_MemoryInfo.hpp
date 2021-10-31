@@ -24,9 +24,9 @@ namespace android::os
 		jint otherPss();
 		jint otherSharedDirty();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Debug_MemoryInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Debug_MemoryInfo(QAndroidJniObject obj);
+		Debug_MemoryInfo(QJniObject obj);
 		
 		// Constructors
 		Debug_MemoryInfo();

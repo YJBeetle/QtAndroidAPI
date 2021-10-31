@@ -7,8 +7,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimeZoneNames::TimeZoneNames(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TimeZoneNames::TimeZoneNames(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

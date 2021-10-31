@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RuntimeException::RuntimeException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	RuntimeException::RuntimeException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	RuntimeException::RuntimeException()

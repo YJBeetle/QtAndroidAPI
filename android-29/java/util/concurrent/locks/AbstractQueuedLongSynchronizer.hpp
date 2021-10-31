@@ -19,9 +19,9 @@ namespace java::util::concurrent::locks
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbstractQueuedLongSynchronizer(const char *className, const char *sig, Ts...agv) : java::util::concurrent::locks::AbstractOwnableSynchronizer(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractQueuedLongSynchronizer(QAndroidJniObject obj);
+		AbstractQueuedLongSynchronizer(QJniObject obj);
 		
 		// Constructors
 		AbstractQueuedLongSynchronizer();

@@ -54,9 +54,9 @@ namespace android::net::wifi::p2p
 		static jint WIFI_P2P_STATE_ENABLED();
 		static jstring WIFI_P2P_THIS_DEVICE_CHANGED_ACTION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiP2pManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pManager(QAndroidJniObject obj);
+		WifiP2pManager(QJniObject obj);
 		
 		// Constructors
 		

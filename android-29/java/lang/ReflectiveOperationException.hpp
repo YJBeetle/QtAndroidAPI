@@ -11,9 +11,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ReflectiveOperationException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ReflectiveOperationException(QAndroidJniObject obj);
+		ReflectiveOperationException(QJniObject obj);
 		
 		// Constructors
 		ReflectiveOperationException();

@@ -18,8 +18,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContentProviderOperation::ContentProviderOperation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContentProviderOperation::ContentProviderOperation(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

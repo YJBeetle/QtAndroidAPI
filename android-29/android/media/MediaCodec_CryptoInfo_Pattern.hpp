@@ -10,9 +10,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodec_CryptoInfo_Pattern(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_CryptoInfo_Pattern(QAndroidJniObject obj);
+		MediaCodec_CryptoInfo_Pattern(QJniObject obj);
 		
 		// Constructors
 		MediaCodec_CryptoInfo_Pattern(jint arg0, jint arg1);

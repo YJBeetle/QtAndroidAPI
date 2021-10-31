@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebViewRenderProcess::WebViewRenderProcess(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebViewRenderProcess::WebViewRenderProcess(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebViewRenderProcess::WebViewRenderProcess()

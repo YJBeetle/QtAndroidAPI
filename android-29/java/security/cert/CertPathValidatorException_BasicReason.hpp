@@ -18,9 +18,9 @@ namespace java::security::cert
 		static java::security::cert::CertPathValidatorException_BasicReason UNDETERMINED_REVOCATION_STATUS();
 		static java::security::cert::CertPathValidatorException_BasicReason UNSPECIFIED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CertPathValidatorException_BasicReason(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		CertPathValidatorException_BasicReason(QAndroidJniObject obj);
+		CertPathValidatorException_BasicReason(QJniObject obj);
 		
 		// Constructors
 		

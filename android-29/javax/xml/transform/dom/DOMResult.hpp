@@ -11,9 +11,9 @@ namespace javax::xml::transform::dom
 		// Fields
 		static jstring FEATURE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DOMResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DOMResult(QAndroidJniObject obj);
+		DOMResult(QJniObject obj);
 		
 		// Constructors
 		DOMResult();

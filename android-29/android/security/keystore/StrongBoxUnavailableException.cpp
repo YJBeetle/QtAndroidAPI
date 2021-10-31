@@ -4,8 +4,8 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StrongBoxUnavailableException::StrongBoxUnavailableException(QAndroidJniObject obj) : java::security::ProviderException(obj) {}
+	// QJniObject forward
+	StrongBoxUnavailableException::StrongBoxUnavailableException(QJniObject obj) : java::security::ProviderException(obj) {}
 	
 	// Constructors
 	StrongBoxUnavailableException::StrongBoxUnavailableException()

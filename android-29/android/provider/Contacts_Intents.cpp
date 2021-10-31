@@ -60,8 +60,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Contacts_Intents::Contacts_Intents(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Contacts_Intents::Contacts_Intents(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Contacts_Intents::Contacts_Intents()

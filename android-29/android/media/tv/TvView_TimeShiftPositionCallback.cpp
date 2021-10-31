@@ -4,8 +4,8 @@ namespace android::media::tv
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TvView_TimeShiftPositionCallback::TvView_TimeShiftPositionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TvView_TimeShiftPositionCallback::TvView_TimeShiftPositionCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TvView_TimeShiftPositionCallback::TvView_TimeShiftPositionCallback()

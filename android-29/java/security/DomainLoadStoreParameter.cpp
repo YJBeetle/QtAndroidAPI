@@ -5,8 +5,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DomainLoadStoreParameter::DomainLoadStoreParameter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DomainLoadStoreParameter::DomainLoadStoreParameter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DomainLoadStoreParameter::DomainLoadStoreParameter(java::net::URI arg0, __JniBaseClass arg1)

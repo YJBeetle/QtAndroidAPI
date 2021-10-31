@@ -166,8 +166,8 @@ namespace android::telecom
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	PhoneAccount::PhoneAccount(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PhoneAccount::PhoneAccount(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

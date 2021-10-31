@@ -14,9 +14,9 @@ namespace android::util
 		static jint LTR();
 		static jint RTL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LayoutDirection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LayoutDirection(QAndroidJniObject obj);
+		LayoutDirection(QJniObject obj);
 		
 		// Constructors
 		

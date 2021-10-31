@@ -18,9 +18,9 @@ namespace android::location
 		static jint CONSTELLATION_SBAS();
 		static jint CONSTELLATION_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GnssStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GnssStatus(QAndroidJniObject obj);
+		GnssStatus(QJniObject obj);
 		
 		// Constructors
 		

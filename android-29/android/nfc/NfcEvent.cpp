@@ -24,8 +24,8 @@ namespace android::nfc
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NfcEvent::NfcEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NfcEvent::NfcEvent(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

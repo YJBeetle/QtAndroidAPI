@@ -29,9 +29,9 @@ namespace android::view
 		static jint ACTION_DROP();
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DragEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DragEvent(QAndroidJniObject obj);
+		DragEvent(QJniObject obj);
 		
 		// Constructors
 		

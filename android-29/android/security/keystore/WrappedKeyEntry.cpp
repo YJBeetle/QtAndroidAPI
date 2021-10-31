@@ -4,8 +4,8 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WrappedKeyEntry::WrappedKeyEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WrappedKeyEntry::WrappedKeyEntry(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WrappedKeyEntry::WrappedKeyEntry(jbyteArray arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)

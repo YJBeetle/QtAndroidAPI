@@ -12,9 +12,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Notification_DecoratedMediaCustomViewStyle(const char *className, const char *sig, Ts...agv) : android::app::Notification_MediaStyle(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_DecoratedMediaCustomViewStyle(QAndroidJniObject obj);
+		Notification_DecoratedMediaCustomViewStyle(QJniObject obj);
 		
 		// Constructors
 		Notification_DecoratedMediaCustomViewStyle();

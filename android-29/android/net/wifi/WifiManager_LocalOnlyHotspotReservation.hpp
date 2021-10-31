@@ -18,9 +18,9 @@ namespace android::net::wifi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiManager_LocalOnlyHotspotReservation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_LocalOnlyHotspotReservation(QAndroidJniObject obj);
+		WifiManager_LocalOnlyHotspotReservation(QJniObject obj);
 		
 		// Constructors
 		

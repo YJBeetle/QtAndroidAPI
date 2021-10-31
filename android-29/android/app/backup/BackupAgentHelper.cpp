@@ -7,8 +7,8 @@ namespace android::app::backup
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BackupAgentHelper::BackupAgentHelper(QAndroidJniObject obj) : android::app::backup::BackupAgent(obj) {}
+	// QJniObject forward
+	BackupAgentHelper::BackupAgentHelper(QJniObject obj) : android::app::backup::BackupAgent(obj) {}
 	
 	// Constructors
 	BackupAgentHelper::BackupAgentHelper()

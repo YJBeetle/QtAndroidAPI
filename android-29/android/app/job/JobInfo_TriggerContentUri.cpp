@@ -21,8 +21,8 @@ namespace android::app::job
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(android::net::Uri arg0, jint arg1)

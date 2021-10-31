@@ -23,9 +23,9 @@ namespace android::service::notification
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StatusBarNotification(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StatusBarNotification(QAndroidJniObject obj);
+		StatusBarNotification(QJniObject obj);
 		
 		// Constructors
 		StatusBarNotification(android::os::Parcel arg0);

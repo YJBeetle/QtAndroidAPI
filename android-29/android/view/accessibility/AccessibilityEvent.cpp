@@ -336,8 +336,8 @@ namespace android::view::accessibility
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessibilityEvent::AccessibilityEvent(QAndroidJniObject obj) : android::view::accessibility::AccessibilityRecord(obj) {}
+	// QJniObject forward
+	AccessibilityEvent::AccessibilityEvent(QJniObject obj) : android::view::accessibility::AccessibilityRecord(obj) {}
 	
 	// Constructors
 	

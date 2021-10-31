@@ -74,8 +74,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_AggregationExceptions::ContactsContract_AggregationExceptions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_AggregationExceptions::ContactsContract_AggregationExceptions(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

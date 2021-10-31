@@ -22,9 +22,9 @@ namespace java::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DecimalFormatSymbols(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DecimalFormatSymbols(QAndroidJniObject obj);
+		DecimalFormatSymbols(QJniObject obj);
 		
 		// Constructors
 		DecimalFormatSymbols();

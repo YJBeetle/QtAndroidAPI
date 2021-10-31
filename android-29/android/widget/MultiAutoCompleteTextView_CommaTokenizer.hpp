@@ -10,9 +10,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MultiAutoCompleteTextView_CommaTokenizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MultiAutoCompleteTextView_CommaTokenizer(QAndroidJniObject obj);
+		MultiAutoCompleteTextView_CommaTokenizer(QJniObject obj);
 		
 		// Constructors
 		MultiAutoCompleteTextView_CommaTokenizer();

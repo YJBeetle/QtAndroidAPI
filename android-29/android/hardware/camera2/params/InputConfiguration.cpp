@@ -4,8 +4,8 @@ namespace android::hardware::camera2::params
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputConfiguration::InputConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InputConfiguration::InputConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	InputConfiguration::InputConfiguration(jint arg0, jint arg1, jint arg2)

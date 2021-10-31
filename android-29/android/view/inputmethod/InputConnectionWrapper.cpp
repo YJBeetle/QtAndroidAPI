@@ -12,8 +12,8 @@ namespace android::view::inputmethod
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputConnectionWrapper::InputConnectionWrapper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InputConnectionWrapper::InputConnectionWrapper(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	InputConnectionWrapper::InputConnectionWrapper(__JniBaseClass arg0, jboolean arg1)

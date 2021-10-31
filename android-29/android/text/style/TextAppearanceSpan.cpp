@@ -10,8 +10,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextAppearanceSpan::TextAppearanceSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
+	// QJniObject forward
+	TextAppearanceSpan::TextAppearanceSpan(QJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
 	
 	// Constructors
 	TextAppearanceSpan::TextAppearanceSpan(android::os::Parcel arg0)

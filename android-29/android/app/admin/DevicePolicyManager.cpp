@@ -1094,8 +1094,8 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DevicePolicyManager::DevicePolicyManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DevicePolicyManager::DevicePolicyManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

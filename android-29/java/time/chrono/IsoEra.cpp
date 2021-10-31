@@ -20,8 +20,8 @@ namespace java::time::chrono
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IsoEra::IsoEra(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	IsoEra::IsoEra(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

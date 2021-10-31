@@ -24,8 +24,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(android::view::View arg0, jint arg1, jlong arg2)

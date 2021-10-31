@@ -16,9 +16,9 @@ namespace android::view::textclassifier
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextClassifierEvent_TextLinkifyEvent(const char *className, const char *sig, Ts...agv) : android::view::textclassifier::TextClassifierEvent(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassifierEvent_TextLinkifyEvent(QAndroidJniObject obj);
+		TextClassifierEvent_TextLinkifyEvent(QJniObject obj);
 		
 		// Constructors
 		

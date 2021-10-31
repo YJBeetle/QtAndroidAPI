@@ -6,8 +6,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Pipe::Pipe(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Pipe::Pipe(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

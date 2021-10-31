@@ -16,9 +16,9 @@ namespace android::preference
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Preference_BaseSavedState(const char *className, const char *sig, Ts...agv) : android::view::AbsSavedState(className, sig, std::forward<Ts>(agv)...) {}
-		Preference_BaseSavedState(QAndroidJniObject obj);
+		Preference_BaseSavedState(QJniObject obj);
 		
 		// Constructors
 		Preference_BaseSavedState(android::os::Parcel arg0);

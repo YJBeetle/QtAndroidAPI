@@ -53,8 +53,8 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo()

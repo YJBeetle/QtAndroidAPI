@@ -34,9 +34,9 @@ namespace java::sql
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DriverManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DriverManager(QAndroidJniObject obj);
+		DriverManager(QJniObject obj);
 		
 		// Constructors
 		

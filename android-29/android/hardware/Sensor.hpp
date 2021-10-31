@@ -70,9 +70,9 @@ namespace android::hardware
 		static jint TYPE_STEP_DETECTOR();
 		static jint TYPE_TEMPERATURE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Sensor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Sensor(QAndroidJniObject obj);
+		Sensor(QJniObject obj);
 		
 		// Constructors
 		

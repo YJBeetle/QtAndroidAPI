@@ -5,8 +5,8 @@ namespace javax::xml::transform
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Transformer::Transformer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Transformer::Transformer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

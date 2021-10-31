@@ -23,9 +23,9 @@ namespace android::opengl
 		static jint EGL_OPENGL_ES3_BIT_KHR();
 		static jint EGL_RECORDABLE_ANDROID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EGLExt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EGLExt(QAndroidJniObject obj);
+		EGLExt(QJniObject obj);
 		
 		// Constructors
 		EGLExt();

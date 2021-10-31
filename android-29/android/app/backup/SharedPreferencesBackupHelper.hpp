@@ -26,9 +26,9 @@ namespace android::app::backup
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SharedPreferencesBackupHelper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SharedPreferencesBackupHelper(QAndroidJniObject obj);
+		SharedPreferencesBackupHelper(QJniObject obj);
 		
 		// Constructors
 		SharedPreferencesBackupHelper(android::content::Context arg0, jarray arg1);

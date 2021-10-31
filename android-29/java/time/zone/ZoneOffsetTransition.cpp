@@ -9,8 +9,8 @@ namespace java::time::zone
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZoneOffsetTransition::ZoneOffsetTransition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ZoneOffsetTransition::ZoneOffsetTransition(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

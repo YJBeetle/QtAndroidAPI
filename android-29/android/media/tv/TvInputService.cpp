@@ -23,8 +23,8 @@ namespace android::media::tv
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	TvInputService::TvInputService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	TvInputService::TvInputService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	TvInputService::TvInputService()

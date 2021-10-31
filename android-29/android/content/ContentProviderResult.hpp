@@ -25,9 +25,9 @@ namespace android::content
 		java::lang::Integer count();
 		android::net::Uri uri();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContentProviderResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContentProviderResult(QAndroidJniObject obj);
+		ContentProviderResult(QJniObject obj);
 		
 		// Constructors
 		ContentProviderResult(android::net::Uri arg0);

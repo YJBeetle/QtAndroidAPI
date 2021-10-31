@@ -5,8 +5,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IntentService::IntentService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	IntentService::IntentService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	IntentService::IntentService(jstring arg0)

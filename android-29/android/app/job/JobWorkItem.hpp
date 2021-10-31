@@ -19,9 +19,9 @@ namespace android::app::job
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JobWorkItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		JobWorkItem(QAndroidJniObject obj);
+		JobWorkItem(QJniObject obj);
 		
 		// Constructors
 		JobWorkItem(android::content::Intent arg0);

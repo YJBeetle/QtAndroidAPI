@@ -36,9 +36,9 @@ namespace android::widget
 		static jint ITEM_VIEW_TYPE_HEADER_OR_FOOTER();
 		static jint ITEM_VIEW_TYPE_IGNORE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AdapterView(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		AdapterView(QAndroidJniObject obj);
+		AdapterView(QJniObject obj);
 		
 		// Constructors
 		AdapterView(android::content::Context arg0);

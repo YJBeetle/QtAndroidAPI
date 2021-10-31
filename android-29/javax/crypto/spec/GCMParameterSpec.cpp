@@ -4,8 +4,8 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GCMParameterSpec::GCMParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GCMParameterSpec::GCMParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GCMParameterSpec::GCMParameterSpec(jint arg0, jbyteArray arg1)

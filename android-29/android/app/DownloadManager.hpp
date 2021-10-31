@@ -71,9 +71,9 @@ namespace android::app
 		static jint STATUS_RUNNING();
 		static jint STATUS_SUCCESSFUL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DownloadManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DownloadManager(QAndroidJniObject obj);
+		DownloadManager(QJniObject obj);
 		
 		// Constructors
 		

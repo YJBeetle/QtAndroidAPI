@@ -20,8 +20,8 @@ namespace java::nio
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ByteOrder::ByteOrder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ByteOrder::ByteOrder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

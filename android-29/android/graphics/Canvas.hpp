@@ -71,9 +71,9 @@ namespace android::graphics
 		// Fields
 		static jint ALL_SAVE_FLAG();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Canvas(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Canvas(QAndroidJniObject obj);
+		Canvas(QJniObject obj);
 		
 		// Constructors
 		Canvas();

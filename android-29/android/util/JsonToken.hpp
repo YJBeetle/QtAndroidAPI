@@ -21,9 +21,9 @@ namespace android::util
 		static android::util::JsonToken NUMBER();
 		static android::util::JsonToken STRING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JsonToken(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		JsonToken(QAndroidJniObject obj);
+		JsonToken(QJniObject obj);
 		
 		// Constructors
 		

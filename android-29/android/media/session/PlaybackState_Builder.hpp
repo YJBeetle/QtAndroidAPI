@@ -22,9 +22,9 @@ namespace android::media::session
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PlaybackState_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackState_Builder(QAndroidJniObject obj);
+		PlaybackState_Builder(QJniObject obj);
 		
 		// Constructors
 		PlaybackState_Builder();

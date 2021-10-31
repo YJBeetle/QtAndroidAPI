@@ -12,9 +12,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WindowManager_InvalidDisplayException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		WindowManager_InvalidDisplayException(QAndroidJniObject obj);
+		WindowManager_InvalidDisplayException(QJniObject obj);
 		
 		// Constructors
 		WindowManager_InvalidDisplayException();

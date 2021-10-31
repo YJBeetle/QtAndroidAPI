@@ -5,8 +5,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ObjectInputStream_GetField::ObjectInputStream_GetField(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ObjectInputStream_GetField::ObjectInputStream_GetField(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ObjectInputStream_GetField::ObjectInputStream_GetField()

@@ -41,9 +41,9 @@ namespace android::view::autofill
 		static jstring EXTRA_AUTHENTICATION_RESULT();
 		static jstring EXTRA_CLIENT_STATE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AutofillManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AutofillManager(QAndroidJniObject obj);
+		AutofillManager(QJniObject obj);
 		
 		// Constructors
 		

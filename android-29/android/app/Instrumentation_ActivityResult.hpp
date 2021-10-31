@@ -14,9 +14,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Instrumentation_ActivityResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Instrumentation_ActivityResult(QAndroidJniObject obj);
+		Instrumentation_ActivityResult(QJniObject obj);
 		
 		// Constructors
 		Instrumentation_ActivityResult(jint arg0, android::content::Intent arg1);

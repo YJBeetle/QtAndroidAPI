@@ -27,8 +27,8 @@ namespace java::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumberFormat::NumberFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
+	// QJniObject forward
+	NumberFormat::NumberFormat(QJniObject obj) : java::text::Format(obj) {}
 	
 	// Constructors
 	

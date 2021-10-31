@@ -7,8 +7,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaRouteButton::MediaRouteButton(QAndroidJniObject obj) : android::view::View(obj) {}
+	// QJniObject forward
+	MediaRouteButton::MediaRouteButton(QJniObject obj) : android::view::View(obj) {}
 	
 	// Constructors
 	MediaRouteButton::MediaRouteButton(android::content::Context arg0)

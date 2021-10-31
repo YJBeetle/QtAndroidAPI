@@ -15,9 +15,9 @@ namespace android::net::wifi::hotspot2::pps
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Credential_SimCredential(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Credential_SimCredential(QAndroidJniObject obj);
+		Credential_SimCredential(QJniObject obj);
 		
 		// Constructors
 		Credential_SimCredential();

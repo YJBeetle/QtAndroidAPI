@@ -10,8 +10,8 @@ namespace android::inputmethodservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyboardView::KeyboardView(QAndroidJniObject obj) : android::view::View(obj) {}
+	// QJniObject forward
+	KeyboardView::KeyboardView(QJniObject obj) : android::view::View(obj) {}
 	
 	// Constructors
 	KeyboardView::KeyboardView(android::content::Context arg0, __JniBaseClass arg1)

@@ -19,9 +19,9 @@ namespace android::location
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GnssMeasurementsEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GnssMeasurementsEvent(QAndroidJniObject obj);
+		GnssMeasurementsEvent(QJniObject obj);
 		
 		// Constructors
 		

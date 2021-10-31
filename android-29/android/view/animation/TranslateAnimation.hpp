@@ -19,9 +19,9 @@ namespace android::view::animation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TranslateAnimation(const char *className, const char *sig, Ts...agv) : android::view::animation::Animation(className, sig, std::forward<Ts>(agv)...) {}
-		TranslateAnimation(QAndroidJniObject obj);
+		TranslateAnimation(QJniObject obj);
 		
 		// Constructors
 		TranslateAnimation(android::content::Context arg0, __JniBaseClass arg1);

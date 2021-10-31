@@ -18,9 +18,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NetworkRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkRequest_Builder(QAndroidJniObject obj);
+		NetworkRequest_Builder(QJniObject obj);
 		
 		// Constructors
 		NetworkRequest_Builder();

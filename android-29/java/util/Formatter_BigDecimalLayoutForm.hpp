@@ -13,9 +13,9 @@ namespace java::util
 		static java::util::Formatter_BigDecimalLayoutForm DECIMAL_FLOAT();
 		static java::util::Formatter_BigDecimalLayoutForm SCIENTIFIC();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Formatter_BigDecimalLayoutForm(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Formatter_BigDecimalLayoutForm(QAndroidJniObject obj);
+		Formatter_BigDecimalLayoutForm(QJniObject obj);
 		
 		// Constructors
 		

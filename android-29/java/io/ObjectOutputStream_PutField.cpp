@@ -4,8 +4,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ObjectOutputStream_PutField::ObjectOutputStream_PutField(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ObjectOutputStream_PutField::ObjectOutputStream_PutField(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ObjectOutputStream_PutField::ObjectOutputStream_PutField()

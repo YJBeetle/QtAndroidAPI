@@ -8,8 +8,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SharedElementCallback::SharedElementCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SharedElementCallback::SharedElementCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SharedElementCallback::SharedElementCallback()

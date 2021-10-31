@@ -4,8 +4,8 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BidirectionalTypeConverter::BidirectionalTypeConverter(QAndroidJniObject obj) : android::animation::TypeConverter(obj) {}
+	// QJniObject forward
+	BidirectionalTypeConverter::BidirectionalTypeConverter(QJniObject obj) : android::animation::TypeConverter(obj) {}
 	
 	// Constructors
 	BidirectionalTypeConverter::BidirectionalTypeConverter(jclass arg0, jclass arg1)

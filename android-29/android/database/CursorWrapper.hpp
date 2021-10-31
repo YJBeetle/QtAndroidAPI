@@ -34,9 +34,9 @@ namespace android::database
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CursorWrapper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CursorWrapper(QAndroidJniObject obj);
+		CursorWrapper(QJniObject obj);
 		
 		// Constructors
 		CursorWrapper(__JniBaseClass arg0);

@@ -22,9 +22,9 @@ namespace java::time
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Clock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Clock(QAndroidJniObject obj);
+		Clock(QJniObject obj);
 		
 		// Constructors
 		

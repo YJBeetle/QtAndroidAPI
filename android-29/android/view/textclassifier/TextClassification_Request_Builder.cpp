@@ -8,8 +8,8 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextClassification_Request_Builder::TextClassification_Request_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextClassification_Request_Builder::TextClassification_Request_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TextClassification_Request_Builder::TextClassification_Request_Builder(jstring arg0, jint arg1, jint arg2)

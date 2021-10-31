@@ -12,8 +12,8 @@ namespace android::os
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Build_Partition::Build_Partition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Build_Partition::Build_Partition(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

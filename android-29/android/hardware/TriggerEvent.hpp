@@ -17,9 +17,9 @@ namespace android::hardware
 		jlong timestamp();
 		jfloatArray values();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TriggerEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TriggerEvent(QAndroidJniObject obj);
+		TriggerEvent(QJniObject obj);
 		
 		// Constructors
 		

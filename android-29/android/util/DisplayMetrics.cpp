@@ -214,8 +214,8 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DisplayMetrics::DisplayMetrics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DisplayMetrics::DisplayMetrics(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DisplayMetrics::DisplayMetrics()

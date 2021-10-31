@@ -14,9 +14,9 @@ namespace android::icu::text
 		jint limit();
 		jint start();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Transliterator_Position(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Transliterator_Position(QAndroidJniObject obj);
+		Transliterator_Position(QJniObject obj);
 		
 		// Constructors
 		Transliterator_Position();

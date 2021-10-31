@@ -11,9 +11,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UFormat(const char *className, const char *sig, Ts...agv) : java::text::Format(className, sig, std::forward<Ts>(agv)...) {}
-		UFormat(QAndroidJniObject obj);
+		UFormat(QJniObject obj);
 		
 		// Constructors
 		UFormat();

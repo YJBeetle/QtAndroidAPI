@@ -12,9 +12,9 @@ namespace android::text::style
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TtsSpan_TelephoneBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_TelephoneBuilder(QAndroidJniObject obj);
+		TtsSpan_TelephoneBuilder(QJniObject obj);
 		
 		// Constructors
 		TtsSpan_TelephoneBuilder();

@@ -4,8 +4,8 @@ namespace java::util::prefs
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvalidPreferencesFormatException::InvalidPreferencesFormatException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	InvalidPreferencesFormatException::InvalidPreferencesFormatException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	InvalidPreferencesFormatException::InvalidPreferencesFormatException(jstring arg0)

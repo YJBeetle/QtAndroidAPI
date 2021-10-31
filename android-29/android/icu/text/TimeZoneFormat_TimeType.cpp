@@ -28,8 +28,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TimeZoneFormat_TimeType::TimeZoneFormat_TimeType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	TimeZoneFormat_TimeType::TimeZoneFormat_TimeType(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

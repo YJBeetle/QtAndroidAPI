@@ -16,8 +16,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WallpaperColors::WallpaperColors(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WallpaperColors::WallpaperColors(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WallpaperColors::WallpaperColors(android::os::Parcel arg0)

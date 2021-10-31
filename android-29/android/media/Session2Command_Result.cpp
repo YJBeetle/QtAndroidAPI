@@ -26,8 +26,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Session2Command_Result::Session2Command_Result(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Session2Command_Result::Session2Command_Result(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Session2Command_Result::Session2Command_Result(jint arg0, android::os::Bundle arg1)

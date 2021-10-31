@@ -13,9 +13,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InvalidObjectException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidObjectException(QAndroidJniObject obj);
+		InvalidObjectException(QJniObject obj);
 		
 		// Constructors
 		InvalidObjectException(jstring arg0);

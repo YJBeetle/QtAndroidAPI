@@ -36,8 +36,8 @@ namespace java::sql
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ClientInfoStatus::ClientInfoStatus(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ClientInfoStatus::ClientInfoStatus(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

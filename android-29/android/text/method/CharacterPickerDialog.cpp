@@ -8,8 +8,8 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CharacterPickerDialog::CharacterPickerDialog(QAndroidJniObject obj) : android::app::Dialog(obj) {}
+	// QJniObject forward
+	CharacterPickerDialog::CharacterPickerDialog(QJniObject obj) : android::app::Dialog(obj) {}
 	
 	// Constructors
 	CharacterPickerDialog::CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, __JniBaseClass arg2, jstring arg3, jboolean arg4)

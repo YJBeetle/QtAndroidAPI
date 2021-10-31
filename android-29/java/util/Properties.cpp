@@ -16,8 +16,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Properties::Properties(QAndroidJniObject obj) : java::util::Hashtable(obj) {}
+	// QJniObject forward
+	Properties::Properties(QJniObject obj) : java::util::Hashtable(obj) {}
 	
 	// Constructors
 	Properties::Properties()

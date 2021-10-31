@@ -22,9 +22,9 @@ namespace android::service::voice
 		static jint STATE_KEYPHRASE_UNENROLLED();
 		static jint STATE_KEYPHRASE_UNSUPPORTED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AlwaysOnHotwordDetector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AlwaysOnHotwordDetector(QAndroidJniObject obj);
+		AlwaysOnHotwordDetector(QJniObject obj);
 		
 		// Constructors
 		

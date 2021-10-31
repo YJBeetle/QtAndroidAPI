@@ -4,8 +4,8 @@ namespace javax::xml::_namespace
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	QName::QName(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	QName::QName(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	QName::QName(jstring arg0)

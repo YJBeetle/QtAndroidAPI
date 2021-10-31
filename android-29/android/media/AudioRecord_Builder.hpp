@@ -22,9 +22,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AudioRecord_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AudioRecord_Builder(QAndroidJniObject obj);
+		AudioRecord_Builder(QJniObject obj);
 		
 		// Constructors
 		AudioRecord_Builder();

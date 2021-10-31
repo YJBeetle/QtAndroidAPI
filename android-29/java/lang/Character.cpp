@@ -496,8 +496,8 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Character::Character(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Character::Character(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Character::Character(jchar arg0)

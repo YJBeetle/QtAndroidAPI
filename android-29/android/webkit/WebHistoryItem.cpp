@@ -5,8 +5,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebHistoryItem::WebHistoryItem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebHistoryItem::WebHistoryItem(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebHistoryItem::WebHistoryItem()

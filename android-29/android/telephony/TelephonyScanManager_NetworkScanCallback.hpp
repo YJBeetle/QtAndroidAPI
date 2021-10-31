@@ -10,9 +10,9 @@ namespace android::telephony
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TelephonyScanManager_NetworkScanCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyScanManager_NetworkScanCallback(QAndroidJniObject obj);
+		TelephonyScanManager_NetworkScanCallback(QJniObject obj);
 		
 		// Constructors
 		TelephonyScanManager_NetworkScanCallback();

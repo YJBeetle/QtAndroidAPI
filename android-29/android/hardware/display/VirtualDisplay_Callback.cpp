@@ -4,8 +4,8 @@ namespace android::hardware::display
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VirtualDisplay_Callback::VirtualDisplay_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VirtualDisplay_Callback::VirtualDisplay_Callback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	VirtualDisplay_Callback::VirtualDisplay_Callback()

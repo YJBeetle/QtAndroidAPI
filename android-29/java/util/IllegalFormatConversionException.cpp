@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalFormatConversionException::IllegalFormatConversionException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
+	// QJniObject forward
+	IllegalFormatConversionException::IllegalFormatConversionException(QJniObject obj) : java::util::IllegalFormatException(obj) {}
 	
 	// Constructors
 	IllegalFormatConversionException::IllegalFormatConversionException(jchar arg0, jclass arg1)

@@ -47,8 +47,8 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ResourceBundle_Control::ResourceBundle_Control(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ResourceBundle_Control::ResourceBundle_Control(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

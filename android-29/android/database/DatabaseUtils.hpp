@@ -64,9 +64,9 @@ namespace android::database
 		static jint STATEMENT_UNPREPARED();
 		static jint STATEMENT_UPDATE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DatabaseUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DatabaseUtils(QAndroidJniObject obj);
+		DatabaseUtils(QJniObject obj);
 		
 		// Constructors
 		DatabaseUtils();

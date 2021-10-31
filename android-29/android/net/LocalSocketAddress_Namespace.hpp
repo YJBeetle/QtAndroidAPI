@@ -14,9 +14,9 @@ namespace android::net
 		static android::net::LocalSocketAddress_Namespace FILESYSTEM();
 		static android::net::LocalSocketAddress_Namespace RESERVED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocalSocketAddress_Namespace(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		LocalSocketAddress_Namespace(QAndroidJniObject obj);
+		LocalSocketAddress_Namespace(QJniObject obj);
 		
 		// Constructors
 		

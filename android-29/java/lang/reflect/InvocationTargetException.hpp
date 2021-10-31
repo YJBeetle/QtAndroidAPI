@@ -12,9 +12,9 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InvocationTargetException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		InvocationTargetException(QAndroidJniObject obj);
+		InvocationTargetException(QJniObject obj);
 		
 		// Constructors
 		InvocationTargetException(jthrowable arg0);

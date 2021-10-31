@@ -345,8 +345,8 @@ namespace android::opengl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EGL15::EGL15(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EGL15::EGL15(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

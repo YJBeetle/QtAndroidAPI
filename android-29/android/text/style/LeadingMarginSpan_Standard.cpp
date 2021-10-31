@@ -8,8 +8,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(android::os::Parcel arg0)

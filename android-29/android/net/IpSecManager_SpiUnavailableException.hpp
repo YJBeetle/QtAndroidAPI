@@ -12,9 +12,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IpSecManager_SpiUnavailableException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecManager_SpiUnavailableException(QAndroidJniObject obj);
+		IpSecManager_SpiUnavailableException(QJniObject obj);
 		
 		// Constructors
 		

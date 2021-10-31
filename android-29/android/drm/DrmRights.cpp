@@ -6,8 +6,8 @@ namespace android::drm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DrmRights::DrmRights(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DrmRights::DrmRights(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DrmRights::DrmRights(android::drm::ProcessedData arg0, jstring arg1)

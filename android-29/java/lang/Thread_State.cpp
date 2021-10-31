@@ -52,8 +52,8 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Thread_State::Thread_State(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Thread_State::Thread_State(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

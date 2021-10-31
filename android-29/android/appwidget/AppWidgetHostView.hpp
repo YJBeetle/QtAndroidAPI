@@ -53,9 +53,9 @@ namespace android::appwidget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppWidgetHostView(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		AppWidgetHostView(QAndroidJniObject obj);
+		AppWidgetHostView(QJniObject obj);
 		
 		// Constructors
 		AppWidgetHostView(android::content::Context arg0);

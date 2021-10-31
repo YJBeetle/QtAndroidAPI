@@ -19,8 +19,8 @@ namespace java::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IDN::IDN(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IDN::IDN(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

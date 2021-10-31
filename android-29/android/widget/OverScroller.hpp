@@ -14,9 +14,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OverScroller(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		OverScroller(QAndroidJniObject obj);
+		OverScroller(QJniObject obj);
 		
 		// Constructors
 		OverScroller(android::content::Context arg0);

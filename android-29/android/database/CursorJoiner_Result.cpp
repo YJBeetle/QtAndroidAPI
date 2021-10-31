@@ -28,8 +28,8 @@ namespace android::database
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CursorJoiner_Result::CursorJoiner_Result(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	CursorJoiner_Result::CursorJoiner_Result(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

@@ -10,9 +10,9 @@ namespace android::telephony
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(QAndroidJniObject obj);
+		SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(QJniObject obj);
 		
 		// Constructors
 		SubscriptionManager_OnOpportunisticSubscriptionsChangedListener();

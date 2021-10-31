@@ -19,9 +19,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VoiceInteractor_PickOptionRequest_Option(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor_PickOptionRequest_Option(QAndroidJniObject obj);
+		VoiceInteractor_PickOptionRequest_Option(QJniObject obj);
 		
 		// Constructors
 		VoiceInteractor_PickOptionRequest_Option(jstring arg0, jint arg1);

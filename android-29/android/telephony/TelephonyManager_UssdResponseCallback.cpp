@@ -5,8 +5,8 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TelephonyManager_UssdResponseCallback::TelephonyManager_UssdResponseCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TelephonyManager_UssdResponseCallback::TelephonyManager_UssdResponseCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TelephonyManager_UssdResponseCallback::TelephonyManager_UssdResponseCallback()

@@ -34,9 +34,9 @@ namespace android::provider
 		static jstring WAP_PUSH_DELIVER_ACTION();
 		static jstring WAP_PUSH_RECEIVED_ACTION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Telephony_Sms_Intents(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Sms_Intents(QAndroidJniObject obj);
+		Telephony_Sms_Intents(QJniObject obj);
 		
 		// Constructors
 		

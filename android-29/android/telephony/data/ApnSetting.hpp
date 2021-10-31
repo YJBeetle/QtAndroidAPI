@@ -52,9 +52,9 @@ namespace android::telephony::data
 		static jint TYPE_MMS();
 		static jint TYPE_SUPL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ApnSetting(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ApnSetting(QAndroidJniObject obj);
+		ApnSetting(QJniObject obj);
 		
 		// Constructors
 		

@@ -29,9 +29,9 @@ namespace android::view::textclassifier
 		static android::app::Person PERSON_USER_OTHERS();
 		static android::app::Person PERSON_USER_SELF();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConversationActions_Message(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConversationActions_Message(QAndroidJniObject obj);
+		ConversationActions_Message(QJniObject obj);
 		
 		// Constructors
 		

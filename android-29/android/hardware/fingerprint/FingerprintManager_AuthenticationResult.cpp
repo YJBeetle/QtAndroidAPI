@@ -5,8 +5,8 @@ namespace android::hardware::fingerprint
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FingerprintManager_AuthenticationResult::FingerprintManager_AuthenticationResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FingerprintManager_AuthenticationResult::FingerprintManager_AuthenticationResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

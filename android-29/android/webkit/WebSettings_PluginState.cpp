@@ -28,8 +28,8 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WebSettings_PluginState::WebSettings_PluginState(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	WebSettings_PluginState::WebSettings_PluginState(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

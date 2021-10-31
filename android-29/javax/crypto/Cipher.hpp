@@ -49,9 +49,9 @@ namespace javax::crypto
 		static jint UNWRAP_MODE();
 		static jint WRAP_MODE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Cipher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Cipher(QAndroidJniObject obj);
+		Cipher(QJniObject obj);
 		
 		// Constructors
 		

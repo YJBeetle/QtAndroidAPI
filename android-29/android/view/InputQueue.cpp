@@ -4,8 +4,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputQueue::InputQueue(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InputQueue::InputQueue(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

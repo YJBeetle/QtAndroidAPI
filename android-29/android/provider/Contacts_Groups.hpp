@@ -21,9 +21,9 @@ namespace android::provider
 		static jstring GROUP_ANDROID_STARRED();
 		static jstring GROUP_MY_CONTACTS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Contacts_Groups(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Groups(QAndroidJniObject obj);
+		Contacts_Groups(QJniObject obj);
 		
 		// Constructors
 		

@@ -52,9 +52,9 @@ namespace java::time::chrono
 		// Fields
 		static java::time::chrono::JapaneseChronology INSTANCE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JapaneseChronology(const char *className, const char *sig, Ts...agv) : java::time::chrono::AbstractChronology(className, sig, std::forward<Ts>(agv)...) {}
-		JapaneseChronology(QAndroidJniObject obj);
+		JapaneseChronology(QJniObject obj);
 		
 		// Constructors
 		

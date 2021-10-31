@@ -17,8 +17,8 @@ namespace android::database
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CharArrayBuffer::CharArrayBuffer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CharArrayBuffer::CharArrayBuffer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CharArrayBuffer::CharArrayBuffer(jcharArray arg0)

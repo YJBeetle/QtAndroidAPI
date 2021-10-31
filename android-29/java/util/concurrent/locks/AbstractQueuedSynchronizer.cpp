@@ -6,8 +6,8 @@ namespace java::util::concurrent::locks
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractQueuedSynchronizer::AbstractQueuedSynchronizer(QAndroidJniObject obj) : java::util::concurrent::locks::AbstractOwnableSynchronizer(obj) {}
+	// QJniObject forward
+	AbstractQueuedSynchronizer::AbstractQueuedSynchronizer(QJniObject obj) : java::util::concurrent::locks::AbstractOwnableSynchronizer(obj) {}
 	
 	// Constructors
 	

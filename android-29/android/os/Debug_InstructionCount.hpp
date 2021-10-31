@@ -10,9 +10,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Debug_InstructionCount(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Debug_InstructionCount(QAndroidJniObject obj);
+		Debug_InstructionCount(QJniObject obj);
 		
 		// Constructors
 		Debug_InstructionCount();

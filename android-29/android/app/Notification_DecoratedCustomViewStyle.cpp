@@ -4,8 +4,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_DecoratedCustomViewStyle::Notification_DecoratedCustomViewStyle(QAndroidJniObject obj) : android::app::Notification_Style(obj) {}
+	// QJniObject forward
+	Notification_DecoratedCustomViewStyle::Notification_DecoratedCustomViewStyle(QJniObject obj) : android::app::Notification_Style(obj) {}
 	
 	// Constructors
 	Notification_DecoratedCustomViewStyle::Notification_DecoratedCustomViewStyle()

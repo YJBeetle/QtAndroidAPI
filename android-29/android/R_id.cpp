@@ -522,8 +522,8 @@ namespace android
 		);
 	}
 	
-	// QAndroidJniObject forward
-	R_id::R_id(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	R_id::R_id(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	R_id::R_id()

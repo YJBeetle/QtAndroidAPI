@@ -4,8 +4,8 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LocatorImpl::LocatorImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocatorImpl::LocatorImpl(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LocatorImpl::LocatorImpl()

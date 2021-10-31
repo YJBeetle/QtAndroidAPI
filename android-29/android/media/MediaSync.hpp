@@ -44,9 +44,9 @@ namespace android::media
 		static jint MEDIASYNC_ERROR_AUDIOTRACK_FAIL();
 		static jint MEDIASYNC_ERROR_SURFACE_FAIL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaSync(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSync(QAndroidJniObject obj);
+		MediaSync(QJniObject obj);
 		
 		// Constructors
 		MediaSync();

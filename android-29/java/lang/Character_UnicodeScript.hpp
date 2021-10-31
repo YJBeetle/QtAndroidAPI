@@ -172,9 +172,9 @@ namespace java::lang
 		static java::lang::Character_UnicodeScript YI();
 		static java::lang::Character_UnicodeScript ZANABAZAR_SQUARE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Character_UnicodeScript(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Character_UnicodeScript(QAndroidJniObject obj);
+		Character_UnicodeScript(QJniObject obj);
 		
 		// Constructors
 		

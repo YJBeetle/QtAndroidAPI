@@ -149,9 +149,9 @@ namespace android::widget
 		static jint AUTO_SIZE_TEXT_TYPE_NONE();
 		static jint AUTO_SIZE_TEXT_TYPE_UNIFORM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextView(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		TextView(QAndroidJniObject obj);
+		TextView(QJniObject obj);
 		
 		// Constructors
 		TextView(android::content::Context arg0);

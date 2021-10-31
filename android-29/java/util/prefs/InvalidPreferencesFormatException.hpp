@@ -11,9 +11,9 @@ namespace java::util::prefs
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InvalidPreferencesFormatException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidPreferencesFormatException(QAndroidJniObject obj);
+		InvalidPreferencesFormatException(QJniObject obj);
 		
 		// Constructors
 		InvalidPreferencesFormatException(jstring arg0);

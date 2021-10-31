@@ -23,9 +23,9 @@ namespace android::app::assist
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AssistStructure(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AssistStructure(QAndroidJniObject obj);
+		AssistStructure(QJniObject obj);
 		
 		// Constructors
 		AssistStructure();

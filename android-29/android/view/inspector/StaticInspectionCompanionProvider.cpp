@@ -4,8 +4,8 @@ namespace android::view::inspector
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StaticInspectionCompanionProvider::StaticInspectionCompanionProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StaticInspectionCompanionProvider::StaticInspectionCompanionProvider(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StaticInspectionCompanionProvider::StaticInspectionCompanionProvider()

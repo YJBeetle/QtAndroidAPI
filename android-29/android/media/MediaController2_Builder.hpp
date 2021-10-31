@@ -30,9 +30,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaController2_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaController2_Builder(QAndroidJniObject obj);
+		MediaController2_Builder(QJniObject obj);
 		
 		// Constructors
 		MediaController2_Builder(android::content::Context arg0, android::media::Session2Token arg1);

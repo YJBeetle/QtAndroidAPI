@@ -13,9 +13,9 @@ namespace java::text
 		static java::text::AttributedCharacterIterator_Attribute LANGUAGE();
 		static java::text::AttributedCharacterIterator_Attribute READING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AttributedCharacterIterator_Attribute(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AttributedCharacterIterator_Attribute(QAndroidJniObject obj);
+		AttributedCharacterIterator_Attribute(QJniObject obj);
 		
 		// Constructors
 		

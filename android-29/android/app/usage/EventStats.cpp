@@ -13,8 +13,8 @@ namespace android::app::usage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EventStats::EventStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EventStats::EventStats(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	EventStats::EventStats(android::app::usage::EventStats &arg0)

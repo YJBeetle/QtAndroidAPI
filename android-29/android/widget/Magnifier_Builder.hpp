@@ -22,9 +22,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Magnifier_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Magnifier_Builder(QAndroidJniObject obj);
+		Magnifier_Builder(QJniObject obj);
 		
 		// Constructors
 		Magnifier_Builder(android::view::View arg0);

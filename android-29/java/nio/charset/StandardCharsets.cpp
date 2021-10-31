@@ -53,8 +53,8 @@ namespace java::nio::charset
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StandardCharsets::StandardCharsets(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StandardCharsets::StandardCharsets(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

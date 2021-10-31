@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EventListenerProxy::EventListenerProxy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EventListenerProxy::EventListenerProxy(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	EventListenerProxy::EventListenerProxy(__JniBaseClass arg0)

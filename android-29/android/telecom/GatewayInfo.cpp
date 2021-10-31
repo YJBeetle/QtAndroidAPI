@@ -14,8 +14,8 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GatewayInfo::GatewayInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GatewayInfo::GatewayInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GatewayInfo::GatewayInfo(jstring arg0, android::net::Uri arg1, android::net::Uri arg2)

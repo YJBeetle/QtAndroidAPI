@@ -8,8 +8,8 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AnimationDrawable::AnimationDrawable(QAndroidJniObject obj) : android::graphics::drawable::DrawableContainer(obj) {}
+	// QJniObject forward
+	AnimationDrawable::AnimationDrawable(QJniObject obj) : android::graphics::drawable::DrawableContainer(obj) {}
 	
 	// Constructors
 	AnimationDrawable::AnimationDrawable()

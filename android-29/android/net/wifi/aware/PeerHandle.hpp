@@ -10,9 +10,9 @@ namespace android::net::wifi::aware
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PeerHandle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PeerHandle(QAndroidJniObject obj);
+		PeerHandle(QJniObject obj);
 		
 		// Constructors
 		

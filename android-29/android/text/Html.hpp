@@ -21,9 +21,9 @@ namespace android::text
 		static jint TO_HTML_PARAGRAPH_LINES_CONSECUTIVE();
 		static jint TO_HTML_PARAGRAPH_LINES_INDIVIDUAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Html(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Html(QAndroidJniObject obj);
+		Html(QJniObject obj);
 		
 		// Constructors
 		

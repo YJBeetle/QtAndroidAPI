@@ -12,8 +12,8 @@ namespace android::mtp
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MtpDevice::MtpDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MtpDevice::MtpDevice(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MtpDevice::MtpDevice(android::hardware::usb::UsbDevice arg0)

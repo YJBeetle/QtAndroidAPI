@@ -20,9 +20,9 @@ namespace java::security::cert
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CertPathValidatorException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		CertPathValidatorException(QAndroidJniObject obj);
+		CertPathValidatorException(QJniObject obj);
 		
 		// Constructors
 		CertPathValidatorException();

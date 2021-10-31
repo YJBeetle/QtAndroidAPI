@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsatisfiedLinkError::UnsatisfiedLinkError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
+	// QJniObject forward
+	UnsatisfiedLinkError::UnsatisfiedLinkError(QJniObject obj) : java::lang::LinkageError(obj) {}
 	
 	// Constructors
 	UnsatisfiedLinkError::UnsatisfiedLinkError()

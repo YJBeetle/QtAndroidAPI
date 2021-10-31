@@ -34,9 +34,9 @@ namespace android::hardware::camera2
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraCaptureSession_CaptureCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CameraCaptureSession_CaptureCallback(QAndroidJniObject obj);
+		CameraCaptureSession_CaptureCallback(QJniObject obj);
 		
 		// Constructors
 		CameraCaptureSession_CaptureCallback();

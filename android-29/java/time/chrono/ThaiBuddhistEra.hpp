@@ -21,9 +21,9 @@ namespace java::time::chrono
 		static java::time::chrono::ThaiBuddhistEra BE();
 		static java::time::chrono::ThaiBuddhistEra BEFORE_BE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ThaiBuddhistEra(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ThaiBuddhistEra(QAndroidJniObject obj);
+		ThaiBuddhistEra(QJniObject obj);
 		
 		// Constructors
 		

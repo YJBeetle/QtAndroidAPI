@@ -38,9 +38,9 @@ namespace java::awt::font
 		static jint THAI();
 		static jint TIBETAN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NumericShaper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NumericShaper(QAndroidJniObject obj);
+		NumericShaper(QJniObject obj);
 		
 		// Constructors
 		

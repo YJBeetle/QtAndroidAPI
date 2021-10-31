@@ -27,9 +27,9 @@ namespace android::telephony
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SubscriptionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SubscriptionInfo(QAndroidJniObject obj);
+		SubscriptionInfo(QJniObject obj);
 		
 		// Constructors
 		

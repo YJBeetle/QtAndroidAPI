@@ -24,9 +24,9 @@ namespace android::provider
 		static jstring RETRY_INDEX();
 		static jstring SUBSCRIPTION_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Telephony_MmsSms_PendingMessages(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_MmsSms_PendingMessages(QAndroidJniObject obj);
+		Telephony_MmsSms_PendingMessages(QJniObject obj);
 		
 		// Constructors
 		

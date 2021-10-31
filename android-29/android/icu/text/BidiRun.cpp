@@ -4,8 +4,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BidiRun::BidiRun(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BidiRun::BidiRun(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -18,9 +18,9 @@ namespace android::graphics::fonts
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FontFamily_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FontFamily_Builder(QAndroidJniObject obj);
+		FontFamily_Builder(QJniObject obj);
 		
 		// Constructors
 		FontFamily_Builder(android::graphics::fonts::Font arg0);

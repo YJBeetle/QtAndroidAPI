@@ -62,8 +62,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SubscriptionPlan::SubscriptionPlan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SubscriptionPlan::SubscriptionPlan(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -16,9 +16,9 @@ namespace android::app
 		jlong durationMillis();
 		jstring serviceDetails();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ApplicationErrorReport_RunningServiceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationErrorReport_RunningServiceInfo(QAndroidJniObject obj);
+		ApplicationErrorReport_RunningServiceInfo(QJniObject obj);
 		
 		// Constructors
 		ApplicationErrorReport_RunningServiceInfo();

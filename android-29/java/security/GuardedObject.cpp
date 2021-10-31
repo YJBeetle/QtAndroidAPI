@@ -5,8 +5,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GuardedObject::GuardedObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GuardedObject::GuardedObject(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GuardedObject::GuardedObject(jobject arg0, __JniBaseClass arg1)

@@ -19,9 +19,9 @@ namespace android::app
 		// Fields
 		static jint INVALID_POSITION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActionBar_Tab(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActionBar_Tab(QAndroidJniObject obj);
+		ActionBar_Tab(QJniObject obj);
 		
 		// Constructors
 		ActionBar_Tab();

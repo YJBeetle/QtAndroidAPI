@@ -5,8 +5,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HandshakeCompletedEvent::HandshakeCompletedEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
+	// QJniObject forward
+	HandshakeCompletedEvent::HandshakeCompletedEvent(QJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
 	HandshakeCompletedEvent::HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, __JniBaseClass arg1)

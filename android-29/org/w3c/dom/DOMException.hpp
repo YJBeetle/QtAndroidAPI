@@ -30,9 +30,9 @@ namespace org::w3c::dom
 		static jshort WRONG_DOCUMENT_ERR();
 		jshort code();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DOMException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		DOMException(QAndroidJniObject obj);
+		DOMException(QJniObject obj);
 		
 		// Constructors
 		DOMException(jshort arg0, jstring arg1);

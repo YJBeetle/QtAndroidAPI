@@ -20,9 +20,9 @@ namespace android::provider
 		static jstring NAME();
 		static jstring VALUE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Settings_NameValueTable(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Settings_NameValueTable(QAndroidJniObject obj);
+		Settings_NameValueTable(QJniObject obj);
 		
 		// Constructors
 		Settings_NameValueTable();

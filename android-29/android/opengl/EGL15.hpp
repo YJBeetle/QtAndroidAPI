@@ -85,9 +85,9 @@ namespace android::opengl
 		static jint EGL_TIMEOUT_EXPIRED();
 		static jint EGL_UNSIGNALED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EGL15(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EGL15(QAndroidJniObject obj);
+		EGL15(QJniObject obj);
 		
 		// Constructors
 		

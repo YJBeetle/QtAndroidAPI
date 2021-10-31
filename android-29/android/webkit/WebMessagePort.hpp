@@ -22,9 +22,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WebMessagePort(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WebMessagePort(QAndroidJniObject obj);
+		WebMessagePort(QJniObject obj);
 		
 		// Constructors
 		

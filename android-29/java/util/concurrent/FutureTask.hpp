@@ -18,9 +18,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FutureTask(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FutureTask(QAndroidJniObject obj);
+		FutureTask(QJniObject obj);
 		
 		// Constructors
 		FutureTask(__JniBaseClass arg0);

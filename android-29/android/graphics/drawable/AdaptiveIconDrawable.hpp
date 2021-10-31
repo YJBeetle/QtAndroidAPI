@@ -59,9 +59,9 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AdaptiveIconDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
-		AdaptiveIconDrawable(QAndroidJniObject obj);
+		AdaptiveIconDrawable(QJniObject obj);
 		
 		// Constructors
 		AdaptiveIconDrawable(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1);

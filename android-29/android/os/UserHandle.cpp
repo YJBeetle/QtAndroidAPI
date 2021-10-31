@@ -13,8 +13,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UserHandle::UserHandle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UserHandle::UserHandle(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	UserHandle::UserHandle(android::os::Parcel arg0)

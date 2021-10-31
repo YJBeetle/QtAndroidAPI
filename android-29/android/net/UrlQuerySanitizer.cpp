@@ -4,8 +4,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UrlQuerySanitizer::UrlQuerySanitizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UrlQuerySanitizer::UrlQuerySanitizer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	UrlQuerySanitizer::UrlQuerySanitizer()

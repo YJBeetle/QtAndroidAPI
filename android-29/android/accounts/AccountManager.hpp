@@ -79,9 +79,9 @@ namespace android::accounts
 		static jint VISIBILITY_USER_MANAGED_VISIBLE();
 		static jint VISIBILITY_VISIBLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccountManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccountManager(QAndroidJniObject obj);
+		AccountManager(QJniObject obj);
 		
 		// Constructors
 		

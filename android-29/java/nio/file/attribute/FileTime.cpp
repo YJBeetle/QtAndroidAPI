@@ -7,8 +7,8 @@ namespace java::nio::file::attribute
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileTime::FileTime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FileTime::FileTime(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -6,8 +6,8 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AttributedString::AttributedString(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AttributedString::AttributedString(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AttributedString::AttributedString(jstring arg0)

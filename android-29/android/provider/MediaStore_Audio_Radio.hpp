@@ -11,9 +11,9 @@ namespace android::provider
 		// Fields
 		static jstring ENTRY_CONTENT_TYPE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaStore_Audio_Radio(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio_Radio(QAndroidJniObject obj);
+		MediaStore_Audio_Radio(QJniObject obj);
 		
 		// Constructors
 		

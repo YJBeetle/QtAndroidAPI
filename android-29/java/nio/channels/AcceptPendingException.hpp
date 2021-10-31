@@ -13,9 +13,9 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AcceptPendingException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		AcceptPendingException(QAndroidJniObject obj);
+		AcceptPendingException(QJniObject obj);
 		
 		// Constructors
 		AcceptPendingException();

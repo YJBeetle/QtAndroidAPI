@@ -51,9 +51,9 @@ namespace android::content
 		static jint SYSTEM_HIGH_PRIORITY();
 		static jint SYSTEM_LOW_PRIORITY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IntentFilter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IntentFilter(QAndroidJniObject obj);
+		IntentFilter(QJniObject obj);
 		
 		// Constructors
 		IntentFilter();

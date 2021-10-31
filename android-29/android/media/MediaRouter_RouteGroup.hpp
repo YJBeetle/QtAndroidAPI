@@ -23,9 +23,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaRouter_RouteGroup(const char *className, const char *sig, Ts...agv) : android::media::MediaRouter_RouteInfo(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter_RouteGroup(QAndroidJniObject obj);
+		MediaRouter_RouteGroup(QJniObject obj);
 		
 		// Constructors
 		

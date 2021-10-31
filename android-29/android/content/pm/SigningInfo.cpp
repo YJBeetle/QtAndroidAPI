@@ -13,8 +13,8 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SigningInfo::SigningInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SigningInfo::SigningInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SigningInfo::SigningInfo()

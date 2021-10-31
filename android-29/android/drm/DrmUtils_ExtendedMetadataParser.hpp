@@ -10,9 +10,9 @@ namespace android::drm
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DrmUtils_ExtendedMetadataParser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DrmUtils_ExtendedMetadataParser(QAndroidJniObject obj);
+		DrmUtils_ExtendedMetadataParser(QJniObject obj);
 		
 		// Constructors
 		

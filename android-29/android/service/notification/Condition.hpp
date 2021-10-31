@@ -41,9 +41,9 @@ namespace android::service::notification
 		jint state();
 		jstring summary();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Condition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Condition(QAndroidJniObject obj);
+		Condition(QJniObject obj);
 		
 		// Constructors
 		Condition(android::os::Parcel arg0);

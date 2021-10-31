@@ -14,8 +14,8 @@ namespace org::xmlpull::v1
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	XmlPullParserFactory::XmlPullParserFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	XmlPullParserFactory::XmlPullParserFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

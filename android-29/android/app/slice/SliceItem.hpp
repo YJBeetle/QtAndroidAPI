@@ -43,9 +43,9 @@ namespace android::app::slice
 		static jstring FORMAT_SLICE();
 		static jstring FORMAT_TEXT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SliceItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SliceItem(QAndroidJniObject obj);
+		SliceItem(QJniObject obj);
 		
 		// Constructors
 		

@@ -22,9 +22,9 @@ namespace android::bluetooth
 		static jint STATE_NOT_PLAYING();
 		static jint STATE_PLAYING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothA2dp(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothA2dp(QAndroidJniObject obj);
+		BluetoothA2dp(QJniObject obj);
 		
 		// Constructors
 		

@@ -22,9 +22,9 @@ namespace android::content::res
 		static jint ACCESS_STREAMING();
 		static jint ACCESS_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AssetManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AssetManager(QAndroidJniObject obj);
+		AssetManager(QJniObject obj);
 		
 		// Constructors
 		

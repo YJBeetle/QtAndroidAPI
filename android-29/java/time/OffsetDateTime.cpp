@@ -34,8 +34,8 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OffsetDateTime::OffsetDateTime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	OffsetDateTime::OffsetDateTime(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

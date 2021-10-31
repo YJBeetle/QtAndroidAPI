@@ -7,8 +7,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SimpleExpandableListAdapter::SimpleExpandableListAdapter(QAndroidJniObject obj) : android::widget::BaseExpandableListAdapter(obj) {}
+	// QJniObject forward
+	SimpleExpandableListAdapter::SimpleExpandableListAdapter(QJniObject obj) : android::widget::BaseExpandableListAdapter(obj) {}
 	
 	// Constructors
 	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4, __JniBaseClass arg5, jint arg6, jarray arg7, jintArray arg8)

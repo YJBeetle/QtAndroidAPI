@@ -101,8 +101,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	UserDictionary_Words::UserDictionary_Words(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UserDictionary_Words::UserDictionary_Words(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	UserDictionary_Words::UserDictionary_Words()

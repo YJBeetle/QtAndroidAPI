@@ -10,9 +10,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InputQueue(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		InputQueue(QAndroidJniObject obj);
+		InputQueue(QJniObject obj);
 		
 		// Constructors
 		

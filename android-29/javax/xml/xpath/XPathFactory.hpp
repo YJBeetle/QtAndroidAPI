@@ -16,9 +16,9 @@ namespace javax::xml::xpath
 		static jstring DEFAULT_OBJECT_MODEL_URI();
 		static jstring DEFAULT_PROPERTY_NAME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit XPathFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		XPathFactory(QAndroidJniObject obj);
+		XPathFactory(QJniObject obj);
 		
 		// Constructors
 		

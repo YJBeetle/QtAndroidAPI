@@ -27,8 +27,8 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Year::Year(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Year::Year(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

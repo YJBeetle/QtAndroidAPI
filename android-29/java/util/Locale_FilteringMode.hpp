@@ -16,9 +16,9 @@ namespace java::util
 		static java::util::Locale_FilteringMode MAP_EXTENDED_RANGES();
 		static java::util::Locale_FilteringMode REJECT_EXTENDED_RANGES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Locale_FilteringMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Locale_FilteringMode(QAndroidJniObject obj);
+		Locale_FilteringMode(QJniObject obj);
 		
 		// Constructors
 		

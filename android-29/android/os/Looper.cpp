@@ -6,8 +6,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Looper::Looper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Looper::Looper(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

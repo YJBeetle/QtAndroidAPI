@@ -10,9 +10,9 @@ namespace android::animation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ArgbEvaluator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ArgbEvaluator(QAndroidJniObject obj);
+		ArgbEvaluator(QJniObject obj);
 		
 		// Constructors
 		ArgbEvaluator();

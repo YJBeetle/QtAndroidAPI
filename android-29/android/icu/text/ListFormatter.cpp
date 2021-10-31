@@ -6,8 +6,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ListFormatter::ListFormatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ListFormatter::ListFormatter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

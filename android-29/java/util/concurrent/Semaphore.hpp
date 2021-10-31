@@ -14,9 +14,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Semaphore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Semaphore(QAndroidJniObject obj);
+		Semaphore(QJniObject obj);
 		
 		// Constructors
 		Semaphore(jint arg0);

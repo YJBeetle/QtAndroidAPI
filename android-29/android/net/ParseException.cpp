@@ -11,8 +11,8 @@ namespace android::net
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ParseException::ParseException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	ParseException::ParseException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	

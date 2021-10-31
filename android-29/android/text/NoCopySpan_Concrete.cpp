@@ -4,8 +4,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoCopySpan_Concrete::NoCopySpan_Concrete(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NoCopySpan_Concrete::NoCopySpan_Concrete(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	NoCopySpan_Concrete::NoCopySpan_Concrete()

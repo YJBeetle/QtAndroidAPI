@@ -335,9 +335,9 @@ namespace android::view
 		static android::util::Property Y();
 		static android::util::Property Z();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit View(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		View(QAndroidJniObject obj);
+		View(QJniObject obj);
 		
 		// Constructors
 		View(android::content::Context arg0);

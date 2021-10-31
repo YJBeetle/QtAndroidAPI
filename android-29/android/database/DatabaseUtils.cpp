@@ -85,8 +85,8 @@ namespace android::database
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DatabaseUtils::DatabaseUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DatabaseUtils::DatabaseUtils(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DatabaseUtils::DatabaseUtils()

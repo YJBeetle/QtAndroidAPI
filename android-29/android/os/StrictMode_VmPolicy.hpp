@@ -15,9 +15,9 @@ namespace android::os
 		// Fields
 		static android::os::StrictMode_VmPolicy LAX();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StrictMode_VmPolicy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StrictMode_VmPolicy(QAndroidJniObject obj);
+		StrictMode_VmPolicy(QJniObject obj);
 		
 		// Constructors
 		

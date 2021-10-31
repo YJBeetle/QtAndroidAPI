@@ -5,8 +5,8 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Parameter::Parameter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Parameter::Parameter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -4,8 +4,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PolicyQualifierInfo::PolicyQualifierInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PolicyQualifierInfo::PolicyQualifierInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PolicyQualifierInfo::PolicyQualifierInfo(jbyteArray arg0)

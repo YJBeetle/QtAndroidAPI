@@ -24,9 +24,9 @@ namespace java::time::chrono
 		// Fields
 		static java::time::chrono::HijrahEra AH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HijrahEra(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		HijrahEra(QAndroidJniObject obj);
+		HijrahEra(QJniObject obj);
 		
 		// Constructors
 		

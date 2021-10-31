@@ -5,8 +5,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IdentityScope::IdentityScope(QAndroidJniObject obj) : java::security::Identity(obj) {}
+	// QJniObject forward
+	IdentityScope::IdentityScope(QJniObject obj) : java::security::Identity(obj) {}
 	
 	// Constructors
 	IdentityScope::IdentityScope(jstring arg0)

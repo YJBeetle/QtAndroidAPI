@@ -11,9 +11,9 @@ namespace android::nfc
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FormatException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		FormatException(QAndroidJniObject obj);
+		FormatException(QJniObject obj);
 		
 		// Constructors
 		FormatException();

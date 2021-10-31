@@ -4,8 +4,8 @@ namespace java::time::temporal
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsupportedTemporalTypeException::UnsupportedTemporalTypeException(QAndroidJniObject obj) : java::time::DateTimeException(obj) {}
+	// QJniObject forward
+	UnsupportedTemporalTypeException::UnsupportedTemporalTypeException(QJniObject obj) : java::time::DateTimeException(obj) {}
 	
 	// Constructors
 	UnsupportedTemporalTypeException::UnsupportedTemporalTypeException(jstring arg0)

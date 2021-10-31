@@ -65,8 +65,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActionBar::ActionBar(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ActionBar::ActionBar(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ActionBar::ActionBar()

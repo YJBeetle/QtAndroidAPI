@@ -28,8 +28,8 @@ namespace android::gesture
 		).object<jfloatArray>();
 	}
 	
-	// QAndroidJniObject forward
-	GestureStroke::GestureStroke(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GestureStroke::GestureStroke(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GestureStroke::GestureStroke(java::util::ArrayList arg0)

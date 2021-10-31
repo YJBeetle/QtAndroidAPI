@@ -52,8 +52,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TimeZoneFormat_GMTOffsetPatternType::TimeZoneFormat_GMTOffsetPatternType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	TimeZoneFormat_GMTOffsetPatternType::TimeZoneFormat_GMTOffsetPatternType(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

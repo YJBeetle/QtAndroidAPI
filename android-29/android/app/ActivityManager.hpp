@@ -75,9 +75,9 @@ namespace android::app
 		static jint RECENT_IGNORE_UNAVAILABLE();
 		static jint RECENT_WITH_EXCLUDED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActivityManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager(QAndroidJniObject obj);
+		ActivityManager(QJniObject obj);
 		
 		// Constructors
 		

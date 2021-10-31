@@ -4,8 +4,8 @@ namespace android::view::inspector
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WindowInspector::WindowInspector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WindowInspector::WindowInspector(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

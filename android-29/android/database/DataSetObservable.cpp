@@ -4,8 +4,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DataSetObservable::DataSetObservable(QAndroidJniObject obj) : android::database::Observable(obj) {}
+	// QJniObject forward
+	DataSetObservable::DataSetObservable(QJniObject obj) : android::database::Observable(obj) {}
 	
 	// Constructors
 	DataSetObservable::DataSetObservable()

@@ -93,8 +93,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_CommonDataKinds_Website::ContactsContract_CommonDataKinds_Website(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_CommonDataKinds_Website::ContactsContract_CommonDataKinds_Website(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

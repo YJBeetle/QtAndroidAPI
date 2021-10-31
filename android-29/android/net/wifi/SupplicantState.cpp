@@ -109,8 +109,8 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SupplicantState::SupplicantState(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	SupplicantState::SupplicantState(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

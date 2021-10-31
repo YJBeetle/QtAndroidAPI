@@ -20,9 +20,9 @@ namespace android::text::style
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StyleSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
-		StyleSpan(QAndroidJniObject obj);
+		StyleSpan(QJniObject obj);
 		
 		// Constructors
 		StyleSpan(android::os::Parcel arg0);

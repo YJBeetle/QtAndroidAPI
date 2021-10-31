@@ -27,9 +27,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SurfaceView(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceView(QAndroidJniObject obj);
+		SurfaceView(QJniObject obj);
 		
 		// Constructors
 		SurfaceView(android::content::Context arg0);

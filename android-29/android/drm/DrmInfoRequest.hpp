@@ -16,9 +16,9 @@ namespace android::drm
 		static jint TYPE_RIGHTS_ACQUISITION_PROGRESS_INFO();
 		static jint TYPE_UNREGISTRATION_INFO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DrmInfoRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DrmInfoRequest(QAndroidJniObject obj);
+		DrmInfoRequest(QJniObject obj);
 		
 		// Constructors
 		DrmInfoRequest(jint arg0, jstring arg1);

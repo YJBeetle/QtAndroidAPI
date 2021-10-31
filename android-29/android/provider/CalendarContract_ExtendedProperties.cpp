@@ -13,8 +13,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CalendarContract_ExtendedProperties::CalendarContract_ExtendedProperties(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CalendarContract_ExtendedProperties::CalendarContract_ExtendedProperties(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

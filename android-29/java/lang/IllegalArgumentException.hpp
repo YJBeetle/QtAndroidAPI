@@ -12,9 +12,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IllegalArgumentException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalArgumentException(QAndroidJniObject obj);
+		IllegalArgumentException(QJniObject obj);
 		
 		// Constructors
 		IllegalArgumentException();

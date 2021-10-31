@@ -13,8 +13,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DragAndDropPermissions::DragAndDropPermissions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DragAndDropPermissions::DragAndDropPermissions(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

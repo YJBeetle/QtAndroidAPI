@@ -27,9 +27,9 @@ namespace android::content
 		android::os::Bundle extras();
 		jlong period();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PeriodicSync(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PeriodicSync(QAndroidJniObject obj);
+		PeriodicSync(QJniObject obj);
 		
 		// Constructors
 		PeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jlong arg3);

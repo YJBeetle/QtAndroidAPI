@@ -37,8 +37,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_StatusUpdates::ContactsContract_StatusUpdates(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_StatusUpdates::ContactsContract_StatusUpdates(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -5,8 +5,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Semaphore::Semaphore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Semaphore::Semaphore(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Semaphore::Semaphore(jint arg0)

@@ -4,8 +4,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AcceptPendingException::AcceptPendingException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	AcceptPendingException::AcceptPendingException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	AcceptPendingException::AcceptPendingException()

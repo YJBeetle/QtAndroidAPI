@@ -12,9 +12,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InflateException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		InflateException(QAndroidJniObject obj);
+		InflateException(QJniObject obj);
 		
 		// Constructors
 		InflateException();

@@ -19,8 +19,8 @@ namespace java::security
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Policy::Policy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Policy::Policy(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Policy::Policy()

@@ -13,9 +13,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DeadObjectException(const char *className, const char *sig, Ts...agv) : android::os::RemoteException(className, sig, std::forward<Ts>(agv)...) {}
-		DeadObjectException(QAndroidJniObject obj);
+		DeadObjectException(QJniObject obj);
 		
 		// Constructors
 		DeadObjectException();

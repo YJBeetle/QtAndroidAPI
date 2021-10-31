@@ -10,9 +10,9 @@ namespace android::os::strictmode
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Violation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Violation(QAndroidJniObject obj);
+		Violation(QJniObject obj);
 		
 		// Constructors
 		

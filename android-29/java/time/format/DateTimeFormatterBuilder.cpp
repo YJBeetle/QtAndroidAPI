@@ -11,8 +11,8 @@ namespace java::time::format
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DateTimeFormatterBuilder::DateTimeFormatterBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DateTimeFormatterBuilder::DateTimeFormatterBuilder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DateTimeFormatterBuilder::DateTimeFormatterBuilder()

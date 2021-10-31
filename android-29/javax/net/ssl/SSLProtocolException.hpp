@@ -13,9 +13,9 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SSLProtocolException(const char *className, const char *sig, Ts...agv) : javax::net::ssl::SSLException(className, sig, std::forward<Ts>(agv)...) {}
-		SSLProtocolException(QAndroidJniObject obj);
+		SSLProtocolException(QJniObject obj);
 		
 		// Constructors
 		SSLProtocolException(jstring arg0);

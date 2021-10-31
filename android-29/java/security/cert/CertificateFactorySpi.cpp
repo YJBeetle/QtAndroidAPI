@@ -8,8 +8,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CertificateFactorySpi::CertificateFactorySpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CertificateFactorySpi::CertificateFactorySpi(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CertificateFactorySpi::CertificateFactorySpi()

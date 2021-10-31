@@ -9,8 +9,8 @@ namespace android::telecom
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PhoneAccount_Builder::PhoneAccount_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PhoneAccount_Builder::PhoneAccount_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccount arg0)

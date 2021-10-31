@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Number::Number(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Number::Number(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Number::Number()

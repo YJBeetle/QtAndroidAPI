@@ -4,8 +4,8 @@ namespace java::nio
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvalidMarkException::InvalidMarkException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	InvalidMarkException::InvalidMarkException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	InvalidMarkException::InvalidMarkException()

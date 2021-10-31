@@ -5,8 +5,8 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AttachCallback::AttachCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AttachCallback::AttachCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AttachCallback::AttachCallback()

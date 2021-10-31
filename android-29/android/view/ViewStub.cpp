@@ -8,8 +8,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ViewStub::ViewStub(QAndroidJniObject obj) : android::view::View(obj) {}
+	// QJniObject forward
+	ViewStub::ViewStub(QJniObject obj) : android::view::View(obj) {}
 	
 	// Constructors
 	ViewStub::ViewStub(android::content::Context arg0)

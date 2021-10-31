@@ -26,9 +26,9 @@ namespace android::view::inputmethod
 		static jint FLAG_HAS_VISIBLE_REGION();
 		static jint FLAG_IS_RTL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CursorAnchorInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CursorAnchorInfo(QAndroidJniObject obj);
+		CursorAnchorInfo(QJniObject obj);
 		
 		// Constructors
 		CursorAnchorInfo(android::os::Parcel arg0);

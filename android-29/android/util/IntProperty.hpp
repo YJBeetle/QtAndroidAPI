@@ -15,9 +15,9 @@ namespace android::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IntProperty(const char *className, const char *sig, Ts...agv) : android::util::Property(className, sig, std::forward<Ts>(agv)...) {}
-		IntProperty(QAndroidJniObject obj);
+		IntProperty(QJniObject obj);
 		
 		// Constructors
 		IntProperty(jstring arg0);

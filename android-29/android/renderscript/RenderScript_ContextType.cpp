@@ -28,8 +28,8 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RenderScript_ContextType::RenderScript_ContextType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	RenderScript_ContextType::RenderScript_ContextType(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

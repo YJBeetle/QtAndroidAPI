@@ -30,9 +30,9 @@ namespace android::nfc::cardemulation
 		static jint SELECTION_MODE_ASK_IF_CONFLICT();
 		static jint SELECTION_MODE_PREFER_DEFAULT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CardEmulation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CardEmulation(QAndroidJniObject obj);
+		CardEmulation(QJniObject obj);
 		
 		// Constructors
 		

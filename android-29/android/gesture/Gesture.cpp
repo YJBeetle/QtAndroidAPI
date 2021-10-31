@@ -18,8 +18,8 @@ namespace android::gesture
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Gesture::Gesture(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Gesture::Gesture(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Gesture::Gesture()

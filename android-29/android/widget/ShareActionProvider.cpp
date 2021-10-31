@@ -15,8 +15,8 @@ namespace android::widget
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ShareActionProvider::ShareActionProvider(QAndroidJniObject obj) : android::view::ActionProvider(obj) {}
+	// QJniObject forward
+	ShareActionProvider::ShareActionProvider(QJniObject obj) : android::view::ActionProvider(obj) {}
 	
 	// Constructors
 	ShareActionProvider::ShareActionProvider(android::content::Context arg0)

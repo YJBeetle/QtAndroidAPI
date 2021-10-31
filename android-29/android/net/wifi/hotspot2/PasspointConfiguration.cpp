@@ -15,8 +15,8 @@ namespace android::net::wifi::hotspot2
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PasspointConfiguration::PasspointConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PasspointConfiguration::PasspointConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PasspointConfiguration::PasspointConfiguration()

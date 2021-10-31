@@ -91,8 +91,8 @@ namespace android::media::midi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MidiDeviceInfo::MidiDeviceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MidiDeviceInfo::MidiDeviceInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

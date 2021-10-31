@@ -4,8 +4,8 @@ namespace javax::xml::xpath
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	XPathFunctionException::XPathFunctionException(QAndroidJniObject obj) : javax::xml::xpath::XPathExpressionException(obj) {}
+	// QJniObject forward
+	XPathFunctionException::XPathFunctionException(QJniObject obj) : javax::xml::xpath::XPathExpressionException(obj) {}
 	
 	// Constructors
 	XPathFunctionException::XPathFunctionException(jstring arg0)

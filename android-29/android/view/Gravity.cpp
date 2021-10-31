@@ -194,8 +194,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Gravity::Gravity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Gravity::Gravity(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Gravity::Gravity()

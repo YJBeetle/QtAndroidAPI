@@ -63,8 +63,8 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextLinks::TextLinks(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextLinks::TextLinks(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

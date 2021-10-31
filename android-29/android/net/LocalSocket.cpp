@@ -30,8 +30,8 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocalSocket::LocalSocket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocalSocket::LocalSocket(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LocalSocket::LocalSocket()

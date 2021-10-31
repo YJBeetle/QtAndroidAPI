@@ -746,9 +746,9 @@ namespace android
 		static jint Widget_Toolbar_Button_Navigation();
 		static jint Widget_WebView();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit R_style(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		R_style(QAndroidJniObject obj);
+		R_style(QJniObject obj);
 		
 		// Constructors
 		R_style();

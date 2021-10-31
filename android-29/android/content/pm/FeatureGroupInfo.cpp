@@ -20,8 +20,8 @@ namespace android::content::pm
 		).object<jarray>();
 	}
 	
-	// QAndroidJniObject forward
-	FeatureGroupInfo::FeatureGroupInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FeatureGroupInfo::FeatureGroupInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	FeatureGroupInfo::FeatureGroupInfo()

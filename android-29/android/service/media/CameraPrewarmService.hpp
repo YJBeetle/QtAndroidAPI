@@ -17,9 +17,9 @@ namespace android::service::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraPrewarmService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		CameraPrewarmService(QAndroidJniObject obj);
+		CameraPrewarmService(QJniObject obj);
 		
 		// Constructors
 		CameraPrewarmService();

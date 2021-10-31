@@ -177,8 +177,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PointerIcon::PointerIcon(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PointerIcon::PointerIcon(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

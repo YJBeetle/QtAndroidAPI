@@ -38,8 +38,8 @@ namespace java::io
 		);
 	}
 	
-	// QAndroidJniObject forward
-	File::File(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	File::File(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	File::File(jstring arg0)

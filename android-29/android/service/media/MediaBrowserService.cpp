@@ -20,8 +20,8 @@ namespace android::service::media
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaBrowserService::MediaBrowserService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	MediaBrowserService::MediaBrowserService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	MediaBrowserService::MediaBrowserService()

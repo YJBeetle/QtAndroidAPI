@@ -1450,8 +1450,8 @@ namespace android::opengl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GLES32::GLES32(QAndroidJniObject obj) : android::opengl::GLES31(obj) {}
+	// QJniObject forward
+	GLES32::GLES32(QJniObject obj) : android::opengl::GLES31(obj) {}
 	
 	// Constructors
 	

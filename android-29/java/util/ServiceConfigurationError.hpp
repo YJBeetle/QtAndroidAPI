@@ -11,9 +11,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ServiceConfigurationError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceConfigurationError(QAndroidJniObject obj);
+		ServiceConfigurationError(QJniObject obj);
 		
 		// Constructors
 		ServiceConfigurationError(jstring arg0);

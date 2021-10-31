@@ -39,9 +39,9 @@ namespace java::security
 		// Fields
 		static java::security::PermissionCollection UNSUPPORTED_EMPTY_COLLECTION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Policy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Policy(QAndroidJniObject obj);
+		Policy(QJniObject obj);
 		
 		// Constructors
 		Policy();

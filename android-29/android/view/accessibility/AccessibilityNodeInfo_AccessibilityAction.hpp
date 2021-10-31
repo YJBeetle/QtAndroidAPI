@@ -47,9 +47,9 @@ namespace android::view::accessibility
 		static android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction ACTION_SHOW_ON_SCREEN();
 		static android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction ACTION_SHOW_TOOLTIP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessibilityNodeInfo_AccessibilityAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj);
+		AccessibilityNodeInfo_AccessibilityAction(QJniObject obj);
 		
 		// Constructors
 		AccessibilityNodeInfo_AccessibilityAction(jint arg0, jstring arg1);

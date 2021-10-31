@@ -42,8 +42,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HardwareRenderer::HardwareRenderer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	HardwareRenderer::HardwareRenderer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	HardwareRenderer::HardwareRenderer()

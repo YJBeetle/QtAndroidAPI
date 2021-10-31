@@ -10,9 +10,9 @@ namespace android::media::midi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MidiReceiver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MidiReceiver(QAndroidJniObject obj);
+		MidiReceiver(QJniObject obj);
 		
 		// Constructors
 		MidiReceiver();

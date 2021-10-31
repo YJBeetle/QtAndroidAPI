@@ -11,9 +11,9 @@ namespace org::json
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JSONException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		JSONException(QAndroidJniObject obj);
+		JSONException(QJniObject obj);
 		
 		// Constructors
 		JSONException(jstring arg0);

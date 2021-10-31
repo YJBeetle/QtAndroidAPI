@@ -16,9 +16,9 @@ namespace android::view
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WindowContentFrameStats(const char *className, const char *sig, Ts...agv) : android::view::FrameStats(className, sig, std::forward<Ts>(agv)...) {}
-		WindowContentFrameStats(QAndroidJniObject obj);
+		WindowContentFrameStats(QJniObject obj);
 		
 		// Constructors
 		

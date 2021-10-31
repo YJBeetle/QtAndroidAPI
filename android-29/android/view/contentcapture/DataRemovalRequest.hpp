@@ -20,9 +20,9 @@ namespace android::view::contentcapture
 		static __JniBaseClass CREATOR();
 		static jint FLAG_IS_PREFIX();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DataRemovalRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DataRemovalRequest(QAndroidJniObject obj);
+		DataRemovalRequest(QJniObject obj);
 		
 		// Constructors
 		

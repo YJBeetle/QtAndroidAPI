@@ -16,8 +16,8 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaSession2Service::MediaSession2Service(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	MediaSession2Service::MediaSession2Service(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	MediaSession2Service::MediaSession2Service()

@@ -16,9 +16,9 @@ namespace android::telephony
 		static android::telephony::SmsMessage_MessageClass CLASS_3();
 		static android::telephony::SmsMessage_MessageClass UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SmsMessage_MessageClass(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		SmsMessage_MessageClass(QAndroidJniObject obj);
+		SmsMessage_MessageClass(QJniObject obj);
 		
 		// Constructors
 		

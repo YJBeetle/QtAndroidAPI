@@ -22,9 +22,9 @@ namespace javax::crypto
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyGenerator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyGenerator(QAndroidJniObject obj);
+		KeyGenerator(QJniObject obj);
 		
 		// Constructors
 		

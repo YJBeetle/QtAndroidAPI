@@ -52,8 +52,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ViewDebug_RecyclerTraceType::ViewDebug_RecyclerTraceType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ViewDebug_RecyclerTraceType::ViewDebug_RecyclerTraceType(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

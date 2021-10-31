@@ -5,8 +5,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NetworkInterface::NetworkInterface(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NetworkInterface::NetworkInterface(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

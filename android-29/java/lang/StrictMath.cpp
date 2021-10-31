@@ -18,8 +18,8 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StrictMath::StrictMath(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StrictMath::StrictMath(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

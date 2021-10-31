@@ -28,8 +28,8 @@ namespace java::time::format
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ResolverStyle::ResolverStyle(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ResolverStyle::ResolverStyle(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

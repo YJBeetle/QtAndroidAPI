@@ -95,8 +95,8 @@ namespace android::view::textclassifier
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ConversationAction::ConversationAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConversationAction::ConversationAction(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

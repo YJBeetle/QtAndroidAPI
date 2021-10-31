@@ -10,9 +10,9 @@ namespace android::view::inspector
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StaticInspectionCompanionProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StaticInspectionCompanionProvider(QAndroidJniObject obj);
+		StaticInspectionCompanionProvider(QJniObject obj);
 		
 		// Constructors
 		StaticInspectionCompanionProvider();

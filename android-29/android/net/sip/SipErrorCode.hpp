@@ -23,9 +23,9 @@ namespace android::net::sip
 		static jint TIME_OUT();
 		static jint TRANSACTION_TERMINTED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SipErrorCode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SipErrorCode(QAndroidJniObject obj);
+		SipErrorCode(QJniObject obj);
 		
 		// Constructors
 		

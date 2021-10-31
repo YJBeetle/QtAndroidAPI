@@ -84,9 +84,9 @@ namespace android::widget
 		static jint TRANSCRIPT_MODE_DISABLED();
 		static jint TRANSCRIPT_MODE_NORMAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbsListView(const char *className, const char *sig, Ts...agv) : android::widget::AdapterView(className, sig, std::forward<Ts>(agv)...) {}
-		AbsListView(QAndroidJniObject obj);
+		AbsListView(QJniObject obj);
 		
 		// Constructors
 		AbsListView(android::content::Context arg0);

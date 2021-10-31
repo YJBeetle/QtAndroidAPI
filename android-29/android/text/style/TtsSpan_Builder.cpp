@@ -5,8 +5,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TtsSpan_Builder::TtsSpan_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TtsSpan_Builder::TtsSpan_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TtsSpan_Builder::TtsSpan_Builder(jstring arg0)

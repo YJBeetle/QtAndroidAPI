@@ -25,9 +25,9 @@ namespace java::io
 		jstring sval();
 		jint ttype();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StreamTokenizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StreamTokenizer(QAndroidJniObject obj);
+		StreamTokenizer(QJniObject obj);
 		
 		// Constructors
 		StreamTokenizer(java::io::InputStream arg0);

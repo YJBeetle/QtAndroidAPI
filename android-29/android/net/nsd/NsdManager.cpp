@@ -63,8 +63,8 @@ namespace android::net::nsd
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NsdManager::NsdManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NsdManager::NsdManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

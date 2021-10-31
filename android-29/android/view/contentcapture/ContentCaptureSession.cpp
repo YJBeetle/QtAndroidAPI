@@ -9,8 +9,8 @@ namespace android::view::contentcapture
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContentCaptureSession::ContentCaptureSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContentCaptureSession::ContentCaptureSession(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

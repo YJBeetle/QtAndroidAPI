@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FloatMath::FloatMath(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FloatMath::FloatMath(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

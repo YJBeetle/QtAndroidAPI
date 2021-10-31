@@ -41,9 +41,9 @@ namespace java::lang
 		static java::io::InputStream in();
 		static java::io::PrintStream out();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit System(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		System(QAndroidJniObject obj);
+		System(QJniObject obj);
 		
 		// Constructors
 		

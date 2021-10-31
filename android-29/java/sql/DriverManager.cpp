@@ -10,8 +10,8 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DriverManager::DriverManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DriverManager::DriverManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

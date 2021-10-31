@@ -84,8 +84,8 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	// QAndroidJniObject forward
-	Double::Double(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	// QJniObject forward
+	Double::Double(QJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
 	Double::Double(jdouble arg0)

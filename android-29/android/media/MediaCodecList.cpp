@@ -20,8 +20,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaCodecList::MediaCodecList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaCodecList::MediaCodecList(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaCodecList::MediaCodecList(jint arg0)

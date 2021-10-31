@@ -255,8 +255,8 @@ namespace android::os
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	BatteryManager::BatteryManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BatteryManager::BatteryManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

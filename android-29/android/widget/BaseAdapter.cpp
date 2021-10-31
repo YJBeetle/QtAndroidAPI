@@ -7,8 +7,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BaseAdapter::BaseAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BaseAdapter::BaseAdapter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	BaseAdapter::BaseAdapter()

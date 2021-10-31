@@ -10,8 +10,8 @@ namespace java::time::zone
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZoneRules::ZoneRules(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ZoneRules::ZoneRules(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

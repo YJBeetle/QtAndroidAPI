@@ -14,8 +14,8 @@ namespace android::net::wifi::aware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Characteristics::Characteristics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Characteristics::Characteristics(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

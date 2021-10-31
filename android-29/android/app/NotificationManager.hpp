@@ -71,9 +71,9 @@ namespace android::app
 		static jstring META_DATA_AUTOMATIC_RULE_TYPE();
 		static jstring META_DATA_RULE_INSTANCE_LIMIT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NotificationManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationManager(QAndroidJniObject obj);
+		NotificationManager(QJniObject obj);
 		
 		// Constructors
 		

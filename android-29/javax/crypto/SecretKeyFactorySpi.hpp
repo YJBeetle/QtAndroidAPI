@@ -10,9 +10,9 @@ namespace javax::crypto
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SecretKeyFactorySpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SecretKeyFactorySpi(QAndroidJniObject obj);
+		SecretKeyFactorySpi(QJniObject obj);
 		
 		// Constructors
 		SecretKeyFactorySpi();

@@ -8,8 +8,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlgorithmParameterGenerator::AlgorithmParameterGenerator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AlgorithmParameterGenerator::AlgorithmParameterGenerator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

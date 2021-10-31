@@ -14,9 +14,9 @@ namespace android::media
 		jlong presentationTimeUs();
 		jint size();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodec_BufferInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_BufferInfo(QAndroidJniObject obj);
+		MediaCodec_BufferInfo(QJniObject obj);
 		
 		// Constructors
 		MediaCodec_BufferInfo();

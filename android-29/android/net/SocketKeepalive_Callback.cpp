@@ -4,8 +4,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SocketKeepalive_Callback::SocketKeepalive_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SocketKeepalive_Callback::SocketKeepalive_Callback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SocketKeepalive_Callback::SocketKeepalive_Callback()

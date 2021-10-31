@@ -30,9 +30,9 @@ namespace android::graphics::text
 		static jint JUSTIFICATION_MODE_INTER_WORD();
 		static jint JUSTIFICATION_MODE_NONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LineBreaker(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LineBreaker(QAndroidJniObject obj);
+		LineBreaker(QJniObject obj);
 		
 		// Constructors
 		

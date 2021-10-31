@@ -22,9 +22,9 @@ namespace android::net::wifi::p2p
 		java::net::InetAddress groupOwnerAddress();
 		jboolean isGroupOwner();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiP2pInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pInfo(QAndroidJniObject obj);
+		WifiP2pInfo(QJniObject obj);
 		
 		// Constructors
 		WifiP2pInfo();

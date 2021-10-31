@@ -15,9 +15,9 @@ namespace java::security::spec
 		// Fields
 		static java::security::spec::ECPoint POINT_INFINITY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ECPoint(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ECPoint(QAndroidJniObject obj);
+		ECPoint(QJniObject obj);
 		
 		// Constructors
 		ECPoint(java::math::BigInteger arg0, java::math::BigInteger arg1);

@@ -10,8 +10,8 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Dataset_Builder::Dataset_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Dataset_Builder::Dataset_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Dataset_Builder::Dataset_Builder()

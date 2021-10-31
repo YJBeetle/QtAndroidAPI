@@ -5,8 +5,8 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Adler32::Adler32(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Adler32::Adler32(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Adler32::Adler32()

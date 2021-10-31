@@ -18,9 +18,9 @@ namespace android::animation
 		static jint RESTART();
 		static jint REVERSE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ValueAnimator(const char *className, const char *sig, Ts...agv) : android::animation::Animator(className, sig, std::forward<Ts>(agv)...) {}
-		ValueAnimator(QAndroidJniObject obj);
+		ValueAnimator(QJniObject obj);
 		
 		// Constructors
 		ValueAnimator();

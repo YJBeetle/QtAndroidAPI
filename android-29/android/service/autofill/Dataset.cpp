@@ -14,8 +14,8 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Dataset::Dataset(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Dataset::Dataset(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

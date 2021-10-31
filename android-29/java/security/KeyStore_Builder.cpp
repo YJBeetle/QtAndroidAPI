@@ -7,8 +7,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyStore_Builder::KeyStore_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyStore_Builder::KeyStore_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

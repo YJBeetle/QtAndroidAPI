@@ -28,8 +28,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Bundle::Bundle(QAndroidJniObject obj) : android::os::BaseBundle(obj) {}
+	// QJniObject forward
+	Bundle::Bundle(QJniObject obj) : android::os::BaseBundle(obj) {}
 	
 	// Constructors
 	Bundle::Bundle()

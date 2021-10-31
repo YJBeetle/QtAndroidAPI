@@ -14,9 +14,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnknownFormatFlagsException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
-		UnknownFormatFlagsException(QAndroidJniObject obj);
+		UnknownFormatFlagsException(QJniObject obj);
 		
 		// Constructors
 		UnknownFormatFlagsException(jstring arg0);

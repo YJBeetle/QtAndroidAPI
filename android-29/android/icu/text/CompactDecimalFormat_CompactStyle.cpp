@@ -20,8 +20,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CompactDecimalFormat_CompactStyle::CompactDecimalFormat_CompactStyle(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	CompactDecimalFormat_CompactStyle::CompactDecimalFormat_CompactStyle(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

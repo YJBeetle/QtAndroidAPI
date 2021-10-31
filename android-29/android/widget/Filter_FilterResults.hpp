@@ -12,9 +12,9 @@ namespace android::widget
 		jint count();
 		jobject values();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Filter_FilterResults(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Filter_FilterResults(QAndroidJniObject obj);
+		Filter_FilterResults(QJniObject obj);
 		
 		// Constructors
 		Filter_FilterResults();

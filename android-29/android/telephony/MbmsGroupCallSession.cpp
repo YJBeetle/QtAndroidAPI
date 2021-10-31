@@ -6,8 +6,8 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MbmsGroupCallSession::MbmsGroupCallSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MbmsGroupCallSession::MbmsGroupCallSession(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -18,9 +18,9 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BatchUpdates_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BatchUpdates_Builder(QAndroidJniObject obj);
+		BatchUpdates_Builder(QJniObject obj);
 		
 		// Constructors
 		BatchUpdates_Builder();

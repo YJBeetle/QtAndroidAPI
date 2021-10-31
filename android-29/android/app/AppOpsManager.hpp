@@ -50,9 +50,9 @@ namespace android::app
 		static jstring OPSTR_WRITE_SETTINGS();
 		static jint WATCH_FOREGROUND_CHANGES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppOpsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AppOpsManager(QAndroidJniObject obj);
+		AppOpsManager(QJniObject obj);
 		
 		// Constructors
 		

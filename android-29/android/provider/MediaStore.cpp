@@ -310,8 +310,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaStore::MediaStore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaStore::MediaStore(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaStore::MediaStore()

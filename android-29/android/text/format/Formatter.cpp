@@ -5,8 +5,8 @@ namespace android::text::format
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Formatter::Formatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Formatter::Formatter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Formatter::Formatter()

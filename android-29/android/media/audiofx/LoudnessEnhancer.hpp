@@ -12,9 +12,9 @@ namespace android::media::audiofx
 		// Fields
 		static jint PARAM_TARGET_GAIN_MB();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LoudnessEnhancer(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		LoudnessEnhancer(QAndroidJniObject obj);
+		LoudnessEnhancer(QJniObject obj);
 		
 		// Constructors
 		LoudnessEnhancer(jint arg0);

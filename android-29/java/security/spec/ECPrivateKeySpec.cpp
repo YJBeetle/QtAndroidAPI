@@ -6,8 +6,8 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ECPrivateKeySpec::ECPrivateKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ECPrivateKeySpec::ECPrivateKeySpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ECPrivateKeySpec::ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1)

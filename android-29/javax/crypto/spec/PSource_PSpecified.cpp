@@ -12,8 +12,8 @@ namespace javax::crypto::spec
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PSource_PSpecified::PSource_PSpecified(QAndroidJniObject obj) : javax::crypto::spec::PSource(obj) {}
+	// QJniObject forward
+	PSource_PSpecified::PSource_PSpecified(QJniObject obj) : javax::crypto::spec::PSource(obj) {}
 	
 	// Constructors
 	PSource_PSpecified::PSource_PSpecified(jbyteArray arg0)

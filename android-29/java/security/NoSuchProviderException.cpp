@@ -4,8 +4,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoSuchProviderException::NoSuchProviderException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	// QJniObject forward
+	NoSuchProviderException::NoSuchProviderException(QJniObject obj) : java::security::GeneralSecurityException(obj) {}
 	
 	// Constructors
 	NoSuchProviderException::NoSuchProviderException()

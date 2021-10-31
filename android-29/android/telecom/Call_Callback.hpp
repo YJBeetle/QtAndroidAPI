@@ -35,9 +35,9 @@ namespace android::telecom
 		static jint HANDOVER_FAILURE_UNKNOWN();
 		static jint HANDOVER_FAILURE_USER_REJECTED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Call_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Call_Callback(QAndroidJniObject obj);
+		Call_Callback(QJniObject obj);
 		
 		// Constructors
 		Call_Callback();

@@ -29,9 +29,9 @@ namespace android::media
 		static jint TYPE_SESSION();
 		static jint TYPE_SESSION_SERVICE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Session2Token(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Session2Token(QAndroidJniObject obj);
+		Session2Token(QJniObject obj);
 		
 		// Constructors
 		Session2Token(android::content::Context arg0, android::content::ComponentName arg1);

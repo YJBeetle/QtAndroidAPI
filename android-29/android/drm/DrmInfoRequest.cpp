@@ -48,8 +48,8 @@ namespace android::drm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DrmInfoRequest::DrmInfoRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DrmInfoRequest::DrmInfoRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DrmInfoRequest::DrmInfoRequest(jint arg0, jstring arg1)

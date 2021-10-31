@@ -40,9 +40,9 @@ namespace android::view
 		static jint ERROR_UNKNOWN();
 		static jint SUCCESS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PixelCopy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PixelCopy(QAndroidJniObject obj);
+		PixelCopy(QJniObject obj);
 		
 		// Constructors
 		

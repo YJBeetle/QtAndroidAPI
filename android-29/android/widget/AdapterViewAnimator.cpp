@@ -9,8 +9,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AdapterViewAnimator::AdapterViewAnimator(QAndroidJniObject obj) : android::widget::AdapterView(obj) {}
+	// QJniObject forward
+	AdapterViewAnimator::AdapterViewAnimator(QJniObject obj) : android::widget::AdapterView(obj) {}
 	
 	// Constructors
 	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0)

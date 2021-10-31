@@ -10,9 +10,9 @@ namespace org::xml::sax::helpers
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AttributeListImpl(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AttributeListImpl(QAndroidJniObject obj);
+		AttributeListImpl(QJniObject obj);
 		
 		// Constructors
 		AttributeListImpl();

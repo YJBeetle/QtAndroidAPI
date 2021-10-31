@@ -21,9 +21,9 @@ namespace android::content
 		jstring authority();
 		jlong startTime();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SyncInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SyncInfo(QAndroidJniObject obj);
+		SyncInfo(QJniObject obj);
 		
 		// Constructors
 		

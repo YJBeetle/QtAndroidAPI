@@ -57,9 +57,9 @@ namespace android::media
 		static jint MEDIA_RECORDER_INFO_NEXT_OUTPUT_FILE_STARTED();
 		static jint MEDIA_RECORDER_INFO_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaRecorder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRecorder(QAndroidJniObject obj);
+		MediaRecorder(QJniObject obj);
 		
 		// Constructors
 		MediaRecorder();

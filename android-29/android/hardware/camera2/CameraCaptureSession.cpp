@@ -10,8 +10,8 @@ namespace android::hardware::camera2
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CameraCaptureSession::CameraCaptureSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CameraCaptureSession::CameraCaptureSession(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CameraCaptureSession::CameraCaptureSession()

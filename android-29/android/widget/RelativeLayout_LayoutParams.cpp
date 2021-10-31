@@ -13,8 +13,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RelativeLayout_LayoutParams::RelativeLayout_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_MarginLayoutParams(obj) {}
+	// QJniObject forward
+	RelativeLayout_LayoutParams::RelativeLayout_LayoutParams(QJniObject obj) : android::view::ViewGroup_MarginLayoutParams(obj) {}
 	
 	// Constructors
 	RelativeLayout_LayoutParams::RelativeLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0)

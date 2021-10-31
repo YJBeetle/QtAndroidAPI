@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MalformedJsonException::MalformedJsonException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	MalformedJsonException::MalformedJsonException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	MalformedJsonException::MalformedJsonException(jstring arg0)

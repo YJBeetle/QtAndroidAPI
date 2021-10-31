@@ -6,8 +6,8 @@ namespace java::nio
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FloatBuffer::FloatBuffer(QAndroidJniObject obj) : java::nio::Buffer(obj) {}
+	// QJniObject forward
+	FloatBuffer::FloatBuffer(QJniObject obj) : java::nio::Buffer(obj) {}
 	
 	// Constructors
 	

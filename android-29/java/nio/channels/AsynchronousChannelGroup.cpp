@@ -6,8 +6,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AsynchronousChannelGroup::AsynchronousChannelGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AsynchronousChannelGroup::AsynchronousChannelGroup(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

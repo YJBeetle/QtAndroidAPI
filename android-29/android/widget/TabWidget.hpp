@@ -37,9 +37,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TabWidget(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
-		TabWidget(QAndroidJniObject obj);
+		TabWidget(QJniObject obj);
 		
 		// Constructors
 		TabWidget(android::content::Context arg0);

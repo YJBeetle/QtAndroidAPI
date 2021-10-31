@@ -18,9 +18,9 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MembershipKey(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MembershipKey(QAndroidJniObject obj);
+		MembershipKey(QJniObject obj);
 		
 		// Constructors
 		

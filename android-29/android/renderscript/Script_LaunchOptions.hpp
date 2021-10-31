@@ -10,9 +10,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Script_LaunchOptions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Script_LaunchOptions(QAndroidJniObject obj);
+		Script_LaunchOptions(QJniObject obj);
 		
 		// Constructors
 		Script_LaunchOptions();

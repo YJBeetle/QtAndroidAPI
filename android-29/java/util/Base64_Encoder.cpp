@@ -6,8 +6,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Base64_Encoder::Base64_Encoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Base64_Encoder::Base64_Encoder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

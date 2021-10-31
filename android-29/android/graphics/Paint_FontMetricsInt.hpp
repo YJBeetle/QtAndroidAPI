@@ -15,9 +15,9 @@ namespace android::graphics
 		jint leading();
 		jint top();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Paint_FontMetricsInt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_FontMetricsInt(QAndroidJniObject obj);
+		Paint_FontMetricsInt(QJniObject obj);
 		
 		// Constructors
 		Paint_FontMetricsInt();

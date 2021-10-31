@@ -4,8 +4,8 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HideReturnsTransformationMethod::HideReturnsTransformationMethod(QAndroidJniObject obj) : android::text::method::ReplacementTransformationMethod(obj) {}
+	// QJniObject forward
+	HideReturnsTransformationMethod::HideReturnsTransformationMethod(QJniObject obj) : android::text::method::ReplacementTransformationMethod(obj) {}
 	
 	// Constructors
 	HideReturnsTransformationMethod::HideReturnsTransformationMethod()

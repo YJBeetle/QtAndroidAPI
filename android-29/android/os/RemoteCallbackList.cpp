@@ -4,8 +4,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteCallbackList::RemoteCallbackList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RemoteCallbackList::RemoteCallbackList(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RemoteCallbackList::RemoteCallbackList()

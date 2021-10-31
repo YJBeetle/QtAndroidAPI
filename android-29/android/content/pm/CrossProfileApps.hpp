@@ -22,9 +22,9 @@ namespace android::content::pm
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CrossProfileApps(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CrossProfileApps(QAndroidJniObject obj);
+		CrossProfileApps(QJniObject obj);
 		
 		// Constructors
 		

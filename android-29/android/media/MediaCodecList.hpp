@@ -20,9 +20,9 @@ namespace android::media
 		static jint ALL_CODECS();
 		static jint REGULAR_CODECS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodecList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecList(QAndroidJniObject obj);
+		MediaCodecList(QJniObject obj);
 		
 		// Constructors
 		MediaCodecList(jint arg0);

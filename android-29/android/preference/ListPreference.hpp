@@ -24,9 +24,9 @@ namespace android::preference
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ListPreference(const char *className, const char *sig, Ts...agv) : android::preference::DialogPreference(className, sig, std::forward<Ts>(agv)...) {}
-		ListPreference(QAndroidJniObject obj);
+		ListPreference(QJniObject obj);
 		
 		// Constructors
 		ListPreference(android::content::Context arg0);

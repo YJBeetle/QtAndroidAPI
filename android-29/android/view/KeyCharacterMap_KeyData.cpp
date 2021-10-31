@@ -30,8 +30,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	KeyCharacterMap_KeyData::KeyCharacterMap_KeyData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyCharacterMap_KeyData::KeyCharacterMap_KeyData(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyCharacterMap_KeyData::KeyCharacterMap_KeyData()

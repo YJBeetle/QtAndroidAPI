@@ -13,9 +13,9 @@ namespace java::util
 		static jint LEFT_JUSTIFY();
 		static jint UPPERCASE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FormattableFlags(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FormattableFlags(QAndroidJniObject obj);
+		FormattableFlags(QJniObject obj);
 		
 		// Constructors
 		

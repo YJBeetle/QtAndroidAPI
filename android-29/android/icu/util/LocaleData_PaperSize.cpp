@@ -4,8 +4,8 @@ namespace android::icu::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LocaleData_PaperSize::LocaleData_PaperSize(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocaleData_PaperSize::LocaleData_PaperSize(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

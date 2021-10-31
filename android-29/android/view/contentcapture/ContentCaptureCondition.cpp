@@ -21,8 +21,8 @@ namespace android::view::contentcapture
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContentCaptureCondition::ContentCaptureCondition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContentCaptureCondition::ContentCaptureCondition(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ContentCaptureCondition::ContentCaptureCondition(android::content::LocusId arg0, jint arg1)

@@ -14,9 +14,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodecInfo_VideoCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecInfo_VideoCapabilities(QAndroidJniObject obj);
+		MediaCodecInfo_VideoCapabilities(QJniObject obj);
 		
 		// Constructors
 		

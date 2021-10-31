@@ -47,8 +47,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VibrationEffect::VibrationEffect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VibrationEffect::VibrationEffect(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

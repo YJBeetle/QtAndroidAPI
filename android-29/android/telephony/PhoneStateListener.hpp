@@ -36,9 +36,9 @@ namespace android::telephony
 		static jint LISTEN_SIGNAL_STRENGTHS();
 		static jint LISTEN_USER_MOBILE_DATA_STATE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PhoneStateListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PhoneStateListener(QAndroidJniObject obj);
+		PhoneStateListener(QJniObject obj);
 		
 		// Constructors
 		PhoneStateListener();

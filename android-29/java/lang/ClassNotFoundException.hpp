@@ -20,9 +20,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ClassNotFoundException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		ClassNotFoundException(QAndroidJniObject obj);
+		ClassNotFoundException(QJniObject obj);
 		
 		// Constructors
 		ClassNotFoundException();

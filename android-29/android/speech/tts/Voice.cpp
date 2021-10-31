@@ -84,8 +84,8 @@ namespace android::speech::tts
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Voice::Voice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Voice::Voice(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Voice::Voice(jstring arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __JniBaseClass arg5)

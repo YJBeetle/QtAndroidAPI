@@ -11,9 +11,9 @@ namespace android::media::audiofx
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NoiseSuppressor(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		NoiseSuppressor(QAndroidJniObject obj);
+		NoiseSuppressor(QJniObject obj);
 		
 		// Constructors
 		

@@ -12,9 +12,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RuntimePermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		RuntimePermission(QAndroidJniObject obj);
+		RuntimePermission(QJniObject obj);
 		
 		// Constructors
 		RuntimePermission(jstring arg0);

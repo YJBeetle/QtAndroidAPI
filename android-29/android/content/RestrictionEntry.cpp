@@ -70,8 +70,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RestrictionEntry::RestrictionEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RestrictionEntry::RestrictionEntry(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RestrictionEntry::RestrictionEntry(android::os::Parcel arg0)

@@ -5,8 +5,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CertPathValidatorSpi::CertPathValidatorSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CertPathValidatorSpi::CertPathValidatorSpi(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CertPathValidatorSpi::CertPathValidatorSpi()

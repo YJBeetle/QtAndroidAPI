@@ -12,9 +12,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OutOfMemoryError(const char *className, const char *sig, Ts...agv) : java::lang::VirtualMachineError(className, sig, std::forward<Ts>(agv)...) {}
-		OutOfMemoryError(QAndroidJniObject obj);
+		OutOfMemoryError(QJniObject obj);
 		
 		// Constructors
 		OutOfMemoryError();

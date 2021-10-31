@@ -8,8 +8,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Toolbar_LayoutParams::Toolbar_LayoutParams(QAndroidJniObject obj) : android::app::ActionBar_LayoutParams(obj) {}
+	// QJniObject forward
+	Toolbar_LayoutParams::Toolbar_LayoutParams(QJniObject obj) : android::app::ActionBar_LayoutParams(obj) {}
 	
 	// Constructors
 	Toolbar_LayoutParams::Toolbar_LayoutParams(android::app::ActionBar_LayoutParams arg0)

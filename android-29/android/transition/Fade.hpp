@@ -34,9 +34,9 @@ namespace android::transition
 		static jint IN();
 		static jint OUT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Fade(const char *className, const char *sig, Ts...agv) : android::transition::Visibility(className, sig, std::forward<Ts>(agv)...) {}
-		Fade(QAndroidJniObject obj);
+		Fade(QJniObject obj);
 		
 		// Constructors
 		Fade();

@@ -19,9 +19,9 @@ namespace android::view::accessibility
 		// Fields
 		static jint HOST_VIEW_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessibilityNodeProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityNodeProvider(QAndroidJniObject obj);
+		AccessibilityNodeProvider(QJniObject obj);
 		
 		// Constructors
 		AccessibilityNodeProvider();

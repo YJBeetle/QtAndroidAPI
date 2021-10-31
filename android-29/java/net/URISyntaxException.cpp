@@ -4,8 +4,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	URISyntaxException::URISyntaxException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	URISyntaxException::URISyntaxException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	URISyntaxException::URISyntaxException(jstring arg0, jstring arg1)

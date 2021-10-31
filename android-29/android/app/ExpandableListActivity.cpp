@@ -7,8 +7,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ExpandableListActivity::ExpandableListActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
+	// QJniObject forward
+	ExpandableListActivity::ExpandableListActivity(QJniObject obj) : android::app::Activity(obj) {}
 	
 	// Constructors
 	ExpandableListActivity::ExpandableListActivity()

@@ -7,8 +7,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringBuilder::StringBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StringBuilder::StringBuilder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StringBuilder::StringBuilder()

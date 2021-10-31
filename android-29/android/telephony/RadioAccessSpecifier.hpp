@@ -15,9 +15,9 @@ namespace android::telephony
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RadioAccessSpecifier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RadioAccessSpecifier(QAndroidJniObject obj);
+		RadioAccessSpecifier(QJniObject obj);
 		
 		// Constructors
 		RadioAccessSpecifier(jint arg0, jintArray arg1, jintArray arg2);

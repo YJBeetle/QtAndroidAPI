@@ -28,8 +28,8 @@ namespace java::nio::file
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StandardCopyOption::StandardCopyOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	StandardCopyOption::StandardCopyOption(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

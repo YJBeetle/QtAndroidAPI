@@ -5,8 +5,8 @@ namespace android::service::voice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlwaysOnHotwordDetector_EventPayload::AlwaysOnHotwordDetector_EventPayload(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AlwaysOnHotwordDetector_EventPayload::AlwaysOnHotwordDetector_EventPayload(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

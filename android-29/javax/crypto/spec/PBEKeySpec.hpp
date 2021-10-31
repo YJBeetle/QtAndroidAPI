@@ -10,9 +10,9 @@ namespace javax::crypto::spec
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PBEKeySpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PBEKeySpec(QAndroidJniObject obj);
+		PBEKeySpec(QJniObject obj);
 		
 		// Constructors
 		PBEKeySpec(jcharArray arg0);

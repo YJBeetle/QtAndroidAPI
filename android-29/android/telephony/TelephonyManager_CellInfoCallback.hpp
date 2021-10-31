@@ -12,9 +12,9 @@ namespace android::telephony
 		static jint ERROR_MODEM_ERROR();
 		static jint ERROR_TIMEOUT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TelephonyManager_CellInfoCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_CellInfoCallback(QAndroidJniObject obj);
+		TelephonyManager_CellInfoCallback(QJniObject obj);
 		
 		// Constructors
 		TelephonyManager_CellInfoCallback();

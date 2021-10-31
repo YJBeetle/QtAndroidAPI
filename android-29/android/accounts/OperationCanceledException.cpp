@@ -4,8 +4,8 @@ namespace android::accounts
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OperationCanceledException::OperationCanceledException(QAndroidJniObject obj) : android::accounts::AccountsException(obj) {}
+	// QJniObject forward
+	OperationCanceledException::OperationCanceledException(QJniObject obj) : android::accounts::AccountsException(obj) {}
 	
 	// Constructors
 	OperationCanceledException::OperationCanceledException()

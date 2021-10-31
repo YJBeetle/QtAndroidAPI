@@ -22,9 +22,9 @@ namespace android::hardware
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SensorEventCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SensorEventCallback(QAndroidJniObject obj);
+		SensorEventCallback(QJniObject obj);
 		
 		// Constructors
 		SensorEventCallback();

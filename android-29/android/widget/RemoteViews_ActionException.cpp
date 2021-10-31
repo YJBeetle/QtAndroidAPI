@@ -5,8 +5,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteViews_ActionException::RemoteViews_ActionException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	RemoteViews_ActionException::RemoteViews_ActionException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	RemoteViews_ActionException::RemoteViews_ActionException(java::lang::Exception arg0)

@@ -20,8 +20,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SearchRecentSuggestionsProvider::SearchRecentSuggestionsProvider(QAndroidJniObject obj) : android::content::ContentProvider(obj) {}
+	// QJniObject forward
+	SearchRecentSuggestionsProvider::SearchRecentSuggestionsProvider(QJniObject obj) : android::content::ContentProvider(obj) {}
 	
 	// Constructors
 	SearchRecentSuggestionsProvider::SearchRecentSuggestionsProvider()

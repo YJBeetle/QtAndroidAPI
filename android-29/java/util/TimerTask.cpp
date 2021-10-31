@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimerTask::TimerTask(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TimerTask::TimerTask(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -144,8 +144,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessNetworkConstants_UtranBand::AccessNetworkConstants_UtranBand(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessNetworkConstants_UtranBand::AccessNetworkConstants_UtranBand(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

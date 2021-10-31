@@ -22,9 +22,9 @@ namespace android::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AtomicFile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicFile(QAndroidJniObject obj);
+		AtomicFile(QJniObject obj);
 		
 		// Constructors
 		AtomicFile(java::io::File arg0);

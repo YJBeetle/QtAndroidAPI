@@ -7,8 +7,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RandomAccessFile::RandomAccessFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RandomAccessFile::RandomAccessFile(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RandomAccessFile::RandomAccessFile(java::io::File arg0, jstring arg1)

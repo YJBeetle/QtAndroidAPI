@@ -113,9 +113,9 @@ namespace android::media
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT();
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaPlayer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaPlayer(QAndroidJniObject obj);
+		MediaPlayer(QJniObject obj);
 		
 		// Constructors
 		MediaPlayer();

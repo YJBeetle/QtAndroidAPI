@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LruCache::LruCache(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LruCache::LruCache(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LruCache::LruCache(jint arg0)

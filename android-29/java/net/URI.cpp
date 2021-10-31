@@ -9,8 +9,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	URI::URI(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	URI::URI(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	URI::URI(jstring arg0)

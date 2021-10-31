@@ -6,8 +6,8 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	XMLFilterImpl::XMLFilterImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	XMLFilterImpl::XMLFilterImpl(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	XMLFilterImpl::XMLFilterImpl()

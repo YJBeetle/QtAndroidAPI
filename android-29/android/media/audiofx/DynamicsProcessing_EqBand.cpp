@@ -4,8 +4,8 @@ namespace android::media::audiofx
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DynamicsProcessing_EqBand::DynamicsProcessing_EqBand(QAndroidJniObject obj) : android::media::audiofx::DynamicsProcessing_BandBase(obj) {}
+	// QJniObject forward
+	DynamicsProcessing_EqBand::DynamicsProcessing_EqBand(QJniObject obj) : android::media::audiofx::DynamicsProcessing_BandBase(obj) {}
 	
 	// Constructors
 	DynamicsProcessing_EqBand::DynamicsProcessing_EqBand(android::media::audiofx::DynamicsProcessing_EqBand &arg0)

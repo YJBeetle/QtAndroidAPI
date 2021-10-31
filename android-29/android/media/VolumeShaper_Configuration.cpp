@@ -73,8 +73,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VolumeShaper_Configuration::VolumeShaper_Configuration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VolumeShaper_Configuration::VolumeShaper_Configuration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

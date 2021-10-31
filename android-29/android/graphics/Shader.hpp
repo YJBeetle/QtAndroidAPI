@@ -14,9 +14,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Shader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Shader(QAndroidJniObject obj);
+		Shader(QJniObject obj);
 		
 		// Constructors
 		Shader();

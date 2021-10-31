@@ -7,8 +7,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SelectableChannel::SelectableChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractInterruptibleChannel(obj) {}
+	// QJniObject forward
+	SelectableChannel::SelectableChannel(QJniObject obj) : java::nio::channels::spi::AbstractInterruptibleChannel(obj) {}
 	
 	// Constructors
 	

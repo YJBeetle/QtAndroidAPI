@@ -5,8 +5,8 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IntEvaluator::IntEvaluator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IntEvaluator::IntEvaluator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	IntEvaluator::IntEvaluator()

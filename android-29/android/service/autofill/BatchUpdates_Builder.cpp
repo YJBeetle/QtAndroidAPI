@@ -6,8 +6,8 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BatchUpdates_Builder::BatchUpdates_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BatchUpdates_Builder::BatchUpdates_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	BatchUpdates_Builder::BatchUpdates_Builder()

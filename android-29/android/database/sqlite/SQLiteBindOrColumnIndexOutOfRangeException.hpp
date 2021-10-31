@@ -14,9 +14,9 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SQLiteBindOrColumnIndexOutOfRangeException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteBindOrColumnIndexOutOfRangeException(QAndroidJniObject obj);
+		SQLiteBindOrColumnIndexOutOfRangeException(QJniObject obj);
 		
 		// Constructors
 		SQLiteBindOrColumnIndexOutOfRangeException();

@@ -196,8 +196,8 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ULocale::ULocale(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ULocale::ULocale(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ULocale::ULocale(jstring arg0)

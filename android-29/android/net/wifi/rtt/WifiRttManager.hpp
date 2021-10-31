@@ -19,9 +19,9 @@ namespace android::net::wifi::rtt
 		// Fields
 		static jstring ACTION_WIFI_RTT_STATE_CHANGED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiRttManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiRttManager(QAndroidJniObject obj);
+		WifiRttManager(QJniObject obj);
 		
 		// Constructors
 		

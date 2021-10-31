@@ -60,9 +60,9 @@ namespace android::media::tv
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TvView(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		TvView(QAndroidJniObject obj);
+		TvView(QJniObject obj);
 		
 		// Constructors
 		TvView(android::content::Context arg0);

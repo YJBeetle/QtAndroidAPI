@@ -26,9 +26,9 @@ namespace android::media::tv
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TvInputInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TvInputInfo_Builder(QAndroidJniObject obj);
+		TvInputInfo_Builder(QJniObject obj);
 		
 		// Constructors
 		TvInputInfo_Builder(android::content::Context arg0, android::content::ComponentName arg1);

@@ -8,8 +8,8 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TransitionInflater::TransitionInflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TransitionInflater::TransitionInflater(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

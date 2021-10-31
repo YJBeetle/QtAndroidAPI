@@ -4,8 +4,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DigestException::DigestException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	// QJniObject forward
+	DigestException::DigestException(QJniObject obj) : java::security::GeneralSecurityException(obj) {}
 	
 	// Constructors
 	DigestException::DigestException()

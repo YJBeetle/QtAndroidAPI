@@ -4,8 +4,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InflateException::InflateException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	InflateException::InflateException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	InflateException::InflateException()

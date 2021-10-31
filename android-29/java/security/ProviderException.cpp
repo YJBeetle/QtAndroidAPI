@@ -4,8 +4,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProviderException::ProviderException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	ProviderException::ProviderException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	ProviderException::ProviderException()

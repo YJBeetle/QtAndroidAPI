@@ -6,8 +6,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BitmapShader::BitmapShader(QAndroidJniObject obj) : android::graphics::Shader(obj) {}
+	// QJniObject forward
+	BitmapShader::BitmapShader(QJniObject obj) : android::graphics::Shader(obj) {}
 	
 	// Constructors
 	BitmapShader::BitmapShader(android::graphics::Bitmap arg0, android::graphics::Shader_TileMode arg1, android::graphics::Shader_TileMode arg2)

@@ -26,9 +26,9 @@ namespace javax::security::auth
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Subject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Subject(QAndroidJniObject obj);
+		Subject(QJniObject obj);
 		
 		// Constructors
 		Subject();

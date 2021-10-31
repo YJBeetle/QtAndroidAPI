@@ -33,9 +33,9 @@ namespace android::provider
 		static jint TYPE_SISTER();
 		static jint TYPE_SPOUSE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Relation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_Relation(QAndroidJniObject obj);
+		ContactsContract_CommonDataKinds_Relation(QJniObject obj);
 		
 		// Constructors
 		

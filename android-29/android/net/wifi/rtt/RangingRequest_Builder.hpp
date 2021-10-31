@@ -26,9 +26,9 @@ namespace android::net::wifi::rtt
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RangingRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RangingRequest_Builder(QAndroidJniObject obj);
+		RangingRequest_Builder(QJniObject obj);
 		
 		// Constructors
 		RangingRequest_Builder();

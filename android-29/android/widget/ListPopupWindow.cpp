@@ -59,8 +59,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ListPopupWindow::ListPopupWindow(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ListPopupWindow::ListPopupWindow(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ListPopupWindow::ListPopupWindow(android::content::Context arg0)

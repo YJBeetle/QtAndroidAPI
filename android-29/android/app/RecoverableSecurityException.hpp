@@ -22,9 +22,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RecoverableSecurityException(const char *className, const char *sig, Ts...agv) : java::lang::SecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		RecoverableSecurityException(QAndroidJniObject obj);
+		RecoverableSecurityException(QJniObject obj);
 		
 		// Constructors
 		RecoverableSecurityException(jthrowable arg0, jstring arg1, android::app::RemoteAction arg2);

@@ -15,9 +15,9 @@ namespace android::database
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbstractCursor_SelfContentObserver(const char *className, const char *sig, Ts...agv) : android::database::ContentObserver(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractCursor_SelfContentObserver(QAndroidJniObject obj);
+		AbstractCursor_SelfContentObserver(QJniObject obj);
 		
 		// Constructors
 		AbstractCursor_SelfContentObserver(android::database::AbstractCursor arg0);

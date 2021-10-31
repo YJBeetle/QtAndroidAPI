@@ -30,8 +30,8 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SessionConfiguration::SessionConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SessionConfiguration::SessionConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SessionConfiguration::SessionConfiguration(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::hardware::camera2::CameraCaptureSession_StateCallback arg3)

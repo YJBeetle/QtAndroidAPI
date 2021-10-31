@@ -4,8 +4,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DirectoryNotEmptyException::DirectoryNotEmptyException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
+	// QJniObject forward
+	DirectoryNotEmptyException::DirectoryNotEmptyException(QJniObject obj) : java::nio::file::FileSystemException(obj) {}
 	
 	// Constructors
 	DirectoryNotEmptyException::DirectoryNotEmptyException(jstring arg0)

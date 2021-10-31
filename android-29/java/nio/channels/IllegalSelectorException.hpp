@@ -13,9 +13,9 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IllegalSelectorException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalSelectorException(QAndroidJniObject obj);
+		IllegalSelectorException(QJniObject obj);
 		
 		// Constructors
 		IllegalSelectorException();

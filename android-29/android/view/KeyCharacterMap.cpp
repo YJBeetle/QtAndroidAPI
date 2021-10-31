@@ -105,8 +105,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	KeyCharacterMap::KeyCharacterMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyCharacterMap::KeyCharacterMap(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -12,9 +12,9 @@ namespace android::renderscript
 		jint x();
 		jint y();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Int2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Int2(QAndroidJniObject obj);
+		Int2(QJniObject obj);
 		
 		// Constructors
 		Int2();

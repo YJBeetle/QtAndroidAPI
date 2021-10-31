@@ -22,9 +22,9 @@ namespace android::media
 		static jint EULER_Y();
 		static jint EULER_Z();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FaceDetector_Face(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FaceDetector_Face(QAndroidJniObject obj);
+		FaceDetector_Face(QJniObject obj);
 		
 		// Constructors
 		

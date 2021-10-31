@@ -47,9 +47,9 @@ namespace android::media
 		static android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint UHD_50();
 		static android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint UHD_60();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodecInfo_VideoCapabilities_PerformancePoint(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecInfo_VideoCapabilities_PerformancePoint(QAndroidJniObject obj);
+		MediaCodecInfo_VideoCapabilities_PerformancePoint(QJniObject obj);
 		
 		// Constructors
 		MediaCodecInfo_VideoCapabilities_PerformancePoint(jint arg0, jint arg1, jint arg2);

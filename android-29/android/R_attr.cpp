@@ -9818,8 +9818,8 @@ namespace android
 		);
 	}
 	
-	// QAndroidJniObject forward
-	R_attr::R_attr(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	R_attr::R_attr(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	R_attr::R_attr()

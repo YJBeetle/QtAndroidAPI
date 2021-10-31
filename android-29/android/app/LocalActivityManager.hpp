@@ -26,9 +26,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocalActivityManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LocalActivityManager(QAndroidJniObject obj);
+		LocalActivityManager(QJniObject obj);
 		
 		// Constructors
 		LocalActivityManager(android::app::Activity arg0, jboolean arg1);

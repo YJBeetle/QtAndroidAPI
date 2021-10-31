@@ -77,8 +77,8 @@ namespace java::util::logging
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Level::Level(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Level::Level(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

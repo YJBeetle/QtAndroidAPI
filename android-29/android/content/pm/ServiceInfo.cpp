@@ -117,8 +117,8 @@ namespace android::content::pm
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ServiceInfo::ServiceInfo(QAndroidJniObject obj) : android::content::pm::ComponentInfo(obj) {}
+	// QJniObject forward
+	ServiceInfo::ServiceInfo(QJniObject obj) : android::content::pm::ComponentInfo(obj) {}
 	
 	// Constructors
 	ServiceInfo::ServiceInfo()

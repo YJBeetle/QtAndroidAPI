@@ -13,9 +13,9 @@ namespace android::view::accessibility
 		static jint RANGE_TYPE_INT();
 		static jint RANGE_TYPE_PERCENT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessibilityNodeInfo_RangeInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityNodeInfo_RangeInfo(QAndroidJniObject obj);
+		AccessibilityNodeInfo_RangeInfo(QJniObject obj);
 		
 		// Constructors
 		

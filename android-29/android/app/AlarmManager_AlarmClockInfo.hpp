@@ -19,9 +19,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AlarmManager_AlarmClockInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AlarmManager_AlarmClockInfo(QAndroidJniObject obj);
+		AlarmManager_AlarmClockInfo(QJniObject obj);
 		
 		// Constructors
 		AlarmManager_AlarmClockInfo(jlong arg0, android::app::PendingIntent arg1);

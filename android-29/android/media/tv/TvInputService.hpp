@@ -27,9 +27,9 @@ namespace android::media::tv
 		static jstring SERVICE_INTERFACE();
 		static jstring SERVICE_META_DATA();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TvInputService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		TvInputService(QAndroidJniObject obj);
+		TvInputService(QJniObject obj);
 		
 		// Constructors
 		TvInputService();

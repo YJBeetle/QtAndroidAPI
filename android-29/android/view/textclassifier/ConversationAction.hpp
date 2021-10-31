@@ -33,9 +33,9 @@ namespace android::view::textclassifier
 		static jstring TYPE_VIEW_CALENDAR();
 		static jstring TYPE_VIEW_MAP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConversationAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConversationAction(QAndroidJniObject obj);
+		ConversationAction(QJniObject obj);
 		
 		// Constructors
 		

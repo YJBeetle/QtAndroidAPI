@@ -22,9 +22,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AsyncPlayer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AsyncPlayer(QAndroidJniObject obj);
+		AsyncPlayer(QJniObject obj);
 		
 		// Constructors
 		AsyncPlayer(jstring arg0);

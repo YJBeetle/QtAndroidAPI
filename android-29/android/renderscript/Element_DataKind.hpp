@@ -19,9 +19,9 @@ namespace android::renderscript
 		static android::renderscript::Element_DataKind PIXEL_YUV();
 		static android::renderscript::Element_DataKind USER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Element_DataKind(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Element_DataKind(QAndroidJniObject obj);
+		Element_DataKind(QJniObject obj);
 		
 		// Constructors
 		

@@ -1197,8 +1197,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ExifInterface::ExifInterface(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ExifInterface::ExifInterface(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ExifInterface::ExifInterface(java::io::File arg0)

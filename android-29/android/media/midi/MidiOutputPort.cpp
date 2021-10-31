@@ -6,8 +6,8 @@ namespace android::media::midi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MidiOutputPort::MidiOutputPort(QAndroidJniObject obj) : android::media::midi::MidiSender(obj) {}
+	// QJniObject forward
+	MidiOutputPort::MidiOutputPort(QJniObject obj) : android::media::midi::MidiSender(obj) {}
 	
 	// Constructors
 	

@@ -33,9 +33,9 @@ namespace android::nfc
 		static jshort TNF_UNKNOWN();
 		static jshort TNF_WELL_KNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NdefRecord(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NdefRecord(QAndroidJniObject obj);
+		NdefRecord(QJniObject obj);
 		
 		// Constructors
 		NdefRecord(jbyteArray arg0);

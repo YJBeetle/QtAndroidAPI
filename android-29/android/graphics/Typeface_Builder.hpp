@@ -26,9 +26,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Typeface_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Typeface_Builder(QAndroidJniObject obj);
+		Typeface_Builder(QJniObject obj);
 		
 		// Constructors
 		Typeface_Builder(java::io::File arg0);

@@ -7,8 +7,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProcessBuilder::ProcessBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ProcessBuilder::ProcessBuilder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ProcessBuilder::ProcessBuilder(jarray arg0)

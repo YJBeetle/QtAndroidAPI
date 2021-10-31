@@ -8,8 +8,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaMuxer::MediaMuxer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaMuxer::MediaMuxer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaMuxer::MediaMuxer(java::io::FileDescriptor arg0, jint arg1)

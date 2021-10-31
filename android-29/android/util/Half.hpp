@@ -24,9 +24,9 @@ namespace android::util
 		static jshort POSITIVE_ZERO();
 		static jint SIZE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Half(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Half(QAndroidJniObject obj);
+		Half(QJniObject obj);
 		
 		// Constructors
 		Half(jdouble arg0);

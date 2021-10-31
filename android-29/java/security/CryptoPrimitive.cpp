@@ -84,8 +84,8 @@ namespace java::security
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CryptoPrimitive::CryptoPrimitive(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	CryptoPrimitive::CryptoPrimitive(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

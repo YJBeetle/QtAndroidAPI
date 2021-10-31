@@ -23,9 +23,9 @@ namespace java::time
 		// Fields
 		static java::time::Duration ZERO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Duration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Duration(QAndroidJniObject obj);
+		Duration(QJniObject obj);
 		
 		// Constructors
 		

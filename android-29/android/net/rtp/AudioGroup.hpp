@@ -14,9 +14,9 @@ namespace android::net::rtp
 		static jint MODE_NORMAL();
 		static jint MODE_ON_HOLD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AudioGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AudioGroup(QAndroidJniObject obj);
+		AudioGroup(QJniObject obj);
 		
 		// Constructors
 		AudioGroup();

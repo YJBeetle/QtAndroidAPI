@@ -19,9 +19,9 @@ namespace java::net
 		// Fields
 		static java::net::Proxy NO_PROXY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Proxy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Proxy(QAndroidJniObject obj);
+		Proxy(QJniObject obj);
 		
 		// Constructors
 		Proxy(java::net::Proxy_Type arg0, java::net::SocketAddress arg1);

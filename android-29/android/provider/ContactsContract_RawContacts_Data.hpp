@@ -11,9 +11,9 @@ namespace android::provider
 		// Fields
 		static jstring CONTENT_DIRECTORY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_RawContacts_Data(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_RawContacts_Data(QAndroidJniObject obj);
+		ContactsContract_RawContacts_Data(QJniObject obj);
 		
 		// Constructors
 		

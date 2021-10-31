@@ -47,8 +47,8 @@ namespace java::util::logging
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ErrorManager::ErrorManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ErrorManager::ErrorManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ErrorManager::ErrorManager()

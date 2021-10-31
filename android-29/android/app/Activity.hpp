@@ -201,9 +201,9 @@ namespace android::app
 		static jint RESULT_FIRST_USER();
 		static jint RESULT_OK();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Activity(const char *className, const char *sig, Ts...agv) : android::view::ContextThemeWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		Activity(QAndroidJniObject obj);
+		Activity(QJniObject obj);
 		
 		// Constructors
 		Activity();

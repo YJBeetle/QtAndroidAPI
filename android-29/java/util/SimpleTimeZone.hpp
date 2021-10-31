@@ -30,9 +30,9 @@ namespace java::util
 		static jint UTC_TIME();
 		static jint WALL_TIME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SimpleTimeZone(const char *className, const char *sig, Ts...agv) : java::util::TimeZone(className, sig, std::forward<Ts>(agv)...) {}
-		SimpleTimeZone(QAndroidJniObject obj);
+		SimpleTimeZone(QJniObject obj);
 		
 		// Constructors
 		SimpleTimeZone(jint arg0, jstring arg1);

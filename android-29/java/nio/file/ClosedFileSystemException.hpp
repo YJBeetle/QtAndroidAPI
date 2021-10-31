@@ -13,9 +13,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ClosedFileSystemException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		ClosedFileSystemException(QAndroidJniObject obj);
+		ClosedFileSystemException(QJniObject obj);
 		
 		// Constructors
 		ClosedFileSystemException();

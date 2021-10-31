@@ -109,8 +109,8 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ResolveInfo::ResolveInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ResolveInfo::ResolveInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ResolveInfo::ResolveInfo()

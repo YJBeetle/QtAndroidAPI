@@ -6,8 +6,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringBuffer::StringBuffer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StringBuffer::StringBuffer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StringBuffer::StringBuffer()

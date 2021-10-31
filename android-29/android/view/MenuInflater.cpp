@@ -5,8 +5,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MenuInflater::MenuInflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MenuInflater::MenuInflater(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MenuInflater::MenuInflater(android::content::Context arg0)

@@ -8,8 +8,8 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AllocationAdapter::AllocationAdapter(QAndroidJniObject obj) : android::renderscript::Allocation(obj) {}
+	// QJniObject forward
+	AllocationAdapter::AllocationAdapter(QJniObject obj) : android::renderscript::Allocation(obj) {}
 	
 	// Constructors
 	

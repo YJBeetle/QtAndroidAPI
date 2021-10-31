@@ -25,9 +25,9 @@ namespace android::view::textclassifier
 		static jstring HINT_FOR_IN_APP();
 		static jstring HINT_FOR_NOTIFICATION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConversationActions_Request(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConversationActions_Request(QAndroidJniObject obj);
+		ConversationActions_Request(QJniObject obj);
 		
 		// Constructors
 		

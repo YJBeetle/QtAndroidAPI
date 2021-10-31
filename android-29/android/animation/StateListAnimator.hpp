@@ -14,9 +14,9 @@ namespace android::animation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StateListAnimator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StateListAnimator(QAndroidJniObject obj);
+		StateListAnimator(QJniObject obj);
 		
 		// Constructors
 		StateListAnimator();

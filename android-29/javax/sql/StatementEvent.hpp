@@ -15,9 +15,9 @@ namespace javax::sql
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StatementEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		StatementEvent(QAndroidJniObject obj);
+		StatementEvent(QJniObject obj);
 		
 		// Constructors
 		StatementEvent(__JniBaseClass arg0, __JniBaseClass arg1);

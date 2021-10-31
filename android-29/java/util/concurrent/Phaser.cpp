@@ -6,8 +6,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Phaser::Phaser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Phaser::Phaser(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Phaser::Phaser()

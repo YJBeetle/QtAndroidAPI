@@ -8,8 +8,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BitSet::BitSet(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BitSet::BitSet(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	BitSet::BitSet()

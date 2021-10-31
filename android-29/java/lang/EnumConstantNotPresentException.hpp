@@ -12,9 +12,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EnumConstantNotPresentException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		EnumConstantNotPresentException(QAndroidJniObject obj);
+		EnumConstantNotPresentException(QJniObject obj);
 		
 		// Constructors
 		EnumConstantNotPresentException(jclass arg0, jstring arg1);

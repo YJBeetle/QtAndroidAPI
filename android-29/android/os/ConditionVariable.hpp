@@ -10,9 +10,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConditionVariable(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConditionVariable(QAndroidJniObject obj);
+		ConditionVariable(QJniObject obj);
 		
 		// Constructors
 		ConditionVariable();

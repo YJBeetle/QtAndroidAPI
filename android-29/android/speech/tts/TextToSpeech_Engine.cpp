@@ -239,8 +239,8 @@ namespace android::speech::tts
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	TextToSpeech_Engine::TextToSpeech_Engine(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextToSpeech_Engine::TextToSpeech_Engine(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TextToSpeech_Engine::TextToSpeech_Engine(android::speech::tts::TextToSpeech arg0)

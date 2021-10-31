@@ -82,9 +82,9 @@ namespace java::awt::font
 		static java::lang::Float WIDTH_SEMI_CONDENSED();
 		static java::lang::Float WIDTH_SEMI_EXTENDED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextAttribute(const char *className, const char *sig, Ts...agv) : java::text::AttributedCharacterIterator_Attribute(className, sig, std::forward<Ts>(agv)...) {}
-		TextAttribute(QAndroidJniObject obj);
+		TextAttribute(QJniObject obj);
 		
 		// Constructors
 		

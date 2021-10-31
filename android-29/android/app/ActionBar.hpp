@@ -38,9 +38,9 @@ namespace android::app
 		static jint NAVIGATION_MODE_STANDARD();
 		static jint NAVIGATION_MODE_TABS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActionBar(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActionBar(QAndroidJniObject obj);
+		ActionBar(QJniObject obj);
 		
 		// Constructors
 		ActionBar();

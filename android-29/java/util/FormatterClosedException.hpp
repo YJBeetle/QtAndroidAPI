@@ -13,9 +13,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FormatterClosedException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		FormatterClosedException(QAndroidJniObject obj);
+		FormatterClosedException(QJniObject obj);
 		
 		// Constructors
 		FormatterClosedException();

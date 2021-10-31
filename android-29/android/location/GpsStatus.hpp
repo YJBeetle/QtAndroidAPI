@@ -14,9 +14,9 @@ namespace android::location
 		static jint GPS_EVENT_STARTED();
 		static jint GPS_EVENT_STOPPED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GpsStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GpsStatus(QAndroidJniObject obj);
+		GpsStatus(QJniObject obj);
 		
 		// Constructors
 		

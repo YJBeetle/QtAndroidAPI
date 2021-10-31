@@ -15,8 +15,8 @@ namespace android::hardware::usb
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UsbDevice::UsbDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UsbDevice::UsbDevice(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

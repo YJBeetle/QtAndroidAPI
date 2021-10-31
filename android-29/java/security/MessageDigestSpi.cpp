@@ -5,8 +5,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MessageDigestSpi::MessageDigestSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MessageDigestSpi::MessageDigestSpi(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MessageDigestSpi::MessageDigestSpi()

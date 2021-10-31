@@ -15,9 +15,9 @@ namespace android::telephony::gsm
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GsmCellLocation(const char *className, const char *sig, Ts...agv) : android::telephony::CellLocation(className, sig, std::forward<Ts>(agv)...) {}
-		GsmCellLocation(QAndroidJniObject obj);
+		GsmCellLocation(QJniObject obj);
 		
 		// Constructors
 		GsmCellLocation();

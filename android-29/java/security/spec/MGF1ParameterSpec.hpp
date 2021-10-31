@@ -21,9 +21,9 @@ namespace java::security::spec
 		static java::security::spec::MGF1ParameterSpec SHA512_224();
 		static java::security::spec::MGF1ParameterSpec SHA512_256();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MGF1ParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MGF1ParameterSpec(QAndroidJniObject obj);
+		MGF1ParameterSpec(QJniObject obj);
 		
 		// Constructors
 		MGF1ParameterSpec(jstring arg0);

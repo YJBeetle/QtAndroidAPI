@@ -25,9 +25,9 @@ namespace java::time::temporal
 		static java::time::temporal::WeekFields SUNDAY_START();
 		static __JniBaseClass WEEK_BASED_YEARS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WeekFields(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WeekFields(QAndroidJniObject obj);
+		WeekFields(QJniObject obj);
 		
 		// Constructors
 		

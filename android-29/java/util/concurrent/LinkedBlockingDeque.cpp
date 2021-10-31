@@ -8,8 +8,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LinkedBlockingDeque::LinkedBlockingDeque(QAndroidJniObject obj) : java::util::AbstractQueue(obj) {}
+	// QJniObject forward
+	LinkedBlockingDeque::LinkedBlockingDeque(QJniObject obj) : java::util::AbstractQueue(obj) {}
 	
 	// Constructors
 	LinkedBlockingDeque::LinkedBlockingDeque()

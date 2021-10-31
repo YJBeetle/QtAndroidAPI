@@ -56,9 +56,9 @@ namespace android::widget
 		static __JniBaseClass CREATOR();
 		static jstring EXTRA_SHARED_ELEMENT_BOUNDS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RemoteViews(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteViews(QAndroidJniObject obj);
+		RemoteViews(QJniObject obj);
 		
 		// Constructors
 		RemoteViews(android::os::Parcel arg0);

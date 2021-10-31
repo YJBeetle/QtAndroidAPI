@@ -11,9 +11,9 @@ namespace android::util
 		// Fields
 		jbyte value();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MutableByte(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MutableByte(QAndroidJniObject obj);
+		MutableByte(QJniObject obj);
 		
 		// Constructors
 		MutableByte(jbyte arg0);

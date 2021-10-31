@@ -16,8 +16,8 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiNetworkSpecifier::WifiNetworkSpecifier(QAndroidJniObject obj) : android::net::NetworkSpecifier(obj) {}
+	// QJniObject forward
+	WifiNetworkSpecifier::WifiNetworkSpecifier(QJniObject obj) : android::net::NetworkSpecifier(obj) {}
 	
 	// Constructors
 	

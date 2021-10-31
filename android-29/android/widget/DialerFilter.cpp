@@ -42,8 +42,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DialerFilter::DialerFilter(QAndroidJniObject obj) : android::widget::RelativeLayout(obj) {}
+	// QJniObject forward
+	DialerFilter::DialerFilter(QJniObject obj) : android::widget::RelativeLayout(obj) {}
 	
 	// Constructors
 	DialerFilter::DialerFilter(android::content::Context arg0)

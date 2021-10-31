@@ -12,9 +12,9 @@ namespace android::provider
 		static jstring CONTENT_DIRECTORY();
 		static jstring DATA_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_RawContacts_Entity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_RawContacts_Entity(QAndroidJniObject obj);
+		ContactsContract_RawContacts_Entity(QJniObject obj);
 		
 		// Constructors
 		

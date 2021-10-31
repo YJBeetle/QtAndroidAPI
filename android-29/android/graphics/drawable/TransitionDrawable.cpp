@@ -5,8 +5,8 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TransitionDrawable::TransitionDrawable(QAndroidJniObject obj) : android::graphics::drawable::LayerDrawable(obj) {}
+	// QJniObject forward
+	TransitionDrawable::TransitionDrawable(QJniObject obj) : android::graphics::drawable::LayerDrawable(obj) {}
 	
 	// Constructors
 	TransitionDrawable::TransitionDrawable(jarray arg0)

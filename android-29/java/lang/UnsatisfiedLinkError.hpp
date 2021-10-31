@@ -12,9 +12,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnsatisfiedLinkError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
-		UnsatisfiedLinkError(QAndroidJniObject obj);
+		UnsatisfiedLinkError(QJniObject obj);
 		
 		// Constructors
 		UnsatisfiedLinkError();
