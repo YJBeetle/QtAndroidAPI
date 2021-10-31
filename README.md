@@ -7,7 +7,7 @@
 QAndroidJniObject javaString = QAndroidJniObject::fromString("Message");
 QAndroidJniObject toast = QAndroidJniObject::callStaticObjectMethod("android/widget/Toast", "makeText",
                                                                     "(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;",
-                                                                    QtAndroid::androidContext().object(),
+                                                                    QNativeInterface::QAndroidApplication::context().object(),
                                                                     javaString.object(),
                                                                     jint(0));
 toast.callMethod<void>("show");
@@ -18,7 +18,7 @@ toast.callMethod<void>("show");
 #include "android/widget/Toast.hpp"
 using android::widget::Toast;
 using android::content::Context;
-auto toast = Toast::makeText(Context(QtAndroid::androidContext()),
+auto toast = Toast::makeText(Context(QNativeInterface::QAndroidApplication::context()),
                              "Message",
                              0);
 toast.show();
