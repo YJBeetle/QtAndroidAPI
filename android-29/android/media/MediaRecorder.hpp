@@ -67,13 +67,13 @@ namespace android::media
 		// Methods
 		static jint getAudioSourceMax();
 		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
-		QAndroidJniObject getActiveMicrophones();
-		QAndroidJniObject getActiveRecordingConfiguration();
+		__JniBaseClass getActiveMicrophones();
+		android::media::AudioRecordingConfiguration getActiveRecordingConfiguration();
 		jint getMaxAmplitude();
-		QAndroidJniObject getMetrics();
-		QAndroidJniObject getPreferredDevice();
-		QAndroidJniObject getRoutedDevice();
-		QAndroidJniObject getSurface();
+		android::os::PersistableBundle getMetrics();
+		android::media::AudioDeviceInfo getPreferredDevice();
+		android::media::AudioDeviceInfo getRoutedDevice();
+		android::view::Surface getSurface();
 		void pause();
 		void prepare();
 		void registerAudioRecordingCallback(__JniBaseClass arg0, android::media::AudioManager_AudioRecordingCallback arg1);

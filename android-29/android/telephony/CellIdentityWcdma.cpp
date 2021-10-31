@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject CellIdentityWcdma::CREATOR()
+	__JniBaseClass CellIdentityWcdma::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellIdentityWcdma",

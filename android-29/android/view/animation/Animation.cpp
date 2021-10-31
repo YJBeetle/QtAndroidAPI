@@ -143,7 +143,7 @@ namespace android::view::animation
 			"()Z"
 		);
 	}
-	QAndroidJniObject Animation::getInterpolator()
+	__JniBaseClass Animation::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",

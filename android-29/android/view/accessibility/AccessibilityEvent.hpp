@@ -25,7 +25,7 @@ namespace android::view::accessibility
 		static jint CONTENT_CHANGE_TYPE_SUBTREE();
 		static jint CONTENT_CHANGE_TYPE_TEXT();
 		static jint CONTENT_CHANGE_TYPE_UNDEFINED();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint INVALID_POSITION();
 		static jint MAX_TEXT_LENGTH();
 		static jint TYPES_ALL_MASK();
@@ -74,9 +74,9 @@ namespace android::view::accessibility
 		
 		// Methods
 		static jstring eventTypeToString(jint arg0);
-		static QAndroidJniObject obtain();
-		static QAndroidJniObject obtain(android::view::accessibility::AccessibilityEvent arg0);
-		static QAndroidJniObject obtain(jint arg0);
+		static android::view::accessibility::AccessibilityEvent obtain();
+		static android::view::accessibility::AccessibilityEvent obtain(android::view::accessibility::AccessibilityEvent arg0);
+		static android::view::accessibility::AccessibilityEvent obtain(jint arg0);
 		void appendRecord(android::view::accessibility::AccessibilityRecord arg0);
 		jint describeContents();
 		jint getAction();
@@ -85,7 +85,7 @@ namespace android::view::accessibility
 		jint getEventType();
 		jint getMovementGranularity();
 		jstring getPackageName();
-		QAndroidJniObject getRecord(jint arg0);
+		android::view::accessibility::AccessibilityRecord getRecord(jint arg0);
 		jint getRecordCount();
 		jint getWindowChanges();
 		void initFromParcel(android::os::Parcel arg0);

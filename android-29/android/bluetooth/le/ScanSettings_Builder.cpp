@@ -16,14 +16,14 @@ namespace android::bluetooth::le
 		) {}
 	
 	// Methods
-	QAndroidJniObject ScanSettings_Builder::build()
+	android::bluetooth::le::ScanSettings ScanSettings_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/bluetooth/le/ScanSettings;"
 		);
 	}
-	QAndroidJniObject ScanSettings_Builder::setCallbackType(jint arg0)
+	android::bluetooth::le::ScanSettings_Builder ScanSettings_Builder::setCallbackType(jint arg0)
 	{
 		return callObjectMethod(
 			"setCallbackType",
@@ -31,7 +31,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject ScanSettings_Builder::setLegacy(jboolean arg0)
+	android::bluetooth::le::ScanSettings_Builder ScanSettings_Builder::setLegacy(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setLegacy",
@@ -39,7 +39,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject ScanSettings_Builder::setMatchMode(jint arg0)
+	android::bluetooth::le::ScanSettings_Builder ScanSettings_Builder::setMatchMode(jint arg0)
 	{
 		return callObjectMethod(
 			"setMatchMode",
@@ -47,7 +47,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject ScanSettings_Builder::setNumOfMatches(jint arg0)
+	android::bluetooth::le::ScanSettings_Builder ScanSettings_Builder::setNumOfMatches(jint arg0)
 	{
 		return callObjectMethod(
 			"setNumOfMatches",
@@ -55,7 +55,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject ScanSettings_Builder::setPhy(jint arg0)
+	android::bluetooth::le::ScanSettings_Builder ScanSettings_Builder::setPhy(jint arg0)
 	{
 		return callObjectMethod(
 			"setPhy",
@@ -63,7 +63,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject ScanSettings_Builder::setReportDelay(jlong arg0)
+	android::bluetooth::le::ScanSettings_Builder ScanSettings_Builder::setReportDelay(jlong arg0)
 	{
 		return callObjectMethod(
 			"setReportDelay",
@@ -71,7 +71,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject ScanSettings_Builder::setScanMode(jint arg0)
+	android::bluetooth::le::ScanSettings_Builder ScanSettings_Builder::setScanMode(jint arg0)
 	{
 		return callObjectMethod(
 			"setScanMode",

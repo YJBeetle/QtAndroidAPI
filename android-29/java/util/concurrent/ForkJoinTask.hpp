@@ -42,21 +42,21 @@ namespace java::util::concurrent
 		ForkJoinTask();
 		
 		// Methods
-		static QAndroidJniObject adapt(__JniBaseClass arg0);
-		static QAndroidJniObject adapt(__JniBaseClass arg0, jobject arg1);
-		static QAndroidJniObject getPool();
+		static java::util::concurrent::ForkJoinTask adapt(__JniBaseClass arg0);
+		static java::util::concurrent::ForkJoinTask adapt(__JniBaseClass arg0, jobject arg1);
+		static java::util::concurrent::ForkJoinPool getPool();
 		static jint getQueuedTaskCount();
 		static jint getSurplusQueuedTaskCount();
 		static void helpQuiesce();
 		static jboolean inForkJoinPool();
-		static QAndroidJniObject invokeAll(__JniBaseClass arg0);
+		static __JniBaseClass invokeAll(__JniBaseClass arg0);
 		static void invokeAll(jarray arg0);
 		static void invokeAll(java::util::concurrent::ForkJoinTask arg0, java::util::concurrent::ForkJoinTask arg1);
 		jboolean cancel(jboolean arg0);
 		jboolean compareAndSetForkJoinTaskTag(jshort arg0, jshort arg1);
 		void complete(jobject arg0);
 		void completeExceptionally(jthrowable arg0);
-		QAndroidJniObject fork();
+		java::util::concurrent::ForkJoinTask fork();
 		jobject get();
 		jobject get(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		jthrowable getException();

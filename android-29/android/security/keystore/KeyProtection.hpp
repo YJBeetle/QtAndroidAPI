@@ -24,9 +24,9 @@ namespace android::security::keystore
 		jarray getBlockModes();
 		jarray getDigests();
 		jarray getEncryptionPaddings();
-		QAndroidJniObject getKeyValidityForConsumptionEnd();
-		QAndroidJniObject getKeyValidityForOriginationEnd();
-		QAndroidJniObject getKeyValidityStart();
+		java::util::Date getKeyValidityForConsumptionEnd();
+		java::util::Date getKeyValidityForOriginationEnd();
+		java::util::Date getKeyValidityStart();
 		jint getPurposes();
 		jarray getSignaturePaddings();
 		jint getUserAuthenticationValidityDurationSeconds();

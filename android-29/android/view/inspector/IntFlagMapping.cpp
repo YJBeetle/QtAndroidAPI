@@ -25,7 +25,7 @@ namespace android::view::inspector
 			arg2
 		);
 	}
-	QAndroidJniObject IntFlagMapping::get(jint arg0)
+	__JniBaseClass IntFlagMapping::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",

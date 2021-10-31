@@ -31,18 +31,18 @@ namespace javax::security::cert
 		X509Certificate();
 		
 		// Methods
-		static QAndroidJniObject getInstance(jbyteArray arg0);
-		static QAndroidJniObject getInstance(java::io::InputStream arg0);
+		static javax::security::cert::X509Certificate getInstance(jbyteArray arg0);
+		static javax::security::cert::X509Certificate getInstance(java::io::InputStream arg0);
 		void checkValidity();
 		void checkValidity(java::util::Date arg0);
-		QAndroidJniObject getIssuerDN();
-		QAndroidJniObject getNotAfter();
-		QAndroidJniObject getNotBefore();
-		QAndroidJniObject getSerialNumber();
+		__JniBaseClass getIssuerDN();
+		java::util::Date getNotAfter();
+		java::util::Date getNotBefore();
+		java::math::BigInteger getSerialNumber();
 		jstring getSigAlgName();
 		jstring getSigAlgOID();
 		jbyteArray getSigAlgParams();
-		QAndroidJniObject getSubjectDN();
+		__JniBaseClass getSubjectDN();
 		jint getVersion();
 	};
 } // namespace javax::security::cert

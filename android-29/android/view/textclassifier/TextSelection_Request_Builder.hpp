@@ -30,9 +30,9 @@ namespace android::view::textclassifier
 		TextSelection_Request_Builder(jstring arg0, jint arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setDefaultLocales(android::os::LocaleList arg0);
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
+		android::view::textclassifier::TextSelection_Request build();
+		android::view::textclassifier::TextSelection_Request_Builder setDefaultLocales(android::os::LocaleList arg0);
+		android::view::textclassifier::TextSelection_Request_Builder setExtras(android::os::Bundle arg0);
 	};
 } // namespace android::view::textclassifier
 

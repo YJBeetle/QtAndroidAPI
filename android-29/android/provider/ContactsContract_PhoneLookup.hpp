@@ -13,8 +13,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_FILTER_URI();
-		static QAndroidJniObject ENTERPRISE_CONTENT_FILTER_URI();
+		static android::net::Uri CONTENT_FILTER_URI();
+		static android::net::Uri ENTERPRISE_CONTENT_FILTER_URI();
 		static jstring QUERY_PARAMETER_SIP_ADDRESS();
 		
 		// QAndroidJniObject forward

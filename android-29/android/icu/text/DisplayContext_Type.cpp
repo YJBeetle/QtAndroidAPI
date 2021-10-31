@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject DisplayContext_Type::CAPITALIZATION()
+	android::icu::text::DisplayContext_Type DisplayContext_Type::CAPITALIZATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext$Type;"
 		);
 	}
-	QAndroidJniObject DisplayContext_Type::DIALECT_HANDLING()
+	android::icu::text::DisplayContext_Type DisplayContext_Type::DIALECT_HANDLING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext$Type;"
 		);
 	}
-	QAndroidJniObject DisplayContext_Type::DISPLAY_LENGTH()
+	android::icu::text::DisplayContext_Type DisplayContext_Type::DISPLAY_LENGTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext$Type;"
 		);
 	}
-	QAndroidJniObject DisplayContext_Type::SUBSTITUTE_HANDLING()
+	android::icu::text::DisplayContext_Type DisplayContext_Type::SUBSTITUTE_HANDLING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
@@ -42,7 +42,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DisplayContext_Type::valueOf(jstring arg0)
+	android::icu::text::DisplayContext_Type DisplayContext_Type::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DisplayContext$Type",

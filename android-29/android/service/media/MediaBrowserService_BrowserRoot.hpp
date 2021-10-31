@@ -25,7 +25,7 @@ namespace android::service::media
 		MediaBrowserService_BrowserRoot(jstring arg0, android::os::Bundle arg1);
 		
 		// Methods
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jstring getRootId();
 	};
 } // namespace android::service::media

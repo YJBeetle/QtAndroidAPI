@@ -53,14 +53,14 @@ namespace android::drm
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject DrmSupportInfo::getFileSuffixIterator()
+	__JniBaseClass DrmSupportInfo::getFileSuffixIterator()
 	{
 		return callObjectMethod(
 			"getFileSuffixIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject DrmSupportInfo::getMimeTypeIterator()
+	__JniBaseClass DrmSupportInfo::getMimeTypeIterator()
 	{
 		return callObjectMethod(
 			"getMimeTypeIterator",

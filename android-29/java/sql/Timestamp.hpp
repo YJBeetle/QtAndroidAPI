@@ -32,9 +32,9 @@ namespace java::sql
 		Timestamp(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		
 		// Methods
-		static QAndroidJniObject from(java::time::Instant arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(java::time::LocalDateTime arg0);
+		static java::sql::Timestamp from(java::time::Instant arg0);
+		static java::sql::Timestamp valueOf(jstring arg0);
+		static java::sql::Timestamp valueOf(java::time::LocalDateTime arg0);
 		jboolean after(java::sql::Timestamp arg0);
 		jboolean before(java::sql::Timestamp arg0);
 		jint compareTo(jobject arg0);
@@ -47,8 +47,8 @@ namespace java::sql
 		jint hashCode();
 		void setNanos(jint arg0);
 		void setTime(jlong arg0);
-		QAndroidJniObject toInstant();
-		QAndroidJniObject toLocalDateTime();
+		java::time::Instant toInstant();
+		java::time::LocalDateTime toLocalDateTime();
 		jstring toString();
 	};
 } // namespace java::sql

@@ -25,7 +25,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DropBoxManager_Entry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -42,7 +42,7 @@ namespace android::os
 		void close();
 		jint describeContents();
 		jint getFlags();
-		QAndroidJniObject getInputStream();
+		java::io::InputStream getInputStream();
 		jstring getTag();
 		jstring getText(jint arg0);
 		jlong getTimeMillis();

@@ -5,7 +5,7 @@
 namespace java::lang
 {
 	// Fields
-	QAndroidJniObject ProcessBuilder_Redirect::DISCARD()
+	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::DISCARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
@@ -13,7 +13,7 @@ namespace java::lang
 			"Ljava/lang/ProcessBuilder$Redirect;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect::INHERIT()
+	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::INHERIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
@@ -21,7 +21,7 @@ namespace java::lang
 			"Ljava/lang/ProcessBuilder$Redirect;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect::PIPE()
+	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::PIPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
@@ -36,7 +36,7 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ProcessBuilder_Redirect::appendTo(java::io::File arg0)
+	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::appendTo(java::io::File arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect",
@@ -45,7 +45,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect::from(java::io::File arg0)
+	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::from(java::io::File arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect",
@@ -54,7 +54,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect::to(java::io::File arg0)
+	java::lang::ProcessBuilder_Redirect ProcessBuilder_Redirect::to(java::io::File arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect",
@@ -71,7 +71,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect::file()
+	java::io::File ProcessBuilder_Redirect::file()
 	{
 		return callObjectMethod(
 			"file",
@@ -85,7 +85,7 @@ namespace java::lang
 			"()I"
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect::type()
+	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect::type()
 	{
 		return callObjectMethod(
 			"type",

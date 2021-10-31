@@ -27,7 +27,7 @@ namespace javax::xml::xpath
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject XPathFactory::newDefaultInstance()
+	javax::xml::xpath::XPathFactory XPathFactory::newDefaultInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
@@ -35,7 +35,7 @@ namespace javax::xml::xpath
 			"()Ljavax/xml/xpath/XPathFactory;"
 		);
 	}
-	QAndroidJniObject XPathFactory::newInstance()
+	javax::xml::xpath::XPathFactory XPathFactory::newInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
@@ -43,7 +43,7 @@ namespace javax::xml::xpath
 			"()Ljavax/xml/xpath/XPathFactory;"
 		);
 	}
-	QAndroidJniObject XPathFactory::newInstance(jstring arg0)
+	javax::xml::xpath::XPathFactory XPathFactory::newInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
@@ -52,7 +52,7 @@ namespace javax::xml::xpath
 			arg0
 		);
 	}
-	QAndroidJniObject XPathFactory::newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2)
+	javax::xml::xpath::XPathFactory XPathFactory::newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
@@ -79,7 +79,7 @@ namespace javax::xml::xpath
 			arg0
 		);
 	}
-	QAndroidJniObject XPathFactory::newXPath()
+	__JniBaseClass XPathFactory::newXPath()
 	{
 		return callObjectMethod(
 			"newXPath",

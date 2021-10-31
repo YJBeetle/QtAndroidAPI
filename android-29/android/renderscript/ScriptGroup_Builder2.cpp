@@ -23,14 +23,14 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	QAndroidJniObject ScriptGroup_Builder2::addInput()
+	android::renderscript::ScriptGroup_Input ScriptGroup_Builder2::addInput()
 	{
 		return callObjectMethod(
 			"addInput",
 			"()Landroid/renderscript/ScriptGroup$Input;"
 		);
 	}
-	QAndroidJniObject ScriptGroup_Builder2::addInvoke(android::renderscript::Script_InvokeID arg0, jobjectArray arg1)
+	android::renderscript::ScriptGroup_Closure ScriptGroup_Builder2::addInvoke(android::renderscript::Script_InvokeID arg0, jobjectArray arg1)
 	{
 		return callObjectMethod(
 			"addInvoke",
@@ -39,7 +39,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	QAndroidJniObject ScriptGroup_Builder2::addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, jobjectArray arg2)
+	android::renderscript::ScriptGroup_Closure ScriptGroup_Builder2::addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, jobjectArray arg2)
 	{
 		return callObjectMethod(
 			"addKernel",
@@ -49,7 +49,7 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	QAndroidJniObject ScriptGroup_Builder2::create(jstring arg0, jarray arg1)
+	android::renderscript::ScriptGroup ScriptGroup_Builder2::create(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"create",

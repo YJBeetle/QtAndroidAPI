@@ -229,7 +229,7 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getKeys();
+		__JniBaseClass getKeys();
 	};
 } // namespace android::hardware::camera2
 

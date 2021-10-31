@@ -24,7 +24,7 @@ namespace android::service::voice
 		void cancel();
 		jstring getCallingPackage();
 		jint getCallingUid();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jboolean isActive();
 		jstring toString();
 	};

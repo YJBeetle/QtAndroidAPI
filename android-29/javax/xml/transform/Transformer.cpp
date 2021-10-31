@@ -18,14 +18,14 @@ namespace javax::xml::transform
 			"()V"
 		);
 	}
-	QAndroidJniObject Transformer::getErrorListener()
+	__JniBaseClass Transformer::getErrorListener()
 	{
 		return callObjectMethod(
 			"getErrorListener",
 			"()Ljavax/xml/transform/ErrorListener;"
 		);
 	}
-	QAndroidJniObject Transformer::getOutputProperties()
+	java::util::Properties Transformer::getOutputProperties()
 	{
 		return callObjectMethod(
 			"getOutputProperties",
@@ -48,7 +48,7 @@ namespace javax::xml::transform
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject Transformer::getURIResolver()
+	__JniBaseClass Transformer::getURIResolver()
 	{
 		return callObjectMethod(
 			"getURIResolver",

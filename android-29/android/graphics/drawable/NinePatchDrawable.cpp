@@ -95,7 +95,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject NinePatchDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState NinePatchDrawable::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
@@ -123,7 +123,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject NinePatchDrawable::getOpticalInsets()
+	android::graphics::Insets NinePatchDrawable::getOpticalInsets()
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
@@ -146,14 +146,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NinePatchDrawable::getPaint()
+	android::graphics::Paint NinePatchDrawable::getPaint()
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
 		);
 	}
-	QAndroidJniObject NinePatchDrawable::getTransparentRegion()
+	android::graphics::Region NinePatchDrawable::getTransparentRegion()
 	{
 		return callObjectMethod(
 			"getTransparentRegion",
@@ -192,7 +192,7 @@ namespace android::graphics::drawable
 			"()Z"
 		);
 	}
-	QAndroidJniObject NinePatchDrawable::mutate()
+	android::graphics::drawable::Drawable NinePatchDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

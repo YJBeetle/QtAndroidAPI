@@ -40,7 +40,7 @@ namespace java::util::concurrent::locks
 			"()V"
 		);
 	}
-	QAndroidJniObject ReentrantReadWriteLock_WriteLock::newCondition()
+	__JniBaseClass ReentrantReadWriteLock_WriteLock::newCondition()
 	{
 		return callObjectMethod(
 			"newCondition",

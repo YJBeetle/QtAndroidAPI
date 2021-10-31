@@ -5,7 +5,7 @@
 namespace android::net::wifi::aware
 {
 	// Fields
-	QAndroidJniObject WifiAwareNetworkInfo::CREATOR()
+	__JniBaseClass WifiAwareNetworkInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.aware.WifiAwareNetworkInfo",
@@ -35,7 +35,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	QAndroidJniObject WifiAwareNetworkInfo::getPeerIpv6Addr()
+	java::net::Inet6Address WifiAwareNetworkInfo::getPeerIpv6Addr()
 	{
 		return callObjectMethod(
 			"getPeerIpv6Addr",

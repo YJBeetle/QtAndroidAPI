@@ -49,11 +49,11 @@ namespace android::widget
 		LinearLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::widget::LinearLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getAccessibilityClassName();
 		jint getBaseline();
 		jint getBaselineAlignedChildIndex();
-		QAndroidJniObject getDividerDrawable();
+		android::graphics::drawable::Drawable getDividerDrawable();
 		jint getDividerPadding();
 		jint getGravity();
 		jint getOrientation();

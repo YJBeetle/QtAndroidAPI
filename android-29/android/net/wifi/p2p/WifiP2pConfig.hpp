@@ -17,13 +17,13 @@ namespace android::net::wifi::p2p
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint GROUP_OWNER_BAND_2GHZ();
 		static jint GROUP_OWNER_BAND_5GHZ();
 		static jint GROUP_OWNER_BAND_AUTO();
 		jstring deviceAddress();
 		jint groupOwnerIntent();
-		QAndroidJniObject wps();
+		android::net::wifi::WpsInfo wps();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiP2pConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

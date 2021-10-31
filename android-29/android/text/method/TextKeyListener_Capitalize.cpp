@@ -3,7 +3,7 @@
 namespace android::text::method
 {
 	// Fields
-	QAndroidJniObject TextKeyListener_Capitalize::CHARACTERS()
+	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::CHARACTERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
@@ -11,7 +11,7 @@ namespace android::text::method
 			"Landroid/text/method/TextKeyListener$Capitalize;"
 		);
 	}
-	QAndroidJniObject TextKeyListener_Capitalize::NONE()
+	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::NONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
@@ -19,7 +19,7 @@ namespace android::text::method
 			"Landroid/text/method/TextKeyListener$Capitalize;"
 		);
 	}
-	QAndroidJniObject TextKeyListener_Capitalize::SENTENCES()
+	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::SENTENCES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
@@ -27,7 +27,7 @@ namespace android::text::method
 			"Landroid/text/method/TextKeyListener$Capitalize;"
 		);
 	}
-	QAndroidJniObject TextKeyListener_Capitalize::WORDS()
+	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::WORDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
@@ -42,7 +42,7 @@ namespace android::text::method
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TextKeyListener_Capitalize::valueOf(jstring arg0)
+	android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.TextKeyListener$Capitalize",

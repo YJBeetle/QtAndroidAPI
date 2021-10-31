@@ -39,14 +39,14 @@ namespace java::util
 		void clear();
 		jobject clone();
 		jboolean contains(jobject arg0);
-		QAndroidJniObject descendingIterator();
+		__JniBaseClass descendingIterator();
 		jobject element();
 		jobject get(jint arg0);
 		jobject getFirst();
 		jobject getLast();
 		jint indexOf(jobject arg0);
 		jint lastIndexOf(jobject arg0);
-		QAndroidJniObject listIterator(jint arg0);
+		__JniBaseClass listIterator(jint arg0);
 		jboolean offer(jobject arg0);
 		jboolean offerFirst(jobject arg0);
 		jboolean offerLast(jobject arg0);
@@ -67,7 +67,7 @@ namespace java::util
 		jboolean removeLastOccurrence(jobject arg0);
 		jobject set(jint arg0, jobject arg1);
 		jint size();
-		QAndroidJniObject spliterator();
+		__JniBaseClass spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 	};

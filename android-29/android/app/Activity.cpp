@@ -139,7 +139,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject Activity::createPendingResult(jint arg0, android::content::Intent arg1, jint arg2)
+	android::app::PendingIntent Activity::createPendingResult(jint arg0, android::content::Intent arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"createPendingResult",
@@ -238,7 +238,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject Activity::findViewById(jint arg0)
+	android::view::View Activity::findViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"findViewById",
@@ -299,21 +299,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Activity::getActionBar()
+	android::app::ActionBar Activity::getActionBar()
 	{
 		return callObjectMethod(
 			"getActionBar",
 			"()Landroid/app/ActionBar;"
 		);
 	}
-	QAndroidJniObject Activity::getApplication()
+	android::app::Application Activity::getApplication()
 	{
 		return callObjectMethod(
 			"getApplication",
 			"()Landroid/app/Application;"
 		);
 	}
-	QAndroidJniObject Activity::getCallingActivity()
+	android::content::ComponentName Activity::getCallingActivity()
 	{
 		return callObjectMethod(
 			"getCallingActivity",
@@ -334,42 +334,42 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Activity::getComponentName()
+	android::content::ComponentName Activity::getComponentName()
 	{
 		return callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject Activity::getContentScene()
+	android::transition::Scene Activity::getContentScene()
 	{
 		return callObjectMethod(
 			"getContentScene",
 			"()Landroid/transition/Scene;"
 		);
 	}
-	QAndroidJniObject Activity::getContentTransitionManager()
+	android::transition::TransitionManager Activity::getContentTransitionManager()
 	{
 		return callObjectMethod(
 			"getContentTransitionManager",
 			"()Landroid/transition/TransitionManager;"
 		);
 	}
-	QAndroidJniObject Activity::getCurrentFocus()
+	android::view::View Activity::getCurrentFocus()
 	{
 		return callObjectMethod(
 			"getCurrentFocus",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject Activity::getFragmentManager()
+	android::app::FragmentManager Activity::getFragmentManager()
 	{
 		return callObjectMethod(
 			"getFragmentManager",
 			"()Landroid/app/FragmentManager;"
 		);
 	}
-	QAndroidJniObject Activity::getIntent()
+	android::content::Intent Activity::getIntent()
 	{
 		return callObjectMethod(
 			"getIntent",
@@ -383,14 +383,14 @@ namespace android::app
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject Activity::getLayoutInflater()
+	android::view::LayoutInflater Activity::getLayoutInflater()
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	QAndroidJniObject Activity::getLoaderManager()
+	android::app::LoaderManager Activity::getLoaderManager()
 	{
 		return callObjectMethod(
 			"getLoaderManager",
@@ -411,35 +411,35 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Activity::getMediaController()
+	android::media::session::MediaController Activity::getMediaController()
 	{
 		return callObjectMethod(
 			"getMediaController",
 			"()Landroid/media/session/MediaController;"
 		);
 	}
-	QAndroidJniObject Activity::getMenuInflater()
+	android::view::MenuInflater Activity::getMenuInflater()
 	{
 		return callObjectMethod(
 			"getMenuInflater",
 			"()Landroid/view/MenuInflater;"
 		);
 	}
-	QAndroidJniObject Activity::getParent()
+	android::app::Activity Activity::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/app/Activity;"
 		);
 	}
-	QAndroidJniObject Activity::getParentActivityIntent()
+	android::content::Intent Activity::getParentActivityIntent()
 	{
 		return callObjectMethod(
 			"getParentActivityIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	QAndroidJniObject Activity::getPreferences(jint arg0)
+	__JniBaseClass Activity::getPreferences(jint arg0)
 	{
 		return callObjectMethod(
 			"getPreferences",
@@ -447,7 +447,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Activity::getReferrer()
+	android::net::Uri Activity::getReferrer()
 	{
 		return callObjectMethod(
 			"getReferrer",
@@ -461,7 +461,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Activity::getSearchEvent()
+	android::view::SearchEvent Activity::getSearchEvent()
 	{
 		return callObjectMethod(
 			"getSearchEvent",
@@ -497,7 +497,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Activity::getVoiceInteractor()
+	android::app::VoiceInteractor Activity::getVoiceInteractor()
 	{
 		return callObjectMethod(
 			"getVoiceInteractor",
@@ -511,14 +511,14 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Activity::getWindow()
+	android::view::Window Activity::getWindow()
 	{
 		return callObjectMethod(
 			"getWindow",
 			"()Landroid/view/Window;"
 		);
 	}
-	QAndroidJniObject Activity::getWindowManager()
+	__JniBaseClass Activity::getWindowManager()
 	{
 		return callObjectMethod(
 			"getWindowManager",
@@ -623,7 +623,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject Activity::managedQuery(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	__JniBaseClass Activity::managedQuery(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"managedQuery",
@@ -789,7 +789,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Activity::onCreatePanelView(jint arg0)
+	android::view::View Activity::onCreatePanelView(jint arg0)
 	{
 		return callObjectMethod(
 			"onCreatePanelView",
@@ -806,7 +806,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Activity::onCreateView(jstring arg0, android::content::Context arg1, __JniBaseClass arg2)
+	android::view::View Activity::onCreateView(jstring arg0, android::content::Context arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -816,7 +816,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Activity::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3)
+	android::view::View Activity::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3)
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -1089,7 +1089,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject Activity::onProvideReferrer()
+	android::net::Uri Activity::onProvideReferrer()
 	{
 		return callObjectMethod(
 			"onProvideReferrer",
@@ -1215,7 +1215,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Activity::onWindowStartingActionMode(__JniBaseClass arg0)
+	android::view::ActionMode Activity::onWindowStartingActionMode(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -1223,7 +1223,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Activity::onWindowStartingActionMode(__JniBaseClass arg0, jint arg1)
+	android::view::ActionMode Activity::onWindowStartingActionMode(__JniBaseClass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -1308,7 +1308,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject Activity::requestDragAndDropPermissions(android::view::DragEvent arg0)
+	android::view::DragAndDropPermissions Activity::requestDragAndDropPermissions(android::view::DragEvent arg0)
 	{
 		return callObjectMethod(
 			"requestDragAndDropPermissions",
@@ -1348,7 +1348,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Activity::requireViewById(jint arg0)
+	android::view::View Activity::requireViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"requireViewById",
@@ -1707,7 +1707,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject Activity::startActionMode(__JniBaseClass arg0)
+	android::view::ActionMode Activity::startActionMode(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"startActionMode",
@@ -1715,7 +1715,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Activity::startActionMode(__JniBaseClass arg0, jint arg1)
+	android::view::ActionMode Activity::startActionMode(__JniBaseClass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"startActionMode",

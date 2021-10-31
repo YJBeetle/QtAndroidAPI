@@ -26,11 +26,11 @@ namespace android::view::textclassifier
 		TextLinks_Builder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject addLink(jint arg0, jint arg1, __JniBaseClass arg2);
-		QAndroidJniObject addLink(jint arg0, jint arg1, __JniBaseClass arg2, android::os::Bundle arg3);
-		QAndroidJniObject build();
-		QAndroidJniObject clearTextLinks();
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
+		android::view::textclassifier::TextLinks_Builder addLink(jint arg0, jint arg1, __JniBaseClass arg2);
+		android::view::textclassifier::TextLinks_Builder addLink(jint arg0, jint arg1, __JniBaseClass arg2, android::os::Bundle arg3);
+		android::view::textclassifier::TextLinks build();
+		android::view::textclassifier::TextLinks_Builder clearTextLinks();
+		android::view::textclassifier::TextLinks_Builder setExtras(android::os::Bundle arg0);
 	};
 } // namespace android::view::textclassifier
 

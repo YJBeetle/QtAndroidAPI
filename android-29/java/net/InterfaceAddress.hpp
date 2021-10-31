@@ -26,8 +26,8 @@ namespace java::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAddress();
-		QAndroidJniObject getBroadcast();
+		java::net::InetAddress getAddress();
+		java::net::InetAddress getBroadcast();
 		jshort getNetworkPrefixLength();
 		jint hashCode();
 		jstring toString();

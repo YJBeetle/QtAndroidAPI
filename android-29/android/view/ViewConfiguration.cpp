@@ -16,7 +16,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	QAndroidJniObject ViewConfiguration::get(android::content::Context arg0)
+	android::view::ViewConfiguration ViewConfiguration::get(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.ViewConfiguration",

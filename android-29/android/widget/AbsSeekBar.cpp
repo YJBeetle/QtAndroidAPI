@@ -78,7 +78,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	QAndroidJniObject AbsSeekBar::getThumb()
+	android::graphics::drawable::Drawable AbsSeekBar::getThumb()
 	{
 		return callObjectMethod(
 			"getThumb",
@@ -92,49 +92,49 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AbsSeekBar::getThumbTintBlendMode()
+	android::graphics::BlendMode AbsSeekBar::getThumbTintBlendMode()
 	{
 		return callObjectMethod(
 			"getThumbTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject AbsSeekBar::getThumbTintList()
+	android::content::res::ColorStateList AbsSeekBar::getThumbTintList()
 	{
 		return callObjectMethod(
 			"getThumbTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject AbsSeekBar::getThumbTintMode()
+	android::graphics::PorterDuff_Mode AbsSeekBar::getThumbTintMode()
 	{
 		return callObjectMethod(
 			"getThumbTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject AbsSeekBar::getTickMark()
+	android::graphics::drawable::Drawable AbsSeekBar::getTickMark()
 	{
 		return callObjectMethod(
 			"getTickMark",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject AbsSeekBar::getTickMarkTintBlendMode()
+	android::graphics::BlendMode AbsSeekBar::getTickMarkTintBlendMode()
 	{
 		return callObjectMethod(
 			"getTickMarkTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject AbsSeekBar::getTickMarkTintList()
+	android::content::res::ColorStateList AbsSeekBar::getTickMarkTintList()
 	{
 		return callObjectMethod(
 			"getTickMarkTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject AbsSeekBar::getTickMarkTintMode()
+	android::graphics::PorterDuff_Mode AbsSeekBar::getTickMarkTintMode()
 	{
 		return callObjectMethod(
 			"getTickMarkTintMode",

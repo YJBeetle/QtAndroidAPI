@@ -290,7 +290,7 @@ namespace java::net
 			"()V"
 		);
 	}
-	QAndroidJniObject HttpURLConnection::getErrorStream()
+	java::io::InputStream HttpURLConnection::getErrorStream()
 	{
 		return callObjectMethod(
 			"getErrorStream",
@@ -329,7 +329,7 @@ namespace java::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject HttpURLConnection::getPermission()
+	java::security::Permission HttpURLConnection::getPermission()
 	{
 		return callObjectMethod(
 			"getPermission",

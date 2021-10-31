@@ -27,7 +27,7 @@ namespace android::webkit
 		
 		// Methods
 		void deny();
-		QAndroidJniObject getOrigin();
+		android::net::Uri getOrigin();
 		jarray getResources();
 		void grant(jarray arg0);
 	};

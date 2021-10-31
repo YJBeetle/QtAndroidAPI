@@ -28,7 +28,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Media::EXTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Audio_Media::EXTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Media",
@@ -44,7 +44,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Media::INTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Audio_Media::INTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Media",
@@ -72,7 +72,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaStore_Audio_Media::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Audio_Media::getContentUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Media",
@@ -81,7 +81,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject MediaStore_Audio_Media::getContentUriForPath(jstring arg0)
+	android::net::Uri MediaStore_Audio_Media::getContentUriForPath(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Media",

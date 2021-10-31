@@ -17,8 +17,8 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject empty();
-		static QAndroidJniObject of(jint arg0);
+		static java::util::OptionalInt empty();
+		static java::util::OptionalInt of(jint arg0);
 		jboolean equals(jobject arg0);
 		jint getAsInt();
 		jint hashCode();
@@ -30,7 +30,7 @@ namespace java::util
 		jint orElseGet(__JniBaseClass arg0);
 		jint orElseThrow();
 		jint orElseThrow(__JniBaseClass arg0);
-		QAndroidJniObject stream();
+		__JniBaseClass stream();
 		jstring toString();
 	};
 } // namespace java::util

@@ -54,7 +54,7 @@ namespace android::provider
 			"CONFIGURATION_STATE_OK"
 		);
 	}
-	QAndroidJniObject VoicemailContract_Status::CONTENT_URI()
+	android::net::Uri VoicemailContract_Status::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
@@ -242,7 +242,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject VoicemailContract_Status::buildSourceUri(jstring arg0)
+	android::net::Uri VoicemailContract_Status::buildSourceUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.VoicemailContract$Status",

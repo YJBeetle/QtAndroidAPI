@@ -31,9 +31,9 @@ namespace javax::net::ssl
 		SSLSocketFactory();
 		
 		// Methods
-		static QAndroidJniObject getDefault();
-		QAndroidJniObject createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2);
-		QAndroidJniObject createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
+		static javax::net::SocketFactory getDefault();
+		java::net::Socket createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2);
+		java::net::Socket createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
 		jarray getDefaultCipherSuites();
 		jarray getSupportedCipherSuites();
 	};

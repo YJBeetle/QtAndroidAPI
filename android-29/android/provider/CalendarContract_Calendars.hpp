@@ -14,9 +14,9 @@ namespace android::provider
 	public:
 		// Fields
 		static jstring CALENDAR_LOCATION();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
-		static QAndroidJniObject ENTERPRISE_CONTENT_URI();
+		static android::net::Uri ENTERPRISE_CONTENT_URI();
 		static jstring NAME();
 		
 		// QAndroidJniObject forward

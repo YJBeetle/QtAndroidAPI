@@ -22,16 +22,16 @@ namespace android::bluetooth::le
 		AdvertisingSetParameters_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setAnonymous(jboolean arg0);
-		QAndroidJniObject setConnectable(jboolean arg0);
-		QAndroidJniObject setIncludeTxPower(jboolean arg0);
-		QAndroidJniObject setInterval(jint arg0);
-		QAndroidJniObject setLegacyMode(jboolean arg0);
-		QAndroidJniObject setPrimaryPhy(jint arg0);
-		QAndroidJniObject setScannable(jboolean arg0);
-		QAndroidJniObject setSecondaryPhy(jint arg0);
-		QAndroidJniObject setTxPowerLevel(jint arg0);
+		android::bluetooth::le::AdvertisingSetParameters build();
+		android::bluetooth::le::AdvertisingSetParameters_Builder setAnonymous(jboolean arg0);
+		android::bluetooth::le::AdvertisingSetParameters_Builder setConnectable(jboolean arg0);
+		android::bluetooth::le::AdvertisingSetParameters_Builder setIncludeTxPower(jboolean arg0);
+		android::bluetooth::le::AdvertisingSetParameters_Builder setInterval(jint arg0);
+		android::bluetooth::le::AdvertisingSetParameters_Builder setLegacyMode(jboolean arg0);
+		android::bluetooth::le::AdvertisingSetParameters_Builder setPrimaryPhy(jint arg0);
+		android::bluetooth::le::AdvertisingSetParameters_Builder setScannable(jboolean arg0);
+		android::bluetooth::le::AdvertisingSetParameters_Builder setSecondaryPhy(jint arg0);
+		android::bluetooth::le::AdvertisingSetParameters_Builder setTxPowerLevel(jint arg0);
 	};
 } // namespace android::bluetooth::le
 

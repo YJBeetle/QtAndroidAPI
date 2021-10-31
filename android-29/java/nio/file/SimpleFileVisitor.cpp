@@ -12,7 +12,7 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SimpleFileVisitor::postVisitDirectory(jobject arg0, java::io::IOException arg1)
+	java::nio::file::FileVisitResult SimpleFileVisitor::postVisitDirectory(jobject arg0, java::io::IOException arg1)
 	{
 		return callObjectMethod(
 			"postVisitDirectory",
@@ -21,7 +21,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SimpleFileVisitor::preVisitDirectory(jobject arg0, __JniBaseClass arg1)
+	java::nio::file::FileVisitResult SimpleFileVisitor::preVisitDirectory(jobject arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"preVisitDirectory",
@@ -30,7 +30,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SimpleFileVisitor::visitFile(jobject arg0, __JniBaseClass arg1)
+	java::nio::file::FileVisitResult SimpleFileVisitor::visitFile(jobject arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"visitFile",
@@ -39,7 +39,7 @@ namespace java::nio::file
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SimpleFileVisitor::visitFileFailed(jobject arg0, java::io::IOException arg1)
+	java::nio::file::FileVisitResult SimpleFileVisitor::visitFileFailed(jobject arg0, java::io::IOException arg1)
 	{
 		return callObjectMethod(
 			"visitFileFailed",

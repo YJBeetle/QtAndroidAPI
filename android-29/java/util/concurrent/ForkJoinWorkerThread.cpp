@@ -14,7 +14,7 @@ namespace java::util::concurrent
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ForkJoinWorkerThread::getPool()
+	java::util::concurrent::ForkJoinPool ForkJoinWorkerThread::getPool()
 	{
 		return callObjectMethod(
 			"getPool",

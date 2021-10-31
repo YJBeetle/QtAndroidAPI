@@ -17,7 +17,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject KeyPairGeneratorSpi::generateKeyPair()
+	java::security::KeyPair KeyPairGeneratorSpi::generateKeyPair()
 	{
 		return callObjectMethod(
 			"generateKeyPair",

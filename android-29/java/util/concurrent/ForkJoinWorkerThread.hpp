@@ -34,7 +34,7 @@ namespace java::util::concurrent
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getPool();
+		java::util::concurrent::ForkJoinPool getPool();
 		jint getPoolIndex();
 		void run();
 	};

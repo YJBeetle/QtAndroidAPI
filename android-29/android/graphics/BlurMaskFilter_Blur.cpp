@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject BlurMaskFilter_Blur::INNER()
+	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::INNER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/BlurMaskFilter$Blur;"
 		);
 	}
-	QAndroidJniObject BlurMaskFilter_Blur::NORMAL()
+	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/BlurMaskFilter$Blur;"
 		);
 	}
-	QAndroidJniObject BlurMaskFilter_Blur::OUTER()
+	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::OUTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"Landroid/graphics/BlurMaskFilter$Blur;"
 		);
 	}
-	QAndroidJniObject BlurMaskFilter_Blur::SOLID()
+	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::SOLID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
@@ -42,7 +42,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject BlurMaskFilter_Blur::valueOf(jstring arg0)
+	android::graphics::BlurMaskFilter_Blur BlurMaskFilter_Blur::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BlurMaskFilter$Blur",

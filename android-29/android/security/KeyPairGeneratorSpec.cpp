@@ -14,21 +14,21 @@ namespace android::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject KeyPairGeneratorSpec::getAlgorithmParameterSpec()
+	__JniBaseClass KeyPairGeneratorSpec::getAlgorithmParameterSpec()
 	{
 		return callObjectMethod(
 			"getAlgorithmParameterSpec",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getContext()
+	android::content::Context KeyPairGeneratorSpec::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getEndDate()
+	java::util::Date KeyPairGeneratorSpec::getEndDate()
 	{
 		return callObjectMethod(
 			"getEndDate",
@@ -56,21 +56,21 @@ namespace android::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getSerialNumber()
+	java::math::BigInteger KeyPairGeneratorSpec::getSerialNumber()
 	{
 		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getStartDate()
+	java::util::Date KeyPairGeneratorSpec::getStartDate()
 	{
 		return callObjectMethod(
 			"getStartDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getSubjectDN()
+	javax::security::auth::x500::X500Principal KeyPairGeneratorSpec::getSubjectDN()
 	{
 		return callObjectMethod(
 			"getSubjectDN",

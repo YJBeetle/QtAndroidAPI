@@ -42,18 +42,18 @@ namespace java::util::regex
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject compile(jstring arg0);
-		static QAndroidJniObject compile(jstring arg0, jint arg1);
+		static java::util::regex::Pattern compile(jstring arg0);
+		static java::util::regex::Pattern compile(jstring arg0, jint arg1);
 		static jboolean matches(jstring arg0, jstring arg1);
 		static jstring quote(jstring arg0);
-		QAndroidJniObject asMatchPredicate();
-		QAndroidJniObject asPredicate();
+		__JniBaseClass asMatchPredicate();
+		__JniBaseClass asPredicate();
 		jint flags();
-		QAndroidJniObject matcher(jstring arg0);
+		java::util::regex::Matcher matcher(jstring arg0);
 		jstring pattern();
 		jarray split(jstring arg0);
 		jarray split(jstring arg0, jint arg1);
-		QAndroidJniObject splitAsStream(jstring arg0);
+		__JniBaseClass splitAsStream(jstring arg0);
 		jstring toString();
 	};
 } // namespace java::util::regex

@@ -29,13 +29,13 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createNonrecurring(java::time::ZonedDateTime arg0, java::time::ZonedDateTime arg1);
-		static QAndroidJniObject createRecurring(java::time::ZonedDateTime arg0, java::time::Period arg1);
-		QAndroidJniObject build();
-		QAndroidJniObject setDataLimit(jlong arg0, jint arg1);
-		QAndroidJniObject setDataUsage(jlong arg0, jlong arg1);
-		QAndroidJniObject setSummary(jstring arg0);
-		QAndroidJniObject setTitle(jstring arg0);
+		static android::telephony::SubscriptionPlan_Builder createNonrecurring(java::time::ZonedDateTime arg0, java::time::ZonedDateTime arg1);
+		static android::telephony::SubscriptionPlan_Builder createRecurring(java::time::ZonedDateTime arg0, java::time::Period arg1);
+		android::telephony::SubscriptionPlan build();
+		android::telephony::SubscriptionPlan_Builder setDataLimit(jlong arg0, jint arg1);
+		android::telephony::SubscriptionPlan_Builder setDataUsage(jlong arg0, jlong arg1);
+		android::telephony::SubscriptionPlan_Builder setSummary(jstring arg0);
+		android::telephony::SubscriptionPlan_Builder setTitle(jstring arg0);
 	};
 } // namespace android::telephony
 

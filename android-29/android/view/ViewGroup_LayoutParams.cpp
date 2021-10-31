@@ -33,7 +33,7 @@ namespace android::view
 			"height"
 		);
 	}
-	QAndroidJniObject ViewGroup_LayoutParams::layoutAnimationParameters()
+	android::view::animation::LayoutAnimationController_AnimationParameters ViewGroup_LayoutParams::layoutAnimationParameters()
 	{
 		return getObjectField(
 			"layoutAnimationParameters",

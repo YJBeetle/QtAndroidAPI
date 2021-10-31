@@ -13,8 +13,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_FILTER_URI();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_FILTER_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring EXTRA_ADDRESS_BOOK_INDEX();
 		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
 		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();

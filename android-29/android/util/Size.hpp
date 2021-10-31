@@ -18,7 +18,7 @@ namespace android::util
 		Size(jint arg0, jint arg1);
 		
 		// Methods
-		static QAndroidJniObject parseSize(jstring arg0);
+		static android::util::Size parseSize(jstring arg0);
 		jboolean equals(jobject arg0);
 		jint getHeight();
 		jint getWidth();

@@ -17,7 +17,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject Property::of(jclass arg0, jclass arg1, jstring arg2)
+	android::util::Property Property::of(jclass arg0, jclass arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Property",

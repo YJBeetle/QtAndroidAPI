@@ -15,7 +15,7 @@ namespace android::net::wifi::p2p
 		// Fields
 		static jint AVAILABLE();
 		static jint CONNECTED();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FAILED();
 		static jint INVITED();
 		static jint UNAVAILABLE();

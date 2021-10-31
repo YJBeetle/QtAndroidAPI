@@ -10,7 +10,7 @@ namespace java::time::temporal
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TemporalQueries::chronology()
+	__JniBaseClass TemporalQueries::chronology()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalQueries",
@@ -18,7 +18,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
-	QAndroidJniObject TemporalQueries::localDate()
+	__JniBaseClass TemporalQueries::localDate()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalQueries",
@@ -26,7 +26,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
-	QAndroidJniObject TemporalQueries::localTime()
+	__JniBaseClass TemporalQueries::localTime()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalQueries",
@@ -34,7 +34,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
-	QAndroidJniObject TemporalQueries::offset()
+	__JniBaseClass TemporalQueries::offset()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalQueries",
@@ -42,7 +42,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
-	QAndroidJniObject TemporalQueries::precision()
+	__JniBaseClass TemporalQueries::precision()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalQueries",
@@ -50,7 +50,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
-	QAndroidJniObject TemporalQueries::zone()
+	__JniBaseClass TemporalQueries::zone()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalQueries",
@@ -58,7 +58,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
-	QAndroidJniObject TemporalQueries::zoneId()
+	__JniBaseClass TemporalQueries::zoneId()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalQueries",

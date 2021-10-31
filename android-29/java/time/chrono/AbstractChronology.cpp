@@ -46,7 +46,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	QAndroidJniObject AbstractChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
+	__JniBaseClass AbstractChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
 	{
 		return callObjectMethod(
 			"resolveDate",

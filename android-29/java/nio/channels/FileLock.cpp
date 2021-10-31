@@ -12,14 +12,14 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FileLock::acquiredBy()
+	__JniBaseClass FileLock::acquiredBy()
 	{
 		return callObjectMethod(
 			"acquiredBy",
 			"()Ljava/nio/channels/Channel;"
 		);
 	}
-	QAndroidJniObject FileLock::channel()
+	java::nio::channels::FileChannel FileLock::channel()
 	{
 		return callObjectMethod(
 			"channel",

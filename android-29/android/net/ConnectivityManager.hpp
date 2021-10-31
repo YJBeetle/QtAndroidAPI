@@ -106,25 +106,25 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getProcessDefaultNetwork();
+		static android::net::Network getProcessDefaultNetwork();
 		static jboolean isNetworkTypeValid(jint arg0);
 		static jboolean setProcessDefaultNetwork(android::net::Network arg0);
 		void addDefaultNetworkActiveListener(__JniBaseClass arg0);
 		jboolean bindProcessToNetwork(android::net::Network arg0);
-		QAndroidJniObject createSocketKeepalive(android::net::Network arg0, android::net::IpSecManager_UdpEncapsulationSocket arg1, java::net::InetAddress arg2, java::net::InetAddress arg3, __JniBaseClass arg4, android::net::SocketKeepalive_Callback arg5);
-		QAndroidJniObject getActiveNetwork();
-		QAndroidJniObject getActiveNetworkInfo();
+		android::net::SocketKeepalive createSocketKeepalive(android::net::Network arg0, android::net::IpSecManager_UdpEncapsulationSocket arg1, java::net::InetAddress arg2, java::net::InetAddress arg3, __JniBaseClass arg4, android::net::SocketKeepalive_Callback arg5);
+		android::net::Network getActiveNetwork();
+		android::net::NetworkInfo getActiveNetworkInfo();
 		jarray getAllNetworkInfo();
 		jarray getAllNetworks();
 		jboolean getBackgroundDataSetting();
-		QAndroidJniObject getBoundNetworkForProcess();
+		android::net::Network getBoundNetworkForProcess();
 		jint getConnectionOwnerUid(jint arg0, java::net::InetSocketAddress arg1, java::net::InetSocketAddress arg2);
-		QAndroidJniObject getDefaultProxy();
-		QAndroidJniObject getLinkProperties(android::net::Network arg0);
+		android::net::ProxyInfo getDefaultProxy();
+		android::net::LinkProperties getLinkProperties(android::net::Network arg0);
 		jint getMultipathPreference(android::net::Network arg0);
-		QAndroidJniObject getNetworkCapabilities(android::net::Network arg0);
-		QAndroidJniObject getNetworkInfo(android::net::Network arg0);
-		QAndroidJniObject getNetworkInfo(jint arg0);
+		android::net::NetworkCapabilities getNetworkCapabilities(android::net::Network arg0);
+		android::net::NetworkInfo getNetworkInfo(android::net::Network arg0);
+		android::net::NetworkInfo getNetworkInfo(jint arg0);
 		jint getNetworkPreference();
 		jbyteArray getNetworkWatchlistConfigHash();
 		jint getRestrictBackgroundStatus();

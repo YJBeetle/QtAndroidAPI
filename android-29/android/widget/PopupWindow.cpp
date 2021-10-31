@@ -115,14 +115,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject PopupWindow::getBackground()
+	android::graphics::drawable::Drawable PopupWindow::getBackground()
 	{
 		return callObjectMethod(
 			"getBackground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject PopupWindow::getContentView()
+	android::view::View PopupWindow::getContentView()
 	{
 		return callObjectMethod(
 			"getContentView",
@@ -136,21 +136,21 @@ namespace android::widget
 			"()F"
 		);
 	}
-	QAndroidJniObject PopupWindow::getEnterTransition()
+	android::transition::Transition PopupWindow::getEnterTransition()
 	{
 		return callObjectMethod(
 			"getEnterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject PopupWindow::getEpicenterBounds()
+	android::graphics::Rect PopupWindow::getEpicenterBounds()
 	{
 		return callObjectMethod(
 			"getEpicenterBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	QAndroidJniObject PopupWindow::getExitTransition()
+	android::transition::Transition PopupWindow::getExitTransition()
 	{
 		return callObjectMethod(
 			"getExitTransition",

@@ -13,7 +13,7 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DocumentsContract_Path(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -25,7 +25,7 @@ namespace android::provider
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getPath();
+		__JniBaseClass getPath();
 		jstring getRootId();
 		jint hashCode();
 		jstring toString();

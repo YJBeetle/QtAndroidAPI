@@ -12,7 +12,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Selector::open()
+	java::nio::channels::Selector Selector::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.Selector",
@@ -34,14 +34,14 @@ namespace java::nio::channels
 			"()Z"
 		);
 	}
-	QAndroidJniObject Selector::keys()
+	__JniBaseClass Selector::keys()
 	{
 		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject Selector::provider()
+	java::nio::channels::spi::SelectorProvider Selector::provider()
 	{
 		return callObjectMethod(
 			"provider",
@@ -95,14 +95,14 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Selector::selectedKeys()
+	__JniBaseClass Selector::selectedKeys()
 	{
 		return callObjectMethod(
 			"selectedKeys",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject Selector::wakeup()
+	java::nio::channels::Selector Selector::wakeup()
 	{
 		return callObjectMethod(
 			"wakeup",

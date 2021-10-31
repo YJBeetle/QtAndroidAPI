@@ -6,7 +6,7 @@
 namespace android::app::slice
 {
 	// Fields
-	QAndroidJniObject Slice::CREATOR()
+	__JniBaseClass Slice::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.Slice",
@@ -268,28 +268,28 @@ namespace android::app::slice
 			"()I"
 		);
 	}
-	QAndroidJniObject Slice::getHints()
+	__JniBaseClass Slice::getHints()
 	{
 		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Slice::getItems()
+	__JniBaseClass Slice::getItems()
 	{
 		return callObjectMethod(
 			"getItems",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Slice::getSpec()
+	android::app::slice::SliceSpec Slice::getSpec()
 	{
 		return callObjectMethod(
 			"getSpec",
 			"()Landroid/app/slice/SliceSpec;"
 		);
 	}
-	QAndroidJniObject Slice::getUri()
+	android::net::Uri Slice::getUri()
 	{
 		return callObjectMethod(
 			"getUri",

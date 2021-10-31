@@ -23,8 +23,8 @@ namespace java::security
 		KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getAttributes();
-		QAndroidJniObject getTrustedCertificate();
+		__JniBaseClass getAttributes();
+		java::security::cert::Certificate getTrustedCertificate();
 		jstring toString();
 	};
 } // namespace java::security

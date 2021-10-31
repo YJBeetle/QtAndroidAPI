@@ -38,7 +38,7 @@ namespace android::media
 		
 		// Methods
 		jboolean clearArtworkConfiguration();
-		QAndroidJniObject editMetadata();
+		android::media::RemoteController_MetadataEditor editMetadata();
 		jlong getEstimatedMediaPosition();
 		jboolean seekTo(jlong arg0);
 		jboolean sendMediaKeyEvent(android::view::KeyEvent arg0);

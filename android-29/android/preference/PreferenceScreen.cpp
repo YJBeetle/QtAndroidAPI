@@ -23,14 +23,14 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PreferenceScreen::getDialog()
+	android::app::Dialog PreferenceScreen::getDialog()
 	{
 		return callObjectMethod(
 			"getDialog",
 			"()Landroid/app/Dialog;"
 		);
 	}
-	QAndroidJniObject PreferenceScreen::getRootAdapter()
+	__JniBaseClass PreferenceScreen::getRootAdapter()
 	{
 		return callObjectMethod(
 			"getRootAdapter",

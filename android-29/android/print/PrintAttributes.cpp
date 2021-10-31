@@ -21,7 +21,7 @@ namespace android::print
 			"COLOR_MODE_MONOCHROME"
 		);
 	}
-	QAndroidJniObject PrintAttributes::CREATOR()
+	__JniBaseClass PrintAttributes::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes",
@@ -86,21 +86,21 @@ namespace android::print
 			"()I"
 		);
 	}
-	QAndroidJniObject PrintAttributes::getMediaSize()
+	android::print::PrintAttributes_MediaSize PrintAttributes::getMediaSize()
 	{
 		return callObjectMethod(
 			"getMediaSize",
 			"()Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes::getMinMargins()
+	android::print::PrintAttributes_Margins PrintAttributes::getMinMargins()
 	{
 		return callObjectMethod(
 			"getMinMargins",
 			"()Landroid/print/PrintAttributes$Margins;"
 		);
 	}
-	QAndroidJniObject PrintAttributes::getResolution()
+	android::print::PrintAttributes_Resolution PrintAttributes::getResolution()
 	{
 		return callObjectMethod(
 			"getResolution",

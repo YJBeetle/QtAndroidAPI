@@ -24,7 +24,7 @@ namespace java::util
 		LinkedHashSet(jint arg0, jfloat arg1);
 		
 		// Methods
-		QAndroidJniObject spliterator();
+		__JniBaseClass spliterator();
 	};
 } // namespace java::util
 

@@ -26,13 +26,13 @@ namespace android::net
 		NetworkRequest_Builder();
 		
 		// Methods
-		QAndroidJniObject addCapability(jint arg0);
-		QAndroidJniObject addTransportType(jint arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject removeCapability(jint arg0);
-		QAndroidJniObject removeTransportType(jint arg0);
-		QAndroidJniObject setNetworkSpecifier(android::net::NetworkSpecifier arg0);
-		QAndroidJniObject setNetworkSpecifier(jstring arg0);
+		android::net::NetworkRequest_Builder addCapability(jint arg0);
+		android::net::NetworkRequest_Builder addTransportType(jint arg0);
+		android::net::NetworkRequest build();
+		android::net::NetworkRequest_Builder removeCapability(jint arg0);
+		android::net::NetworkRequest_Builder removeTransportType(jint arg0);
+		android::net::NetworkRequest_Builder setNetworkSpecifier(android::net::NetworkSpecifier arg0);
+		android::net::NetworkRequest_Builder setNetworkSpecifier(jstring arg0);
 	};
 } // namespace android::net
 

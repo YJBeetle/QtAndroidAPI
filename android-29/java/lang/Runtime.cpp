@@ -13,7 +13,7 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Runtime::getRuntime()
+	java::lang::Runtime Runtime::getRuntime()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Runtime",
@@ -21,7 +21,7 @@ namespace java::lang
 			"()Ljava/lang/Runtime;"
 		);
 	}
-	QAndroidJniObject Runtime::version()
+	__JniBaseClass Runtime::version()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Runtime",
@@ -44,7 +44,7 @@ namespace java::lang
 			"()I"
 		);
 	}
-	QAndroidJniObject Runtime::exec(jarray arg0)
+	java::lang::Process Runtime::exec(jarray arg0)
 	{
 		return callObjectMethod(
 			"exec",
@@ -52,7 +52,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Runtime::exec(jstring arg0)
+	java::lang::Process Runtime::exec(jstring arg0)
 	{
 		return callObjectMethod(
 			"exec",
@@ -60,7 +60,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Runtime::exec(jarray arg0, jarray arg1)
+	java::lang::Process Runtime::exec(jarray arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"exec",
@@ -69,7 +69,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Runtime::exec(jstring arg0, jarray arg1)
+	java::lang::Process Runtime::exec(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"exec",
@@ -78,7 +78,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Runtime::exec(jarray arg0, jarray arg1, java::io::File arg2)
+	java::lang::Process Runtime::exec(jarray arg0, jarray arg1, java::io::File arg2)
 	{
 		return callObjectMethod(
 			"exec",
@@ -88,7 +88,7 @@ namespace java::lang
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Runtime::exec(jstring arg0, jarray arg1, java::io::File arg2)
+	java::lang::Process Runtime::exec(jstring arg0, jarray arg1, java::io::File arg2)
 	{
 		return callObjectMethod(
 			"exec",

@@ -16,7 +16,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject Locale_Builder::addUnicodeLocaleAttribute(jstring arg0)
+	java::util::Locale_Builder Locale_Builder::addUnicodeLocaleAttribute(jstring arg0)
 	{
 		return callObjectMethod(
 			"addUnicodeLocaleAttribute",
@@ -24,28 +24,28 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_Builder::build()
+	java::util::Locale Locale_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale_Builder::clear()
+	java::util::Locale_Builder Locale_Builder::clear()
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/util/Locale$Builder;"
 		);
 	}
-	QAndroidJniObject Locale_Builder::clearExtensions()
+	java::util::Locale_Builder Locale_Builder::clearExtensions()
 	{
 		return callObjectMethod(
 			"clearExtensions",
 			"()Ljava/util/Locale$Builder;"
 		);
 	}
-	QAndroidJniObject Locale_Builder::removeUnicodeLocaleAttribute(jstring arg0)
+	java::util::Locale_Builder Locale_Builder::removeUnicodeLocaleAttribute(jstring arg0)
 	{
 		return callObjectMethod(
 			"removeUnicodeLocaleAttribute",
@@ -53,7 +53,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_Builder::setExtension(jchar arg0, jstring arg1)
+	java::util::Locale_Builder Locale_Builder::setExtension(jchar arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"setExtension",
@@ -62,7 +62,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Locale_Builder::setLanguage(jstring arg0)
+	java::util::Locale_Builder Locale_Builder::setLanguage(jstring arg0)
 	{
 		return callObjectMethod(
 			"setLanguage",
@@ -70,7 +70,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_Builder::setLanguageTag(jstring arg0)
+	java::util::Locale_Builder Locale_Builder::setLanguageTag(jstring arg0)
 	{
 		return callObjectMethod(
 			"setLanguageTag",
@@ -78,7 +78,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_Builder::setLocale(java::util::Locale arg0)
+	java::util::Locale_Builder Locale_Builder::setLocale(java::util::Locale arg0)
 	{
 		return callObjectMethod(
 			"setLocale",
@@ -86,7 +86,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Locale_Builder::setRegion(jstring arg0)
+	java::util::Locale_Builder Locale_Builder::setRegion(jstring arg0)
 	{
 		return callObjectMethod(
 			"setRegion",
@@ -94,7 +94,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_Builder::setScript(jstring arg0)
+	java::util::Locale_Builder Locale_Builder::setScript(jstring arg0)
 	{
 		return callObjectMethod(
 			"setScript",
@@ -102,7 +102,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_Builder::setUnicodeLocaleKeyword(jstring arg0, jstring arg1)
+	java::util::Locale_Builder Locale_Builder::setUnicodeLocaleKeyword(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"setUnicodeLocaleKeyword",
@@ -111,7 +111,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Locale_Builder::setVariant(jstring arg0)
+	java::util::Locale_Builder Locale_Builder::setVariant(jstring arg0)
 	{
 		return callObjectMethod(
 			"setVariant",

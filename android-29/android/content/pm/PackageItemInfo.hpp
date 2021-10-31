@@ -29,7 +29,7 @@ namespace android::content::pm
 		jint icon();
 		jint labelRes();
 		jint logo();
-		QAndroidJniObject metaData();
+		android::os::Bundle metaData();
 		jstring name();
 		jstring nonLocalizedLabel();
 		jstring packageName();
@@ -43,12 +43,12 @@ namespace android::content::pm
 		PackageItemInfo(android::content::pm::PackageItemInfo &arg0);
 		
 		// Methods
-		QAndroidJniObject loadBanner(android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadIcon(android::content::pm::PackageManager arg0);
+		android::graphics::drawable::Drawable loadBanner(android::content::pm::PackageManager arg0);
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
 		jstring loadLabel(android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadLogo(android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadUnbadgedIcon(android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadXmlMetaData(android::content::pm::PackageManager arg0, jstring arg1);
+		android::graphics::drawable::Drawable loadLogo(android::content::pm::PackageManager arg0);
+		android::graphics::drawable::Drawable loadUnbadgedIcon(android::content::pm::PackageManager arg0);
+		__JniBaseClass loadXmlMetaData(android::content::pm::PackageManager arg0, jstring arg1);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

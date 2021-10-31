@@ -21,13 +21,13 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint INSTALL_LOCATION_AUTO();
 		static jint INSTALL_LOCATION_INTERNAL_ONLY();
 		static jint INSTALL_LOCATION_PREFER_EXTERNAL();
 		static jint REQUESTED_PERMISSION_GRANTED();
 		jarray activities();
-		QAndroidJniObject applicationInfo();
+		android::content::pm::ApplicationInfo applicationInfo();
 		jint baseRevisionCode();
 		jarray configPreferences();
 		jarray featureGroups();
@@ -48,7 +48,7 @@ namespace android::content::pm
 		jstring sharedUserId();
 		jint sharedUserLabel();
 		jarray signatures();
-		QAndroidJniObject signingInfo();
+		android::content::pm::SigningInfo signingInfo();
 		jarray splitNames();
 		jintArray splitRevisionCodes();
 		jint versionCode();

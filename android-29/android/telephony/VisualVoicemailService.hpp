@@ -38,7 +38,7 @@ namespace android::telephony
 		VisualVoicemailService();
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onCellServiceConnected(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, android::telecom::PhoneAccountHandle arg1);
 		void onSimRemoved(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, android::telecom::PhoneAccountHandle arg1);
 		void onSmsReceived(android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, android::telephony::VisualVoicemailSms arg1);

@@ -33,10 +33,10 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getActivityId();
-		QAndroidJniObject getAssistContent();
-		QAndroidJniObject getAssistData();
-		QAndroidJniObject getAssistStructure();
+		android::service::voice::VoiceInteractionSession_ActivityId getActivityId();
+		android::app::assist::AssistContent getAssistContent();
+		android::os::Bundle getAssistData();
+		android::app::assist::AssistStructure getAssistStructure();
 		jint getCount();
 		jint getIndex();
 		jboolean isFocused();

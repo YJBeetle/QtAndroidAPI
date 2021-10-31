@@ -45,9 +45,9 @@ namespace android::security
 		// Methods
 		static void choosePrivateKeyAlias(android::app::Activity arg0, __JniBaseClass arg1, jarray arg2, jarray arg3, android::net::Uri arg4, jstring arg5);
 		static void choosePrivateKeyAlias(android::app::Activity arg0, __JniBaseClass arg1, jarray arg2, jarray arg3, jstring arg4, jint arg5, jstring arg6);
-		static QAndroidJniObject createInstallIntent();
+		static android::content::Intent createInstallIntent();
 		static jarray getCertificateChain(android::content::Context arg0, jstring arg1);
-		static QAndroidJniObject getPrivateKey(android::content::Context arg0, jstring arg1);
+		static __JniBaseClass getPrivateKey(android::content::Context arg0, jstring arg1);
 		static jboolean isBoundKeyAlgorithm(jstring arg0);
 		static jboolean isKeyAlgorithmSupported(jstring arg0);
 	};

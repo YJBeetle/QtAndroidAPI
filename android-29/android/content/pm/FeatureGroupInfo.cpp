@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject FeatureGroupInfo::CREATOR()
+	__JniBaseClass FeatureGroupInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.FeatureGroupInfo",

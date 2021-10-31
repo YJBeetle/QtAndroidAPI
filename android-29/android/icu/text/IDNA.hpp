@@ -32,11 +32,11 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getUTS46Instance(jint arg0);
-		QAndroidJniObject labelToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
-		QAndroidJniObject labelToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
-		QAndroidJniObject nameToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
-		QAndroidJniObject nameToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
+		static android::icu::text::IDNA getUTS46Instance(jint arg0);
+		java::lang::StringBuilder labelToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
+		java::lang::StringBuilder labelToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
+		java::lang::StringBuilder nameToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
+		java::lang::StringBuilder nameToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2);
 	};
 } // namespace android::icu::text
 

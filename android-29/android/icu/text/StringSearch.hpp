@@ -39,7 +39,7 @@ namespace android::icu::text
 		StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3);
 		
 		// Methods
-		QAndroidJniObject getCollator();
+		android::icu::text::RuleBasedCollator getCollator();
 		jint getIndex();
 		jstring getPattern();
 		jboolean isCanonical();

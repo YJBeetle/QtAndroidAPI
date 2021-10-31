@@ -41,7 +41,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject View_AccessibilityDelegate::getAccessibilityNodeProvider(android::view::View arg0)
+	android::view::accessibility::AccessibilityNodeProvider View_AccessibilityDelegate::getAccessibilityNodeProvider(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"getAccessibilityNodeProvider",

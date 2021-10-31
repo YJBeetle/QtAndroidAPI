@@ -17,7 +17,7 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	QAndroidJniObject TextClassifierEvent_ConversationActionsEvent_Builder::build()
+	android::view::textclassifier::TextClassifierEvent_ConversationActionsEvent TextClassifierEvent_ConversationActionsEvent_Builder::build()
 	{
 		return callObjectMethod(
 			"build",

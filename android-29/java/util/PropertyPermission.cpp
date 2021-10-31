@@ -51,7 +51,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PropertyPermission::newPermissionCollection()
+	java::security::PermissionCollection PropertyPermission::newPermissionCollection()
 	{
 		return callObjectMethod(
 			"newPermissionCollection",

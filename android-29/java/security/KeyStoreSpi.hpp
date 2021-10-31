@@ -34,16 +34,16 @@ namespace java::security
 		KeyStoreSpi();
 		
 		// Methods
-		QAndroidJniObject engineAliases();
+		__JniBaseClass engineAliases();
 		jboolean engineContainsAlias(jstring arg0);
 		void engineDeleteEntry(jstring arg0);
 		jboolean engineEntryInstanceOf(jstring arg0, jclass arg1);
-		QAndroidJniObject engineGetCertificate(jstring arg0);
+		java::security::cert::Certificate engineGetCertificate(jstring arg0);
 		jstring engineGetCertificateAlias(java::security::cert::Certificate arg0);
 		jarray engineGetCertificateChain(jstring arg0);
-		QAndroidJniObject engineGetCreationDate(jstring arg0);
-		QAndroidJniObject engineGetEntry(jstring arg0, __JniBaseClass arg1);
-		QAndroidJniObject engineGetKey(jstring arg0, jcharArray arg1);
+		java::util::Date engineGetCreationDate(jstring arg0);
+		__JniBaseClass engineGetEntry(jstring arg0, __JniBaseClass arg1);
+		__JniBaseClass engineGetKey(jstring arg0, jcharArray arg1);
 		jboolean engineIsCertificateEntry(jstring arg0);
 		jboolean engineIsKeyEntry(jstring arg0);
 		void engineLoad(__JniBaseClass arg0);

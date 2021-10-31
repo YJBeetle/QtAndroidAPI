@@ -34,12 +34,12 @@ namespace android::telephony::mbms
 		DownloadRequest_Builder(android::net::Uri arg0, android::net::Uri arg1);
 		
 		// Methods
-		static QAndroidJniObject fromDownloadRequest(android::telephony::mbms::DownloadRequest arg0);
-		static QAndroidJniObject fromSerializedRequest(jbyteArray arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject setAppIntent(android::content::Intent arg0);
-		QAndroidJniObject setServiceInfo(android::telephony::mbms::FileServiceInfo arg0);
-		QAndroidJniObject setSubscriptionId(jint arg0);
+		static android::telephony::mbms::DownloadRequest_Builder fromDownloadRequest(android::telephony::mbms::DownloadRequest arg0);
+		static android::telephony::mbms::DownloadRequest_Builder fromSerializedRequest(jbyteArray arg0);
+		android::telephony::mbms::DownloadRequest build();
+		android::telephony::mbms::DownloadRequest_Builder setAppIntent(android::content::Intent arg0);
+		android::telephony::mbms::DownloadRequest_Builder setServiceInfo(android::telephony::mbms::FileServiceInfo arg0);
+		android::telephony::mbms::DownloadRequest_Builder setSubscriptionId(jint arg0);
 	};
 } // namespace android::telephony::mbms
 

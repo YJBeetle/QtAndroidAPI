@@ -50,28 +50,28 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	QAndroidJniObject ParserAdapter::getContentHandler()
+	__JniBaseClass ParserAdapter::getContentHandler()
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	QAndroidJniObject ParserAdapter::getDTDHandler()
+	__JniBaseClass ParserAdapter::getDTDHandler()
 	{
 		return callObjectMethod(
 			"getDTDHandler",
 			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
-	QAndroidJniObject ParserAdapter::getEntityResolver()
+	__JniBaseClass ParserAdapter::getEntityResolver()
 	{
 		return callObjectMethod(
 			"getEntityResolver",
 			"()Lorg/xml/sax/EntityResolver;"
 		);
 	}
-	QAndroidJniObject ParserAdapter::getErrorHandler()
+	__JniBaseClass ParserAdapter::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",

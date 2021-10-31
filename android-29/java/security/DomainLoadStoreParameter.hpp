@@ -22,9 +22,9 @@ namespace java::security
 		DomainLoadStoreParameter(java::net::URI arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getConfiguration();
-		QAndroidJniObject getProtectionParameter();
-		QAndroidJniObject getProtectionParams();
+		java::net::URI getConfiguration();
+		__JniBaseClass getProtectionParameter();
+		__JniBaseClass getProtectionParams();
 	};
 } // namespace java::security
 

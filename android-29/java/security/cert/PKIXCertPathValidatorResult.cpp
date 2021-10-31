@@ -26,21 +26,21 @@ namespace java::security::cert
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject PKIXCertPathValidatorResult::getPolicyTree()
+	__JniBaseClass PKIXCertPathValidatorResult::getPolicyTree()
 	{
 		return callObjectMethod(
 			"getPolicyTree",
 			"()Ljava/security/cert/PolicyNode;"
 		);
 	}
-	QAndroidJniObject PKIXCertPathValidatorResult::getPublicKey()
+	__JniBaseClass PKIXCertPathValidatorResult::getPublicKey()
 	{
 		return callObjectMethod(
 			"getPublicKey",
 			"()Ljava/security/PublicKey;"
 		);
 	}
-	QAndroidJniObject PKIXCertPathValidatorResult::getTrustAnchor()
+	java::security::cert::TrustAnchor PKIXCertPathValidatorResult::getTrustAnchor()
 	{
 		return callObjectMethod(
 			"getTrustAnchor",

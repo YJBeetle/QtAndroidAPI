@@ -50,7 +50,7 @@ namespace android::media
 			"()Z"
 		);
 	}
-	QAndroidJniObject RemoteController::editMetadata()
+	android::media::RemoteController_MetadataEditor RemoteController::editMetadata()
 	{
 		return callObjectMethod(
 			"editMetadata",

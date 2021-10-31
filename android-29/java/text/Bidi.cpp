@@ -93,7 +93,7 @@ namespace java::text
 			"()Z"
 		);
 	}
-	QAndroidJniObject Bidi::createLineBidi(jint arg0, jint arg1)
+	java::text::Bidi Bidi::createLineBidi(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"createLineBidi",

@@ -60,7 +60,7 @@ namespace android::media
 			"CONTENT_TYPE_UNKNOWN"
 		);
 	}
-	QAndroidJniObject AudioAttributes::CREATOR()
+	__JniBaseClass AudioAttributes::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioAttributes",

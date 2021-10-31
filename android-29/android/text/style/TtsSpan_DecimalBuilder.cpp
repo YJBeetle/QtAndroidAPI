@@ -30,7 +30,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_DecimalBuilder::setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2)
+	android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"setArgumentsFromDouble",
@@ -40,7 +40,7 @@ namespace android::text::style
 			arg2
 		);
 	}
-	QAndroidJniObject TtsSpan_DecimalBuilder::setFractionalPart(jstring arg0)
+	android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setFractionalPart(jstring arg0)
 	{
 		return callObjectMethod(
 			"setFractionalPart",
@@ -48,7 +48,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_DecimalBuilder::setIntegerPart(jstring arg0)
+	android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setIntegerPart(jstring arg0)
 	{
 		return callObjectMethod(
 			"setIntegerPart",
@@ -56,7 +56,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_DecimalBuilder::setIntegerPart(jlong arg0)
+	android::text::style::TtsSpan_DecimalBuilder TtsSpan_DecimalBuilder::setIntegerPart(jlong arg0)
 	{
 		return callObjectMethod(
 			"setIntegerPart",

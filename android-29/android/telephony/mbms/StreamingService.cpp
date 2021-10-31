@@ -103,14 +103,14 @@ namespace android::telephony::mbms
 			"()V"
 		);
 	}
-	QAndroidJniObject StreamingService::getInfo()
+	android::telephony::mbms::StreamingServiceInfo StreamingService::getInfo()
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Landroid/telephony/mbms/StreamingServiceInfo;"
 		);
 	}
-	QAndroidJniObject StreamingService::getPlaybackUri()
+	android::net::Uri StreamingService::getPlaybackUri()
 	{
 		return callObjectMethod(
 			"getPlaybackUri",

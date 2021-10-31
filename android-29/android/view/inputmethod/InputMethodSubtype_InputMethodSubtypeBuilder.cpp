@@ -16,14 +16,14 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::build()
+	android::view::inputmethod::InputMethodSubtype InputMethodSubtype_InputMethodSubtypeBuilder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/inputmethod/InputMethodSubtype;"
 		);
 	}
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setIsAsciiCapable(jboolean arg0)
+	android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setIsAsciiCapable(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIsAsciiCapable",
@@ -31,7 +31,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setIsAuxiliary(jboolean arg0)
+	android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setIsAuxiliary(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIsAuxiliary",
@@ -39,7 +39,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setLanguageTag(jstring arg0)
+	android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setLanguageTag(jstring arg0)
 	{
 		return callObjectMethod(
 			"setLanguageTag",
@@ -47,7 +47,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setOverridesImplicitlyEnabledSubtype(jboolean arg0)
+	android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setOverridesImplicitlyEnabledSubtype(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setOverridesImplicitlyEnabledSubtype",
@@ -55,7 +55,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeExtraValue(jstring arg0)
+	android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeExtraValue(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSubtypeExtraValue",
@@ -63,7 +63,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeIconResId(jint arg0)
+	android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeIconResId(jint arg0)
 	{
 		return callObjectMethod(
 			"setSubtypeIconResId",
@@ -71,7 +71,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeId(jint arg0)
+	android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeId(jint arg0)
 	{
 		return callObjectMethod(
 			"setSubtypeId",
@@ -79,7 +79,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeLocale(jstring arg0)
+	android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeLocale(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSubtypeLocale",
@@ -87,7 +87,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeMode(jstring arg0)
+	android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeMode(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSubtypeMode",
@@ -95,7 +95,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeNameResId(jint arg0)
+	android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeNameResId(jint arg0)
 	{
 		return callObjectMethod(
 			"setSubtypeNameResId",

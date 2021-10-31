@@ -21,12 +21,12 @@ namespace android::text::style
 		TtsSpan_FractionBuilder(jlong arg0, jlong arg1, jlong arg2);
 		
 		// Methods
-		QAndroidJniObject setDenominator(jstring arg0);
-		QAndroidJniObject setDenominator(jlong arg0);
-		QAndroidJniObject setIntegerPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(jlong arg0);
-		QAndroidJniObject setNumerator(jstring arg0);
-		QAndroidJniObject setNumerator(jlong arg0);
+		android::text::style::TtsSpan_FractionBuilder setDenominator(jstring arg0);
+		android::text::style::TtsSpan_FractionBuilder setDenominator(jlong arg0);
+		android::text::style::TtsSpan_FractionBuilder setIntegerPart(jstring arg0);
+		android::text::style::TtsSpan_FractionBuilder setIntegerPart(jlong arg0);
+		android::text::style::TtsSpan_FractionBuilder setNumerator(jstring arg0);
+		android::text::style::TtsSpan_FractionBuilder setNumerator(jlong arg0);
 	};
 } // namespace android::text::style
 

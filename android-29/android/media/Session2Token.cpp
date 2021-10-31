@@ -7,7 +7,7 @@
 namespace android::media
 {
 	// Fields
-	QAndroidJniObject Session2Token::CREATOR()
+	__JniBaseClass Session2Token::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.Session2Token",
@@ -58,7 +58,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject Session2Token::getExtras()
+	android::os::Bundle Session2Token::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

@@ -12,7 +12,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject StrictMode::allowThreadDiskReads()
+	android::os::StrictMode_ThreadPolicy StrictMode::allowThreadDiskReads()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.StrictMode",
@@ -20,7 +20,7 @@ namespace android::os
 			"()Landroid/os/StrictMode$ThreadPolicy;"
 		);
 	}
-	QAndroidJniObject StrictMode::allowThreadDiskWrites()
+	android::os::StrictMode_ThreadPolicy StrictMode::allowThreadDiskWrites()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.StrictMode",
@@ -36,7 +36,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	QAndroidJniObject StrictMode::getThreadPolicy()
+	android::os::StrictMode_ThreadPolicy StrictMode::getThreadPolicy()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.StrictMode",
@@ -44,7 +44,7 @@ namespace android::os
 			"()Landroid/os/StrictMode$ThreadPolicy;"
 		);
 	}
-	QAndroidJniObject StrictMode::getVmPolicy()
+	android::os::StrictMode_VmPolicy StrictMode::getVmPolicy()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.StrictMode",

@@ -102,7 +102,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ColorSpace::adapt(android::graphics::ColorSpace arg0, jfloatArray arg1)
+	android::graphics::ColorSpace ColorSpace::adapt(android::graphics::ColorSpace arg0, jfloatArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace",
@@ -112,7 +112,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject ColorSpace::adapt(android::graphics::ColorSpace arg0, jfloatArray arg1, android::graphics::ColorSpace_Adaptation arg2)
+	android::graphics::ColorSpace ColorSpace::adapt(android::graphics::ColorSpace arg0, jfloatArray arg1, android::graphics::ColorSpace_Adaptation arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace",
@@ -123,7 +123,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ColorSpace::connect(android::graphics::ColorSpace arg0)
+	android::graphics::ColorSpace_Connector ColorSpace::connect(android::graphics::ColorSpace arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace",
@@ -132,7 +132,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ColorSpace::connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1)
+	android::graphics::ColorSpace_Connector ColorSpace::connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace",
@@ -142,7 +142,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ColorSpace::connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace_RenderIntent arg1)
+	android::graphics::ColorSpace_Connector ColorSpace::connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace_RenderIntent arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace",
@@ -152,7 +152,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ColorSpace::connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1, android::graphics::ColorSpace_RenderIntent arg2)
+	android::graphics::ColorSpace_Connector ColorSpace::connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1, android::graphics::ColorSpace_RenderIntent arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace",
@@ -163,7 +163,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ColorSpace::get(android::graphics::ColorSpace_Named arg0)
+	android::graphics::ColorSpace ColorSpace::get(android::graphics::ColorSpace_Named arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace",
@@ -172,7 +172,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ColorSpace::match(jfloatArray arg0, android::graphics::ColorSpace_Rgb_TransferParameters arg1)
+	android::graphics::ColorSpace ColorSpace::match(jfloatArray arg0, android::graphics::ColorSpace_Rgb_TransferParameters arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace",
@@ -238,7 +238,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject ColorSpace::getModel()
+	android::graphics::ColorSpace_Model ColorSpace::getModel()
 	{
 		return callObjectMethod(
 			"getModel",

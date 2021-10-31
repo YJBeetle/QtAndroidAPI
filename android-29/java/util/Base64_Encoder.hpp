@@ -27,10 +27,10 @@ namespace java::util
 		// Methods
 		jbyteArray encode(jbyteArray arg0);
 		jint encode(jbyteArray arg0, jbyteArray arg1);
-		QAndroidJniObject encode(java::nio::ByteBuffer arg0);
+		java::nio::ByteBuffer encode(java::nio::ByteBuffer arg0);
 		jstring encodeToString(jbyteArray arg0);
-		QAndroidJniObject withoutPadding();
-		QAndroidJniObject wrap(java::io::OutputStream arg0);
+		java::util::Base64_Encoder withoutPadding();
+		java::io::OutputStream wrap(java::io::OutputStream arg0);
 	};
 } // namespace java::util
 

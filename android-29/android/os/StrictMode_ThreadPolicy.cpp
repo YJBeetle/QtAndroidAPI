@@ -3,7 +3,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject StrictMode_ThreadPolicy::LAX()
+	android::os::StrictMode_ThreadPolicy StrictMode_ThreadPolicy::LAX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.StrictMode$ThreadPolicy",

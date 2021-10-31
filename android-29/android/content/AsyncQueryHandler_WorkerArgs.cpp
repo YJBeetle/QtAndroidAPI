@@ -13,7 +13,7 @@ namespace android::content
 			"Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject AsyncQueryHandler_WorkerArgs::handler()
+	android::os::Handler AsyncQueryHandler_WorkerArgs::handler()
 	{
 		return getObjectField(
 			"handler",
@@ -55,14 +55,14 @@ namespace android::content
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject AsyncQueryHandler_WorkerArgs::uri()
+	android::net::Uri AsyncQueryHandler_WorkerArgs::uri()
 	{
 		return getObjectField(
 			"uri",
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject AsyncQueryHandler_WorkerArgs::values()
+	android::content::ContentValues AsyncQueryHandler_WorkerArgs::values()
 	{
 		return getObjectField(
 			"values",

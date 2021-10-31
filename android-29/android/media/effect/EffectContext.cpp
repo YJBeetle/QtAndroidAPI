@@ -11,7 +11,7 @@ namespace android::media::effect
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject EffectContext::createWithCurrentGlContext()
+	android::media::effect::EffectContext EffectContext::createWithCurrentGlContext()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.effect.EffectContext",
@@ -19,7 +19,7 @@ namespace android::media::effect
 			"()Landroid/media/effect/EffectContext;"
 		);
 	}
-	QAndroidJniObject EffectContext::getFactory()
+	android::media::effect::EffectFactory EffectContext::getFactory()
 	{
 		return callObjectMethod(
 			"getFactory",

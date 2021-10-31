@@ -10,21 +10,21 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DAY();
-		static QAndroidJniObject FRIDAY();
-		static QAndroidJniObject HOUR();
-		static QAndroidJniObject MINUTE();
-		static QAndroidJniObject MONDAY();
-		static QAndroidJniObject MONTH();
-		static QAndroidJniObject QUARTER();
-		static QAndroidJniObject SATURDAY();
-		static QAndroidJniObject SECOND();
-		static QAndroidJniObject SUNDAY();
-		static QAndroidJniObject THURSDAY();
-		static QAndroidJniObject TUESDAY();
-		static QAndroidJniObject WEDNESDAY();
-		static QAndroidJniObject WEEK();
-		static QAndroidJniObject YEAR();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit DAY();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit FRIDAY();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit HOUR();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit MINUTE();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit MONDAY();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit MONTH();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit QUARTER();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit SATURDAY();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit SECOND();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit SUNDAY();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit THURSDAY();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit TUESDAY();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit WEDNESDAY();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit WEEK();
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit YEAR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RelativeDateTimeFormatter_RelativeDateTimeUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,7 +33,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

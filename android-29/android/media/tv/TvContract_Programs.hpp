@@ -46,7 +46,7 @@ namespace android::media::tv
 		static jstring COLUMN_VIDEO_WIDTH();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jint REVIEW_RATING_STYLE_PERCENTAGE();
 		static jint REVIEW_RATING_STYLE_STARS();
 		static jint REVIEW_RATING_STYLE_THUMBS_UP_DOWN();

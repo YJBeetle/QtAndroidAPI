@@ -34,7 +34,7 @@ namespace android::webkit
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ConsoleMessage::messageLevel()
+	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage::messageLevel()
 	{
 		return callObjectMethod(
 			"messageLevel",

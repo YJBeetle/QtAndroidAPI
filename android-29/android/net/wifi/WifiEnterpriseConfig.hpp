@@ -17,7 +17,7 @@ namespace android::net::wifi
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiEnterpriseConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,9 +31,9 @@ namespace android::net::wifi
 		jint describeContents();
 		jstring getAltSubjectMatch();
 		jstring getAnonymousIdentity();
-		QAndroidJniObject getCaCertificate();
+		java::security::cert::X509Certificate getCaCertificate();
 		jarray getCaCertificates();
-		QAndroidJniObject getClientCertificate();
+		java::security::cert::X509Certificate getClientCertificate();
 		jarray getClientCertificateChain();
 		jstring getDomainSuffixMatch();
 		jint getEapMethod();

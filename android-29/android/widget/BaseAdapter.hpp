@@ -32,7 +32,7 @@ namespace android::widget
 		// Methods
 		jboolean areAllItemsEnabled();
 		jarray getAutofillOptions();
-		QAndroidJniObject getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
+		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		jint getItemViewType(jint arg0);
 		jint getViewTypeCount();
 		jboolean hasStableIds();

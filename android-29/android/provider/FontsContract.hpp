@@ -45,8 +45,8 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject buildTypeface(android::content::Context arg0, android::os::CancellationSignal arg1, jarray arg2);
-		static QAndroidJniObject fetchFonts(android::content::Context arg0, android::os::CancellationSignal arg1, android::provider::FontRequest arg2);
+		static android::graphics::Typeface buildTypeface(android::content::Context arg0, android::os::CancellationSignal arg1, jarray arg2);
+		static android::provider::FontsContract_FontFamilyResult fetchFonts(android::content::Context arg0, android::os::CancellationSignal arg1, android::provider::FontRequest arg2);
 		static void requestFonts(android::content::Context arg0, android::provider::FontRequest arg1, android::os::Handler arg2, android::os::CancellationSignal arg3, android::provider::FontsContract_FontRequestCallback arg4);
 	};
 } // namespace android::provider

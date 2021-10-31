@@ -13,7 +13,7 @@ namespace android::telephony::euicc
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DownloadableSubscription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::telephony::euicc
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject forActivationCode(jstring arg0);
+		static android::telephony::euicc::DownloadableSubscription forActivationCode(jstring arg0);
 		jint describeContents();
 		jstring getConfirmationCode();
 		jstring getEncodedActivationCode();

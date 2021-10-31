@@ -64,11 +64,11 @@ namespace java::util
 		// Methods
 		void close();
 		void flush();
-		QAndroidJniObject format(jstring arg0, jobjectArray arg1);
-		QAndroidJniObject format(java::util::Locale arg0, jstring arg1, jobjectArray arg2);
-		QAndroidJniObject ioException();
-		QAndroidJniObject locale();
-		QAndroidJniObject out();
+		java::util::Formatter format(jstring arg0, jobjectArray arg1);
+		java::util::Formatter format(java::util::Locale arg0, jstring arg1, jobjectArray arg2);
+		java::io::IOException ioException();
+		java::util::Locale locale();
+		__JniBaseClass out();
 		jstring toString();
 	};
 } // namespace java::util

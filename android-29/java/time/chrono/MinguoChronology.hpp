@@ -46,7 +46,7 @@ namespace java::time::chrono
 	{
 	public:
 		// Fields
-		static QAndroidJniObject INSTANCE();
+		static java::time::chrono::MinguoChronology INSTANCE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MinguoChronology(const char *className, const char *sig, Ts...agv) : java::time::chrono::AbstractChronology(className, sig, std::forward<Ts>(agv)...) {}
@@ -55,26 +55,26 @@ namespace java::time::chrono
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject date(__JniBaseClass arg0);
-		QAndroidJniObject date(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3);
-		QAndroidJniObject dateEpochDay(jlong arg0);
-		QAndroidJniObject dateNow();
-		QAndroidJniObject dateNow(java::time::Clock arg0);
-		QAndroidJniObject dateNow(java::time::ZoneId arg0);
-		QAndroidJniObject dateYearDay(jint arg0, jint arg1);
-		QAndroidJniObject dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2);
-		QAndroidJniObject eraOf(jint arg0);
-		QAndroidJniObject eras();
+		java::time::chrono::MinguoDate date(__JniBaseClass arg0);
+		java::time::chrono::MinguoDate date(jint arg0, jint arg1, jint arg2);
+		java::time::chrono::MinguoDate date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3);
+		java::time::chrono::MinguoDate dateEpochDay(jlong arg0);
+		java::time::chrono::MinguoDate dateNow();
+		java::time::chrono::MinguoDate dateNow(java::time::Clock arg0);
+		java::time::chrono::MinguoDate dateNow(java::time::ZoneId arg0);
+		java::time::chrono::MinguoDate dateYearDay(jint arg0, jint arg1);
+		java::time::chrono::MinguoDate dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2);
+		java::time::chrono::MinguoEra eraOf(jint arg0);
+		__JniBaseClass eras();
 		jstring getCalendarType();
 		jstring getId();
 		jboolean isLeapYear(jlong arg0);
-		QAndroidJniObject localDateTime(__JniBaseClass arg0);
+		__JniBaseClass localDateTime(__JniBaseClass arg0);
 		jint prolepticYear(__JniBaseClass arg0, jint arg1);
-		QAndroidJniObject range(java::time::temporal::ChronoField arg0);
-		QAndroidJniObject resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1);
-		QAndroidJniObject zonedDateTime(__JniBaseClass arg0);
-		QAndroidJniObject zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1);
+		java::time::temporal::ValueRange range(java::time::temporal::ChronoField arg0);
+		java::time::chrono::MinguoDate resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1);
+		__JniBaseClass zonedDateTime(__JniBaseClass arg0);
+		__JniBaseClass zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1);
 	};
 } // namespace java::time::chrono
 

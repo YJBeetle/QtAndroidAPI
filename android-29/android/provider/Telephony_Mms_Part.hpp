@@ -18,7 +18,7 @@ namespace android::provider
 		static jstring CONTENT_ID();
 		static jstring CONTENT_LOCATION();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring CT_START();
 		static jstring CT_TYPE();
 		static jstring FILENAME();

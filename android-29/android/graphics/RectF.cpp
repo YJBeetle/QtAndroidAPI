@@ -5,7 +5,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject RectF::CREATOR()
+	__JniBaseClass RectF::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.RectF",

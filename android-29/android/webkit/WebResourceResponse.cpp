@@ -30,7 +30,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	QAndroidJniObject WebResourceResponse::getData()
+	java::io::InputStream WebResourceResponse::getData()
 	{
 		return callObjectMethod(
 			"getData",
@@ -58,7 +58,7 @@ namespace android::webkit
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WebResourceResponse::getResponseHeaders()
+	__JniBaseClass WebResourceResponse::getResponseHeaders()
 	{
 		return callObjectMethod(
 			"getResponseHeaders",

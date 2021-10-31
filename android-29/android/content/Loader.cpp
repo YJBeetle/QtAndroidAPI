@@ -81,7 +81,7 @@ namespace android::content
 			"()V"
 		);
 	}
-	QAndroidJniObject Loader::getContext()
+	android::content::Context Loader::getContext()
 	{
 		return callObjectMethod(
 			"getContext",

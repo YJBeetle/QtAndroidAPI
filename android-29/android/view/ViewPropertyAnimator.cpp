@@ -11,7 +11,7 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ViewPropertyAnimator::alpha(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::alpha(jfloat arg0)
 	{
 		return callObjectMethod(
 			"alpha",
@@ -19,7 +19,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::alphaBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::alphaBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"alphaBy",
@@ -41,7 +41,7 @@ namespace android::view
 			"()J"
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::getInterpolator()
+	__JniBaseClass ViewPropertyAnimator::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -55,7 +55,7 @@ namespace android::view
 			"()J"
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::rotation(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotation(jfloat arg0)
 	{
 		return callObjectMethod(
 			"rotation",
@@ -63,7 +63,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::rotationBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"rotationBy",
@@ -71,7 +71,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::rotationX(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationX(jfloat arg0)
 	{
 		return callObjectMethod(
 			"rotationX",
@@ -79,7 +79,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::rotationXBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationXBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"rotationXBy",
@@ -87,7 +87,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::rotationY(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationY(jfloat arg0)
 	{
 		return callObjectMethod(
 			"rotationY",
@@ -95,7 +95,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::rotationYBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::rotationYBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"rotationYBy",
@@ -103,7 +103,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::scaleX(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleX(jfloat arg0)
 	{
 		return callObjectMethod(
 			"scaleX",
@@ -111,7 +111,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::scaleXBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleXBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"scaleXBy",
@@ -119,7 +119,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::scaleY(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleY(jfloat arg0)
 	{
 		return callObjectMethod(
 			"scaleY",
@@ -127,7 +127,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::scaleYBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::scaleYBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"scaleYBy",
@@ -135,7 +135,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::setDuration(jlong arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setDuration(jlong arg0)
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -143,7 +143,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::setInterpolator(__JniBaseClass arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setInterpolator(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setInterpolator",
@@ -151,7 +151,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::setListener(__JniBaseClass arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setListener",
@@ -159,7 +159,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::setStartDelay(jlong arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setStartDelay(jlong arg0)
 	{
 		return callObjectMethod(
 			"setStartDelay",
@@ -167,7 +167,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::setUpdateListener(__JniBaseClass arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setUpdateListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setUpdateListener",
@@ -182,7 +182,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::translationX(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationX(jfloat arg0)
 	{
 		return callObjectMethod(
 			"translationX",
@@ -190,7 +190,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::translationXBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationXBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"translationXBy",
@@ -198,7 +198,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::translationY(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationY(jfloat arg0)
 	{
 		return callObjectMethod(
 			"translationY",
@@ -206,7 +206,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::translationYBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationYBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"translationYBy",
@@ -214,7 +214,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::translationZ(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationZ(jfloat arg0)
 	{
 		return callObjectMethod(
 			"translationZ",
@@ -222,7 +222,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::translationZBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::translationZBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"translationZBy",
@@ -230,7 +230,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::withEndAction(__JniBaseClass arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::withEndAction(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"withEndAction",
@@ -238,14 +238,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::withLayer()
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::withLayer()
 	{
 		return callObjectMethod(
 			"withLayer",
 			"()Landroid/view/ViewPropertyAnimator;"
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::withStartAction(__JniBaseClass arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::withStartAction(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"withStartAction",
@@ -253,7 +253,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::x(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::x(jfloat arg0)
 	{
 		return callObjectMethod(
 			"x",
@@ -261,7 +261,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::xBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::xBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"xBy",
@@ -269,7 +269,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::y(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::y(jfloat arg0)
 	{
 		return callObjectMethod(
 			"y",
@@ -277,7 +277,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::yBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::yBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"yBy",
@@ -285,7 +285,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::z(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::z(jfloat arg0)
 	{
 		return callObjectMethod(
 			"z",
@@ -293,7 +293,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::zBy(jfloat arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::zBy(jfloat arg0)
 	{
 		return callObjectMethod(
 			"zBy",

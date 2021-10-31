@@ -30,7 +30,7 @@ namespace android::renderscript
 		Sampler_Builder(android::renderscript::RenderScript arg0);
 		
 		// Methods
-		QAndroidJniObject create();
+		android::renderscript::Sampler create();
 		void setAnisotropy(jfloat arg0);
 		void setMagnification(android::renderscript::Sampler_Value arg0);
 		void setMinification(android::renderscript::Sampler_Value arg0);

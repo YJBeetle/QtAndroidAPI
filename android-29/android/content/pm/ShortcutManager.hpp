@@ -34,16 +34,16 @@ namespace android::content::pm
 		
 		// Methods
 		jboolean addDynamicShortcuts(__JniBaseClass arg0);
-		QAndroidJniObject createShortcutResultIntent(android::content::pm::ShortcutInfo arg0);
+		android::content::Intent createShortcutResultIntent(android::content::pm::ShortcutInfo arg0);
 		void disableShortcuts(__JniBaseClass arg0);
 		void disableShortcuts(__JniBaseClass arg0, jstring arg1);
 		void enableShortcuts(__JniBaseClass arg0);
-		QAndroidJniObject getDynamicShortcuts();
+		__JniBaseClass getDynamicShortcuts();
 		jint getIconMaxHeight();
 		jint getIconMaxWidth();
-		QAndroidJniObject getManifestShortcuts();
+		__JniBaseClass getManifestShortcuts();
 		jint getMaxShortcutCountPerActivity();
-		QAndroidJniObject getPinnedShortcuts();
+		__JniBaseClass getPinnedShortcuts();
 		jboolean isRateLimitingActive();
 		jboolean isRequestPinShortcutSupported();
 		void removeAllDynamicShortcuts();

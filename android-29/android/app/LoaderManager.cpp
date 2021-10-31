@@ -47,7 +47,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject LoaderManager::getLoader(jint arg0)
+	android::content::Loader LoaderManager::getLoader(jint arg0)
 	{
 		return callObjectMethod(
 			"getLoader",
@@ -55,7 +55,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject LoaderManager::initLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2)
+	android::content::Loader LoaderManager::initLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"initLoader",
@@ -65,7 +65,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject LoaderManager::restartLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2)
+	android::content::Loader LoaderManager::restartLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"restartLoader",

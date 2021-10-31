@@ -12,7 +12,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TimedText::getBounds()
+	android::graphics::Rect TimedText::getBounds()
 	{
 		return callObjectMethod(
 			"getBounds",

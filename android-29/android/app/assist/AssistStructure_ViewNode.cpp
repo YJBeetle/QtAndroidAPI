@@ -65,7 +65,7 @@ namespace android::app::assist
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getAutofillId()
+	android::view::autofill::AutofillId AssistStructure_ViewNode::getAutofillId()
 	{
 		return callObjectMethod(
 			"getAutofillId",
@@ -86,14 +86,14 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getAutofillValue()
+	android::view::autofill::AutofillValue AssistStructure_ViewNode::getAutofillValue()
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getChildAt(jint arg0)
+	android::app::assist::AssistStructure_ViewNode AssistStructure_ViewNode::getChildAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getChildAt",
@@ -129,7 +129,7 @@ namespace android::app::assist
 			"()F"
 		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getExtras()
+	android::os::Bundle AssistStructure_ViewNode::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -150,7 +150,7 @@ namespace android::app::assist
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getHtmlInfo()
+	android::view::ViewStructure_HtmlInfo AssistStructure_ViewNode::getHtmlInfo()
 	{
 		return callObjectMethod(
 			"getHtmlInfo",
@@ -206,7 +206,7 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getLocaleList()
+	android::os::LocaleList AssistStructure_ViewNode::getLocaleList()
 	{
 		return callObjectMethod(
 			"getLocaleList",
@@ -325,7 +325,7 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getTransformation()
+	android::graphics::Matrix AssistStructure_ViewNode::getTransformation()
 	{
 		return callObjectMethod(
 			"getTransformation",

@@ -21,7 +21,7 @@ namespace android::view::accessibility
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityNodeInfo_TouchDelegateInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,9 +32,9 @@ namespace android::view::accessibility
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getRegionAt(jint arg0);
+		android::graphics::Region getRegionAt(jint arg0);
 		jint getRegionCount();
-		QAndroidJniObject getTargetForRegion(android::graphics::Region arg0);
+		android::view::accessibility::AccessibilityNodeInfo getTargetForRegion(android::graphics::Region arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::accessibility

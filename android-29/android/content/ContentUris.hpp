@@ -26,10 +26,10 @@ namespace android::content
 		ContentUris();
 		
 		// Methods
-		static QAndroidJniObject appendId(android::net::Uri_Builder arg0, jlong arg1);
+		static android::net::Uri_Builder appendId(android::net::Uri_Builder arg0, jlong arg1);
 		static jlong parseId(android::net::Uri arg0);
-		static QAndroidJniObject removeId(android::net::Uri arg0);
-		static QAndroidJniObject withAppendedId(android::net::Uri arg0, jlong arg1);
+		static android::net::Uri removeId(android::net::Uri arg0);
+		static android::net::Uri withAppendedId(android::net::Uri arg0, jlong arg1);
 	};
 } // namespace android::content
 

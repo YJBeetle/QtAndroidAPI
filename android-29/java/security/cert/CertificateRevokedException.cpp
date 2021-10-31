@@ -24,21 +24,21 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	QAndroidJniObject CertificateRevokedException::getAuthorityName()
+	javax::security::auth::x500::X500Principal CertificateRevokedException::getAuthorityName()
 	{
 		return callObjectMethod(
 			"getAuthorityName",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	QAndroidJniObject CertificateRevokedException::getExtensions()
+	__JniBaseClass CertificateRevokedException::getExtensions()
 	{
 		return callObjectMethod(
 			"getExtensions",
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject CertificateRevokedException::getInvalidityDate()
+	java::util::Date CertificateRevokedException::getInvalidityDate()
 	{
 		return callObjectMethod(
 			"getInvalidityDate",
@@ -52,14 +52,14 @@ namespace java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CertificateRevokedException::getRevocationDate()
+	java::util::Date CertificateRevokedException::getRevocationDate()
 	{
 		return callObjectMethod(
 			"getRevocationDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject CertificateRevokedException::getRevocationReason()
+	java::security::cert::CRLReason CertificateRevokedException::getRevocationReason()
 	{
 		return callObjectMethod(
 			"getRevocationReason",

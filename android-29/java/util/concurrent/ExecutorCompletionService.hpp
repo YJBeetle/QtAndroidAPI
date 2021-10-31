@@ -27,11 +27,11 @@ namespace java::util::concurrent
 		ExecutorCompletionService(__JniBaseClass arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject poll();
-		QAndroidJniObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		QAndroidJniObject submit(__JniBaseClass arg0);
-		QAndroidJniObject submit(__JniBaseClass arg0, jobject arg1);
-		QAndroidJniObject take();
+		__JniBaseClass poll();
+		__JniBaseClass poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		__JniBaseClass submit(__JniBaseClass arg0);
+		__JniBaseClass submit(__JniBaseClass arg0, jobject arg1);
+		__JniBaseClass take();
 	};
 } // namespace java::util::concurrent
 

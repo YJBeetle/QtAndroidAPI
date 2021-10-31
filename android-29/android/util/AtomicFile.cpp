@@ -42,14 +42,14 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AtomicFile::getBaseFile()
+	java::io::File AtomicFile::getBaseFile()
 	{
 		return callObjectMethod(
 			"getBaseFile",
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject AtomicFile::openRead()
+	java::io::FileInputStream AtomicFile::openRead()
 	{
 		return callObjectMethod(
 			"openRead",
@@ -63,7 +63,7 @@ namespace android::util
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject AtomicFile::startWrite()
+	java::io::FileOutputStream AtomicFile::startWrite()
 	{
 		return callObjectMethod(
 			"startWrite",

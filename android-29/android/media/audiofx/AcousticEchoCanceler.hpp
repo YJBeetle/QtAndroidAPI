@@ -18,7 +18,7 @@ namespace android::media::audiofx
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(jint arg0);
+		static android::media::audiofx::AcousticEchoCanceler create(jint arg0);
 		static jboolean isAvailable();
 	};
 } // namespace android::media::audiofx

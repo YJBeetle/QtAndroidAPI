@@ -5,7 +5,7 @@
 namespace android::app::usage
 {
 	// Fields
-	QAndroidJniObject ConfigurationStats::CREATOR()
+	__JniBaseClass ConfigurationStats::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.usage.ConfigurationStats",
@@ -40,7 +40,7 @@ namespace android::app::usage
 			"()I"
 		);
 	}
-	QAndroidJniObject ConfigurationStats::getConfiguration()
+	android::content::res::Configuration ConfigurationStats::getConfiguration()
 	{
 		return callObjectMethod(
 			"getConfiguration",

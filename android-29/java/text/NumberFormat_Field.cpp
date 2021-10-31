@@ -3,7 +3,7 @@
 namespace java::text
 {
 	// Fields
-	QAndroidJniObject NumberFormat_Field::CURRENCY()
+	java::text::NumberFormat_Field NumberFormat_Field::CURRENCY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -11,7 +11,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::DECIMAL_SEPARATOR()
+	java::text::NumberFormat_Field NumberFormat_Field::DECIMAL_SEPARATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -19,7 +19,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::EXPONENT()
+	java::text::NumberFormat_Field NumberFormat_Field::EXPONENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -27,7 +27,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::EXPONENT_SIGN()
+	java::text::NumberFormat_Field NumberFormat_Field::EXPONENT_SIGN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -35,7 +35,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::EXPONENT_SYMBOL()
+	java::text::NumberFormat_Field NumberFormat_Field::EXPONENT_SYMBOL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -43,7 +43,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::FRACTION()
+	java::text::NumberFormat_Field NumberFormat_Field::FRACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -51,7 +51,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::GROUPING_SEPARATOR()
+	java::text::NumberFormat_Field NumberFormat_Field::GROUPING_SEPARATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -59,7 +59,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::INTEGER()
+	java::text::NumberFormat_Field NumberFormat_Field::INTEGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -67,7 +67,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::PERCENT()
+	java::text::NumberFormat_Field NumberFormat_Field::PERCENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -75,7 +75,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::PERMILLE()
+	java::text::NumberFormat_Field NumberFormat_Field::PERMILLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -83,7 +83,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::PREFIX()
+	java::text::NumberFormat_Field NumberFormat_Field::PREFIX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -91,7 +91,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::SIGN()
+	java::text::NumberFormat_Field NumberFormat_Field::SIGN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
@@ -99,7 +99,7 @@ namespace java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::SUFFIX()
+	java::text::NumberFormat_Field NumberFormat_Field::SUFFIX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",

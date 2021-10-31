@@ -18,8 +18,8 @@ namespace android::text
 		Editable_Factory();
 		
 		// Methods
-		static QAndroidJniObject getInstance();
-		QAndroidJniObject newEditable(jstring arg0);
+		static android::text::Editable_Factory getInstance();
+		__JniBaseClass newEditable(jstring arg0);
 	};
 } // namespace android::text
 

@@ -27,7 +27,7 @@ namespace android::graphics
 		
 		// Methods
 		jint getError();
-		QAndroidJniObject getSource();
+		android::graphics::ImageDecoder_Source getSource();
 	};
 } // namespace android::graphics
 

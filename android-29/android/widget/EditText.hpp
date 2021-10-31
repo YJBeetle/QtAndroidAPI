@@ -38,7 +38,7 @@ namespace android::widget
 		void extendSelection(jint arg0);
 		jstring getAccessibilityClassName();
 		jboolean getFreezesText();
-		QAndroidJniObject getText();
+		__JniBaseClass getText();
 		void selectAll();
 		void setEllipsize(android::text::TextUtils_TruncateAt arg0);
 		void setSelection(jint arg0);

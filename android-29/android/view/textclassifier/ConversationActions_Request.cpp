@@ -6,7 +6,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject ConversationActions_Request::CREATOR()
+	__JniBaseClass ConversationActions_Request::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Request",
@@ -51,21 +51,21 @@ namespace android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ConversationActions_Request::getConversation()
+	__JniBaseClass ConversationActions_Request::getConversation()
 	{
 		return callObjectMethod(
 			"getConversation",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ConversationActions_Request::getExtras()
+	android::os::Bundle ConversationActions_Request::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject ConversationActions_Request::getHints()
+	__JniBaseClass ConversationActions_Request::getHints()
 	{
 		return callObjectMethod(
 			"getHints",
@@ -79,7 +79,7 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject ConversationActions_Request::getTypeConfig()
+	android::view::textclassifier::TextClassifier_EntityConfig ConversationActions_Request::getTypeConfig()
 	{
 		return callObjectMethod(
 			"getTypeConfig",

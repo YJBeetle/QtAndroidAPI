@@ -75,31 +75,31 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(android::content::Context arg0);
+		static android::app::WallpaperManager getInstance(android::content::Context arg0);
 		void addOnColorsChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
 		void clear();
 		void clear(jint arg0);
 		void clearWallpaper();
 		void clearWallpaperOffsets(__JniBaseClass arg0);
 		void forgetLoadedWallpaper();
-		QAndroidJniObject getBuiltInDrawable();
-		QAndroidJniObject getBuiltInDrawable(jint arg0);
-		QAndroidJniObject getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4);
-		QAndroidJniObject getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5);
-		QAndroidJniObject getCropAndSetWallpaperIntent(android::net::Uri arg0);
+		android::graphics::drawable::Drawable getBuiltInDrawable();
+		android::graphics::drawable::Drawable getBuiltInDrawable(jint arg0);
+		android::graphics::drawable::Drawable getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4);
+		android::graphics::drawable::Drawable getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5);
+		android::content::Intent getCropAndSetWallpaperIntent(android::net::Uri arg0);
 		jint getDesiredMinimumHeight();
 		jint getDesiredMinimumWidth();
-		QAndroidJniObject getDrawable();
-		QAndroidJniObject getFastDrawable();
-		QAndroidJniObject getWallpaperColors(jint arg0);
-		QAndroidJniObject getWallpaperFile(jint arg0);
+		android::graphics::drawable::Drawable getDrawable();
+		android::graphics::drawable::Drawable getFastDrawable();
+		android::app::WallpaperColors getWallpaperColors(jint arg0);
+		android::os::ParcelFileDescriptor getWallpaperFile(jint arg0);
 		jint getWallpaperId(jint arg0);
-		QAndroidJniObject getWallpaperInfo();
+		android::app::WallpaperInfo getWallpaperInfo();
 		jboolean hasResourceWallpaper(jint arg0);
 		jboolean isSetWallpaperAllowed();
 		jboolean isWallpaperSupported();
-		QAndroidJniObject peekDrawable();
-		QAndroidJniObject peekFastDrawable();
+		android::graphics::drawable::Drawable peekDrawable();
+		android::graphics::drawable::Drawable peekFastDrawable();
 		void removeOnColorsChangedListener(__JniBaseClass arg0);
 		void sendWallpaperCommand(__JniBaseClass arg0, jstring arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5);
 		jint setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2);

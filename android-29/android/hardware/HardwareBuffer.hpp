@@ -14,7 +14,7 @@ namespace android::hardware
 	public:
 		// Fields
 		static jint BLOB();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DS_24UI8();
 		static jint DS_FP32UI8();
 		static jint D_16();
@@ -47,7 +47,7 @@ namespace android::hardware
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
+		static android::hardware::HardwareBuffer create(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
 		static jboolean isSupported(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
 		void close();
 		jint describeContents();

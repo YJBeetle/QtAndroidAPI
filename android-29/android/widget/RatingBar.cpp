@@ -55,7 +55,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject RatingBar::getOnRatingBarChangeListener()
+	__JniBaseClass RatingBar::getOnRatingBarChangeListener()
 	{
 		return callObjectMethod(
 			"getOnRatingBarChangeListener",

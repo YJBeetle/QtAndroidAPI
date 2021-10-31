@@ -33,7 +33,7 @@ namespace android::media
 			arg4.object()
 		);
 	}
-	QAndroidJniObject MediaSession2_SessionCallback::onConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1)
+	android::media::Session2CommandGroup MediaSession2_SessionCallback::onConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1)
 	{
 		return callObjectMethod(
 			"onConnect",
@@ -60,7 +60,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaSession2_SessionCallback::onSessionCommand(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, android::media::Session2Command arg2, android::os::Bundle arg3)
+	android::media::Session2Command_Result MediaSession2_SessionCallback::onSessionCommand(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, android::media::Session2Command arg2, android::os::Bundle arg3)
 	{
 		return callObjectMethod(
 			"onSessionCommand",

@@ -55,7 +55,7 @@ namespace android::accessibilityservice
 			"CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT"
 		);
 	}
-	QAndroidJniObject AccessibilityServiceInfo::CREATOR()
+	__JniBaseClass AccessibilityServiceInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accessibilityservice.AccessibilityServiceInfo",
@@ -316,7 +316,7 @@ namespace android::accessibilityservice
 			"()I"
 		);
 	}
-	QAndroidJniObject AccessibilityServiceInfo::getResolveInfo()
+	android::content::pm::ResolveInfo AccessibilityServiceInfo::getResolveInfo()
 	{
 		return callObjectMethod(
 			"getResolveInfo",

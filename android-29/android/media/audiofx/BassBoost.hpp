@@ -25,7 +25,7 @@ namespace android::media::audiofx
 		BassBoost(jint arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject getProperties();
+		android::media::audiofx::BassBoost_Settings getProperties();
 		jshort getRoundedStrength();
 		jboolean getStrengthSupported();
 		void setParameterListener(__JniBaseClass arg0);

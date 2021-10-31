@@ -21,7 +21,7 @@ namespace android::service::voice
 		) {}
 	
 	// Methods
-	QAndroidJniObject VoiceInteractionSessionService::onBind(android::content::Intent arg0)
+	__JniBaseClass VoiceInteractionSessionService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -51,7 +51,7 @@ namespace android::service::voice
 			"()V"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSessionService::onNewSession(android::os::Bundle arg0)
+	android::service::voice::VoiceInteractionSession VoiceInteractionSessionService::onNewSession(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"onNewSession",

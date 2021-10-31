@@ -42,9 +42,9 @@ namespace java::util::concurrent::locks
 		jboolean isFair();
 		jboolean isWriteLocked();
 		jboolean isWriteLockedByCurrentThread();
-		QAndroidJniObject readLock();
+		java::util::concurrent::locks::ReentrantReadWriteLock_ReadLock readLock();
 		jstring toString();
-		QAndroidJniObject writeLock();
+		java::util::concurrent::locks::ReentrantReadWriteLock_WriteLock writeLock();
 	};
 } // namespace java::util::concurrent::locks
 

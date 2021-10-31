@@ -22,15 +22,15 @@ namespace android::net::wifi::aware
 		SubscribeConfig_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setMatchFilter(__JniBaseClass arg0);
-		QAndroidJniObject setMaxDistanceMm(jint arg0);
-		QAndroidJniObject setMinDistanceMm(jint arg0);
-		QAndroidJniObject setServiceName(jstring arg0);
-		QAndroidJniObject setServiceSpecificInfo(jbyteArray arg0);
-		QAndroidJniObject setSubscribeType(jint arg0);
-		QAndroidJniObject setTerminateNotificationEnabled(jboolean arg0);
-		QAndroidJniObject setTtlSec(jint arg0);
+		android::net::wifi::aware::SubscribeConfig build();
+		android::net::wifi::aware::SubscribeConfig_Builder setMatchFilter(__JniBaseClass arg0);
+		android::net::wifi::aware::SubscribeConfig_Builder setMaxDistanceMm(jint arg0);
+		android::net::wifi::aware::SubscribeConfig_Builder setMinDistanceMm(jint arg0);
+		android::net::wifi::aware::SubscribeConfig_Builder setServiceName(jstring arg0);
+		android::net::wifi::aware::SubscribeConfig_Builder setServiceSpecificInfo(jbyteArray arg0);
+		android::net::wifi::aware::SubscribeConfig_Builder setSubscribeType(jint arg0);
+		android::net::wifi::aware::SubscribeConfig_Builder setTerminateNotificationEnabled(jboolean arg0);
+		android::net::wifi::aware::SubscribeConfig_Builder setTtlSec(jint arg0);
 	};
 } // namespace android::net::wifi::aware
 

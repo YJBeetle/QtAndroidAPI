@@ -33,15 +33,15 @@ namespace android::security
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getAlgorithmParameterSpec();
-		QAndroidJniObject getContext();
-		QAndroidJniObject getEndDate();
+		__JniBaseClass getAlgorithmParameterSpec();
+		android::content::Context getContext();
+		java::util::Date getEndDate();
 		jint getKeySize();
 		jstring getKeyType();
 		jstring getKeystoreAlias();
-		QAndroidJniObject getSerialNumber();
-		QAndroidJniObject getStartDate();
-		QAndroidJniObject getSubjectDN();
+		java::math::BigInteger getSerialNumber();
+		java::util::Date getStartDate();
+		javax::security::auth::x500::X500Principal getSubjectDN();
 		jboolean isEncryptionRequired();
 	};
 } // namespace android::security

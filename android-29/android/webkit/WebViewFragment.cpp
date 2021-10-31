@@ -20,14 +20,14 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	QAndroidJniObject WebViewFragment::getWebView()
+	android::webkit::WebView WebViewFragment::getWebView()
 	{
 		return callObjectMethod(
 			"getWebView",
 			"()Landroid/webkit/WebView;"
 		);
 	}
-	QAndroidJniObject WebViewFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
+	android::view::View WebViewFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"onCreateView",

@@ -20,7 +20,7 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	QAndroidJniObject TextClassification_Builder::addAction(android::app::RemoteAction arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::addAction(android::app::RemoteAction arg0)
 	{
 		return callObjectMethod(
 			"addAction",
@@ -28,14 +28,14 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassification_Builder::build()
+	android::view::textclassifier::TextClassification TextClassification_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextClassification;"
 		);
 	}
-	QAndroidJniObject TextClassification_Builder::setEntityType(jstring arg0, jfloat arg1)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setEntityType(jstring arg0, jfloat arg1)
 	{
 		return callObjectMethod(
 			"setEntityType",
@@ -44,7 +44,7 @@ namespace android::view::textclassifier
 			arg1
 		);
 	}
-	QAndroidJniObject TextClassification_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -52,7 +52,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassification_Builder::setIcon(android::graphics::drawable::Drawable arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setIcon(android::graphics::drawable::Drawable arg0)
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -60,7 +60,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassification_Builder::setId(jstring arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setId(jstring arg0)
 	{
 		return callObjectMethod(
 			"setId",
@@ -68,7 +68,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassification_Builder::setIntent(android::content::Intent arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setIntent(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"setIntent",
@@ -76,7 +76,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassification_Builder::setLabel(jstring arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setLabel(jstring arg0)
 	{
 		return callObjectMethod(
 			"setLabel",
@@ -84,7 +84,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassification_Builder::setOnClickListener(__JniBaseClass arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setOnClickListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setOnClickListener",
@@ -92,7 +92,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassification_Builder::setText(jstring arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setText",

@@ -13,7 +13,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jint dalvikPrivateDirty();
 		jint dalvikPss();
 		jint dalvikSharedDirty();
@@ -34,7 +34,7 @@ namespace android::os
 		// Methods
 		jint describeContents();
 		jstring getMemoryStat(jstring arg0);
-		QAndroidJniObject getMemoryStats();
+		__JniBaseClass getMemoryStats();
 		jint getTotalPrivateClean();
 		jint getTotalPrivateDirty();
 		jint getTotalPss();

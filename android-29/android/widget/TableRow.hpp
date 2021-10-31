@@ -42,9 +42,9 @@ namespace android::widget
 		TableRow(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::widget::TableRow_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getVirtualChildAt(jint arg0);
+		android::view::View getVirtualChildAt(jint arg0);
 		jint getVirtualChildCount();
 		void setOnHierarchyChangeListener(__JniBaseClass arg0);
 	};

@@ -29,8 +29,8 @@ namespace android::media::projection
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject createScreenCaptureIntent();
-		QAndroidJniObject getMediaProjection(jint arg0, android::content::Intent arg1);
+		android::content::Intent createScreenCaptureIntent();
+		android::media::projection::MediaProjection getMediaProjection(jint arg0, android::content::Intent arg1);
 	};
 } // namespace android::media::projection
 

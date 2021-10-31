@@ -16,7 +16,7 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Signature::getInstance(jstring arg0)
+	java::security::Signature Signature::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Signature",
@@ -25,7 +25,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject Signature::getInstance(jstring arg0, jstring arg1)
+	java::security::Signature Signature::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Signature",
@@ -35,7 +35,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject Signature::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::Signature Signature::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Signature",
@@ -67,14 +67,14 @@ namespace java::security
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject Signature::getParameters()
+	java::security::AlgorithmParameters Signature::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
-	QAndroidJniObject Signature::getProvider()
+	java::security::Provider Signature::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

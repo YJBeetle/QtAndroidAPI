@@ -11,7 +11,7 @@ namespace android::hardware::fingerprint
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FingerprintManager_AuthenticationResult::getCryptoObject()
+	android::hardware::fingerprint::FingerprintManager_CryptoObject FingerprintManager_AuthenticationResult::getCryptoObject()
 	{
 		return callObjectMethod(
 			"getCryptoObject",

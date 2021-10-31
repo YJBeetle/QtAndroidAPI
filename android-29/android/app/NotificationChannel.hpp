@@ -21,7 +21,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring DEFAULT_CHANNEL_ID();
 		
 		// QAndroidJniObject forward
@@ -39,7 +39,7 @@ namespace android::app
 		void enableLights(jboolean arg0);
 		void enableVibration(jboolean arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAudioAttributes();
+		android::media::AudioAttributes getAudioAttributes();
 		jstring getDescription();
 		jstring getGroup();
 		jstring getId();
@@ -47,7 +47,7 @@ namespace android::app
 		jint getLightColor();
 		jint getLockscreenVisibility();
 		jstring getName();
-		QAndroidJniObject getSound();
+		android::net::Uri getSound();
 		jlongArray getVibrationPattern();
 		jboolean hasUserSetImportance();
 		jint hashCode();

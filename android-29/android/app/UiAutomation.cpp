@@ -105,7 +105,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject UiAutomation::executeAndWaitForEvent(__JniBaseClass arg0, __JniBaseClass arg1, jlong arg2)
+	android::view::accessibility::AccessibilityEvent UiAutomation::executeAndWaitForEvent(__JniBaseClass arg0, __JniBaseClass arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"executeAndWaitForEvent",
@@ -115,7 +115,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject UiAutomation::executeShellCommand(jstring arg0)
+	android::os::ParcelFileDescriptor UiAutomation::executeShellCommand(jstring arg0)
 	{
 		return callObjectMethod(
 			"executeShellCommand",
@@ -123,7 +123,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject UiAutomation::findFocus(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo UiAutomation::findFocus(jint arg0)
 	{
 		return callObjectMethod(
 			"findFocus",
@@ -131,28 +131,28 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject UiAutomation::getRootInActiveWindow()
+	android::view::accessibility::AccessibilityNodeInfo UiAutomation::getRootInActiveWindow()
 	{
 		return callObjectMethod(
 			"getRootInActiveWindow",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	QAndroidJniObject UiAutomation::getServiceInfo()
+	android::accessibilityservice::AccessibilityServiceInfo UiAutomation::getServiceInfo()
 	{
 		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
 		);
 	}
-	QAndroidJniObject UiAutomation::getWindowAnimationFrameStats()
+	android::view::WindowAnimationFrameStats UiAutomation::getWindowAnimationFrameStats()
 	{
 		return callObjectMethod(
 			"getWindowAnimationFrameStats",
 			"()Landroid/view/WindowAnimationFrameStats;"
 		);
 	}
-	QAndroidJniObject UiAutomation::getWindowContentFrameStats(jint arg0)
+	android::view::WindowContentFrameStats UiAutomation::getWindowContentFrameStats(jint arg0)
 	{
 		return callObjectMethod(
 			"getWindowContentFrameStats",
@@ -160,7 +160,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject UiAutomation::getWindows()
+	__JniBaseClass UiAutomation::getWindows()
 	{
 		return callObjectMethod(
 			"getWindows",
@@ -254,7 +254,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject UiAutomation::takeScreenshot()
+	android::graphics::Bitmap UiAutomation::takeScreenshot()
 	{
 		return callObjectMethod(
 			"takeScreenshot",

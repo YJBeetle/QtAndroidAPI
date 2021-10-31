@@ -40,7 +40,7 @@ namespace android::util
 		jstring nextName();
 		void nextNull();
 		jstring nextString();
-		QAndroidJniObject peek();
+		android::util::JsonToken peek();
 		void setLenient(jboolean arg0);
 		void skipValue();
 		jstring toString();

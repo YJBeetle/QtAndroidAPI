@@ -15,7 +15,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ScriptIntrinsicBlend::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
+	android::renderscript::ScriptIntrinsicBlend ScriptIntrinsicBlend::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicBlend",
@@ -310,105 +310,105 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDAdd()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDAdd()
 	{
 		return callObjectMethod(
 			"getKernelIDAdd",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDClear()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDClear()
 	{
 		return callObjectMethod(
 			"getKernelIDClear",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDDst()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDDst()
 	{
 		return callObjectMethod(
 			"getKernelIDDst",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDDstAtop()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDDstAtop()
 	{
 		return callObjectMethod(
 			"getKernelIDDstAtop",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDDstIn()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDDstIn()
 	{
 		return callObjectMethod(
 			"getKernelIDDstIn",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDDstOut()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDDstOut()
 	{
 		return callObjectMethod(
 			"getKernelIDDstOut",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDDstOver()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDDstOver()
 	{
 		return callObjectMethod(
 			"getKernelIDDstOver",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDMultiply()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDMultiply()
 	{
 		return callObjectMethod(
 			"getKernelIDMultiply",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSrc()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDSrc()
 	{
 		return callObjectMethod(
 			"getKernelIDSrc",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSrcAtop()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDSrcAtop()
 	{
 		return callObjectMethod(
 			"getKernelIDSrcAtop",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSrcIn()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDSrcIn()
 	{
 		return callObjectMethod(
 			"getKernelIDSrcIn",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSrcOut()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDSrcOut()
 	{
 		return callObjectMethod(
 			"getKernelIDSrcOut",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSrcOver()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDSrcOver()
 	{
 		return callObjectMethod(
 			"getKernelIDSrcOver",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSubtract()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDSubtract()
 	{
 		return callObjectMethod(
 			"getKernelIDSubtract",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDXor()
+	android::renderscript::Script_KernelID ScriptIntrinsicBlend::getKernelIDXor()
 	{
 		return callObjectMethod(
 			"getKernelIDXor",

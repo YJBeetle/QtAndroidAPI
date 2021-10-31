@@ -100,7 +100,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WallpaperManager::getInstance(android::content::Context arg0)
+	android::app::WallpaperManager WallpaperManager::getInstance(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.WallpaperManager",
@@ -155,14 +155,14 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject WallpaperManager::getBuiltInDrawable()
+	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable()
 	{
 		return callObjectMethod(
 			"getBuiltInDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject WallpaperManager::getBuiltInDrawable(jint arg0)
+	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable(jint arg0)
 	{
 		return callObjectMethod(
 			"getBuiltInDrawable",
@@ -170,7 +170,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4)
+	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4)
 	{
 		return callObjectMethod(
 			"getBuiltInDrawable",
@@ -182,7 +182,7 @@ namespace android::app
 			arg4
 		);
 	}
-	QAndroidJniObject WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5)
+	android::graphics::drawable::Drawable WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"getBuiltInDrawable",
@@ -195,7 +195,7 @@ namespace android::app
 			arg5
 		);
 	}
-	QAndroidJniObject WallpaperManager::getCropAndSetWallpaperIntent(android::net::Uri arg0)
+	android::content::Intent WallpaperManager::getCropAndSetWallpaperIntent(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"getCropAndSetWallpaperIntent",
@@ -217,21 +217,21 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject WallpaperManager::getDrawable()
+	android::graphics::drawable::Drawable WallpaperManager::getDrawable()
 	{
 		return callObjectMethod(
 			"getDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject WallpaperManager::getFastDrawable()
+	android::graphics::drawable::Drawable WallpaperManager::getFastDrawable()
 	{
 		return callObjectMethod(
 			"getFastDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject WallpaperManager::getWallpaperColors(jint arg0)
+	android::app::WallpaperColors WallpaperManager::getWallpaperColors(jint arg0)
 	{
 		return callObjectMethod(
 			"getWallpaperColors",
@@ -239,7 +239,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject WallpaperManager::getWallpaperFile(jint arg0)
+	android::os::ParcelFileDescriptor WallpaperManager::getWallpaperFile(jint arg0)
 	{
 		return callObjectMethod(
 			"getWallpaperFile",
@@ -255,7 +255,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject WallpaperManager::getWallpaperInfo()
+	android::app::WallpaperInfo WallpaperManager::getWallpaperInfo()
 	{
 		return callObjectMethod(
 			"getWallpaperInfo",
@@ -284,14 +284,14 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject WallpaperManager::peekDrawable()
+	android::graphics::drawable::Drawable WallpaperManager::peekDrawable()
 	{
 		return callObjectMethod(
 			"peekDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject WallpaperManager::peekFastDrawable()
+	android::graphics::drawable::Drawable WallpaperManager::peekFastDrawable()
 	{
 		return callObjectMethod(
 			"peekFastDrawable",

@@ -37,7 +37,7 @@ namespace android::media::audiofx
 		jint getDecayTime();
 		jshort getDensity();
 		jshort getDiffusion();
-		QAndroidJniObject getProperties();
+		android::media::audiofx::EnvironmentalReverb_Settings getProperties();
 		jint getReflectionsDelay();
 		jshort getReflectionsLevel();
 		jint getReverbDelay();

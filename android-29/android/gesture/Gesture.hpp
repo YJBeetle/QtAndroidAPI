@@ -33,7 +33,7 @@ namespace android::gesture
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Gesture(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -46,17 +46,17 @@ namespace android::gesture
 		void addStroke(android::gesture::GestureStroke arg0);
 		jobject clone();
 		jint describeContents();
-		QAndroidJniObject getBoundingBox();
+		android::graphics::RectF getBoundingBox();
 		jlong getID();
 		jfloat getLength();
-		QAndroidJniObject getStrokes();
+		java::util::ArrayList getStrokes();
 		jint getStrokesCount();
-		QAndroidJniObject toBitmap(jint arg0, jint arg1, jint arg2, jint arg3);
-		QAndroidJniObject toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		QAndroidJniObject toPath();
-		QAndroidJniObject toPath(android::graphics::Path arg0);
-		QAndroidJniObject toPath(jint arg0, jint arg1, jint arg2, jint arg3);
-		QAndroidJniObject toPath(android::graphics::Path arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		android::graphics::Bitmap toBitmap(jint arg0, jint arg1, jint arg2, jint arg3);
+		android::graphics::Bitmap toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		android::graphics::Path toPath();
+		android::graphics::Path toPath(android::graphics::Path arg0);
+		android::graphics::Path toPath(jint arg0, jint arg1, jint arg2, jint arg3);
+		android::graphics::Path toPath(android::graphics::Path arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::gesture

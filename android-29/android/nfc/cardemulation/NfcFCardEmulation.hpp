@@ -29,7 +29,7 @@ namespace android::nfc::cardemulation
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(android::nfc::NfcAdapter arg0);
+		static android::nfc::cardemulation::NfcFCardEmulation getInstance(android::nfc::NfcAdapter arg0);
 		jboolean disableService(android::app::Activity arg0);
 		jboolean enableService(android::app::Activity arg0, android::content::ComponentName arg1);
 		jstring getNfcid2ForService(android::content::ComponentName arg0);

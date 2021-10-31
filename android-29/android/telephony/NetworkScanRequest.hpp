@@ -17,7 +17,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint SCAN_TYPE_ONE_SHOT();
 		static jint SCAN_TYPE_PERIODIC();
 		
@@ -34,7 +34,7 @@ namespace android::telephony
 		jboolean getIncrementalResults();
 		jint getIncrementalResultsPeriodicity();
 		jint getMaxSearchTime();
-		QAndroidJniObject getPlmns();
+		java::util::ArrayList getPlmns();
 		jint getScanType();
 		jint getSearchPeriodicity();
 		jarray getSpecifiers();

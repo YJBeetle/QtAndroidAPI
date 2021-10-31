@@ -17,7 +17,7 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Proxy::getInvocationHandler(jobject arg0)
+	__JniBaseClass Proxy::getInvocationHandler(jobject arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.reflect.Proxy",

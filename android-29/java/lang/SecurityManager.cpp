@@ -246,7 +246,7 @@ namespace java::lang
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject SecurityManager::getThreadGroup()
+	java::lang::ThreadGroup SecurityManager::getThreadGroup()
 	{
 		return callObjectMethod(
 			"getThreadGroup",

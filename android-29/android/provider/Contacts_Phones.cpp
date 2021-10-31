@@ -5,7 +5,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject Contacts_Phones::CONTENT_FILTER_URL()
+	android::net::Uri Contacts_Phones::CONTENT_FILTER_URL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Phones",
@@ -29,7 +29,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Phones::CONTENT_URI()
+	android::net::Uri Contacts_Phones::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Phones",

@@ -25,7 +25,7 @@ namespace android::service::media
 		CameraPrewarmService();
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onCooldown(jboolean arg0);
 		void onPrewarm();
 		jboolean onUnbind(android::content::Intent arg0);

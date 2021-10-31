@@ -27,8 +27,8 @@ namespace android::text::method
 		DateKeyListener(java::util::Locale arg0);
 		
 		// Methods
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static android::text::method::DateKeyListener getInstance();
+		static android::text::method::DateKeyListener getInstance(java::util::Locale arg0);
 		jint getInputType();
 	};
 } // namespace android::text::method

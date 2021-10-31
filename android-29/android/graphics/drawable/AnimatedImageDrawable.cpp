@@ -49,7 +49,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject AnimatedImageDrawable::getColorFilter()
+	android::graphics::ColorFilter AnimatedImageDrawable::getColorFilter()
 	{
 		return callObjectMethod(
 			"getColorFilter",

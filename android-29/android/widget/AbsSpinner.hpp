@@ -46,13 +46,13 @@ namespace android::widget
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getAdapter();
+		__JniBaseClass getAdapter();
 		jint getAutofillType();
-		QAndroidJniObject getAutofillValue();
+		android::view::autofill::AutofillValue getAutofillValue();
 		jint getCount();
-		QAndroidJniObject getSelectedView();
+		android::view::View getSelectedView();
 		void onRestoreInstanceState(__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
+		__JniBaseClass onSaveInstanceState();
 		jint pointToPosition(jint arg0, jint arg1);
 		void requestLayout();
 		void setAdapter(__JniBaseClass arg0);

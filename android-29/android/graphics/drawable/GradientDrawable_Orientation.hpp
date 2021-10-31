@@ -10,14 +10,14 @@ namespace android::graphics::drawable
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BL_TR();
-		static QAndroidJniObject BOTTOM_TOP();
-		static QAndroidJniObject BR_TL();
-		static QAndroidJniObject LEFT_RIGHT();
-		static QAndroidJniObject RIGHT_LEFT();
-		static QAndroidJniObject TL_BR();
-		static QAndroidJniObject TOP_BOTTOM();
-		static QAndroidJniObject TR_BL();
+		static android::graphics::drawable::GradientDrawable_Orientation BL_TR();
+		static android::graphics::drawable::GradientDrawable_Orientation BOTTOM_TOP();
+		static android::graphics::drawable::GradientDrawable_Orientation BR_TL();
+		static android::graphics::drawable::GradientDrawable_Orientation LEFT_RIGHT();
+		static android::graphics::drawable::GradientDrawable_Orientation RIGHT_LEFT();
+		static android::graphics::drawable::GradientDrawable_Orientation TL_BR();
+		static android::graphics::drawable::GradientDrawable_Orientation TOP_BOTTOM();
+		static android::graphics::drawable::GradientDrawable_Orientation TR_BL();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GradientDrawable_Orientation(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,7 +26,7 @@ namespace android::graphics::drawable
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::drawable::GradientDrawable_Orientation valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics::drawable

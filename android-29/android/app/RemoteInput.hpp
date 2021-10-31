@@ -21,7 +21,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint EDIT_CHOICES_BEFORE_SENDING_AUTO();
 		static jint EDIT_CHOICES_BEFORE_SENDING_DISABLED();
 		static jint EDIT_CHOICES_BEFORE_SENDING_ENABLED();
@@ -39,16 +39,16 @@ namespace android::app
 		// Methods
 		static void addDataResultToIntent(android::app::RemoteInput arg0, android::content::Intent arg1, __JniBaseClass arg2);
 		static void addResultsToIntent(jarray arg0, android::content::Intent arg1, android::os::Bundle arg2);
-		static QAndroidJniObject getDataResultsFromIntent(android::content::Intent arg0, jstring arg1);
-		static QAndroidJniObject getResultsFromIntent(android::content::Intent arg0);
+		static __JniBaseClass getDataResultsFromIntent(android::content::Intent arg0, jstring arg1);
+		static android::os::Bundle getResultsFromIntent(android::content::Intent arg0);
 		static jint getResultsSource(android::content::Intent arg0);
 		static void setResultsSource(android::content::Intent arg0, jint arg1);
 		jint describeContents();
 		jboolean getAllowFreeFormInput();
-		QAndroidJniObject getAllowedDataTypes();
+		__JniBaseClass getAllowedDataTypes();
 		jarray getChoices();
 		jint getEditChoicesBeforeSending();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jstring getLabel();
 		jstring getResultKey();
 		jboolean isDataOnly();

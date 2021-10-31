@@ -52,14 +52,14 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject adapt(android::graphics::ColorSpace arg0, jfloatArray arg1);
-		static QAndroidJniObject adapt(android::graphics::ColorSpace arg0, jfloatArray arg1, android::graphics::ColorSpace_Adaptation arg2);
-		static QAndroidJniObject connect(android::graphics::ColorSpace arg0);
-		static QAndroidJniObject connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1);
-		static QAndroidJniObject connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace_RenderIntent arg1);
-		static QAndroidJniObject connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1, android::graphics::ColorSpace_RenderIntent arg2);
-		static QAndroidJniObject get(android::graphics::ColorSpace_Named arg0);
-		static QAndroidJniObject match(jfloatArray arg0, android::graphics::ColorSpace_Rgb_TransferParameters arg1);
+		static android::graphics::ColorSpace adapt(android::graphics::ColorSpace arg0, jfloatArray arg1);
+		static android::graphics::ColorSpace adapt(android::graphics::ColorSpace arg0, jfloatArray arg1, android::graphics::ColorSpace_Adaptation arg2);
+		static android::graphics::ColorSpace_Connector connect(android::graphics::ColorSpace arg0);
+		static android::graphics::ColorSpace_Connector connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1);
+		static android::graphics::ColorSpace_Connector connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace_RenderIntent arg1);
+		static android::graphics::ColorSpace_Connector connect(android::graphics::ColorSpace arg0, android::graphics::ColorSpace arg1, android::graphics::ColorSpace_RenderIntent arg2);
+		static android::graphics::ColorSpace get(android::graphics::ColorSpace_Named arg0);
+		static android::graphics::ColorSpace match(jfloatArray arg0, android::graphics::ColorSpace_Rgb_TransferParameters arg1);
 		jboolean equals(jobject arg0);
 		jfloatArray fromXyz(jfloatArray arg0);
 		jfloatArray fromXyz(jfloat arg0, jfloat arg1, jfloat arg2);
@@ -67,7 +67,7 @@ namespace android::graphics
 		jint getId();
 		jfloat getMaxValue(jint arg0);
 		jfloat getMinValue(jint arg0);
-		QAndroidJniObject getModel();
+		android::graphics::ColorSpace_Model getModel();
 		jstring getName();
 		jint hashCode();
 		jboolean isSrgb();

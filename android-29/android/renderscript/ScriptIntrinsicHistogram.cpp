@@ -16,7 +16,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ScriptIntrinsicHistogram::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
+	android::renderscript::ScriptIntrinsicHistogram ScriptIntrinsicHistogram::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicHistogram",
@@ -60,14 +60,14 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicHistogram::getFieldID_Input()
+	android::renderscript::Script_FieldID ScriptIntrinsicHistogram::getFieldID_Input()
 	{
 		return callObjectMethod(
 			"getFieldID_Input",
 			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicHistogram::getKernelID_Separate()
+	android::renderscript::Script_KernelID ScriptIntrinsicHistogram::getKernelID_Separate()
 	{
 		return callObjectMethod(
 			"getKernelID_Separate",

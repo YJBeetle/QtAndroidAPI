@@ -24,7 +24,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	QAndroidJniObject PathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	android::graphics::Path PathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		return callObjectMethod(
 			"getPath",

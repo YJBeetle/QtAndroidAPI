@@ -19,14 +19,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	QAndroidJniObject ConversationActions_Request_Builder::build()
+	android::view::textclassifier::ConversationActions_Request ConversationActions_Request_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/ConversationActions$Request;"
 		);
 	}
-	QAndroidJniObject ConversationActions_Request_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -34,7 +34,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ConversationActions_Request_Builder::setHints(__JniBaseClass arg0)
+	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setHints(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setHints",
@@ -42,7 +42,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ConversationActions_Request_Builder::setMaxSuggestions(jint arg0)
+	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setMaxSuggestions(jint arg0)
 	{
 		return callObjectMethod(
 			"setMaxSuggestions",
@@ -50,7 +50,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject ConversationActions_Request_Builder::setTypeConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0)
+	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setTypeConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0)
 	{
 		return callObjectMethod(
 			"setTypeConfig",

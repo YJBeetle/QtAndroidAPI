@@ -35,7 +35,7 @@ namespace android::view::accessibility
 			arg3.object()
 		);
 	}
-	QAndroidJniObject AccessibilityNodeProvider::createAccessibilityNodeInfo(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeProvider::createAccessibilityNodeInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"createAccessibilityNodeInfo",
@@ -43,7 +43,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityNodeProvider::findAccessibilityNodeInfosByText(jstring arg0, jint arg1)
+	__JniBaseClass AccessibilityNodeProvider::findAccessibilityNodeInfosByText(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByText",
@@ -52,7 +52,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	QAndroidJniObject AccessibilityNodeProvider::findFocus(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeProvider::findFocus(jint arg0)
 	{
 		return callObjectMethod(
 			"findFocus",

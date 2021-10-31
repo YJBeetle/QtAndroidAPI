@@ -18,21 +18,21 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject DomainLoadStoreParameter::getConfiguration()
+	java::net::URI DomainLoadStoreParameter::getConfiguration()
 	{
 		return callObjectMethod(
 			"getConfiguration",
 			"()Ljava/net/URI;"
 		);
 	}
-	QAndroidJniObject DomainLoadStoreParameter::getProtectionParameter()
+	__JniBaseClass DomainLoadStoreParameter::getProtectionParameter()
 	{
 		return callObjectMethod(
 			"getProtectionParameter",
 			"()Ljava/security/KeyStore$ProtectionParameter;"
 		);
 	}
-	QAndroidJniObject DomainLoadStoreParameter::getProtectionParams()
+	__JniBaseClass DomainLoadStoreParameter::getProtectionParams()
 	{
 		return callObjectMethod(
 			"getProtectionParams",

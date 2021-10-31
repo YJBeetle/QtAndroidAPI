@@ -12,7 +12,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_RawContactsEntity::CONTENT_URI()
+	android::net::Uri ContactsContract_RawContactsEntity::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$RawContactsEntity",
@@ -28,7 +28,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_RawContactsEntity::PROFILE_CONTENT_URI()
+	android::net::Uri ContactsContract_RawContactsEntity::PROFILE_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$RawContactsEntity",

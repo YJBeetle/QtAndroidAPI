@@ -39,9 +39,9 @@ namespace android::content
 		jstring coerceToStyledText(android::content::Context arg0);
 		jstring coerceToText(android::content::Context arg0);
 		jstring getHtmlText();
-		QAndroidJniObject getIntent();
+		android::content::Intent getIntent();
 		jstring getText();
-		QAndroidJniObject getUri();
+		android::net::Uri getUri();
 		jstring toString();
 	};
 } // namespace android::content

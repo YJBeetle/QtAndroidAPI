@@ -35,7 +35,7 @@ namespace android::service::wallpaper
 		) {}
 	
 	// Methods
-	QAndroidJniObject WallpaperService::onBind(android::content::Intent arg0)
+	__JniBaseClass WallpaperService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -50,7 +50,7 @@ namespace android::service::wallpaper
 			"()V"
 		);
 	}
-	QAndroidJniObject WallpaperService::onCreateEngine()
+	android::service::wallpaper::WallpaperService_Engine WallpaperService::onCreateEngine()
 	{
 		return callObjectMethod(
 			"onCreateEngine",

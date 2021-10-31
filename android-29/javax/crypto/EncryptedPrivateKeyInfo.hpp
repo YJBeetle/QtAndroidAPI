@@ -37,13 +37,13 @@ namespace javax::crypto
 		
 		// Methods
 		jstring getAlgName();
-		QAndroidJniObject getAlgParameters();
+		java::security::AlgorithmParameters getAlgParameters();
 		jbyteArray getEncoded();
 		jbyteArray getEncryptedData();
-		QAndroidJniObject getKeySpec(__JniBaseClass arg0);
-		QAndroidJniObject getKeySpec(javax::crypto::Cipher arg0);
-		QAndroidJniObject getKeySpec(__JniBaseClass arg0, jstring arg1);
-		QAndroidJniObject getKeySpec(__JniBaseClass arg0, java::security::Provider arg1);
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(__JniBaseClass arg0);
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(javax::crypto::Cipher arg0);
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(__JniBaseClass arg0, jstring arg1);
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(__JniBaseClass arg0, java::security::Provider arg1);
 	};
 } // namespace javax::crypto
 

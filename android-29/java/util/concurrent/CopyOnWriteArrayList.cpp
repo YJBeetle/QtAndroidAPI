@@ -165,7 +165,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject CopyOnWriteArrayList::iterator()
+	__JniBaseClass CopyOnWriteArrayList::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -189,14 +189,14 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	QAndroidJniObject CopyOnWriteArrayList::listIterator()
+	__JniBaseClass CopyOnWriteArrayList::listIterator()
 	{
 		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	QAndroidJniObject CopyOnWriteArrayList::listIterator(jint arg0)
+	__JniBaseClass CopyOnWriteArrayList::listIterator(jint arg0)
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -276,14 +276,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CopyOnWriteArrayList::spliterator()
+	__JniBaseClass CopyOnWriteArrayList::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	QAndroidJniObject CopyOnWriteArrayList::subList(jint arg0, jint arg1)
+	__JniBaseClass CopyOnWriteArrayList::subList(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subList",

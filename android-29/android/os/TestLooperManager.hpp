@@ -34,10 +34,10 @@ namespace android::os
 		
 		// Methods
 		void execute(android::os::Message arg0);
-		QAndroidJniObject getMessageQueue();
+		android::os::MessageQueue getMessageQueue();
 		jboolean hasMessages(android::os::Handler arg0, jobject arg1, jint arg2);
 		jboolean hasMessages(android::os::Handler arg0, jobject arg1, __JniBaseClass arg2);
-		QAndroidJniObject next();
+		android::os::Message next();
 		void recycle(android::os::Message arg0);
 		void release();
 	};

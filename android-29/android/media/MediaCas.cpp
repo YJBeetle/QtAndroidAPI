@@ -42,7 +42,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaCas::openSession()
+	android::media::MediaCas_Session MediaCas::openSession()
 	{
 		return callObjectMethod(
 			"openSession",

@@ -35,8 +35,8 @@ namespace java::util::concurrent
 		ConcurrentHashMap(jint arg0, jfloat arg1, jint arg2);
 		
 		// Methods
-		static QAndroidJniObject newKeySet();
-		static QAndroidJniObject newKeySet(jint arg0);
+		static java::util::concurrent::ConcurrentHashMap_KeySetView newKeySet();
+		static java::util::concurrent::ConcurrentHashMap_KeySetView newKeySet(jint arg0);
 		void clear();
 		jobject compute(jobject arg0, __JniBaseClass arg1);
 		jobject computeIfAbsent(jobject arg0, __JniBaseClass arg1);
@@ -44,8 +44,8 @@ namespace java::util::concurrent
 		jboolean contains(jobject arg0);
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		QAndroidJniObject elements();
-		QAndroidJniObject entrySet();
+		__JniBaseClass elements();
+		__JniBaseClass entrySet();
 		jboolean equals(jobject arg0);
 		void forEach(__JniBaseClass arg0);
 		void forEach(jlong arg0, __JniBaseClass arg1);
@@ -60,9 +60,9 @@ namespace java::util::concurrent
 		jobject getOrDefault(jobject arg0, jobject arg1);
 		jint hashCode();
 		jboolean isEmpty();
-		QAndroidJniObject keySet();
-		QAndroidJniObject keySet(jobject arg0);
-		QAndroidJniObject keys();
+		java::util::concurrent::ConcurrentHashMap_KeySetView keySet();
+		java::util::concurrent::ConcurrentHashMap_KeySetView keySet(jobject arg0);
+		__JniBaseClass keys();
 		jlong mappingCount();
 		jobject merge(jobject arg0, jobject arg1, __JniBaseClass arg2);
 		jobject put(jobject arg0, jobject arg1);
@@ -70,7 +70,7 @@ namespace java::util::concurrent
 		jobject putIfAbsent(jobject arg0, jobject arg1);
 		jobject reduce(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2);
 		jobject reduceEntries(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		QAndroidJniObject reduceEntries(jlong arg0, __JniBaseClass arg1);
+		__JniBaseClass reduceEntries(jlong arg0, __JniBaseClass arg1);
 		jdouble reduceEntriesToDouble(jlong arg0, __JniBaseClass arg1, jdouble arg2, __JniBaseClass arg3);
 		jint reduceEntriesToInt(jlong arg0, __JniBaseClass arg1, jint arg2, __JniBaseClass arg3);
 		jlong reduceEntriesToLong(jlong arg0, __JniBaseClass arg1, jlong arg2, __JniBaseClass arg3);
@@ -98,7 +98,7 @@ namespace java::util::concurrent
 		jobject searchValues(jlong arg0, __JniBaseClass arg1);
 		jint size();
 		jstring toString();
-		QAndroidJniObject values();
+		__JniBaseClass values();
 	};
 } // namespace java::util::concurrent
 

@@ -33,7 +33,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject Settings_NameValueTable::getUriFor(android::net::Uri arg0, jstring arg1)
+	android::net::Uri Settings_NameValueTable::getUriFor(android::net::Uri arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Settings$NameValueTable",

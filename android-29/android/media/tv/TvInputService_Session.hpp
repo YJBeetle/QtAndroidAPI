@@ -64,7 +64,7 @@ namespace android::media::tv
 		void notifyVideoAvailable();
 		void notifyVideoUnavailable(jint arg0);
 		void onAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
-		QAndroidJniObject onCreateOverlayView();
+		android::view::View onCreateOverlayView();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
 		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
 		jboolean onKeyLongPress(jint arg0, android::view::KeyEvent arg1);

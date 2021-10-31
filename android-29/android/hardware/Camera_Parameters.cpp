@@ -518,7 +518,7 @@ namespace android::hardware
 			"()F"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getFocusAreas()
+	__JniBaseClass Camera_Parameters::getFocusAreas()
 	{
 		return callObjectMethod(
 			"getFocusAreas",
@@ -569,7 +569,7 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getJpegThumbnailSize()
+	android::hardware::Camera_Size Camera_Parameters::getJpegThumbnailSize()
 	{
 		return callObjectMethod(
 			"getJpegThumbnailSize",
@@ -611,7 +611,7 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getMeteringAreas()
+	__JniBaseClass Camera_Parameters::getMeteringAreas()
 	{
 		return callObjectMethod(
 			"getMeteringAreas",
@@ -632,14 +632,14 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getPictureSize()
+	android::hardware::Camera_Size Camera_Parameters::getPictureSize()
 	{
 		return callObjectMethod(
 			"getPictureSize",
 			"()Landroid/hardware/Camera$Size;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getPreferredPreviewSizeForVideo()
+	android::hardware::Camera_Size Camera_Parameters::getPreferredPreviewSizeForVideo()
 	{
 		return callObjectMethod(
 			"getPreferredPreviewSizeForVideo",
@@ -668,7 +668,7 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getPreviewSize()
+	android::hardware::Camera_Size Camera_Parameters::getPreviewSize()
 	{
 		return callObjectMethod(
 			"getPreviewSize",
@@ -682,98 +682,98 @@ namespace android::hardware
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedAntibanding()
+	__JniBaseClass Camera_Parameters::getSupportedAntibanding()
 	{
 		return callObjectMethod(
 			"getSupportedAntibanding",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedColorEffects()
+	__JniBaseClass Camera_Parameters::getSupportedColorEffects()
 	{
 		return callObjectMethod(
 			"getSupportedColorEffects",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedFlashModes()
+	__JniBaseClass Camera_Parameters::getSupportedFlashModes()
 	{
 		return callObjectMethod(
 			"getSupportedFlashModes",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedFocusModes()
+	__JniBaseClass Camera_Parameters::getSupportedFocusModes()
 	{
 		return callObjectMethod(
 			"getSupportedFocusModes",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedJpegThumbnailSizes()
+	__JniBaseClass Camera_Parameters::getSupportedJpegThumbnailSizes()
 	{
 		return callObjectMethod(
 			"getSupportedJpegThumbnailSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedPictureFormats()
+	__JniBaseClass Camera_Parameters::getSupportedPictureFormats()
 	{
 		return callObjectMethod(
 			"getSupportedPictureFormats",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedPictureSizes()
+	__JniBaseClass Camera_Parameters::getSupportedPictureSizes()
 	{
 		return callObjectMethod(
 			"getSupportedPictureSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedPreviewFormats()
+	__JniBaseClass Camera_Parameters::getSupportedPreviewFormats()
 	{
 		return callObjectMethod(
 			"getSupportedPreviewFormats",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedPreviewFpsRange()
+	__JniBaseClass Camera_Parameters::getSupportedPreviewFpsRange()
 	{
 		return callObjectMethod(
 			"getSupportedPreviewFpsRange",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedPreviewFrameRates()
+	__JniBaseClass Camera_Parameters::getSupportedPreviewFrameRates()
 	{
 		return callObjectMethod(
 			"getSupportedPreviewFrameRates",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedPreviewSizes()
+	__JniBaseClass Camera_Parameters::getSupportedPreviewSizes()
 	{
 		return callObjectMethod(
 			"getSupportedPreviewSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedSceneModes()
+	__JniBaseClass Camera_Parameters::getSupportedSceneModes()
 	{
 		return callObjectMethod(
 			"getSupportedSceneModes",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedVideoSizes()
+	__JniBaseClass Camera_Parameters::getSupportedVideoSizes()
 	{
 		return callObjectMethod(
 			"getSupportedVideoSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getSupportedWhiteBalance()
+	__JniBaseClass Camera_Parameters::getSupportedWhiteBalance()
 	{
 		return callObjectMethod(
 			"getSupportedWhiteBalance",
@@ -808,7 +808,7 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	QAndroidJniObject Camera_Parameters::getZoomRatios()
+	__JniBaseClass Camera_Parameters::getZoomRatios()
 	{
 		return callObjectMethod(
 			"getZoomRatios",

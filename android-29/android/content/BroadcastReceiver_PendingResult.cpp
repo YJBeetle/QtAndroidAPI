@@ -53,7 +53,7 @@ namespace android::content
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject BroadcastReceiver_PendingResult::getResultExtras(jboolean arg0)
+	android::os::Bundle BroadcastReceiver_PendingResult::getResultExtras(jboolean arg0)
 	{
 		return callObjectMethod(
 			"getResultExtras",

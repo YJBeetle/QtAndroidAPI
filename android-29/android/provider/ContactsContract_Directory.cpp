@@ -45,7 +45,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Directory::CONTENT_URI()
+	android::net::Uri ContactsContract_Directory::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
@@ -76,7 +76,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Directory::ENTERPRISE_CONTENT_URI()
+	android::net::Uri ContactsContract_Directory::ENTERPRISE_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Directory",

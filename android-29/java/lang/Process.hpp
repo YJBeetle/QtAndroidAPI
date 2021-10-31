@@ -34,20 +34,20 @@ namespace java::lang
 		Process();
 		
 		// Methods
-		QAndroidJniObject children();
-		QAndroidJniObject descendants();
+		__JniBaseClass children();
+		__JniBaseClass descendants();
 		void destroy();
-		QAndroidJniObject destroyForcibly();
+		java::lang::Process destroyForcibly();
 		jint exitValue();
-		QAndroidJniObject getErrorStream();
-		QAndroidJniObject getInputStream();
-		QAndroidJniObject getOutputStream();
-		QAndroidJniObject info();
+		java::io::InputStream getErrorStream();
+		java::io::InputStream getInputStream();
+		java::io::OutputStream getOutputStream();
+		__JniBaseClass info();
 		jboolean isAlive();
-		QAndroidJniObject onExit();
+		java::util::concurrent::CompletableFuture onExit();
 		jlong pid();
 		jboolean supportsNormalTermination();
-		QAndroidJniObject toHandle();
+		__JniBaseClass toHandle();
 		jboolean waitFor(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		jint waitFor();
 	};

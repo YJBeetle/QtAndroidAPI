@@ -10,7 +10,7 @@ namespace android::media::audiofx
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AcousticEchoCanceler::create(jint arg0)
+	android::media::audiofx::AcousticEchoCanceler AcousticEchoCanceler::create(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.audiofx.AcousticEchoCanceler",

@@ -10,10 +10,10 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONDITION_COUNT();
-		static QAndroidJniObject CONTAINED();
-		static QAndroidJniObject NOT_CONTAINED();
-		static QAndroidJniObject SIMPLE();
+		static android::icu::text::UnicodeSet_SpanCondition CONDITION_COUNT();
+		static android::icu::text::UnicodeSet_SpanCondition CONTAINED();
+		static android::icu::text::UnicodeSet_SpanCondition NOT_CONTAINED();
+		static android::icu::text::UnicodeSet_SpanCondition SIMPLE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnicodeSet_SpanCondition(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::UnicodeSet_SpanCondition valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

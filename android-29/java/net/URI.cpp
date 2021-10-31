@@ -60,7 +60,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject URI::create(jstring arg0)
+	java::net::URI URI::create(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URI",
@@ -219,21 +219,21 @@ namespace java::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject URI::normalize()
+	java::net::URI URI::normalize()
 	{
 		return callObjectMethod(
 			"normalize",
 			"()Ljava/net/URI;"
 		);
 	}
-	QAndroidJniObject URI::parseServerAuthority()
+	java::net::URI URI::parseServerAuthority()
 	{
 		return callObjectMethod(
 			"parseServerAuthority",
 			"()Ljava/net/URI;"
 		);
 	}
-	QAndroidJniObject URI::relativize(java::net::URI arg0)
+	java::net::URI URI::relativize(java::net::URI arg0)
 	{
 		return callObjectMethod(
 			"relativize",
@@ -241,7 +241,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject URI::resolve(jstring arg0)
+	java::net::URI URI::resolve(jstring arg0)
 	{
 		return callObjectMethod(
 			"resolve",
@@ -249,7 +249,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject URI::resolve(java::net::URI arg0)
+	java::net::URI URI::resolve(java::net::URI arg0)
 	{
 		return callObjectMethod(
 			"resolve",
@@ -271,7 +271,7 @@ namespace java::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject URI::toURL()
+	java::net::URL URI::toURL()
 	{
 		return callObjectMethod(
 			"toURL",

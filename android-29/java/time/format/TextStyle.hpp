@@ -10,12 +10,12 @@ namespace java::time::format
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FULL();
-		static QAndroidJniObject FULL_STANDALONE();
-		static QAndroidJniObject NARROW();
-		static QAndroidJniObject NARROW_STANDALONE();
-		static QAndroidJniObject SHORT();
-		static QAndroidJniObject SHORT_STANDALONE();
+		static java::time::format::TextStyle FULL();
+		static java::time::format::TextStyle FULL_STANDALONE();
+		static java::time::format::TextStyle NARROW();
+		static java::time::format::TextStyle NARROW_STANDALONE();
+		static java::time::format::TextStyle SHORT();
+		static java::time::format::TextStyle SHORT_STANDALONE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,10 +24,10 @@ namespace java::time::format
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::time::format::TextStyle valueOf(jstring arg0);
 		static jarray values();
-		QAndroidJniObject asNormal();
-		QAndroidJniObject asStandalone();
+		java::time::format::TextStyle asNormal();
+		java::time::format::TextStyle asStandalone();
 		jboolean isStandalone();
 	};
 } // namespace java::time::format

@@ -19,21 +19,21 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	QAndroidJniObject RSAOtherPrimeInfo::getCrtCoefficient()
+	java::math::BigInteger RSAOtherPrimeInfo::getCrtCoefficient()
 	{
 		return callObjectMethod(
 			"getCrtCoefficient",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAOtherPrimeInfo::getExponent()
+	java::math::BigInteger RSAOtherPrimeInfo::getExponent()
 	{
 		return callObjectMethod(
 			"getExponent",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAOtherPrimeInfo::getPrime()
+	java::math::BigInteger RSAOtherPrimeInfo::getPrime()
 	{
 		return callObjectMethod(
 			"getPrime",

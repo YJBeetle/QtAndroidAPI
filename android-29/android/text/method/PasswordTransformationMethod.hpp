@@ -26,7 +26,7 @@ namespace android::text::method
 		PasswordTransformationMethod();
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static android::text::method::PasswordTransformationMethod getInstance();
 		void afterTextChanged(__JniBaseClass arg0);
 		void beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
 		jstring getTransformation(jstring arg0, android::view::View arg1);

@@ -6,7 +6,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject PeriodicSync::CREATOR()
+	__JniBaseClass PeriodicSync::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.PeriodicSync",
@@ -14,7 +14,7 @@ namespace android::content
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject PeriodicSync::account()
+	android::accounts::Account PeriodicSync::account()
 	{
 		return getObjectField(
 			"account",
@@ -28,7 +28,7 @@ namespace android::content
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PeriodicSync::extras()
+	android::os::Bundle PeriodicSync::extras()
 	{
 		return getObjectField(
 			"extras",

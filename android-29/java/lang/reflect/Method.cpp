@@ -20,14 +20,14 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	QAndroidJniObject Method::getAnnotatedReturnType()
+	__JniBaseClass Method::getAnnotatedReturnType()
 	{
 		return callObjectMethod(
 			"getAnnotatedReturnType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	QAndroidJniObject Method::getAnnotation(jclass arg0)
+	__JniBaseClass Method::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -77,7 +77,7 @@ namespace java::lang::reflect
 			"()[Ljava/lang/reflect/Type;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Method::getGenericReturnType()
+	__JniBaseClass Method::getGenericReturnType()
 	{
 		return callObjectMethod(
 			"getGenericReturnType",

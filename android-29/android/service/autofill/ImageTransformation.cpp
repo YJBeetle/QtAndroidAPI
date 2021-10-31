@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	QAndroidJniObject ImageTransformation::CREATOR()
+	__JniBaseClass ImageTransformation::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.ImageTransformation",

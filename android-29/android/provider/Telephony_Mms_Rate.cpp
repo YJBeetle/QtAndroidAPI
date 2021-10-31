@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject Telephony_Mms_Rate::CONTENT_URI()
+	android::net::Uri Telephony_Mms_Rate::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Rate",

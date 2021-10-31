@@ -12,7 +12,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract_Calendars::CONTENT_URI()
+	android::net::Uri CalendarContract_Calendars::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
@@ -28,7 +28,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract_Calendars::ENTERPRISE_CONTENT_URI()
+	android::net::Uri CalendarContract_Calendars::ENTERPRISE_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",

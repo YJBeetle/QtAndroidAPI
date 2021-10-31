@@ -9,7 +9,7 @@
 namespace android::bluetooth
 {
 	// Fields
-	QAndroidJniObject BluetoothGattCharacteristic::CREATOR()
+	__JniBaseClass BluetoothGattCharacteristic::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothGattCharacteristic",
@@ -236,7 +236,7 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	QAndroidJniObject BluetoothGattCharacteristic::getDescriptor(java::util::UUID arg0)
+	android::bluetooth::BluetoothGattDescriptor BluetoothGattCharacteristic::getDescriptor(java::util::UUID arg0)
 	{
 		return callObjectMethod(
 			"getDescriptor",
@@ -244,14 +244,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BluetoothGattCharacteristic::getDescriptors()
+	__JniBaseClass BluetoothGattCharacteristic::getDescriptors()
 	{
 		return callObjectMethod(
 			"getDescriptors",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject BluetoothGattCharacteristic::getFloatValue(jint arg0, jint arg1)
+	java::lang::Float BluetoothGattCharacteristic::getFloatValue(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getFloatValue",
@@ -267,7 +267,7 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	QAndroidJniObject BluetoothGattCharacteristic::getIntValue(jint arg0, jint arg1)
+	java::lang::Integer BluetoothGattCharacteristic::getIntValue(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getIntValue",
@@ -290,7 +290,7 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	QAndroidJniObject BluetoothGattCharacteristic::getService()
+	android::bluetooth::BluetoothGattService BluetoothGattCharacteristic::getService()
 	{
 		return callObjectMethod(
 			"getService",
@@ -305,7 +305,7 @@ namespace android::bluetooth
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothGattCharacteristic::getUuid()
+	java::util::UUID BluetoothGattCharacteristic::getUuid()
 	{
 		return callObjectMethod(
 			"getUuid",

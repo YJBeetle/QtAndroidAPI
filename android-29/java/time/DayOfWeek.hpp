@@ -22,13 +22,13 @@ namespace java::time
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FRIDAY();
-		static QAndroidJniObject MONDAY();
-		static QAndroidJniObject SATURDAY();
-		static QAndroidJniObject SUNDAY();
-		static QAndroidJniObject THURSDAY();
-		static QAndroidJniObject TUESDAY();
-		static QAndroidJniObject WEDNESDAY();
+		static java::time::DayOfWeek FRIDAY();
+		static java::time::DayOfWeek MONDAY();
+		static java::time::DayOfWeek SATURDAY();
+		static java::time::DayOfWeek SUNDAY();
+		static java::time::DayOfWeek THURSDAY();
+		static java::time::DayOfWeek TUESDAY();
+		static java::time::DayOfWeek WEDNESDAY();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DayOfWeek(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -37,20 +37,20 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject from(__JniBaseClass arg0);
-		static QAndroidJniObject of(jint arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::time::DayOfWeek from(__JniBaseClass arg0);
+		static java::time::DayOfWeek of(jint arg0);
+		static java::time::DayOfWeek valueOf(jstring arg0);
 		static jarray values();
-		QAndroidJniObject adjustInto(__JniBaseClass arg0);
+		__JniBaseClass adjustInto(__JniBaseClass arg0);
 		jint get(__JniBaseClass arg0);
 		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
 		jlong getLong(__JniBaseClass arg0);
 		jint getValue();
 		jboolean isSupported(__JniBaseClass arg0);
-		QAndroidJniObject minus(jlong arg0);
-		QAndroidJniObject plus(jlong arg0);
+		java::time::DayOfWeek minus(jlong arg0);
+		java::time::DayOfWeek plus(jlong arg0);
 		jobject query(__JniBaseClass arg0);
-		QAndroidJniObject range(__JniBaseClass arg0);
+		java::time::temporal::ValueRange range(__JniBaseClass arg0);
 	};
 } // namespace java::time
 

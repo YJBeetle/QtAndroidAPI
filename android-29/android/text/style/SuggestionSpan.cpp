@@ -15,7 +15,7 @@ namespace android::text::style
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SuggestionSpan::CREATOR()
+	__JniBaseClass SuggestionSpan::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.SuggestionSpan",
@@ -143,7 +143,7 @@ namespace android::text::style
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SuggestionSpan::getLocaleObject()
+	java::util::Locale SuggestionSpan::getLocaleObject()
 	{
 		return callObjectMethod(
 			"getLocaleObject",

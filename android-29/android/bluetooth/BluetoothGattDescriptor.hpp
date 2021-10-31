@@ -21,7 +21,7 @@ namespace android::bluetooth
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jbyteArray DISABLE_NOTIFICATION_VALUE();
 		static jbyteArray ENABLE_INDICATION_VALUE();
 		static jbyteArray ENABLE_NOTIFICATION_VALUE();
@@ -43,9 +43,9 @@ namespace android::bluetooth
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getCharacteristic();
+		android::bluetooth::BluetoothGattCharacteristic getCharacteristic();
 		jint getPermissions();
-		QAndroidJniObject getUuid();
+		java::util::UUID getUuid();
 		jbyteArray getValue();
 		jboolean setValue(jbyteArray arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

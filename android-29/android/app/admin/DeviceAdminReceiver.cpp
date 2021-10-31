@@ -164,7 +164,7 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	QAndroidJniObject DeviceAdminReceiver::getManager(android::content::Context arg0)
+	android::app::admin::DevicePolicyManager DeviceAdminReceiver::getManager(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"getManager",
@@ -172,7 +172,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DeviceAdminReceiver::getWho(android::content::Context arg0)
+	android::content::ComponentName DeviceAdminReceiver::getWho(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"getWho",

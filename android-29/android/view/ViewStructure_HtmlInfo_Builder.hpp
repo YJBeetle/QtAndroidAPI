@@ -22,8 +22,8 @@ namespace android::view
 		ViewStructure_HtmlInfo_Builder();
 		
 		// Methods
-		QAndroidJniObject addAttribute(jstring arg0, jstring arg1);
-		QAndroidJniObject build();
+		android::view::ViewStructure_HtmlInfo_Builder addAttribute(jstring arg0, jstring arg1);
+		android::view::ViewStructure_HtmlInfo build();
 	};
 } // namespace android::view
 

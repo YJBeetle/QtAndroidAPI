@@ -25,7 +25,7 @@ namespace android::view
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint TYPE_ALIAS();
 		static jint TYPE_ALL_SCROLL();
 		static jint TYPE_ARROW();
@@ -57,9 +57,9 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2);
-		static QAndroidJniObject getSystemIcon(android::content::Context arg0, jint arg1);
-		static QAndroidJniObject load(android::content::res::Resources arg0, jint arg1);
+		static android::view::PointerIcon create(android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2);
+		static android::view::PointerIcon getSystemIcon(android::content::Context arg0, jint arg1);
+		static android::view::PointerIcon load(android::content::res::Resources arg0, jint arg1);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

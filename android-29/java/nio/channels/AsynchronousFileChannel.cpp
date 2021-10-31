@@ -12,7 +12,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AsynchronousFileChannel::open(__JniBaseClass arg0, jarray arg1)
+	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::open(__JniBaseClass arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.AsynchronousFileChannel",
@@ -22,7 +22,7 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::open(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, jarray arg3)
+	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::open(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, jarray arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.AsynchronousFileChannel",
@@ -42,14 +42,14 @@ namespace java::nio::channels
 			arg0
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::lock()
+	__JniBaseClass AsynchronousFileChannel::lock()
 	{
 		return callObjectMethod(
 			"lock",
 			"()Ljava/util/concurrent/Future;"
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::lock(jlong arg0, jlong arg1, jboolean arg2)
+	__JniBaseClass AsynchronousFileChannel::lock(jlong arg0, jlong arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"lock",
@@ -80,7 +80,7 @@ namespace java::nio::channels
 			arg4.object()
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::read(java::nio::ByteBuffer arg0, jlong arg1)
+	__JniBaseClass AsynchronousFileChannel::read(java::nio::ByteBuffer arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"read",
@@ -107,7 +107,7 @@ namespace java::nio::channels
 			"()J"
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::truncate(jlong arg0)
+	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::truncate(jlong arg0)
 	{
 		return callObjectMethod(
 			"truncate",
@@ -115,14 +115,14 @@ namespace java::nio::channels
 			arg0
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::tryLock()
+	java::nio::channels::FileLock AsynchronousFileChannel::tryLock()
 	{
 		return callObjectMethod(
 			"tryLock",
 			"()Ljava/nio/channels/FileLock;"
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::tryLock(jlong arg0, jlong arg1, jboolean arg2)
+	java::nio::channels::FileLock AsynchronousFileChannel::tryLock(jlong arg0, jlong arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"tryLock",
@@ -132,7 +132,7 @@ namespace java::nio::channels
 			arg2
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::write(java::nio::ByteBuffer arg0, jlong arg1)
+	__JniBaseClass AsynchronousFileChannel::write(java::nio::ByteBuffer arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"write",

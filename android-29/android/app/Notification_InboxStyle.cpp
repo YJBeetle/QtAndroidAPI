@@ -22,7 +22,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Notification_InboxStyle::addLine(jstring arg0)
+	android::app::Notification_InboxStyle Notification_InboxStyle::addLine(jstring arg0)
 	{
 		return callObjectMethod(
 			"addLine",
@@ -30,7 +30,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_InboxStyle::setBigContentTitle(jstring arg0)
+	android::app::Notification_InboxStyle Notification_InboxStyle::setBigContentTitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setBigContentTitle",
@@ -38,7 +38,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_InboxStyle::setSummaryText(jstring arg0)
+	android::app::Notification_InboxStyle Notification_InboxStyle::setSummaryText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSummaryText",

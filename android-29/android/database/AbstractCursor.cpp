@@ -115,7 +115,7 @@ namespace android::database
 			arg0
 		);
 	}
-	QAndroidJniObject AbstractCursor::getExtras()
+	android::os::Bundle AbstractCursor::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -146,14 +146,14 @@ namespace android::database
 			arg0
 		);
 	}
-	QAndroidJniObject AbstractCursor::getNotificationUri()
+	android::net::Uri AbstractCursor::getNotificationUri()
 	{
 		return callObjectMethod(
 			"getNotificationUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject AbstractCursor::getNotificationUris()
+	__JniBaseClass AbstractCursor::getNotificationUris()
 	{
 		return callObjectMethod(
 			"getNotificationUris",
@@ -198,7 +198,7 @@ namespace android::database
 			"()Z"
 		);
 	}
-	QAndroidJniObject AbstractCursor::getWindow()
+	android::database::CursorWindow AbstractCursor::getWindow()
 	{
 		return callObjectMethod(
 			"getWindow",
@@ -324,7 +324,7 @@ namespace android::database
 			"()Z"
 		);
 	}
-	QAndroidJniObject AbstractCursor::respond(android::os::Bundle arg0)
+	android::os::Bundle AbstractCursor::respond(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"respond",

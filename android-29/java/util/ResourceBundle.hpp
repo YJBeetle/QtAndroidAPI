@@ -40,22 +40,22 @@ namespace java::util
 		// Methods
 		static void clearCache();
 		static void clearCache(java::lang::ClassLoader arg0);
-		static QAndroidJniObject getBundle(jstring arg0);
-		static QAndroidJniObject getBundle(jstring arg0, __JniBaseClass arg1);
-		static QAndroidJniObject getBundle(jstring arg0, java::util::Locale arg1);
-		static QAndroidJniObject getBundle(jstring arg0, java::util::ResourceBundle_Control arg1);
-		static QAndroidJniObject getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2);
-		static QAndroidJniObject getBundle(jstring arg0, java::util::Locale arg1, __JniBaseClass arg2);
-		static QAndroidJniObject getBundle(jstring arg0, java::util::Locale arg1, java::util::ResourceBundle_Control arg2);
-		static QAndroidJniObject getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2, java::util::ResourceBundle_Control arg3);
+		static java::util::ResourceBundle getBundle(jstring arg0);
+		static java::util::ResourceBundle getBundle(jstring arg0, __JniBaseClass arg1);
+		static java::util::ResourceBundle getBundle(jstring arg0, java::util::Locale arg1);
+		static java::util::ResourceBundle getBundle(jstring arg0, java::util::ResourceBundle_Control arg1);
+		static java::util::ResourceBundle getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2);
+		static java::util::ResourceBundle getBundle(jstring arg0, java::util::Locale arg1, __JniBaseClass arg2);
+		static java::util::ResourceBundle getBundle(jstring arg0, java::util::Locale arg1, java::util::ResourceBundle_Control arg2);
+		static java::util::ResourceBundle getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2, java::util::ResourceBundle_Control arg3);
 		jboolean containsKey(jstring arg0);
 		jstring getBaseBundleName();
-		QAndroidJniObject getKeys();
-		QAndroidJniObject getLocale();
+		__JniBaseClass getKeys();
+		java::util::Locale getLocale();
 		jobject getObject(jstring arg0);
 		jstring getString(jstring arg0);
 		jarray getStringArray(jstring arg0);
-		QAndroidJniObject keySet();
+		__JniBaseClass keySet();
 	};
 } // namespace java::util
 

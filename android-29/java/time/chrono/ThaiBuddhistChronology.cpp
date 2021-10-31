@@ -13,7 +13,7 @@
 namespace java::time::chrono
 {
 	// Fields
-	QAndroidJniObject ThaiBuddhistChronology::INSTANCE()
+	java::time::chrono::ThaiBuddhistChronology ThaiBuddhistChronology::INSTANCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.ThaiBuddhistChronology",
@@ -28,7 +28,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ThaiBuddhistChronology::date(__JniBaseClass arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::date(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"date",
@@ -36,7 +36,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::date(jint arg0, jint arg1, jint arg2)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::date(jint arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"date",
@@ -46,7 +46,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"date",
@@ -57,7 +57,7 @@ namespace java::time::chrono
 			arg3
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::dateEpochDay(jlong arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateEpochDay(jlong arg0)
 	{
 		return callObjectMethod(
 			"dateEpochDay",
@@ -65,14 +65,14 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::dateNow()
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateNow()
 	{
 		return callObjectMethod(
 			"dateNow",
 			"()Ljava/time/chrono/ThaiBuddhistDate;"
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::dateNow(java::time::Clock arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateNow(java::time::Clock arg0)
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -80,7 +80,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::dateNow(java::time::ZoneId arg0)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateNow(java::time::ZoneId arg0)
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -88,7 +88,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::dateYearDay(jint arg0, jint arg1)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateYearDay(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -97,7 +97,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -107,7 +107,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::eraOf(jint arg0)
+	java::time::chrono::ThaiBuddhistEra ThaiBuddhistChronology::eraOf(jint arg0)
 	{
 		return callObjectMethod(
 			"eraOf",
@@ -115,7 +115,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::eras()
+	__JniBaseClass ThaiBuddhistChronology::eras()
 	{
 		return callObjectMethod(
 			"eras",
@@ -144,7 +144,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::localDateTime(__JniBaseClass arg0)
+	__JniBaseClass ThaiBuddhistChronology::localDateTime(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"localDateTime",
@@ -161,7 +161,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::range(java::time::temporal::ChronoField arg0)
+	java::time::temporal::ValueRange ThaiBuddhistChronology::range(java::time::temporal::ChronoField arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -169,7 +169,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
+	java::time::chrono::ThaiBuddhistDate ThaiBuddhistChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
 	{
 		return callObjectMethod(
 			"resolveDate",
@@ -178,7 +178,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::zonedDateTime(__JniBaseClass arg0)
+	__JniBaseClass ThaiBuddhistChronology::zonedDateTime(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"zonedDateTime",
@@ -186,7 +186,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
+	__JniBaseClass ThaiBuddhistChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
 		return callObjectMethod(
 			"zonedDateTime",

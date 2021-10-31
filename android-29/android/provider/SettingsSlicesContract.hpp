@@ -14,7 +14,7 @@ namespace android::provider
 	public:
 		// Fields
 		static jstring AUTHORITY();
-		static QAndroidJniObject BASE_URI();
+		static android::net::Uri BASE_URI();
 		static jstring KEY_AIRPLANE_MODE();
 		static jstring KEY_BATTERY_SAVER();
 		static jstring KEY_BLUETOOTH();

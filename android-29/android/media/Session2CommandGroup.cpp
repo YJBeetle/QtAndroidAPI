@@ -5,7 +5,7 @@
 namespace android::media
 {
 	// Fields
-	QAndroidJniObject Session2CommandGroup::CREATOR()
+	__JniBaseClass Session2CommandGroup::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.Session2CommandGroup",
@@ -27,7 +27,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject Session2CommandGroup::getCommands()
+	__JniBaseClass Session2CommandGroup::getCommands()
 	{
 		return callObjectMethod(
 			"getCommands",

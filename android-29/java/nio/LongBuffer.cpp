@@ -12,7 +12,7 @@ namespace java::nio
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject LongBuffer::allocate(jint arg0)
+	java::nio::LongBuffer LongBuffer::allocate(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.LongBuffer",
@@ -21,7 +21,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject LongBuffer::wrap(jlongArray arg0)
+	java::nio::LongBuffer LongBuffer::wrap(jlongArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.LongBuffer",
@@ -30,7 +30,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject LongBuffer::wrap(jlongArray arg0, jint arg1, jint arg2)
+	java::nio::LongBuffer LongBuffer::wrap(jlongArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.LongBuffer",
@@ -55,21 +55,21 @@ namespace java::nio
 			"()I"
 		);
 	}
-	QAndroidJniObject LongBuffer::asReadOnlyBuffer()
+	java::nio::LongBuffer LongBuffer::asReadOnlyBuffer()
 	{
 		return callObjectMethod(
 			"asReadOnlyBuffer",
 			"()Ljava/nio/LongBuffer;"
 		);
 	}
-	QAndroidJniObject LongBuffer::clear()
+	java::nio::LongBuffer LongBuffer::clear()
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/LongBuffer;"
 		);
 	}
-	QAndroidJniObject LongBuffer::compact()
+	java::nio::LongBuffer LongBuffer::compact()
 	{
 		return callObjectMethod(
 			"compact",
@@ -92,7 +92,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LongBuffer::duplicate()
+	java::nio::LongBuffer LongBuffer::duplicate()
 	{
 		return callObjectMethod(
 			"duplicate",
@@ -107,14 +107,14 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject LongBuffer::flip()
+	java::nio::LongBuffer LongBuffer::flip()
 	{
 		return callObjectMethod(
 			"flip",
 			"()Ljava/nio/LongBuffer;"
 		);
 	}
-	QAndroidJniObject LongBuffer::get(jlongArray arg0)
+	java::nio::LongBuffer LongBuffer::get(jlongArray arg0)
 	{
 		return callObjectMethod(
 			"get",
@@ -122,7 +122,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject LongBuffer::get(jint arg0, jlongArray arg1)
+	java::nio::LongBuffer LongBuffer::get(jint arg0, jlongArray arg1)
 	{
 		return callObjectMethod(
 			"get",
@@ -131,7 +131,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject LongBuffer::get(jlongArray arg0, jint arg1, jint arg2)
+	java::nio::LongBuffer LongBuffer::get(jlongArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
@@ -141,7 +141,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject LongBuffer::get(jint arg0, jlongArray arg1, jint arg2, jint arg3)
+	java::nio::LongBuffer LongBuffer::get(jint arg0, jlongArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
@@ -188,7 +188,7 @@ namespace java::nio
 			"()Z"
 		);
 	}
-	QAndroidJniObject LongBuffer::limit(jint arg0)
+	java::nio::LongBuffer LongBuffer::limit(jint arg0)
 	{
 		return callObjectMethod(
 			"limit",
@@ -196,7 +196,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject LongBuffer::mark()
+	java::nio::LongBuffer LongBuffer::mark()
 	{
 		return callObjectMethod(
 			"mark",
@@ -211,14 +211,14 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LongBuffer::order()
+	java::nio::ByteOrder LongBuffer::order()
 	{
 		return callObjectMethod(
 			"order",
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
-	QAndroidJniObject LongBuffer::position(jint arg0)
+	java::nio::LongBuffer LongBuffer::position(jint arg0)
 	{
 		return callObjectMethod(
 			"position",
@@ -226,7 +226,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject LongBuffer::put(jlongArray arg0)
+	java::nio::LongBuffer LongBuffer::put(jlongArray arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -234,7 +234,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject LongBuffer::put(java::nio::LongBuffer arg0)
+	java::nio::LongBuffer LongBuffer::put(java::nio::LongBuffer arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -242,7 +242,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LongBuffer::put(jlong arg0)
+	java::nio::LongBuffer LongBuffer::put(jlong arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -250,7 +250,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject LongBuffer::put(jint arg0, jlongArray arg1)
+	java::nio::LongBuffer LongBuffer::put(jint arg0, jlongArray arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -259,7 +259,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject LongBuffer::put(jint arg0, jlong arg1)
+	java::nio::LongBuffer LongBuffer::put(jint arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -268,7 +268,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject LongBuffer::put(jlongArray arg0, jint arg1, jint arg2)
+	java::nio::LongBuffer LongBuffer::put(jlongArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
@@ -278,7 +278,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject LongBuffer::put(jint arg0, jlongArray arg1, jint arg2, jint arg3)
+	java::nio::LongBuffer LongBuffer::put(jint arg0, jlongArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -289,7 +289,7 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject LongBuffer::put(jint arg0, java::nio::LongBuffer arg1, jint arg2, jint arg3)
+	java::nio::LongBuffer LongBuffer::put(jint arg0, java::nio::LongBuffer arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -300,28 +300,28 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject LongBuffer::reset()
+	java::nio::LongBuffer LongBuffer::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/LongBuffer;"
 		);
 	}
-	QAndroidJniObject LongBuffer::rewind()
+	java::nio::LongBuffer LongBuffer::rewind()
 	{
 		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/LongBuffer;"
 		);
 	}
-	QAndroidJniObject LongBuffer::slice()
+	java::nio::LongBuffer LongBuffer::slice()
 	{
 		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/LongBuffer;"
 		);
 	}
-	QAndroidJniObject LongBuffer::slice(jint arg0, jint arg1)
+	java::nio::LongBuffer LongBuffer::slice(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"slice",

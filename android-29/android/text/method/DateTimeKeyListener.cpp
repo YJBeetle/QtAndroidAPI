@@ -30,7 +30,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	QAndroidJniObject DateTimeKeyListener::getInstance()
+	android::text::method::DateTimeKeyListener DateTimeKeyListener::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.DateTimeKeyListener",
@@ -38,7 +38,7 @@ namespace android::text::method
 			"()Landroid/text/method/DateTimeKeyListener;"
 		);
 	}
-	QAndroidJniObject DateTimeKeyListener::getInstance(java::util::Locale arg0)
+	android::text::method::DateTimeKeyListener DateTimeKeyListener::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.DateTimeKeyListener",

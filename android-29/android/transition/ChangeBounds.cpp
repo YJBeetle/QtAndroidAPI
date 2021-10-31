@@ -42,7 +42,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ChangeBounds::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
+	android::animation::Animator ChangeBounds::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
 	{
 		return callObjectMethod(
 			"createAnimator",

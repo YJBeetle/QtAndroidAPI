@@ -10,7 +10,7 @@ namespace java::nio::file
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NOFOLLOW_LINKS();
+		static java::nio::file::LinkOption NOFOLLOW_LINKS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LinkOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -19,7 +19,7 @@ namespace java::nio::file
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::nio::file::LinkOption valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::nio::file

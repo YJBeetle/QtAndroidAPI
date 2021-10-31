@@ -18,7 +18,7 @@ namespace android::media
 	public:
 		// Fields
 		static jint COMMAND_CODE_CUSTOM();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Session2Command(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,7 +33,7 @@ namespace android::media
 		jboolean equals(jobject arg0);
 		jint getCommandCode();
 		jstring getCustomAction();
-		QAndroidJniObject getCustomExtras();
+		android::os::Bundle getCustomExtras();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

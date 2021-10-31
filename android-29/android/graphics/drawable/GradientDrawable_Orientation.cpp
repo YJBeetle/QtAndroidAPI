@@ -3,7 +3,7 @@
 namespace android::graphics::drawable
 {
 	// Fields
-	QAndroidJniObject GradientDrawable_Orientation::BL_TR()
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::BL_TR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.drawable.GradientDrawable$Orientation",
@@ -11,7 +11,7 @@ namespace android::graphics::drawable
 			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
 		);
 	}
-	QAndroidJniObject GradientDrawable_Orientation::BOTTOM_TOP()
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::BOTTOM_TOP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.drawable.GradientDrawable$Orientation",
@@ -19,7 +19,7 @@ namespace android::graphics::drawable
 			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
 		);
 	}
-	QAndroidJniObject GradientDrawable_Orientation::BR_TL()
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::BR_TL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.drawable.GradientDrawable$Orientation",
@@ -27,7 +27,7 @@ namespace android::graphics::drawable
 			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
 		);
 	}
-	QAndroidJniObject GradientDrawable_Orientation::LEFT_RIGHT()
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::LEFT_RIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.drawable.GradientDrawable$Orientation",
@@ -35,7 +35,7 @@ namespace android::graphics::drawable
 			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
 		);
 	}
-	QAndroidJniObject GradientDrawable_Orientation::RIGHT_LEFT()
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::RIGHT_LEFT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.drawable.GradientDrawable$Orientation",
@@ -43,7 +43,7 @@ namespace android::graphics::drawable
 			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
 		);
 	}
-	QAndroidJniObject GradientDrawable_Orientation::TL_BR()
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::TL_BR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.drawable.GradientDrawable$Orientation",
@@ -51,7 +51,7 @@ namespace android::graphics::drawable
 			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
 		);
 	}
-	QAndroidJniObject GradientDrawable_Orientation::TOP_BOTTOM()
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::TOP_BOTTOM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.drawable.GradientDrawable$Orientation",
@@ -59,7 +59,7 @@ namespace android::graphics::drawable
 			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
 		);
 	}
-	QAndroidJniObject GradientDrawable_Orientation::TR_BL()
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::TR_BL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.drawable.GradientDrawable$Orientation",
@@ -74,7 +74,7 @@ namespace android::graphics::drawable
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject GradientDrawable_Orientation::valueOf(jstring arg0)
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.GradientDrawable$Orientation",

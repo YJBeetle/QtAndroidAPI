@@ -62,7 +62,7 @@ namespace java::nio::channels
 			"()V"
 		);
 	}
-	QAndroidJniObject SelectionKey::channel()
+	java::nio::channels::SelectableChannel SelectionKey::channel()
 	{
 		return callObjectMethod(
 			"channel",
@@ -76,7 +76,7 @@ namespace java::nio::channels
 			"()I"
 		);
 	}
-	QAndroidJniObject SelectionKey::interestOps(jint arg0)
+	java::nio::channels::SelectionKey SelectionKey::interestOps(jint arg0)
 	{
 		return callObjectMethod(
 			"interestOps",
@@ -142,7 +142,7 @@ namespace java::nio::channels
 			"()I"
 		);
 	}
-	QAndroidJniObject SelectionKey::selector()
+	java::nio::channels::Selector SelectionKey::selector()
 	{
 		return callObjectMethod(
 			"selector",

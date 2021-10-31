@@ -18,14 +18,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject ListActivity::getListAdapter()
+	__JniBaseClass ListActivity::getListAdapter()
 	{
 		return callObjectMethod(
 			"getListAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	QAndroidJniObject ListActivity::getListView()
+	android::widget::ListView ListActivity::getListView()
 	{
 		return callObjectMethod(
 			"getListView",

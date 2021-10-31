@@ -22,9 +22,9 @@ namespace javax::crypto::spec
 		DHPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
 		
 		// Methods
-		QAndroidJniObject getG();
-		QAndroidJniObject getP();
-		QAndroidJniObject getX();
+		java::math::BigInteger getG();
+		java::math::BigInteger getP();
+		java::math::BigInteger getX();
 	};
 } // namespace javax::crypto::spec
 

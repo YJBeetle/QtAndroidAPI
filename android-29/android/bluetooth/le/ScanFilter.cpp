@@ -6,7 +6,7 @@
 namespace android::bluetooth::le
 {
 	// Fields
-	QAndroidJniObject ScanFilter::CREATOR()
+	__JniBaseClass ScanFilter::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.le.ScanFilter",
@@ -85,35 +85,35 @@ namespace android::bluetooth::le
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject ScanFilter::getServiceDataUuid()
+	android::os::ParcelUuid ScanFilter::getServiceDataUuid()
 	{
 		return callObjectMethod(
 			"getServiceDataUuid",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
-	QAndroidJniObject ScanFilter::getServiceSolicitationUuid()
+	android::os::ParcelUuid ScanFilter::getServiceSolicitationUuid()
 	{
 		return callObjectMethod(
 			"getServiceSolicitationUuid",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
-	QAndroidJniObject ScanFilter::getServiceSolicitationUuidMask()
+	android::os::ParcelUuid ScanFilter::getServiceSolicitationUuidMask()
 	{
 		return callObjectMethod(
 			"getServiceSolicitationUuidMask",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
-	QAndroidJniObject ScanFilter::getServiceUuid()
+	android::os::ParcelUuid ScanFilter::getServiceUuid()
 	{
 		return callObjectMethod(
 			"getServiceUuid",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
-	QAndroidJniObject ScanFilter::getServiceUuidMask()
+	android::os::ParcelUuid ScanFilter::getServiceUuidMask()
 	{
 		return callObjectMethod(
 			"getServiceUuidMask",

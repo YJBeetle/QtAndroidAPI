@@ -3,7 +3,7 @@
 namespace java::lang
 {
 	// Fields
-	QAndroidJniObject Thread_State::BLOCKED()
+	java::lang::Thread_State Thread_State::BLOCKED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
@@ -11,7 +11,7 @@ namespace java::lang
 			"Ljava/lang/Thread$State;"
 		);
 	}
-	QAndroidJniObject Thread_State::NEW()
+	java::lang::Thread_State Thread_State::NEW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
@@ -19,7 +19,7 @@ namespace java::lang
 			"Ljava/lang/Thread$State;"
 		);
 	}
-	QAndroidJniObject Thread_State::RUNNABLE()
+	java::lang::Thread_State Thread_State::RUNNABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
@@ -27,7 +27,7 @@ namespace java::lang
 			"Ljava/lang/Thread$State;"
 		);
 	}
-	QAndroidJniObject Thread_State::TERMINATED()
+	java::lang::Thread_State Thread_State::TERMINATED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
@@ -35,7 +35,7 @@ namespace java::lang
 			"Ljava/lang/Thread$State;"
 		);
 	}
-	QAndroidJniObject Thread_State::TIMED_WAITING()
+	java::lang::Thread_State Thread_State::TIMED_WAITING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
@@ -43,7 +43,7 @@ namespace java::lang
 			"Ljava/lang/Thread$State;"
 		);
 	}
-	QAndroidJniObject Thread_State::WAITING()
+	java::lang::Thread_State Thread_State::WAITING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
@@ -58,7 +58,7 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Thread_State::valueOf(jstring arg0)
+	java::lang::Thread_State Thread_State::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Thread$State",

@@ -25,7 +25,7 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DriverManager::drivers()
+	__JniBaseClass DriverManager::drivers()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -33,7 +33,7 @@ namespace java::sql
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	QAndroidJniObject DriverManager::getConnection(jstring arg0)
+	__JniBaseClass DriverManager::getConnection(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -42,7 +42,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	QAndroidJniObject DriverManager::getConnection(jstring arg0, java::util::Properties arg1)
+	__JniBaseClass DriverManager::getConnection(jstring arg0, java::util::Properties arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -52,7 +52,7 @@ namespace java::sql
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DriverManager::getConnection(jstring arg0, jstring arg1, jstring arg2)
+	__JniBaseClass DriverManager::getConnection(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -63,7 +63,7 @@ namespace java::sql
 			arg2
 		);
 	}
-	QAndroidJniObject DriverManager::getDriver(jstring arg0)
+	__JniBaseClass DriverManager::getDriver(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -72,7 +72,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	QAndroidJniObject DriverManager::getDrivers()
+	__JniBaseClass DriverManager::getDrivers()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -80,7 +80,7 @@ namespace java::sql
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject DriverManager::getLogStream()
+	java::io::PrintStream DriverManager::getLogStream()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -88,7 +88,7 @@ namespace java::sql
 			"()Ljava/io/PrintStream;"
 		);
 	}
-	QAndroidJniObject DriverManager::getLogWriter()
+	java::io::PrintWriter DriverManager::getLogWriter()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.DriverManager",

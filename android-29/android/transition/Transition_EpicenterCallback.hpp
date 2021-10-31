@@ -26,7 +26,7 @@ namespace android::transition
 		Transition_EpicenterCallback();
 		
 		// Methods
-		QAndroidJniObject onGetEpicenter(android::transition::Transition arg0);
+		android::graphics::Rect onGetEpicenter(android::transition::Transition arg0);
 	};
 } // namespace android::transition
 

@@ -31,9 +31,9 @@ namespace java::sql
 		
 		// Methods
 		jint getErrorCode();
-		QAndroidJniObject getNextException();
+		java::sql::SQLException getNextException();
 		jstring getSQLState();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		void setNextException(java::sql::SQLException arg0);
 	};
 } // namespace java::sql

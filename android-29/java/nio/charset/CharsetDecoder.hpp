@@ -38,21 +38,21 @@ namespace java::nio::charset
 		
 		// Methods
 		jfloat averageCharsPerByte();
-		QAndroidJniObject charset();
-		QAndroidJniObject decode(java::nio::ByteBuffer arg0);
-		QAndroidJniObject decode(java::nio::ByteBuffer arg0, java::nio::CharBuffer arg1, jboolean arg2);
-		QAndroidJniObject detectedCharset();
-		QAndroidJniObject flush(java::nio::CharBuffer arg0);
+		java::nio::charset::Charset charset();
+		java::nio::CharBuffer decode(java::nio::ByteBuffer arg0);
+		java::nio::charset::CoderResult decode(java::nio::ByteBuffer arg0, java::nio::CharBuffer arg1, jboolean arg2);
+		java::nio::charset::Charset detectedCharset();
+		java::nio::charset::CoderResult flush(java::nio::CharBuffer arg0);
 		jboolean isAutoDetecting();
 		jboolean isCharsetDetected();
-		QAndroidJniObject malformedInputAction();
+		java::nio::charset::CodingErrorAction malformedInputAction();
 		jfloat maxCharsPerByte();
-		QAndroidJniObject onMalformedInput(java::nio::charset::CodingErrorAction arg0);
-		QAndroidJniObject onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0);
-		QAndroidJniObject replaceWith(jstring arg0);
+		java::nio::charset::CharsetDecoder onMalformedInput(java::nio::charset::CodingErrorAction arg0);
+		java::nio::charset::CharsetDecoder onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0);
+		java::nio::charset::CharsetDecoder replaceWith(jstring arg0);
 		jstring replacement();
-		QAndroidJniObject reset();
-		QAndroidJniObject unmappableCharacterAction();
+		java::nio::charset::CharsetDecoder reset();
+		java::nio::charset::CodingErrorAction unmappableCharacterAction();
 	};
 } // namespace java::nio::charset
 

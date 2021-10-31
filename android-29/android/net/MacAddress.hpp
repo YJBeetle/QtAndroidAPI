@@ -13,8 +13,8 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BROADCAST_ADDRESS();
-		static QAndroidJniObject CREATOR();
+		static android::net::MacAddress BROADCAST_ADDRESS();
+		static __JniBaseClass CREATOR();
 		static jint TYPE_BROADCAST();
 		static jint TYPE_MULTICAST();
 		static jint TYPE_UNICAST();
@@ -26,8 +26,8 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject fromBytes(jbyteArray arg0);
-		static QAndroidJniObject fromString(jstring arg0);
+		static android::net::MacAddress fromBytes(jbyteArray arg0);
+		static android::net::MacAddress fromString(jstring arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getAddressType();

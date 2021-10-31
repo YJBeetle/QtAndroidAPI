@@ -61,7 +61,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject IDNA::getUTS46Instance(jint arg0)
+	android::icu::text::IDNA IDNA::getUTS46Instance(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.IDNA",
@@ -70,7 +70,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject IDNA::labelToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
+	java::lang::StringBuilder IDNA::labelToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
 	{
 		return callObjectMethod(
 			"labelToASCII",
@@ -80,7 +80,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject IDNA::labelToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
+	java::lang::StringBuilder IDNA::labelToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
 	{
 		return callObjectMethod(
 			"labelToUnicode",
@@ -90,7 +90,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject IDNA::nameToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
+	java::lang::StringBuilder IDNA::nameToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
 	{
 		return callObjectMethod(
 			"nameToASCII",
@@ -100,7 +100,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject IDNA::nameToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
+	java::lang::StringBuilder IDNA::nameToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
 	{
 		return callObjectMethod(
 			"nameToUnicode",

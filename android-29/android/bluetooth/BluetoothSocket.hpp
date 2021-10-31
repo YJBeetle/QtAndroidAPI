@@ -35,11 +35,11 @@ namespace android::bluetooth
 		void close();
 		void connect();
 		jint getConnectionType();
-		QAndroidJniObject getInputStream();
+		java::io::InputStream getInputStream();
 		jint getMaxReceivePacketSize();
 		jint getMaxTransmitPacketSize();
-		QAndroidJniObject getOutputStream();
-		QAndroidJniObject getRemoteDevice();
+		java::io::OutputStream getOutputStream();
+		android::bluetooth::BluetoothDevice getRemoteDevice();
 		jboolean isConnected();
 	};
 } // namespace android::bluetooth

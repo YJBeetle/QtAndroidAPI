@@ -33,8 +33,8 @@ namespace java::lang::invoke
 		
 		// Methods
 		static void syncAll(jarray arg0);
-		QAndroidJniObject dynamicInvoker();
-		QAndroidJniObject getTarget();
+		java::lang::invoke::MethodHandle dynamicInvoker();
+		java::lang::invoke::MethodHandle getTarget();
 		void setTarget(java::lang::invoke::MethodHandle arg0);
 	};
 } // namespace java::lang::invoke

@@ -29,16 +29,16 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newInstance(jint arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject newInstance(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
-		QAndroidJniObject acquireLatestImage();
-		QAndroidJniObject acquireNextImage();
+		static android::media::ImageReader newInstance(jint arg0, jint arg1, jint arg2, jint arg3);
+		static android::media::ImageReader newInstance(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
+		android::media::Image acquireLatestImage();
+		android::media::Image acquireNextImage();
 		void close();
 		void discardFreeBuffers();
 		jint getHeight();
 		jint getImageFormat();
 		jint getMaxImages();
-		QAndroidJniObject getSurface();
+		android::view::Surface getSurface();
 		jint getWidth();
 		void setOnImageAvailableListener(__JniBaseClass arg0, android::os::Handler arg1);
 	};

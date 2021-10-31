@@ -10,9 +10,9 @@ namespace java::security
 	{
 	public:
 		// Fields
-		static QAndroidJniObject PRIVATE();
-		static QAndroidJniObject PUBLIC();
-		static QAndroidJniObject SECRET();
+		static java::security::KeyRep_Type PRIVATE();
+		static java::security::KeyRep_Type PUBLIC();
+		static java::security::KeyRep_Type SECRET();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyRep_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::security::KeyRep_Type valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::security

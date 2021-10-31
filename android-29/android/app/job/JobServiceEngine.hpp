@@ -26,7 +26,7 @@ namespace android::app::job
 		JobServiceEngine(android::app::Service arg0);
 		
 		// Methods
-		QAndroidJniObject getBinder();
+		__JniBaseClass getBinder();
 		void jobFinished(android::app::job::JobParameters arg0, jboolean arg1);
 		jboolean onStartJob(android::app::job::JobParameters arg0);
 		jboolean onStopJob(android::app::job::JobParameters arg0);

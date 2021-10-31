@@ -24,7 +24,7 @@ namespace java::lang::annotation
 		AnnotationTypeMismatchException(java::lang::reflect::Method arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject element();
+		java::lang::reflect::Method element();
 		jstring foundType();
 	};
 } // namespace java::lang::annotation

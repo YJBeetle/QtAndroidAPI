@@ -43,13 +43,13 @@ namespace android::service::autofill
 		Dataset_Builder(android::widget::RemoteViews arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setAuthentication(android::content::IntentSender arg0);
-		QAndroidJniObject setId(jstring arg0);
-		QAndroidJniObject setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1);
-		QAndroidJniObject setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2);
-		QAndroidJniObject setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2);
-		QAndroidJniObject setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3);
+		android::service::autofill::Dataset build();
+		android::service::autofill::Dataset_Builder setAuthentication(android::content::IntentSender arg0);
+		android::service::autofill::Dataset_Builder setId(jstring arg0);
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1);
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2);
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2);
+		android::service::autofill::Dataset_Builder setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3);
 	};
 } // namespace android::service::autofill
 

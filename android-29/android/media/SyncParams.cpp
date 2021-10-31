@@ -64,7 +64,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject SyncParams::allowDefaults()
+	android::media::SyncParams SyncParams::allowDefaults()
 	{
 		return callObjectMethod(
 			"allowDefaults",
@@ -99,7 +99,7 @@ namespace android::media
 			"()F"
 		);
 	}
-	QAndroidJniObject SyncParams::setAudioAdjustMode(jint arg0)
+	android::media::SyncParams SyncParams::setAudioAdjustMode(jint arg0)
 	{
 		return callObjectMethod(
 			"setAudioAdjustMode",
@@ -107,7 +107,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject SyncParams::setFrameRate(jfloat arg0)
+	android::media::SyncParams SyncParams::setFrameRate(jfloat arg0)
 	{
 		return callObjectMethod(
 			"setFrameRate",
@@ -115,7 +115,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject SyncParams::setSyncSource(jint arg0)
+	android::media::SyncParams SyncParams::setSyncSource(jint arg0)
 	{
 		return callObjectMethod(
 			"setSyncSource",
@@ -123,7 +123,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject SyncParams::setTolerance(jfloat arg0)
+	android::media::SyncParams SyncParams::setTolerance(jfloat arg0)
 	{
 		return callObjectMethod(
 			"setTolerance",

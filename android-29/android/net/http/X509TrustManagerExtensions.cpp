@@ -17,7 +17,7 @@ namespace android::net::http
 		) {}
 	
 	// Methods
-	QAndroidJniObject X509TrustManagerExtensions::checkServerTrusted(jarray arg0, jstring arg1, jstring arg2)
+	__JniBaseClass X509TrustManagerExtensions::checkServerTrusted(jarray arg0, jstring arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"checkServerTrusted",

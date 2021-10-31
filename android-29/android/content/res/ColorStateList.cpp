@@ -6,7 +6,7 @@
 namespace android::content::res
 {
 	// Fields
-	QAndroidJniObject ColorStateList::CREATOR()
+	__JniBaseClass ColorStateList::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.res.ColorStateList",
@@ -28,7 +28,7 @@ namespace android::content::res
 		) {}
 	
 	// Methods
-	QAndroidJniObject ColorStateList::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1)
+	android::content::res::ColorStateList ColorStateList::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.res.ColorStateList",
@@ -38,7 +38,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ColorStateList::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2)
+	android::content::res::ColorStateList ColorStateList::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.res.ColorStateList",
@@ -49,7 +49,7 @@ namespace android::content::res
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ColorStateList::valueOf(jint arg0)
+	android::content::res::ColorStateList ColorStateList::valueOf(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.res.ColorStateList",
@@ -109,7 +109,7 @@ namespace android::content::res
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ColorStateList::withAlpha(jint arg0)
+	android::content::res::ColorStateList ColorStateList::withAlpha(jint arg0)
 	{
 		return callObjectMethod(
 			"withAlpha",

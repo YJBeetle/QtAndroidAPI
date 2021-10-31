@@ -3,7 +3,7 @@
 namespace java::security
 {
 	// Fields
-	QAndroidJniObject CryptoPrimitive::BLOCK_CIPHER()
+	java::security::CryptoPrimitive CryptoPrimitive::BLOCK_CIPHER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
@@ -11,7 +11,7 @@ namespace java::security
 			"Ljava/security/CryptoPrimitive;"
 		);
 	}
-	QAndroidJniObject CryptoPrimitive::KEY_AGREEMENT()
+	java::security::CryptoPrimitive CryptoPrimitive::KEY_AGREEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
@@ -19,7 +19,7 @@ namespace java::security
 			"Ljava/security/CryptoPrimitive;"
 		);
 	}
-	QAndroidJniObject CryptoPrimitive::KEY_ENCAPSULATION()
+	java::security::CryptoPrimitive CryptoPrimitive::KEY_ENCAPSULATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
@@ -27,7 +27,7 @@ namespace java::security
 			"Ljava/security/CryptoPrimitive;"
 		);
 	}
-	QAndroidJniObject CryptoPrimitive::KEY_WRAP()
+	java::security::CryptoPrimitive CryptoPrimitive::KEY_WRAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
@@ -35,7 +35,7 @@ namespace java::security
 			"Ljava/security/CryptoPrimitive;"
 		);
 	}
-	QAndroidJniObject CryptoPrimitive::MAC()
+	java::security::CryptoPrimitive CryptoPrimitive::MAC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
@@ -43,7 +43,7 @@ namespace java::security
 			"Ljava/security/CryptoPrimitive;"
 		);
 	}
-	QAndroidJniObject CryptoPrimitive::MESSAGE_DIGEST()
+	java::security::CryptoPrimitive CryptoPrimitive::MESSAGE_DIGEST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
@@ -51,7 +51,7 @@ namespace java::security
 			"Ljava/security/CryptoPrimitive;"
 		);
 	}
-	QAndroidJniObject CryptoPrimitive::PUBLIC_KEY_ENCRYPTION()
+	java::security::CryptoPrimitive CryptoPrimitive::PUBLIC_KEY_ENCRYPTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
@@ -59,7 +59,7 @@ namespace java::security
 			"Ljava/security/CryptoPrimitive;"
 		);
 	}
-	QAndroidJniObject CryptoPrimitive::SECURE_RANDOM()
+	java::security::CryptoPrimitive CryptoPrimitive::SECURE_RANDOM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
@@ -67,7 +67,7 @@ namespace java::security
 			"Ljava/security/CryptoPrimitive;"
 		);
 	}
-	QAndroidJniObject CryptoPrimitive::SIGNATURE()
+	java::security::CryptoPrimitive CryptoPrimitive::SIGNATURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
@@ -75,7 +75,7 @@ namespace java::security
 			"Ljava/security/CryptoPrimitive;"
 		);
 	}
-	QAndroidJniObject CryptoPrimitive::STREAM_CIPHER()
+	java::security::CryptoPrimitive CryptoPrimitive::STREAM_CIPHER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
@@ -90,7 +90,7 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CryptoPrimitive::valueOf(jstring arg0)
+	java::security::CryptoPrimitive CryptoPrimitive::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.CryptoPrimitive",

@@ -5,7 +5,7 @@
 namespace android::media::session
 {
 	// Fields
-	QAndroidJniObject MediaController_PlaybackInfo::CREATOR()
+	__JniBaseClass MediaController_PlaybackInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.session.MediaController$PlaybackInfo",
@@ -41,7 +41,7 @@ namespace android::media::session
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaController_PlaybackInfo::getAudioAttributes()
+	android::media::AudioAttributes MediaController_PlaybackInfo::getAudioAttributes()
 	{
 		return callObjectMethod(
 			"getAudioAttributes",

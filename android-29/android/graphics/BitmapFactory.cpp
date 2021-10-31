@@ -22,7 +22,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	QAndroidJniObject BitmapFactory::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2)
+	android::graphics::Bitmap BitmapFactory::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
@@ -33,7 +33,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
+	android::graphics::Bitmap BitmapFactory::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
@@ -45,7 +45,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeFile(jstring arg0)
+	android::graphics::Bitmap BitmapFactory::decodeFile(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
@@ -54,7 +54,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeFile(jstring arg0, android::graphics::BitmapFactory_Options arg1)
+	android::graphics::Bitmap BitmapFactory::decodeFile(jstring arg0, android::graphics::BitmapFactory_Options arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
@@ -64,7 +64,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeFileDescriptor(java::io::FileDescriptor arg0)
+	android::graphics::Bitmap BitmapFactory::decodeFileDescriptor(java::io::FileDescriptor arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
@@ -73,7 +73,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeFileDescriptor(java::io::FileDescriptor arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2)
+	android::graphics::Bitmap BitmapFactory::decodeFileDescriptor(java::io::FileDescriptor arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
@@ -84,7 +84,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeResource(android::content::res::Resources arg0, jint arg1)
+	android::graphics::Bitmap BitmapFactory::decodeResource(android::content::res::Resources arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
@@ -94,7 +94,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeResource(android::content::res::Resources arg0, jint arg1, android::graphics::BitmapFactory_Options arg2)
+	android::graphics::Bitmap BitmapFactory::decodeResource(android::content::res::Resources arg0, jint arg1, android::graphics::BitmapFactory_Options arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
@@ -105,7 +105,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, android::graphics::Rect arg3, android::graphics::BitmapFactory_Options arg4)
+	android::graphics::Bitmap BitmapFactory::decodeResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, android::graphics::Rect arg3, android::graphics::BitmapFactory_Options arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
@@ -118,7 +118,7 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeStream(java::io::InputStream arg0)
+	android::graphics::Bitmap BitmapFactory::decodeStream(java::io::InputStream arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",
@@ -127,7 +127,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeStream(java::io::InputStream arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2)
+	android::graphics::Bitmap BitmapFactory::decodeStream(java::io::InputStream arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapFactory",

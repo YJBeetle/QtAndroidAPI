@@ -19,7 +19,7 @@ namespace android::text
 		
 		// Methods
 		jboolean hasNext();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jstring next();
 		void remove();
 		void setString(jstring arg0);

@@ -21,7 +21,7 @@ namespace android::net::wifi::hotspot2
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PasspointConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -34,8 +34,8 @@ namespace android::net::wifi::hotspot2
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCredential();
-		QAndroidJniObject getHomeSp();
+		android::net::wifi::hotspot2::pps::Credential getCredential();
+		android::net::wifi::hotspot2::pps::HomeSp getHomeSp();
 		jint hashCode();
 		void setCredential(android::net::wifi::hotspot2::pps::Credential arg0);
 		void setHomeSp(android::net::wifi::hotspot2::pps::HomeSp arg0);

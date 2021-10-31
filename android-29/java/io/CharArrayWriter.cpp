@@ -22,7 +22,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	QAndroidJniObject CharArrayWriter::append(jchar arg0)
+	java::io::CharArrayWriter CharArrayWriter::append(jchar arg0)
 	{
 		return callObjectMethod(
 			"append",
@@ -30,7 +30,7 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject CharArrayWriter::append(jstring arg0)
+	java::io::CharArrayWriter CharArrayWriter::append(jstring arg0)
 	{
 		return callObjectMethod(
 			"append",
@@ -38,7 +38,7 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject CharArrayWriter::append(jstring arg0, jint arg1, jint arg2)
+	java::io::CharArrayWriter CharArrayWriter::append(jstring arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",

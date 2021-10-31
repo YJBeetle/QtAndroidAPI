@@ -449,42 +449,42 @@ namespace android::renderscript
 			"()Z"
 		);
 	}
-	QAndroidJniObject FieldPacker::subByte2()
+	android::renderscript::Byte2 FieldPacker::subByte2()
 	{
 		return callObjectMethod(
 			"subByte2",
 			"()Landroid/renderscript/Byte2;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subByte3()
+	android::renderscript::Byte3 FieldPacker::subByte3()
 	{
 		return callObjectMethod(
 			"subByte3",
 			"()Landroid/renderscript/Byte3;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subByte4()
+	android::renderscript::Byte4 FieldPacker::subByte4()
 	{
 		return callObjectMethod(
 			"subByte4",
 			"()Landroid/renderscript/Byte4;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subDouble2()
+	android::renderscript::Double2 FieldPacker::subDouble2()
 	{
 		return callObjectMethod(
 			"subDouble2",
 			"()Landroid/renderscript/Double2;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subDouble3()
+	android::renderscript::Double3 FieldPacker::subDouble3()
 	{
 		return callObjectMethod(
 			"subDouble3",
 			"()Landroid/renderscript/Double3;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subDouble4()
+	android::renderscript::Double4 FieldPacker::subDouble4()
 	{
 		return callObjectMethod(
 			"subDouble4",
@@ -505,21 +505,21 @@ namespace android::renderscript
 			"()D"
 		);
 	}
-	QAndroidJniObject FieldPacker::subFloat2()
+	android::renderscript::Float2 FieldPacker::subFloat2()
 	{
 		return callObjectMethod(
 			"subFloat2",
 			"()Landroid/renderscript/Float2;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subFloat3()
+	android::renderscript::Float3 FieldPacker::subFloat3()
 	{
 		return callObjectMethod(
 			"subFloat3",
 			"()Landroid/renderscript/Float3;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subFloat4()
+	android::renderscript::Float4 FieldPacker::subFloat4()
 	{
 		return callObjectMethod(
 			"subFloat4",
@@ -554,84 +554,84 @@ namespace android::renderscript
 			"()B"
 		);
 	}
-	QAndroidJniObject FieldPacker::subInt2()
+	android::renderscript::Int2 FieldPacker::subInt2()
 	{
 		return callObjectMethod(
 			"subInt2",
 			"()Landroid/renderscript/Int2;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subInt3()
+	android::renderscript::Int3 FieldPacker::subInt3()
 	{
 		return callObjectMethod(
 			"subInt3",
 			"()Landroid/renderscript/Int3;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subInt4()
+	android::renderscript::Int4 FieldPacker::subInt4()
 	{
 		return callObjectMethod(
 			"subInt4",
 			"()Landroid/renderscript/Int4;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subLong2()
+	android::renderscript::Long2 FieldPacker::subLong2()
 	{
 		return callObjectMethod(
 			"subLong2",
 			"()Landroid/renderscript/Long2;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subLong3()
+	android::renderscript::Long3 FieldPacker::subLong3()
 	{
 		return callObjectMethod(
 			"subLong3",
 			"()Landroid/renderscript/Long3;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subLong4()
+	android::renderscript::Long4 FieldPacker::subLong4()
 	{
 		return callObjectMethod(
 			"subLong4",
 			"()Landroid/renderscript/Long4;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subMatrix2f()
+	android::renderscript::Matrix2f FieldPacker::subMatrix2f()
 	{
 		return callObjectMethod(
 			"subMatrix2f",
 			"()Landroid/renderscript/Matrix2f;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subMatrix3f()
+	android::renderscript::Matrix3f FieldPacker::subMatrix3f()
 	{
 		return callObjectMethod(
 			"subMatrix3f",
 			"()Landroid/renderscript/Matrix3f;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subMatrix4f()
+	android::renderscript::Matrix4f FieldPacker::subMatrix4f()
 	{
 		return callObjectMethod(
 			"subMatrix4f",
 			"()Landroid/renderscript/Matrix4f;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subShort2()
+	android::renderscript::Short2 FieldPacker::subShort2()
 	{
 		return callObjectMethod(
 			"subShort2",
 			"()Landroid/renderscript/Short2;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subShort3()
+	android::renderscript::Short3 FieldPacker::subShort3()
 	{
 		return callObjectMethod(
 			"subShort3",
 			"()Landroid/renderscript/Short3;"
 		);
 	}
-	QAndroidJniObject FieldPacker::subShort4()
+	android::renderscript::Short4 FieldPacker::subShort4()
 	{
 		return callObjectMethod(
 			"subShort4",

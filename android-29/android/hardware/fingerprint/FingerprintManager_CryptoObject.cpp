@@ -31,21 +31,21 @@ namespace android::hardware::fingerprint
 		) {}
 	
 	// Methods
-	QAndroidJniObject FingerprintManager_CryptoObject::getCipher()
+	javax::crypto::Cipher FingerprintManager_CryptoObject::getCipher()
 	{
 		return callObjectMethod(
 			"getCipher",
 			"()Ljavax/crypto/Cipher;"
 		);
 	}
-	QAndroidJniObject FingerprintManager_CryptoObject::getMac()
+	javax::crypto::Mac FingerprintManager_CryptoObject::getMac()
 	{
 		return callObjectMethod(
 			"getMac",
 			"()Ljavax/crypto/Mac;"
 		);
 	}
-	QAndroidJniObject FingerprintManager_CryptoObject::getSignature()
+	java::security::Signature FingerprintManager_CryptoObject::getSignature()
 	{
 		return callObjectMethod(
 			"getSignature",

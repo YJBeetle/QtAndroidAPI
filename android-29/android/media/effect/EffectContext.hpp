@@ -21,8 +21,8 @@ namespace android::media::effect
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createWithCurrentGlContext();
-		QAndroidJniObject getFactory();
+		static android::media::effect::EffectContext createWithCurrentGlContext();
+		android::media::effect::EffectFactory getFactory();
 		void release();
 	};
 } // namespace android::media::effect

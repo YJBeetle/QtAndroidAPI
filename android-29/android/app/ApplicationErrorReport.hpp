@@ -37,19 +37,19 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint TYPE_ANR();
 		static jint TYPE_BATTERY();
 		static jint TYPE_CRASH();
 		static jint TYPE_NONE();
 		static jint TYPE_RUNNING_SERVICE();
-		QAndroidJniObject anrInfo();
-		QAndroidJniObject batteryInfo();
-		QAndroidJniObject crashInfo();
+		android::app::ApplicationErrorReport_AnrInfo anrInfo();
+		android::app::ApplicationErrorReport_BatteryInfo batteryInfo();
+		android::app::ApplicationErrorReport_CrashInfo crashInfo();
 		jstring installerPackageName();
 		jstring packageName();
 		jstring processName();
-		QAndroidJniObject runningServiceInfo();
+		android::app::ApplicationErrorReport_RunningServiceInfo runningServiceInfo();
 		jboolean systemApp();
 		jlong time();
 		jint type();
@@ -62,7 +62,7 @@ namespace android::app
 		ApplicationErrorReport();
 		
 		// Methods
-		static QAndroidJniObject getErrorReportReceiver(android::content::Context arg0, jstring arg1, jint arg2);
+		static android::content::ComponentName getErrorReportReceiver(android::content::Context arg0, jstring arg1, jint arg2);
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
 		void readFromParcel(android::os::Parcel arg0);

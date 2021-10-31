@@ -4,7 +4,7 @@
 namespace android::icu::util
 {
 	// Fields
-	QAndroidJniObject MeasureUnit::ACRE()
+	android::icu::util::MeasureUnit MeasureUnit::ACRE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -12,7 +12,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::ACRE_FOOT()
+	android::icu::util::MeasureUnit MeasureUnit::ACRE_FOOT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -20,7 +20,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::AMPERE()
+	android::icu::util::MeasureUnit MeasureUnit::AMPERE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -28,7 +28,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::ARC_MINUTE()
+	android::icu::util::MeasureUnit MeasureUnit::ARC_MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -36,7 +36,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::ARC_SECOND()
+	android::icu::util::MeasureUnit MeasureUnit::ARC_SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -44,7 +44,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::ASTRONOMICAL_UNIT()
+	android::icu::util::MeasureUnit MeasureUnit::ASTRONOMICAL_UNIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -52,7 +52,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::BIT()
+	android::icu::util::MeasureUnit MeasureUnit::BIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -60,7 +60,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::BUSHEL()
+	android::icu::util::MeasureUnit MeasureUnit::BUSHEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -68,7 +68,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::BYTE()
+	android::icu::util::MeasureUnit MeasureUnit::BYTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -76,7 +76,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CALORIE()
+	android::icu::util::MeasureUnit MeasureUnit::CALORIE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -84,7 +84,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CARAT()
+	android::icu::util::MeasureUnit MeasureUnit::CARAT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -92,7 +92,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CELSIUS()
+	android::icu::util::MeasureUnit MeasureUnit::CELSIUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -100,7 +100,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CENTILITER()
+	android::icu::util::MeasureUnit MeasureUnit::CENTILITER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -108,7 +108,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CENTIMETER()
+	android::icu::util::MeasureUnit MeasureUnit::CENTIMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -116,7 +116,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CENTURY()
+	android::icu::util::MeasureUnit MeasureUnit::CENTURY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -124,7 +124,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CUBIC_CENTIMETER()
+	android::icu::util::MeasureUnit MeasureUnit::CUBIC_CENTIMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -132,7 +132,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CUBIC_FOOT()
+	android::icu::util::MeasureUnit MeasureUnit::CUBIC_FOOT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -140,7 +140,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CUBIC_INCH()
+	android::icu::util::MeasureUnit MeasureUnit::CUBIC_INCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -148,7 +148,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CUBIC_KILOMETER()
+	android::icu::util::MeasureUnit MeasureUnit::CUBIC_KILOMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -156,7 +156,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CUBIC_METER()
+	android::icu::util::MeasureUnit MeasureUnit::CUBIC_METER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -164,7 +164,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CUBIC_MILE()
+	android::icu::util::MeasureUnit MeasureUnit::CUBIC_MILE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -172,7 +172,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CUBIC_YARD()
+	android::icu::util::MeasureUnit MeasureUnit::CUBIC_YARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -180,7 +180,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CUP()
+	android::icu::util::MeasureUnit MeasureUnit::CUP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -188,7 +188,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::CUP_METRIC()
+	android::icu::util::MeasureUnit MeasureUnit::CUP_METRIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -196,7 +196,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::DAY()
+	android::icu::util::TimeUnit MeasureUnit::DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -204,7 +204,7 @@ namespace android::icu::util
 			"Landroid/icu/util/TimeUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::DECILITER()
+	android::icu::util::MeasureUnit MeasureUnit::DECILITER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -212,7 +212,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::DECIMETER()
+	android::icu::util::MeasureUnit MeasureUnit::DECIMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -220,7 +220,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::DEGREE()
+	android::icu::util::MeasureUnit MeasureUnit::DEGREE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -228,7 +228,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::FAHRENHEIT()
+	android::icu::util::MeasureUnit MeasureUnit::FAHRENHEIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -236,7 +236,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::FATHOM()
+	android::icu::util::MeasureUnit MeasureUnit::FATHOM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -244,7 +244,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::FLUID_OUNCE()
+	android::icu::util::MeasureUnit MeasureUnit::FLUID_OUNCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -252,7 +252,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::FOODCALORIE()
+	android::icu::util::MeasureUnit MeasureUnit::FOODCALORIE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -260,7 +260,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::FOOT()
+	android::icu::util::MeasureUnit MeasureUnit::FOOT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -268,7 +268,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::FURLONG()
+	android::icu::util::MeasureUnit MeasureUnit::FURLONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -276,7 +276,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::GALLON()
+	android::icu::util::MeasureUnit MeasureUnit::GALLON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -284,7 +284,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::GALLON_IMPERIAL()
+	android::icu::util::MeasureUnit MeasureUnit::GALLON_IMPERIAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -292,7 +292,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::GENERIC_TEMPERATURE()
+	android::icu::util::MeasureUnit MeasureUnit::GENERIC_TEMPERATURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -300,7 +300,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::GIGABIT()
+	android::icu::util::MeasureUnit MeasureUnit::GIGABIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -308,7 +308,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::GIGABYTE()
+	android::icu::util::MeasureUnit MeasureUnit::GIGABYTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -316,7 +316,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::GIGAHERTZ()
+	android::icu::util::MeasureUnit MeasureUnit::GIGAHERTZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -324,7 +324,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::GIGAWATT()
+	android::icu::util::MeasureUnit MeasureUnit::GIGAWATT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -332,7 +332,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::GRAM()
+	android::icu::util::MeasureUnit MeasureUnit::GRAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -340,7 +340,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::G_FORCE()
+	android::icu::util::MeasureUnit MeasureUnit::G_FORCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -348,7 +348,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::HECTARE()
+	android::icu::util::MeasureUnit MeasureUnit::HECTARE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -356,7 +356,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::HECTOLITER()
+	android::icu::util::MeasureUnit MeasureUnit::HECTOLITER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -364,7 +364,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::HECTOPASCAL()
+	android::icu::util::MeasureUnit MeasureUnit::HECTOPASCAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -372,7 +372,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::HERTZ()
+	android::icu::util::MeasureUnit MeasureUnit::HERTZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -380,7 +380,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::HORSEPOWER()
+	android::icu::util::MeasureUnit MeasureUnit::HORSEPOWER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -388,7 +388,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::HOUR()
+	android::icu::util::TimeUnit MeasureUnit::HOUR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -396,7 +396,7 @@ namespace android::icu::util
 			"Landroid/icu/util/TimeUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::INCH()
+	android::icu::util::MeasureUnit MeasureUnit::INCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -404,7 +404,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::INCH_HG()
+	android::icu::util::MeasureUnit MeasureUnit::INCH_HG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -412,7 +412,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::JOULE()
+	android::icu::util::MeasureUnit MeasureUnit::JOULE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -420,7 +420,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KARAT()
+	android::icu::util::MeasureUnit MeasureUnit::KARAT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -428,7 +428,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KELVIN()
+	android::icu::util::MeasureUnit MeasureUnit::KELVIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -436,7 +436,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KILOBIT()
+	android::icu::util::MeasureUnit MeasureUnit::KILOBIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -444,7 +444,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KILOBYTE()
+	android::icu::util::MeasureUnit MeasureUnit::KILOBYTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -452,7 +452,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KILOCALORIE()
+	android::icu::util::MeasureUnit MeasureUnit::KILOCALORIE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -460,7 +460,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KILOGRAM()
+	android::icu::util::MeasureUnit MeasureUnit::KILOGRAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -468,7 +468,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KILOHERTZ()
+	android::icu::util::MeasureUnit MeasureUnit::KILOHERTZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -476,7 +476,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KILOJOULE()
+	android::icu::util::MeasureUnit MeasureUnit::KILOJOULE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -484,7 +484,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KILOMETER()
+	android::icu::util::MeasureUnit MeasureUnit::KILOMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -492,7 +492,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KILOMETER_PER_HOUR()
+	android::icu::util::MeasureUnit MeasureUnit::KILOMETER_PER_HOUR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -500,7 +500,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KILOWATT()
+	android::icu::util::MeasureUnit MeasureUnit::KILOWATT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -508,7 +508,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KILOWATT_HOUR()
+	android::icu::util::MeasureUnit MeasureUnit::KILOWATT_HOUR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -516,7 +516,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::KNOT()
+	android::icu::util::MeasureUnit MeasureUnit::KNOT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -524,7 +524,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::LIGHT_YEAR()
+	android::icu::util::MeasureUnit MeasureUnit::LIGHT_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -532,7 +532,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::LITER()
+	android::icu::util::MeasureUnit MeasureUnit::LITER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -540,7 +540,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::LITER_PER_100KILOMETERS()
+	android::icu::util::MeasureUnit MeasureUnit::LITER_PER_100KILOMETERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -548,7 +548,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::LITER_PER_KILOMETER()
+	android::icu::util::MeasureUnit MeasureUnit::LITER_PER_KILOMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -556,7 +556,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::LUX()
+	android::icu::util::MeasureUnit MeasureUnit::LUX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -564,7 +564,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MEGABIT()
+	android::icu::util::MeasureUnit MeasureUnit::MEGABIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -572,7 +572,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MEGABYTE()
+	android::icu::util::MeasureUnit MeasureUnit::MEGABYTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -580,7 +580,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MEGAHERTZ()
+	android::icu::util::MeasureUnit MeasureUnit::MEGAHERTZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -588,7 +588,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MEGALITER()
+	android::icu::util::MeasureUnit MeasureUnit::MEGALITER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -596,7 +596,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MEGAWATT()
+	android::icu::util::MeasureUnit MeasureUnit::MEGAWATT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -604,7 +604,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::METER()
+	android::icu::util::MeasureUnit MeasureUnit::METER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -612,7 +612,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::METER_PER_SECOND()
+	android::icu::util::MeasureUnit MeasureUnit::METER_PER_SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -620,7 +620,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::METER_PER_SECOND_SQUARED()
+	android::icu::util::MeasureUnit MeasureUnit::METER_PER_SECOND_SQUARED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -628,7 +628,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::METRIC_TON()
+	android::icu::util::MeasureUnit MeasureUnit::METRIC_TON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -636,7 +636,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MICROGRAM()
+	android::icu::util::MeasureUnit MeasureUnit::MICROGRAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -644,7 +644,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MICROMETER()
+	android::icu::util::MeasureUnit MeasureUnit::MICROMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -652,7 +652,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MICROSECOND()
+	android::icu::util::MeasureUnit MeasureUnit::MICROSECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -660,7 +660,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILE()
+	android::icu::util::MeasureUnit MeasureUnit::MILE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -668,7 +668,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILE_PER_GALLON()
+	android::icu::util::MeasureUnit MeasureUnit::MILE_PER_GALLON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -676,7 +676,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILE_PER_GALLON_IMPERIAL()
+	android::icu::util::MeasureUnit MeasureUnit::MILE_PER_GALLON_IMPERIAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -684,7 +684,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILE_PER_HOUR()
+	android::icu::util::MeasureUnit MeasureUnit::MILE_PER_HOUR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -692,7 +692,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILE_SCANDINAVIAN()
+	android::icu::util::MeasureUnit MeasureUnit::MILE_SCANDINAVIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -700,7 +700,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILLIAMPERE()
+	android::icu::util::MeasureUnit MeasureUnit::MILLIAMPERE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -708,7 +708,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILLIBAR()
+	android::icu::util::MeasureUnit MeasureUnit::MILLIBAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -716,7 +716,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILLIGRAM()
+	android::icu::util::MeasureUnit MeasureUnit::MILLIGRAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -724,7 +724,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILLIGRAM_PER_DECILITER()
+	android::icu::util::MeasureUnit MeasureUnit::MILLIGRAM_PER_DECILITER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -732,7 +732,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILLILITER()
+	android::icu::util::MeasureUnit MeasureUnit::MILLILITER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -740,7 +740,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILLIMETER()
+	android::icu::util::MeasureUnit MeasureUnit::MILLIMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -748,7 +748,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILLIMETER_OF_MERCURY()
+	android::icu::util::MeasureUnit MeasureUnit::MILLIMETER_OF_MERCURY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -756,7 +756,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILLIMOLE_PER_LITER()
+	android::icu::util::MeasureUnit MeasureUnit::MILLIMOLE_PER_LITER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -764,7 +764,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILLISECOND()
+	android::icu::util::MeasureUnit MeasureUnit::MILLISECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -772,7 +772,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MILLIWATT()
+	android::icu::util::MeasureUnit MeasureUnit::MILLIWATT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -780,7 +780,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MINUTE()
+	android::icu::util::TimeUnit MeasureUnit::MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -788,7 +788,7 @@ namespace android::icu::util
 			"Landroid/icu/util/TimeUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::MONTH()
+	android::icu::util::TimeUnit MeasureUnit::MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -796,7 +796,7 @@ namespace android::icu::util
 			"Landroid/icu/util/TimeUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::NANOMETER()
+	android::icu::util::MeasureUnit MeasureUnit::NANOMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -804,7 +804,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::NANOSECOND()
+	android::icu::util::MeasureUnit MeasureUnit::NANOSECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -812,7 +812,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::NAUTICAL_MILE()
+	android::icu::util::MeasureUnit MeasureUnit::NAUTICAL_MILE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -820,7 +820,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::OHM()
+	android::icu::util::MeasureUnit MeasureUnit::OHM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -828,7 +828,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::OUNCE()
+	android::icu::util::MeasureUnit MeasureUnit::OUNCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -836,7 +836,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::OUNCE_TROY()
+	android::icu::util::MeasureUnit MeasureUnit::OUNCE_TROY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -844,7 +844,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::PARSEC()
+	android::icu::util::MeasureUnit MeasureUnit::PARSEC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -852,7 +852,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::PART_PER_MILLION()
+	android::icu::util::MeasureUnit MeasureUnit::PART_PER_MILLION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -860,7 +860,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::PICOMETER()
+	android::icu::util::MeasureUnit MeasureUnit::PICOMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -868,7 +868,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::PINT()
+	android::icu::util::MeasureUnit MeasureUnit::PINT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -876,7 +876,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::PINT_METRIC()
+	android::icu::util::MeasureUnit MeasureUnit::PINT_METRIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -884,7 +884,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::POINT()
+	android::icu::util::MeasureUnit MeasureUnit::POINT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -892,7 +892,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::POUND()
+	android::icu::util::MeasureUnit MeasureUnit::POUND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -900,7 +900,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::POUND_PER_SQUARE_INCH()
+	android::icu::util::MeasureUnit MeasureUnit::POUND_PER_SQUARE_INCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -908,7 +908,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::QUART()
+	android::icu::util::MeasureUnit MeasureUnit::QUART()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -916,7 +916,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::RADIAN()
+	android::icu::util::MeasureUnit MeasureUnit::RADIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -924,7 +924,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::REVOLUTION_ANGLE()
+	android::icu::util::MeasureUnit MeasureUnit::REVOLUTION_ANGLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -932,7 +932,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::SECOND()
+	android::icu::util::TimeUnit MeasureUnit::SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -940,7 +940,7 @@ namespace android::icu::util
 			"Landroid/icu/util/TimeUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::SQUARE_CENTIMETER()
+	android::icu::util::MeasureUnit MeasureUnit::SQUARE_CENTIMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -948,7 +948,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::SQUARE_FOOT()
+	android::icu::util::MeasureUnit MeasureUnit::SQUARE_FOOT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -956,7 +956,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::SQUARE_INCH()
+	android::icu::util::MeasureUnit MeasureUnit::SQUARE_INCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -964,7 +964,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::SQUARE_KILOMETER()
+	android::icu::util::MeasureUnit MeasureUnit::SQUARE_KILOMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -972,7 +972,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::SQUARE_METER()
+	android::icu::util::MeasureUnit MeasureUnit::SQUARE_METER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -980,7 +980,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::SQUARE_MILE()
+	android::icu::util::MeasureUnit MeasureUnit::SQUARE_MILE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -988,7 +988,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::SQUARE_YARD()
+	android::icu::util::MeasureUnit MeasureUnit::SQUARE_YARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -996,7 +996,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::STONE()
+	android::icu::util::MeasureUnit MeasureUnit::STONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1004,7 +1004,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::TABLESPOON()
+	android::icu::util::MeasureUnit MeasureUnit::TABLESPOON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1012,7 +1012,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::TEASPOON()
+	android::icu::util::MeasureUnit MeasureUnit::TEASPOON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1020,7 +1020,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::TERABIT()
+	android::icu::util::MeasureUnit MeasureUnit::TERABIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1028,7 +1028,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::TERABYTE()
+	android::icu::util::MeasureUnit MeasureUnit::TERABYTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1036,7 +1036,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::TON()
+	android::icu::util::MeasureUnit MeasureUnit::TON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1044,7 +1044,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::VOLT()
+	android::icu::util::MeasureUnit MeasureUnit::VOLT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1052,7 +1052,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::WATT()
+	android::icu::util::MeasureUnit MeasureUnit::WATT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1060,7 +1060,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::WEEK()
+	android::icu::util::TimeUnit MeasureUnit::WEEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1068,7 +1068,7 @@ namespace android::icu::util
 			"Landroid/icu/util/TimeUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::YARD()
+	android::icu::util::MeasureUnit MeasureUnit::YARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1076,7 +1076,7 @@ namespace android::icu::util
 			"Landroid/icu/util/MeasureUnit;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::YEAR()
+	android::icu::util::TimeUnit MeasureUnit::YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.MeasureUnit",
@@ -1091,7 +1091,7 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MeasureUnit::getAvailable()
+	__JniBaseClass MeasureUnit::getAvailable()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.MeasureUnit",
@@ -1099,7 +1099,7 @@ namespace android::icu::util
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject MeasureUnit::getAvailable(jstring arg0)
+	__JniBaseClass MeasureUnit::getAvailable(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.MeasureUnit",
@@ -1108,7 +1108,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject MeasureUnit::getAvailableTypes()
+	__JniBaseClass MeasureUnit::getAvailableTypes()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.MeasureUnit",

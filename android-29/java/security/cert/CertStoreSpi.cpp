@@ -16,7 +16,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	QAndroidJniObject CertStoreSpi::engineGetCRLs(__JniBaseClass arg0)
+	__JniBaseClass CertStoreSpi::engineGetCRLs(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"engineGetCRLs",
@@ -24,7 +24,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CertStoreSpi::engineGetCertificates(__JniBaseClass arg0)
+	__JniBaseClass CertStoreSpi::engineGetCertificates(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"engineGetCertificates",

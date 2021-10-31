@@ -22,7 +22,7 @@ namespace android::content
 		
 		// Methods
 		jstring getContentDescription();
-		QAndroidJniObject getIcon();
+		android::graphics::drawable::Icon getIcon();
 		jstring getLabel();
 	};
 } // namespace android::content

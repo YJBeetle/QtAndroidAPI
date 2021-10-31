@@ -30,7 +30,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject UserDictionary_Words::CONTENT_URI()
+	android::net::Uri UserDictionary_Words::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.UserDictionary$Words",

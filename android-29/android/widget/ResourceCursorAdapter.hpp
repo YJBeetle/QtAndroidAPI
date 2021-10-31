@@ -38,8 +38,8 @@ namespace android::widget
 		ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
-		QAndroidJniObject newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
+		android::view::View newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
+		android::view::View newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
 		void setDropDownViewResource(jint arg0);
 		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
 		void setViewResource(jint arg0);

@@ -13,7 +13,7 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CrossProfileApps::getProfileSwitchingIconDrawable(android::os::UserHandle arg0)
+	android::graphics::drawable::Drawable CrossProfileApps::getProfileSwitchingIconDrawable(android::os::UserHandle arg0)
 	{
 		return callObjectMethod(
 			"getProfileSwitchingIconDrawable",
@@ -29,7 +29,7 @@ namespace android::content::pm
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject CrossProfileApps::getTargetUserProfiles()
+	__JniBaseClass CrossProfileApps::getTargetUserProfiles()
 	{
 		return callObjectMethod(
 			"getTargetUserProfiles",

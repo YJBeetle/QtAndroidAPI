@@ -3,7 +3,7 @@
 namespace java::net
 {
 	// Fields
-	QAndroidJniObject Authenticator_RequestorType::PROXY()
+	java::net::Authenticator_RequestorType Authenticator_RequestorType::PROXY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Authenticator$RequestorType",
@@ -11,7 +11,7 @@ namespace java::net
 			"Ljava/net/Authenticator$RequestorType;"
 		);
 	}
-	QAndroidJniObject Authenticator_RequestorType::SERVER()
+	java::net::Authenticator_RequestorType Authenticator_RequestorType::SERVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Authenticator$RequestorType",
@@ -26,7 +26,7 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Authenticator_RequestorType::valueOf(jstring arg0)
+	java::net::Authenticator_RequestorType Authenticator_RequestorType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Authenticator$RequestorType",

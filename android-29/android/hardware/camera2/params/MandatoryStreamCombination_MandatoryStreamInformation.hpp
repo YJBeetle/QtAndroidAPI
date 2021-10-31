@@ -18,7 +18,7 @@ namespace android::hardware::camera2::params
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAvailableSizes();
+		__JniBaseClass getAvailableSizes();
 		jint getFormat();
 		jint hashCode();
 		jboolean isInput();

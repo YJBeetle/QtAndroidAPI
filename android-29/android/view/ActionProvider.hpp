@@ -28,8 +28,8 @@ namespace android::view
 		// Methods
 		jboolean hasSubMenu();
 		jboolean isVisible();
-		QAndroidJniObject onCreateActionView();
-		QAndroidJniObject onCreateActionView(__JniBaseClass arg0);
+		android::view::View onCreateActionView();
+		android::view::View onCreateActionView(__JniBaseClass arg0);
 		jboolean onPerformDefaultAction();
 		void onPrepareSubMenu(__JniBaseClass arg0);
 		jboolean overridesItemVisibility();

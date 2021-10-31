@@ -33,9 +33,9 @@ namespace java::net
 		InetSocketAddress(java::net::InetAddress arg0, jint arg1);
 		
 		// Methods
-		static QAndroidJniObject createUnresolved(jstring arg0, jint arg1);
+		static java::net::InetSocketAddress createUnresolved(jstring arg0, jint arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAddress();
+		java::net::InetAddress getAddress();
 		jstring getHostName();
 		jstring getHostString();
 		jint getPort();

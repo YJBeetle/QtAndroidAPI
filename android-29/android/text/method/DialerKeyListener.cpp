@@ -24,7 +24,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	QAndroidJniObject DialerKeyListener::getInstance()
+	android::text::method::DialerKeyListener DialerKeyListener::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.DialerKeyListener",

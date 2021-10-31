@@ -26,9 +26,9 @@ namespace android::media
 		
 		// Methods
 		void close();
-		QAndroidJniObject getCropRect();
+		android::graphics::Rect getCropRect();
 		jint getFormat();
-		QAndroidJniObject getHardwareBuffer();
+		android::hardware::HardwareBuffer getHardwareBuffer();
 		jint getHeight();
 		jarray getPlanes();
 		jlong getTimestamp();

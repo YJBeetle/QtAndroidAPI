@@ -66,7 +66,7 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	QAndroidJniObject SQLWarning::getNextWarning()
+	java::sql::SQLWarning SQLWarning::getNextWarning()
 	{
 		return callObjectMethod(
 			"getNextWarning",

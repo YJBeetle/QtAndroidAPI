@@ -37,7 +37,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaSync::createInputSurface()
+	android::view::Surface MediaSync::createInputSurface()
 	{
 		return callObjectMethod(
 			"createInputSurface",
@@ -51,21 +51,21 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaSync::getPlaybackParams()
+	android::media::PlaybackParams MediaSync::getPlaybackParams()
 	{
 		return callObjectMethod(
 			"getPlaybackParams",
 			"()Landroid/media/PlaybackParams;"
 		);
 	}
-	QAndroidJniObject MediaSync::getSyncParams()
+	android::media::SyncParams MediaSync::getSyncParams()
 	{
 		return callObjectMethod(
 			"getSyncParams",
 			"()Landroid/media/SyncParams;"
 		);
 	}
-	QAndroidJniObject MediaSync::getTimestamp()
+	android::media::MediaTimestamp MediaSync::getTimestamp()
 	{
 		return callObjectMethod(
 			"getTimestamp",

@@ -17,22 +17,22 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject emptyDoubleSpliterator();
-		static QAndroidJniObject emptyIntSpliterator();
-		static QAndroidJniObject emptyLongSpliterator();
-		static QAndroidJniObject emptySpliterator();
-		static QAndroidJniObject iterator(__JniBaseClass arg0);
-		static QAndroidJniObject spliterator(jobjectArray arg0, jint arg1);
-		static QAndroidJniObject spliterator(__JniBaseClass arg0, jint arg1);
-		static QAndroidJniObject spliterator(__JniBaseClass arg0, jlong arg1, jint arg2);
-		static QAndroidJniObject spliterator(jobjectArray arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject spliterator(jdoubleArray arg0, jint arg1);
-		static QAndroidJniObject spliterator(jdoubleArray arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject spliterator(jintArray arg0, jint arg1);
-		static QAndroidJniObject spliterator(jintArray arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject spliterator(jlongArray arg0, jint arg1);
-		static QAndroidJniObject spliterator(jlongArray arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject spliteratorUnknownSize(__JniBaseClass arg0, jint arg1);
+		static __JniBaseClass emptyDoubleSpliterator();
+		static __JniBaseClass emptyIntSpliterator();
+		static __JniBaseClass emptyLongSpliterator();
+		static __JniBaseClass emptySpliterator();
+		static __JniBaseClass iterator(__JniBaseClass arg0);
+		static __JniBaseClass spliterator(jobjectArray arg0, jint arg1);
+		static __JniBaseClass spliterator(__JniBaseClass arg0, jint arg1);
+		static __JniBaseClass spliterator(__JniBaseClass arg0, jlong arg1, jint arg2);
+		static __JniBaseClass spliterator(jobjectArray arg0, jint arg1, jint arg2, jint arg3);
+		static __JniBaseClass spliterator(jdoubleArray arg0, jint arg1);
+		static __JniBaseClass spliterator(jdoubleArray arg0, jint arg1, jint arg2, jint arg3);
+		static __JniBaseClass spliterator(jintArray arg0, jint arg1);
+		static __JniBaseClass spliterator(jintArray arg0, jint arg1, jint arg2, jint arg3);
+		static __JniBaseClass spliterator(jlongArray arg0, jint arg1);
+		static __JniBaseClass spliterator(jlongArray arg0, jint arg1, jint arg2, jint arg3);
+		static __JniBaseClass spliteratorUnknownSize(__JniBaseClass arg0, jint arg1);
 	};
 } // namespace java::util
 

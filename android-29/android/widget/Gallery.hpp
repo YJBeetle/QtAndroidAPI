@@ -55,7 +55,7 @@ namespace android::widget
 		// Methods
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
 		void dispatchSetSelected(jboolean arg0);
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::view::ViewGroup_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getAccessibilityClassName();
 		jboolean onDown(android::view::MotionEvent arg0);
 		jboolean onFling(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);

@@ -29,28 +29,28 @@ namespace org::xmlpull::v1::sax2
 			"()I"
 		);
 	}
-	QAndroidJniObject Driver::getContentHandler()
+	__JniBaseClass Driver::getContentHandler()
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	QAndroidJniObject Driver::getDTDHandler()
+	__JniBaseClass Driver::getDTDHandler()
 	{
 		return callObjectMethod(
 			"getDTDHandler",
 			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
-	QAndroidJniObject Driver::getEntityResolver()
+	__JniBaseClass Driver::getEntityResolver()
 	{
 		return callObjectMethod(
 			"getEntityResolver",
 			"()Lorg/xml/sax/EntityResolver;"
 		);
 	}
-	QAndroidJniObject Driver::getErrorHandler()
+	__JniBaseClass Driver::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",

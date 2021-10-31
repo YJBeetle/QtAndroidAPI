@@ -61,7 +61,7 @@ namespace android::os
 		static jlong getNativeHeapSize();
 		static jlong getPss();
 		static jstring getRuntimeStat(jstring arg0);
-		static QAndroidJniObject getRuntimeStats();
+		static __JniBaseClass getRuntimeStats();
 		static jint getThreadAllocCount();
 		static jint getThreadAllocSize();
 		static jint getThreadExternalAllocCount();

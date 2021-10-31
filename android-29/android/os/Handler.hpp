@@ -29,21 +29,21 @@ namespace android::os
 		Handler(android::os::Looper arg0, __JniBaseClass arg1);
 		
 		// Methods
-		static QAndroidJniObject createAsync(android::os::Looper arg0);
-		static QAndroidJniObject createAsync(android::os::Looper arg0, __JniBaseClass arg1);
+		static android::os::Handler createAsync(android::os::Looper arg0);
+		static android::os::Handler createAsync(android::os::Looper arg0, __JniBaseClass arg1);
 		void dispatchMessage(android::os::Message arg0);
 		void dump(__JniBaseClass arg0, jstring arg1);
-		QAndroidJniObject getLooper();
+		android::os::Looper getLooper();
 		jstring getMessageName(android::os::Message arg0);
 		void handleMessage(android::os::Message arg0);
 		jboolean hasCallbacks(__JniBaseClass arg0);
 		jboolean hasMessages(jint arg0);
 		jboolean hasMessages(jint arg0, jobject arg1);
-		QAndroidJniObject obtainMessage();
-		QAndroidJniObject obtainMessage(jint arg0);
-		QAndroidJniObject obtainMessage(jint arg0, jobject arg1);
-		QAndroidJniObject obtainMessage(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject obtainMessage(jint arg0, jint arg1, jint arg2, jobject arg3);
+		android::os::Message obtainMessage();
+		android::os::Message obtainMessage(jint arg0);
+		android::os::Message obtainMessage(jint arg0, jobject arg1);
+		android::os::Message obtainMessage(jint arg0, jint arg1, jint arg2);
+		android::os::Message obtainMessage(jint arg0, jint arg1, jint arg2, jobject arg3);
 		jboolean post(__JniBaseClass arg0);
 		jboolean postAtFrontOfQueue(__JniBaseClass arg0);
 		jboolean postAtTime(__JniBaseClass arg0, jlong arg1);

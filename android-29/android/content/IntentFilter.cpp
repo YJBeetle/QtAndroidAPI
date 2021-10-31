@@ -9,7 +9,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject IntentFilter::CREATOR()
+	__JniBaseClass IntentFilter::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.IntentFilter",
@@ -160,7 +160,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	QAndroidJniObject IntentFilter::create(jstring arg0, jstring arg1)
+	android::content::IntentFilter IntentFilter::create(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.IntentFilter",
@@ -170,7 +170,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject IntentFilter::actionsIterator()
+	__JniBaseClass IntentFilter::actionsIterator()
 	{
 		return callObjectMethod(
 			"actionsIterator",
@@ -236,14 +236,14 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject IntentFilter::authoritiesIterator()
+	__JniBaseClass IntentFilter::authoritiesIterator()
 	{
 		return callObjectMethod(
 			"authoritiesIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject IntentFilter::categoriesIterator()
+	__JniBaseClass IntentFilter::categoriesIterator()
 	{
 		return callObjectMethod(
 			"categoriesIterator",
@@ -331,7 +331,7 @@ namespace android::content
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject IntentFilter::getDataAuthority(jint arg0)
+	android::content::IntentFilter_AuthorityEntry IntentFilter::getDataAuthority(jint arg0)
 	{
 		return callObjectMethod(
 			"getDataAuthority",
@@ -339,7 +339,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject IntentFilter::getDataPath(jint arg0)
+	android::os::PatternMatcher IntentFilter::getDataPath(jint arg0)
 	{
 		return callObjectMethod(
 			"getDataPath",
@@ -355,7 +355,7 @@ namespace android::content
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject IntentFilter::getDataSchemeSpecificPart(jint arg0)
+	android::os::PatternMatcher IntentFilter::getDataSchemeSpecificPart(jint arg0)
 	{
 		return callObjectMethod(
 			"getDataSchemeSpecificPart",
@@ -492,7 +492,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IntentFilter::pathsIterator()
+	__JniBaseClass IntentFilter::pathsIterator()
 	{
 		return callObjectMethod(
 			"pathsIterator",
@@ -507,14 +507,14 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IntentFilter::schemeSpecificPartsIterator()
+	__JniBaseClass IntentFilter::schemeSpecificPartsIterator()
 	{
 		return callObjectMethod(
 			"schemeSpecificPartsIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject IntentFilter::schemesIterator()
+	__JniBaseClass IntentFilter::schemesIterator()
 	{
 		return callObjectMethod(
 			"schemesIterator",
@@ -529,7 +529,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject IntentFilter::typesIterator()
+	__JniBaseClass IntentFilter::typesIterator()
 	{
 		return callObjectMethod(
 			"typesIterator",

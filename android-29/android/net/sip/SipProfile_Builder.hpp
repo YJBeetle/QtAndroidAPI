@@ -24,16 +24,16 @@ namespace android::net::sip
 		SipProfile_Builder(jstring arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setAuthUserName(jstring arg0);
-		QAndroidJniObject setAutoRegistration(jboolean arg0);
-		QAndroidJniObject setDisplayName(jstring arg0);
-		QAndroidJniObject setOutboundProxy(jstring arg0);
-		QAndroidJniObject setPassword(jstring arg0);
-		QAndroidJniObject setPort(jint arg0);
-		QAndroidJniObject setProfileName(jstring arg0);
-		QAndroidJniObject setProtocol(jstring arg0);
-		QAndroidJniObject setSendKeepAlive(jboolean arg0);
+		android::net::sip::SipProfile build();
+		android::net::sip::SipProfile_Builder setAuthUserName(jstring arg0);
+		android::net::sip::SipProfile_Builder setAutoRegistration(jboolean arg0);
+		android::net::sip::SipProfile_Builder setDisplayName(jstring arg0);
+		android::net::sip::SipProfile_Builder setOutboundProxy(jstring arg0);
+		android::net::sip::SipProfile_Builder setPassword(jstring arg0);
+		android::net::sip::SipProfile_Builder setPort(jint arg0);
+		android::net::sip::SipProfile_Builder setProfileName(jstring arg0);
+		android::net::sip::SipProfile_Builder setProtocol(jstring arg0);
+		android::net::sip::SipProfile_Builder setSendKeepAlive(jboolean arg0);
 	};
 } // namespace android::net::sip
 

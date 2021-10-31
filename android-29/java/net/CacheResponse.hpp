@@ -22,8 +22,8 @@ namespace java::net
 		CacheResponse();
 		
 		// Methods
-		QAndroidJniObject getBody();
-		QAndroidJniObject getHeaders();
+		java::io::InputStream getBody();
+		__JniBaseClass getHeaders();
 	};
 } // namespace java::net
 

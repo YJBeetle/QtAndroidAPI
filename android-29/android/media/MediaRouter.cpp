@@ -84,7 +84,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaRouter::createRouteCategory(jint arg0, jboolean arg1)
+	android::media::MediaRouter_RouteCategory MediaRouter::createRouteCategory(jint arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"createRouteCategory",
@@ -93,7 +93,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaRouter::createRouteCategory(jstring arg0, jboolean arg1)
+	android::media::MediaRouter_RouteCategory MediaRouter::createRouteCategory(jstring arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"createRouteCategory",
@@ -102,7 +102,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaRouter::createUserRoute(android::media::MediaRouter_RouteCategory arg0)
+	android::media::MediaRouter_UserRouteInfo MediaRouter::createUserRoute(android::media::MediaRouter_RouteCategory arg0)
 	{
 		return callObjectMethod(
 			"createUserRoute",
@@ -110,7 +110,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaRouter::getCategoryAt(jint arg0)
+	android::media::MediaRouter_RouteCategory MediaRouter::getCategoryAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getCategoryAt",
@@ -125,14 +125,14 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaRouter::getDefaultRoute()
+	android::media::MediaRouter_RouteInfo MediaRouter::getDefaultRoute()
 	{
 		return callObjectMethod(
 			"getDefaultRoute",
 			"()Landroid/media/MediaRouter$RouteInfo;"
 		);
 	}
-	QAndroidJniObject MediaRouter::getRouteAt(jint arg0)
+	android::media::MediaRouter_RouteInfo MediaRouter::getRouteAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getRouteAt",
@@ -147,7 +147,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaRouter::getSelectedRoute(jint arg0)
+	android::media::MediaRouter_RouteInfo MediaRouter::getSelectedRoute(jint arg0)
 	{
 		return callObjectMethod(
 			"getSelectedRoute",

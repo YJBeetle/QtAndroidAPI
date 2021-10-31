@@ -25,8 +25,8 @@ namespace java::nio::charset::spi
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject charsetForName(jstring arg0);
-		QAndroidJniObject charsets();
+		java::nio::charset::Charset charsetForName(jstring arg0);
+		__JniBaseClass charsets();
 	};
 } // namespace java::nio::charset::spi
 

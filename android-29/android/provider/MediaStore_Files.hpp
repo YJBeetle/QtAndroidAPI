@@ -22,8 +22,8 @@ namespace android::provider
 		MediaStore_Files();
 		
 		// Methods
-		static QAndroidJniObject getContentUri(jstring arg0);
-		static QAndroidJniObject getContentUri(jstring arg0, jlong arg1);
+		static android::net::Uri getContentUri(jstring arg0);
+		static android::net::Uri getContentUri(jstring arg0, jlong arg1);
 	};
 } // namespace android::provider
 

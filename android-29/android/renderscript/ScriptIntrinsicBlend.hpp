@@ -40,7 +40,7 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
+		static android::renderscript::ScriptIntrinsicBlend create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
 		void forEachAdd(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1);
 		void forEachAdd(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2);
 		void forEachClear(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1);
@@ -71,21 +71,21 @@ namespace android::renderscript
 		void forEachSubtract(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2);
 		void forEachXor(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1);
 		void forEachXor(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2);
-		QAndroidJniObject getKernelIDAdd();
-		QAndroidJniObject getKernelIDClear();
-		QAndroidJniObject getKernelIDDst();
-		QAndroidJniObject getKernelIDDstAtop();
-		QAndroidJniObject getKernelIDDstIn();
-		QAndroidJniObject getKernelIDDstOut();
-		QAndroidJniObject getKernelIDDstOver();
-		QAndroidJniObject getKernelIDMultiply();
-		QAndroidJniObject getKernelIDSrc();
-		QAndroidJniObject getKernelIDSrcAtop();
-		QAndroidJniObject getKernelIDSrcIn();
-		QAndroidJniObject getKernelIDSrcOut();
-		QAndroidJniObject getKernelIDSrcOver();
-		QAndroidJniObject getKernelIDSubtract();
-		QAndroidJniObject getKernelIDXor();
+		android::renderscript::Script_KernelID getKernelIDAdd();
+		android::renderscript::Script_KernelID getKernelIDClear();
+		android::renderscript::Script_KernelID getKernelIDDst();
+		android::renderscript::Script_KernelID getKernelIDDstAtop();
+		android::renderscript::Script_KernelID getKernelIDDstIn();
+		android::renderscript::Script_KernelID getKernelIDDstOut();
+		android::renderscript::Script_KernelID getKernelIDDstOver();
+		android::renderscript::Script_KernelID getKernelIDMultiply();
+		android::renderscript::Script_KernelID getKernelIDSrc();
+		android::renderscript::Script_KernelID getKernelIDSrcAtop();
+		android::renderscript::Script_KernelID getKernelIDSrcIn();
+		android::renderscript::Script_KernelID getKernelIDSrcOut();
+		android::renderscript::Script_KernelID getKernelIDSrcOver();
+		android::renderscript::Script_KernelID getKernelIDSubtract();
+		android::renderscript::Script_KernelID getKernelIDXor();
 	};
 } // namespace android::renderscript
 

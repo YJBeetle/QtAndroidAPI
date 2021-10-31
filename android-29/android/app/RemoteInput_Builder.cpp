@@ -18,7 +18,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject RemoteInput_Builder::addExtras(android::os::Bundle arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::addExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"addExtras",
@@ -26,21 +26,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RemoteInput_Builder::build()
+	android::app::RemoteInput RemoteInput_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/RemoteInput;"
 		);
 	}
-	QAndroidJniObject RemoteInput_Builder::getExtras()
+	android::os::Bundle RemoteInput_Builder::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject RemoteInput_Builder::setAllowDataType(jstring arg0, jboolean arg1)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setAllowDataType(jstring arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"setAllowDataType",
@@ -49,7 +49,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject RemoteInput_Builder::setAllowFreeFormInput(jboolean arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setAllowFreeFormInput(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setAllowFreeFormInput",
@@ -57,7 +57,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject RemoteInput_Builder::setChoices(jarray arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setChoices(jarray arg0)
 	{
 		return callObjectMethod(
 			"setChoices",
@@ -65,7 +65,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject RemoteInput_Builder::setEditChoicesBeforeSending(jint arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setEditChoicesBeforeSending(jint arg0)
 	{
 		return callObjectMethod(
 			"setEditChoicesBeforeSending",
@@ -73,7 +73,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject RemoteInput_Builder::setLabel(jstring arg0)
+	android::app::RemoteInput_Builder RemoteInput_Builder::setLabel(jstring arg0)
 	{
 		return callObjectMethod(
 			"setLabel",

@@ -34,7 +34,7 @@ namespace android::icu::text
 		void applyPattern(jstring arg0);
 		jboolean equals(jobject arg0);
 		jstring format(jstring arg0);
-		QAndroidJniObject format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		jint hashCode();
 		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
 		jstring toPattern();

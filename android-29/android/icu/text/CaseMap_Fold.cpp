@@ -12,7 +12,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CaseMap_Fold::apply(jstring arg0, __JniBaseClass arg1, android::icu::text::Edits arg2)
+	__JniBaseClass CaseMap_Fold::apply(jstring arg0, __JniBaseClass arg1, android::icu::text::Edits arg2)
 	{
 		return callObjectMethod(
 			"apply",
@@ -30,14 +30,14 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject CaseMap_Fold::omitUnchangedText()
+	android::icu::text::CaseMap_Fold CaseMap_Fold::omitUnchangedText()
 	{
 		return callObjectMethod(
 			"omitUnchangedText",
 			"()Landroid/icu/text/CaseMap$Fold;"
 		);
 	}
-	QAndroidJniObject CaseMap_Fold::turkic()
+	android::icu::text::CaseMap_Fold CaseMap_Fold::turkic()
 	{
 		return callObjectMethod(
 			"turkic",

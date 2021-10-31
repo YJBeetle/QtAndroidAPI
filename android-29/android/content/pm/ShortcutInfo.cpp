@@ -10,7 +10,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject ShortcutInfo::CREATOR()
+	__JniBaseClass ShortcutInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ShortcutInfo",
@@ -96,14 +96,14 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject ShortcutInfo::getActivity()
+	android::content::ComponentName ShortcutInfo::getActivity()
 	{
 		return callObjectMethod(
 			"getActivity",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject ShortcutInfo::getCategories()
+	__JniBaseClass ShortcutInfo::getCategories()
 	{
 		return callObjectMethod(
 			"getCategories",
@@ -124,7 +124,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject ShortcutInfo::getExtras()
+	android::os::PersistableBundle ShortcutInfo::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -138,7 +138,7 @@ namespace android::content::pm
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ShortcutInfo::getIntent()
+	android::content::Intent ShortcutInfo::getIntent()
 	{
 		return callObjectMethod(
 			"getIntent",
@@ -159,7 +159,7 @@ namespace android::content::pm
 			"()J"
 		);
 	}
-	QAndroidJniObject ShortcutInfo::getLocusId()
+	android::content::LocusId ShortcutInfo::getLocusId()
 	{
 		return callObjectMethod(
 			"getLocusId",
@@ -194,7 +194,7 @@ namespace android::content::pm
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ShortcutInfo::getUserHandle()
+	android::os::UserHandle ShortcutInfo::getUserHandle()
 	{
 		return callObjectMethod(
 			"getUserHandle",

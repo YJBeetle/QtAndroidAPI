@@ -45,26 +45,26 @@ namespace java::nio::charset
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject availableCharsets();
-		static QAndroidJniObject defaultCharset();
-		static QAndroidJniObject forName(jstring arg0);
+		static __JniBaseClass availableCharsets();
+		static java::nio::charset::Charset defaultCharset();
+		static java::nio::charset::Charset forName(jstring arg0);
 		static jboolean isSupported(jstring arg0);
-		QAndroidJniObject aliases();
+		__JniBaseClass aliases();
 		jboolean canEncode();
 		jint compareTo(jobject arg0);
 		jint compareTo(java::nio::charset::Charset arg0);
 		jboolean contains(java::nio::charset::Charset arg0);
-		QAndroidJniObject decode(java::nio::ByteBuffer arg0);
+		java::nio::CharBuffer decode(java::nio::ByteBuffer arg0);
 		jstring displayName();
 		jstring displayName(java::util::Locale arg0);
-		QAndroidJniObject encode(jstring arg0);
-		QAndroidJniObject encode(java::nio::CharBuffer arg0);
+		java::nio::ByteBuffer encode(jstring arg0);
+		java::nio::ByteBuffer encode(java::nio::CharBuffer arg0);
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jboolean isRegistered();
 		jstring name();
-		QAndroidJniObject newDecoder();
-		QAndroidJniObject newEncoder();
+		java::nio::charset::CharsetDecoder newDecoder();
+		java::nio::charset::CharsetEncoder newEncoder();
 		jstring toString();
 	};
 } // namespace java::nio::charset

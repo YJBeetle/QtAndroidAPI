@@ -117,7 +117,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject DecimalFormat::format(android::icu::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(android::icu::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -127,7 +127,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::format(android::icu::util::CurrencyAmount arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(android::icu::util::CurrencyAmount arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -137,7 +137,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -147,7 +147,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::format(java::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(java::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -157,7 +157,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::format(java::math::BigInteger arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(java::math::BigInteger arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -167,7 +167,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -177,7 +177,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::formatToCharacterIterator(jobject arg0)
+	__JniBaseClass DecimalFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -185,28 +185,28 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject DecimalFormat::getCurrency()
+	android::icu::util::Currency DecimalFormat::getCurrency()
 	{
 		return callObjectMethod(
 			"getCurrency",
 			"()Landroid/icu/util/Currency;"
 		);
 	}
-	QAndroidJniObject DecimalFormat::getCurrencyPluralInfo()
+	android::icu::text::CurrencyPluralInfo DecimalFormat::getCurrencyPluralInfo()
 	{
 		return callObjectMethod(
 			"getCurrencyPluralInfo",
 			"()Landroid/icu/text/CurrencyPluralInfo;"
 		);
 	}
-	QAndroidJniObject DecimalFormat::getCurrencyUsage()
+	android::icu::util::Currency_CurrencyUsage DecimalFormat::getCurrencyUsage()
 	{
 		return callObjectMethod(
 			"getCurrencyUsage",
 			"()Landroid/icu/util/Currency$CurrencyUsage;"
 		);
 	}
-	QAndroidJniObject DecimalFormat::getDecimalFormatSymbols()
+	android::icu::text::DecimalFormatSymbols DecimalFormat::getDecimalFormatSymbols()
 	{
 		return callObjectMethod(
 			"getDecimalFormatSymbols",
@@ -227,14 +227,14 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject DecimalFormat::getMathContext()
+	java::math::MathContext DecimalFormat::getMathContext()
 	{
 		return callObjectMethod(
 			"getMathContext",
 			"()Ljava/math/MathContext;"
 		);
 	}
-	QAndroidJniObject DecimalFormat::getMathContextICU()
+	android::icu::math::MathContext DecimalFormat::getMathContextICU()
 	{
 		return callObjectMethod(
 			"getMathContextICU",
@@ -346,7 +346,7 @@ namespace android::icu::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject DecimalFormat::getRoundingIncrement()
+	java::math::BigDecimal DecimalFormat::getRoundingIncrement()
 	{
 		return callObjectMethod(
 			"getRoundingIncrement",
@@ -430,7 +430,7 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	QAndroidJniObject DecimalFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number DecimalFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
@@ -439,7 +439,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::parseCurrency(jstring arg0, java::text::ParsePosition arg1)
+	android::icu::util::CurrencyAmount DecimalFormat::parseCurrency(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseCurrency",

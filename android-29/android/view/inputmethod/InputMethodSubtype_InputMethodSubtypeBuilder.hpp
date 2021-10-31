@@ -22,17 +22,17 @@ namespace android::view::inputmethod
 		InputMethodSubtype_InputMethodSubtypeBuilder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setIsAsciiCapable(jboolean arg0);
-		QAndroidJniObject setIsAuxiliary(jboolean arg0);
-		QAndroidJniObject setLanguageTag(jstring arg0);
-		QAndroidJniObject setOverridesImplicitlyEnabledSubtype(jboolean arg0);
-		QAndroidJniObject setSubtypeExtraValue(jstring arg0);
-		QAndroidJniObject setSubtypeIconResId(jint arg0);
-		QAndroidJniObject setSubtypeId(jint arg0);
-		QAndroidJniObject setSubtypeLocale(jstring arg0);
-		QAndroidJniObject setSubtypeMode(jstring arg0);
-		QAndroidJniObject setSubtypeNameResId(jint arg0);
+		android::view::inputmethod::InputMethodSubtype build();
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setIsAsciiCapable(jboolean arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setIsAuxiliary(jboolean arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setLanguageTag(jstring arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setOverridesImplicitlyEnabledSubtype(jboolean arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeExtraValue(jstring arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeIconResId(jint arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeId(jint arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeLocale(jstring arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeMode(jstring arg0);
+		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeNameResId(jint arg0);
 	};
 } // namespace android::view::inputmethod
 

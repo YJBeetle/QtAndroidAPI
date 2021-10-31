@@ -24,14 +24,14 @@ namespace java::lang::invoke
 		) {}
 	
 	// Methods
-	QAndroidJniObject VolatileCallSite::dynamicInvoker()
+	java::lang::invoke::MethodHandle VolatileCallSite::dynamicInvoker()
 	{
 		return callObjectMethod(
 			"dynamicInvoker",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	QAndroidJniObject VolatileCallSite::getTarget()
+	java::lang::invoke::MethodHandle VolatileCallSite::getTarget()
 	{
 		return callObjectMethod(
 			"getTarget",

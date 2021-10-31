@@ -39,9 +39,9 @@ namespace android::service::wallpaper
 		WallpaperService();
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onCreate();
-		QAndroidJniObject onCreateEngine();
+		android::service::wallpaper::WallpaperService_Engine onCreateEngine();
 		void onDestroy();
 	};
 } // namespace android::service::wallpaper

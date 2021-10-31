@@ -5,7 +5,7 @@
 namespace android::media::session
 {
 	// Fields
-	QAndroidJniObject PlaybackState_CustomAction::CREATOR()
+	__JniBaseClass PlaybackState_CustomAction::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.session.PlaybackState$CustomAction",
@@ -34,7 +34,7 @@ namespace android::media::session
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PlaybackState_CustomAction::getExtras()
+	android::os::Bundle PlaybackState_CustomAction::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

@@ -28,8 +28,8 @@ namespace java::text
 		
 		// Methods
 		static jarray getAvailableLocales();
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static java::text::DateFormatSymbols getInstance();
+		static java::text::DateFormatSymbols getInstance(java::util::Locale arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
 		jarray getAmPmStrings();

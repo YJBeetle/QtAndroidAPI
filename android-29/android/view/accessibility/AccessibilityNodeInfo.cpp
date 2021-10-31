@@ -255,7 +255,7 @@ namespace android::view::accessibility
 			"ACTION_SET_TEXT"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::CREATOR()
+	__JniBaseClass AccessibilityNodeInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
@@ -343,7 +343,7 @@ namespace android::view::accessibility
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AccessibilityNodeInfo::obtain()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::obtain()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo",
@@ -351,7 +351,7 @@ namespace android::view::accessibility
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::obtain(android::view::View arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::obtain(android::view::View arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo",
@@ -360,7 +360,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::obtain(android::view::accessibility::AccessibilityNodeInfo arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::obtain(android::view::accessibility::AccessibilityNodeInfo arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo",
@@ -369,7 +369,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::obtain(android::view::View arg0, jint arg1)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::obtain(android::view::View arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo",
@@ -434,7 +434,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::findAccessibilityNodeInfosByText(jstring arg0)
+	__JniBaseClass AccessibilityNodeInfo::findAccessibilityNodeInfosByText(jstring arg0)
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByText",
@@ -442,7 +442,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(jstring arg0)
+	__JniBaseClass AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(jstring arg0)
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByViewId",
@@ -450,7 +450,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::findFocus(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::findFocus(jint arg0)
 	{
 		return callObjectMethod(
 			"findFocus",
@@ -458,7 +458,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::focusSearch(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::focusSearch(jint arg0)
 	{
 		return callObjectMethod(
 			"focusSearch",
@@ -466,7 +466,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getActionList()
+	__JniBaseClass AccessibilityNodeInfo::getActionList()
 	{
 		return callObjectMethod(
 			"getActionList",
@@ -480,7 +480,7 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getAvailableExtraData()
+	__JniBaseClass AccessibilityNodeInfo::getAvailableExtraData()
 	{
 		return callObjectMethod(
 			"getAvailableExtraData",
@@ -503,7 +503,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getChild(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getChild(jint arg0)
 	{
 		return callObjectMethod(
 			"getChild",
@@ -525,14 +525,14 @@ namespace android::view::accessibility
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getCollectionInfo()
+	android::view::accessibility::AccessibilityNodeInfo_CollectionInfo AccessibilityNodeInfo::getCollectionInfo()
 	{
 		return callObjectMethod(
 			"getCollectionInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getCollectionItemInfo()
+	android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo AccessibilityNodeInfo::getCollectionItemInfo()
 	{
 		return callObjectMethod(
 			"getCollectionItemInfo",
@@ -560,7 +560,7 @@ namespace android::view::accessibility
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getExtras()
+	android::os::Bundle AccessibilityNodeInfo::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -581,14 +581,14 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getLabelFor()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getLabelFor()
 	{
 		return callObjectMethod(
 			"getLabelFor",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getLabeledBy()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getLabeledBy()
 	{
 		return callObjectMethod(
 			"getLabeledBy",
@@ -630,14 +630,14 @@ namespace android::view::accessibility
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getParent()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getRangeInfo()
+	android::view::accessibility::AccessibilityNodeInfo_RangeInfo AccessibilityNodeInfo::getRangeInfo()
 	{
 		return callObjectMethod(
 			"getRangeInfo",
@@ -672,21 +672,21 @@ namespace android::view::accessibility
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getTouchDelegateInfo()
+	android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo AccessibilityNodeInfo::getTouchDelegateInfo()
 	{
 		return callObjectMethod(
 			"getTouchDelegateInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$TouchDelegateInfo;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getTraversalAfter()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getTraversalAfter()
 	{
 		return callObjectMethod(
 			"getTraversalAfter",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getTraversalBefore()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getTraversalBefore()
 	{
 		return callObjectMethod(
 			"getTraversalBefore",
@@ -700,7 +700,7 @@ namespace android::view::accessibility
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getWindow()
+	android::view::accessibility::AccessibilityWindowInfo AccessibilityNodeInfo::getWindow()
 	{
 		return callObjectMethod(
 			"getWindow",

@@ -7,7 +7,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject LabeledIntent::CREATOR()
+	__JniBaseClass LabeledIntent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.LabeledIntent",
@@ -84,7 +84,7 @@ namespace android::content::pm
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject LabeledIntent::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable LabeledIntent::loadIcon(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadIcon",

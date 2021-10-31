@@ -15,7 +15,7 @@
 namespace java::time::chrono
 {
 	// Fields
-	QAndroidJniObject HijrahChronology::INSTANCE()
+	java::time::chrono::HijrahChronology HijrahChronology::INSTANCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.HijrahChronology",
@@ -30,7 +30,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject HijrahChronology::date(__JniBaseClass arg0)
+	java::time::chrono::HijrahDate HijrahChronology::date(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"date",
@@ -38,7 +38,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahChronology::date(jint arg0, jint arg1, jint arg2)
+	java::time::chrono::HijrahDate HijrahChronology::date(jint arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"date",
@@ -48,7 +48,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	QAndroidJniObject HijrahChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
+	java::time::chrono::HijrahDate HijrahChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"date",
@@ -59,7 +59,7 @@ namespace java::time::chrono
 			arg3
 		);
 	}
-	QAndroidJniObject HijrahChronology::dateEpochDay(jlong arg0)
+	java::time::chrono::HijrahDate HijrahChronology::dateEpochDay(jlong arg0)
 	{
 		return callObjectMethod(
 			"dateEpochDay",
@@ -67,14 +67,14 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject HijrahChronology::dateNow()
+	java::time::chrono::HijrahDate HijrahChronology::dateNow()
 	{
 		return callObjectMethod(
 			"dateNow",
 			"()Ljava/time/chrono/HijrahDate;"
 		);
 	}
-	QAndroidJniObject HijrahChronology::dateNow(java::time::Clock arg0)
+	java::time::chrono::HijrahDate HijrahChronology::dateNow(java::time::Clock arg0)
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -82,7 +82,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahChronology::dateNow(java::time::ZoneId arg0)
+	java::time::chrono::HijrahDate HijrahChronology::dateNow(java::time::ZoneId arg0)
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -90,7 +90,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahChronology::dateYearDay(jint arg0, jint arg1)
+	java::time::chrono::HijrahDate HijrahChronology::dateYearDay(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -99,7 +99,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	QAndroidJniObject HijrahChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
+	java::time::chrono::HijrahDate HijrahChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -109,7 +109,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	QAndroidJniObject HijrahChronology::eraOf(jint arg0)
+	java::time::chrono::HijrahEra HijrahChronology::eraOf(jint arg0)
 	{
 		return callObjectMethod(
 			"eraOf",
@@ -117,7 +117,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject HijrahChronology::eras()
+	__JniBaseClass HijrahChronology::eras()
 	{
 		return callObjectMethod(
 			"eras",
@@ -146,7 +146,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject HijrahChronology::localDateTime(__JniBaseClass arg0)
+	__JniBaseClass HijrahChronology::localDateTime(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"localDateTime",
@@ -163,7 +163,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	QAndroidJniObject HijrahChronology::range(java::time::temporal::ChronoField arg0)
+	java::time::temporal::ValueRange HijrahChronology::range(java::time::temporal::ChronoField arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -171,7 +171,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
+	java::time::chrono::HijrahDate HijrahChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
 	{
 		return callObjectMethod(
 			"resolveDate",
@@ -180,7 +180,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	QAndroidJniObject HijrahChronology::zonedDateTime(__JniBaseClass arg0)
+	__JniBaseClass HijrahChronology::zonedDateTime(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"zonedDateTime",
@@ -188,7 +188,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
+	__JniBaseClass HijrahChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
 		return callObjectMethod(
 			"zonedDateTime",

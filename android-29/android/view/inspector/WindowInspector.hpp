@@ -17,7 +17,7 @@ namespace android::view::inspector
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getGlobalWindowViews();
+		static __JniBaseClass getGlobalWindowViews();
 	};
 } // namespace android::view::inspector
 

@@ -48,7 +48,7 @@ namespace android::view
 			"ACTION_DROP"
 		);
 	}
-	QAndroidJniObject DragEvent::CREATOR()
+	__JniBaseClass DragEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.DragEvent",
@@ -77,14 +77,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject DragEvent::getClipData()
+	android::content::ClipData DragEvent::getClipData()
 	{
 		return callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
 		);
 	}
-	QAndroidJniObject DragEvent::getClipDescription()
+	android::content::ClipDescription DragEvent::getClipDescription()
 	{
 		return callObjectMethod(
 			"getClipDescription",

@@ -25,8 +25,8 @@ namespace android::hardware::display
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getDisplay();
-		QAndroidJniObject getSurface();
+		android::view::Display getDisplay();
+		android::view::Surface getSurface();
 		void release();
 		void resize(jint arg0, jint arg1, jint arg2);
 		void setSurface(android::view::Surface arg0);

@@ -5,7 +5,7 @@
 namespace android::speech::tts
 {
 	// Fields
-	QAndroidJniObject Voice::CREATOR()
+	__JniBaseClass Voice::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.tts.Voice",
@@ -116,7 +116,7 @@ namespace android::speech::tts
 			arg0
 		);
 	}
-	QAndroidJniObject Voice::getFeatures()
+	__JniBaseClass Voice::getFeatures()
 	{
 		return callObjectMethod(
 			"getFeatures",
@@ -130,7 +130,7 @@ namespace android::speech::tts
 			"()I"
 		);
 	}
-	QAndroidJniObject Voice::getLocale()
+	java::util::Locale Voice::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",

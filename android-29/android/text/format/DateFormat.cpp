@@ -60,7 +60,7 @@ namespace android::text::format
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::getDateFormat(android::content::Context arg0)
+	java::text::DateFormat DateFormat::getDateFormat(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateFormat",
@@ -78,7 +78,7 @@ namespace android::text::format
 			arg0.object()
 		).object<jcharArray>();
 	}
-	QAndroidJniObject DateFormat::getLongDateFormat(android::content::Context arg0)
+	java::text::DateFormat DateFormat::getLongDateFormat(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateFormat",
@@ -87,7 +87,7 @@ namespace android::text::format
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DateFormat::getMediumDateFormat(android::content::Context arg0)
+	java::text::DateFormat DateFormat::getMediumDateFormat(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateFormat",
@@ -96,7 +96,7 @@ namespace android::text::format
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DateFormat::getTimeFormat(android::content::Context arg0)
+	java::text::DateFormat DateFormat::getTimeFormat(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateFormat",

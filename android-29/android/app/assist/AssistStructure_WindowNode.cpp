@@ -32,7 +32,7 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	QAndroidJniObject AssistStructure_WindowNode::getRootViewNode()
+	android::app::assist::AssistStructure_ViewNode AssistStructure_WindowNode::getRootViewNode()
 	{
 		return callObjectMethod(
 			"getRootViewNode",

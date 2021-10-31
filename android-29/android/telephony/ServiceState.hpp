@@ -13,7 +13,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DUPLEX_MODE_FDD();
 		static jint DUPLEX_MODE_TDD();
 		static jint DUPLEX_MODE_UNKNOWN();

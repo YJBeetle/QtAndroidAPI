@@ -53,21 +53,21 @@ namespace android::widget
 		
 		// Methods
 		void clearListSelection();
-		QAndroidJniObject createDragToOpenListener(android::view::View arg0);
+		__JniBaseClass createDragToOpenListener(android::view::View arg0);
 		void dismiss();
-		QAndroidJniObject getAnchorView();
+		android::view::View getAnchorView();
 		jint getAnimationStyle();
-		QAndroidJniObject getBackground();
-		QAndroidJniObject getEpicenterBounds();
+		android::graphics::drawable::Drawable getBackground();
+		android::graphics::Rect getEpicenterBounds();
 		jint getHeight();
 		jint getHorizontalOffset();
 		jint getInputMethodMode();
-		QAndroidJniObject getListView();
+		android::widget::ListView getListView();
 		jint getPromptPosition();
 		jobject getSelectedItem();
 		jlong getSelectedItemId();
 		jint getSelectedItemPosition();
-		QAndroidJniObject getSelectedView();
+		android::view::View getSelectedView();
 		jint getSoftInputMode();
 		jint getVerticalOffset();
 		jint getWidth();

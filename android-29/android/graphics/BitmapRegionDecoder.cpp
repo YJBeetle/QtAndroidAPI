@@ -15,7 +15,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject BitmapRegionDecoder::newInstance(java::io::FileDescriptor arg0, jboolean arg1)
+	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(java::io::FileDescriptor arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
@@ -25,7 +25,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject BitmapRegionDecoder::newInstance(java::io::InputStream arg0, jboolean arg1)
+	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(java::io::InputStream arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
@@ -35,7 +35,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject BitmapRegionDecoder::newInstance(jstring arg0, jboolean arg1)
+	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(jstring arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
@@ -45,7 +45,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject BitmapRegionDecoder::newInstance(jbyteArray arg0, jint arg1, jint arg2, jboolean arg3)
+	android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(jbyteArray arg0, jint arg1, jint arg2, jboolean arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BitmapRegionDecoder",
@@ -57,7 +57,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	QAndroidJniObject BitmapRegionDecoder::decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1)
+	android::graphics::Bitmap BitmapRegionDecoder::decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1)
 	{
 		return callObjectMethod(
 			"decodeRegion",

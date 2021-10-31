@@ -12,7 +12,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_ProviderStatus::CONTENT_URI()
+	android::net::Uri ContactsContract_ProviderStatus::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$ProviderStatus",

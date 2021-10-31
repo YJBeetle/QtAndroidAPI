@@ -11,7 +11,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Image_Plane::getBuffer()
+	java::nio::ByteBuffer Image_Plane::getBuffer()
 	{
 		return callObjectMethod(
 			"getBuffer",

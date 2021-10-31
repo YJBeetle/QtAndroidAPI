@@ -10,8 +10,8 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject MIN_ELEMENTS();
-		static QAndroidJniObject WHOLE_SPAN();
+		static android::icu::text::UnicodeSetSpanner_CountMethod MIN_ELEMENTS();
+		static android::icu::text::UnicodeSetSpanner_CountMethod WHOLE_SPAN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnicodeSetSpanner_CountMethod(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,7 +20,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::UnicodeSetSpanner_CountMethod valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

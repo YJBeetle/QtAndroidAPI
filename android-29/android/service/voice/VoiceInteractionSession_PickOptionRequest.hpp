@@ -28,7 +28,7 @@ namespace android::service::voice
 		// Methods
 		jarray getOptions();
 		jstring getPrompt();
-		QAndroidJniObject getVoicePrompt();
+		android::app::VoiceInteractor_Prompt getVoicePrompt();
 		void sendIntermediatePickOptionResult(jarray arg0, android::os::Bundle arg1);
 		void sendPickOptionResult(jarray arg0, android::os::Bundle arg1);
 	};

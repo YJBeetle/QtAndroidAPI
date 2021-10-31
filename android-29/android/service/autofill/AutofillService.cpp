@@ -38,14 +38,14 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	QAndroidJniObject AutofillService::getFillEventHistory()
+	android::service::autofill::FillEventHistory AutofillService::getFillEventHistory()
 	{
 		return callObjectMethod(
 			"getFillEventHistory",
 			"()Landroid/service/autofill/FillEventHistory;"
 		);
 	}
-	QAndroidJniObject AutofillService::onBind(android::content::Intent arg0)
+	__JniBaseClass AutofillService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

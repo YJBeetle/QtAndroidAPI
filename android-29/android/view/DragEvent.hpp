@@ -27,7 +27,7 @@ namespace android::view
 		static jint ACTION_DRAG_LOCATION();
 		static jint ACTION_DRAG_STARTED();
 		static jint ACTION_DROP();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DragEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -38,8 +38,8 @@ namespace android::view
 		// Methods
 		jint describeContents();
 		jint getAction();
-		QAndroidJniObject getClipData();
-		QAndroidJniObject getClipDescription();
+		android::content::ClipData getClipData();
+		android::content::ClipDescription getClipDescription();
 		jobject getLocalState();
 		jboolean getResult();
 		jfloat getX();

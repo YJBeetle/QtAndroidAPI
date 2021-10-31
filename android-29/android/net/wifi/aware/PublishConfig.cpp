@@ -4,7 +4,7 @@
 namespace android::net::wifi::aware
 {
 	// Fields
-	QAndroidJniObject PublishConfig::CREATOR()
+	__JniBaseClass PublishConfig::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.aware.PublishConfig",

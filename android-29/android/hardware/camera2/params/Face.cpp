@@ -33,7 +33,7 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Face::getBounds()
+	android::graphics::Rect Face::getBounds()
 	{
 		return callObjectMethod(
 			"getBounds",
@@ -47,21 +47,21 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	QAndroidJniObject Face::getLeftEyePosition()
+	android::graphics::Point Face::getLeftEyePosition()
 	{
 		return callObjectMethod(
 			"getLeftEyePosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	QAndroidJniObject Face::getMouthPosition()
+	android::graphics::Point Face::getMouthPosition()
 	{
 		return callObjectMethod(
 			"getMouthPosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	QAndroidJniObject Face::getRightEyePosition()
+	android::graphics::Point Face::getRightEyePosition()
 	{
 		return callObjectMethod(
 			"getRightEyePosition",

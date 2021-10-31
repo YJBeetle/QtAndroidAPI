@@ -16,7 +16,7 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	QAndroidJniObject DeviceAdminService::onBind(android::content::Intent arg0)
+	__JniBaseClass DeviceAdminService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

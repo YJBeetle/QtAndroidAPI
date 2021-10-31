@@ -25,8 +25,8 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject acquiredBy();
-		QAndroidJniObject channel();
+		__JniBaseClass acquiredBy();
+		java::nio::channels::FileChannel channel();
 		void close();
 		jboolean isShared();
 		jboolean isValid();

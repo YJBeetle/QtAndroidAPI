@@ -56,7 +56,7 @@ namespace android::media
 			"BT_FOLDER_TYPE_YEARS"
 		);
 	}
-	QAndroidJniObject MediaDescription::CREATOR()
+	__JniBaseClass MediaDescription::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaDescription",
@@ -101,21 +101,21 @@ namespace android::media
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaDescription::getExtras()
+	android::os::Bundle MediaDescription::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject MediaDescription::getIconBitmap()
+	android::graphics::Bitmap MediaDescription::getIconBitmap()
 	{
 		return callObjectMethod(
 			"getIconBitmap",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	QAndroidJniObject MediaDescription::getIconUri()
+	android::net::Uri MediaDescription::getIconUri()
 	{
 		return callObjectMethod(
 			"getIconUri",
@@ -129,7 +129,7 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaDescription::getMediaUri()
+	android::net::Uri MediaDescription::getMediaUri()
 	{
 		return callObjectMethod(
 			"getMediaUri",

@@ -249,7 +249,7 @@ namespace android::graphics
 			arg5
 		);
 	}
-	QAndroidJniObject Path::getFillType()
+	android::graphics::Path_FillType Path::getFillType()
 	{
 		return callObjectMethod(
 			"getFillType",

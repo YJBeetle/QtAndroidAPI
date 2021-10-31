@@ -31,7 +31,7 @@ namespace android::text::method
 		ArrowKeyMovementMethod();
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static __JniBaseClass getInstance();
 		jboolean canSelectArbitrarily();
 		void initialize(android::widget::TextView arg0, __JniBaseClass arg1);
 		void onTakeFocus(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2);

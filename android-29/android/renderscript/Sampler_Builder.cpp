@@ -19,7 +19,7 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	QAndroidJniObject Sampler_Builder::create()
+	android::renderscript::Sampler Sampler_Builder::create()
 	{
 		return callObjectMethod(
 			"create",

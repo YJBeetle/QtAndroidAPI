@@ -25,8 +25,8 @@ namespace android::view::accessibility
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject obtain();
-		static QAndroidJniObject obtain(android::view::accessibility::AccessibilityRecord arg0);
+		static android::view::accessibility::AccessibilityRecord obtain();
+		static android::view::accessibility::AccessibilityRecord obtain(android::view::accessibility::AccessibilityRecord arg0);
 		jint getAddedCount();
 		jstring getBeforeText();
 		jstring getClassName();
@@ -36,14 +36,14 @@ namespace android::view::accessibility
 		jint getItemCount();
 		jint getMaxScrollX();
 		jint getMaxScrollY();
-		QAndroidJniObject getParcelableData();
+		__JniBaseClass getParcelableData();
 		jint getRemovedCount();
 		jint getScrollDeltaX();
 		jint getScrollDeltaY();
 		jint getScrollX();
 		jint getScrollY();
-		QAndroidJniObject getSource();
-		QAndroidJniObject getText();
+		android::view::accessibility::AccessibilityNodeInfo getSource();
+		__JniBaseClass getText();
 		jint getToIndex();
 		jint getWindowId();
 		jboolean isChecked();

@@ -37,12 +37,12 @@ namespace android::content::res
 		void dump(jint arg0, jstring arg1, jstring arg2);
 		jintArray getAttributeResolutionStack(jint arg0, jint arg1, jint arg2);
 		jint getChangingConfigurations();
-		QAndroidJniObject getDrawable(jint arg0);
+		android::graphics::drawable::Drawable getDrawable(jint arg0);
 		jint getExplicitStyle(__JniBaseClass arg0);
-		QAndroidJniObject getResources();
-		QAndroidJniObject obtainStyledAttributes(jintArray arg0);
-		QAndroidJniObject obtainStyledAttributes(jint arg0, jintArray arg1);
-		QAndroidJniObject obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3);
+		android::content::res::Resources getResources();
+		android::content::res::TypedArray obtainStyledAttributes(jintArray arg0);
+		android::content::res::TypedArray obtainStyledAttributes(jint arg0, jintArray arg1);
+		android::content::res::TypedArray obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3);
 		void rebase();
 		jboolean resolveAttribute(jint arg0, android::util::TypedValue arg1, jboolean arg2);
 		void setTo(android::content::res::Resources_Theme arg0);

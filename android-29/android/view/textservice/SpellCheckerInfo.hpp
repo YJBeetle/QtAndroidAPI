@@ -33,7 +33,7 @@ namespace android::view::textservice
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SpellCheckerInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -43,14 +43,14 @@ namespace android::view::textservice
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getComponent();
+		android::content::ComponentName getComponent();
 		jstring getId();
 		jstring getPackageName();
-		QAndroidJniObject getServiceInfo();
+		android::content::pm::ServiceInfo getServiceInfo();
 		jstring getSettingsActivity();
-		QAndroidJniObject getSubtypeAt(jint arg0);
+		android::view::textservice::SpellCheckerSubtype getSubtypeAt(jint arg0);
 		jint getSubtypeCount();
-		QAndroidJniObject loadIcon(android::content::pm::PackageManager arg0);
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
 		jstring loadLabel(android::content::pm::PackageManager arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

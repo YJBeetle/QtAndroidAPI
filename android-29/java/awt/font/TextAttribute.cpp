@@ -6,7 +6,7 @@
 namespace java::awt::font
 {
 	// Fields
-	QAndroidJniObject TextAttribute::BACKGROUND()
+	java::awt::font::TextAttribute TextAttribute::BACKGROUND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -14,7 +14,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::BIDI_EMBEDDING()
+	java::awt::font::TextAttribute TextAttribute::BIDI_EMBEDDING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -22,7 +22,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::CHAR_REPLACEMENT()
+	java::awt::font::TextAttribute TextAttribute::CHAR_REPLACEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -30,7 +30,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::FAMILY()
+	java::awt::font::TextAttribute TextAttribute::FAMILY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -38,7 +38,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::FONT()
+	java::awt::font::TextAttribute TextAttribute::FONT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -46,7 +46,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::FOREGROUND()
+	java::awt::font::TextAttribute TextAttribute::FOREGROUND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -54,7 +54,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::INPUT_METHOD_HIGHLIGHT()
+	java::awt::font::TextAttribute TextAttribute::INPUT_METHOD_HIGHLIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -62,7 +62,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::INPUT_METHOD_UNDERLINE()
+	java::awt::font::TextAttribute TextAttribute::INPUT_METHOD_UNDERLINE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -70,7 +70,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::JUSTIFICATION()
+	java::awt::font::TextAttribute TextAttribute::JUSTIFICATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -78,7 +78,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::JUSTIFICATION_FULL()
+	java::lang::Float TextAttribute::JUSTIFICATION_FULL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -86,7 +86,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::JUSTIFICATION_NONE()
+	java::lang::Float TextAttribute::JUSTIFICATION_NONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -94,7 +94,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::KERNING()
+	java::awt::font::TextAttribute TextAttribute::KERNING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -102,7 +102,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::KERNING_ON()
+	java::lang::Integer TextAttribute::KERNING_ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -110,7 +110,7 @@ namespace java::awt::font
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TextAttribute::LIGATURES()
+	java::awt::font::TextAttribute TextAttribute::LIGATURES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -118,7 +118,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::LIGATURES_ON()
+	java::lang::Integer TextAttribute::LIGATURES_ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -126,7 +126,7 @@ namespace java::awt::font
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TextAttribute::NUMERIC_SHAPING()
+	java::awt::font::TextAttribute TextAttribute::NUMERIC_SHAPING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -134,7 +134,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::POSTURE()
+	java::awt::font::TextAttribute TextAttribute::POSTURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -142,7 +142,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::POSTURE_OBLIQUE()
+	java::lang::Float TextAttribute::POSTURE_OBLIQUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -150,7 +150,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::POSTURE_REGULAR()
+	java::lang::Float TextAttribute::POSTURE_REGULAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -158,7 +158,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::RUN_DIRECTION()
+	java::awt::font::TextAttribute TextAttribute::RUN_DIRECTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -166,7 +166,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::RUN_DIRECTION_LTR()
+	java::lang::Boolean TextAttribute::RUN_DIRECTION_LTR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -174,7 +174,7 @@ namespace java::awt::font
 			"Ljava/lang/Boolean;"
 		);
 	}
-	QAndroidJniObject TextAttribute::RUN_DIRECTION_RTL()
+	java::lang::Boolean TextAttribute::RUN_DIRECTION_RTL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -182,7 +182,7 @@ namespace java::awt::font
 			"Ljava/lang/Boolean;"
 		);
 	}
-	QAndroidJniObject TextAttribute::SIZE()
+	java::awt::font::TextAttribute TextAttribute::SIZE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -190,7 +190,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::STRIKETHROUGH()
+	java::awt::font::TextAttribute TextAttribute::STRIKETHROUGH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -198,7 +198,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::STRIKETHROUGH_ON()
+	java::lang::Boolean TextAttribute::STRIKETHROUGH_ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -206,7 +206,7 @@ namespace java::awt::font
 			"Ljava/lang/Boolean;"
 		);
 	}
-	QAndroidJniObject TextAttribute::SUPERSCRIPT()
+	java::awt::font::TextAttribute TextAttribute::SUPERSCRIPT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -214,7 +214,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::SUPERSCRIPT_SUB()
+	java::lang::Integer TextAttribute::SUPERSCRIPT_SUB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -222,7 +222,7 @@ namespace java::awt::font
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TextAttribute::SUPERSCRIPT_SUPER()
+	java::lang::Integer TextAttribute::SUPERSCRIPT_SUPER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -230,7 +230,7 @@ namespace java::awt::font
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TextAttribute::SWAP_COLORS()
+	java::awt::font::TextAttribute TextAttribute::SWAP_COLORS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -238,7 +238,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::SWAP_COLORS_ON()
+	java::lang::Boolean TextAttribute::SWAP_COLORS_ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -246,7 +246,7 @@ namespace java::awt::font
 			"Ljava/lang/Boolean;"
 		);
 	}
-	QAndroidJniObject TextAttribute::TRACKING()
+	java::awt::font::TextAttribute TextAttribute::TRACKING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -254,7 +254,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::TRACKING_LOOSE()
+	java::lang::Float TextAttribute::TRACKING_LOOSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -262,7 +262,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::TRACKING_TIGHT()
+	java::lang::Float TextAttribute::TRACKING_TIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -270,7 +270,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::TRANSFORM()
+	java::awt::font::TextAttribute TextAttribute::TRANSFORM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -278,7 +278,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::UNDERLINE()
+	java::awt::font::TextAttribute TextAttribute::UNDERLINE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -286,7 +286,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::UNDERLINE_LOW_DASHED()
+	java::lang::Integer TextAttribute::UNDERLINE_LOW_DASHED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -294,7 +294,7 @@ namespace java::awt::font
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TextAttribute::UNDERLINE_LOW_DOTTED()
+	java::lang::Integer TextAttribute::UNDERLINE_LOW_DOTTED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -302,7 +302,7 @@ namespace java::awt::font
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TextAttribute::UNDERLINE_LOW_GRAY()
+	java::lang::Integer TextAttribute::UNDERLINE_LOW_GRAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -310,7 +310,7 @@ namespace java::awt::font
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TextAttribute::UNDERLINE_LOW_ONE_PIXEL()
+	java::lang::Integer TextAttribute::UNDERLINE_LOW_ONE_PIXEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -318,7 +318,7 @@ namespace java::awt::font
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TextAttribute::UNDERLINE_LOW_TWO_PIXEL()
+	java::lang::Integer TextAttribute::UNDERLINE_LOW_TWO_PIXEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -326,7 +326,7 @@ namespace java::awt::font
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TextAttribute::UNDERLINE_ON()
+	java::lang::Integer TextAttribute::UNDERLINE_ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -334,7 +334,7 @@ namespace java::awt::font
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT()
+	java::awt::font::TextAttribute TextAttribute::WEIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -342,7 +342,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_BOLD()
+	java::lang::Float TextAttribute::WEIGHT_BOLD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -350,7 +350,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_DEMIBOLD()
+	java::lang::Float TextAttribute::WEIGHT_DEMIBOLD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -358,7 +358,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_DEMILIGHT()
+	java::lang::Float TextAttribute::WEIGHT_DEMILIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -366,7 +366,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_EXTRABOLD()
+	java::lang::Float TextAttribute::WEIGHT_EXTRABOLD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -374,7 +374,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_EXTRA_LIGHT()
+	java::lang::Float TextAttribute::WEIGHT_EXTRA_LIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -382,7 +382,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_HEAVY()
+	java::lang::Float TextAttribute::WEIGHT_HEAVY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -390,7 +390,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_LIGHT()
+	java::lang::Float TextAttribute::WEIGHT_LIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -398,7 +398,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_MEDIUM()
+	java::lang::Float TextAttribute::WEIGHT_MEDIUM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -406,7 +406,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_REGULAR()
+	java::lang::Float TextAttribute::WEIGHT_REGULAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -414,7 +414,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_SEMIBOLD()
+	java::lang::Float TextAttribute::WEIGHT_SEMIBOLD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -422,7 +422,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WEIGHT_ULTRABOLD()
+	java::lang::Float TextAttribute::WEIGHT_ULTRABOLD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -430,7 +430,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WIDTH()
+	java::awt::font::TextAttribute TextAttribute::WIDTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -438,7 +438,7 @@ namespace java::awt::font
 			"Ljava/awt/font/TextAttribute;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WIDTH_CONDENSED()
+	java::lang::Float TextAttribute::WIDTH_CONDENSED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -446,7 +446,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WIDTH_EXTENDED()
+	java::lang::Float TextAttribute::WIDTH_EXTENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -454,7 +454,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WIDTH_REGULAR()
+	java::lang::Float TextAttribute::WIDTH_REGULAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -462,7 +462,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WIDTH_SEMI_CONDENSED()
+	java::lang::Float TextAttribute::WIDTH_SEMI_CONDENSED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",
@@ -470,7 +470,7 @@ namespace java::awt::font
 			"Ljava/lang/Float;"
 		);
 	}
-	QAndroidJniObject TextAttribute::WIDTH_SEMI_EXTENDED()
+	java::lang::Float TextAttribute::WIDTH_SEMI_EXTENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.TextAttribute",

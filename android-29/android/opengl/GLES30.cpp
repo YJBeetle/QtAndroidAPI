@@ -2867,7 +2867,7 @@ namespace android::opengl
 			arg3
 		);
 	}
-	QAndroidJniObject GLES30::glGetBufferPointerv(jint arg0, jint arg1)
+	java::nio::Buffer GLES30::glGetBufferPointerv(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.GLES30",
@@ -3415,7 +3415,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	QAndroidJniObject GLES30::glMapBufferRange(jint arg0, jint arg1, jint arg2, jint arg3)
+	java::nio::Buffer GLES30::glMapBufferRange(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.GLES30",

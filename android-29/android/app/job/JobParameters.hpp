@@ -33,7 +33,7 @@ namespace android::app::job
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JobParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -43,14 +43,14 @@ namespace android::app::job
 		
 		// Methods
 		void completeWork(android::app::job::JobWorkItem arg0);
-		QAndroidJniObject dequeueWork();
+		android::app::job::JobWorkItem dequeueWork();
 		jint describeContents();
-		QAndroidJniObject getClipData();
+		android::content::ClipData getClipData();
 		jint getClipGrantFlags();
-		QAndroidJniObject getExtras();
+		android::os::PersistableBundle getExtras();
 		jint getJobId();
-		QAndroidJniObject getNetwork();
-		QAndroidJniObject getTransientExtras();
+		android::net::Network getNetwork();
+		android::os::Bundle getTransientExtras();
 		jarray getTriggeredContentAuthorities();
 		jarray getTriggeredContentUris();
 		jboolean isOverrideDeadlineExpired();

@@ -13,7 +13,7 @@ namespace android::bluetooth
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint MAX();
 		static jint SERVICE_BEST_EFFORT();
 		static jint SERVICE_GUARANTEED();

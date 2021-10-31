@@ -19,10 +19,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createEvent(jint arg0);
+		static android::media::MediaSyncEvent createEvent(jint arg0);
 		jint getAudioSessionId();
 		jint getType();
-		QAndroidJniObject setAudioSessionId(jint arg0);
+		android::media::MediaSyncEvent setAudioSessionId(jint arg0);
 	};
 } // namespace android::media
 

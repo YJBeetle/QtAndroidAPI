@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject TimeZoneFormat_TimeType::DAYLIGHT()
+	android::icu::text::TimeZoneFormat_TimeType TimeZoneFormat_TimeType::DAYLIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$TimeType",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/TimeZoneFormat$TimeType;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_TimeType::STANDARD()
+	android::icu::text::TimeZoneFormat_TimeType TimeZoneFormat_TimeType::STANDARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$TimeType",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/TimeZoneFormat$TimeType;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_TimeType::UNKNOWN()
+	android::icu::text::TimeZoneFormat_TimeType TimeZoneFormat_TimeType::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$TimeType",
@@ -34,7 +34,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TimeZoneFormat_TimeType::valueOf(jstring arg0)
+	android::icu::text::TimeZoneFormat_TimeType TimeZoneFormat_TimeType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$TimeType",

@@ -22,7 +22,7 @@ namespace java::io
 		InputStream();
 		
 		// Methods
-		static QAndroidJniObject nullInputStream();
+		static java::io::InputStream nullInputStream();
 		jint available();
 		void close();
 		void mark(jint arg0);

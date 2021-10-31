@@ -13,7 +13,7 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TextClassifierEvent_Builder::setActionIndices(jintArray arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setActionIndices(jintArray arg0)
 	{
 		return callObjectMethod(
 			"setActionIndices",
@@ -21,7 +21,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setEntityTypes(jarray arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEntityTypes(jarray arg0)
 	{
 		return callObjectMethod(
 			"setEntityTypes",
@@ -29,7 +29,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setEventContext(android::view::textclassifier::TextClassificationContext arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEventContext(android::view::textclassifier::TextClassificationContext arg0)
 	{
 		return callObjectMethod(
 			"setEventContext",
@@ -37,7 +37,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setEventIndex(jint arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEventIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"setEventIndex",
@@ -45,7 +45,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -53,7 +53,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setLocale(android::icu::util::ULocale arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setLocale(android::icu::util::ULocale arg0)
 	{
 		return callObjectMethod(
 			"setLocale",
@@ -61,7 +61,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setModelName(jstring arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setModelName(jstring arg0)
 	{
 		return callObjectMethod(
 			"setModelName",
@@ -69,7 +69,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setResultId(jstring arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setResultId(jstring arg0)
 	{
 		return callObjectMethod(
 			"setResultId",
@@ -77,7 +77,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setScores(jfloatArray arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setScores(jfloatArray arg0)
 	{
 		return callObjectMethod(
 			"setScores",

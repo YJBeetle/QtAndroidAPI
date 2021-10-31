@@ -9,7 +9,7 @@
 namespace android::appwidget
 {
 	// Fields
-	QAndroidJniObject AppWidgetProviderInfo::CREATOR()
+	__JniBaseClass AppWidgetProviderInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetProviderInfo",
@@ -86,7 +86,7 @@ namespace android::appwidget
 			"autoAdvanceViewId"
 		);
 	}
-	QAndroidJniObject AppWidgetProviderInfo::configure()
+	android::content::ComponentName AppWidgetProviderInfo::configure()
 	{
 		return getObjectField(
 			"configure",
@@ -148,7 +148,7 @@ namespace android::appwidget
 			"previewImage"
 		);
 	}
-	QAndroidJniObject AppWidgetProviderInfo::provider()
+	android::content::ComponentName AppWidgetProviderInfo::provider()
 	{
 		return getObjectField(
 			"provider",
@@ -197,7 +197,7 @@ namespace android::appwidget
 		) {}
 	
 	// Methods
-	QAndroidJniObject AppWidgetProviderInfo::clone()
+	android::appwidget::AppWidgetProviderInfo AppWidgetProviderInfo::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -211,14 +211,14 @@ namespace android::appwidget
 			"()I"
 		);
 	}
-	QAndroidJniObject AppWidgetProviderInfo::getProfile()
+	android::os::UserHandle AppWidgetProviderInfo::getProfile()
 	{
 		return callObjectMethod(
 			"getProfile",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	QAndroidJniObject AppWidgetProviderInfo::loadIcon(android::content::Context arg0, jint arg1)
+	android::graphics::drawable::Drawable AppWidgetProviderInfo::loadIcon(android::content::Context arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -235,7 +235,7 @@ namespace android::appwidget
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetProviderInfo::loadPreviewImage(android::content::Context arg0, jint arg1)
+	android::graphics::drawable::Drawable AppWidgetProviderInfo::loadPreviewImage(android::content::Context arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"loadPreviewImage",

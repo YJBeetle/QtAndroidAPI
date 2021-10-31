@@ -22,7 +22,7 @@ namespace android::webkit
 		WebView_WebViewTransport(android::webkit::WebView arg0);
 		
 		// Methods
-		QAndroidJniObject getWebView();
+		android::webkit::WebView getWebView();
 		void setWebView(android::webkit::WebView arg0);
 	};
 } // namespace android::webkit

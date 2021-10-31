@@ -22,7 +22,7 @@ namespace android::animation
 		IntEvaluator();
 		
 		// Methods
-		QAndroidJniObject evaluate(jfloat arg0, java::lang::Integer arg1, java::lang::Integer arg2);
+		java::lang::Integer evaluate(jfloat arg0, java::lang::Integer arg1, java::lang::Integer arg2);
 		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
 	};
 } // namespace android::animation

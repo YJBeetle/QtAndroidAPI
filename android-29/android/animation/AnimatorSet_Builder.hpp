@@ -25,10 +25,10 @@ namespace android::animation
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject after(android::animation::Animator arg0);
-		QAndroidJniObject after(jlong arg0);
-		QAndroidJniObject before(android::animation::Animator arg0);
-		QAndroidJniObject with(android::animation::Animator arg0);
+		android::animation::AnimatorSet_Builder after(android::animation::Animator arg0);
+		android::animation::AnimatorSet_Builder after(jlong arg0);
+		android::animation::AnimatorSet_Builder before(android::animation::Animator arg0);
+		android::animation::AnimatorSet_Builder with(android::animation::Animator arg0);
 	};
 } // namespace android::animation
 

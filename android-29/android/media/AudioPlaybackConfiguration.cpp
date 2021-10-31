@@ -5,7 +5,7 @@
 namespace android::media
 {
 	// Fields
-	QAndroidJniObject AudioPlaybackConfiguration::CREATOR()
+	__JniBaseClass AudioPlaybackConfiguration::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioPlaybackConfiguration",
@@ -35,7 +35,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioPlaybackConfiguration::getAudioAttributes()
+	android::media::AudioAttributes AudioPlaybackConfiguration::getAudioAttributes()
 	{
 		return callObjectMethod(
 			"getAudioAttributes",

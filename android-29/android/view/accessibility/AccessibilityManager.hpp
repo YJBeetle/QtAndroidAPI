@@ -38,9 +38,9 @@ namespace android::view::accessibility
 		void addAccessibilityStateChangeListener(__JniBaseClass arg0, android::os::Handler arg1);
 		jboolean addTouchExplorationStateChangeListener(__JniBaseClass arg0);
 		void addTouchExplorationStateChangeListener(__JniBaseClass arg0, android::os::Handler arg1);
-		QAndroidJniObject getAccessibilityServiceList();
-		QAndroidJniObject getEnabledAccessibilityServiceList(jint arg0);
-		QAndroidJniObject getInstalledAccessibilityServiceList();
+		__JniBaseClass getAccessibilityServiceList();
+		__JniBaseClass getEnabledAccessibilityServiceList(jint arg0);
+		__JniBaseClass getInstalledAccessibilityServiceList();
 		jint getRecommendedTimeoutMillis(jint arg0, jint arg1);
 		void interrupt();
 		jboolean isEnabled();

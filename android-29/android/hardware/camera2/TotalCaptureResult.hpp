@@ -19,8 +19,8 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getPartialResults();
-		QAndroidJniObject getPhysicalCameraResults();
+		__JniBaseClass getPartialResults();
+		__JniBaseClass getPhysicalCameraResults();
 	};
 } // namespace android::hardware::camera2
 

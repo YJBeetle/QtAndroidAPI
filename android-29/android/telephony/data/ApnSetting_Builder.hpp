@@ -30,27 +30,27 @@ namespace android::telephony::data
 		ApnSetting_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setApnName(jstring arg0);
-		QAndroidJniObject setApnTypeBitmask(jint arg0);
-		QAndroidJniObject setAuthType(jint arg0);
-		QAndroidJniObject setCarrierEnabled(jboolean arg0);
-		QAndroidJniObject setCarrierId(jint arg0);
-		QAndroidJniObject setEntryName(jstring arg0);
-		QAndroidJniObject setMmsProxyAddress(jstring arg0);
-		QAndroidJniObject setMmsProxyAddress(java::net::InetAddress arg0);
-		QAndroidJniObject setMmsProxyPort(jint arg0);
-		QAndroidJniObject setMmsc(android::net::Uri arg0);
-		QAndroidJniObject setMvnoType(jint arg0);
-		QAndroidJniObject setNetworkTypeBitmask(jint arg0);
-		QAndroidJniObject setOperatorNumeric(jstring arg0);
-		QAndroidJniObject setPassword(jstring arg0);
-		QAndroidJniObject setProtocol(jint arg0);
-		QAndroidJniObject setProxyAddress(jstring arg0);
-		QAndroidJniObject setProxyAddress(java::net::InetAddress arg0);
-		QAndroidJniObject setProxyPort(jint arg0);
-		QAndroidJniObject setRoamingProtocol(jint arg0);
-		QAndroidJniObject setUser(jstring arg0);
+		android::telephony::data::ApnSetting build();
+		android::telephony::data::ApnSetting_Builder setApnName(jstring arg0);
+		android::telephony::data::ApnSetting_Builder setApnTypeBitmask(jint arg0);
+		android::telephony::data::ApnSetting_Builder setAuthType(jint arg0);
+		android::telephony::data::ApnSetting_Builder setCarrierEnabled(jboolean arg0);
+		android::telephony::data::ApnSetting_Builder setCarrierId(jint arg0);
+		android::telephony::data::ApnSetting_Builder setEntryName(jstring arg0);
+		android::telephony::data::ApnSetting_Builder setMmsProxyAddress(jstring arg0);
+		android::telephony::data::ApnSetting_Builder setMmsProxyAddress(java::net::InetAddress arg0);
+		android::telephony::data::ApnSetting_Builder setMmsProxyPort(jint arg0);
+		android::telephony::data::ApnSetting_Builder setMmsc(android::net::Uri arg0);
+		android::telephony::data::ApnSetting_Builder setMvnoType(jint arg0);
+		android::telephony::data::ApnSetting_Builder setNetworkTypeBitmask(jint arg0);
+		android::telephony::data::ApnSetting_Builder setOperatorNumeric(jstring arg0);
+		android::telephony::data::ApnSetting_Builder setPassword(jstring arg0);
+		android::telephony::data::ApnSetting_Builder setProtocol(jint arg0);
+		android::telephony::data::ApnSetting_Builder setProxyAddress(jstring arg0);
+		android::telephony::data::ApnSetting_Builder setProxyAddress(java::net::InetAddress arg0);
+		android::telephony::data::ApnSetting_Builder setProxyPort(jint arg0);
+		android::telephony::data::ApnSetting_Builder setRoamingProtocol(jint arg0);
+		android::telephony::data::ApnSetting_Builder setUser(jstring arg0);
 	};
 } // namespace android::telephony::data
 

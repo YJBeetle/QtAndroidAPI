@@ -32,12 +32,12 @@ namespace android::icu::text
 		
 		// Methods
 		jobject clone();
-		QAndroidJniObject cloneAsThawed();
+		android::icu::text::DateIntervalInfo cloneAsThawed();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject freeze();
+		android::icu::text::DateIntervalInfo freeze();
 		jboolean getDefaultOrder();
 		jstring getFallbackIntervalPattern();
-		QAndroidJniObject getIntervalPattern(jstring arg0, jint arg1);
+		android::icu::text::DateIntervalInfo_PatternInfo getIntervalPattern(jstring arg0, jint arg1);
 		jint hashCode();
 		jboolean isFrozen();
 		void setFallbackIntervalPattern(jstring arg0);

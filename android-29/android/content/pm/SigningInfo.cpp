@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject SigningInfo::CREATOR()
+	__JniBaseClass SigningInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.SigningInfo",

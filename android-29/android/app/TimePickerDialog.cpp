@@ -51,7 +51,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TimePickerDialog::onSaveInstanceState()
+	android::os::Bundle TimePickerDialog::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

@@ -20,7 +20,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	QAndroidJniObject QwertyKeyListener::getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1)
+	android::text::method::QwertyKeyListener QwertyKeyListener::getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.QwertyKeyListener",
@@ -30,7 +30,7 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	QAndroidJniObject QwertyKeyListener::getInstanceForFullKeyboard()
+	android::text::method::QwertyKeyListener QwertyKeyListener::getInstanceForFullKeyboard()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.QwertyKeyListener",

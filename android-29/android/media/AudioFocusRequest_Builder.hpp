@@ -31,14 +31,14 @@ namespace android::media
 		AudioFocusRequest_Builder(jint arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setAcceptsDelayedFocusGain(jboolean arg0);
-		QAndroidJniObject setAudioAttributes(android::media::AudioAttributes arg0);
-		QAndroidJniObject setFocusGain(jint arg0);
-		QAndroidJniObject setForceDucking(jboolean arg0);
-		QAndroidJniObject setOnAudioFocusChangeListener(__JniBaseClass arg0);
-		QAndroidJniObject setOnAudioFocusChangeListener(__JniBaseClass arg0, android::os::Handler arg1);
-		QAndroidJniObject setWillPauseWhenDucked(jboolean arg0);
+		android::media::AudioFocusRequest build();
+		android::media::AudioFocusRequest_Builder setAcceptsDelayedFocusGain(jboolean arg0);
+		android::media::AudioFocusRequest_Builder setAudioAttributes(android::media::AudioAttributes arg0);
+		android::media::AudioFocusRequest_Builder setFocusGain(jint arg0);
+		android::media::AudioFocusRequest_Builder setForceDucking(jboolean arg0);
+		android::media::AudioFocusRequest_Builder setOnAudioFocusChangeListener(__JniBaseClass arg0);
+		android::media::AudioFocusRequest_Builder setOnAudioFocusChangeListener(__JniBaseClass arg0, android::os::Handler arg1);
+		android::media::AudioFocusRequest_Builder setWillPauseWhenDucked(jboolean arg0);
 	};
 } // namespace android::media
 

@@ -32,7 +32,7 @@ namespace android::telephony
 			"CONNECTION_UNKNOWN"
 		);
 	}
-	QAndroidJniObject CellInfo::CREATOR()
+	__JniBaseClass CellInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellInfo",

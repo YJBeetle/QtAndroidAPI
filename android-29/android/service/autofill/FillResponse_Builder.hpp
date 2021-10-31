@@ -46,18 +46,18 @@ namespace android::service::autofill
 		FillResponse_Builder();
 		
 		// Methods
-		QAndroidJniObject addDataset(android::service::autofill::Dataset arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject disableAutofill(jlong arg0);
-		QAndroidJniObject setAuthentication(jarray arg0, android::content::IntentSender arg1, android::widget::RemoteViews arg2);
-		QAndroidJniObject setClientState(android::os::Bundle arg0);
-		QAndroidJniObject setFieldClassificationIds(jarray arg0);
-		QAndroidJniObject setFlags(jint arg0);
-		QAndroidJniObject setFooter(android::widget::RemoteViews arg0);
-		QAndroidJniObject setHeader(android::widget::RemoteViews arg0);
-		QAndroidJniObject setIgnoredIds(jarray arg0);
-		QAndroidJniObject setSaveInfo(android::service::autofill::SaveInfo arg0);
-		QAndroidJniObject setUserData(android::service::autofill::UserData arg0);
+		android::service::autofill::FillResponse_Builder addDataset(android::service::autofill::Dataset arg0);
+		android::service::autofill::FillResponse build();
+		android::service::autofill::FillResponse_Builder disableAutofill(jlong arg0);
+		android::service::autofill::FillResponse_Builder setAuthentication(jarray arg0, android::content::IntentSender arg1, android::widget::RemoteViews arg2);
+		android::service::autofill::FillResponse_Builder setClientState(android::os::Bundle arg0);
+		android::service::autofill::FillResponse_Builder setFieldClassificationIds(jarray arg0);
+		android::service::autofill::FillResponse_Builder setFlags(jint arg0);
+		android::service::autofill::FillResponse_Builder setFooter(android::widget::RemoteViews arg0);
+		android::service::autofill::FillResponse_Builder setHeader(android::widget::RemoteViews arg0);
+		android::service::autofill::FillResponse_Builder setIgnoredIds(jarray arg0);
+		android::service::autofill::FillResponse_Builder setSaveInfo(android::service::autofill::SaveInfo arg0);
+		android::service::autofill::FillResponse_Builder setUserData(android::service::autofill::UserData arg0);
 	};
 } // namespace android::service::autofill
 

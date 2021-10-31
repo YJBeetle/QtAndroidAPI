@@ -48,10 +48,10 @@ namespace android::widget
 		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
 		jstring getAccessibilityClassName();
 		jint getAutofillType();
-		QAndroidJniObject getAutofillValue();
+		android::view::autofill::AutofillValue getAutofillValue();
 		jint getBaseline();
-		QAndroidJniObject getCurrentHour();
-		QAndroidJniObject getCurrentMinute();
+		java::lang::Integer getCurrentHour();
+		java::lang::Integer getCurrentMinute();
 		jint getHour();
 		jint getMinute();
 		jboolean is24HourView();

@@ -39,13 +39,13 @@ namespace android::provider
 		static jstring BLUETOOTH_DISCOVERABILITY();
 		static jstring BLUETOOTH_DISCOVERABILITY_TIMEOUT();
 		static jstring BLUETOOTH_ON();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DATA_ROAMING();
 		static jstring DATE_FORMAT();
 		static jstring DEBUG_APP();
-		static QAndroidJniObject DEFAULT_ALARM_ALERT_URI();
-		static QAndroidJniObject DEFAULT_NOTIFICATION_URI();
-		static QAndroidJniObject DEFAULT_RINGTONE_URI();
+		static android::net::Uri DEFAULT_ALARM_ALERT_URI();
+		static android::net::Uri DEFAULT_NOTIFICATION_URI();
+		static android::net::Uri DEFAULT_RINGTONE_URI();
 		static jstring DEVICE_PROVISIONED();
 		static jstring DIM_SCREEN();
 		static jstring DTMF_TONE_TYPE_WHEN_DIALING();
@@ -146,7 +146,7 @@ namespace android::provider
 		static jlong getLong(android::content::ContentResolver arg0, jstring arg1, jlong arg2);
 		static jboolean getShowGTalkServiceStatus(android::content::ContentResolver arg0);
 		static jstring getString(android::content::ContentResolver arg0, jstring arg1);
-		static QAndroidJniObject getUriFor(jstring arg0);
+		static android::net::Uri getUriFor(jstring arg0);
 		static jboolean putConfiguration(android::content::ContentResolver arg0, android::content::res::Configuration arg1);
 		static jboolean putFloat(android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
 		static jboolean putInt(android::content::ContentResolver arg0, jstring arg1, jint arg2);

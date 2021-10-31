@@ -302,7 +302,7 @@ namespace android::media
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject MediaMetadataRetriever::getFrameAtIndex(jint arg0)
+	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"getFrameAtIndex",
@@ -310,7 +310,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getFrameAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1)
+	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1)
 	{
 		return callObjectMethod(
 			"getFrameAtIndex",
@@ -319,14 +319,14 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getFrameAtTime()
+	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtTime()
 	{
 		return callObjectMethod(
 			"getFrameAtTime",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getFrameAtTime(jlong arg0)
+	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtTime(jlong arg0)
 	{
 		return callObjectMethod(
 			"getFrameAtTime",
@@ -334,7 +334,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getFrameAtTime(jlong arg0, jint arg1)
+	android::graphics::Bitmap MediaMetadataRetriever::getFrameAtTime(jlong arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getFrameAtTime",
@@ -343,7 +343,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1)
+	__JniBaseClass MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getFramesAtIndex",
@@ -352,7 +352,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1, android::media::MediaMetadataRetriever_BitmapParams arg2)
+	__JniBaseClass MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1, android::media::MediaMetadataRetriever_BitmapParams arg2)
 	{
 		return callObjectMethod(
 			"getFramesAtIndex",
@@ -362,7 +362,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getImageAtIndex(jint arg0)
+	android::graphics::Bitmap MediaMetadataRetriever::getImageAtIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"getImageAtIndex",
@@ -370,7 +370,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getImageAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1)
+	android::graphics::Bitmap MediaMetadataRetriever::getImageAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1)
 	{
 		return callObjectMethod(
 			"getImageAtIndex",
@@ -379,14 +379,14 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getPrimaryImage()
+	android::graphics::Bitmap MediaMetadataRetriever::getPrimaryImage()
 	{
 		return callObjectMethod(
 			"getPrimaryImage",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getPrimaryImage(android::media::MediaMetadataRetriever_BitmapParams arg0)
+	android::graphics::Bitmap MediaMetadataRetriever::getPrimaryImage(android::media::MediaMetadataRetriever_BitmapParams arg0)
 	{
 		return callObjectMethod(
 			"getPrimaryImage",
@@ -394,7 +394,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getScaledFrameAtTime(jlong arg0, jint arg1, jint arg2, jint arg3)
+	android::graphics::Bitmap MediaMetadataRetriever::getScaledFrameAtTime(jlong arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"getScaledFrameAtTime",

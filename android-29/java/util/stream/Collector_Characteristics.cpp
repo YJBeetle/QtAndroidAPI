@@ -3,7 +3,7 @@
 namespace java::util::stream
 {
 	// Fields
-	QAndroidJniObject Collector_Characteristics::CONCURRENT()
+	java::util::stream::Collector_Characteristics Collector_Characteristics::CONCURRENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.stream.Collector$Characteristics",
@@ -11,7 +11,7 @@ namespace java::util::stream
 			"Ljava/util/stream/Collector$Characteristics;"
 		);
 	}
-	QAndroidJniObject Collector_Characteristics::IDENTITY_FINISH()
+	java::util::stream::Collector_Characteristics Collector_Characteristics::IDENTITY_FINISH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.stream.Collector$Characteristics",
@@ -19,7 +19,7 @@ namespace java::util::stream
 			"Ljava/util/stream/Collector$Characteristics;"
 		);
 	}
-	QAndroidJniObject Collector_Characteristics::UNORDERED()
+	java::util::stream::Collector_Characteristics Collector_Characteristics::UNORDERED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.stream.Collector$Characteristics",
@@ -34,7 +34,7 @@ namespace java::util::stream
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Collector_Characteristics::valueOf(jstring arg0)
+	java::util::stream::Collector_Characteristics Collector_Characteristics::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collector$Characteristics",

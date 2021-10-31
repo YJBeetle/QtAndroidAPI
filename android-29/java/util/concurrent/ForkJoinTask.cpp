@@ -21,7 +21,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	QAndroidJniObject ForkJoinTask::adapt(__JniBaseClass arg0)
+	java::util::concurrent::ForkJoinTask ForkJoinTask::adapt(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
@@ -30,7 +30,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ForkJoinTask::adapt(__JniBaseClass arg0, jobject arg1)
+	java::util::concurrent::ForkJoinTask ForkJoinTask::adapt(__JniBaseClass arg0, jobject arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
@@ -40,7 +40,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	QAndroidJniObject ForkJoinTask::getPool()
+	java::util::concurrent::ForkJoinPool ForkJoinTask::getPool()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
@@ -80,7 +80,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject ForkJoinTask::invokeAll(__JniBaseClass arg0)
+	__JniBaseClass ForkJoinTask::invokeAll(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
@@ -141,7 +141,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ForkJoinTask::fork()
+	java::util::concurrent::ForkJoinTask ForkJoinTask::fork()
 	{
 		return callObjectMethod(
 			"fork",

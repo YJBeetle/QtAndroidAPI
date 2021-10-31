@@ -32,11 +32,11 @@ namespace java::text
 		
 		// Methods
 		static jarray getAvailableLocales();
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static java::text::DecimalFormatSymbols getInstance();
+		static java::text::DecimalFormatSymbols getInstance(java::util::Locale arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCurrency();
+		java::util::Currency getCurrency();
 		jstring getCurrencySymbol();
 		jchar getDecimalSeparator();
 		jchar getDigit();

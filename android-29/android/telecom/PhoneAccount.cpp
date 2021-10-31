@@ -79,7 +79,7 @@ namespace android::telecom
 			"CAPABILITY_VIDEO_CALLING_RELIES_ON_PRESENCE"
 		);
 	}
-	QAndroidJniObject PhoneAccount::CREATOR()
+	__JniBaseClass PhoneAccount::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccount",
@@ -172,7 +172,7 @@ namespace android::telecom
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PhoneAccount::builder(android::telecom::PhoneAccountHandle arg0, jstring arg1)
+	android::telecom::PhoneAccount_Builder PhoneAccount::builder(android::telecom::PhoneAccountHandle arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telecom.PhoneAccount",
@@ -197,14 +197,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject PhoneAccount::getAccountHandle()
+	android::telecom::PhoneAccountHandle PhoneAccount::getAccountHandle()
 	{
 		return callObjectMethod(
 			"getAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	QAndroidJniObject PhoneAccount::getAddress()
+	android::net::Uri PhoneAccount::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
@@ -218,7 +218,7 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject PhoneAccount::getExtras()
+	android::os::Bundle PhoneAccount::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -232,7 +232,7 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject PhoneAccount::getIcon()
+	android::graphics::drawable::Icon PhoneAccount::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",
@@ -253,14 +253,14 @@ namespace android::telecom
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PhoneAccount::getSubscriptionAddress()
+	android::net::Uri PhoneAccount::getSubscriptionAddress()
 	{
 		return callObjectMethod(
 			"getSubscriptionAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject PhoneAccount::getSupportedUriSchemes()
+	__JniBaseClass PhoneAccount::getSupportedUriSchemes()
 	{
 		return callObjectMethod(
 			"getSupportedUriSchemes",
@@ -297,7 +297,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject PhoneAccount::toBuilder()
+	android::telecom::PhoneAccount_Builder PhoneAccount::toBuilder()
 	{
 		return callObjectMethod(
 			"toBuilder",

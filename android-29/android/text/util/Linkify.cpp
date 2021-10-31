@@ -40,7 +40,7 @@ namespace android::text::util
 			"WEB_URLS"
 		);
 	}
-	QAndroidJniObject Linkify::sPhoneNumberMatchFilter()
+	__JniBaseClass Linkify::sPhoneNumberMatchFilter()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.util.Linkify",
@@ -48,7 +48,7 @@ namespace android::text::util
 			"Landroid/text/util/Linkify$MatchFilter;"
 		);
 	}
-	QAndroidJniObject Linkify::sPhoneNumberTransformFilter()
+	__JniBaseClass Linkify::sPhoneNumberTransformFilter()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.util.Linkify",
@@ -56,7 +56,7 @@ namespace android::text::util
 			"Landroid/text/util/Linkify$TransformFilter;"
 		);
 	}
-	QAndroidJniObject Linkify::sUrlMatchFilter()
+	__JniBaseClass Linkify::sUrlMatchFilter()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.util.Linkify",

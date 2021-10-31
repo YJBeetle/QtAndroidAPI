@@ -131,14 +131,14 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject ThreadPoolExecutor::getQueue()
+	__JniBaseClass ThreadPoolExecutor::getQueue()
 	{
 		return callObjectMethod(
 			"getQueue",
 			"()Ljava/util/concurrent/BlockingQueue;"
 		);
 	}
-	QAndroidJniObject ThreadPoolExecutor::getRejectedExecutionHandler()
+	__JniBaseClass ThreadPoolExecutor::getRejectedExecutionHandler()
 	{
 		return callObjectMethod(
 			"getRejectedExecutionHandler",
@@ -152,7 +152,7 @@ namespace java::util::concurrent
 			"()J"
 		);
 	}
-	QAndroidJniObject ThreadPoolExecutor::getThreadFactory()
+	__JniBaseClass ThreadPoolExecutor::getThreadFactory()
 	{
 		return callObjectMethod(
 			"getThreadFactory",
@@ -257,7 +257,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	QAndroidJniObject ThreadPoolExecutor::shutdownNow()
+	__JniBaseClass ThreadPoolExecutor::shutdownNow()
 	{
 		return callObjectMethod(
 			"shutdownNow",

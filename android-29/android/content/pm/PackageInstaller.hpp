@@ -70,13 +70,13 @@ namespace android::content::pm
 		// Methods
 		void abandonSession(jint arg0);
 		jint createSession(android::content::pm::PackageInstaller_SessionParams arg0);
-		QAndroidJniObject getActiveStagedSession();
-		QAndroidJniObject getAllSessions();
-		QAndroidJniObject getMySessions();
-		QAndroidJniObject getSessionInfo(jint arg0);
-		QAndroidJniObject getStagedSessions();
+		android::content::pm::PackageInstaller_SessionInfo getActiveStagedSession();
+		__JniBaseClass getAllSessions();
+		__JniBaseClass getMySessions();
+		android::content::pm::PackageInstaller_SessionInfo getSessionInfo(jint arg0);
+		__JniBaseClass getStagedSessions();
 		void installExistingPackage(jstring arg0, jint arg1, android::content::IntentSender arg2);
-		QAndroidJniObject openSession(jint arg0);
+		android::content::pm::PackageInstaller_Session openSession(jint arg0);
 		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0);
 		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0, android::os::Handler arg1);
 		void uninstall(android::content::pm::VersionedPackage arg0, android::content::IntentSender arg1);

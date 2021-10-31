@@ -9,7 +9,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject ContentProviderOperation::CREATOR()
+	__JniBaseClass ContentProviderOperation::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ContentProviderOperation",
@@ -24,7 +24,7 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ContentProviderOperation::newAssertQuery(android::net::Uri arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation::newAssertQuery(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ContentProviderOperation",
@@ -33,7 +33,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ContentProviderOperation::newDelete(android::net::Uri arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation::newDelete(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ContentProviderOperation",
@@ -42,7 +42,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ContentProviderOperation::newInsert(android::net::Uri arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation::newInsert(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ContentProviderOperation",
@@ -51,7 +51,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ContentProviderOperation::newUpdate(android::net::Uri arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation::newUpdate(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ContentProviderOperation",
@@ -60,7 +60,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ContentProviderOperation::apply(android::content::ContentProvider arg0, jarray arg1, jint arg2)
+	android::content::ContentProviderResult ContentProviderOperation::apply(android::content::ContentProvider arg0, jarray arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"apply",
@@ -77,7 +77,7 @@ namespace android::content
 			"()I"
 		);
 	}
-	QAndroidJniObject ContentProviderOperation::getUri()
+	android::net::Uri ContentProviderOperation::getUri()
 	{
 		return callObjectMethod(
 			"getUri",
@@ -142,7 +142,7 @@ namespace android::content
 			arg1
 		).object<jarray>();
 	}
-	QAndroidJniObject ContentProviderOperation::resolveValueBackReferences(jarray arg0, jint arg1)
+	android::content::ContentValues ContentProviderOperation::resolveValueBackReferences(jarray arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resolveValueBackReferences",

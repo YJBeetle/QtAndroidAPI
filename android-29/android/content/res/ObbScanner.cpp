@@ -11,7 +11,7 @@ namespace android::content::res
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ObbScanner::getObbInfo(jstring arg0)
+	android::content::res::ObbInfo ObbScanner::getObbInfo(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.res.ObbScanner",

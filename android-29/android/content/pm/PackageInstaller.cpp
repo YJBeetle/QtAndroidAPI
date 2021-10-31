@@ -177,28 +177,28 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageInstaller::getActiveStagedSession()
+	android::content::pm::PackageInstaller_SessionInfo PackageInstaller::getActiveStagedSession()
 	{
 		return callObjectMethod(
 			"getActiveStagedSession",
 			"()Landroid/content/pm/PackageInstaller$SessionInfo;"
 		);
 	}
-	QAndroidJniObject PackageInstaller::getAllSessions()
+	__JniBaseClass PackageInstaller::getAllSessions()
 	{
 		return callObjectMethod(
 			"getAllSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PackageInstaller::getMySessions()
+	__JniBaseClass PackageInstaller::getMySessions()
 	{
 		return callObjectMethod(
 			"getMySessions",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PackageInstaller::getSessionInfo(jint arg0)
+	android::content::pm::PackageInstaller_SessionInfo PackageInstaller::getSessionInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getSessionInfo",
@@ -206,7 +206,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageInstaller::getStagedSessions()
+	__JniBaseClass PackageInstaller::getStagedSessions()
 	{
 		return callObjectMethod(
 			"getStagedSessions",
@@ -223,7 +223,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	QAndroidJniObject PackageInstaller::openSession(jint arg0)
+	android::content::pm::PackageInstaller_Session PackageInstaller::openSession(jint arg0)
 	{
 		return callObjectMethod(
 			"openSession",

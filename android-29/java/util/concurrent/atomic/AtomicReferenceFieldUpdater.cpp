@@ -10,7 +10,7 @@ namespace java::util::concurrent::atomic
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AtomicReferenceFieldUpdater::newUpdater(jclass arg0, jclass arg1, jstring arg2)
+	java::util::concurrent::atomic::AtomicReferenceFieldUpdater AtomicReferenceFieldUpdater::newUpdater(jclass arg0, jclass arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.atomic.AtomicReferenceFieldUpdater",

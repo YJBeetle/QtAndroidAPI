@@ -26,13 +26,13 @@ namespace java::util::concurrent
 		jboolean contains(jobject arg0);
 		jboolean equals(jobject arg0);
 		void forEach(__JniBaseClass arg0);
-		QAndroidJniObject getMap();
+		java::util::concurrent::ConcurrentHashMap getMap();
 		jobject getMappedValue();
 		jint hashCode();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jboolean remove(jobject arg0);
 		jboolean removeAll(__JniBaseClass arg0);
-		QAndroidJniObject spliterator();
+		__JniBaseClass spliterator();
 	};
 } // namespace java::util::concurrent
 

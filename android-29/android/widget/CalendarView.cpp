@@ -92,7 +92,7 @@ namespace android::widget
 			"()J"
 		);
 	}
-	QAndroidJniObject CalendarView::getSelectedDateVerticalBar()
+	android::graphics::drawable::Drawable CalendarView::getSelectedDateVerticalBar()
 	{
 		return callObjectMethod(
 			"getSelectedDateVerticalBar",

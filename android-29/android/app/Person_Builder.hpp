@@ -26,13 +26,13 @@ namespace android::app
 		Person_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setBot(jboolean arg0);
-		QAndroidJniObject setIcon(android::graphics::drawable::Icon arg0);
-		QAndroidJniObject setImportant(jboolean arg0);
-		QAndroidJniObject setKey(jstring arg0);
-		QAndroidJniObject setName(jstring arg0);
-		QAndroidJniObject setUri(jstring arg0);
+		android::app::Person build();
+		android::app::Person_Builder setBot(jboolean arg0);
+		android::app::Person_Builder setIcon(android::graphics::drawable::Icon arg0);
+		android::app::Person_Builder setImportant(jboolean arg0);
+		android::app::Person_Builder setKey(jstring arg0);
+		android::app::Person_Builder setName(jstring arg0);
+		android::app::Person_Builder setUri(jstring arg0);
 	};
 } // namespace android::app
 

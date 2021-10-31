@@ -20,14 +20,14 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject InterfaceAddress::getAddress()
+	java::net::InetAddress InterfaceAddress::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	QAndroidJniObject InterfaceAddress::getBroadcast()
+	java::net::InetAddress InterfaceAddress::getBroadcast()
 	{
 		return callObjectMethod(
 			"getBroadcast",

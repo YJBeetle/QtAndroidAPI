@@ -40,8 +40,8 @@ namespace android::view
 		// Methods
 		void draw(android::graphics::Canvas arg0);
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);
-		QAndroidJniObject getHolder();
-		QAndroidJniObject getSurfaceControl();
+		__JniBaseClass getHolder();
+		android::view::SurfaceControl getSurfaceControl();
 		void setSecure(jboolean arg0);
 		void setVisibility(jint arg0);
 		void setZOrderMediaOverlay(jboolean arg0);

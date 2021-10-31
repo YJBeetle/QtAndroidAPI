@@ -17,8 +17,8 @@ namespace android::content
 	{
 	public:
 		// Fields
-		QAndroidJniObject uri();
-		QAndroidJniObject values();
+		android::net::Uri uri();
+		android::content::ContentValues values();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Entity_NamedContentValues(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

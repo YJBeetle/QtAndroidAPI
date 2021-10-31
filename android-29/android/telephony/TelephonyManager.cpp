@@ -791,7 +791,7 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	QAndroidJniObject TelephonyManager::createForPhoneAccountHandle(android::telecom::PhoneAccountHandle arg0)
+	android::telephony::TelephonyManager TelephonyManager::createForPhoneAccountHandle(android::telecom::PhoneAccountHandle arg0)
 	{
 		return callObjectMethod(
 			"createForPhoneAccountHandle",
@@ -799,7 +799,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TelephonyManager::createForSubscriptionId(jint arg0)
+	android::telephony::TelephonyManager TelephonyManager::createForSubscriptionId(jint arg0)
 	{
 		return callObjectMethod(
 			"createForSubscriptionId",
@@ -814,7 +814,7 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	QAndroidJniObject TelephonyManager::getAllCellInfo()
+	__JniBaseClass TelephonyManager::getAllCellInfo()
 	{
 		return callObjectMethod(
 			"getAllCellInfo",
@@ -835,7 +835,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	QAndroidJniObject TelephonyManager::getCarrierConfig()
+	android::os::PersistableBundle TelephonyManager::getCarrierConfig()
 	{
 		return callObjectMethod(
 			"getCarrierConfig",
@@ -849,7 +849,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	QAndroidJniObject TelephonyManager::getCellLocation()
+	android::telephony::CellLocation TelephonyManager::getCellLocation()
 	{
 		return callObjectMethod(
 			"getCellLocation",
@@ -899,14 +899,14 @@ namespace android::telephony
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TelephonyManager::getEmergencyNumberList()
+	__JniBaseClass TelephonyManager::getEmergencyNumberList()
 	{
 		return callObjectMethod(
 			"getEmergencyNumberList",
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject TelephonyManager::getEmergencyNumberList(jint arg0)
+	__JniBaseClass TelephonyManager::getEmergencyNumberList(jint arg0)
 	{
 		return callObjectMethod(
 			"getEmergencyNumberList",
@@ -1067,14 +1067,14 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	QAndroidJniObject TelephonyManager::getServiceState()
+	android::telephony::ServiceState TelephonyManager::getServiceState()
 	{
 		return callObjectMethod(
 			"getServiceState",
 			"()Landroid/telephony/ServiceState;"
 		);
 	}
-	QAndroidJniObject TelephonyManager::getSignalStrength()
+	android::telephony::SignalStrength TelephonyManager::getSignalStrength()
 	{
 		return callObjectMethod(
 			"getSignalStrength",
@@ -1174,7 +1174,7 @@ namespace android::telephony
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject TelephonyManager::getUiccCardsInfo()
+	__JniBaseClass TelephonyManager::getUiccCardsInfo()
 	{
 		return callObjectMethod(
 			"getUiccCardsInfo",
@@ -1209,7 +1209,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	QAndroidJniObject TelephonyManager::getVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0)
+	android::net::Uri TelephonyManager::getVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0)
 	{
 		return callObjectMethod(
 			"getVoicemailRingtoneUri",
@@ -1252,7 +1252,7 @@ namespace android::telephony
 			arg5
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject TelephonyManager::iccOpenLogicalChannel(jstring arg0)
+	android::telephony::IccOpenLogicalChannelResponse TelephonyManager::iccOpenLogicalChannel(jstring arg0)
 	{
 		return callObjectMethod(
 			"iccOpenLogicalChannel",
@@ -1260,7 +1260,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	QAndroidJniObject TelephonyManager::iccOpenLogicalChannel(jstring arg0, jint arg1)
+	android::telephony::IccOpenLogicalChannelResponse TelephonyManager::iccOpenLogicalChannel(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"iccOpenLogicalChannel",
@@ -1407,7 +1407,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	QAndroidJniObject TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, __JniBaseClass arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2)
+	android::telephony::NetworkScan TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, __JniBaseClass arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2)
 	{
 		return callObjectMethod(
 			"requestNetworkScan",

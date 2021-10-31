@@ -21,7 +21,7 @@ namespace android::hardware::biometrics
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getCryptoObject();
+		android::hardware::biometrics::BiometricPrompt_CryptoObject getCryptoObject();
 	};
 } // namespace android::hardware::biometrics
 

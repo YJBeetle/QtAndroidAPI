@@ -42,7 +42,7 @@ namespace android::service::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaBrowserService_BrowserRoot::getExtras()
+	android::os::Bundle MediaBrowserService_BrowserRoot::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

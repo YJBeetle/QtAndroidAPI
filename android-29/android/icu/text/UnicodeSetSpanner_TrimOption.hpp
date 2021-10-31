@@ -10,9 +10,9 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BOTH();
-		static QAndroidJniObject LEADING();
-		static QAndroidJniObject TRAILING();
+		static android::icu::text::UnicodeSetSpanner_TrimOption BOTH();
+		static android::icu::text::UnicodeSetSpanner_TrimOption LEADING();
+		static android::icu::text::UnicodeSetSpanner_TrimOption TRAILING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnicodeSetSpanner_TrimOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::UnicodeSetSpanner_TrimOption valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

@@ -28,8 +28,8 @@ namespace android::content
 		
 		// Methods
 		void close();
-		QAndroidJniObject getRows();
-		QAndroidJniObject getValues(jstring arg0);
+		__JniBaseClass getRows();
+		android::content::ContentValues getValues(jstring arg0);
 		void requery();
 		void setKeepUpdated(jboolean arg0);
 	};

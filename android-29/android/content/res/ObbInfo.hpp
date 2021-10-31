@@ -13,7 +13,7 @@ namespace android::content::res
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint OBB_OVERLAY();
 		jstring filename();
 		jint flags();

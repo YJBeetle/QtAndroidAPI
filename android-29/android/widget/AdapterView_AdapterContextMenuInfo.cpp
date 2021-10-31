@@ -16,7 +16,7 @@ namespace android::widget
 			"position"
 		);
 	}
-	QAndroidJniObject AdapterView_AdapterContextMenuInfo::targetView()
+	android::view::View AdapterView_AdapterContextMenuInfo::targetView()
 	{
 		return getObjectField(
 			"targetView",

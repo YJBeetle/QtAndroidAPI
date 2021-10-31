@@ -14,7 +14,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ServerSocketChannel::open()
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.ServerSocketChannel",
@@ -22,7 +22,7 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/ServerSocketChannel;"
 		);
 	}
-	QAndroidJniObject ServerSocketChannel::open(__JniBaseClass arg0)
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::open(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.ServerSocketChannel",
@@ -31,14 +31,14 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ServerSocketChannel::accept()
+	java::nio::channels::SocketChannel ServerSocketChannel::accept()
 	{
 		return callObjectMethod(
 			"accept",
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	QAndroidJniObject ServerSocketChannel::bind(java::net::SocketAddress arg0)
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::bind(java::net::SocketAddress arg0)
 	{
 		return callObjectMethod(
 			"bind",
@@ -46,7 +46,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ServerSocketChannel::bind(java::net::SocketAddress arg0, jint arg1)
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::bind(java::net::SocketAddress arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"bind",
@@ -55,14 +55,14 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	QAndroidJniObject ServerSocketChannel::getLocalAddress()
+	java::net::SocketAddress ServerSocketChannel::getLocalAddress()
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	QAndroidJniObject ServerSocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
+	java::nio::channels::ServerSocketChannel ServerSocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -71,7 +71,7 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	QAndroidJniObject ServerSocketChannel::socket()
+	java::net::ServerSocket ServerSocketChannel::socket()
 	{
 		return callObjectMethod(
 			"socket",

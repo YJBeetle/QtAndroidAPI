@@ -134,7 +134,7 @@ namespace android::icu::text
 			arg0
 		).object<jintArray>();
 	}
-	QAndroidJniObject Collator::getFunctionalEquivalent(jstring arg0, android::icu::util::ULocale arg1)
+	android::icu::util::ULocale Collator::getFunctionalEquivalent(jstring arg0, android::icu::util::ULocale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
@@ -144,7 +144,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collator::getFunctionalEquivalent(jstring arg0, android::icu::util::ULocale arg1, jbooleanArray arg2)
+	android::icu::util::ULocale Collator::getFunctionalEquivalent(jstring arg0, android::icu::util::ULocale arg1, jbooleanArray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
@@ -155,7 +155,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	QAndroidJniObject Collator::getInstance()
+	android::icu::text::Collator Collator::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
@@ -163,7 +163,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/Collator;"
 		);
 	}
-	QAndroidJniObject Collator::getInstance(android::icu::util::ULocale arg0)
+	android::icu::text::Collator Collator::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
@@ -172,7 +172,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collator::getInstance(java::util::Locale arg0)
+	android::icu::text::Collator Collator::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
@@ -216,7 +216,7 @@ namespace android::icu::text
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject Collator::cloneAsThawed()
+	android::icu::text::Collator Collator::cloneAsThawed()
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
@@ -258,14 +258,14 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	QAndroidJniObject Collator::freeze()
+	android::icu::text::Collator Collator::freeze()
 	{
 		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/text/Collator;"
 		);
 	}
-	QAndroidJniObject Collator::getCollationKey(jstring arg0)
+	android::icu::text::CollationKey Collator::getCollationKey(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCollationKey",
@@ -301,14 +301,14 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject Collator::getTailoredSet()
+	android::icu::text::UnicodeSet Collator::getTailoredSet()
 	{
 		return callObjectMethod(
 			"getTailoredSet",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
-	QAndroidJniObject Collator::getUCAVersion()
+	android::icu::util::VersionInfo Collator::getUCAVersion()
 	{
 		return callObjectMethod(
 			"getUCAVersion",
@@ -322,7 +322,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject Collator::getVersion()
+	android::icu::util::VersionInfo Collator::getVersion()
 	{
 		return callObjectMethod(
 			"getVersion",
@@ -351,7 +351,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject Collator::setMaxVariable(jint arg0)
+	android::icu::text::Collator Collator::setMaxVariable(jint arg0)
 	{
 		return callObjectMethod(
 			"setMaxVariable",

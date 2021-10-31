@@ -34,8 +34,8 @@ namespace android::app
 		ExpandableListActivity();
 		
 		// Methods
-		QAndroidJniObject getExpandableListAdapter();
-		QAndroidJniObject getExpandableListView();
+		__JniBaseClass getExpandableListAdapter();
+		android::widget::ExpandableListView getExpandableListView();
 		jlong getSelectedId();
 		jlong getSelectedPosition();
 		jboolean onChildClick(android::widget::ExpandableListView arg0, android::view::View arg1, jint arg2, jint arg3, jlong arg4);

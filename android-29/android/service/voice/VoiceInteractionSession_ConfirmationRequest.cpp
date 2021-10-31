@@ -19,7 +19,7 @@ namespace android::service::voice
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject VoiceInteractionSession_ConfirmationRequest::getVoicePrompt()
+	android::app::VoiceInteractor_Prompt VoiceInteractionSession_ConfirmationRequest::getVoicePrompt()
 	{
 		return callObjectMethod(
 			"getVoicePrompt",

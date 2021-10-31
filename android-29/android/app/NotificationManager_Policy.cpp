@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject NotificationManager_Policy::CREATOR()
+	__JniBaseClass NotificationManager_Policy::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.NotificationManager$Policy",

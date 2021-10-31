@@ -34,8 +34,8 @@ namespace android::app
 		ListActivity();
 		
 		// Methods
-		QAndroidJniObject getListAdapter();
-		QAndroidJniObject getListView();
+		__JniBaseClass getListAdapter();
+		android::widget::ListView getListView();
 		jlong getSelectedItemId();
 		jint getSelectedItemPosition();
 		void onContentChanged();

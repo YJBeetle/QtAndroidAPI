@@ -89,21 +89,21 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	QAndroidJniObject MeteringRectangle::getRect()
+	android::graphics::Rect MeteringRectangle::getRect()
 	{
 		return callObjectMethod(
 			"getRect",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	QAndroidJniObject MeteringRectangle::getSize()
+	android::util::Size MeteringRectangle::getSize()
 	{
 		return callObjectMethod(
 			"getSize",
 			"()Landroid/util/Size;"
 		);
 	}
-	QAndroidJniObject MeteringRectangle::getUpperLeftPoint()
+	android::graphics::Point MeteringRectangle::getUpperLeftPoint()
 	{
 		return callObjectMethod(
 			"getUpperLeftPoint",

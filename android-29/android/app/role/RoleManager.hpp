@@ -29,7 +29,7 @@ namespace android::app::role
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject createRequestRoleIntent(jstring arg0);
+		android::content::Intent createRequestRoleIntent(jstring arg0);
 		jboolean isRoleAvailable(jstring arg0);
 		jboolean isRoleHeld(jstring arg0);
 	};

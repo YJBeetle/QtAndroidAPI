@@ -41,10 +41,10 @@ namespace javax::xml::parsers
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getParser();
+		__JniBaseClass getParser();
 		jobject getProperty(jstring arg0);
-		QAndroidJniObject getSchema();
-		QAndroidJniObject getXMLReader();
+		javax::xml::validation::Schema getSchema();
+		__JniBaseClass getXMLReader();
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		jboolean isXIncludeAware();

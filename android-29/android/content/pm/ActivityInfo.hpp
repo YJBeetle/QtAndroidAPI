@@ -38,7 +38,7 @@ namespace android::content::pm
 		static jint CONFIG_SMALLEST_SCREEN_SIZE();
 		static jint CONFIG_TOUCHSCREEN();
 		static jint CONFIG_UI_MODE();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DOCUMENT_LAUNCH_ALWAYS();
 		static jint DOCUMENT_LAUNCH_INTO_EXISTING();
 		static jint DOCUMENT_LAUNCH_NEVER();
@@ -98,7 +98,7 @@ namespace android::content::pm
 		jstring taskAffinity();
 		jint theme();
 		jint uiOptions();
-		QAndroidJniObject windowLayout();
+		android::content::pm::ActivityInfo_WindowLayout windowLayout();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::ComponentInfo(className, sig, std::forward<Ts>(agv)...) {}

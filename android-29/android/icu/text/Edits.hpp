@@ -24,13 +24,13 @@ namespace android::icu::text
 		// Methods
 		void addReplace(jint arg0, jint arg1);
 		void addUnchanged(jint arg0);
-		QAndroidJniObject getCoarseChangesIterator();
-		QAndroidJniObject getCoarseIterator();
-		QAndroidJniObject getFineChangesIterator();
-		QAndroidJniObject getFineIterator();
+		android::icu::text::Edits_Iterator getCoarseChangesIterator();
+		android::icu::text::Edits_Iterator getCoarseIterator();
+		android::icu::text::Edits_Iterator getFineChangesIterator();
+		android::icu::text::Edits_Iterator getFineIterator();
 		jboolean hasChanges();
 		jint lengthDelta();
-		QAndroidJniObject mergeAndAppend(android::icu::text::Edits arg0, android::icu::text::Edits arg1);
+		android::icu::text::Edits mergeAndAppend(android::icu::text::Edits arg0, android::icu::text::Edits arg1);
 		jint numberOfChanges();
 		void reset();
 	};

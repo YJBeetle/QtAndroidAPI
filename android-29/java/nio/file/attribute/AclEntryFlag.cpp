@@ -3,7 +3,7 @@
 namespace java::nio::file::attribute
 {
 	// Fields
-	QAndroidJniObject AclEntryFlag::DIRECTORY_INHERIT()
+	java::nio::file::attribute::AclEntryFlag AclEntryFlag::DIRECTORY_INHERIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryFlag",
@@ -11,7 +11,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryFlag;"
 		);
 	}
-	QAndroidJniObject AclEntryFlag::FILE_INHERIT()
+	java::nio::file::attribute::AclEntryFlag AclEntryFlag::FILE_INHERIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryFlag",
@@ -19,7 +19,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryFlag;"
 		);
 	}
-	QAndroidJniObject AclEntryFlag::INHERIT_ONLY()
+	java::nio::file::attribute::AclEntryFlag AclEntryFlag::INHERIT_ONLY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryFlag",
@@ -27,7 +27,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryFlag;"
 		);
 	}
-	QAndroidJniObject AclEntryFlag::NO_PROPAGATE_INHERIT()
+	java::nio::file::attribute::AclEntryFlag AclEntryFlag::NO_PROPAGATE_INHERIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryFlag",
@@ -42,7 +42,7 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AclEntryFlag::valueOf(jstring arg0)
+	java::nio::file::attribute::AclEntryFlag AclEntryFlag::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntryFlag",

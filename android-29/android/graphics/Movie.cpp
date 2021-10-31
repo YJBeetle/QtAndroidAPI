@@ -13,7 +13,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Movie::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2)
+	android::graphics::Movie Movie::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Movie",
@@ -24,7 +24,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	QAndroidJniObject Movie::decodeFile(jstring arg0)
+	android::graphics::Movie Movie::decodeFile(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Movie",
@@ -33,7 +33,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Movie::decodeStream(java::io::InputStream arg0)
+	android::graphics::Movie Movie::decodeStream(java::io::InputStream arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Movie",

@@ -37,7 +37,7 @@ namespace javax::security::auth
 		jarray getPrincipals();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
-		QAndroidJniObject newPermissionCollection();
+		java::security::PermissionCollection newPermissionCollection();
 	};
 } // namespace javax::security::auth
 

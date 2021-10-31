@@ -50,14 +50,14 @@ namespace java::io
 		jint available();
 		void close();
 		void defaultReadObject();
-		QAndroidJniObject getObjectInputFilter();
+		__JniBaseClass getObjectInputFilter();
 		jint read();
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		jboolean readBoolean();
 		jbyte readByte();
 		jchar readChar();
 		jdouble readDouble();
-		QAndroidJniObject readFields();
+		java::io::ObjectInputStream_GetField readFields();
 		jfloat readFloat();
 		void readFully(jbyteArray arg0);
 		void readFully(jbyteArray arg0, jint arg1, jint arg2);

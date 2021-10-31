@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject CellIdentityLte::CREATOR()
+	__JniBaseClass CellIdentityLte::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellIdentityLte",

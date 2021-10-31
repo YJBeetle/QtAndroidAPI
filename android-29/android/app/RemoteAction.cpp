@@ -7,7 +7,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject RemoteAction::CREATOR()
+	__JniBaseClass RemoteAction::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.RemoteAction",
@@ -31,7 +31,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject RemoteAction::clone()
+	android::app::RemoteAction RemoteAction::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -54,7 +54,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject RemoteAction::getActionIntent()
+	android::app::PendingIntent RemoteAction::getActionIntent()
 	{
 		return callObjectMethod(
 			"getActionIntent",
@@ -68,7 +68,7 @@ namespace android::app
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject RemoteAction::getIcon()
+	android::graphics::drawable::Icon RemoteAction::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",

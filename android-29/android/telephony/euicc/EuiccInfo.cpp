@@ -4,7 +4,7 @@
 namespace android::telephony::euicc
 {
 	// Fields
-	QAndroidJniObject EuiccInfo::CREATOR()
+	__JniBaseClass EuiccInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.euicc.EuiccInfo",

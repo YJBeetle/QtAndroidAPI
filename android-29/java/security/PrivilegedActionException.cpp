@@ -19,7 +19,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrivilegedActionException::getException()
+	java::lang::Exception PrivilegedActionException::getException()
 	{
 		return callObjectMethod(
 			"getException",

@@ -97,7 +97,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	QAndroidJniObject DefaultHandler::resolveEntity(jstring arg0, jstring arg1)
+	org::xml::sax::InputSource DefaultHandler::resolveEntity(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"resolveEntity",

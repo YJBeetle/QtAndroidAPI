@@ -28,9 +28,9 @@ namespace java::lang::reflect
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAnnotatedReceiverType();
-		QAndroidJniObject getAnnotatedReturnType();
-		QAndroidJniObject getAnnotation(jclass arg0);
+		__JniBaseClass getAnnotatedReceiverType();
+		__JniBaseClass getAnnotatedReturnType();
+		__JniBaseClass getAnnotation(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jclass getDeclaringClass();
 		jarray getExceptionTypes();

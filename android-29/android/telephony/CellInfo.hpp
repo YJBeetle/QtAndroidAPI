@@ -17,7 +17,7 @@ namespace android::telephony
 		static jint CONNECTION_PRIMARY_SERVING();
 		static jint CONNECTION_SECONDARY_SERVING();
 		static jint CONNECTION_UNKNOWN();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint UNAVAILABLE();
 		static jlong UNAVAILABLE_LONG();
 		

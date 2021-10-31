@@ -16,7 +16,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	QAndroidJniObject WebViewDatabase::getInstance(android::content::Context arg0)
+	android::webkit::WebViewDatabase WebViewDatabase::getInstance(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebViewDatabase",

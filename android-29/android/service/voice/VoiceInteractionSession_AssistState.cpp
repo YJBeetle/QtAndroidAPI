@@ -14,28 +14,28 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject VoiceInteractionSession_AssistState::getActivityId()
+	android::service::voice::VoiceInteractionSession_ActivityId VoiceInteractionSession_AssistState::getActivityId()
 	{
 		return callObjectMethod(
 			"getActivityId",
 			"()Landroid/service/voice/VoiceInteractionSession$ActivityId;"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistContent()
+	android::app::assist::AssistContent VoiceInteractionSession_AssistState::getAssistContent()
 	{
 		return callObjectMethod(
 			"getAssistContent",
 			"()Landroid/app/assist/AssistContent;"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistData()
+	android::os::Bundle VoiceInteractionSession_AssistState::getAssistData()
 	{
 		return callObjectMethod(
 			"getAssistData",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistStructure()
+	android::app::assist::AssistStructure VoiceInteractionSession_AssistState::getAssistStructure()
 	{
 		return callObjectMethod(
 			"getAssistStructure",

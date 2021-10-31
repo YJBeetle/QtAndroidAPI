@@ -47,13 +47,13 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject allocateSecurityParameterIndex(java::net::InetAddress arg0);
-		QAndroidJniObject allocateSecurityParameterIndex(java::net::InetAddress arg0, jint arg1);
+		android::net::IpSecManager_SecurityParameterIndex allocateSecurityParameterIndex(java::net::InetAddress arg0);
+		android::net::IpSecManager_SecurityParameterIndex allocateSecurityParameterIndex(java::net::InetAddress arg0, jint arg1);
 		void applyTransportModeTransform(java::io::FileDescriptor arg0, jint arg1, android::net::IpSecTransform arg2);
 		void applyTransportModeTransform(java::net::DatagramSocket arg0, jint arg1, android::net::IpSecTransform arg2);
 		void applyTransportModeTransform(java::net::Socket arg0, jint arg1, android::net::IpSecTransform arg2);
-		QAndroidJniObject openUdpEncapsulationSocket();
-		QAndroidJniObject openUdpEncapsulationSocket(jint arg0);
+		android::net::IpSecManager_UdpEncapsulationSocket openUdpEncapsulationSocket();
+		android::net::IpSecManager_UdpEncapsulationSocket openUdpEncapsulationSocket(jint arg0);
 		void removeTransportModeTransforms(java::io::FileDescriptor arg0);
 		void removeTransportModeTransforms(java::net::DatagramSocket arg0);
 		void removeTransportModeTransforms(java::net::Socket arg0);

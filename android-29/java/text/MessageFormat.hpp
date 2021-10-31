@@ -52,12 +52,12 @@ namespace java::text
 		void applyPattern(jstring arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject format(jobjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		QAndroidJniObject format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		QAndroidJniObject formatToCharacterIterator(jobject arg0);
+		java::lang::StringBuffer format(jobjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		__JniBaseClass formatToCharacterIterator(jobject arg0);
 		jarray getFormats();
 		jarray getFormatsByArgumentIndex();
-		QAndroidJniObject getLocale();
+		java::util::Locale getLocale();
 		jint hashCode();
 		jobjectArray parse(jstring arg0);
 		jobjectArray parse(jstring arg0, java::text::ParsePosition arg1);

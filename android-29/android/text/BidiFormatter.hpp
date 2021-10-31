@@ -21,9 +21,9 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(jboolean arg0);
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static android::text::BidiFormatter getInstance();
+		static android::text::BidiFormatter getInstance(jboolean arg0);
+		static android::text::BidiFormatter getInstance(java::util::Locale arg0);
 		jboolean getStereoReset();
 		jboolean isRtl(jstring arg0);
 		jboolean isRtlContext();

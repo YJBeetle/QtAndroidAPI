@@ -76,7 +76,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject TimePicker::getAutofillValue()
+	android::view::autofill::AutofillValue TimePicker::getAutofillValue()
 	{
 		return callObjectMethod(
 			"getAutofillValue",
@@ -90,14 +90,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject TimePicker::getCurrentHour()
+	java::lang::Integer TimePicker::getCurrentHour()
 	{
 		return callObjectMethod(
 			"getCurrentHour",
 			"()Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject TimePicker::getCurrentMinute()
+	java::lang::Integer TimePicker::getCurrentMinute()
 	{
 		return callObjectMethod(
 			"getCurrentMinute",

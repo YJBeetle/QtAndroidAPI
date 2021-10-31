@@ -6,7 +6,7 @@
 namespace java::time
 {
 	// Fields
-	QAndroidJniObject ZoneOffset::MAX()
+	java::time::ZoneOffset ZoneOffset::MAX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.ZoneOffset",
@@ -14,7 +14,7 @@ namespace java::time
 			"Ljava/time/ZoneOffset;"
 		);
 	}
-	QAndroidJniObject ZoneOffset::MIN()
+	java::time::ZoneOffset ZoneOffset::MIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.ZoneOffset",
@@ -22,7 +22,7 @@ namespace java::time
 			"Ljava/time/ZoneOffset;"
 		);
 	}
-	QAndroidJniObject ZoneOffset::UTC()
+	java::time::ZoneOffset ZoneOffset::UTC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.ZoneOffset",
@@ -37,7 +37,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ZoneOffset::from(__JniBaseClass arg0)
+	java::time::ZoneOffset ZoneOffset::from(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneOffset",
@@ -46,7 +46,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ZoneOffset::of(jstring arg0)
+	java::time::ZoneOffset ZoneOffset::of(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneOffset",
@@ -55,7 +55,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject ZoneOffset::ofHours(jint arg0)
+	java::time::ZoneOffset ZoneOffset::ofHours(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneOffset",
@@ -64,7 +64,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject ZoneOffset::ofHoursMinutes(jint arg0, jint arg1)
+	java::time::ZoneOffset ZoneOffset::ofHoursMinutes(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneOffset",
@@ -74,7 +74,7 @@ namespace java::time
 			arg1
 		);
 	}
-	QAndroidJniObject ZoneOffset::ofHoursMinutesSeconds(jint arg0, jint arg1, jint arg2)
+	java::time::ZoneOffset ZoneOffset::ofHoursMinutesSeconds(jint arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneOffset",
@@ -85,7 +85,7 @@ namespace java::time
 			arg2
 		);
 	}
-	QAndroidJniObject ZoneOffset::ofTotalSeconds(jint arg0)
+	java::time::ZoneOffset ZoneOffset::ofTotalSeconds(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneOffset",
@@ -94,7 +94,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject ZoneOffset::adjustInto(__JniBaseClass arg0)
+	__JniBaseClass ZoneOffset::adjustInto(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -149,7 +149,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ZoneOffset::getRules()
+	java::time::zone::ZoneRules ZoneOffset::getRules()
 	{
 		return callObjectMethod(
 			"getRules",
@@ -186,7 +186,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject ZoneOffset::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange ZoneOffset::range(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"range",

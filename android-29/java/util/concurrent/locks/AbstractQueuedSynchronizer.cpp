@@ -44,14 +44,14 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	QAndroidJniObject AbstractQueuedSynchronizer::getExclusiveQueuedThreads()
+	__JniBaseClass AbstractQueuedSynchronizer::getExclusiveQueuedThreads()
 	{
 		return callObjectMethod(
 			"getExclusiveQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
-	QAndroidJniObject AbstractQueuedSynchronizer::getFirstQueuedThread()
+	java::lang::Thread AbstractQueuedSynchronizer::getFirstQueuedThread()
 	{
 		return callObjectMethod(
 			"getFirstQueuedThread",
@@ -65,14 +65,14 @@ namespace java::util::concurrent::locks
 			"()I"
 		);
 	}
-	QAndroidJniObject AbstractQueuedSynchronizer::getQueuedThreads()
+	__JniBaseClass AbstractQueuedSynchronizer::getQueuedThreads()
 	{
 		return callObjectMethod(
 			"getQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
-	QAndroidJniObject AbstractQueuedSynchronizer::getSharedQueuedThreads()
+	__JniBaseClass AbstractQueuedSynchronizer::getSharedQueuedThreads()
 	{
 		return callObjectMethod(
 			"getSharedQueuedThreads",
@@ -87,7 +87,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AbstractQueuedSynchronizer::getWaitingThreads(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0)
+	__JniBaseClass AbstractQueuedSynchronizer::getWaitingThreads(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0)
 	{
 		return callObjectMethod(
 			"getWaitingThreads",

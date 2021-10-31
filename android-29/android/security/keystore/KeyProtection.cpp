@@ -32,21 +32,21 @@ namespace android::security::keystore
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject KeyProtection::getKeyValidityForConsumptionEnd()
+	java::util::Date KeyProtection::getKeyValidityForConsumptionEnd()
 	{
 		return callObjectMethod(
 			"getKeyValidityForConsumptionEnd",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject KeyProtection::getKeyValidityForOriginationEnd()
+	java::util::Date KeyProtection::getKeyValidityForOriginationEnd()
 	{
 		return callObjectMethod(
 			"getKeyValidityForOriginationEnd",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject KeyProtection::getKeyValidityStart()
+	java::util::Date KeyProtection::getKeyValidityStart()
 	{
 		return callObjectMethod(
 			"getKeyValidityStart",

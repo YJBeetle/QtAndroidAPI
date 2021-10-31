@@ -25,7 +25,7 @@ namespace android::service::chooser
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ChooserTarget(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -36,9 +36,9 @@ namespace android::service::chooser
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getComponentName();
-		QAndroidJniObject getIcon();
-		QAndroidJniObject getIntentExtras();
+		android::content::ComponentName getComponentName();
+		android::graphics::drawable::Icon getIcon();
+		android::os::Bundle getIntentExtras();
 		jfloat getScore();
 		jstring getTitle();
 		jstring toString();

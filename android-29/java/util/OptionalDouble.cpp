@@ -10,7 +10,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject OptionalDouble::empty()
+	java::util::OptionalDouble OptionalDouble::empty()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.OptionalDouble",
@@ -18,7 +18,7 @@ namespace java::util
 			"()Ljava/util/OptionalDouble;"
 		);
 	}
-	QAndroidJniObject OptionalDouble::of(jdouble arg0)
+	java::util::OptionalDouble OptionalDouble::of(jdouble arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.OptionalDouble",
@@ -111,7 +111,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OptionalDouble::stream()
+	__JniBaseClass OptionalDouble::stream()
 	{
 		return callObjectMethod(
 			"stream",

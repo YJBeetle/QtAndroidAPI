@@ -78,7 +78,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	QAndroidJniObject AutoCompleteTextView::getAdapter()
+	__JniBaseClass AutoCompleteTextView::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
@@ -99,7 +99,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AutoCompleteTextView::getDropDownBackground()
+	android::graphics::drawable::Drawable AutoCompleteTextView::getDropDownBackground()
 	{
 		return callObjectMethod(
 			"getDropDownBackground",
@@ -141,14 +141,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AutoCompleteTextView::getItemClickListener()
+	__JniBaseClass AutoCompleteTextView::getItemClickListener()
 	{
 		return callObjectMethod(
 			"getItemClickListener",
 			"()Landroid/widget/AdapterView$OnItemClickListener;"
 		);
 	}
-	QAndroidJniObject AutoCompleteTextView::getItemSelectedListener()
+	__JniBaseClass AutoCompleteTextView::getItemSelectedListener()
 	{
 		return callObjectMethod(
 			"getItemSelectedListener",
@@ -162,14 +162,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AutoCompleteTextView::getOnItemClickListener()
+	__JniBaseClass AutoCompleteTextView::getOnItemClickListener()
 	{
 		return callObjectMethod(
 			"getOnItemClickListener",
 			"()Landroid/widget/AdapterView$OnItemClickListener;"
 		);
 	}
-	QAndroidJniObject AutoCompleteTextView::getOnItemSelectedListener()
+	__JniBaseClass AutoCompleteTextView::getOnItemSelectedListener()
 	{
 		return callObjectMethod(
 			"getOnItemSelectedListener",
@@ -183,7 +183,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AutoCompleteTextView::getValidator()
+	__JniBaseClass AutoCompleteTextView::getValidator()
 	{
 		return callObjectMethod(
 			"getValidator",

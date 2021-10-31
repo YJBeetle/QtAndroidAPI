@@ -31,14 +31,14 @@ namespace android::inputmethodservice
 			"height"
 		);
 	}
-	QAndroidJniObject Keyboard_Key::icon()
+	android::graphics::drawable::Drawable Keyboard_Key::icon()
 	{
 		return getObjectField(
 			"icon",
 			"Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject Keyboard_Key::iconPreview()
+	android::graphics::drawable::Drawable Keyboard_Key::iconPreview()
 	{
 		return getObjectField(
 			"iconPreview",

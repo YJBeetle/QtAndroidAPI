@@ -45,14 +45,14 @@ namespace java::awt::font
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getContextualShaper(jint arg0);
-		static QAndroidJniObject getContextualShaper(__JniBaseClass arg0);
-		static QAndroidJniObject getContextualShaper(jint arg0, jint arg1);
-		static QAndroidJniObject getContextualShaper(__JniBaseClass arg0, java::awt::font::NumericShaper_Range arg1);
-		static QAndroidJniObject getShaper(jint arg0);
-		static QAndroidJniObject getShaper(java::awt::font::NumericShaper_Range arg0);
+		static java::awt::font::NumericShaper getContextualShaper(jint arg0);
+		static java::awt::font::NumericShaper getContextualShaper(__JniBaseClass arg0);
+		static java::awt::font::NumericShaper getContextualShaper(jint arg0, jint arg1);
+		static java::awt::font::NumericShaper getContextualShaper(__JniBaseClass arg0, java::awt::font::NumericShaper_Range arg1);
+		static java::awt::font::NumericShaper getShaper(jint arg0);
+		static java::awt::font::NumericShaper getShaper(java::awt::font::NumericShaper_Range arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getRangeSet();
+		__JniBaseClass getRangeSet();
 		jint getRanges();
 		jint hashCode();
 		jboolean isContextual();

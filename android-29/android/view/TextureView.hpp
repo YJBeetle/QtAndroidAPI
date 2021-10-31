@@ -60,17 +60,17 @@ namespace android::view
 		// Methods
 		void buildLayer();
 		void draw(android::graphics::Canvas arg0);
-		QAndroidJniObject getBitmap();
-		QAndroidJniObject getBitmap(android::graphics::Bitmap arg0);
-		QAndroidJniObject getBitmap(jint arg0, jint arg1);
+		android::graphics::Bitmap getBitmap();
+		android::graphics::Bitmap getBitmap(android::graphics::Bitmap arg0);
+		android::graphics::Bitmap getBitmap(jint arg0, jint arg1);
 		jint getLayerType();
-		QAndroidJniObject getSurfaceTexture();
-		QAndroidJniObject getSurfaceTextureListener();
-		QAndroidJniObject getTransform(android::graphics::Matrix arg0);
+		android::graphics::SurfaceTexture getSurfaceTexture();
+		__JniBaseClass getSurfaceTextureListener();
+		android::graphics::Matrix getTransform(android::graphics::Matrix arg0);
 		jboolean isAvailable();
 		jboolean isOpaque();
-		QAndroidJniObject lockCanvas();
-		QAndroidJniObject lockCanvas(android::graphics::Rect arg0);
+		android::graphics::Canvas lockCanvas();
+		android::graphics::Canvas lockCanvas(android::graphics::Rect arg0);
 		void setBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setForeground(android::graphics::drawable::Drawable arg0);
 		void setLayerPaint(android::graphics::Paint arg0);

@@ -18,8 +18,8 @@ namespace java::security::cert
 		CertPathBuilderSpi();
 		
 		// Methods
-		QAndroidJniObject engineBuild(__JniBaseClass arg0);
-		QAndroidJniObject engineGetRevocationChecker();
+		__JniBaseClass engineBuild(__JniBaseClass arg0);
+		__JniBaseClass engineGetRevocationChecker();
 	};
 } // namespace java::security::cert
 

@@ -42,7 +42,7 @@ namespace android::os
 		Build();
 		
 		// Methods
-		static QAndroidJniObject getFingerprintedPartitions();
+		static __JniBaseClass getFingerprintedPartitions();
 		static jstring getRadioVersion();
 		static jstring getSerial();
 	};

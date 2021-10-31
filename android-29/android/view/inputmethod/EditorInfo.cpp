@@ -6,7 +6,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	QAndroidJniObject EditorInfo::CREATOR()
+	__JniBaseClass EditorInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.EditorInfo",
@@ -160,7 +160,7 @@ namespace android::view::inputmethod
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject EditorInfo::extras()
+	android::os::Bundle EditorInfo::extras()
 	{
 		return getObjectField(
 			"extras",
@@ -180,7 +180,7 @@ namespace android::view::inputmethod
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject EditorInfo::hintLocales()
+	android::os::LocaleList EditorInfo::hintLocales()
 	{
 		return getObjectField(
 			"hintLocales",

@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject RemoteInput::CREATOR()
+	__JniBaseClass RemoteInput::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.RemoteInput",
@@ -94,7 +94,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject RemoteInput::getDataResultsFromIntent(android::content::Intent arg0, jstring arg1)
+	__JniBaseClass RemoteInput::getDataResultsFromIntent(android::content::Intent arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.RemoteInput",
@@ -104,7 +104,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject RemoteInput::getResultsFromIntent(android::content::Intent arg0)
+	android::os::Bundle RemoteInput::getResultsFromIntent(android::content::Intent arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.RemoteInput",
@@ -146,7 +146,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject RemoteInput::getAllowedDataTypes()
+	__JniBaseClass RemoteInput::getAllowedDataTypes()
 	{
 		return callObjectMethod(
 			"getAllowedDataTypes",
@@ -167,7 +167,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject RemoteInput::getExtras()
+	android::os::Bundle RemoteInput::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

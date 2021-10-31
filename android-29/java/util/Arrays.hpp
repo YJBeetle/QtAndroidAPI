@@ -21,7 +21,7 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject asList(jobjectArray arg0);
+		static __JniBaseClass asList(jobjectArray arg0);
 		static jint binarySearch(jbyteArray arg0, jbyte arg1);
 		static jint binarySearch(jcharArray arg0, jchar arg1);
 		static jint binarySearch(jdoubleArray arg0, jdouble arg1);
@@ -210,22 +210,22 @@ namespace java::util
 		static void sort(jobjectArray arg0, jint arg1, jint arg2);
 		static void sort(jshortArray arg0, jint arg1, jint arg2);
 		static void sort(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3);
-		static QAndroidJniObject spliterator(jobjectArray arg0);
-		static QAndroidJniObject spliterator(jobjectArray arg0, jint arg1, jint arg2);
-		static QAndroidJniObject spliterator(jdoubleArray arg0);
-		static QAndroidJniObject spliterator(jdoubleArray arg0, jint arg1, jint arg2);
-		static QAndroidJniObject spliterator(jintArray arg0);
-		static QAndroidJniObject spliterator(jintArray arg0, jint arg1, jint arg2);
-		static QAndroidJniObject spliterator(jlongArray arg0);
-		static QAndroidJniObject spliterator(jlongArray arg0, jint arg1, jint arg2);
-		static QAndroidJniObject stream(jdoubleArray arg0);
-		static QAndroidJniObject stream(jdoubleArray arg0, jint arg1, jint arg2);
-		static QAndroidJniObject stream(jintArray arg0);
-		static QAndroidJniObject stream(jintArray arg0, jint arg1, jint arg2);
-		static QAndroidJniObject stream(jlongArray arg0);
-		static QAndroidJniObject stream(jlongArray arg0, jint arg1, jint arg2);
-		static QAndroidJniObject stream(jobjectArray arg0);
-		static QAndroidJniObject stream(jobjectArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass spliterator(jobjectArray arg0);
+		static __JniBaseClass spliterator(jobjectArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass spliterator(jdoubleArray arg0);
+		static __JniBaseClass spliterator(jdoubleArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass spliterator(jintArray arg0);
+		static __JniBaseClass spliterator(jintArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass spliterator(jlongArray arg0);
+		static __JniBaseClass spliterator(jlongArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass stream(jdoubleArray arg0);
+		static __JniBaseClass stream(jdoubleArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass stream(jintArray arg0);
+		static __JniBaseClass stream(jintArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass stream(jlongArray arg0);
+		static __JniBaseClass stream(jlongArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass stream(jobjectArray arg0);
+		static __JniBaseClass stream(jobjectArray arg0, jint arg1, jint arg2);
 		static jstring toString(jbyteArray arg0);
 		static jstring toString(jcharArray arg0);
 		static jstring toString(jdoubleArray arg0);

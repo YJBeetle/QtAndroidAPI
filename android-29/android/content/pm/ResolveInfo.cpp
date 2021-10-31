@@ -10,7 +10,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject ResolveInfo::CREATOR()
+	__JniBaseClass ResolveInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ResolveInfo",
@@ -18,14 +18,14 @@ namespace android::content::pm
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject ResolveInfo::activityInfo()
+	android::content::pm::ActivityInfo ResolveInfo::activityInfo()
 	{
 		return getObjectField(
 			"activityInfo",
 			"Landroid/content/pm/ActivityInfo;"
 		);
 	}
-	QAndroidJniObject ResolveInfo::filter()
+	android::content::IntentFilter ResolveInfo::filter()
 	{
 		return getObjectField(
 			"filter",
@@ -81,7 +81,7 @@ namespace android::content::pm
 			"priority"
 		);
 	}
-	QAndroidJniObject ResolveInfo::providerInfo()
+	android::content::pm::ProviderInfo ResolveInfo::providerInfo()
 	{
 		return getObjectField(
 			"providerInfo",
@@ -95,7 +95,7 @@ namespace android::content::pm
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ResolveInfo::serviceInfo()
+	android::content::pm::ServiceInfo ResolveInfo::serviceInfo()
 	{
 		return getObjectField(
 			"serviceInfo",
@@ -149,7 +149,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject ResolveInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable ResolveInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadIcon",

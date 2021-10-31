@@ -25,9 +25,9 @@ namespace android::security::keystore
 		jarray getDigests();
 		jarray getEncryptionPaddings();
 		jint getKeySize();
-		QAndroidJniObject getKeyValidityForConsumptionEnd();
-		QAndroidJniObject getKeyValidityForOriginationEnd();
-		QAndroidJniObject getKeyValidityStart();
+		java::util::Date getKeyValidityForConsumptionEnd();
+		java::util::Date getKeyValidityForOriginationEnd();
+		java::util::Date getKeyValidityStart();
 		jstring getKeystoreAlias();
 		jint getOrigin();
 		jint getPurposes();

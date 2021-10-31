@@ -22,26 +22,26 @@ namespace android::service::notification
 		ZenPolicy_Builder();
 		
 		// Methods
-		QAndroidJniObject allowAlarms(jboolean arg0);
-		QAndroidJniObject allowAllSounds();
-		QAndroidJniObject allowCalls(jint arg0);
-		QAndroidJniObject allowEvents(jboolean arg0);
-		QAndroidJniObject allowMedia(jboolean arg0);
-		QAndroidJniObject allowMessages(jint arg0);
-		QAndroidJniObject allowReminders(jboolean arg0);
-		QAndroidJniObject allowRepeatCallers(jboolean arg0);
-		QAndroidJniObject allowSystem(jboolean arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject disallowAllSounds();
-		QAndroidJniObject hideAllVisualEffects();
-		QAndroidJniObject showAllVisualEffects();
-		QAndroidJniObject showBadges(jboolean arg0);
-		QAndroidJniObject showFullScreenIntent(jboolean arg0);
-		QAndroidJniObject showInAmbientDisplay(jboolean arg0);
-		QAndroidJniObject showInNotificationList(jboolean arg0);
-		QAndroidJniObject showLights(jboolean arg0);
-		QAndroidJniObject showPeeking(jboolean arg0);
-		QAndroidJniObject showStatusBarIcons(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder allowAlarms(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder allowAllSounds();
+		android::service::notification::ZenPolicy_Builder allowCalls(jint arg0);
+		android::service::notification::ZenPolicy_Builder allowEvents(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder allowMedia(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder allowMessages(jint arg0);
+		android::service::notification::ZenPolicy_Builder allowReminders(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder allowRepeatCallers(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder allowSystem(jboolean arg0);
+		android::service::notification::ZenPolicy build();
+		android::service::notification::ZenPolicy_Builder disallowAllSounds();
+		android::service::notification::ZenPolicy_Builder hideAllVisualEffects();
+		android::service::notification::ZenPolicy_Builder showAllVisualEffects();
+		android::service::notification::ZenPolicy_Builder showBadges(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder showFullScreenIntent(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder showInAmbientDisplay(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder showInNotificationList(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder showLights(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder showPeeking(jboolean arg0);
+		android::service::notification::ZenPolicy_Builder showStatusBarIcons(jboolean arg0);
 	};
 } // namespace android::service::notification
 

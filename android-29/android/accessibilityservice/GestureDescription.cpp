@@ -27,7 +27,7 @@ namespace android::accessibilityservice
 			"()I"
 		);
 	}
-	QAndroidJniObject GestureDescription::getStroke(jint arg0)
+	android::accessibilityservice::GestureDescription_StrokeDescription GestureDescription::getStroke(jint arg0)
 	{
 		return callObjectMethod(
 			"getStroke",

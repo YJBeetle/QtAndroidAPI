@@ -10,7 +10,7 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject UserPrincipalLookupService::lookupPrincipalByGroupName(jstring arg0)
+	__JniBaseClass UserPrincipalLookupService::lookupPrincipalByGroupName(jstring arg0)
 	{
 		return callObjectMethod(
 			"lookupPrincipalByGroupName",
@@ -18,7 +18,7 @@ namespace java::nio::file::attribute
 			arg0
 		);
 	}
-	QAndroidJniObject UserPrincipalLookupService::lookupPrincipalByName(jstring arg0)
+	__JniBaseClass UserPrincipalLookupService::lookupPrincipalByName(jstring arg0)
 	{
 		return callObjectMethod(
 			"lookupPrincipalByName",

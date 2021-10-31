@@ -41,21 +41,21 @@ namespace android::service::media
 			arg2
 		);
 	}
-	QAndroidJniObject MediaBrowserService::getBrowserRootHints()
+	android::os::Bundle MediaBrowserService::getBrowserRootHints()
 	{
 		return callObjectMethod(
 			"getBrowserRootHints",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject MediaBrowserService::getCurrentBrowserInfo()
+	android::media::session::MediaSessionManager_RemoteUserInfo MediaBrowserService::getCurrentBrowserInfo()
 	{
 		return callObjectMethod(
 			"getCurrentBrowserInfo",
 			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
 		);
 	}
-	QAndroidJniObject MediaBrowserService::getSessionToken()
+	android::media::session::MediaSession_Token MediaBrowserService::getSessionToken()
 	{
 		return callObjectMethod(
 			"getSessionToken",
@@ -79,7 +79,7 @@ namespace android::service::media
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaBrowserService::onBind(android::content::Intent arg0)
+	__JniBaseClass MediaBrowserService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -94,7 +94,7 @@ namespace android::service::media
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaBrowserService::onGetRoot(jstring arg0, jint arg1, android::os::Bundle arg2)
+	android::service::media::MediaBrowserService_BrowserRoot MediaBrowserService::onGetRoot(jstring arg0, jint arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"onGetRoot",

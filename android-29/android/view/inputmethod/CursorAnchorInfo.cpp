@@ -6,7 +6,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	QAndroidJniObject CursorAnchorInfo::CREATOR()
+	__JniBaseClass CursorAnchorInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.CursorAnchorInfo",
@@ -63,7 +63,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject CursorAnchorInfo::getCharacterBounds(jint arg0)
+	android::graphics::RectF CursorAnchorInfo::getCharacterBounds(jint arg0)
 	{
 		return callObjectMethod(
 			"getCharacterBounds",
@@ -128,7 +128,7 @@ namespace android::view::inputmethod
 			"()F"
 		);
 	}
-	QAndroidJniObject CursorAnchorInfo::getMatrix()
+	android::graphics::Matrix CursorAnchorInfo::getMatrix()
 	{
 		return callObjectMethod(
 			"getMatrix",

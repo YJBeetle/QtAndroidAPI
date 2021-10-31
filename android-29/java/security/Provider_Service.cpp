@@ -46,7 +46,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Provider_Service::getProvider()
+	java::security::Provider Provider_Service::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

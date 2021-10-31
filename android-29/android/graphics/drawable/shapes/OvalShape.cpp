@@ -20,7 +20,7 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	QAndroidJniObject OvalShape::clone()
+	android::graphics::drawable::shapes::OvalShape OvalShape::clone()
 	{
 		return callObjectMethod(
 			"clone",

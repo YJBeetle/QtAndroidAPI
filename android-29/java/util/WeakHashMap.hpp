@@ -29,17 +29,17 @@ namespace java::util
 		void clear();
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		QAndroidJniObject entrySet();
+		__JniBaseClass entrySet();
 		void forEach(__JniBaseClass arg0);
 		jobject get(jobject arg0);
 		jboolean isEmpty();
-		QAndroidJniObject keySet();
+		__JniBaseClass keySet();
 		jobject put(jobject arg0, jobject arg1);
 		void putAll(__JniBaseClass arg0);
 		jobject remove(jobject arg0);
 		void replaceAll(__JniBaseClass arg0);
 		jint size();
-		QAndroidJniObject values();
+		__JniBaseClass values();
 	};
 } // namespace java::util
 

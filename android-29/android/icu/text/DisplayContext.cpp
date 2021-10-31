@@ -4,7 +4,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject DisplayContext::CAPITALIZATION_FOR_BEGINNING_OF_SENTENCE()
+	android::icu::text::DisplayContext DisplayContext::CAPITALIZATION_FOR_BEGINNING_OF_SENTENCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -12,7 +12,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject DisplayContext::CAPITALIZATION_FOR_MIDDLE_OF_SENTENCE()
+	android::icu::text::DisplayContext DisplayContext::CAPITALIZATION_FOR_MIDDLE_OF_SENTENCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -20,7 +20,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject DisplayContext::CAPITALIZATION_FOR_STANDALONE()
+	android::icu::text::DisplayContext DisplayContext::CAPITALIZATION_FOR_STANDALONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -28,7 +28,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject DisplayContext::CAPITALIZATION_FOR_UI_LIST_OR_MENU()
+	android::icu::text::DisplayContext DisplayContext::CAPITALIZATION_FOR_UI_LIST_OR_MENU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -36,7 +36,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject DisplayContext::CAPITALIZATION_NONE()
+	android::icu::text::DisplayContext DisplayContext::CAPITALIZATION_NONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -44,7 +44,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject DisplayContext::DIALECT_NAMES()
+	android::icu::text::DisplayContext DisplayContext::DIALECT_NAMES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -52,7 +52,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject DisplayContext::LENGTH_FULL()
+	android::icu::text::DisplayContext DisplayContext::LENGTH_FULL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -60,7 +60,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject DisplayContext::LENGTH_SHORT()
+	android::icu::text::DisplayContext DisplayContext::LENGTH_SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -68,7 +68,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject DisplayContext::NO_SUBSTITUTE()
+	android::icu::text::DisplayContext DisplayContext::NO_SUBSTITUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -76,7 +76,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject DisplayContext::STANDARD_NAMES()
+	android::icu::text::DisplayContext DisplayContext::STANDARD_NAMES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -84,7 +84,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject DisplayContext::SUBSTITUTE()
+	android::icu::text::DisplayContext DisplayContext::SUBSTITUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext",
@@ -99,7 +99,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DisplayContext::valueOf(jstring arg0)
+	android::icu::text::DisplayContext DisplayContext::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DisplayContext",
@@ -116,7 +116,7 @@ namespace android::icu::text
 			"()[Landroid/icu/text/DisplayContext;"
 		).object<jarray>();
 	}
-	QAndroidJniObject DisplayContext::type()
+	android::icu::text::DisplayContext_Type DisplayContext::type()
 	{
 		return callObjectMethod(
 			"type",

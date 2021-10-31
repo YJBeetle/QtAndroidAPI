@@ -31,13 +31,13 @@ namespace java::nio::channels
 		
 		// Methods
 		jobject blockingLock();
-		QAndroidJniObject configureBlocking(jboolean arg0);
+		java::nio::channels::SelectableChannel configureBlocking(jboolean arg0);
 		jboolean isBlocking();
 		jboolean isRegistered();
-		QAndroidJniObject keyFor(java::nio::channels::Selector arg0);
-		QAndroidJniObject provider();
-		QAndroidJniObject _register(java::nio::channels::Selector arg0, jint arg1);
-		QAndroidJniObject _register(java::nio::channels::Selector arg0, jint arg1, jobject arg2);
+		java::nio::channels::SelectionKey keyFor(java::nio::channels::Selector arg0);
+		java::nio::channels::spi::SelectorProvider provider();
+		java::nio::channels::SelectionKey _register(java::nio::channels::Selector arg0, jint arg1);
+		java::nio::channels::SelectionKey _register(java::nio::channels::Selector arg0, jint arg1, jobject arg2);
 		jint validOps();
 	};
 } // namespace java::nio::channels

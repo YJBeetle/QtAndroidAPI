@@ -22,7 +22,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	QAndroidJniObject Picture::beginRecording(jint arg0, jint arg1)
+	android::graphics::Canvas Picture::beginRecording(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"beginRecording",

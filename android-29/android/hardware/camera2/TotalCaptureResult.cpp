@@ -10,14 +10,14 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TotalCaptureResult::getPartialResults()
+	__JniBaseClass TotalCaptureResult::getPartialResults()
 	{
 		return callObjectMethod(
 			"getPartialResults",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject TotalCaptureResult::getPhysicalCameraResults()
+	__JniBaseClass TotalCaptureResult::getPhysicalCameraResults()
 	{
 		return callObjectMethod(
 			"getPhysicalCameraResults",

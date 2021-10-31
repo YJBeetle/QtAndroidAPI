@@ -44,7 +44,7 @@ namespace android::text
 		jboolean getLineContainsTab(jint arg0);
 		jint getLineCount();
 		jint getLineDescent(jint arg0);
-		QAndroidJniObject getLineDirections(jint arg0);
+		android::text::Layout_Directions getLineDirections(jint arg0);
 		jint getLineStart(jint arg0);
 		jint getLineTop(jint arg0);
 		jint getParagraphDirection(jint arg0);

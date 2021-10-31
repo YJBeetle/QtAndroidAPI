@@ -27,11 +27,11 @@ namespace android::content::pm
 		LauncherApps_ShortcutQuery();
 		
 		// Methods
-		QAndroidJniObject setActivity(android::content::ComponentName arg0);
-		QAndroidJniObject setChangedSince(jlong arg0);
-		QAndroidJniObject setPackage(jstring arg0);
-		QAndroidJniObject setQueryFlags(jint arg0);
-		QAndroidJniObject setShortcutIds(__JniBaseClass arg0);
+		android::content::pm::LauncherApps_ShortcutQuery setActivity(android::content::ComponentName arg0);
+		android::content::pm::LauncherApps_ShortcutQuery setChangedSince(jlong arg0);
+		android::content::pm::LauncherApps_ShortcutQuery setPackage(jstring arg0);
+		android::content::pm::LauncherApps_ShortcutQuery setQueryFlags(jint arg0);
+		android::content::pm::LauncherApps_ShortcutQuery setShortcutIds(__JniBaseClass arg0);
 	};
 } // namespace android::content::pm
 

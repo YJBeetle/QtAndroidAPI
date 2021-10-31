@@ -108,7 +108,7 @@ namespace android::text::style
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getArgs();
+		android::os::PersistableBundle getArgs();
 		jint getSpanTypeId();
 		jstring getType();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

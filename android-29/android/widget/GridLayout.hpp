@@ -37,16 +37,16 @@ namespace android::widget
 		// Fields
 		static jint ALIGN_BOUNDS();
 		static jint ALIGN_MARGINS();
-		static QAndroidJniObject BASELINE();
-		static QAndroidJniObject BOTTOM();
-		static QAndroidJniObject CENTER();
-		static QAndroidJniObject END();
-		static QAndroidJniObject FILL();
+		static android::widget::GridLayout_Alignment BASELINE();
+		static android::widget::GridLayout_Alignment BOTTOM();
+		static android::widget::GridLayout_Alignment CENTER();
+		static android::widget::GridLayout_Alignment END();
+		static android::widget::GridLayout_Alignment FILL();
 		static jint HORIZONTAL();
-		static QAndroidJniObject LEFT();
-		static QAndroidJniObject RIGHT();
-		static QAndroidJniObject START();
-		static QAndroidJniObject TOP();
+		static android::widget::GridLayout_Alignment LEFT();
+		static android::widget::GridLayout_Alignment RIGHT();
+		static android::widget::GridLayout_Alignment START();
+		static android::widget::GridLayout_Alignment TOP();
 		static jint UNDEFINED();
 		static jint VERTICAL();
 		
@@ -61,15 +61,15 @@ namespace android::widget
 		GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		static QAndroidJniObject spec(jint arg0);
-		static QAndroidJniObject spec(jint arg0, android::widget::GridLayout_Alignment arg1);
-		static QAndroidJniObject spec(jint arg0, jfloat arg1);
-		static QAndroidJniObject spec(jint arg0, jint arg1);
-		static QAndroidJniObject spec(jint arg0, android::widget::GridLayout_Alignment arg1, jfloat arg2);
-		static QAndroidJniObject spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2);
-		static QAndroidJniObject spec(jint arg0, jint arg1, jfloat arg2);
-		static QAndroidJniObject spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2, jfloat arg3);
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		static android::widget::GridLayout_Spec spec(jint arg0);
+		static android::widget::GridLayout_Spec spec(jint arg0, android::widget::GridLayout_Alignment arg1);
+		static android::widget::GridLayout_Spec spec(jint arg0, jfloat arg1);
+		static android::widget::GridLayout_Spec spec(jint arg0, jint arg1);
+		static android::widget::GridLayout_Spec spec(jint arg0, android::widget::GridLayout_Alignment arg1, jfloat arg2);
+		static android::widget::GridLayout_Spec spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2);
+		static android::widget::GridLayout_Spec spec(jint arg0, jint arg1, jfloat arg2);
+		static android::widget::GridLayout_Spec spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2, jfloat arg3);
+		android::widget::GridLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getAccessibilityClassName();
 		jint getAlignmentMode();
 		jint getColumnCount();

@@ -30,10 +30,10 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject asAttributeSet(__JniBaseClass arg0);
-		static QAndroidJniObject findEncodingByName(jstring arg0);
-		static QAndroidJniObject newPullParser();
-		static QAndroidJniObject newSerializer();
+		static __JniBaseClass asAttributeSet(__JniBaseClass arg0);
+		static android::util::Xml_Encoding findEncodingByName(jstring arg0);
+		static __JniBaseClass newPullParser();
+		static __JniBaseClass newSerializer();
 		static void parse(java::io::Reader arg0, __JniBaseClass arg1);
 		static void parse(jstring arg0, __JniBaseClass arg1);
 		static void parse(java::io::InputStream arg0, android::util::Xml_Encoding arg1, __JniBaseClass arg2);

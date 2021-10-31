@@ -21,7 +21,7 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getCaptureAudioFormat();
+		android::media::AudioFormat getCaptureAudioFormat();
 		jbyteArray getTriggerAudio();
 	};
 } // namespace android::service::voice

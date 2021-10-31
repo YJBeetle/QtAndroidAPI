@@ -79,7 +79,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject InsetDrawable::getOpticalInsets()
+	android::graphics::Insets InsetDrawable::getOpticalInsets()
 	{
 		return callObjectMethod(
 			"getOpticalInsets",

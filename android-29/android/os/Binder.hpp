@@ -41,7 +41,7 @@ namespace android::os
 		static jint getCallingPid();
 		static jint getCallingUid();
 		static jint getCallingUidOrThrow();
-		static QAndroidJniObject getCallingUserHandle();
+		static android::os::UserHandle getCallingUserHandle();
 		static jint getCallingWorkSourceUid();
 		static void joinThreadPool();
 		static void restoreCallingIdentity(jlong arg0);
@@ -54,7 +54,7 @@ namespace android::os
 		jboolean isBinderAlive();
 		void linkToDeath(__JniBaseClass arg0, jint arg1);
 		jboolean pingBinder();
-		QAndroidJniObject queryLocalInterface(jstring arg0);
+		__JniBaseClass queryLocalInterface(jstring arg0);
 		jboolean transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3);
 		jboolean unlinkToDeath(__JniBaseClass arg0, jint arg1);
 	};

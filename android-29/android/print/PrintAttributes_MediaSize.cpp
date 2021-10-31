@@ -4,7 +4,7 @@
 namespace android::print
 {
 	// Fields
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A0()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -12,7 +12,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A1()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -20,7 +20,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A10()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A10()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -28,7 +28,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A2()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -36,7 +36,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A3()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -44,7 +44,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A4()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -52,7 +52,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A5()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -60,7 +60,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A6()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A6()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -68,7 +68,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A7()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A7()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -76,7 +76,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A8()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -84,7 +84,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_A9()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A9()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -92,7 +92,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B0()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -100,7 +100,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B1()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -108,7 +108,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B10()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B10()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -116,7 +116,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B2()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -124,7 +124,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B3()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -132,7 +132,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B4()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -140,7 +140,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B5()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -148,7 +148,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B6()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B6()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -156,7 +156,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B7()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B7()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -164,7 +164,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B8()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -172,7 +172,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_B9()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B9()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -180,7 +180,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C0()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -188,7 +188,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C1()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -196,7 +196,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C10()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C10()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -204,7 +204,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C2()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -212,7 +212,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C3()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -220,7 +220,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C4()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -228,7 +228,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C5()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -236,7 +236,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C6()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C6()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -244,7 +244,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C7()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C7()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -252,7 +252,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C8()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -260,7 +260,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ISO_C9()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C9()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -268,7 +268,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B0()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -276,7 +276,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B1()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -284,7 +284,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B10()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B10()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -292,7 +292,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B2()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -300,7 +300,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B3()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -308,7 +308,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B4()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -316,7 +316,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B5()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -324,7 +324,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B6()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B6()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -332,7 +332,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B7()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B7()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -340,7 +340,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B8()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -348,7 +348,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_B9()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B9()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -356,7 +356,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JIS_EXEC()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_EXEC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -364,7 +364,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JPN_CHOU2()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_CHOU2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -372,7 +372,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JPN_CHOU3()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_CHOU3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -380,7 +380,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JPN_CHOU4()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_CHOU4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -388,7 +388,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JPN_HAGAKI()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_HAGAKI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -396,7 +396,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JPN_KAHU()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_KAHU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -404,7 +404,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JPN_KAKU2()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_KAKU2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -412,7 +412,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JPN_OUFUKU()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_OUFUKU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -420,7 +420,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::JPN_YOU4()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_YOU4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -428,7 +428,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_FOOLSCAP()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_FOOLSCAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -436,7 +436,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_GOVT_LETTER()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_GOVT_LETTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -444,7 +444,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_INDEX_3X5()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_INDEX_3X5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -452,7 +452,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_INDEX_4X6()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_INDEX_4X6()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -460,7 +460,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_INDEX_5X8()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_INDEX_5X8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -468,7 +468,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_JUNIOR_LEGAL()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_JUNIOR_LEGAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -476,7 +476,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_LEDGER()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_LEDGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -484,7 +484,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_LEGAL()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_LEGAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -492,7 +492,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_LETTER()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_LETTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -500,7 +500,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_MONARCH()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_MONARCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -508,7 +508,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_QUARTO()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_QUARTO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -516,7 +516,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::NA_TABLOID()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_TABLOID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -524,7 +524,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::OM_DAI_PA_KAI()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::OM_DAI_PA_KAI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -532,7 +532,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::OM_JUURO_KU_KAI()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::OM_JUURO_KU_KAI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -540,7 +540,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::OM_PA_KAI()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::OM_PA_KAI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -548,7 +548,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_1()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -556,7 +556,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_10()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_10()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -564,7 +564,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_16K()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_16K()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -572,7 +572,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_2()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -580,7 +580,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_3()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -588,7 +588,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_4()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -596,7 +596,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_5()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -604,7 +604,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_6()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_6()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -612,7 +612,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_7()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_7()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -620,7 +620,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_8()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -628,7 +628,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::PRC_9()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_9()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -636,7 +636,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ROC_16K()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ROC_16K()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -644,7 +644,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::ROC_8K()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ROC_8K()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -652,7 +652,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::UNKNOWN_LANDSCAPE()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::UNKNOWN_LANDSCAPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -660,7 +660,7 @@ namespace android::print
 			"Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::UNKNOWN_PORTRAIT()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::UNKNOWN_PORTRAIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$MediaSize",
@@ -684,14 +684,14 @@ namespace android::print
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrintAttributes_MediaSize::asLandscape()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::asLandscape()
 	{
 		return callObjectMethod(
 			"asLandscape",
 			"()Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::asPortrait()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::asPortrait()
 	{
 		return callObjectMethod(
 			"asPortrait",

@@ -3,7 +3,7 @@
 namespace android::telephony::gsm
 {
 	// Fields
-	QAndroidJniObject SmsMessage_MessageClass::CLASS_0()
+	android::telephony::gsm::SmsMessage_MessageClass SmsMessage_MessageClass::CLASS_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.gsm.SmsMessage$MessageClass",
@@ -11,7 +11,7 @@ namespace android::telephony::gsm
 			"Landroid/telephony/gsm/SmsMessage$MessageClass;"
 		);
 	}
-	QAndroidJniObject SmsMessage_MessageClass::CLASS_1()
+	android::telephony::gsm::SmsMessage_MessageClass SmsMessage_MessageClass::CLASS_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.gsm.SmsMessage$MessageClass",
@@ -19,7 +19,7 @@ namespace android::telephony::gsm
 			"Landroid/telephony/gsm/SmsMessage$MessageClass;"
 		);
 	}
-	QAndroidJniObject SmsMessage_MessageClass::CLASS_2()
+	android::telephony::gsm::SmsMessage_MessageClass SmsMessage_MessageClass::CLASS_2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.gsm.SmsMessage$MessageClass",
@@ -27,7 +27,7 @@ namespace android::telephony::gsm
 			"Landroid/telephony/gsm/SmsMessage$MessageClass;"
 		);
 	}
-	QAndroidJniObject SmsMessage_MessageClass::CLASS_3()
+	android::telephony::gsm::SmsMessage_MessageClass SmsMessage_MessageClass::CLASS_3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.gsm.SmsMessage$MessageClass",
@@ -35,7 +35,7 @@ namespace android::telephony::gsm
 			"Landroid/telephony/gsm/SmsMessage$MessageClass;"
 		);
 	}
-	QAndroidJniObject SmsMessage_MessageClass::UNKNOWN()
+	android::telephony::gsm::SmsMessage_MessageClass SmsMessage_MessageClass::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.gsm.SmsMessage$MessageClass",
@@ -50,7 +50,7 @@ namespace android::telephony::gsm
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SmsMessage_MessageClass::valueOf(jstring arg0)
+	android::telephony::gsm::SmsMessage_MessageClass SmsMessage_MessageClass::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage$MessageClass",

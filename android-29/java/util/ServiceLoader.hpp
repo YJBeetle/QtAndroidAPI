@@ -45,14 +45,14 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject load(jclass arg0);
-		static QAndroidJniObject load(jclass arg0, java::lang::ClassLoader arg1);
-		static QAndroidJniObject load(__JniBaseClass arg0, jclass arg1);
-		static QAndroidJniObject loadInstalled(jclass arg0);
-		QAndroidJniObject findFirst();
-		QAndroidJniObject iterator();
+		static java::util::ServiceLoader load(jclass arg0);
+		static java::util::ServiceLoader load(jclass arg0, java::lang::ClassLoader arg1);
+		static java::util::ServiceLoader load(__JniBaseClass arg0, jclass arg1);
+		static java::util::ServiceLoader loadInstalled(jclass arg0);
+		java::util::Optional findFirst();
+		__JniBaseClass iterator();
 		void reload();
-		QAndroidJniObject stream();
+		__JniBaseClass stream();
 		jstring toString();
 	};
 } // namespace java::util

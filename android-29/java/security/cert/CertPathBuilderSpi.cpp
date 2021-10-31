@@ -15,7 +15,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	QAndroidJniObject CertPathBuilderSpi::engineBuild(__JniBaseClass arg0)
+	__JniBaseClass CertPathBuilderSpi::engineBuild(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"engineBuild",
@@ -23,7 +23,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CertPathBuilderSpi::engineGetRevocationChecker()
+	__JniBaseClass CertPathBuilderSpi::engineGetRevocationChecker()
 	{
 		return callObjectMethod(
 			"engineGetRevocationChecker",

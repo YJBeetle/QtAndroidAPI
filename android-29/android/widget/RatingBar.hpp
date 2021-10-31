@@ -30,7 +30,7 @@ namespace android::widget
 		// Methods
 		jstring getAccessibilityClassName();
 		jint getNumStars();
-		QAndroidJniObject getOnRatingBarChangeListener();
+		__JniBaseClass getOnRatingBarChangeListener();
 		jfloat getRating();
 		jfloat getStepSize();
 		jboolean isIndicator();

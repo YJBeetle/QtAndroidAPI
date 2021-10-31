@@ -19,7 +19,7 @@ namespace android::net::wifi
 			"()V"
 		);
 	}
-	QAndroidJniObject WifiManager_LocalOnlyHotspotReservation::getWifiConfiguration()
+	android::net::wifi::WifiConfiguration WifiManager_LocalOnlyHotspotReservation::getWifiConfiguration()
 	{
 		return callObjectMethod(
 			"getWifiConfiguration",

@@ -21,7 +21,7 @@ namespace android::view::inputmethod
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_HAS_INVISIBLE_REGION();
 		static jint FLAG_HAS_VISIBLE_REGION();
 		static jint FLAG_IS_RTL();
@@ -36,7 +36,7 @@ namespace android::view::inputmethod
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCharacterBounds(jint arg0);
+		android::graphics::RectF getCharacterBounds(jint arg0);
 		jint getCharacterBoundsFlags(jint arg0);
 		jstring getComposingText();
 		jint getComposingTextStart();
@@ -45,7 +45,7 @@ namespace android::view::inputmethod
 		jint getInsertionMarkerFlags();
 		jfloat getInsertionMarkerHorizontal();
 		jfloat getInsertionMarkerTop();
-		QAndroidJniObject getMatrix();
+		android::graphics::Matrix getMatrix();
 		jint getSelectionEnd();
 		jint getSelectionStart();
 		jint hashCode();

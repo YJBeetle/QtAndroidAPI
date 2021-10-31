@@ -22,7 +22,7 @@ namespace android::view
 		SearchEvent(android::view::InputDevice arg0);
 		
 		// Methods
-		QAndroidJniObject getInputDevice();
+		android::view::InputDevice getInputDevice();
 	};
 } // namespace android::view
 

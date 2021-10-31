@@ -21,8 +21,8 @@ namespace android::text::style
 		TtsSpan_TimeBuilder(jint arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject setHours(jint arg0);
-		QAndroidJniObject setMinutes(jint arg0);
+		android::text::style::TtsSpan_TimeBuilder setHours(jint arg0);
+		android::text::style::TtsSpan_TimeBuilder setMinutes(jint arg0);
 	};
 } // namespace android::text::style
 

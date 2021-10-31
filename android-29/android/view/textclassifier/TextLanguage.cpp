@@ -6,7 +6,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject TextLanguage::CREATOR()
+	__JniBaseClass TextLanguage::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextLanguage",
@@ -36,7 +36,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextLanguage::getExtras()
+	android::os::Bundle TextLanguage::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -50,7 +50,7 @@ namespace android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextLanguage::getLocale(jint arg0)
+	android::icu::util::ULocale TextLanguage::getLocale(jint arg0)
 	{
 		return callObjectMethod(
 			"getLocale",

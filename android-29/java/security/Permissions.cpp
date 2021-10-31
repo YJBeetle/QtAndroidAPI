@@ -28,7 +28,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Permissions::elements()
+	__JniBaseClass Permissions::elements()
 	{
 		return callObjectMethod(
 			"elements",

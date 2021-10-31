@@ -26,7 +26,7 @@ namespace android::webkit
 		TracingController();
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static android::webkit::TracingController getInstance();
 		jboolean isTracing();
 		void start(android::webkit::TracingConfig arg0);
 		jboolean stop(java::io::OutputStream arg0, __JniBaseClass arg1);

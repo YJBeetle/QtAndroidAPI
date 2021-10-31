@@ -31,7 +31,7 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	QAndroidJniObject Timestamp::from(java::time::Instant arg0)
+	java::sql::Timestamp Timestamp::from(java::time::Instant arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.Timestamp",
@@ -40,7 +40,7 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Timestamp::valueOf(jstring arg0)
+	java::sql::Timestamp Timestamp::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.Timestamp",
@@ -49,7 +49,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	QAndroidJniObject Timestamp::valueOf(java::time::LocalDateTime arg0)
+	java::sql::Timestamp Timestamp::valueOf(java::time::LocalDateTime arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.Timestamp",
@@ -151,14 +151,14 @@ namespace java::sql
 			arg0
 		);
 	}
-	QAndroidJniObject Timestamp::toInstant()
+	java::time::Instant Timestamp::toInstant()
 	{
 		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	QAndroidJniObject Timestamp::toLocalDateTime()
+	java::time::LocalDateTime Timestamp::toLocalDateTime()
 	{
 		return callObjectMethod(
 			"toLocalDateTime",

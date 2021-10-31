@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject SearchableInfo::CREATOR()
+	__JniBaseClass SearchableInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.SearchableInfo",
@@ -55,7 +55,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject SearchableInfo::getSearchActivity()
+	android::content::ComponentName SearchableInfo::getSearchActivity()
 	{
 		return callObjectMethod(
 			"getSearchActivity",

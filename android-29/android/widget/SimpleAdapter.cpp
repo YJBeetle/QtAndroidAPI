@@ -34,7 +34,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject SimpleAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View SimpleAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"getDropDownView",
@@ -44,14 +44,14 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	QAndroidJniObject SimpleAdapter::getDropDownViewTheme()
+	android::content::res::Resources_Theme SimpleAdapter::getDropDownViewTheme()
 	{
 		return callObjectMethod(
 			"getDropDownViewTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	QAndroidJniObject SimpleAdapter::getFilter()
+	android::widget::Filter SimpleAdapter::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
@@ -74,7 +74,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject SimpleAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View SimpleAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"getView",
@@ -84,7 +84,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	QAndroidJniObject SimpleAdapter::getViewBinder()
+	__JniBaseClass SimpleAdapter::getViewBinder()
 	{
 		return callObjectMethod(
 			"getViewBinder",

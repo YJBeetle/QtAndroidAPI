@@ -33,7 +33,7 @@ namespace android::bluetooth
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FORMAT_FLOAT();
 		static jint FORMAT_SFLOAT();
 		static jint FORMAT_SINT16();
@@ -72,16 +72,16 @@ namespace android::bluetooth
 		// Methods
 		jboolean addDescriptor(android::bluetooth::BluetoothGattDescriptor arg0);
 		jint describeContents();
-		QAndroidJniObject getDescriptor(java::util::UUID arg0);
-		QAndroidJniObject getDescriptors();
-		QAndroidJniObject getFloatValue(jint arg0, jint arg1);
+		android::bluetooth::BluetoothGattDescriptor getDescriptor(java::util::UUID arg0);
+		__JniBaseClass getDescriptors();
+		java::lang::Float getFloatValue(jint arg0, jint arg1);
 		jint getInstanceId();
-		QAndroidJniObject getIntValue(jint arg0, jint arg1);
+		java::lang::Integer getIntValue(jint arg0, jint arg1);
 		jint getPermissions();
 		jint getProperties();
-		QAndroidJniObject getService();
+		android::bluetooth::BluetoothGattService getService();
 		jstring getStringValue(jint arg0);
-		QAndroidJniObject getUuid();
+		java::util::UUID getUuid();
 		jbyteArray getValue();
 		jint getWriteType();
 		jboolean setValue(jbyteArray arg0);

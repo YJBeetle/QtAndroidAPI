@@ -21,7 +21,7 @@ namespace android::bluetooth::le
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DATA_COMPLETE();
 		static jint DATA_TRUNCATED();
 		static jint PERIODIC_INTERVAL_NOT_PRESENT();
@@ -42,11 +42,11 @@ namespace android::bluetooth::le
 		jboolean equals(jobject arg0);
 		jint getAdvertisingSid();
 		jint getDataStatus();
-		QAndroidJniObject getDevice();
+		android::bluetooth::BluetoothDevice getDevice();
 		jint getPeriodicAdvertisingInterval();
 		jint getPrimaryPhy();
 		jint getRssi();
-		QAndroidJniObject getScanRecord();
+		android::bluetooth::le::ScanRecord getScanRecord();
 		jint getSecondaryPhy();
 		jlong getTimestampNanos();
 		jint getTxPower();

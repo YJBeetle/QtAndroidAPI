@@ -63,7 +63,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ImageDecoder::createSource(java::io::File arg0)
+	android::graphics::ImageDecoder_Source ImageDecoder::createSource(java::io::File arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -72,7 +72,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ImageDecoder::createSource(java::nio::ByteBuffer arg0)
+	android::graphics::ImageDecoder_Source ImageDecoder::createSource(java::nio::ByteBuffer arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -81,7 +81,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ImageDecoder::createSource(__JniBaseClass arg0)
+	android::graphics::ImageDecoder_Source ImageDecoder::createSource(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -90,7 +90,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ImageDecoder::createSource(android::content::ContentResolver arg0, android::net::Uri arg1)
+	android::graphics::ImageDecoder_Source ImageDecoder::createSource(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -100,7 +100,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ImageDecoder::createSource(android::content::res::AssetManager arg0, jstring arg1)
+	android::graphics::ImageDecoder_Source ImageDecoder::createSource(android::content::res::AssetManager arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -110,7 +110,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject ImageDecoder::createSource(android::content::res::Resources arg0, jint arg1)
+	android::graphics::ImageDecoder_Source ImageDecoder::createSource(android::content::res::Resources arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -120,7 +120,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject ImageDecoder::decodeBitmap(android::graphics::ImageDecoder_Source arg0)
+	android::graphics::Bitmap ImageDecoder::decodeBitmap(android::graphics::ImageDecoder_Source arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -129,7 +129,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ImageDecoder::decodeBitmap(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1)
+	android::graphics::Bitmap ImageDecoder::decodeBitmap(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -139,7 +139,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ImageDecoder::decodeDrawable(android::graphics::ImageDecoder_Source arg0)
+	android::graphics::drawable::Drawable ImageDecoder::decodeDrawable(android::graphics::ImageDecoder_Source arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -148,7 +148,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ImageDecoder::decodeDrawable(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1)
+	android::graphics::drawable::Drawable ImageDecoder::decodeDrawable(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -181,7 +181,7 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	QAndroidJniObject ImageDecoder::getCrop()
+	android::graphics::Rect ImageDecoder::getCrop()
 	{
 		return callObjectMethod(
 			"getCrop",
@@ -195,14 +195,14 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	QAndroidJniObject ImageDecoder::getOnPartialImageListener()
+	__JniBaseClass ImageDecoder::getOnPartialImageListener()
 	{
 		return callObjectMethod(
 			"getOnPartialImageListener",
 			"()Landroid/graphics/ImageDecoder$OnPartialImageListener;"
 		);
 	}
-	QAndroidJniObject ImageDecoder::getPostProcessor()
+	__JniBaseClass ImageDecoder::getPostProcessor()
 	{
 		return callObjectMethod(
 			"getPostProcessor",

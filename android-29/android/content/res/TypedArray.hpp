@@ -40,13 +40,13 @@ namespace android::content::res
 		jboolean getBoolean(jint arg0, jboolean arg1);
 		jint getChangingConfigurations();
 		jint getColor(jint arg0, jint arg1);
-		QAndroidJniObject getColorStateList(jint arg0);
+		android::content::res::ColorStateList getColorStateList(jint arg0);
 		jfloat getDimension(jint arg0, jfloat arg1);
 		jint getDimensionPixelOffset(jint arg0, jint arg1);
 		jint getDimensionPixelSize(jint arg0, jint arg1);
-		QAndroidJniObject getDrawable(jint arg0);
+		android::graphics::drawable::Drawable getDrawable(jint arg0);
 		jfloat getFloat(jint arg0, jfloat arg1);
-		QAndroidJniObject getFont(jint arg0);
+		android::graphics::Typeface getFont(jint arg0);
 		jfloat getFraction(jint arg0, jint arg1, jint arg2, jfloat arg3);
 		jint getIndex(jint arg0);
 		jint getIndexCount();
@@ -57,7 +57,7 @@ namespace android::content::res
 		jstring getNonResourceString(jint arg0);
 		jstring getPositionDescription();
 		jint getResourceId(jint arg0, jint arg1);
-		QAndroidJniObject getResources();
+		android::content::res::Resources getResources();
 		jint getSourceResourceId(jint arg0, jint arg1);
 		jstring getString(jint arg0);
 		jstring getText(jint arg0);
@@ -67,7 +67,7 @@ namespace android::content::res
 		jboolean hasValue(jint arg0);
 		jboolean hasValueOrEmpty(jint arg0);
 		jint length();
-		QAndroidJniObject peekValue(jint arg0);
+		android::util::TypedValue peekValue(jint arg0);
 		void recycle();
 		jstring toString();
 	};

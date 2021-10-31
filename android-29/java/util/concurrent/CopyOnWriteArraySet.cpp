@@ -84,7 +84,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject CopyOnWriteArraySet::iterator()
+	__JniBaseClass CopyOnWriteArraySet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -130,7 +130,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject CopyOnWriteArraySet::spliterator()
+	__JniBaseClass CopyOnWriteArraySet::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

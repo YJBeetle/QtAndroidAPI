@@ -57,7 +57,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Visibility::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
+	android::animation::Animator Visibility::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
 	{
 		return callObjectMethod(
 			"createAnimator",
@@ -98,7 +98,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Visibility::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	android::animation::Animator Visibility::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
 	{
 		return callObjectMethod(
 			"onAppear",
@@ -109,7 +109,7 @@ namespace android::transition
 			arg3.object()
 		);
 	}
-	QAndroidJniObject Visibility::onAppear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4)
+	android::animation::Animator Visibility::onAppear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"onAppear",
@@ -121,7 +121,7 @@ namespace android::transition
 			arg4
 		);
 	}
-	QAndroidJniObject Visibility::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	android::animation::Animator Visibility::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
 	{
 		return callObjectMethod(
 			"onDisappear",
@@ -132,7 +132,7 @@ namespace android::transition
 			arg3.object()
 		);
 	}
-	QAndroidJniObject Visibility::onDisappear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4)
+	android::animation::Animator Visibility::onDisappear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"onDisappear",

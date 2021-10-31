@@ -5,7 +5,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject SharedLibraryInfo::CREATOR()
+	__JniBaseClass SharedLibraryInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.SharedLibraryInfo",
@@ -55,14 +55,14 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject SharedLibraryInfo::getDeclaringPackage()
+	android::content::pm::VersionedPackage SharedLibraryInfo::getDeclaringPackage()
 	{
 		return callObjectMethod(
 			"getDeclaringPackage",
 			"()Landroid/content/pm/VersionedPackage;"
 		);
 	}
-	QAndroidJniObject SharedLibraryInfo::getDependentPackages()
+	__JniBaseClass SharedLibraryInfo::getDependentPackages()
 	{
 		return callObjectMethod(
 			"getDependentPackages",

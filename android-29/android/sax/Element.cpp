@@ -10,7 +10,7 @@ namespace android::sax
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Element::getChild(jstring arg0)
+	android::sax::Element Element::getChild(jstring arg0)
 	{
 		return callObjectMethod(
 			"getChild",
@@ -18,7 +18,7 @@ namespace android::sax
 			arg0
 		);
 	}
-	QAndroidJniObject Element::getChild(jstring arg0, jstring arg1)
+	android::sax::Element Element::getChild(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getChild",
@@ -27,7 +27,7 @@ namespace android::sax
 			arg1
 		);
 	}
-	QAndroidJniObject Element::requireChild(jstring arg0)
+	android::sax::Element Element::requireChild(jstring arg0)
 	{
 		return callObjectMethod(
 			"requireChild",
@@ -35,7 +35,7 @@ namespace android::sax
 			arg0
 		);
 	}
-	QAndroidJniObject Element::requireChild(jstring arg0, jstring arg1)
+	android::sax::Element Element::requireChild(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"requireChild",

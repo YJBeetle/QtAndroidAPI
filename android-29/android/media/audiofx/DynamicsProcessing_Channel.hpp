@@ -40,13 +40,13 @@ namespace android::media::audiofx
 		
 		// Methods
 		jfloat getInputGain();
-		QAndroidJniObject getLimiter();
-		QAndroidJniObject getMbc();
-		QAndroidJniObject getMbcBand(jint arg0);
-		QAndroidJniObject getPostEq();
-		QAndroidJniObject getPostEqBand(jint arg0);
-		QAndroidJniObject getPreEq();
-		QAndroidJniObject getPreEqBand(jint arg0);
+		android::media::audiofx::DynamicsProcessing_Limiter getLimiter();
+		android::media::audiofx::DynamicsProcessing_Mbc getMbc();
+		android::media::audiofx::DynamicsProcessing_MbcBand getMbcBand(jint arg0);
+		android::media::audiofx::DynamicsProcessing_Eq getPostEq();
+		android::media::audiofx::DynamicsProcessing_EqBand getPostEqBand(jint arg0);
+		android::media::audiofx::DynamicsProcessing_Eq getPreEq();
+		android::media::audiofx::DynamicsProcessing_EqBand getPreEqBand(jint arg0);
 		void setInputGain(jfloat arg0);
 		void setLimiter(android::media::audiofx::DynamicsProcessing_Limiter arg0);
 		void setMbc(android::media::audiofx::DynamicsProcessing_Mbc arg0);

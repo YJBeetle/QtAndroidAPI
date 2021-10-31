@@ -10,11 +10,11 @@ namespace android::webkit
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEBUG();
-		static QAndroidJniObject ERROR();
-		static QAndroidJniObject LOG();
-		static QAndroidJniObject TIP();
-		static QAndroidJniObject WARNING();
+		static android::webkit::ConsoleMessage_MessageLevel DEBUG();
+		static android::webkit::ConsoleMessage_MessageLevel ERROR();
+		static android::webkit::ConsoleMessage_MessageLevel LOG();
+		static android::webkit::ConsoleMessage_MessageLevel TIP();
+		static android::webkit::ConsoleMessage_MessageLevel WARNING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConsoleMessage_MessageLevel(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -23,7 +23,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::webkit::ConsoleMessage_MessageLevel valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::webkit

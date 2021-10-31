@@ -45,9 +45,9 @@ namespace android::widget
 		// Methods
 		void collapseActionView();
 		void dismissPopupMenus();
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::widget::Toolbar_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getCollapseContentDescription();
-		QAndroidJniObject getCollapseIcon();
+		android::graphics::drawable::Drawable getCollapseIcon();
 		jint getContentInsetEnd();
 		jint getContentInsetEndWithActions();
 		jint getContentInsetLeft();
@@ -58,12 +58,12 @@ namespace android::widget
 		jint getCurrentContentInsetLeft();
 		jint getCurrentContentInsetRight();
 		jint getCurrentContentInsetStart();
-		QAndroidJniObject getLogo();
+		android::graphics::drawable::Drawable getLogo();
 		jstring getLogoDescription();
-		QAndroidJniObject getMenu();
+		__JniBaseClass getMenu();
 		jstring getNavigationContentDescription();
-		QAndroidJniObject getNavigationIcon();
-		QAndroidJniObject getOverflowIcon();
+		android::graphics::drawable::Drawable getNavigationIcon();
+		android::graphics::drawable::Drawable getOverflowIcon();
 		jint getPopupTheme();
 		jstring getSubtitle();
 		jstring getTitle();

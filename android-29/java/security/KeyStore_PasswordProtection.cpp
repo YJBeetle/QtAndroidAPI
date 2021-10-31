@@ -45,7 +45,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject KeyStore_PasswordProtection::getProtectionParameters()
+	__JniBaseClass KeyStore_PasswordProtection::getProtectionParameters()
 	{
 		return callObjectMethod(
 			"getProtectionParameters",

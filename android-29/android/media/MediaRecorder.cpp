@@ -91,14 +91,14 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaRecorder::getActiveMicrophones()
+	__JniBaseClass MediaRecorder::getActiveMicrophones()
 	{
 		return callObjectMethod(
 			"getActiveMicrophones",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject MediaRecorder::getActiveRecordingConfiguration()
+	android::media::AudioRecordingConfiguration MediaRecorder::getActiveRecordingConfiguration()
 	{
 		return callObjectMethod(
 			"getActiveRecordingConfiguration",
@@ -112,28 +112,28 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaRecorder::getMetrics()
+	android::os::PersistableBundle MediaRecorder::getMetrics()
 	{
 		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	QAndroidJniObject MediaRecorder::getPreferredDevice()
+	android::media::AudioDeviceInfo MediaRecorder::getPreferredDevice()
 	{
 		return callObjectMethod(
 			"getPreferredDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	QAndroidJniObject MediaRecorder::getRoutedDevice()
+	android::media::AudioDeviceInfo MediaRecorder::getRoutedDevice()
 	{
 		return callObjectMethod(
 			"getRoutedDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	QAndroidJniObject MediaRecorder::getSurface()
+	android::view::Surface MediaRecorder::getSurface()
 	{
 		return callObjectMethod(
 			"getSurface",

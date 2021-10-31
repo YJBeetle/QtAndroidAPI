@@ -9,7 +9,7 @@
 namespace java::util::concurrent
 {
 	// Fields
-	QAndroidJniObject ForkJoinPool::defaultForkJoinWorkerThreadFactory()
+	__JniBaseClass ForkJoinPool::defaultForkJoinWorkerThreadFactory()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.concurrent.ForkJoinPool",
@@ -59,7 +59,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	QAndroidJniObject ForkJoinPool::commonPool()
+	java::util::concurrent::ForkJoinPool ForkJoinPool::commonPool()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinPool",
@@ -132,7 +132,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject ForkJoinPool::getFactory()
+	__JniBaseClass ForkJoinPool::getFactory()
 	{
 		return callObjectMethod(
 			"getFactory",
@@ -181,7 +181,7 @@ namespace java::util::concurrent
 			"()J"
 		);
 	}
-	QAndroidJniObject ForkJoinPool::getUncaughtExceptionHandler()
+	__JniBaseClass ForkJoinPool::getUncaughtExceptionHandler()
 	{
 		return callObjectMethod(
 			"getUncaughtExceptionHandler",
@@ -203,7 +203,7 @@ namespace java::util::concurrent
 			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject ForkJoinPool::invokeAll(__JniBaseClass arg0)
+	__JniBaseClass ForkJoinPool::invokeAll(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"invokeAll",
@@ -246,14 +246,14 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	QAndroidJniObject ForkJoinPool::shutdownNow()
+	__JniBaseClass ForkJoinPool::shutdownNow()
 	{
 		return callObjectMethod(
 			"shutdownNow",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ForkJoinPool::submit(__JniBaseClass arg0)
+	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"submit",
@@ -261,7 +261,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ForkJoinPool::submit(java::util::concurrent::ForkJoinTask arg0)
+	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(java::util::concurrent::ForkJoinTask arg0)
 	{
 		return callObjectMethod(
 			"submit",
@@ -269,7 +269,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ForkJoinPool::submit(__JniBaseClass arg0, jobject arg1)
+	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"submit",

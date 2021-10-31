@@ -45,7 +45,7 @@ namespace android::transition
 			"()F"
 		);
 	}
-	QAndroidJniObject ArcMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	android::graphics::Path ArcMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		return callObjectMethod(
 			"getPath",

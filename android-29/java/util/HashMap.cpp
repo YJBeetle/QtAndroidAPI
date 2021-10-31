@@ -93,7 +93,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject HashMap::entrySet()
+	__JniBaseClass HashMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -132,7 +132,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject HashMap::keySet()
+	__JniBaseClass HashMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -226,7 +226,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject HashMap::values()
+	__JniBaseClass HashMap::values()
 	{
 		return callObjectMethod(
 			"values",

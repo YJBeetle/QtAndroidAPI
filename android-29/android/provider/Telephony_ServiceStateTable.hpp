@@ -14,7 +14,7 @@ namespace android::provider
 	public:
 		// Fields
 		static jstring AUTHORITY();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring IS_MANUAL_NETWORK_SELECTION();
 		static jstring VOICE_OPERATOR_NUMERIC();
 		static jstring VOICE_REG_STATE();
@@ -26,8 +26,8 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getUriForSubscriptionId(jint arg0);
-		static QAndroidJniObject getUriForSubscriptionIdAndField(jint arg0, jstring arg1);
+		static android::net::Uri getUriForSubscriptionId(jint arg0);
+		static android::net::Uri getUriForSubscriptionIdAndField(jint arg0, jstring arg1);
 	};
 } // namespace android::provider
 

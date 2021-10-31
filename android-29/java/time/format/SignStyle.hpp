@@ -10,11 +10,11 @@ namespace java::time::format
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ALWAYS();
-		static QAndroidJniObject EXCEEDS_PAD();
-		static QAndroidJniObject NEVER();
-		static QAndroidJniObject NORMAL();
-		static QAndroidJniObject NOT_NEGATIVE();
+		static java::time::format::SignStyle ALWAYS();
+		static java::time::format::SignStyle EXCEEDS_PAD();
+		static java::time::format::SignStyle NEVER();
+		static java::time::format::SignStyle NORMAL();
+		static java::time::format::SignStyle NOT_NEGATIVE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SignStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -23,7 +23,7 @@ namespace java::time::format
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::time::format::SignStyle valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::time::format

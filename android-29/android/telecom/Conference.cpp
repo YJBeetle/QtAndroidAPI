@@ -45,14 +45,14 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	QAndroidJniObject Conference::getCallAudioState()
+	android::telecom::CallAudioState Conference::getCallAudioState()
 	{
 		return callObjectMethod(
 			"getCallAudioState",
 			"()Landroid/telecom/CallAudioState;"
 		);
 	}
-	QAndroidJniObject Conference::getConferenceableConnections()
+	__JniBaseClass Conference::getConferenceableConnections()
 	{
 		return callObjectMethod(
 			"getConferenceableConnections",
@@ -80,28 +80,28 @@ namespace android::telecom
 			"()J"
 		);
 	}
-	QAndroidJniObject Conference::getConnections()
+	__JniBaseClass Conference::getConnections()
 	{
 		return callObjectMethod(
 			"getConnections",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Conference::getDisconnectCause()
+	android::telecom::DisconnectCause Conference::getDisconnectCause()
 	{
 		return callObjectMethod(
 			"getDisconnectCause",
 			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
-	QAndroidJniObject Conference::getExtras()
+	android::os::Bundle Conference::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Conference::getPhoneAccountHandle()
+	android::telecom::PhoneAccountHandle Conference::getPhoneAccountHandle()
 	{
 		return callObjectMethod(
 			"getPhoneAccountHandle",
@@ -115,14 +115,14 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject Conference::getStatusHints()
+	android::telecom::StatusHints Conference::getStatusHints()
 	{
 		return callObjectMethod(
 			"getStatusHints",
 			"()Landroid/telecom/StatusHints;"
 		);
 	}
-	QAndroidJniObject Conference::getVideoProvider()
+	android::telecom::Connection_VideoProvider Conference::getVideoProvider()
 	{
 		return callObjectMethod(
 			"getVideoProvider",

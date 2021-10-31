@@ -14,7 +14,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject KeyguardManager::createConfirmDeviceCredentialIntent(jstring arg0, jstring arg1)
+	android::content::Intent KeyguardManager::createConfirmDeviceCredentialIntent(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"createConfirmDeviceCredentialIntent",
@@ -66,7 +66,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject KeyguardManager::newKeyguardLock(jstring arg0)
+	android::app::KeyguardManager_KeyguardLock KeyguardManager::newKeyguardLock(jstring arg0)
 	{
 		return callObjectMethod(
 			"newKeyguardLock",

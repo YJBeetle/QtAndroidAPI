@@ -5,7 +5,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject NetworkScanRequest::CREATOR()
+	__JniBaseClass NetworkScanRequest::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.NetworkScanRequest",
@@ -82,7 +82,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	QAndroidJniObject NetworkScanRequest::getPlmns()
+	java::util::ArrayList NetworkScanRequest::getPlmns()
 	{
 		return callObjectMethod(
 			"getPlmns",

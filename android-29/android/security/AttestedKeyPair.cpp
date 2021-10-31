@@ -11,14 +11,14 @@ namespace android::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AttestedKeyPair::getAttestationRecord()
+	__JniBaseClass AttestedKeyPair::getAttestationRecord()
 	{
 		return callObjectMethod(
 			"getAttestationRecord",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject AttestedKeyPair::getKeyPair()
+	java::security::KeyPair AttestedKeyPair::getKeyPair()
 	{
 		return callObjectMethod(
 			"getKeyPair",

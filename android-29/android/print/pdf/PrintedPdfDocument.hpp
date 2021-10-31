@@ -35,10 +35,10 @@ namespace android::print::pdf
 		PrintedPdfDocument(android::content::Context arg0, android::print::PrintAttributes arg1);
 		
 		// Methods
-		QAndroidJniObject getPageContentRect();
+		android::graphics::Rect getPageContentRect();
 		jint getPageHeight();
 		jint getPageWidth();
-		QAndroidJniObject startPage(jint arg0);
+		android::graphics::pdf::PdfDocument_Page startPage(jint arg0);
 	};
 } // namespace android::print::pdf
 

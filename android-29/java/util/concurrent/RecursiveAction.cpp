@@ -16,7 +16,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	QAndroidJniObject RecursiveAction::getRawResult()
+	java::lang::Void RecursiveAction::getRawResult()
 	{
 		return callObjectMethod(
 			"getRawResult",

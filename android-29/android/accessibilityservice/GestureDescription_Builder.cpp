@@ -17,7 +17,7 @@ namespace android::accessibilityservice
 		) {}
 	
 	// Methods
-	QAndroidJniObject GestureDescription_Builder::addStroke(android::accessibilityservice::GestureDescription_StrokeDescription arg0)
+	android::accessibilityservice::GestureDescription_Builder GestureDescription_Builder::addStroke(android::accessibilityservice::GestureDescription_StrokeDescription arg0)
 	{
 		return callObjectMethod(
 			"addStroke",
@@ -25,7 +25,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	QAndroidJniObject GestureDescription_Builder::build()
+	android::accessibilityservice::GestureDescription GestureDescription_Builder::build()
 	{
 		return callObjectMethod(
 			"build",

@@ -21,7 +21,7 @@ namespace android::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Xml::asAttributeSet(__JniBaseClass arg0)
+	__JniBaseClass Xml::asAttributeSet(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Xml",
@@ -30,7 +30,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Xml::findEncodingByName(jstring arg0)
+	android::util::Xml_Encoding Xml::findEncodingByName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Xml",
@@ -39,7 +39,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject Xml::newPullParser()
+	__JniBaseClass Xml::newPullParser()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Xml",
@@ -47,7 +47,7 @@ namespace android::util
 			"()Lorg/xmlpull/v1/XmlPullParser;"
 		);
 	}
-	QAndroidJniObject Xml::newSerializer()
+	__JniBaseClass Xml::newSerializer()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Xml",

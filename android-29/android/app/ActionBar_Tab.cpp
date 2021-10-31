@@ -31,14 +31,14 @@ namespace android::app
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ActionBar_Tab::getCustomView()
+	android::view::View ActionBar_Tab::getCustomView()
 	{
 		return callObjectMethod(
 			"getCustomView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::getIcon()
+	android::graphics::drawable::Drawable ActionBar_Tab::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",
@@ -73,7 +73,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setContentDescription(jint arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setContentDescription(jint arg0)
 	{
 		return callObjectMethod(
 			"setContentDescription",
@@ -81,7 +81,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setContentDescription(jstring arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setContentDescription(jstring arg0)
 	{
 		return callObjectMethod(
 			"setContentDescription",
@@ -89,7 +89,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setCustomView(android::view::View arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setCustomView(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"setCustomView",
@@ -97,7 +97,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setCustomView(jint arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setCustomView(jint arg0)
 	{
 		return callObjectMethod(
 			"setCustomView",
@@ -105,7 +105,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setIcon(android::graphics::drawable::Drawable arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setIcon(android::graphics::drawable::Drawable arg0)
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -113,7 +113,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setIcon(jint arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setIcon(jint arg0)
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -121,7 +121,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setTabListener(__JniBaseClass arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setTabListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setTabListener",
@@ -129,7 +129,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setTag(jobject arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setTag(jobject arg0)
 	{
 		return callObjectMethod(
 			"setTag",
@@ -137,7 +137,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setText(jint arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setText(jint arg0)
 	{
 		return callObjectMethod(
 			"setText",
@@ -145,7 +145,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setText(jstring arg0)
+	android::app::ActionBar_Tab ActionBar_Tab::setText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setText",

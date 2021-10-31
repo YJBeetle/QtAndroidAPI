@@ -17,10 +17,10 @@ namespace javax::xml::validation
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getErrorHandler();
+		__JniBaseClass getErrorHandler();
 		jboolean getFeature(jstring arg0);
 		jobject getProperty(jstring arg0);
-		QAndroidJniObject getResourceResolver();
+		__JniBaseClass getResourceResolver();
 		void reset();
 		void setErrorHandler(__JniBaseClass arg0);
 		void setFeature(jstring arg0, jboolean arg1);

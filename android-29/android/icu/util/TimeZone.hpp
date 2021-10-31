@@ -30,7 +30,7 @@ namespace android::icu::util
 	public:
 		// Fields
 		static jint GENERIC_LOCATION();
-		static QAndroidJniObject GMT_ZONE();
+		static android::icu::util::TimeZone GMT_ZONE();
 		static jint LONG();
 		static jint LONG_GENERIC();
 		static jint LONG_GMT();
@@ -40,7 +40,7 @@ namespace android::icu::util
 		static jint SHORT_GMT();
 		static jint TIMEZONE_ICU();
 		static jint TIMEZONE_JDK();
-		static QAndroidJniObject UNKNOWN_ZONE();
+		static android::icu::util::TimeZone UNKNOWN_ZONE();
 		static jstring UNKNOWN_ZONE_ID();
 		
 		// QAndroidJniObject forward
@@ -55,22 +55,22 @@ namespace android::icu::util
 		static jarray getAvailableIDs();
 		static jarray getAvailableIDs(jint arg0);
 		static jarray getAvailableIDs(jstring arg0);
-		static QAndroidJniObject getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, java::lang::Integer arg2);
+		static __JniBaseClass getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, java::lang::Integer arg2);
 		static jstring getCanonicalID(jstring arg0);
 		static jstring getCanonicalID(jstring arg0, jbooleanArray arg1);
-		static QAndroidJniObject getDefault();
+		static android::icu::util::TimeZone getDefault();
 		static jstring getEquivalentID(jstring arg0, jint arg1);
-		static QAndroidJniObject getFrozenTimeZone(jstring arg0);
+		static android::icu::util::TimeZone getFrozenTimeZone(jstring arg0);
 		static jstring getIDForWindowsID(jstring arg0, jstring arg1);
 		static jstring getRegion(jstring arg0);
 		static jstring getTZDataVersion();
-		static QAndroidJniObject getTimeZone(jstring arg0);
-		static QAndroidJniObject getTimeZone(jstring arg0, jint arg1);
+		static android::icu::util::TimeZone getTimeZone(jstring arg0);
+		static android::icu::util::TimeZone getTimeZone(jstring arg0, jint arg1);
 		static jstring getWindowsID(jstring arg0);
 		jobject clone();
-		QAndroidJniObject cloneAsThawed();
+		android::icu::util::TimeZone cloneAsThawed();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject freeze();
+		android::icu::util::TimeZone freeze();
 		jint getDSTSavings();
 		jstring getDisplayName();
 		jstring getDisplayName(android::icu::util::ULocale arg0);

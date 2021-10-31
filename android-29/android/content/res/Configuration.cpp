@@ -76,7 +76,7 @@ namespace android::content::res
 			"COLOR_MODE_WIDE_COLOR_GAMUT_YES"
 		);
 	}
-	QAndroidJniObject Configuration::CREATOR()
+	__JniBaseClass Configuration::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.res.Configuration",
@@ -568,7 +568,7 @@ namespace android::content::res
 			"keyboardHidden"
 		);
 	}
-	QAndroidJniObject Configuration::locale()
+	java::util::Locale Configuration::locale()
 	{
 		return getObjectField(
 			"locale",
@@ -723,7 +723,7 @@ namespace android::content::res
 			"()I"
 		);
 	}
-	QAndroidJniObject Configuration::getLocales()
+	android::os::LocaleList Configuration::getLocales()
 	{
 		return callObjectMethod(
 			"getLocales",

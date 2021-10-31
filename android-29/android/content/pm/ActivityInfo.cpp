@@ -138,7 +138,7 @@ namespace android::content::pm
 			"CONFIG_UI_MODE"
 		);
 	}
-	QAndroidJniObject ActivityInfo::CREATOR()
+	__JniBaseClass ActivityInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ActivityInfo",
@@ -548,7 +548,7 @@ namespace android::content::pm
 			"uiOptions"
 		);
 	}
-	QAndroidJniObject ActivityInfo::windowLayout()
+	android::content::pm::ActivityInfo_WindowLayout ActivityInfo::windowLayout()
 	{
 		return getObjectField(
 			"windowLayout",

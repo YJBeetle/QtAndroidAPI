@@ -4,7 +4,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject NetworkCapabilities::CREATOR()
+	__JniBaseClass NetworkCapabilities::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkCapabilities",
@@ -278,7 +278,7 @@ namespace android::net
 			"()I"
 		);
 	}
-	QAndroidJniObject NetworkCapabilities::getTransportInfo()
+	__JniBaseClass NetworkCapabilities::getTransportInfo()
 	{
 		return callObjectMethod(
 			"getTransportInfo",

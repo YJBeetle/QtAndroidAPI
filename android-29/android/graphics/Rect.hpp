@@ -13,7 +13,7 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jint bottom();
 		jint left();
 		jint right();
@@ -30,7 +30,7 @@ namespace android::graphics
 		
 		// Methods
 		static jboolean intersects(android::graphics::Rect arg0, android::graphics::Rect arg1);
-		static QAndroidJniObject unflattenFromString(jstring arg0);
+		static android::graphics::Rect unflattenFromString(jstring arg0);
 		jint centerX();
 		jint centerY();
 		jboolean contains(android::graphics::Rect arg0);

@@ -10,10 +10,10 @@ namespace java::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NFC();
-		static QAndroidJniObject NFD();
-		static QAndroidJniObject NFKC();
-		static QAndroidJniObject NFKD();
+		static java::text::Normalizer_Form NFC();
+		static java::text::Normalizer_Form NFD();
+		static java::text::Normalizer_Form NFKC();
+		static java::text::Normalizer_Form NFKD();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Normalizer_Form(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::text::Normalizer_Form valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::text

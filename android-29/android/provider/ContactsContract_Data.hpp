@@ -18,7 +18,7 @@ namespace android::provider
 	public:
 		// Fields
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring EXTRA_ADDRESS_BOOK_INDEX();
 		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
 		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
@@ -31,7 +31,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getContactLookupUri(android::content::ContentResolver arg0, android::net::Uri arg1);
+		static android::net::Uri getContactLookupUri(android::content::ContentResolver arg0, android::net::Uri arg1);
 	};
 } // namespace android::provider
 

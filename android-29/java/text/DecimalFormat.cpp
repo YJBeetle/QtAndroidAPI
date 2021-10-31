@@ -70,7 +70,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject DecimalFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -80,7 +80,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -90,7 +90,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -100,7 +100,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::formatToCharacterIterator(jobject arg0)
+	__JniBaseClass DecimalFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -108,14 +108,14 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject DecimalFormat::getCurrency()
+	java::util::Currency DecimalFormat::getCurrency()
 	{
 		return callObjectMethod(
 			"getCurrency",
 			"()Ljava/util/Currency;"
 		);
 	}
-	QAndroidJniObject DecimalFormat::getDecimalFormatSymbols()
+	java::text::DecimalFormatSymbols DecimalFormat::getDecimalFormatSymbols()
 	{
 		return callObjectMethod(
 			"getDecimalFormatSymbols",
@@ -192,7 +192,7 @@ namespace java::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject DecimalFormat::getRoundingMode()
+	java::math::RoundingMode DecimalFormat::getRoundingMode()
 	{
 		return callObjectMethod(
 			"getRoundingMode",
@@ -220,7 +220,7 @@ namespace java::text
 			"()Z"
 		);
 	}
-	QAndroidJniObject DecimalFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number DecimalFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",

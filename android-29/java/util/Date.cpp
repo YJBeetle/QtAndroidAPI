@@ -74,7 +74,7 @@ namespace java::util
 			arg5
 		);
 	}
-	QAndroidJniObject Date::from(java::time::Instant arg0)
+	java::util::Date Date::from(java::time::Instant arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Date",
@@ -272,7 +272,7 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Date::toInstant()
+	java::time::Instant Date::toInstant()
 	{
 		return callObjectMethod(
 			"toInstant",

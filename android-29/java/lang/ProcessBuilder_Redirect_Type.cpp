@@ -3,7 +3,7 @@
 namespace java::lang
 {
 	// Fields
-	QAndroidJniObject ProcessBuilder_Redirect_Type::APPEND()
+	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::APPEND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
@@ -11,7 +11,7 @@ namespace java::lang
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect_Type::INHERIT()
+	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::INHERIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
@@ -19,7 +19,7 @@ namespace java::lang
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect_Type::PIPE()
+	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::PIPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
@@ -27,7 +27,7 @@ namespace java::lang
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect_Type::READ()
+	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::READ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
@@ -35,7 +35,7 @@ namespace java::lang
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect_Type::WRITE()
+	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::WRITE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
@@ -50,7 +50,7 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ProcessBuilder_Redirect_Type::valueOf(jstring arg0)
+	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect$Type",

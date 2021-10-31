@@ -23,9 +23,9 @@ namespace android::accessibilityservice
 		GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3);
 		
 		// Methods
-		QAndroidJniObject continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3);
+		android::accessibilityservice::GestureDescription_StrokeDescription continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3);
 		jlong getDuration();
-		QAndroidJniObject getPath();
+		android::graphics::Path getPath();
 		jlong getStartTime();
 		jboolean willContinue();
 	};

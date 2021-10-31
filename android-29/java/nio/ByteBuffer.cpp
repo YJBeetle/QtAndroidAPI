@@ -18,7 +18,7 @@ namespace java::nio
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ByteBuffer::allocate(jint arg0)
+	java::nio::ByteBuffer ByteBuffer::allocate(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.ByteBuffer",
@@ -27,7 +27,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::allocateDirect(jint arg0)
+	java::nio::ByteBuffer ByteBuffer::allocateDirect(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.ByteBuffer",
@@ -36,7 +36,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::wrap(jbyteArray arg0)
+	java::nio::ByteBuffer ByteBuffer::wrap(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.ByteBuffer",
@@ -45,7 +45,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::wrap(jbyteArray arg0, jint arg1, jint arg2)
+	java::nio::ByteBuffer ByteBuffer::wrap(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.ByteBuffer",
@@ -56,7 +56,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject ByteBuffer::alignedSlice(jint arg0)
+	java::nio::ByteBuffer ByteBuffer::alignedSlice(jint arg0)
 	{
 		return callObjectMethod(
 			"alignedSlice",
@@ -87,63 +87,63 @@ namespace java::nio
 			"()I"
 		);
 	}
-	QAndroidJniObject ByteBuffer::asCharBuffer()
+	java::nio::CharBuffer ByteBuffer::asCharBuffer()
 	{
 		return callObjectMethod(
 			"asCharBuffer",
 			"()Ljava/nio/CharBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::asDoubleBuffer()
+	java::nio::DoubleBuffer ByteBuffer::asDoubleBuffer()
 	{
 		return callObjectMethod(
 			"asDoubleBuffer",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::asFloatBuffer()
+	java::nio::FloatBuffer ByteBuffer::asFloatBuffer()
 	{
 		return callObjectMethod(
 			"asFloatBuffer",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::asIntBuffer()
+	java::nio::IntBuffer ByteBuffer::asIntBuffer()
 	{
 		return callObjectMethod(
 			"asIntBuffer",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::asLongBuffer()
+	java::nio::LongBuffer ByteBuffer::asLongBuffer()
 	{
 		return callObjectMethod(
 			"asLongBuffer",
 			"()Ljava/nio/LongBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::asReadOnlyBuffer()
+	java::nio::ByteBuffer ByteBuffer::asReadOnlyBuffer()
 	{
 		return callObjectMethod(
 			"asReadOnlyBuffer",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::asShortBuffer()
+	java::nio::ShortBuffer ByteBuffer::asShortBuffer()
 	{
 		return callObjectMethod(
 			"asShortBuffer",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::clear()
+	java::nio::ByteBuffer ByteBuffer::clear()
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::compact()
+	java::nio::ByteBuffer ByteBuffer::compact()
 	{
 		return callObjectMethod(
 			"compact",
@@ -166,7 +166,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ByteBuffer::duplicate()
+	java::nio::ByteBuffer ByteBuffer::duplicate()
 	{
 		return callObjectMethod(
 			"duplicate",
@@ -181,7 +181,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::flip()
+	java::nio::ByteBuffer ByteBuffer::flip()
 	{
 		return callObjectMethod(
 			"flip",
@@ -203,7 +203,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::get(jbyteArray arg0)
+	java::nio::ByteBuffer ByteBuffer::get(jbyteArray arg0)
 	{
 		return callObjectMethod(
 			"get",
@@ -211,7 +211,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::get(jint arg0, jbyteArray arg1)
+	java::nio::ByteBuffer ByteBuffer::get(jint arg0, jbyteArray arg1)
 	{
 		return callObjectMethod(
 			"get",
@@ -220,7 +220,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ByteBuffer::get(jbyteArray arg0, jint arg1, jint arg2)
+	java::nio::ByteBuffer ByteBuffer::get(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
@@ -230,7 +230,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject ByteBuffer::get(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
+	java::nio::ByteBuffer ByteBuffer::get(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
@@ -352,7 +352,7 @@ namespace java::nio
 			"()Z"
 		);
 	}
-	QAndroidJniObject ByteBuffer::limit(jint arg0)
+	java::nio::ByteBuffer ByteBuffer::limit(jint arg0)
 	{
 		return callObjectMethod(
 			"limit",
@@ -360,7 +360,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::mark()
+	java::nio::ByteBuffer ByteBuffer::mark()
 	{
 		return callObjectMethod(
 			"mark",
@@ -375,7 +375,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ByteBuffer::order(java::nio::ByteOrder arg0)
+	java::nio::ByteBuffer ByteBuffer::order(java::nio::ByteOrder arg0)
 	{
 		return callObjectMethod(
 			"order",
@@ -383,14 +383,14 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ByteBuffer::order()
+	java::nio::ByteOrder ByteBuffer::order()
 	{
 		return callObjectMethod(
 			"order",
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::position(jint arg0)
+	java::nio::ByteBuffer ByteBuffer::position(jint arg0)
 	{
 		return callObjectMethod(
 			"position",
@@ -398,7 +398,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::put(jbyteArray arg0)
+	java::nio::ByteBuffer ByteBuffer::put(jbyteArray arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -406,7 +406,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::put(jbyte arg0)
+	java::nio::ByteBuffer ByteBuffer::put(jbyte arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -414,7 +414,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::put(java::nio::ByteBuffer arg0)
+	java::nio::ByteBuffer ByteBuffer::put(java::nio::ByteBuffer arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -422,7 +422,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ByteBuffer::put(jint arg0, jbyteArray arg1)
+	java::nio::ByteBuffer ByteBuffer::put(jint arg0, jbyteArray arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -431,7 +431,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ByteBuffer::put(jint arg0, jbyte arg1)
+	java::nio::ByteBuffer ByteBuffer::put(jint arg0, jbyte arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -440,7 +440,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ByteBuffer::put(jbyteArray arg0, jint arg1, jint arg2)
+	java::nio::ByteBuffer ByteBuffer::put(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
@@ -450,7 +450,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject ByteBuffer::put(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
+	java::nio::ByteBuffer ByteBuffer::put(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -461,7 +461,7 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject ByteBuffer::put(jint arg0, java::nio::ByteBuffer arg1, jint arg2, jint arg3)
+	java::nio::ByteBuffer ByteBuffer::put(jint arg0, java::nio::ByteBuffer arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -472,7 +472,7 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject ByteBuffer::putChar(jchar arg0)
+	java::nio::ByteBuffer ByteBuffer::putChar(jchar arg0)
 	{
 		return callObjectMethod(
 			"putChar",
@@ -480,7 +480,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::putChar(jint arg0, jchar arg1)
+	java::nio::ByteBuffer ByteBuffer::putChar(jint arg0, jchar arg1)
 	{
 		return callObjectMethod(
 			"putChar",
@@ -489,7 +489,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ByteBuffer::putDouble(jdouble arg0)
+	java::nio::ByteBuffer ByteBuffer::putDouble(jdouble arg0)
 	{
 		return callObjectMethod(
 			"putDouble",
@@ -497,7 +497,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::putDouble(jint arg0, jdouble arg1)
+	java::nio::ByteBuffer ByteBuffer::putDouble(jint arg0, jdouble arg1)
 	{
 		return callObjectMethod(
 			"putDouble",
@@ -506,7 +506,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ByteBuffer::putFloat(jfloat arg0)
+	java::nio::ByteBuffer ByteBuffer::putFloat(jfloat arg0)
 	{
 		return callObjectMethod(
 			"putFloat",
@@ -514,7 +514,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::putFloat(jint arg0, jfloat arg1)
+	java::nio::ByteBuffer ByteBuffer::putFloat(jint arg0, jfloat arg1)
 	{
 		return callObjectMethod(
 			"putFloat",
@@ -523,7 +523,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ByteBuffer::putInt(jint arg0)
+	java::nio::ByteBuffer ByteBuffer::putInt(jint arg0)
 	{
 		return callObjectMethod(
 			"putInt",
@@ -531,7 +531,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::putInt(jint arg0, jint arg1)
+	java::nio::ByteBuffer ByteBuffer::putInt(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"putInt",
@@ -540,7 +540,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ByteBuffer::putLong(jlong arg0)
+	java::nio::ByteBuffer ByteBuffer::putLong(jlong arg0)
 	{
 		return callObjectMethod(
 			"putLong",
@@ -548,7 +548,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::putLong(jint arg0, jlong arg1)
+	java::nio::ByteBuffer ByteBuffer::putLong(jint arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"putLong",
@@ -557,7 +557,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ByteBuffer::putShort(jshort arg0)
+	java::nio::ByteBuffer ByteBuffer::putShort(jshort arg0)
 	{
 		return callObjectMethod(
 			"putShort",
@@ -565,7 +565,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ByteBuffer::putShort(jint arg0, jshort arg1)
+	java::nio::ByteBuffer ByteBuffer::putShort(jint arg0, jshort arg1)
 	{
 		return callObjectMethod(
 			"putShort",
@@ -574,28 +574,28 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ByteBuffer::reset()
+	java::nio::ByteBuffer ByteBuffer::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::rewind()
+	java::nio::ByteBuffer ByteBuffer::rewind()
 	{
 		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::slice()
+	java::nio::ByteBuffer ByteBuffer::slice()
 	{
 		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	QAndroidJniObject ByteBuffer::slice(jint arg0, jint arg1)
+	java::nio::ByteBuffer ByteBuffer::slice(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"slice",

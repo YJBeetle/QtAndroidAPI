@@ -46,7 +46,7 @@ namespace android::inputmethodservice
 		
 		// Methods
 		void closing();
-		QAndroidJniObject getKeyboard();
+		android::inputmethodservice::Keyboard getKeyboard();
 		jboolean handleBack();
 		void invalidateAllKeys();
 		void invalidateKey(jint arg0);

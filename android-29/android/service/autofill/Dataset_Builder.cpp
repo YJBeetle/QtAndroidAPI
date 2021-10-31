@@ -27,14 +27,14 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	QAndroidJniObject Dataset_Builder::build()
+	android::service::autofill::Dataset Dataset_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/Dataset;"
 		);
 	}
-	QAndroidJniObject Dataset_Builder::setAuthentication(android::content::IntentSender arg0)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setAuthentication(android::content::IntentSender arg0)
 	{
 		return callObjectMethod(
 			"setAuthentication",
@@ -42,7 +42,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Dataset_Builder::setId(jstring arg0)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setId(jstring arg0)
 	{
 		return callObjectMethod(
 			"setId",
@@ -50,7 +50,7 @@ namespace android::service::autofill
 			arg0
 		);
 	}
-	QAndroidJniObject Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1)
 	{
 		return callObjectMethod(
 			"setValue",
@@ -59,7 +59,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2)
 	{
 		return callObjectMethod(
 			"setValue",
@@ -69,7 +69,7 @@ namespace android::service::autofill
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2)
 	{
 		return callObjectMethod(
 			"setValue",
@@ -79,7 +79,7 @@ namespace android::service::autofill
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3)
+	android::service::autofill::Dataset_Builder Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3)
 	{
 		return callObjectMethod(
 			"setValue",

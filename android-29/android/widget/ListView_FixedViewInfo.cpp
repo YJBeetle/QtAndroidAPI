@@ -18,7 +18,7 @@ namespace android::widget
 			"isSelectable"
 		);
 	}
-	QAndroidJniObject ListView_FixedViewInfo::view()
+	android::view::View ListView_FixedViewInfo::view()
 	{
 		return getObjectField(
 			"view",

@@ -28,7 +28,7 @@ namespace android::view
 			"ACTION_UP"
 		);
 	}
-	QAndroidJniObject KeyEvent::CREATOR()
+	__JniBaseClass KeyEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.KeyEvent",
@@ -2390,7 +2390,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	QAndroidJniObject KeyEvent::changeAction(android::view::KeyEvent arg0, jint arg1)
+	android::view::KeyEvent KeyEvent::changeAction(android::view::KeyEvent arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.KeyEvent",
@@ -2400,7 +2400,7 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject KeyEvent::changeFlags(android::view::KeyEvent arg0, jint arg1)
+	android::view::KeyEvent KeyEvent::changeFlags(android::view::KeyEvent arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.KeyEvent",
@@ -2410,7 +2410,7 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject KeyEvent::changeTimeRepeat(android::view::KeyEvent arg0, jlong arg1, jint arg2)
+	android::view::KeyEvent KeyEvent::changeTimeRepeat(android::view::KeyEvent arg0, jlong arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.KeyEvent",
@@ -2421,7 +2421,7 @@ namespace android::view
 			arg2
 		);
 	}
-	QAndroidJniObject KeyEvent::changeTimeRepeat(android::view::KeyEvent arg0, jlong arg1, jint arg2, jint arg3)
+	android::view::KeyEvent KeyEvent::changeTimeRepeat(android::view::KeyEvent arg0, jlong arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.KeyEvent",
@@ -2590,7 +2590,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject KeyEvent::getKeyCharacterMap()
+	android::view::KeyCharacterMap KeyEvent::getKeyCharacterMap()
 	{
 		return callObjectMethod(
 			"getKeyCharacterMap",

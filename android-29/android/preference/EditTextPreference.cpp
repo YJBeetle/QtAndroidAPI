@@ -44,7 +44,7 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	QAndroidJniObject EditTextPreference::getEditText()
+	android::widget::EditText EditTextPreference::getEditText()
 	{
 		return callObjectMethod(
 			"getEditText",

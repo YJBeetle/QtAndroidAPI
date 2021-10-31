@@ -18,7 +18,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MinguoDate::from(__JniBaseClass arg0)
+	java::time::chrono::MinguoDate MinguoDate::from(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
@@ -27,7 +27,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MinguoDate::now()
+	java::time::chrono::MinguoDate MinguoDate::now()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
@@ -35,7 +35,7 @@ namespace java::time::chrono
 			"()Ljava/time/chrono/MinguoDate;"
 		);
 	}
-	QAndroidJniObject MinguoDate::now(java::time::Clock arg0)
+	java::time::chrono::MinguoDate MinguoDate::now(java::time::Clock arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
@@ -44,7 +44,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MinguoDate::now(java::time::ZoneId arg0)
+	java::time::chrono::MinguoDate MinguoDate::now(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
@@ -53,7 +53,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MinguoDate::of(jint arg0, jint arg1, jint arg2)
+	java::time::chrono::MinguoDate MinguoDate::of(jint arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
@@ -64,7 +64,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	QAndroidJniObject MinguoDate::atTime(java::time::LocalTime arg0)
+	__JniBaseClass MinguoDate::atTime(java::time::LocalTime arg0)
 	{
 		return callObjectMethod(
 			"atTime",
@@ -80,14 +80,14 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject MinguoDate::getChronology()
+	java::time::chrono::MinguoChronology MinguoDate::getChronology()
 	{
 		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/MinguoChronology;"
 		);
 	}
-	QAndroidJniObject MinguoDate::getEra()
+	java::time::chrono::MinguoEra MinguoDate::getEra()
 	{
 		return callObjectMethod(
 			"getEra",
@@ -116,7 +116,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	QAndroidJniObject MinguoDate::minus(__JniBaseClass arg0)
+	java::time::chrono::MinguoDate MinguoDate::minus(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -124,7 +124,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MinguoDate::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::chrono::MinguoDate MinguoDate::minus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -133,7 +133,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MinguoDate::plus(__JniBaseClass arg0)
+	java::time::chrono::MinguoDate MinguoDate::plus(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -141,7 +141,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MinguoDate::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::chrono::MinguoDate MinguoDate::plus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -150,7 +150,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MinguoDate::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange MinguoDate::range(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -172,7 +172,7 @@ namespace java::time::chrono
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MinguoDate::until(__JniBaseClass arg0)
+	__JniBaseClass MinguoDate::until(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"until",
@@ -189,7 +189,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MinguoDate::with(__JniBaseClass arg0)
+	java::time::chrono::MinguoDate MinguoDate::with(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -197,7 +197,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MinguoDate::with(__JniBaseClass arg0, jlong arg1)
+	java::time::chrono::MinguoDate MinguoDate::with(__JniBaseClass arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

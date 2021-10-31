@@ -19,8 +19,8 @@ namespace android::provider
 		// Fields
 		static jint BROADCAST_THREAD();
 		static jint COMMON_THREAD();
-		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject OBSOLETE_THREADS_URI();
+		static android::net::Uri CONTENT_URI();
+		static android::net::Uri OBSOLETE_THREADS_URI();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Telephony_Threads(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

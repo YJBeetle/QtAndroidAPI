@@ -39,7 +39,7 @@ namespace android::icu::text
 			"INPUT_IS_FCD"
 		);
 	}
-	QAndroidJniObject Normalizer::MAYBE()
+	android::icu::text::Normalizer_QuickCheckResult Normalizer::MAYBE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer",
@@ -47,7 +47,7 @@ namespace android::icu::text
 			"Landroid/icu/text/Normalizer$QuickCheckResult;"
 		);
 	}
-	QAndroidJniObject Normalizer::NO()
+	android::icu::text::Normalizer_QuickCheckResult Normalizer::NO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer",
@@ -55,7 +55,7 @@ namespace android::icu::text
 			"Landroid/icu/text/Normalizer$QuickCheckResult;"
 		);
 	}
-	QAndroidJniObject Normalizer::YES()
+	android::icu::text::Normalizer_QuickCheckResult Normalizer::YES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer",

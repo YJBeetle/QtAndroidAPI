@@ -21,7 +21,7 @@ namespace java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CertStore::getInstance(jstring arg0, __JniBaseClass arg1)
+	java::security::cert::CertStore CertStore::getInstance(jstring arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.cert.CertStore",
@@ -31,7 +31,7 @@ namespace java::security::cert
 			arg1.object()
 		);
 	}
-	QAndroidJniObject CertStore::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
+	java::security::cert::CertStore CertStore::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.cert.CertStore",
@@ -42,7 +42,7 @@ namespace java::security::cert
 			arg2
 		);
 	}
-	QAndroidJniObject CertStore::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
+	java::security::cert::CertStore CertStore::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.cert.CertStore",
@@ -53,7 +53,7 @@ namespace java::security::cert
 			arg2.object()
 		);
 	}
-	QAndroidJniObject CertStore::getCRLs(__JniBaseClass arg0)
+	__JniBaseClass CertStore::getCRLs(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"getCRLs",
@@ -61,14 +61,14 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CertStore::getCertStoreParameters()
+	__JniBaseClass CertStore::getCertStoreParameters()
 	{
 		return callObjectMethod(
 			"getCertStoreParameters",
 			"()Ljava/security/cert/CertStoreParameters;"
 		);
 	}
-	QAndroidJniObject CertStore::getCertificates(__JniBaseClass arg0)
+	__JniBaseClass CertStore::getCertificates(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"getCertificates",
@@ -76,7 +76,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CertStore::getProvider()
+	java::security::Provider CertStore::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

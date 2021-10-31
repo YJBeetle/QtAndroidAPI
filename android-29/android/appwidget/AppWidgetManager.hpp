@@ -72,16 +72,16 @@ namespace android::appwidget
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(android::content::Context arg0);
+		static android::appwidget::AppWidgetManager getInstance(android::content::Context arg0);
 		jboolean bindAppWidgetIdIfAllowed(jint arg0, android::content::ComponentName arg1);
 		jboolean bindAppWidgetIdIfAllowed(jint arg0, android::content::ComponentName arg1, android::os::Bundle arg2);
 		jboolean bindAppWidgetIdIfAllowed(jint arg0, android::os::UserHandle arg1, android::content::ComponentName arg2, android::os::Bundle arg3);
 		jintArray getAppWidgetIds(android::content::ComponentName arg0);
-		QAndroidJniObject getAppWidgetInfo(jint arg0);
-		QAndroidJniObject getAppWidgetOptions(jint arg0);
-		QAndroidJniObject getInstalledProviders();
-		QAndroidJniObject getInstalledProvidersForPackage(jstring arg0, android::os::UserHandle arg1);
-		QAndroidJniObject getInstalledProvidersForProfile(android::os::UserHandle arg0);
+		android::appwidget::AppWidgetProviderInfo getAppWidgetInfo(jint arg0);
+		android::os::Bundle getAppWidgetOptions(jint arg0);
+		__JniBaseClass getInstalledProviders();
+		__JniBaseClass getInstalledProvidersForPackage(jstring arg0, android::os::UserHandle arg1);
+		__JniBaseClass getInstalledProvidersForProfile(android::os::UserHandle arg0);
 		jboolean isRequestPinAppWidgetSupported();
 		void notifyAppWidgetViewDataChanged(jintArray arg0, jint arg1);
 		void notifyAppWidgetViewDataChanged(jint arg0, jint arg1);

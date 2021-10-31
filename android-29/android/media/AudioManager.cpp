@@ -787,14 +787,14 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject AudioManager::getActivePlaybackConfigurations()
+	__JniBaseClass AudioManager::getActivePlaybackConfigurations()
 	{
 		return callObjectMethod(
 			"getActivePlaybackConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject AudioManager::getActiveRecordingConfigurations()
+	__JniBaseClass AudioManager::getActiveRecordingConfigurations()
 	{
 		return callObjectMethod(
 			"getActiveRecordingConfigurations",
@@ -816,7 +816,7 @@ namespace android::media
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject AudioManager::getMicrophones()
+	__JniBaseClass AudioManager::getMicrophones()
 	{
 		return callObjectMethod(
 			"getMicrophones",

@@ -54,7 +54,7 @@ namespace android::service::quicksettings
 			arg1.object()
 		);
 	}
-	QAndroidJniObject TileService::getQsTile()
+	android::service::quicksettings::Tile TileService::getQsTile()
 	{
 		return callObjectMethod(
 			"getQsTile",
@@ -75,7 +75,7 @@ namespace android::service::quicksettings
 			"()Z"
 		);
 	}
-	QAndroidJniObject TileService::onBind(android::content::Intent arg0)
+	__JniBaseClass TileService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

@@ -66,7 +66,7 @@ namespace android::view::animation
 			"()F"
 		);
 	}
-	QAndroidJniObject Transformation::getMatrix()
+	android::graphics::Matrix Transformation::getMatrix()
 	{
 		return callObjectMethod(
 			"getMatrix",

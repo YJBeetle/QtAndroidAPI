@@ -13,7 +13,7 @@ namespace javax::xml::parsers
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DocumentBuilderFactory::newDefaultInstance()
+	javax::xml::parsers::DocumentBuilderFactory DocumentBuilderFactory::newDefaultInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
@@ -21,7 +21,7 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/DocumentBuilderFactory;"
 		);
 	}
-	QAndroidJniObject DocumentBuilderFactory::newDefaultNSInstance()
+	javax::xml::parsers::DocumentBuilderFactory DocumentBuilderFactory::newDefaultNSInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
@@ -29,7 +29,7 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/DocumentBuilderFactory;"
 		);
 	}
-	QAndroidJniObject DocumentBuilderFactory::newInstance()
+	javax::xml::parsers::DocumentBuilderFactory DocumentBuilderFactory::newInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
@@ -37,7 +37,7 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/DocumentBuilderFactory;"
 		);
 	}
-	QAndroidJniObject DocumentBuilderFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::parsers::DocumentBuilderFactory DocumentBuilderFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
@@ -47,7 +47,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DocumentBuilderFactory::newNSInstance()
+	javax::xml::parsers::DocumentBuilderFactory DocumentBuilderFactory::newNSInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
@@ -55,7 +55,7 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/DocumentBuilderFactory;"
 		);
 	}
-	QAndroidJniObject DocumentBuilderFactory::newNSInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::parsers::DocumentBuilderFactory DocumentBuilderFactory::newNSInstance(jstring arg0, java::lang::ClassLoader arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
@@ -81,7 +81,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	QAndroidJniObject DocumentBuilderFactory::getSchema()
+	javax::xml::validation::Schema DocumentBuilderFactory::getSchema()
 	{
 		return callObjectMethod(
 			"getSchema",
@@ -137,7 +137,7 @@ namespace javax::xml::parsers
 			"()Z"
 		);
 	}
-	QAndroidJniObject DocumentBuilderFactory::newDocumentBuilder()
+	javax::xml::parsers::DocumentBuilder DocumentBuilderFactory::newDocumentBuilder()
 	{
 		return callObjectMethod(
 			"newDocumentBuilder",

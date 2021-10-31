@@ -31,7 +31,7 @@ namespace android::content::pm
 			"logo"
 		);
 	}
-	QAndroidJniObject PackageItemInfo::metaData()
+	android::os::Bundle PackageItemInfo::metaData()
 	{
 		return getObjectField(
 			"metaData",
@@ -77,7 +77,7 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	QAndroidJniObject PackageItemInfo::loadBanner(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable PackageItemInfo::loadBanner(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadBanner",
@@ -85,7 +85,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageItemInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable PackageItemInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -101,7 +101,7 @@ namespace android::content::pm
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject PackageItemInfo::loadLogo(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable PackageItemInfo::loadLogo(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadLogo",
@@ -109,7 +109,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageItemInfo::loadUnbadgedIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable PackageItemInfo::loadUnbadgedIcon(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadUnbadgedIcon",
@@ -117,7 +117,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageItemInfo::loadXmlMetaData(android::content::pm::PackageManager arg0, jstring arg1)
+	__JniBaseClass PackageItemInfo::loadXmlMetaData(android::content::pm::PackageManager arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"loadXmlMetaData",

@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject RadioAccessSpecifier::CREATOR()
+	__JniBaseClass RadioAccessSpecifier::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.RadioAccessSpecifier",

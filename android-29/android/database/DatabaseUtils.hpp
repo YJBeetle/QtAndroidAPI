@@ -76,8 +76,8 @@ namespace android::database
 		static jarray appendSelectionArgs(jarray arg0, jarray arg1);
 		static void appendValueToSql(java::lang::StringBuilder arg0, jobject arg1);
 		static void bindObjectToProgram(android::database::sqlite::SQLiteProgram arg0, jint arg1, jobject arg2);
-		static QAndroidJniObject blobFileDescriptorForQuery(android::database::sqlite::SQLiteStatement arg0, jarray arg1);
-		static QAndroidJniObject blobFileDescriptorForQuery(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2);
+		static android::os::ParcelFileDescriptor blobFileDescriptorForQuery(android::database::sqlite::SQLiteStatement arg0, jarray arg1);
+		static android::os::ParcelFileDescriptor blobFileDescriptorForQuery(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2);
 		static jstring concatenateWhere(jstring arg0, jstring arg1);
 		static void createDbFromSqlStatements(android::content::Context arg0, jstring arg1, jint arg2, jstring arg3);
 		static void cursorDoubleToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3);

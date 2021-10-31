@@ -61,9 +61,9 @@ namespace android::app
 		// Methods
 		void onAttachFragment(android::app::Fragment arg0);
 		void onDump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		QAndroidJniObject onFindViewById(jint arg0);
+		android::view::View onFindViewById(jint arg0);
 		jobject onGetHost();
-		QAndroidJniObject onGetLayoutInflater();
+		android::view::LayoutInflater onGetLayoutInflater();
 		jint onGetWindowAnimations();
 		jboolean onHasView();
 		jboolean onHasWindowAnimations();

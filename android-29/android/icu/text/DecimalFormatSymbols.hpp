@@ -39,15 +39,15 @@ namespace android::icu::text
 		DecimalFormatSymbols(java::util::Locale arg0);
 		
 		// Methods
-		static QAndroidJniObject forNumberingSystem(android::icu::util::ULocale arg0, android::icu::text::NumberingSystem arg1);
-		static QAndroidJniObject forNumberingSystem(java::util::Locale arg0, android::icu::text::NumberingSystem arg1);
+		static android::icu::text::DecimalFormatSymbols forNumberingSystem(android::icu::util::ULocale arg0, android::icu::text::NumberingSystem arg1);
+		static android::icu::text::DecimalFormatSymbols forNumberingSystem(java::util::Locale arg0, android::icu::text::NumberingSystem arg1);
 		static jarray getAvailableLocales();
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static android::icu::text::DecimalFormatSymbols getInstance();
+		static android::icu::text::DecimalFormatSymbols getInstance(android::icu::util::ULocale arg0);
+		static android::icu::text::DecimalFormatSymbols getInstance(java::util::Locale arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCurrency();
+		android::icu::util::Currency getCurrency();
 		jstring getCurrencySymbol();
 		jchar getDecimalSeparator();
 		jstring getDecimalSeparatorString();
@@ -60,7 +60,7 @@ namespace android::icu::text
 		jstring getGroupingSeparatorString();
 		jstring getInfinity();
 		jstring getInternationalCurrencySymbol();
-		QAndroidJniObject getLocale();
+		java::util::Locale getLocale();
 		jchar getMinusSign();
 		jstring getMinusSignString();
 		jchar getMonetaryDecimalSeparator();
@@ -78,7 +78,7 @@ namespace android::icu::text
 		jchar getPlusSign();
 		jstring getPlusSignString();
 		jchar getSignificantDigit();
-		QAndroidJniObject getULocale();
+		android::icu::util::ULocale getULocale();
 		jchar getZeroDigit();
 		jint hashCode();
 		void setCurrency(android::icu::util::Currency arg0);

@@ -76,7 +76,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject DialogFragment::getDialog()
+	android::app::Dialog DialogFragment::getDialog()
 	{
 		return callObjectMethod(
 			"getDialog",
@@ -136,7 +136,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DialogFragment::onCreateDialog(android::os::Bundle arg0)
+	android::app::Dialog DialogFragment::onCreateDialog(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"onCreateDialog",
@@ -166,7 +166,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DialogFragment::onGetLayoutInflater(android::os::Bundle arg0)
+	android::view::LayoutInflater DialogFragment::onGetLayoutInflater(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"onGetLayoutInflater",

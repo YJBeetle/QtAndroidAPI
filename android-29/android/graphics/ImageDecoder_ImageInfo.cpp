@@ -13,7 +13,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ImageDecoder_ImageInfo::getColorSpace()
+	android::graphics::ColorSpace ImageDecoder_ImageInfo::getColorSpace()
 	{
 		return callObjectMethod(
 			"getColorSpace",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ImageDecoder_ImageInfo::getSize()
+	android::util::Size ImageDecoder_ImageInfo::getSize()
 	{
 		return callObjectMethod(
 			"getSize",

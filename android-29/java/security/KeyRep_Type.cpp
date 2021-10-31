@@ -3,7 +3,7 @@
 namespace java::security
 {
 	// Fields
-	QAndroidJniObject KeyRep_Type::PRIVATE()
+	java::security::KeyRep_Type KeyRep_Type::PRIVATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.KeyRep$Type",
@@ -11,7 +11,7 @@ namespace java::security
 			"Ljava/security/KeyRep$Type;"
 		);
 	}
-	QAndroidJniObject KeyRep_Type::PUBLIC()
+	java::security::KeyRep_Type KeyRep_Type::PUBLIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.KeyRep$Type",
@@ -19,7 +19,7 @@ namespace java::security
 			"Ljava/security/KeyRep$Type;"
 		);
 	}
-	QAndroidJniObject KeyRep_Type::SECRET()
+	java::security::KeyRep_Type KeyRep_Type::SECRET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.KeyRep$Type",
@@ -34,7 +34,7 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject KeyRep_Type::valueOf(jstring arg0)
+	java::security::KeyRep_Type KeyRep_Type::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyRep$Type",

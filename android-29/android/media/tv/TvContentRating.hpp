@@ -9,7 +9,7 @@ namespace android::media::tv
 	{
 	public:
 		// Fields
-		static QAndroidJniObject UNRATED();
+		static android::media::tv::TvContentRating UNRATED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvContentRating(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -18,15 +18,15 @@ namespace android::media::tv
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createRating(jstring arg0, jstring arg1, jstring arg2, jarray arg3);
-		static QAndroidJniObject unflattenFromString(jstring arg0);
+		static android::media::tv::TvContentRating createRating(jstring arg0, jstring arg1, jstring arg2, jarray arg3);
+		static android::media::tv::TvContentRating unflattenFromString(jstring arg0);
 		jboolean contains(android::media::tv::TvContentRating arg0);
 		jboolean equals(jobject arg0);
 		jstring flattenToString();
 		jstring getDomain();
 		jstring getMainRating();
 		jstring getRatingSystem();
-		QAndroidJniObject getSubRatings();
+		__JniBaseClass getSubRatings();
 		jint hashCode();
 	};
 } // namespace android::media::tv

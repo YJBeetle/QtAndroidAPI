@@ -67,21 +67,21 @@ namespace javax::xml::datatype
 			"()I"
 		);
 	}
-	QAndroidJniObject XMLGregorianCalendar::getEon()
+	java::math::BigInteger XMLGregorianCalendar::getEon()
 	{
 		return callObjectMethod(
 			"getEon",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject XMLGregorianCalendar::getEonAndYear()
+	java::math::BigInteger XMLGregorianCalendar::getEonAndYear()
 	{
 		return callObjectMethod(
 			"getEonAndYear",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject XMLGregorianCalendar::getFractionalSecond()
+	java::math::BigDecimal XMLGregorianCalendar::getFractionalSecond()
 	{
 		return callObjectMethod(
 			"getFractionalSecond",
@@ -123,7 +123,7 @@ namespace javax::xml::datatype
 			"()I"
 		);
 	}
-	QAndroidJniObject XMLGregorianCalendar::getTimeZone(jint arg0)
+	java::util::TimeZone XMLGregorianCalendar::getTimeZone(jint arg0)
 	{
 		return callObjectMethod(
 			"getTimeZone",
@@ -138,7 +138,7 @@ namespace javax::xml::datatype
 			"()I"
 		);
 	}
-	QAndroidJniObject XMLGregorianCalendar::getXMLSchemaType()
+	javax::xml::_namespace::QName XMLGregorianCalendar::getXMLSchemaType()
 	{
 		return callObjectMethod(
 			"getXMLSchemaType",
@@ -166,7 +166,7 @@ namespace javax::xml::datatype
 			"()Z"
 		);
 	}
-	QAndroidJniObject XMLGregorianCalendar::normalize()
+	javax::xml::datatype::XMLGregorianCalendar XMLGregorianCalendar::normalize()
 	{
 		return callObjectMethod(
 			"normalize",
@@ -292,14 +292,14 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	QAndroidJniObject XMLGregorianCalendar::toGregorianCalendar()
+	java::util::GregorianCalendar XMLGregorianCalendar::toGregorianCalendar()
 	{
 		return callObjectMethod(
 			"toGregorianCalendar",
 			"()Ljava/util/GregorianCalendar;"
 		);
 	}
-	QAndroidJniObject XMLGregorianCalendar::toGregorianCalendar(java::util::TimeZone arg0, java::util::Locale arg1, javax::xml::datatype::XMLGregorianCalendar arg2)
+	java::util::GregorianCalendar XMLGregorianCalendar::toGregorianCalendar(java::util::TimeZone arg0, java::util::Locale arg1, javax::xml::datatype::XMLGregorianCalendar arg2)
 	{
 		return callObjectMethod(
 			"toGregorianCalendar",

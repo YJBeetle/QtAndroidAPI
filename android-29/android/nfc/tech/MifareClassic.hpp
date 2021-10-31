@@ -33,7 +33,7 @@ namespace android::nfc::tech
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject get(android::nfc::Tag arg0);
+		static android::nfc::tech::MifareClassic get(android::nfc::Tag arg0);
 		jboolean authenticateSectorWithKeyA(jint arg0, jbyteArray arg1);
 		jboolean authenticateSectorWithKeyB(jint arg0, jbyteArray arg1);
 		jint blockToSector(jint arg0);
@@ -45,7 +45,7 @@ namespace android::nfc::tech
 		jint getMaxTransceiveLength();
 		jint getSectorCount();
 		jint getSize();
-		QAndroidJniObject getTag();
+		android::nfc::Tag getTag();
 		jint getTimeout();
 		jint getType();
 		void increment(jint arg0, jint arg1);

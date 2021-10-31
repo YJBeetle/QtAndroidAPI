@@ -19,7 +19,7 @@ namespace android::widget
 		// Fields
 		jobject data();
 		jboolean isSelectable();
-		QAndroidJniObject view();
+		android::view::View view();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ListView_FixedViewInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

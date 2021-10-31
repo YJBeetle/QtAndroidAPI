@@ -9,9 +9,9 @@ namespace java::nio::charset
 	{
 	public:
 		// Fields
-		static QAndroidJniObject IGNORE();
-		static QAndroidJniObject REPLACE();
-		static QAndroidJniObject REPORT();
+		static java::nio::charset::CodingErrorAction IGNORE();
+		static java::nio::charset::CodingErrorAction REPLACE();
+		static java::nio::charset::CodingErrorAction REPORT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CodingErrorAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

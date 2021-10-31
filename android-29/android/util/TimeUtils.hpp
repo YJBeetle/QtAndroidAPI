@@ -21,9 +21,9 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getTimeZone(jint arg0, jboolean arg1, jlong arg2, jstring arg3);
+		static java::util::TimeZone getTimeZone(jint arg0, jboolean arg1, jlong arg2, jstring arg3);
 		static jstring getTimeZoneDatabaseVersion();
-		static QAndroidJniObject getTimeZoneIdsForCountryCode(jstring arg0);
+		static __JniBaseClass getTimeZoneIdsForCountryCode(jstring arg0);
 	};
 } // namespace android::util
 

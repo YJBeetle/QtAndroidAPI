@@ -34,10 +34,10 @@ namespace java::util
 		// Methods
 		jboolean add(jobject arg0);
 		void clear();
-		QAndroidJniObject comparator();
+		__JniBaseClass comparator();
 		jboolean contains(jobject arg0);
 		void forEach(__JniBaseClass arg0);
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jboolean offer(jobject arg0);
 		jobject peek();
 		jobject poll();
@@ -46,7 +46,7 @@ namespace java::util
 		jboolean removeIf(__JniBaseClass arg0);
 		jboolean retainAll(__JniBaseClass arg0);
 		jint size();
-		QAndroidJniObject spliterator();
+		__JniBaseClass spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 	};

@@ -41,23 +41,23 @@ namespace java::time::zone
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject of(java::time::ZoneOffset arg0);
-		static QAndroidJniObject of(java::time::ZoneOffset arg0, java::time::ZoneOffset arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4);
+		static java::time::zone::ZoneRules of(java::time::ZoneOffset arg0);
+		static java::time::zone::ZoneRules of(java::time::ZoneOffset arg0, java::time::ZoneOffset arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getDaylightSavings(java::time::Instant arg0);
-		QAndroidJniObject getOffset(java::time::Instant arg0);
-		QAndroidJniObject getOffset(java::time::LocalDateTime arg0);
-		QAndroidJniObject getStandardOffset(java::time::Instant arg0);
-		QAndroidJniObject getTransition(java::time::LocalDateTime arg0);
-		QAndroidJniObject getTransitionRules();
-		QAndroidJniObject getTransitions();
-		QAndroidJniObject getValidOffsets(java::time::LocalDateTime arg0);
+		java::time::Duration getDaylightSavings(java::time::Instant arg0);
+		java::time::ZoneOffset getOffset(java::time::Instant arg0);
+		java::time::ZoneOffset getOffset(java::time::LocalDateTime arg0);
+		java::time::ZoneOffset getStandardOffset(java::time::Instant arg0);
+		java::time::zone::ZoneOffsetTransition getTransition(java::time::LocalDateTime arg0);
+		__JniBaseClass getTransitionRules();
+		__JniBaseClass getTransitions();
+		__JniBaseClass getValidOffsets(java::time::LocalDateTime arg0);
 		jint hashCode();
 		jboolean isDaylightSavings(java::time::Instant arg0);
 		jboolean isFixedOffset();
 		jboolean isValidOffset(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1);
-		QAndroidJniObject nextTransition(java::time::Instant arg0);
-		QAndroidJniObject previousTransition(java::time::Instant arg0);
+		java::time::zone::ZoneOffsetTransition nextTransition(java::time::Instant arg0);
+		java::time::zone::ZoneOffsetTransition previousTransition(java::time::Instant arg0);
 		jstring toString();
 	};
 } // namespace java::time::zone

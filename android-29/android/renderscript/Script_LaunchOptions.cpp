@@ -57,7 +57,7 @@ namespace android::renderscript
 			"()I"
 		);
 	}
-	QAndroidJniObject Script_LaunchOptions::setX(jint arg0, jint arg1)
+	android::renderscript::Script_LaunchOptions Script_LaunchOptions::setX(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setX",
@@ -66,7 +66,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	QAndroidJniObject Script_LaunchOptions::setY(jint arg0, jint arg1)
+	android::renderscript::Script_LaunchOptions Script_LaunchOptions::setY(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setY",
@@ -75,7 +75,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	QAndroidJniObject Script_LaunchOptions::setZ(jint arg0, jint arg1)
+	android::renderscript::Script_LaunchOptions Script_LaunchOptions::setZ(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setZ",

@@ -14,7 +14,7 @@ namespace android::provider
 	public:
 		// Fields
 		static jstring AUTHORITY();
-		static QAndroidJniObject AUTHORITY_URI();
+		static android::net::Uri AUTHORITY_URI();
 		static jstring CALLER_IS_SYNCADAPTER();
 		static jstring DEFERRED_SNIPPETING();
 		static jstring DEFERRED_SNIPPETING_QUERY();

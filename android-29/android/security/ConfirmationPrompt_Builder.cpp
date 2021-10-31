@@ -18,14 +18,14 @@ namespace android::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject ConfirmationPrompt_Builder::build()
+	android::security::ConfirmationPrompt ConfirmationPrompt_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/security/ConfirmationPrompt;"
 		);
 	}
-	QAndroidJniObject ConfirmationPrompt_Builder::setExtraData(jbyteArray arg0)
+	android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setExtraData(jbyteArray arg0)
 	{
 		return callObjectMethod(
 			"setExtraData",
@@ -33,7 +33,7 @@ namespace android::security
 			arg0
 		);
 	}
-	QAndroidJniObject ConfirmationPrompt_Builder::setPromptText(jstring arg0)
+	android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setPromptText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setPromptText",

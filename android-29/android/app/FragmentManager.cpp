@@ -46,7 +46,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FragmentManager::beginTransaction()
+	android::app::FragmentTransaction FragmentManager::beginTransaction()
 	{
 		return callObjectMethod(
 			"beginTransaction",
@@ -71,7 +71,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject FragmentManager::findFragmentById(jint arg0)
+	android::app::Fragment FragmentManager::findFragmentById(jint arg0)
 	{
 		return callObjectMethod(
 			"findFragmentById",
@@ -79,7 +79,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentManager::findFragmentByTag(jstring arg0)
+	android::app::Fragment FragmentManager::findFragmentByTag(jstring arg0)
 	{
 		return callObjectMethod(
 			"findFragmentByTag",
@@ -87,7 +87,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentManager::getBackStackEntryAt(jint arg0)
+	__JniBaseClass FragmentManager::getBackStackEntryAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getBackStackEntryAt",
@@ -102,7 +102,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject FragmentManager::getFragment(android::os::Bundle arg0, jstring arg1)
+	android::app::Fragment FragmentManager::getFragment(android::os::Bundle arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getFragment",
@@ -111,14 +111,14 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject FragmentManager::getFragments()
+	__JniBaseClass FragmentManager::getFragments()
 	{
 		return callObjectMethod(
 			"getFragments",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject FragmentManager::getPrimaryNavigationFragment()
+	android::app::Fragment FragmentManager::getPrimaryNavigationFragment()
 	{
 		return callObjectMethod(
 			"getPrimaryNavigationFragment",
@@ -223,7 +223,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FragmentManager::saveFragmentInstanceState(android::app::Fragment arg0)
+	android::app::Fragment_SavedState FragmentManager::saveFragmentInstanceState(android::app::Fragment arg0)
 	{
 		return callObjectMethod(
 			"saveFragmentInstanceState",

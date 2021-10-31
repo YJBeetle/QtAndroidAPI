@@ -27,7 +27,7 @@ namespace android::content
 		jboolean getAbortBroadcast();
 		jint getResultCode();
 		jstring getResultData();
-		QAndroidJniObject getResultExtras(jboolean arg0);
+		android::os::Bundle getResultExtras(jboolean arg0);
 		void setResult(jint arg0, jstring arg1, android::os::Bundle arg2);
 		void setResultCode(jint arg0);
 		void setResultData(jstring arg0);

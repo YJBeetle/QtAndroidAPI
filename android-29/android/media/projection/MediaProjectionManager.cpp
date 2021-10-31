@@ -13,14 +13,14 @@ namespace android::media::projection
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MediaProjectionManager::createScreenCaptureIntent()
+	android::content::Intent MediaProjectionManager::createScreenCaptureIntent()
 	{
 		return callObjectMethod(
 			"createScreenCaptureIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	QAndroidJniObject MediaProjectionManager::getMediaProjection(jint arg0, android::content::Intent arg1)
+	android::media::projection::MediaProjection MediaProjectionManager::getMediaProjection(jint arg0, android::content::Intent arg1)
 	{
 		return callObjectMethod(
 			"getMediaProjection",

@@ -22,7 +22,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FragmentController::createController(android::app::FragmentHostCallback arg0)
+	android::app::FragmentController FragmentController::createController(android::app::FragmentHostCallback arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.FragmentController",
@@ -233,7 +233,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject FragmentController::findFragmentByWho(jstring arg0)
+	android::app::Fragment FragmentController::findFragmentByWho(jstring arg0)
 	{
 		return callObjectMethod(
 			"findFragmentByWho",
@@ -241,14 +241,14 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentController::getFragmentManager()
+	android::app::FragmentManager FragmentController::getFragmentManager()
 	{
 		return callObjectMethod(
 			"getFragmentManager",
 			"()Landroid/app/FragmentManager;"
 		);
 	}
-	QAndroidJniObject FragmentController::getLoaderManager()
+	android::app::LoaderManager FragmentController::getLoaderManager()
 	{
 		return callObjectMethod(
 			"getLoaderManager",
@@ -262,7 +262,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject FragmentController::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3)
+	android::view::View FragmentController::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3)
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -306,28 +306,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FragmentController::retainLoaderNonConfig()
+	android::util::ArrayMap FragmentController::retainLoaderNonConfig()
 	{
 		return callObjectMethod(
 			"retainLoaderNonConfig",
 			"()Landroid/util/ArrayMap;"
 		);
 	}
-	QAndroidJniObject FragmentController::retainNestedNonConfig()
+	android::app::FragmentManagerNonConfig FragmentController::retainNestedNonConfig()
 	{
 		return callObjectMethod(
 			"retainNestedNonConfig",
 			"()Landroid/app/FragmentManagerNonConfig;"
 		);
 	}
-	QAndroidJniObject FragmentController::retainNonConfig()
+	__JniBaseClass FragmentController::retainNonConfig()
 	{
 		return callObjectMethod(
 			"retainNonConfig",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject FragmentController::saveAllState()
+	__JniBaseClass FragmentController::saveAllState()
 	{
 		return callObjectMethod(
 			"saveAllState",

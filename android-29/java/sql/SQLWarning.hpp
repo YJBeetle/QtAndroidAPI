@@ -27,7 +27,7 @@ namespace java::sql
 		SQLWarning(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
 		
 		// Methods
-		QAndroidJniObject getNextWarning();
+		java::sql::SQLWarning getNextWarning();
 		void setNextWarning(java::sql::SQLWarning arg0);
 	};
 } // namespace java::sql

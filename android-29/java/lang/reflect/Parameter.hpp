@@ -22,17 +22,17 @@ namespace java::lang::reflect
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAnnotatedType();
-		QAndroidJniObject getAnnotation(jclass arg0);
+		__JniBaseClass getAnnotatedType();
+		__JniBaseClass getAnnotation(jclass arg0);
 		jarray getAnnotations();
 		jarray getAnnotationsByType(jclass arg0);
-		QAndroidJniObject getDeclaredAnnotation(jclass arg0);
+		__JniBaseClass getDeclaredAnnotation(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jarray getDeclaredAnnotationsByType(jclass arg0);
-		QAndroidJniObject getDeclaringExecutable();
+		java::lang::reflect::Executable getDeclaringExecutable();
 		jint getModifiers();
 		jstring getName();
-		QAndroidJniObject getParameterizedType();
+		__JniBaseClass getParameterizedType();
 		jclass getType();
 		jint hashCode();
 		jboolean isImplicit();

@@ -132,7 +132,7 @@ namespace android::icu::text
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject BreakIterator::getCharacterInstance()
+	android::icu::text::BreakIterator BreakIterator::getCharacterInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -140,7 +140,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/BreakIterator;"
 		);
 	}
-	QAndroidJniObject BreakIterator::getCharacterInstance(android::icu::util::ULocale arg0)
+	android::icu::text::BreakIterator BreakIterator::getCharacterInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -149,7 +149,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getCharacterInstance(java::util::Locale arg0)
+	android::icu::text::BreakIterator BreakIterator::getCharacterInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -158,7 +158,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getLineInstance()
+	android::icu::text::BreakIterator BreakIterator::getLineInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -166,7 +166,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/BreakIterator;"
 		);
 	}
-	QAndroidJniObject BreakIterator::getLineInstance(android::icu::util::ULocale arg0)
+	android::icu::text::BreakIterator BreakIterator::getLineInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -175,7 +175,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getLineInstance(java::util::Locale arg0)
+	android::icu::text::BreakIterator BreakIterator::getLineInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -184,7 +184,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getSentenceInstance()
+	android::icu::text::BreakIterator BreakIterator::getSentenceInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -192,7 +192,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/BreakIterator;"
 		);
 	}
-	QAndroidJniObject BreakIterator::getSentenceInstance(android::icu::util::ULocale arg0)
+	android::icu::text::BreakIterator BreakIterator::getSentenceInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -201,7 +201,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getSentenceInstance(java::util::Locale arg0)
+	android::icu::text::BreakIterator BreakIterator::getSentenceInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -210,7 +210,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getTitleInstance()
+	android::icu::text::BreakIterator BreakIterator::getTitleInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -218,7 +218,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/BreakIterator;"
 		);
 	}
-	QAndroidJniObject BreakIterator::getTitleInstance(android::icu::util::ULocale arg0)
+	android::icu::text::BreakIterator BreakIterator::getTitleInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -227,7 +227,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getTitleInstance(java::util::Locale arg0)
+	android::icu::text::BreakIterator BreakIterator::getTitleInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -236,7 +236,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getWordInstance()
+	android::icu::text::BreakIterator BreakIterator::getWordInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -244,7 +244,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/BreakIterator;"
 		);
 	}
-	QAndroidJniObject BreakIterator::getWordInstance(android::icu::util::ULocale arg0)
+	android::icu::text::BreakIterator BreakIterator::getWordInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -253,7 +253,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getWordInstance(java::util::Locale arg0)
+	android::icu::text::BreakIterator BreakIterator::getWordInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.BreakIterator",
@@ -306,7 +306,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject BreakIterator::getText()
+	__JniBaseClass BreakIterator::getText()
 	{
 		return callObjectMethod(
 			"getText",

@@ -11,14 +11,14 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ValidatorHandler::getContentHandler()
+	__JniBaseClass ValidatorHandler::getContentHandler()
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	QAndroidJniObject ValidatorHandler::getErrorHandler()
+	__JniBaseClass ValidatorHandler::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",
@@ -41,14 +41,14 @@ namespace javax::xml::validation
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject ValidatorHandler::getResourceResolver()
+	__JniBaseClass ValidatorHandler::getResourceResolver()
 	{
 		return callObjectMethod(
 			"getResourceResolver",
 			"()Lorg/w3c/dom/ls/LSResourceResolver;"
 		);
 	}
-	QAndroidJniObject ValidatorHandler::getTypeInfoProvider()
+	javax::xml::validation::TypeInfoProvider ValidatorHandler::getTypeInfoProvider()
 	{
 		return callObjectMethod(
 			"getTypeInfoProvider",

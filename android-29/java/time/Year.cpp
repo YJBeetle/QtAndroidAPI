@@ -33,7 +33,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Year::from(__JniBaseClass arg0)
+	java::time::Year Year::from(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Year",
@@ -51,7 +51,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Year::now()
+	java::time::Year Year::now()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Year",
@@ -59,7 +59,7 @@ namespace java::time
 			"()Ljava/time/Year;"
 		);
 	}
-	QAndroidJniObject Year::now(java::time::Clock arg0)
+	java::time::Year Year::now(java::time::Clock arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Year",
@@ -68,7 +68,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Year::now(java::time::ZoneId arg0)
+	java::time::Year Year::now(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Year",
@@ -77,7 +77,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Year::of(jint arg0)
+	java::time::Year Year::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Year",
@@ -86,7 +86,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Year::parse(jstring arg0)
+	java::time::Year Year::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Year",
@@ -95,7 +95,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Year::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
+	java::time::Year Year::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Year",
@@ -105,7 +105,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Year::adjustInto(__JniBaseClass arg0)
+	__JniBaseClass Year::adjustInto(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -113,7 +113,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Year::atDay(jint arg0)
+	java::time::LocalDate Year::atDay(jint arg0)
 	{
 		return callObjectMethod(
 			"atDay",
@@ -121,7 +121,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Year::atMonth(jint arg0)
+	java::time::YearMonth Year::atMonth(jint arg0)
 	{
 		return callObjectMethod(
 			"atMonth",
@@ -129,7 +129,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Year::atMonth(java::time::Month arg0)
+	java::time::YearMonth Year::atMonth(java::time::Month arg0)
 	{
 		return callObjectMethod(
 			"atMonth",
@@ -137,7 +137,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Year::atMonthDay(java::time::MonthDay arg0)
+	java::time::LocalDate Year::atMonthDay(java::time::MonthDay arg0)
 	{
 		return callObjectMethod(
 			"atMonthDay",
@@ -253,7 +253,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	QAndroidJniObject Year::minus(__JniBaseClass arg0)
+	java::time::Year Year::minus(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -261,7 +261,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Year::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::Year Year::minus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -270,7 +270,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Year::minusYears(jlong arg0)
+	java::time::Year Year::minusYears(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusYears",
@@ -278,7 +278,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Year::plus(__JniBaseClass arg0)
+	java::time::Year Year::plus(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -286,7 +286,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Year::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::Year Year::plus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -295,7 +295,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Year::plusYears(jlong arg0)
+	java::time::Year Year::plusYears(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusYears",
@@ -311,7 +311,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject Year::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange Year::range(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -335,7 +335,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Year::with(__JniBaseClass arg0)
+	java::time::Year Year::with(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -343,7 +343,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Year::with(__JniBaseClass arg0, jlong arg1)
+	java::time::Year Year::with(__JniBaseClass arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

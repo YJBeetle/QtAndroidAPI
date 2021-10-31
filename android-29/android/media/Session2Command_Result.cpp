@@ -46,7 +46,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject Session2Command_Result::getResultData()
+	android::os::Bundle Session2Command_Result::getResultData()
 	{
 		return callObjectMethod(
 			"getResultData",

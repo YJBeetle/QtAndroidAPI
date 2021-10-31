@@ -72,7 +72,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	QAndroidJniObject Preference::getContext()
+	android::content::Context Preference::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
@@ -86,14 +86,14 @@ namespace android::preference
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Preference::getEditor()
+	__JniBaseClass Preference::getEditor()
 	{
 		return callObjectMethod(
 			"getEditor",
 			"()Landroid/content/SharedPreferences$Editor;"
 		);
 	}
-	QAndroidJniObject Preference::getExtras()
+	android::os::Bundle Preference::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -107,14 +107,14 @@ namespace android::preference
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Preference::getIcon()
+	android::graphics::drawable::Drawable Preference::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject Preference::getIntent()
+	android::content::Intent Preference::getIntent()
 	{
 		return callObjectMethod(
 			"getIntent",
@@ -135,14 +135,14 @@ namespace android::preference
 			"()I"
 		);
 	}
-	QAndroidJniObject Preference::getOnPreferenceChangeListener()
+	__JniBaseClass Preference::getOnPreferenceChangeListener()
 	{
 		return callObjectMethod(
 			"getOnPreferenceChangeListener",
 			"()Landroid/preference/Preference$OnPreferenceChangeListener;"
 		);
 	}
-	QAndroidJniObject Preference::getOnPreferenceClickListener()
+	__JniBaseClass Preference::getOnPreferenceClickListener()
 	{
 		return callObjectMethod(
 			"getOnPreferenceClickListener",
@@ -156,14 +156,14 @@ namespace android::preference
 			"()I"
 		);
 	}
-	QAndroidJniObject Preference::getParent()
+	android::preference::PreferenceGroup Preference::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/preference/PreferenceGroup;"
 		);
 	}
-	QAndroidJniObject Preference::getPersistedStringSet(__JniBaseClass arg0)
+	__JniBaseClass Preference::getPersistedStringSet(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"getPersistedStringSet",
@@ -171,21 +171,21 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Preference::getPreferenceDataStore()
+	__JniBaseClass Preference::getPreferenceDataStore()
 	{
 		return callObjectMethod(
 			"getPreferenceDataStore",
 			"()Landroid/preference/PreferenceDataStore;"
 		);
 	}
-	QAndroidJniObject Preference::getPreferenceManager()
+	android::preference::PreferenceManager Preference::getPreferenceManager()
 	{
 		return callObjectMethod(
 			"getPreferenceManager",
 			"()Landroid/preference/PreferenceManager;"
 		);
 	}
-	QAndroidJniObject Preference::getSharedPreferences()
+	__JniBaseClass Preference::getSharedPreferences()
 	{
 		return callObjectMethod(
 			"getSharedPreferences",
@@ -220,7 +220,7 @@ namespace android::preference
 			"()I"
 		);
 	}
-	QAndroidJniObject Preference::getView(android::view::View arg0, android::view::ViewGroup arg1)
+	android::view::View Preference::getView(android::view::View arg0, android::view::ViewGroup arg1)
 	{
 		return callObjectMethod(
 			"getView",
@@ -311,7 +311,7 @@ namespace android::preference
 			arg1
 		);
 	}
-	QAndroidJniObject Preference::peekExtras()
+	android::os::Bundle Preference::peekExtras()
 	{
 		return callObjectMethod(
 			"peekExtras",

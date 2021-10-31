@@ -104,7 +104,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	QAndroidJniObject ImageView::getColorFilter()
+	android::graphics::ColorFilter ImageView::getColorFilter()
 	{
 		return callObjectMethod(
 			"getColorFilter",
@@ -118,7 +118,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	QAndroidJniObject ImageView::getDrawable()
+	android::graphics::drawable::Drawable ImageView::getDrawable()
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -132,28 +132,28 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ImageView::getImageMatrix()
+	android::graphics::Matrix ImageView::getImageMatrix()
 	{
 		return callObjectMethod(
 			"getImageMatrix",
 			"()Landroid/graphics/Matrix;"
 		);
 	}
-	QAndroidJniObject ImageView::getImageTintBlendMode()
+	android::graphics::BlendMode ImageView::getImageTintBlendMode()
 	{
 		return callObjectMethod(
 			"getImageTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject ImageView::getImageTintList()
+	android::content::res::ColorStateList ImageView::getImageTintList()
 	{
 		return callObjectMethod(
 			"getImageTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject ImageView::getImageTintMode()
+	android::graphics::PorterDuff_Mode ImageView::getImageTintMode()
 	{
 		return callObjectMethod(
 			"getImageTintMode",
@@ -174,7 +174,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ImageView::getScaleType()
+	android::widget::ImageView_ScaleType ImageView::getScaleType()
 	{
 		return callObjectMethod(
 			"getScaleType",

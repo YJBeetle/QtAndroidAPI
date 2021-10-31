@@ -56,7 +56,7 @@ namespace android::transition
 			"()I"
 		);
 	}
-	QAndroidJniObject Slide::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	android::animation::Animator Slide::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
 	{
 		return callObjectMethod(
 			"onAppear",
@@ -67,7 +67,7 @@ namespace android::transition
 			arg3.object()
 		);
 	}
-	QAndroidJniObject Slide::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	android::animation::Animator Slide::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
 	{
 		return callObjectMethod(
 			"onDisappear",

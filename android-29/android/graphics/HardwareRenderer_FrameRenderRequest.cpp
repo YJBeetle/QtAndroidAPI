@@ -11,7 +11,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject HardwareRenderer_FrameRenderRequest::setFrameCommitCallback(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setFrameCommitCallback(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setFrameCommitCallback",
@@ -20,7 +20,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	QAndroidJniObject HardwareRenderer_FrameRenderRequest::setVsyncTime(jlong arg0)
+	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setVsyncTime(jlong arg0)
 	{
 		return callObjectMethod(
 			"setVsyncTime",
@@ -28,7 +28,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject HardwareRenderer_FrameRenderRequest::setWaitForPresent(jboolean arg0)
+	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setWaitForPresent(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setWaitForPresent",

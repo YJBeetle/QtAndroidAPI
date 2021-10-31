@@ -26,8 +26,8 @@ namespace android::graphics::pdf
 		PdfDocument_PageInfo_Builder(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject create();
-		QAndroidJniObject setContentRect(android::graphics::Rect arg0);
+		android::graphics::pdf::PdfDocument_PageInfo create();
+		android::graphics::pdf::PdfDocument_PageInfo_Builder setContentRect(android::graphics::Rect arg0);
 	};
 } // namespace android::graphics::pdf
 

@@ -26,14 +26,14 @@ namespace android::printservice
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PrinterDiscoverySession::getPrinters()
+	__JniBaseClass PrinterDiscoverySession::getPrinters()
 	{
 		return callObjectMethod(
 			"getPrinters",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PrinterDiscoverySession::getTrackedPrinters()
+	__JniBaseClass PrinterDiscoverySession::getTrackedPrinters()
 	{
 		return callObjectMethod(
 			"getTrackedPrinters",

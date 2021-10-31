@@ -7,7 +7,7 @@
 namespace java::math
 {
 	// Fields
-	QAndroidJniObject BigInteger::ONE()
+	java::math::BigInteger BigInteger::ONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.BigInteger",
@@ -15,7 +15,7 @@ namespace java::math
 			"Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject BigInteger::TEN()
+	java::math::BigInteger BigInteger::TEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.BigInteger",
@@ -23,7 +23,7 @@ namespace java::math
 			"Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject BigInteger::TWO()
+	java::math::BigInteger BigInteger::TWO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.BigInteger",
@@ -31,7 +31,7 @@ namespace java::math
 			"Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject BigInteger::ZERO()
+	java::math::BigInteger BigInteger::ZERO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.BigInteger",
@@ -104,7 +104,7 @@ namespace java::math
 		) {}
 	
 	// Methods
-	QAndroidJniObject BigInteger::probablePrime(jint arg0, java::util::Random arg1)
+	java::math::BigInteger BigInteger::probablePrime(jint arg0, java::util::Random arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.math.BigInteger",
@@ -114,7 +114,7 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	QAndroidJniObject BigInteger::valueOf(jlong arg0)
+	java::math::BigInteger BigInteger::valueOf(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.math.BigInteger",
@@ -123,14 +123,14 @@ namespace java::math
 			arg0
 		);
 	}
-	QAndroidJniObject BigInteger::abs()
+	java::math::BigInteger BigInteger::abs()
 	{
 		return callObjectMethod(
 			"abs",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject BigInteger::add(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::add(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"add",
@@ -138,7 +138,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BigInteger::_and(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::_and(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"and",
@@ -146,7 +146,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BigInteger::andNot(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::andNot(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"andNot",
@@ -175,7 +175,7 @@ namespace java::math
 			"()B"
 		);
 	}
-	QAndroidJniObject BigInteger::clearBit(jint arg0)
+	java::math::BigInteger BigInteger::clearBit(jint arg0)
 	{
 		return callObjectMethod(
 			"clearBit",
@@ -199,7 +199,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BigInteger::divide(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::divide(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"divide",
@@ -230,7 +230,7 @@ namespace java::math
 			arg0
 		);
 	}
-	QAndroidJniObject BigInteger::flipBit(jint arg0)
+	java::math::BigInteger BigInteger::flipBit(jint arg0)
 	{
 		return callObjectMethod(
 			"flipBit",
@@ -245,7 +245,7 @@ namespace java::math
 			"()F"
 		);
 	}
-	QAndroidJniObject BigInteger::gcd(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::gcd(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"gcd",
@@ -303,7 +303,7 @@ namespace java::math
 			"()J"
 		);
 	}
-	QAndroidJniObject BigInteger::max(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::max(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"max",
@@ -311,7 +311,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BigInteger::min(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::min(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"min",
@@ -319,7 +319,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BigInteger::mod(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::mod(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"mod",
@@ -327,7 +327,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BigInteger::modInverse(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::modInverse(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"modInverse",
@@ -335,7 +335,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BigInteger::modPow(java::math::BigInteger arg0, java::math::BigInteger arg1)
+	java::math::BigInteger BigInteger::modPow(java::math::BigInteger arg0, java::math::BigInteger arg1)
 	{
 		return callObjectMethod(
 			"modPow",
@@ -344,7 +344,7 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	QAndroidJniObject BigInteger::multiply(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::multiply(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"multiply",
@@ -352,28 +352,28 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BigInteger::negate()
+	java::math::BigInteger BigInteger::negate()
 	{
 		return callObjectMethod(
 			"negate",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject BigInteger::nextProbablePrime()
+	java::math::BigInteger BigInteger::nextProbablePrime()
 	{
 		return callObjectMethod(
 			"nextProbablePrime",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject BigInteger::_not()
+	java::math::BigInteger BigInteger::_not()
 	{
 		return callObjectMethod(
 			"not",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject BigInteger::_or(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::_or(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"or",
@@ -381,7 +381,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BigInteger::pow(jint arg0)
+	java::math::BigInteger BigInteger::pow(jint arg0)
 	{
 		return callObjectMethod(
 			"pow",
@@ -389,7 +389,7 @@ namespace java::math
 			arg0
 		);
 	}
-	QAndroidJniObject BigInteger::remainder(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::remainder(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"remainder",
@@ -397,7 +397,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BigInteger::setBit(jint arg0)
+	java::math::BigInteger BigInteger::setBit(jint arg0)
 	{
 		return callObjectMethod(
 			"setBit",
@@ -405,7 +405,7 @@ namespace java::math
 			arg0
 		);
 	}
-	QAndroidJniObject BigInteger::shiftLeft(jint arg0)
+	java::math::BigInteger BigInteger::shiftLeft(jint arg0)
 	{
 		return callObjectMethod(
 			"shiftLeft",
@@ -413,7 +413,7 @@ namespace java::math
 			arg0
 		);
 	}
-	QAndroidJniObject BigInteger::shiftRight(jint arg0)
+	java::math::BigInteger BigInteger::shiftRight(jint arg0)
 	{
 		return callObjectMethod(
 			"shiftRight",
@@ -435,7 +435,7 @@ namespace java::math
 			"()I"
 		);
 	}
-	QAndroidJniObject BigInteger::sqrt()
+	java::math::BigInteger BigInteger::sqrt()
 	{
 		return callObjectMethod(
 			"sqrt",
@@ -449,7 +449,7 @@ namespace java::math
 			"()[Ljava/math/BigInteger;"
 		).object<jarray>();
 	}
-	QAndroidJniObject BigInteger::subtract(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::subtract(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"subtract",
@@ -487,7 +487,7 @@ namespace java::math
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject BigInteger::_xor(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::_xor(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"xor",

@@ -3,7 +3,7 @@
 namespace javax::crypto::spec
 {
 	// Fields
-	QAndroidJniObject PSource_PSpecified::DEFAULT()
+	javax::crypto::spec::PSource_PSpecified PSource_PSpecified::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.crypto.spec.PSource$PSpecified",

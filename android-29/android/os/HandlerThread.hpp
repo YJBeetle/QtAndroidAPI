@@ -24,7 +24,7 @@ namespace android::os
 		HandlerThread(jstring arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject getLooper();
+		android::os::Looper getLooper();
 		jint getThreadId();
 		jboolean quit();
 		jboolean quitSafely();

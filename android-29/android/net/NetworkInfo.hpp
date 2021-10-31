@@ -21,7 +21,7 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,10 +31,10 @@ namespace android::net
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getDetailedState();
+		android::net::NetworkInfo_DetailedState getDetailedState();
 		jstring getExtraInfo();
 		jstring getReason();
-		QAndroidJniObject getState();
+		android::net::NetworkInfo_State getState();
 		jint getSubtype();
 		jstring getSubtypeName();
 		jint getType();

@@ -7,7 +7,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject Region::CREATOR()
+	__JniBaseClass Region::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Region",
@@ -72,7 +72,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Region::getBoundaryPath()
+	android::graphics::Path Region::getBoundaryPath()
 	{
 		return callObjectMethod(
 			"getBoundaryPath",
@@ -87,7 +87,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Region::getBounds()
+	android::graphics::Rect Region::getBounds()
 	{
 		return callObjectMethod(
 			"getBounds",

@@ -78,7 +78,7 @@ namespace org::json
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject JSONObject::accumulate(jstring arg0, jobject arg1)
+	org::json::JSONObject JSONObject::accumulate(jstring arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"accumulate",
@@ -119,7 +119,7 @@ namespace org::json
 			arg0
 		);
 	}
-	QAndroidJniObject JSONObject::getJSONArray(jstring arg0)
+	org::json::JSONArray JSONObject::getJSONArray(jstring arg0)
 	{
 		return callObjectMethod(
 			"getJSONArray",
@@ -127,7 +127,7 @@ namespace org::json
 			arg0
 		);
 	}
-	QAndroidJniObject JSONObject::getJSONObject(jstring arg0)
+	org::json::JSONObject JSONObject::getJSONObject(jstring arg0)
 	{
 		return callObjectMethod(
 			"getJSONObject",
@@ -167,7 +167,7 @@ namespace org::json
 			arg0
 		);
 	}
-	QAndroidJniObject JSONObject::keys()
+	__JniBaseClass JSONObject::keys()
 	{
 		return callObjectMethod(
 			"keys",
@@ -181,7 +181,7 @@ namespace org::json
 			"()I"
 		);
 	}
-	QAndroidJniObject JSONObject::names()
+	org::json::JSONArray JSONObject::names()
 	{
 		return callObjectMethod(
 			"names",
@@ -247,7 +247,7 @@ namespace org::json
 			arg1
 		);
 	}
-	QAndroidJniObject JSONObject::optJSONArray(jstring arg0)
+	org::json::JSONArray JSONObject::optJSONArray(jstring arg0)
 	{
 		return callObjectMethod(
 			"optJSONArray",
@@ -255,7 +255,7 @@ namespace org::json
 			arg0
 		);
 	}
-	QAndroidJniObject JSONObject::optJSONObject(jstring arg0)
+	org::json::JSONObject JSONObject::optJSONObject(jstring arg0)
 	{
 		return callObjectMethod(
 			"optJSONObject",
@@ -297,7 +297,7 @@ namespace org::json
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject JSONObject::put(jstring arg0, jboolean arg1)
+	org::json::JSONObject JSONObject::put(jstring arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -306,7 +306,7 @@ namespace org::json
 			arg1
 		);
 	}
-	QAndroidJniObject JSONObject::put(jstring arg0, jdouble arg1)
+	org::json::JSONObject JSONObject::put(jstring arg0, jdouble arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -315,7 +315,7 @@ namespace org::json
 			arg1
 		);
 	}
-	QAndroidJniObject JSONObject::put(jstring arg0, jint arg1)
+	org::json::JSONObject JSONObject::put(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -324,7 +324,7 @@ namespace org::json
 			arg1
 		);
 	}
-	QAndroidJniObject JSONObject::put(jstring arg0, jobject arg1)
+	org::json::JSONObject JSONObject::put(jstring arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -333,7 +333,7 @@ namespace org::json
 			arg1
 		);
 	}
-	QAndroidJniObject JSONObject::put(jstring arg0, jlong arg1)
+	org::json::JSONObject JSONObject::put(jstring arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -342,7 +342,7 @@ namespace org::json
 			arg1
 		);
 	}
-	QAndroidJniObject JSONObject::putOpt(jstring arg0, jobject arg1)
+	org::json::JSONObject JSONObject::putOpt(jstring arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"putOpt",
@@ -359,7 +359,7 @@ namespace org::json
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject JSONObject::toJSONArray(org::json::JSONArray arg0)
+	org::json::JSONArray JSONObject::toJSONArray(org::json::JSONArray arg0)
 	{
 		return callObjectMethod(
 			"toJSONArray",

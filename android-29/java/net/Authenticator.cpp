@@ -19,7 +19,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject Authenticator::getDefault()
+	java::net::Authenticator Authenticator::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Authenticator",
@@ -27,7 +27,7 @@ namespace java::net
 			"()Ljava/net/Authenticator;"
 		);
 	}
-	QAndroidJniObject Authenticator::requestPasswordAuthentication(java::net::InetAddress arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4)
+	java::net::PasswordAuthentication Authenticator::requestPasswordAuthentication(java::net::InetAddress arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Authenticator",
@@ -40,7 +40,7 @@ namespace java::net
 			arg4
 		);
 	}
-	QAndroidJniObject Authenticator::requestPasswordAuthentication(jstring arg0, java::net::InetAddress arg1, jint arg2, jstring arg3, jstring arg4, jstring arg5)
+	java::net::PasswordAuthentication Authenticator::requestPasswordAuthentication(jstring arg0, java::net::InetAddress arg1, jint arg2, jstring arg3, jstring arg4, jstring arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Authenticator",
@@ -54,7 +54,7 @@ namespace java::net
 			arg5
 		);
 	}
-	QAndroidJniObject Authenticator::requestPasswordAuthentication(jstring arg0, java::net::InetAddress arg1, jint arg2, jstring arg3, jstring arg4, jstring arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7)
+	java::net::PasswordAuthentication Authenticator::requestPasswordAuthentication(jstring arg0, java::net::InetAddress arg1, jint arg2, jstring arg3, jstring arg4, jstring arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Authenticator",
@@ -70,7 +70,7 @@ namespace java::net
 			arg7.object()
 		);
 	}
-	QAndroidJniObject Authenticator::requestPasswordAuthentication(java::net::Authenticator arg0, jstring arg1, java::net::InetAddress arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6, java::net::URL arg7, java::net::Authenticator_RequestorType arg8)
+	java::net::PasswordAuthentication Authenticator::requestPasswordAuthentication(java::net::Authenticator arg0, jstring arg1, java::net::InetAddress arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6, java::net::URL arg7, java::net::Authenticator_RequestorType arg8)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Authenticator",
@@ -96,7 +96,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Authenticator::requestPasswordAuthenticationInstance(jstring arg0, java::net::InetAddress arg1, jint arg2, jstring arg3, jstring arg4, jstring arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7)
+	java::net::PasswordAuthentication Authenticator::requestPasswordAuthenticationInstance(jstring arg0, java::net::InetAddress arg1, jint arg2, jstring arg3, jstring arg4, jstring arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7)
 	{
 		return callObjectMethod(
 			"requestPasswordAuthenticationInstance",

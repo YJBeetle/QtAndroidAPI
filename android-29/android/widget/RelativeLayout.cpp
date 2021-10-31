@@ -204,7 +204,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject RelativeLayout::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::RelativeLayout_LayoutParams RelativeLayout::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",

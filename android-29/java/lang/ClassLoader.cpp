@@ -19,7 +19,7 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ClassLoader::getPlatformClassLoader()
+	java::lang::ClassLoader ClassLoader::getPlatformClassLoader()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ClassLoader",
@@ -27,7 +27,7 @@ namespace java::lang
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	QAndroidJniObject ClassLoader::getSystemClassLoader()
+	java::lang::ClassLoader ClassLoader::getSystemClassLoader()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ClassLoader",
@@ -35,7 +35,7 @@ namespace java::lang
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	QAndroidJniObject ClassLoader::getSystemResource(jstring arg0)
+	java::net::URL ClassLoader::getSystemResource(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ClassLoader",
@@ -44,7 +44,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject ClassLoader::getSystemResourceAsStream(jstring arg0)
+	java::io::InputStream ClassLoader::getSystemResourceAsStream(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ClassLoader",
@@ -53,7 +53,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject ClassLoader::getSystemResources(jstring arg0)
+	__JniBaseClass ClassLoader::getSystemResources(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ClassLoader",
@@ -69,7 +69,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	QAndroidJniObject ClassLoader::getDefinedPackage(jstring arg0)
+	java::lang::Package ClassLoader::getDefinedPackage(jstring arg0)
 	{
 		return callObjectMethod(
 			"getDefinedPackage",
@@ -91,14 +91,14 @@ namespace java::lang
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ClassLoader::getParent()
+	java::lang::ClassLoader ClassLoader::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	QAndroidJniObject ClassLoader::getResource(jstring arg0)
+	java::net::URL ClassLoader::getResource(jstring arg0)
 	{
 		return callObjectMethod(
 			"getResource",
@@ -106,7 +106,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject ClassLoader::getResourceAsStream(jstring arg0)
+	java::io::InputStream ClassLoader::getResourceAsStream(jstring arg0)
 	{
 		return callObjectMethod(
 			"getResourceAsStream",
@@ -114,7 +114,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject ClassLoader::getResources(jstring arg0)
+	__JniBaseClass ClassLoader::getResources(jstring arg0)
 	{
 		return callObjectMethod(
 			"getResources",
@@ -122,7 +122,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject ClassLoader::getUnnamedModule()
+	__JniBaseClass ClassLoader::getUnnamedModule()
 	{
 		return callObjectMethod(
 			"getUnnamedModule",
@@ -144,7 +144,7 @@ namespace java::lang
 			arg0
 		).object<jclass>();
 	}
-	QAndroidJniObject ClassLoader::resources(jstring arg0)
+	__JniBaseClass ClassLoader::resources(jstring arg0)
 	{
 		return callObjectMethod(
 			"resources",

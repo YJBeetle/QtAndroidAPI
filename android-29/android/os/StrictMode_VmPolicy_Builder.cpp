@@ -22,126 +22,126 @@ namespace android::os
 		) {}
 	
 	// Methods
-	QAndroidJniObject StrictMode_VmPolicy_Builder::build()
+	android::os::StrictMode_VmPolicy StrictMode_VmPolicy_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/os/StrictMode$VmPolicy;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectActivityLeaks()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectActivityLeaks()
 	{
 		return callObjectMethod(
 			"detectActivityLeaks",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectAll()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectAll()
 	{
 		return callObjectMethod(
 			"detectAll",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectCleartextNetwork()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectCleartextNetwork()
 	{
 		return callObjectMethod(
 			"detectCleartextNetwork",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectContentUriWithoutPermission()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectContentUriWithoutPermission()
 	{
 		return callObjectMethod(
 			"detectContentUriWithoutPermission",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectCredentialProtectedWhileLocked()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectCredentialProtectedWhileLocked()
 	{
 		return callObjectMethod(
 			"detectCredentialProtectedWhileLocked",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectFileUriExposure()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectFileUriExposure()
 	{
 		return callObjectMethod(
 			"detectFileUriExposure",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectImplicitDirectBoot()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectImplicitDirectBoot()
 	{
 		return callObjectMethod(
 			"detectImplicitDirectBoot",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectLeakedClosableObjects()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectLeakedClosableObjects()
 	{
 		return callObjectMethod(
 			"detectLeakedClosableObjects",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectLeakedRegistrationObjects()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectLeakedRegistrationObjects()
 	{
 		return callObjectMethod(
 			"detectLeakedRegistrationObjects",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectLeakedSqlLiteObjects()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectLeakedSqlLiteObjects()
 	{
 		return callObjectMethod(
 			"detectLeakedSqlLiteObjects",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectNonSdkApiUsage()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectNonSdkApiUsage()
 	{
 		return callObjectMethod(
 			"detectNonSdkApiUsage",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectUntaggedSockets()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::detectUntaggedSockets()
 	{
 		return callObjectMethod(
 			"detectUntaggedSockets",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyDeath()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDeath()
 	{
 		return callObjectMethod(
 			"penaltyDeath",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyDeathOnCleartextNetwork()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDeathOnCleartextNetwork()
 	{
 		return callObjectMethod(
 			"penaltyDeathOnCleartextNetwork",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyDeathOnFileUriExposure()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDeathOnFileUriExposure()
 	{
 		return callObjectMethod(
 			"penaltyDeathOnFileUriExposure",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyDropBox()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyDropBox()
 	{
 		return callObjectMethod(
 			"penaltyDropBox",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyListener(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"penaltyListener",
@@ -150,21 +150,21 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyLog()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyLog()
 	{
 		return callObjectMethod(
 			"penaltyLog",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::permitNonSdkApiUsage()
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::permitNonSdkApiUsage()
 	{
 		return callObjectMethod(
 			"permitNonSdkApiUsage",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::setClassInstanceLimit(jclass arg0, jint arg1)
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::setClassInstanceLimit(jclass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setClassInstanceLimit",

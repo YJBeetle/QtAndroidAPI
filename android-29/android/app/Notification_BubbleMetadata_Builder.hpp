@@ -30,14 +30,14 @@ namespace android::app
 		Notification_BubbleMetadata_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setAutoExpandBubble(jboolean arg0);
-		QAndroidJniObject setDeleteIntent(android::app::PendingIntent arg0);
-		QAndroidJniObject setDesiredHeight(jint arg0);
-		QAndroidJniObject setDesiredHeightResId(jint arg0);
-		QAndroidJniObject setIcon(android::graphics::drawable::Icon arg0);
-		QAndroidJniObject setIntent(android::app::PendingIntent arg0);
-		QAndroidJniObject setSuppressNotification(jboolean arg0);
+		android::app::Notification_BubbleMetadata build();
+		android::app::Notification_BubbleMetadata_Builder setAutoExpandBubble(jboolean arg0);
+		android::app::Notification_BubbleMetadata_Builder setDeleteIntent(android::app::PendingIntent arg0);
+		android::app::Notification_BubbleMetadata_Builder setDesiredHeight(jint arg0);
+		android::app::Notification_BubbleMetadata_Builder setDesiredHeightResId(jint arg0);
+		android::app::Notification_BubbleMetadata_Builder setIcon(android::graphics::drawable::Icon arg0);
+		android::app::Notification_BubbleMetadata_Builder setIntent(android::app::PendingIntent arg0);
+		android::app::Notification_BubbleMetadata_Builder setSuppressNotification(jboolean arg0);
 	};
 } // namespace android::app
 

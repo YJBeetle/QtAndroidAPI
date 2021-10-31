@@ -21,7 +21,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Person(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,14 +32,14 @@ namespace android::app
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getIcon();
+		android::graphics::drawable::Icon getIcon();
 		jstring getKey();
 		jstring getName();
 		jstring getUri();
 		jint hashCode();
 		jboolean isBot();
 		jboolean isImportant();
-		QAndroidJniObject toBuilder();
+		android::app::Person_Builder toBuilder();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

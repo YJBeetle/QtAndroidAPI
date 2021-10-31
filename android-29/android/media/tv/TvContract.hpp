@@ -38,22 +38,22 @@ namespace android::media::tv
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject buildChannelLogoUri(android::net::Uri arg0);
-		static QAndroidJniObject buildChannelLogoUri(jlong arg0);
-		static QAndroidJniObject buildChannelUri(jlong arg0);
-		static QAndroidJniObject buildChannelUriForPassthroughInput(jstring arg0);
-		static QAndroidJniObject buildChannelsUriForInput(jstring arg0);
+		static android::net::Uri buildChannelLogoUri(android::net::Uri arg0);
+		static android::net::Uri buildChannelLogoUri(jlong arg0);
+		static android::net::Uri buildChannelUri(jlong arg0);
+		static android::net::Uri buildChannelUriForPassthroughInput(jstring arg0);
+		static android::net::Uri buildChannelsUriForInput(jstring arg0);
 		static jstring buildInputId(android::content::ComponentName arg0);
-		static QAndroidJniObject buildPreviewProgramUri(jlong arg0);
-		static QAndroidJniObject buildPreviewProgramsUriForChannel(android::net::Uri arg0);
-		static QAndroidJniObject buildPreviewProgramsUriForChannel(jlong arg0);
-		static QAndroidJniObject buildProgramUri(jlong arg0);
-		static QAndroidJniObject buildProgramsUriForChannel(android::net::Uri arg0);
-		static QAndroidJniObject buildProgramsUriForChannel(jlong arg0);
-		static QAndroidJniObject buildProgramsUriForChannel(android::net::Uri arg0, jlong arg1, jlong arg2);
-		static QAndroidJniObject buildProgramsUriForChannel(jlong arg0, jlong arg1, jlong arg2);
-		static QAndroidJniObject buildRecordedProgramUri(jlong arg0);
-		static QAndroidJniObject buildWatchNextProgramUri(jlong arg0);
+		static android::net::Uri buildPreviewProgramUri(jlong arg0);
+		static android::net::Uri buildPreviewProgramsUriForChannel(android::net::Uri arg0);
+		static android::net::Uri buildPreviewProgramsUriForChannel(jlong arg0);
+		static android::net::Uri buildProgramUri(jlong arg0);
+		static android::net::Uri buildProgramsUriForChannel(android::net::Uri arg0);
+		static android::net::Uri buildProgramsUriForChannel(jlong arg0);
+		static android::net::Uri buildProgramsUriForChannel(android::net::Uri arg0, jlong arg1, jlong arg2);
+		static android::net::Uri buildProgramsUriForChannel(jlong arg0, jlong arg1, jlong arg2);
+		static android::net::Uri buildRecordedProgramUri(jlong arg0);
+		static android::net::Uri buildWatchNextProgramUri(jlong arg0);
 		static jboolean isChannelUri(android::net::Uri arg0);
 		static jboolean isChannelUriForPassthroughInput(android::net::Uri arg0);
 		static jboolean isChannelUriForTunerInput(android::net::Uri arg0);

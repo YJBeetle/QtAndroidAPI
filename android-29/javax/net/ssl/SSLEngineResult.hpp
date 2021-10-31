@@ -29,8 +29,8 @@ namespace javax::net::ssl
 		// Methods
 		jint bytesConsumed();
 		jint bytesProduced();
-		QAndroidJniObject getHandshakeStatus();
-		QAndroidJniObject getStatus();
+		javax::net::ssl::SSLEngineResult_HandshakeStatus getHandshakeStatus();
+		javax::net::ssl::SSLEngineResult_Status getStatus();
 		jlong sequenceNumber();
 		jstring toString();
 	};

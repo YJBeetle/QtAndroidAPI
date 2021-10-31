@@ -14,19 +14,19 @@ namespace android::net::wifi
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ASSOCIATED();
-		static QAndroidJniObject ASSOCIATING();
-		static QAndroidJniObject AUTHENTICATING();
-		static QAndroidJniObject COMPLETED();
-		static QAndroidJniObject DISCONNECTED();
-		static QAndroidJniObject DORMANT();
-		static QAndroidJniObject FOUR_WAY_HANDSHAKE();
-		static QAndroidJniObject GROUP_HANDSHAKE();
-		static QAndroidJniObject INACTIVE();
-		static QAndroidJniObject INTERFACE_DISABLED();
-		static QAndroidJniObject INVALID();
-		static QAndroidJniObject SCANNING();
-		static QAndroidJniObject UNINITIALIZED();
+		static android::net::wifi::SupplicantState ASSOCIATED();
+		static android::net::wifi::SupplicantState ASSOCIATING();
+		static android::net::wifi::SupplicantState AUTHENTICATING();
+		static android::net::wifi::SupplicantState COMPLETED();
+		static android::net::wifi::SupplicantState DISCONNECTED();
+		static android::net::wifi::SupplicantState DORMANT();
+		static android::net::wifi::SupplicantState FOUR_WAY_HANDSHAKE();
+		static android::net::wifi::SupplicantState GROUP_HANDSHAKE();
+		static android::net::wifi::SupplicantState INACTIVE();
+		static android::net::wifi::SupplicantState INTERFACE_DISABLED();
+		static android::net::wifi::SupplicantState INVALID();
+		static android::net::wifi::SupplicantState SCANNING();
+		static android::net::wifi::SupplicantState UNINITIALIZED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SupplicantState(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -36,7 +36,7 @@ namespace android::net::wifi
 		
 		// Methods
 		static jboolean isValidState(android::net::wifi::SupplicantState arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::net::wifi::SupplicantState valueOf(jstring arg0);
 		static jarray values();
 		jint describeContents();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

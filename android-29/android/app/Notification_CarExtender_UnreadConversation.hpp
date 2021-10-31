@@ -29,9 +29,9 @@ namespace android::app
 		jarray getMessages();
 		jstring getParticipant();
 		jarray getParticipants();
-		QAndroidJniObject getReadPendingIntent();
-		QAndroidJniObject getRemoteInput();
-		QAndroidJniObject getReplyPendingIntent();
+		android::app::PendingIntent getReadPendingIntent();
+		android::app::RemoteInput getRemoteInput();
+		android::app::PendingIntent getReplyPendingIntent();
 	};
 } // namespace android::app
 

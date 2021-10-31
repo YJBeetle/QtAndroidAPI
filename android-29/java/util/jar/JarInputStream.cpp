@@ -27,21 +27,21 @@ namespace java::util::jar
 		) {}
 	
 	// Methods
-	QAndroidJniObject JarInputStream::getManifest()
+	java::util::jar::Manifest JarInputStream::getManifest()
 	{
 		return callObjectMethod(
 			"getManifest",
 			"()Ljava/util/jar/Manifest;"
 		);
 	}
-	QAndroidJniObject JarInputStream::getNextEntry()
+	java::util::zip::ZipEntry JarInputStream::getNextEntry()
 	{
 		return callObjectMethod(
 			"getNextEntry",
 			"()Ljava/util/zip/ZipEntry;"
 		);
 	}
-	QAndroidJniObject JarInputStream::getNextJarEntry()
+	java::util::jar::JarEntry JarInputStream::getNextJarEntry()
 	{
 		return callObjectMethod(
 			"getNextJarEntry",

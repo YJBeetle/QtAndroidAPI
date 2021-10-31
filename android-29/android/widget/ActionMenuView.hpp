@@ -47,9 +47,9 @@ namespace android::widget
 		
 		// Methods
 		void dismissPopupMenus();
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
-		QAndroidJniObject getMenu();
-		QAndroidJniObject getOverflowIcon();
+		android::widget::ActionMenuView_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		__JniBaseClass getMenu();
+		android::graphics::drawable::Drawable getOverflowIcon();
 		jint getPopupTheme();
 		jboolean hideOverflowMenu();
 		jboolean isOverflowMenuShowing();

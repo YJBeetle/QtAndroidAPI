@@ -23,13 +23,13 @@ namespace android::media
 		AudioAttributes_Builder(android::media::AudioAttributes arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setAllowedCapturePolicy(jint arg0);
-		QAndroidJniObject setContentType(jint arg0);
-		QAndroidJniObject setFlags(jint arg0);
-		QAndroidJniObject setHapticChannelsMuted(jboolean arg0);
-		QAndroidJniObject setLegacyStreamType(jint arg0);
-		QAndroidJniObject setUsage(jint arg0);
+		android::media::AudioAttributes build();
+		android::media::AudioAttributes_Builder setAllowedCapturePolicy(jint arg0);
+		android::media::AudioAttributes_Builder setContentType(jint arg0);
+		android::media::AudioAttributes_Builder setFlags(jint arg0);
+		android::media::AudioAttributes_Builder setHapticChannelsMuted(jboolean arg0);
+		android::media::AudioAttributes_Builder setLegacyStreamType(jint arg0);
+		android::media::AudioAttributes_Builder setUsage(jint arg0);
 	};
 } // namespace android::media
 

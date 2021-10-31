@@ -10,7 +10,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Optional::empty()
+	java::util::Optional Optional::empty()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Optional",
@@ -18,7 +18,7 @@ namespace java::util
 			"()Ljava/util/Optional;"
 		);
 	}
-	QAndroidJniObject Optional::of(jobject arg0)
+	java::util::Optional Optional::of(jobject arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Optional",
@@ -27,7 +27,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Optional::ofNullable(jobject arg0)
+	java::util::Optional Optional::ofNullable(jobject arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Optional",
@@ -44,7 +44,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Optional::filter(__JniBaseClass arg0)
+	java::util::Optional Optional::filter(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"filter",
@@ -52,7 +52,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Optional::flatMap(__JniBaseClass arg0)
+	java::util::Optional Optional::flatMap(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"flatMap",
@@ -105,7 +105,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject Optional::map(__JniBaseClass arg0)
+	java::util::Optional Optional::map(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"map",
@@ -113,7 +113,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Optional::_or(__JniBaseClass arg0)
+	java::util::Optional Optional::_or(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"or",
@@ -152,7 +152,7 @@ namespace java::util
 			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject Optional::stream()
+	__JniBaseClass Optional::stream()
 	{
 		return callObjectMethod(
 			"stream",

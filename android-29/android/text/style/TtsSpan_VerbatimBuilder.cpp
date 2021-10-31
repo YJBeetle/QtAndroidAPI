@@ -21,7 +21,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_VerbatimBuilder::setVerbatim(jstring arg0)
+	android::text::style::TtsSpan_VerbatimBuilder TtsSpan_VerbatimBuilder::setVerbatim(jstring arg0)
 	{
 		return callObjectMethod(
 			"setVerbatim",

@@ -36,13 +36,13 @@ namespace android::hardware
 		// Methods
 		static void getCameraInfo(jint arg0, android::hardware::Camera_CameraInfo arg1);
 		static jint getNumberOfCameras();
-		static QAndroidJniObject open();
-		static QAndroidJniObject open(jint arg0);
+		static android::hardware::Camera open();
+		static android::hardware::Camera open(jint arg0);
 		void addCallbackBuffer(jbyteArray arg0);
 		void autoFocus(__JniBaseClass arg0);
 		void cancelAutoFocus();
 		jboolean enableShutterSound(jboolean arg0);
-		QAndroidJniObject getParameters();
+		android::hardware::Camera_Parameters getParameters();
 		void lock();
 		void reconnect();
 		void release();

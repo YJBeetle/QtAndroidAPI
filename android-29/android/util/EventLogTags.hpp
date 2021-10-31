@@ -27,8 +27,8 @@ namespace android::util
 		EventLogTags(java::io::BufferedReader arg0);
 		
 		// Methods
-		QAndroidJniObject get(jint arg0);
-		QAndroidJniObject get(jstring arg0);
+		android::util::EventLogTags_Description get(jint arg0);
+		android::util::EventLogTags_Description get(jstring arg0);
 	};
 } // namespace android::util
 

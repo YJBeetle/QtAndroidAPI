@@ -70,7 +70,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ConcurrentLinkedDeque::descendingIterator()
+	__JniBaseClass ConcurrentLinkedDeque::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
@@ -113,7 +113,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject ConcurrentLinkedDeque::iterator()
+	__JniBaseClass ConcurrentLinkedDeque::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -277,7 +277,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject ConcurrentLinkedDeque::spliterator()
+	__JniBaseClass ConcurrentLinkedDeque::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

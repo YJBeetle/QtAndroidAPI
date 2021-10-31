@@ -78,12 +78,12 @@ namespace android::icu::text
 		void applyPattern(jstring arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		QAndroidJniObject formatToCharacterIterator(jobject arg0);
-		QAndroidJniObject get2DigitYearStart();
-		QAndroidJniObject getDateFormatSymbols();
-		QAndroidJniObject getNumberFormat(jchar arg0);
-		QAndroidJniObject getTimeZoneFormat();
+		java::lang::StringBuffer format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		__JniBaseClass formatToCharacterIterator(jobject arg0);
+		java::util::Date get2DigitYearStart();
+		android::icu::text::DateFormatSymbols getDateFormatSymbols();
+		android::icu::text::NumberFormat getNumberFormat(jchar arg0);
+		android::icu::text::TimeZoneFormat getTimeZoneFormat();
 		jint hashCode();
 		void parse(jstring arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2);
 		void set2DigitYearStart(java::util::Date arg0);

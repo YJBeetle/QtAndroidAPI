@@ -21,7 +21,7 @@ namespace java::util::concurrent::atomic
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newUpdater(jclass arg0, jstring arg1);
+		static java::util::concurrent::atomic::AtomicLongFieldUpdater newUpdater(jclass arg0, jstring arg1);
 		jlong accumulateAndGet(jobject arg0, jlong arg1, __JniBaseClass arg2);
 		jlong addAndGet(jobject arg0, jlong arg1);
 		jboolean compareAndSet(jobject arg0, jlong arg1, jlong arg2);

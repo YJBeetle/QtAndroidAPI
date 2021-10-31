@@ -18,7 +18,7 @@ namespace android::view::inspector
 		StaticInspectionCompanionProvider();
 		
 		// Methods
-		QAndroidJniObject provide(jclass arg0);
+		__JniBaseClass provide(jclass arg0);
 	};
 } // namespace android::view::inspector
 

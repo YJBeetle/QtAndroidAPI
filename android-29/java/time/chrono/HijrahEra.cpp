@@ -6,7 +6,7 @@
 namespace java::time::chrono
 {
 	// Fields
-	QAndroidJniObject HijrahEra::AH()
+	java::time::chrono::HijrahEra HijrahEra::AH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.HijrahEra",
@@ -21,7 +21,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject HijrahEra::of(jint arg0)
+	java::time::chrono::HijrahEra HijrahEra::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.HijrahEra",
@@ -30,7 +30,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject HijrahEra::valueOf(jstring arg0)
+	java::time::chrono::HijrahEra HijrahEra::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.HijrahEra",
@@ -63,7 +63,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	QAndroidJniObject HijrahEra::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange HijrahEra::range(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"range",

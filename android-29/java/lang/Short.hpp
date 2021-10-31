@@ -31,7 +31,7 @@ namespace java::lang
 		// Methods
 		static jint compare(jshort arg0, jshort arg1);
 		static jint compareUnsigned(jshort arg0, jshort arg1);
-		static QAndroidJniObject decode(jstring arg0);
+		static java::lang::Short decode(jstring arg0);
 		static jint hashCode(jshort arg0);
 		static jshort parseShort(jstring arg0);
 		static jshort parseShort(jstring arg0, jint arg1);
@@ -39,13 +39,13 @@ namespace java::lang
 		static jstring toString(jshort arg0);
 		static jint toUnsignedInt(jshort arg0);
 		static jlong toUnsignedLong(jshort arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(jshort arg0);
-		static QAndroidJniObject valueOf(jstring arg0, jint arg1);
+		static java::lang::Short valueOf(jstring arg0);
+		static java::lang::Short valueOf(jshort arg0);
+		static java::lang::Short valueOf(jstring arg0, jint arg1);
 		jbyte byteValue();
 		jint compareTo(jobject arg0);
 		jint compareTo(java::lang::Short arg0);
-		QAndroidJniObject describeConstable();
+		java::util::Optional describeConstable();
 		jdouble doubleValue();
 		jboolean equals(jobject arg0);
 		jfloat floatValue();

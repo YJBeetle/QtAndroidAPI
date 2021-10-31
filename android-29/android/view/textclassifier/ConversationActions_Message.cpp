@@ -7,7 +7,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject ConversationActions_Message::CREATOR()
+	__JniBaseClass ConversationActions_Message::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Message",
@@ -15,7 +15,7 @@ namespace android::view::textclassifier
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject ConversationActions_Message::PERSON_USER_OTHERS()
+	android::app::Person ConversationActions_Message::PERSON_USER_OTHERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Message",
@@ -23,7 +23,7 @@ namespace android::view::textclassifier
 			"Landroid/app/Person;"
 		);
 	}
-	QAndroidJniObject ConversationActions_Message::PERSON_USER_SELF()
+	android::app::Person ConversationActions_Message::PERSON_USER_SELF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Message",
@@ -45,21 +45,21 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject ConversationActions_Message::getAuthor()
+	android::app::Person ConversationActions_Message::getAuthor()
 	{
 		return callObjectMethod(
 			"getAuthor",
 			"()Landroid/app/Person;"
 		);
 	}
-	QAndroidJniObject ConversationActions_Message::getExtras()
+	android::os::Bundle ConversationActions_Message::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject ConversationActions_Message::getReferenceTime()
+	java::time::ZonedDateTime ConversationActions_Message::getReferenceTime()
 	{
 		return callObjectMethod(
 			"getReferenceTime",

@@ -5,7 +5,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject ParcelUuid::CREATOR()
+	__JniBaseClass ParcelUuid::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.ParcelUuid",
@@ -26,7 +26,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	QAndroidJniObject ParcelUuid::fromString(jstring arg0)
+	android::os::ParcelUuid ParcelUuid::fromString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.ParcelUuid",
@@ -50,7 +50,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject ParcelUuid::getUuid()
+	java::util::UUID ParcelUuid::getUuid()
 	{
 		return callObjectMethod(
 			"getUuid",

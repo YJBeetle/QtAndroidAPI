@@ -32,7 +32,7 @@ namespace java::io
 		jobject get(jstring arg0, jobject arg1);
 		jlong get(jstring arg0, jlong arg1);
 		jshort get(jstring arg0, jshort arg1);
-		QAndroidJniObject getObjectStreamClass();
+		java::io::ObjectStreamClass getObjectStreamClass();
 	};
 } // namespace java::io
 

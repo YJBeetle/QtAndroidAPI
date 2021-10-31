@@ -104,7 +104,7 @@ namespace android::bluetooth
 			"BOND_NONE"
 		);
 	}
-	QAndroidJniObject BluetoothDevice::CREATOR()
+	__JniBaseClass BluetoothDevice::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
@@ -324,7 +324,7 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2)
+	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2)
 	{
 		return callObjectMethod(
 			"connectGatt",
@@ -334,7 +334,7 @@ namespace android::bluetooth
 			arg2.object()
 		);
 	}
-	QAndroidJniObject BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3)
+	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"connectGatt",
@@ -345,7 +345,7 @@ namespace android::bluetooth
 			arg3
 		);
 	}
-	QAndroidJniObject BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4)
+	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"connectGatt",
@@ -357,7 +357,7 @@ namespace android::bluetooth
 			arg4
 		);
 	}
-	QAndroidJniObject BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, android::os::Handler arg5)
+	android::bluetooth::BluetoothGatt BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, android::os::Handler arg5)
 	{
 		return callObjectMethod(
 			"connectGatt",
@@ -377,7 +377,7 @@ namespace android::bluetooth
 			"()Z"
 		);
 	}
-	QAndroidJniObject BluetoothDevice::createInsecureL2capChannel(jint arg0)
+	android::bluetooth::BluetoothSocket BluetoothDevice::createInsecureL2capChannel(jint arg0)
 	{
 		return callObjectMethod(
 			"createInsecureL2capChannel",
@@ -385,7 +385,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	QAndroidJniObject BluetoothDevice::createInsecureRfcommSocketToServiceRecord(java::util::UUID arg0)
+	android::bluetooth::BluetoothSocket BluetoothDevice::createInsecureRfcommSocketToServiceRecord(java::util::UUID arg0)
 	{
 		return callObjectMethod(
 			"createInsecureRfcommSocketToServiceRecord",
@@ -393,7 +393,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BluetoothDevice::createL2capChannel(jint arg0)
+	android::bluetooth::BluetoothSocket BluetoothDevice::createL2capChannel(jint arg0)
 	{
 		return callObjectMethod(
 			"createL2capChannel",
@@ -401,7 +401,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	QAndroidJniObject BluetoothDevice::createRfcommSocketToServiceRecord(java::util::UUID arg0)
+	android::bluetooth::BluetoothSocket BluetoothDevice::createRfcommSocketToServiceRecord(java::util::UUID arg0)
 	{
 		return callObjectMethod(
 			"createRfcommSocketToServiceRecord",
@@ -438,7 +438,7 @@ namespace android::bluetooth
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothDevice::getBluetoothClass()
+	android::bluetooth::BluetoothClass BluetoothDevice::getBluetoothClass()
 	{
 		return callObjectMethod(
 			"getBluetoothClass",

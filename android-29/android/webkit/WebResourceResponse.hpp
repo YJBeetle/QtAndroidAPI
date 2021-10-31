@@ -23,11 +23,11 @@ namespace android::webkit
 		WebResourceResponse(jstring arg0, jstring arg1, jint arg2, jstring arg3, __JniBaseClass arg4, java::io::InputStream arg5);
 		
 		// Methods
-		QAndroidJniObject getData();
+		java::io::InputStream getData();
 		jstring getEncoding();
 		jstring getMimeType();
 		jstring getReasonPhrase();
-		QAndroidJniObject getResponseHeaders();
+		__JniBaseClass getResponseHeaders();
 		jint getStatusCode();
 		void setData(java::io::InputStream arg0);
 		void setEncoding(jstring arg0);

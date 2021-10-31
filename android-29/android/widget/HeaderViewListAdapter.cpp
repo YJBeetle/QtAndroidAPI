@@ -37,7 +37,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject HeaderViewListAdapter::getFilter()
+	android::widget::Filter HeaderViewListAdapter::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
@@ -82,7 +82,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject HeaderViewListAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View HeaderViewListAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"getView",
@@ -99,7 +99,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject HeaderViewListAdapter::getWrappedAdapter()
+	__JniBaseClass HeaderViewListAdapter::getWrappedAdapter()
 	{
 		return callObjectMethod(
 			"getWrappedAdapter",

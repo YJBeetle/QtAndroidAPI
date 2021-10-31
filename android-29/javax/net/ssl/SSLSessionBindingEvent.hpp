@@ -20,7 +20,7 @@ namespace javax::net::ssl
 		
 		// Methods
 		jstring getName();
-		QAndroidJniObject getSession();
+		__JniBaseClass getSession();
 	};
 } // namespace javax::net::ssl
 

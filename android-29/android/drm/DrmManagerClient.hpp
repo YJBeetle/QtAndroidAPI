@@ -48,7 +48,7 @@ namespace android::drm
 		DrmManagerClient(android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject acquireDrmInfo(android::drm::DrmInfoRequest arg0);
+		android::drm::DrmInfo acquireDrmInfo(android::drm::DrmInfoRequest arg0);
 		jint acquireRights(android::drm::DrmInfoRequest arg0);
 		jboolean canHandle(android::net::Uri arg0, jstring arg1);
 		jboolean canHandle(jstring arg0, jstring arg1);
@@ -57,15 +57,15 @@ namespace android::drm
 		jint checkRightsStatus(android::net::Uri arg0, jint arg1);
 		jint checkRightsStatus(jstring arg0, jint arg1);
 		void close();
-		QAndroidJniObject closeConvertSession(jint arg0);
-		QAndroidJniObject convertData(jint arg0, jbyteArray arg1);
+		android::drm::DrmConvertedStatus closeConvertSession(jint arg0);
+		android::drm::DrmConvertedStatus convertData(jint arg0, jbyteArray arg1);
 		jarray getAvailableDrmEngines();
-		QAndroidJniObject getConstraints(android::net::Uri arg0, jint arg1);
-		QAndroidJniObject getConstraints(jstring arg0, jint arg1);
+		android::content::ContentValues getConstraints(android::net::Uri arg0, jint arg1);
+		android::content::ContentValues getConstraints(jstring arg0, jint arg1);
 		jint getDrmObjectType(android::net::Uri arg0, jstring arg1);
 		jint getDrmObjectType(jstring arg0, jstring arg1);
-		QAndroidJniObject getMetadata(android::net::Uri arg0);
-		QAndroidJniObject getMetadata(jstring arg0);
+		android::content::ContentValues getMetadata(android::net::Uri arg0);
+		android::content::ContentValues getMetadata(jstring arg0);
 		jstring getOriginalMimeType(android::net::Uri arg0);
 		jstring getOriginalMimeType(jstring arg0);
 		jint openConvertSession(jstring arg0);

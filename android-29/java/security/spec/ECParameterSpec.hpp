@@ -31,9 +31,9 @@ namespace java::security::spec
 		
 		// Methods
 		jint getCofactor();
-		QAndroidJniObject getCurve();
-		QAndroidJniObject getGenerator();
-		QAndroidJniObject getOrder();
+		java::security::spec::EllipticCurve getCurve();
+		java::security::spec::ECPoint getGenerator();
+		java::math::BigInteger getOrder();
 	};
 } // namespace java::security::spec
 

@@ -28,14 +28,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Presentation::getDisplay()
+	android::view::Display Presentation::getDisplay()
 	{
 		return callObjectMethod(
 			"getDisplay",
 			"()Landroid/view/Display;"
 		);
 	}
-	QAndroidJniObject Presentation::getResources()
+	android::content::res::Resources Presentation::getResources()
 	{
 		return callObjectMethod(
 			"getResources",

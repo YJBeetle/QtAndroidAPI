@@ -6,7 +6,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject PackageInfo::CREATOR()
+	__JniBaseClass PackageInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.PackageInfo",
@@ -49,7 +49,7 @@ namespace android::content::pm
 			"[Landroid/content/pm/ActivityInfo;"
 		).object<jarray>();
 	}
-	QAndroidJniObject PackageInfo::applicationInfo()
+	android::content::pm::ApplicationInfo PackageInfo::applicationInfo()
 	{
 		return getObjectField(
 			"applicationInfo",
@@ -190,7 +190,7 @@ namespace android::content::pm
 			"[Landroid/content/pm/Signature;"
 		).object<jarray>();
 	}
-	QAndroidJniObject PackageInfo::signingInfo()
+	android::content::pm::SigningInfo PackageInfo::signingInfo()
 	{
 		return getObjectField(
 			"signingInfo",

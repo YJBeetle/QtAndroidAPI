@@ -11,7 +11,7 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ARGUMENT();
+		static android::icu::text::MessageFormat_Field ARGUMENT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessageFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}

@@ -10,8 +10,8 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ALL_STYLES();
-		static QAndroidJniObject TZ_DATABASE_ABBREVIATIONS();
+		static android::icu::text::TimeZoneFormat_ParseOption ALL_STYLES();
+		static android::icu::text::TimeZoneFormat_ParseOption TZ_DATABASE_ABBREVIATIONS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimeZoneFormat_ParseOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,7 +20,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::TimeZoneFormat_ParseOption valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

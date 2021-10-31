@@ -22,8 +22,8 @@ namespace android::icu::text
 		
 		// Methods
 		jstring getLabel();
-		QAndroidJniObject getLabelType();
-		QAndroidJniObject iterator();
+		android::icu::text::AlphabeticIndex_Bucket_LabelType getLabelType();
+		__JniBaseClass iterator();
 		jint size();
 		jstring toString();
 	};

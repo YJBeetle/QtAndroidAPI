@@ -4,7 +4,7 @@
 namespace android::location
 {
 	// Fields
-	QAndroidJniObject GnssClock::CREATOR()
+	__JniBaseClass GnssClock::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.GnssClock",

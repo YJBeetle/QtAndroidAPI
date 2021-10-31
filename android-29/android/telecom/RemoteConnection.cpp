@@ -40,7 +40,7 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	QAndroidJniObject RemoteConnection::getAddress()
+	android::net::Uri RemoteConnection::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
@@ -68,14 +68,14 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject RemoteConnection::getConference()
+	android::telecom::RemoteConference RemoteConnection::getConference()
 	{
 		return callObjectMethod(
 			"getConference",
 			"()Landroid/telecom/RemoteConference;"
 		);
 	}
-	QAndroidJniObject RemoteConnection::getConferenceableConnections()
+	__JniBaseClass RemoteConnection::getConferenceableConnections()
 	{
 		return callObjectMethod(
 			"getConferenceableConnections",
@@ -96,14 +96,14 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject RemoteConnection::getDisconnectCause()
+	android::telecom::DisconnectCause RemoteConnection::getDisconnectCause()
 	{
 		return callObjectMethod(
 			"getDisconnectCause",
 			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
-	QAndroidJniObject RemoteConnection::getExtras()
+	android::os::Bundle RemoteConnection::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -117,14 +117,14 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject RemoteConnection::getStatusHints()
+	android::telecom::StatusHints RemoteConnection::getStatusHints()
 	{
 		return callObjectMethod(
 			"getStatusHints",
 			"()Landroid/telecom/StatusHints;"
 		);
 	}
-	QAndroidJniObject RemoteConnection::getVideoProvider()
+	android::telecom::RemoteConnection_VideoProvider RemoteConnection::getVideoProvider()
 	{
 		return callObjectMethod(
 			"getVideoProvider",

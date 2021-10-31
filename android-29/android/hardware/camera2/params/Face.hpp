@@ -28,11 +28,11 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getBounds();
+		android::graphics::Rect getBounds();
 		jint getId();
-		QAndroidJniObject getLeftEyePosition();
-		QAndroidJniObject getMouthPosition();
-		QAndroidJniObject getRightEyePosition();
+		android::graphics::Point getLeftEyePosition();
+		android::graphics::Point getMouthPosition();
+		android::graphics::Point getRightEyePosition();
 		jint getScore();
 		jstring toString();
 	};

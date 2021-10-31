@@ -16,7 +16,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject CharacterStyle::wrap(android::text::style::CharacterStyle arg0)
+	android::text::style::CharacterStyle CharacterStyle::wrap(android::text::style::CharacterStyle arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.style.CharacterStyle",
@@ -25,7 +25,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CharacterStyle::getUnderlying()
+	android::text::style::CharacterStyle CharacterStyle::getUnderlying()
 	{
 		return callObjectMethod(
 			"getUnderlying",

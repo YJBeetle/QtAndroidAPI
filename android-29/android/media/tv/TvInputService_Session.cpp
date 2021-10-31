@@ -108,7 +108,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	QAndroidJniObject TvInputService_Session::onCreateOverlayView()
+	android::view::View TvInputService_Session::onCreateOverlayView()
 	{
 		return callObjectMethod(
 			"onCreateOverlayView",

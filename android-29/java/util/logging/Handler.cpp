@@ -37,28 +37,28 @@ namespace java::util::logging
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Handler::getErrorManager()
+	java::util::logging::ErrorManager Handler::getErrorManager()
 	{
 		return callObjectMethod(
 			"getErrorManager",
 			"()Ljava/util/logging/ErrorManager;"
 		);
 	}
-	QAndroidJniObject Handler::getFilter()
+	__JniBaseClass Handler::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Ljava/util/logging/Filter;"
 		);
 	}
-	QAndroidJniObject Handler::getFormatter()
+	java::util::logging::Formatter Handler::getFormatter()
 	{
 		return callObjectMethod(
 			"getFormatter",
 			"()Ljava/util/logging/Formatter;"
 		);
 	}
-	QAndroidJniObject Handler::getLevel()
+	java::util::logging::Level Handler::getLevel()
 	{
 		return callObjectMethod(
 			"getLevel",

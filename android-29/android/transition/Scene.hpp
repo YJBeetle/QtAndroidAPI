@@ -32,11 +32,11 @@ namespace android::transition
 		Scene(android::view::ViewGroup arg0, android::view::ViewGroup arg1);
 		
 		// Methods
-		static QAndroidJniObject getCurrentScene(android::view::ViewGroup arg0);
-		static QAndroidJniObject getSceneForLayout(android::view::ViewGroup arg0, jint arg1, android::content::Context arg2);
+		static android::transition::Scene getCurrentScene(android::view::ViewGroup arg0);
+		static android::transition::Scene getSceneForLayout(android::view::ViewGroup arg0, jint arg1, android::content::Context arg2);
 		void enter();
 		void exit();
-		QAndroidJniObject getSceneRoot();
+		android::view::ViewGroup getSceneRoot();
 		void setEnterAction(__JniBaseClass arg0);
 		void setExitAction(__JniBaseClass arg0);
 	};

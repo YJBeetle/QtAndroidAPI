@@ -26,7 +26,7 @@ namespace android::print
 		PrintJobInfo_Builder(android::print::PrintJobInfo arg0);
 		
 		// Methods
-		QAndroidJniObject build();
+		android::print::PrintJobInfo build();
 		void putAdvancedOption(jstring arg0, jint arg1);
 		void putAdvancedOption(jstring arg0, jstring arg1);
 		void setAttributes(android::print::PrintAttributes arg0);

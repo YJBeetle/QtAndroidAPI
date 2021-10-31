@@ -13,7 +13,7 @@ namespace javax::crypto
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ExemptionMechanism::getInstance(jstring arg0)
+	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.ExemptionMechanism",
@@ -22,7 +22,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	QAndroidJniObject ExemptionMechanism::getInstance(jstring arg0, jstring arg1)
+	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.ExemptionMechanism",
@@ -32,7 +32,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	QAndroidJniObject ExemptionMechanism::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::crypto::ExemptionMechanism ExemptionMechanism::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.ExemptionMechanism",
@@ -81,7 +81,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	QAndroidJniObject ExemptionMechanism::getProvider()
+	java::security::Provider ExemptionMechanism::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

@@ -9,7 +9,7 @@
 namespace android::app::slice
 {
 	// Fields
-	QAndroidJniObject SliceItem::CREATOR()
+	__JniBaseClass SliceItem::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceItem",
@@ -95,14 +95,14 @@ namespace android::app::slice
 			"()I"
 		);
 	}
-	QAndroidJniObject SliceItem::getAction()
+	android::app::PendingIntent SliceItem::getAction()
 	{
 		return callObjectMethod(
 			"getAction",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	QAndroidJniObject SliceItem::getBundle()
+	android::os::Bundle SliceItem::getBundle()
 	{
 		return callObjectMethod(
 			"getBundle",
@@ -116,14 +116,14 @@ namespace android::app::slice
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SliceItem::getHints()
+	__JniBaseClass SliceItem::getHints()
 	{
 		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject SliceItem::getIcon()
+	android::graphics::drawable::Icon SliceItem::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",
@@ -144,14 +144,14 @@ namespace android::app::slice
 			"()J"
 		);
 	}
-	QAndroidJniObject SliceItem::getRemoteInput()
+	android::app::RemoteInput SliceItem::getRemoteInput()
 	{
 		return callObjectMethod(
 			"getRemoteInput",
 			"()Landroid/app/RemoteInput;"
 		);
 	}
-	QAndroidJniObject SliceItem::getSlice()
+	android::app::slice::Slice SliceItem::getSlice()
 	{
 		return callObjectMethod(
 			"getSlice",

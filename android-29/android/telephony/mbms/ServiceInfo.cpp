@@ -21,7 +21,7 @@ namespace android::telephony::mbms
 			arg0
 		);
 	}
-	QAndroidJniObject ServiceInfo::getLocales()
+	__JniBaseClass ServiceInfo::getLocales()
 	{
 		return callObjectMethod(
 			"getLocales",
@@ -36,7 +36,7 @@ namespace android::telephony::mbms
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject ServiceInfo::getNamedContentLocales()
+	__JniBaseClass ServiceInfo::getNamedContentLocales()
 	{
 		return callObjectMethod(
 			"getNamedContentLocales",
@@ -57,14 +57,14 @@ namespace android::telephony::mbms
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ServiceInfo::getSessionEndTime()
+	java::util::Date ServiceInfo::getSessionEndTime()
 	{
 		return callObjectMethod(
 			"getSessionEndTime",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject ServiceInfo::getSessionStartTime()
+	java::util::Date ServiceInfo::getSessionStartTime()
 	{
 		return callObjectMethod(
 			"getSessionStartTime",

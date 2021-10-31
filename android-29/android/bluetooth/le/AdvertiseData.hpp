@@ -17,7 +17,7 @@ namespace android::bluetooth::le
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AdvertiseData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,9 +30,9 @@ namespace android::bluetooth::le
 		jboolean equals(jobject arg0);
 		jboolean getIncludeDeviceName();
 		jboolean getIncludeTxPowerLevel();
-		QAndroidJniObject getManufacturerSpecificData();
-		QAndroidJniObject getServiceData();
-		QAndroidJniObject getServiceUuids();
+		android::util::SparseArray getManufacturerSpecificData();
+		__JniBaseClass getServiceData();
+		__JniBaseClass getServiceUuids();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

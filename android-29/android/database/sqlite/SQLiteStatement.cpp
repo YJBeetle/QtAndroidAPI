@@ -33,7 +33,7 @@ namespace android::database::sqlite
 			"()I"
 		);
 	}
-	QAndroidJniObject SQLiteStatement::simpleQueryForBlobFileDescriptor()
+	android::os::ParcelFileDescriptor SQLiteStatement::simpleQueryForBlobFileDescriptor()
 	{
 		return callObjectMethod(
 			"simpleQueryForBlobFileDescriptor",

@@ -46,7 +46,7 @@ namespace android::widget
 		void addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1);
 		void addView(android::view::View arg0, jint arg1);
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::widget::TableLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getAccessibilityClassName();
 		jboolean isColumnCollapsed(jint arg0);
 		jboolean isColumnShrinkable(jint arg0);

@@ -18,7 +18,7 @@ namespace android::app::admin
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConnectEvent(const char *className, const char *sig, Ts...agv) : android::app::admin::NetworkEvent(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,7 +28,7 @@ namespace android::app::admin
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getInetAddress();
+		java::net::InetAddress getInetAddress();
 		jint getPort();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

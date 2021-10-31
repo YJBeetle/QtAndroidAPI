@@ -64,7 +64,7 @@ namespace javax::security::auth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PrivateCredentialPermission::newPermissionCollection()
+	java::security::PermissionCollection PrivateCredentialPermission::newPermissionCollection()
 	{
 		return callObjectMethod(
 			"newPermissionCollection",

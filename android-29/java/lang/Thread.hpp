@@ -50,11 +50,11 @@ namespace java::lang
 		
 		// Methods
 		static jint activeCount();
-		static QAndroidJniObject currentThread();
+		static java::lang::Thread currentThread();
 		static void dumpStack();
 		static jint enumerate(jarray arg0);
-		static QAndroidJniObject getAllStackTraces();
-		static QAndroidJniObject getDefaultUncaughtExceptionHandler();
+		static __JniBaseClass getAllStackTraces();
+		static __JniBaseClass getDefaultUncaughtExceptionHandler();
 		static jboolean holdsLock(jobject arg0);
 		static jboolean interrupted();
 		static void onSpinWait();
@@ -64,14 +64,14 @@ namespace java::lang
 		static void yield();
 		void checkAccess();
 		jint countStackFrames();
-		QAndroidJniObject getContextClassLoader();
+		java::lang::ClassLoader getContextClassLoader();
 		jlong getId();
 		jstring getName();
 		jint getPriority();
 		jarray getStackTrace();
-		QAndroidJniObject getState();
-		QAndroidJniObject getThreadGroup();
-		QAndroidJniObject getUncaughtExceptionHandler();
+		java::lang::Thread_State getState();
+		java::lang::ThreadGroup getThreadGroup();
+		__JniBaseClass getUncaughtExceptionHandler();
 		void interrupt();
 		jboolean isAlive();
 		jboolean isDaemon();

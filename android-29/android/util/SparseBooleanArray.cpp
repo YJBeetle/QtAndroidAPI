@@ -37,7 +37,7 @@ namespace android::util
 			"()V"
 		);
 	}
-	QAndroidJniObject SparseBooleanArray::clone()
+	android::util::SparseBooleanArray SparseBooleanArray::clone()
 	{
 		return callObjectMethod(
 			"clone",

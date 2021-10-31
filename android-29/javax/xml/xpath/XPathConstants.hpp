@@ -13,12 +13,12 @@ namespace javax::xml::xpath
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BOOLEAN();
+		static javax::xml::_namespace::QName BOOLEAN();
 		static jstring DOM_OBJECT_MODEL();
-		static QAndroidJniObject NODE();
-		static QAndroidJniObject NODESET();
-		static QAndroidJniObject NUMBER();
-		static QAndroidJniObject STRING();
+		static javax::xml::_namespace::QName NODE();
+		static javax::xml::_namespace::QName NODESET();
+		static javax::xml::_namespace::QName NUMBER();
+		static javax::xml::_namespace::QName STRING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XPathConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

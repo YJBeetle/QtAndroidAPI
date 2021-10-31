@@ -91,7 +91,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrintWriter::append(jchar arg0)
+	java::io::PrintWriter PrintWriter::append(jchar arg0)
 	{
 		return callObjectMethod(
 			"append",
@@ -99,7 +99,7 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject PrintWriter::append(jstring arg0)
+	java::io::PrintWriter PrintWriter::append(jstring arg0)
 	{
 		return callObjectMethod(
 			"append",
@@ -107,7 +107,7 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject PrintWriter::append(jstring arg0, jint arg1, jint arg2)
+	java::io::PrintWriter PrintWriter::append(jstring arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
@@ -138,7 +138,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	QAndroidJniObject PrintWriter::format(jstring arg0, jobjectArray arg1)
+	java::io::PrintWriter PrintWriter::format(jstring arg0, jobjectArray arg1)
 	{
 		return callObjectMethod(
 			"format",
@@ -147,7 +147,7 @@ namespace java::io
 			arg1
 		);
 	}
-	QAndroidJniObject PrintWriter::format(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
+	java::io::PrintWriter PrintWriter::format(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -229,7 +229,7 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject PrintWriter::printf(jstring arg0, jobjectArray arg1)
+	java::io::PrintWriter PrintWriter::printf(jstring arg0, jobjectArray arg1)
 	{
 		return callObjectMethod(
 			"printf",
@@ -238,7 +238,7 @@ namespace java::io
 			arg1
 		);
 	}
-	QAndroidJniObject PrintWriter::printf(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
+	java::io::PrintWriter PrintWriter::printf(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
 	{
 		return callObjectMethod(
 			"printf",

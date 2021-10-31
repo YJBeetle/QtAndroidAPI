@@ -10,10 +10,10 @@ namespace javax::net::ssl
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BUFFER_OVERFLOW();
-		static QAndroidJniObject BUFFER_UNDERFLOW();
-		static QAndroidJniObject CLOSED();
-		static QAndroidJniObject OK();
+		static javax::net::ssl::SSLEngineResult_Status BUFFER_OVERFLOW();
+		static javax::net::ssl::SSLEngineResult_Status BUFFER_UNDERFLOW();
+		static javax::net::ssl::SSLEngineResult_Status CLOSED();
+		static javax::net::ssl::SSLEngineResult_Status OK();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SSLEngineResult_Status(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static javax::net::ssl::SSLEngineResult_Status valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace javax::net::ssl

@@ -47,7 +47,7 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Resources::getSystem()
+	android::content::res::Resources Resources::getSystem()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.res.Resources",
@@ -69,7 +69,7 @@ namespace android::content::res
 			"()V"
 		);
 	}
-	QAndroidJniObject Resources::getAnimation(jint arg0)
+	__JniBaseClass Resources::getAnimation(jint arg0)
 	{
 		return callObjectMethod(
 			"getAnimation",
@@ -77,7 +77,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::getAssets()
+	android::content::res::AssetManager Resources::getAssets()
 	{
 		return callObjectMethod(
 			"getAssets",
@@ -109,7 +109,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Resources::getColorStateList(jint arg0)
+	android::content::res::ColorStateList Resources::getColorStateList(jint arg0)
 	{
 		return callObjectMethod(
 			"getColorStateList",
@@ -117,7 +117,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::getColorStateList(jint arg0, android::content::res::Resources_Theme arg1)
+	android::content::res::ColorStateList Resources::getColorStateList(jint arg0, android::content::res::Resources_Theme arg1)
 	{
 		return callObjectMethod(
 			"getColorStateList",
@@ -126,7 +126,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Resources::getConfiguration()
+	android::content::res::Configuration Resources::getConfiguration()
 	{
 		return callObjectMethod(
 			"getConfiguration",
@@ -157,14 +157,14 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::getDisplayMetrics()
+	android::util::DisplayMetrics Resources::getDisplayMetrics()
 	{
 		return callObjectMethod(
 			"getDisplayMetrics",
 			"()Landroid/util/DisplayMetrics;"
 		);
 	}
-	QAndroidJniObject Resources::getDrawable(jint arg0)
+	android::graphics::drawable::Drawable Resources::getDrawable(jint arg0)
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -172,7 +172,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::getDrawable(jint arg0, android::content::res::Resources_Theme arg1)
+	android::graphics::drawable::Drawable Resources::getDrawable(jint arg0, android::content::res::Resources_Theme arg1)
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -181,7 +181,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Resources::getDrawableForDensity(jint arg0, jint arg1)
+	android::graphics::drawable::Drawable Resources::getDrawableForDensity(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getDrawableForDensity",
@@ -190,7 +190,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	QAndroidJniObject Resources::getDrawableForDensity(jint arg0, jint arg1, android::content::res::Resources_Theme arg2)
+	android::graphics::drawable::Drawable Resources::getDrawableForDensity(jint arg0, jint arg1, android::content::res::Resources_Theme arg2)
 	{
 		return callObjectMethod(
 			"getDrawableForDensity",
@@ -208,7 +208,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::getFont(jint arg0)
+	android::graphics::Typeface Resources::getFont(jint arg0)
 	{
 		return callObjectMethod(
 			"getFont",
@@ -252,7 +252,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::getLayout(jint arg0)
+	__JniBaseClass Resources::getLayout(jint arg0)
 	{
 		return callObjectMethod(
 			"getLayout",
@@ -260,7 +260,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::getMovie(jint arg0)
+	android::graphics::Movie Resources::getMovie(jint arg0)
 	{
 		return callObjectMethod(
 			"getMovie",
@@ -409,7 +409,7 @@ namespace android::content::res
 			arg3
 		);
 	}
-	QAndroidJniObject Resources::getXml(jint arg0)
+	__JniBaseClass Resources::getXml(jint arg0)
 	{
 		return callObjectMethod(
 			"getXml",
@@ -417,14 +417,14 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::newTheme()
+	android::content::res::Resources_Theme Resources::newTheme()
 	{
 		return callObjectMethod(
 			"newTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	QAndroidJniObject Resources::obtainAttributes(__JniBaseClass arg0, jintArray arg1)
+	android::content::res::TypedArray Resources::obtainAttributes(__JniBaseClass arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"obtainAttributes",
@@ -433,7 +433,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	QAndroidJniObject Resources::obtainTypedArray(jint arg0)
+	android::content::res::TypedArray Resources::obtainTypedArray(jint arg0)
 	{
 		return callObjectMethod(
 			"obtainTypedArray",
@@ -441,7 +441,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::openRawResource(jint arg0)
+	java::io::InputStream Resources::openRawResource(jint arg0)
 	{
 		return callObjectMethod(
 			"openRawResource",
@@ -449,7 +449,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::openRawResource(jint arg0, android::util::TypedValue arg1)
+	java::io::InputStream Resources::openRawResource(jint arg0, android::util::TypedValue arg1)
 	{
 		return callObjectMethod(
 			"openRawResource",
@@ -458,7 +458,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Resources::openRawResourceFd(jint arg0)
+	android::content::res::AssetFileDescriptor Resources::openRawResourceFd(jint arg0)
 	{
 		return callObjectMethod(
 			"openRawResourceFd",

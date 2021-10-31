@@ -18,7 +18,7 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	QAndroidJniObject CheckedOutputStream::getChecksum()
+	__JniBaseClass CheckedOutputStream::getChecksum()
 	{
 		return callObjectMethod(
 			"getChecksum",

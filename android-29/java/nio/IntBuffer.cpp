@@ -12,7 +12,7 @@ namespace java::nio
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject IntBuffer::allocate(jint arg0)
+	java::nio::IntBuffer IntBuffer::allocate(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.IntBuffer",
@@ -21,7 +21,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject IntBuffer::wrap(jintArray arg0)
+	java::nio::IntBuffer IntBuffer::wrap(jintArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.IntBuffer",
@@ -30,7 +30,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject IntBuffer::wrap(jintArray arg0, jint arg1, jint arg2)
+	java::nio::IntBuffer IntBuffer::wrap(jintArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.IntBuffer",
@@ -55,21 +55,21 @@ namespace java::nio
 			"()I"
 		);
 	}
-	QAndroidJniObject IntBuffer::asReadOnlyBuffer()
+	java::nio::IntBuffer IntBuffer::asReadOnlyBuffer()
 	{
 		return callObjectMethod(
 			"asReadOnlyBuffer",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
-	QAndroidJniObject IntBuffer::clear()
+	java::nio::IntBuffer IntBuffer::clear()
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
-	QAndroidJniObject IntBuffer::compact()
+	java::nio::IntBuffer IntBuffer::compact()
 	{
 		return callObjectMethod(
 			"compact",
@@ -92,7 +92,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IntBuffer::duplicate()
+	java::nio::IntBuffer IntBuffer::duplicate()
 	{
 		return callObjectMethod(
 			"duplicate",
@@ -107,7 +107,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject IntBuffer::flip()
+	java::nio::IntBuffer IntBuffer::flip()
 	{
 		return callObjectMethod(
 			"flip",
@@ -129,7 +129,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject IntBuffer::get(jintArray arg0)
+	java::nio::IntBuffer IntBuffer::get(jintArray arg0)
 	{
 		return callObjectMethod(
 			"get",
@@ -137,7 +137,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject IntBuffer::get(jint arg0, jintArray arg1)
+	java::nio::IntBuffer IntBuffer::get(jint arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"get",
@@ -146,7 +146,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject IntBuffer::get(jintArray arg0, jint arg1, jint arg2)
+	java::nio::IntBuffer IntBuffer::get(jintArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
@@ -156,7 +156,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject IntBuffer::get(jint arg0, jintArray arg1, jint arg2, jint arg3)
+	java::nio::IntBuffer IntBuffer::get(jint arg0, jintArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
@@ -188,7 +188,7 @@ namespace java::nio
 			"()Z"
 		);
 	}
-	QAndroidJniObject IntBuffer::limit(jint arg0)
+	java::nio::IntBuffer IntBuffer::limit(jint arg0)
 	{
 		return callObjectMethod(
 			"limit",
@@ -196,7 +196,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject IntBuffer::mark()
+	java::nio::IntBuffer IntBuffer::mark()
 	{
 		return callObjectMethod(
 			"mark",
@@ -211,14 +211,14 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IntBuffer::order()
+	java::nio::ByteOrder IntBuffer::order()
 	{
 		return callObjectMethod(
 			"order",
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
-	QAndroidJniObject IntBuffer::position(jint arg0)
+	java::nio::IntBuffer IntBuffer::position(jint arg0)
 	{
 		return callObjectMethod(
 			"position",
@@ -226,7 +226,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject IntBuffer::put(jintArray arg0)
+	java::nio::IntBuffer IntBuffer::put(jintArray arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -234,7 +234,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject IntBuffer::put(jint arg0)
+	java::nio::IntBuffer IntBuffer::put(jint arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -242,7 +242,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject IntBuffer::put(java::nio::IntBuffer arg0)
+	java::nio::IntBuffer IntBuffer::put(java::nio::IntBuffer arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -250,7 +250,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IntBuffer::put(jint arg0, jintArray arg1)
+	java::nio::IntBuffer IntBuffer::put(jint arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -259,7 +259,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject IntBuffer::put(jint arg0, jint arg1)
+	java::nio::IntBuffer IntBuffer::put(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -268,7 +268,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject IntBuffer::put(jintArray arg0, jint arg1, jint arg2)
+	java::nio::IntBuffer IntBuffer::put(jintArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
@@ -278,7 +278,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject IntBuffer::put(jint arg0, jintArray arg1, jint arg2, jint arg3)
+	java::nio::IntBuffer IntBuffer::put(jint arg0, jintArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -289,7 +289,7 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject IntBuffer::put(jint arg0, java::nio::IntBuffer arg1, jint arg2, jint arg3)
+	java::nio::IntBuffer IntBuffer::put(jint arg0, java::nio::IntBuffer arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -300,28 +300,28 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject IntBuffer::reset()
+	java::nio::IntBuffer IntBuffer::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
-	QAndroidJniObject IntBuffer::rewind()
+	java::nio::IntBuffer IntBuffer::rewind()
 	{
 		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
-	QAndroidJniObject IntBuffer::slice()
+	java::nio::IntBuffer IntBuffer::slice()
 	{
 		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
-	QAndroidJniObject IntBuffer::slice(jint arg0, jint arg1)
+	java::nio::IntBuffer IntBuffer::slice(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"slice",

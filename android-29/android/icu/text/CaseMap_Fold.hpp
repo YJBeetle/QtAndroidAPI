@@ -26,10 +26,10 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject apply(jstring arg0, __JniBaseClass arg1, android::icu::text::Edits arg2);
+		__JniBaseClass apply(jstring arg0, __JniBaseClass arg1, android::icu::text::Edits arg2);
 		jstring apply(jstring arg0);
-		QAndroidJniObject omitUnchangedText();
-		QAndroidJniObject turkic();
+		android::icu::text::CaseMap_Fold omitUnchangedText();
+		android::icu::text::CaseMap_Fold turkic();
 	};
 } // namespace android::icu::text
 

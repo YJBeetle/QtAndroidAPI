@@ -18,10 +18,10 @@ namespace java::util
 		Dictionary();
 		
 		// Methods
-		QAndroidJniObject elements();
+		__JniBaseClass elements();
 		jobject get(jobject arg0);
 		jboolean isEmpty();
-		QAndroidJniObject keys();
+		__JniBaseClass keys();
 		jobject put(jobject arg0, jobject arg1);
 		jobject remove(jobject arg0);
 		jint size();

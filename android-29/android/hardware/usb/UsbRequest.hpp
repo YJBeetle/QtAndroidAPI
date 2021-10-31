@@ -33,7 +33,7 @@ namespace android::hardware::usb
 		jboolean cancel();
 		void close();
 		jobject getClientData();
-		QAndroidJniObject getEndpoint();
+		android::hardware::usb::UsbEndpoint getEndpoint();
 		jboolean initialize(android::hardware::usb::UsbDeviceConnection arg0, android::hardware::usb::UsbEndpoint arg1);
 		jboolean queue(java::nio::ByteBuffer arg0);
 		jboolean queue(java::nio::ByteBuffer arg0, jint arg1);

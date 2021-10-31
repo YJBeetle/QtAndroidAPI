@@ -3,7 +3,7 @@
 namespace android::icu::util
 {
 	// Fields
-	QAndroidJniObject ULocale_Category::DISPLAY()
+	android::icu::util::ULocale_Category ULocale_Category::DISPLAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale$Category",
@@ -11,7 +11,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale$Category;"
 		);
 	}
-	QAndroidJniObject ULocale_Category::FORMAT()
+	android::icu::util::ULocale_Category ULocale_Category::FORMAT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale$Category",
@@ -26,7 +26,7 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ULocale_Category::valueOf(jstring arg0)
+	android::icu::util::ULocale_Category ULocale_Category::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale$Category",

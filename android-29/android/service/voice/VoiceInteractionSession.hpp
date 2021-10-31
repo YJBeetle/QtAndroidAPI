@@ -130,11 +130,11 @@ namespace android::service::voice
 		void closeSystemDialogs();
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		void finish();
-		QAndroidJniObject getContext();
+		android::content::Context getContext();
 		jint getDisabledShowContext();
-		QAndroidJniObject getLayoutInflater();
+		android::view::LayoutInflater getLayoutInflater();
 		jint getUserDisabledShowContext();
-		QAndroidJniObject getWindow();
+		android::app::Dialog getWindow();
 		void hide();
 		void onAssistStructureFailure(jthrowable arg0);
 		void onBackPressed();
@@ -143,7 +143,7 @@ namespace android::service::voice
 		void onComputeInsets(android::service::voice::VoiceInteractionSession_Insets arg0);
 		void onConfigurationChanged(android::content::res::Configuration arg0);
 		void onCreate();
-		QAndroidJniObject onCreateContentView();
+		android::view::View onCreateContentView();
 		void onDestroy();
 		void onDirectActionsInvalidated(android::service::voice::VoiceInteractionSession_ActivityId arg0);
 		jbooleanArray onGetSupportedCommands(jarray arg0);

@@ -33,7 +33,7 @@ namespace java::security
 		jstring getAlgorithm();
 		jstring getAttribute(jstring arg0);
 		jstring getClassName();
-		QAndroidJniObject getProvider();
+		java::security::Provider getProvider();
 		jstring getType();
 		jobject newInstance(jobject arg0);
 		jboolean supportsParameter(jobject arg0);

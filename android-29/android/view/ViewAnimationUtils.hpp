@@ -25,7 +25,7 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createCircularReveal(android::view::View arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4);
+		static android::animation::Animator createCircularReveal(android::view::View arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4);
 	};
 } // namespace android::view
 

@@ -25,7 +25,7 @@ namespace android::view
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint KEYBOARD_TYPE_ALPHABETIC();
 		static jint KEYBOARD_TYPE_NONE();
 		static jint KEYBOARD_TYPE_NON_ALPHABETIC();
@@ -69,22 +69,22 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDevice(jint arg0);
+		static android::view::InputDevice getDevice(jint arg0);
 		static jintArray getDeviceIds();
 		jint describeContents();
 		jint getControllerNumber();
 		jstring getDescriptor();
 		jint getId();
-		QAndroidJniObject getKeyCharacterMap();
+		android::view::KeyCharacterMap getKeyCharacterMap();
 		jint getKeyboardType();
-		QAndroidJniObject getMotionRange(jint arg0);
-		QAndroidJniObject getMotionRange(jint arg0, jint arg1);
-		QAndroidJniObject getMotionRanges();
+		android::view::InputDevice_MotionRange getMotionRange(jint arg0);
+		android::view::InputDevice_MotionRange getMotionRange(jint arg0, jint arg1);
+		__JniBaseClass getMotionRanges();
 		jstring getName();
 		jint getProductId();
 		jint getSources();
 		jint getVendorId();
-		QAndroidJniObject getVibrator();
+		android::os::Vibrator getVibrator();
 		jbooleanArray hasKeys(jintArray arg0);
 		jboolean hasMicrophone();
 		jboolean isEnabled();

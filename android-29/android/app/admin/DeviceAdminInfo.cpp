@@ -10,7 +10,7 @@
 namespace android::app::admin
 {
 	// Fields
-	QAndroidJniObject DeviceAdminInfo::CREATOR()
+	__JniBaseClass DeviceAdminInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminInfo",
@@ -111,14 +111,14 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	QAndroidJniObject DeviceAdminInfo::getActivityInfo()
+	android::content::pm::ActivityInfo DeviceAdminInfo::getActivityInfo()
 	{
 		return callObjectMethod(
 			"getActivityInfo",
 			"()Landroid/content/pm/ActivityInfo;"
 		);
 	}
-	QAndroidJniObject DeviceAdminInfo::getComponent()
+	android::content::ComponentName DeviceAdminInfo::getComponent()
 	{
 		return callObjectMethod(
 			"getComponent",
@@ -162,7 +162,7 @@ namespace android::app::admin
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable DeviceAdminInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadIcon",

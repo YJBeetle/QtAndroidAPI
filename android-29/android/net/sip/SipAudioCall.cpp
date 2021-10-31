@@ -61,14 +61,14 @@ namespace android::net::sip
 			"()V"
 		);
 	}
-	QAndroidJniObject SipAudioCall::getLocalProfile()
+	android::net::sip::SipProfile SipAudioCall::getLocalProfile()
 	{
 		return callObjectMethod(
 			"getLocalProfile",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
-	QAndroidJniObject SipAudioCall::getPeerProfile()
+	android::net::sip::SipProfile SipAudioCall::getPeerProfile()
 	{
 		return callObjectMethod(
 			"getPeerProfile",

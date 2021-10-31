@@ -19,10 +19,10 @@ namespace java::lang::reflect
 		// Methods
 		static void setAccessible(jarray arg0, jboolean arg1);
 		jboolean canAccess(jobject arg0);
-		QAndroidJniObject getAnnotation(jclass arg0);
+		__JniBaseClass getAnnotation(jclass arg0);
 		jarray getAnnotations();
 		jarray getAnnotationsByType(jclass arg0);
-		QAndroidJniObject getDeclaredAnnotation(jclass arg0);
+		__JniBaseClass getDeclaredAnnotation(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jarray getDeclaredAnnotationsByType(jclass arg0);
 		jboolean isAccessible();

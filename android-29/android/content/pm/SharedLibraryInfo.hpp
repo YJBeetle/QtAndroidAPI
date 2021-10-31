@@ -17,7 +17,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint TYPE_BUILTIN();
 		static jint TYPE_DYNAMIC();
 		static jint TYPE_STATIC();
@@ -31,8 +31,8 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getDeclaringPackage();
-		QAndroidJniObject getDependentPackages();
+		android::content::pm::VersionedPackage getDeclaringPackage();
+		__JniBaseClass getDependentPackages();
 		jlong getLongVersion();
 		jstring getName();
 		jint getType();

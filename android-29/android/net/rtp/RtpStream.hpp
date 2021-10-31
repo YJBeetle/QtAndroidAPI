@@ -25,10 +25,10 @@ namespace android::net::rtp
 		
 		// Methods
 		void associate(java::net::InetAddress arg0, jint arg1);
-		QAndroidJniObject getLocalAddress();
+		java::net::InetAddress getLocalAddress();
 		jint getLocalPort();
 		jint getMode();
-		QAndroidJniObject getRemoteAddress();
+		java::net::InetAddress getRemoteAddress();
 		jint getRemotePort();
 		jboolean isBusy();
 		void release();

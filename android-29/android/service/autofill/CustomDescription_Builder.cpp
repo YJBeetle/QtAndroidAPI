@@ -19,7 +19,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	QAndroidJniObject CustomDescription_Builder::addChild(jint arg0, __JniBaseClass arg1)
+	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::addChild(jint arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"addChild",
@@ -28,7 +28,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	QAndroidJniObject CustomDescription_Builder::addOnClickAction(jint arg0, __JniBaseClass arg1)
+	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::addOnClickAction(jint arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"addOnClickAction",
@@ -37,7 +37,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	QAndroidJniObject CustomDescription_Builder::batchUpdate(__JniBaseClass arg0, android::service::autofill::BatchUpdates arg1)
+	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::batchUpdate(__JniBaseClass arg0, android::service::autofill::BatchUpdates arg1)
 	{
 		return callObjectMethod(
 			"batchUpdate",
@@ -46,7 +46,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	QAndroidJniObject CustomDescription_Builder::build()
+	android::service::autofill::CustomDescription CustomDescription_Builder::build()
 	{
 		return callObjectMethod(
 			"build",

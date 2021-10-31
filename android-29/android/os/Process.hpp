@@ -58,7 +58,7 @@ namespace android::os
 		static jint myPid();
 		static jint myTid();
 		static jint myUid();
-		static QAndroidJniObject myUserHandle();
+		static android::os::UserHandle myUserHandle();
 		static void sendSignal(jint arg0, jint arg1);
 		static void setThreadPriority(jint arg0);
 		static void setThreadPriority(jint arg0, jint arg1);

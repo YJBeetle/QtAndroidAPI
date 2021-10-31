@@ -14,7 +14,7 @@ namespace android::provider
 	public:
 		// Fields
 		static jstring CONTENT_DIRECTORY();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
 		
 		// QAndroidJniObject forward

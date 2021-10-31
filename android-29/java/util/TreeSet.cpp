@@ -61,7 +61,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject TreeSet::comparator()
+	__JniBaseClass TreeSet::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
@@ -76,14 +76,14 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject TreeSet::descendingIterator()
+	__JniBaseClass TreeSet::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject TreeSet::descendingSet()
+	__JniBaseClass TreeSet::descendingSet()
 	{
 		return callObjectMethod(
 			"descendingSet",
@@ -105,7 +105,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject TreeSet::headSet(jobject arg0, jboolean arg1)
+	__JniBaseClass TreeSet::headSet(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headSet",
@@ -114,7 +114,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject TreeSet::headSet(jobject arg0)
+	__JniBaseClass TreeSet::headSet(jobject arg0)
 	{
 		return callObjectMethod(
 			"headSet",
@@ -137,7 +137,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject TreeSet::iterator()
+	__JniBaseClass TreeSet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -188,14 +188,14 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject TreeSet::spliterator()
+	__JniBaseClass TreeSet::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	QAndroidJniObject TreeSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	__JniBaseClass TreeSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subSet",
@@ -206,7 +206,7 @@ namespace java::util
 			arg3
 		);
 	}
-	QAndroidJniObject TreeSet::subSet(jobject arg0, jobject arg1)
+	__JniBaseClass TreeSet::subSet(jobject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"subSet",
@@ -215,7 +215,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject TreeSet::tailSet(jobject arg0, jboolean arg1)
+	__JniBaseClass TreeSet::tailSet(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailSet",
@@ -224,7 +224,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject TreeSet::tailSet(jobject arg0)
+	__JniBaseClass TreeSet::tailSet(jobject arg0)
 	{
 		return callObjectMethod(
 			"tailSet",

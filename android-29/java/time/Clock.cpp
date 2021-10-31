@@ -13,7 +13,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Clock::fixed(java::time::Instant arg0, java::time::ZoneId arg1)
+	java::time::Clock Clock::fixed(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Clock",
@@ -23,7 +23,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Clock::offset(java::time::Clock arg0, java::time::Duration arg1)
+	java::time::Clock Clock::offset(java::time::Clock arg0, java::time::Duration arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Clock",
@@ -33,7 +33,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Clock::system(java::time::ZoneId arg0)
+	java::time::Clock Clock::system(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Clock",
@@ -42,7 +42,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Clock::systemDefaultZone()
+	java::time::Clock Clock::systemDefaultZone()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Clock",
@@ -50,7 +50,7 @@ namespace java::time
 			"()Ljava/time/Clock;"
 		);
 	}
-	QAndroidJniObject Clock::systemUTC()
+	java::time::Clock Clock::systemUTC()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Clock",
@@ -58,7 +58,7 @@ namespace java::time
 			"()Ljava/time/Clock;"
 		);
 	}
-	QAndroidJniObject Clock::tick(java::time::Clock arg0, java::time::Duration arg1)
+	java::time::Clock Clock::tick(java::time::Clock arg0, java::time::Duration arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Clock",
@@ -68,7 +68,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Clock::tickMillis(java::time::ZoneId arg0)
+	java::time::Clock Clock::tickMillis(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Clock",
@@ -77,7 +77,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Clock::tickMinutes(java::time::ZoneId arg0)
+	java::time::Clock Clock::tickMinutes(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Clock",
@@ -86,7 +86,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Clock::tickSeconds(java::time::ZoneId arg0)
+	java::time::Clock Clock::tickSeconds(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Clock",
@@ -103,7 +103,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Clock::getZone()
+	java::time::ZoneId Clock::getZone()
 	{
 		return callObjectMethod(
 			"getZone",
@@ -117,7 +117,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	QAndroidJniObject Clock::instant()
+	java::time::Instant Clock::instant()
 	{
 		return callObjectMethod(
 			"instant",
@@ -131,7 +131,7 @@ namespace java::time
 			"()J"
 		);
 	}
-	QAndroidJniObject Clock::withZone(java::time::ZoneId arg0)
+	java::time::Clock Clock::withZone(java::time::ZoneId arg0)
 	{
 		return callObjectMethod(
 			"withZone",

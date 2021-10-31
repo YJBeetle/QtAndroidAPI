@@ -13,7 +13,7 @@ namespace android::nfc
 	{
 	public:
 		// Fields
-		QAndroidJniObject nfcAdapter();
+		android::nfc::NfcAdapter nfcAdapter();
 		jint peerLlcpMajorVersion();
 		jint peerLlcpMinorVersion();
 		

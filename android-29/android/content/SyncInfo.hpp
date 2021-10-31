@@ -17,7 +17,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		QAndroidJniObject account();
+		android::accounts::Account account();
 		jstring authority();
 		jlong startTime();
 		

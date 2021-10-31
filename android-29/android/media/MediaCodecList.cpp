@@ -40,7 +40,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaCodecList::getCodecInfoAt(jint arg0)
+	android::media::MediaCodecInfo MediaCodecList::getCodecInfoAt(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaCodecList",

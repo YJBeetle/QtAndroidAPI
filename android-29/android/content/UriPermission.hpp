@@ -17,7 +17,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jlong INVALID_TIME();
 		
 		// QAndroidJniObject forward
@@ -29,7 +29,7 @@ namespace android::content
 		// Methods
 		jint describeContents();
 		jlong getPersistedTime();
-		QAndroidJniObject getUri();
+		android::net::Uri getUri();
 		jboolean isReadPermission();
 		jboolean isWritePermission();
 		jstring toString();

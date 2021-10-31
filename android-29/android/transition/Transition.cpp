@@ -59,7 +59,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	QAndroidJniObject Transition::addListener(__JniBaseClass arg0)
+	android::transition::Transition Transition::addListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"addListener",
@@ -67,7 +67,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Transition::addTarget(android::view::View arg0)
+	android::transition::Transition Transition::addTarget(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -75,7 +75,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Transition::addTarget(jint arg0)
+	android::transition::Transition Transition::addTarget(jint arg0)
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -83,7 +83,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	QAndroidJniObject Transition::addTarget(jclass arg0)
+	android::transition::Transition Transition::addTarget(jclass arg0)
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -91,7 +91,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	QAndroidJniObject Transition::addTarget(jstring arg0)
+	android::transition::Transition Transition::addTarget(jstring arg0)
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -122,14 +122,14 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Transition::clone()
+	android::transition::Transition Transition::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Transition::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
+	android::animation::Animator Transition::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
 	{
 		return callObjectMethod(
 			"createAnimator",
@@ -139,7 +139,7 @@ namespace android::transition
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Transition::excludeChildren(android::view::View arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeChildren(android::view::View arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeChildren",
@@ -148,7 +148,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	QAndroidJniObject Transition::excludeChildren(jint arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeChildren(jint arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeChildren",
@@ -157,7 +157,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	QAndroidJniObject Transition::excludeChildren(jclass arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeChildren(jclass arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeChildren",
@@ -166,7 +166,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	QAndroidJniObject Transition::excludeTarget(android::view::View arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeTarget(android::view::View arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -175,7 +175,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	QAndroidJniObject Transition::excludeTarget(jint arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeTarget(jint arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -184,7 +184,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	QAndroidJniObject Transition::excludeTarget(jclass arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeTarget(jclass arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -193,7 +193,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	QAndroidJniObject Transition::excludeTarget(jstring arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeTarget(jstring arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -209,21 +209,21 @@ namespace android::transition
 			"()J"
 		);
 	}
-	QAndroidJniObject Transition::getEpicenter()
+	android::graphics::Rect Transition::getEpicenter()
 	{
 		return callObjectMethod(
 			"getEpicenter",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	QAndroidJniObject Transition::getEpicenterCallback()
+	android::transition::Transition_EpicenterCallback Transition::getEpicenterCallback()
 	{
 		return callObjectMethod(
 			"getEpicenterCallback",
 			"()Landroid/transition/Transition$EpicenterCallback;"
 		);
 	}
-	QAndroidJniObject Transition::getInterpolator()
+	__JniBaseClass Transition::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -237,14 +237,14 @@ namespace android::transition
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Transition::getPathMotion()
+	android::transition::PathMotion Transition::getPathMotion()
 	{
 		return callObjectMethod(
 			"getPathMotion",
 			"()Landroid/transition/PathMotion;"
 		);
 	}
-	QAndroidJniObject Transition::getPropagation()
+	android::transition::TransitionPropagation Transition::getPropagation()
 	{
 		return callObjectMethod(
 			"getPropagation",
@@ -258,28 +258,28 @@ namespace android::transition
 			"()J"
 		);
 	}
-	QAndroidJniObject Transition::getTargetIds()
+	__JniBaseClass Transition::getTargetIds()
 	{
 		return callObjectMethod(
 			"getTargetIds",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Transition::getTargetNames()
+	__JniBaseClass Transition::getTargetNames()
 	{
 		return callObjectMethod(
 			"getTargetNames",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Transition::getTargetTypes()
+	__JniBaseClass Transition::getTargetTypes()
 	{
 		return callObjectMethod(
 			"getTargetTypes",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Transition::getTargets()
+	__JniBaseClass Transition::getTargets()
 	{
 		return callObjectMethod(
 			"getTargets",
@@ -293,7 +293,7 @@ namespace android::transition
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Transition::getTransitionValues(android::view::View arg0, jboolean arg1)
+	android::transition::TransitionValues Transition::getTransitionValues(android::view::View arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"getTransitionValues",
@@ -311,7 +311,7 @@ namespace android::transition
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Transition::removeListener(__JniBaseClass arg0)
+	android::transition::Transition Transition::removeListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"removeListener",
@@ -319,7 +319,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Transition::removeTarget(android::view::View arg0)
+	android::transition::Transition Transition::removeTarget(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -327,7 +327,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Transition::removeTarget(jint arg0)
+	android::transition::Transition Transition::removeTarget(jint arg0)
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -335,7 +335,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	QAndroidJniObject Transition::removeTarget(jclass arg0)
+	android::transition::Transition Transition::removeTarget(jclass arg0)
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -343,7 +343,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	QAndroidJniObject Transition::removeTarget(jstring arg0)
+	android::transition::Transition Transition::removeTarget(jstring arg0)
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -351,7 +351,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	QAndroidJniObject Transition::setDuration(jlong arg0)
+	android::transition::Transition Transition::setDuration(jlong arg0)
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -367,7 +367,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Transition::setInterpolator(__JniBaseClass arg0)
+	android::transition::Transition Transition::setInterpolator(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setInterpolator",
@@ -399,7 +399,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Transition::setStartDelay(jlong arg0)
+	android::transition::Transition Transition::setStartDelay(jlong arg0)
 	{
 		return callObjectMethod(
 			"setStartDelay",

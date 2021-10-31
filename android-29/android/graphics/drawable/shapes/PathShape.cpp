@@ -22,7 +22,7 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	QAndroidJniObject PathShape::clone()
+	android::graphics::drawable::shapes::PathShape PathShape::clone()
 	{
 		return callObjectMethod(
 			"clone",

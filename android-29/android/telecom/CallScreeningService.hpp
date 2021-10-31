@@ -34,7 +34,7 @@ namespace android::telecom
 		CallScreeningService();
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onScreenCall(android::telecom::Call_Details arg0);
 		jboolean onUnbind(android::content::Intent arg0);
 		void respondToCall(android::telecom::Call_Details arg0, android::telecom::CallScreeningService_CallResponse arg1);

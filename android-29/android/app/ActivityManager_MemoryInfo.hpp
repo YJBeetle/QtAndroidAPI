@@ -13,7 +13,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jlong availMem();
 		jboolean lowMemory();
 		jlong threshold();

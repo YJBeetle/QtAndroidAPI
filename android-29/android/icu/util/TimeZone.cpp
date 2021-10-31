@@ -15,7 +15,7 @@ namespace android::icu::util
 			"GENERIC_LOCATION"
 		);
 	}
-	QAndroidJniObject TimeZone::GMT_ZONE()
+	android::icu::util::TimeZone TimeZone::GMT_ZONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.TimeZone",
@@ -86,7 +86,7 @@ namespace android::icu::util
 			"TIMEZONE_JDK"
 		);
 	}
-	QAndroidJniObject TimeZone::UNKNOWN_ZONE()
+	android::icu::util::TimeZone TimeZone::UNKNOWN_ZONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.TimeZone",
@@ -149,7 +149,7 @@ namespace android::icu::util
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject TimeZone::getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, java::lang::Integer arg2)
+	__JniBaseClass TimeZone::getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, java::lang::Integer arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.TimeZone",
@@ -179,7 +179,7 @@ namespace android::icu::util
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject TimeZone::getDefault()
+	android::icu::util::TimeZone TimeZone::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.TimeZone",
@@ -197,7 +197,7 @@ namespace android::icu::util
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject TimeZone::getFrozenTimeZone(jstring arg0)
+	android::icu::util::TimeZone TimeZone::getFrozenTimeZone(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.TimeZone",
@@ -233,7 +233,7 @@ namespace android::icu::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TimeZone::getTimeZone(jstring arg0)
+	android::icu::util::TimeZone TimeZone::getTimeZone(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.TimeZone",
@@ -242,7 +242,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZone::getTimeZone(jstring arg0, jint arg1)
+	android::icu::util::TimeZone TimeZone::getTimeZone(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.TimeZone",
@@ -268,7 +268,7 @@ namespace android::icu::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject TimeZone::cloneAsThawed()
+	android::icu::util::TimeZone TimeZone::cloneAsThawed()
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
@@ -283,7 +283,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZone::freeze()
+	android::icu::util::TimeZone TimeZone::freeze()
 	{
 		return callObjectMethod(
 			"freeze",

@@ -17,8 +17,8 @@ namespace android::database::sqlite
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getCursorFactory();
-		QAndroidJniObject getErrorHandler();
+		__JniBaseClass getCursorFactory();
+		__JniBaseClass getErrorHandler();
 		jlong getIdleConnectionTimeout();
 		jstring getJournalMode();
 		jint getLookasideSlotCount();

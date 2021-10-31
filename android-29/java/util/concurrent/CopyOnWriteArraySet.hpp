@@ -33,13 +33,13 @@ namespace java::util::concurrent
 		jboolean equals(jobject arg0);
 		void forEach(__JniBaseClass arg0);
 		jboolean isEmpty();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jboolean remove(jobject arg0);
 		jboolean removeAll(__JniBaseClass arg0);
 		jboolean removeIf(__JniBaseClass arg0);
 		jboolean retainAll(__JniBaseClass arg0);
 		jint size();
-		QAndroidJniObject spliterator();
+		__JniBaseClass spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 	};

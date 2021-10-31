@@ -3,7 +3,7 @@
 namespace java::util::jar
 {
 	// Fields
-	QAndroidJniObject Attributes_Name::CLASS_PATH()
+	java::util::jar::Attributes_Name Attributes_Name::CLASS_PATH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -11,7 +11,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::CONTENT_TYPE()
+	java::util::jar::Attributes_Name Attributes_Name::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -19,7 +19,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::EXTENSION_INSTALLATION()
+	java::util::jar::Attributes_Name Attributes_Name::EXTENSION_INSTALLATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -27,7 +27,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::EXTENSION_LIST()
+	java::util::jar::Attributes_Name Attributes_Name::EXTENSION_LIST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -35,7 +35,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::EXTENSION_NAME()
+	java::util::jar::Attributes_Name Attributes_Name::EXTENSION_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -43,7 +43,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::IMPLEMENTATION_TITLE()
+	java::util::jar::Attributes_Name Attributes_Name::IMPLEMENTATION_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -51,7 +51,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::IMPLEMENTATION_URL()
+	java::util::jar::Attributes_Name Attributes_Name::IMPLEMENTATION_URL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -59,7 +59,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::IMPLEMENTATION_VENDOR()
+	java::util::jar::Attributes_Name Attributes_Name::IMPLEMENTATION_VENDOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -67,7 +67,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::IMPLEMENTATION_VENDOR_ID()
+	java::util::jar::Attributes_Name Attributes_Name::IMPLEMENTATION_VENDOR_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -75,7 +75,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::IMPLEMENTATION_VERSION()
+	java::util::jar::Attributes_Name Attributes_Name::IMPLEMENTATION_VERSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -83,7 +83,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::MAIN_CLASS()
+	java::util::jar::Attributes_Name Attributes_Name::MAIN_CLASS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -91,7 +91,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::MANIFEST_VERSION()
+	java::util::jar::Attributes_Name Attributes_Name::MANIFEST_VERSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -99,7 +99,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::MULTI_RELEASE()
+	java::util::jar::Attributes_Name Attributes_Name::MULTI_RELEASE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -107,7 +107,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::SEALED()
+	java::util::jar::Attributes_Name Attributes_Name::SEALED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -115,7 +115,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::SIGNATURE_VERSION()
+	java::util::jar::Attributes_Name Attributes_Name::SIGNATURE_VERSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -123,7 +123,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::SPECIFICATION_TITLE()
+	java::util::jar::Attributes_Name Attributes_Name::SPECIFICATION_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -131,7 +131,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::SPECIFICATION_VENDOR()
+	java::util::jar::Attributes_Name Attributes_Name::SPECIFICATION_VENDOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
@@ -139,7 +139,7 @@ namespace java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::SPECIFICATION_VERSION()
+	java::util::jar::Attributes_Name Attributes_Name::SPECIFICATION_VERSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",

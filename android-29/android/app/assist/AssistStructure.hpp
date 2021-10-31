@@ -21,7 +21,7 @@ namespace android::app::assist
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AssistStructure(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -34,8 +34,8 @@ namespace android::app::assist
 		jint describeContents();
 		jlong getAcquisitionEndTime();
 		jlong getAcquisitionStartTime();
-		QAndroidJniObject getActivityComponent();
-		QAndroidJniObject getWindowNodeAt(jint arg0);
+		android::content::ComponentName getActivityComponent();
+		android::app::assist::AssistStructure_WindowNode getWindowNodeAt(jint arg0);
 		jint getWindowNodeCount();
 		jboolean isHomeActivity();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

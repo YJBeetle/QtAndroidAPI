@@ -23,7 +23,7 @@ namespace android::se::omapi
 		// Methods
 		void close();
 		jbyteArray getSelectResponse();
-		QAndroidJniObject getSession();
+		android::se::omapi::Session getSession();
 		jboolean isBasicChannel();
 		jboolean isOpen();
 		jboolean selectNext();

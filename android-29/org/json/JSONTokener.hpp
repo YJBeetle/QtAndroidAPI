@@ -35,7 +35,7 @@ namespace org::json
 		jobject nextValue();
 		void skipPast(jstring arg0);
 		jchar skipTo(jchar arg0);
-		QAndroidJniObject syntaxError(jstring arg0);
+		org::json::JSONException syntaxError(jstring arg0);
 		jstring toString();
 	};
 } // namespace org::json

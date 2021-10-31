@@ -23,7 +23,7 @@ namespace android::text
 			"()Z"
 		);
 	}
-	QAndroidJniObject TextUtils_SimpleStringSplitter::iterator()
+	__JniBaseClass TextUtils_SimpleStringSplitter::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

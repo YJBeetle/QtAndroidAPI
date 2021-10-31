@@ -17,7 +17,7 @@ namespace android::net::wifi::aware
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiAwareNetworkInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,7 +28,7 @@ namespace android::net::wifi::aware
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getPeerIpv6Addr();
+		java::net::Inet6Address getPeerIpv6Addr();
 		jint getPort();
 		jint getTransportProtocol();
 		jint hashCode();

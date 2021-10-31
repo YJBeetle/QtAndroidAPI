@@ -18,7 +18,7 @@ namespace android::telecom
 		static jint CALL_PULLED();
 		static jint CANCELED();
 		static jint CONNECTION_MANAGER_NOT_SUPPORTED();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint ERROR();
 		static jint LOCAL();
 		static jint MISSED();

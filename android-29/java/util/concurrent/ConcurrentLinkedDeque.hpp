@@ -34,13 +34,13 @@ namespace java::util::concurrent
 		void addLast(jobject arg0);
 		void clear();
 		jboolean contains(jobject arg0);
-		QAndroidJniObject descendingIterator();
+		__JniBaseClass descendingIterator();
 		jobject element();
 		void forEach(__JniBaseClass arg0);
 		jobject getFirst();
 		jobject getLast();
 		jboolean isEmpty();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jboolean offer(jobject arg0);
 		jboolean offerFirst(jobject arg0);
 		jboolean offerLast(jobject arg0);
@@ -62,7 +62,7 @@ namespace java::util::concurrent
 		jboolean removeLastOccurrence(jobject arg0);
 		jboolean retainAll(__JniBaseClass arg0);
 		jint size();
-		QAndroidJniObject spliterator();
+		__JniBaseClass spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 		jstring toString();

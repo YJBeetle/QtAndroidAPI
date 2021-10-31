@@ -29,7 +29,7 @@ namespace android::text::method
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextKeyListener::getInstance()
+	android::text::method::TextKeyListener TextKeyListener::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.TextKeyListener",
@@ -37,7 +37,7 @@ namespace android::text::method
 			"()Landroid/text/method/TextKeyListener;"
 		);
 	}
-	QAndroidJniObject TextKeyListener::getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1)
+	android::text::method::TextKeyListener TextKeyListener::getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.TextKeyListener",

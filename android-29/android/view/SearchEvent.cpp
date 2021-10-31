@@ -17,7 +17,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	QAndroidJniObject SearchEvent::getInputDevice()
+	android::view::InputDevice SearchEvent::getInputDevice()
 	{
 		return callObjectMethod(
 			"getInputDevice",

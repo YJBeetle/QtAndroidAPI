@@ -23,7 +23,7 @@ namespace android::media
 		// Methods
 		jstring getName();
 		jstring getName(android::content::Context arg0);
-		QAndroidJniObject getRoutes(__JniBaseClass arg0);
+		__JniBaseClass getRoutes(__JniBaseClass arg0);
 		jint getSupportedTypes();
 		jboolean isGroupable();
 		jstring toString();

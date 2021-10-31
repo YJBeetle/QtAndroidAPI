@@ -33,7 +33,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint MATCH_ADJUSTMENT_MASK();
 		static jint MATCH_ADJUSTMENT_NORMAL();
 		static jint MATCH_CATEGORY_EMPTY();
@@ -62,8 +62,8 @@ namespace android::content
 		IntentFilter(jstring arg0, jstring arg1);
 		
 		// Methods
-		static QAndroidJniObject create(jstring arg0, jstring arg1);
-		QAndroidJniObject actionsIterator();
+		static android::content::IntentFilter create(jstring arg0, jstring arg1);
+		__JniBaseClass actionsIterator();
 		void addAction(jstring arg0);
 		void addCategory(jstring arg0);
 		void addDataAuthority(jstring arg0, jstring arg1);
@@ -71,8 +71,8 @@ namespace android::content
 		void addDataScheme(jstring arg0);
 		void addDataSchemeSpecificPart(jstring arg0, jint arg1);
 		void addDataType(jstring arg0);
-		QAndroidJniObject authoritiesIterator();
-		QAndroidJniObject categoriesIterator();
+		__JniBaseClass authoritiesIterator();
+		__JniBaseClass categoriesIterator();
 		jint countActions();
 		jint countCategories();
 		jint countDataAuthorities();
@@ -84,10 +84,10 @@ namespace android::content
 		void dump(__JniBaseClass arg0, jstring arg1);
 		jstring getAction(jint arg0);
 		jstring getCategory(jint arg0);
-		QAndroidJniObject getDataAuthority(jint arg0);
-		QAndroidJniObject getDataPath(jint arg0);
+		android::content::IntentFilter_AuthorityEntry getDataAuthority(jint arg0);
+		android::os::PatternMatcher getDataPath(jint arg0);
 		jstring getDataScheme(jint arg0);
-		QAndroidJniObject getDataSchemeSpecificPart(jint arg0);
+		android::os::PatternMatcher getDataSchemeSpecificPart(jint arg0);
 		jstring getDataType(jint arg0);
 		jint getPriority();
 		jboolean hasAction(jstring arg0);
@@ -103,12 +103,12 @@ namespace android::content
 		jstring matchCategories(__JniBaseClass arg0);
 		jint matchData(jstring arg0, jstring arg1, android::net::Uri arg2);
 		jint matchDataAuthority(android::net::Uri arg0);
-		QAndroidJniObject pathsIterator();
+		__JniBaseClass pathsIterator();
 		void readFromXml(__JniBaseClass arg0);
-		QAndroidJniObject schemeSpecificPartsIterator();
-		QAndroidJniObject schemesIterator();
+		__JniBaseClass schemeSpecificPartsIterator();
+		__JniBaseClass schemesIterator();
 		void setPriority(jint arg0);
-		QAndroidJniObject typesIterator();
+		__JniBaseClass typesIterator();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 		void writeToXml(__JniBaseClass arg0);
 	};

@@ -55,14 +55,14 @@ namespace android::database::sqlite
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SQLiteOpenHelper::getReadableDatabase()
+	android::database::sqlite::SQLiteDatabase SQLiteOpenHelper::getReadableDatabase()
 	{
 		return callObjectMethod(
 			"getReadableDatabase",
 			"()Landroid/database/sqlite/SQLiteDatabase;"
 		);
 	}
-	QAndroidJniObject SQLiteOpenHelper::getWritableDatabase()
+	android::database::sqlite::SQLiteDatabase SQLiteOpenHelper::getWritableDatabase()
 	{
 		return callObjectMethod(
 			"getWritableDatabase",

@@ -4,7 +4,7 @@
 namespace android::accounts
 {
 	// Fields
-	QAndroidJniObject AuthenticatorDescription::CREATOR()
+	__JniBaseClass AuthenticatorDescription::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AuthenticatorDescription",
@@ -86,7 +86,7 @@ namespace android::accounts
 		) {}
 	
 	// Methods
-	QAndroidJniObject AuthenticatorDescription::newKey(jstring arg0)
+	android::accounts::AuthenticatorDescription AuthenticatorDescription::newKey(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.accounts.AuthenticatorDescription",

@@ -25,7 +25,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WallpaperColors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -36,13 +36,13 @@ namespace android::app
 		WallpaperColors(android::graphics::Color arg0, android::graphics::Color arg1, android::graphics::Color arg2);
 		
 		// Methods
-		static QAndroidJniObject fromBitmap(android::graphics::Bitmap arg0);
-		static QAndroidJniObject fromDrawable(android::graphics::drawable::Drawable arg0);
+		static android::app::WallpaperColors fromBitmap(android::graphics::Bitmap arg0);
+		static android::app::WallpaperColors fromDrawable(android::graphics::drawable::Drawable arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getPrimaryColor();
-		QAndroidJniObject getSecondaryColor();
-		QAndroidJniObject getTertiaryColor();
+		android::graphics::Color getPrimaryColor();
+		android::graphics::Color getSecondaryColor();
+		android::graphics::Color getTertiaryColor();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

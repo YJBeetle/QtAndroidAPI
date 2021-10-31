@@ -4,7 +4,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject TextClassifier_EntityConfig::CREATOR()
+	__JniBaseClass TextClassifier_EntityConfig::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
@@ -19,7 +19,7 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TextClassifier_EntityConfig::create(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::create(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
@@ -30,7 +30,7 @@ namespace android::view::textclassifier
 			arg2.object()
 		);
 	}
-	QAndroidJniObject TextClassifier_EntityConfig::createWithExplicitEntityList(__JniBaseClass arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::createWithExplicitEntityList(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
@@ -39,7 +39,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassifier_EntityConfig::createWithHints(__JniBaseClass arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::createWithHints(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
@@ -55,14 +55,14 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject TextClassifier_EntityConfig::getHints()
+	__JniBaseClass TextClassifier_EntityConfig::getHints()
 	{
 		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/Collection;"
 		);
 	}
-	QAndroidJniObject TextClassifier_EntityConfig::resolveEntityListModifications(__JniBaseClass arg0)
+	__JniBaseClass TextClassifier_EntityConfig::resolveEntityListModifications(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"resolveEntityListModifications",

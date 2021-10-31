@@ -15,7 +15,7 @@ namespace android::provider
 		// Fields
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring RAW_CONTACT_ID1();
 		static jstring RAW_CONTACT_ID2();
 		static jstring TYPE();

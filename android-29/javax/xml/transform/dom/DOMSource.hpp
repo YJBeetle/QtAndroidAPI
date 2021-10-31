@@ -21,7 +21,7 @@ namespace javax::xml::transform::dom
 		DOMSource(__JniBaseClass arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getNode();
+		__JniBaseClass getNode();
 		jstring getSystemId();
 		jboolean isEmpty();
 		void setNode(__JniBaseClass arg0);

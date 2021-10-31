@@ -3,7 +3,7 @@
 namespace java::nio::file::attribute
 {
 	// Fields
-	QAndroidJniObject AclEntryPermission::ADD_FILE()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::ADD_FILE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -11,7 +11,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::ADD_SUBDIRECTORY()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::ADD_SUBDIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -19,7 +19,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::APPEND_DATA()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::APPEND_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -27,7 +27,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::DELETE()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::DELETE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -35,7 +35,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::DELETE_CHILD()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::DELETE_CHILD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -43,7 +43,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::EXECUTE()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::EXECUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -51,7 +51,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::LIST_DIRECTORY()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::LIST_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -59,7 +59,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::READ_ACL()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::READ_ACL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -67,7 +67,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::READ_ATTRIBUTES()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::READ_ATTRIBUTES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -75,7 +75,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::READ_DATA()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::READ_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -83,7 +83,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::READ_NAMED_ATTRS()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::READ_NAMED_ATTRS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -91,7 +91,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::SYNCHRONIZE()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::SYNCHRONIZE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -99,7 +99,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::WRITE_ACL()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::WRITE_ACL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -107,7 +107,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::WRITE_ATTRIBUTES()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::WRITE_ATTRIBUTES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -115,7 +115,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::WRITE_DATA()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::WRITE_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -123,7 +123,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::WRITE_NAMED_ATTRS()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::WRITE_NAMED_ATTRS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -131,7 +131,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryPermission;"
 		);
 	}
-	QAndroidJniObject AclEntryPermission::WRITE_OWNER()
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::WRITE_OWNER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryPermission",
@@ -146,7 +146,7 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AclEntryPermission::valueOf(jstring arg0)
+	java::nio::file::attribute::AclEntryPermission AclEntryPermission::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntryPermission",

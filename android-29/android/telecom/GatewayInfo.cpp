@@ -5,7 +5,7 @@
 namespace android::telecom
 {
 	// Fields
-	QAndroidJniObject GatewayInfo::CREATOR()
+	__JniBaseClass GatewayInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.GatewayInfo",
@@ -35,7 +35,7 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject GatewayInfo::getGatewayAddress()
+	android::net::Uri GatewayInfo::getGatewayAddress()
 	{
 		return callObjectMethod(
 			"getGatewayAddress",
@@ -49,7 +49,7 @@ namespace android::telecom
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject GatewayInfo::getOriginalAddress()
+	android::net::Uri GatewayInfo::getOriginalAddress()
 	{
 		return callObjectMethod(
 			"getOriginalAddress",

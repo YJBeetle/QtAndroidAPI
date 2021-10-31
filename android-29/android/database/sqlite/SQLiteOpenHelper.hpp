@@ -34,8 +34,8 @@ namespace android::database::sqlite
 		// Methods
 		void close();
 		jstring getDatabaseName();
-		QAndroidJniObject getReadableDatabase();
-		QAndroidJniObject getWritableDatabase();
+		android::database::sqlite::SQLiteDatabase getReadableDatabase();
+		android::database::sqlite::SQLiteDatabase getWritableDatabase();
 		void onConfigure(android::database::sqlite::SQLiteDatabase arg0);
 		void onCreate(android::database::sqlite::SQLiteDatabase arg0);
 		void onDowngrade(android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2);

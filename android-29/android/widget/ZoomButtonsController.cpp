@@ -19,14 +19,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject ZoomButtonsController::getContainer()
+	android::view::ViewGroup ZoomButtonsController::getContainer()
 	{
 		return callObjectMethod(
 			"getContainer",
 			"()Landroid/view/ViewGroup;"
 		);
 	}
-	QAndroidJniObject ZoomButtonsController::getZoomControls()
+	android::view::View ZoomButtonsController::getZoomControls()
 	{
 		return callObjectMethod(
 			"getZoomControls",

@@ -79,7 +79,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Short::decode(jstring arg0)
+	java::lang::Short Short::decode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Short",
@@ -152,7 +152,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Short::valueOf(jstring arg0)
+	java::lang::Short Short::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Short",
@@ -161,7 +161,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Short::valueOf(jshort arg0)
+	java::lang::Short Short::valueOf(jshort arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Short",
@@ -170,7 +170,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Short::valueOf(jstring arg0, jint arg1)
+	java::lang::Short Short::valueOf(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Short",
@@ -203,7 +203,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Short::describeConstable()
+	java::util::Optional Short::describeConstable()
 	{
 		return callObjectMethod(
 			"describeConstable",

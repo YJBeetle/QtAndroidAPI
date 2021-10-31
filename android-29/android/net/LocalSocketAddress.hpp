@@ -24,7 +24,7 @@ namespace android::net
 		
 		// Methods
 		jstring getName();
-		QAndroidJniObject getNamespace();
+		android::net::LocalSocketAddress_Namespace getNamespace();
 	};
 } // namespace android::net
 

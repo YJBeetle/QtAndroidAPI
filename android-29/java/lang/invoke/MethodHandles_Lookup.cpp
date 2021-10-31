@@ -75,7 +75,7 @@ namespace java::lang::invoke
 			arg0
 		).object<jclass>();
 	}
-	QAndroidJniObject MethodHandles_Lookup::bind(jobject arg0, jstring arg1, java::lang::invoke::MethodType arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::bind(jobject arg0, jstring arg1, java::lang::invoke::MethodType arg2)
 	{
 		return callObjectMethod(
 			"bind",
@@ -93,7 +93,7 @@ namespace java::lang::invoke
 			arg0
 		).object<jclass>();
 	}
-	QAndroidJniObject MethodHandles_Lookup::defineHiddenClass(jbyteArray arg0, jboolean arg1, jarray arg2)
+	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::defineHiddenClass(jbyteArray arg0, jboolean arg1, jarray arg2)
 	{
 		return callObjectMethod(
 			"defineHiddenClass",
@@ -103,7 +103,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::defineHiddenClassWithClassData(jbyteArray arg0, jobject arg1, jboolean arg2, jarray arg3)
+	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::defineHiddenClassWithClassData(jbyteArray arg0, jobject arg1, jboolean arg2, jarray arg3)
 	{
 		return callObjectMethod(
 			"defineHiddenClassWithClassData",
@@ -114,7 +114,7 @@ namespace java::lang::invoke
 			arg3
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::dropLookupMode(jint arg0)
+	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::dropLookupMode(jint arg0)
 	{
 		return callObjectMethod(
 			"dropLookupMode",
@@ -138,7 +138,7 @@ namespace java::lang::invoke
 			arg0
 		).object<jclass>();
 	}
-	QAndroidJniObject MethodHandles_Lookup::findConstructor(jclass arg0, java::lang::invoke::MethodType arg1)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findConstructor(jclass arg0, java::lang::invoke::MethodType arg1)
 	{
 		return callObjectMethod(
 			"findConstructor",
@@ -147,7 +147,7 @@ namespace java::lang::invoke
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findGetter(jclass arg0, jstring arg1, jclass arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findGetter(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return callObjectMethod(
 			"findGetter",
@@ -157,7 +157,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findSetter(jclass arg0, jstring arg1, jclass arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findSetter(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return callObjectMethod(
 			"findSetter",
@@ -167,7 +167,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findSpecial(jclass arg0, jstring arg1, java::lang::invoke::MethodType arg2, jclass arg3)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findSpecial(jclass arg0, jstring arg1, java::lang::invoke::MethodType arg2, jclass arg3)
 	{
 		return callObjectMethod(
 			"findSpecial",
@@ -178,7 +178,7 @@ namespace java::lang::invoke
 			arg3
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findStatic(jclass arg0, jstring arg1, java::lang::invoke::MethodType arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findStatic(jclass arg0, jstring arg1, java::lang::invoke::MethodType arg2)
 	{
 		return callObjectMethod(
 			"findStatic",
@@ -188,7 +188,7 @@ namespace java::lang::invoke
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findStaticGetter(jclass arg0, jstring arg1, jclass arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findStaticGetter(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return callObjectMethod(
 			"findStaticGetter",
@@ -198,7 +198,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findStaticSetter(jclass arg0, jstring arg1, jclass arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findStaticSetter(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return callObjectMethod(
 			"findStaticSetter",
@@ -208,7 +208,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findStaticVarHandle(jclass arg0, jstring arg1, jclass arg2)
+	__JniBaseClass MethodHandles_Lookup::findStaticVarHandle(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return callObjectMethod(
 			"findStaticVarHandle",
@@ -218,7 +218,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findVarHandle(jclass arg0, jstring arg1, jclass arg2)
+	__JniBaseClass MethodHandles_Lookup::findVarHandle(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return callObjectMethod(
 			"findVarHandle",
@@ -228,7 +228,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findVirtual(jclass arg0, jstring arg1, java::lang::invoke::MethodType arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findVirtual(jclass arg0, jstring arg1, java::lang::invoke::MethodType arg2)
 	{
 		return callObjectMethod(
 			"findVirtual",
@@ -252,7 +252,7 @@ namespace java::lang::invoke
 			"()Z"
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::in(jclass arg0)
+	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::in(jclass arg0)
 	{
 		return callObjectMethod(
 			"in",
@@ -281,7 +281,7 @@ namespace java::lang::invoke
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
-	QAndroidJniObject MethodHandles_Lookup::revealDirect(java::lang::invoke::MethodHandle arg0)
+	__JniBaseClass MethodHandles_Lookup::revealDirect(java::lang::invoke::MethodHandle arg0)
 	{
 		return callObjectMethod(
 			"revealDirect",
@@ -296,7 +296,7 @@ namespace java::lang::invoke
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MethodHandles_Lookup::unreflect(java::lang::reflect::Method arg0)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflect(java::lang::reflect::Method arg0)
 	{
 		return callObjectMethod(
 			"unreflect",
@@ -304,7 +304,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::unreflectConstructor(java::lang::reflect::Constructor arg0)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectConstructor(java::lang::reflect::Constructor arg0)
 	{
 		return callObjectMethod(
 			"unreflectConstructor",
@@ -312,7 +312,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::unreflectGetter(java::lang::reflect::Field arg0)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectGetter(java::lang::reflect::Field arg0)
 	{
 		return callObjectMethod(
 			"unreflectGetter",
@@ -320,7 +320,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::unreflectSetter(java::lang::reflect::Field arg0)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectSetter(java::lang::reflect::Field arg0)
 	{
 		return callObjectMethod(
 			"unreflectSetter",
@@ -328,7 +328,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::unreflectSpecial(java::lang::reflect::Method arg0, jclass arg1)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectSpecial(java::lang::reflect::Method arg0, jclass arg1)
 	{
 		return callObjectMethod(
 			"unreflectSpecial",
@@ -337,7 +337,7 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::unreflectVarHandle(java::lang::reflect::Field arg0)
+	__JniBaseClass MethodHandles_Lookup::unreflectVarHandle(java::lang::reflect::Field arg0)
 	{
 		return callObjectMethod(
 			"unreflectVarHandle",

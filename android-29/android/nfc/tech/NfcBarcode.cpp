@@ -25,7 +25,7 @@ namespace android::nfc::tech
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject NfcBarcode::get(android::nfc::Tag arg0)
+	android::nfc::tech::NfcBarcode NfcBarcode::get(android::nfc::Tag arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.tech.NfcBarcode",
@@ -55,7 +55,7 @@ namespace android::nfc::tech
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject NfcBarcode::getTag()
+	android::nfc::Tag NfcBarcode::getTag()
 	{
 		return callObjectMethod(
 			"getTag",

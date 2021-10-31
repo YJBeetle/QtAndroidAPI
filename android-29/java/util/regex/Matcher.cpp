@@ -22,7 +22,7 @@ namespace java::util::regex
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Matcher::appendReplacement(java::lang::StringBuffer arg0, jstring arg1)
+	java::util::regex::Matcher Matcher::appendReplacement(java::lang::StringBuffer arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"appendReplacement",
@@ -31,7 +31,7 @@ namespace java::util::regex
 			arg1
 		);
 	}
-	QAndroidJniObject Matcher::appendReplacement(java::lang::StringBuilder arg0, jstring arg1)
+	java::util::regex::Matcher Matcher::appendReplacement(java::lang::StringBuilder arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"appendReplacement",
@@ -40,7 +40,7 @@ namespace java::util::regex
 			arg1
 		);
 	}
-	QAndroidJniObject Matcher::appendTail(java::lang::StringBuffer arg0)
+	java::lang::StringBuffer Matcher::appendTail(java::lang::StringBuffer arg0)
 	{
 		return callObjectMethod(
 			"appendTail",
@@ -48,7 +48,7 @@ namespace java::util::regex
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Matcher::appendTail(java::lang::StringBuilder arg0)
+	java::lang::StringBuilder Matcher::appendTail(java::lang::StringBuilder arg0)
 	{
 		return callObjectMethod(
 			"appendTail",
@@ -159,14 +159,14 @@ namespace java::util::regex
 			"()Z"
 		);
 	}
-	QAndroidJniObject Matcher::pattern()
+	java::util::regex::Pattern Matcher::pattern()
 	{
 		return callObjectMethod(
 			"pattern",
 			"()Ljava/util/regex/Pattern;"
 		);
 	}
-	QAndroidJniObject Matcher::region(jint arg0, jint arg1)
+	java::util::regex::Matcher Matcher::region(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"region",
@@ -228,14 +228,14 @@ namespace java::util::regex
 			"()Z"
 		);
 	}
-	QAndroidJniObject Matcher::reset()
+	java::util::regex::Matcher Matcher::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/util/regex/Matcher;"
 		);
 	}
-	QAndroidJniObject Matcher::reset(jstring arg0)
+	java::util::regex::Matcher Matcher::reset(jstring arg0)
 	{
 		return callObjectMethod(
 			"reset",
@@ -243,7 +243,7 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	QAndroidJniObject Matcher::results()
+	__JniBaseClass Matcher::results()
 	{
 		return callObjectMethod(
 			"results",
@@ -273,7 +273,7 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	QAndroidJniObject Matcher::toMatchResult()
+	__JniBaseClass Matcher::toMatchResult()
 	{
 		return callObjectMethod(
 			"toMatchResult",
@@ -287,7 +287,7 @@ namespace java::util::regex
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Matcher::useAnchoringBounds(jboolean arg0)
+	java::util::regex::Matcher Matcher::useAnchoringBounds(jboolean arg0)
 	{
 		return callObjectMethod(
 			"useAnchoringBounds",
@@ -295,7 +295,7 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	QAndroidJniObject Matcher::usePattern(java::util::regex::Pattern arg0)
+	java::util::regex::Matcher Matcher::usePattern(java::util::regex::Pattern arg0)
 	{
 		return callObjectMethod(
 			"usePattern",
@@ -303,7 +303,7 @@ namespace java::util::regex
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Matcher::useTransparentBounds(jboolean arg0)
+	java::util::regex::Matcher Matcher::useTransparentBounds(jboolean arg0)
 	{
 		return callObjectMethod(
 			"useTransparentBounds",

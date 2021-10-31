@@ -35,8 +35,8 @@ namespace android::preference
 		// Methods
 		void addItemFromInflater(android::preference::Preference arg0);
 		jboolean addPreference(android::preference::Preference arg0);
-		QAndroidJniObject findPreference(jstring arg0);
-		QAndroidJniObject getPreference(jint arg0);
+		android::preference::Preference findPreference(jstring arg0);
+		android::preference::Preference getPreference(jint arg0);
 		jint getPreferenceCount();
 		jboolean isOrderingAsAdded();
 		void notifyDependencyChange(jboolean arg0);

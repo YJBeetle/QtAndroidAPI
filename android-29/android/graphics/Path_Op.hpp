@@ -10,11 +10,11 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DIFFERENCE();
-		static QAndroidJniObject INTERSECT();
-		static QAndroidJniObject REVERSE_DIFFERENCE();
-		static QAndroidJniObject UNION();
-		static QAndroidJniObject XOR();
+		static android::graphics::Path_Op DIFFERENCE();
+		static android::graphics::Path_Op INTERSECT();
+		static android::graphics::Path_Op REVERSE_DIFFERENCE();
+		static android::graphics::Path_Op UNION();
+		static android::graphics::Path_Op XOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Path_Op(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -23,7 +23,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Path_Op valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

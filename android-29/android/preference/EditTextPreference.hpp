@@ -39,7 +39,7 @@ namespace android::preference
 		EditTextPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject getEditText();
+		android::widget::EditText getEditText();
 		jstring getText();
 		void setText(jstring arg0);
 		jboolean shouldDisableDependents();

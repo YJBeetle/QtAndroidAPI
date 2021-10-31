@@ -28,7 +28,7 @@ namespace android::text::style
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getAlignment();
+		android::text::Layout_Alignment getAlignment();
 		jint getSpanTypeId();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

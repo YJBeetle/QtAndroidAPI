@@ -32,8 +32,8 @@ namespace android::text::method
 		QwertyKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1);
 		
 		// Methods
-		static QAndroidJniObject getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);
-		static QAndroidJniObject getInstanceForFullKeyboard();
+		static android::text::method::QwertyKeyListener getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);
+		static android::text::method::QwertyKeyListener getInstanceForFullKeyboard();
 		static void markAsReplaced(__JniBaseClass arg0, jint arg1, jint arg2, jstring arg3);
 		jint getInputType();
 		jboolean onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3);

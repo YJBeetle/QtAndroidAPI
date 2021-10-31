@@ -83,14 +83,14 @@ namespace android::drm
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject DrmInfoRequest::iterator()
+	__JniBaseClass DrmInfoRequest::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject DrmInfoRequest::keyIterator()
+	__JniBaseClass DrmInfoRequest::keyIterator()
 	{
 		return callObjectMethod(
 			"keyIterator",

@@ -93,7 +93,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::CONTENT_URI()
+	android::net::Uri Settings_Global::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
@@ -439,7 +439,7 @@ namespace android::provider
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::getUriFor(jstring arg0)
+	android::net::Uri Settings_Global::getUriFor(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Settings$Global",

@@ -19,7 +19,7 @@ namespace android::location
 		static jint ADR_STATE_RESET();
 		static jint ADR_STATE_UNKNOWN();
 		static jint ADR_STATE_VALID();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint MULTIPATH_INDICATOR_DETECTED();
 		static jint MULTIPATH_INDICATOR_NOT_DETECTED();
 		static jint MULTIPATH_INDICATOR_UNKNOWN();

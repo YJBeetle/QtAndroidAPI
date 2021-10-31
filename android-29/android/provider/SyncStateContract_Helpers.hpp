@@ -39,10 +39,10 @@ namespace android::provider
 		
 		// Methods
 		static jbyteArray get(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2);
-		static QAndroidJniObject getWithUri(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2);
-		static QAndroidJniObject insert(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, jbyteArray arg3);
-		static QAndroidJniObject newSetOperation(android::net::Uri arg0, android::accounts::Account arg1, jbyteArray arg2);
-		static QAndroidJniObject newUpdateOperation(android::net::Uri arg0, jbyteArray arg1);
+		static android::util::Pair getWithUri(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2);
+		static android::net::Uri insert(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, jbyteArray arg3);
+		static android::content::ContentProviderOperation newSetOperation(android::net::Uri arg0, android::accounts::Account arg1, jbyteArray arg2);
+		static android::content::ContentProviderOperation newUpdateOperation(android::net::Uri arg0, jbyteArray arg1);
 		static void set(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, jbyteArray arg3);
 		static void update(android::content::ContentProviderClient arg0, android::net::Uri arg1, jbyteArray arg2);
 	};

@@ -29,7 +29,7 @@ namespace android::telecom
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConnectionRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -41,10 +41,10 @@ namespace android::telecom
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getAccountHandle();
-		QAndroidJniObject getAddress();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getRttTextStream();
+		android::telecom::PhoneAccountHandle getAccountHandle();
+		android::net::Uri getAddress();
+		android::os::Bundle getExtras();
+		android::telecom::Connection_RttTextStream getRttTextStream();
 		jint getVideoState();
 		jboolean isRequestingRtt();
 		jstring toString();

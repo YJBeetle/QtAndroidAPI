@@ -81,7 +81,7 @@ namespace android::media::audiofx
 			"()S"
 		);
 	}
-	QAndroidJniObject PresetReverb::getProperties()
+	android::media::audiofx::PresetReverb_Settings PresetReverb::getProperties()
 	{
 		return callObjectMethod(
 			"getProperties",

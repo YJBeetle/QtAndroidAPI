@@ -22,7 +22,7 @@ namespace android::view::contentcapture
 			"()V"
 		);
 	}
-	QAndroidJniObject ContentCaptureSession::createContentCaptureSession(android::view::contentcapture::ContentCaptureContext arg0)
+	android::view::contentcapture::ContentCaptureSession ContentCaptureSession::createContentCaptureSession(android::view::contentcapture::ContentCaptureContext arg0)
 	{
 		return callObjectMethod(
 			"createContentCaptureSession",
@@ -37,21 +37,21 @@ namespace android::view::contentcapture
 			"()V"
 		);
 	}
-	QAndroidJniObject ContentCaptureSession::getContentCaptureContext()
+	android::view::contentcapture::ContentCaptureContext ContentCaptureSession::getContentCaptureContext()
 	{
 		return callObjectMethod(
 			"getContentCaptureContext",
 			"()Landroid/view/contentcapture/ContentCaptureContext;"
 		);
 	}
-	QAndroidJniObject ContentCaptureSession::getContentCaptureSessionId()
+	android::view::contentcapture::ContentCaptureSessionId ContentCaptureSession::getContentCaptureSessionId()
 	{
 		return callObjectMethod(
 			"getContentCaptureSessionId",
 			"()Landroid/view/contentcapture/ContentCaptureSessionId;"
 		);
 	}
-	QAndroidJniObject ContentCaptureSession::newAutofillId(android::view::autofill::AutofillId arg0, jlong arg1)
+	android::view::autofill::AutofillId ContentCaptureSession::newAutofillId(android::view::autofill::AutofillId arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"newAutofillId",
@@ -60,7 +60,7 @@ namespace android::view::contentcapture
 			arg1
 		);
 	}
-	QAndroidJniObject ContentCaptureSession::newViewStructure(android::view::View arg0)
+	android::view::ViewStructure ContentCaptureSession::newViewStructure(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"newViewStructure",
@@ -68,7 +68,7 @@ namespace android::view::contentcapture
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ContentCaptureSession::newVirtualViewStructure(android::view::autofill::AutofillId arg0, jlong arg1)
+	android::view::ViewStructure ContentCaptureSession::newVirtualViewStructure(android::view::autofill::AutofillId arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"newVirtualViewStructure",

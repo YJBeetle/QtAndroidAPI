@@ -18,7 +18,7 @@ namespace java::util
 		EventListenerProxy(__JniBaseClass arg0);
 		
 		// Methods
-		QAndroidJniObject getListener();
+		__JniBaseClass getListener();
 	};
 } // namespace java::util
 

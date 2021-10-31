@@ -21,7 +21,7 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getActiveRequest(jstring arg0);
+		android::app::VoiceInteractor_Request getActiveRequest(jstring arg0);
 		jarray getActiveRequests();
 		jboolean isDestroyed();
 		void notifyDirectActionsChanged();

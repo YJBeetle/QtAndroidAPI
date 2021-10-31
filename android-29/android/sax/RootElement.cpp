@@ -23,7 +23,7 @@ namespace android::sax
 		) {}
 	
 	// Methods
-	QAndroidJniObject RootElement::getContentHandler()
+	__JniBaseClass RootElement::getContentHandler()
 	{
 		return callObjectMethod(
 			"getContentHandler",

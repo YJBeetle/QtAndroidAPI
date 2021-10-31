@@ -82,7 +82,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject GregorianCalendar::from(java::time::ZonedDateTime arg0)
+	java::util::GregorianCalendar GregorianCalendar::from(java::time::ZonedDateTime arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.GregorianCalendar",
@@ -146,7 +146,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject GregorianCalendar::getGregorianChange()
+	java::util::Date GregorianCalendar::getGregorianChange()
 	{
 		return callObjectMethod(
 			"getGregorianChange",
@@ -177,7 +177,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject GregorianCalendar::getTimeZone()
+	java::util::TimeZone GregorianCalendar::getTimeZone()
 	{
 		return callObjectMethod(
 			"getTimeZone",
@@ -264,7 +264,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject GregorianCalendar::toZonedDateTime()
+	java::time::ZonedDateTime GregorianCalendar::toZonedDateTime()
 	{
 		return callObjectMethod(
 			"toZonedDateTime",

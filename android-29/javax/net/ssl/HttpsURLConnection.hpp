@@ -31,17 +31,17 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDefaultHostnameVerifier();
-		static QAndroidJniObject getDefaultSSLSocketFactory();
+		static __JniBaseClass getDefaultHostnameVerifier();
+		static javax::net::ssl::SSLSocketFactory getDefaultSSLSocketFactory();
 		static void setDefaultHostnameVerifier(__JniBaseClass arg0);
 		static void setDefaultSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0);
 		jstring getCipherSuite();
-		QAndroidJniObject getHostnameVerifier();
+		__JniBaseClass getHostnameVerifier();
 		jarray getLocalCertificates();
-		QAndroidJniObject getLocalPrincipal();
-		QAndroidJniObject getPeerPrincipal();
-		QAndroidJniObject getSSLSession();
-		QAndroidJniObject getSSLSocketFactory();
+		__JniBaseClass getLocalPrincipal();
+		__JniBaseClass getPeerPrincipal();
+		java::util::Optional getSSLSession();
+		javax::net::ssl::SSLSocketFactory getSSLSocketFactory();
 		jarray getServerCertificates();
 		void setHostnameVerifier(__JniBaseClass arg0);
 		void setSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0);

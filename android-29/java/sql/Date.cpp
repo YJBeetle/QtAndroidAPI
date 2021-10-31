@@ -26,7 +26,7 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	QAndroidJniObject Date::valueOf(jstring arg0)
+	java::sql::Date Date::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.Date",
@@ -35,7 +35,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	QAndroidJniObject Date::valueOf(java::time::LocalDate arg0)
+	java::sql::Date Date::valueOf(java::time::LocalDate arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.Date",
@@ -97,14 +97,14 @@ namespace java::sql
 			arg0
 		);
 	}
-	QAndroidJniObject Date::toInstant()
+	java::time::Instant Date::toInstant()
 	{
 		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	QAndroidJniObject Date::toLocalDate()
+	java::time::LocalDate Date::toLocalDate()
 	{
 		return callObjectMethod(
 			"toLocalDate",

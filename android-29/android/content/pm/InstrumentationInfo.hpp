@@ -14,7 +14,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jstring dataDir();
 		jboolean functionalTest();
 		jboolean handleProfiling();

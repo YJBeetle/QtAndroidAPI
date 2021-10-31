@@ -47,9 +47,9 @@ namespace android::hardware::display
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5);
-		QAndroidJniObject createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7);
-		QAndroidJniObject getDisplay(jint arg0);
+		android::hardware::display::VirtualDisplay createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5);
+		android::hardware::display::VirtualDisplay createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7);
+		android::view::Display getDisplay(jint arg0);
 		jarray getDisplays();
 		jarray getDisplays(jstring arg0);
 		void registerDisplayListener(__JniBaseClass arg0, android::os::Handler arg1);

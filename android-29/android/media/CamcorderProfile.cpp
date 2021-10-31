@@ -250,7 +250,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CamcorderProfile::get(jint arg0)
+	android::media::CamcorderProfile CamcorderProfile::get(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.CamcorderProfile",
@@ -259,7 +259,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject CamcorderProfile::get(jint arg0, jint arg1)
+	android::media::CamcorderProfile CamcorderProfile::get(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.CamcorderProfile",

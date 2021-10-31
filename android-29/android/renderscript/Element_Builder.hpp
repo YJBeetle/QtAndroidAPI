@@ -26,9 +26,9 @@ namespace android::renderscript
 		Element_Builder(android::renderscript::RenderScript arg0);
 		
 		// Methods
-		QAndroidJniObject add(android::renderscript::Element arg0, jstring arg1);
-		QAndroidJniObject add(android::renderscript::Element arg0, jstring arg1, jint arg2);
-		QAndroidJniObject create();
+		android::renderscript::Element_Builder add(android::renderscript::Element arg0, jstring arg1);
+		android::renderscript::Element_Builder add(android::renderscript::Element arg0, jstring arg1, jint arg2);
+		android::renderscript::Element create();
 	};
 } // namespace android::renderscript
 

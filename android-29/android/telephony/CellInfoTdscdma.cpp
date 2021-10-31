@@ -6,7 +6,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject CellInfoTdscdma::CREATOR()
+	__JniBaseClass CellInfoTdscdma::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellInfoTdscdma",
@@ -36,14 +36,14 @@ namespace android::telephony
 			arg0
 		);
 	}
-	QAndroidJniObject CellInfoTdscdma::getCellIdentity()
+	android::telephony::CellIdentityTdscdma CellInfoTdscdma::getCellIdentity()
 	{
 		return callObjectMethod(
 			"getCellIdentity",
 			"()Landroid/telephony/CellIdentityTdscdma;"
 		);
 	}
-	QAndroidJniObject CellInfoTdscdma::getCellSignalStrength()
+	android::telephony::CellSignalStrengthTdscdma CellInfoTdscdma::getCellSignalStrength()
 	{
 		return callObjectMethod(
 			"getCellSignalStrength",

@@ -61,17 +61,17 @@ namespace java::util::jar
 		JarFile(java::io::File arg0, jboolean arg1, jint arg2, __JniBaseClass arg3);
 		
 		// Methods
-		static QAndroidJniObject baseVersion();
-		static QAndroidJniObject runtimeVersion();
-		QAndroidJniObject entries();
-		QAndroidJniObject getEntry(jstring arg0);
-		QAndroidJniObject getInputStream(java::util::zip::ZipEntry arg0);
-		QAndroidJniObject getJarEntry(jstring arg0);
-		QAndroidJniObject getManifest();
-		QAndroidJniObject getVersion();
+		static __JniBaseClass baseVersion();
+		static __JniBaseClass runtimeVersion();
+		__JniBaseClass entries();
+		java::util::zip::ZipEntry getEntry(jstring arg0);
+		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0);
+		java::util::jar::JarEntry getJarEntry(jstring arg0);
+		java::util::jar::Manifest getManifest();
+		__JniBaseClass getVersion();
 		jboolean isMultiRelease();
-		QAndroidJniObject stream();
-		QAndroidJniObject versionedStream();
+		__JniBaseClass stream();
+		__JniBaseClass versionedStream();
 	};
 } // namespace java::util::jar
 

@@ -36,7 +36,7 @@ namespace android::companion
 		// Methods
 		void associate(android::companion::AssociationRequest arg0, android::companion::CompanionDeviceManager_Callback arg1, android::os::Handler arg2);
 		void disassociate(jstring arg0);
-		QAndroidJniObject getAssociations();
+		__JniBaseClass getAssociations();
 		jboolean hasNotificationAccess(android::content::ComponentName arg0);
 		void requestNotificationAccess(android::content::ComponentName arg0);
 	};

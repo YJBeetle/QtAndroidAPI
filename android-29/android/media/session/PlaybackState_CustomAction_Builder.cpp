@@ -20,14 +20,14 @@ namespace android::media::session
 		) {}
 	
 	// Methods
-	QAndroidJniObject PlaybackState_CustomAction_Builder::build()
+	android::media::session::PlaybackState_CustomAction PlaybackState_CustomAction_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/session/PlaybackState$CustomAction;"
 		);
 	}
-	QAndroidJniObject PlaybackState_CustomAction_Builder::setExtras(android::os::Bundle arg0)
+	android::media::session::PlaybackState_CustomAction_Builder PlaybackState_CustomAction_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",

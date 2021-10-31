@@ -59,12 +59,12 @@ namespace android::view::inputmethod
 		// Methods
 		void dispatchKeyEventFromInputMethod(android::view::View arg0, android::view::KeyEvent arg1);
 		void displayCompletions(android::view::View arg0, jarray arg1);
-		QAndroidJniObject getCurrentInputMethodSubtype();
-		QAndroidJniObject getEnabledInputMethodList();
-		QAndroidJniObject getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1);
-		QAndroidJniObject getInputMethodList();
-		QAndroidJniObject getLastInputMethodSubtype();
-		QAndroidJniObject getShortcutInputMethodsAndSubtypes();
+		android::view::inputmethod::InputMethodSubtype getCurrentInputMethodSubtype();
+		__JniBaseClass getEnabledInputMethodList();
+		__JniBaseClass getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1);
+		__JniBaseClass getInputMethodList();
+		android::view::inputmethod::InputMethodSubtype getLastInputMethodSubtype();
+		__JniBaseClass getShortcutInputMethodsAndSubtypes();
 		void hideSoftInputFromInputMethod(__JniBaseClass arg0, jint arg1);
 		jboolean hideSoftInputFromWindow(__JniBaseClass arg0, jint arg1);
 		jboolean hideSoftInputFromWindow(__JniBaseClass arg0, jint arg1, android::os::ResultReceiver arg2);

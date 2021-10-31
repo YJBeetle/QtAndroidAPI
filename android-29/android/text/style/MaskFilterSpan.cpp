@@ -18,7 +18,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject MaskFilterSpan::getMaskFilter()
+	android::graphics::MaskFilter MaskFilterSpan::getMaskFilter()
 	{
 		return callObjectMethod(
 			"getMaskFilter",

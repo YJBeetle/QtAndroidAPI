@@ -51,7 +51,7 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject LauncherApps::getActivityList(jstring arg0, android::os::UserHandle arg1)
+	__JniBaseClass LauncherApps::getActivityList(jstring arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getActivityList",
@@ -60,14 +60,14 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	QAndroidJniObject LauncherApps::getAllPackageInstallerSessions()
+	__JniBaseClass LauncherApps::getAllPackageInstallerSessions()
 	{
 		return callObjectMethod(
 			"getAllPackageInstallerSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject LauncherApps::getApplicationInfo(jstring arg0, jint arg1, android::os::UserHandle arg2)
+	android::content::pm::ApplicationInfo LauncherApps::getApplicationInfo(jstring arg0, jint arg1, android::os::UserHandle arg2)
 	{
 		return callObjectMethod(
 			"getApplicationInfo",
@@ -77,7 +77,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	QAndroidJniObject LauncherApps::getPinItemRequest(android::content::Intent arg0)
+	android::content::pm::LauncherApps_PinItemRequest LauncherApps::getPinItemRequest(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"getPinItemRequest",
@@ -85,14 +85,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LauncherApps::getProfiles()
+	__JniBaseClass LauncherApps::getProfiles()
 	{
 		return callObjectMethod(
 			"getProfiles",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject LauncherApps::getShortcutBadgedIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1)
+	android::graphics::drawable::Drawable LauncherApps::getShortcutBadgedIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getShortcutBadgedIconDrawable",
@@ -101,7 +101,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject LauncherApps::getShortcutConfigActivityIntent(android::content::pm::LauncherActivityInfo arg0)
+	android::content::IntentSender LauncherApps::getShortcutConfigActivityIntent(android::content::pm::LauncherActivityInfo arg0)
 	{
 		return callObjectMethod(
 			"getShortcutConfigActivityIntent",
@@ -109,7 +109,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LauncherApps::getShortcutConfigActivityList(jstring arg0, android::os::UserHandle arg1)
+	__JniBaseClass LauncherApps::getShortcutConfigActivityList(jstring arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getShortcutConfigActivityList",
@@ -118,7 +118,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	QAndroidJniObject LauncherApps::getShortcutIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1)
+	android::graphics::drawable::Drawable LauncherApps::getShortcutIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getShortcutIconDrawable",
@@ -127,7 +127,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject LauncherApps::getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1)
+	__JniBaseClass LauncherApps::getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getShortcuts",
@@ -136,7 +136,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	QAndroidJniObject LauncherApps::getSuspendedPackageLauncherExtras(jstring arg0, android::os::UserHandle arg1)
+	android::os::Bundle LauncherApps::getSuspendedPackageLauncherExtras(jstring arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getSuspendedPackageLauncherExtras",
@@ -206,7 +206,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	QAndroidJniObject LauncherApps::resolveActivity(android::content::Intent arg0, android::os::UserHandle arg1)
+	android::content::pm::LauncherActivityInfo LauncherApps::resolveActivity(android::content::Intent arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"resolveActivity",

@@ -20,7 +20,7 @@ namespace android::animation
 		
 		// Methods
 		jobject convertBack(jobject arg0);
-		QAndroidJniObject invert();
+		android::animation::BidirectionalTypeConverter invert();
 	};
 } // namespace android::animation
 

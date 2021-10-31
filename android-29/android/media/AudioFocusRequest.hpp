@@ -26,7 +26,7 @@ namespace android::media
 		
 		// Methods
 		jboolean acceptsDelayedFocusGain();
-		QAndroidJniObject getAudioAttributes();
+		android::media::AudioAttributes getAudioAttributes();
 		jint getFocusGain();
 		jboolean willPauseWhenDucked();
 	};

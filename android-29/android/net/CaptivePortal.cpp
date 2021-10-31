@@ -4,7 +4,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject CaptivePortal::CREATOR()
+	__JniBaseClass CaptivePortal::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.CaptivePortal",

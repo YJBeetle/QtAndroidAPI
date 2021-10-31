@@ -11,7 +11,7 @@ namespace android::net::wifi
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WpsInfo::CREATOR()
+	__JniBaseClass WpsInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WpsInfo",

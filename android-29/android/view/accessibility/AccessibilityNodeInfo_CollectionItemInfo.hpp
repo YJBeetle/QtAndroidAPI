@@ -17,8 +17,8 @@ namespace android::view::accessibility
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
-		static QAndroidJniObject obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4, jboolean arg5);
+		static android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
+		static android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4, jboolean arg5);
 		jint getColumnIndex();
 		jint getColumnSpan();
 		jint getRowIndex();

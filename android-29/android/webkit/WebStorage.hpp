@@ -17,7 +17,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static android::webkit::WebStorage getInstance();
 		void deleteAllData();
 		void deleteOrigin(jstring arg0);
 		void getOrigins(__JniBaseClass arg0);

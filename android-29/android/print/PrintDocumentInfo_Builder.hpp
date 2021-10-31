@@ -22,9 +22,9 @@ namespace android::print
 		PrintDocumentInfo_Builder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setContentType(jint arg0);
-		QAndroidJniObject setPageCount(jint arg0);
+		android::print::PrintDocumentInfo build();
+		android::print::PrintDocumentInfo_Builder setContentType(jint arg0);
+		android::print::PrintDocumentInfo_Builder setPageCount(jint arg0);
 	};
 } // namespace android::print
 

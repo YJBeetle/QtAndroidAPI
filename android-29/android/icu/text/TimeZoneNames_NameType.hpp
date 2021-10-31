@@ -10,13 +10,13 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EXEMPLAR_LOCATION();
-		static QAndroidJniObject LONG_DAYLIGHT();
-		static QAndroidJniObject LONG_GENERIC();
-		static QAndroidJniObject LONG_STANDARD();
-		static QAndroidJniObject SHORT_DAYLIGHT();
-		static QAndroidJniObject SHORT_GENERIC();
-		static QAndroidJniObject SHORT_STANDARD();
+		static android::icu::text::TimeZoneNames_NameType EXEMPLAR_LOCATION();
+		static android::icu::text::TimeZoneNames_NameType LONG_DAYLIGHT();
+		static android::icu::text::TimeZoneNames_NameType LONG_GENERIC();
+		static android::icu::text::TimeZoneNames_NameType LONG_STANDARD();
+		static android::icu::text::TimeZoneNames_NameType SHORT_DAYLIGHT();
+		static android::icu::text::TimeZoneNames_NameType SHORT_GENERIC();
+		static android::icu::text::TimeZoneNames_NameType SHORT_STANDARD();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimeZoneNames_NameType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -25,7 +25,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::TimeZoneNames_NameType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

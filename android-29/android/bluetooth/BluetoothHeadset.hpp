@@ -41,9 +41,9 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getConnectedDevices();
+		__JniBaseClass getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
+		__JniBaseClass getDevicesMatchingConnectionStates(jintArray arg0);
 		jboolean isAudioConnected(android::bluetooth::BluetoothDevice arg0);
 		jboolean sendVendorSpecificResultCode(android::bluetooth::BluetoothDevice arg0, jstring arg1, jstring arg2);
 		jboolean startVoiceRecognition(android::bluetooth::BluetoothDevice arg0);

@@ -87,7 +87,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject LinearLayout::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::LinearLayout_LayoutParams LinearLayout::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -116,7 +116,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject LinearLayout::getDividerDrawable()
+	android::graphics::drawable::Drawable LinearLayout::getDividerDrawable()
 	{
 		return callObjectMethod(
 			"getDividerDrawable",

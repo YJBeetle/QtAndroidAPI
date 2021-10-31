@@ -17,7 +17,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static android::webkit::GeolocationPermissions getInstance();
 		void allow(jstring arg0);
 		void clear(jstring arg0);
 		void clearAll();

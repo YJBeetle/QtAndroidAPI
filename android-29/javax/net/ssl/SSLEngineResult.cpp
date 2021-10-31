@@ -45,14 +45,14 @@ namespace javax::net::ssl
 			"()I"
 		);
 	}
-	QAndroidJniObject SSLEngineResult::getHandshakeStatus()
+	javax::net::ssl::SSLEngineResult_HandshakeStatus SSLEngineResult::getHandshakeStatus()
 	{
 		return callObjectMethod(
 			"getHandshakeStatus",
 			"()Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
 		);
 	}
-	QAndroidJniObject SSLEngineResult::getStatus()
+	javax::net::ssl::SSLEngineResult_Status SSLEngineResult::getStatus()
 	{
 		return callObjectMethod(
 			"getStatus",

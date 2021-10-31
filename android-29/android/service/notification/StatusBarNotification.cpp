@@ -6,7 +6,7 @@
 namespace android::service::notification
 {
 	// Fields
-	QAndroidJniObject StatusBarNotification::CREATOR()
+	__JniBaseClass StatusBarNotification::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.notification.StatusBarNotification",
@@ -42,7 +42,7 @@ namespace android::service::notification
 		) {}
 	
 	// Methods
-	QAndroidJniObject StatusBarNotification::clone()
+	android::service::notification::StatusBarNotification StatusBarNotification::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -77,7 +77,7 @@ namespace android::service::notification
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject StatusBarNotification::getNotification()
+	android::app::Notification StatusBarNotification::getNotification()
 	{
 		return callObjectMethod(
 			"getNotification",
@@ -126,7 +126,7 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	QAndroidJniObject StatusBarNotification::getUser()
+	android::os::UserHandle StatusBarNotification::getUser()
 	{
 		return callObjectMethod(
 			"getUser",

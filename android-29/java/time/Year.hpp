@@ -55,19 +55,19 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject from(__JniBaseClass arg0);
+		static java::time::Year from(__JniBaseClass arg0);
 		static jboolean isLeap(jlong arg0);
-		static QAndroidJniObject now();
-		static QAndroidJniObject now(java::time::Clock arg0);
-		static QAndroidJniObject now(java::time::ZoneId arg0);
-		static QAndroidJniObject of(jint arg0);
-		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		QAndroidJniObject adjustInto(__JniBaseClass arg0);
-		QAndroidJniObject atDay(jint arg0);
-		QAndroidJniObject atMonth(jint arg0);
-		QAndroidJniObject atMonth(java::time::Month arg0);
-		QAndroidJniObject atMonthDay(java::time::MonthDay arg0);
+		static java::time::Year now();
+		static java::time::Year now(java::time::Clock arg0);
+		static java::time::Year now(java::time::ZoneId arg0);
+		static java::time::Year of(jint arg0);
+		static java::time::Year parse(jstring arg0);
+		static java::time::Year parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
+		__JniBaseClass adjustInto(__JniBaseClass arg0);
+		java::time::LocalDate atDay(jint arg0);
+		java::time::YearMonth atMonth(jint arg0);
+		java::time::YearMonth atMonth(java::time::Month arg0);
+		java::time::LocalDate atMonthDay(java::time::MonthDay arg0);
 		jint compareTo(jobject arg0);
 		jint compareTo(java::time::Year arg0);
 		jboolean equals(jobject arg0);
@@ -82,18 +82,18 @@ namespace java::time
 		jboolean isSupported(__JniBaseClass arg0);
 		jboolean isValidMonthDay(java::time::MonthDay arg0);
 		jint length();
-		QAndroidJniObject minus(__JniBaseClass arg0);
-		QAndroidJniObject minus(jlong arg0, __JniBaseClass arg1);
-		QAndroidJniObject minusYears(jlong arg0);
-		QAndroidJniObject plus(__JniBaseClass arg0);
-		QAndroidJniObject plus(jlong arg0, __JniBaseClass arg1);
-		QAndroidJniObject plusYears(jlong arg0);
+		java::time::Year minus(__JniBaseClass arg0);
+		java::time::Year minus(jlong arg0, __JniBaseClass arg1);
+		java::time::Year minusYears(jlong arg0);
+		java::time::Year plus(__JniBaseClass arg0);
+		java::time::Year plus(jlong arg0, __JniBaseClass arg1);
+		java::time::Year plusYears(jlong arg0);
 		jobject query(__JniBaseClass arg0);
-		QAndroidJniObject range(__JniBaseClass arg0);
+		java::time::temporal::ValueRange range(__JniBaseClass arg0);
 		jstring toString();
 		jlong until(__JniBaseClass arg0, __JniBaseClass arg1);
-		QAndroidJniObject with(__JniBaseClass arg0);
-		QAndroidJniObject with(__JniBaseClass arg0, jlong arg1);
+		java::time::Year with(__JniBaseClass arg0);
+		java::time::Year with(__JniBaseClass arg0, jlong arg1);
 	};
 } // namespace java::time
 

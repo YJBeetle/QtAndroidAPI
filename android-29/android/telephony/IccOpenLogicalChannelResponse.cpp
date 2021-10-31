@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject IccOpenLogicalChannelResponse::CREATOR()
+	__JniBaseClass IccOpenLogicalChannelResponse::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.IccOpenLogicalChannelResponse",

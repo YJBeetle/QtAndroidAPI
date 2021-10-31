@@ -31,7 +31,7 @@ namespace java::security
 		PrivilegedActionException(java::lang::Exception arg0);
 		
 		// Methods
-		QAndroidJniObject getException();
+		java::lang::Exception getException();
 		jstring toString();
 	};
 } // namespace java::security

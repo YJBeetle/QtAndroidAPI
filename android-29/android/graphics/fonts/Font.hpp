@@ -35,10 +35,10 @@ namespace android::graphics::fonts
 		// Methods
 		jboolean equals(jobject arg0);
 		jarray getAxes();
-		QAndroidJniObject getBuffer();
-		QAndroidJniObject getFile();
-		QAndroidJniObject getLocaleList();
-		QAndroidJniObject getStyle();
+		java::nio::ByteBuffer getBuffer();
+		java::io::File getFile();
+		android::os::LocaleList getLocaleList();
+		android::graphics::fonts::FontStyle getStyle();
 		jint getTtcIndex();
 		jint hashCode();
 		jstring toString();

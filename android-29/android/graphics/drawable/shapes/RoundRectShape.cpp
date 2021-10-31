@@ -24,7 +24,7 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	QAndroidJniObject RoundRectShape::clone()
+	android::graphics::drawable::shapes::RoundRectShape RoundRectShape::clone()
 	{
 		return callObjectMethod(
 			"clone",

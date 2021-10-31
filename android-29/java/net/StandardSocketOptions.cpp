@@ -3,7 +3,7 @@
 namespace java::net
 {
 	// Fields
-	QAndroidJniObject StandardSocketOptions::IP_MULTICAST_IF()
+	__JniBaseClass StandardSocketOptions::IP_MULTICAST_IF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -11,7 +11,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::IP_MULTICAST_LOOP()
+	__JniBaseClass StandardSocketOptions::IP_MULTICAST_LOOP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -19,7 +19,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::IP_MULTICAST_TTL()
+	__JniBaseClass StandardSocketOptions::IP_MULTICAST_TTL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -27,7 +27,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::IP_TOS()
+	__JniBaseClass StandardSocketOptions::IP_TOS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -35,7 +35,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::SO_BROADCAST()
+	__JniBaseClass StandardSocketOptions::SO_BROADCAST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -43,7 +43,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::SO_KEEPALIVE()
+	__JniBaseClass StandardSocketOptions::SO_KEEPALIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -51,7 +51,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::SO_LINGER()
+	__JniBaseClass StandardSocketOptions::SO_LINGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -59,7 +59,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::SO_RCVBUF()
+	__JniBaseClass StandardSocketOptions::SO_RCVBUF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -67,7 +67,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::SO_REUSEADDR()
+	__JniBaseClass StandardSocketOptions::SO_REUSEADDR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -75,7 +75,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::SO_REUSEPORT()
+	__JniBaseClass StandardSocketOptions::SO_REUSEPORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -83,7 +83,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::SO_SNDBUF()
+	__JniBaseClass StandardSocketOptions::SO_SNDBUF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -91,7 +91,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	QAndroidJniObject StandardSocketOptions::TCP_NODELAY()
+	__JniBaseClass StandardSocketOptions::TCP_NODELAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.StandardSocketOptions",

@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject UiccCardInfo::CREATOR()
+	__JniBaseClass UiccCardInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.UiccCardInfo",

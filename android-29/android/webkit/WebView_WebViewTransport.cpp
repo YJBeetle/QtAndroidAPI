@@ -17,7 +17,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	QAndroidJniObject WebView_WebViewTransport::getWebView()
+	android::webkit::WebView WebView_WebViewTransport::getWebView()
 	{
 		return callObjectMethod(
 			"getWebView",

@@ -26,7 +26,7 @@ namespace java::text
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject BreakIterator::getCharacterInstance()
+	java::text::BreakIterator BreakIterator::getCharacterInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.BreakIterator",
@@ -34,7 +34,7 @@ namespace java::text
 			"()Ljava/text/BreakIterator;"
 		);
 	}
-	QAndroidJniObject BreakIterator::getCharacterInstance(java::util::Locale arg0)
+	java::text::BreakIterator BreakIterator::getCharacterInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.BreakIterator",
@@ -43,7 +43,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getLineInstance()
+	java::text::BreakIterator BreakIterator::getLineInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.BreakIterator",
@@ -51,7 +51,7 @@ namespace java::text
 			"()Ljava/text/BreakIterator;"
 		);
 	}
-	QAndroidJniObject BreakIterator::getLineInstance(java::util::Locale arg0)
+	java::text::BreakIterator BreakIterator::getLineInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.BreakIterator",
@@ -60,7 +60,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getSentenceInstance()
+	java::text::BreakIterator BreakIterator::getSentenceInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.BreakIterator",
@@ -68,7 +68,7 @@ namespace java::text
 			"()Ljava/text/BreakIterator;"
 		);
 	}
-	QAndroidJniObject BreakIterator::getSentenceInstance(java::util::Locale arg0)
+	java::text::BreakIterator BreakIterator::getSentenceInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.BreakIterator",
@@ -77,7 +77,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BreakIterator::getWordInstance()
+	java::text::BreakIterator BreakIterator::getWordInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.BreakIterator",
@@ -85,7 +85,7 @@ namespace java::text
 			"()Ljava/text/BreakIterator;"
 		);
 	}
-	QAndroidJniObject BreakIterator::getWordInstance(java::util::Locale arg0)
+	java::text::BreakIterator BreakIterator::getWordInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.BreakIterator",
@@ -123,7 +123,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject BreakIterator::getText()
+	__JniBaseClass BreakIterator::getText()
 	{
 		return callObjectMethod(
 			"getText",

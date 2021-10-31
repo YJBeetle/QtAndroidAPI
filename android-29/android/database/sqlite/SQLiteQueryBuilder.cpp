@@ -147,14 +147,14 @@ namespace android::database::sqlite
 			arg2
 		);
 	}
-	QAndroidJniObject SQLiteQueryBuilder::getCursorFactory()
+	__JniBaseClass SQLiteQueryBuilder::getCursorFactory()
 	{
 		return callObjectMethod(
 			"getCursorFactory",
 			"()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;"
 		);
 	}
-	QAndroidJniObject SQLiteQueryBuilder::getProjectionMap()
+	__JniBaseClass SQLiteQueryBuilder::getProjectionMap()
 	{
 		return callObjectMethod(
 			"getProjectionMap",
@@ -182,7 +182,7 @@ namespace android::database::sqlite
 			"()Z"
 		);
 	}
-	QAndroidJniObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6)
+	__JniBaseClass SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6)
 	{
 		return callObjectMethod(
 			"query",
@@ -196,7 +196,7 @@ namespace android::database::sqlite
 			arg6
 		);
 	}
-	QAndroidJniObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
+	__JniBaseClass SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
 	{
 		return callObjectMethod(
 			"query",
@@ -211,7 +211,7 @@ namespace android::database::sqlite
 			arg7
 		);
 	}
-	QAndroidJniObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7, android::os::CancellationSignal arg8)
+	__JniBaseClass SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7, android::os::CancellationSignal arg8)
 	{
 		return callObjectMethod(
 			"query",

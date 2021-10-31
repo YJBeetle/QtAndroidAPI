@@ -16,7 +16,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject EventListenerProxy::getListener()
+	__JniBaseClass EventListenerProxy::getListener()
 	{
 		return callObjectMethod(
 			"getListener",

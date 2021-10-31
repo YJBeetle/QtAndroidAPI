@@ -27,7 +27,7 @@ namespace javax::security::auth
 		
 		// Methods
 		jarray combine(jarray arg0, jarray arg1);
-		QAndroidJniObject getSubject();
+		javax::security::auth::Subject getSubject();
 	};
 } // namespace javax::security::auth
 

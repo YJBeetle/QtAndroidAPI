@@ -33,7 +33,7 @@ namespace android::speech
 		) {}
 	
 	// Methods
-	QAndroidJniObject RecognitionService::onBind(android::content::Intent arg0)
+	__JniBaseClass RecognitionService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

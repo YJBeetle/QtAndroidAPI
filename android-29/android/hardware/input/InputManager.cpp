@@ -28,7 +28,7 @@ namespace android::hardware::input
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject InputManager::getInputDevice(jint arg0)
+	android::view::InputDevice InputManager::getInputDevice(jint arg0)
 	{
 		return callObjectMethod(
 			"getInputDevice",

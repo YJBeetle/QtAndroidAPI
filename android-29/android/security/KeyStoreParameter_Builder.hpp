@@ -26,8 +26,8 @@ namespace android::security
 		KeyStoreParameter_Builder(android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setEncryptionRequired(jboolean arg0);
+		android::security::KeyStoreParameter build();
+		android::security::KeyStoreParameter_Builder setEncryptionRequired(jboolean arg0);
 	};
 } // namespace android::security
 

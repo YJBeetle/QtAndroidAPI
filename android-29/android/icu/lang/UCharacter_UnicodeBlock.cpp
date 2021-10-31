@@ -3,7 +3,7 @@
 namespace android::icu::lang
 {
 	// Fields
-	QAndroidJniObject UCharacter_UnicodeBlock::ADLAM()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ADLAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -18,7 +18,7 @@ namespace android::icu::lang
 			"ADLAM_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::AEGEAN_NUMBERS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::AEGEAN_NUMBERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -33,7 +33,7 @@ namespace android::icu::lang
 			"AEGEAN_NUMBERS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::AHOM()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::AHOM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -48,7 +48,7 @@ namespace android::icu::lang
 			"AHOM_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ALCHEMICAL_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ALCHEMICAL_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -63,7 +63,7 @@ namespace android::icu::lang
 			"ALCHEMICAL_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ALPHABETIC_PRESENTATION_FORMS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ALPHABETIC_PRESENTATION_FORMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -78,7 +78,7 @@ namespace android::icu::lang
 			"ALPHABETIC_PRESENTATION_FORMS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ANATOLIAN_HIEROGLYPHS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ANATOLIAN_HIEROGLYPHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -93,7 +93,7 @@ namespace android::icu::lang
 			"ANATOLIAN_HIEROGLYPHS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ANCIENT_GREEK_MUSICAL_NOTATION()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ANCIENT_GREEK_MUSICAL_NOTATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -108,7 +108,7 @@ namespace android::icu::lang
 			"ANCIENT_GREEK_MUSICAL_NOTATION_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ANCIENT_GREEK_NUMBERS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ANCIENT_GREEK_NUMBERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -123,7 +123,7 @@ namespace android::icu::lang
 			"ANCIENT_GREEK_NUMBERS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ANCIENT_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ANCIENT_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -138,7 +138,7 @@ namespace android::icu::lang
 			"ANCIENT_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ARABIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -146,7 +146,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ARABIC_EXTENDED_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC_EXTENDED_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -168,7 +168,7 @@ namespace android::icu::lang
 			"ARABIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -183,7 +183,7 @@ namespace android::icu::lang
 			"ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ARABIC_PRESENTATION_FORMS_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC_PRESENTATION_FORMS_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -198,7 +198,7 @@ namespace android::icu::lang
 			"ARABIC_PRESENTATION_FORMS_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ARABIC_PRESENTATION_FORMS_B()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC_PRESENTATION_FORMS_B()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -213,7 +213,7 @@ namespace android::icu::lang
 			"ARABIC_PRESENTATION_FORMS_B_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ARABIC_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -228,7 +228,7 @@ namespace android::icu::lang
 			"ARABIC_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ARMENIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARMENIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -243,7 +243,7 @@ namespace android::icu::lang
 			"ARMENIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ARROWS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARROWS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -258,7 +258,7 @@ namespace android::icu::lang
 			"ARROWS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::AVESTAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::AVESTAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -273,7 +273,7 @@ namespace android::icu::lang
 			"AVESTAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BALINESE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BALINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -288,7 +288,7 @@ namespace android::icu::lang
 			"BALINESE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BAMUM()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BAMUM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -303,7 +303,7 @@ namespace android::icu::lang
 			"BAMUM_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BAMUM_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BAMUM_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -318,7 +318,7 @@ namespace android::icu::lang
 			"BAMUM_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BASIC_LATIN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BASIC_LATIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -333,7 +333,7 @@ namespace android::icu::lang
 			"BASIC_LATIN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BASSA_VAH()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BASSA_VAH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -348,7 +348,7 @@ namespace android::icu::lang
 			"BASSA_VAH_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BATAK()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BATAK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -363,7 +363,7 @@ namespace android::icu::lang
 			"BATAK_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BENGALI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BENGALI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -378,7 +378,7 @@ namespace android::icu::lang
 			"BENGALI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BHAIKSUKI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BHAIKSUKI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -393,7 +393,7 @@ namespace android::icu::lang
 			"BHAIKSUKI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BLOCK_ELEMENTS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BLOCK_ELEMENTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -408,7 +408,7 @@ namespace android::icu::lang
 			"BLOCK_ELEMENTS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BOPOMOFO()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BOPOMOFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -416,7 +416,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BOPOMOFO_EXTENDED()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BOPOMOFO_EXTENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -438,7 +438,7 @@ namespace android::icu::lang
 			"BOPOMOFO_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BOX_DRAWING()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BOX_DRAWING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -453,7 +453,7 @@ namespace android::icu::lang
 			"BOX_DRAWING_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BRAHMI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BRAHMI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -468,7 +468,7 @@ namespace android::icu::lang
 			"BRAHMI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BRAILLE_PATTERNS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BRAILLE_PATTERNS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -483,7 +483,7 @@ namespace android::icu::lang
 			"BRAILLE_PATTERNS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BUGINESE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BUGINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -498,7 +498,7 @@ namespace android::icu::lang
 			"BUGINESE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BUHID()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BUHID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -513,7 +513,7 @@ namespace android::icu::lang
 			"BUHID_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::BYZANTINE_MUSICAL_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BYZANTINE_MUSICAL_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -528,7 +528,7 @@ namespace android::icu::lang
 			"BYZANTINE_MUSICAL_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CARIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CARIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -543,7 +543,7 @@ namespace android::icu::lang
 			"CARIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CAUCASIAN_ALBANIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CAUCASIAN_ALBANIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -558,7 +558,7 @@ namespace android::icu::lang
 			"CAUCASIAN_ALBANIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CHAKMA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHAKMA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -573,7 +573,7 @@ namespace android::icu::lang
 			"CHAKMA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CHAM()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -588,7 +588,7 @@ namespace android::icu::lang
 			"CHAM_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CHEROKEE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHEROKEE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -603,7 +603,7 @@ namespace android::icu::lang
 			"CHEROKEE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CHEROKEE_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHEROKEE_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -618,7 +618,7 @@ namespace android::icu::lang
 			"CHEROKEE_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CHESS_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHESS_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -633,7 +633,7 @@ namespace android::icu::lang
 			"CHESS_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_COMPATIBILITY()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_COMPATIBILITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -641,7 +641,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_COMPATIBILITY_FORMS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_COMPATIBILITY_FORMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -663,7 +663,7 @@ namespace android::icu::lang
 			"CJK_COMPATIBILITY_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_COMPATIBILITY_IDEOGRAPHS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_COMPATIBILITY_IDEOGRAPHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -678,7 +678,7 @@ namespace android::icu::lang
 			"CJK_COMPATIBILITY_IDEOGRAPHS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -693,7 +693,7 @@ namespace android::icu::lang
 			"CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_RADICALS_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_RADICALS_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -708,7 +708,7 @@ namespace android::icu::lang
 			"CJK_RADICALS_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_STROKES()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_STROKES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -723,7 +723,7 @@ namespace android::icu::lang
 			"CJK_STROKES_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_SYMBOLS_AND_PUNCTUATION()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_SYMBOLS_AND_PUNCTUATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -738,7 +738,7 @@ namespace android::icu::lang
 			"CJK_SYMBOLS_AND_PUNCTUATION_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -746,7 +746,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -761,7 +761,7 @@ namespace android::icu::lang
 			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -776,7 +776,7 @@ namespace android::icu::lang
 			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -791,7 +791,7 @@ namespace android::icu::lang
 			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -806,7 +806,7 @@ namespace android::icu::lang
 			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -821,7 +821,7 @@ namespace android::icu::lang
 			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -843,7 +843,7 @@ namespace android::icu::lang
 			"CJK_UNIFIED_IDEOGRAPHS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -851,7 +851,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS_EXTENDED()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS_EXTENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -873,7 +873,7 @@ namespace android::icu::lang
 			"COMBINING_DIACRITICAL_MARKS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -888,7 +888,7 @@ namespace android::icu::lang
 			"COMBINING_DIACRITICAL_MARKS_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::COMBINING_HALF_MARKS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMBINING_HALF_MARKS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -903,7 +903,7 @@ namespace android::icu::lang
 			"COMBINING_HALF_MARKS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::COMBINING_MARKS_FOR_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMBINING_MARKS_FOR_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -918,7 +918,7 @@ namespace android::icu::lang
 			"COMBINING_MARKS_FOR_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::COMMON_INDIC_NUMBER_FORMS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMMON_INDIC_NUMBER_FORMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -933,7 +933,7 @@ namespace android::icu::lang
 			"COMMON_INDIC_NUMBER_FORMS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CONTROL_PICTURES()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CONTROL_PICTURES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -948,7 +948,7 @@ namespace android::icu::lang
 			"CONTROL_PICTURES_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::COPTIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COPTIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -956,7 +956,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::COPTIC_EPACT_NUMBERS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COPTIC_EPACT_NUMBERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -978,7 +978,7 @@ namespace android::icu::lang
 			"COPTIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::COUNTING_ROD_NUMERALS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COUNTING_ROD_NUMERALS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -993,7 +993,7 @@ namespace android::icu::lang
 			"COUNTING_ROD_NUMERALS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CUNEIFORM()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CUNEIFORM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1008,7 +1008,7 @@ namespace android::icu::lang
 			"CUNEIFORM_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CUNEIFORM_NUMBERS_AND_PUNCTUATION()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CUNEIFORM_NUMBERS_AND_PUNCTUATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1023,7 +1023,7 @@ namespace android::icu::lang
 			"CUNEIFORM_NUMBERS_AND_PUNCTUATION_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CURRENCY_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CURRENCY_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1038,7 +1038,7 @@ namespace android::icu::lang
 			"CURRENCY_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CYPRIOT_SYLLABARY()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYPRIOT_SYLLABARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1053,7 +1053,7 @@ namespace android::icu::lang
 			"CYPRIOT_SYLLABARY_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CYRILLIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1061,7 +1061,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1076,7 +1076,7 @@ namespace android::icu::lang
 			"CYRILLIC_EXTENDED_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_B()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_B()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1091,7 +1091,7 @@ namespace android::icu::lang
 			"CYRILLIC_EXTENDED_B_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_C()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_C()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1113,7 +1113,7 @@ namespace android::icu::lang
 			"CYRILLIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CYRILLIC_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1121,7 +1121,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::CYRILLIC_SUPPLEMENTARY()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC_SUPPLEMENTARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1143,7 +1143,7 @@ namespace android::icu::lang
 			"CYRILLIC_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::DESERET()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DESERET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1158,7 +1158,7 @@ namespace android::icu::lang
 			"DESERET_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::DEVANAGARI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DEVANAGARI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1166,7 +1166,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::DEVANAGARI_EXTENDED()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DEVANAGARI_EXTENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1188,7 +1188,7 @@ namespace android::icu::lang
 			"DEVANAGARI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::DINGBATS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DINGBATS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1203,7 +1203,7 @@ namespace android::icu::lang
 			"DINGBATS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::DOGRA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DOGRA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1218,7 +1218,7 @@ namespace android::icu::lang
 			"DOGRA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::DOMINO_TILES()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DOMINO_TILES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1233,7 +1233,7 @@ namespace android::icu::lang
 			"DOMINO_TILES_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::DUPLOYAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DUPLOYAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1248,7 +1248,7 @@ namespace android::icu::lang
 			"DUPLOYAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::EARLY_DYNASTIC_CUNEIFORM()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::EARLY_DYNASTIC_CUNEIFORM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1263,7 +1263,7 @@ namespace android::icu::lang
 			"EARLY_DYNASTIC_CUNEIFORM_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::EGYPTIAN_HIEROGLYPHS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::EGYPTIAN_HIEROGLYPHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1278,7 +1278,7 @@ namespace android::icu::lang
 			"EGYPTIAN_HIEROGLYPHS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ELBASAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ELBASAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1293,7 +1293,7 @@ namespace android::icu::lang
 			"ELBASAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::EMOTICONS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::EMOTICONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1308,7 +1308,7 @@ namespace android::icu::lang
 			"EMOTICONS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ENCLOSED_ALPHANUMERICS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ENCLOSED_ALPHANUMERICS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1323,7 +1323,7 @@ namespace android::icu::lang
 			"ENCLOSED_ALPHANUMERICS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ENCLOSED_ALPHANUMERIC_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ENCLOSED_ALPHANUMERIC_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1338,7 +1338,7 @@ namespace android::icu::lang
 			"ENCLOSED_ALPHANUMERIC_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ENCLOSED_CJK_LETTERS_AND_MONTHS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ENCLOSED_CJK_LETTERS_AND_MONTHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1353,7 +1353,7 @@ namespace android::icu::lang
 			"ENCLOSED_CJK_LETTERS_AND_MONTHS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ENCLOSED_IDEOGRAPHIC_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ENCLOSED_IDEOGRAPHIC_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1368,7 +1368,7 @@ namespace android::icu::lang
 			"ENCLOSED_IDEOGRAPHIC_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ETHIOPIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ETHIOPIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1376,7 +1376,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ETHIOPIC_EXTENDED()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ETHIOPIC_EXTENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1384,7 +1384,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ETHIOPIC_EXTENDED_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ETHIOPIC_EXTENDED_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1413,7 +1413,7 @@ namespace android::icu::lang
 			"ETHIOPIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ETHIOPIC_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ETHIOPIC_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1428,7 +1428,7 @@ namespace android::icu::lang
 			"ETHIOPIC_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GENERAL_PUNCTUATION()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GENERAL_PUNCTUATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1443,7 +1443,7 @@ namespace android::icu::lang
 			"GENERAL_PUNCTUATION_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GEOMETRIC_SHAPES()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GEOMETRIC_SHAPES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1451,7 +1451,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GEOMETRIC_SHAPES_EXTENDED()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GEOMETRIC_SHAPES_EXTENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1473,7 +1473,7 @@ namespace android::icu::lang
 			"GEOMETRIC_SHAPES_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GEORGIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GEORGIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1481,7 +1481,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GEORGIAN_EXTENDED()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GEORGIAN_EXTENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1503,7 +1503,7 @@ namespace android::icu::lang
 			"GEORGIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GEORGIAN_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GEORGIAN_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1518,7 +1518,7 @@ namespace android::icu::lang
 			"GEORGIAN_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GLAGOLITIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GLAGOLITIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1533,7 +1533,7 @@ namespace android::icu::lang
 			"GLAGOLITIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GLAGOLITIC_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GLAGOLITIC_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1548,7 +1548,7 @@ namespace android::icu::lang
 			"GLAGOLITIC_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GOTHIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GOTHIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1563,7 +1563,7 @@ namespace android::icu::lang
 			"GOTHIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GRANTHA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GRANTHA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1578,7 +1578,7 @@ namespace android::icu::lang
 			"GRANTHA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GREEK()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GREEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1586,7 +1586,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GREEK_EXTENDED()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GREEK_EXTENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1608,7 +1608,7 @@ namespace android::icu::lang
 			"GREEK_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GUJARATI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GUJARATI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1623,7 +1623,7 @@ namespace android::icu::lang
 			"GUJARATI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GUNJALA_GONDI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GUNJALA_GONDI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1638,7 +1638,7 @@ namespace android::icu::lang
 			"GUNJALA_GONDI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::GURMUKHI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GURMUKHI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1653,7 +1653,7 @@ namespace android::icu::lang
 			"GURMUKHI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HALFWIDTH_AND_FULLWIDTH_FORMS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HALFWIDTH_AND_FULLWIDTH_FORMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1668,7 +1668,7 @@ namespace android::icu::lang
 			"HALFWIDTH_AND_FULLWIDTH_FORMS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HANGUL_COMPATIBILITY_JAMO()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANGUL_COMPATIBILITY_JAMO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1683,7 +1683,7 @@ namespace android::icu::lang
 			"HANGUL_COMPATIBILITY_JAMO_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HANGUL_JAMO()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANGUL_JAMO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1691,7 +1691,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HANGUL_JAMO_EXTENDED_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANGUL_JAMO_EXTENDED_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1706,7 +1706,7 @@ namespace android::icu::lang
 			"HANGUL_JAMO_EXTENDED_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HANGUL_JAMO_EXTENDED_B()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANGUL_JAMO_EXTENDED_B()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1728,7 +1728,7 @@ namespace android::icu::lang
 			"HANGUL_JAMO_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HANGUL_SYLLABLES()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANGUL_SYLLABLES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1743,7 +1743,7 @@ namespace android::icu::lang
 			"HANGUL_SYLLABLES_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HANIFI_ROHINGYA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANIFI_ROHINGYA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1758,7 +1758,7 @@ namespace android::icu::lang
 			"HANIFI_ROHINGYA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HANUNOO()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANUNOO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1773,7 +1773,7 @@ namespace android::icu::lang
 			"HANUNOO_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HATRAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HATRAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1788,7 +1788,7 @@ namespace android::icu::lang
 			"HATRAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HEBREW()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HEBREW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1803,7 +1803,7 @@ namespace android::icu::lang
 			"HEBREW_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HIGH_PRIVATE_USE_SURROGATES()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HIGH_PRIVATE_USE_SURROGATES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1818,7 +1818,7 @@ namespace android::icu::lang
 			"HIGH_PRIVATE_USE_SURROGATES_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HIGH_SURROGATES()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HIGH_SURROGATES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1833,7 +1833,7 @@ namespace android::icu::lang
 			"HIGH_SURROGATES_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::HIRAGANA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HIRAGANA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1848,7 +1848,7 @@ namespace android::icu::lang
 			"HIRAGANA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::IDEOGRAPHIC_DESCRIPTION_CHARACTERS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::IDEOGRAPHIC_DESCRIPTION_CHARACTERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1863,7 +1863,7 @@ namespace android::icu::lang
 			"IDEOGRAPHIC_DESCRIPTION_CHARACTERS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1878,7 +1878,7 @@ namespace android::icu::lang
 			"IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::IMPERIAL_ARAMAIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::IMPERIAL_ARAMAIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1893,7 +1893,7 @@ namespace android::icu::lang
 			"IMPERIAL_ARAMAIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::INDIC_SIYAQ_NUMBERS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::INDIC_SIYAQ_NUMBERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1908,7 +1908,7 @@ namespace android::icu::lang
 			"INDIC_SIYAQ_NUMBERS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::INSCRIPTIONAL_PAHLAVI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::INSCRIPTIONAL_PAHLAVI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1923,7 +1923,7 @@ namespace android::icu::lang
 			"INSCRIPTIONAL_PAHLAVI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::INSCRIPTIONAL_PARTHIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::INSCRIPTIONAL_PARTHIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1938,7 +1938,7 @@ namespace android::icu::lang
 			"INSCRIPTIONAL_PARTHIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::INVALID_CODE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::INVALID_CODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1953,7 +1953,7 @@ namespace android::icu::lang
 			"INVALID_CODE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::IPA_EXTENSIONS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::IPA_EXTENSIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1968,7 +1968,7 @@ namespace android::icu::lang
 			"IPA_EXTENSIONS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::JAVANESE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::JAVANESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1983,7 +1983,7 @@ namespace android::icu::lang
 			"JAVANESE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KAITHI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KAITHI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -1998,7 +1998,7 @@ namespace android::icu::lang
 			"KAITHI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KANA_EXTENDED_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KANA_EXTENDED_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2013,7 +2013,7 @@ namespace android::icu::lang
 			"KANA_EXTENDED_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KANA_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KANA_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2028,7 +2028,7 @@ namespace android::icu::lang
 			"KANA_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KANBUN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KANBUN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2043,7 +2043,7 @@ namespace android::icu::lang
 			"KANBUN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KANGXI_RADICALS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KANGXI_RADICALS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2058,7 +2058,7 @@ namespace android::icu::lang
 			"KANGXI_RADICALS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KANNADA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KANNADA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2073,7 +2073,7 @@ namespace android::icu::lang
 			"KANNADA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KATAKANA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KATAKANA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2088,7 +2088,7 @@ namespace android::icu::lang
 			"KATAKANA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KATAKANA_PHONETIC_EXTENSIONS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KATAKANA_PHONETIC_EXTENSIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2103,7 +2103,7 @@ namespace android::icu::lang
 			"KATAKANA_PHONETIC_EXTENSIONS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KAYAH_LI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KAYAH_LI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2118,7 +2118,7 @@ namespace android::icu::lang
 			"KAYAH_LI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KHAROSHTHI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHAROSHTHI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2133,7 +2133,7 @@ namespace android::icu::lang
 			"KHAROSHTHI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KHMER()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHMER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2148,7 +2148,7 @@ namespace android::icu::lang
 			"KHMER_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KHMER_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHMER_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2163,7 +2163,7 @@ namespace android::icu::lang
 			"KHMER_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KHOJKI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHOJKI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2178,7 +2178,7 @@ namespace android::icu::lang
 			"KHOJKI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::KHUDAWADI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHUDAWADI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2193,7 +2193,7 @@ namespace android::icu::lang
 			"KHUDAWADI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LAO()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LAO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2208,7 +2208,7 @@ namespace android::icu::lang
 			"LAO_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LATIN_1_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_1_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2223,7 +2223,7 @@ namespace android::icu::lang
 			"LATIN_1_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LATIN_EXTENDED_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2231,7 +2231,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LATIN_EXTENDED_ADDITIONAL()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_ADDITIONAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2253,7 +2253,7 @@ namespace android::icu::lang
 			"LATIN_EXTENDED_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LATIN_EXTENDED_B()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_B()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2268,7 +2268,7 @@ namespace android::icu::lang
 			"LATIN_EXTENDED_B_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LATIN_EXTENDED_C()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_C()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2283,7 +2283,7 @@ namespace android::icu::lang
 			"LATIN_EXTENDED_C_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LATIN_EXTENDED_D()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_D()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2298,7 +2298,7 @@ namespace android::icu::lang
 			"LATIN_EXTENDED_D_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LATIN_EXTENDED_E()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_E()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2313,7 +2313,7 @@ namespace android::icu::lang
 			"LATIN_EXTENDED_E_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LEPCHA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LEPCHA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2328,7 +2328,7 @@ namespace android::icu::lang
 			"LEPCHA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LETTERLIKE_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LETTERLIKE_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2343,7 +2343,7 @@ namespace android::icu::lang
 			"LETTERLIKE_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LIMBU()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LIMBU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2358,7 +2358,7 @@ namespace android::icu::lang
 			"LIMBU_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LINEAR_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LINEAR_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2373,7 +2373,7 @@ namespace android::icu::lang
 			"LINEAR_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LINEAR_B_IDEOGRAMS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LINEAR_B_IDEOGRAMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2388,7 +2388,7 @@ namespace android::icu::lang
 			"LINEAR_B_IDEOGRAMS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LINEAR_B_SYLLABARY()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LINEAR_B_SYLLABARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2403,7 +2403,7 @@ namespace android::icu::lang
 			"LINEAR_B_SYLLABARY_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LISU()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LISU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2418,7 +2418,7 @@ namespace android::icu::lang
 			"LISU_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LOW_SURROGATES()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LOW_SURROGATES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2433,7 +2433,7 @@ namespace android::icu::lang
 			"LOW_SURROGATES_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LYCIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LYCIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2448,7 +2448,7 @@ namespace android::icu::lang
 			"LYCIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::LYDIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LYDIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2463,7 +2463,7 @@ namespace android::icu::lang
 			"LYDIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MAHAJANI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MAHAJANI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2478,7 +2478,7 @@ namespace android::icu::lang
 			"MAHAJANI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MAHJONG_TILES()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MAHJONG_TILES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2493,7 +2493,7 @@ namespace android::icu::lang
 			"MAHJONG_TILES_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MAKASAR()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MAKASAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2508,7 +2508,7 @@ namespace android::icu::lang
 			"MAKASAR_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MALAYALAM()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MALAYALAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2523,7 +2523,7 @@ namespace android::icu::lang
 			"MALAYALAM_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MANDAIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MANDAIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2538,7 +2538,7 @@ namespace android::icu::lang
 			"MANDAIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MANICHAEAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MANICHAEAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2553,7 +2553,7 @@ namespace android::icu::lang
 			"MANICHAEAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MARCHEN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MARCHEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2568,7 +2568,7 @@ namespace android::icu::lang
 			"MARCHEN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MASARAM_GONDI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MASARAM_GONDI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2583,7 +2583,7 @@ namespace android::icu::lang
 			"MASARAM_GONDI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MATHEMATICAL_ALPHANUMERIC_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MATHEMATICAL_ALPHANUMERIC_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2598,7 +2598,7 @@ namespace android::icu::lang
 			"MATHEMATICAL_ALPHANUMERIC_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MATHEMATICAL_OPERATORS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MATHEMATICAL_OPERATORS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2613,7 +2613,7 @@ namespace android::icu::lang
 			"MATHEMATICAL_OPERATORS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MAYAN_NUMERALS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MAYAN_NUMERALS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2628,7 +2628,7 @@ namespace android::icu::lang
 			"MAYAN_NUMERALS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MEDEFAIDRIN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MEDEFAIDRIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2643,7 +2643,7 @@ namespace android::icu::lang
 			"MEDEFAIDRIN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MEETEI_MAYEK()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MEETEI_MAYEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2651,7 +2651,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MEETEI_MAYEK_EXTENSIONS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MEETEI_MAYEK_EXTENSIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2673,7 +2673,7 @@ namespace android::icu::lang
 			"MEETEI_MAYEK_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MENDE_KIKAKUI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MENDE_KIKAKUI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2688,7 +2688,7 @@ namespace android::icu::lang
 			"MENDE_KIKAKUI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MEROITIC_CURSIVE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MEROITIC_CURSIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2703,7 +2703,7 @@ namespace android::icu::lang
 			"MEROITIC_CURSIVE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MEROITIC_HIEROGLYPHS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MEROITIC_HIEROGLYPHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2718,7 +2718,7 @@ namespace android::icu::lang
 			"MEROITIC_HIEROGLYPHS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MIAO()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MIAO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2733,7 +2733,7 @@ namespace android::icu::lang
 			"MIAO_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2748,7 +2748,7 @@ namespace android::icu::lang
 			"MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2763,7 +2763,7 @@ namespace android::icu::lang
 			"MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2771,7 +2771,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS_AND_ARROWS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS_AND_ARROWS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2786,7 +2786,7 @@ namespace android::icu::lang
 			"MISCELLANEOUS_SYMBOLS_AND_ARROWS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2808,7 +2808,7 @@ namespace android::icu::lang
 			"MISCELLANEOUS_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MISCELLANEOUS_TECHNICAL()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_TECHNICAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2823,7 +2823,7 @@ namespace android::icu::lang
 			"MISCELLANEOUS_TECHNICAL_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MODI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MODI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2831,7 +2831,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MODIFIER_TONE_LETTERS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MODIFIER_TONE_LETTERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2853,7 +2853,7 @@ namespace android::icu::lang
 			"MODI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MONGOLIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MONGOLIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2868,7 +2868,7 @@ namespace android::icu::lang
 			"MONGOLIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MONGOLIAN_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MONGOLIAN_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2883,7 +2883,7 @@ namespace android::icu::lang
 			"MONGOLIAN_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MRO()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MRO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2898,7 +2898,7 @@ namespace android::icu::lang
 			"MRO_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MULTANI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MULTANI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2913,7 +2913,7 @@ namespace android::icu::lang
 			"MULTANI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MUSICAL_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MUSICAL_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2928,7 +2928,7 @@ namespace android::icu::lang
 			"MUSICAL_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MYANMAR()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MYANMAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2936,7 +2936,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MYANMAR_EXTENDED_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MYANMAR_EXTENDED_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2951,7 +2951,7 @@ namespace android::icu::lang
 			"MYANMAR_EXTENDED_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::MYANMAR_EXTENDED_B()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MYANMAR_EXTENDED_B()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2973,7 +2973,7 @@ namespace android::icu::lang
 			"MYANMAR_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::NABATAEAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NABATAEAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -2988,7 +2988,7 @@ namespace android::icu::lang
 			"NABATAEAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::NEWA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NEWA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3003,7 +3003,7 @@ namespace android::icu::lang
 			"NEWA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::NEW_TAI_LUE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NEW_TAI_LUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3018,7 +3018,7 @@ namespace android::icu::lang
 			"NEW_TAI_LUE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::NKO()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NKO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3033,7 +3033,7 @@ namespace android::icu::lang
 			"NKO_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::NO_BLOCK()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NO_BLOCK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3041,7 +3041,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::NUMBER_FORMS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NUMBER_FORMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3056,7 +3056,7 @@ namespace android::icu::lang
 			"NUMBER_FORMS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::NUSHU()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NUSHU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3071,7 +3071,7 @@ namespace android::icu::lang
 			"NUSHU_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OGHAM()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OGHAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3086,7 +3086,7 @@ namespace android::icu::lang
 			"OGHAM_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OLD_HUNGARIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_HUNGARIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3101,7 +3101,7 @@ namespace android::icu::lang
 			"OLD_HUNGARIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OLD_ITALIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_ITALIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3116,7 +3116,7 @@ namespace android::icu::lang
 			"OLD_ITALIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OLD_NORTH_ARABIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_NORTH_ARABIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3131,7 +3131,7 @@ namespace android::icu::lang
 			"OLD_NORTH_ARABIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OLD_PERMIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_PERMIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3146,7 +3146,7 @@ namespace android::icu::lang
 			"OLD_PERMIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OLD_PERSIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_PERSIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3161,7 +3161,7 @@ namespace android::icu::lang
 			"OLD_PERSIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OLD_SOGDIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_SOGDIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3176,7 +3176,7 @@ namespace android::icu::lang
 			"OLD_SOGDIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OLD_SOUTH_ARABIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_SOUTH_ARABIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3191,7 +3191,7 @@ namespace android::icu::lang
 			"OLD_SOUTH_ARABIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OLD_TURKIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_TURKIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3206,7 +3206,7 @@ namespace android::icu::lang
 			"OLD_TURKIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OL_CHIKI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OL_CHIKI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3221,7 +3221,7 @@ namespace android::icu::lang
 			"OL_CHIKI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OPTICAL_CHARACTER_RECOGNITION()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OPTICAL_CHARACTER_RECOGNITION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3236,7 +3236,7 @@ namespace android::icu::lang
 			"OPTICAL_CHARACTER_RECOGNITION_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ORIYA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ORIYA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3251,7 +3251,7 @@ namespace android::icu::lang
 			"ORIYA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ORNAMENTAL_DINGBATS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ORNAMENTAL_DINGBATS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3266,7 +3266,7 @@ namespace android::icu::lang
 			"ORNAMENTAL_DINGBATS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OSAGE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OSAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3281,7 +3281,7 @@ namespace android::icu::lang
 			"OSAGE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::OSMANYA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OSMANYA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3296,7 +3296,7 @@ namespace android::icu::lang
 			"OSMANYA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PAHAWH_HMONG()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PAHAWH_HMONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3311,7 +3311,7 @@ namespace android::icu::lang
 			"PAHAWH_HMONG_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PALMYRENE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PALMYRENE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3326,7 +3326,7 @@ namespace android::icu::lang
 			"PALMYRENE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PAU_CIN_HAU()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PAU_CIN_HAU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3341,7 +3341,7 @@ namespace android::icu::lang
 			"PAU_CIN_HAU_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PHAGS_PA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PHAGS_PA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3356,7 +3356,7 @@ namespace android::icu::lang
 			"PHAGS_PA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PHAISTOS_DISC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PHAISTOS_DISC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3371,7 +3371,7 @@ namespace android::icu::lang
 			"PHAISTOS_DISC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PHOENICIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PHOENICIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3386,7 +3386,7 @@ namespace android::icu::lang
 			"PHOENICIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PHONETIC_EXTENSIONS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PHONETIC_EXTENSIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3401,7 +3401,7 @@ namespace android::icu::lang
 			"PHONETIC_EXTENSIONS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PHONETIC_EXTENSIONS_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PHONETIC_EXTENSIONS_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3416,7 +3416,7 @@ namespace android::icu::lang
 			"PHONETIC_EXTENSIONS_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PLAYING_CARDS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PLAYING_CARDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3431,7 +3431,7 @@ namespace android::icu::lang
 			"PLAYING_CARDS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PRIVATE_USE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PRIVATE_USE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3439,7 +3439,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PRIVATE_USE_AREA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PRIVATE_USE_AREA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3461,7 +3461,7 @@ namespace android::icu::lang
 			"PRIVATE_USE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::PSALTER_PAHLAVI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PSALTER_PAHLAVI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3476,7 +3476,7 @@ namespace android::icu::lang
 			"PSALTER_PAHLAVI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::REJANG()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::REJANG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3491,7 +3491,7 @@ namespace android::icu::lang
 			"REJANG_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::RUMI_NUMERAL_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::RUMI_NUMERAL_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3506,7 +3506,7 @@ namespace android::icu::lang
 			"RUMI_NUMERAL_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::RUNIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::RUNIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3521,7 +3521,7 @@ namespace android::icu::lang
 			"RUNIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SAMARITAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SAMARITAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3536,7 +3536,7 @@ namespace android::icu::lang
 			"SAMARITAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SAURASHTRA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SAURASHTRA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3551,7 +3551,7 @@ namespace android::icu::lang
 			"SAURASHTRA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SHARADA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SHARADA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3566,7 +3566,7 @@ namespace android::icu::lang
 			"SHARADA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SHAVIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SHAVIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3581,7 +3581,7 @@ namespace android::icu::lang
 			"SHAVIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SHORTHAND_FORMAT_CONTROLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SHORTHAND_FORMAT_CONTROLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3596,7 +3596,7 @@ namespace android::icu::lang
 			"SHORTHAND_FORMAT_CONTROLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SIDDHAM()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SIDDHAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3611,7 +3611,7 @@ namespace android::icu::lang
 			"SIDDHAM_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SINHALA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SINHALA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3619,7 +3619,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SINHALA_ARCHAIC_NUMBERS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SINHALA_ARCHAIC_NUMBERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3641,7 +3641,7 @@ namespace android::icu::lang
 			"SINHALA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SMALL_FORM_VARIANTS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SMALL_FORM_VARIANTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3656,7 +3656,7 @@ namespace android::icu::lang
 			"SMALL_FORM_VARIANTS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SOGDIAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SOGDIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3671,7 +3671,7 @@ namespace android::icu::lang
 			"SOGDIAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SORA_SOMPENG()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SORA_SOMPENG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3686,7 +3686,7 @@ namespace android::icu::lang
 			"SORA_SOMPENG_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SOYOMBO()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SOYOMBO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3701,7 +3701,7 @@ namespace android::icu::lang
 			"SOYOMBO_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SPACING_MODIFIER_LETTERS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SPACING_MODIFIER_LETTERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3716,7 +3716,7 @@ namespace android::icu::lang
 			"SPACING_MODIFIER_LETTERS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SPECIALS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SPECIALS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3731,7 +3731,7 @@ namespace android::icu::lang
 			"SPECIALS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUNDANESE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUNDANESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3746,7 +3746,7 @@ namespace android::icu::lang
 			"SUNDANESE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUNDANESE_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUNDANESE_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3761,7 +3761,7 @@ namespace android::icu::lang
 			"SUNDANESE_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUPERSCRIPTS_AND_SUBSCRIPTS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPERSCRIPTS_AND_SUBSCRIPTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3776,7 +3776,7 @@ namespace android::icu::lang
 			"SUPERSCRIPTS_AND_SUBSCRIPTS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3791,7 +3791,7 @@ namespace android::icu::lang
 			"SUPPLEMENTAL_ARROWS_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_B()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_B()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3806,7 +3806,7 @@ namespace android::icu::lang
 			"SUPPLEMENTAL_ARROWS_B_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_C()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_C()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3821,7 +3821,7 @@ namespace android::icu::lang
 			"SUPPLEMENTAL_ARROWS_C_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUPPLEMENTAL_MATHEMATICAL_OPERATORS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_MATHEMATICAL_OPERATORS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3836,7 +3836,7 @@ namespace android::icu::lang
 			"SUPPLEMENTAL_MATHEMATICAL_OPERATORS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUPPLEMENTAL_PUNCTUATION()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_PUNCTUATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3851,7 +3851,7 @@ namespace android::icu::lang
 			"SUPPLEMENTAL_PUNCTUATION_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3866,7 +3866,7 @@ namespace android::icu::lang
 			"SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUPPLEMENTARY_PRIVATE_USE_AREA_A()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTARY_PRIVATE_USE_AREA_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3881,7 +3881,7 @@ namespace android::icu::lang
 			"SUPPLEMENTARY_PRIVATE_USE_AREA_A_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUPPLEMENTARY_PRIVATE_USE_AREA_B()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTARY_PRIVATE_USE_AREA_B()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3896,7 +3896,7 @@ namespace android::icu::lang
 			"SUPPLEMENTARY_PRIVATE_USE_AREA_B_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SUTTON_SIGNWRITING()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUTTON_SIGNWRITING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3911,7 +3911,7 @@ namespace android::icu::lang
 			"SUTTON_SIGNWRITING_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SYLOTI_NAGRI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SYLOTI_NAGRI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3926,7 +3926,7 @@ namespace android::icu::lang
 			"SYLOTI_NAGRI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SYRIAC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SYRIAC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3941,7 +3941,7 @@ namespace android::icu::lang
 			"SYRIAC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::SYRIAC_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SYRIAC_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3956,7 +3956,7 @@ namespace android::icu::lang
 			"SYRIAC_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TAGALOG()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAGALOG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3971,7 +3971,7 @@ namespace android::icu::lang
 			"TAGALOG_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TAGBANWA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAGBANWA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -3986,7 +3986,7 @@ namespace android::icu::lang
 			"TAGBANWA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TAGS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAGS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4001,7 +4001,7 @@ namespace android::icu::lang
 			"TAGS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TAI_LE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAI_LE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4016,7 +4016,7 @@ namespace android::icu::lang
 			"TAI_LE_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TAI_THAM()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAI_THAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4031,7 +4031,7 @@ namespace android::icu::lang
 			"TAI_THAM_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TAI_VIET()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAI_VIET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4046,7 +4046,7 @@ namespace android::icu::lang
 			"TAI_VIET_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TAI_XUAN_JING_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAI_XUAN_JING_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4061,7 +4061,7 @@ namespace android::icu::lang
 			"TAI_XUAN_JING_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TAKRI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAKRI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4076,7 +4076,7 @@ namespace android::icu::lang
 			"TAKRI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TAMIL()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAMIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4091,7 +4091,7 @@ namespace android::icu::lang
 			"TAMIL_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TANGUT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TANGUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4099,7 +4099,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TANGUT_COMPONENTS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TANGUT_COMPONENTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4121,7 +4121,7 @@ namespace android::icu::lang
 			"TANGUT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TELUGU()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TELUGU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4136,7 +4136,7 @@ namespace android::icu::lang
 			"TELUGU_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::THAANA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::THAANA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4151,7 +4151,7 @@ namespace android::icu::lang
 			"THAANA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::THAI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::THAI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4166,7 +4166,7 @@ namespace android::icu::lang
 			"THAI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TIBETAN()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TIBETAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4181,7 +4181,7 @@ namespace android::icu::lang
 			"TIBETAN_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TIFINAGH()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TIFINAGH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4196,7 +4196,7 @@ namespace android::icu::lang
 			"TIFINAGH_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TIRHUTA()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TIRHUTA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4211,7 +4211,7 @@ namespace android::icu::lang
 			"TIRHUTA_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::TRANSPORT_AND_MAP_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TRANSPORT_AND_MAP_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4226,7 +4226,7 @@ namespace android::icu::lang
 			"TRANSPORT_AND_MAP_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::UGARITIC()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::UGARITIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4241,7 +4241,7 @@ namespace android::icu::lang
 			"UGARITIC_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4249,7 +4249,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4271,7 +4271,7 @@ namespace android::icu::lang
 			"UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::VAI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::VAI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4286,7 +4286,7 @@ namespace android::icu::lang
 			"VAI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::VARIATION_SELECTORS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::VARIATION_SELECTORS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4301,7 +4301,7 @@ namespace android::icu::lang
 			"VARIATION_SELECTORS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::VARIATION_SELECTORS_SUPPLEMENT()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::VARIATION_SELECTORS_SUPPLEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4316,7 +4316,7 @@ namespace android::icu::lang
 			"VARIATION_SELECTORS_SUPPLEMENT_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::VEDIC_EXTENSIONS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::VEDIC_EXTENSIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4331,7 +4331,7 @@ namespace android::icu::lang
 			"VEDIC_EXTENSIONS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::VERTICAL_FORMS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::VERTICAL_FORMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4346,7 +4346,7 @@ namespace android::icu::lang
 			"VERTICAL_FORMS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::WARANG_CITI()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::WARANG_CITI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4361,7 +4361,7 @@ namespace android::icu::lang
 			"WARANG_CITI_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::YIJING_HEXAGRAM_SYMBOLS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::YIJING_HEXAGRAM_SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4376,7 +4376,7 @@ namespace android::icu::lang
 			"YIJING_HEXAGRAM_SYMBOLS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::YI_RADICALS()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::YI_RADICALS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4391,7 +4391,7 @@ namespace android::icu::lang
 			"YI_RADICALS_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::YI_SYLLABLES()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::YI_SYLLABLES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4406,7 +4406,7 @@ namespace android::icu::lang
 			"YI_SYLLABLES_ID"
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::ZANABAZAR_SQUARE()
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ZANABAZAR_SQUARE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4428,7 +4428,7 @@ namespace android::icu::lang
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject UCharacter_UnicodeBlock::forName(jstring arg0)
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::forName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4437,7 +4437,7 @@ namespace android::icu::lang
 			arg0
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::getInstance(jint arg0)
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::getInstance(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UCharacter$UnicodeBlock",
@@ -4446,7 +4446,7 @@ namespace android::icu::lang
 			arg0
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::of(jint arg0)
+	android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UCharacter$UnicodeBlock",

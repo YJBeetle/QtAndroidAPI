@@ -59,7 +59,7 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	QAndroidJniObject LensShadingMap::getGainFactorVector(jint arg0, jint arg1)
+	android::hardware::camera2::params::RggbChannelVector LensShadingMap::getGainFactorVector(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getGainFactorVector",

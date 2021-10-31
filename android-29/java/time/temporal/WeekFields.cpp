@@ -6,7 +6,7 @@
 namespace java::time::temporal
 {
 	// Fields
-	QAndroidJniObject WeekFields::ISO()
+	java::time::temporal::WeekFields WeekFields::ISO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.WeekFields",
@@ -14,7 +14,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/WeekFields;"
 		);
 	}
-	QAndroidJniObject WeekFields::SUNDAY_START()
+	java::time::temporal::WeekFields WeekFields::SUNDAY_START()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.WeekFields",
@@ -22,7 +22,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/WeekFields;"
 		);
 	}
-	QAndroidJniObject WeekFields::WEEK_BASED_YEARS()
+	__JniBaseClass WeekFields::WEEK_BASED_YEARS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.WeekFields",
@@ -37,7 +37,7 @@ namespace java::time::temporal
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WeekFields::of(java::util::Locale arg0)
+	java::time::temporal::WeekFields WeekFields::of(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.WeekFields",
@@ -46,7 +46,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WeekFields::of(java::time::DayOfWeek arg0, jint arg1)
+	java::time::temporal::WeekFields WeekFields::of(java::time::DayOfWeek arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.WeekFields",
@@ -56,7 +56,7 @@ namespace java::time::temporal
 			arg1
 		);
 	}
-	QAndroidJniObject WeekFields::dayOfWeek()
+	__JniBaseClass WeekFields::dayOfWeek()
 	{
 		return callObjectMethod(
 			"dayOfWeek",
@@ -71,7 +71,7 @@ namespace java::time::temporal
 			arg0
 		);
 	}
-	QAndroidJniObject WeekFields::getFirstDayOfWeek()
+	java::time::DayOfWeek WeekFields::getFirstDayOfWeek()
 	{
 		return callObjectMethod(
 			"getFirstDayOfWeek",
@@ -99,28 +99,28 @@ namespace java::time::temporal
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WeekFields::weekBasedYear()
+	__JniBaseClass WeekFields::weekBasedYear()
 	{
 		return callObjectMethod(
 			"weekBasedYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	QAndroidJniObject WeekFields::weekOfMonth()
+	__JniBaseClass WeekFields::weekOfMonth()
 	{
 		return callObjectMethod(
 			"weekOfMonth",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	QAndroidJniObject WeekFields::weekOfWeekBasedYear()
+	__JniBaseClass WeekFields::weekOfWeekBasedYear()
 	{
 		return callObjectMethod(
 			"weekOfWeekBasedYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	QAndroidJniObject WeekFields::weekOfYear()
+	__JniBaseClass WeekFields::weekOfYear()
 	{
 		return callObjectMethod(
 			"weekOfYear",

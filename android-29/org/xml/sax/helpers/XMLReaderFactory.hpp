@@ -21,8 +21,8 @@ namespace org::xml::sax::helpers
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createXMLReader();
-		static QAndroidJniObject createXMLReader(jstring arg0);
+		static __JniBaseClass createXMLReader();
+		static __JniBaseClass createXMLReader(jstring arg0);
 	};
 } // namespace org::xml::sax::helpers
 

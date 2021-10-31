@@ -21,7 +21,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	QAndroidJniObject PKIXCertPathBuilderResult::getCertPath()
+	java::security::cert::CertPath PKIXCertPathBuilderResult::getCertPath()
 	{
 		return callObjectMethod(
 			"getCertPath",

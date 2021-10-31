@@ -33,9 +33,9 @@ namespace android::transition
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject from(android::content::Context arg0);
-		QAndroidJniObject inflateTransition(jint arg0);
-		QAndroidJniObject inflateTransitionManager(jint arg0, android::view::ViewGroup arg1);
+		static android::transition::TransitionInflater from(android::content::Context arg0);
+		android::transition::Transition inflateTransition(jint arg0);
+		android::transition::TransitionManager inflateTransitionManager(jint arg0, android::view::ViewGroup arg1);
 	};
 } // namespace android::transition
 

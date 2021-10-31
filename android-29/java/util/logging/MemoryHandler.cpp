@@ -40,7 +40,7 @@ namespace java::util::logging
 			"()V"
 		);
 	}
-	QAndroidJniObject MemoryHandler::getPushLevel()
+	java::util::logging::Level MemoryHandler::getPushLevel()
 	{
 		return callObjectMethod(
 			"getPushLevel",

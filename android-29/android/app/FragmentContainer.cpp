@@ -16,7 +16,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject FragmentContainer::onFindViewById(jint arg0)
+	android::view::View FragmentContainer::onFindViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"onFindViewById",

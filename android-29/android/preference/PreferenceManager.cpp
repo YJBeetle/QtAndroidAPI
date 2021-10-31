@@ -29,7 +29,7 @@ namespace android::preference
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PreferenceManager::getDefaultSharedPreferences(android::content::Context arg0)
+	__JniBaseClass PreferenceManager::getDefaultSharedPreferences(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.preference.PreferenceManager",
@@ -71,7 +71,7 @@ namespace android::preference
 			arg4
 		);
 	}
-	QAndroidJniObject PreferenceManager::createPreferenceScreen(android::content::Context arg0)
+	android::preference::PreferenceScreen PreferenceManager::createPreferenceScreen(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"createPreferenceScreen",
@@ -79,7 +79,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PreferenceManager::findPreference(jstring arg0)
+	android::preference::Preference PreferenceManager::findPreference(jstring arg0)
 	{
 		return callObjectMethod(
 			"findPreference",
@@ -87,14 +87,14 @@ namespace android::preference
 			arg0
 		);
 	}
-	QAndroidJniObject PreferenceManager::getPreferenceDataStore()
+	__JniBaseClass PreferenceManager::getPreferenceDataStore()
 	{
 		return callObjectMethod(
 			"getPreferenceDataStore",
 			"()Landroid/preference/PreferenceDataStore;"
 		);
 	}
-	QAndroidJniObject PreferenceManager::getSharedPreferences()
+	__JniBaseClass PreferenceManager::getSharedPreferences()
 	{
 		return callObjectMethod(
 			"getSharedPreferences",

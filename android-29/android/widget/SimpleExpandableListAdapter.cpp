@@ -76,7 +76,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject SimpleExpandableListAdapter::getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4)
+	android::view::View SimpleExpandableListAdapter::getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4)
 	{
 		return callObjectMethod(
 			"getChildView",
@@ -119,7 +119,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject SimpleExpandableListAdapter::getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3)
+	android::view::View SimpleExpandableListAdapter::getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3)
 	{
 		return callObjectMethod(
 			"getGroupView",
@@ -146,7 +146,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject SimpleExpandableListAdapter::newChildView(jboolean arg0, android::view::ViewGroup arg1)
+	android::view::View SimpleExpandableListAdapter::newChildView(jboolean arg0, android::view::ViewGroup arg1)
 	{
 		return callObjectMethod(
 			"newChildView",
@@ -155,7 +155,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SimpleExpandableListAdapter::newGroupView(jboolean arg0, android::view::ViewGroup arg1)
+	android::view::View SimpleExpandableListAdapter::newGroupView(jboolean arg0, android::view::ViewGroup arg1)
 	{
 		return callObjectMethod(
 			"newGroupView",

@@ -4,14 +4,14 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject LocaleDisplayNames_UiListItem::minimized()
+	android::icu::util::ULocale LocaleDisplayNames_UiListItem::minimized()
 	{
 		return getObjectField(
 			"minimized",
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames_UiListItem::modified()
+	android::icu::util::ULocale LocaleDisplayNames_UiListItem::modified()
 	{
 		return getObjectField(
 			"modified",
@@ -48,7 +48,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject LocaleDisplayNames_UiListItem::getComparator(__JniBaseClass arg0, jboolean arg1)
+	__JniBaseClass LocaleDisplayNames_UiListItem::getComparator(__JniBaseClass arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames$UiListItem",

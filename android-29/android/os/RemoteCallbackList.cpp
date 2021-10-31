@@ -37,7 +37,7 @@ namespace android::os
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject RemoteCallbackList::getBroadcastItem(jint arg0)
+	__JniBaseClass RemoteCallbackList::getBroadcastItem(jint arg0)
 	{
 		return callObjectMethod(
 			"getBroadcastItem",
@@ -60,7 +60,7 @@ namespace android::os
 			"()I"
 		);
 	}
-	QAndroidJniObject RemoteCallbackList::getRegisteredCallbackItem(jint arg0)
+	__JniBaseClass RemoteCallbackList::getRegisteredCallbackItem(jint arg0)
 	{
 		return callObjectMethod(
 			"getRegisteredCallbackItem",

@@ -39,25 +39,25 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createFromRules(jstring arg0, jstring arg1, jint arg2);
-		static QAndroidJniObject getAvailableIDs();
-		static QAndroidJniObject getAvailableSources();
-		static QAndroidJniObject getAvailableTargets(jstring arg0);
-		static QAndroidJniObject getAvailableVariants(jstring arg0, jstring arg1);
+		static android::icu::text::Transliterator createFromRules(jstring arg0, jstring arg1, jint arg2);
+		static __JniBaseClass getAvailableIDs();
+		static __JniBaseClass getAvailableSources();
+		static __JniBaseClass getAvailableTargets(jstring arg0);
+		static __JniBaseClass getAvailableVariants(jstring arg0, jstring arg1);
 		static jstring getDisplayName(jstring arg0);
 		static jstring getDisplayName(jstring arg0, android::icu::util::ULocale arg1);
 		static jstring getDisplayName(jstring arg0, java::util::Locale arg1);
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(jstring arg0, jint arg1);
+		static android::icu::text::Transliterator getInstance(jstring arg0);
+		static android::icu::text::Transliterator getInstance(jstring arg0, jint arg1);
 		void filteredTransliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, jboolean arg2);
 		void finishTransliteration(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1);
 		jarray getElements();
-		QAndroidJniObject getFilter();
+		android::icu::text::UnicodeFilter getFilter();
 		jstring getID();
-		QAndroidJniObject getInverse();
+		android::icu::text::Transliterator getInverse();
 		jint getMaximumContextLength();
-		QAndroidJniObject getSourceSet();
-		QAndroidJniObject getTargetSet();
+		android::icu::text::UnicodeSet getSourceSet();
+		android::icu::text::UnicodeSet getTargetSet();
 		void setFilter(android::icu::text::UnicodeFilter arg0);
 		jstring toRules(jboolean arg0);
 		jint transliterate(__JniBaseClass arg0, jint arg1, jint arg2);

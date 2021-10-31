@@ -5,7 +5,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject TextLinks_TextLink::CREATOR()
+	__JniBaseClass TextLinks_TextLink::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextLinks$TextLink",
@@ -57,7 +57,7 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject TextLinks_TextLink::getExtras()
+	android::os::Bundle TextLinks_TextLink::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

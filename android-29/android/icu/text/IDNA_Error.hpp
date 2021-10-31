@@ -10,21 +10,21 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BIDI();
-		static QAndroidJniObject CONTEXTJ();
-		static QAndroidJniObject CONTEXTO_DIGITS();
-		static QAndroidJniObject CONTEXTO_PUNCTUATION();
-		static QAndroidJniObject DISALLOWED();
-		static QAndroidJniObject DOMAIN_NAME_TOO_LONG();
-		static QAndroidJniObject EMPTY_LABEL();
-		static QAndroidJniObject HYPHEN_3_4();
-		static QAndroidJniObject INVALID_ACE_LABEL();
-		static QAndroidJniObject LABEL_HAS_DOT();
-		static QAndroidJniObject LABEL_TOO_LONG();
-		static QAndroidJniObject LEADING_COMBINING_MARK();
-		static QAndroidJniObject LEADING_HYPHEN();
-		static QAndroidJniObject PUNYCODE();
-		static QAndroidJniObject TRAILING_HYPHEN();
+		static android::icu::text::IDNA_Error BIDI();
+		static android::icu::text::IDNA_Error CONTEXTJ();
+		static android::icu::text::IDNA_Error CONTEXTO_DIGITS();
+		static android::icu::text::IDNA_Error CONTEXTO_PUNCTUATION();
+		static android::icu::text::IDNA_Error DISALLOWED();
+		static android::icu::text::IDNA_Error DOMAIN_NAME_TOO_LONG();
+		static android::icu::text::IDNA_Error EMPTY_LABEL();
+		static android::icu::text::IDNA_Error HYPHEN_3_4();
+		static android::icu::text::IDNA_Error INVALID_ACE_LABEL();
+		static android::icu::text::IDNA_Error LABEL_HAS_DOT();
+		static android::icu::text::IDNA_Error LABEL_TOO_LONG();
+		static android::icu::text::IDNA_Error LEADING_COMBINING_MARK();
+		static android::icu::text::IDNA_Error LEADING_HYPHEN();
+		static android::icu::text::IDNA_Error PUNYCODE();
+		static android::icu::text::IDNA_Error TRAILING_HYPHEN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IDNA_Error(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,7 +33,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::IDNA_Error valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

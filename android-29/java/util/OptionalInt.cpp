@@ -10,7 +10,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject OptionalInt::empty()
+	java::util::OptionalInt OptionalInt::empty()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.OptionalInt",
@@ -18,7 +18,7 @@ namespace java::util
 			"()Ljava/util/OptionalInt;"
 		);
 	}
-	QAndroidJniObject OptionalInt::of(jint arg0)
+	java::util::OptionalInt OptionalInt::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.OptionalInt",
@@ -111,7 +111,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OptionalInt::stream()
+	__JniBaseClass OptionalInt::stream()
 	{
 		return callObjectMethod(
 			"stream",

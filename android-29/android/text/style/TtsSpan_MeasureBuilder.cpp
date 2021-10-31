@@ -15,7 +15,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_MeasureBuilder::setDenominator(jstring arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setDenominator(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDenominator",
@@ -23,7 +23,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setDenominator(jlong arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setDenominator(jlong arg0)
 	{
 		return callObjectMethod(
 			"setDenominator",
@@ -31,7 +31,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setFractionalPart(jstring arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setFractionalPart(jstring arg0)
 	{
 		return callObjectMethod(
 			"setFractionalPart",
@@ -39,7 +39,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setIntegerPart(jstring arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setIntegerPart(jstring arg0)
 	{
 		return callObjectMethod(
 			"setIntegerPart",
@@ -47,7 +47,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setIntegerPart(jlong arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setIntegerPart(jlong arg0)
 	{
 		return callObjectMethod(
 			"setIntegerPart",
@@ -55,7 +55,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setNumber(jstring arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumber(jstring arg0)
 	{
 		return callObjectMethod(
 			"setNumber",
@@ -63,7 +63,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setNumber(jlong arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumber(jlong arg0)
 	{
 		return callObjectMethod(
 			"setNumber",
@@ -71,7 +71,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setNumerator(jstring arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumerator(jstring arg0)
 	{
 		return callObjectMethod(
 			"setNumerator",
@@ -79,7 +79,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setNumerator(jlong arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setNumerator(jlong arg0)
 	{
 		return callObjectMethod(
 			"setNumerator",
@@ -87,7 +87,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setUnit(jstring arg0)
+	android::text::style::TtsSpan_MeasureBuilder TtsSpan_MeasureBuilder::setUnit(jstring arg0)
 	{
 		return callObjectMethod(
 			"setUnit",

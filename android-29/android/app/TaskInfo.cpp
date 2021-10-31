@@ -6,14 +6,14 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject TaskInfo::baseActivity()
+	android::content::ComponentName TaskInfo::baseActivity()
 	{
 		return getObjectField(
 			"baseActivity",
 			"Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject TaskInfo::baseIntent()
+	android::content::Intent TaskInfo::baseIntent()
 	{
 		return getObjectField(
 			"baseIntent",
@@ -32,14 +32,14 @@ namespace android::app
 			"numActivities"
 		);
 	}
-	QAndroidJniObject TaskInfo::origActivity()
+	android::content::ComponentName TaskInfo::origActivity()
 	{
 		return getObjectField(
 			"origActivity",
 			"Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject TaskInfo::taskDescription()
+	android::app::ActivityManager_TaskDescription TaskInfo::taskDescription()
 	{
 		return getObjectField(
 			"taskDescription",
@@ -52,7 +52,7 @@ namespace android::app
 			"taskId"
 		);
 	}
-	QAndroidJniObject TaskInfo::topActivity()
+	android::content::ComponentName TaskInfo::topActivity()
 	{
 		return getObjectField(
 			"topActivity",

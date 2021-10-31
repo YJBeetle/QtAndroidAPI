@@ -11,7 +11,7 @@ namespace java::time::temporal
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ValueRange::of(jlong arg0, jlong arg1)
+	java::time::temporal::ValueRange ValueRange::of(jlong arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.ValueRange",
@@ -21,7 +21,7 @@ namespace java::time::temporal
 			arg1
 		);
 	}
-	QAndroidJniObject ValueRange::of(jlong arg0, jlong arg1, jlong arg2)
+	java::time::temporal::ValueRange ValueRange::of(jlong arg0, jlong arg1, jlong arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.ValueRange",
@@ -32,7 +32,7 @@ namespace java::time::temporal
 			arg2
 		);
 	}
-	QAndroidJniObject ValueRange::of(jlong arg0, jlong arg1, jlong arg2, jlong arg3)
+	java::time::temporal::ValueRange ValueRange::of(jlong arg0, jlong arg1, jlong arg2, jlong arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.ValueRange",

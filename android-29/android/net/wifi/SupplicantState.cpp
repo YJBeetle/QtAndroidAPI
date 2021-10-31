@@ -4,7 +4,7 @@
 namespace android::net::wifi
 {
 	// Fields
-	QAndroidJniObject SupplicantState::ASSOCIATED()
+	android::net::wifi::SupplicantState SupplicantState::ASSOCIATED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -12,7 +12,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::ASSOCIATING()
+	android::net::wifi::SupplicantState SupplicantState::ASSOCIATING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -20,7 +20,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::AUTHENTICATING()
+	android::net::wifi::SupplicantState SupplicantState::AUTHENTICATING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -28,7 +28,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::COMPLETED()
+	android::net::wifi::SupplicantState SupplicantState::COMPLETED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -36,7 +36,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::DISCONNECTED()
+	android::net::wifi::SupplicantState SupplicantState::DISCONNECTED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -44,7 +44,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::DORMANT()
+	android::net::wifi::SupplicantState SupplicantState::DORMANT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -52,7 +52,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::FOUR_WAY_HANDSHAKE()
+	android::net::wifi::SupplicantState SupplicantState::FOUR_WAY_HANDSHAKE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -60,7 +60,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::GROUP_HANDSHAKE()
+	android::net::wifi::SupplicantState SupplicantState::GROUP_HANDSHAKE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -68,7 +68,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::INACTIVE()
+	android::net::wifi::SupplicantState SupplicantState::INACTIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -76,7 +76,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::INTERFACE_DISABLED()
+	android::net::wifi::SupplicantState SupplicantState::INTERFACE_DISABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -84,7 +84,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::INVALID()
+	android::net::wifi::SupplicantState SupplicantState::INVALID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -92,7 +92,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::SCANNING()
+	android::net::wifi::SupplicantState SupplicantState::SCANNING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -100,7 +100,7 @@ namespace android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::UNINITIALIZED()
+	android::net::wifi::SupplicantState SupplicantState::UNINITIALIZED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
@@ -124,7 +124,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SupplicantState::valueOf(jstring arg0)
+	android::net::wifi::SupplicantState SupplicantState::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.wifi.SupplicantState",

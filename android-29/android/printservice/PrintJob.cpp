@@ -67,21 +67,21 @@ namespace android::printservice
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject PrintJob::getDocument()
+	android::printservice::PrintDocument PrintJob::getDocument()
 	{
 		return callObjectMethod(
 			"getDocument",
 			"()Landroid/printservice/PrintDocument;"
 		);
 	}
-	QAndroidJniObject PrintJob::getId()
+	android::print::PrintJobId PrintJob::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Landroid/print/PrintJobId;"
 		);
 	}
-	QAndroidJniObject PrintJob::getInfo()
+	android::print::PrintJobInfo PrintJob::getInfo()
 	{
 		return callObjectMethod(
 			"getInfo",

@@ -121,11 +121,11 @@ namespace android::media
 		MediaPlayer();
 		
 		// Methods
-		static QAndroidJniObject create(android::content::Context arg0, android::net::Uri arg1);
-		static QAndroidJniObject create(android::content::Context arg0, jint arg1);
-		static QAndroidJniObject create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2);
-		static QAndroidJniObject create(android::content::Context arg0, jint arg1, android::media::AudioAttributes arg2, jint arg3);
-		static QAndroidJniObject create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2, android::media::AudioAttributes arg3, jint arg4);
+		static android::media::MediaPlayer create(android::content::Context arg0, android::net::Uri arg1);
+		static android::media::MediaPlayer create(android::content::Context arg0, jint arg1);
+		static android::media::MediaPlayer create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2);
+		static android::media::MediaPlayer create(android::content::Context arg0, jint arg1, android::media::AudioAttributes arg2, jint arg3);
+		static android::media::MediaPlayer create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2, android::media::AudioAttributes arg3, jint arg4);
 		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
 		void addTimedTextSource(java::io::FileDescriptor arg0, jstring arg1);
 		void addTimedTextSource(jstring arg0, jstring arg1);
@@ -134,21 +134,21 @@ namespace android::media
 		void attachAuxEffect(jint arg0);
 		void clearOnMediaTimeDiscontinuityListener();
 		void clearOnSubtitleDataListener();
-		QAndroidJniObject createVolumeShaper(android::media::VolumeShaper_Configuration arg0);
+		android::media::VolumeShaper createVolumeShaper(android::media::VolumeShaper_Configuration arg0);
 		void deselectTrack(jint arg0);
 		jint getAudioSessionId();
 		jint getCurrentPosition();
-		QAndroidJniObject getDrmInfo();
+		android::media::MediaPlayer_DrmInfo getDrmInfo();
 		jstring getDrmPropertyString(jstring arg0);
 		jint getDuration();
-		QAndroidJniObject getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, __JniBaseClass arg4);
-		QAndroidJniObject getMetrics();
-		QAndroidJniObject getPlaybackParams();
-		QAndroidJniObject getPreferredDevice();
-		QAndroidJniObject getRoutedDevice();
+		android::media::MediaDrm_KeyRequest getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, __JniBaseClass arg4);
+		android::os::PersistableBundle getMetrics();
+		android::media::PlaybackParams getPlaybackParams();
+		android::media::AudioDeviceInfo getPreferredDevice();
+		android::media::AudioDeviceInfo getRoutedDevice();
 		jint getSelectedTrack(jint arg0);
-		QAndroidJniObject getSyncParams();
-		QAndroidJniObject getTimestamp();
+		android::media::SyncParams getSyncParams();
+		android::media::MediaTimestamp getTimestamp();
 		jarray getTrackInfo();
 		jint getVideoHeight();
 		jint getVideoWidth();

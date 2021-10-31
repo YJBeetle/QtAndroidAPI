@@ -32,9 +32,9 @@ namespace android::graphics::drawable
 		// Methods
 		jboolean canApplyTheme();
 		jint getChangingConfigurations();
-		QAndroidJniObject newDrawable();
-		QAndroidJniObject newDrawable(android::content::res::Resources arg0);
-		QAndroidJniObject newDrawable(android::content::res::Resources arg0, android::content::res::Resources_Theme arg1);
+		android::graphics::drawable::Drawable newDrawable();
+		android::graphics::drawable::Drawable newDrawable(android::content::res::Resources arg0);
+		android::graphics::drawable::Drawable newDrawable(android::content::res::Resources arg0, android::content::res::Resources_Theme arg1);
 	};
 } // namespace android::graphics::drawable
 

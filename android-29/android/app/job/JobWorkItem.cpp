@@ -5,7 +5,7 @@
 namespace android::app::job
 {
 	// Fields
-	QAndroidJniObject JobWorkItem::CREATOR()
+	__JniBaseClass JobWorkItem::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.job.JobWorkItem",
@@ -62,7 +62,7 @@ namespace android::app::job
 			"()J"
 		);
 	}
-	QAndroidJniObject JobWorkItem::getIntent()
+	android::content::Intent JobWorkItem::getIntent()
 	{
 		return callObjectMethod(
 			"getIntent",

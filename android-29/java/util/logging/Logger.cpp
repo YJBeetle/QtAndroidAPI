@@ -20,7 +20,7 @@ namespace java::util::logging
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Logger::global()
+	java::util::logging::Logger Logger::global()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.Logger",
@@ -35,7 +35,7 @@ namespace java::util::logging
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Logger::getAnonymousLogger()
+	java::util::logging::Logger Logger::getAnonymousLogger()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.logging.Logger",
@@ -43,7 +43,7 @@ namespace java::util::logging
 			"()Ljava/util/logging/Logger;"
 		);
 	}
-	QAndroidJniObject Logger::getAnonymousLogger(jstring arg0)
+	java::util::logging::Logger Logger::getAnonymousLogger(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.logging.Logger",
@@ -52,7 +52,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	QAndroidJniObject Logger::getGlobal()
+	java::util::logging::Logger Logger::getGlobal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.logging.Logger",
@@ -60,7 +60,7 @@ namespace java::util::logging
 			"()Ljava/util/logging/Logger;"
 		);
 	}
-	QAndroidJniObject Logger::getLogger(jstring arg0)
+	java::util::logging::Logger Logger::getLogger(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.logging.Logger",
@@ -69,7 +69,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	QAndroidJniObject Logger::getLogger(jstring arg0, jstring arg1)
+	java::util::logging::Logger Logger::getLogger(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.logging.Logger",
@@ -199,7 +199,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Logger::getFilter()
+	__JniBaseClass Logger::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
@@ -213,7 +213,7 @@ namespace java::util::logging
 			"()[Ljava/util/logging/Handler;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Logger::getLevel()
+	java::util::logging::Level Logger::getLevel()
 	{
 		return callObjectMethod(
 			"getLevel",
@@ -227,14 +227,14 @@ namespace java::util::logging
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Logger::getParent()
+	java::util::logging::Logger Logger::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Ljava/util/logging/Logger;"
 		);
 	}
-	QAndroidJniObject Logger::getResourceBundle()
+	java::util::ResourceBundle Logger::getResourceBundle()
 	{
 		return callObjectMethod(
 			"getResourceBundle",

@@ -23,7 +23,7 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	QAndroidJniObject SNIHostName::createSNIMatcher(jstring arg0)
+	javax::net::ssl::SNIMatcher SNIHostName::createSNIMatcher(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.SNIHostName",

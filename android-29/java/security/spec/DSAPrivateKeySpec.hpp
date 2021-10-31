@@ -22,10 +22,10 @@ namespace java::security::spec
 		DSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3);
 		
 		// Methods
-		QAndroidJniObject getG();
-		QAndroidJniObject getP();
-		QAndroidJniObject getQ();
-		QAndroidJniObject getX();
+		java::math::BigInteger getG();
+		java::math::BigInteger getP();
+		java::math::BigInteger getQ();
+		java::math::BigInteger getX();
 	};
 } // namespace java::security::spec
 

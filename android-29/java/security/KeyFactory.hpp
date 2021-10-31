@@ -25,15 +25,15 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		QAndroidJniObject generatePrivate(__JniBaseClass arg0);
-		QAndroidJniObject generatePublic(__JniBaseClass arg0);
+		static java::security::KeyFactory getInstance(jstring arg0);
+		static java::security::KeyFactory getInstance(jstring arg0, jstring arg1);
+		static java::security::KeyFactory getInstance(jstring arg0, java::security::Provider arg1);
+		__JniBaseClass generatePrivate(__JniBaseClass arg0);
+		__JniBaseClass generatePublic(__JniBaseClass arg0);
 		jstring getAlgorithm();
-		QAndroidJniObject getKeySpec(__JniBaseClass arg0, jclass arg1);
-		QAndroidJniObject getProvider();
-		QAndroidJniObject translateKey(__JniBaseClass arg0);
+		__JniBaseClass getKeySpec(__JniBaseClass arg0, jclass arg1);
+		java::security::Provider getProvider();
+		__JniBaseClass translateKey(__JniBaseClass arg0);
 	};
 } // namespace java::security
 

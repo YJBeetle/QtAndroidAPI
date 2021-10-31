@@ -25,9 +25,9 @@ namespace android::view::textclassifier
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject PERSON_USER_OTHERS();
-		static QAndroidJniObject PERSON_USER_SELF();
+		static __JniBaseClass CREATOR();
+		static android::app::Person PERSON_USER_OTHERS();
+		static android::app::Person PERSON_USER_SELF();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConversationActions_Message(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -37,9 +37,9 @@ namespace android::view::textclassifier
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getAuthor();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getReferenceTime();
+		android::app::Person getAuthor();
+		android::os::Bundle getExtras();
+		java::time::ZonedDateTime getReferenceTime();
 		jstring getText();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

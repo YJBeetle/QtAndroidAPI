@@ -323,7 +323,7 @@ namespace android::app
 			"()[Landroid/service/notification/StatusBarNotification;"
 		).object<jarray>();
 	}
-	QAndroidJniObject NotificationManager::getAutomaticZenRule(jstring arg0)
+	android::app::AutomaticZenRule NotificationManager::getAutomaticZenRule(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAutomaticZenRule",
@@ -331,7 +331,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject NotificationManager::getAutomaticZenRules()
+	__JniBaseClass NotificationManager::getAutomaticZenRules()
 	{
 		return callObjectMethod(
 			"getAutomaticZenRules",
@@ -352,7 +352,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject NotificationManager::getNotificationChannel(jstring arg0)
+	android::app::NotificationChannel NotificationManager::getNotificationChannel(jstring arg0)
 	{
 		return callObjectMethod(
 			"getNotificationChannel",
@@ -360,7 +360,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject NotificationManager::getNotificationChannelGroup(jstring arg0)
+	android::app::NotificationChannelGroup NotificationManager::getNotificationChannelGroup(jstring arg0)
 	{
 		return callObjectMethod(
 			"getNotificationChannelGroup",
@@ -368,14 +368,14 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject NotificationManager::getNotificationChannelGroups()
+	__JniBaseClass NotificationManager::getNotificationChannelGroups()
 	{
 		return callObjectMethod(
 			"getNotificationChannelGroups",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject NotificationManager::getNotificationChannels()
+	__JniBaseClass NotificationManager::getNotificationChannels()
 	{
 		return callObjectMethod(
 			"getNotificationChannels",
@@ -389,7 +389,7 @@ namespace android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject NotificationManager::getNotificationPolicy()
+	android::app::NotificationManager_Policy NotificationManager::getNotificationPolicy()
 	{
 		return callObjectMethod(
 			"getNotificationPolicy",

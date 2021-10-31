@@ -33,8 +33,8 @@ namespace android::widget
 		
 		// Methods
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getText1();
-		QAndroidJniObject getText2();
+		android::widget::TextView getText1();
+		android::widget::TextView getText2();
 	};
 } // namespace android::widget
 

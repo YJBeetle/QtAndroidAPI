@@ -25,17 +25,17 @@ namespace android::preference
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jstring breadCrumbShortTitle();
 		jint breadCrumbShortTitleRes();
 		jstring breadCrumbTitle();
 		jint breadCrumbTitleRes();
-		QAndroidJniObject extras();
+		android::os::Bundle extras();
 		jstring fragment();
-		QAndroidJniObject fragmentArguments();
+		android::os::Bundle fragmentArguments();
 		jint iconRes();
 		jlong id();
-		QAndroidJniObject intent();
+		android::content::Intent intent();
 		jstring summary();
 		jint summaryRes();
 		jstring title();

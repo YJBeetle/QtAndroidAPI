@@ -122,7 +122,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputConnectionWrapper::getExtractedText(android::view::inputmethod::ExtractedTextRequest arg0, jint arg1)
+	android::view::inputmethod::ExtractedText InputConnectionWrapper::getExtractedText(android::view::inputmethod::ExtractedTextRequest arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getExtractedText",
@@ -131,7 +131,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	QAndroidJniObject InputConnectionWrapper::getHandler()
+	android::os::Handler InputConnectionWrapper::getHandler()
 	{
 		return callObjectMethod(
 			"getHandler",

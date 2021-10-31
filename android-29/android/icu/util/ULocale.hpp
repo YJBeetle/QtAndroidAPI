@@ -17,30 +17,30 @@ namespace android::icu::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CANADA();
-		static QAndroidJniObject CANADA_FRENCH();
-		static QAndroidJniObject CHINA();
-		static QAndroidJniObject CHINESE();
-		static QAndroidJniObject ENGLISH();
-		static QAndroidJniObject FRANCE();
-		static QAndroidJniObject FRENCH();
-		static QAndroidJniObject GERMAN();
-		static QAndroidJniObject GERMANY();
-		static QAndroidJniObject ITALIAN();
-		static QAndroidJniObject ITALY();
-		static QAndroidJniObject JAPAN();
-		static QAndroidJniObject JAPANESE();
-		static QAndroidJniObject KOREA();
-		static QAndroidJniObject KOREAN();
-		static QAndroidJniObject PRC();
+		static android::icu::util::ULocale CANADA();
+		static android::icu::util::ULocale CANADA_FRENCH();
+		static android::icu::util::ULocale CHINA();
+		static android::icu::util::ULocale CHINESE();
+		static android::icu::util::ULocale ENGLISH();
+		static android::icu::util::ULocale FRANCE();
+		static android::icu::util::ULocale FRENCH();
+		static android::icu::util::ULocale GERMAN();
+		static android::icu::util::ULocale GERMANY();
+		static android::icu::util::ULocale ITALIAN();
+		static android::icu::util::ULocale ITALY();
+		static android::icu::util::ULocale JAPAN();
+		static android::icu::util::ULocale JAPANESE();
+		static android::icu::util::ULocale KOREA();
+		static android::icu::util::ULocale KOREAN();
+		static android::icu::util::ULocale PRC();
 		static jchar PRIVATE_USE_EXTENSION();
-		static QAndroidJniObject ROOT();
-		static QAndroidJniObject SIMPLIFIED_CHINESE();
-		static QAndroidJniObject TAIWAN();
-		static QAndroidJniObject TRADITIONAL_CHINESE();
-		static QAndroidJniObject UK();
+		static android::icu::util::ULocale ROOT();
+		static android::icu::util::ULocale SIMPLIFIED_CHINESE();
+		static android::icu::util::ULocale TAIWAN();
+		static android::icu::util::ULocale TRADITIONAL_CHINESE();
+		static android::icu::util::ULocale UK();
 		static jchar UNICODE_LOCALE_EXTENSION();
-		static QAndroidJniObject US();
+		static android::icu::util::ULocale US();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ULocale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -52,20 +52,20 @@ namespace android::icu::util
 		ULocale(jstring arg0, jstring arg1, jstring arg2);
 		
 		// Methods
-		static QAndroidJniObject acceptLanguage(jarray arg0, jbooleanArray arg1);
-		static QAndroidJniObject acceptLanguage(jstring arg0, jbooleanArray arg1);
-		static QAndroidJniObject acceptLanguage(jarray arg0, jarray arg1, jbooleanArray arg2);
-		static QAndroidJniObject acceptLanguage(jstring arg0, jarray arg1, jbooleanArray arg2);
-		static QAndroidJniObject addLikelySubtags(android::icu::util::ULocale arg0);
+		static android::icu::util::ULocale acceptLanguage(jarray arg0, jbooleanArray arg1);
+		static android::icu::util::ULocale acceptLanguage(jstring arg0, jbooleanArray arg1);
+		static android::icu::util::ULocale acceptLanguage(jarray arg0, jarray arg1, jbooleanArray arg2);
+		static android::icu::util::ULocale acceptLanguage(jstring arg0, jarray arg1, jbooleanArray arg2);
+		static android::icu::util::ULocale addLikelySubtags(android::icu::util::ULocale arg0);
 		static jstring canonicalize(jstring arg0);
-		static QAndroidJniObject createCanonical(jstring arg0);
-		static QAndroidJniObject forLanguageTag(jstring arg0);
-		static QAndroidJniObject forLocale(java::util::Locale arg0);
+		static android::icu::util::ULocale createCanonical(jstring arg0);
+		static android::icu::util::ULocale forLanguageTag(jstring arg0);
+		static android::icu::util::ULocale forLocale(java::util::Locale arg0);
 		static jarray getAvailableLocales();
 		static jstring getBaseName(jstring arg0);
 		static jstring getCountry(jstring arg0);
-		static QAndroidJniObject getDefault();
-		static QAndroidJniObject getDefault(android::icu::util::ULocale_Category arg0);
+		static android::icu::util::ULocale getDefault();
+		static android::icu::util::ULocale getDefault(android::icu::util::ULocale_Category arg0);
 		static jstring getDisplayCountry(jstring arg0, android::icu::util::ULocale arg1);
 		static jstring getDisplayCountry(jstring arg0, jstring arg1);
 		static jstring getDisplayKeyword(jstring arg0);
@@ -91,12 +91,12 @@ namespace android::icu::util
 		static jarray getISOCountries();
 		static jarray getISOLanguages();
 		static jstring getKeywordValue(jstring arg0, jstring arg1);
-		static QAndroidJniObject getKeywords(jstring arg0);
+		static __JniBaseClass getKeywords(jstring arg0);
 		static jstring getLanguage(jstring arg0);
 		static jstring getName(jstring arg0);
 		static jstring getScript(jstring arg0);
 		static jstring getVariant(jstring arg0);
-		static QAndroidJniObject minimizeSubtags(android::icu::util::ULocale arg0);
+		static android::icu::util::ULocale minimizeSubtags(android::icu::util::ULocale arg0);
 		static jstring setKeywordValue(jstring arg0, jstring arg1, jstring arg2);
 		static jstring toLegacyKey(jstring arg0);
 		static jstring toLegacyType(jstring arg0, jstring arg1);
@@ -126,25 +126,25 @@ namespace android::icu::util
 		jstring getDisplayVariant();
 		jstring getDisplayVariant(android::icu::util::ULocale arg0);
 		jstring getExtension(jchar arg0);
-		QAndroidJniObject getExtensionKeys();
-		QAndroidJniObject getFallback();
+		__JniBaseClass getExtensionKeys();
+		android::icu::util::ULocale getFallback();
 		jstring getISO3Country();
 		jstring getISO3Language();
 		jstring getKeywordValue(jstring arg0);
-		QAndroidJniObject getKeywords();
+		__JniBaseClass getKeywords();
 		jstring getLanguage();
 		jstring getLineOrientation();
 		jstring getName();
 		jstring getScript();
-		QAndroidJniObject getUnicodeLocaleAttributes();
-		QAndroidJniObject getUnicodeLocaleKeys();
+		__JniBaseClass getUnicodeLocaleAttributes();
+		__JniBaseClass getUnicodeLocaleKeys();
 		jstring getUnicodeLocaleType(jstring arg0);
 		jstring getVariant();
 		jint hashCode();
 		jboolean isRightToLeft();
-		QAndroidJniObject setKeywordValue(jstring arg0, jstring arg1);
+		android::icu::util::ULocale setKeywordValue(jstring arg0, jstring arg1);
 		jstring toLanguageTag();
-		QAndroidJniObject toLocale();
+		java::util::Locale toLocale();
 		jstring toString();
 	};
 } // namespace android::icu::util

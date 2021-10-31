@@ -10,24 +10,24 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ADD();
-		static QAndroidJniObject CLEAR();
-		static QAndroidJniObject DARKEN();
-		static QAndroidJniObject DST();
-		static QAndroidJniObject DST_ATOP();
-		static QAndroidJniObject DST_IN();
-		static QAndroidJniObject DST_OUT();
-		static QAndroidJniObject DST_OVER();
-		static QAndroidJniObject LIGHTEN();
-		static QAndroidJniObject MULTIPLY();
-		static QAndroidJniObject OVERLAY();
-		static QAndroidJniObject SCREEN();
-		static QAndroidJniObject SRC();
-		static QAndroidJniObject SRC_ATOP();
-		static QAndroidJniObject SRC_IN();
-		static QAndroidJniObject SRC_OUT();
-		static QAndroidJniObject SRC_OVER();
-		static QAndroidJniObject XOR();
+		static android::graphics::PorterDuff_Mode ADD();
+		static android::graphics::PorterDuff_Mode CLEAR();
+		static android::graphics::PorterDuff_Mode DARKEN();
+		static android::graphics::PorterDuff_Mode DST();
+		static android::graphics::PorterDuff_Mode DST_ATOP();
+		static android::graphics::PorterDuff_Mode DST_IN();
+		static android::graphics::PorterDuff_Mode DST_OUT();
+		static android::graphics::PorterDuff_Mode DST_OVER();
+		static android::graphics::PorterDuff_Mode LIGHTEN();
+		static android::graphics::PorterDuff_Mode MULTIPLY();
+		static android::graphics::PorterDuff_Mode OVERLAY();
+		static android::graphics::PorterDuff_Mode SCREEN();
+		static android::graphics::PorterDuff_Mode SRC();
+		static android::graphics::PorterDuff_Mode SRC_ATOP();
+		static android::graphics::PorterDuff_Mode SRC_IN();
+		static android::graphics::PorterDuff_Mode SRC_OUT();
+		static android::graphics::PorterDuff_Mode SRC_OVER();
+		static android::graphics::PorterDuff_Mode XOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PorterDuff_Mode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -36,7 +36,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::PorterDuff_Mode valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

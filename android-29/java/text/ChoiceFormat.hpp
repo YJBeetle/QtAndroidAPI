@@ -47,12 +47,12 @@ namespace java::text
 		void applyPattern(jstring arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		QAndroidJniObject format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		java::lang::StringBuffer format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		java::lang::StringBuffer format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		jobjectArray getFormats();
 		jdoubleArray getLimits();
 		jint hashCode();
-		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
+		java::lang::Number parse(jstring arg0, java::text::ParsePosition arg1);
 		void setChoices(jdoubleArray arg0, jarray arg1);
 		jstring toPattern();
 	};

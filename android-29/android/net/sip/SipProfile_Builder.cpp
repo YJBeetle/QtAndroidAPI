@@ -30,14 +30,14 @@ namespace android::net::sip
 		) {}
 	
 	// Methods
-	QAndroidJniObject SipProfile_Builder::build()
+	android::net::sip::SipProfile SipProfile_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
-	QAndroidJniObject SipProfile_Builder::setAuthUserName(jstring arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setAuthUserName(jstring arg0)
 	{
 		return callObjectMethod(
 			"setAuthUserName",
@@ -45,7 +45,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipProfile_Builder::setAutoRegistration(jboolean arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setAutoRegistration(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setAutoRegistration",
@@ -53,7 +53,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipProfile_Builder::setDisplayName(jstring arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setDisplayName(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDisplayName",
@@ -61,7 +61,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipProfile_Builder::setOutboundProxy(jstring arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setOutboundProxy(jstring arg0)
 	{
 		return callObjectMethod(
 			"setOutboundProxy",
@@ -69,7 +69,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipProfile_Builder::setPassword(jstring arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setPassword(jstring arg0)
 	{
 		return callObjectMethod(
 			"setPassword",
@@ -77,7 +77,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipProfile_Builder::setPort(jint arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setPort(jint arg0)
 	{
 		return callObjectMethod(
 			"setPort",
@@ -85,7 +85,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipProfile_Builder::setProfileName(jstring arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setProfileName(jstring arg0)
 	{
 		return callObjectMethod(
 			"setProfileName",
@@ -93,7 +93,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipProfile_Builder::setProtocol(jstring arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setProtocol(jstring arg0)
 	{
 		return callObjectMethod(
 			"setProtocol",
@@ -101,7 +101,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipProfile_Builder::setSendKeepAlive(jboolean arg0)
+	android::net::sip::SipProfile_Builder SipProfile_Builder::setSendKeepAlive(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setSendKeepAlive",

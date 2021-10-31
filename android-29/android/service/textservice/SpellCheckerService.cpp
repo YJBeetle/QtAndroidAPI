@@ -25,14 +25,14 @@ namespace android::service::textservice
 		) {}
 	
 	// Methods
-	QAndroidJniObject SpellCheckerService::createSession()
+	android::service::textservice::SpellCheckerService_Session SpellCheckerService::createSession()
 	{
 		return callObjectMethod(
 			"createSession",
 			"()Landroid/service/textservice/SpellCheckerService$Session;"
 		);
 	}
-	QAndroidJniObject SpellCheckerService::onBind(android::content::Intent arg0)
+	__JniBaseClass SpellCheckerService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

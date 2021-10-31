@@ -44,7 +44,7 @@ namespace android::view::textservice
 			arg1
 		);
 	}
-	QAndroidJniObject SpellCheckerSession::getSpellChecker()
+	android::view::textservice::SpellCheckerInfo SpellCheckerSession::getSpellChecker()
 	{
 		return callObjectMethod(
 			"getSpellChecker",

@@ -10,7 +10,7 @@ namespace android::view::accessibility
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AccessibilityNodeInfo_CollectionItemInfo::obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4)
+	android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo AccessibilityNodeInfo_CollectionItemInfo::obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionItemInfo",
@@ -23,7 +23,7 @@ namespace android::view::accessibility
 			arg4
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_CollectionItemInfo::obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4, jboolean arg5)
+	android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo AccessibilityNodeInfo_CollectionItemInfo::obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4, jboolean arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionItemInfo",

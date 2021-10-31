@@ -24,14 +24,14 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	QAndroidJniObject WebChromeClient::getDefaultVideoPoster()
+	android::graphics::Bitmap WebChromeClient::getDefaultVideoPoster()
 	{
 		return callObjectMethod(
 			"getDefaultVideoPoster",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	QAndroidJniObject WebChromeClient::getVideoLoadingProgressView()
+	android::view::View WebChromeClient::getVideoLoadingProgressView()
 	{
 		return callObjectMethod(
 			"getVideoLoadingProgressView",

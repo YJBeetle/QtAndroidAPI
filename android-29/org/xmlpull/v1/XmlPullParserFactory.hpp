@@ -26,13 +26,13 @@ namespace org::xmlpull::v1
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newInstance();
-		static QAndroidJniObject newInstance(jstring arg0, jclass arg1);
+		static org::xmlpull::v1::XmlPullParserFactory newInstance();
+		static org::xmlpull::v1::XmlPullParserFactory newInstance(jstring arg0, jclass arg1);
 		jboolean getFeature(jstring arg0);
 		jboolean isNamespaceAware();
 		jboolean isValidating();
-		QAndroidJniObject newPullParser();
-		QAndroidJniObject newSerializer();
+		__JniBaseClass newPullParser();
+		__JniBaseClass newSerializer();
 		void setFeature(jstring arg0, jboolean arg1);
 		void setNamespaceAware(jboolean arg0);
 		void setValidating(jboolean arg0);

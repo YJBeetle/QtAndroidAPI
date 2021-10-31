@@ -35,7 +35,7 @@ namespace java::util::prefs
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PreferenceChangeEvent::getNode()
+	java::util::prefs::Preferences PreferenceChangeEvent::getNode()
 	{
 		return callObjectMethod(
 			"getNode",

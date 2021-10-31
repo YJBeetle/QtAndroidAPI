@@ -39,7 +39,7 @@ namespace android::nfc::tech
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MifareUltralight::get(android::nfc::Tag arg0)
+	android::nfc::tech::MifareUltralight MifareUltralight::get(android::nfc::Tag arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.tech.MifareUltralight",
@@ -69,7 +69,7 @@ namespace android::nfc::tech
 			"()I"
 		);
 	}
-	QAndroidJniObject MifareUltralight::getTag()
+	android::nfc::Tag MifareUltralight::getTag()
 	{
 		return callObjectMethod(
 			"getTag",

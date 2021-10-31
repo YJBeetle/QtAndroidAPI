@@ -13,7 +13,7 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint RATING_3_STARS();
 		static jint RATING_4_STARS();
 		static jint RATING_5_STARS();
@@ -29,11 +29,11 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newHeartRating(jboolean arg0);
-		static QAndroidJniObject newPercentageRating(jfloat arg0);
-		static QAndroidJniObject newStarRating(jint arg0, jfloat arg1);
-		static QAndroidJniObject newThumbRating(jboolean arg0);
-		static QAndroidJniObject newUnratedRating(jint arg0);
+		static android::media::Rating newHeartRating(jboolean arg0);
+		static android::media::Rating newPercentageRating(jfloat arg0);
+		static android::media::Rating newStarRating(jint arg0, jfloat arg1);
+		static android::media::Rating newThumbRating(jboolean arg0);
+		static android::media::Rating newUnratedRating(jint arg0);
 		jint describeContents();
 		jfloat getPercentRating();
 		jint getRatingStyle();

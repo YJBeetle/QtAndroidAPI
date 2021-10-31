@@ -17,10 +17,10 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_FILTER_URL();
+		static android::net::Uri CONTENT_FILTER_URL();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
 		static jstring PERSON_ID();
 		

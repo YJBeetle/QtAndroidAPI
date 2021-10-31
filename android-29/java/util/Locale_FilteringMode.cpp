@@ -3,7 +3,7 @@
 namespace java::util
 {
 	// Fields
-	QAndroidJniObject Locale_FilteringMode::AUTOSELECT_FILTERING()
+	java::util::Locale_FilteringMode Locale_FilteringMode::AUTOSELECT_FILTERING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$FilteringMode",
@@ -11,7 +11,7 @@ namespace java::util
 			"Ljava/util/Locale$FilteringMode;"
 		);
 	}
-	QAndroidJniObject Locale_FilteringMode::EXTENDED_FILTERING()
+	java::util::Locale_FilteringMode Locale_FilteringMode::EXTENDED_FILTERING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$FilteringMode",
@@ -19,7 +19,7 @@ namespace java::util
 			"Ljava/util/Locale$FilteringMode;"
 		);
 	}
-	QAndroidJniObject Locale_FilteringMode::IGNORE_EXTENDED_RANGES()
+	java::util::Locale_FilteringMode Locale_FilteringMode::IGNORE_EXTENDED_RANGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$FilteringMode",
@@ -27,7 +27,7 @@ namespace java::util
 			"Ljava/util/Locale$FilteringMode;"
 		);
 	}
-	QAndroidJniObject Locale_FilteringMode::MAP_EXTENDED_RANGES()
+	java::util::Locale_FilteringMode Locale_FilteringMode::MAP_EXTENDED_RANGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$FilteringMode",
@@ -35,7 +35,7 @@ namespace java::util
 			"Ljava/util/Locale$FilteringMode;"
 		);
 	}
-	QAndroidJniObject Locale_FilteringMode::REJECT_EXTENDED_RANGES()
+	java::util::Locale_FilteringMode Locale_FilteringMode::REJECT_EXTENDED_RANGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$FilteringMode",
@@ -50,7 +50,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Locale_FilteringMode::valueOf(jstring arg0)
+	java::util::Locale_FilteringMode Locale_FilteringMode::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale$FilteringMode",

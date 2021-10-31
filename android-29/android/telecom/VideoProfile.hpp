@@ -13,7 +13,7 @@ namespace android::telecom
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint QUALITY_DEFAULT();
 		static jint QUALITY_HIGH();
 		static jint QUALITY_LOW();

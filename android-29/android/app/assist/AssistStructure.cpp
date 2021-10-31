@@ -6,7 +6,7 @@
 namespace android::app::assist
 {
 	// Fields
-	QAndroidJniObject AssistStructure::CREATOR()
+	__JniBaseClass AssistStructure::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.assist.AssistStructure",
@@ -47,14 +47,14 @@ namespace android::app::assist
 			"()J"
 		);
 	}
-	QAndroidJniObject AssistStructure::getActivityComponent()
+	android::content::ComponentName AssistStructure::getActivityComponent()
 	{
 		return callObjectMethod(
 			"getActivityComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject AssistStructure::getWindowNodeAt(jint arg0)
+	android::app::assist::AssistStructure_WindowNode AssistStructure::getWindowNodeAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getWindowNodeAt",

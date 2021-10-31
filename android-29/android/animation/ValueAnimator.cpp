@@ -53,7 +53,7 @@ namespace android::animation
 			"()J"
 		);
 	}
-	QAndroidJniObject ValueAnimator::ofArgb(jintArray arg0)
+	android::animation::ValueAnimator ValueAnimator::ofArgb(jintArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.ValueAnimator",
@@ -62,7 +62,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject ValueAnimator::ofFloat(jfloatArray arg0)
+	android::animation::ValueAnimator ValueAnimator::ofFloat(jfloatArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.ValueAnimator",
@@ -71,7 +71,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject ValueAnimator::ofInt(jintArray arg0)
+	android::animation::ValueAnimator ValueAnimator::ofInt(jintArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.ValueAnimator",
@@ -80,7 +80,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject ValueAnimator::ofObject(__JniBaseClass arg0, jobjectArray arg1)
+	android::animation::ValueAnimator ValueAnimator::ofObject(__JniBaseClass arg0, jobjectArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.ValueAnimator",
@@ -90,7 +90,7 @@ namespace android::animation
 			arg1
 		);
 	}
-	QAndroidJniObject ValueAnimator::ofPropertyValuesHolder(jarray arg0)
+	android::animation::ValueAnimator ValueAnimator::ofPropertyValuesHolder(jarray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.ValueAnimator",
@@ -123,7 +123,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	QAndroidJniObject ValueAnimator::clone()
+	android::animation::ValueAnimator ValueAnimator::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -173,7 +173,7 @@ namespace android::animation
 			"()J"
 		);
 	}
-	QAndroidJniObject ValueAnimator::getInterpolator()
+	__JniBaseClass ValueAnimator::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -281,7 +281,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject ValueAnimator::setDuration(jlong arg0)
+	android::animation::ValueAnimator ValueAnimator::setDuration(jlong arg0)
 	{
 		return callObjectMethod(
 			"setDuration",

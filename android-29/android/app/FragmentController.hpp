@@ -65,7 +65,7 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createController(android::app::FragmentHostCallback arg0);
+		static android::app::FragmentController createController(android::app::FragmentHostCallback arg0);
 		void attachHost(android::app::Fragment arg0);
 		void dispatchActivityCreated();
 		void dispatchConfigurationChanged(android::content::res::Configuration arg0);
@@ -92,19 +92,19 @@ namespace android::app
 		void doLoaderStop(jboolean arg0);
 		void dumpLoaders(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		jboolean execPendingActions();
-		QAndroidJniObject findFragmentByWho(jstring arg0);
-		QAndroidJniObject getFragmentManager();
-		QAndroidJniObject getLoaderManager();
+		android::app::Fragment findFragmentByWho(jstring arg0);
+		android::app::FragmentManager getFragmentManager();
+		android::app::LoaderManager getLoaderManager();
 		void noteStateNotSaved();
-		QAndroidJniObject onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3);
+		android::view::View onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3);
 		void reportLoaderStart();
 		void restoreAllState(__JniBaseClass arg0, android::app::FragmentManagerNonConfig arg1);
 		void restoreAllState(__JniBaseClass arg0, __JniBaseClass arg1);
 		void restoreLoaderNonConfig(android::util::ArrayMap arg0);
-		QAndroidJniObject retainLoaderNonConfig();
-		QAndroidJniObject retainNestedNonConfig();
-		QAndroidJniObject retainNonConfig();
-		QAndroidJniObject saveAllState();
+		android::util::ArrayMap retainLoaderNonConfig();
+		android::app::FragmentManagerNonConfig retainNestedNonConfig();
+		__JniBaseClass retainNonConfig();
+		__JniBaseClass saveAllState();
 	};
 } // namespace android::app
 

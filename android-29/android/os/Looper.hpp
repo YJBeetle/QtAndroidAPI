@@ -25,15 +25,15 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getMainLooper();
+		static android::os::Looper getMainLooper();
 		static void loop();
-		static QAndroidJniObject myLooper();
-		static QAndroidJniObject myQueue();
+		static android::os::Looper myLooper();
+		static android::os::MessageQueue myQueue();
 		static void prepare();
 		static void prepareMainLooper();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		QAndroidJniObject getQueue();
-		QAndroidJniObject getThread();
+		android::os::MessageQueue getQueue();
+		java::lang::Thread getThread();
 		jboolean isCurrentThread();
 		void quit();
 		void quitSafely();

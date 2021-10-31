@@ -35,7 +35,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Instrumentation_ActivityMonitor::getFilter()
+	android::content::IntentFilter Instrumentation_ActivityMonitor::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
@@ -49,14 +49,14 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Instrumentation_ActivityMonitor::getLastActivity()
+	android::app::Activity Instrumentation_ActivityMonitor::getLastActivity()
 	{
 		return callObjectMethod(
 			"getLastActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	QAndroidJniObject Instrumentation_ActivityMonitor::getResult()
+	android::app::Instrumentation_ActivityResult Instrumentation_ActivityMonitor::getResult()
 	{
 		return callObjectMethod(
 			"getResult",
@@ -70,7 +70,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject Instrumentation_ActivityMonitor::onStartActivity(android::content::Intent arg0)
+	android::app::Instrumentation_ActivityResult Instrumentation_ActivityMonitor::onStartActivity(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onStartActivity",
@@ -78,14 +78,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instrumentation_ActivityMonitor::waitForActivity()
+	android::app::Activity Instrumentation_ActivityMonitor::waitForActivity()
 	{
 		return callObjectMethod(
 			"waitForActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	QAndroidJniObject Instrumentation_ActivityMonitor::waitForActivityWithTimeout(jlong arg0)
+	android::app::Activity Instrumentation_ActivityMonitor::waitForActivityWithTimeout(jlong arg0)
 	{
 		return callObjectMethod(
 			"waitForActivityWithTimeout",

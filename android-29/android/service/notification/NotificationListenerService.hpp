@@ -96,11 +96,11 @@ namespace android::service::notification
 		jarray getActiveNotifications(jarray arg0);
 		jint getCurrentInterruptionFilter();
 		jint getCurrentListenerHints();
-		QAndroidJniObject getCurrentRanking();
-		QAndroidJniObject getNotificationChannelGroups(jstring arg0, android::os::UserHandle arg1);
-		QAndroidJniObject getNotificationChannels(jstring arg0, android::os::UserHandle arg1);
+		android::service::notification::NotificationListenerService_RankingMap getCurrentRanking();
+		__JniBaseClass getNotificationChannelGroups(jstring arg0, android::os::UserHandle arg1);
+		__JniBaseClass getNotificationChannels(jstring arg0, android::os::UserHandle arg1);
 		jarray getSnoozedNotifications();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onDestroy();
 		void onInterruptionFilterChanged(jint arg0);
 		void onListenerConnected();

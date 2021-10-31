@@ -17,7 +17,7 @@ namespace android::speech::tts
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint LATENCY_HIGH();
 		static jint LATENCY_LOW();
 		static jint LATENCY_NORMAL();
@@ -39,9 +39,9 @@ namespace android::speech::tts
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getFeatures();
+		__JniBaseClass getFeatures();
 		jint getLatency();
-		QAndroidJniObject getLocale();
+		java::util::Locale getLocale();
 		jstring getName();
 		jint getQuality();
 		jint hashCode();

@@ -73,7 +73,7 @@ namespace android::webkit
 		jint getDefaultFixedFontSize();
 		jint getDefaultFontSize();
 		jstring getDefaultTextEncodingName();
-		QAndroidJniObject getDefaultZoom();
+		android::webkit::WebSettings_ZoomDensity getDefaultZoom();
 		jint getDisabledActionModeMenuItems();
 		jboolean getDisplayZoomControls();
 		jboolean getDomStorageEnabled();
@@ -82,7 +82,7 @@ namespace android::webkit
 		jint getForceDark();
 		jboolean getJavaScriptCanOpenWindowsAutomatically();
 		jboolean getJavaScriptEnabled();
-		QAndroidJniObject getLayoutAlgorithm();
+		android::webkit::WebSettings_LayoutAlgorithm getLayoutAlgorithm();
 		jboolean getLightTouchEnabled();
 		jboolean getLoadWithOverviewMode();
 		jboolean getLoadsImagesAutomatically();
@@ -91,14 +91,14 @@ namespace android::webkit
 		jint getMinimumLogicalFontSize();
 		jint getMixedContentMode();
 		jboolean getOffscreenPreRaster();
-		QAndroidJniObject getPluginState();
+		android::webkit::WebSettings_PluginState getPluginState();
 		jboolean getSafeBrowsingEnabled();
 		jstring getSansSerifFontFamily();
 		jboolean getSaveFormData();
 		jboolean getSavePassword();
 		jstring getSerifFontFamily();
 		jstring getStandardFontFamily();
-		QAndroidJniObject getTextSize();
+		android::webkit::WebSettings_TextSize getTextSize();
 		jint getTextZoom();
 		jboolean getUseWideViewPort();
 		jstring getUserAgentString();

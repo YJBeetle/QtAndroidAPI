@@ -10,7 +10,7 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject GeolocationPermissions::getInstance()
+	android::webkit::GeolocationPermissions GeolocationPermissions::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.GeolocationPermissions",

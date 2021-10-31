@@ -14,7 +14,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DatagramChannel::open()
+	java::nio::channels::DatagramChannel DatagramChannel::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.DatagramChannel",
@@ -22,7 +22,7 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/DatagramChannel;"
 		);
 	}
-	QAndroidJniObject DatagramChannel::open(__JniBaseClass arg0)
+	java::nio::channels::DatagramChannel DatagramChannel::open(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.DatagramChannel",
@@ -31,7 +31,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DatagramChannel::bind(java::net::SocketAddress arg0)
+	java::nio::channels::DatagramChannel DatagramChannel::bind(java::net::SocketAddress arg0)
 	{
 		return callObjectMethod(
 			"bind",
@@ -39,7 +39,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DatagramChannel::connect(java::net::SocketAddress arg0)
+	java::nio::channels::DatagramChannel DatagramChannel::connect(java::net::SocketAddress arg0)
 	{
 		return callObjectMethod(
 			"connect",
@@ -47,21 +47,21 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DatagramChannel::disconnect()
+	java::nio::channels::DatagramChannel DatagramChannel::disconnect()
 	{
 		return callObjectMethod(
 			"disconnect",
 			"()Ljava/nio/channels/DatagramChannel;"
 		);
 	}
-	QAndroidJniObject DatagramChannel::getLocalAddress()
+	java::net::SocketAddress DatagramChannel::getLocalAddress()
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	QAndroidJniObject DatagramChannel::getRemoteAddress()
+	java::net::SocketAddress DatagramChannel::getRemoteAddress()
 	{
 		return callObjectMethod(
 			"getRemoteAddress",
@@ -101,7 +101,7 @@ namespace java::nio::channels
 			arg2
 		);
 	}
-	QAndroidJniObject DatagramChannel::receive(java::nio::ByteBuffer arg0)
+	java::net::SocketAddress DatagramChannel::receive(java::nio::ByteBuffer arg0)
 	{
 		return callObjectMethod(
 			"receive",
@@ -118,7 +118,7 @@ namespace java::nio::channels
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DatagramChannel::setOption(__JniBaseClass arg0, jobject arg1)
+	java::nio::channels::DatagramChannel DatagramChannel::setOption(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -127,7 +127,7 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	QAndroidJniObject DatagramChannel::socket()
+	java::net::DatagramSocket DatagramChannel::socket()
 	{
 		return callObjectMethod(
 			"socket",

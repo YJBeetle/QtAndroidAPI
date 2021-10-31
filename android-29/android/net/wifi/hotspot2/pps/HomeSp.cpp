@@ -4,7 +4,7 @@
 namespace android::net::wifi::hotspot2::pps
 {
 	// Fields
-	QAndroidJniObject HomeSp::CREATOR()
+	__JniBaseClass HomeSp::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.hotspot2.pps.HomeSp",

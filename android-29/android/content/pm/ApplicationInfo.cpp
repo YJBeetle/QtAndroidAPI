@@ -70,7 +70,7 @@ namespace android::content::pm
 			"CATEGORY_VIDEO"
 		);
 	}
-	QAndroidJniObject ApplicationInfo::CREATOR()
+	__JniBaseClass ApplicationInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ApplicationInfo",
@@ -455,7 +455,7 @@ namespace android::content::pm
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject ApplicationInfo::storageUuid()
+	java::util::UUID ApplicationInfo::storageUuid()
 	{
 		return getObjectField(
 			"storageUuid",

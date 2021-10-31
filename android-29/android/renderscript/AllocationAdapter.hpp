@@ -35,9 +35,9 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create1D(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1);
-		static QAndroidJniObject create2D(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1);
-		static QAndroidJniObject createTyped(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1, android::renderscript::Type arg2);
+		static android::renderscript::AllocationAdapter create1D(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1);
+		static android::renderscript::AllocationAdapter create2D(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1);
+		static android::renderscript::AllocationAdapter createTyped(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1, android::renderscript::Type arg2);
 		void resize(jint arg0);
 		void setFace(android::renderscript::Type_CubemapFace arg0);
 		void setLOD(jint arg0);

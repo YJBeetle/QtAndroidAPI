@@ -63,7 +63,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessageFormat::format(jobjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MessageFormat::format(jobjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -73,7 +73,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MessageFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MessageFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -83,7 +83,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MessageFormat::formatToCharacterIterator(jobject arg0)
+	__JniBaseClass MessageFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -105,7 +105,7 @@ namespace java::text
 			"()[Ljava/text/Format;"
 		).object<jarray>();
 	}
-	QAndroidJniObject MessageFormat::getLocale()
+	java::util::Locale MessageFormat::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",

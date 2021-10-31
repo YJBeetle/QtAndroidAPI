@@ -24,7 +24,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	QAndroidJniObject HandlerThread::getLooper()
+	android::os::Looper HandlerThread::getLooper()
 	{
 		return callObjectMethod(
 			"getLooper",

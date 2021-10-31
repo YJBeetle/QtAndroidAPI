@@ -18,14 +18,14 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	QAndroidJniObject FreezePeriod::getEnd()
+	java::time::MonthDay FreezePeriod::getEnd()
 	{
 		return callObjectMethod(
 			"getEnd",
 			"()Ljava/time/MonthDay;"
 		);
 	}
-	QAndroidJniObject FreezePeriod::getStart()
+	java::time::MonthDay FreezePeriod::getStart()
 	{
 		return callObjectMethod(
 			"getStart",

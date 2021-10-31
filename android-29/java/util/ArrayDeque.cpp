@@ -68,7 +68,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	QAndroidJniObject ArrayDeque::clone()
+	java::util::ArrayDeque ArrayDeque::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -83,7 +83,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject ArrayDeque::descendingIterator()
+	__JniBaseClass ArrayDeque::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
@@ -126,7 +126,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject ArrayDeque::iterator()
+	__JniBaseClass ArrayDeque::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -290,7 +290,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject ArrayDeque::spliterator()
+	__JniBaseClass ArrayDeque::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

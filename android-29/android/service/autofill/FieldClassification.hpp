@@ -21,7 +21,7 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getMatches();
+		__JniBaseClass getMatches();
 		jstring toString();
 	};
 } // namespace android::service::autofill

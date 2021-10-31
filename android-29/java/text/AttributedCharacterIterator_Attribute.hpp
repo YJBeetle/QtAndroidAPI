@@ -9,9 +9,9 @@ namespace java::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject INPUT_METHOD_SEGMENT();
-		static QAndroidJniObject LANGUAGE();
-		static QAndroidJniObject READING();
+		static java::text::AttributedCharacterIterator_Attribute INPUT_METHOD_SEGMENT();
+		static java::text::AttributedCharacterIterator_Attribute LANGUAGE();
+		static java::text::AttributedCharacterIterator_Attribute READING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AttributedCharacterIterator_Attribute(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

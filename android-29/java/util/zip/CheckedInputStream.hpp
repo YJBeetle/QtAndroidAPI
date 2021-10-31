@@ -24,7 +24,7 @@ namespace java::util::zip
 		CheckedInputStream(java::io::InputStream arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getChecksum();
+		__JniBaseClass getChecksum();
 		jint read();
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		jlong skip(jlong arg0);

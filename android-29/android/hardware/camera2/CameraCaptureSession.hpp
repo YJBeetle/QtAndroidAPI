@@ -49,8 +49,8 @@ namespace android::hardware::camera2
 		jint captureSingleRequest(android::hardware::camera2::CaptureRequest arg0, __JniBaseClass arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2);
 		void close();
 		void finalizeOutputConfigurations(__JniBaseClass arg0);
-		QAndroidJniObject getDevice();
-		QAndroidJniObject getInputSurface();
+		android::hardware::camera2::CameraDevice getDevice();
+		android::view::Surface getInputSurface();
 		jboolean isReprocessable();
 		void prepare(android::view::Surface arg0);
 		jint setRepeatingBurst(__JniBaseClass arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2);

@@ -13,7 +13,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jlong cacheSize();
 		jlong codeSize();
 		jlong dataSize();

@@ -13,14 +13,14 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ContentProviderOperation_Builder::build()
+	android::content::ContentProviderOperation ContentProviderOperation_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/content/ContentProviderOperation;"
 		);
 	}
-	QAndroidJniObject ContentProviderOperation_Builder::withExpectedCount(jint arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withExpectedCount(jint arg0)
 	{
 		return callObjectMethod(
 			"withExpectedCount",
@@ -28,7 +28,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject ContentProviderOperation_Builder::withSelection(jstring arg0, jarray arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withSelection(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"withSelection",
@@ -37,7 +37,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ContentProviderOperation_Builder::withSelectionBackReference(jint arg0, jint arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withSelectionBackReference(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"withSelectionBackReference",
@@ -46,7 +46,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ContentProviderOperation_Builder::withValue(jstring arg0, jobject arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValue(jstring arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"withValue",
@@ -55,7 +55,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ContentProviderOperation_Builder::withValueBackReference(jstring arg0, jint arg1)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValueBackReference(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"withValueBackReference",
@@ -64,7 +64,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ContentProviderOperation_Builder::withValueBackReferences(android::content::ContentValues arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValueBackReferences(android::content::ContentValues arg0)
 	{
 		return callObjectMethod(
 			"withValueBackReferences",
@@ -72,7 +72,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ContentProviderOperation_Builder::withValues(android::content::ContentValues arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withValues(android::content::ContentValues arg0)
 	{
 		return callObjectMethod(
 			"withValues",
@@ -80,7 +80,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ContentProviderOperation_Builder::withYieldAllowed(jboolean arg0)
+	android::content::ContentProviderOperation_Builder ContentProviderOperation_Builder::withYieldAllowed(jboolean arg0)
 	{
 		return callObjectMethod(
 			"withYieldAllowed",

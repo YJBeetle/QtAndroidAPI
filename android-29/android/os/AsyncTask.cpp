@@ -5,7 +5,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject AsyncTask::SERIAL_EXECUTOR()
+	__JniBaseClass AsyncTask::SERIAL_EXECUTOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.AsyncTask",
@@ -13,7 +13,7 @@ namespace android::os
 			"Ljava/util/concurrent/Executor;"
 		);
 	}
-	QAndroidJniObject AsyncTask::THREAD_POOL_EXECUTOR()
+	__JniBaseClass AsyncTask::THREAD_POOL_EXECUTOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.AsyncTask",
@@ -50,7 +50,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject AsyncTask::execute(jobjectArray arg0)
+	android::os::AsyncTask AsyncTask::execute(jobjectArray arg0)
 	{
 		return callObjectMethod(
 			"execute",
@@ -58,7 +58,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject AsyncTask::executeOnExecutor(__JniBaseClass arg0, jobjectArray arg1)
+	android::os::AsyncTask AsyncTask::executeOnExecutor(__JniBaseClass arg0, jobjectArray arg1)
 	{
 		return callObjectMethod(
 			"executeOnExecutor",
@@ -83,7 +83,7 @@ namespace android::os
 			arg1.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject AsyncTask::getStatus()
+	android::os::AsyncTask_Status AsyncTask::getStatus()
 	{
 		return callObjectMethod(
 			"getStatus",

@@ -15,7 +15,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_EXTERNAL_SERVICE();
 		static jint FLAG_ISOLATED_PROCESS();
 		static jint FLAG_SINGLE_USER();

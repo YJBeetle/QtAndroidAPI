@@ -3,7 +3,7 @@
 namespace java::nio::file
 {
 	// Fields
-	QAndroidJniObject FileVisitResult::CONTINUE()
+	java::nio::file::FileVisitResult FileVisitResult::CONTINUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitResult",
@@ -11,7 +11,7 @@ namespace java::nio::file
 			"Ljava/nio/file/FileVisitResult;"
 		);
 	}
-	QAndroidJniObject FileVisitResult::SKIP_SIBLINGS()
+	java::nio::file::FileVisitResult FileVisitResult::SKIP_SIBLINGS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitResult",
@@ -19,7 +19,7 @@ namespace java::nio::file
 			"Ljava/nio/file/FileVisitResult;"
 		);
 	}
-	QAndroidJniObject FileVisitResult::SKIP_SUBTREE()
+	java::nio::file::FileVisitResult FileVisitResult::SKIP_SUBTREE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitResult",
@@ -27,7 +27,7 @@ namespace java::nio::file
 			"Ljava/nio/file/FileVisitResult;"
 		);
 	}
-	QAndroidJniObject FileVisitResult::TERMINATE()
+	java::nio::file::FileVisitResult FileVisitResult::TERMINATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitResult",
@@ -42,7 +42,7 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FileVisitResult::valueOf(jstring arg0)
+	java::nio::file::FileVisitResult FileVisitResult::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.FileVisitResult",

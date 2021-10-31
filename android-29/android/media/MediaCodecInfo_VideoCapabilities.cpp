@@ -21,7 +21,7 @@ namespace android::media
 			arg2
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getAchievableFrameRatesFor(jint arg0, jint arg1)
+	android::util::Range MediaCodecInfo_VideoCapabilities::getAchievableFrameRatesFor(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getAchievableFrameRatesFor",
@@ -30,7 +30,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getBitrateRange()
+	android::util::Range MediaCodecInfo_VideoCapabilities::getBitrateRange()
 	{
 		return callObjectMethod(
 			"getBitrateRange",
@@ -44,14 +44,14 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedFrameRates()
+	android::util::Range MediaCodecInfo_VideoCapabilities::getSupportedFrameRates()
 	{
 		return callObjectMethod(
 			"getSupportedFrameRates",
 			"()Landroid/util/Range;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedFrameRatesFor(jint arg0, jint arg1)
+	android::util::Range MediaCodecInfo_VideoCapabilities::getSupportedFrameRatesFor(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getSupportedFrameRatesFor",
@@ -60,14 +60,14 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedHeights()
+	android::util::Range MediaCodecInfo_VideoCapabilities::getSupportedHeights()
 	{
 		return callObjectMethod(
 			"getSupportedHeights",
 			"()Landroid/util/Range;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedHeightsFor(jint arg0)
+	android::util::Range MediaCodecInfo_VideoCapabilities::getSupportedHeightsFor(jint arg0)
 	{
 		return callObjectMethod(
 			"getSupportedHeightsFor",
@@ -75,21 +75,21 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedPerformancePoints()
+	__JniBaseClass MediaCodecInfo_VideoCapabilities::getSupportedPerformancePoints()
 	{
 		return callObjectMethod(
 			"getSupportedPerformancePoints",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedWidths()
+	android::util::Range MediaCodecInfo_VideoCapabilities::getSupportedWidths()
 	{
 		return callObjectMethod(
 			"getSupportedWidths",
 			"()Landroid/util/Range;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedWidthsFor(jint arg0)
+	android::util::Range MediaCodecInfo_VideoCapabilities::getSupportedWidthsFor(jint arg0)
 	{
 		return callObjectMethod(
 			"getSupportedWidthsFor",

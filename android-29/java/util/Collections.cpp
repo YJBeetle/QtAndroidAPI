@@ -5,7 +5,7 @@
 namespace java::util
 {
 	// Fields
-	QAndroidJniObject Collections::EMPTY_LIST()
+	__JniBaseClass Collections::EMPTY_LIST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Collections",
@@ -13,7 +13,7 @@ namespace java::util
 			"Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Collections::EMPTY_MAP()
+	__JniBaseClass Collections::EMPTY_MAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Collections",
@@ -21,7 +21,7 @@ namespace java::util
 			"Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject Collections::EMPTY_SET()
+	__JniBaseClass Collections::EMPTY_SET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Collections",
@@ -46,7 +46,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Collections::asLifoQueue(__JniBaseClass arg0)
+	__JniBaseClass Collections::asLifoQueue(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -76,7 +76,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Collections::checkedCollection(__JniBaseClass arg0, jclass arg1)
+	__JniBaseClass Collections::checkedCollection(__JniBaseClass arg0, jclass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -86,7 +86,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Collections::checkedList(__JniBaseClass arg0, jclass arg1)
+	__JniBaseClass Collections::checkedList(__JniBaseClass arg0, jclass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -96,7 +96,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Collections::checkedMap(__JniBaseClass arg0, jclass arg1, jclass arg2)
+	__JniBaseClass Collections::checkedMap(__JniBaseClass arg0, jclass arg1, jclass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -107,7 +107,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Collections::checkedNavigableMap(__JniBaseClass arg0, jclass arg1, jclass arg2)
+	__JniBaseClass Collections::checkedNavigableMap(__JniBaseClass arg0, jclass arg1, jclass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -118,7 +118,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Collections::checkedNavigableSet(__JniBaseClass arg0, jclass arg1)
+	__JniBaseClass Collections::checkedNavigableSet(__JniBaseClass arg0, jclass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -128,7 +128,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Collections::checkedQueue(__JniBaseClass arg0, jclass arg1)
+	__JniBaseClass Collections::checkedQueue(__JniBaseClass arg0, jclass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -138,7 +138,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Collections::checkedSet(__JniBaseClass arg0, jclass arg1)
+	__JniBaseClass Collections::checkedSet(__JniBaseClass arg0, jclass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -148,7 +148,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Collections::checkedSortedMap(__JniBaseClass arg0, jclass arg1, jclass arg2)
+	__JniBaseClass Collections::checkedSortedMap(__JniBaseClass arg0, jclass arg1, jclass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -159,7 +159,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Collections::checkedSortedSet(__JniBaseClass arg0, jclass arg1)
+	__JniBaseClass Collections::checkedSortedSet(__JniBaseClass arg0, jclass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -189,7 +189,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collections::emptyEnumeration()
+	__JniBaseClass Collections::emptyEnumeration()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -197,7 +197,7 @@ namespace java::util
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject Collections::emptyIterator()
+	__JniBaseClass Collections::emptyIterator()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -205,7 +205,7 @@ namespace java::util
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject Collections::emptyList()
+	__JniBaseClass Collections::emptyList()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -213,7 +213,7 @@ namespace java::util
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Collections::emptyListIterator()
+	__JniBaseClass Collections::emptyListIterator()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -221,7 +221,7 @@ namespace java::util
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	QAndroidJniObject Collections::emptyMap()
+	__JniBaseClass Collections::emptyMap()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -229,7 +229,7 @@ namespace java::util
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject Collections::emptyNavigableMap()
+	__JniBaseClass Collections::emptyNavigableMap()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -237,7 +237,7 @@ namespace java::util
 			"()Ljava/util/NavigableMap;"
 		);
 	}
-	QAndroidJniObject Collections::emptyNavigableSet()
+	__JniBaseClass Collections::emptyNavigableSet()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -245,7 +245,7 @@ namespace java::util
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	QAndroidJniObject Collections::emptySet()
+	__JniBaseClass Collections::emptySet()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -253,7 +253,7 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject Collections::emptySortedMap()
+	__JniBaseClass Collections::emptySortedMap()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -261,7 +261,7 @@ namespace java::util
 			"()Ljava/util/SortedMap;"
 		);
 	}
-	QAndroidJniObject Collections::emptySortedSet()
+	__JniBaseClass Collections::emptySortedSet()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -269,7 +269,7 @@ namespace java::util
 			"()Ljava/util/SortedSet;"
 		);
 	}
-	QAndroidJniObject Collections::enumeration(__JniBaseClass arg0)
+	__JniBaseClass Collections::enumeration(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -318,7 +318,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collections::list(__JniBaseClass arg0)
+	java::util::ArrayList Collections::list(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -365,7 +365,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject Collections::nCopies(jint arg0, jobject arg1)
+	__JniBaseClass Collections::nCopies(jint arg0, jobject arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -375,7 +375,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Collections::newSetFromMap(__JniBaseClass arg0)
+	__JniBaseClass Collections::newSetFromMap(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -404,7 +404,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::reverseOrder()
+	__JniBaseClass Collections::reverseOrder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -412,7 +412,7 @@ namespace java::util
 			"()Ljava/util/Comparator;"
 		);
 	}
-	QAndroidJniObject Collections::reverseOrder(__JniBaseClass arg0)
+	__JniBaseClass Collections::reverseOrder(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -450,7 +450,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collections::singleton(jobject arg0)
+	__JniBaseClass Collections::singleton(jobject arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -459,7 +459,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Collections::singletonList(jobject arg0)
+	__JniBaseClass Collections::singletonList(jobject arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -468,7 +468,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Collections::singletonMap(jobject arg0, jobject arg1)
+	__JniBaseClass Collections::singletonMap(jobject arg0, jobject arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -508,7 +508,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Collections::synchronizedCollection(__JniBaseClass arg0)
+	__JniBaseClass Collections::synchronizedCollection(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -517,7 +517,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::synchronizedList(__JniBaseClass arg0)
+	__JniBaseClass Collections::synchronizedList(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -526,7 +526,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::synchronizedMap(__JniBaseClass arg0)
+	__JniBaseClass Collections::synchronizedMap(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -535,7 +535,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::synchronizedNavigableMap(__JniBaseClass arg0)
+	__JniBaseClass Collections::synchronizedNavigableMap(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -544,7 +544,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::synchronizedNavigableSet(__JniBaseClass arg0)
+	__JniBaseClass Collections::synchronizedNavigableSet(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -553,7 +553,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::synchronizedSet(__JniBaseClass arg0)
+	__JniBaseClass Collections::synchronizedSet(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -562,7 +562,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::synchronizedSortedMap(__JniBaseClass arg0)
+	__JniBaseClass Collections::synchronizedSortedMap(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -571,7 +571,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::synchronizedSortedSet(__JniBaseClass arg0)
+	__JniBaseClass Collections::synchronizedSortedSet(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -580,7 +580,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::unmodifiableCollection(__JniBaseClass arg0)
+	__JniBaseClass Collections::unmodifiableCollection(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -589,7 +589,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::unmodifiableList(__JniBaseClass arg0)
+	__JniBaseClass Collections::unmodifiableList(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -598,7 +598,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::unmodifiableMap(__JniBaseClass arg0)
+	__JniBaseClass Collections::unmodifiableMap(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -607,7 +607,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::unmodifiableNavigableMap(__JniBaseClass arg0)
+	__JniBaseClass Collections::unmodifiableNavigableMap(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -616,7 +616,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::unmodifiableNavigableSet(__JniBaseClass arg0)
+	__JniBaseClass Collections::unmodifiableNavigableSet(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -625,7 +625,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::unmodifiableSet(__JniBaseClass arg0)
+	__JniBaseClass Collections::unmodifiableSet(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -634,7 +634,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::unmodifiableSortedMap(__JniBaseClass arg0)
+	__JniBaseClass Collections::unmodifiableSortedMap(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",
@@ -643,7 +643,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collections::unmodifiableSortedSet(__JniBaseClass arg0)
+	__JniBaseClass Collections::unmodifiableSortedSet(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Collections",

@@ -21,28 +21,28 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getByIndex(jint arg0);
-		static QAndroidJniObject getByInetAddress(java::net::InetAddress arg0);
-		static QAndroidJniObject getByName(jstring arg0);
-		static QAndroidJniObject getNetworkInterfaces();
-		static QAndroidJniObject networkInterfaces();
+		static java::net::NetworkInterface getByIndex(jint arg0);
+		static java::net::NetworkInterface getByInetAddress(java::net::InetAddress arg0);
+		static java::net::NetworkInterface getByName(jstring arg0);
+		static __JniBaseClass getNetworkInterfaces();
+		static __JniBaseClass networkInterfaces();
 		jboolean equals(jobject arg0);
 		jstring getDisplayName();
 		jbyteArray getHardwareAddress();
 		jint getIndex();
-		QAndroidJniObject getInetAddresses();
-		QAndroidJniObject getInterfaceAddresses();
+		__JniBaseClass getInetAddresses();
+		__JniBaseClass getInterfaceAddresses();
 		jint getMTU();
 		jstring getName();
-		QAndroidJniObject getParent();
-		QAndroidJniObject getSubInterfaces();
+		java::net::NetworkInterface getParent();
+		__JniBaseClass getSubInterfaces();
 		jint hashCode();
-		QAndroidJniObject inetAddresses();
+		__JniBaseClass inetAddresses();
 		jboolean isLoopback();
 		jboolean isPointToPoint();
 		jboolean isUp();
 		jboolean isVirtual();
-		QAndroidJniObject subInterfaces();
+		__JniBaseClass subInterfaces();
 		jboolean supportsMulticast();
 		jstring toString();
 	};

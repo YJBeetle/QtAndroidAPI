@@ -11,14 +11,14 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject BluetoothServerSocket::accept()
+	android::bluetooth::BluetoothSocket BluetoothServerSocket::accept()
 	{
 		return callObjectMethod(
 			"accept",
 			"()Landroid/bluetooth/BluetoothSocket;"
 		);
 	}
-	QAndroidJniObject BluetoothServerSocket::accept(jint arg0)
+	android::bluetooth::BluetoothSocket BluetoothServerSocket::accept(jint arg0)
 	{
 		return callObjectMethod(
 			"accept",

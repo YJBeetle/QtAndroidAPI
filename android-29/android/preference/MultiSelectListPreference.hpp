@@ -38,7 +38,7 @@ namespace android::preference
 		jint findIndexOfValue(jstring arg0);
 		jarray getEntries();
 		jarray getEntryValues();
-		QAndroidJniObject getValues();
+		__JniBaseClass getValues();
 		void setEntries(jarray arg0);
 		void setEntries(jint arg0);
 		void setEntryValues(jarray arg0);

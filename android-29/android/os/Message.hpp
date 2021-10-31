@@ -25,11 +25,11 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jint arg1();
 		jint arg2();
 		jobject obj();
-		QAndroidJniObject replyTo();
+		android::os::Messenger replyTo();
 		jint sendingUid();
 		jint what();
 		
@@ -41,22 +41,22 @@ namespace android::os
 		Message();
 		
 		// Methods
-		static QAndroidJniObject obtain();
-		static QAndroidJniObject obtain(android::os::Handler arg0);
-		static QAndroidJniObject obtain(android::os::Message arg0);
-		static QAndroidJniObject obtain(android::os::Handler arg0, jint arg1);
-		static QAndroidJniObject obtain(android::os::Handler arg0, __JniBaseClass arg1);
-		static QAndroidJniObject obtain(android::os::Handler arg0, jint arg1, jobject arg2);
-		static QAndroidJniObject obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3, jobject arg4);
+		static android::os::Message obtain();
+		static android::os::Message obtain(android::os::Handler arg0);
+		static android::os::Message obtain(android::os::Message arg0);
+		static android::os::Message obtain(android::os::Handler arg0, jint arg1);
+		static android::os::Message obtain(android::os::Handler arg0, __JniBaseClass arg1);
+		static android::os::Message obtain(android::os::Handler arg0, jint arg1, jobject arg2);
+		static android::os::Message obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3);
+		static android::os::Message obtain(android::os::Handler arg0, jint arg1, jint arg2, jint arg3, jobject arg4);
 		void copyFrom(android::os::Message arg0);
 		jint describeContents();
-		QAndroidJniObject getCallback();
-		QAndroidJniObject getData();
-		QAndroidJniObject getTarget();
+		__JniBaseClass getCallback();
+		android::os::Bundle getData();
+		android::os::Handler getTarget();
 		jlong getWhen();
 		jboolean isAsynchronous();
-		QAndroidJniObject peekData();
+		android::os::Bundle peekData();
 		void recycle();
 		void sendToTarget();
 		void setAsynchronous(jboolean arg0);

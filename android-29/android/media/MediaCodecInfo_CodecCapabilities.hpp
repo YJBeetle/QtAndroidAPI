@@ -96,13 +96,13 @@ namespace android::media
 		MediaCodecInfo_CodecCapabilities();
 		
 		// Methods
-		static QAndroidJniObject createFromProfileLevel(jstring arg0, jint arg1, jint arg2);
-		QAndroidJniObject getAudioCapabilities();
-		QAndroidJniObject getDefaultFormat();
-		QAndroidJniObject getEncoderCapabilities();
+		static android::media::MediaCodecInfo_CodecCapabilities createFromProfileLevel(jstring arg0, jint arg1, jint arg2);
+		android::media::MediaCodecInfo_AudioCapabilities getAudioCapabilities();
+		android::media::MediaFormat getDefaultFormat();
+		android::media::MediaCodecInfo_EncoderCapabilities getEncoderCapabilities();
 		jint getMaxSupportedInstances();
 		jstring getMimeType();
-		QAndroidJniObject getVideoCapabilities();
+		android::media::MediaCodecInfo_VideoCapabilities getVideoCapabilities();
 		jboolean isFeatureRequired(jstring arg0);
 		jboolean isFeatureSupported(jstring arg0);
 		jboolean isFormatSupported(android::media::MediaFormat arg0);

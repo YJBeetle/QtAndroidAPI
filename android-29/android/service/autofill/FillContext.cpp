@@ -6,7 +6,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	QAndroidJniObject FillContext::CREATOR()
+	__JniBaseClass FillContext::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.FillContext",
@@ -28,7 +28,7 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	QAndroidJniObject FillContext::getFocusedId()
+	android::view::autofill::AutofillId FillContext::getFocusedId()
 	{
 		return callObjectMethod(
 			"getFocusedId",
@@ -42,7 +42,7 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	QAndroidJniObject FillContext::getStructure()
+	android::app::assist::AssistStructure FillContext::getStructure()
 	{
 		return callObjectMethod(
 			"getStructure",

@@ -18,7 +18,7 @@ namespace java::lang::annotation
 		) {}
 	
 	// Methods
-	QAndroidJniObject AnnotationTypeMismatchException::element()
+	java::lang::reflect::Method AnnotationTypeMismatchException::element()
 	{
 		return callObjectMethod(
 			"element",

@@ -126,7 +126,7 @@ namespace android::database
 			arg0
 		);
 	}
-	QAndroidJniObject MatrixCursor::newRow()
+	android::database::MatrixCursor_RowBuilder MatrixCursor::newRow()
 	{
 		return callObjectMethod(
 			"newRow",

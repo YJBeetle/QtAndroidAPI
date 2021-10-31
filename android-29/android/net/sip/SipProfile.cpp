@@ -4,7 +4,7 @@
 namespace android::net::sip
 {
 	// Fields
-	QAndroidJniObject SipProfile::CREATOR()
+	__JniBaseClass SipProfile::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.sip.SipProfile",

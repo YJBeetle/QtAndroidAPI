@@ -6,7 +6,7 @@
 namespace android::print
 {
 	// Fields
-	QAndroidJniObject PrinterInfo::CREATOR()
+	__JniBaseClass PrinterInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrinterInfo",
@@ -57,7 +57,7 @@ namespace android::print
 			arg0
 		);
 	}
-	QAndroidJniObject PrinterInfo::getCapabilities()
+	android::print::PrinterCapabilitiesInfo PrinterInfo::getCapabilities()
 	{
 		return callObjectMethod(
 			"getCapabilities",
@@ -71,7 +71,7 @@ namespace android::print
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PrinterInfo::getId()
+	android::print::PrinterId PrinterInfo::getId()
 	{
 		return callObjectMethod(
 			"getId",

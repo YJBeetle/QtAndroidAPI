@@ -40,8 +40,8 @@ namespace android::speech
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createSpeechRecognizer(android::content::Context arg0);
-		static QAndroidJniObject createSpeechRecognizer(android::content::Context arg0, android::content::ComponentName arg1);
+		static android::speech::SpeechRecognizer createSpeechRecognizer(android::content::Context arg0);
+		static android::speech::SpeechRecognizer createSpeechRecognizer(android::content::Context arg0, android::content::ComponentName arg1);
 		static jboolean isRecognitionAvailable(android::content::Context arg0);
 		void cancel();
 		void destroy();

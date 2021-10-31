@@ -9,11 +9,11 @@ namespace android::net::rtp
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AMR();
-		static QAndroidJniObject GSM();
-		static QAndroidJniObject GSM_EFR();
-		static QAndroidJniObject PCMA();
-		static QAndroidJniObject PCMU();
+		static android::net::rtp::AudioCodec AMR();
+		static android::net::rtp::AudioCodec GSM();
+		static android::net::rtp::AudioCodec GSM_EFR();
+		static android::net::rtp::AudioCodec PCMA();
+		static android::net::rtp::AudioCodec PCMU();
 		jstring fmtp();
 		jstring rtpmap();
 		jint type();
@@ -25,7 +25,7 @@ namespace android::net::rtp
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getCodec(jint arg0, jstring arg1, jstring arg2);
+		static android::net::rtp::AudioCodec getCodec(jint arg0, jstring arg1, jstring arg2);
 		static jarray getCodecs();
 	};
 } // namespace android::net::rtp

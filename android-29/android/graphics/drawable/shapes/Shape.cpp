@@ -18,7 +18,7 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	QAndroidJniObject Shape::clone()
+	android::graphics::drawable::shapes::Shape Shape::clone()
 	{
 		return callObjectMethod(
 			"clone",

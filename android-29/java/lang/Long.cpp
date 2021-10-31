@@ -90,7 +90,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Long::decode(jstring arg0)
+	java::lang::Long Long::decode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
@@ -109,7 +109,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Long::getLong(jstring arg0)
+	java::lang::Long Long::getLong(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
@@ -118,7 +118,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Long::getLong(jstring arg0, java::lang::Long arg1)
+	java::lang::Long Long::getLong(jstring arg0, java::lang::Long arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
@@ -128,7 +128,7 @@ namespace java::lang
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Long::getLong(jstring arg0, jlong arg1)
+	java::lang::Long Long::getLong(jstring arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
@@ -397,7 +397,7 @@ namespace java::lang
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject Long::valueOf(jstring arg0)
+	java::lang::Long Long::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
@@ -406,7 +406,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Long::valueOf(jlong arg0)
+	java::lang::Long Long::valueOf(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
@@ -415,7 +415,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Long::valueOf(jstring arg0, jint arg1)
+	java::lang::Long Long::valueOf(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
@@ -448,7 +448,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Long::describeConstable()
+	java::util::Optional Long::describeConstable()
 	{
 		return callObjectMethod(
 			"describeConstable",
@@ -498,7 +498,7 @@ namespace java::lang
 			"()J"
 		);
 	}
-	QAndroidJniObject Long::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
+	java::lang::Long Long::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
 	{
 		return callObjectMethod(
 			"resolveConstantDesc",

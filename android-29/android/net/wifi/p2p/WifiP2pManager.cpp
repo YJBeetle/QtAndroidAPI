@@ -262,7 +262,7 @@ namespace android::net::wifi::p2p
 			arg1.object()
 		);
 	}
-	QAndroidJniObject WifiP2pManager::initialize(android::content::Context arg0, android::os::Looper arg1, __JniBaseClass arg2)
+	android::net::wifi::p2p::WifiP2pManager_Channel WifiP2pManager::initialize(android::content::Context arg0, android::os::Looper arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"initialize",

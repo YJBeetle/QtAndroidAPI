@@ -16,7 +16,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	QAndroidJniObject ShapeDrawable_ShaderFactory::resize(jint arg0, jint arg1)
+	android::graphics::Shader ShapeDrawable_ShaderFactory::resize(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resize",

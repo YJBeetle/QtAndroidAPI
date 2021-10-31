@@ -17,7 +17,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject MetricAffectingSpan::getUnderlying()
+	android::text::style::MetricAffectingSpan MetricAffectingSpan::getUnderlying()
 	{
 		return callObjectMethod(
 			"getUnderlying",

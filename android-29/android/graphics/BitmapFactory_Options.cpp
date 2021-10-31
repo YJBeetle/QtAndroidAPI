@@ -6,7 +6,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject BitmapFactory_Options::inBitmap()
+	android::graphics::Bitmap BitmapFactory_Options::inBitmap()
 	{
 		return getObjectField(
 			"inBitmap",
@@ -49,14 +49,14 @@ namespace android::graphics
 			"inPreferQualityOverSpeed"
 		);
 	}
-	QAndroidJniObject BitmapFactory_Options::inPreferredColorSpace()
+	android::graphics::ColorSpace BitmapFactory_Options::inPreferredColorSpace()
 	{
 		return getObjectField(
 			"inPreferredColorSpace",
 			"Landroid/graphics/ColorSpace;"
 		);
 	}
-	QAndroidJniObject BitmapFactory_Options::inPreferredConfig()
+	android::graphics::Bitmap_Config BitmapFactory_Options::inPreferredConfig()
 	{
 		return getObjectField(
 			"inPreferredConfig",
@@ -112,14 +112,14 @@ namespace android::graphics
 			"mCancel"
 		);
 	}
-	QAndroidJniObject BitmapFactory_Options::outColorSpace()
+	android::graphics::ColorSpace BitmapFactory_Options::outColorSpace()
 	{
 		return getObjectField(
 			"outColorSpace",
 			"Landroid/graphics/ColorSpace;"
 		);
 	}
-	QAndroidJniObject BitmapFactory_Options::outConfig()
+	android::graphics::Bitmap_Config BitmapFactory_Options::outConfig()
 	{
 		return getObjectField(
 			"outConfig",

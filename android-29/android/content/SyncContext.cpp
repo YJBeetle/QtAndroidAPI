@@ -11,7 +11,7 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SyncContext::getSyncContextBinder()
+	__JniBaseClass SyncContext::getSyncContextBinder()
 	{
 		return callObjectMethod(
 			"getSyncContextBinder",

@@ -14,7 +14,7 @@
 namespace android::widget
 {
 	// Fields
-	QAndroidJniObject RemoteViews::CREATOR()
+	__JniBaseClass RemoteViews::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.RemoteViews",
@@ -72,7 +72,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	QAndroidJniObject RemoteViews::apply(android::content::Context arg0, android::view::ViewGroup arg1)
+	android::view::View RemoteViews::apply(android::content::Context arg0, android::view::ViewGroup arg1)
 	{
 		return callObjectMethod(
 			"apply",
@@ -81,7 +81,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	QAndroidJniObject RemoteViews::clone()
+	android::widget::RemoteViews RemoteViews::clone()
 	{
 		return callObjectMethod(
 			"clone",

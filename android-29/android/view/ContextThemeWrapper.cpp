@@ -42,14 +42,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ContextThemeWrapper::getAssets()
+	android::content::res::AssetManager ContextThemeWrapper::getAssets()
 	{
 		return callObjectMethod(
 			"getAssets",
 			"()Landroid/content/res/AssetManager;"
 		);
 	}
-	QAndroidJniObject ContextThemeWrapper::getResources()
+	android::content::res::Resources ContextThemeWrapper::getResources()
 	{
 		return callObjectMethod(
 			"getResources",
@@ -64,7 +64,7 @@ namespace android::view
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject ContextThemeWrapper::getTheme()
+	android::content::res::Resources_Theme ContextThemeWrapper::getTheme()
 	{
 		return callObjectMethod(
 			"getTheme",

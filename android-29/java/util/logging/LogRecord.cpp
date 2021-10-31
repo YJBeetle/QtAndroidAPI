@@ -23,14 +23,14 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	QAndroidJniObject LogRecord::getInstant()
+	java::time::Instant LogRecord::getInstant()
 	{
 		return callObjectMethod(
 			"getInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	QAndroidJniObject LogRecord::getLevel()
+	java::util::logging::Level LogRecord::getLevel()
 	{
 		return callObjectMethod(
 			"getLevel",
@@ -72,7 +72,7 @@ namespace java::util::logging
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
-	QAndroidJniObject LogRecord::getResourceBundle()
+	java::util::ResourceBundle LogRecord::getResourceBundle()
 	{
 		return callObjectMethod(
 			"getResourceBundle",
@@ -145,7 +145,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	QAndroidJniObject LogRecord::setLongThreadID(jlong arg0)
+	java::util::logging::LogRecord LogRecord::setLongThreadID(jlong arg0)
 	{
 		return callObjectMethod(
 			"setLongThreadID",

@@ -6,7 +6,7 @@
 namespace android::bluetooth::le
 {
 	// Fields
-	QAndroidJniObject ScanResult::CREATOR()
+	__JniBaseClass ScanResult::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.le.ScanResult",
@@ -116,7 +116,7 @@ namespace android::bluetooth::le
 			"()I"
 		);
 	}
-	QAndroidJniObject ScanResult::getDevice()
+	android::bluetooth::BluetoothDevice ScanResult::getDevice()
 	{
 		return callObjectMethod(
 			"getDevice",
@@ -144,7 +144,7 @@ namespace android::bluetooth::le
 			"()I"
 		);
 	}
-	QAndroidJniObject ScanResult::getScanRecord()
+	android::bluetooth::le::ScanRecord ScanResult::getScanRecord()
 	{
 		return callObjectMethod(
 			"getScanRecord",

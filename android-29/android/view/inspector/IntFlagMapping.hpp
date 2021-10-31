@@ -19,7 +19,7 @@ namespace android::view::inspector
 		
 		// Methods
 		void add(jint arg0, jint arg1, jstring arg2);
-		QAndroidJniObject get(jint arg0);
+		__JniBaseClass get(jint arg0);
 	};
 } // namespace android::view::inspector
 

@@ -4,7 +4,7 @@
 namespace android::view::autofill
 {
 	// Fields
-	QAndroidJniObject AutofillValue::CREATOR()
+	__JniBaseClass AutofillValue::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.autofill.AutofillValue",
@@ -19,7 +19,7 @@ namespace android::view::autofill
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AutofillValue::forDate(jlong arg0)
+	android::view::autofill::AutofillValue AutofillValue::forDate(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.autofill.AutofillValue",
@@ -28,7 +28,7 @@ namespace android::view::autofill
 			arg0
 		);
 	}
-	QAndroidJniObject AutofillValue::forList(jint arg0)
+	android::view::autofill::AutofillValue AutofillValue::forList(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.autofill.AutofillValue",
@@ -37,7 +37,7 @@ namespace android::view::autofill
 			arg0
 		);
 	}
-	QAndroidJniObject AutofillValue::forText(jstring arg0)
+	android::view::autofill::AutofillValue AutofillValue::forText(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.autofill.AutofillValue",
@@ -46,7 +46,7 @@ namespace android::view::autofill
 			arg0
 		);
 	}
-	QAndroidJniObject AutofillValue::forToggle(jboolean arg0)
+	android::view::autofill::AutofillValue AutofillValue::forToggle(jboolean arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.autofill.AutofillValue",

@@ -13,8 +13,8 @@ namespace java::nio::charset
 	{
 	public:
 		// Fields
-		static QAndroidJniObject OVERFLOW();
-		static QAndroidJniObject UNDERFLOW();
+		static java::nio::charset::CoderResult OVERFLOW();
+		static java::nio::charset::CoderResult UNDERFLOW();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CoderResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -23,8 +23,8 @@ namespace java::nio::charset
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject malformedForLength(jint arg0);
-		static QAndroidJniObject unmappableForLength(jint arg0);
+		static java::nio::charset::CoderResult malformedForLength(jint arg0);
+		static java::nio::charset::CoderResult unmappableForLength(jint arg0);
 		jboolean isError();
 		jboolean isMalformed();
 		jboolean isOverflow();

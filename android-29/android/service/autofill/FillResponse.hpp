@@ -17,7 +17,7 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_DISABLE_ACTIVITY_ONLY();
 		static jint FLAG_TRACK_CONTEXT_COMMITED();
 		

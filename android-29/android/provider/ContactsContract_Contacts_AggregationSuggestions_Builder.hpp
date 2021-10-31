@@ -22,10 +22,10 @@ namespace android::provider
 		ContactsContract_Contacts_AggregationSuggestions_Builder();
 		
 		// Methods
-		QAndroidJniObject addNameParameter(jstring arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject setContactId(jlong arg0);
-		QAndroidJniObject setLimit(jint arg0);
+		android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder addNameParameter(jstring arg0);
+		android::net::Uri build();
+		android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder setContactId(jlong arg0);
+		android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder setLimit(jint arg0);
 	};
 } // namespace android::provider
 

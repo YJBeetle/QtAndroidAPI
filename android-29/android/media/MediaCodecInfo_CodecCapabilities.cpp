@@ -461,7 +461,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaCodecInfo_CodecCapabilities::createFromProfileLevel(jstring arg0, jint arg1, jint arg2)
+	android::media::MediaCodecInfo_CodecCapabilities MediaCodecInfo_CodecCapabilities::createFromProfileLevel(jstring arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaCodecInfo$CodecCapabilities",
@@ -472,21 +472,21 @@ namespace android::media
 			arg2
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_CodecCapabilities::getAudioCapabilities()
+	android::media::MediaCodecInfo_AudioCapabilities MediaCodecInfo_CodecCapabilities::getAudioCapabilities()
 	{
 		return callObjectMethod(
 			"getAudioCapabilities",
 			"()Landroid/media/MediaCodecInfo$AudioCapabilities;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_CodecCapabilities::getDefaultFormat()
+	android::media::MediaFormat MediaCodecInfo_CodecCapabilities::getDefaultFormat()
 	{
 		return callObjectMethod(
 			"getDefaultFormat",
 			"()Landroid/media/MediaFormat;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_CodecCapabilities::getEncoderCapabilities()
+	android::media::MediaCodecInfo_EncoderCapabilities MediaCodecInfo_CodecCapabilities::getEncoderCapabilities()
 	{
 		return callObjectMethod(
 			"getEncoderCapabilities",
@@ -507,7 +507,7 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodecInfo_CodecCapabilities::getVideoCapabilities()
+	android::media::MediaCodecInfo_VideoCapabilities MediaCodecInfo_CodecCapabilities::getVideoCapabilities()
 	{
 		return callObjectMethod(
 			"getVideoCapabilities",

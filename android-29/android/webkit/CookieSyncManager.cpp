@@ -11,7 +11,7 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CookieSyncManager::createInstance(android::content::Context arg0)
+	android::webkit::CookieSyncManager CookieSyncManager::createInstance(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.CookieSyncManager",
@@ -20,7 +20,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CookieSyncManager::getInstance()
+	android::webkit::CookieSyncManager CookieSyncManager::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.CookieSyncManager",

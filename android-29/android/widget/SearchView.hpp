@@ -51,7 +51,7 @@ namespace android::widget
 		jint getMaxWidth();
 		jstring getQuery();
 		jstring getQueryHint();
-		QAndroidJniObject getSuggestionsAdapter();
+		android::widget::CursorAdapter getSuggestionsAdapter();
 		jboolean isIconfiedByDefault();
 		jboolean isIconified();
 		jboolean isIconifiedByDefault();

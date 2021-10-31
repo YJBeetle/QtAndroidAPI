@@ -12,7 +12,7 @@ namespace javax::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ServerSocketFactory::getDefault()
+	javax::net::ServerSocketFactory ServerSocketFactory::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ServerSocketFactory",
@@ -20,14 +20,14 @@ namespace javax::net
 			"()Ljavax/net/ServerSocketFactory;"
 		);
 	}
-	QAndroidJniObject ServerSocketFactory::createServerSocket()
+	java::net::ServerSocket ServerSocketFactory::createServerSocket()
 	{
 		return callObjectMethod(
 			"createServerSocket",
 			"()Ljava/net/ServerSocket;"
 		);
 	}
-	QAndroidJniObject ServerSocketFactory::createServerSocket(jint arg0)
+	java::net::ServerSocket ServerSocketFactory::createServerSocket(jint arg0)
 	{
 		return callObjectMethod(
 			"createServerSocket",
@@ -35,7 +35,7 @@ namespace javax::net
 			arg0
 		);
 	}
-	QAndroidJniObject ServerSocketFactory::createServerSocket(jint arg0, jint arg1)
+	java::net::ServerSocket ServerSocketFactory::createServerSocket(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"createServerSocket",
@@ -44,7 +44,7 @@ namespace javax::net
 			arg1
 		);
 	}
-	QAndroidJniObject ServerSocketFactory::createServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2)
+	java::net::ServerSocket ServerSocketFactory::createServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2)
 	{
 		return callObjectMethod(
 			"createServerSocket",

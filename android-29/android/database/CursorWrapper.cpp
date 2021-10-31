@@ -106,7 +106,7 @@ namespace android::database
 			arg0
 		);
 	}
-	QAndroidJniObject CursorWrapper::getExtras()
+	android::os::Bundle CursorWrapper::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -137,14 +137,14 @@ namespace android::database
 			arg0
 		);
 	}
-	QAndroidJniObject CursorWrapper::getNotificationUri()
+	android::net::Uri CursorWrapper::getNotificationUri()
 	{
 		return callObjectMethod(
 			"getNotificationUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject CursorWrapper::getNotificationUris()
+	__JniBaseClass CursorWrapper::getNotificationUris()
 	{
 		return callObjectMethod(
 			"getNotificationUris",
@@ -189,7 +189,7 @@ namespace android::database
 			"()Z"
 		);
 	}
-	QAndroidJniObject CursorWrapper::getWrappedCursor()
+	__JniBaseClass CursorWrapper::getWrappedCursor()
 	{
 		return callObjectMethod(
 			"getWrappedCursor",
@@ -306,7 +306,7 @@ namespace android::database
 			"()Z"
 		);
 	}
-	QAndroidJniObject CursorWrapper::respond(android::os::Bundle arg0)
+	android::os::Bundle CursorWrapper::respond(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"respond",

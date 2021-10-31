@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject ColorSpace_Named::ACES()
+	android::graphics::ColorSpace_Named ColorSpace_Named::ACES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::ACESCG()
+	android::graphics::ColorSpace_Named ColorSpace_Named::ACESCG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::ADOBE_RGB()
+	android::graphics::ColorSpace_Named ColorSpace_Named::ADOBE_RGB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::BT2020()
+	android::graphics::ColorSpace_Named ColorSpace_Named::BT2020()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -35,7 +35,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::BT709()
+	android::graphics::ColorSpace_Named ColorSpace_Named::BT709()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -43,7 +43,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::CIE_LAB()
+	android::graphics::ColorSpace_Named ColorSpace_Named::CIE_LAB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -51,7 +51,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::CIE_XYZ()
+	android::graphics::ColorSpace_Named ColorSpace_Named::CIE_XYZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -59,7 +59,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::DCI_P3()
+	android::graphics::ColorSpace_Named ColorSpace_Named::DCI_P3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -67,7 +67,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::DISPLAY_P3()
+	android::graphics::ColorSpace_Named ColorSpace_Named::DISPLAY_P3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -75,7 +75,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::EXTENDED_SRGB()
+	android::graphics::ColorSpace_Named ColorSpace_Named::EXTENDED_SRGB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -83,7 +83,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::LINEAR_EXTENDED_SRGB()
+	android::graphics::ColorSpace_Named ColorSpace_Named::LINEAR_EXTENDED_SRGB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -91,7 +91,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::LINEAR_SRGB()
+	android::graphics::ColorSpace_Named ColorSpace_Named::LINEAR_SRGB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -99,7 +99,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::NTSC_1953()
+	android::graphics::ColorSpace_Named ColorSpace_Named::NTSC_1953()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -107,7 +107,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::PRO_PHOTO_RGB()
+	android::graphics::ColorSpace_Named ColorSpace_Named::PRO_PHOTO_RGB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -115,7 +115,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::SMPTE_C()
+	android::graphics::ColorSpace_Named ColorSpace_Named::SMPTE_C()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -123,7 +123,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Named;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::SRGB()
+	android::graphics::ColorSpace_Named ColorSpace_Named::SRGB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Named",
@@ -138,7 +138,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ColorSpace_Named::valueOf(jstring arg0)
+	android::graphics::ColorSpace_Named ColorSpace_Named::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace$Named",

@@ -27,7 +27,7 @@ namespace android::text::style
 		MetricAffectingSpan();
 		
 		// Methods
-		QAndroidJniObject getUnderlying();
+		android::text::style::MetricAffectingSpan getUnderlying();
 		void updateMeasureState(android::text::TextPaint arg0);
 	};
 } // namespace android::text::style

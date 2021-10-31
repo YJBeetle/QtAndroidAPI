@@ -40,7 +40,7 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	QAndroidJniObject LevelListDrawable::mutate()
+	android::graphics::drawable::Drawable LevelListDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

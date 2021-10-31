@@ -10,12 +10,12 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DIFFERENCE();
-		static QAndroidJniObject INTERSECT();
-		static QAndroidJniObject REPLACE();
-		static QAndroidJniObject REVERSE_DIFFERENCE();
-		static QAndroidJniObject UNION();
-		static QAndroidJniObject XOR();
+		static android::graphics::Region_Op DIFFERENCE();
+		static android::graphics::Region_Op INTERSECT();
+		static android::graphics::Region_Op REPLACE();
+		static android::graphics::Region_Op REVERSE_DIFFERENCE();
+		static android::graphics::Region_Op UNION();
+		static android::graphics::Region_Op XOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Region_Op(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,7 +24,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Region_Op valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

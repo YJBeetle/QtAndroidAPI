@@ -35,14 +35,14 @@ namespace org::xml::sax
 		) {}
 	
 	// Methods
-	QAndroidJniObject InputSource::getByteStream()
+	java::io::InputStream InputSource::getByteStream()
 	{
 		return callObjectMethod(
 			"getByteStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	QAndroidJniObject InputSource::getCharacterStream()
+	java::io::Reader InputSource::getCharacterStream()
 	{
 		return callObjectMethod(
 			"getCharacterStream",

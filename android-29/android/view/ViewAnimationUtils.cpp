@@ -12,7 +12,7 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ViewAnimationUtils::createCircularReveal(android::view::View arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4)
+	android::animation::Animator ViewAnimationUtils::createCircularReveal(android::view::View arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.ViewAnimationUtils",

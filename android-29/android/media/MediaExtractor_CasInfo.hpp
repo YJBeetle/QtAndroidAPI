@@ -22,7 +22,7 @@ namespace android::media
 		
 		// Methods
 		jbyteArray getPrivateData();
-		QAndroidJniObject getSession();
+		android::media::MediaCas_Session getSession();
 		jint getSystemId();
 	};
 } // namespace android::media

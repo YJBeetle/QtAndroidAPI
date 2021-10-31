@@ -42,7 +42,7 @@ namespace android::media
 		void onConnected(android::media::MediaController2 arg0, android::media::Session2CommandGroup arg1);
 		void onDisconnected(android::media::MediaController2 arg0);
 		void onPlaybackActiveChanged(android::media::MediaController2 arg0, jboolean arg1);
-		QAndroidJniObject onSessionCommand(android::media::MediaController2 arg0, android::media::Session2Command arg1, android::os::Bundle arg2);
+		android::media::Session2Command_Result onSessionCommand(android::media::MediaController2 arg0, android::media::Session2Command arg1, android::os::Bundle arg2);
 	};
 } // namespace android::media
 

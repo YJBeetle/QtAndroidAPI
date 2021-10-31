@@ -27,14 +27,14 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject Measure::getNumber()
+	java::lang::Number Measure::getNumber()
 	{
 		return callObjectMethod(
 			"getNumber",
 			"()Ljava/lang/Number;"
 		);
 	}
-	QAndroidJniObject Measure::getUnit()
+	android::icu::util::MeasureUnit Measure::getUnit()
 	{
 		return callObjectMethod(
 			"getUnit",

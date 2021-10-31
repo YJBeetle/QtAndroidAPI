@@ -13,15 +13,15 @@ namespace java::util::logging
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ALL();
-		static QAndroidJniObject CONFIG();
-		static QAndroidJniObject FINE();
-		static QAndroidJniObject FINER();
-		static QAndroidJniObject FINEST();
-		static QAndroidJniObject INFO();
-		static QAndroidJniObject OFF();
-		static QAndroidJniObject SEVERE();
-		static QAndroidJniObject WARNING();
+		static java::util::logging::Level ALL();
+		static java::util::logging::Level CONFIG();
+		static java::util::logging::Level FINE();
+		static java::util::logging::Level FINER();
+		static java::util::logging::Level FINEST();
+		static java::util::logging::Level INFO();
+		static java::util::logging::Level OFF();
+		static java::util::logging::Level SEVERE();
+		static java::util::logging::Level WARNING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Level(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,7 +30,7 @@ namespace java::util::logging
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject parse(jstring arg0);
+		static java::util::logging::Level parse(jstring arg0);
 		jboolean equals(jobject arg0);
 		jstring getLocalizedName();
 		jstring getName();

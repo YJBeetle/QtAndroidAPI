@@ -18,16 +18,16 @@ namespace org::json
 		JSONStringer();
 		
 		// Methods
-		QAndroidJniObject array();
-		QAndroidJniObject endArray();
-		QAndroidJniObject endObject();
-		QAndroidJniObject key(jstring arg0);
-		QAndroidJniObject object();
+		org::json::JSONStringer array();
+		org::json::JSONStringer endArray();
+		org::json::JSONStringer endObject();
+		org::json::JSONStringer key(jstring arg0);
+		org::json::JSONStringer object();
 		jstring toString();
-		QAndroidJniObject value(jboolean arg0);
-		QAndroidJniObject value(jdouble arg0);
-		QAndroidJniObject value(jobject arg0);
-		QAndroidJniObject value(jlong arg0);
+		org::json::JSONStringer value(jboolean arg0);
+		org::json::JSONStringer value(jdouble arg0);
+		org::json::JSONStringer value(jobject arg0);
+		org::json::JSONStringer value(jlong arg0);
 	};
 } // namespace org::json
 

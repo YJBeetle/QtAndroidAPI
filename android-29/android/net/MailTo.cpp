@@ -27,7 +27,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject MailTo::parse(jstring arg0)
+	android::net::MailTo MailTo::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.MailTo",
@@ -50,7 +50,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MailTo::getHeaders()
+	__JniBaseClass MailTo::getHeaders()
 	{
 		return callObjectMethod(
 			"getHeaders",

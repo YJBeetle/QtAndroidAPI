@@ -6,7 +6,7 @@
 namespace java::time
 {
 	// Fields
-	QAndroidJniObject Duration::ZERO()
+	java::time::Duration Duration::ZERO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.Duration",
@@ -21,7 +21,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Duration::between(__JniBaseClass arg0, __JniBaseClass arg1)
+	java::time::Duration Duration::between(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -31,7 +31,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Duration::from(__JniBaseClass arg0)
+	java::time::Duration Duration::from(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -40,7 +40,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Duration::of(jlong arg0, __JniBaseClass arg1)
+	java::time::Duration Duration::of(jlong arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -50,7 +50,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Duration::ofDays(jlong arg0)
+	java::time::Duration Duration::ofDays(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -59,7 +59,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::ofHours(jlong arg0)
+	java::time::Duration Duration::ofHours(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -68,7 +68,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::ofMillis(jlong arg0)
+	java::time::Duration Duration::ofMillis(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -77,7 +77,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::ofMinutes(jlong arg0)
+	java::time::Duration Duration::ofMinutes(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -86,7 +86,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::ofNanos(jlong arg0)
+	java::time::Duration Duration::ofNanos(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -95,7 +95,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::ofSeconds(jlong arg0)
+	java::time::Duration Duration::ofSeconds(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -104,7 +104,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::ofSeconds(jlong arg0, jlong arg1)
+	java::time::Duration Duration::ofSeconds(jlong arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -114,7 +114,7 @@ namespace java::time
 			arg1
 		);
 	}
-	QAndroidJniObject Duration::parse(jstring arg0)
+	java::time::Duration Duration::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Duration",
@@ -123,14 +123,14 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::abs()
+	java::time::Duration Duration::abs()
 	{
 		return callObjectMethod(
 			"abs",
 			"()Ljava/time/Duration;"
 		);
 	}
-	QAndroidJniObject Duration::addTo(__JniBaseClass arg0)
+	__JniBaseClass Duration::addTo(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"addTo",
@@ -154,7 +154,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Duration::dividedBy(jlong arg0)
+	java::time::Duration Duration::dividedBy(jlong arg0)
 	{
 		return callObjectMethod(
 			"dividedBy",
@@ -200,7 +200,7 @@ namespace java::time
 			"()J"
 		);
 	}
-	QAndroidJniObject Duration::getUnits()
+	__JniBaseClass Duration::getUnits()
 	{
 		return callObjectMethod(
 			"getUnits",
@@ -228,7 +228,7 @@ namespace java::time
 			"()Z"
 		);
 	}
-	QAndroidJniObject Duration::minus(java::time::Duration arg0)
+	java::time::Duration Duration::minus(java::time::Duration arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -236,7 +236,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Duration::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::Duration Duration::minus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -245,7 +245,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Duration::minusDays(jlong arg0)
+	java::time::Duration Duration::minusDays(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusDays",
@@ -253,7 +253,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::minusHours(jlong arg0)
+	java::time::Duration Duration::minusHours(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusHours",
@@ -261,7 +261,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::minusMillis(jlong arg0)
+	java::time::Duration Duration::minusMillis(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusMillis",
@@ -269,7 +269,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::minusMinutes(jlong arg0)
+	java::time::Duration Duration::minusMinutes(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusMinutes",
@@ -277,7 +277,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::minusNanos(jlong arg0)
+	java::time::Duration Duration::minusNanos(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusNanos",
@@ -285,7 +285,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::minusSeconds(jlong arg0)
+	java::time::Duration Duration::minusSeconds(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusSeconds",
@@ -293,7 +293,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::multipliedBy(jlong arg0)
+	java::time::Duration Duration::multipliedBy(jlong arg0)
 	{
 		return callObjectMethod(
 			"multipliedBy",
@@ -301,14 +301,14 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::negated()
+	java::time::Duration Duration::negated()
 	{
 		return callObjectMethod(
 			"negated",
 			"()Ljava/time/Duration;"
 		);
 	}
-	QAndroidJniObject Duration::plus(java::time::Duration arg0)
+	java::time::Duration Duration::plus(java::time::Duration arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -316,7 +316,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Duration::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::Duration Duration::plus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -325,7 +325,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Duration::plusDays(jlong arg0)
+	java::time::Duration Duration::plusDays(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusDays",
@@ -333,7 +333,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::plusHours(jlong arg0)
+	java::time::Duration Duration::plusHours(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusHours",
@@ -341,7 +341,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::plusMillis(jlong arg0)
+	java::time::Duration Duration::plusMillis(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusMillis",
@@ -349,7 +349,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::plusMinutes(jlong arg0)
+	java::time::Duration Duration::plusMinutes(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusMinutes",
@@ -357,7 +357,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::plusNanos(jlong arg0)
+	java::time::Duration Duration::plusNanos(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusNanos",
@@ -365,7 +365,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::plusSeconds(jlong arg0)
+	java::time::Duration Duration::plusSeconds(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusSeconds",
@@ -373,7 +373,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::subtractFrom(__JniBaseClass arg0)
+	__JniBaseClass Duration::subtractFrom(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"subtractFrom",
@@ -472,7 +472,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Duration::truncatedTo(__JniBaseClass arg0)
+	java::time::Duration Duration::truncatedTo(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -480,7 +480,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Duration::withNanos(jint arg0)
+	java::time::Duration Duration::withNanos(jint arg0)
 	{
 		return callObjectMethod(
 			"withNanos",
@@ -488,7 +488,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::withSeconds(jlong arg0)
+	java::time::Duration Duration::withSeconds(jlong arg0)
 	{
 		return callObjectMethod(
 			"withSeconds",

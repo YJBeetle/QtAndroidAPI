@@ -5,7 +5,7 @@
 namespace android::telephony::mbms
 {
 	// Fields
-	QAndroidJniObject FileInfo::CREATOR()
+	__JniBaseClass FileInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.mbms.FileInfo",
@@ -42,7 +42,7 @@ namespace android::telephony::mbms
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject FileInfo::getUri()
+	android::net::Uri FileInfo::getUri()
 	{
 		return callObjectMethod(
 			"getUri",

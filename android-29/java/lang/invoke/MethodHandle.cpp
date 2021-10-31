@@ -12,7 +12,7 @@ namespace java::lang::invoke
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MethodHandle::asCollector(jclass arg0, jint arg1)
+	java::lang::invoke::MethodHandle MethodHandle::asCollector(jclass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"asCollector",
@@ -21,7 +21,7 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	QAndroidJniObject MethodHandle::asCollector(jint arg0, jclass arg1, jint arg2)
+	java::lang::invoke::MethodHandle MethodHandle::asCollector(jint arg0, jclass arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"asCollector",
@@ -31,14 +31,14 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandle::asFixedArity()
+	java::lang::invoke::MethodHandle MethodHandle::asFixedArity()
 	{
 		return callObjectMethod(
 			"asFixedArity",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	QAndroidJniObject MethodHandle::asSpreader(jclass arg0, jint arg1)
+	java::lang::invoke::MethodHandle MethodHandle::asSpreader(jclass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"asSpreader",
@@ -47,7 +47,7 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	QAndroidJniObject MethodHandle::asSpreader(jint arg0, jclass arg1, jint arg2)
+	java::lang::invoke::MethodHandle MethodHandle::asSpreader(jint arg0, jclass arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"asSpreader",
@@ -57,7 +57,7 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandle::asType(java::lang::invoke::MethodType arg0)
+	java::lang::invoke::MethodHandle MethodHandle::asType(java::lang::invoke::MethodType arg0)
 	{
 		return callObjectMethod(
 			"asType",
@@ -65,7 +65,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MethodHandle::asVarargsCollector(jclass arg0)
+	java::lang::invoke::MethodHandle MethodHandle::asVarargsCollector(jclass arg0)
 	{
 		return callObjectMethod(
 			"asVarargsCollector",
@@ -73,7 +73,7 @@ namespace java::lang::invoke
 			arg0
 		);
 	}
-	QAndroidJniObject MethodHandle::bindTo(jobject arg0)
+	java::lang::invoke::MethodHandle MethodHandle::bindTo(jobject arg0)
 	{
 		return callObjectMethod(
 			"bindTo",
@@ -81,7 +81,7 @@ namespace java::lang::invoke
 			arg0
 		);
 	}
-	QAndroidJniObject MethodHandle::describeConstable()
+	java::util::Optional MethodHandle::describeConstable()
 	{
 		return callObjectMethod(
 			"describeConstable",
@@ -134,14 +134,14 @@ namespace java::lang::invoke
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MethodHandle::type()
+	java::lang::invoke::MethodType MethodHandle::type()
 	{
 		return callObjectMethod(
 			"type",
 			"()Ljava/lang/invoke/MethodType;"
 		);
 	}
-	QAndroidJniObject MethodHandle::withVarargs(jboolean arg0)
+	java::lang::invoke::MethodHandle MethodHandle::withVarargs(jboolean arg0)
 	{
 		return callObjectMethod(
 			"withVarargs",

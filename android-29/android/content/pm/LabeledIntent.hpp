@@ -26,7 +26,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LabeledIntent(const char *className, const char *sig, Ts...agv) : android::content::Intent(className, sig, std::forward<Ts>(agv)...) {}
@@ -43,7 +43,7 @@ namespace android::content::pm
 		jint getLabelResource();
 		jstring getNonLocalizedLabel();
 		jstring getSourcePackage();
-		QAndroidJniObject loadIcon(android::content::pm::PackageManager arg0);
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
 		jstring loadLabel(android::content::pm::PackageManager arg0);
 		void readFromParcel(android::os::Parcel arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

@@ -52,7 +52,7 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FilePermission::newPermissionCollection()
+	java::security::PermissionCollection FilePermission::newPermissionCollection()
 	{
 		return callObjectMethod(
 			"newPermissionCollection",

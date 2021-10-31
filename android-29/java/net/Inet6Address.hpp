@@ -30,13 +30,13 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1, jint arg2);
-		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1, java::net::NetworkInterface arg2);
+		static java::net::Inet6Address getByAddress(jstring arg0, jbyteArray arg1, jint arg2);
+		static java::net::Inet6Address getByAddress(jstring arg0, jbyteArray arg1, java::net::NetworkInterface arg2);
 		jboolean equals(jobject arg0);
 		jbyteArray getAddress();
 		jstring getHostAddress();
 		jint getScopeId();
-		QAndroidJniObject getScopedInterface();
+		java::net::NetworkInterface getScopedInterface();
 		jint hashCode();
 		jboolean isAnyLocalAddress();
 		jboolean isIPv4CompatibleAddress();

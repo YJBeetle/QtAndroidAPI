@@ -25,13 +25,13 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject withCachedThreadPool(__JniBaseClass arg0, jint arg1);
-		static QAndroidJniObject withFixedThreadPool(jint arg0, __JniBaseClass arg1);
-		static QAndroidJniObject withThreadPool(__JniBaseClass arg0);
+		static java::nio::channels::AsynchronousChannelGroup withCachedThreadPool(__JniBaseClass arg0, jint arg1);
+		static java::nio::channels::AsynchronousChannelGroup withFixedThreadPool(jint arg0, __JniBaseClass arg1);
+		static java::nio::channels::AsynchronousChannelGroup withThreadPool(__JniBaseClass arg0);
 		jboolean awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		jboolean isShutdown();
 		jboolean isTerminated();
-		QAndroidJniObject provider();
+		java::nio::channels::spi::AsynchronousChannelProvider provider();
 		void shutdown();
 		void shutdownNow();
 	};

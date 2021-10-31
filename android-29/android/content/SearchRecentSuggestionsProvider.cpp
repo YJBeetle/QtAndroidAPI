@@ -49,7 +49,7 @@ namespace android::content
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject SearchRecentSuggestionsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
+	android::net::Uri SearchRecentSuggestionsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
 	{
 		return callObjectMethod(
 			"insert",
@@ -65,7 +65,7 @@ namespace android::content
 			"()Z"
 		);
 	}
-	QAndroidJniObject SearchRecentSuggestionsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	__JniBaseClass SearchRecentSuggestionsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"query",

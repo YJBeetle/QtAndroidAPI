@@ -75,7 +75,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DnsResolver::getInstance()
+	android::net::DnsResolver DnsResolver::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.DnsResolver",

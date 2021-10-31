@@ -17,14 +17,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject KeyPair::getPrivate()
+	__JniBaseClass KeyPair::getPrivate()
 	{
 		return callObjectMethod(
 			"getPrivate",
 			"()Ljava/security/PrivateKey;"
 		);
 	}
-	QAndroidJniObject KeyPair::getPublic()
+	__JniBaseClass KeyPair::getPublic()
 	{
 		return callObjectMethod(
 			"getPublic",

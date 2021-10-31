@@ -35,8 +35,8 @@ namespace android::service::carrier
 		
 		// Methods
 		void notifyCarrierNetworkChange(jboolean arg0);
-		QAndroidJniObject onBind(android::content::Intent arg0);
-		QAndroidJniObject onLoadConfig(android::service::carrier::CarrierIdentifier arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
+		android::os::PersistableBundle onLoadConfig(android::service::carrier::CarrierIdentifier arg0);
 	};
 } // namespace android::service::carrier
 

@@ -4,7 +4,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject Rect::CREATOR()
+	__JniBaseClass Rect::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Rect",
@@ -73,7 +73,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Rect::unflattenFromString(jstring arg0)
+	android::graphics::Rect Rect::unflattenFromString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Rect",

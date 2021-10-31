@@ -5,7 +5,7 @@
 namespace android::telecom
 {
 	// Fields
-	QAndroidJniObject PhoneAccountSuggestion::CREATOR()
+	__JniBaseClass PhoneAccountSuggestion::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccountSuggestion",
@@ -78,7 +78,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject PhoneAccountSuggestion::getPhoneAccountHandle()
+	android::telecom::PhoneAccountHandle PhoneAccountSuggestion::getPhoneAccountHandle()
 	{
 		return callObjectMethod(
 			"getPhoneAccountHandle",

@@ -48,7 +48,7 @@ namespace java::util::zip
 			"()V"
 		);
 	}
-	QAndroidJniObject ZipInputStream::getNextEntry()
+	java::util::zip::ZipEntry ZipInputStream::getNextEntry()
 	{
 		return callObjectMethod(
 			"getNextEntry",

@@ -14,7 +14,7 @@ namespace android::gesture
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject GestureUtils::computeOrientedBoundingBox(jfloatArray arg0)
+	android::gesture::OrientedBoundingBox GestureUtils::computeOrientedBoundingBox(jfloatArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.gesture.GestureUtils",
@@ -23,7 +23,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	QAndroidJniObject GestureUtils::computeOrientedBoundingBox(java::util::ArrayList arg0)
+	android::gesture::OrientedBoundingBox GestureUtils::computeOrientedBoundingBox(java::util::ArrayList arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.gesture.GestureUtils",

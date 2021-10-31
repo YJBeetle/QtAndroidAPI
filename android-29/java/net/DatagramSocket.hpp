@@ -56,15 +56,15 @@ namespace java::net
 		void connect(java::net::InetAddress arg0, jint arg1);
 		void disconnect();
 		jboolean getBroadcast();
-		QAndroidJniObject getChannel();
-		QAndroidJniObject getInetAddress();
-		QAndroidJniObject getLocalAddress();
+		java::nio::channels::DatagramChannel getChannel();
+		java::net::InetAddress getInetAddress();
+		java::net::InetAddress getLocalAddress();
 		jint getLocalPort();
-		QAndroidJniObject getLocalSocketAddress();
+		java::net::SocketAddress getLocalSocketAddress();
 		jobject getOption(__JniBaseClass arg0);
 		jint getPort();
 		jint getReceiveBufferSize();
-		QAndroidJniObject getRemoteSocketAddress();
+		java::net::SocketAddress getRemoteSocketAddress();
 		jboolean getReuseAddress();
 		jint getSendBufferSize();
 		jint getSoTimeout();
@@ -75,13 +75,13 @@ namespace java::net
 		void receive(java::net::DatagramPacket arg0);
 		void send(java::net::DatagramPacket arg0);
 		void setBroadcast(jboolean arg0);
-		QAndroidJniObject setOption(__JniBaseClass arg0, jobject arg1);
+		java::net::DatagramSocket setOption(__JniBaseClass arg0, jobject arg1);
 		void setReceiveBufferSize(jint arg0);
 		void setReuseAddress(jboolean arg0);
 		void setSendBufferSize(jint arg0);
 		void setSoTimeout(jint arg0);
 		void setTrafficClass(jint arg0);
-		QAndroidJniObject supportedOptions();
+		__JniBaseClass supportedOptions();
 	};
 } // namespace java::net
 

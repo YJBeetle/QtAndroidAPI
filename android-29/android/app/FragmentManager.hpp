@@ -49,16 +49,16 @@ namespace android::app
 		// Methods
 		static void enableDebugLogging(jboolean arg0);
 		void addOnBackStackChangedListener(__JniBaseClass arg0);
-		QAndroidJniObject beginTransaction();
+		android::app::FragmentTransaction beginTransaction();
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		jboolean executePendingTransactions();
-		QAndroidJniObject findFragmentById(jint arg0);
-		QAndroidJniObject findFragmentByTag(jstring arg0);
-		QAndroidJniObject getBackStackEntryAt(jint arg0);
+		android::app::Fragment findFragmentById(jint arg0);
+		android::app::Fragment findFragmentByTag(jstring arg0);
+		__JniBaseClass getBackStackEntryAt(jint arg0);
 		jint getBackStackEntryCount();
-		QAndroidJniObject getFragment(android::os::Bundle arg0, jstring arg1);
-		QAndroidJniObject getFragments();
-		QAndroidJniObject getPrimaryNavigationFragment();
+		android::app::Fragment getFragment(android::os::Bundle arg0, jstring arg1);
+		__JniBaseClass getFragments();
+		android::app::Fragment getPrimaryNavigationFragment();
 		void invalidateOptionsMenu();
 		jboolean isDestroyed();
 		jboolean isStateSaved();
@@ -71,7 +71,7 @@ namespace android::app
 		void putFragment(android::os::Bundle arg0, jstring arg1, android::app::Fragment arg2);
 		void registerFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0, jboolean arg1);
 		void removeOnBackStackChangedListener(__JniBaseClass arg0);
-		QAndroidJniObject saveFragmentInstanceState(android::app::Fragment arg0);
+		android::app::Fragment_SavedState saveFragmentInstanceState(android::app::Fragment arg0);
 		void unregisterFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0);
 	};
 } // namespace android::app

@@ -51,7 +51,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SocketPermission::newPermissionCollection()
+	java::security::PermissionCollection SocketPermission::newPermissionCollection()
 	{
 		return callObjectMethod(
 			"newPermissionCollection",

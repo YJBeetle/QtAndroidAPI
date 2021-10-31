@@ -48,7 +48,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject PictureDrawable::getPicture()
+	android::graphics::Picture PictureDrawable::getPicture()
 	{
 		return callObjectMethod(
 			"getPicture",

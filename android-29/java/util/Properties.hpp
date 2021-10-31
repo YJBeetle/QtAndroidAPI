@@ -78,8 +78,8 @@ namespace java::util
 		jboolean contains(jobject arg0);
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		QAndroidJniObject elements();
-		QAndroidJniObject entrySet();
+		__JniBaseClass elements();
+		__JniBaseClass entrySet();
 		jboolean equals(jobject arg0);
 		void forEach(__JniBaseClass arg0);
 		jobject get(jobject arg0);
@@ -88,15 +88,15 @@ namespace java::util
 		jstring getProperty(jstring arg0, jstring arg1);
 		jint hashCode();
 		jboolean isEmpty();
-		QAndroidJniObject keySet();
-		QAndroidJniObject keys();
+		__JniBaseClass keySet();
+		__JniBaseClass keys();
 		void list(java::io::PrintStream arg0);
 		void list(java::io::PrintWriter arg0);
 		void load(java::io::InputStream arg0);
 		void load(java::io::Reader arg0);
 		void loadFromXML(java::io::InputStream arg0);
 		jobject merge(jobject arg0, jobject arg1, __JniBaseClass arg2);
-		QAndroidJniObject propertyNames();
+		__JniBaseClass propertyNames();
 		jobject put(jobject arg0, jobject arg1);
 		void putAll(__JniBaseClass arg0);
 		jobject putIfAbsent(jobject arg0, jobject arg1);
@@ -113,9 +113,9 @@ namespace java::util
 		void storeToXML(java::io::OutputStream arg0, jstring arg1);
 		void storeToXML(java::io::OutputStream arg0, jstring arg1, jstring arg2);
 		void storeToXML(java::io::OutputStream arg0, jstring arg1, java::nio::charset::Charset arg2);
-		QAndroidJniObject stringPropertyNames();
+		__JniBaseClass stringPropertyNames();
 		jstring toString();
-		QAndroidJniObject values();
+		__JniBaseClass values();
 	};
 } // namespace java::util
 

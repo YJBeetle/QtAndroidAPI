@@ -21,14 +21,14 @@ namespace android::security::keystore
 		) {}
 	
 	// Methods
-	QAndroidJniObject KeyGenParameterSpec_Builder::build()
+	android::security::keystore::KeyGenParameterSpec KeyGenParameterSpec_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/security/keystore/KeyGenParameterSpec;"
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setAlgorithmParameterSpec(__JniBaseClass arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setAlgorithmParameterSpec(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setAlgorithmParameterSpec",
@@ -36,7 +36,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setAttestationChallenge(jbyteArray arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setAttestationChallenge(jbyteArray arg0)
 	{
 		return callObjectMethod(
 			"setAttestationChallenge",
@@ -44,7 +44,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setBlockModes(jarray arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setBlockModes(jarray arg0)
 	{
 		return callObjectMethod(
 			"setBlockModes",
@@ -52,7 +52,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setCertificateNotAfter(java::util::Date arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setCertificateNotAfter(java::util::Date arg0)
 	{
 		return callObjectMethod(
 			"setCertificateNotAfter",
@@ -60,7 +60,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setCertificateNotBefore(java::util::Date arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setCertificateNotBefore(java::util::Date arg0)
 	{
 		return callObjectMethod(
 			"setCertificateNotBefore",
@@ -68,7 +68,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setCertificateSerialNumber(java::math::BigInteger arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setCertificateSerialNumber(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"setCertificateSerialNumber",
@@ -76,7 +76,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setCertificateSubject(javax::security::auth::x500::X500Principal arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setCertificateSubject(javax::security::auth::x500::X500Principal arg0)
 	{
 		return callObjectMethod(
 			"setCertificateSubject",
@@ -84,7 +84,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setDigests(jarray arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setDigests(jarray arg0)
 	{
 		return callObjectMethod(
 			"setDigests",
@@ -92,7 +92,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setEncryptionPaddings(jarray arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setEncryptionPaddings(jarray arg0)
 	{
 		return callObjectMethod(
 			"setEncryptionPaddings",
@@ -100,7 +100,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setInvalidatedByBiometricEnrollment(jboolean arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setInvalidatedByBiometricEnrollment(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setInvalidatedByBiometricEnrollment",
@@ -108,7 +108,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setIsStrongBoxBacked(jboolean arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setIsStrongBoxBacked(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIsStrongBoxBacked",
@@ -116,7 +116,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setKeySize(jint arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setKeySize(jint arg0)
 	{
 		return callObjectMethod(
 			"setKeySize",
@@ -124,7 +124,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setKeyValidityEnd(java::util::Date arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setKeyValidityEnd(java::util::Date arg0)
 	{
 		return callObjectMethod(
 			"setKeyValidityEnd",
@@ -132,7 +132,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setKeyValidityForConsumptionEnd(java::util::Date arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setKeyValidityForConsumptionEnd(java::util::Date arg0)
 	{
 		return callObjectMethod(
 			"setKeyValidityForConsumptionEnd",
@@ -140,7 +140,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setKeyValidityForOriginationEnd(java::util::Date arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setKeyValidityForOriginationEnd(java::util::Date arg0)
 	{
 		return callObjectMethod(
 			"setKeyValidityForOriginationEnd",
@@ -148,7 +148,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setKeyValidityStart(java::util::Date arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setKeyValidityStart(java::util::Date arg0)
 	{
 		return callObjectMethod(
 			"setKeyValidityStart",
@@ -156,7 +156,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setRandomizedEncryptionRequired(jboolean arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setRandomizedEncryptionRequired(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setRandomizedEncryptionRequired",
@@ -164,7 +164,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setSignaturePaddings(jarray arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setSignaturePaddings(jarray arg0)
 	{
 		return callObjectMethod(
 			"setSignaturePaddings",
@@ -172,7 +172,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setUnlockedDeviceRequired(jboolean arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setUnlockedDeviceRequired(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setUnlockedDeviceRequired",
@@ -180,7 +180,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setUserAuthenticationRequired(jboolean arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setUserAuthenticationRequired(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setUserAuthenticationRequired",
@@ -188,7 +188,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setUserAuthenticationValidWhileOnBody(jboolean arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setUserAuthenticationValidWhileOnBody(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setUserAuthenticationValidWhileOnBody",
@@ -196,7 +196,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setUserAuthenticationValidityDurationSeconds(jint arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setUserAuthenticationValidityDurationSeconds(jint arg0)
 	{
 		return callObjectMethod(
 			"setUserAuthenticationValidityDurationSeconds",
@@ -204,7 +204,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setUserConfirmationRequired(jboolean arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setUserConfirmationRequired(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setUserConfirmationRequired",
@@ -212,7 +212,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setUserPresenceRequired(jboolean arg0)
+	android::security::keystore::KeyGenParameterSpec_Builder KeyGenParameterSpec_Builder::setUserPresenceRequired(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setUserPresenceRequired",

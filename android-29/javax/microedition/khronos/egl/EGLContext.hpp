@@ -18,8 +18,8 @@ namespace javax::microedition::khronos::egl
 		EGLContext();
 		
 		// Methods
-		static QAndroidJniObject getEGL();
-		QAndroidJniObject getGL();
+		static __JniBaseClass getEGL();
+		__JniBaseClass getGL();
 	};
 } // namespace javax::microedition::khronos::egl
 

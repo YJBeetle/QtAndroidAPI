@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject ServiceInfo::CREATOR()
+	__JniBaseClass ServiceInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ServiceInfo",

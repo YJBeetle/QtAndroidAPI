@@ -32,9 +32,9 @@ namespace java::nio::channels
 		jobject attach(jobject arg0);
 		jobject attachment();
 		void cancel();
-		QAndroidJniObject channel();
+		java::nio::channels::SelectableChannel channel();
 		jint interestOps();
-		QAndroidJniObject interestOps(jint arg0);
+		java::nio::channels::SelectionKey interestOps(jint arg0);
 		jint interestOpsAnd(jint arg0);
 		jint interestOpsOr(jint arg0);
 		jboolean isAcceptable();
@@ -43,7 +43,7 @@ namespace java::nio::channels
 		jboolean isValid();
 		jboolean isWritable();
 		jint readyOps();
-		QAndroidJniObject selector();
+		java::nio::channels::Selector selector();
 	};
 } // namespace java::nio::channels
 

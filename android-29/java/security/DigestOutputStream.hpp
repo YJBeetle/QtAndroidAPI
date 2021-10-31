@@ -28,7 +28,7 @@ namespace java::security
 		DigestOutputStream(java::io::OutputStream arg0, java::security::MessageDigest arg1);
 		
 		// Methods
-		QAndroidJniObject getMessageDigest();
+		java::security::MessageDigest getMessageDigest();
 		void on(jboolean arg0);
 		void setMessageDigest(java::security::MessageDigest arg0);
 		jstring toString();

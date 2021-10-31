@@ -4,7 +4,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject SyncAdapterType::CREATOR()
+	__JniBaseClass SyncAdapterType::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.SyncAdapterType",
@@ -54,7 +54,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	QAndroidJniObject SyncAdapterType::newKey(jstring arg0, jstring arg1)
+	android::content::SyncAdapterType SyncAdapterType::newKey(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.SyncAdapterType",

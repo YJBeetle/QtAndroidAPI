@@ -26,14 +26,14 @@ namespace android::media
 		AudioPresentation_Builder(jint arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setHasAudioDescription(jboolean arg0);
-		QAndroidJniObject setHasDialogueEnhancement(jboolean arg0);
-		QAndroidJniObject setHasSpokenSubtitles(jboolean arg0);
-		QAndroidJniObject setLabels(__JniBaseClass arg0);
-		QAndroidJniObject setLocale(android::icu::util::ULocale arg0);
-		QAndroidJniObject setMasteringIndication(jint arg0);
-		QAndroidJniObject setProgramId(jint arg0);
+		android::media::AudioPresentation build();
+		android::media::AudioPresentation_Builder setHasAudioDescription(jboolean arg0);
+		android::media::AudioPresentation_Builder setHasDialogueEnhancement(jboolean arg0);
+		android::media::AudioPresentation_Builder setHasSpokenSubtitles(jboolean arg0);
+		android::media::AudioPresentation_Builder setLabels(__JniBaseClass arg0);
+		android::media::AudioPresentation_Builder setLocale(android::icu::util::ULocale arg0);
+		android::media::AudioPresentation_Builder setMasteringIndication(jint arg0);
+		android::media::AudioPresentation_Builder setProgramId(jint arg0);
 	};
 } // namespace android::media
 

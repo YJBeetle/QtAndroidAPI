@@ -53,21 +53,21 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	QAndroidJniObject StampedLock::asReadLock()
+	__JniBaseClass StampedLock::asReadLock()
 	{
 		return callObjectMethod(
 			"asReadLock",
 			"()Ljava/util/concurrent/locks/Lock;"
 		);
 	}
-	QAndroidJniObject StampedLock::asReadWriteLock()
+	__JniBaseClass StampedLock::asReadWriteLock()
 	{
 		return callObjectMethod(
 			"asReadWriteLock",
 			"()Ljava/util/concurrent/locks/ReadWriteLock;"
 		);
 	}
-	QAndroidJniObject StampedLock::asWriteLock()
+	__JniBaseClass StampedLock::asWriteLock()
 	{
 		return callObjectMethod(
 			"asWriteLock",

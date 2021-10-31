@@ -47,7 +47,7 @@ namespace java::security
 			arg1.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject Provider::configure(jstring arg0)
+	java::security::Provider Provider::configure(jstring arg0)
 	{
 		return callObjectMethod(
 			"configure",
@@ -55,14 +55,14 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject Provider::elements()
+	__JniBaseClass Provider::elements()
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject Provider::entrySet()
+	__JniBaseClass Provider::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -116,7 +116,7 @@ namespace java::security
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Provider::getService(jstring arg0, jstring arg1)
+	java::security::Provider_Service Provider::getService(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getService",
@@ -125,7 +125,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject Provider::getServices()
+	__JniBaseClass Provider::getServices()
 	{
 		return callObjectMethod(
 			"getServices",
@@ -153,14 +153,14 @@ namespace java::security
 			"()Z"
 		);
 	}
-	QAndroidJniObject Provider::keySet()
+	__JniBaseClass Provider::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject Provider::keys()
+	__JniBaseClass Provider::keys()
 	{
 		return callObjectMethod(
 			"keys",
@@ -262,7 +262,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Provider::values()
+	__JniBaseClass Provider::values()
 	{
 		return callObjectMethod(
 			"values",

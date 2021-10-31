@@ -10,11 +10,11 @@ namespace java::lang
 	{
 	public:
 		// Fields
-		static QAndroidJniObject APPEND();
-		static QAndroidJniObject INHERIT();
-		static QAndroidJniObject PIPE();
-		static QAndroidJniObject READ();
-		static QAndroidJniObject WRITE();
+		static java::lang::ProcessBuilder_Redirect_Type APPEND();
+		static java::lang::ProcessBuilder_Redirect_Type INHERIT();
+		static java::lang::ProcessBuilder_Redirect_Type PIPE();
+		static java::lang::ProcessBuilder_Redirect_Type READ();
+		static java::lang::ProcessBuilder_Redirect_Type WRITE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProcessBuilder_Redirect_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -23,7 +23,7 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::lang::ProcessBuilder_Redirect_Type valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::lang

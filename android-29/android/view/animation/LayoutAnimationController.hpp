@@ -43,10 +43,10 @@ namespace android::view::animation
 		LayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1);
 		
 		// Methods
-		QAndroidJniObject getAnimation();
-		QAndroidJniObject getAnimationForView(android::view::View arg0);
+		android::view::animation::Animation getAnimation();
+		android::view::animation::Animation getAnimationForView(android::view::View arg0);
 		jfloat getDelay();
-		QAndroidJniObject getInterpolator();
+		__JniBaseClass getInterpolator();
 		jint getOrder();
 		jboolean isDone();
 		void setAnimation(android::view::animation::Animation arg0);

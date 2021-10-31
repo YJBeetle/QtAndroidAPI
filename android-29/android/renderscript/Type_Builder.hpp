@@ -30,13 +30,13 @@ namespace android::renderscript
 		Type_Builder(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
 		
 		// Methods
-		QAndroidJniObject create();
-		QAndroidJniObject setFaces(jboolean arg0);
-		QAndroidJniObject setMipmaps(jboolean arg0);
-		QAndroidJniObject setX(jint arg0);
-		QAndroidJniObject setY(jint arg0);
-		QAndroidJniObject setYuvFormat(jint arg0);
-		QAndroidJniObject setZ(jint arg0);
+		android::renderscript::Type create();
+		android::renderscript::Type_Builder setFaces(jboolean arg0);
+		android::renderscript::Type_Builder setMipmaps(jboolean arg0);
+		android::renderscript::Type_Builder setX(jint arg0);
+		android::renderscript::Type_Builder setY(jint arg0);
+		android::renderscript::Type_Builder setYuvFormat(jint arg0);
+		android::renderscript::Type_Builder setZ(jint arg0);
 	};
 } // namespace android::renderscript
 

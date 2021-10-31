@@ -18,7 +18,7 @@ namespace android::text
 		SpannedString(jstring arg0);
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::text::SpannedString valueOf(jstring arg0);
 		jchar charAt(jint arg0);
 		jboolean equals(jobject arg0);
 		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);

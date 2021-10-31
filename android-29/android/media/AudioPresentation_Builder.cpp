@@ -18,14 +18,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject AudioPresentation_Builder::build()
+	android::media::AudioPresentation AudioPresentation_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioPresentation;"
 		);
 	}
-	QAndroidJniObject AudioPresentation_Builder::setHasAudioDescription(jboolean arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setHasAudioDescription(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setHasAudioDescription",
@@ -33,7 +33,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioPresentation_Builder::setHasDialogueEnhancement(jboolean arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setHasDialogueEnhancement(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setHasDialogueEnhancement",
@@ -41,7 +41,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioPresentation_Builder::setHasSpokenSubtitles(jboolean arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setHasSpokenSubtitles(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setHasSpokenSubtitles",
@@ -49,7 +49,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioPresentation_Builder::setLabels(__JniBaseClass arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setLabels(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setLabels",
@@ -57,7 +57,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AudioPresentation_Builder::setLocale(android::icu::util::ULocale arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setLocale(android::icu::util::ULocale arg0)
 	{
 		return callObjectMethod(
 			"setLocale",
@@ -65,7 +65,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AudioPresentation_Builder::setMasteringIndication(jint arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setMasteringIndication(jint arg0)
 	{
 		return callObjectMethod(
 			"setMasteringIndication",
@@ -73,7 +73,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioPresentation_Builder::setProgramId(jint arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setProgramId(jint arg0)
 	{
 		return callObjectMethod(
 			"setProgramId",

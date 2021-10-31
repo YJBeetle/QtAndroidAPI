@@ -22,8 +22,8 @@ namespace android::media
 		MediaMetadataRetriever_BitmapParams();
 		
 		// Methods
-		QAndroidJniObject getActualConfig();
-		QAndroidJniObject getPreferredConfig();
+		android::graphics::Bitmap_Config getActualConfig();
+		android::graphics::Bitmap_Config getPreferredConfig();
 		void setPreferredConfig(android::graphics::Bitmap_Config arg0);
 	};
 } // namespace android::media

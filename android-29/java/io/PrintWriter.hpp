@@ -57,14 +57,14 @@ namespace java::io
 		PrintWriter(java::io::OutputStream arg0, jboolean arg1, java::nio::charset::Charset arg2);
 		
 		// Methods
-		QAndroidJniObject append(jchar arg0);
-		QAndroidJniObject append(jstring arg0);
-		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
+		java::io::PrintWriter append(jchar arg0);
+		java::io::PrintWriter append(jstring arg0);
+		java::io::PrintWriter append(jstring arg0, jint arg1, jint arg2);
 		jboolean checkError();
 		void close();
 		void flush();
-		QAndroidJniObject format(jstring arg0, jobjectArray arg1);
-		QAndroidJniObject format(java::util::Locale arg0, jstring arg1, jobjectArray arg2);
+		java::io::PrintWriter format(jstring arg0, jobjectArray arg1);
+		java::io::PrintWriter format(java::util::Locale arg0, jstring arg1, jobjectArray arg2);
 		void print(jcharArray arg0);
 		void print(jboolean arg0);
 		void print(jchar arg0);
@@ -74,8 +74,8 @@ namespace java::io
 		void print(jobject arg0);
 		void print(jstring arg0);
 		void print(jlong arg0);
-		QAndroidJniObject printf(jstring arg0, jobjectArray arg1);
-		QAndroidJniObject printf(java::util::Locale arg0, jstring arg1, jobjectArray arg2);
+		java::io::PrintWriter printf(jstring arg0, jobjectArray arg1);
+		java::io::PrintWriter printf(java::util::Locale arg0, jstring arg1, jobjectArray arg2);
 		void println();
 		void println(jcharArray arg0);
 		void println(jboolean arg0);

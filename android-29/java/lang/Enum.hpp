@@ -25,10 +25,10 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jclass arg0, jstring arg1);
+		static java::lang::Enum valueOf(jclass arg0, jstring arg1);
 		jint compareTo(java::lang::Enum arg0);
 		jint compareTo(jobject arg0);
-		QAndroidJniObject describeConstable();
+		java::util::Optional describeConstable();
 		jboolean equals(jobject arg0);
 		jclass getDeclaringClass();
 		jint hashCode();

@@ -4,7 +4,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject Point::CREATOR()
+	__JniBaseClass Point::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Point",

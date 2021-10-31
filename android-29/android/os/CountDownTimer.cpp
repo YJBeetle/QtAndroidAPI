@@ -39,7 +39,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject CountDownTimer::start()
+	android::os::CountDownTimer CountDownTimer::start()
 	{
 		return callObjectMethod(
 			"start",

@@ -37,14 +37,14 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getApplicationInfo();
-		QAndroidJniObject getBadgedIcon(jint arg0);
-		QAndroidJniObject getComponentName();
+		android::content::pm::ApplicationInfo getApplicationInfo();
+		android::graphics::drawable::Drawable getBadgedIcon(jint arg0);
+		android::content::ComponentName getComponentName();
 		jlong getFirstInstallTime();
-		QAndroidJniObject getIcon(jint arg0);
+		android::graphics::drawable::Drawable getIcon(jint arg0);
 		jstring getLabel();
 		jstring getName();
-		QAndroidJniObject getUser();
+		android::os::UserHandle getUser();
 	};
 } // namespace android::content::pm
 

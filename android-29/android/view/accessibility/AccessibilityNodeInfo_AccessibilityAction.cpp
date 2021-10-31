@@ -3,7 +3,7 @@
 namespace android::view::accessibility
 {
 	// Fields
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_ACCESSIBILITY_FOCUS()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_ACCESSIBILITY_FOCUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -11,7 +11,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_CLEAR_ACCESSIBILITY_FOCUS()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_CLEAR_ACCESSIBILITY_FOCUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -19,7 +19,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_CLEAR_FOCUS()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_CLEAR_FOCUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -27,7 +27,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_CLEAR_SELECTION()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_CLEAR_SELECTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -35,7 +35,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_CLICK()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_CLICK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -43,7 +43,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_COLLAPSE()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_COLLAPSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -51,7 +51,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_CONTEXT_CLICK()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_CONTEXT_CLICK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -59,7 +59,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_COPY()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_COPY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -67,7 +67,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_CUT()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_CUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -75,7 +75,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_DISMISS()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_DISMISS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -83,7 +83,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_EXPAND()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_EXPAND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -91,7 +91,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_FOCUS()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_FOCUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -99,7 +99,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_HIDE_TOOLTIP()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_HIDE_TOOLTIP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -107,7 +107,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_LONG_CLICK()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_LONG_CLICK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -115,7 +115,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_MOVE_WINDOW()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_MOVE_WINDOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -123,7 +123,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_NEXT_AT_MOVEMENT_GRANULARITY()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_NEXT_AT_MOVEMENT_GRANULARITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -131,7 +131,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_NEXT_HTML_ELEMENT()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_NEXT_HTML_ELEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -139,7 +139,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_PAGE_DOWN()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_PAGE_DOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -147,7 +147,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_PAGE_LEFT()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_PAGE_LEFT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -155,7 +155,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_PAGE_RIGHT()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_PAGE_RIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -163,7 +163,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_PAGE_UP()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_PAGE_UP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -171,7 +171,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_PASTE()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_PASTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -179,7 +179,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -187,7 +187,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_PREVIOUS_HTML_ELEMENT()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_PREVIOUS_HTML_ELEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -195,7 +195,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_BACKWARD()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_BACKWARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -203,7 +203,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_DOWN()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_DOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -211,7 +211,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_FORWARD()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_FORWARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -219,7 +219,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_LEFT()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_LEFT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -227,7 +227,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_RIGHT()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_RIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -235,7 +235,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_TO_POSITION()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_TO_POSITION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -243,7 +243,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_UP()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SCROLL_UP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -251,7 +251,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SELECT()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SELECT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -259,7 +259,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SET_PROGRESS()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SET_PROGRESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -267,7 +267,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SET_SELECTION()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SET_SELECTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -275,7 +275,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SET_TEXT()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SET_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -283,7 +283,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SHOW_ON_SCREEN()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SHOW_ON_SCREEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
@@ -291,7 +291,7 @@ namespace android::view::accessibility
 			"Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_AccessibilityAction::ACTION_SHOW_TOOLTIP()
+	android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction AccessibilityNodeInfo_AccessibilityAction::ACTION_SHOW_TOOLTIP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",

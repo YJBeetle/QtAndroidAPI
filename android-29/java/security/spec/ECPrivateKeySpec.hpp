@@ -26,8 +26,8 @@ namespace java::security::spec
 		ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1);
 		
 		// Methods
-		QAndroidJniObject getParams();
-		QAndroidJniObject getS();
+		java::security::spec::ECParameterSpec getParams();
+		java::math::BigInteger getS();
 	};
 } // namespace java::security::spec
 

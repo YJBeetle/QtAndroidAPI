@@ -28,7 +28,7 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	QAndroidJniObject SSLParameters::getAlgorithmConstraints()
+	__JniBaseClass SSLParameters::getAlgorithmConstraints()
 	{
 		return callObjectMethod(
 			"getAlgorithmConstraints",
@@ -84,14 +84,14 @@ namespace javax::net::ssl
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject SSLParameters::getSNIMatchers()
+	__JniBaseClass SSLParameters::getSNIMatchers()
 	{
 		return callObjectMethod(
 			"getSNIMatchers",
 			"()Ljava/util/Collection;"
 		);
 	}
-	QAndroidJniObject SSLParameters::getServerNames()
+	__JniBaseClass SSLParameters::getServerNames()
 	{
 		return callObjectMethod(
 			"getServerNames",

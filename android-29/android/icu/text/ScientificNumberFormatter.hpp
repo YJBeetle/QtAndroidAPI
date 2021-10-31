@@ -25,10 +25,10 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getMarkupInstance(android::icu::text::DecimalFormat arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject getMarkupInstance(android::icu::util::ULocale arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject getSuperscriptInstance(android::icu::text::DecimalFormat arg0);
-		static QAndroidJniObject getSuperscriptInstance(android::icu::util::ULocale arg0);
+		static android::icu::text::ScientificNumberFormatter getMarkupInstance(android::icu::text::DecimalFormat arg0, jstring arg1, jstring arg2);
+		static android::icu::text::ScientificNumberFormatter getMarkupInstance(android::icu::util::ULocale arg0, jstring arg1, jstring arg2);
+		static android::icu::text::ScientificNumberFormatter getSuperscriptInstance(android::icu::text::DecimalFormat arg0);
+		static android::icu::text::ScientificNumberFormatter getSuperscriptInstance(android::icu::util::ULocale arg0);
 		jstring format(jobject arg0);
 	};
 } // namespace android::icu::text

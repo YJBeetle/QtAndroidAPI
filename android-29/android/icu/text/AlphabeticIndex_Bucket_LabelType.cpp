@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::INFLOW()
+	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::INFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
 		);
 	}
-	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::NORMAL()
+	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
 		);
 	}
-	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::OVERFLOW()
+	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::OVERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
 		);
 	}
-	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::UNDERFLOW()
+	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::UNDERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
@@ -42,7 +42,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::valueOf(jstring arg0)
+	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",

@@ -49,7 +49,7 @@ namespace java::util
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject TimeZone::getDefault()
+	java::util::TimeZone TimeZone::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.TimeZone",
@@ -57,7 +57,7 @@ namespace java::util
 			"()Ljava/util/TimeZone;"
 		);
 	}
-	QAndroidJniObject TimeZone::getTimeZone(jstring arg0)
+	java::util::TimeZone TimeZone::getTimeZone(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.TimeZone",
@@ -66,7 +66,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZone::getTimeZone(java::time::ZoneId arg0)
+	java::util::TimeZone TimeZone::getTimeZone(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.TimeZone",
@@ -206,7 +206,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZone::toZoneId()
+	java::time::ZoneId TimeZone::toZoneId()
 	{
 		return callObjectMethod(
 			"toZoneId",

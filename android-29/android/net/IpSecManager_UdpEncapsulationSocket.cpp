@@ -18,7 +18,7 @@ namespace android::net
 			"()V"
 		);
 	}
-	QAndroidJniObject IpSecManager_UdpEncapsulationSocket::getFileDescriptor()
+	java::io::FileDescriptor IpSecManager_UdpEncapsulationSocket::getFileDescriptor()
 	{
 		return callObjectMethod(
 			"getFileDescriptor",

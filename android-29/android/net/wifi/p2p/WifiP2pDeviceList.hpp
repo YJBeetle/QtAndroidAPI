@@ -17,7 +17,7 @@ namespace android::net::wifi::p2p
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiP2pDeviceList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -29,8 +29,8 @@ namespace android::net::wifi::p2p
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject get(jstring arg0);
-		QAndroidJniObject getDeviceList();
+		android::net::wifi::p2p::WifiP2pDevice get(jstring arg0);
+		__JniBaseClass getDeviceList();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

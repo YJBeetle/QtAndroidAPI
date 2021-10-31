@@ -39,8 +39,8 @@ namespace android::content::pm
 		jint getParentSessionId();
 		jboolean isMultiPackage();
 		jboolean isStaged();
-		QAndroidJniObject openRead(jstring arg0);
-		QAndroidJniObject openWrite(jstring arg0, jlong arg1, jlong arg2);
+		java::io::InputStream openRead(jstring arg0);
+		java::io::OutputStream openWrite(jstring arg0, jlong arg1, jlong arg2);
 		void removeChildSessionId(jint arg0);
 		void removeSplit(jstring arg0);
 		void setStagingProgress(jfloat arg0);

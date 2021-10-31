@@ -26,11 +26,11 @@ namespace android::animation
 		void addListener(__JniBaseClass arg0);
 		void addPauseListener(__JniBaseClass arg0);
 		void cancel();
-		QAndroidJniObject clone();
+		android::animation::Animator clone();
 		void end();
 		jlong getDuration();
-		QAndroidJniObject getInterpolator();
-		QAndroidJniObject getListeners();
+		__JniBaseClass getInterpolator();
+		java::util::ArrayList getListeners();
 		jlong getStartDelay();
 		jlong getTotalDuration();
 		jboolean isPaused();
@@ -41,7 +41,7 @@ namespace android::animation
 		void removeListener(__JniBaseClass arg0);
 		void removePauseListener(__JniBaseClass arg0);
 		void resume();
-		QAndroidJniObject setDuration(jlong arg0);
+		android::animation::Animator setDuration(jlong arg0);
 		void setInterpolator(__JniBaseClass arg0);
 		void setStartDelay(jlong arg0);
 		void setTarget(jobject arg0);

@@ -200,7 +200,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	QAndroidJniObject Environment::getDataDirectory()
+	java::io::File Environment::getDataDirectory()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Environment",
@@ -208,7 +208,7 @@ namespace android::os
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject Environment::getDownloadCacheDirectory()
+	java::io::File Environment::getDownloadCacheDirectory()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Environment",
@@ -216,7 +216,7 @@ namespace android::os
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject Environment::getExternalStorageDirectory()
+	java::io::File Environment::getExternalStorageDirectory()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Environment",
@@ -224,7 +224,7 @@ namespace android::os
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject Environment::getExternalStoragePublicDirectory(jstring arg0)
+	java::io::File Environment::getExternalStoragePublicDirectory(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Environment",
@@ -250,7 +250,7 @@ namespace android::os
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject Environment::getRootDirectory()
+	java::io::File Environment::getRootDirectory()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Environment",

@@ -10,8 +10,8 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AA();
-		static QAndroidJniObject BW();
+		static android::graphics::Canvas_EdgeType AA();
+		static android::graphics::Canvas_EdgeType BW();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Canvas_EdgeType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,7 +20,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Canvas_EdgeType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

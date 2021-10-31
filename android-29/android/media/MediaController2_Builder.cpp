@@ -22,14 +22,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaController2_Builder::build()
+	android::media::MediaController2 MediaController2_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/MediaController2;"
 		);
 	}
-	QAndroidJniObject MediaController2_Builder::setConnectionHints(android::os::Bundle arg0)
+	android::media::MediaController2_Builder MediaController2_Builder::setConnectionHints(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setConnectionHints",
@@ -37,7 +37,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaController2_Builder::setControllerCallback(__JniBaseClass arg0, android::media::MediaController2_ControllerCallback arg1)
+	android::media::MediaController2_Builder MediaController2_Builder::setControllerCallback(__JniBaseClass arg0, android::media::MediaController2_ControllerCallback arg1)
 	{
 		return callObjectMethod(
 			"setControllerCallback",

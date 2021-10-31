@@ -34,10 +34,10 @@ namespace java::net
 		ResponseCache();
 		
 		// Methods
-		static QAndroidJniObject getDefault();
+		static java::net::ResponseCache getDefault();
 		static void setDefault(java::net::ResponseCache arg0);
-		QAndroidJniObject get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2);
-		QAndroidJniObject put(java::net::URI arg0, java::net::URLConnection arg1);
+		java::net::CacheResponse get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2);
+		java::net::CacheRequest put(java::net::URI arg0, java::net::URLConnection arg1);
 	};
 } // namespace java::net
 

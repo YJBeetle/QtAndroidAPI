@@ -13,7 +13,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject Notification::AUDIO_ATTRIBUTES_DEFAULT()
+	android::media::AudioAttributes Notification::AUDIO_ATTRIBUTES_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
@@ -177,7 +177,7 @@ namespace android::app
 			"COLOR_DEFAULT"
 		);
 	}
-	QAndroidJniObject Notification::CREATOR()
+	__JniBaseClass Notification::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
@@ -693,7 +693,7 @@ namespace android::app
 			"[Landroid/app/Notification$Action;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Notification::audioAttributes()
+	android::media::AudioAttributes Notification::audioAttributes()
 	{
 		return getObjectField(
 			"audioAttributes",
@@ -706,7 +706,7 @@ namespace android::app
 			"audioStreamType"
 		);
 	}
-	QAndroidJniObject Notification::bigContentView()
+	android::widget::RemoteViews Notification::bigContentView()
 	{
 		return getObjectField(
 			"bigContentView",
@@ -726,14 +726,14 @@ namespace android::app
 			"color"
 		);
 	}
-	QAndroidJniObject Notification::contentIntent()
+	android::app::PendingIntent Notification::contentIntent()
 	{
 		return getObjectField(
 			"contentIntent",
 			"Landroid/app/PendingIntent;"
 		);
 	}
-	QAndroidJniObject Notification::contentView()
+	android::widget::RemoteViews Notification::contentView()
 	{
 		return getObjectField(
 			"contentView",
@@ -746,14 +746,14 @@ namespace android::app
 			"defaults"
 		);
 	}
-	QAndroidJniObject Notification::deleteIntent()
+	android::app::PendingIntent Notification::deleteIntent()
 	{
 		return getObjectField(
 			"deleteIntent",
 			"Landroid/app/PendingIntent;"
 		);
 	}
-	QAndroidJniObject Notification::extras()
+	android::os::Bundle Notification::extras()
 	{
 		return getObjectField(
 			"extras",
@@ -766,14 +766,14 @@ namespace android::app
 			"flags"
 		);
 	}
-	QAndroidJniObject Notification::fullScreenIntent()
+	android::app::PendingIntent Notification::fullScreenIntent()
 	{
 		return getObjectField(
 			"fullScreenIntent",
 			"Landroid/app/PendingIntent;"
 		);
 	}
-	QAndroidJniObject Notification::headsUpContentView()
+	android::widget::RemoteViews Notification::headsUpContentView()
 	{
 		return getObjectField(
 			"headsUpContentView",
@@ -792,7 +792,7 @@ namespace android::app
 			"iconLevel"
 		);
 	}
-	QAndroidJniObject Notification::largeIcon()
+	android::graphics::Bitmap Notification::largeIcon()
 	{
 		return getObjectField(
 			"largeIcon",
@@ -829,14 +829,14 @@ namespace android::app
 			"priority"
 		);
 	}
-	QAndroidJniObject Notification::publicVersion()
+	android::app::Notification Notification::publicVersion()
 	{
 		return getObjectField(
 			"publicVersion",
 			"Landroid/app/Notification;"
 		);
 	}
-	QAndroidJniObject Notification::sound()
+	android::net::Uri Notification::sound()
 	{
 		return getObjectField(
 			"sound",
@@ -850,7 +850,7 @@ namespace android::app
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Notification::tickerView()
+	android::widget::RemoteViews Notification::tickerView()
 	{
 		return getObjectField(
 			"tickerView",
@@ -902,7 +902,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Notification::clone()
+	android::app::Notification Notification::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -930,7 +930,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Notification::getBubbleMetadata()
+	android::app::Notification_BubbleMetadata Notification::getBubbleMetadata()
 	{
 		return callObjectMethod(
 			"getBubbleMetadata",
@@ -958,14 +958,14 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Notification::getLargeIcon()
+	android::graphics::drawable::Icon Notification::getLargeIcon()
 	{
 		return callObjectMethod(
 			"getLargeIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	QAndroidJniObject Notification::getLocusId()
+	android::content::LocusId Notification::getLocusId()
 	{
 		return callObjectMethod(
 			"getLocusId",
@@ -986,7 +986,7 @@ namespace android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Notification::getSmallIcon()
+	android::graphics::drawable::Icon Notification::getSmallIcon()
 	{
 		return callObjectMethod(
 			"getSmallIcon",

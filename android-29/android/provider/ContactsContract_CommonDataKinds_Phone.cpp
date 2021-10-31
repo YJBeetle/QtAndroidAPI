@@ -5,7 +5,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::CONTENT_FILTER_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_Phone::CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
@@ -29,7 +29,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::CONTENT_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_Phone::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
@@ -37,7 +37,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::ENTERPRISE_CONTENT_FILTER_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_Phone::ENTERPRISE_CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",

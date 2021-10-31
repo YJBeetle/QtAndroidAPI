@@ -15,7 +15,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	QAndroidJniObject HideReturnsTransformationMethod::getInstance()
+	android::text::method::HideReturnsTransformationMethod HideReturnsTransformationMethod::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.HideReturnsTransformationMethod",

@@ -23,7 +23,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject TreeMap::ceilingEntry(jobject arg0)
+	__JniBaseClass TreeMap::ceilingEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"ceilingEntry",
@@ -53,7 +53,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::comparator()
+	__JniBaseClass TreeMap::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
@@ -103,28 +103,28 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject TreeMap::descendingKeySet()
+	__JniBaseClass TreeMap::descendingKeySet()
 	{
 		return callObjectMethod(
 			"descendingKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	QAndroidJniObject TreeMap::descendingMap()
+	__JniBaseClass TreeMap::descendingMap()
 	{
 		return callObjectMethod(
 			"descendingMap",
 			"()Ljava/util/NavigableMap;"
 		);
 	}
-	QAndroidJniObject TreeMap::entrySet()
+	__JniBaseClass TreeMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject TreeMap::firstEntry()
+	__JniBaseClass TreeMap::firstEntry()
 	{
 		return callObjectMethod(
 			"firstEntry",
@@ -138,7 +138,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::floorEntry(jobject arg0)
+	__JniBaseClass TreeMap::floorEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"floorEntry",
@@ -170,7 +170,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::headMap(jobject arg0, jboolean arg1)
+	__JniBaseClass TreeMap::headMap(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headMap",
@@ -179,7 +179,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject TreeMap::headMap(jobject arg0)
+	__JniBaseClass TreeMap::headMap(jobject arg0)
 	{
 		return callObjectMethod(
 			"headMap",
@@ -187,7 +187,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject TreeMap::higherEntry(jobject arg0)
+	__JniBaseClass TreeMap::higherEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"higherEntry",
@@ -203,14 +203,14 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::keySet()
+	__JniBaseClass TreeMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject TreeMap::lastEntry()
+	__JniBaseClass TreeMap::lastEntry()
 	{
 		return callObjectMethod(
 			"lastEntry",
@@ -224,7 +224,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::lowerEntry(jobject arg0)
+	__JniBaseClass TreeMap::lowerEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"lowerEntry",
@@ -250,21 +250,21 @@ namespace java::util
 			arg2.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::navigableKeySet()
+	__JniBaseClass TreeMap::navigableKeySet()
 	{
 		return callObjectMethod(
 			"navigableKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	QAndroidJniObject TreeMap::pollFirstEntry()
+	__JniBaseClass TreeMap::pollFirstEntry()
 	{
 		return callObjectMethod(
 			"pollFirstEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	QAndroidJniObject TreeMap::pollLastEntry()
+	__JniBaseClass TreeMap::pollLastEntry()
 	{
 		return callObjectMethod(
 			"pollLastEntry",
@@ -339,7 +339,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject TreeMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	__JniBaseClass TreeMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subMap",
@@ -350,7 +350,7 @@ namespace java::util
 			arg3
 		);
 	}
-	QAndroidJniObject TreeMap::subMap(jobject arg0, jobject arg1)
+	__JniBaseClass TreeMap::subMap(jobject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"subMap",
@@ -359,7 +359,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject TreeMap::tailMap(jobject arg0, jboolean arg1)
+	__JniBaseClass TreeMap::tailMap(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailMap",
@@ -368,7 +368,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject TreeMap::tailMap(jobject arg0)
+	__JniBaseClass TreeMap::tailMap(jobject arg0)
 	{
 		return callObjectMethod(
 			"tailMap",
@@ -376,7 +376,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject TreeMap::values()
+	__JniBaseClass TreeMap::values()
 	{
 		return callObjectMethod(
 			"values",

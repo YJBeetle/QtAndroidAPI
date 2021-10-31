@@ -46,17 +46,17 @@ namespace android::graphics
 		BitmapFactory();
 		
 		// Methods
-		static QAndroidJniObject decodeByteArray(jbyteArray arg0, jint arg1, jint arg2);
-		static QAndroidJniObject decodeByteArray(jbyteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3);
-		static QAndroidJniObject decodeFile(jstring arg0);
-		static QAndroidJniObject decodeFile(jstring arg0, android::graphics::BitmapFactory_Options arg1);
-		static QAndroidJniObject decodeFileDescriptor(java::io::FileDescriptor arg0);
-		static QAndroidJniObject decodeFileDescriptor(java::io::FileDescriptor arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2);
-		static QAndroidJniObject decodeResource(android::content::res::Resources arg0, jint arg1);
-		static QAndroidJniObject decodeResource(android::content::res::Resources arg0, jint arg1, android::graphics::BitmapFactory_Options arg2);
-		static QAndroidJniObject decodeResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, android::graphics::Rect arg3, android::graphics::BitmapFactory_Options arg4);
-		static QAndroidJniObject decodeStream(java::io::InputStream arg0);
-		static QAndroidJniObject decodeStream(java::io::InputStream arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2);
+		static android::graphics::Bitmap decodeByteArray(jbyteArray arg0, jint arg1, jint arg2);
+		static android::graphics::Bitmap decodeByteArray(jbyteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3);
+		static android::graphics::Bitmap decodeFile(jstring arg0);
+		static android::graphics::Bitmap decodeFile(jstring arg0, android::graphics::BitmapFactory_Options arg1);
+		static android::graphics::Bitmap decodeFileDescriptor(java::io::FileDescriptor arg0);
+		static android::graphics::Bitmap decodeFileDescriptor(java::io::FileDescriptor arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2);
+		static android::graphics::Bitmap decodeResource(android::content::res::Resources arg0, jint arg1);
+		static android::graphics::Bitmap decodeResource(android::content::res::Resources arg0, jint arg1, android::graphics::BitmapFactory_Options arg2);
+		static android::graphics::Bitmap decodeResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, android::graphics::Rect arg3, android::graphics::BitmapFactory_Options arg4);
+		static android::graphics::Bitmap decodeStream(java::io::InputStream arg0);
+		static android::graphics::Bitmap decodeStream(java::io::InputStream arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2);
 	};
 } // namespace android::graphics
 

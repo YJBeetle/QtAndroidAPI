@@ -48,9 +48,9 @@ namespace android::printservice
 		PrintService();
 		
 		// Methods
-		QAndroidJniObject generatePrinterId(jstring arg0);
-		QAndroidJniObject getActivePrintJobs();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		android::print::PrinterId generatePrinterId(jstring arg0);
+		__JniBaseClass getActivePrintJobs();
+		__JniBaseClass onBind(android::content::Intent arg0);
 	};
 } // namespace android::printservice
 

@@ -18,7 +18,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_COSTS_MONEY();
 		static jint FLAG_HARD_RESTRICTED();
 		static jint FLAG_IMMUTABLY_RESTRICTED();

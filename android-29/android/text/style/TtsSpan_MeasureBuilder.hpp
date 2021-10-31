@@ -20,16 +20,16 @@ namespace android::text::style
 		TtsSpan_MeasureBuilder();
 		
 		// Methods
-		QAndroidJniObject setDenominator(jstring arg0);
-		QAndroidJniObject setDenominator(jlong arg0);
-		QAndroidJniObject setFractionalPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(jlong arg0);
-		QAndroidJniObject setNumber(jstring arg0);
-		QAndroidJniObject setNumber(jlong arg0);
-		QAndroidJniObject setNumerator(jstring arg0);
-		QAndroidJniObject setNumerator(jlong arg0);
-		QAndroidJniObject setUnit(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setDenominator(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setDenominator(jlong arg0);
+		android::text::style::TtsSpan_MeasureBuilder setFractionalPart(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setIntegerPart(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setIntegerPart(jlong arg0);
+		android::text::style::TtsSpan_MeasureBuilder setNumber(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setNumber(jlong arg0);
+		android::text::style::TtsSpan_MeasureBuilder setNumerator(jstring arg0);
+		android::text::style::TtsSpan_MeasureBuilder setNumerator(jlong arg0);
+		android::text::style::TtsSpan_MeasureBuilder setUnit(jstring arg0);
 	};
 } // namespace android::text::style
 

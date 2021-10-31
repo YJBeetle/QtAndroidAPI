@@ -40,15 +40,15 @@ namespace android::net
 		SSLCertificateSocketFactory(jint arg0);
 		
 		// Methods
-		static QAndroidJniObject getDefault(jint arg0);
-		static QAndroidJniObject getDefault(jint arg0, android::net::SSLSessionCache arg1);
-		static QAndroidJniObject getInsecure(jint arg0, android::net::SSLSessionCache arg1);
-		QAndroidJniObject createSocket();
-		QAndroidJniObject createSocket(jstring arg0, jint arg1);
-		QAndroidJniObject createSocket(java::net::InetAddress arg0, jint arg1);
-		QAndroidJniObject createSocket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
-		QAndroidJniObject createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
-		QAndroidJniObject createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
+		static javax::net::SocketFactory getDefault(jint arg0);
+		static javax::net::ssl::SSLSocketFactory getDefault(jint arg0, android::net::SSLSessionCache arg1);
+		static javax::net::ssl::SSLSocketFactory getInsecure(jint arg0, android::net::SSLSessionCache arg1);
+		java::net::Socket createSocket();
+		java::net::Socket createSocket(jstring arg0, jint arg1);
+		java::net::Socket createSocket(java::net::InetAddress arg0, jint arg1);
+		java::net::Socket createSocket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
+		java::net::Socket createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
+		java::net::Socket createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
 		jarray getDefaultCipherSuites();
 		jbyteArray getNpnSelectedProtocol(java::net::Socket arg0);
 		jarray getSupportedCipherSuites();

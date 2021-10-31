@@ -105,7 +105,7 @@ namespace java::io
 			arg1
 		);
 	}
-	QAndroidJniObject ObjectInputStream_GetField::getObjectStreamClass()
+	java::io::ObjectStreamClass ObjectInputStream_GetField::getObjectStreamClass()
 	{
 		return callObjectMethod(
 			"getObjectStreamClass",

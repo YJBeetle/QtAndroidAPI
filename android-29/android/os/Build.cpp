@@ -206,7 +206,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	QAndroidJniObject Build::getFingerprintedPartitions()
+	__JniBaseClass Build::getFingerprintedPartitions()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Build",

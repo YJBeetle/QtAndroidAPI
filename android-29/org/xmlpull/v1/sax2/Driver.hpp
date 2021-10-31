@@ -24,10 +24,10 @@ namespace org::xmlpull::v1::sax2
 		
 		// Methods
 		jint getColumnNumber();
-		QAndroidJniObject getContentHandler();
-		QAndroidJniObject getDTDHandler();
-		QAndroidJniObject getEntityResolver();
-		QAndroidJniObject getErrorHandler();
+		__JniBaseClass getContentHandler();
+		__JniBaseClass getDTDHandler();
+		__JniBaseClass getEntityResolver();
+		__JniBaseClass getErrorHandler();
 		jboolean getFeature(jstring arg0);
 		jint getIndex(jstring arg0);
 		jint getIndex(jstring arg0, jstring arg1);

@@ -16,7 +16,7 @@ namespace android::print
 		static jint CONTENT_TYPE_DOCUMENT();
 		static jint CONTENT_TYPE_PHOTO();
 		static jint CONTENT_TYPE_UNKNOWN();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint PAGE_COUNT_UNKNOWN();
 		
 		// QAndroidJniObject forward

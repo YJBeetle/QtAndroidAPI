@@ -5,7 +5,7 @@
 namespace android::service::quicksettings
 {
 	// Fields
-	QAndroidJniObject Tile::CREATOR()
+	__JniBaseClass Tile::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.quicksettings.Tile",
@@ -55,7 +55,7 @@ namespace android::service::quicksettings
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Tile::getIcon()
+	android::graphics::drawable::Icon Tile::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",

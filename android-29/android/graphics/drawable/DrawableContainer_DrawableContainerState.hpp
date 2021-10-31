@@ -38,13 +38,13 @@ namespace android::graphics::drawable
 		jboolean canApplyTheme();
 		jboolean canConstantState();
 		jint getChangingConfigurations();
-		QAndroidJniObject getChild(jint arg0);
+		android::graphics::drawable::Drawable getChild(jint arg0);
 		jint getChildCount();
 		jarray getChildren();
 		jint getConstantHeight();
 		jint getConstantMinimumHeight();
 		jint getConstantMinimumWidth();
-		QAndroidJniObject getConstantPadding();
+		android::graphics::Rect getConstantPadding();
 		jint getConstantWidth();
 		jint getEnterFadeDuration();
 		jint getExitFadeDuration();

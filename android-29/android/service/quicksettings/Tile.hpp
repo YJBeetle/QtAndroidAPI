@@ -17,7 +17,7 @@ namespace android::service::quicksettings
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint STATE_ACTIVE();
 		static jint STATE_INACTIVE();
 		static jint STATE_UNAVAILABLE();
@@ -31,7 +31,7 @@ namespace android::service::quicksettings
 		// Methods
 		jint describeContents();
 		jstring getContentDescription();
-		QAndroidJniObject getIcon();
+		android::graphics::drawable::Icon getIcon();
 		jstring getLabel();
 		jint getState();
 		jstring getSubtitle();

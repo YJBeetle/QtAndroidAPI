@@ -21,7 +21,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_DigitsBuilder::setDigits(jstring arg0)
+	android::text::style::TtsSpan_DigitsBuilder TtsSpan_DigitsBuilder::setDigits(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDigits",

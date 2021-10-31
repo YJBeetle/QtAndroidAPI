@@ -34,13 +34,13 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject open(__JniBaseClass arg0, jarray arg1);
-		static QAndroidJniObject open(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
+		static java::nio::channels::FileChannel open(__JniBaseClass arg0, jarray arg1);
+		static java::nio::channels::FileChannel open(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
 		void force(jboolean arg0);
-		QAndroidJniObject lock();
-		QAndroidJniObject lock(jlong arg0, jlong arg1, jboolean arg2);
-		QAndroidJniObject map(java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2);
-		QAndroidJniObject position(jlong arg0);
+		java::nio::channels::FileLock lock();
+		java::nio::channels::FileLock lock(jlong arg0, jlong arg1, jboolean arg2);
+		java::nio::MappedByteBuffer map(java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2);
+		java::nio::channels::FileChannel position(jlong arg0);
 		jlong position();
 		jint read(java::nio::ByteBuffer arg0);
 		jint read(java::nio::ByteBuffer arg0, jlong arg1);
@@ -49,9 +49,9 @@ namespace java::nio::channels
 		jlong size();
 		jlong transferFrom(__JniBaseClass arg0, jlong arg1, jlong arg2);
 		jlong transferTo(jlong arg0, jlong arg1, __JniBaseClass arg2);
-		QAndroidJniObject truncate(jlong arg0);
-		QAndroidJniObject tryLock();
-		QAndroidJniObject tryLock(jlong arg0, jlong arg1, jboolean arg2);
+		java::nio::channels::FileChannel truncate(jlong arg0);
+		java::nio::channels::FileLock tryLock();
+		java::nio::channels::FileLock tryLock(jlong arg0, jlong arg1, jboolean arg2);
 		jint write(java::nio::ByteBuffer arg0);
 		jint write(java::nio::ByteBuffer arg0, jlong arg1);
 		jlong write(jarray arg0);

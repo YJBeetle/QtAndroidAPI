@@ -20,14 +20,14 @@ namespace java::util::prefs
 		) {}
 	
 	// Methods
-	QAndroidJniObject NodeChangeEvent::getChild()
+	java::util::prefs::Preferences NodeChangeEvent::getChild()
 	{
 		return callObjectMethod(
 			"getChild",
 			"()Ljava/util/prefs/Preferences;"
 		);
 	}
-	QAndroidJniObject NodeChangeEvent::getParent()
+	java::util::prefs::Preferences NodeChangeEvent::getParent()
 	{
 		return callObjectMethod(
 			"getParent",

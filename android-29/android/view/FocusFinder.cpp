@@ -13,7 +13,7 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FocusFinder::getInstance()
+	android::view::FocusFinder FocusFinder::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.FocusFinder",
@@ -21,7 +21,7 @@ namespace android::view
 			"()Landroid/view/FocusFinder;"
 		);
 	}
-	QAndroidJniObject FocusFinder::findNearestTouchable(android::view::ViewGroup arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)
+	android::view::View FocusFinder::findNearestTouchable(android::view::ViewGroup arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)
 	{
 		return callObjectMethod(
 			"findNearestTouchable",
@@ -33,7 +33,7 @@ namespace android::view
 			arg4
 		);
 	}
-	QAndroidJniObject FocusFinder::findNextFocus(android::view::ViewGroup arg0, android::view::View arg1, jint arg2)
+	android::view::View FocusFinder::findNextFocus(android::view::ViewGroup arg0, android::view::View arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"findNextFocus",
@@ -43,7 +43,7 @@ namespace android::view
 			arg2
 		);
 	}
-	QAndroidJniObject FocusFinder::findNextFocusFromRect(android::view::ViewGroup arg0, android::graphics::Rect arg1, jint arg2)
+	android::view::View FocusFinder::findNextFocusFromRect(android::view::ViewGroup arg0, android::graphics::Rect arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"findNextFocusFromRect",
@@ -53,7 +53,7 @@ namespace android::view
 			arg2
 		);
 	}
-	QAndroidJniObject FocusFinder::findNextKeyboardNavigationCluster(android::view::View arg0, android::view::View arg1, jint arg2)
+	android::view::View FocusFinder::findNextKeyboardNavigationCluster(android::view::View arg0, android::view::View arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"findNextKeyboardNavigationCluster",

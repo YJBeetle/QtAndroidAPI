@@ -40,7 +40,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	QAndroidJniObject TypedArray::getColorStateList(jint arg0)
+	android::content::res::ColorStateList TypedArray::getColorStateList(jint arg0)
 	{
 		return callObjectMethod(
 			"getColorStateList",
@@ -75,7 +75,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	QAndroidJniObject TypedArray::getDrawable(jint arg0)
+	android::graphics::drawable::Drawable TypedArray::getDrawable(jint arg0)
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -92,7 +92,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	QAndroidJniObject TypedArray::getFont(jint arg0)
+	android::graphics::Typeface TypedArray::getFont(jint arg0)
 	{
 		return callObjectMethod(
 			"getFont",
@@ -186,7 +186,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	QAndroidJniObject TypedArray::getResources()
+	android::content::res::Resources TypedArray::getResources()
 	{
 		return callObjectMethod(
 			"getResources",
@@ -266,7 +266,7 @@ namespace android::content::res
 			"()I"
 		);
 	}
-	QAndroidJniObject TypedArray::peekValue(jint arg0)
+	android::util::TypedValue TypedArray::peekValue(jint arg0)
 	{
 		return callObjectMethod(
 			"peekValue",

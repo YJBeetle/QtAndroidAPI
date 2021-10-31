@@ -38,10 +38,10 @@ namespace org::xml::sax::helpers
 		void characters(jcharArray arg0, jint arg1, jint arg2);
 		void endDocument();
 		void endElement(jstring arg0);
-		QAndroidJniObject getContentHandler();
-		QAndroidJniObject getDTDHandler();
-		QAndroidJniObject getEntityResolver();
-		QAndroidJniObject getErrorHandler();
+		__JniBaseClass getContentHandler();
+		__JniBaseClass getDTDHandler();
+		__JniBaseClass getEntityResolver();
+		__JniBaseClass getErrorHandler();
 		jboolean getFeature(jstring arg0);
 		jobject getProperty(jstring arg0);
 		void ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2);

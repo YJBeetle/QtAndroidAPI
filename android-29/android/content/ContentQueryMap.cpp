@@ -28,14 +28,14 @@ namespace android::content
 			"()V"
 		);
 	}
-	QAndroidJniObject ContentQueryMap::getRows()
+	__JniBaseClass ContentQueryMap::getRows()
 	{
 		return callObjectMethod(
 			"getRows",
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject ContentQueryMap::getValues(jstring arg0)
+	android::content::ContentValues ContentQueryMap::getValues(jstring arg0)
 	{
 		return callObjectMethod(
 			"getValues",

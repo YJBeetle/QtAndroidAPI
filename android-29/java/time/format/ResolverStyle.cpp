@@ -3,7 +3,7 @@
 namespace java::time::format
 {
 	// Fields
-	QAndroidJniObject ResolverStyle::LENIENT()
+	java::time::format::ResolverStyle ResolverStyle::LENIENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.ResolverStyle",
@@ -11,7 +11,7 @@ namespace java::time::format
 			"Ljava/time/format/ResolverStyle;"
 		);
 	}
-	QAndroidJniObject ResolverStyle::SMART()
+	java::time::format::ResolverStyle ResolverStyle::SMART()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.ResolverStyle",
@@ -19,7 +19,7 @@ namespace java::time::format
 			"Ljava/time/format/ResolverStyle;"
 		);
 	}
-	QAndroidJniObject ResolverStyle::STRICT()
+	java::time::format::ResolverStyle ResolverStyle::STRICT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.ResolverStyle",
@@ -34,7 +34,7 @@ namespace java::time::format
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ResolverStyle::valueOf(jstring arg0)
+	java::time::format::ResolverStyle ResolverStyle::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.ResolverStyle",

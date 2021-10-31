@@ -25,9 +25,9 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getDestination();
-		QAndroidJniObject getRenderIntent();
-		QAndroidJniObject getSource();
+		android::graphics::ColorSpace getDestination();
+		android::graphics::ColorSpace_RenderIntent getRenderIntent();
+		android::graphics::ColorSpace getSource();
 		jfloatArray transform(jfloatArray arg0);
 		jfloatArray transform(jfloat arg0, jfloat arg1, jfloat arg2);
 	};

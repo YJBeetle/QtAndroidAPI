@@ -23,14 +23,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Notification_Action_WearableExtender::clone()
+	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/app/Notification$Action$WearableExtender;"
 		);
 	}
-	QAndroidJniObject Notification_Action_WearableExtender::extend(android::app::Notification_Action_Builder arg0)
+	android::app::Notification_Action_Builder Notification_Action_WearableExtender::extend(android::app::Notification_Action_Builder arg0)
 	{
 		return callObjectMethod(
 			"extend",
@@ -80,7 +80,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject Notification_Action_WearableExtender::setAvailableOffline(jboolean arg0)
+	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setAvailableOffline(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setAvailableOffline",
@@ -88,7 +88,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Action_WearableExtender::setCancelLabel(jstring arg0)
+	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setCancelLabel(jstring arg0)
 	{
 		return callObjectMethod(
 			"setCancelLabel",
@@ -96,7 +96,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Action_WearableExtender::setConfirmLabel(jstring arg0)
+	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setConfirmLabel(jstring arg0)
 	{
 		return callObjectMethod(
 			"setConfirmLabel",
@@ -104,7 +104,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Action_WearableExtender::setHintDisplayActionInline(jboolean arg0)
+	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setHintDisplayActionInline(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setHintDisplayActionInline",
@@ -112,7 +112,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Action_WearableExtender::setHintLaunchesActivity(jboolean arg0)
+	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setHintLaunchesActivity(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setHintLaunchesActivity",
@@ -120,7 +120,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Action_WearableExtender::setInProgressLabel(jstring arg0)
+	android::app::Notification_Action_WearableExtender Notification_Action_WearableExtender::setInProgressLabel(jstring arg0)
 	{
 		return callObjectMethod(
 			"setInProgressLabel",

@@ -51,21 +51,21 @@ namespace android::media::session
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaSession::getController()
+	android::media::session::MediaController MediaSession::getController()
 	{
 		return callObjectMethod(
 			"getController",
 			"()Landroid/media/session/MediaController;"
 		);
 	}
-	QAndroidJniObject MediaSession::getCurrentControllerInfo()
+	android::media::session::MediaSessionManager_RemoteUserInfo MediaSession::getCurrentControllerInfo()
 	{
 		return callObjectMethod(
 			"getCurrentControllerInfo",
 			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
 		);
 	}
-	QAndroidJniObject MediaSession::getSessionToken()
+	android::media::session::MediaSession_Token MediaSession::getSessionToken()
 	{
 		return callObjectMethod(
 			"getSessionToken",

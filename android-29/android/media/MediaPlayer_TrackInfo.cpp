@@ -61,7 +61,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaPlayer_TrackInfo::getFormat()
+	android::media::MediaFormat MediaPlayer_TrackInfo::getFormat()
 	{
 		return callObjectMethod(
 			"getFormat",

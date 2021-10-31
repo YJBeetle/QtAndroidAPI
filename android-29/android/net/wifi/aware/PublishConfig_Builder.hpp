@@ -22,14 +22,14 @@ namespace android::net::wifi::aware
 		PublishConfig_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setMatchFilter(__JniBaseClass arg0);
-		QAndroidJniObject setPublishType(jint arg0);
-		QAndroidJniObject setRangingEnabled(jboolean arg0);
-		QAndroidJniObject setServiceName(jstring arg0);
-		QAndroidJniObject setServiceSpecificInfo(jbyteArray arg0);
-		QAndroidJniObject setTerminateNotificationEnabled(jboolean arg0);
-		QAndroidJniObject setTtlSec(jint arg0);
+		android::net::wifi::aware::PublishConfig build();
+		android::net::wifi::aware::PublishConfig_Builder setMatchFilter(__JniBaseClass arg0);
+		android::net::wifi::aware::PublishConfig_Builder setPublishType(jint arg0);
+		android::net::wifi::aware::PublishConfig_Builder setRangingEnabled(jboolean arg0);
+		android::net::wifi::aware::PublishConfig_Builder setServiceName(jstring arg0);
+		android::net::wifi::aware::PublishConfig_Builder setServiceSpecificInfo(jbyteArray arg0);
+		android::net::wifi::aware::PublishConfig_Builder setTerminateNotificationEnabled(jboolean arg0);
+		android::net::wifi::aware::PublishConfig_Builder setTtlSec(jint arg0);
 	};
 } // namespace android::net::wifi::aware
 

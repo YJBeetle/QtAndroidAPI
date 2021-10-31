@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject PorterDuff_Mode::ADD()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::ADD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::CLEAR()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::CLEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::DARKEN()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::DARKEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::DST()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::DST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -35,7 +35,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::DST_ATOP()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::DST_ATOP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -43,7 +43,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::DST_IN()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::DST_IN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -51,7 +51,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::DST_OUT()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::DST_OUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -59,7 +59,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::DST_OVER()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::DST_OVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -67,7 +67,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::LIGHTEN()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::LIGHTEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -75,7 +75,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::MULTIPLY()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::MULTIPLY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -83,7 +83,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::OVERLAY()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::OVERLAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -91,7 +91,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::SCREEN()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::SCREEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -99,7 +99,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::SRC()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::SRC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -107,7 +107,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::SRC_ATOP()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::SRC_ATOP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -115,7 +115,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::SRC_IN()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::SRC_IN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -123,7 +123,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::SRC_OUT()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::SRC_OUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -131,7 +131,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::SRC_OVER()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::SRC_OVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -139,7 +139,7 @@ namespace android::graphics
 			"Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::XOR()
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::XOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PorterDuff$Mode",
@@ -154,7 +154,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PorterDuff_Mode::valueOf(jstring arg0)
+	android::graphics::PorterDuff_Mode PorterDuff_Mode::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.PorterDuff$Mode",

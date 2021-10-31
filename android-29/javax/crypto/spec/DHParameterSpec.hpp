@@ -23,9 +23,9 @@ namespace javax::crypto::spec
 		DHParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject getG();
+		java::math::BigInteger getG();
 		jint getL();
-		QAndroidJniObject getP();
+		java::math::BigInteger getP();
 	};
 } // namespace javax::crypto::spec
 

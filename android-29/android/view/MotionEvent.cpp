@@ -560,7 +560,7 @@ namespace android::view
 			"CLASSIFICATION_NONE"
 		);
 	}
-	QAndroidJniObject MotionEvent::CREATOR()
+	__JniBaseClass MotionEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.MotionEvent",
@@ -686,7 +686,7 @@ namespace android::view
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject MotionEvent::obtain(android::view::MotionEvent arg0)
+	android::view::MotionEvent MotionEvent::obtain(android::view::MotionEvent arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",
@@ -695,7 +695,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5)
+	android::view::MotionEvent MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",
@@ -709,7 +709,7 @@ namespace android::view
 			arg5
 		);
 	}
-	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11)
+	android::view::MotionEvent MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",
@@ -729,7 +729,7 @@ namespace android::view
 			arg11
 		);
 	}
-	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jintArray arg4, jarray arg5, jint arg6, jfloat arg7, jfloat arg8, jint arg9, jint arg10, jint arg11, jint arg12)
+	android::view::MotionEvent MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jintArray arg4, jarray arg5, jint arg6, jfloat arg7, jfloat arg8, jint arg9, jint arg10, jint arg11, jint arg12)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",
@@ -750,7 +750,7 @@ namespace android::view
 			arg12
 		);
 	}
-	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jint arg8, jfloat arg9, jfloat arg10, jint arg11, jint arg12)
+	android::view::MotionEvent MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jint arg8, jfloat arg9, jfloat arg10, jint arg11, jint arg12)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",
@@ -771,7 +771,7 @@ namespace android::view
 			arg12
 		);
 	}
-	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jarray arg4, jarray arg5, jint arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11, jint arg12, jint arg13)
+	android::view::MotionEvent MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jarray arg4, jarray arg5, jint arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11, jint arg12, jint arg13)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",
@@ -793,7 +793,7 @@ namespace android::view
 			arg13
 		);
 	}
-	QAndroidJniObject MotionEvent::obtainNoHistory(android::view::MotionEvent arg0)
+	android::view::MotionEvent MotionEvent::obtainNoHistory(android::view::MotionEvent arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",

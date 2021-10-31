@@ -19,14 +19,14 @@ namespace java::nio::file
 			"()V"
 		);
 	}
-	QAndroidJniObject FileSystem::getFileStores()
+	__JniBaseClass FileSystem::getFileStores()
 	{
 		return callObjectMethod(
 			"getFileStores",
 			"()Ljava/lang/Iterable;"
 		);
 	}
-	QAndroidJniObject FileSystem::getPath(jstring arg0, jarray arg1)
+	__JniBaseClass FileSystem::getPath(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"getPath",
@@ -35,7 +35,7 @@ namespace java::nio::file
 			arg1
 		);
 	}
-	QAndroidJniObject FileSystem::getPathMatcher(jstring arg0)
+	__JniBaseClass FileSystem::getPathMatcher(jstring arg0)
 	{
 		return callObjectMethod(
 			"getPathMatcher",
@@ -43,7 +43,7 @@ namespace java::nio::file
 			arg0
 		);
 	}
-	QAndroidJniObject FileSystem::getRootDirectories()
+	__JniBaseClass FileSystem::getRootDirectories()
 	{
 		return callObjectMethod(
 			"getRootDirectories",
@@ -57,7 +57,7 @@ namespace java::nio::file
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject FileSystem::getUserPrincipalLookupService()
+	java::nio::file::attribute::UserPrincipalLookupService FileSystem::getUserPrincipalLookupService()
 	{
 		return callObjectMethod(
 			"getUserPrincipalLookupService",
@@ -78,21 +78,21 @@ namespace java::nio::file
 			"()Z"
 		);
 	}
-	QAndroidJniObject FileSystem::newWatchService()
+	__JniBaseClass FileSystem::newWatchService()
 	{
 		return callObjectMethod(
 			"newWatchService",
 			"()Ljava/nio/file/WatchService;"
 		);
 	}
-	QAndroidJniObject FileSystem::provider()
+	java::nio::file::spi::FileSystemProvider FileSystem::provider()
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/file/spi/FileSystemProvider;"
 		);
 	}
-	QAndroidJniObject FileSystem::supportedFileAttributeViews()
+	__JniBaseClass FileSystem::supportedFileAttributeViews()
 	{
 		return callObjectMethod(
 			"supportedFileAttributeViews",

@@ -39,12 +39,12 @@ namespace android::animation
 		void addTransitionListener(__JniBaseClass arg0);
 		void disableTransitionType(jint arg0);
 		void enableTransitionType(jint arg0);
-		QAndroidJniObject getAnimator(jint arg0);
+		android::animation::Animator getAnimator(jint arg0);
 		jlong getDuration(jint arg0);
-		QAndroidJniObject getInterpolator(jint arg0);
+		__JniBaseClass getInterpolator(jint arg0);
 		jlong getStagger(jint arg0);
 		jlong getStartDelay(jint arg0);
-		QAndroidJniObject getTransitionListeners();
+		__JniBaseClass getTransitionListeners();
 		void hideChild(android::view::ViewGroup arg0, android::view::View arg1);
 		void hideChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2);
 		jboolean isChangingLayout();

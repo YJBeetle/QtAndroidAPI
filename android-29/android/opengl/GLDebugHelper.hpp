@@ -26,7 +26,7 @@ namespace android::opengl
 		GLDebugHelper();
 		
 		// Methods
-		static QAndroidJniObject wrap(__JniBaseClass arg0, jint arg1, java::io::Writer arg2);
+		static __JniBaseClass wrap(__JniBaseClass arg0, jint arg1, java::io::Writer arg2);
 	};
 } // namespace android::opengl
 

@@ -14,7 +14,7 @@ namespace javax::crypto
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Mac::getInstance(jstring arg0)
+	javax::crypto::Mac Mac::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.Mac",
@@ -23,7 +23,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	QAndroidJniObject Mac::getInstance(jstring arg0, jstring arg1)
+	javax::crypto::Mac Mac::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.Mac",
@@ -33,7 +33,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	QAndroidJniObject Mac::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::crypto::Mac Mac::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.Mac",
@@ -88,7 +88,7 @@ namespace javax::crypto
 			"()I"
 		);
 	}
-	QAndroidJniObject Mac::getProvider()
+	java::security::Provider Mac::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

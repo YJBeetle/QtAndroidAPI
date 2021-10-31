@@ -10,7 +10,7 @@ namespace java::util::stream
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject StreamSupport::doubleStream(__JniBaseClass arg0, jboolean arg1)
+	__JniBaseClass StreamSupport::doubleStream(__JniBaseClass arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
@@ -20,7 +20,7 @@ namespace java::util::stream
 			arg1
 		);
 	}
-	QAndroidJniObject StreamSupport::doubleStream(__JniBaseClass arg0, jint arg1, jboolean arg2)
+	__JniBaseClass StreamSupport::doubleStream(__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
@@ -31,7 +31,7 @@ namespace java::util::stream
 			arg2
 		);
 	}
-	QAndroidJniObject StreamSupport::intStream(__JniBaseClass arg0, jboolean arg1)
+	__JniBaseClass StreamSupport::intStream(__JniBaseClass arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
@@ -41,7 +41,7 @@ namespace java::util::stream
 			arg1
 		);
 	}
-	QAndroidJniObject StreamSupport::intStream(__JniBaseClass arg0, jint arg1, jboolean arg2)
+	__JniBaseClass StreamSupport::intStream(__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
@@ -52,7 +52,7 @@ namespace java::util::stream
 			arg2
 		);
 	}
-	QAndroidJniObject StreamSupport::longStream(__JniBaseClass arg0, jboolean arg1)
+	__JniBaseClass StreamSupport::longStream(__JniBaseClass arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
@@ -62,7 +62,7 @@ namespace java::util::stream
 			arg1
 		);
 	}
-	QAndroidJniObject StreamSupport::longStream(__JniBaseClass arg0, jint arg1, jboolean arg2)
+	__JniBaseClass StreamSupport::longStream(__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
@@ -73,7 +73,7 @@ namespace java::util::stream
 			arg2
 		);
 	}
-	QAndroidJniObject StreamSupport::stream(__JniBaseClass arg0, jboolean arg1)
+	__JniBaseClass StreamSupport::stream(__JniBaseClass arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.StreamSupport",
@@ -83,7 +83,7 @@ namespace java::util::stream
 			arg1
 		);
 	}
-	QAndroidJniObject StreamSupport::stream(__JniBaseClass arg0, jint arg1, jboolean arg2)
+	__JniBaseClass StreamSupport::stream(__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.StreamSupport",

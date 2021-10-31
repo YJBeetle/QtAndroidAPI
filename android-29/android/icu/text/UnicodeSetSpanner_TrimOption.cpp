@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject UnicodeSetSpanner_TrimOption::BOTH()
+	android::icu::text::UnicodeSetSpanner_TrimOption UnicodeSetSpanner_TrimOption::BOTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSetSpanner$TrimOption",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
 		);
 	}
-	QAndroidJniObject UnicodeSetSpanner_TrimOption::LEADING()
+	android::icu::text::UnicodeSetSpanner_TrimOption UnicodeSetSpanner_TrimOption::LEADING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSetSpanner$TrimOption",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
 		);
 	}
-	QAndroidJniObject UnicodeSetSpanner_TrimOption::TRAILING()
+	android::icu::text::UnicodeSetSpanner_TrimOption UnicodeSetSpanner_TrimOption::TRAILING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSetSpanner$TrimOption",
@@ -34,7 +34,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject UnicodeSetSpanner_TrimOption::valueOf(jstring arg0)
+	android::icu::text::UnicodeSetSpanner_TrimOption UnicodeSetSpanner_TrimOption::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UnicodeSetSpanner$TrimOption",

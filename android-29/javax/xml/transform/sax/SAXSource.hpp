@@ -25,10 +25,10 @@ namespace javax::xml::transform::sax
 		SAXSource(__JniBaseClass arg0, org::xml::sax::InputSource arg1);
 		
 		// Methods
-		static QAndroidJniObject sourceToInputSource(__JniBaseClass arg0);
-		QAndroidJniObject getInputSource();
+		static org::xml::sax::InputSource sourceToInputSource(__JniBaseClass arg0);
+		org::xml::sax::InputSource getInputSource();
 		jstring getSystemId();
-		QAndroidJniObject getXMLReader();
+		__JniBaseClass getXMLReader();
 		jboolean isEmpty();
 		void setInputSource(org::xml::sax::InputSource arg0);
 		void setSystemId(jstring arg0);

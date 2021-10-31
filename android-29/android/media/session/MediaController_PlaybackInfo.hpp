@@ -17,7 +17,7 @@ namespace android::media::session
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint PLAYBACK_TYPE_LOCAL();
 		static jint PLAYBACK_TYPE_REMOTE();
 		
@@ -29,7 +29,7 @@ namespace android::media::session
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getAudioAttributes();
+		android::media::AudioAttributes getAudioAttributes();
 		jint getCurrentVolume();
 		jint getMaxVolume();
 		jint getPlaybackType();

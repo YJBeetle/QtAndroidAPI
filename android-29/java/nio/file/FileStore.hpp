@@ -19,7 +19,7 @@ namespace java::nio::file
 		// Methods
 		jobject getAttribute(jstring arg0);
 		jlong getBlockSize();
-		QAndroidJniObject getFileStoreAttributeView(jclass arg0);
+		__JniBaseClass getFileStoreAttributeView(jclass arg0);
 		jlong getTotalSpace();
 		jlong getUnallocatedSpace();
 		jlong getUsableSpace();

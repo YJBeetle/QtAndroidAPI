@@ -43,7 +43,7 @@ namespace java::util::prefs
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Preferences::systemNodeForPackage(jclass arg0)
+	java::util::prefs::Preferences Preferences::systemNodeForPackage(jclass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.prefs.Preferences",
@@ -52,7 +52,7 @@ namespace java::util::prefs
 			arg0
 		);
 	}
-	QAndroidJniObject Preferences::systemRoot()
+	java::util::prefs::Preferences Preferences::systemRoot()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.prefs.Preferences",
@@ -60,7 +60,7 @@ namespace java::util::prefs
 			"()Ljava/util/prefs/Preferences;"
 		);
 	}
-	QAndroidJniObject Preferences::userNodeForPackage(jclass arg0)
+	java::util::prefs::Preferences Preferences::userNodeForPackage(jclass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.prefs.Preferences",
@@ -69,7 +69,7 @@ namespace java::util::prefs
 			arg0
 		);
 	}
-	QAndroidJniObject Preferences::userRoot()
+	java::util::prefs::Preferences Preferences::userRoot()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.prefs.Preferences",
@@ -221,7 +221,7 @@ namespace java::util::prefs
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Preferences::node(jstring arg0)
+	java::util::prefs::Preferences Preferences::node(jstring arg0)
 	{
 		return callObjectMethod(
 			"node",
@@ -237,7 +237,7 @@ namespace java::util::prefs
 			arg0
 		);
 	}
-	QAndroidJniObject Preferences::parent()
+	java::util::prefs::Preferences Preferences::parent()
 	{
 		return callObjectMethod(
 			"parent",

@@ -17,10 +17,10 @@ namespace java::io
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject nullWriter();
-		QAndroidJniObject append(jchar arg0);
-		QAndroidJniObject append(jstring arg0);
-		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
+		static java::io::Writer nullWriter();
+		java::io::Writer append(jchar arg0);
+		java::io::Writer append(jstring arg0);
+		java::io::Writer append(jstring arg0, jint arg1, jint arg2);
 		void close();
 		void flush();
 		void write(jcharArray arg0);

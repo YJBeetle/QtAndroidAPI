@@ -24,9 +24,9 @@ namespace android::app
 		Notification_BigTextStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
-		QAndroidJniObject bigText(jstring arg0);
-		QAndroidJniObject setBigContentTitle(jstring arg0);
-		QAndroidJniObject setSummaryText(jstring arg0);
+		android::app::Notification_BigTextStyle bigText(jstring arg0);
+		android::app::Notification_BigTextStyle setBigContentTitle(jstring arg0);
+		android::app::Notification_BigTextStyle setSummaryText(jstring arg0);
 	};
 } // namespace android::app
 

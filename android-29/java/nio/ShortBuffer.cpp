@@ -12,7 +12,7 @@ namespace java::nio
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ShortBuffer::allocate(jint arg0)
+	java::nio::ShortBuffer ShortBuffer::allocate(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.ShortBuffer",
@@ -21,7 +21,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ShortBuffer::wrap(jshortArray arg0)
+	java::nio::ShortBuffer ShortBuffer::wrap(jshortArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.ShortBuffer",
@@ -30,7 +30,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ShortBuffer::wrap(jshortArray arg0, jint arg1, jint arg2)
+	java::nio::ShortBuffer ShortBuffer::wrap(jshortArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.ShortBuffer",
@@ -55,21 +55,21 @@ namespace java::nio
 			"()I"
 		);
 	}
-	QAndroidJniObject ShortBuffer::asReadOnlyBuffer()
+	java::nio::ShortBuffer ShortBuffer::asReadOnlyBuffer()
 	{
 		return callObjectMethod(
 			"asReadOnlyBuffer",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
-	QAndroidJniObject ShortBuffer::clear()
+	java::nio::ShortBuffer ShortBuffer::clear()
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
-	QAndroidJniObject ShortBuffer::compact()
+	java::nio::ShortBuffer ShortBuffer::compact()
 	{
 		return callObjectMethod(
 			"compact",
@@ -92,7 +92,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortBuffer::duplicate()
+	java::nio::ShortBuffer ShortBuffer::duplicate()
 	{
 		return callObjectMethod(
 			"duplicate",
@@ -107,14 +107,14 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ShortBuffer::flip()
+	java::nio::ShortBuffer ShortBuffer::flip()
 	{
 		return callObjectMethod(
 			"flip",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
-	QAndroidJniObject ShortBuffer::get(jshortArray arg0)
+	java::nio::ShortBuffer ShortBuffer::get(jshortArray arg0)
 	{
 		return callObjectMethod(
 			"get",
@@ -122,7 +122,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ShortBuffer::get(jint arg0, jshortArray arg1)
+	java::nio::ShortBuffer ShortBuffer::get(jint arg0, jshortArray arg1)
 	{
 		return callObjectMethod(
 			"get",
@@ -131,7 +131,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ShortBuffer::get(jshortArray arg0, jint arg1, jint arg2)
+	java::nio::ShortBuffer ShortBuffer::get(jshortArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
@@ -141,7 +141,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject ShortBuffer::get(jint arg0, jshortArray arg1, jint arg2, jint arg3)
+	java::nio::ShortBuffer ShortBuffer::get(jint arg0, jshortArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
@@ -188,7 +188,7 @@ namespace java::nio
 			"()Z"
 		);
 	}
-	QAndroidJniObject ShortBuffer::limit(jint arg0)
+	java::nio::ShortBuffer ShortBuffer::limit(jint arg0)
 	{
 		return callObjectMethod(
 			"limit",
@@ -196,7 +196,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ShortBuffer::mark()
+	java::nio::ShortBuffer ShortBuffer::mark()
 	{
 		return callObjectMethod(
 			"mark",
@@ -211,14 +211,14 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortBuffer::order()
+	java::nio::ByteOrder ShortBuffer::order()
 	{
 		return callObjectMethod(
 			"order",
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
-	QAndroidJniObject ShortBuffer::position(jint arg0)
+	java::nio::ShortBuffer ShortBuffer::position(jint arg0)
 	{
 		return callObjectMethod(
 			"position",
@@ -226,7 +226,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ShortBuffer::put(jshortArray arg0)
+	java::nio::ShortBuffer ShortBuffer::put(jshortArray arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -234,7 +234,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ShortBuffer::put(java::nio::ShortBuffer arg0)
+	java::nio::ShortBuffer ShortBuffer::put(java::nio::ShortBuffer arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -242,7 +242,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortBuffer::put(jshort arg0)
+	java::nio::ShortBuffer ShortBuffer::put(jshort arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -250,7 +250,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject ShortBuffer::put(jint arg0, jshortArray arg1)
+	java::nio::ShortBuffer ShortBuffer::put(jint arg0, jshortArray arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -259,7 +259,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ShortBuffer::put(jint arg0, jshort arg1)
+	java::nio::ShortBuffer ShortBuffer::put(jint arg0, jshort arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -268,7 +268,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject ShortBuffer::put(jshortArray arg0, jint arg1, jint arg2)
+	java::nio::ShortBuffer ShortBuffer::put(jshortArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
@@ -278,7 +278,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject ShortBuffer::put(jint arg0, jshortArray arg1, jint arg2, jint arg3)
+	java::nio::ShortBuffer ShortBuffer::put(jint arg0, jshortArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -289,7 +289,7 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject ShortBuffer::put(jint arg0, java::nio::ShortBuffer arg1, jint arg2, jint arg3)
+	java::nio::ShortBuffer ShortBuffer::put(jint arg0, java::nio::ShortBuffer arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -300,28 +300,28 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject ShortBuffer::reset()
+	java::nio::ShortBuffer ShortBuffer::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
-	QAndroidJniObject ShortBuffer::rewind()
+	java::nio::ShortBuffer ShortBuffer::rewind()
 	{
 		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
-	QAndroidJniObject ShortBuffer::slice()
+	java::nio::ShortBuffer ShortBuffer::slice()
 	{
 		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
-	QAndroidJniObject ShortBuffer::slice(jint arg0, jint arg1)
+	java::nio::ShortBuffer ShortBuffer::slice(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"slice",

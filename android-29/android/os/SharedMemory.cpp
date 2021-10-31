@@ -6,7 +6,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject SharedMemory::CREATOR()
+	__JniBaseClass SharedMemory::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.SharedMemory",
@@ -21,7 +21,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SharedMemory::create(jstring arg0, jint arg1)
+	android::os::SharedMemory SharedMemory::create(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.SharedMemory",
@@ -61,7 +61,7 @@ namespace android::os
 			"()I"
 		);
 	}
-	QAndroidJniObject SharedMemory::map(jint arg0, jint arg1, jint arg2)
+	java::nio::ByteBuffer SharedMemory::map(jint arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"map",
@@ -71,14 +71,14 @@ namespace android::os
 			arg2
 		);
 	}
-	QAndroidJniObject SharedMemory::mapReadOnly()
+	java::nio::ByteBuffer SharedMemory::mapReadOnly()
 	{
 		return callObjectMethod(
 			"mapReadOnly",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	QAndroidJniObject SharedMemory::mapReadWrite()
+	java::nio::ByteBuffer SharedMemory::mapReadWrite()
 	{
 		return callObjectMethod(
 			"mapReadWrite",

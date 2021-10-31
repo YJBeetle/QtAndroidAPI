@@ -11,7 +11,7 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Paths::get(java::net::URI arg0)
+	__JniBaseClass Paths::get(java::net::URI arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.Paths",
@@ -20,7 +20,7 @@ namespace java::nio::file
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Paths::get(jstring arg0, jarray arg1)
+	__JniBaseClass Paths::get(jstring arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.Paths",

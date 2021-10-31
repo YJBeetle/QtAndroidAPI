@@ -3,7 +3,7 @@
 namespace java::net
 {
 	// Fields
-	QAndroidJniObject Proxy_Type::DIRECT()
+	java::net::Proxy_Type Proxy_Type::DIRECT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Proxy$Type",
@@ -11,7 +11,7 @@ namespace java::net
 			"Ljava/net/Proxy$Type;"
 		);
 	}
-	QAndroidJniObject Proxy_Type::HTTP()
+	java::net::Proxy_Type Proxy_Type::HTTP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Proxy$Type",
@@ -19,7 +19,7 @@ namespace java::net
 			"Ljava/net/Proxy$Type;"
 		);
 	}
-	QAndroidJniObject Proxy_Type::SOCKS()
+	java::net::Proxy_Type Proxy_Type::SOCKS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Proxy$Type",
@@ -34,7 +34,7 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Proxy_Type::valueOf(jstring arg0)
+	java::net::Proxy_Type Proxy_Type::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Proxy$Type",

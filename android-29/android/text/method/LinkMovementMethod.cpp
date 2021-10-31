@@ -18,7 +18,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	QAndroidJniObject LinkMovementMethod::getInstance()
+	__JniBaseClass LinkMovementMethod::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.LinkMovementMethod",

@@ -40,7 +40,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	QAndroidJniObject NamespaceSupport::getDeclaredPrefixes()
+	__JniBaseClass NamespaceSupport::getDeclaredPrefixes()
 	{
 		return callObjectMethod(
 			"getDeclaredPrefixes",
@@ -55,14 +55,14 @@ namespace org::xml::sax::helpers
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject NamespaceSupport::getPrefixes()
+	__JniBaseClass NamespaceSupport::getPrefixes()
 	{
 		return callObjectMethod(
 			"getPrefixes",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject NamespaceSupport::getPrefixes(jstring arg0)
+	__JniBaseClass NamespaceSupport::getPrefixes(jstring arg0)
 	{
 		return callObjectMethod(
 			"getPrefixes",

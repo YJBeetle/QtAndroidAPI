@@ -388,7 +388,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WifiManager::createMulticastLock(jstring arg0)
+	android::net::wifi::WifiManager_MulticastLock WifiManager::createMulticastLock(jstring arg0)
 	{
 		return callObjectMethod(
 			"createMulticastLock",
@@ -396,7 +396,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiManager::createWifiLock(jstring arg0)
+	android::net::wifi::WifiManager_WifiLock WifiManager::createWifiLock(jstring arg0)
 	{
 		return callObjectMethod(
 			"createWifiLock",
@@ -404,7 +404,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiManager::createWifiLock(jint arg0, jstring arg1)
+	android::net::wifi::WifiManager_WifiLock WifiManager::createWifiLock(jint arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"createWifiLock",
@@ -437,21 +437,21 @@ namespace android::net::wifi
 			arg1
 		);
 	}
-	QAndroidJniObject WifiManager::getConfiguredNetworks()
+	__JniBaseClass WifiManager::getConfiguredNetworks()
 	{
 		return callObjectMethod(
 			"getConfiguredNetworks",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject WifiManager::getConnectionInfo()
+	android::net::wifi::WifiInfo WifiManager::getConnectionInfo()
 	{
 		return callObjectMethod(
 			"getConnectionInfo",
 			"()Landroid/net/wifi/WifiInfo;"
 		);
 	}
-	QAndroidJniObject WifiManager::getDhcpInfo()
+	android::net::DhcpInfo WifiManager::getDhcpInfo()
 	{
 		return callObjectMethod(
 			"getDhcpInfo",
@@ -465,14 +465,14 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	QAndroidJniObject WifiManager::getPasspointConfigurations()
+	__JniBaseClass WifiManager::getPasspointConfigurations()
 	{
 		return callObjectMethod(
 			"getPasspointConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject WifiManager::getScanResults()
+	__JniBaseClass WifiManager::getScanResults()
 	{
 		return callObjectMethod(
 			"getScanResults",

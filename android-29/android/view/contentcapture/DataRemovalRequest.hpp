@@ -17,7 +17,7 @@ namespace android::view::contentcapture
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_IS_PREFIX();
 		
 		// QAndroidJniObject forward
@@ -28,7 +28,7 @@ namespace android::view::contentcapture
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getLocusIdRequests();
+		__JniBaseClass getLocusIdRequests();
 		jstring getPackageName();
 		jboolean isForEverything();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

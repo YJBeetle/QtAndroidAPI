@@ -25,12 +25,12 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getPackage(jstring arg0);
+		static java::lang::Package getPackage(jstring arg0);
 		static jarray getPackages();
-		QAndroidJniObject getAnnotation(jclass arg0);
+		__JniBaseClass getAnnotation(jclass arg0);
 		jarray getAnnotations();
 		jarray getAnnotationsByType(jclass arg0);
-		QAndroidJniObject getDeclaredAnnotation(jclass arg0);
+		__JniBaseClass getDeclaredAnnotation(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jarray getDeclaredAnnotationsByType(jclass arg0);
 		jstring getImplementationTitle();

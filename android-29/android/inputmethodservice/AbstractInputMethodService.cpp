@@ -22,14 +22,14 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	QAndroidJniObject AbstractInputMethodService::getKeyDispatcherState()
+	android::view::KeyEvent_DispatcherState AbstractInputMethodService::getKeyDispatcherState()
 	{
 		return callObjectMethod(
 			"getKeyDispatcherState",
 			"()Landroid/view/KeyEvent$DispatcherState;"
 		);
 	}
-	QAndroidJniObject AbstractInputMethodService::onBind(android::content::Intent arg0)
+	__JniBaseClass AbstractInputMethodService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -37,14 +37,14 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AbstractInputMethodService::onCreateInputMethodInterface()
+	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl AbstractInputMethodService::onCreateInputMethodInterface()
 	{
 		return callObjectMethod(
 			"onCreateInputMethodInterface",
 			"()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodImpl;"
 		);
 	}
-	QAndroidJniObject AbstractInputMethodService::onCreateInputMethodSessionInterface()
+	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl AbstractInputMethodService::onCreateInputMethodSessionInterface()
 	{
 		return callObjectMethod(
 			"onCreateInputMethodSessionInterface",

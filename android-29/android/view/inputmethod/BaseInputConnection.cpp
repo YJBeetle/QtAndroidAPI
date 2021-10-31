@@ -159,14 +159,14 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject BaseInputConnection::getEditable()
+	__JniBaseClass BaseInputConnection::getEditable()
 	{
 		return callObjectMethod(
 			"getEditable",
 			"()Landroid/text/Editable;"
 		);
 	}
-	QAndroidJniObject BaseInputConnection::getExtractedText(android::view::inputmethod::ExtractedTextRequest arg0, jint arg1)
+	android::view::inputmethod::ExtractedText BaseInputConnection::getExtractedText(android::view::inputmethod::ExtractedTextRequest arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getExtractedText",
@@ -175,7 +175,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	QAndroidJniObject BaseInputConnection::getHandler()
+	android::os::Handler BaseInputConnection::getHandler()
 	{
 		return callObjectMethod(
 			"getHandler",

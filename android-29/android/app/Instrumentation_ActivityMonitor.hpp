@@ -36,14 +36,14 @@ namespace android::app
 		Instrumentation_ActivityMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		
 		// Methods
-		QAndroidJniObject getFilter();
+		android::content::IntentFilter getFilter();
 		jint getHits();
-		QAndroidJniObject getLastActivity();
-		QAndroidJniObject getResult();
+		android::app::Activity getLastActivity();
+		android::app::Instrumentation_ActivityResult getResult();
 		jboolean isBlocking();
-		QAndroidJniObject onStartActivity(android::content::Intent arg0);
-		QAndroidJniObject waitForActivity();
-		QAndroidJniObject waitForActivityWithTimeout(jlong arg0);
+		android::app::Instrumentation_ActivityResult onStartActivity(android::content::Intent arg0);
+		android::app::Activity waitForActivity();
+		android::app::Activity waitForActivityWithTimeout(jlong arg0);
 	};
 } // namespace android::app
 

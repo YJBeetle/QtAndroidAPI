@@ -67,7 +67,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject AdaptiveIconDrawable::getBackground()
+	android::graphics::drawable::Drawable AdaptiveIconDrawable::getBackground()
 	{
 		return callObjectMethod(
 			"getBackground",
@@ -81,14 +81,14 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject AdaptiveIconDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState AdaptiveIconDrawable::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	QAndroidJniObject AdaptiveIconDrawable::getForeground()
+	android::graphics::drawable::Drawable AdaptiveIconDrawable::getForeground()
 	{
 		return callObjectMethod(
 			"getForeground",
@@ -103,7 +103,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AdaptiveIconDrawable::getIconMask()
+	android::graphics::Path AdaptiveIconDrawable::getIconMask()
 	{
 		return callObjectMethod(
 			"getIconMask",
@@ -139,7 +139,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AdaptiveIconDrawable::getTransparentRegion()
+	android::graphics::Region AdaptiveIconDrawable::getTransparentRegion()
 	{
 		return callObjectMethod(
 			"getTransparentRegion",
@@ -200,7 +200,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	QAndroidJniObject AdaptiveIconDrawable::mutate()
+	android::graphics::drawable::Drawable AdaptiveIconDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

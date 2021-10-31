@@ -157,14 +157,14 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ExpandableListView::getAdapter()
+	__JniBaseClass ExpandableListView::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	QAndroidJniObject ExpandableListView::getExpandableListAdapter()
+	__JniBaseClass ExpandableListView::getExpandableListAdapter()
 	{
 		return callObjectMethod(
 			"getExpandableListAdapter",
@@ -225,7 +225,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject ExpandableListView::onSaveInstanceState()
+	__JniBaseClass ExpandableListView::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

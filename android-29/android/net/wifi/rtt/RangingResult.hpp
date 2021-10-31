@@ -25,7 +25,7 @@ namespace android::net::wifi::rtt
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint STATUS_FAIL();
 		static jint STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC();
 		static jint STATUS_SUCCESS();
@@ -41,14 +41,14 @@ namespace android::net::wifi::rtt
 		jboolean equals(jobject arg0);
 		jint getDistanceMm();
 		jint getDistanceStdDevMm();
-		QAndroidJniObject getMacAddress();
+		android::net::MacAddress getMacAddress();
 		jint getNumAttemptedMeasurements();
 		jint getNumSuccessfulMeasurements();
-		QAndroidJniObject getPeerHandle();
+		android::net::wifi::aware::PeerHandle getPeerHandle();
 		jlong getRangingTimestampMillis();
 		jint getRssi();
 		jint getStatus();
-		QAndroidJniObject getUnverifiedResponderLocation();
+		android::net::wifi::rtt::ResponderLocation getUnverifiedResponderLocation();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

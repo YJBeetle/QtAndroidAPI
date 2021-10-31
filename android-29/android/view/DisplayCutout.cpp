@@ -37,35 +37,35 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject DisplayCutout::getBoundingRectBottom()
+	android::graphics::Rect DisplayCutout::getBoundingRectBottom()
 	{
 		return callObjectMethod(
 			"getBoundingRectBottom",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	QAndroidJniObject DisplayCutout::getBoundingRectLeft()
+	android::graphics::Rect DisplayCutout::getBoundingRectLeft()
 	{
 		return callObjectMethod(
 			"getBoundingRectLeft",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	QAndroidJniObject DisplayCutout::getBoundingRectRight()
+	android::graphics::Rect DisplayCutout::getBoundingRectRight()
 	{
 		return callObjectMethod(
 			"getBoundingRectRight",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	QAndroidJniObject DisplayCutout::getBoundingRectTop()
+	android::graphics::Rect DisplayCutout::getBoundingRectTop()
 	{
 		return callObjectMethod(
 			"getBoundingRectTop",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	QAndroidJniObject DisplayCutout::getBoundingRects()
+	__JniBaseClass DisplayCutout::getBoundingRects()
 	{
 		return callObjectMethod(
 			"getBoundingRects",

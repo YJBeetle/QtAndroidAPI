@@ -16,7 +16,7 @@ namespace android::service::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject CameraPrewarmService::onBind(android::content::Intent arg0)
+	__JniBaseClass CameraPrewarmService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

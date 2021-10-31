@@ -105,7 +105,7 @@ namespace android::util
 			"()I"
 		);
 	}
-	QAndroidJniObject LruCache::snapshot()
+	__JniBaseClass LruCache::snapshot()
 	{
 		return callObjectMethod(
 			"snapshot",

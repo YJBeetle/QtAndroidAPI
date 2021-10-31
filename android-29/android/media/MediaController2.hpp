@@ -39,7 +39,7 @@ namespace android::media
 		// Methods
 		void cancelSessionCommand(jobject arg0);
 		void close();
-		QAndroidJniObject getConnectedToken();
+		android::media::Session2Token getConnectedToken();
 		jboolean isPlaybackActive();
 		jobject sendSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1);
 	};

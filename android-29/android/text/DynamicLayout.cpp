@@ -107,7 +107,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicLayout::getLineDirections(jint arg0)
+	android::text::Layout_Directions DynamicLayout::getLineDirections(jint arg0)
 	{
 		return callObjectMethod(
 			"getLineDirections",

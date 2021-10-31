@@ -3,7 +3,7 @@
 namespace android::webkit
 {
 	// Fields
-	QAndroidJniObject WebSettings_ZoomDensity::CLOSE()
+	android::webkit::WebSettings_ZoomDensity WebSettings_ZoomDensity::CLOSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$ZoomDensity",
@@ -11,7 +11,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$ZoomDensity;"
 		);
 	}
-	QAndroidJniObject WebSettings_ZoomDensity::FAR()
+	android::webkit::WebSettings_ZoomDensity WebSettings_ZoomDensity::FAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$ZoomDensity",
@@ -19,7 +19,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$ZoomDensity;"
 		);
 	}
-	QAndroidJniObject WebSettings_ZoomDensity::MEDIUM()
+	android::webkit::WebSettings_ZoomDensity WebSettings_ZoomDensity::MEDIUM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$ZoomDensity",
@@ -34,7 +34,7 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WebSettings_ZoomDensity::valueOf(jstring arg0)
+	android::webkit::WebSettings_ZoomDensity WebSettings_ZoomDensity::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebSettings$ZoomDensity",

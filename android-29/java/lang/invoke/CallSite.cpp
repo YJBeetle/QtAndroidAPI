@@ -13,14 +13,14 @@ namespace java::lang::invoke
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CallSite::dynamicInvoker()
+	java::lang::invoke::MethodHandle CallSite::dynamicInvoker()
 	{
 		return callObjectMethod(
 			"dynamicInvoker",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	QAndroidJniObject CallSite::getTarget()
+	java::lang::invoke::MethodHandle CallSite::getTarget()
 	{
 		return callObjectMethod(
 			"getTarget",
@@ -35,7 +35,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CallSite::type()
+	java::lang::invoke::MethodType CallSite::type()
 	{
 		return callObjectMethod(
 			"type",

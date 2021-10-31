@@ -60,7 +60,7 @@ namespace java::security::spec
 			"()[I"
 		).object<jintArray>();
 	}
-	QAndroidJniObject ECFieldF2m::getReductionPolynomial()
+	java::math::BigInteger ECFieldF2m::getReductionPolynomial()
 	{
 		return callObjectMethod(
 			"getReductionPolynomial",

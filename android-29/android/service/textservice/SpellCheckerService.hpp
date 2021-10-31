@@ -30,8 +30,8 @@ namespace android::service::textservice
 		SpellCheckerService();
 		
 		// Methods
-		QAndroidJniObject createSession();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		android::service::textservice::SpellCheckerService_Session createSession();
+		__JniBaseClass onBind(android::content::Intent arg0);
 	};
 } // namespace android::service::textservice
 

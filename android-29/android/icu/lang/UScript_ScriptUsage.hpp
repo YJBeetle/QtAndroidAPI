@@ -10,12 +10,12 @@ namespace android::icu::lang
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ASPIRATIONAL();
-		static QAndroidJniObject EXCLUDED();
-		static QAndroidJniObject LIMITED_USE();
-		static QAndroidJniObject NOT_ENCODED();
-		static QAndroidJniObject RECOMMENDED();
-		static QAndroidJniObject UNKNOWN();
+		static android::icu::lang::UScript_ScriptUsage ASPIRATIONAL();
+		static android::icu::lang::UScript_ScriptUsage EXCLUDED();
+		static android::icu::lang::UScript_ScriptUsage LIMITED_USE();
+		static android::icu::lang::UScript_ScriptUsage NOT_ENCODED();
+		static android::icu::lang::UScript_ScriptUsage RECOMMENDED();
+		static android::icu::lang::UScript_ScriptUsage UNKNOWN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UScript_ScriptUsage(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,7 +24,7 @@ namespace android::icu::lang
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::lang::UScript_ScriptUsage valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::lang

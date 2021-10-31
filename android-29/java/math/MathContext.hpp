@@ -17,10 +17,10 @@ namespace java::math
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DECIMAL128();
-		static QAndroidJniObject DECIMAL32();
-		static QAndroidJniObject DECIMAL64();
-		static QAndroidJniObject UNLIMITED();
+		static java::math::MathContext DECIMAL128();
+		static java::math::MathContext DECIMAL32();
+		static java::math::MathContext DECIMAL64();
+		static java::math::MathContext UNLIMITED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MathContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -34,7 +34,7 @@ namespace java::math
 		// Methods
 		jboolean equals(jobject arg0);
 		jint getPrecision();
-		QAndroidJniObject getRoundingMode();
+		java::math::RoundingMode getRoundingMode();
 		jint hashCode();
 		jstring toString();
 	};

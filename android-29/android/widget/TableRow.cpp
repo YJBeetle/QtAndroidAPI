@@ -28,7 +28,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject TableRow::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::TableRow_LayoutParams TableRow::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -43,7 +43,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TableRow::getVirtualChildAt(jint arg0)
+	android::view::View TableRow::getVirtualChildAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getVirtualChildAt",

@@ -32,7 +32,7 @@ namespace java::text
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject DecimalFormatSymbols::getInstance()
+	java::text::DecimalFormatSymbols DecimalFormatSymbols::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DecimalFormatSymbols",
@@ -40,7 +40,7 @@ namespace java::text
 			"()Ljava/text/DecimalFormatSymbols;"
 		);
 	}
-	QAndroidJniObject DecimalFormatSymbols::getInstance(java::util::Locale arg0)
+	java::text::DecimalFormatSymbols DecimalFormatSymbols::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DecimalFormatSymbols",
@@ -64,7 +64,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject DecimalFormatSymbols::getCurrency()
+	java::util::Currency DecimalFormatSymbols::getCurrency()
 	{
 		return callObjectMethod(
 			"getCurrency",

@@ -73,28 +73,28 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject ColorStateListDrawable::getColorFilter()
+	android::graphics::ColorFilter ColorStateListDrawable::getColorFilter()
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	QAndroidJniObject ColorStateListDrawable::getColorStateList()
+	android::content::res::ColorStateList ColorStateListDrawable::getColorStateList()
 	{
 		return callObjectMethod(
 			"getColorStateList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject ColorStateListDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState ColorStateListDrawable::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	QAndroidJniObject ColorStateListDrawable::getCurrent()
+	android::graphics::drawable::Drawable ColorStateListDrawable::getCurrent()
 	{
 		return callObjectMethod(
 			"getCurrent",
@@ -130,7 +130,7 @@ namespace android::graphics::drawable
 			"()Z"
 		);
 	}
-	QAndroidJniObject ColorStateListDrawable::mutate()
+	android::graphics::drawable::Drawable ColorStateListDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

@@ -30,13 +30,13 @@ namespace java::util::concurrent::locks
 		void acquireInterruptibly(jint arg0);
 		void acquireShared(jint arg0);
 		void acquireSharedInterruptibly(jint arg0);
-		QAndroidJniObject getExclusiveQueuedThreads();
-		QAndroidJniObject getFirstQueuedThread();
+		__JniBaseClass getExclusiveQueuedThreads();
+		java::lang::Thread getFirstQueuedThread();
 		jint getQueueLength();
-		QAndroidJniObject getQueuedThreads();
-		QAndroidJniObject getSharedQueuedThreads();
+		__JniBaseClass getQueuedThreads();
+		__JniBaseClass getSharedQueuedThreads();
 		jint getWaitQueueLength(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0);
-		QAndroidJniObject getWaitingThreads(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0);
+		__JniBaseClass getWaitingThreads(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0);
 		jboolean hasContended();
 		jboolean hasQueuedPredecessors();
 		jboolean hasQueuedThreads();

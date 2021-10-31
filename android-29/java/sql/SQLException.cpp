@@ -74,7 +74,7 @@ namespace java::sql
 			"()I"
 		);
 	}
-	QAndroidJniObject SQLException::getNextException()
+	java::sql::SQLException SQLException::getNextException()
 	{
 		return callObjectMethod(
 			"getNextException",
@@ -88,7 +88,7 @@ namespace java::sql
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SQLException::iterator()
+	__JniBaseClass SQLException::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

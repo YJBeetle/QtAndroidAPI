@@ -17,7 +17,7 @@ namespace java::time::zone
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ZoneOffsetTransitionRule::of(java::time::Month arg0, jint arg1, java::time::DayOfWeek arg2, java::time::LocalTime arg3, jboolean arg4, java::time::zone::ZoneOffsetTransitionRule_TimeDefinition arg5, java::time::ZoneOffset arg6, java::time::ZoneOffset arg7, java::time::ZoneOffset arg8)
+	java::time::zone::ZoneOffsetTransitionRule ZoneOffsetTransitionRule::of(java::time::Month arg0, jint arg1, java::time::DayOfWeek arg2, java::time::LocalTime arg3, jboolean arg4, java::time::zone::ZoneOffsetTransitionRule_TimeDefinition arg5, java::time::ZoneOffset arg6, java::time::ZoneOffset arg7, java::time::ZoneOffset arg8)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.zone.ZoneOffsetTransitionRule",
@@ -34,7 +34,7 @@ namespace java::time::zone
 			arg8.object()
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule::createTransition(jint arg0)
+	java::time::zone::ZoneOffsetTransition ZoneOffsetTransitionRule::createTransition(jint arg0)
 	{
 		return callObjectMethod(
 			"createTransition",
@@ -57,49 +57,49 @@ namespace java::time::zone
 			"()I"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule::getDayOfWeek()
+	java::time::DayOfWeek ZoneOffsetTransitionRule::getDayOfWeek()
 	{
 		return callObjectMethod(
 			"getDayOfWeek",
 			"()Ljava/time/DayOfWeek;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule::getLocalTime()
+	java::time::LocalTime ZoneOffsetTransitionRule::getLocalTime()
 	{
 		return callObjectMethod(
 			"getLocalTime",
 			"()Ljava/time/LocalTime;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule::getMonth()
+	java::time::Month ZoneOffsetTransitionRule::getMonth()
 	{
 		return callObjectMethod(
 			"getMonth",
 			"()Ljava/time/Month;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule::getOffsetAfter()
+	java::time::ZoneOffset ZoneOffsetTransitionRule::getOffsetAfter()
 	{
 		return callObjectMethod(
 			"getOffsetAfter",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule::getOffsetBefore()
+	java::time::ZoneOffset ZoneOffsetTransitionRule::getOffsetBefore()
 	{
 		return callObjectMethod(
 			"getOffsetBefore",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule::getStandardOffset()
+	java::time::ZoneOffset ZoneOffsetTransitionRule::getStandardOffset()
 	{
 		return callObjectMethod(
 			"getStandardOffset",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule::getTimeDefinition()
+	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule::getTimeDefinition()
 	{
 		return callObjectMethod(
 			"getTimeDefinition",

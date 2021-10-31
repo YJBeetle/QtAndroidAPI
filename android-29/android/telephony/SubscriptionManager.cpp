@@ -105,7 +105,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SubscriptionManager::from(android::content::Context arg0)
+	android::telephony::SubscriptionManager SubscriptionManager::from(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.SubscriptionManager",
@@ -207,7 +207,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SubscriptionManager::createSubscriptionGroup(__JniBaseClass arg0)
+	android::os::ParcelUuid SubscriptionManager::createSubscriptionGroup(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"createSubscriptionGroup",
@@ -215,14 +215,14 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getAccessibleSubscriptionInfoList()
+	__JniBaseClass SubscriptionManager::getAccessibleSubscriptionInfoList()
 	{
 		return callObjectMethod(
 			"getAccessibleSubscriptionInfoList",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getActiveSubscriptionInfo(jint arg0)
+	android::telephony::SubscriptionInfo SubscriptionManager::getActiveSubscriptionInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getActiveSubscriptionInfo",
@@ -244,7 +244,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getActiveSubscriptionInfoForSimSlotIndex(jint arg0)
+	android::telephony::SubscriptionInfo SubscriptionManager::getActiveSubscriptionInfoForSimSlotIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"getActiveSubscriptionInfoForSimSlotIndex",
@@ -252,14 +252,14 @@ namespace android::telephony
 			arg0
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getActiveSubscriptionInfoList()
+	__JniBaseClass SubscriptionManager::getActiveSubscriptionInfoList()
 	{
 		return callObjectMethod(
 			"getActiveSubscriptionInfoList",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getOpportunisticSubscriptions()
+	__JniBaseClass SubscriptionManager::getOpportunisticSubscriptions()
 	{
 		return callObjectMethod(
 			"getOpportunisticSubscriptions",
@@ -274,7 +274,7 @@ namespace android::telephony
 			arg0
 		).object<jintArray>();
 	}
-	QAndroidJniObject SubscriptionManager::getSubscriptionPlans(jint arg0)
+	__JniBaseClass SubscriptionManager::getSubscriptionPlans(jint arg0)
 	{
 		return callObjectMethod(
 			"getSubscriptionPlans",
@@ -282,7 +282,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getSubscriptionsInGroup(android::os::ParcelUuid arg0)
+	__JniBaseClass SubscriptionManager::getSubscriptionsInGroup(android::os::ParcelUuid arg0)
 	{
 		return callObjectMethod(
 			"getSubscriptionsInGroup",

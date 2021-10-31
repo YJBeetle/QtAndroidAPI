@@ -12,14 +12,14 @@ namespace android::printservice
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PrintDocument::getData()
+	android::os::ParcelFileDescriptor PrintDocument::getData()
 	{
 		return callObjectMethod(
 			"getData",
 			"()Landroid/os/ParcelFileDescriptor;"
 		);
 	}
-	QAndroidJniObject PrintDocument::getInfo()
+	android::print::PrintDocumentInfo PrintDocument::getInfo()
 	{
 		return callObjectMethod(
 			"getInfo",

@@ -18,8 +18,8 @@ namespace java::security
 		KeyPair(__JniBaseClass arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getPrivate();
-		QAndroidJniObject getPublic();
+		__JniBaseClass getPrivate();
+		__JniBaseClass getPublic();
 	};
 } // namespace java::security
 

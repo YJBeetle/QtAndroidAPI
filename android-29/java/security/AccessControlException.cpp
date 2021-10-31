@@ -24,7 +24,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject AccessControlException::getPermission()
+	java::security::Permission AccessControlException::getPermission()
 	{
 		return callObjectMethod(
 			"getPermission",

@@ -70,7 +70,7 @@ namespace android::widget
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Chronometer::getOnChronometerTickListener()
+	__JniBaseClass Chronometer::getOnChronometerTickListener()
 	{
 		return callObjectMethod(
 			"getOnChronometerTickListener",

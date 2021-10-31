@@ -28,19 +28,19 @@ namespace java::util::concurrent
 		jboolean add(jobject arg0);
 		jobject ceiling(jobject arg0);
 		void clear();
-		QAndroidJniObject clone();
-		QAndroidJniObject comparator();
+		java::util::concurrent::ConcurrentSkipListSet clone();
+		__JniBaseClass comparator();
 		jboolean contains(jobject arg0);
-		QAndroidJniObject descendingIterator();
-		QAndroidJniObject descendingSet();
+		__JniBaseClass descendingIterator();
+		__JniBaseClass descendingSet();
 		jboolean equals(jobject arg0);
 		jobject first();
 		jobject floor(jobject arg0);
-		QAndroidJniObject headSet(jobject arg0);
-		QAndroidJniObject headSet(jobject arg0, jboolean arg1);
+		__JniBaseClass headSet(jobject arg0);
+		__JniBaseClass headSet(jobject arg0, jboolean arg1);
 		jobject higher(jobject arg0);
 		jboolean isEmpty();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jobject last();
 		jobject lower(jobject arg0);
 		jobject pollFirst();
@@ -48,11 +48,11 @@ namespace java::util::concurrent
 		jboolean remove(jobject arg0);
 		jboolean removeAll(__JniBaseClass arg0);
 		jint size();
-		QAndroidJniObject spliterator();
-		QAndroidJniObject subSet(jobject arg0, jobject arg1);
-		QAndroidJniObject subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
-		QAndroidJniObject tailSet(jobject arg0);
-		QAndroidJniObject tailSet(jobject arg0, jboolean arg1);
+		__JniBaseClass spliterator();
+		__JniBaseClass subSet(jobject arg0, jobject arg1);
+		__JniBaseClass subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
+		__JniBaseClass tailSet(jobject arg0);
+		__JniBaseClass tailSet(jobject arg0, jboolean arg1);
 	};
 } // namespace java::util::concurrent
 

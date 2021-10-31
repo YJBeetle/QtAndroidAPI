@@ -19,14 +19,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject Magnifier_Builder::build()
+	android::widget::Magnifier Magnifier_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/widget/Magnifier;"
 		);
 	}
-	QAndroidJniObject Magnifier_Builder::setClippingEnabled(jboolean arg0)
+	android::widget::Magnifier_Builder Magnifier_Builder::setClippingEnabled(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setClippingEnabled",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject Magnifier_Builder::setCornerRadius(jfloat arg0)
+	android::widget::Magnifier_Builder Magnifier_Builder::setCornerRadius(jfloat arg0)
 	{
 		return callObjectMethod(
 			"setCornerRadius",
@@ -42,7 +42,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject Magnifier_Builder::setDefaultSourceToMagnifierOffset(jint arg0, jint arg1)
+	android::widget::Magnifier_Builder Magnifier_Builder::setDefaultSourceToMagnifierOffset(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setDefaultSourceToMagnifierOffset",
@@ -51,7 +51,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject Magnifier_Builder::setElevation(jfloat arg0)
+	android::widget::Magnifier_Builder Magnifier_Builder::setElevation(jfloat arg0)
 	{
 		return callObjectMethod(
 			"setElevation",
@@ -59,7 +59,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject Magnifier_Builder::setInitialZoom(jfloat arg0)
+	android::widget::Magnifier_Builder Magnifier_Builder::setInitialZoom(jfloat arg0)
 	{
 		return callObjectMethod(
 			"setInitialZoom",
@@ -67,7 +67,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject Magnifier_Builder::setOverlay(android::graphics::drawable::Drawable arg0)
+	android::widget::Magnifier_Builder Magnifier_Builder::setOverlay(android::graphics::drawable::Drawable arg0)
 	{
 		return callObjectMethod(
 			"setOverlay",
@@ -75,7 +75,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Magnifier_Builder::setSize(jint arg0, jint arg1)
+	android::widget::Magnifier_Builder Magnifier_Builder::setSize(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setSize",
@@ -84,7 +84,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject Magnifier_Builder::setSourceBounds(jint arg0, jint arg1, jint arg2, jint arg3)
+	android::widget::Magnifier_Builder Magnifier_Builder::setSourceBounds(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"setSourceBounds",

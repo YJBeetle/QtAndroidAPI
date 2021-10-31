@@ -17,7 +17,7 @@ namespace android::telephony::mbms
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DownloadRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,9 +30,9 @@ namespace android::telephony::mbms
 		static jint getMaxDestinationUriSize();
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getDestinationUri();
+		android::net::Uri getDestinationUri();
 		jstring getFileServiceId();
-		QAndroidJniObject getSourceUri();
+		android::net::Uri getSourceUri();
 		jint getSubscriptionId();
 		jint hashCode();
 		jbyteArray toByteArray();

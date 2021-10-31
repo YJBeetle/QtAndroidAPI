@@ -30,8 +30,8 @@ namespace android::service::autofill
 		CharSequenceTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jstring arg2);
 		
 		// Methods
-		QAndroidJniObject addField(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jstring arg2);
-		QAndroidJniObject build();
+		android::service::autofill::CharSequenceTransformation_Builder addField(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jstring arg2);
+		android::service::autofill::CharSequenceTransformation build();
 	};
 } // namespace android::service::autofill
 

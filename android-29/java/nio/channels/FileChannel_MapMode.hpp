@@ -9,9 +9,9 @@ namespace java::nio::channels
 	{
 	public:
 		// Fields
-		static QAndroidJniObject PRIVATE();
-		static QAndroidJniObject READ_ONLY();
-		static QAndroidJniObject READ_WRITE();
+		static java::nio::channels::FileChannel_MapMode PRIVATE();
+		static java::nio::channels::FileChannel_MapMode READ_ONLY();
+		static java::nio::channels::FileChannel_MapMode READ_WRITE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileChannel_MapMode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

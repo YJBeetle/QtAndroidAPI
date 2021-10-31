@@ -25,7 +25,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	QAndroidJniObject StateListAnimator::clone()
+	android::animation::StateListAnimator StateListAnimator::clone()
 	{
 		return callObjectMethod(
 			"clone",

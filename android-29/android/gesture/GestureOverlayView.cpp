@@ -136,7 +136,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	QAndroidJniObject GestureOverlayView::getCurrentStroke()
+	java::util::ArrayList GestureOverlayView::getCurrentStroke()
 	{
 		return callObjectMethod(
 			"getCurrentStroke",
@@ -150,7 +150,7 @@ namespace android::gesture
 			"()J"
 		);
 	}
-	QAndroidJniObject GestureOverlayView::getGesture()
+	android::gesture::Gesture GestureOverlayView::getGesture()
 	{
 		return callObjectMethod(
 			"getGesture",
@@ -164,14 +164,14 @@ namespace android::gesture
 			"()I"
 		);
 	}
-	QAndroidJniObject GestureOverlayView::getGesturePath()
+	android::graphics::Path GestureOverlayView::getGesturePath()
 	{
 		return callObjectMethod(
 			"getGesturePath",
 			"()Landroid/graphics/Path;"
 		);
 	}
-	QAndroidJniObject GestureOverlayView::getGesturePath(android::graphics::Path arg0)
+	android::graphics::Path GestureOverlayView::getGesturePath(android::graphics::Path arg0)
 	{
 		return callObjectMethod(
 			"getGesturePath",

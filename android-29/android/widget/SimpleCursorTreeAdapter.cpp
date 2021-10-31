@@ -56,7 +56,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject SimpleCursorTreeAdapter::getViewBinder()
+	__JniBaseClass SimpleCursorTreeAdapter::getViewBinder()
 	{
 		return callObjectMethod(
 			"getViewBinder",

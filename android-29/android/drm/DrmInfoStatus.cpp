@@ -18,7 +18,7 @@ namespace android::drm
 			"STATUS_OK"
 		);
 	}
-	QAndroidJniObject DrmInfoStatus::data()
+	android::drm::ProcessedData DrmInfoStatus::data()
 	{
 		return getObjectField(
 			"data",

@@ -102,14 +102,14 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Hashtable::elements()
+	__JniBaseClass Hashtable::elements()
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject Hashtable::entrySet()
+	__JniBaseClass Hashtable::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -163,14 +163,14 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject Hashtable::keySet()
+	__JniBaseClass Hashtable::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject Hashtable::keys()
+	__JniBaseClass Hashtable::keys()
 	{
 		return callObjectMethod(
 			"keys",
@@ -271,7 +271,7 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Hashtable::values()
+	__JniBaseClass Hashtable::values()
 	{
 		return callObjectMethod(
 			"values",

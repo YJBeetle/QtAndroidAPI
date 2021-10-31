@@ -3,7 +3,7 @@
 namespace java::nio::file::attribute
 {
 	// Fields
-	QAndroidJniObject AclEntryType::ALARM()
+	java::nio::file::attribute::AclEntryType AclEntryType::ALARM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryType",
@@ -11,7 +11,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryType;"
 		);
 	}
-	QAndroidJniObject AclEntryType::ALLOW()
+	java::nio::file::attribute::AclEntryType AclEntryType::ALLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryType",
@@ -19,7 +19,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryType;"
 		);
 	}
-	QAndroidJniObject AclEntryType::AUDIT()
+	java::nio::file::attribute::AclEntryType AclEntryType::AUDIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryType",
@@ -27,7 +27,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryType;"
 		);
 	}
-	QAndroidJniObject AclEntryType::DENY()
+	java::nio::file::attribute::AclEntryType AclEntryType::DENY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryType",
@@ -42,7 +42,7 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AclEntryType::valueOf(jstring arg0)
+	java::nio::file::attribute::AclEntryType AclEntryType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntryType",

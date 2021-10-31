@@ -28,14 +28,14 @@ namespace android::print
 			arg0
 		);
 	}
-	QAndroidJniObject PrintJob::getId()
+	android::print::PrintJobId PrintJob::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Landroid/print/PrintJobId;"
 		);
 	}
-	QAndroidJniObject PrintJob::getInfo()
+	android::print::PrintJobInfo PrintJob::getInfo()
 	{
 		return callObjectMethod(
 			"getInfo",

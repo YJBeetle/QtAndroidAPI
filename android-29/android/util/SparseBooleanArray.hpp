@@ -21,7 +21,7 @@ namespace android::util
 		// Methods
 		void append(jint arg0, jboolean arg1);
 		void clear();
-		QAndroidJniObject clone();
+		android::util::SparseBooleanArray clone();
 		void _delete(jint arg0);
 		jboolean equals(jobject arg0);
 		jboolean get(jint arg0);

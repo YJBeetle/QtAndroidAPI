@@ -49,14 +49,14 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject CountedCompleter::firstComplete()
+	java::util::concurrent::CountedCompleter CountedCompleter::firstComplete()
 	{
 		return callObjectMethod(
 			"firstComplete",
 			"()Ljava/util/concurrent/CountedCompleter;"
 		);
 	}
-	QAndroidJniObject CountedCompleter::getCompleter()
+	java::util::concurrent::CountedCompleter CountedCompleter::getCompleter()
 	{
 		return callObjectMethod(
 			"getCompleter",
@@ -77,7 +77,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject CountedCompleter::getRoot()
+	java::util::concurrent::CountedCompleter CountedCompleter::getRoot()
 	{
 		return callObjectMethod(
 			"getRoot",
@@ -92,7 +92,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject CountedCompleter::nextComplete()
+	java::util::concurrent::CountedCompleter CountedCompleter::nextComplete()
 	{
 		return callObjectMethod(
 			"nextComplete",

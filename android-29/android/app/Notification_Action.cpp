@@ -7,7 +7,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject Notification_Action::CREATOR()
+	__JniBaseClass Notification_Action::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification$Action",
@@ -92,7 +92,7 @@ namespace android::app
 			"SEMANTIC_ACTION_UNMUTE"
 		);
 	}
-	QAndroidJniObject Notification_Action::actionIntent()
+	android::app::PendingIntent Notification_Action::actionIntent()
 	{
 		return getObjectField(
 			"actionIntent",
@@ -127,7 +127,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Notification_Action::clone()
+	android::app::Notification_Action Notification_Action::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -155,14 +155,14 @@ namespace android::app
 			"()[Landroid/app/RemoteInput;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Notification_Action::getExtras()
+	android::os::Bundle Notification_Action::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Notification_Action::getIcon()
+	android::graphics::drawable::Icon Notification_Action::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",

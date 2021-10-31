@@ -41,8 +41,8 @@ namespace java::io
 		File(jstring arg0, jstring arg1);
 		
 		// Methods
-		static QAndroidJniObject createTempFile(jstring arg0, jstring arg1);
-		static QAndroidJniObject createTempFile(jstring arg0, jstring arg1, java::io::File arg2);
+		static java::io::File createTempFile(jstring arg0, jstring arg1);
+		static java::io::File createTempFile(jstring arg0, jstring arg1, java::io::File arg2);
 		static jarray listRoots();
 		jboolean canExecute();
 		jboolean canRead();
@@ -54,14 +54,14 @@ namespace java::io
 		void deleteOnExit();
 		jboolean equals(jobject arg0);
 		jboolean exists();
-		QAndroidJniObject getAbsoluteFile();
+		java::io::File getAbsoluteFile();
 		jstring getAbsolutePath();
-		QAndroidJniObject getCanonicalFile();
+		java::io::File getCanonicalFile();
 		jstring getCanonicalPath();
 		jlong getFreeSpace();
 		jstring getName();
 		jstring getParent();
-		QAndroidJniObject getParentFile();
+		java::io::File getParentFile();
 		jstring getPath();
 		jlong getTotalSpace();
 		jlong getUsableSpace();
@@ -87,10 +87,10 @@ namespace java::io
 		jboolean setReadable(jboolean arg0, jboolean arg1);
 		jboolean setWritable(jboolean arg0);
 		jboolean setWritable(jboolean arg0, jboolean arg1);
-		QAndroidJniObject toPath();
+		__JniBaseClass toPath();
 		jstring toString();
-		QAndroidJniObject toURI();
-		QAndroidJniObject toURL();
+		java::net::URI toURI();
+		java::net::URL toURL();
 	};
 } // namespace java::io
 

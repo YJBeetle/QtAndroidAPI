@@ -28,7 +28,7 @@ namespace android::provider
 		Settings_NameValueTable();
 		
 		// Methods
-		static QAndroidJniObject getUriFor(android::net::Uri arg0, jstring arg1);
+		static android::net::Uri getUriFor(android::net::Uri arg0, jstring arg1);
 	};
 } // namespace android::provider
 

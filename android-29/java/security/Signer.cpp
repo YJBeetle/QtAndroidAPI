@@ -25,7 +25,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject Signer::getPrivateKey()
+	__JniBaseClass Signer::getPrivateKey()
 	{
 		return callObjectMethod(
 			"getPrivateKey",

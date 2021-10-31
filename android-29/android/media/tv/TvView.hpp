@@ -79,7 +79,7 @@ namespace android::media::tv
 		void draw(android::graphics::Canvas arg0);
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);
 		jstring getSelectedTrack(jint arg0);
-		QAndroidJniObject getTracks(jint arg0);
+		__JniBaseClass getTracks(jint arg0);
 		jboolean onUnhandledInputEvent(android::view::InputEvent arg0);
 		void reset();
 		void selectTrack(jint arg0, jstring arg1);

@@ -44,10 +44,10 @@ namespace java::util::logging
 		void close();
 		void flush();
 		jstring getEncoding();
-		QAndroidJniObject getErrorManager();
-		QAndroidJniObject getFilter();
-		QAndroidJniObject getFormatter();
-		QAndroidJniObject getLevel();
+		java::util::logging::ErrorManager getErrorManager();
+		__JniBaseClass getFilter();
+		java::util::logging::Formatter getFormatter();
+		java::util::logging::Level getLevel();
 		jboolean isLoggable(java::util::logging::LogRecord arg0);
 		void publish(java::util::logging::LogRecord arg0);
 		void setEncoding(jstring arg0);

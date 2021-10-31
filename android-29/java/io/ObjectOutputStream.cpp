@@ -43,7 +43,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	QAndroidJniObject ObjectOutputStream::putFields()
+	java::io::ObjectOutputStream_PutField ObjectOutputStream::putFields()
 	{
 		return callObjectMethod(
 			"putFields",

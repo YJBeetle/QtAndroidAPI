@@ -10,23 +10,23 @@ namespace java::nio::file::attribute
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ADD_FILE();
-		static QAndroidJniObject ADD_SUBDIRECTORY();
-		static QAndroidJniObject APPEND_DATA();
-		static QAndroidJniObject DELETE();
-		static QAndroidJniObject DELETE_CHILD();
-		static QAndroidJniObject EXECUTE();
-		static QAndroidJniObject LIST_DIRECTORY();
-		static QAndroidJniObject READ_ACL();
-		static QAndroidJniObject READ_ATTRIBUTES();
-		static QAndroidJniObject READ_DATA();
-		static QAndroidJniObject READ_NAMED_ATTRS();
-		static QAndroidJniObject SYNCHRONIZE();
-		static QAndroidJniObject WRITE_ACL();
-		static QAndroidJniObject WRITE_ATTRIBUTES();
-		static QAndroidJniObject WRITE_DATA();
-		static QAndroidJniObject WRITE_NAMED_ATTRS();
-		static QAndroidJniObject WRITE_OWNER();
+		static java::nio::file::attribute::AclEntryPermission ADD_FILE();
+		static java::nio::file::attribute::AclEntryPermission ADD_SUBDIRECTORY();
+		static java::nio::file::attribute::AclEntryPermission APPEND_DATA();
+		static java::nio::file::attribute::AclEntryPermission DELETE();
+		static java::nio::file::attribute::AclEntryPermission DELETE_CHILD();
+		static java::nio::file::attribute::AclEntryPermission EXECUTE();
+		static java::nio::file::attribute::AclEntryPermission LIST_DIRECTORY();
+		static java::nio::file::attribute::AclEntryPermission READ_ACL();
+		static java::nio::file::attribute::AclEntryPermission READ_ATTRIBUTES();
+		static java::nio::file::attribute::AclEntryPermission READ_DATA();
+		static java::nio::file::attribute::AclEntryPermission READ_NAMED_ATTRS();
+		static java::nio::file::attribute::AclEntryPermission SYNCHRONIZE();
+		static java::nio::file::attribute::AclEntryPermission WRITE_ACL();
+		static java::nio::file::attribute::AclEntryPermission WRITE_ATTRIBUTES();
+		static java::nio::file::attribute::AclEntryPermission WRITE_DATA();
+		static java::nio::file::attribute::AclEntryPermission WRITE_NAMED_ATTRS();
+		static java::nio::file::attribute::AclEntryPermission WRITE_OWNER();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AclEntryPermission(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -35,7 +35,7 @@ namespace java::nio::file::attribute
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::nio::file::attribute::AclEntryPermission valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::nio::file::attribute

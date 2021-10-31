@@ -23,7 +23,7 @@ namespace android::content
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getIntent();
+		android::content::Intent getIntent();
 		jint hashCode();
 	};
 } // namespace android::content

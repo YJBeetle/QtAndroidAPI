@@ -13,7 +13,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ImageWriter::newInstance(android::view::Surface arg0, jint arg1)
+	android::media::ImageWriter ImageWriter::newInstance(android::view::Surface arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ImageWriter",
@@ -23,7 +23,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject ImageWriter::newInstance(android::view::Surface arg0, jint arg1, jint arg2)
+	android::media::ImageWriter ImageWriter::newInstance(android::view::Surface arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ImageWriter",
@@ -41,7 +41,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject ImageWriter::dequeueInputImage()
+	android::media::Image ImageWriter::dequeueInputImage()
 	{
 		return callObjectMethod(
 			"dequeueInputImage",

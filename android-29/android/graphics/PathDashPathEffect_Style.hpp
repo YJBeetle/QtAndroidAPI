@@ -10,9 +10,9 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject MORPH();
-		static QAndroidJniObject ROTATE();
-		static QAndroidJniObject TRANSLATE();
+		static android::graphics::PathDashPathEffect_Style MORPH();
+		static android::graphics::PathDashPathEffect_Style ROTATE();
+		static android::graphics::PathDashPathEffect_Style TRANSLATE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PathDashPathEffect_Style(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::PathDashPathEffect_Style valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

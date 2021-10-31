@@ -30,7 +30,7 @@ namespace java::util::jar
 		) {}
 	
 	// Methods
-	QAndroidJniObject JarEntry::getAttributes()
+	java::util::jar::Attributes JarEntry::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",

@@ -16,7 +16,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject Parcel::STRING_CREATOR()
+	__JniBaseClass Parcel::STRING_CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.Parcel",
@@ -31,7 +31,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Parcel::obtain()
+	android::os::Parcel Parcel::obtain()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Parcel",
@@ -56,7 +56,7 @@ namespace android::os
 			"()[Landroid/os/IBinder;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Parcel::createBinderArrayList()
+	java::util::ArrayList Parcel::createBinderArrayList()
 	{
 		return callObjectMethod(
 			"createBinderArrayList",
@@ -119,7 +119,7 @@ namespace android::os
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Parcel::createStringArrayList()
+	java::util::ArrayList Parcel::createStringArrayList()
 	{
 		return callObjectMethod(
 			"createStringArrayList",
@@ -134,7 +134,7 @@ namespace android::os
 			arg0.object()
 		).object<jobjectArray>();
 	}
-	QAndroidJniObject Parcel::createTypedArrayList(__JniBaseClass arg0)
+	java::util::ArrayList Parcel::createTypedArrayList(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"createTypedArrayList",
@@ -142,7 +142,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Parcel::createTypedArrayMap(__JniBaseClass arg0)
+	android::util::ArrayMap Parcel::createTypedArrayMap(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"createTypedArrayMap",
@@ -150,7 +150,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Parcel::createTypedSparseArray(__JniBaseClass arg0)
+	android::util::SparseArray Parcel::createTypedSparseArray(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"createTypedSparseArray",
@@ -216,7 +216,7 @@ namespace android::os
 			arg0.object()
 		).object<jobjectArray>();
 	}
-	QAndroidJniObject Parcel::readArrayList(java::lang::ClassLoader arg0)
+	java::util::ArrayList Parcel::readArrayList(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readArrayList",
@@ -255,14 +255,14 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Parcel::readBundle()
+	android::os::Bundle Parcel::readBundle()
 	{
 		return callObjectMethod(
 			"readBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Parcel::readBundle(java::lang::ClassLoader arg0)
+	android::os::Bundle Parcel::readBundle(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readBundle",
@@ -324,7 +324,7 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject Parcel::readFileDescriptor()
+	android::os::ParcelFileDescriptor Parcel::readFileDescriptor()
 	{
 		return callObjectMethod(
 			"readFileDescriptor",
@@ -346,7 +346,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Parcel::readHashMap(java::lang::ClassLoader arg0)
+	java::util::HashMap Parcel::readHashMap(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readHashMap",
@@ -402,7 +402,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Parcel::readParcelable(java::lang::ClassLoader arg0)
+	__JniBaseClass Parcel::readParcelable(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readParcelable",
@@ -418,7 +418,7 @@ namespace android::os
 			arg0.object()
 		).object<jarray>();
 	}
-	QAndroidJniObject Parcel::readParcelableList(__JniBaseClass arg0, java::lang::ClassLoader arg1)
+	__JniBaseClass Parcel::readParcelableList(__JniBaseClass arg0, java::lang::ClassLoader arg1)
 	{
 		return callObjectMethod(
 			"readParcelableList",
@@ -427,14 +427,14 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Parcel::readPersistableBundle()
+	android::os::PersistableBundle Parcel::readPersistableBundle()
 	{
 		return callObjectMethod(
 			"readPersistableBundle",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	QAndroidJniObject Parcel::readPersistableBundle(java::lang::ClassLoader arg0)
+	android::os::PersistableBundle Parcel::readPersistableBundle(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readPersistableBundle",
@@ -442,28 +442,28 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Parcel::readSerializable()
+	__JniBaseClass Parcel::readSerializable()
 	{
 		return callObjectMethod(
 			"readSerializable",
 			"()Ljava/io/Serializable;"
 		);
 	}
-	QAndroidJniObject Parcel::readSize()
+	android::util::Size Parcel::readSize()
 	{
 		return callObjectMethod(
 			"readSize",
 			"()Landroid/util/Size;"
 		);
 	}
-	QAndroidJniObject Parcel::readSizeF()
+	android::util::SizeF Parcel::readSizeF()
 	{
 		return callObjectMethod(
 			"readSizeF",
 			"()Landroid/util/SizeF;"
 		);
 	}
-	QAndroidJniObject Parcel::readSparseArray(java::lang::ClassLoader arg0)
+	android::util::SparseArray Parcel::readSparseArray(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readSparseArray",
@@ -471,7 +471,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Parcel::readSparseBooleanArray()
+	android::util::SparseBooleanArray Parcel::readSparseBooleanArray()
 	{
 		return callObjectMethod(
 			"readSparseBooleanArray",
@@ -501,7 +501,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Parcel::readStrongBinder()
+	__JniBaseClass Parcel::readStrongBinder()
 	{
 		return callObjectMethod(
 			"readStrongBinder",

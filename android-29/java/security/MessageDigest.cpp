@@ -12,7 +12,7 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MessageDigest::getInstance(jstring arg0)
+	java::security::MessageDigest MessageDigest::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.MessageDigest",
@@ -21,7 +21,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject MessageDigest::getInstance(jstring arg0, jstring arg1)
+	java::security::MessageDigest MessageDigest::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.MessageDigest",
@@ -31,7 +31,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject MessageDigest::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::MessageDigest MessageDigest::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.MessageDigest",
@@ -97,7 +97,7 @@ namespace java::security
 			"()I"
 		);
 	}
-	QAndroidJniObject MessageDigest::getProvider()
+	java::security::Provider MessageDigest::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

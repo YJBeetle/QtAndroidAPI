@@ -24,9 +24,9 @@ namespace android::renderscript
 		jint getYStart();
 		jint getZEnd();
 		jint getZStart();
-		QAndroidJniObject setX(jint arg0, jint arg1);
-		QAndroidJniObject setY(jint arg0, jint arg1);
-		QAndroidJniObject setZ(jint arg0, jint arg1);
+		android::renderscript::Script_LaunchOptions setX(jint arg0, jint arg1);
+		android::renderscript::Script_LaunchOptions setY(jint arg0, jint arg1);
+		android::renderscript::Script_LaunchOptions setZ(jint arg0, jint arg1);
 	};
 } // namespace android::renderscript
 

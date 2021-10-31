@@ -36,22 +36,22 @@ namespace java::security
 		jobject compute(jobject arg0, __JniBaseClass arg1);
 		jobject computeIfAbsent(jobject arg0, __JniBaseClass arg1);
 		jobject computeIfPresent(jobject arg0, __JniBaseClass arg1);
-		QAndroidJniObject configure(jstring arg0);
-		QAndroidJniObject elements();
-		QAndroidJniObject entrySet();
+		java::security::Provider configure(jstring arg0);
+		__JniBaseClass elements();
+		__JniBaseClass entrySet();
 		void forEach(__JniBaseClass arg0);
 		jobject get(jobject arg0);
 		jstring getInfo();
 		jstring getName();
 		jobject getOrDefault(jobject arg0, jobject arg1);
 		jstring getProperty(jstring arg0);
-		QAndroidJniObject getService(jstring arg0, jstring arg1);
-		QAndroidJniObject getServices();
+		java::security::Provider_Service getService(jstring arg0, jstring arg1);
+		__JniBaseClass getServices();
 		jdouble getVersion();
 		jstring getVersionStr();
 		jboolean isConfigured();
-		QAndroidJniObject keySet();
-		QAndroidJniObject keys();
+		__JniBaseClass keySet();
+		__JniBaseClass keys();
 		void load(java::io::InputStream arg0);
 		jobject merge(jobject arg0, jobject arg1, __JniBaseClass arg2);
 		jobject put(jobject arg0, jobject arg1);
@@ -63,7 +63,7 @@ namespace java::security
 		jobject replace(jobject arg0, jobject arg1);
 		void replaceAll(__JniBaseClass arg0);
 		jstring toString();
-		QAndroidJniObject values();
+		__JniBaseClass values();
 	};
 } // namespace java::security
 

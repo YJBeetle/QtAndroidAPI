@@ -10,8 +10,8 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DIALECT_NAMES();
-		static QAndroidJniObject STANDARD_NAMES();
+		static android::icu::text::LocaleDisplayNames_DialectHandling DIALECT_NAMES();
+		static android::icu::text::LocaleDisplayNames_DialectHandling STANDARD_NAMES();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocaleDisplayNames_DialectHandling(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,7 +20,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::LocaleDisplayNames_DialectHandling valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

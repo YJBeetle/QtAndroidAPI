@@ -18,9 +18,9 @@ namespace java::time::zone
 	{
 	public:
 		// Fields
-		static QAndroidJniObject STANDARD();
-		static QAndroidJniObject UTC();
-		static QAndroidJniObject WALL();
+		static java::time::zone::ZoneOffsetTransitionRule_TimeDefinition STANDARD();
+		static java::time::zone::ZoneOffsetTransitionRule_TimeDefinition UTC();
+		static java::time::zone::ZoneOffsetTransitionRule_TimeDefinition WALL();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZoneOffsetTransitionRule_TimeDefinition(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -29,9 +29,9 @@ namespace java::time::zone
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::time::zone::ZoneOffsetTransitionRule_TimeDefinition valueOf(jstring arg0);
 		static jarray values();
-		QAndroidJniObject createDateTime(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2);
+		java::time::LocalDateTime createDateTime(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2);
 	};
 } // namespace java::time::zone
 

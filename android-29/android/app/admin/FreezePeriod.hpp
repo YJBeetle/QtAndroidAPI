@@ -22,8 +22,8 @@ namespace android::app::admin
 		FreezePeriod(java::time::MonthDay arg0, java::time::MonthDay arg1);
 		
 		// Methods
-		QAndroidJniObject getEnd();
-		QAndroidJniObject getStart();
+		java::time::MonthDay getEnd();
+		java::time::MonthDay getStart();
 		jstring toString();
 	};
 } // namespace android::app::admin

@@ -22,8 +22,8 @@ namespace java::security::cert
 		CertPathValidatorSpi();
 		
 		// Methods
-		QAndroidJniObject engineGetRevocationChecker();
-		QAndroidJniObject engineValidate(java::security::cert::CertPath arg0, __JniBaseClass arg1);
+		__JniBaseClass engineGetRevocationChecker();
+		__JniBaseClass engineValidate(java::security::cert::CertPath arg0, __JniBaseClass arg1);
 	};
 } // namespace java::security::cert
 

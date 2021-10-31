@@ -1220,7 +1220,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::createAdminSupportIntent(jstring arg0)
+	android::content::Intent DevicePolicyManager::createAdminSupportIntent(jstring arg0)
 	{
 		return callObjectMethod(
 			"createAdminSupportIntent",
@@ -1228,7 +1228,7 @@ namespace android::app::admin
 			arg0
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::createAndManageUser(android::content::ComponentName arg0, jstring arg1, android::content::ComponentName arg2, android::os::PersistableBundle arg3, jint arg4)
+	android::os::UserHandle DevicePolicyManager::createAndManageUser(android::content::ComponentName arg0, jstring arg1, android::content::ComponentName arg2, android::os::PersistableBundle arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"createAndManageUser",
@@ -1258,7 +1258,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::generateKeyPair(android::content::ComponentName arg0, jstring arg1, android::security::keystore::KeyGenParameterSpec arg2, jint arg3)
+	android::security::AttestedKeyPair DevicePolicyManager::generateKeyPair(android::content::ComponentName arg0, jstring arg1, android::security::keystore::KeyGenParameterSpec arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"generateKeyPair",
@@ -1276,14 +1276,14 @@ namespace android::app::admin
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject DevicePolicyManager::getActiveAdmins()
+	__JniBaseClass DevicePolicyManager::getActiveAdmins()
 	{
 		return callObjectMethod(
 			"getActiveAdmins",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getAffiliationIds(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getAffiliationIds(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getAffiliationIds",
@@ -1291,7 +1291,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getAlwaysOnVpnLockdownWhitelist(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getAlwaysOnVpnLockdownWhitelist(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getAlwaysOnVpnLockdownWhitelist",
@@ -1307,7 +1307,7 @@ namespace android::app::admin
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject DevicePolicyManager::getApplicationRestrictions(android::content::ComponentName arg0, jstring arg1)
+	android::os::Bundle DevicePolicyManager::getApplicationRestrictions(android::content::ComponentName arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getApplicationRestrictions",
@@ -1331,7 +1331,7 @@ namespace android::app::admin
 			"()Z"
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getBindDeviceAdminTargetUsers(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getBindDeviceAdminTargetUsers(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getBindDeviceAdminTargetUsers",
@@ -1363,7 +1363,7 @@ namespace android::app::admin
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject DevicePolicyManager::getCrossProfileCalendarPackages(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getCrossProfileCalendarPackages(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getCrossProfileCalendarPackages",
@@ -1387,7 +1387,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getCrossProfileWidgetProviders(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getCrossProfileWidgetProviders(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getCrossProfileWidgetProviders",
@@ -1402,7 +1402,7 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getDelegatePackages(android::content::ComponentName arg0, jstring arg1)
+	__JniBaseClass DevicePolicyManager::getDelegatePackages(android::content::ComponentName arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getDelegatePackages",
@@ -1411,7 +1411,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getDelegatedScopes(android::content::ComponentName arg0, jstring arg1)
+	__JniBaseClass DevicePolicyManager::getDelegatedScopes(android::content::ComponentName arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getDelegatedScopes",
@@ -1451,7 +1451,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getInstalledCaCerts(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getInstalledCaCerts(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getInstalledCaCerts",
@@ -1459,7 +1459,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getKeepUninstalledPackages(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getKeepUninstalledPackages(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getKeepUninstalledPackages",
@@ -1515,7 +1515,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getMeteredDataDisabledPackages(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getMeteredDataDisabledPackages(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getMeteredDataDisabledPackages",
@@ -1539,7 +1539,7 @@ namespace android::app::admin
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject DevicePolicyManager::getOverrideApns(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getOverrideApns(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getOverrideApns",
@@ -1547,7 +1547,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getParentProfileInstance(android::content::ComponentName arg0)
+	android::app::admin::DevicePolicyManager DevicePolicyManager::getParentProfileInstance(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getParentProfileInstance",
@@ -1658,7 +1658,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getPendingSystemUpdate(android::content::ComponentName arg0)
+	android::app::admin::SystemUpdateInfo DevicePolicyManager::getPendingSystemUpdate(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getPendingSystemUpdate",
@@ -1684,7 +1684,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getPermittedAccessibilityServices(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getPermittedAccessibilityServices(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getPermittedAccessibilityServices",
@@ -1692,7 +1692,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getPermittedCrossProfileNotificationListeners",
@@ -1700,7 +1700,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getPermittedInputMethods(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getPermittedInputMethods(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getPermittedInputMethods",
@@ -1724,7 +1724,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getSecondaryUsers(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::getSecondaryUsers(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getSecondaryUsers",
@@ -1763,21 +1763,21 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getSystemUpdatePolicy()
+	android::app::admin::SystemUpdatePolicy DevicePolicyManager::getSystemUpdatePolicy()
 	{
 		return callObjectMethod(
 			"getSystemUpdatePolicy",
 			"()Landroid/app/admin/SystemUpdatePolicy;"
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getTransferOwnershipBundle()
+	android::os::PersistableBundle DevicePolicyManager::getTransferOwnershipBundle()
 	{
 		return callObjectMethod(
 			"getTransferOwnershipBundle",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1)
+	__JniBaseClass DevicePolicyManager::getTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1)
 	{
 		return callObjectMethod(
 			"getTrustAgentConfiguration",
@@ -1786,7 +1786,7 @@ namespace android::app::admin
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getUserRestrictions(android::content::ComponentName arg0)
+	android::os::Bundle DevicePolicyManager::getUserRestrictions(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getUserRestrictions",
@@ -2169,7 +2169,7 @@ namespace android::app::admin
 			arg3
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::retrieveNetworkLogs(android::content::ComponentName arg0, jlong arg1)
+	__JniBaseClass DevicePolicyManager::retrieveNetworkLogs(android::content::ComponentName arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"retrieveNetworkLogs",
@@ -2178,7 +2178,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::retrievePreRebootSecurityLogs(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::retrievePreRebootSecurityLogs(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"retrievePreRebootSecurityLogs",
@@ -2186,7 +2186,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::retrieveSecurityLogs(android::content::ComponentName arg0)
+	__JniBaseClass DevicePolicyManager::retrieveSecurityLogs(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"retrieveSecurityLogs",
@@ -2500,7 +2500,7 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::setMeteredDataDisabledPackages(android::content::ComponentName arg0, __JniBaseClass arg1)
+	__JniBaseClass DevicePolicyManager::setMeteredDataDisabledPackages(android::content::ComponentName arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setMeteredDataDisabledPackages",

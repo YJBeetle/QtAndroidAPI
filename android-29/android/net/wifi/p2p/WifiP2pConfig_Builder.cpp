@@ -17,14 +17,14 @@ namespace android::net::wifi::p2p
 		) {}
 	
 	// Methods
-	QAndroidJniObject WifiP2pConfig_Builder::build()
+	android::net::wifi::p2p::WifiP2pConfig WifiP2pConfig_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/p2p/WifiP2pConfig;"
 		);
 	}
-	QAndroidJniObject WifiP2pConfig_Builder::enablePersistentMode(jboolean arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::enablePersistentMode(jboolean arg0)
 	{
 		return callObjectMethod(
 			"enablePersistentMode",
@@ -32,7 +32,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	QAndroidJniObject WifiP2pConfig_Builder::setDeviceAddress(android::net::MacAddress arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setDeviceAddress(android::net::MacAddress arg0)
 	{
 		return callObjectMethod(
 			"setDeviceAddress",
@@ -40,7 +40,7 @@ namespace android::net::wifi::p2p
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WifiP2pConfig_Builder::setGroupOperatingBand(jint arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setGroupOperatingBand(jint arg0)
 	{
 		return callObjectMethod(
 			"setGroupOperatingBand",
@@ -48,7 +48,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	QAndroidJniObject WifiP2pConfig_Builder::setGroupOperatingFrequency(jint arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setGroupOperatingFrequency(jint arg0)
 	{
 		return callObjectMethod(
 			"setGroupOperatingFrequency",
@@ -56,7 +56,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	QAndroidJniObject WifiP2pConfig_Builder::setNetworkName(jstring arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setNetworkName(jstring arg0)
 	{
 		return callObjectMethod(
 			"setNetworkName",
@@ -64,7 +64,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	QAndroidJniObject WifiP2pConfig_Builder::setPassphrase(jstring arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setPassphrase(jstring arg0)
 	{
 		return callObjectMethod(
 			"setPassphrase",

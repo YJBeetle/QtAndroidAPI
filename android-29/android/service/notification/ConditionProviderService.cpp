@@ -84,7 +84,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ConditionProviderService::onBind(android::content::Intent arg0)
+	__JniBaseClass ConditionProviderService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

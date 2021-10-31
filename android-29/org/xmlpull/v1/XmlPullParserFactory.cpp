@@ -20,7 +20,7 @@ namespace org::xmlpull::v1
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject XmlPullParserFactory::newInstance()
+	org::xmlpull::v1::XmlPullParserFactory XmlPullParserFactory::newInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"org.xmlpull.v1.XmlPullParserFactory",
@@ -28,7 +28,7 @@ namespace org::xmlpull::v1
 			"()Lorg/xmlpull/v1/XmlPullParserFactory;"
 		);
 	}
-	QAndroidJniObject XmlPullParserFactory::newInstance(jstring arg0, jclass arg1)
+	org::xmlpull::v1::XmlPullParserFactory XmlPullParserFactory::newInstance(jstring arg0, jclass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"org.xmlpull.v1.XmlPullParserFactory",
@@ -60,14 +60,14 @@ namespace org::xmlpull::v1
 			"()Z"
 		);
 	}
-	QAndroidJniObject XmlPullParserFactory::newPullParser()
+	__JniBaseClass XmlPullParserFactory::newPullParser()
 	{
 		return callObjectMethod(
 			"newPullParser",
 			"()Lorg/xmlpull/v1/XmlPullParser;"
 		);
 	}
-	QAndroidJniObject XmlPullParserFactory::newSerializer()
+	__JniBaseClass XmlPullParserFactory::newSerializer()
 	{
 		return callObjectMethod(
 			"newSerializer",

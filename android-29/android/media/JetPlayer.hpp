@@ -25,7 +25,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getJetPlayer();
+		static android::media::JetPlayer getJetPlayer();
 		static jint getMaxTracks();
 		jboolean clearQueue();
 		jobject clone();

@@ -21,15 +21,15 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		QAndroidJniObject inBitmap();
+		android::graphics::Bitmap inBitmap();
 		jint inDensity();
 		jboolean inDither();
 		jboolean inInputShareable();
 		jboolean inJustDecodeBounds();
 		jboolean inMutable();
 		jboolean inPreferQualityOverSpeed();
-		QAndroidJniObject inPreferredColorSpace();
-		QAndroidJniObject inPreferredConfig();
+		android::graphics::ColorSpace inPreferredColorSpace();
+		android::graphics::Bitmap_Config inPreferredConfig();
 		jboolean inPremultiplied();
 		jboolean inPurgeable();
 		jint inSampleSize();
@@ -38,8 +38,8 @@ namespace android::graphics
 		jint inTargetDensity();
 		jbyteArray inTempStorage();
 		jboolean mCancel();
-		QAndroidJniObject outColorSpace();
-		QAndroidJniObject outConfig();
+		android::graphics::ColorSpace outColorSpace();
+		android::graphics::Bitmap_Config outConfig();
 		jint outHeight();
 		jstring outMimeType();
 		jint outWidth();

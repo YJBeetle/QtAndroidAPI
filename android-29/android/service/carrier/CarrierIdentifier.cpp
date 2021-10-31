@@ -4,7 +4,7 @@
 namespace android::service::carrier
 {
 	// Fields
-	QAndroidJniObject CarrierIdentifier::CREATOR()
+	__JniBaseClass CarrierIdentifier::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.carrier.CarrierIdentifier",

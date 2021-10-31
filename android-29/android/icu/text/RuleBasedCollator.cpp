@@ -29,7 +29,7 @@ namespace android::icu::text
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject RuleBasedCollator::cloneAsThawed()
+	android::icu::text::RuleBasedCollator RuleBasedCollator::cloneAsThawed()
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
@@ -53,14 +53,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::freeze()
+	android::icu::text::Collator RuleBasedCollator::freeze()
 	{
 		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/text/Collator;"
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(android::icu::text::UCharacterIterator arg0)
+	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(android::icu::text::UCharacterIterator arg0)
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
@@ -68,7 +68,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(jstring arg0)
+	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
@@ -76,7 +76,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(__JniBaseClass arg0)
+	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
@@ -84,7 +84,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationKey(jstring arg0)
+	android::icu::text::CollationKey RuleBasedCollator::getCollationKey(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCollationKey",
@@ -152,14 +152,14 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getTailoredSet()
+	android::icu::text::UnicodeSet RuleBasedCollator::getTailoredSet()
 	{
 		return callObjectMethod(
 			"getTailoredSet",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getUCAVersion()
+	android::icu::util::VersionInfo RuleBasedCollator::getUCAVersion()
 	{
 		return callObjectMethod(
 			"getUCAVersion",
@@ -173,7 +173,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getVersion()
+	android::icu::util::VersionInfo RuleBasedCollator::getVersion()
 	{
 		return callObjectMethod(
 			"getVersion",
@@ -304,7 +304,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::setMaxVariable(jint arg0)
+	android::icu::text::RuleBasedCollator RuleBasedCollator::setMaxVariable(jint arg0)
 	{
 		return callObjectMethod(
 			"setMaxVariable",

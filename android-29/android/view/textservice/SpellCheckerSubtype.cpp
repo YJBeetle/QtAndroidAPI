@@ -6,7 +6,7 @@
 namespace android::view::textservice
 {
 	// Fields
-	QAndroidJniObject SpellCheckerSubtype::CREATOR()
+	__JniBaseClass SpellCheckerSubtype::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textservice.SpellCheckerSubtype",

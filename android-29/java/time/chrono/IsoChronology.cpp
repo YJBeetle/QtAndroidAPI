@@ -16,7 +16,7 @@
 namespace java::time::chrono
 {
 	// Fields
-	QAndroidJniObject IsoChronology::INSTANCE()
+	java::time::chrono::IsoChronology IsoChronology::INSTANCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.IsoChronology",
@@ -31,7 +31,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject IsoChronology::date(__JniBaseClass arg0)
+	java::time::LocalDate IsoChronology::date(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"date",
@@ -39,7 +39,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IsoChronology::date(jint arg0, jint arg1, jint arg2)
+	java::time::LocalDate IsoChronology::date(jint arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"date",
@@ -49,7 +49,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	QAndroidJniObject IsoChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
+	java::time::LocalDate IsoChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"date",
@@ -60,7 +60,7 @@ namespace java::time::chrono
 			arg3
 		);
 	}
-	QAndroidJniObject IsoChronology::dateEpochDay(jlong arg0)
+	java::time::LocalDate IsoChronology::dateEpochDay(jlong arg0)
 	{
 		return callObjectMethod(
 			"dateEpochDay",
@@ -68,14 +68,14 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject IsoChronology::dateNow()
+	java::time::LocalDate IsoChronology::dateNow()
 	{
 		return callObjectMethod(
 			"dateNow",
 			"()Ljava/time/LocalDate;"
 		);
 	}
-	QAndroidJniObject IsoChronology::dateNow(java::time::Clock arg0)
+	java::time::LocalDate IsoChronology::dateNow(java::time::Clock arg0)
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -83,7 +83,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IsoChronology::dateNow(java::time::ZoneId arg0)
+	java::time::LocalDate IsoChronology::dateNow(java::time::ZoneId arg0)
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -91,7 +91,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IsoChronology::dateYearDay(jint arg0, jint arg1)
+	java::time::LocalDate IsoChronology::dateYearDay(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -100,7 +100,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	QAndroidJniObject IsoChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
+	java::time::LocalDate IsoChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -124,7 +124,7 @@ namespace java::time::chrono
 			arg6.object()
 		);
 	}
-	QAndroidJniObject IsoChronology::eraOf(jint arg0)
+	java::time::chrono::IsoEra IsoChronology::eraOf(jint arg0)
 	{
 		return callObjectMethod(
 			"eraOf",
@@ -132,7 +132,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject IsoChronology::eras()
+	__JniBaseClass IsoChronology::eras()
 	{
 		return callObjectMethod(
 			"eras",
@@ -161,7 +161,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject IsoChronology::localDateTime(__JniBaseClass arg0)
+	java::time::LocalDateTime IsoChronology::localDateTime(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"localDateTime",
@@ -169,7 +169,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IsoChronology::period(jint arg0, jint arg1, jint arg2)
+	java::time::Period IsoChronology::period(jint arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"period",
@@ -188,7 +188,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	QAndroidJniObject IsoChronology::range(java::time::temporal::ChronoField arg0)
+	java::time::temporal::ValueRange IsoChronology::range(java::time::temporal::ChronoField arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -196,7 +196,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IsoChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
+	java::time::LocalDate IsoChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
 	{
 		return callObjectMethod(
 			"resolveDate",
@@ -205,7 +205,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	QAndroidJniObject IsoChronology::zonedDateTime(__JniBaseClass arg0)
+	java::time::ZonedDateTime IsoChronology::zonedDateTime(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"zonedDateTime",
@@ -213,7 +213,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IsoChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
+	java::time::ZonedDateTime IsoChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
 		return callObjectMethod(
 			"zonedDateTime",

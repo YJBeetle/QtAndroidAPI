@@ -3,7 +3,7 @@
 namespace android::text
 {
 	// Fields
-	QAndroidJniObject TextDirectionHeuristics::ANYRTL_LTR()
+	__JniBaseClass TextDirectionHeuristics::ANYRTL_LTR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextDirectionHeuristics",
@@ -11,7 +11,7 @@ namespace android::text
 			"Landroid/text/TextDirectionHeuristic;"
 		);
 	}
-	QAndroidJniObject TextDirectionHeuristics::FIRSTSTRONG_LTR()
+	__JniBaseClass TextDirectionHeuristics::FIRSTSTRONG_LTR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextDirectionHeuristics",
@@ -19,7 +19,7 @@ namespace android::text
 			"Landroid/text/TextDirectionHeuristic;"
 		);
 	}
-	QAndroidJniObject TextDirectionHeuristics::FIRSTSTRONG_RTL()
+	__JniBaseClass TextDirectionHeuristics::FIRSTSTRONG_RTL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextDirectionHeuristics",
@@ -27,7 +27,7 @@ namespace android::text
 			"Landroid/text/TextDirectionHeuristic;"
 		);
 	}
-	QAndroidJniObject TextDirectionHeuristics::LOCALE()
+	__JniBaseClass TextDirectionHeuristics::LOCALE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextDirectionHeuristics",
@@ -35,7 +35,7 @@ namespace android::text
 			"Landroid/text/TextDirectionHeuristic;"
 		);
 	}
-	QAndroidJniObject TextDirectionHeuristics::LTR()
+	__JniBaseClass TextDirectionHeuristics::LTR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextDirectionHeuristics",
@@ -43,7 +43,7 @@ namespace android::text
 			"Landroid/text/TextDirectionHeuristic;"
 		);
 	}
-	QAndroidJniObject TextDirectionHeuristics::RTL()
+	__JniBaseClass TextDirectionHeuristics::RTL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextDirectionHeuristics",

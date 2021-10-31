@@ -47,7 +47,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject FragmentHostCallback::onFindViewById(jint arg0)
+	android::view::View FragmentHostCallback::onFindViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"onFindViewById",
@@ -62,7 +62,7 @@ namespace android::app
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject FragmentHostCallback::onGetLayoutInflater()
+	android::view::LayoutInflater FragmentHostCallback::onGetLayoutInflater()
 	{
 		return callObjectMethod(
 			"onGetLayoutInflater",

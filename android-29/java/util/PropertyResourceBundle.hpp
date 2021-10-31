@@ -28,7 +28,7 @@ namespace java::util
 		PropertyResourceBundle(java::io::Reader arg0);
 		
 		// Methods
-		QAndroidJniObject getKeys();
+		__JniBaseClass getKeys();
 		jobject handleGetObject(jstring arg0);
 	};
 } // namespace java::util

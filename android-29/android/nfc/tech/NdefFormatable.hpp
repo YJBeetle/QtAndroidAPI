@@ -25,12 +25,12 @@ namespace android::nfc::tech
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject get(android::nfc::Tag arg0);
+		static android::nfc::tech::NdefFormatable get(android::nfc::Tag arg0);
 		void close();
 		void connect();
 		void format(android::nfc::NdefMessage arg0);
 		void formatReadOnly(android::nfc::NdefMessage arg0);
-		QAndroidJniObject getTag();
+		android::nfc::Tag getTag();
 		jboolean isConnected();
 	};
 } // namespace android::nfc::tech

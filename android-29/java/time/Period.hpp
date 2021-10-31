@@ -25,7 +25,7 @@ namespace java::time
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ZERO();
+		static java::time::Period ZERO();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Period(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -34,42 +34,42 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject between(java::time::LocalDate arg0, java::time::LocalDate arg1);
-		static QAndroidJniObject from(__JniBaseClass arg0);
-		static QAndroidJniObject of(jint arg0, jint arg1, jint arg2);
-		static QAndroidJniObject ofDays(jint arg0);
-		static QAndroidJniObject ofMonths(jint arg0);
-		static QAndroidJniObject ofWeeks(jint arg0);
-		static QAndroidJniObject ofYears(jint arg0);
-		static QAndroidJniObject parse(jstring arg0);
-		QAndroidJniObject addTo(__JniBaseClass arg0);
+		static java::time::Period between(java::time::LocalDate arg0, java::time::LocalDate arg1);
+		static java::time::Period from(__JniBaseClass arg0);
+		static java::time::Period of(jint arg0, jint arg1, jint arg2);
+		static java::time::Period ofDays(jint arg0);
+		static java::time::Period ofMonths(jint arg0);
+		static java::time::Period ofWeeks(jint arg0);
+		static java::time::Period ofYears(jint arg0);
+		static java::time::Period parse(jstring arg0);
+		__JniBaseClass addTo(__JniBaseClass arg0);
 		jboolean equals(jobject arg0);
 		jlong get(__JniBaseClass arg0);
-		QAndroidJniObject getChronology();
+		java::time::chrono::IsoChronology getChronology();
 		jint getDays();
 		jint getMonths();
-		QAndroidJniObject getUnits();
+		__JniBaseClass getUnits();
 		jint getYears();
 		jint hashCode();
 		jboolean isNegative();
 		jboolean isZero();
-		QAndroidJniObject minus(__JniBaseClass arg0);
-		QAndroidJniObject minusDays(jlong arg0);
-		QAndroidJniObject minusMonths(jlong arg0);
-		QAndroidJniObject minusYears(jlong arg0);
-		QAndroidJniObject multipliedBy(jint arg0);
-		QAndroidJniObject negated();
-		QAndroidJniObject normalized();
-		QAndroidJniObject plus(__JniBaseClass arg0);
-		QAndroidJniObject plusDays(jlong arg0);
-		QAndroidJniObject plusMonths(jlong arg0);
-		QAndroidJniObject plusYears(jlong arg0);
-		QAndroidJniObject subtractFrom(__JniBaseClass arg0);
+		java::time::Period minus(__JniBaseClass arg0);
+		java::time::Period minusDays(jlong arg0);
+		java::time::Period minusMonths(jlong arg0);
+		java::time::Period minusYears(jlong arg0);
+		java::time::Period multipliedBy(jint arg0);
+		java::time::Period negated();
+		java::time::Period normalized();
+		java::time::Period plus(__JniBaseClass arg0);
+		java::time::Period plusDays(jlong arg0);
+		java::time::Period plusMonths(jlong arg0);
+		java::time::Period plusYears(jlong arg0);
+		__JniBaseClass subtractFrom(__JniBaseClass arg0);
 		jstring toString();
 		jlong toTotalMonths();
-		QAndroidJniObject withDays(jint arg0);
-		QAndroidJniObject withMonths(jint arg0);
-		QAndroidJniObject withYears(jint arg0);
+		java::time::Period withDays(jint arg0);
+		java::time::Period withMonths(jint arg0);
+		java::time::Period withYears(jint arg0);
 	};
 } // namespace java::time
 

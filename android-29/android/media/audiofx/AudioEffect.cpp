@@ -80,7 +80,7 @@ namespace android::media::audiofx
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AudioEffect::EFFECT_TYPE_AEC()
+	java::util::UUID AudioEffect::EFFECT_TYPE_AEC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.audiofx.AudioEffect",
@@ -88,7 +88,7 @@ namespace android::media::audiofx
 			"Ljava/util/UUID;"
 		);
 	}
-	QAndroidJniObject AudioEffect::EFFECT_TYPE_AGC()
+	java::util::UUID AudioEffect::EFFECT_TYPE_AGC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.audiofx.AudioEffect",
@@ -96,7 +96,7 @@ namespace android::media::audiofx
 			"Ljava/util/UUID;"
 		);
 	}
-	QAndroidJniObject AudioEffect::EFFECT_TYPE_BASS_BOOST()
+	java::util::UUID AudioEffect::EFFECT_TYPE_BASS_BOOST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.audiofx.AudioEffect",
@@ -104,7 +104,7 @@ namespace android::media::audiofx
 			"Ljava/util/UUID;"
 		);
 	}
-	QAndroidJniObject AudioEffect::EFFECT_TYPE_DYNAMICS_PROCESSING()
+	java::util::UUID AudioEffect::EFFECT_TYPE_DYNAMICS_PROCESSING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.audiofx.AudioEffect",
@@ -112,7 +112,7 @@ namespace android::media::audiofx
 			"Ljava/util/UUID;"
 		);
 	}
-	QAndroidJniObject AudioEffect::EFFECT_TYPE_ENV_REVERB()
+	java::util::UUID AudioEffect::EFFECT_TYPE_ENV_REVERB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.audiofx.AudioEffect",
@@ -120,7 +120,7 @@ namespace android::media::audiofx
 			"Ljava/util/UUID;"
 		);
 	}
-	QAndroidJniObject AudioEffect::EFFECT_TYPE_EQUALIZER()
+	java::util::UUID AudioEffect::EFFECT_TYPE_EQUALIZER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.audiofx.AudioEffect",
@@ -128,7 +128,7 @@ namespace android::media::audiofx
 			"Ljava/util/UUID;"
 		);
 	}
-	QAndroidJniObject AudioEffect::EFFECT_TYPE_LOUDNESS_ENHANCER()
+	java::util::UUID AudioEffect::EFFECT_TYPE_LOUDNESS_ENHANCER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.audiofx.AudioEffect",
@@ -136,7 +136,7 @@ namespace android::media::audiofx
 			"Ljava/util/UUID;"
 		);
 	}
-	QAndroidJniObject AudioEffect::EFFECT_TYPE_NS()
+	java::util::UUID AudioEffect::EFFECT_TYPE_NS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.audiofx.AudioEffect",
@@ -144,7 +144,7 @@ namespace android::media::audiofx
 			"Ljava/util/UUID;"
 		);
 	}
-	QAndroidJniObject AudioEffect::EFFECT_TYPE_PRESET_REVERB()
+	java::util::UUID AudioEffect::EFFECT_TYPE_PRESET_REVERB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.audiofx.AudioEffect",
@@ -152,7 +152,7 @@ namespace android::media::audiofx
 			"Ljava/util/UUID;"
 		);
 	}
-	QAndroidJniObject AudioEffect::EFFECT_TYPE_VIRTUALIZER()
+	java::util::UUID AudioEffect::EFFECT_TYPE_VIRTUALIZER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.audiofx.AudioEffect",
@@ -248,7 +248,7 @@ namespace android::media::audiofx
 			"()[Landroid/media/audiofx/AudioEffect$Descriptor;"
 		).object<jarray>();
 	}
-	QAndroidJniObject AudioEffect::getDescriptor()
+	android::media::audiofx::AudioEffect_Descriptor AudioEffect::getDescriptor()
 	{
 		return callObjectMethod(
 			"getDescriptor",

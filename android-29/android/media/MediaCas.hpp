@@ -29,7 +29,7 @@ namespace android::media
 		static jarray enumeratePlugins();
 		static jboolean isSystemIdSupported(jint arg0);
 		void close();
-		QAndroidJniObject openSession();
+		android::media::MediaCas_Session openSession();
 		void processEmm(jbyteArray arg0);
 		void processEmm(jbyteArray arg0, jint arg1, jint arg2);
 		void provision(jstring arg0);

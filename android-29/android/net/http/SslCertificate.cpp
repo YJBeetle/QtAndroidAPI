@@ -38,7 +38,7 @@ namespace android::net::http
 		) {}
 	
 	// Methods
-	QAndroidJniObject SslCertificate::restoreState(android::os::Bundle arg0)
+	android::net::http::SslCertificate SslCertificate::restoreState(android::os::Bundle arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.http.SslCertificate",
@@ -47,7 +47,7 @@ namespace android::net::http
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SslCertificate::saveState(android::net::http::SslCertificate arg0)
+	android::os::Bundle SslCertificate::saveState(android::net::http::SslCertificate arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.http.SslCertificate",
@@ -56,14 +56,14 @@ namespace android::net::http
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SslCertificate::getIssuedBy()
+	android::net::http::SslCertificate_DName SslCertificate::getIssuedBy()
 	{
 		return callObjectMethod(
 			"getIssuedBy",
 			"()Landroid/net/http/SslCertificate$DName;"
 		);
 	}
-	QAndroidJniObject SslCertificate::getIssuedTo()
+	android::net::http::SslCertificate_DName SslCertificate::getIssuedTo()
 	{
 		return callObjectMethod(
 			"getIssuedTo",
@@ -77,7 +77,7 @@ namespace android::net::http
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SslCertificate::getValidNotAfterDate()
+	java::util::Date SslCertificate::getValidNotAfterDate()
 	{
 		return callObjectMethod(
 			"getValidNotAfterDate",
@@ -91,14 +91,14 @@ namespace android::net::http
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SslCertificate::getValidNotBeforeDate()
+	java::util::Date SslCertificate::getValidNotBeforeDate()
 	{
 		return callObjectMethod(
 			"getValidNotBeforeDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject SslCertificate::getX509Certificate()
+	java::security::cert::X509Certificate SslCertificate::getX509Certificate()
 	{
 		return callObjectMethod(
 			"getX509Certificate",

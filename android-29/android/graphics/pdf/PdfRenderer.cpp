@@ -32,7 +32,7 @@ namespace android::graphics::pdf
 			"()I"
 		);
 	}
-	QAndroidJniObject PdfRenderer::openPage(jint arg0)
+	android::graphics::pdf::PdfRenderer_Page PdfRenderer::openPage(jint arg0)
 	{
 		return callObjectMethod(
 			"openPage",

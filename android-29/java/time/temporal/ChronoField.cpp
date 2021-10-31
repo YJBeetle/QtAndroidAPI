@@ -5,7 +5,7 @@
 namespace java::time::temporal
 {
 	// Fields
-	QAndroidJniObject ChronoField::ALIGNED_DAY_OF_WEEK_IN_MONTH()
+	java::time::temporal::ChronoField ChronoField::ALIGNED_DAY_OF_WEEK_IN_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -13,7 +13,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::ALIGNED_DAY_OF_WEEK_IN_YEAR()
+	java::time::temporal::ChronoField ChronoField::ALIGNED_DAY_OF_WEEK_IN_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -21,7 +21,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::ALIGNED_WEEK_OF_MONTH()
+	java::time::temporal::ChronoField ChronoField::ALIGNED_WEEK_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -29,7 +29,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::ALIGNED_WEEK_OF_YEAR()
+	java::time::temporal::ChronoField ChronoField::ALIGNED_WEEK_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -37,7 +37,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::AMPM_OF_DAY()
+	java::time::temporal::ChronoField ChronoField::AMPM_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -45,7 +45,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::CLOCK_HOUR_OF_AMPM()
+	java::time::temporal::ChronoField ChronoField::CLOCK_HOUR_OF_AMPM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -53,7 +53,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::CLOCK_HOUR_OF_DAY()
+	java::time::temporal::ChronoField ChronoField::CLOCK_HOUR_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -61,7 +61,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::DAY_OF_MONTH()
+	java::time::temporal::ChronoField ChronoField::DAY_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -69,7 +69,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::DAY_OF_WEEK()
+	java::time::temporal::ChronoField ChronoField::DAY_OF_WEEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -77,7 +77,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::DAY_OF_YEAR()
+	java::time::temporal::ChronoField ChronoField::DAY_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -85,7 +85,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::EPOCH_DAY()
+	java::time::temporal::ChronoField ChronoField::EPOCH_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -93,7 +93,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::ERA()
+	java::time::temporal::ChronoField ChronoField::ERA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -101,7 +101,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::HOUR_OF_AMPM()
+	java::time::temporal::ChronoField ChronoField::HOUR_OF_AMPM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -109,7 +109,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::HOUR_OF_DAY()
+	java::time::temporal::ChronoField ChronoField::HOUR_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -117,7 +117,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::INSTANT_SECONDS()
+	java::time::temporal::ChronoField ChronoField::INSTANT_SECONDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -125,7 +125,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::MICRO_OF_DAY()
+	java::time::temporal::ChronoField ChronoField::MICRO_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -133,7 +133,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::MICRO_OF_SECOND()
+	java::time::temporal::ChronoField ChronoField::MICRO_OF_SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -141,7 +141,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::MILLI_OF_DAY()
+	java::time::temporal::ChronoField ChronoField::MILLI_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -149,7 +149,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::MILLI_OF_SECOND()
+	java::time::temporal::ChronoField ChronoField::MILLI_OF_SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -157,7 +157,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::MINUTE_OF_DAY()
+	java::time::temporal::ChronoField ChronoField::MINUTE_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -165,7 +165,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::MINUTE_OF_HOUR()
+	java::time::temporal::ChronoField ChronoField::MINUTE_OF_HOUR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -173,7 +173,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::MONTH_OF_YEAR()
+	java::time::temporal::ChronoField ChronoField::MONTH_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -181,7 +181,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::NANO_OF_DAY()
+	java::time::temporal::ChronoField ChronoField::NANO_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -189,7 +189,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::NANO_OF_SECOND()
+	java::time::temporal::ChronoField ChronoField::NANO_OF_SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -197,7 +197,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::OFFSET_SECONDS()
+	java::time::temporal::ChronoField ChronoField::OFFSET_SECONDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -205,7 +205,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::PROLEPTIC_MONTH()
+	java::time::temporal::ChronoField ChronoField::PROLEPTIC_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -213,7 +213,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::SECOND_OF_DAY()
+	java::time::temporal::ChronoField ChronoField::SECOND_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -221,7 +221,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::SECOND_OF_MINUTE()
+	java::time::temporal::ChronoField ChronoField::SECOND_OF_MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -229,7 +229,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::YEAR()
+	java::time::temporal::ChronoField ChronoField::YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -237,7 +237,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoField;"
 		);
 	}
-	QAndroidJniObject ChronoField::YEAR_OF_ERA()
+	java::time::temporal::ChronoField ChronoField::YEAR_OF_ERA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
@@ -252,7 +252,7 @@ namespace java::time::temporal
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ChronoField::valueOf(jstring arg0)
+	java::time::temporal::ChronoField ChronoField::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.ChronoField",
@@ -269,7 +269,7 @@ namespace java::time::temporal
 			"()[Ljava/time/temporal/ChronoField;"
 		).object<jarray>();
 	}
-	QAndroidJniObject ChronoField::adjustInto(__JniBaseClass arg0, jlong arg1)
+	__JniBaseClass ChronoField::adjustInto(__JniBaseClass arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -294,7 +294,7 @@ namespace java::time::temporal
 			arg0
 		);
 	}
-	QAndroidJniObject ChronoField::getBaseUnit()
+	__JniBaseClass ChronoField::getBaseUnit()
 	{
 		return callObjectMethod(
 			"getBaseUnit",
@@ -317,7 +317,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ChronoField::getRangeUnit()
+	__JniBaseClass ChronoField::getRangeUnit()
 	{
 		return callObjectMethod(
 			"getRangeUnit",
@@ -346,14 +346,14 @@ namespace java::time::temporal
 			"()Z"
 		);
 	}
-	QAndroidJniObject ChronoField::range()
+	java::time::temporal::ValueRange ChronoField::range()
 	{
 		return callObjectMethod(
 			"range",
 			"()Ljava/time/temporal/ValueRange;"
 		);
 	}
-	QAndroidJniObject ChronoField::rangeRefinedBy(__JniBaseClass arg0)
+	java::time::temporal::ValueRange ChronoField::rangeRefinedBy(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"rangeRefinedBy",

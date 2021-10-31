@@ -33,7 +33,7 @@ namespace android::appwidget
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint RESIZE_BOTH();
 		static jint RESIZE_HORIZONTAL();
 		static jint RESIZE_NONE();
@@ -44,7 +44,7 @@ namespace android::appwidget
 		static jint WIDGET_FEATURE_HIDE_FROM_PICKER();
 		static jint WIDGET_FEATURE_RECONFIGURABLE();
 		jint autoAdvanceViewId();
-		QAndroidJniObject configure();
+		android::content::ComponentName configure();
 		jint icon();
 		jint initialKeyguardLayout();
 		jint initialLayout();
@@ -54,7 +54,7 @@ namespace android::appwidget
 		jint minResizeWidth();
 		jint minWidth();
 		jint previewImage();
-		QAndroidJniObject provider();
+		android::content::ComponentName provider();
 		jint resizeMode();
 		jint updatePeriodMillis();
 		jint widgetCategory();
@@ -69,12 +69,12 @@ namespace android::appwidget
 		AppWidgetProviderInfo(android::os::Parcel arg0);
 		
 		// Methods
-		QAndroidJniObject clone();
+		android::appwidget::AppWidgetProviderInfo clone();
 		jint describeContents();
-		QAndroidJniObject getProfile();
-		QAndroidJniObject loadIcon(android::content::Context arg0, jint arg1);
+		android::os::UserHandle getProfile();
+		android::graphics::drawable::Drawable loadIcon(android::content::Context arg0, jint arg1);
 		jstring loadLabel(android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadPreviewImage(android::content::Context arg0, jint arg1);
+		android::graphics::drawable::Drawable loadPreviewImage(android::content::Context arg0, jint arg1);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

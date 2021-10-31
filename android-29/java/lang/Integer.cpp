@@ -89,7 +89,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Integer::decode(jstring arg0)
+	java::lang::Integer Integer::decode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Integer",
@@ -108,7 +108,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Integer::getInteger(jstring arg0)
+	java::lang::Integer Integer::getInteger(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Integer",
@@ -117,7 +117,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Integer::getInteger(jstring arg0, jint arg1)
+	java::lang::Integer Integer::getInteger(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Integer",
@@ -127,7 +127,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Integer::getInteger(jstring arg0, java::lang::Integer arg1)
+	java::lang::Integer Integer::getInteger(jstring arg0, java::lang::Integer arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Integer",
@@ -405,7 +405,7 @@ namespace java::lang
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject Integer::valueOf(jint arg0)
+	java::lang::Integer Integer::valueOf(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Integer",
@@ -414,7 +414,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Integer::valueOf(jstring arg0)
+	java::lang::Integer Integer::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Integer",
@@ -423,7 +423,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Integer::valueOf(jstring arg0, jint arg1)
+	java::lang::Integer Integer::valueOf(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Integer",
@@ -456,7 +456,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Integer::describeConstable()
+	java::util::Optional Integer::describeConstable()
 	{
 		return callObjectMethod(
 			"describeConstable",
@@ -506,7 +506,7 @@ namespace java::lang
 			"()J"
 		);
 	}
-	QAndroidJniObject Integer::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
+	java::lang::Integer Integer::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
 	{
 		return callObjectMethod(
 			"resolveConstantDesc",

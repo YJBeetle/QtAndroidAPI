@@ -27,7 +27,7 @@ namespace java::text
 		static void reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4);
 		static jboolean requiresBidi(jcharArray arg0, jint arg1, jint arg2);
 		jboolean baseIsLeftToRight();
-		QAndroidJniObject createLineBidi(jint arg0, jint arg1);
+		java::text::Bidi createLineBidi(jint arg0, jint arg1);
 		jint getBaseLevel();
 		jint getLength();
 		jint getLevelAt(jint arg0);

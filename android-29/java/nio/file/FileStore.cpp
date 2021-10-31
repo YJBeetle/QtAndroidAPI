@@ -25,7 +25,7 @@ namespace java::nio::file
 			"()J"
 		);
 	}
-	QAndroidJniObject FileStore::getFileStoreAttributeView(jclass arg0)
+	__JniBaseClass FileStore::getFileStoreAttributeView(jclass arg0)
 	{
 		return callObjectMethod(
 			"getFileStoreAttributeView",

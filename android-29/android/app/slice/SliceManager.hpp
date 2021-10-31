@@ -31,14 +31,14 @@ namespace android::app::slice
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject bindSlice(android::content::Intent arg0, __JniBaseClass arg1);
-		QAndroidJniObject bindSlice(android::net::Uri arg0, __JniBaseClass arg1);
+		android::app::slice::Slice bindSlice(android::content::Intent arg0, __JniBaseClass arg1);
+		android::app::slice::Slice bindSlice(android::net::Uri arg0, __JniBaseClass arg1);
 		jint checkSlicePermission(android::net::Uri arg0, jint arg1, jint arg2);
-		QAndroidJniObject getPinnedSlices();
-		QAndroidJniObject getPinnedSpecs(android::net::Uri arg0);
-		QAndroidJniObject getSliceDescendants(android::net::Uri arg0);
+		__JniBaseClass getPinnedSlices();
+		__JniBaseClass getPinnedSpecs(android::net::Uri arg0);
+		__JniBaseClass getSliceDescendants(android::net::Uri arg0);
 		void grantSlicePermission(jstring arg0, android::net::Uri arg1);
-		QAndroidJniObject mapIntentToUri(android::content::Intent arg0);
+		android::net::Uri mapIntentToUri(android::content::Intent arg0);
 		void pinSlice(android::net::Uri arg0, __JniBaseClass arg1);
 		void revokeSlicePermission(jstring arg0, android::net::Uri arg1);
 		void unpinSlice(android::net::Uri arg0);

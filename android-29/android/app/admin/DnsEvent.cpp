@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	QAndroidJniObject DnsEvent::CREATOR()
+	__JniBaseClass DnsEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DnsEvent",
@@ -33,7 +33,7 @@ namespace android::app::admin
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject DnsEvent::getInetAddresses()
+	__JniBaseClass DnsEvent::getInetAddresses()
 	{
 		return callObjectMethod(
 			"getInetAddresses",

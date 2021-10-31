@@ -3,7 +3,7 @@
 namespace android::icu::math
 {
 	// Fields
-	QAndroidJniObject MathContext::DEFAULT()
+	android::icu::math::MathContext MathContext::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.math.MathContext",

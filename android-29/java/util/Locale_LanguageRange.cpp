@@ -37,7 +37,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject Locale_LanguageRange::mapEquivalents(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Locale_LanguageRange::mapEquivalents(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",
@@ -47,7 +47,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Locale_LanguageRange::parse(jstring arg0)
+	__JniBaseClass Locale_LanguageRange::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",
@@ -56,7 +56,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_LanguageRange::parse(jstring arg0, __JniBaseClass arg1)
+	__JniBaseClass Locale_LanguageRange::parse(jstring arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",

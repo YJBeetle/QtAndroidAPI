@@ -25,8 +25,8 @@ namespace android::view::contentcapture
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getContentCaptureConditions();
-		QAndroidJniObject getServiceComponentName();
+		__JniBaseClass getContentCaptureConditions();
+		android::content::ComponentName getServiceComponentName();
 		jboolean isContentCaptureEnabled();
 		void removeData(android::view::contentcapture::DataRemovalRequest arg0);
 		void setContentCaptureEnabled(jboolean arg0);

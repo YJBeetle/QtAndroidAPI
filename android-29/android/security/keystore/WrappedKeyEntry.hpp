@@ -18,7 +18,7 @@ namespace android::security::keystore
 		WrappedKeyEntry(jbyteArray arg0, jstring arg1, jstring arg2, __JniBaseClass arg3);
 		
 		// Methods
-		QAndroidJniObject getAlgorithmParameterSpec();
+		__JniBaseClass getAlgorithmParameterSpec();
 		jstring getTransformation();
 		jbyteArray getWrappedKeyBytes();
 		jstring getWrappingKeyAlias();

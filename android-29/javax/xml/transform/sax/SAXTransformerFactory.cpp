@@ -26,21 +26,21 @@ namespace javax::xml::transform::sax
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SAXTransformerFactory::newTemplatesHandler()
+	__JniBaseClass SAXTransformerFactory::newTemplatesHandler()
 	{
 		return callObjectMethod(
 			"newTemplatesHandler",
 			"()Ljavax/xml/transform/sax/TemplatesHandler;"
 		);
 	}
-	QAndroidJniObject SAXTransformerFactory::newTransformerHandler()
+	__JniBaseClass SAXTransformerFactory::newTransformerHandler()
 	{
 		return callObjectMethod(
 			"newTransformerHandler",
 			"()Ljavax/xml/transform/sax/TransformerHandler;"
 		);
 	}
-	QAndroidJniObject SAXTransformerFactory::newTransformerHandler(__JniBaseClass arg0)
+	__JniBaseClass SAXTransformerFactory::newTransformerHandler(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"newTransformerHandler",
@@ -48,7 +48,7 @@ namespace javax::xml::transform::sax
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SAXTransformerFactory::newXMLFilter(__JniBaseClass arg0)
+	__JniBaseClass SAXTransformerFactory::newXMLFilter(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"newXMLFilter",

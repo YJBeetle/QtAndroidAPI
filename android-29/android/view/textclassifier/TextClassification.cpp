@@ -7,7 +7,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject TextClassification::CREATOR()
+	__JniBaseClass TextClassification::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextClassification",
@@ -29,7 +29,7 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject TextClassification::getActions()
+	__JniBaseClass TextClassification::getActions()
 	{
 		return callObjectMethod(
 			"getActions",
@@ -59,14 +59,14 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject TextClassification::getExtras()
+	android::os::Bundle TextClassification::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject TextClassification::getIcon()
+	android::graphics::drawable::Drawable TextClassification::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",
@@ -80,7 +80,7 @@ namespace android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextClassification::getIntent()
+	android::content::Intent TextClassification::getIntent()
 	{
 		return callObjectMethod(
 			"getIntent",
@@ -94,7 +94,7 @@ namespace android::view::textclassifier
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextClassification::getOnClickListener()
+	__JniBaseClass TextClassification::getOnClickListener()
 	{
 		return callObjectMethod(
 			"getOnClickListener",

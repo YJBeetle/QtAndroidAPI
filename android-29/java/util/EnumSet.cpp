@@ -12,7 +12,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject EnumSet::allOf(jclass arg0)
+	java::util::EnumSet EnumSet::allOf(jclass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -21,7 +21,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject EnumSet::complementOf(java::util::EnumSet arg0)
+	java::util::EnumSet EnumSet::complementOf(java::util::EnumSet arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -30,7 +30,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject EnumSet::copyOf(__JniBaseClass arg0)
+	java::util::EnumSet EnumSet::copyOf(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -39,7 +39,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject EnumSet::copyOf(java::util::EnumSet arg0)
+	java::util::EnumSet EnumSet::copyOf(java::util::EnumSet arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -48,7 +48,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject EnumSet::noneOf(jclass arg0)
+	java::util::EnumSet EnumSet::noneOf(jclass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -57,7 +57,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject EnumSet::of(java::lang::Enum arg0)
+	java::util::EnumSet EnumSet::of(java::lang::Enum arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -66,7 +66,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject EnumSet::of(java::lang::Enum arg0, jarray arg1)
+	java::util::EnumSet EnumSet::of(java::lang::Enum arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -76,7 +76,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1)
+	java::util::EnumSet EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -86,7 +86,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2)
+	java::util::EnumSet EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -97,7 +97,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	QAndroidJniObject EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3)
+	java::util::EnumSet EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -109,7 +109,7 @@ namespace java::util
 			arg3.object()
 		);
 	}
-	QAndroidJniObject EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3, java::lang::Enum arg4)
+	java::util::EnumSet EnumSet::of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3, java::lang::Enum arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -122,7 +122,7 @@ namespace java::util
 			arg4.object()
 		);
 	}
-	QAndroidJniObject EnumSet::range(java::lang::Enum arg0, java::lang::Enum arg1)
+	java::util::EnumSet EnumSet::range(java::lang::Enum arg0, java::lang::Enum arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.EnumSet",
@@ -132,7 +132,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject EnumSet::clone()
+	java::util::EnumSet EnumSet::clone()
 	{
 		return callObjectMethod(
 			"clone",

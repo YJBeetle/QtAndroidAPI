@@ -51,14 +51,14 @@ namespace android::net::sip
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SipSession::getLocalProfile()
+	android::net::sip::SipProfile SipSession::getLocalProfile()
 	{
 		return callObjectMethod(
 			"getLocalProfile",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
-	QAndroidJniObject SipSession::getPeerProfile()
+	android::net::sip::SipProfile SipSession::getPeerProfile()
 	{
 		return callObjectMethod(
 			"getPeerProfile",

@@ -106,7 +106,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject BitmapDrawable::getBitmap()
+	android::graphics::Bitmap BitmapDrawable::getBitmap()
 	{
 		return callObjectMethod(
 			"getBitmap",
@@ -120,14 +120,14 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject BitmapDrawable::getColorFilter()
+	android::graphics::ColorFilter BitmapDrawable::getColorFilter()
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	QAndroidJniObject BitmapDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState BitmapDrawable::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
@@ -162,7 +162,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject BitmapDrawable::getOpticalInsets()
+	android::graphics::Insets BitmapDrawable::getOpticalInsets()
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
@@ -177,21 +177,21 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BitmapDrawable::getPaint()
+	android::graphics::Paint BitmapDrawable::getPaint()
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
 		);
 	}
-	QAndroidJniObject BitmapDrawable::getTileModeX()
+	android::graphics::Shader_TileMode BitmapDrawable::getTileModeX()
 	{
 		return callObjectMethod(
 			"getTileModeX",
 			"()Landroid/graphics/Shader$TileMode;"
 		);
 	}
-	QAndroidJniObject BitmapDrawable::getTileModeY()
+	android::graphics::Shader_TileMode BitmapDrawable::getTileModeY()
 	{
 		return callObjectMethod(
 			"getTileModeY",
@@ -244,7 +244,7 @@ namespace android::graphics::drawable
 			"()Z"
 		);
 	}
-	QAndroidJniObject BitmapDrawable::mutate()
+	android::graphics::drawable::Drawable BitmapDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

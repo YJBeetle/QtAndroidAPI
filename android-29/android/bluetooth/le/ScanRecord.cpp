@@ -41,7 +41,7 @@ namespace android::bluetooth::le
 			arg0
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject ScanRecord::getManufacturerSpecificData()
+	android::util::SparseArray ScanRecord::getManufacturerSpecificData()
 	{
 		return callObjectMethod(
 			"getManufacturerSpecificData",
@@ -56,21 +56,21 @@ namespace android::bluetooth::le
 			arg0.object()
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject ScanRecord::getServiceData()
+	__JniBaseClass ScanRecord::getServiceData()
 	{
 		return callObjectMethod(
 			"getServiceData",
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject ScanRecord::getServiceSolicitationUuids()
+	__JniBaseClass ScanRecord::getServiceSolicitationUuids()
 	{
 		return callObjectMethod(
 			"getServiceSolicitationUuids",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ScanRecord::getServiceUuids()
+	__JniBaseClass ScanRecord::getServiceUuids()
 	{
 		return callObjectMethod(
 			"getServiceUuids",

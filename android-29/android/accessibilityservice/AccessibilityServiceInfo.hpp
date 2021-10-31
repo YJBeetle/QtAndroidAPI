@@ -28,7 +28,7 @@ namespace android::accessibilityservice
 		static jint CAPABILITY_CAN_REQUEST_FINGERPRINT_GESTURES();
 		static jint CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION();
 		static jint CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DEFAULT();
 		static jint FEEDBACK_ALL_MASK();
 		static jint FEEDBACK_AUDIBLE();
@@ -72,7 +72,7 @@ namespace android::accessibilityservice
 		jstring getId();
 		jint getInteractiveUiTimeoutMillis();
 		jint getNonInteractiveUiTimeoutMillis();
-		QAndroidJniObject getResolveInfo();
+		android::content::pm::ResolveInfo getResolveInfo();
 		jstring getSettingsActivityName();
 		jint hashCode();
 		jstring loadDescription(android::content::pm::PackageManager arg0);

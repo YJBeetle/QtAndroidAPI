@@ -95,7 +95,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject LinkedList::descendingIterator()
+	__JniBaseClass LinkedList::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
@@ -147,7 +147,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject LinkedList::listIterator(jint arg0)
+	__JniBaseClass LinkedList::listIterator(jint arg0)
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -305,7 +305,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject LinkedList::spliterator()
+	__JniBaseClass LinkedList::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

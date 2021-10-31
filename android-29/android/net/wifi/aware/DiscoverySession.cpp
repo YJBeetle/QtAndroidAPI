@@ -20,7 +20,7 @@ namespace android::net::wifi::aware
 			"()V"
 		);
 	}
-	QAndroidJniObject DiscoverySession::createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0)
+	android::net::NetworkSpecifier DiscoverySession::createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0)
 	{
 		return callObjectMethod(
 			"createNetworkSpecifierOpen",
@@ -28,7 +28,7 @@ namespace android::net::wifi::aware
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DiscoverySession::createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, jstring arg1)
+	android::net::NetworkSpecifier DiscoverySession::createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"createNetworkSpecifierPassphrase",

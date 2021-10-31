@@ -25,7 +25,7 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Region(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -41,9 +41,9 @@ namespace android::graphics
 		jboolean contains(jint arg0, jint arg1);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getBoundaryPath();
+		android::graphics::Path getBoundaryPath();
 		jboolean getBoundaryPath(android::graphics::Path arg0);
-		QAndroidJniObject getBounds();
+		android::graphics::Rect getBounds();
 		jboolean getBounds(android::graphics::Rect arg0);
 		jboolean isComplex();
 		jboolean isEmpty();

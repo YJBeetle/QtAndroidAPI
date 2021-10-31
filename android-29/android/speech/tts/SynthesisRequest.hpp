@@ -26,7 +26,7 @@ namespace android::speech::tts
 		jstring getCharSequenceText();
 		jstring getCountry();
 		jstring getLanguage();
-		QAndroidJniObject getParams();
+		android::os::Bundle getParams();
 		jint getPitch();
 		jint getSpeechRate();
 		jstring getText();

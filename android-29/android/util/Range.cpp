@@ -17,7 +17,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject Range::create(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::util::Range Range::create(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Range",
@@ -27,7 +27,7 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Range::clamp(__JniBaseClass arg0)
+	__JniBaseClass Range::clamp(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"clamp",
@@ -59,7 +59,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject Range::extend(android::util::Range arg0)
+	android::util::Range Range::extend(android::util::Range arg0)
 	{
 		return callObjectMethod(
 			"extend",
@@ -67,7 +67,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Range::extend(__JniBaseClass arg0)
+	android::util::Range Range::extend(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"extend",
@@ -75,7 +75,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Range::extend(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::util::Range Range::extend(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"extend",
@@ -84,14 +84,14 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Range::getLower()
+	__JniBaseClass Range::getLower()
 	{
 		return callObjectMethod(
 			"getLower",
 			"()Ljava/lang/Comparable;"
 		);
 	}
-	QAndroidJniObject Range::getUpper()
+	__JniBaseClass Range::getUpper()
 	{
 		return callObjectMethod(
 			"getUpper",
@@ -105,7 +105,7 @@ namespace android::util
 			"()I"
 		);
 	}
-	QAndroidJniObject Range::intersect(android::util::Range arg0)
+	android::util::Range Range::intersect(android::util::Range arg0)
 	{
 		return callObjectMethod(
 			"intersect",
@@ -113,7 +113,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Range::intersect(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::util::Range Range::intersect(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"intersect",

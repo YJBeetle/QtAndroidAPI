@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject Display_HdrCapabilities::CREATOR()
+	__JniBaseClass Display_HdrCapabilities::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.Display$HdrCapabilities",

@@ -4,7 +4,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject WorkSource::CREATOR()
+	__JniBaseClass WorkSource::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.WorkSource",

@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject SyncInfo::account()
+	android::accounts::Account SyncInfo::account()
 	{
 		return getObjectField(
 			"account",

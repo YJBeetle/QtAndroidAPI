@@ -53,7 +53,7 @@ namespace android::widget
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring EXTRA_SHARED_ELEMENT_BOUNDS();
 		
 		// QAndroidJniObject forward
@@ -68,8 +68,8 @@ namespace android::widget
 		
 		// Methods
 		void addView(jint arg0, android::widget::RemoteViews arg1);
-		QAndroidJniObject apply(android::content::Context arg0, android::view::ViewGroup arg1);
-		QAndroidJniObject clone();
+		android::view::View apply(android::content::Context arg0, android::view::ViewGroup arg1);
+		android::widget::RemoteViews clone();
 		jint describeContents();
 		jint getLayoutId();
 		jstring getPackage();

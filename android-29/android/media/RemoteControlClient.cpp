@@ -160,7 +160,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject RemoteControlClient::editMetadata(jboolean arg0)
+	android::media::RemoteControlClient_MetadataEditor RemoteControlClient::editMetadata(jboolean arg0)
 	{
 		return callObjectMethod(
 			"editMetadata",
@@ -168,7 +168,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject RemoteControlClient::getMediaSession()
+	android::media::session::MediaSession RemoteControlClient::getMediaSession()
 	{
 		return callObjectMethod(
 			"getMediaSession",

@@ -10,9 +10,9 @@ namespace java::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DIRECT();
-		static QAndroidJniObject HTTP();
-		static QAndroidJniObject SOCKS();
+		static java::net::Proxy_Type DIRECT();
+		static java::net::Proxy_Type HTTP();
+		static java::net::Proxy_Type SOCKS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Proxy_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::net::Proxy_Type valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::net

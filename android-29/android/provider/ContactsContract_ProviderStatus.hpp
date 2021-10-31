@@ -14,7 +14,7 @@ namespace android::provider
 	public:
 		// Fields
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DATABASE_CREATION_TIMESTAMP();
 		static jstring STATUS();
 		static jint STATUS_BUSY();

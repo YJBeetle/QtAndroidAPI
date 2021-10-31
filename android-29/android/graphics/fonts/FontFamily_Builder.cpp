@@ -18,7 +18,7 @@ namespace android::graphics::fonts
 		) {}
 	
 	// Methods
-	QAndroidJniObject FontFamily_Builder::addFont(android::graphics::fonts::Font arg0)
+	android::graphics::fonts::FontFamily_Builder FontFamily_Builder::addFont(android::graphics::fonts::Font arg0)
 	{
 		return callObjectMethod(
 			"addFont",
@@ -26,7 +26,7 @@ namespace android::graphics::fonts
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FontFamily_Builder::build()
+	android::graphics::fonts::FontFamily FontFamily_Builder::build()
 	{
 		return callObjectMethod(
 			"build",

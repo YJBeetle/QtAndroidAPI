@@ -51,14 +51,14 @@ namespace javax::xml::transform::dom
 		) {}
 	
 	// Methods
-	QAndroidJniObject DOMResult::getNextSibling()
+	__JniBaseClass DOMResult::getNextSibling()
 	{
 		return callObjectMethod(
 			"getNextSibling",
 			"()Lorg/w3c/dom/Node;"
 		);
 	}
-	QAndroidJniObject DOMResult::getNode()
+	__JniBaseClass DOMResult::getNode()
 	{
 		return callObjectMethod(
 			"getNode",

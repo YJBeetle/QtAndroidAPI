@@ -11,7 +11,7 @@ namespace android::app
 			"CRASHED"
 		);
 	}
-	QAndroidJniObject ActivityManager_ProcessErrorStateInfo::CREATOR()
+	__JniBaseClass ActivityManager_ProcessErrorStateInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$ProcessErrorStateInfo",

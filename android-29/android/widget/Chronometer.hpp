@@ -35,7 +35,7 @@ namespace android::widget
 		jlong getBase();
 		jstring getContentDescription();
 		jstring getFormat();
-		QAndroidJniObject getOnChronometerTickListener();
+		__JniBaseClass getOnChronometerTickListener();
 		jboolean isCountDown();
 		jboolean isTheFinalCountDown();
 		void setBase(jlong arg0);

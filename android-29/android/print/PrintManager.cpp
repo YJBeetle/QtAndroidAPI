@@ -13,14 +13,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PrintManager::getPrintJobs()
+	__JniBaseClass PrintManager::getPrintJobs()
 	{
 		return callObjectMethod(
 			"getPrintJobs",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PrintManager::print(jstring arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2)
+	android::print::PrintJob PrintManager::print(jstring arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2)
 	{
 		return callObjectMethod(
 			"print",

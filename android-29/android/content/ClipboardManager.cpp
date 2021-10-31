@@ -27,14 +27,14 @@ namespace android::content
 			"()V"
 		);
 	}
-	QAndroidJniObject ClipboardManager::getPrimaryClip()
+	android::content::ClipData ClipboardManager::getPrimaryClip()
 	{
 		return callObjectMethod(
 			"getPrimaryClip",
 			"()Landroid/content/ClipData;"
 		);
 	}
-	QAndroidJniObject ClipboardManager::getPrimaryClipDescription()
+	android::content::ClipDescription ClipboardManager::getPrimaryClipDescription()
 	{
 		return callObjectMethod(
 			"getPrimaryClipDescription",

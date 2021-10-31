@@ -21,7 +21,7 @@ namespace android::app::slice
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring EXTRA_RANGE_VALUE();
 		static jstring EXTRA_TOGGLE_STATE();
 		static jstring HINT_ACTIONS();
@@ -61,10 +61,10 @@ namespace android::app::slice
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getHints();
-		QAndroidJniObject getItems();
-		QAndroidJniObject getSpec();
-		QAndroidJniObject getUri();
+		__JniBaseClass getHints();
+		__JniBaseClass getItems();
+		android::app::slice::SliceSpec getSpec();
+		android::net::Uri getUri();
 		jboolean isCallerNeeded();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

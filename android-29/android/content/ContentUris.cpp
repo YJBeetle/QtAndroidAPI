@@ -17,7 +17,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	QAndroidJniObject ContentUris::appendId(android::net::Uri_Builder arg0, jlong arg1)
+	android::net::Uri_Builder ContentUris::appendId(android::net::Uri_Builder arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ContentUris",
@@ -36,7 +36,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ContentUris::removeId(android::net::Uri arg0)
+	android::net::Uri ContentUris::removeId(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ContentUris",
@@ -45,7 +45,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ContentUris::withAppendedId(android::net::Uri arg0, jlong arg1)
+	android::net::Uri ContentUris::withAppendedId(android::net::Uri arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ContentUris",

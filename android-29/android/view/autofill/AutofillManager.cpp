@@ -62,14 +62,14 @@ namespace android::view::autofill
 			"()V"
 		);
 	}
-	QAndroidJniObject AutofillManager::getAutofillServiceComponentName()
+	android::content::ComponentName AutofillManager::getAutofillServiceComponentName()
 	{
 		return callObjectMethod(
 			"getAutofillServiceComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject AutofillManager::getAvailableFieldClassificationAlgorithms()
+	__JniBaseClass AutofillManager::getAvailableFieldClassificationAlgorithms()
 	{
 		return callObjectMethod(
 			"getAvailableFieldClassificationAlgorithms",
@@ -83,14 +83,14 @@ namespace android::view::autofill
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AutofillManager::getNextAutofillId()
+	android::view::autofill::AutofillId AutofillManager::getNextAutofillId()
 	{
 		return callObjectMethod(
 			"getNextAutofillId",
 			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
-	QAndroidJniObject AutofillManager::getUserData()
+	android::service::autofill::UserData AutofillManager::getUserData()
 	{
 		return callObjectMethod(
 			"getUserData",

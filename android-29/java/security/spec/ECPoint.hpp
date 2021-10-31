@@ -13,7 +13,7 @@ namespace java::security::spec
 	{
 	public:
 		// Fields
-		static QAndroidJniObject POINT_INFINITY();
+		static java::security::spec::ECPoint POINT_INFINITY();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ECPoint(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,8 +24,8 @@ namespace java::security::spec
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAffineX();
-		QAndroidJniObject getAffineY();
+		java::math::BigInteger getAffineX();
+		java::math::BigInteger getAffineY();
 		jint hashCode();
 	};
 } // namespace java::security::spec

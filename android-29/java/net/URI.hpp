@@ -42,7 +42,7 @@ namespace java::net
 		URI(jstring arg0, jstring arg1, jstring arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6);
 		
 		// Methods
-		static QAndroidJniObject create(jstring arg0);
+		static java::net::URI create(jstring arg0);
 		jint compareTo(jobject arg0);
 		jint compareTo(java::net::URI arg0);
 		jboolean equals(jobject arg0);
@@ -64,14 +64,14 @@ namespace java::net
 		jint hashCode();
 		jboolean isAbsolute();
 		jboolean isOpaque();
-		QAndroidJniObject normalize();
-		QAndroidJniObject parseServerAuthority();
-		QAndroidJniObject relativize(java::net::URI arg0);
-		QAndroidJniObject resolve(jstring arg0);
-		QAndroidJniObject resolve(java::net::URI arg0);
+		java::net::URI normalize();
+		java::net::URI parseServerAuthority();
+		java::net::URI relativize(java::net::URI arg0);
+		java::net::URI resolve(jstring arg0);
+		java::net::URI resolve(java::net::URI arg0);
 		jstring toASCIIString();
 		jstring toString();
-		QAndroidJniObject toURL();
+		java::net::URL toURL();
 	};
 } // namespace java::net
 

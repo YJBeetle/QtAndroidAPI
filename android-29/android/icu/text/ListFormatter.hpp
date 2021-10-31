@@ -25,9 +25,9 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static android::icu::text::ListFormatter getInstance();
+		static android::icu::text::ListFormatter getInstance(android::icu::util::ULocale arg0);
+		static android::icu::text::ListFormatter getInstance(java::util::Locale arg0);
 		jstring format(jobjectArray arg0);
 		jstring format(__JniBaseClass arg0);
 		jstring getPatternForNumItems(jint arg0);

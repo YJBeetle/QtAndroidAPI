@@ -34,7 +34,7 @@ namespace android::view::animation
 		// Methods
 		void addAnimation(android::view::animation::Animation arg0);
 		jlong computeDurationHint();
-		QAndroidJniObject getAnimations();
+		__JniBaseClass getAnimations();
 		jlong getDuration();
 		jlong getStartTime();
 		jboolean getTransformation(jlong arg0, android::view::animation::Transformation arg1);

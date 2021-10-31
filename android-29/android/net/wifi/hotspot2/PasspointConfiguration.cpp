@@ -6,7 +6,7 @@
 namespace android::net::wifi::hotspot2
 {
 	// Fields
-	QAndroidJniObject PasspointConfiguration::CREATOR()
+	__JniBaseClass PasspointConfiguration::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.hotspot2.PasspointConfiguration",
@@ -47,14 +47,14 @@ namespace android::net::wifi::hotspot2
 			arg0
 		);
 	}
-	QAndroidJniObject PasspointConfiguration::getCredential()
+	android::net::wifi::hotspot2::pps::Credential PasspointConfiguration::getCredential()
 	{
 		return callObjectMethod(
 			"getCredential",
 			"()Landroid/net/wifi/hotspot2/pps/Credential;"
 		);
 	}
-	QAndroidJniObject PasspointConfiguration::getHomeSp()
+	android::net::wifi::hotspot2::pps::HomeSp PasspointConfiguration::getHomeSp()
 	{
 		return callObjectMethod(
 			"getHomeSp",

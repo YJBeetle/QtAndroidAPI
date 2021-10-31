@@ -13,7 +13,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CaseMap_Upper::apply(java::util::Locale arg0, jstring arg1, __JniBaseClass arg2, android::icu::text::Edits arg3)
+	__JniBaseClass CaseMap_Upper::apply(java::util::Locale arg0, jstring arg1, __JniBaseClass arg2, android::icu::text::Edits arg3)
 	{
 		return callObjectMethod(
 			"apply",
@@ -33,7 +33,7 @@ namespace android::icu::text
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject CaseMap_Upper::omitUnchangedText()
+	android::icu::text::CaseMap_Upper CaseMap_Upper::omitUnchangedText()
 	{
 		return callObjectMethod(
 			"omitUnchangedText",

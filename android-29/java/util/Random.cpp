@@ -24,14 +24,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject Random::doubles()
+	__JniBaseClass Random::doubles()
 	{
 		return callObjectMethod(
 			"doubles",
 			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
-	QAndroidJniObject Random::doubles(jlong arg0)
+	__JniBaseClass Random::doubles(jlong arg0)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -39,7 +39,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Random::doubles(jdouble arg0, jdouble arg1)
+	__JniBaseClass Random::doubles(jdouble arg0, jdouble arg1)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -48,7 +48,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Random::doubles(jlong arg0, jdouble arg1, jdouble arg2)
+	__JniBaseClass Random::doubles(jlong arg0, jdouble arg1, jdouble arg2)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -58,14 +58,14 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Random::ints()
+	__JniBaseClass Random::ints()
 	{
 		return callObjectMethod(
 			"ints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	QAndroidJniObject Random::ints(jlong arg0)
+	__JniBaseClass Random::ints(jlong arg0)
 	{
 		return callObjectMethod(
 			"ints",
@@ -73,7 +73,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Random::ints(jint arg0, jint arg1)
+	__JniBaseClass Random::ints(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"ints",
@@ -82,7 +82,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Random::ints(jlong arg0, jint arg1, jint arg2)
+	__JniBaseClass Random::ints(jlong arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"ints",
@@ -92,14 +92,14 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Random::longs()
+	__JniBaseClass Random::longs()
 	{
 		return callObjectMethod(
 			"longs",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
-	QAndroidJniObject Random::longs(jlong arg0)
+	__JniBaseClass Random::longs(jlong arg0)
 	{
 		return callObjectMethod(
 			"longs",
@@ -107,7 +107,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Random::longs(jlong arg0, jlong arg1)
+	__JniBaseClass Random::longs(jlong arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"longs",
@@ -116,7 +116,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Random::longs(jlong arg0, jlong arg1, jlong arg2)
+	__JniBaseClass Random::longs(jlong arg0, jlong arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"longs",

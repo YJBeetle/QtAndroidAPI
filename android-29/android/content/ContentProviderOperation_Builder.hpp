@@ -29,15 +29,15 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject withExpectedCount(jint arg0);
-		QAndroidJniObject withSelection(jstring arg0, jarray arg1);
-		QAndroidJniObject withSelectionBackReference(jint arg0, jint arg1);
-		QAndroidJniObject withValue(jstring arg0, jobject arg1);
-		QAndroidJniObject withValueBackReference(jstring arg0, jint arg1);
-		QAndroidJniObject withValueBackReferences(android::content::ContentValues arg0);
-		QAndroidJniObject withValues(android::content::ContentValues arg0);
-		QAndroidJniObject withYieldAllowed(jboolean arg0);
+		android::content::ContentProviderOperation build();
+		android::content::ContentProviderOperation_Builder withExpectedCount(jint arg0);
+		android::content::ContentProviderOperation_Builder withSelection(jstring arg0, jarray arg1);
+		android::content::ContentProviderOperation_Builder withSelectionBackReference(jint arg0, jint arg1);
+		android::content::ContentProviderOperation_Builder withValue(jstring arg0, jobject arg1);
+		android::content::ContentProviderOperation_Builder withValueBackReference(jstring arg0, jint arg1);
+		android::content::ContentProviderOperation_Builder withValueBackReferences(android::content::ContentValues arg0);
+		android::content::ContentProviderOperation_Builder withValues(android::content::ContentValues arg0);
+		android::content::ContentProviderOperation_Builder withYieldAllowed(jboolean arg0);
 	};
 } // namespace android::content
 

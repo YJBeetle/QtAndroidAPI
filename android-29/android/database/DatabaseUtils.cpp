@@ -137,7 +137,7 @@ namespace android::database
 			arg2
 		);
 	}
-	QAndroidJniObject DatabaseUtils::blobFileDescriptorForQuery(android::database::sqlite::SQLiteStatement arg0, jarray arg1)
+	android::os::ParcelFileDescriptor DatabaseUtils::blobFileDescriptorForQuery(android::database::sqlite::SQLiteStatement arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",
@@ -147,7 +147,7 @@ namespace android::database
 			arg1
 		);
 	}
-	QAndroidJniObject DatabaseUtils::blobFileDescriptorForQuery(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2)
+	android::os::ParcelFileDescriptor DatabaseUtils::blobFileDescriptorForQuery(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",

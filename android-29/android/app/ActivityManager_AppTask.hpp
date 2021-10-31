@@ -34,7 +34,7 @@ namespace android::app
 		
 		// Methods
 		void finishAndRemoveTask();
-		QAndroidJniObject getTaskInfo();
+		android::app::ActivityManager_RecentTaskInfo getTaskInfo();
 		void moveToFront();
 		void setExcludeFromRecents(jboolean arg0);
 		void startActivity(android::content::Context arg0, android::content::Intent arg1, android::os::Bundle arg2);

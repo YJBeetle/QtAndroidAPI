@@ -33,19 +33,19 @@ namespace javax::xml::validation
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newDefaultInstance();
-		static QAndroidJniObject newInstance(jstring arg0);
-		static QAndroidJniObject newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
-		QAndroidJniObject getErrorHandler();
+		static javax::xml::validation::SchemaFactory newDefaultInstance();
+		static javax::xml::validation::SchemaFactory newInstance(jstring arg0);
+		static javax::xml::validation::SchemaFactory newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
+		__JniBaseClass getErrorHandler();
 		jboolean getFeature(jstring arg0);
 		jobject getProperty(jstring arg0);
-		QAndroidJniObject getResourceResolver();
+		__JniBaseClass getResourceResolver();
 		jboolean isSchemaLanguageSupported(jstring arg0);
-		QAndroidJniObject newSchema();
-		QAndroidJniObject newSchema(jarray arg0);
-		QAndroidJniObject newSchema(java::io::File arg0);
-		QAndroidJniObject newSchema(java::net::URL arg0);
-		QAndroidJniObject newSchema(__JniBaseClass arg0);
+		javax::xml::validation::Schema newSchema();
+		javax::xml::validation::Schema newSchema(jarray arg0);
+		javax::xml::validation::Schema newSchema(java::io::File arg0);
+		javax::xml::validation::Schema newSchema(java::net::URL arg0);
+		javax::xml::validation::Schema newSchema(__JniBaseClass arg0);
 		void setErrorHandler(__JniBaseClass arg0);
 		void setFeature(jstring arg0, jboolean arg1);
 		void setProperty(jstring arg0, jobject arg1);

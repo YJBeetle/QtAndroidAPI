@@ -42,7 +42,7 @@ namespace android::service::chooser
 		) {}
 	
 	// Methods
-	QAndroidJniObject ChooserTargetService::onBind(android::content::Intent arg0)
+	__JniBaseClass ChooserTargetService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -50,7 +50,7 @@ namespace android::service::chooser
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ChooserTargetService::onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1)
+	__JniBaseClass ChooserTargetService::onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1)
 	{
 		return callObjectMethod(
 			"onGetChooserTargets",

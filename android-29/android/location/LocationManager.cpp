@@ -179,7 +179,7 @@ namespace android::location
 			arg0
 		);
 	}
-	QAndroidJniObject LocationManager::getAllProviders()
+	__JniBaseClass LocationManager::getAllProviders()
 	{
 		return callObjectMethod(
 			"getAllProviders",
@@ -209,7 +209,7 @@ namespace android::location
 			"()I"
 		);
 	}
-	QAndroidJniObject LocationManager::getGpsStatus(android::location::GpsStatus arg0)
+	android::location::GpsStatus LocationManager::getGpsStatus(android::location::GpsStatus arg0)
 	{
 		return callObjectMethod(
 			"getGpsStatus",
@@ -217,7 +217,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LocationManager::getLastKnownLocation(jstring arg0)
+	android::location::Location LocationManager::getLastKnownLocation(jstring arg0)
 	{
 		return callObjectMethod(
 			"getLastKnownLocation",
@@ -225,7 +225,7 @@ namespace android::location
 			arg0
 		);
 	}
-	QAndroidJniObject LocationManager::getProvider(jstring arg0)
+	android::location::LocationProvider LocationManager::getProvider(jstring arg0)
 	{
 		return callObjectMethod(
 			"getProvider",
@@ -233,7 +233,7 @@ namespace android::location
 			arg0
 		);
 	}
-	QAndroidJniObject LocationManager::getProviders(jboolean arg0)
+	__JniBaseClass LocationManager::getProviders(jboolean arg0)
 	{
 		return callObjectMethod(
 			"getProviders",
@@ -241,7 +241,7 @@ namespace android::location
 			arg0
 		);
 	}
-	QAndroidJniObject LocationManager::getProviders(android::location::Criteria arg0, jboolean arg1)
+	__JniBaseClass LocationManager::getProviders(android::location::Criteria arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"getProviders",

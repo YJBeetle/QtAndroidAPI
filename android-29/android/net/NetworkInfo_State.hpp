@@ -10,12 +10,12 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONNECTED();
-		static QAndroidJniObject CONNECTING();
-		static QAndroidJniObject DISCONNECTED();
-		static QAndroidJniObject DISCONNECTING();
-		static QAndroidJniObject SUSPENDED();
-		static QAndroidJniObject UNKNOWN();
+		static android::net::NetworkInfo_State CONNECTED();
+		static android::net::NetworkInfo_State CONNECTING();
+		static android::net::NetworkInfo_State DISCONNECTED();
+		static android::net::NetworkInfo_State DISCONNECTING();
+		static android::net::NetworkInfo_State SUSPENDED();
+		static android::net::NetworkInfo_State UNKNOWN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkInfo_State(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,7 +24,7 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::net::NetworkInfo_State valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::net

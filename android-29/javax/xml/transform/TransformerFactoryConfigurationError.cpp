@@ -42,7 +42,7 @@ namespace javax::xml::transform
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
-	QAndroidJniObject TransformerFactoryConfigurationError::getException()
+	java::lang::Exception TransformerFactoryConfigurationError::getException()
 	{
 		return callObjectMethod(
 			"getException",

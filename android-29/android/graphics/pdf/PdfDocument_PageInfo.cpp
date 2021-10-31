@@ -11,7 +11,7 @@ namespace android::graphics::pdf
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PdfDocument_PageInfo::getContentRect()
+	android::graphics::Rect PdfDocument_PageInfo::getContentRect()
 	{
 		return callObjectMethod(
 			"getContentRect",

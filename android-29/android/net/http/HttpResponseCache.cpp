@@ -15,7 +15,7 @@ namespace android::net::http
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject HttpResponseCache::getInstalled()
+	android::net::http::HttpResponseCache HttpResponseCache::getInstalled()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.http.HttpResponseCache",
@@ -23,7 +23,7 @@ namespace android::net::http
 			"()Landroid/net/http/HttpResponseCache;"
 		);
 	}
-	QAndroidJniObject HttpResponseCache::install(java::io::File arg0, jlong arg1)
+	android::net::http::HttpResponseCache HttpResponseCache::install(java::io::File arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.http.HttpResponseCache",
@@ -54,7 +54,7 @@ namespace android::net::http
 			"()V"
 		);
 	}
-	QAndroidJniObject HttpResponseCache::get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2)
+	java::net::CacheResponse HttpResponseCache::get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"get",
@@ -92,7 +92,7 @@ namespace android::net::http
 			"()J"
 		);
 	}
-	QAndroidJniObject HttpResponseCache::put(java::net::URI arg0, java::net::URLConnection arg1)
+	java::net::CacheRequest HttpResponseCache::put(java::net::URI arg0, java::net::URLConnection arg1)
 	{
 		return callObjectMethod(
 			"put",

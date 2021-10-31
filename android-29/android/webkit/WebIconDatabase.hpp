@@ -18,7 +18,7 @@ namespace android::webkit
 		WebIconDatabase();
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static android::webkit::WebIconDatabase getInstance();
 		void close();
 		void open(jstring arg0);
 		void releaseIconForPageUrl(jstring arg0);

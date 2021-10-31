@@ -44,7 +44,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject BlockedNumberContract_BlockedNumbers::CONTENT_URI()
+	android::net::Uri BlockedNumberContract_BlockedNumbers::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.BlockedNumberContract$BlockedNumbers",

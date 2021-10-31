@@ -5,7 +5,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject ComponentInfo::applicationInfo()
+	android::content::pm::ApplicationInfo ComponentInfo::applicationInfo()
 	{
 		return getObjectField(
 			"applicationInfo",

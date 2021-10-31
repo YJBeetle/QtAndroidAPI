@@ -14,14 +14,14 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CaseMap_Title::adjustToCased()
+	android::icu::text::CaseMap_Title CaseMap_Title::adjustToCased()
 	{
 		return callObjectMethod(
 			"adjustToCased",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	QAndroidJniObject CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2, __JniBaseClass arg3, android::icu::text::Edits arg4)
+	__JniBaseClass CaseMap_Title::apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2, __JniBaseClass arg3, android::icu::text::Edits arg4)
 	{
 		return callObjectMethod(
 			"apply",
@@ -43,35 +43,35 @@ namespace android::icu::text
 			arg2
 		).object<jstring>();
 	}
-	QAndroidJniObject CaseMap_Title::noBreakAdjustment()
+	android::icu::text::CaseMap_Title CaseMap_Title::noBreakAdjustment()
 	{
 		return callObjectMethod(
 			"noBreakAdjustment",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	QAndroidJniObject CaseMap_Title::noLowercase()
+	android::icu::text::CaseMap_Title CaseMap_Title::noLowercase()
 	{
 		return callObjectMethod(
 			"noLowercase",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	QAndroidJniObject CaseMap_Title::omitUnchangedText()
+	android::icu::text::CaseMap_Title CaseMap_Title::omitUnchangedText()
 	{
 		return callObjectMethod(
 			"omitUnchangedText",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	QAndroidJniObject CaseMap_Title::sentences()
+	android::icu::text::CaseMap_Title CaseMap_Title::sentences()
 	{
 		return callObjectMethod(
 			"sentences",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	QAndroidJniObject CaseMap_Title::wholeString()
+	android::icu::text::CaseMap_Title CaseMap_Title::wholeString()
 	{
 		return callObjectMethod(
 			"wholeString",

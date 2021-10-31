@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	QAndroidJniObject SaveRequest::CREATOR()
+	__JniBaseClass SaveRequest::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.SaveRequest",
@@ -27,21 +27,21 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	QAndroidJniObject SaveRequest::getClientState()
+	android::os::Bundle SaveRequest::getClientState()
 	{
 		return callObjectMethod(
 			"getClientState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject SaveRequest::getDatasetIds()
+	__JniBaseClass SaveRequest::getDatasetIds()
 	{
 		return callObjectMethod(
 			"getDatasetIds",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject SaveRequest::getFillContexts()
+	__JniBaseClass SaveRequest::getFillContexts()
 	{
 		return callObjectMethod(
 			"getFillContexts",

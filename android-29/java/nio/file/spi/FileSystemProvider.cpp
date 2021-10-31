@@ -18,7 +18,7 @@ namespace java::nio::file::spi
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FileSystemProvider::installedProviders()
+	__JniBaseClass FileSystemProvider::installedProviders()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.spi.FileSystemProvider",
@@ -89,7 +89,7 @@ namespace java::nio::file::spi
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FileSystemProvider::getFileAttributeView(__JniBaseClass arg0, jclass arg1, jarray arg2)
+	__JniBaseClass FileSystemProvider::getFileAttributeView(__JniBaseClass arg0, jclass arg1, jarray arg2)
 	{
 		return callObjectMethod(
 			"getFileAttributeView",
@@ -99,7 +99,7 @@ namespace java::nio::file::spi
 			arg2
 		);
 	}
-	QAndroidJniObject FileSystemProvider::getFileStore(__JniBaseClass arg0)
+	java::nio::file::FileStore FileSystemProvider::getFileStore(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"getFileStore",
@@ -107,7 +107,7 @@ namespace java::nio::file::spi
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FileSystemProvider::getFileSystem(java::net::URI arg0)
+	java::nio::file::FileSystem FileSystemProvider::getFileSystem(java::net::URI arg0)
 	{
 		return callObjectMethod(
 			"getFileSystem",
@@ -115,7 +115,7 @@ namespace java::nio::file::spi
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FileSystemProvider::getPath(java::net::URI arg0)
+	__JniBaseClass FileSystemProvider::getPath(java::net::URI arg0)
 	{
 		return callObjectMethod(
 			"getPath",
@@ -157,7 +157,7 @@ namespace java::nio::file::spi
 			arg2
 		);
 	}
-	QAndroidJniObject FileSystemProvider::newAsynchronousFileChannel(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, jarray arg3)
+	java::nio::channels::AsynchronousFileChannel FileSystemProvider::newAsynchronousFileChannel(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, jarray arg3)
 	{
 		return callObjectMethod(
 			"newAsynchronousFileChannel",
@@ -168,7 +168,7 @@ namespace java::nio::file::spi
 			arg3
 		);
 	}
-	QAndroidJniObject FileSystemProvider::newByteChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2)
+	__JniBaseClass FileSystemProvider::newByteChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2)
 	{
 		return callObjectMethod(
 			"newByteChannel",
@@ -178,7 +178,7 @@ namespace java::nio::file::spi
 			arg2
 		);
 	}
-	QAndroidJniObject FileSystemProvider::newDirectoryStream(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass FileSystemProvider::newDirectoryStream(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"newDirectoryStream",
@@ -187,7 +187,7 @@ namespace java::nio::file::spi
 			arg1.object()
 		);
 	}
-	QAndroidJniObject FileSystemProvider::newFileChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2)
+	java::nio::channels::FileChannel FileSystemProvider::newFileChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2)
 	{
 		return callObjectMethod(
 			"newFileChannel",
@@ -197,7 +197,7 @@ namespace java::nio::file::spi
 			arg2
 		);
 	}
-	QAndroidJniObject FileSystemProvider::newFileSystem(java::net::URI arg0, __JniBaseClass arg1)
+	java::nio::file::FileSystem FileSystemProvider::newFileSystem(java::net::URI arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"newFileSystem",
@@ -206,7 +206,7 @@ namespace java::nio::file::spi
 			arg1.object()
 		);
 	}
-	QAndroidJniObject FileSystemProvider::newFileSystem(__JniBaseClass arg0, __JniBaseClass arg1)
+	java::nio::file::FileSystem FileSystemProvider::newFileSystem(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"newFileSystem",
@@ -215,7 +215,7 @@ namespace java::nio::file::spi
 			arg1.object()
 		);
 	}
-	QAndroidJniObject FileSystemProvider::newInputStream(__JniBaseClass arg0, jarray arg1)
+	java::io::InputStream FileSystemProvider::newInputStream(__JniBaseClass arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"newInputStream",
@@ -224,7 +224,7 @@ namespace java::nio::file::spi
 			arg1
 		);
 	}
-	QAndroidJniObject FileSystemProvider::newOutputStream(__JniBaseClass arg0, jarray arg1)
+	java::io::OutputStream FileSystemProvider::newOutputStream(__JniBaseClass arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"newOutputStream",
@@ -233,7 +233,7 @@ namespace java::nio::file::spi
 			arg1
 		);
 	}
-	QAndroidJniObject FileSystemProvider::readAttributes(__JniBaseClass arg0, jclass arg1, jarray arg2)
+	__JniBaseClass FileSystemProvider::readAttributes(__JniBaseClass arg0, jclass arg1, jarray arg2)
 	{
 		return callObjectMethod(
 			"readAttributes",
@@ -243,7 +243,7 @@ namespace java::nio::file::spi
 			arg2
 		);
 	}
-	QAndroidJniObject FileSystemProvider::readAttributes(__JniBaseClass arg0, jstring arg1, jarray arg2)
+	__JniBaseClass FileSystemProvider::readAttributes(__JniBaseClass arg0, jstring arg1, jarray arg2)
 	{
 		return callObjectMethod(
 			"readAttributes",
@@ -253,7 +253,7 @@ namespace java::nio::file::spi
 			arg2
 		);
 	}
-	QAndroidJniObject FileSystemProvider::readSymbolicLink(__JniBaseClass arg0)
+	__JniBaseClass FileSystemProvider::readSymbolicLink(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"readSymbolicLink",

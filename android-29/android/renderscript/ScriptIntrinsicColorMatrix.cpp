@@ -18,7 +18,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ScriptIntrinsicColorMatrix::create(android::renderscript::RenderScript arg0)
+	android::renderscript::ScriptIntrinsicColorMatrix ScriptIntrinsicColorMatrix::create(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicColorMatrix",
@@ -27,7 +27,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicColorMatrix::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
+	android::renderscript::ScriptIntrinsicColorMatrix ScriptIntrinsicColorMatrix::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicColorMatrix",
@@ -56,7 +56,7 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicColorMatrix::getKernelID()
+	android::renderscript::Script_KernelID ScriptIntrinsicColorMatrix::getKernelID()
 	{
 		return callObjectMethod(
 			"getKernelID",

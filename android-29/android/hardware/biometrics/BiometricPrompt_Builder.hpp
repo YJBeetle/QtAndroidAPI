@@ -26,13 +26,13 @@ namespace android::hardware::biometrics
 		BiometricPrompt_Builder(android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setConfirmationRequired(jboolean arg0);
-		QAndroidJniObject setDescription(jstring arg0);
-		QAndroidJniObject setDeviceCredentialAllowed(jboolean arg0);
-		QAndroidJniObject setNegativeButton(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		QAndroidJniObject setSubtitle(jstring arg0);
-		QAndroidJniObject setTitle(jstring arg0);
+		android::hardware::biometrics::BiometricPrompt build();
+		android::hardware::biometrics::BiometricPrompt_Builder setConfirmationRequired(jboolean arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setDescription(jstring arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setDeviceCredentialAllowed(jboolean arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setNegativeButton(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		android::hardware::biometrics::BiometricPrompt_Builder setSubtitle(jstring arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setTitle(jstring arg0);
 	};
 } // namespace android::hardware::biometrics
 

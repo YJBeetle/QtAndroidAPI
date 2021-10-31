@@ -38,7 +38,7 @@ namespace android::content
 		void deliverResult(jobject arg0);
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		void forceLoad();
-		QAndroidJniObject getContext();
+		android::content::Context getContext();
 		jint getId();
 		jboolean isAbandoned();
 		jboolean isReset();

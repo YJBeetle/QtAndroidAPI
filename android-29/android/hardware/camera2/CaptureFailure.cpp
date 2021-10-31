@@ -46,7 +46,7 @@ namespace android::hardware::camera2
 			"()I"
 		);
 	}
-	QAndroidJniObject CaptureFailure::getRequest()
+	android::hardware::camera2::CaptureRequest CaptureFailure::getRequest()
 	{
 		return callObjectMethod(
 			"getRequest",

@@ -25,7 +25,7 @@ namespace android::view::textclassifier
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextClassification(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -35,16 +35,16 @@ namespace android::view::textclassifier
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getActions();
+		__JniBaseClass getActions();
 		jfloat getConfidenceScore(jstring arg0);
 		jstring getEntity(jint arg0);
 		jint getEntityCount();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getIcon();
+		android::os::Bundle getExtras();
+		android::graphics::drawable::Drawable getIcon();
 		jstring getId();
-		QAndroidJniObject getIntent();
+		android::content::Intent getIntent();
 		jstring getLabel();
-		QAndroidJniObject getOnClickListener();
+		__JniBaseClass getOnClickListener();
 		jstring getText();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

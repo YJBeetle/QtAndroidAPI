@@ -40,7 +40,7 @@ namespace android::icu::text
 		jstring deleteFrom(jstring arg0);
 		jstring deleteFrom(jstring arg0, android::icu::text::UnicodeSet_SpanCondition arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getUnicodeSet();
+		android::icu::text::UnicodeSet getUnicodeSet();
 		jint hashCode();
 		jstring replaceFrom(jstring arg0, jstring arg1);
 		jstring replaceFrom(jstring arg0, jstring arg1, android::icu::text::UnicodeSetSpanner_CountMethod arg2);

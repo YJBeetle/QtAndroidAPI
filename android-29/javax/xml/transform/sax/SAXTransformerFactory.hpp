@@ -20,10 +20,10 @@ namespace javax::xml::transform::sax
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject newTemplatesHandler();
-		QAndroidJniObject newTransformerHandler();
-		QAndroidJniObject newTransformerHandler(__JniBaseClass arg0);
-		QAndroidJniObject newXMLFilter(__JniBaseClass arg0);
+		__JniBaseClass newTemplatesHandler();
+		__JniBaseClass newTransformerHandler();
+		__JniBaseClass newTransformerHandler(__JniBaseClass arg0);
+		__JniBaseClass newXMLFilter(__JniBaseClass arg0);
 	};
 } // namespace javax::xml::transform::sax
 

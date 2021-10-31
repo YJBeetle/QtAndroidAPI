@@ -21,10 +21,10 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
-		QAndroidJniObject account();
+		static __JniBaseClass CREATOR();
+		android::accounts::Account account();
 		jstring authority();
-		QAndroidJniObject extras();
+		android::os::Bundle extras();
 		jlong period();
 		
 		// QAndroidJniObject forward

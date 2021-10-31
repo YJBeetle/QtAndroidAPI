@@ -10,9 +10,9 @@ namespace android::widget
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EDITABLE();
-		static QAndroidJniObject NORMAL();
-		static QAndroidJniObject SPANNABLE();
+		static android::widget::TextView_BufferType EDITABLE();
+		static android::widget::TextView_BufferType NORMAL();
+		static android::widget::TextView_BufferType SPANNABLE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextView_BufferType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::widget
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::widget::TextView_BufferType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::widget

@@ -4,7 +4,7 @@
 namespace android::media
 {
 	// Fields
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_100()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_100()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -12,7 +12,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_120()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_120()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -20,7 +20,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_200()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_200()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -28,7 +28,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_24()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_24()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -36,7 +36,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_240()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_240()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -44,7 +44,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_25()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_25()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -52,7 +52,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_30()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_30()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -60,7 +60,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_50()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_50()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -68,7 +68,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_60()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::FHD_60()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -76,7 +76,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_100()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_100()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -84,7 +84,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_120()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_120()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -92,7 +92,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_200()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_200()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -100,7 +100,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_24()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_24()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -108,7 +108,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_240()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_240()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -116,7 +116,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_25()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_25()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -124,7 +124,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_30()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_30()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -132,7 +132,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_50()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_50()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -140,7 +140,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_60()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::HD_60()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -148,7 +148,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_24()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_24()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -156,7 +156,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_25()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_25()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -164,7 +164,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_30()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_30()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -172,7 +172,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_48()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_48()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -180,7 +180,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_50()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_50()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -188,7 +188,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_60()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::SD_60()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -196,7 +196,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_100()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_100()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -204,7 +204,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_120()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_120()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -212,7 +212,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_200()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_200()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -220,7 +220,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_24()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_24()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -228,7 +228,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_240()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_240()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -236,7 +236,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_25()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_25()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -244,7 +244,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_30()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_30()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -252,7 +252,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_50()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_50()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
@@ -260,7 +260,7 @@ namespace android::media
 			"Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_60()
+	android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint MediaCodecInfo_VideoCapabilities_PerformancePoint::UHD_60()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",

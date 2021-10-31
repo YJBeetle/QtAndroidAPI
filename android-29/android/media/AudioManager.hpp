@@ -169,11 +169,11 @@ namespace android::media
 		void adjustVolume(jint arg0, jint arg1);
 		void dispatchMediaKeyEvent(android::view::KeyEvent arg0);
 		jint generateAudioSessionId();
-		QAndroidJniObject getActivePlaybackConfigurations();
-		QAndroidJniObject getActiveRecordingConfigurations();
+		__JniBaseClass getActivePlaybackConfigurations();
+		__JniBaseClass getActiveRecordingConfigurations();
 		jint getAllowedCapturePolicy();
 		jarray getDevices(jint arg0);
-		QAndroidJniObject getMicrophones();
+		__JniBaseClass getMicrophones();
 		jint getMode();
 		jstring getParameters(jstring arg0);
 		jstring getProperty(jstring arg0);

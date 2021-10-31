@@ -17,7 +17,7 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProxyInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,14 +26,14 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject buildDirectProxy(jstring arg0, jint arg1);
-		static QAndroidJniObject buildDirectProxy(jstring arg0, jint arg1, __JniBaseClass arg2);
-		static QAndroidJniObject buildPacProxy(android::net::Uri arg0);
+		static android::net::ProxyInfo buildDirectProxy(jstring arg0, jint arg1);
+		static android::net::ProxyInfo buildDirectProxy(jstring arg0, jint arg1, __JniBaseClass arg2);
+		static android::net::ProxyInfo buildPacProxy(android::net::Uri arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jarray getExclusionList();
 		jstring getHost();
-		QAndroidJniObject getPacFileUrl();
+		android::net::Uri getPacFileUrl();
 		jint getPort();
 		jint hashCode();
 		jstring toString();

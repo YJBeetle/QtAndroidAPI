@@ -5,7 +5,7 @@
 namespace android::accounts
 {
 	// Fields
-	QAndroidJniObject AccountAuthenticatorResponse::CREATOR()
+	__JniBaseClass AccountAuthenticatorResponse::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountAuthenticatorResponse",

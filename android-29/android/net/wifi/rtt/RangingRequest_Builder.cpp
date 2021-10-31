@@ -19,7 +19,7 @@ namespace android::net::wifi::rtt
 		) {}
 	
 	// Methods
-	QAndroidJniObject RangingRequest_Builder::addAccessPoint(android::net::wifi::ScanResult arg0)
+	android::net::wifi::rtt::RangingRequest_Builder RangingRequest_Builder::addAccessPoint(android::net::wifi::ScanResult arg0)
 	{
 		return callObjectMethod(
 			"addAccessPoint",
@@ -27,7 +27,7 @@ namespace android::net::wifi::rtt
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RangingRequest_Builder::addAccessPoints(__JniBaseClass arg0)
+	android::net::wifi::rtt::RangingRequest_Builder RangingRequest_Builder::addAccessPoints(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"addAccessPoints",
@@ -35,7 +35,7 @@ namespace android::net::wifi::rtt
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RangingRequest_Builder::addWifiAwarePeer(android::net::MacAddress arg0)
+	android::net::wifi::rtt::RangingRequest_Builder RangingRequest_Builder::addWifiAwarePeer(android::net::MacAddress arg0)
 	{
 		return callObjectMethod(
 			"addWifiAwarePeer",
@@ -43,7 +43,7 @@ namespace android::net::wifi::rtt
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RangingRequest_Builder::addWifiAwarePeer(android::net::wifi::aware::PeerHandle arg0)
+	android::net::wifi::rtt::RangingRequest_Builder RangingRequest_Builder::addWifiAwarePeer(android::net::wifi::aware::PeerHandle arg0)
 	{
 		return callObjectMethod(
 			"addWifiAwarePeer",
@@ -51,7 +51,7 @@ namespace android::net::wifi::rtt
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RangingRequest_Builder::build()
+	android::net::wifi::rtt::RangingRequest RangingRequest_Builder::build()
 	{
 		return callObjectMethod(
 			"build",

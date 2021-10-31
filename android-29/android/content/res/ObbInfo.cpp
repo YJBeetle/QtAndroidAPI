@@ -4,7 +4,7 @@
 namespace android::content::res
 {
 	// Fields
-	QAndroidJniObject ObbInfo::CREATOR()
+	__JniBaseClass ObbInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.res.ObbInfo",

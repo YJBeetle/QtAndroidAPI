@@ -22,14 +22,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	QAndroidJniObject TextClassification_Request_Builder::build()
+	android::view::textclassifier::TextClassification_Request TextClassification_Request_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextClassification$Request;"
 		);
 	}
-	QAndroidJniObject TextClassification_Request_Builder::setDefaultLocales(android::os::LocaleList arg0)
+	android::view::textclassifier::TextClassification_Request_Builder TextClassification_Request_Builder::setDefaultLocales(android::os::LocaleList arg0)
 	{
 		return callObjectMethod(
 			"setDefaultLocales",
@@ -37,7 +37,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassification_Request_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::TextClassification_Request_Builder TextClassification_Request_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -45,7 +45,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassification_Request_Builder::setReferenceTime(java::time::ZonedDateTime arg0)
+	android::view::textclassifier::TextClassification_Request_Builder TextClassification_Request_Builder::setReferenceTime(java::time::ZonedDateTime arg0)
 	{
 		return callObjectMethod(
 			"setReferenceTime",

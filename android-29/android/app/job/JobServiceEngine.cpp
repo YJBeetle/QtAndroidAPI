@@ -18,7 +18,7 @@ namespace android::app::job
 		) {}
 	
 	// Methods
-	QAndroidJniObject JobServiceEngine::getBinder()
+	__JniBaseClass JobServiceEngine::getBinder()
 	{
 		return callObjectMethod(
 			"getBinder",

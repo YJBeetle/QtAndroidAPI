@@ -19,7 +19,7 @@ namespace android::net
 		static jstring AUTH_HMAC_SHA256();
 		static jstring AUTH_HMAC_SHA384();
 		static jstring AUTH_HMAC_SHA512();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring CRYPT_AES_CBC();
 		
 		// QAndroidJniObject forward

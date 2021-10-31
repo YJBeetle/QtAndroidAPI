@@ -5,7 +5,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject IpPrefix::CREATOR()
+	__JniBaseClass IpPrefix::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.IpPrefix",
@@ -43,7 +43,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject IpPrefix::getAddress()
+	java::net::InetAddress IpPrefix::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",

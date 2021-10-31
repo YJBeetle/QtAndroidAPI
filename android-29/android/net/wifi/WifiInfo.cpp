@@ -36,7 +36,7 @@ namespace android::net::wifi
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WifiInfo::getDetailedStateOf(android::net::wifi::SupplicantState arg0)
+	android::net::NetworkInfo_DetailedState WifiInfo::getDetailedStateOf(android::net::wifi::SupplicantState arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.wifi.WifiInfo",
@@ -136,7 +136,7 @@ namespace android::net::wifi
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WifiInfo::getSupplicantState()
+	android::net::wifi::SupplicantState WifiInfo::getSupplicantState()
 	{
 		return callObjectMethod(
 			"getSupplicantState",

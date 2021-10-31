@@ -78,28 +78,28 @@ namespace java::security::cert
 			"()I"
 		);
 	}
-	QAndroidJniObject X509CertSelector::getCertificate()
+	java::security::cert::X509Certificate X509CertSelector::getCertificate()
 	{
 		return callObjectMethod(
 			"getCertificate",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	QAndroidJniObject X509CertSelector::getCertificateValid()
+	java::util::Date X509CertSelector::getCertificateValid()
 	{
 		return callObjectMethod(
 			"getCertificateValid",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject X509CertSelector::getExtendedKeyUsage()
+	__JniBaseClass X509CertSelector::getExtendedKeyUsage()
 	{
 		return callObjectMethod(
 			"getExtendedKeyUsage",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject X509CertSelector::getIssuer()
+	javax::security::auth::x500::X500Principal X509CertSelector::getIssuer()
 	{
 		return callObjectMethod(
 			"getIssuer",
@@ -141,42 +141,42 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject X509CertSelector::getPathToNames()
+	__JniBaseClass X509CertSelector::getPathToNames()
 	{
 		return callObjectMethod(
 			"getPathToNames",
 			"()Ljava/util/Collection;"
 		);
 	}
-	QAndroidJniObject X509CertSelector::getPolicy()
+	__JniBaseClass X509CertSelector::getPolicy()
 	{
 		return callObjectMethod(
 			"getPolicy",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject X509CertSelector::getPrivateKeyValid()
+	java::util::Date X509CertSelector::getPrivateKeyValid()
 	{
 		return callObjectMethod(
 			"getPrivateKeyValid",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject X509CertSelector::getSerialNumber()
+	java::math::BigInteger X509CertSelector::getSerialNumber()
 	{
 		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject X509CertSelector::getSubject()
+	javax::security::auth::x500::X500Principal X509CertSelector::getSubject()
 	{
 		return callObjectMethod(
 			"getSubject",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	QAndroidJniObject X509CertSelector::getSubjectAlternativeNames()
+	__JniBaseClass X509CertSelector::getSubjectAlternativeNames()
 	{
 		return callObjectMethod(
 			"getSubjectAlternativeNames",
@@ -204,7 +204,7 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject X509CertSelector::getSubjectPublicKey()
+	__JniBaseClass X509CertSelector::getSubjectPublicKey()
 	{
 		return callObjectMethod(
 			"getSubjectPublicKey",

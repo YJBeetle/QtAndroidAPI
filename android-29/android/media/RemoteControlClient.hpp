@@ -54,8 +54,8 @@ namespace android::media
 		RemoteControlClient(android::app::PendingIntent arg0, android::os::Looper arg1);
 		
 		// Methods
-		QAndroidJniObject editMetadata(jboolean arg0);
-		QAndroidJniObject getMediaSession();
+		android::media::RemoteControlClient_MetadataEditor editMetadata(jboolean arg0);
+		android::media::session::MediaSession getMediaSession();
 		void setMetadataUpdateListener(__JniBaseClass arg0);
 		void setOnGetPlaybackPositionListener(__JniBaseClass arg0);
 		void setPlaybackPositionUpdateListener(__JniBaseClass arg0);

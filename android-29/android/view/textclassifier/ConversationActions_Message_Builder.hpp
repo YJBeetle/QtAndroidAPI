@@ -34,10 +34,10 @@ namespace android::view::textclassifier
 		ConversationActions_Message_Builder(android::app::Person arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
-		QAndroidJniObject setReferenceTime(java::time::ZonedDateTime arg0);
-		QAndroidJniObject setText(jstring arg0);
+		android::view::textclassifier::ConversationActions_Message build();
+		android::view::textclassifier::ConversationActions_Message_Builder setExtras(android::os::Bundle arg0);
+		android::view::textclassifier::ConversationActions_Message_Builder setReferenceTime(java::time::ZonedDateTime arg0);
+		android::view::textclassifier::ConversationActions_Message_Builder setText(jstring arg0);
 	};
 } // namespace android::view::textclassifier
 

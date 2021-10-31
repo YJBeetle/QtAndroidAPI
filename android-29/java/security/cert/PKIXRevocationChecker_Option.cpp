@@ -3,7 +3,7 @@
 namespace java::security::cert
 {
 	// Fields
-	QAndroidJniObject PKIXRevocationChecker_Option::NO_FALLBACK()
+	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::NO_FALLBACK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
@@ -11,7 +11,7 @@ namespace java::security::cert
 			"Ljava/security/cert/PKIXRevocationChecker$Option;"
 		);
 	}
-	QAndroidJniObject PKIXRevocationChecker_Option::ONLY_END_ENTITY()
+	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::ONLY_END_ENTITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
@@ -19,7 +19,7 @@ namespace java::security::cert
 			"Ljava/security/cert/PKIXRevocationChecker$Option;"
 		);
 	}
-	QAndroidJniObject PKIXRevocationChecker_Option::PREFER_CRLS()
+	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::PREFER_CRLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
@@ -27,7 +27,7 @@ namespace java::security::cert
 			"Ljava/security/cert/PKIXRevocationChecker$Option;"
 		);
 	}
-	QAndroidJniObject PKIXRevocationChecker_Option::SOFT_FAIL()
+	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::SOFT_FAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
@@ -42,7 +42,7 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PKIXRevocationChecker_Option::valueOf(jstring arg0)
+	java::security::cert::PKIXRevocationChecker_Option PKIXRevocationChecker_Option::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.cert.PKIXRevocationChecker$Option",

@@ -13,8 +13,8 @@ namespace java::lang
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FALSE();
-		static QAndroidJniObject TRUE();
+		static java::lang::Boolean FALSE();
+		static java::lang::Boolean TRUE();
 		static jclass TYPE();
 		
 		// QAndroidJniObject forward
@@ -34,12 +34,12 @@ namespace java::lang
 		static jboolean logicalXor(jboolean arg0, jboolean arg1);
 		static jboolean parseBoolean(jstring arg0);
 		static jstring toString(jboolean arg0);
-		static QAndroidJniObject valueOf(jboolean arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::lang::Boolean valueOf(jboolean arg0);
+		static java::lang::Boolean valueOf(jstring arg0);
 		jboolean booleanValue();
 		jint compareTo(java::lang::Boolean arg0);
 		jint compareTo(jobject arg0);
-		QAndroidJniObject describeConstable();
+		java::util::Optional describeConstable();
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jstring toString();

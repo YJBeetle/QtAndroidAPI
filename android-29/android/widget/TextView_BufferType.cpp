@@ -3,7 +3,7 @@
 namespace android::widget
 {
 	// Fields
-	QAndroidJniObject TextView_BufferType::EDITABLE()
+	android::widget::TextView_BufferType TextView_BufferType::EDITABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.TextView$BufferType",
@@ -11,7 +11,7 @@ namespace android::widget
 			"Landroid/widget/TextView$BufferType;"
 		);
 	}
-	QAndroidJniObject TextView_BufferType::NORMAL()
+	android::widget::TextView_BufferType TextView_BufferType::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.TextView$BufferType",
@@ -19,7 +19,7 @@ namespace android::widget
 			"Landroid/widget/TextView$BufferType;"
 		);
 	}
-	QAndroidJniObject TextView_BufferType::SPANNABLE()
+	android::widget::TextView_BufferType TextView_BufferType::SPANNABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.TextView$BufferType",
@@ -34,7 +34,7 @@ namespace android::widget
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TextView_BufferType::valueOf(jstring arg0)
+	android::widget::TextView_BufferType TextView_BufferType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.TextView$BufferType",

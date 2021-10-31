@@ -3,7 +3,7 @@
 namespace android::renderscript
 {
 	// Fields
-	QAndroidJniObject Element_DataType::BOOLEAN()
+	android::renderscript::Element_DataType Element_DataType::BOOLEAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -11,7 +11,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::FLOAT_16()
+	android::renderscript::Element_DataType Element_DataType::FLOAT_16()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -19,7 +19,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::FLOAT_32()
+	android::renderscript::Element_DataType Element_DataType::FLOAT_32()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -27,7 +27,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::FLOAT_64()
+	android::renderscript::Element_DataType Element_DataType::FLOAT_64()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -35,7 +35,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::MATRIX_2X2()
+	android::renderscript::Element_DataType Element_DataType::MATRIX_2X2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -43,7 +43,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::MATRIX_3X3()
+	android::renderscript::Element_DataType Element_DataType::MATRIX_3X3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -51,7 +51,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::MATRIX_4X4()
+	android::renderscript::Element_DataType Element_DataType::MATRIX_4X4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -59,7 +59,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::NONE()
+	android::renderscript::Element_DataType Element_DataType::NONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -67,7 +67,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_ALLOCATION()
+	android::renderscript::Element_DataType Element_DataType::RS_ALLOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -75,7 +75,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_ELEMENT()
+	android::renderscript::Element_DataType Element_DataType::RS_ELEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -83,7 +83,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_FONT()
+	android::renderscript::Element_DataType Element_DataType::RS_FONT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -91,7 +91,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_MESH()
+	android::renderscript::Element_DataType Element_DataType::RS_MESH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -99,7 +99,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_PROGRAM_FRAGMENT()
+	android::renderscript::Element_DataType Element_DataType::RS_PROGRAM_FRAGMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -107,7 +107,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_PROGRAM_RASTER()
+	android::renderscript::Element_DataType Element_DataType::RS_PROGRAM_RASTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -115,7 +115,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_PROGRAM_STORE()
+	android::renderscript::Element_DataType Element_DataType::RS_PROGRAM_STORE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -123,7 +123,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_PROGRAM_VERTEX()
+	android::renderscript::Element_DataType Element_DataType::RS_PROGRAM_VERTEX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -131,7 +131,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_SAMPLER()
+	android::renderscript::Element_DataType Element_DataType::RS_SAMPLER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -139,7 +139,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_SCRIPT()
+	android::renderscript::Element_DataType Element_DataType::RS_SCRIPT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -147,7 +147,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::RS_TYPE()
+	android::renderscript::Element_DataType Element_DataType::RS_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -155,7 +155,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::SIGNED_16()
+	android::renderscript::Element_DataType Element_DataType::SIGNED_16()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -163,7 +163,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::SIGNED_32()
+	android::renderscript::Element_DataType Element_DataType::SIGNED_32()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -171,7 +171,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::SIGNED_64()
+	android::renderscript::Element_DataType Element_DataType::SIGNED_64()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -179,7 +179,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::SIGNED_8()
+	android::renderscript::Element_DataType Element_DataType::SIGNED_8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -187,7 +187,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::UNSIGNED_16()
+	android::renderscript::Element_DataType Element_DataType::UNSIGNED_16()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -195,7 +195,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::UNSIGNED_32()
+	android::renderscript::Element_DataType Element_DataType::UNSIGNED_32()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -203,7 +203,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::UNSIGNED_4_4_4_4()
+	android::renderscript::Element_DataType Element_DataType::UNSIGNED_4_4_4_4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -211,7 +211,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::UNSIGNED_5_5_5_1()
+	android::renderscript::Element_DataType Element_DataType::UNSIGNED_5_5_5_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -219,7 +219,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::UNSIGNED_5_6_5()
+	android::renderscript::Element_DataType Element_DataType::UNSIGNED_5_6_5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -227,7 +227,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::UNSIGNED_64()
+	android::renderscript::Element_DataType Element_DataType::UNSIGNED_64()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -235,7 +235,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::UNSIGNED_8()
+	android::renderscript::Element_DataType Element_DataType::UNSIGNED_8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
@@ -250,7 +250,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Element_DataType::valueOf(jstring arg0)
+	android::renderscript::Element_DataType Element_DataType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element$DataType",

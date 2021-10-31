@@ -103,7 +103,7 @@ namespace java::util::concurrent::locks
 			"()V"
 		);
 	}
-	QAndroidJniObject ReentrantLock::newCondition()
+	__JniBaseClass ReentrantLock::newCondition()
 	{
 		return callObjectMethod(
 			"newCondition",

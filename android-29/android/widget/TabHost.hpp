@@ -59,11 +59,11 @@ namespace android::widget
 		jstring getAccessibilityClassName();
 		jint getCurrentTab();
 		jstring getCurrentTabTag();
-		QAndroidJniObject getCurrentTabView();
-		QAndroidJniObject getCurrentView();
-		QAndroidJniObject getTabContentView();
-		QAndroidJniObject getTabWidget();
-		QAndroidJniObject newTabSpec(jstring arg0);
+		android::view::View getCurrentTabView();
+		android::view::View getCurrentView();
+		android::widget::FrameLayout getTabContentView();
+		android::widget::TabWidget getTabWidget();
+		android::widget::TabHost_TabSpec newTabSpec(jstring arg0);
 		void onTouchModeChanged(jboolean arg0);
 		void setCurrentTab(jint arg0);
 		void setCurrentTabByTag(jstring arg0);

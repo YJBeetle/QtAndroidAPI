@@ -10,7 +10,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject PendingIntent::CREATOR()
+	__JniBaseClass PendingIntent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.PendingIntent",
@@ -60,7 +60,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PendingIntent::getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3)
+	android::app::PendingIntent PendingIntent::getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.PendingIntent",
@@ -72,7 +72,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject PendingIntent::getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3, android::os::Bundle arg4)
+	android::app::PendingIntent PendingIntent::getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3, android::os::Bundle arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.PendingIntent",
@@ -85,7 +85,7 @@ namespace android::app
 			arg4.object()
 		);
 	}
-	QAndroidJniObject PendingIntent::getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
+	android::app::PendingIntent PendingIntent::getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.PendingIntent",
@@ -97,7 +97,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject PendingIntent::getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3, android::os::Bundle arg4)
+	android::app::PendingIntent PendingIntent::getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3, android::os::Bundle arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.PendingIntent",
@@ -110,7 +110,7 @@ namespace android::app
 			arg4.object()
 		);
 	}
-	QAndroidJniObject PendingIntent::getBroadcast(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
+	android::app::PendingIntent PendingIntent::getBroadcast(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.PendingIntent",
@@ -122,7 +122,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject PendingIntent::getForegroundService(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
+	android::app::PendingIntent PendingIntent::getForegroundService(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.PendingIntent",
@@ -134,7 +134,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject PendingIntent::getService(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
+	android::app::PendingIntent PendingIntent::getService(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.PendingIntent",
@@ -146,7 +146,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject PendingIntent::readPendingIntentOrNullFromParcel(android::os::Parcel arg0)
+	android::app::PendingIntent PendingIntent::readPendingIntentOrNullFromParcel(android::os::Parcel arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.PendingIntent",
@@ -201,14 +201,14 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject PendingIntent::getCreatorUserHandle()
+	android::os::UserHandle PendingIntent::getCreatorUserHandle()
 	{
 		return callObjectMethod(
 			"getCreatorUserHandle",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	QAndroidJniObject PendingIntent::getIntentSender()
+	android::content::IntentSender PendingIntent::getIntentSender()
 	{
 		return callObjectMethod(
 			"getIntentSender",

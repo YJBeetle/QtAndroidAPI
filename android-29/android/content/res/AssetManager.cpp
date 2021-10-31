@@ -62,7 +62,7 @@ namespace android::content::res
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject AssetManager::open(jstring arg0)
+	java::io::InputStream AssetManager::open(jstring arg0)
 	{
 		return callObjectMethod(
 			"open",
@@ -70,7 +70,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject AssetManager::open(jstring arg0, jint arg1)
+	java::io::InputStream AssetManager::open(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"open",
@@ -79,7 +79,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	QAndroidJniObject AssetManager::openFd(jstring arg0)
+	android::content::res::AssetFileDescriptor AssetManager::openFd(jstring arg0)
 	{
 		return callObjectMethod(
 			"openFd",
@@ -87,7 +87,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject AssetManager::openNonAssetFd(jstring arg0)
+	android::content::res::AssetFileDescriptor AssetManager::openNonAssetFd(jstring arg0)
 	{
 		return callObjectMethod(
 			"openNonAssetFd",
@@ -95,7 +95,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject AssetManager::openNonAssetFd(jint arg0, jstring arg1)
+	android::content::res::AssetFileDescriptor AssetManager::openNonAssetFd(jint arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"openNonAssetFd",
@@ -104,7 +104,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	QAndroidJniObject AssetManager::openXmlResourceParser(jstring arg0)
+	__JniBaseClass AssetManager::openXmlResourceParser(jstring arg0)
 	{
 		return callObjectMethod(
 			"openXmlResourceParser",
@@ -112,7 +112,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject AssetManager::openXmlResourceParser(jint arg0, jstring arg1)
+	__JniBaseClass AssetManager::openXmlResourceParser(jint arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"openXmlResourceParser",

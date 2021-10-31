@@ -35,7 +35,7 @@ namespace android::app::backup
 			"()V"
 		);
 	}
-	QAndroidJniObject BackupManager::getUserForAncestralSerialNumber(jlong arg0)
+	android::os::UserHandle BackupManager::getUserForAncestralSerialNumber(jlong arg0)
 	{
 		return callObjectMethod(
 			"getUserForAncestralSerialNumber",

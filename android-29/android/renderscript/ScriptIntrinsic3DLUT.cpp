@@ -15,7 +15,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ScriptIntrinsic3DLUT::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
+	android::renderscript::ScriptIntrinsic3DLUT ScriptIntrinsic3DLUT::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsic3DLUT",
@@ -44,7 +44,7 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsic3DLUT::getKernelID()
+	android::renderscript::Script_KernelID ScriptIntrinsic3DLUT::getKernelID()
 	{
 		return callObjectMethod(
 			"getKernelID",

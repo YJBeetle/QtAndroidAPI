@@ -234,7 +234,7 @@ namespace android::icu::lang
 		static jint getScript(jint arg0);
 		static jint getScriptExtensions(jint arg0, java::util::BitSet arg1);
 		static jstring getShortName(jint arg0);
-		static QAndroidJniObject getUsage(jint arg0);
+		static android::icu::lang::UScript_ScriptUsage getUsage(jint arg0);
 		static jboolean hasScript(jint arg0, jint arg1);
 		static jboolean isCased(jint arg0);
 		static jboolean isRightToLeft(jint arg0);

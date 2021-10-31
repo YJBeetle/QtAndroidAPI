@@ -44,14 +44,14 @@ namespace android::icu::text
 		
 		// Methods
 		jobject clone();
-		QAndroidJniObject cloneAsThawed();
+		android::icu::text::RuleBasedCollator cloneAsThawed();
 		jint compare(jstring arg0, jstring arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject freeze();
-		QAndroidJniObject getCollationElementIterator(android::icu::text::UCharacterIterator arg0);
-		QAndroidJniObject getCollationElementIterator(jstring arg0);
-		QAndroidJniObject getCollationElementIterator(__JniBaseClass arg0);
-		QAndroidJniObject getCollationKey(jstring arg0);
+		android::icu::text::Collator freeze();
+		android::icu::text::CollationElementIterator getCollationElementIterator(android::icu::text::UCharacterIterator arg0);
+		android::icu::text::CollationElementIterator getCollationElementIterator(jstring arg0);
+		android::icu::text::CollationElementIterator getCollationElementIterator(__JniBaseClass arg0);
+		android::icu::text::CollationKey getCollationKey(jstring arg0);
 		void getContractionsAndExpansions(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet arg1, jboolean arg2);
 		jint getDecomposition();
 		jint getMaxVariable();
@@ -60,10 +60,10 @@ namespace android::icu::text
 		jstring getRules();
 		jstring getRules(jboolean arg0);
 		jint getStrength();
-		QAndroidJniObject getTailoredSet();
-		QAndroidJniObject getUCAVersion();
+		android::icu::text::UnicodeSet getTailoredSet();
+		android::icu::util::VersionInfo getUCAVersion();
 		jint getVariableTop();
-		QAndroidJniObject getVersion();
+		android::icu::util::VersionInfo getVersion();
 		jint hashCode();
 		jboolean isAlternateHandlingShifted();
 		jboolean isCaseLevel();
@@ -81,7 +81,7 @@ namespace android::icu::text
 		void setFrenchCollation(jboolean arg0);
 		void setFrenchCollationDefault();
 		void setLowerCaseFirst(jboolean arg0);
-		QAndroidJniObject setMaxVariable(jint arg0);
+		android::icu::text::RuleBasedCollator setMaxVariable(jint arg0);
 		void setNumericCollation(jboolean arg0);
 		void setNumericCollationDefault();
 		void setReorderCodes(jintArray arg0);

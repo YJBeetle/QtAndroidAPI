@@ -10,9 +10,9 @@ namespace android::webkit
 	{
 	public:
 		// Fields
-		static QAndroidJniObject HIGH();
-		static QAndroidJniObject LOW();
-		static QAndroidJniObject NORMAL();
+		static android::webkit::WebSettings_RenderPriority HIGH();
+		static android::webkit::WebSettings_RenderPriority LOW();
+		static android::webkit::WebSettings_RenderPriority NORMAL();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebSettings_RenderPriority(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::webkit::WebSettings_RenderPriority valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::webkit

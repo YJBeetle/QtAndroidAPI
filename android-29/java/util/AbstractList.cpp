@@ -74,7 +74,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject AbstractList::iterator()
+	__JniBaseClass AbstractList::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -89,14 +89,14 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject AbstractList::listIterator()
+	__JniBaseClass AbstractList::listIterator()
 	{
 		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	QAndroidJniObject AbstractList::listIterator(jint arg0)
+	__JniBaseClass AbstractList::listIterator(jint arg0)
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -121,7 +121,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	QAndroidJniObject AbstractList::subList(jint arg0, jint arg1)
+	__JniBaseClass AbstractList::subList(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subList",

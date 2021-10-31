@@ -11,7 +11,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	QAndroidJniObject InputMethodInfo::CREATOR()
+	__JniBaseClass InputMethodInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.InputMethodInfo",
@@ -66,7 +66,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	QAndroidJniObject InputMethodInfo::getComponent()
+	android::content::ComponentName InputMethodInfo::getComponent()
 	{
 		return callObjectMethod(
 			"getComponent",
@@ -94,7 +94,7 @@ namespace android::view::inputmethod
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject InputMethodInfo::getServiceInfo()
+	android::content::pm::ServiceInfo InputMethodInfo::getServiceInfo()
 	{
 		return callObjectMethod(
 			"getServiceInfo",
@@ -115,7 +115,7 @@ namespace android::view::inputmethod
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject InputMethodInfo::getSubtypeAt(jint arg0)
+	android::view::inputmethod::InputMethodSubtype InputMethodInfo::getSubtypeAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getSubtypeAt",
@@ -137,7 +137,7 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	QAndroidJniObject InputMethodInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable InputMethodInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadIcon",

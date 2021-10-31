@@ -23,35 +23,35 @@ namespace java::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SecureCacheResponse::getLocalCertificateChain()
+	__JniBaseClass SecureCacheResponse::getLocalCertificateChain()
 	{
 		return callObjectMethod(
 			"getLocalCertificateChain",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject SecureCacheResponse::getLocalPrincipal()
+	__JniBaseClass SecureCacheResponse::getLocalPrincipal()
 	{
 		return callObjectMethod(
 			"getLocalPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	QAndroidJniObject SecureCacheResponse::getPeerPrincipal()
+	__JniBaseClass SecureCacheResponse::getPeerPrincipal()
 	{
 		return callObjectMethod(
 			"getPeerPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	QAndroidJniObject SecureCacheResponse::getSSLSession()
+	java::util::Optional SecureCacheResponse::getSSLSession()
 	{
 		return callObjectMethod(
 			"getSSLSession",
 			"()Ljava/util/Optional;"
 		);
 	}
-	QAndroidJniObject SecureCacheResponse::getServerCertificateChain()
+	__JniBaseClass SecureCacheResponse::getServerCertificateChain()
 	{
 		return callObjectMethod(
 			"getServerCertificateChain",

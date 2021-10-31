@@ -28,8 +28,8 @@ namespace android::app
 		Notification_MediaStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
-		QAndroidJniObject setMediaSession(android::media::session::MediaSession_Token arg0);
-		QAndroidJniObject setShowActionsInCompactView(jintArray arg0);
+		android::app::Notification_MediaStyle setMediaSession(android::media::session::MediaSession_Token arg0);
+		android::app::Notification_MediaStyle setShowActionsInCompactView(jintArray arg0);
 	};
 } // namespace android::app
 

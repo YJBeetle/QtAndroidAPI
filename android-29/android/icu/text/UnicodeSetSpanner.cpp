@@ -72,7 +72,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject UnicodeSetSpanner::getUnicodeSet()
+	android::icu::text::UnicodeSet UnicodeSetSpanner::getUnicodeSet()
 	{
 		return callObjectMethod(
 			"getUnicodeSet",

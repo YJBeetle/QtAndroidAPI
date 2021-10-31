@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject View_BaseSavedState::CREATOR()
+	__JniBaseClass View_BaseSavedState::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View$BaseSavedState",

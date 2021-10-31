@@ -49,7 +49,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUDIO_ATTRIBUTES_DEFAULT();
+		static android::media::AudioAttributes AUDIO_ATTRIBUTES_DEFAULT();
 		static jint BADGE_ICON_LARGE();
 		static jint BADGE_ICON_NONE();
 		static jint BADGE_ICON_SMALL();
@@ -70,7 +70,7 @@ namespace android::app
 		static jstring CATEGORY_SYSTEM();
 		static jstring CATEGORY_TRANSPORT();
 		static jint COLOR_DEFAULT();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DEFAULT_ALL();
 		static jint DEFAULT_LIGHTS();
 		static jint DEFAULT_SOUND();
@@ -138,31 +138,31 @@ namespace android::app
 		static jint VISIBILITY_PUBLIC();
 		static jint VISIBILITY_SECRET();
 		jarray actions();
-		QAndroidJniObject audioAttributes();
+		android::media::AudioAttributes audioAttributes();
 		jint audioStreamType();
-		QAndroidJniObject bigContentView();
+		android::widget::RemoteViews bigContentView();
 		jstring category();
 		jint color();
-		QAndroidJniObject contentIntent();
-		QAndroidJniObject contentView();
+		android::app::PendingIntent contentIntent();
+		android::widget::RemoteViews contentView();
 		jint defaults();
-		QAndroidJniObject deleteIntent();
-		QAndroidJniObject extras();
+		android::app::PendingIntent deleteIntent();
+		android::os::Bundle extras();
 		jint flags();
-		QAndroidJniObject fullScreenIntent();
-		QAndroidJniObject headsUpContentView();
+		android::app::PendingIntent fullScreenIntent();
+		android::widget::RemoteViews headsUpContentView();
 		jint icon();
 		jint iconLevel();
-		QAndroidJniObject largeIcon();
+		android::graphics::Bitmap largeIcon();
 		jint ledARGB();
 		jint ledOffMS();
 		jint ledOnMS();
 		jint number();
 		jint priority();
-		QAndroidJniObject publicVersion();
-		QAndroidJniObject sound();
+		android::app::Notification publicVersion();
+		android::net::Uri sound();
 		jstring tickerText();
-		QAndroidJniObject tickerView();
+		android::widget::RemoteViews tickerView();
 		jlongArray vibrate();
 		jint visibility();
 		jlong when();
@@ -177,19 +177,19 @@ namespace android::app
 		Notification(jint arg0, jstring arg1, jlong arg2);
 		
 		// Methods
-		QAndroidJniObject clone();
+		android::app::Notification clone();
 		jint describeContents();
 		jboolean getAllowSystemGeneratedContextualActions();
 		jint getBadgeIconType();
-		QAndroidJniObject getBubbleMetadata();
+		android::app::Notification_BubbleMetadata getBubbleMetadata();
 		jstring getChannelId();
 		jstring getGroup();
 		jint getGroupAlertBehavior();
-		QAndroidJniObject getLargeIcon();
-		QAndroidJniObject getLocusId();
+		android::graphics::drawable::Icon getLargeIcon();
+		android::content::LocusId getLocusId();
 		jstring getSettingsText();
 		jstring getShortcutId();
-		QAndroidJniObject getSmallIcon();
+		android::graphics::drawable::Icon getSmallIcon();
 		jstring getSortKey();
 		jlong getTimeoutAfter();
 		jstring toString();

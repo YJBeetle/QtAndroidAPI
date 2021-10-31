@@ -53,7 +53,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::AUTHORITY_URI()
+	android::net::Uri MediaStore::AUTHORITY_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
@@ -321,7 +321,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaStore::getDocumentUri(android::content::Context arg0, android::net::Uri arg1)
+	android::net::Uri MediaStore::getDocumentUri(android::content::Context arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -331,7 +331,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaStore::getExternalVolumeNames(android::content::Context arg0)
+	__JniBaseClass MediaStore::getExternalVolumeNames(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -340,7 +340,7 @@ namespace android::provider
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaStore::getMediaScannerUri()
+	android::net::Uri MediaStore::getMediaScannerUri()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -348,7 +348,7 @@ namespace android::provider
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject MediaStore::getMediaUri(android::content::Context arg0, android::net::Uri arg1)
+	android::net::Uri MediaStore::getMediaUri(android::content::Context arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -386,7 +386,7 @@ namespace android::provider
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::setIncludePending(android::net::Uri arg0)
+	android::net::Uri MediaStore::setIncludePending(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -395,7 +395,7 @@ namespace android::provider
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaStore::setRequireOriginal(android::net::Uri arg0)
+	android::net::Uri MediaStore::setRequireOriginal(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore",

@@ -33,7 +33,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint MODE_APPEND();
 		static jint MODE_CREATE();
 		static jint MODE_READ_ONLY();
@@ -51,17 +51,17 @@ namespace android::os
 		ParcelFileDescriptor(android::os::ParcelFileDescriptor &arg0);
 		
 		// Methods
-		static QAndroidJniObject adoptFd(jint arg0);
+		static android::os::ParcelFileDescriptor adoptFd(jint arg0);
 		static jarray createPipe();
 		static jarray createReliablePipe();
 		static jarray createReliableSocketPair();
 		static jarray createSocketPair();
-		static QAndroidJniObject dup(java::io::FileDescriptor arg0);
-		static QAndroidJniObject fromDatagramSocket(java::net::DatagramSocket arg0);
-		static QAndroidJniObject fromFd(jint arg0);
-		static QAndroidJniObject fromSocket(java::net::Socket arg0);
-		static QAndroidJniObject open(java::io::File arg0, jint arg1);
-		static QAndroidJniObject open(java::io::File arg0, jint arg1, android::os::Handler arg2, __JniBaseClass arg3);
+		static android::os::ParcelFileDescriptor dup(java::io::FileDescriptor arg0);
+		static android::os::ParcelFileDescriptor fromDatagramSocket(java::net::DatagramSocket arg0);
+		static android::os::ParcelFileDescriptor fromFd(jint arg0);
+		static android::os::ParcelFileDescriptor fromSocket(java::net::Socket arg0);
+		static android::os::ParcelFileDescriptor open(java::io::File arg0, jint arg1);
+		static android::os::ParcelFileDescriptor open(java::io::File arg0, jint arg1, android::os::Handler arg2, __JniBaseClass arg3);
 		static jint parseMode(jstring arg0);
 		jboolean canDetectErrors();
 		void checkError();
@@ -69,9 +69,9 @@ namespace android::os
 		void closeWithError(jstring arg0);
 		jint describeContents();
 		jint detachFd();
-		QAndroidJniObject dup();
+		android::os::ParcelFileDescriptor dup();
 		jint getFd();
-		QAndroidJniObject getFileDescriptor();
+		java::io::FileDescriptor getFileDescriptor();
 		jlong getStatSize();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

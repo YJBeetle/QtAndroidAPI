@@ -39,9 +39,9 @@ namespace android::hardware::camera2::params
 		jboolean equals(jobject arg0);
 		jint getHeight();
 		jint getMeteringWeight();
-		QAndroidJniObject getRect();
-		QAndroidJniObject getSize();
-		QAndroidJniObject getUpperLeftPoint();
+		android::graphics::Rect getRect();
+		android::util::Size getSize();
+		android::graphics::Point getUpperLeftPoint();
 		jint getWidth();
 		jint getX();
 		jint getY();

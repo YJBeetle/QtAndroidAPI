@@ -17,14 +17,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Person_Builder::build()
+	android::app::Person Person_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/Person;"
 		);
 	}
-	QAndroidJniObject Person_Builder::setBot(jboolean arg0)
+	android::app::Person_Builder Person_Builder::setBot(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setBot",
@@ -32,7 +32,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Person_Builder::setIcon(android::graphics::drawable::Icon arg0)
+	android::app::Person_Builder Person_Builder::setIcon(android::graphics::drawable::Icon arg0)
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -40,7 +40,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Person_Builder::setImportant(jboolean arg0)
+	android::app::Person_Builder Person_Builder::setImportant(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setImportant",
@@ -48,7 +48,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Person_Builder::setKey(jstring arg0)
+	android::app::Person_Builder Person_Builder::setKey(jstring arg0)
 	{
 		return callObjectMethod(
 			"setKey",
@@ -56,7 +56,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Person_Builder::setName(jstring arg0)
+	android::app::Person_Builder Person_Builder::setName(jstring arg0)
 	{
 		return callObjectMethod(
 			"setName",
@@ -64,7 +64,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Person_Builder::setUri(jstring arg0)
+	android::app::Person_Builder Person_Builder::setUri(jstring arg0)
 	{
 		return callObjectMethod(
 			"setUri",

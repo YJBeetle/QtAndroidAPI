@@ -10,11 +10,11 @@ namespace android::webkit
 	{
 	public:
 		// Fields
-		static QAndroidJniObject LARGER();
-		static QAndroidJniObject LARGEST();
-		static QAndroidJniObject NORMAL();
-		static QAndroidJniObject SMALLER();
-		static QAndroidJniObject SMALLEST();
+		static android::webkit::WebSettings_TextSize LARGER();
+		static android::webkit::WebSettings_TextSize LARGEST();
+		static android::webkit::WebSettings_TextSize NORMAL();
+		static android::webkit::WebSettings_TextSize SMALLER();
+		static android::webkit::WebSettings_TextSize SMALLEST();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebSettings_TextSize(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -23,7 +23,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::webkit::WebSettings_TextSize valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::webkit

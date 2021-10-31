@@ -13,7 +13,7 @@ namespace android::bluetooth::le
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint INTERVAL_HIGH();
 		static jint INTERVAL_LOW();
 		static jint INTERVAL_MAX();

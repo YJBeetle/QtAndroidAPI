@@ -101,17 +101,17 @@ namespace android::accessibilityservice
 		// Methods
 		void disableSelf();
 		jboolean dispatchGesture(android::accessibilityservice::GestureDescription arg0, android::accessibilityservice::AccessibilityService_GestureResultCallback arg1, android::os::Handler arg2);
-		QAndroidJniObject findFocus(jint arg0);
-		QAndroidJniObject getAccessibilityButtonController();
-		QAndroidJniObject getFingerprintGestureController();
-		QAndroidJniObject getMagnificationController();
-		QAndroidJniObject getRootInActiveWindow();
-		QAndroidJniObject getServiceInfo();
-		QAndroidJniObject getSoftKeyboardController();
+		android::view::accessibility::AccessibilityNodeInfo findFocus(jint arg0);
+		android::accessibilityservice::AccessibilityButtonController getAccessibilityButtonController();
+		android::accessibilityservice::FingerprintGestureController getFingerprintGestureController();
+		android::accessibilityservice::AccessibilityService_MagnificationController getMagnificationController();
+		android::view::accessibility::AccessibilityNodeInfo getRootInActiveWindow();
+		android::accessibilityservice::AccessibilityServiceInfo getServiceInfo();
+		android::accessibilityservice::AccessibilityService_SoftKeyboardController getSoftKeyboardController();
 		jobject getSystemService(jstring arg0);
-		QAndroidJniObject getWindows();
+		__JniBaseClass getWindows();
 		void onAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onInterrupt();
 		jboolean performGlobalAction(jint arg0);
 		void setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0);

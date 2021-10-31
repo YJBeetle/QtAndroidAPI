@@ -26,8 +26,8 @@ namespace java::security::spec
 		ECPublicKeySpec(java::security::spec::ECPoint arg0, java::security::spec::ECParameterSpec arg1);
 		
 		// Methods
-		QAndroidJniObject getParams();
-		QAndroidJniObject getW();
+		java::security::spec::ECParameterSpec getParams();
+		java::security::spec::ECPoint getW();
 	};
 } // namespace java::security::spec
 

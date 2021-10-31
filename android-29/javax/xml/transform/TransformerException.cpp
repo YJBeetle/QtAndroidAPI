@@ -68,7 +68,7 @@ namespace javax::xml::transform
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TransformerException::getLocator()
+	__JniBaseClass TransformerException::getLocator()
 	{
 		return callObjectMethod(
 			"getLocator",

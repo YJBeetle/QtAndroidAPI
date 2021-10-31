@@ -12,7 +12,7 @@ namespace android::media
 			"COMMAND_CODE_CUSTOM"
 		);
 	}
-	QAndroidJniObject Session2Command::CREATOR()
+	__JniBaseClass Session2Command::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.Session2Command",
@@ -69,7 +69,7 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Session2Command::getCustomExtras()
+	android::os::Bundle Session2Command::getCustomExtras()
 	{
 		return callObjectMethod(
 			"getCustomExtras",

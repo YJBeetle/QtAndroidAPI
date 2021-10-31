@@ -49,7 +49,7 @@ namespace android::text::style
 		ImageSpan(android::graphics::drawable::Drawable arg0, jstring arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject getDrawable();
+		android::graphics::drawable::Drawable getDrawable();
 		jstring getSource();
 	};
 } // namespace android::text::style

@@ -29,15 +29,15 @@ namespace javax::xml::parsers
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newDefaultInstance();
-		static QAndroidJniObject newDefaultNSInstance();
-		static QAndroidJniObject newInstance();
-		static QAndroidJniObject newInstance(jstring arg0, java::lang::ClassLoader arg1);
-		static QAndroidJniObject newNSInstance();
-		static QAndroidJniObject newNSInstance(jstring arg0, java::lang::ClassLoader arg1);
+		static javax::xml::parsers::DocumentBuilderFactory newDefaultInstance();
+		static javax::xml::parsers::DocumentBuilderFactory newDefaultNSInstance();
+		static javax::xml::parsers::DocumentBuilderFactory newInstance();
+		static javax::xml::parsers::DocumentBuilderFactory newInstance(jstring arg0, java::lang::ClassLoader arg1);
+		static javax::xml::parsers::DocumentBuilderFactory newNSInstance();
+		static javax::xml::parsers::DocumentBuilderFactory newNSInstance(jstring arg0, java::lang::ClassLoader arg1);
 		jobject getAttribute(jstring arg0);
 		jboolean getFeature(jstring arg0);
-		QAndroidJniObject getSchema();
+		javax::xml::validation::Schema getSchema();
 		jboolean isCoalescing();
 		jboolean isExpandEntityReferences();
 		jboolean isIgnoringComments();
@@ -45,7 +45,7 @@ namespace javax::xml::parsers
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		jboolean isXIncludeAware();
-		QAndroidJniObject newDocumentBuilder();
+		javax::xml::parsers::DocumentBuilder newDocumentBuilder();
 		void setAttribute(jstring arg0, jobject arg1);
 		void setCoalescing(jboolean arg0);
 		void setExpandEntityReferences(jboolean arg0);

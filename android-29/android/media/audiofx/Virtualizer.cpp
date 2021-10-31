@@ -77,7 +77,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	QAndroidJniObject Virtualizer::getProperties()
+	android::media::audiofx::Virtualizer_Settings Virtualizer::getProperties()
 	{
 		return callObjectMethod(
 			"getProperties",

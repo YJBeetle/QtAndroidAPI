@@ -26,8 +26,8 @@ namespace android::view::textclassifier
 		TextLanguage_Request_Builder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
+		android::view::textclassifier::TextLanguage_Request build();
+		android::view::textclassifier::TextLanguage_Request_Builder setExtras(android::os::Bundle arg0);
 	};
 } // namespace android::view::textclassifier
 

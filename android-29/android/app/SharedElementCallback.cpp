@@ -19,7 +19,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject SharedElementCallback::onCaptureSharedElementSnapshot(android::view::View arg0, android::graphics::Matrix arg1, android::graphics::RectF arg2)
+	__JniBaseClass SharedElementCallback::onCaptureSharedElementSnapshot(android::view::View arg0, android::graphics::Matrix arg1, android::graphics::RectF arg2)
 	{
 		return callObjectMethod(
 			"onCaptureSharedElementSnapshot",
@@ -29,7 +29,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject SharedElementCallback::onCreateSnapshotView(android::content::Context arg0, __JniBaseClass arg1)
+	android::view::View SharedElementCallback::onCreateSnapshotView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"onCreateSnapshotView",

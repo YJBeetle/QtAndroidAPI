@@ -16,7 +16,7 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject JarURLConnection::getAttributes()
+	java::util::jar::Attributes JarURLConnection::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",
@@ -37,35 +37,35 @@ namespace java::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject JarURLConnection::getJarEntry()
+	java::util::jar::JarEntry JarURLConnection::getJarEntry()
 	{
 		return callObjectMethod(
 			"getJarEntry",
 			"()Ljava/util/jar/JarEntry;"
 		);
 	}
-	QAndroidJniObject JarURLConnection::getJarFile()
+	java::util::jar::JarFile JarURLConnection::getJarFile()
 	{
 		return callObjectMethod(
 			"getJarFile",
 			"()Ljava/util/jar/JarFile;"
 		);
 	}
-	QAndroidJniObject JarURLConnection::getJarFileURL()
+	java::net::URL JarURLConnection::getJarFileURL()
 	{
 		return callObjectMethod(
 			"getJarFileURL",
 			"()Ljava/net/URL;"
 		);
 	}
-	QAndroidJniObject JarURLConnection::getMainAttributes()
+	java::util::jar::Attributes JarURLConnection::getMainAttributes()
 	{
 		return callObjectMethod(
 			"getMainAttributes",
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
-	QAndroidJniObject JarURLConnection::getManifest()
+	java::util::jar::Manifest JarURLConnection::getManifest()
 	{
 		return callObjectMethod(
 			"getManifest",

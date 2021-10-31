@@ -11,7 +11,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Arrays::asList(jobjectArray arg0)
+	__JniBaseClass Arrays::asList(jobjectArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2093,7 +2093,7 @@ namespace java::util
 			arg3.object()
 		);
 	}
-	QAndroidJniObject Arrays::spliterator(jobjectArray arg0)
+	__JniBaseClass Arrays::spliterator(jobjectArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2102,7 +2102,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Arrays::spliterator(jobjectArray arg0, jint arg1, jint arg2)
+	__JniBaseClass Arrays::spliterator(jobjectArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2113,7 +2113,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Arrays::spliterator(jdoubleArray arg0)
+	__JniBaseClass Arrays::spliterator(jdoubleArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2122,7 +2122,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Arrays::spliterator(jdoubleArray arg0, jint arg1, jint arg2)
+	__JniBaseClass Arrays::spliterator(jdoubleArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2133,7 +2133,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Arrays::spliterator(jintArray arg0)
+	__JniBaseClass Arrays::spliterator(jintArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2142,7 +2142,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Arrays::spliterator(jintArray arg0, jint arg1, jint arg2)
+	__JniBaseClass Arrays::spliterator(jintArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2153,7 +2153,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Arrays::spliterator(jlongArray arg0)
+	__JniBaseClass Arrays::spliterator(jlongArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2162,7 +2162,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Arrays::spliterator(jlongArray arg0, jint arg1, jint arg2)
+	__JniBaseClass Arrays::spliterator(jlongArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2173,7 +2173,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Arrays::stream(jdoubleArray arg0)
+	__JniBaseClass Arrays::stream(jdoubleArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2182,7 +2182,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Arrays::stream(jdoubleArray arg0, jint arg1, jint arg2)
+	__JniBaseClass Arrays::stream(jdoubleArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2193,7 +2193,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Arrays::stream(jintArray arg0)
+	__JniBaseClass Arrays::stream(jintArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2202,7 +2202,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Arrays::stream(jintArray arg0, jint arg1, jint arg2)
+	__JniBaseClass Arrays::stream(jintArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2213,7 +2213,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Arrays::stream(jlongArray arg0)
+	__JniBaseClass Arrays::stream(jlongArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2222,7 +2222,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Arrays::stream(jlongArray arg0, jint arg1, jint arg2)
+	__JniBaseClass Arrays::stream(jlongArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2233,7 +2233,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Arrays::stream(jobjectArray arg0)
+	__JniBaseClass Arrays::stream(jobjectArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",
@@ -2242,7 +2242,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Arrays::stream(jobjectArray arg0, jint arg1, jint arg2)
+	__JniBaseClass Arrays::stream(jobjectArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Arrays",

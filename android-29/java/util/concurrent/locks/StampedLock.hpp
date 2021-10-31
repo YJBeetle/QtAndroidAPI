@@ -30,9 +30,9 @@ namespace java::util::concurrent::locks
 		static jboolean isOptimisticReadStamp(jlong arg0);
 		static jboolean isReadLockStamp(jlong arg0);
 		static jboolean isWriteLockStamp(jlong arg0);
-		QAndroidJniObject asReadLock();
-		QAndroidJniObject asReadWriteLock();
-		QAndroidJniObject asWriteLock();
+		__JniBaseClass asReadLock();
+		__JniBaseClass asReadWriteLock();
+		__JniBaseClass asWriteLock();
 		jint getReadLockCount();
 		jboolean isReadLocked();
 		jboolean isWriteLocked();

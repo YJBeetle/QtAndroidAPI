@@ -25,12 +25,12 @@ namespace javax::net::ssl
 		// Methods
 		jstring getCipherSuite();
 		jarray getLocalCertificates();
-		QAndroidJniObject getLocalPrincipal();
+		__JniBaseClass getLocalPrincipal();
 		jarray getPeerCertificateChain();
 		jarray getPeerCertificates();
-		QAndroidJniObject getPeerPrincipal();
-		QAndroidJniObject getSession();
-		QAndroidJniObject getSocket();
+		__JniBaseClass getPeerPrincipal();
+		__JniBaseClass getSession();
+		javax::net::ssl::SSLSocket getSocket();
 	};
 } // namespace javax::net::ssl
 

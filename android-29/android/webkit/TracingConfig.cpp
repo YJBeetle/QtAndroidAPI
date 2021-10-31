@@ -80,7 +80,7 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TracingConfig::getCustomIncludedCategories()
+	__JniBaseClass TracingConfig::getCustomIncludedCategories()
 	{
 		return callObjectMethod(
 			"getCustomIncludedCategories",

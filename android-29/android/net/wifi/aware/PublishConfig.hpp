@@ -13,7 +13,7 @@ namespace android::net::wifi::aware
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint PUBLISH_TYPE_SOLICITED();
 		static jint PUBLISH_TYPE_UNSOLICITED();
 		

@@ -10,7 +10,7 @@ namespace android::net::wifi::p2p::nsd
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WifiP2pUpnpServiceInfo::newInstance(jstring arg0, jstring arg1, __JniBaseClass arg2)
+	android::net::wifi::p2p::nsd::WifiP2pUpnpServiceInfo WifiP2pUpnpServiceInfo::newInstance(jstring arg0, jstring arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.wifi.p2p.nsd.WifiP2pUpnpServiceInfo",

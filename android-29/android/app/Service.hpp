@@ -53,9 +53,9 @@ namespace android::app
 		Service();
 		
 		// Methods
-		QAndroidJniObject getApplication();
+		android::app::Application getApplication();
 		jint getForegroundServiceType();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onConfigurationChanged(android::content::res::Configuration arg0);
 		void onCreate();
 		void onDestroy();

@@ -10,7 +10,7 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Validator::getErrorHandler()
+	__JniBaseClass Validator::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",
@@ -33,7 +33,7 @@ namespace javax::xml::validation
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject Validator::getResourceResolver()
+	__JniBaseClass Validator::getResourceResolver()
 	{
 		return callObjectMethod(
 			"getResourceResolver",

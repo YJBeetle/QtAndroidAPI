@@ -13,8 +13,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject CONTENT_URI_BY_INSTANCE();
+		static android::net::Uri CONTENT_URI();
+		static android::net::Uri CONTENT_URI_BY_INSTANCE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CalendarContract_CalendarAlerts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

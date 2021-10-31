@@ -25,7 +25,7 @@ namespace android::media
 			"AUDIO_FALLBACK_MODE_MUTE"
 		);
 	}
-	QAndroidJniObject PlaybackParams::CREATOR()
+	__JniBaseClass PlaybackParams::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.PlaybackParams",
@@ -45,7 +45,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject PlaybackParams::allowDefaults()
+	android::media::PlaybackParams PlaybackParams::allowDefaults()
 	{
 		return callObjectMethod(
 			"allowDefaults",
@@ -80,7 +80,7 @@ namespace android::media
 			"()F"
 		);
 	}
-	QAndroidJniObject PlaybackParams::setAudioFallbackMode(jint arg0)
+	android::media::PlaybackParams PlaybackParams::setAudioFallbackMode(jint arg0)
 	{
 		return callObjectMethod(
 			"setAudioFallbackMode",
@@ -88,7 +88,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject PlaybackParams::setPitch(jfloat arg0)
+	android::media::PlaybackParams PlaybackParams::setPitch(jfloat arg0)
 	{
 		return callObjectMethod(
 			"setPitch",
@@ -96,7 +96,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject PlaybackParams::setSpeed(jfloat arg0)
+	android::media::PlaybackParams PlaybackParams::setSpeed(jfloat arg0)
 	{
 		return callObjectMethod(
 			"setSpeed",

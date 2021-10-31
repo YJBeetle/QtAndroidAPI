@@ -34,9 +34,9 @@ namespace java::text
 		jobject clone();
 		jint compare(jstring arg0, jstring arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCollationElementIterator(jstring arg0);
-		QAndroidJniObject getCollationElementIterator(__JniBaseClass arg0);
-		QAndroidJniObject getCollationKey(jstring arg0);
+		java::text::CollationElementIterator getCollationElementIterator(jstring arg0);
+		java::text::CollationElementIterator getCollationElementIterator(__JniBaseClass arg0);
+		java::text::CollationKey getCollationKey(jstring arg0);
 		jstring getRules();
 		jint hashCode();
 	};

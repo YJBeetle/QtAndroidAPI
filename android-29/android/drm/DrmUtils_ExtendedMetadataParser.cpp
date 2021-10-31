@@ -18,14 +18,14 @@ namespace android::drm
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject DrmUtils_ExtendedMetadataParser::iterator()
+	__JniBaseClass DrmUtils_ExtendedMetadataParser::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject DrmUtils_ExtendedMetadataParser::keyIterator()
+	__JniBaseClass DrmUtils_ExtendedMetadataParser::keyIterator()
 	{
 		return callObjectMethod(
 			"keyIterator",

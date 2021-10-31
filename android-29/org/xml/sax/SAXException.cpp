@@ -44,7 +44,7 @@ namespace org::xml::sax
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
-	QAndroidJniObject SAXException::getException()
+	java::lang::Exception SAXException::getException()
 	{
 		return callObjectMethod(
 			"getException",

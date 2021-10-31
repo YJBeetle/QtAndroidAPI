@@ -18,14 +18,14 @@ namespace android::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject JsonWriter::beginArray()
+	android::util::JsonWriter JsonWriter::beginArray()
 	{
 		return callObjectMethod(
 			"beginArray",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
-	QAndroidJniObject JsonWriter::beginObject()
+	android::util::JsonWriter JsonWriter::beginObject()
 	{
 		return callObjectMethod(
 			"beginObject",
@@ -39,14 +39,14 @@ namespace android::util
 			"()V"
 		);
 	}
-	QAndroidJniObject JsonWriter::endArray()
+	android::util::JsonWriter JsonWriter::endArray()
 	{
 		return callObjectMethod(
 			"endArray",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
-	QAndroidJniObject JsonWriter::endObject()
+	android::util::JsonWriter JsonWriter::endObject()
 	{
 		return callObjectMethod(
 			"endObject",
@@ -67,7 +67,7 @@ namespace android::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject JsonWriter::name(jstring arg0)
+	android::util::JsonWriter JsonWriter::name(jstring arg0)
 	{
 		return callObjectMethod(
 			"name",
@@ -75,7 +75,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject JsonWriter::nullValue()
+	android::util::JsonWriter JsonWriter::nullValue()
 	{
 		return callObjectMethod(
 			"nullValue",
@@ -98,7 +98,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject JsonWriter::value(jboolean arg0)
+	android::util::JsonWriter JsonWriter::value(jboolean arg0)
 	{
 		return callObjectMethod(
 			"value",
@@ -106,7 +106,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject JsonWriter::value(jdouble arg0)
+	android::util::JsonWriter JsonWriter::value(jdouble arg0)
 	{
 		return callObjectMethod(
 			"value",
@@ -114,7 +114,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject JsonWriter::value(java::lang::Number arg0)
+	android::util::JsonWriter JsonWriter::value(java::lang::Number arg0)
 	{
 		return callObjectMethod(
 			"value",
@@ -122,7 +122,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject JsonWriter::value(jstring arg0)
+	android::util::JsonWriter JsonWriter::value(jstring arg0)
 	{
 		return callObjectMethod(
 			"value",
@@ -130,7 +130,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject JsonWriter::value(jlong arg0)
+	android::util::JsonWriter JsonWriter::value(jlong arg0)
 	{
 		return callObjectMethod(
 			"value",

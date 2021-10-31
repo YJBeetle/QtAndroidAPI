@@ -33,9 +33,9 @@ namespace java::security::cert
 		CertPathValidatorException(jstring arg0, jthrowable arg1, java::security::cert::CertPath arg2, jint arg3, __JniBaseClass arg4);
 		
 		// Methods
-		QAndroidJniObject getCertPath();
+		java::security::cert::CertPath getCertPath();
 		jint getIndex();
-		QAndroidJniObject getReason();
+		__JniBaseClass getReason();
 	};
 } // namespace java::security::cert
 

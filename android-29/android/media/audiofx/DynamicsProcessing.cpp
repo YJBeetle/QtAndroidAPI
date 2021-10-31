@@ -45,7 +45,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	QAndroidJniObject DynamicsProcessing::getChannelByChannelIndex(jint arg0)
+	android::media::audiofx::DynamicsProcessing_Channel DynamicsProcessing::getChannelByChannelIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"getChannelByChannelIndex",
@@ -60,7 +60,7 @@ namespace android::media::audiofx
 			"()I"
 		);
 	}
-	QAndroidJniObject DynamicsProcessing::getConfig()
+	android::media::audiofx::DynamicsProcessing_Config DynamicsProcessing::getConfig()
 	{
 		return callObjectMethod(
 			"getConfig",
@@ -75,7 +75,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicsProcessing::getLimiterByChannelIndex(jint arg0)
+	android::media::audiofx::DynamicsProcessing_Limiter DynamicsProcessing::getLimiterByChannelIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"getLimiterByChannelIndex",
@@ -83,7 +83,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicsProcessing::getMbcBandByChannelIndex(jint arg0, jint arg1)
+	android::media::audiofx::DynamicsProcessing_MbcBand DynamicsProcessing::getMbcBandByChannelIndex(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getMbcBandByChannelIndex",
@@ -92,7 +92,7 @@ namespace android::media::audiofx
 			arg1
 		);
 	}
-	QAndroidJniObject DynamicsProcessing::getMbcByChannelIndex(jint arg0)
+	android::media::audiofx::DynamicsProcessing_Mbc DynamicsProcessing::getMbcByChannelIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"getMbcByChannelIndex",
@@ -100,7 +100,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicsProcessing::getPostEqBandByChannelIndex(jint arg0, jint arg1)
+	android::media::audiofx::DynamicsProcessing_EqBand DynamicsProcessing::getPostEqBandByChannelIndex(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPostEqBandByChannelIndex",
@@ -109,7 +109,7 @@ namespace android::media::audiofx
 			arg1
 		);
 	}
-	QAndroidJniObject DynamicsProcessing::getPostEqByChannelIndex(jint arg0)
+	android::media::audiofx::DynamicsProcessing_Eq DynamicsProcessing::getPostEqByChannelIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"getPostEqByChannelIndex",
@@ -117,7 +117,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicsProcessing::getPreEqBandByChannelIndex(jint arg0, jint arg1)
+	android::media::audiofx::DynamicsProcessing_EqBand DynamicsProcessing::getPreEqBandByChannelIndex(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPreEqBandByChannelIndex",
@@ -126,7 +126,7 @@ namespace android::media::audiofx
 			arg1
 		);
 	}
-	QAndroidJniObject DynamicsProcessing::getPreEqByChannelIndex(jint arg0)
+	android::media::audiofx::DynamicsProcessing_Eq DynamicsProcessing::getPreEqByChannelIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"getPreEqByChannelIndex",

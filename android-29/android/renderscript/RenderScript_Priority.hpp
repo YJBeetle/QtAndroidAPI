@@ -10,8 +10,8 @@ namespace android::renderscript
 	{
 	public:
 		// Fields
-		static QAndroidJniObject LOW();
-		static QAndroidJniObject NORMAL();
+		static android::renderscript::RenderScript_Priority LOW();
+		static android::renderscript::RenderScript_Priority NORMAL();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RenderScript_Priority(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,7 +20,7 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::renderscript::RenderScript_Priority valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::renderscript

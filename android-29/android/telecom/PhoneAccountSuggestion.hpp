@@ -17,7 +17,7 @@ namespace android::telecom
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint REASON_FREQUENT();
 		static jint REASON_INTRA_CARRIER();
 		static jint REASON_NONE();
@@ -34,7 +34,7 @@ namespace android::telecom
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getPhoneAccountHandle();
+		android::telecom::PhoneAccountHandle getPhoneAccountHandle();
 		jint getReason();
 		jint hashCode();
 		jboolean shouldAutoSelect();

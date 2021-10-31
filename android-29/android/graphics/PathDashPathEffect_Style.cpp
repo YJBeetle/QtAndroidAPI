@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject PathDashPathEffect_Style::MORPH()
+	android::graphics::PathDashPathEffect_Style PathDashPathEffect_Style::MORPH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PathDashPathEffect$Style",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/PathDashPathEffect$Style;"
 		);
 	}
-	QAndroidJniObject PathDashPathEffect_Style::ROTATE()
+	android::graphics::PathDashPathEffect_Style PathDashPathEffect_Style::ROTATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PathDashPathEffect$Style",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/PathDashPathEffect$Style;"
 		);
 	}
-	QAndroidJniObject PathDashPathEffect_Style::TRANSLATE()
+	android::graphics::PathDashPathEffect_Style PathDashPathEffect_Style::TRANSLATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PathDashPathEffect$Style",
@@ -34,7 +34,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PathDashPathEffect_Style::valueOf(jstring arg0)
+	android::graphics::PathDashPathEffect_Style PathDashPathEffect_Style::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.PathDashPathEffect$Style",

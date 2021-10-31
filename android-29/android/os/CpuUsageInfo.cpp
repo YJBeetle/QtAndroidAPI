@@ -4,7 +4,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject CpuUsageInfo::CREATOR()
+	__JniBaseClass CpuUsageInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.CpuUsageInfo",

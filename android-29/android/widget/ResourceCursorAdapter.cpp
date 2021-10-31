@@ -40,7 +40,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject ResourceCursorAdapter::newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
+	android::view::View ResourceCursorAdapter::newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"newDropDownView",
@@ -50,7 +50,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ResourceCursorAdapter::newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
+	android::view::View ResourceCursorAdapter::newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"newView",

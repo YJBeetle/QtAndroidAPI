@@ -8,7 +8,7 @@
 namespace android::net::wifi::hotspot2::pps
 {
 	// Fields
-	QAndroidJniObject Credential::CREATOR()
+	__JniBaseClass Credential::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.hotspot2.pps.Credential",
@@ -49,14 +49,14 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	QAndroidJniObject Credential::getCaCertificate()
+	java::security::cert::X509Certificate Credential::getCaCertificate()
 	{
 		return callObjectMethod(
 			"getCaCertificate",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	QAndroidJniObject Credential::getCertCredential()
+	android::net::wifi::hotspot2::pps::Credential_CertificateCredential Credential::getCertCredential()
 	{
 		return callObjectMethod(
 			"getCertCredential",
@@ -70,7 +70,7 @@ namespace android::net::wifi::hotspot2::pps
 			"()[Ljava/security/cert/X509Certificate;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Credential::getClientPrivateKey()
+	__JniBaseClass Credential::getClientPrivateKey()
 	{
 		return callObjectMethod(
 			"getClientPrivateKey",
@@ -84,14 +84,14 @@ namespace android::net::wifi::hotspot2::pps
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Credential::getSimCredential()
+	android::net::wifi::hotspot2::pps::Credential_SimCredential Credential::getSimCredential()
 	{
 		return callObjectMethod(
 			"getSimCredential",
 			"()Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;"
 		);
 	}
-	QAndroidJniObject Credential::getUserCredential()
+	android::net::wifi::hotspot2::pps::Credential_UserCredential Credential::getUserCredential()
 	{
 		return callObjectMethod(
 			"getUserCredential",

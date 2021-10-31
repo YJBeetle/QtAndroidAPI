@@ -58,19 +58,19 @@ namespace android::app::slice
 		
 		// Methods
 		void attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1);
-		QAndroidJniObject call(jstring arg0, jstring arg1, android::os::Bundle arg2);
+		android::os::Bundle call(jstring arg0, jstring arg1, android::os::Bundle arg2);
 		jint _delete(android::net::Uri arg0, jstring arg1, jarray arg2);
 		jstring getType(android::net::Uri arg0);
-		QAndroidJniObject insert(android::net::Uri arg0, android::content::ContentValues arg1);
-		QAndroidJniObject onBindSlice(android::net::Uri arg0, __JniBaseClass arg1);
-		QAndroidJniObject onCreatePermissionRequest(android::net::Uri arg0);
-		QAndroidJniObject onGetSliceDescendants(android::net::Uri arg0);
-		QAndroidJniObject onMapIntentToUri(android::content::Intent arg0);
+		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1);
+		android::app::slice::Slice onBindSlice(android::net::Uri arg0, __JniBaseClass arg1);
+		android::app::PendingIntent onCreatePermissionRequest(android::net::Uri arg0);
+		__JniBaseClass onGetSliceDescendants(android::net::Uri arg0);
+		android::net::Uri onMapIntentToUri(android::content::Intent arg0);
 		void onSlicePinned(android::net::Uri arg0);
 		void onSliceUnpinned(android::net::Uri arg0);
-		QAndroidJniObject query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		QAndroidJniObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
-		QAndroidJniObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5);
+		__JniBaseClass query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
+		__JniBaseClass query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
+		__JniBaseClass query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5);
 		jint update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3);
 	};
 } // namespace android::app::slice

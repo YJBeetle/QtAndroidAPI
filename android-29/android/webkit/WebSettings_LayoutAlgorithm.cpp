@@ -3,7 +3,7 @@
 namespace android::webkit
 {
 	// Fields
-	QAndroidJniObject WebSettings_LayoutAlgorithm::NARROW_COLUMNS()
+	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::NARROW_COLUMNS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
@@ -11,7 +11,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
 		);
 	}
-	QAndroidJniObject WebSettings_LayoutAlgorithm::NORMAL()
+	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
@@ -19,7 +19,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
 		);
 	}
-	QAndroidJniObject WebSettings_LayoutAlgorithm::SINGLE_COLUMN()
+	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::SINGLE_COLUMN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
@@ -27,7 +27,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
 		);
 	}
-	QAndroidJniObject WebSettings_LayoutAlgorithm::TEXT_AUTOSIZING()
+	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::TEXT_AUTOSIZING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
@@ -42,7 +42,7 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WebSettings_LayoutAlgorithm::valueOf(jstring arg0)
+	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebSettings$LayoutAlgorithm",

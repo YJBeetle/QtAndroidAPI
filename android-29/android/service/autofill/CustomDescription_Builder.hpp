@@ -30,10 +30,10 @@ namespace android::service::autofill
 		CustomDescription_Builder(android::widget::RemoteViews arg0);
 		
 		// Methods
-		QAndroidJniObject addChild(jint arg0, __JniBaseClass arg1);
-		QAndroidJniObject addOnClickAction(jint arg0, __JniBaseClass arg1);
-		QAndroidJniObject batchUpdate(__JniBaseClass arg0, android::service::autofill::BatchUpdates arg1);
-		QAndroidJniObject build();
+		android::service::autofill::CustomDescription_Builder addChild(jint arg0, __JniBaseClass arg1);
+		android::service::autofill::CustomDescription_Builder addOnClickAction(jint arg0, __JniBaseClass arg1);
+		android::service::autofill::CustomDescription_Builder batchUpdate(__JniBaseClass arg0, android::service::autofill::BatchUpdates arg1);
+		android::service::autofill::CustomDescription build();
 	};
 } // namespace android::service::autofill
 

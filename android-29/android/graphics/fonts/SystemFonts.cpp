@@ -10,7 +10,7 @@ namespace android::graphics::fonts
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SystemFonts::getAvailableFonts()
+	__JniBaseClass SystemFonts::getAvailableFonts()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.fonts.SystemFonts",

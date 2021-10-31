@@ -11,7 +11,7 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SchemaFactoryLoader::newFactory(jstring arg0)
+	javax::xml::validation::SchemaFactory SchemaFactoryLoader::newFactory(jstring arg0)
 	{
 		return callObjectMethod(
 			"newFactory",

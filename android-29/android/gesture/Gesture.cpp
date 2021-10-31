@@ -9,7 +9,7 @@
 namespace android::gesture
 {
 	// Fields
-	QAndroidJniObject Gesture::CREATOR()
+	__JniBaseClass Gesture::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.gesture.Gesture",
@@ -51,7 +51,7 @@ namespace android::gesture
 			"()I"
 		);
 	}
-	QAndroidJniObject Gesture::getBoundingBox()
+	android::graphics::RectF Gesture::getBoundingBox()
 	{
 		return callObjectMethod(
 			"getBoundingBox",
@@ -72,7 +72,7 @@ namespace android::gesture
 			"()F"
 		);
 	}
-	QAndroidJniObject Gesture::getStrokes()
+	java::util::ArrayList Gesture::getStrokes()
 	{
 		return callObjectMethod(
 			"getStrokes",
@@ -86,7 +86,7 @@ namespace android::gesture
 			"()I"
 		);
 	}
-	QAndroidJniObject Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3)
+	android::graphics::Bitmap Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"toBitmap",
@@ -97,7 +97,7 @@ namespace android::gesture
 			arg3
 		);
 	}
-	QAndroidJniObject Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	android::graphics::Bitmap Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"toBitmap",
@@ -109,14 +109,14 @@ namespace android::gesture
 			arg4
 		);
 	}
-	QAndroidJniObject Gesture::toPath()
+	android::graphics::Path Gesture::toPath()
 	{
 		return callObjectMethod(
 			"toPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
-	QAndroidJniObject Gesture::toPath(android::graphics::Path arg0)
+	android::graphics::Path Gesture::toPath(android::graphics::Path arg0)
 	{
 		return callObjectMethod(
 			"toPath",
@@ -124,7 +124,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Gesture::toPath(jint arg0, jint arg1, jint arg2, jint arg3)
+	android::graphics::Path Gesture::toPath(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"toPath",
@@ -135,7 +135,7 @@ namespace android::gesture
 			arg3
 		);
 	}
-	QAndroidJniObject Gesture::toPath(android::graphics::Path arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	android::graphics::Path Gesture::toPath(android::graphics::Path arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"toPath",

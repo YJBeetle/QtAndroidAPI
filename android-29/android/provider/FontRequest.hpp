@@ -19,7 +19,7 @@ namespace android::provider
 		FontRequest(jstring arg0, jstring arg1, jstring arg2, __JniBaseClass arg3);
 		
 		// Methods
-		QAndroidJniObject getCertificates();
+		__JniBaseClass getCertificates();
 		jstring getProviderAuthority();
 		jstring getProviderPackage();
 		jstring getQuery();

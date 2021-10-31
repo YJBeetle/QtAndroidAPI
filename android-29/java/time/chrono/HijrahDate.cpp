@@ -17,7 +17,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject HijrahDate::from(__JniBaseClass arg0)
+	java::time::chrono::HijrahDate HijrahDate::from(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
@@ -26,7 +26,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahDate::now()
+	java::time::chrono::HijrahDate HijrahDate::now()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
@@ -34,7 +34,7 @@ namespace java::time::chrono
 			"()Ljava/time/chrono/HijrahDate;"
 		);
 	}
-	QAndroidJniObject HijrahDate::now(java::time::Clock arg0)
+	java::time::chrono::HijrahDate HijrahDate::now(java::time::Clock arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
@@ -43,7 +43,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahDate::now(java::time::ZoneId arg0)
+	java::time::chrono::HijrahDate HijrahDate::now(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
@@ -52,7 +52,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahDate::of(jint arg0, jint arg1, jint arg2)
+	java::time::chrono::HijrahDate HijrahDate::of(jint arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.HijrahDate",
@@ -63,7 +63,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	QAndroidJniObject HijrahDate::atTime(java::time::LocalTime arg0)
+	__JniBaseClass HijrahDate::atTime(java::time::LocalTime arg0)
 	{
 		return callObjectMethod(
 			"atTime",
@@ -79,14 +79,14 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject HijrahDate::getChronology()
+	java::time::chrono::HijrahChronology HijrahDate::getChronology()
 	{
 		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/HijrahChronology;"
 		);
 	}
-	QAndroidJniObject HijrahDate::getEra()
+	java::time::chrono::HijrahEra HijrahDate::getEra()
 	{
 		return callObjectMethod(
 			"getEra",
@@ -129,7 +129,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	QAndroidJniObject HijrahDate::minus(__JniBaseClass arg0)
+	java::time::chrono::HijrahDate HijrahDate::minus(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -137,7 +137,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahDate::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::chrono::HijrahDate HijrahDate::minus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -146,7 +146,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	QAndroidJniObject HijrahDate::plus(__JniBaseClass arg0)
+	java::time::chrono::HijrahDate HijrahDate::plus(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -154,7 +154,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahDate::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::chrono::HijrahDate HijrahDate::plus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -163,7 +163,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	QAndroidJniObject HijrahDate::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange HijrahDate::range(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -185,7 +185,7 @@ namespace java::time::chrono
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject HijrahDate::until(__JniBaseClass arg0)
+	__JniBaseClass HijrahDate::until(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"until",
@@ -202,7 +202,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	QAndroidJniObject HijrahDate::with(__JniBaseClass arg0)
+	java::time::chrono::HijrahDate HijrahDate::with(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -210,7 +210,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	QAndroidJniObject HijrahDate::with(__JniBaseClass arg0, jlong arg1)
+	java::time::chrono::HijrahDate HijrahDate::with(__JniBaseClass arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",
@@ -219,7 +219,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	QAndroidJniObject HijrahDate::withVariant(java::time::chrono::HijrahChronology arg0)
+	java::time::chrono::HijrahDate HijrahDate::withVariant(java::time::chrono::HijrahChronology arg0)
 	{
 		return callObjectMethod(
 			"withVariant",

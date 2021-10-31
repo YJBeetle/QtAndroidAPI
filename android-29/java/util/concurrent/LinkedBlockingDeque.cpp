@@ -78,7 +78,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject LinkedBlockingDeque::descendingIterator()
+	__JniBaseClass LinkedBlockingDeque::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
@@ -131,7 +131,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject LinkedBlockingDeque::iterator()
+	__JniBaseClass LinkedBlockingDeque::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -383,7 +383,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject LinkedBlockingDeque::spliterator()
+	__JniBaseClass LinkedBlockingDeque::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

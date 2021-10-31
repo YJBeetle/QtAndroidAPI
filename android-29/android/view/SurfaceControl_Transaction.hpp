@@ -28,13 +28,13 @@ namespace android::view
 		// Methods
 		void apply();
 		void close();
-		QAndroidJniObject merge(android::view::SurfaceControl_Transaction arg0);
-		QAndroidJniObject reparent(android::view::SurfaceControl arg0, android::view::SurfaceControl arg1);
-		QAndroidJniObject setAlpha(android::view::SurfaceControl arg0, jfloat arg1);
-		QAndroidJniObject setBufferSize(android::view::SurfaceControl arg0, jint arg1, jint arg2);
-		QAndroidJniObject setGeometry(android::view::SurfaceControl arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, jint arg3);
-		QAndroidJniObject setLayer(android::view::SurfaceControl arg0, jint arg1);
-		QAndroidJniObject setVisibility(android::view::SurfaceControl arg0, jboolean arg1);
+		android::view::SurfaceControl_Transaction merge(android::view::SurfaceControl_Transaction arg0);
+		android::view::SurfaceControl_Transaction reparent(android::view::SurfaceControl arg0, android::view::SurfaceControl arg1);
+		android::view::SurfaceControl_Transaction setAlpha(android::view::SurfaceControl arg0, jfloat arg1);
+		android::view::SurfaceControl_Transaction setBufferSize(android::view::SurfaceControl arg0, jint arg1, jint arg2);
+		android::view::SurfaceControl_Transaction setGeometry(android::view::SurfaceControl arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, jint arg3);
+		android::view::SurfaceControl_Transaction setLayer(android::view::SurfaceControl arg0, jint arg1);
+		android::view::SurfaceControl_Transaction setVisibility(android::view::SurfaceControl arg0, jboolean arg1);
 	};
 } // namespace android::view
 

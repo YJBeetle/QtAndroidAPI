@@ -31,10 +31,10 @@ namespace android::net
 		LocalServerSocket(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject accept();
+		android::net::LocalSocket accept();
 		void close();
-		QAndroidJniObject getFileDescriptor();
-		QAndroidJniObject getLocalSocketAddress();
+		java::io::FileDescriptor getFileDescriptor();
+		android::net::LocalSocketAddress getLocalSocketAddress();
 	};
 } // namespace android::net
 

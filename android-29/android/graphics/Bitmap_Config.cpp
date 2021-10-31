@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject Bitmap_Config::ALPHA_8()
+	android::graphics::Bitmap_Config Bitmap_Config::ALPHA_8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/Bitmap$Config;"
 		);
 	}
-	QAndroidJniObject Bitmap_Config::ARGB_4444()
+	android::graphics::Bitmap_Config Bitmap_Config::ARGB_4444()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/Bitmap$Config;"
 		);
 	}
-	QAndroidJniObject Bitmap_Config::ARGB_8888()
+	android::graphics::Bitmap_Config Bitmap_Config::ARGB_8888()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"Landroid/graphics/Bitmap$Config;"
 		);
 	}
-	QAndroidJniObject Bitmap_Config::HARDWARE()
+	android::graphics::Bitmap_Config Bitmap_Config::HARDWARE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
@@ -35,7 +35,7 @@ namespace android::graphics
 			"Landroid/graphics/Bitmap$Config;"
 		);
 	}
-	QAndroidJniObject Bitmap_Config::RGBA_F16()
+	android::graphics::Bitmap_Config Bitmap_Config::RGBA_F16()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
@@ -43,7 +43,7 @@ namespace android::graphics
 			"Landroid/graphics/Bitmap$Config;"
 		);
 	}
-	QAndroidJniObject Bitmap_Config::RGB_565()
+	android::graphics::Bitmap_Config Bitmap_Config::RGB_565()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
@@ -58,7 +58,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Bitmap_Config::valueOf(jstring arg0)
+	android::graphics::Bitmap_Config Bitmap_Config::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Bitmap$Config",

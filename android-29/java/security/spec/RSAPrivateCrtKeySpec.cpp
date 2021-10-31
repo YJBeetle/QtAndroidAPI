@@ -38,42 +38,42 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	QAndroidJniObject RSAPrivateCrtKeySpec::getCrtCoefficient()
+	java::math::BigInteger RSAPrivateCrtKeySpec::getCrtCoefficient()
 	{
 		return callObjectMethod(
 			"getCrtCoefficient",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAPrivateCrtKeySpec::getPrimeExponentP()
+	java::math::BigInteger RSAPrivateCrtKeySpec::getPrimeExponentP()
 	{
 		return callObjectMethod(
 			"getPrimeExponentP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAPrivateCrtKeySpec::getPrimeExponentQ()
+	java::math::BigInteger RSAPrivateCrtKeySpec::getPrimeExponentQ()
 	{
 		return callObjectMethod(
 			"getPrimeExponentQ",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAPrivateCrtKeySpec::getPrimeP()
+	java::math::BigInteger RSAPrivateCrtKeySpec::getPrimeP()
 	{
 		return callObjectMethod(
 			"getPrimeP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAPrivateCrtKeySpec::getPrimeQ()
+	java::math::BigInteger RSAPrivateCrtKeySpec::getPrimeQ()
 	{
 		return callObjectMethod(
 			"getPrimeQ",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAPrivateCrtKeySpec::getPublicExponent()
+	java::math::BigInteger RSAPrivateCrtKeySpec::getPublicExponent()
 	{
 		return callObjectMethod(
 			"getPublicExponent",

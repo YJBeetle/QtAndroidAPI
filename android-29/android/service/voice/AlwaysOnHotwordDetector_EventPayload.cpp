@@ -11,7 +11,7 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AlwaysOnHotwordDetector_EventPayload::getCaptureAudioFormat()
+	android::media::AudioFormat AlwaysOnHotwordDetector_EventPayload::getCaptureAudioFormat()
 	{
 		return callObjectMethod(
 			"getCaptureAudioFormat",

@@ -22,13 +22,13 @@ namespace java::util::concurrent
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DAYS();
-		static QAndroidJniObject HOURS();
-		static QAndroidJniObject MICROSECONDS();
-		static QAndroidJniObject MILLISECONDS();
-		static QAndroidJniObject MINUTES();
-		static QAndroidJniObject NANOSECONDS();
-		static QAndroidJniObject SECONDS();
+		static java::util::concurrent::TimeUnit DAYS();
+		static java::util::concurrent::TimeUnit HOURS();
+		static java::util::concurrent::TimeUnit MICROSECONDS();
+		static java::util::concurrent::TimeUnit MILLISECONDS();
+		static java::util::concurrent::TimeUnit MINUTES();
+		static java::util::concurrent::TimeUnit NANOSECONDS();
+		static java::util::concurrent::TimeUnit SECONDS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimeUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -37,15 +37,15 @@ namespace java::util::concurrent
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject of(java::time::temporal::ChronoUnit arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::util::concurrent::TimeUnit of(java::time::temporal::ChronoUnit arg0);
+		static java::util::concurrent::TimeUnit valueOf(jstring arg0);
 		static jarray values();
 		jlong convert(java::time::Duration arg0);
 		jlong convert(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		void sleep(jlong arg0);
 		void timedJoin(java::lang::Thread arg0, jlong arg1);
 		void timedWait(jobject arg0, jlong arg1);
-		QAndroidJniObject toChronoUnit();
+		java::time::temporal::ChronoUnit toChronoUnit();
 		jlong toDays(jlong arg0);
 		jlong toHours(jlong arg0);
 		jlong toMicros(jlong arg0);

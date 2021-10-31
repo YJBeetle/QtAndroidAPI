@@ -32,21 +32,21 @@ namespace java::nio
 			"()I"
 		);
 	}
-	QAndroidJniObject Buffer::clear()
+	java::nio::Buffer Buffer::clear()
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/Buffer;"
 		);
 	}
-	QAndroidJniObject Buffer::duplicate()
+	java::nio::Buffer Buffer::duplicate()
 	{
 		return callObjectMethod(
 			"duplicate",
 			"()Ljava/nio/Buffer;"
 		);
 	}
-	QAndroidJniObject Buffer::flip()
+	java::nio::Buffer Buffer::flip()
 	{
 		return callObjectMethod(
 			"flip",
@@ -88,7 +88,7 @@ namespace java::nio
 			"()I"
 		);
 	}
-	QAndroidJniObject Buffer::limit(jint arg0)
+	java::nio::Buffer Buffer::limit(jint arg0)
 	{
 		return callObjectMethod(
 			"limit",
@@ -96,7 +96,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject Buffer::mark()
+	java::nio::Buffer Buffer::mark()
 	{
 		return callObjectMethod(
 			"mark",
@@ -110,7 +110,7 @@ namespace java::nio
 			"()I"
 		);
 	}
-	QAndroidJniObject Buffer::position(jint arg0)
+	java::nio::Buffer Buffer::position(jint arg0)
 	{
 		return callObjectMethod(
 			"position",
@@ -125,28 +125,28 @@ namespace java::nio
 			"()I"
 		);
 	}
-	QAndroidJniObject Buffer::reset()
+	java::nio::Buffer Buffer::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/Buffer;"
 		);
 	}
-	QAndroidJniObject Buffer::rewind()
+	java::nio::Buffer Buffer::rewind()
 	{
 		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/Buffer;"
 		);
 	}
-	QAndroidJniObject Buffer::slice()
+	java::nio::Buffer Buffer::slice()
 	{
 		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/Buffer;"
 		);
 	}
-	QAndroidJniObject Buffer::slice(jint arg0, jint arg1)
+	java::nio::Buffer Buffer::slice(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"slice",

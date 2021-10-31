@@ -36,7 +36,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RenderScript::create(android::content::Context arg0)
+	android::renderscript::RenderScript RenderScript::create(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.RenderScript",
@@ -45,7 +45,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RenderScript::create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1)
+	android::renderscript::RenderScript RenderScript::create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.RenderScript",
@@ -55,7 +55,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	QAndroidJniObject RenderScript::create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2)
+	android::renderscript::RenderScript RenderScript::create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.RenderScript",
@@ -66,7 +66,7 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	QAndroidJniObject RenderScript::createMultiContext(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2, jint arg3)
+	android::renderscript::RenderScript RenderScript::createMultiContext(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.RenderScript",
@@ -115,21 +115,21 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	QAndroidJniObject RenderScript::getApplicationContext()
+	android::content::Context RenderScript::getApplicationContext()
 	{
 		return callObjectMethod(
 			"getApplicationContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject RenderScript::getErrorHandler()
+	android::renderscript::RenderScript_RSErrorHandler RenderScript::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",
 			"()Landroid/renderscript/RenderScript$RSErrorHandler;"
 		);
 	}
-	QAndroidJniObject RenderScript::getMessageHandler()
+	android::renderscript::RenderScript_RSMessageHandler RenderScript::getMessageHandler()
 	{
 		return callObjectMethod(
 			"getMessageHandler",

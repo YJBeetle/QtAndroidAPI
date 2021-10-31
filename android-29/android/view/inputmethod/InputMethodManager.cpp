@@ -92,21 +92,21 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	QAndroidJniObject InputMethodManager::getCurrentInputMethodSubtype()
+	android::view::inputmethod::InputMethodSubtype InputMethodManager::getCurrentInputMethodSubtype()
 	{
 		return callObjectMethod(
 			"getCurrentInputMethodSubtype",
 			"()Landroid/view/inputmethod/InputMethodSubtype;"
 		);
 	}
-	QAndroidJniObject InputMethodManager::getEnabledInputMethodList()
+	__JniBaseClass InputMethodManager::getEnabledInputMethodList()
 	{
 		return callObjectMethod(
 			"getEnabledInputMethodList",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject InputMethodManager::getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1)
+	__JniBaseClass InputMethodManager::getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"getEnabledInputMethodSubtypeList",
@@ -115,21 +115,21 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	QAndroidJniObject InputMethodManager::getInputMethodList()
+	__JniBaseClass InputMethodManager::getInputMethodList()
 	{
 		return callObjectMethod(
 			"getInputMethodList",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject InputMethodManager::getLastInputMethodSubtype()
+	android::view::inputmethod::InputMethodSubtype InputMethodManager::getLastInputMethodSubtype()
 	{
 		return callObjectMethod(
 			"getLastInputMethodSubtype",
 			"()Landroid/view/inputmethod/InputMethodSubtype;"
 		);
 	}
-	QAndroidJniObject InputMethodManager::getShortcutInputMethodsAndSubtypes()
+	__JniBaseClass InputMethodManager::getShortcutInputMethodsAndSubtypes()
 	{
 		return callObjectMethod(
 			"getShortcutInputMethodsAndSubtypes",

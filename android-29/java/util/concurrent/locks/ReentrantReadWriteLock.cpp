@@ -104,7 +104,7 @@ namespace java::util::concurrent::locks
 			"()Z"
 		);
 	}
-	QAndroidJniObject ReentrantReadWriteLock::readLock()
+	java::util::concurrent::locks::ReentrantReadWriteLock_ReadLock ReentrantReadWriteLock::readLock()
 	{
 		return callObjectMethod(
 			"readLock",
@@ -118,7 +118,7 @@ namespace java::util::concurrent::locks
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ReentrantReadWriteLock::writeLock()
+	java::util::concurrent::locks::ReentrantReadWriteLock_WriteLock ReentrantReadWriteLock::writeLock()
 	{
 		return callObjectMethod(
 			"writeLock",

@@ -13,28 +13,28 @@ namespace java::nio
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MappedByteBuffer::clear()
+	java::nio::MappedByteBuffer MappedByteBuffer::clear()
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
-	QAndroidJniObject MappedByteBuffer::flip()
+	java::nio::MappedByteBuffer MappedByteBuffer::flip()
 	{
 		return callObjectMethod(
 			"flip",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
-	QAndroidJniObject MappedByteBuffer::force()
+	java::nio::MappedByteBuffer MappedByteBuffer::force()
 	{
 		return callObjectMethod(
 			"force",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
-	QAndroidJniObject MappedByteBuffer::force(jint arg0, jint arg1)
+	java::nio::MappedByteBuffer MappedByteBuffer::force(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"force",
@@ -50,7 +50,7 @@ namespace java::nio
 			"()Z"
 		);
 	}
-	QAndroidJniObject MappedByteBuffer::limit(jint arg0)
+	java::nio::MappedByteBuffer MappedByteBuffer::limit(jint arg0)
 	{
 		return callObjectMethod(
 			"limit",
@@ -58,21 +58,21 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject MappedByteBuffer::load()
+	java::nio::MappedByteBuffer MappedByteBuffer::load()
 	{
 		return callObjectMethod(
 			"load",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
-	QAndroidJniObject MappedByteBuffer::mark()
+	java::nio::MappedByteBuffer MappedByteBuffer::mark()
 	{
 		return callObjectMethod(
 			"mark",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
-	QAndroidJniObject MappedByteBuffer::position(jint arg0)
+	java::nio::MappedByteBuffer MappedByteBuffer::position(jint arg0)
 	{
 		return callObjectMethod(
 			"position",
@@ -80,14 +80,14 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject MappedByteBuffer::reset()
+	java::nio::MappedByteBuffer MappedByteBuffer::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
-	QAndroidJniObject MappedByteBuffer::rewind()
+	java::nio::MappedByteBuffer MappedByteBuffer::rewind()
 	{
 		return callObjectMethod(
 			"rewind",

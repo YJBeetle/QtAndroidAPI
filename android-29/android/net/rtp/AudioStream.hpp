@@ -31,9 +31,9 @@ namespace android::net::rtp
 		AudioStream(java::net::InetAddress arg0);
 		
 		// Methods
-		QAndroidJniObject getCodec();
+		android::net::rtp::AudioCodec getCodec();
 		jint getDtmfType();
-		QAndroidJniObject getGroup();
+		android::net::rtp::AudioGroup getGroup();
 		jboolean isBusy();
 		void join(android::net::rtp::AudioGroup arg0);
 		void setCodec(android::net::rtp::AudioCodec arg0);

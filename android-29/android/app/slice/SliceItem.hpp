@@ -33,7 +33,7 @@ namespace android::app::slice
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring FORMAT_ACTION();
 		static jstring FORMAT_BUNDLE();
 		static jstring FORMAT_IMAGE();
@@ -51,15 +51,15 @@ namespace android::app::slice
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getAction();
-		QAndroidJniObject getBundle();
+		android::app::PendingIntent getAction();
+		android::os::Bundle getBundle();
 		jstring getFormat();
-		QAndroidJniObject getHints();
-		QAndroidJniObject getIcon();
+		__JniBaseClass getHints();
+		android::graphics::drawable::Icon getIcon();
 		jint getInt();
 		jlong getLong();
-		QAndroidJniObject getRemoteInput();
-		QAndroidJniObject getSlice();
+		android::app::RemoteInput getRemoteInput();
+		android::app::slice::Slice getSlice();
 		jstring getSubType();
 		jstring getText();
 		jboolean hasHint(jstring arg0);

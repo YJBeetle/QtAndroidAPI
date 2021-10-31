@@ -13,7 +13,7 @@ namespace android::view::textservice
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TextServicesManager::newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, __JniBaseClass arg2, jboolean arg3)
+	android::view::textservice::SpellCheckerSession TextServicesManager::newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, __JniBaseClass arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"newSpellCheckerSession",

@@ -25,11 +25,11 @@ namespace javax::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDefault();
-		QAndroidJniObject createServerSocket();
-		QAndroidJniObject createServerSocket(jint arg0);
-		QAndroidJniObject createServerSocket(jint arg0, jint arg1);
-		QAndroidJniObject createServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2);
+		static javax::net::ServerSocketFactory getDefault();
+		java::net::ServerSocket createServerSocket();
+		java::net::ServerSocket createServerSocket(jint arg0);
+		java::net::ServerSocket createServerSocket(jint arg0, jint arg1);
+		java::net::ServerSocket createServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2);
 	};
 } // namespace javax::net
 

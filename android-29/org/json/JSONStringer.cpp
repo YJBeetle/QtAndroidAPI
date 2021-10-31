@@ -15,28 +15,28 @@ namespace org::json
 		) {}
 	
 	// Methods
-	QAndroidJniObject JSONStringer::array()
+	org::json::JSONStringer JSONStringer::array()
 	{
 		return callObjectMethod(
 			"array",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
-	QAndroidJniObject JSONStringer::endArray()
+	org::json::JSONStringer JSONStringer::endArray()
 	{
 		return callObjectMethod(
 			"endArray",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
-	QAndroidJniObject JSONStringer::endObject()
+	org::json::JSONStringer JSONStringer::endObject()
 	{
 		return callObjectMethod(
 			"endObject",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
-	QAndroidJniObject JSONStringer::key(jstring arg0)
+	org::json::JSONStringer JSONStringer::key(jstring arg0)
 	{
 		return callObjectMethod(
 			"key",
@@ -44,7 +44,7 @@ namespace org::json
 			arg0
 		);
 	}
-	QAndroidJniObject JSONStringer::object()
+	org::json::JSONStringer JSONStringer::object()
 	{
 		return callObjectMethod(
 			"object",
@@ -58,7 +58,7 @@ namespace org::json
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject JSONStringer::value(jboolean arg0)
+	org::json::JSONStringer JSONStringer::value(jboolean arg0)
 	{
 		return callObjectMethod(
 			"value",
@@ -66,7 +66,7 @@ namespace org::json
 			arg0
 		);
 	}
-	QAndroidJniObject JSONStringer::value(jdouble arg0)
+	org::json::JSONStringer JSONStringer::value(jdouble arg0)
 	{
 		return callObjectMethod(
 			"value",
@@ -74,7 +74,7 @@ namespace org::json
 			arg0
 		);
 	}
-	QAndroidJniObject JSONStringer::value(jobject arg0)
+	org::json::JSONStringer JSONStringer::value(jobject arg0)
 	{
 		return callObjectMethod(
 			"value",
@@ -82,7 +82,7 @@ namespace org::json
 			arg0
 		);
 	}
-	QAndroidJniObject JSONStringer::value(jlong arg0)
+	org::json::JSONStringer JSONStringer::value(jlong arg0)
 	{
 		return callObjectMethod(
 			"value",

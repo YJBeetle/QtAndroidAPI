@@ -60,12 +60,12 @@ namespace android::gesture
 		void clear(jboolean arg0);
 		jboolean dispatchTouchEvent(android::view::MotionEvent arg0);
 		void draw(android::graphics::Canvas arg0);
-		QAndroidJniObject getCurrentStroke();
+		java::util::ArrayList getCurrentStroke();
 		jlong getFadeOffset();
-		QAndroidJniObject getGesture();
+		android::gesture::Gesture getGesture();
 		jint getGestureColor();
-		QAndroidJniObject getGesturePath();
-		QAndroidJniObject getGesturePath(android::graphics::Path arg0);
+		android::graphics::Path getGesturePath();
+		android::graphics::Path getGesturePath(android::graphics::Path arg0);
 		jfloat getGestureStrokeAngleThreshold();
 		jfloat getGestureStrokeLengthThreshold();
 		jfloat getGestureStrokeSquarenessTreshold();

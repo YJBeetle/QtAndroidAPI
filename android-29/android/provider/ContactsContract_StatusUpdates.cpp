@@ -20,7 +20,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_StatusUpdates::CONTENT_URI()
+	android::net::Uri ContactsContract_StatusUpdates::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
@@ -28,7 +28,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_StatusUpdates::PROFILE_CONTENT_URI()
+	android::net::Uri ContactsContract_StatusUpdates::PROFILE_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",

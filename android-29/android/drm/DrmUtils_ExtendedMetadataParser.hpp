@@ -18,8 +18,8 @@ namespace android::drm
 		
 		// Methods
 		jstring get(jstring arg0);
-		QAndroidJniObject iterator();
-		QAndroidJniObject keyIterator();
+		__JniBaseClass iterator();
+		__JniBaseClass keyIterator();
 	};
 } // namespace android::drm
 

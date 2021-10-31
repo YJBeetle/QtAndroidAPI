@@ -66,7 +66,7 @@ namespace java::util::zip
 			"()J"
 		);
 	}
-	QAndroidJniObject ZipEntry::getCreationTime()
+	java::nio::file::attribute::FileTime ZipEntry::getCreationTime()
 	{
 		return callObjectMethod(
 			"getCreationTime",
@@ -80,14 +80,14 @@ namespace java::util::zip
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject ZipEntry::getLastAccessTime()
+	java::nio::file::attribute::FileTime ZipEntry::getLastAccessTime()
 	{
 		return callObjectMethod(
 			"getLastAccessTime",
 			"()Ljava/nio/file/attribute/FileTime;"
 		);
 	}
-	QAndroidJniObject ZipEntry::getLastModifiedTime()
+	java::nio::file::attribute::FileTime ZipEntry::getLastModifiedTime()
 	{
 		return callObjectMethod(
 			"getLastModifiedTime",
@@ -122,7 +122,7 @@ namespace java::util::zip
 			"()J"
 		);
 	}
-	QAndroidJniObject ZipEntry::getTimeLocal()
+	java::time::LocalDateTime ZipEntry::getTimeLocal()
 	{
 		return callObjectMethod(
 			"getTimeLocal",
@@ -167,7 +167,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	QAndroidJniObject ZipEntry::setCreationTime(java::nio::file::attribute::FileTime arg0)
+	java::util::zip::ZipEntry ZipEntry::setCreationTime(java::nio::file::attribute::FileTime arg0)
 	{
 		return callObjectMethod(
 			"setCreationTime",
@@ -183,7 +183,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	QAndroidJniObject ZipEntry::setLastAccessTime(java::nio::file::attribute::FileTime arg0)
+	java::util::zip::ZipEntry ZipEntry::setLastAccessTime(java::nio::file::attribute::FileTime arg0)
 	{
 		return callObjectMethod(
 			"setLastAccessTime",
@@ -191,7 +191,7 @@ namespace java::util::zip
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ZipEntry::setLastModifiedTime(java::nio::file::attribute::FileTime arg0)
+	java::util::zip::ZipEntry ZipEntry::setLastModifiedTime(java::nio::file::attribute::FileTime arg0)
 	{
 		return callObjectMethod(
 			"setLastModifiedTime",

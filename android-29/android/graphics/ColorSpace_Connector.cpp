@@ -12,21 +12,21 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ColorSpace_Connector::getDestination()
+	android::graphics::ColorSpace ColorSpace_Connector::getDestination()
 	{
 		return callObjectMethod(
 			"getDestination",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Connector::getRenderIntent()
+	android::graphics::ColorSpace_RenderIntent ColorSpace_Connector::getRenderIntent()
 	{
 		return callObjectMethod(
 			"getRenderIntent",
 			"()Landroid/graphics/ColorSpace$RenderIntent;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Connector::getSource()
+	android::graphics::ColorSpace ColorSpace_Connector::getSource()
 	{
 		return callObjectMethod(
 			"getSource",

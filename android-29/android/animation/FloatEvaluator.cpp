@@ -17,7 +17,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	QAndroidJniObject FloatEvaluator::evaluate(jfloat arg0, java::lang::Number arg1, java::lang::Number arg2)
+	java::lang::Float FloatEvaluator::evaluate(jfloat arg0, java::lang::Number arg1, java::lang::Number arg2)
 	{
 		return callObjectMethod(
 			"evaluate",

@@ -12,7 +12,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MembershipKey::block(java::net::InetAddress arg0)
+	java::nio::channels::MembershipKey MembershipKey::block(java::net::InetAddress arg0)
 	{
 		return callObjectMethod(
 			"block",
@@ -20,7 +20,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MembershipKey::channel()
+	__JniBaseClass MembershipKey::channel()
 	{
 		return callObjectMethod(
 			"channel",
@@ -34,7 +34,7 @@ namespace java::nio::channels
 			"()V"
 		);
 	}
-	QAndroidJniObject MembershipKey::group()
+	java::net::InetAddress MembershipKey::group()
 	{
 		return callObjectMethod(
 			"group",
@@ -48,21 +48,21 @@ namespace java::nio::channels
 			"()Z"
 		);
 	}
-	QAndroidJniObject MembershipKey::networkInterface()
+	java::net::NetworkInterface MembershipKey::networkInterface()
 	{
 		return callObjectMethod(
 			"networkInterface",
 			"()Ljava/net/NetworkInterface;"
 		);
 	}
-	QAndroidJniObject MembershipKey::sourceAddress()
+	java::net::InetAddress MembershipKey::sourceAddress()
 	{
 		return callObjectMethod(
 			"sourceAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	QAndroidJniObject MembershipKey::unblock(java::net::InetAddress arg0)
+	java::nio::channels::MembershipKey MembershipKey::unblock(java::net::InetAddress arg0)
 	{
 		return callObjectMethod(
 			"unblock",

@@ -59,7 +59,7 @@ namespace java::util::jar
 			arg0
 		);
 	}
-	QAndroidJniObject Attributes::entrySet()
+	__JniBaseClass Attributes::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -112,7 +112,7 @@ namespace java::util::jar
 			"()Z"
 		);
 	}
-	QAndroidJniObject Attributes::keySet()
+	__JniBaseClass Attributes::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -160,7 +160,7 @@ namespace java::util::jar
 			"()I"
 		);
 	}
-	QAndroidJniObject Attributes::values()
+	__JniBaseClass Attributes::values()
 	{
 		return callObjectMethod(
 			"values",

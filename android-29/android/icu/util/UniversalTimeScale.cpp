@@ -137,7 +137,7 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject UniversalTimeScale::bigDecimalFrom(android::icu::math::BigDecimal arg0, jint arg1)
+	android::icu::math::BigDecimal UniversalTimeScale::bigDecimalFrom(android::icu::math::BigDecimal arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.UniversalTimeScale",
@@ -147,7 +147,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	QAndroidJniObject UniversalTimeScale::bigDecimalFrom(jdouble arg0, jint arg1)
+	android::icu::math::BigDecimal UniversalTimeScale::bigDecimalFrom(jdouble arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.UniversalTimeScale",
@@ -157,7 +157,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	QAndroidJniObject UniversalTimeScale::bigDecimalFrom(jlong arg0, jint arg1)
+	android::icu::math::BigDecimal UniversalTimeScale::bigDecimalFrom(jlong arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.UniversalTimeScale",
@@ -187,7 +187,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	QAndroidJniObject UniversalTimeScale::toBigDecimal(android::icu::math::BigDecimal arg0, jint arg1)
+	android::icu::math::BigDecimal UniversalTimeScale::toBigDecimal(android::icu::math::BigDecimal arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.UniversalTimeScale",
@@ -197,7 +197,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	QAndroidJniObject UniversalTimeScale::toBigDecimal(jlong arg0, jint arg1)
+	android::icu::math::BigDecimal UniversalTimeScale::toBigDecimal(jlong arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.UniversalTimeScale",

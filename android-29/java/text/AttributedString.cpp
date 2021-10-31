@@ -78,14 +78,14 @@ namespace java::text
 			arg2
 		);
 	}
-	QAndroidJniObject AttributedString::getIterator()
+	__JniBaseClass AttributedString::getIterator()
 	{
 		return callObjectMethod(
 			"getIterator",
 			"()Ljava/text/AttributedCharacterIterator;"
 		);
 	}
-	QAndroidJniObject AttributedString::getIterator(jarray arg0)
+	__JniBaseClass AttributedString::getIterator(jarray arg0)
 	{
 		return callObjectMethod(
 			"getIterator",
@@ -93,7 +93,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject AttributedString::getIterator(jarray arg0, jint arg1, jint arg2)
+	__JniBaseClass AttributedString::getIterator(jarray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"getIterator",

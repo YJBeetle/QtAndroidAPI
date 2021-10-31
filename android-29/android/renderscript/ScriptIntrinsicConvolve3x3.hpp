@@ -44,11 +44,11 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
+		static android::renderscript::ScriptIntrinsicConvolve3x3 create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
 		void forEach(android::renderscript::Allocation arg0);
 		void forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1);
-		QAndroidJniObject getFieldID_Input();
-		QAndroidJniObject getKernelID();
+		android::renderscript::Script_FieldID getFieldID_Input();
+		android::renderscript::Script_KernelID getKernelID();
 		void setCoefficients(jfloatArray arg0);
 		void setInput(android::renderscript::Allocation arg0);
 	};

@@ -5,7 +5,7 @@
 namespace android::hardware::camera2
 {
 	// Fields
-	QAndroidJniObject CaptureRequest::BLACK_LEVEL_LOCK()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::BLACK_LEVEL_LOCK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -13,7 +13,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::COLOR_CORRECTION_ABERRATION_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::COLOR_CORRECTION_ABERRATION_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -21,7 +21,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::COLOR_CORRECTION_GAINS()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::COLOR_CORRECTION_GAINS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -29,7 +29,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::COLOR_CORRECTION_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::COLOR_CORRECTION_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -37,7 +37,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::COLOR_CORRECTION_TRANSFORM()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::COLOR_CORRECTION_TRANSFORM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -45,7 +45,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AE_ANTIBANDING_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AE_ANTIBANDING_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -53,7 +53,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AE_EXPOSURE_COMPENSATION()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AE_EXPOSURE_COMPENSATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -61,7 +61,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AE_LOCK()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AE_LOCK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -69,7 +69,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AE_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AE_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -77,7 +77,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AE_PRECAPTURE_TRIGGER()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AE_PRECAPTURE_TRIGGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -85,7 +85,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AE_REGIONS()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AE_REGIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -93,7 +93,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AE_TARGET_FPS_RANGE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AE_TARGET_FPS_RANGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -101,7 +101,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AF_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AF_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -109,7 +109,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AF_REGIONS()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AF_REGIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -117,7 +117,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AF_TRIGGER()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AF_TRIGGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -125,7 +125,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AWB_LOCK()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AWB_LOCK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -133,7 +133,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AWB_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AWB_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -141,7 +141,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_AWB_REGIONS()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_AWB_REGIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -149,7 +149,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_CAPTURE_INTENT()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_CAPTURE_INTENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -157,7 +157,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_EFFECT_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_EFFECT_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -165,7 +165,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_ENABLE_ZSL()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_ENABLE_ZSL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -173,7 +173,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -181,7 +181,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_POST_RAW_SENSITIVITY_BOOST()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_POST_RAW_SENSITIVITY_BOOST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -189,7 +189,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_SCENE_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_SCENE_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -197,7 +197,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CONTROL_VIDEO_STABILIZATION_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::CONTROL_VIDEO_STABILIZATION_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -205,7 +205,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::CREATOR()
+	__JniBaseClass CaptureRequest::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -213,7 +213,7 @@ namespace android::hardware::camera2
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::DISTORTION_CORRECTION_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::DISTORTION_CORRECTION_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -221,7 +221,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::EDGE_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::EDGE_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -229,7 +229,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::FLASH_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::FLASH_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -237,7 +237,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::HOT_PIXEL_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::HOT_PIXEL_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -245,7 +245,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::JPEG_GPS_LOCATION()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::JPEG_GPS_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -253,7 +253,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::JPEG_ORIENTATION()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::JPEG_ORIENTATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -261,7 +261,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::JPEG_QUALITY()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::JPEG_QUALITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -269,7 +269,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::JPEG_THUMBNAIL_QUALITY()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::JPEG_THUMBNAIL_QUALITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -277,7 +277,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::JPEG_THUMBNAIL_SIZE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::JPEG_THUMBNAIL_SIZE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -285,7 +285,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::LENS_APERTURE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::LENS_APERTURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -293,7 +293,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::LENS_FILTER_DENSITY()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::LENS_FILTER_DENSITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -301,7 +301,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::LENS_FOCAL_LENGTH()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::LENS_FOCAL_LENGTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -309,7 +309,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::LENS_FOCUS_DISTANCE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::LENS_FOCUS_DISTANCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -317,7 +317,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::LENS_OPTICAL_STABILIZATION_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::LENS_OPTICAL_STABILIZATION_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -325,7 +325,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::NOISE_REDUCTION_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::NOISE_REDUCTION_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -333,7 +333,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::REPROCESS_EFFECTIVE_EXPOSURE_FACTOR()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::REPROCESS_EFFECTIVE_EXPOSURE_FACTOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -341,7 +341,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::SCALER_CROP_REGION()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::SCALER_CROP_REGION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -349,7 +349,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::SENSOR_EXPOSURE_TIME()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::SENSOR_EXPOSURE_TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -357,7 +357,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::SENSOR_FRAME_DURATION()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::SENSOR_FRAME_DURATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -365,7 +365,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::SENSOR_SENSITIVITY()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::SENSOR_SENSITIVITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -373,7 +373,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::SENSOR_TEST_PATTERN_DATA()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::SENSOR_TEST_PATTERN_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -381,7 +381,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::SENSOR_TEST_PATTERN_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::SENSOR_TEST_PATTERN_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -389,7 +389,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::SHADING_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::SHADING_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -397,7 +397,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::STATISTICS_FACE_DETECT_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::STATISTICS_FACE_DETECT_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -405,7 +405,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::STATISTICS_HOT_PIXEL_MAP_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::STATISTICS_HOT_PIXEL_MAP_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -413,7 +413,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::STATISTICS_LENS_SHADING_MAP_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::STATISTICS_LENS_SHADING_MAP_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -421,7 +421,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::STATISTICS_OIS_DATA_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::STATISTICS_OIS_DATA_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -429,7 +429,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::TONEMAP_CURVE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::TONEMAP_CURVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -437,7 +437,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::TONEMAP_GAMMA()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::TONEMAP_GAMMA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -445,7 +445,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::TONEMAP_MODE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::TONEMAP_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -453,7 +453,7 @@ namespace android::hardware::camera2
 			"Landroid/hardware/camera2/CaptureRequest$Key;"
 		);
 	}
-	QAndroidJniObject CaptureRequest::TONEMAP_PRESET_CURVE()
+	android::hardware::camera2::CaptureRequest_Key CaptureRequest::TONEMAP_PRESET_CURVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.CaptureRequest",
@@ -491,7 +491,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject CaptureRequest::getKeys()
+	__JniBaseClass CaptureRequest::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",

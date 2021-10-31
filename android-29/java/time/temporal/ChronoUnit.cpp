@@ -4,7 +4,7 @@
 namespace java::time::temporal
 {
 	// Fields
-	QAndroidJniObject ChronoUnit::CENTURIES()
+	java::time::temporal::ChronoUnit ChronoUnit::CENTURIES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -12,7 +12,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::DAYS()
+	java::time::temporal::ChronoUnit ChronoUnit::DAYS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -20,7 +20,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::DECADES()
+	java::time::temporal::ChronoUnit ChronoUnit::DECADES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -28,7 +28,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::ERAS()
+	java::time::temporal::ChronoUnit ChronoUnit::ERAS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -36,7 +36,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::FOREVER()
+	java::time::temporal::ChronoUnit ChronoUnit::FOREVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -44,7 +44,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::HALF_DAYS()
+	java::time::temporal::ChronoUnit ChronoUnit::HALF_DAYS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -52,7 +52,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::HOURS()
+	java::time::temporal::ChronoUnit ChronoUnit::HOURS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -60,7 +60,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::MICROS()
+	java::time::temporal::ChronoUnit ChronoUnit::MICROS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -68,7 +68,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::MILLENNIA()
+	java::time::temporal::ChronoUnit ChronoUnit::MILLENNIA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -76,7 +76,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::MILLIS()
+	java::time::temporal::ChronoUnit ChronoUnit::MILLIS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -84,7 +84,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::MINUTES()
+	java::time::temporal::ChronoUnit ChronoUnit::MINUTES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -92,7 +92,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::MONTHS()
+	java::time::temporal::ChronoUnit ChronoUnit::MONTHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -100,7 +100,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::NANOS()
+	java::time::temporal::ChronoUnit ChronoUnit::NANOS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -108,7 +108,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::SECONDS()
+	java::time::temporal::ChronoUnit ChronoUnit::SECONDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -116,7 +116,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::WEEKS()
+	java::time::temporal::ChronoUnit ChronoUnit::WEEKS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -124,7 +124,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::YEARS()
+	java::time::temporal::ChronoUnit ChronoUnit::YEARS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
@@ -139,7 +139,7 @@ namespace java::time::temporal
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ChronoUnit::valueOf(jstring arg0)
+	java::time::temporal::ChronoUnit ChronoUnit::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.ChronoUnit",
@@ -156,7 +156,7 @@ namespace java::time::temporal
 			"()[Ljava/time/temporal/ChronoUnit;"
 		).object<jarray>();
 	}
-	QAndroidJniObject ChronoUnit::addTo(__JniBaseClass arg0, jlong arg1)
+	__JniBaseClass ChronoUnit::addTo(__JniBaseClass arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"addTo",
@@ -174,7 +174,7 @@ namespace java::time::temporal
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ChronoUnit::getDuration()
+	java::time::Duration ChronoUnit::getDuration()
 	{
 		return callObjectMethod(
 			"getDuration",

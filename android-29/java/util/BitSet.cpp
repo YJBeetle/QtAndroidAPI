@@ -25,7 +25,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject BitSet::valueOf(jbyteArray arg0)
+	java::util::BitSet BitSet::valueOf(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.BitSet",
@@ -34,7 +34,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject BitSet::valueOf(jlongArray arg0)
+	java::util::BitSet BitSet::valueOf(jlongArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.BitSet",
@@ -43,7 +43,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject BitSet::valueOf(java::nio::ByteBuffer arg0)
+	java::util::BitSet BitSet::valueOf(java::nio::ByteBuffer arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.BitSet",
@@ -52,7 +52,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BitSet::valueOf(java::nio::LongBuffer arg0)
+	java::util::BitSet BitSet::valueOf(java::nio::LongBuffer arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.BitSet",
@@ -148,7 +148,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject BitSet::get(jint arg0, jint arg1)
+	java::util::BitSet BitSet::get(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"get",
@@ -269,7 +269,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject BitSet::stream()
+	__JniBaseClass BitSet::stream()
 	{
 		return callObjectMethod(
 			"stream",

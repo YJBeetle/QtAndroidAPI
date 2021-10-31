@@ -99,12 +99,12 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getAvailableCalendarTypes();
+		static __JniBaseClass getAvailableCalendarTypes();
 		static jarray getAvailableLocales();
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
-		static QAndroidJniObject getInstance(java::util::TimeZone arg0);
-		static QAndroidJniObject getInstance(java::util::TimeZone arg0, java::util::Locale arg1);
+		static java::util::Calendar getInstance();
+		static java::util::Calendar getInstance(java::util::Locale arg0);
+		static java::util::Calendar getInstance(java::util::TimeZone arg0);
+		static java::util::Calendar getInstance(java::util::TimeZone arg0, java::util::Locale arg1);
 		void add(jint arg0, jint arg1);
 		jboolean after(jobject arg0);
 		jboolean before(jobject arg0);
@@ -119,16 +119,16 @@ namespace java::util
 		jint getActualMinimum(jint arg0);
 		jstring getCalendarType();
 		jstring getDisplayName(jint arg0, jint arg1, java::util::Locale arg2);
-		QAndroidJniObject getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2);
+		__JniBaseClass getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2);
 		jint getFirstDayOfWeek();
 		jint getGreatestMinimum(jint arg0);
 		jint getLeastMaximum(jint arg0);
 		jint getMaximum(jint arg0);
 		jint getMinimalDaysInFirstWeek();
 		jint getMinimum(jint arg0);
-		QAndroidJniObject getTime();
+		java::util::Date getTime();
 		jlong getTimeInMillis();
-		QAndroidJniObject getTimeZone();
+		java::util::TimeZone getTimeZone();
 		jint getWeekYear();
 		jint getWeeksInWeekYear();
 		jint hashCode();
@@ -148,7 +148,7 @@ namespace java::util
 		void setTimeInMillis(jlong arg0);
 		void setTimeZone(java::util::TimeZone arg0);
 		void setWeekDate(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject toInstant();
+		java::time::Instant toInstant();
 		jstring toString();
 	};
 } // namespace java::util

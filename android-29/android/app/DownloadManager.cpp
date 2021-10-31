@@ -294,7 +294,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DownloadManager::getMaxBytesOverMobile(android::content::Context arg0)
+	java::lang::Long DownloadManager::getMaxBytesOverMobile(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.DownloadManager",
@@ -303,7 +303,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DownloadManager::getRecommendedMaxBytesOverMobile(android::content::Context arg0)
+	java::lang::Long DownloadManager::getRecommendedMaxBytesOverMobile(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.DownloadManager",
@@ -358,7 +358,7 @@ namespace android::app
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::getUriForDownloadedFile(jlong arg0)
+	android::net::Uri DownloadManager::getUriForDownloadedFile(jlong arg0)
 	{
 		return callObjectMethod(
 			"getUriForDownloadedFile",
@@ -366,7 +366,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager::openDownloadedFile(jlong arg0)
+	android::os::ParcelFileDescriptor DownloadManager::openDownloadedFile(jlong arg0)
 	{
 		return callObjectMethod(
 			"openDownloadedFile",
@@ -374,7 +374,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager::query(android::app::DownloadManager_Query arg0)
+	__JniBaseClass DownloadManager::query(android::app::DownloadManager_Query arg0)
 	{
 		return callObjectMethod(
 			"query",

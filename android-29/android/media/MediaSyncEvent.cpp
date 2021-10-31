@@ -24,7 +24,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MediaSyncEvent::createEvent(jint arg0)
+	android::media::MediaSyncEvent MediaSyncEvent::createEvent(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaSyncEvent",
@@ -47,7 +47,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaSyncEvent::setAudioSessionId(jint arg0)
+	android::media::MediaSyncEvent MediaSyncEvent::setAudioSessionId(jint arg0)
 	{
 		return callObjectMethod(
 			"setAudioSessionId",

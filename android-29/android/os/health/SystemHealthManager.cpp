@@ -11,14 +11,14 @@ namespace android::os::health
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SystemHealthManager::takeMyUidSnapshot()
+	android::os::health::HealthStats SystemHealthManager::takeMyUidSnapshot()
 	{
 		return callObjectMethod(
 			"takeMyUidSnapshot",
 			"()Landroid/os/health/HealthStats;"
 		);
 	}
-	QAndroidJniObject SystemHealthManager::takeUidSnapshot(jint arg0)
+	android::os::health::HealthStats SystemHealthManager::takeUidSnapshot(jint arg0)
 	{
 		return callObjectMethod(
 			"takeUidSnapshot",

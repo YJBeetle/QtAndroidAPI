@@ -13,7 +13,7 @@ namespace android::service::notification
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint PEOPLE_TYPE_ANYONE();
 		static jint PEOPLE_TYPE_CONTACTS();
 		static jint PEOPLE_TYPE_NONE();

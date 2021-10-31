@@ -15,14 +15,14 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject LauncherActivityInfo::getApplicationInfo()
+	android::content::pm::ApplicationInfo LauncherActivityInfo::getApplicationInfo()
 	{
 		return callObjectMethod(
 			"getApplicationInfo",
 			"()Landroid/content/pm/ApplicationInfo;"
 		);
 	}
-	QAndroidJniObject LauncherActivityInfo::getBadgedIcon(jint arg0)
+	android::graphics::drawable::Drawable LauncherActivityInfo::getBadgedIcon(jint arg0)
 	{
 		return callObjectMethod(
 			"getBadgedIcon",
@@ -30,7 +30,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject LauncherActivityInfo::getComponentName()
+	android::content::ComponentName LauncherActivityInfo::getComponentName()
 	{
 		return callObjectMethod(
 			"getComponentName",
@@ -44,7 +44,7 @@ namespace android::content::pm
 			"()J"
 		);
 	}
-	QAndroidJniObject LauncherActivityInfo::getIcon(jint arg0)
+	android::graphics::drawable::Drawable LauncherActivityInfo::getIcon(jint arg0)
 	{
 		return callObjectMethod(
 			"getIcon",
@@ -66,7 +66,7 @@ namespace android::content::pm
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject LauncherActivityInfo::getUser()
+	android::os::UserHandle LauncherActivityInfo::getUser()
 	{
 		return callObjectMethod(
 			"getUser",

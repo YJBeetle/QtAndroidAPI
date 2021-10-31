@@ -48,24 +48,24 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getEmptyInstance();
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
-		QAndroidJniObject addPattern(jstring arg0, jboolean arg1, android::icu::text::DateTimePatternGenerator_PatternInfo arg2);
+		static android::icu::text::DateTimePatternGenerator getEmptyInstance();
+		static android::icu::text::DateTimePatternGenerator getInstance();
+		static android::icu::text::DateTimePatternGenerator getInstance(android::icu::util::ULocale arg0);
+		static android::icu::text::DateTimePatternGenerator getInstance(java::util::Locale arg0);
+		android::icu::text::DateTimePatternGenerator addPattern(jstring arg0, jboolean arg1, android::icu::text::DateTimePatternGenerator_PatternInfo arg2);
 		jobject clone();
-		QAndroidJniObject cloneAsThawed();
-		QAndroidJniObject freeze();
+		android::icu::text::DateTimePatternGenerator cloneAsThawed();
+		android::icu::text::DateTimePatternGenerator freeze();
 		jstring getAppendItemFormat(jint arg0);
 		jstring getAppendItemName(jint arg0);
 		jstring getBaseSkeleton(jstring arg0);
-		QAndroidJniObject getBaseSkeletons(__JniBaseClass arg0);
+		__JniBaseClass getBaseSkeletons(__JniBaseClass arg0);
 		jstring getBestPattern(jstring arg0);
 		jstring getBestPattern(jstring arg0, jint arg1);
 		jstring getDateTimeFormat();
 		jstring getDecimal();
 		jstring getSkeleton(jstring arg0);
-		QAndroidJniObject getSkeletons(__JniBaseClass arg0);
+		__JniBaseClass getSkeletons(__JniBaseClass arg0);
 		jboolean isFrozen();
 		jstring replaceFieldTypes(jstring arg0, jstring arg1);
 		jstring replaceFieldTypes(jstring arg0, jstring arg1, jint arg2);

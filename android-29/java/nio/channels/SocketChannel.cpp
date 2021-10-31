@@ -14,7 +14,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SocketChannel::open()
+	java::nio::channels::SocketChannel SocketChannel::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.SocketChannel",
@@ -22,7 +22,7 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	QAndroidJniObject SocketChannel::open(__JniBaseClass arg0)
+	java::nio::channels::SocketChannel SocketChannel::open(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.SocketChannel",
@@ -31,7 +31,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SocketChannel::open(java::net::SocketAddress arg0)
+	java::nio::channels::SocketChannel SocketChannel::open(java::net::SocketAddress arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.SocketChannel",
@@ -40,7 +40,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SocketChannel::bind(java::net::SocketAddress arg0)
+	java::nio::channels::SocketChannel SocketChannel::bind(java::net::SocketAddress arg0)
 	{
 		return callObjectMethod(
 			"bind",
@@ -63,14 +63,14 @@ namespace java::nio::channels
 			"()Z"
 		);
 	}
-	QAndroidJniObject SocketChannel::getLocalAddress()
+	java::net::SocketAddress SocketChannel::getLocalAddress()
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	QAndroidJniObject SocketChannel::getRemoteAddress()
+	java::net::SocketAddress SocketChannel::getRemoteAddress()
 	{
 		return callObjectMethod(
 			"getRemoteAddress",
@@ -117,7 +117,7 @@ namespace java::nio::channels
 			arg2
 		);
 	}
-	QAndroidJniObject SocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
+	java::nio::channels::SocketChannel SocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -126,21 +126,21 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	QAndroidJniObject SocketChannel::shutdownInput()
+	java::nio::channels::SocketChannel SocketChannel::shutdownInput()
 	{
 		return callObjectMethod(
 			"shutdownInput",
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	QAndroidJniObject SocketChannel::shutdownOutput()
+	java::nio::channels::SocketChannel SocketChannel::shutdownOutput()
 	{
 		return callObjectMethod(
 			"shutdownOutput",
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	QAndroidJniObject SocketChannel::socket()
+	java::net::Socket SocketChannel::socket()
 	{
 		return callObjectMethod(
 			"socket",

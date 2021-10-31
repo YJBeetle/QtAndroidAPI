@@ -25,7 +25,7 @@ namespace android::graphics::fonts
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getFont(jint arg0);
+		android::graphics::fonts::Font getFont(jint arg0);
 		jint getSize();
 	};
 } // namespace android::graphics::fonts

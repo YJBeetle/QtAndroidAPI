@@ -50,7 +50,7 @@ namespace javax::xml::transform::stream
 		) {}
 	
 	// Methods
-	QAndroidJniObject StreamResult::getOutputStream()
+	java::io::OutputStream StreamResult::getOutputStream()
 	{
 		return callObjectMethod(
 			"getOutputStream",
@@ -64,7 +64,7 @@ namespace javax::xml::transform::stream
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject StreamResult::getWriter()
+	java::io::Writer StreamResult::getWriter()
 	{
 		return callObjectMethod(
 			"getWriter",

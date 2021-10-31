@@ -231,7 +231,7 @@ namespace android::speech::tts
 			"()Z"
 		);
 	}
-	QAndroidJniObject TextToSpeech::getAvailableLanguages()
+	__JniBaseClass TextToSpeech::getAvailableLanguages()
 	{
 		return callObjectMethod(
 			"getAvailableLanguages",
@@ -245,28 +245,28 @@ namespace android::speech::tts
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextToSpeech::getDefaultLanguage()
+	java::util::Locale TextToSpeech::getDefaultLanguage()
 	{
 		return callObjectMethod(
 			"getDefaultLanguage",
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject TextToSpeech::getDefaultVoice()
+	android::speech::tts::Voice TextToSpeech::getDefaultVoice()
 	{
 		return callObjectMethod(
 			"getDefaultVoice",
 			"()Landroid/speech/tts/Voice;"
 		);
 	}
-	QAndroidJniObject TextToSpeech::getEngines()
+	__JniBaseClass TextToSpeech::getEngines()
 	{
 		return callObjectMethod(
 			"getEngines",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject TextToSpeech::getFeatures(java::util::Locale arg0)
+	__JniBaseClass TextToSpeech::getFeatures(java::util::Locale arg0)
 	{
 		return callObjectMethod(
 			"getFeatures",
@@ -274,21 +274,21 @@ namespace android::speech::tts
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextToSpeech::getLanguage()
+	java::util::Locale TextToSpeech::getLanguage()
 	{
 		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject TextToSpeech::getVoice()
+	android::speech::tts::Voice TextToSpeech::getVoice()
 	{
 		return callObjectMethod(
 			"getVoice",
 			"()Landroid/speech/tts/Voice;"
 		);
 	}
-	QAndroidJniObject TextToSpeech::getVoices()
+	__JniBaseClass TextToSpeech::getVoices()
 	{
 		return callObjectMethod(
 			"getVoices",

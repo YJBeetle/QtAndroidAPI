@@ -6,7 +6,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject LinkProperties::CREATOR()
+	__JniBaseClass LinkProperties::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.LinkProperties",
@@ -56,7 +56,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject LinkProperties::getDnsServers()
+	__JniBaseClass LinkProperties::getDnsServers()
 	{
 		return callObjectMethod(
 			"getDnsServers",
@@ -70,7 +70,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject LinkProperties::getHttpProxy()
+	android::net::ProxyInfo LinkProperties::getHttpProxy()
 	{
 		return callObjectMethod(
 			"getHttpProxy",
@@ -84,7 +84,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject LinkProperties::getLinkAddresses()
+	__JniBaseClass LinkProperties::getLinkAddresses()
 	{
 		return callObjectMethod(
 			"getLinkAddresses",
@@ -105,7 +105,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject LinkProperties::getRoutes()
+	__JniBaseClass LinkProperties::getRoutes()
 	{
 		return callObjectMethod(
 			"getRoutes",

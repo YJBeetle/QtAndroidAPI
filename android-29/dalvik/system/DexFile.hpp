@@ -28,9 +28,9 @@ namespace dalvik::system
 		
 		// Methods
 		static jboolean isDexOptNeeded(jstring arg0);
-		static QAndroidJniObject loadDex(jstring arg0, jstring arg1, jint arg2);
+		static dalvik::system::DexFile loadDex(jstring arg0, jstring arg1, jint arg2);
 		void close();
-		QAndroidJniObject entries();
+		__JniBaseClass entries();
 		jstring getName();
 		jclass loadClass(jstring arg0, java::lang::ClassLoader arg1);
 		jstring toString();

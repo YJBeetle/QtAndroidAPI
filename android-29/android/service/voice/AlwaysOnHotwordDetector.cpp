@@ -67,21 +67,21 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AlwaysOnHotwordDetector::createEnrollIntent()
+	android::content::Intent AlwaysOnHotwordDetector::createEnrollIntent()
 	{
 		return callObjectMethod(
 			"createEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	QAndroidJniObject AlwaysOnHotwordDetector::createReEnrollIntent()
+	android::content::Intent AlwaysOnHotwordDetector::createReEnrollIntent()
 	{
 		return callObjectMethod(
 			"createReEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	QAndroidJniObject AlwaysOnHotwordDetector::createUnEnrollIntent()
+	android::content::Intent AlwaysOnHotwordDetector::createUnEnrollIntent()
 	{
 		return callObjectMethod(
 			"createUnEnrollIntent",

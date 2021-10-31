@@ -38,14 +38,14 @@ namespace java::io
 		
 		// Methods
 		void flush();
-		QAndroidJniObject format(jstring arg0, jobjectArray arg1);
-		QAndroidJniObject printf(jstring arg0, jobjectArray arg1);
+		java::io::Console format(jstring arg0, jobjectArray arg1);
+		java::io::Console printf(jstring arg0, jobjectArray arg1);
 		jstring readLine();
 		jstring readLine(jstring arg0, jobjectArray arg1);
 		jcharArray readPassword();
 		jcharArray readPassword(jstring arg0, jobjectArray arg1);
-		QAndroidJniObject reader();
-		QAndroidJniObject writer();
+		java::io::Reader reader();
+		java::io::PrintWriter writer();
 	};
 } // namespace java::io
 

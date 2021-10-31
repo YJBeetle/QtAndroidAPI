@@ -3,7 +3,7 @@
 namespace java::nio
 {
 	// Fields
-	QAndroidJniObject ByteOrder::BIG_ENDIAN()
+	java::nio::ByteOrder ByteOrder::BIG_ENDIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.ByteOrder",
@@ -11,7 +11,7 @@ namespace java::nio
 			"Ljava/nio/ByteOrder;"
 		);
 	}
-	QAndroidJniObject ByteOrder::LITTLE_ENDIAN()
+	java::nio::ByteOrder ByteOrder::LITTLE_ENDIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.ByteOrder",
@@ -26,7 +26,7 @@ namespace java::nio
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ByteOrder::nativeOrder()
+	java::nio::ByteOrder ByteOrder::nativeOrder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.ByteOrder",

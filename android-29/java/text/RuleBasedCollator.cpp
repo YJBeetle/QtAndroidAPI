@@ -43,7 +43,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(jstring arg0)
+	java::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
@@ -51,7 +51,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(__JniBaseClass arg0)
+	java::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
@@ -59,7 +59,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationKey(jstring arg0)
+	java::text::CollationKey RuleBasedCollator::getCollationKey(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCollationKey",

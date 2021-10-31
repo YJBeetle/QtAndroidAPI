@@ -25,7 +25,7 @@ namespace android::gesture
 	{
 	public:
 		// Fields
-		QAndroidJniObject boundingBox();
+		android::graphics::RectF boundingBox();
 		jfloat length();
 		jfloatArray points();
 		
@@ -39,9 +39,9 @@ namespace android::gesture
 		// Methods
 		void clearPath();
 		jobject clone();
-		QAndroidJniObject computeOrientedBoundingBox();
-		QAndroidJniObject getPath();
-		QAndroidJniObject toPath(jfloat arg0, jfloat arg1, jint arg2);
+		android::gesture::OrientedBoundingBox computeOrientedBoundingBox();
+		android::graphics::Path getPath();
+		android::graphics::Path toPath(jfloat arg0, jfloat arg1, jint arg2);
 	};
 } // namespace android::gesture
 

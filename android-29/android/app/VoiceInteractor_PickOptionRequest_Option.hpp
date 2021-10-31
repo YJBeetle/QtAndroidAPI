@@ -17,7 +17,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VoiceInteractor_PickOptionRequest_Option(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,10 +27,10 @@ namespace android::app
 		VoiceInteractor_PickOptionRequest_Option(jstring arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject addSynonym(jstring arg0);
+		android::app::VoiceInteractor_PickOptionRequest_Option addSynonym(jstring arg0);
 		jint countSynonyms();
 		jint describeContents();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jint getIndex();
 		jstring getLabel();
 		jstring getSynonymAt(jint arg0);

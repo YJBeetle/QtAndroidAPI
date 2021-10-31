@@ -27,21 +27,21 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject AlertDialog_Builder::create()
+	android::app::AlertDialog AlertDialog_Builder::create()
 	{
 		return callObjectMethod(
 			"create",
 			"()Landroid/app/AlertDialog;"
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::getContext()
+	android::content::Context AlertDialog_Builder::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setAdapter(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setAdapter(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setAdapter",
@@ -50,7 +50,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setCancelable(jboolean arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setCancelable(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setCancelable",
@@ -58,7 +58,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setCursor(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setCursor(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"setCursor",
@@ -68,7 +68,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setCustomTitle(android::view::View arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setCustomTitle(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"setCustomTitle",
@@ -76,7 +76,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setIcon(android::graphics::drawable::Drawable arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setIcon(android::graphics::drawable::Drawable arg0)
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -84,7 +84,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setIcon(jint arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setIcon(jint arg0)
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -92,7 +92,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setIconAttribute(jint arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setIconAttribute(jint arg0)
 	{
 		return callObjectMethod(
 			"setIconAttribute",
@@ -100,7 +100,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setInverseBackgroundForced(jboolean arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setInverseBackgroundForced(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setInverseBackgroundForced",
@@ -108,7 +108,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setItems(jarray arg0, __JniBaseClass arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setItems(jarray arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setItems",
@@ -117,7 +117,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setItems(jint arg0, __JniBaseClass arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setItems(jint arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setItems",
@@ -126,7 +126,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setMessage(jint arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMessage(jint arg0)
 	{
 		return callObjectMethod(
 			"setMessage",
@@ -134,7 +134,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setMessage(jstring arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMessage(jstring arg0)
 	{
 		return callObjectMethod(
 			"setMessage",
@@ -142,7 +142,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setMultiChoiceItems(jarray arg0, jbooleanArray arg1, __JniBaseClass arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(jarray arg0, jbooleanArray arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"setMultiChoiceItems",
@@ -152,7 +152,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setMultiChoiceItems(jint arg0, jbooleanArray arg1, __JniBaseClass arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(jint arg0, jbooleanArray arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"setMultiChoiceItems",
@@ -162,7 +162,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setMultiChoiceItems(__JniBaseClass arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(__JniBaseClass arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
 	{
 		return callObjectMethod(
 			"setMultiChoiceItems",
@@ -173,7 +173,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setNegativeButton(jint arg0, __JniBaseClass arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setNegativeButton(jint arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setNegativeButton",
@@ -182,7 +182,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setNegativeButton(jstring arg0, __JniBaseClass arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setNegativeButton(jstring arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setNegativeButton",
@@ -191,7 +191,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setNeutralButton(jint arg0, __JniBaseClass arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setNeutralButton(jint arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setNeutralButton",
@@ -200,7 +200,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setNeutralButton(jstring arg0, __JniBaseClass arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setNeutralButton(jstring arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setNeutralButton",
@@ -209,7 +209,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setOnCancelListener(__JniBaseClass arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setOnCancelListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setOnCancelListener",
@@ -217,7 +217,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setOnDismissListener(__JniBaseClass arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setOnDismissListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setOnDismissListener",
@@ -225,7 +225,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setOnItemSelectedListener(__JniBaseClass arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setOnItemSelectedListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setOnItemSelectedListener",
@@ -233,7 +233,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setOnKeyListener(__JniBaseClass arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setOnKeyListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setOnKeyListener",
@@ -241,7 +241,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setPositiveButton(jint arg0, __JniBaseClass arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setPositiveButton(jint arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setPositiveButton",
@@ -250,7 +250,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setPositiveButton(jstring arg0, __JniBaseClass arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setPositiveButton(jstring arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"setPositiveButton",
@@ -259,7 +259,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setSingleChoiceItems(jarray arg0, jint arg1, __JniBaseClass arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(jarray arg0, jint arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"setSingleChoiceItems",
@@ -269,7 +269,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setSingleChoiceItems(__JniBaseClass arg0, jint arg1, __JniBaseClass arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(__JniBaseClass arg0, jint arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"setSingleChoiceItems",
@@ -279,7 +279,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setSingleChoiceItems(jint arg0, jint arg1, __JniBaseClass arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(jint arg0, jint arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"setSingleChoiceItems",
@@ -289,7 +289,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setSingleChoiceItems(__JniBaseClass arg0, jint arg1, jstring arg2, __JniBaseClass arg3)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(__JniBaseClass arg0, jint arg1, jstring arg2, __JniBaseClass arg3)
 	{
 		return callObjectMethod(
 			"setSingleChoiceItems",
@@ -300,7 +300,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setTitle(jint arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setTitle(jint arg0)
 	{
 		return callObjectMethod(
 			"setTitle",
@@ -308,7 +308,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setTitle(jstring arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setTitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setTitle",
@@ -316,7 +316,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setView(android::view::View arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setView(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"setView",
@@ -324,7 +324,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setView(jint arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setView(jint arg0)
 	{
 		return callObjectMethod(
 			"setView",
@@ -332,7 +332,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::show()
+	android::app::AlertDialog AlertDialog_Builder::show()
 	{
 		return callObjectMethod(
 			"show",

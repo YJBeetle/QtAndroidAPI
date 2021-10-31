@@ -59,7 +59,7 @@ namespace java::text
 			"()I"
 		);
 	}
-	QAndroidJniObject FieldPosition::getFieldAttribute()
+	java::text::Format_Field FieldPosition::getFieldAttribute()
 	{
 		return callObjectMethod(
 			"getFieldAttribute",

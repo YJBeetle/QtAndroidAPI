@@ -25,10 +25,10 @@ namespace java::nio::file
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject postVisitDirectory(jobject arg0, java::io::IOException arg1);
-		QAndroidJniObject preVisitDirectory(jobject arg0, __JniBaseClass arg1);
-		QAndroidJniObject visitFile(jobject arg0, __JniBaseClass arg1);
-		QAndroidJniObject visitFileFailed(jobject arg0, java::io::IOException arg1);
+		java::nio::file::FileVisitResult postVisitDirectory(jobject arg0, java::io::IOException arg1);
+		java::nio::file::FileVisitResult preVisitDirectory(jobject arg0, __JniBaseClass arg1);
+		java::nio::file::FileVisitResult visitFile(jobject arg0, __JniBaseClass arg1);
+		java::nio::file::FileVisitResult visitFileFailed(jobject arg0, java::io::IOException arg1);
 	};
 } // namespace java::nio::file
 

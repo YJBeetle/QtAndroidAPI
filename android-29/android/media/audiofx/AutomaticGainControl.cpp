@@ -10,7 +10,7 @@ namespace android::media::audiofx
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AutomaticGainControl::create(jint arg0)
+	android::media::audiofx::AutomaticGainControl AutomaticGainControl::create(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.audiofx.AutomaticGainControl",

@@ -29,16 +29,16 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getRuntime();
-		static QAndroidJniObject version();
+		static java::lang::Runtime getRuntime();
+		static __JniBaseClass version();
 		void addShutdownHook(java::lang::Thread arg0);
 		jint availableProcessors();
-		QAndroidJniObject exec(jarray arg0);
-		QAndroidJniObject exec(jstring arg0);
-		QAndroidJniObject exec(jarray arg0, jarray arg1);
-		QAndroidJniObject exec(jstring arg0, jarray arg1);
-		QAndroidJniObject exec(jarray arg0, jarray arg1, java::io::File arg2);
-		QAndroidJniObject exec(jstring arg0, jarray arg1, java::io::File arg2);
+		java::lang::Process exec(jarray arg0);
+		java::lang::Process exec(jstring arg0);
+		java::lang::Process exec(jarray arg0, jarray arg1);
+		java::lang::Process exec(jstring arg0, jarray arg1);
+		java::lang::Process exec(jarray arg0, jarray arg1, java::io::File arg2);
+		java::lang::Process exec(jstring arg0, jarray arg1, java::io::File arg2);
 		void exit(jint arg0);
 		jlong freeMemory();
 		void gc();

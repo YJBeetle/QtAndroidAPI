@@ -100,7 +100,7 @@ namespace android::graphics
 			arg0
 		).object<jfloatArray>();
 	}
-	QAndroidJniObject ColorSpace_Rgb::getEotf()
+	__JniBaseClass ColorSpace_Rgb::getEotf()
 	{
 		return callObjectMethod(
 			"getEotf",
@@ -138,7 +138,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject ColorSpace_Rgb::getOetf()
+	__JniBaseClass ColorSpace_Rgb::getOetf()
 	{
 		return callObjectMethod(
 			"getOetf",
@@ -160,7 +160,7 @@ namespace android::graphics
 			arg0
 		).object<jfloatArray>();
 	}
-	QAndroidJniObject ColorSpace_Rgb::getTransferParameters()
+	android::graphics::ColorSpace_Rgb_TransferParameters ColorSpace_Rgb::getTransferParameters()
 	{
 		return callObjectMethod(
 			"getTransferParameters",

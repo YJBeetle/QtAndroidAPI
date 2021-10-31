@@ -14,7 +14,7 @@ namespace android::app
 	public:
 		// Fields
 		static jint CRASHED();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint NOT_RESPONDING();
 		static jint NO_ERROR();
 		jint condition();

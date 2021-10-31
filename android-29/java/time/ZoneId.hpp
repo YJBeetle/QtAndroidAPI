@@ -29,7 +29,7 @@ namespace java::time
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SHORT_IDS();
+		static __JniBaseClass SHORT_IDS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZoneId(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -38,18 +38,18 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject from(__JniBaseClass arg0);
-		static QAndroidJniObject getAvailableZoneIds();
-		static QAndroidJniObject of(jstring arg0);
-		static QAndroidJniObject of(jstring arg0, __JniBaseClass arg1);
-		static QAndroidJniObject ofOffset(jstring arg0, java::time::ZoneOffset arg1);
-		static QAndroidJniObject systemDefault();
+		static java::time::ZoneId from(__JniBaseClass arg0);
+		static __JniBaseClass getAvailableZoneIds();
+		static java::time::ZoneId of(jstring arg0);
+		static java::time::ZoneId of(jstring arg0, __JniBaseClass arg1);
+		static java::time::ZoneId ofOffset(jstring arg0, java::time::ZoneOffset arg1);
+		static java::time::ZoneId systemDefault();
 		jboolean equals(jobject arg0);
 		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
 		jstring getId();
-		QAndroidJniObject getRules();
+		java::time::zone::ZoneRules getRules();
 		jint hashCode();
-		QAndroidJniObject normalized();
+		java::time::ZoneId normalized();
 		jstring toString();
 	};
 } // namespace java::time

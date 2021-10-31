@@ -17,7 +17,7 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_DELAY_SAVE();
 		static jint FLAG_DONT_SAVE_ON_FINISH();
 		static jint FLAG_SAVE_ON_ALL_VIEWS_INVISIBLE();

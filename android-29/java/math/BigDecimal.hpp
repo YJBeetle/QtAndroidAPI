@@ -30,7 +30,7 @@ namespace java::math
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ONE();
+		static java::math::BigDecimal ONE();
 		static jint ROUND_CEILING();
 		static jint ROUND_DOWN();
 		static jint ROUND_FLOOR();
@@ -39,8 +39,8 @@ namespace java::math
 		static jint ROUND_HALF_UP();
 		static jint ROUND_UNNECESSARY();
 		static jint ROUND_UP();
-		static QAndroidJniObject TEN();
-		static QAndroidJniObject ZERO();
+		static java::math::BigDecimal TEN();
+		static java::math::BigDecimal ZERO();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BigDecimal(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
@@ -65,26 +65,26 @@ namespace java::math
 		BigDecimal(jcharArray arg0, jint arg1, jint arg2, java::math::MathContext arg3);
 		
 		// Methods
-		static QAndroidJniObject valueOf(jdouble arg0);
-		static QAndroidJniObject valueOf(jlong arg0);
-		static QAndroidJniObject valueOf(jlong arg0, jint arg1);
-		QAndroidJniObject abs();
-		QAndroidJniObject abs(java::math::MathContext arg0);
-		QAndroidJniObject add(java::math::BigDecimal arg0);
-		QAndroidJniObject add(java::math::BigDecimal arg0, java::math::MathContext arg1);
+		static java::math::BigDecimal valueOf(jdouble arg0);
+		static java::math::BigDecimal valueOf(jlong arg0);
+		static java::math::BigDecimal valueOf(jlong arg0, jint arg1);
+		java::math::BigDecimal abs();
+		java::math::BigDecimal abs(java::math::MathContext arg0);
+		java::math::BigDecimal add(java::math::BigDecimal arg0);
+		java::math::BigDecimal add(java::math::BigDecimal arg0, java::math::MathContext arg1);
 		jbyte byteValueExact();
 		jint compareTo(jobject arg0);
 		jint compareTo(java::math::BigDecimal arg0);
-		QAndroidJniObject divide(java::math::BigDecimal arg0);
-		QAndroidJniObject divide(java::math::BigDecimal arg0, jint arg1);
-		QAndroidJniObject divide(java::math::BigDecimal arg0, java::math::MathContext arg1);
-		QAndroidJniObject divide(java::math::BigDecimal arg0, java::math::RoundingMode arg1);
-		QAndroidJniObject divide(java::math::BigDecimal arg0, jint arg1, jint arg2);
-		QAndroidJniObject divide(java::math::BigDecimal arg0, jint arg1, java::math::RoundingMode arg2);
+		java::math::BigDecimal divide(java::math::BigDecimal arg0);
+		java::math::BigDecimal divide(java::math::BigDecimal arg0, jint arg1);
+		java::math::BigDecimal divide(java::math::BigDecimal arg0, java::math::MathContext arg1);
+		java::math::BigDecimal divide(java::math::BigDecimal arg0, java::math::RoundingMode arg1);
+		java::math::BigDecimal divide(java::math::BigDecimal arg0, jint arg1, jint arg2);
+		java::math::BigDecimal divide(java::math::BigDecimal arg0, jint arg1, java::math::RoundingMode arg2);
 		jarray divideAndRemainder(java::math::BigDecimal arg0);
 		jarray divideAndRemainder(java::math::BigDecimal arg0, java::math::MathContext arg1);
-		QAndroidJniObject divideToIntegralValue(java::math::BigDecimal arg0);
-		QAndroidJniObject divideToIntegralValue(java::math::BigDecimal arg0, java::math::MathContext arg1);
+		java::math::BigDecimal divideToIntegralValue(java::math::BigDecimal arg0);
+		java::math::BigDecimal divideToIntegralValue(java::math::BigDecimal arg0, java::math::MathContext arg1);
 		jdouble doubleValue();
 		jboolean equals(jobject arg0);
 		jfloat floatValue();
@@ -93,40 +93,40 @@ namespace java::math
 		jint intValueExact();
 		jlong longValue();
 		jlong longValueExact();
-		QAndroidJniObject max(java::math::BigDecimal arg0);
-		QAndroidJniObject min(java::math::BigDecimal arg0);
-		QAndroidJniObject movePointLeft(jint arg0);
-		QAndroidJniObject movePointRight(jint arg0);
-		QAndroidJniObject multiply(java::math::BigDecimal arg0);
-		QAndroidJniObject multiply(java::math::BigDecimal arg0, java::math::MathContext arg1);
-		QAndroidJniObject negate();
-		QAndroidJniObject negate(java::math::MathContext arg0);
-		QAndroidJniObject plus();
-		QAndroidJniObject plus(java::math::MathContext arg0);
-		QAndroidJniObject pow(jint arg0);
-		QAndroidJniObject pow(jint arg0, java::math::MathContext arg1);
+		java::math::BigDecimal max(java::math::BigDecimal arg0);
+		java::math::BigDecimal min(java::math::BigDecimal arg0);
+		java::math::BigDecimal movePointLeft(jint arg0);
+		java::math::BigDecimal movePointRight(jint arg0);
+		java::math::BigDecimal multiply(java::math::BigDecimal arg0);
+		java::math::BigDecimal multiply(java::math::BigDecimal arg0, java::math::MathContext arg1);
+		java::math::BigDecimal negate();
+		java::math::BigDecimal negate(java::math::MathContext arg0);
+		java::math::BigDecimal plus();
+		java::math::BigDecimal plus(java::math::MathContext arg0);
+		java::math::BigDecimal pow(jint arg0);
+		java::math::BigDecimal pow(jint arg0, java::math::MathContext arg1);
 		jint precision();
-		QAndroidJniObject remainder(java::math::BigDecimal arg0);
-		QAndroidJniObject remainder(java::math::BigDecimal arg0, java::math::MathContext arg1);
-		QAndroidJniObject round(java::math::MathContext arg0);
+		java::math::BigDecimal remainder(java::math::BigDecimal arg0);
+		java::math::BigDecimal remainder(java::math::BigDecimal arg0, java::math::MathContext arg1);
+		java::math::BigDecimal round(java::math::MathContext arg0);
 		jint scale();
-		QAndroidJniObject scaleByPowerOfTen(jint arg0);
-		QAndroidJniObject setScale(jint arg0);
-		QAndroidJniObject setScale(jint arg0, jint arg1);
-		QAndroidJniObject setScale(jint arg0, java::math::RoundingMode arg1);
+		java::math::BigDecimal scaleByPowerOfTen(jint arg0);
+		java::math::BigDecimal setScale(jint arg0);
+		java::math::BigDecimal setScale(jint arg0, jint arg1);
+		java::math::BigDecimal setScale(jint arg0, java::math::RoundingMode arg1);
 		jshort shortValueExact();
 		jint signum();
-		QAndroidJniObject sqrt(java::math::MathContext arg0);
-		QAndroidJniObject stripTrailingZeros();
-		QAndroidJniObject subtract(java::math::BigDecimal arg0);
-		QAndroidJniObject subtract(java::math::BigDecimal arg0, java::math::MathContext arg1);
-		QAndroidJniObject toBigInteger();
-		QAndroidJniObject toBigIntegerExact();
+		java::math::BigDecimal sqrt(java::math::MathContext arg0);
+		java::math::BigDecimal stripTrailingZeros();
+		java::math::BigDecimal subtract(java::math::BigDecimal arg0);
+		java::math::BigDecimal subtract(java::math::BigDecimal arg0, java::math::MathContext arg1);
+		java::math::BigInteger toBigInteger();
+		java::math::BigInteger toBigIntegerExact();
 		jstring toEngineeringString();
 		jstring toPlainString();
 		jstring toString();
-		QAndroidJniObject ulp();
-		QAndroidJniObject unscaledValue();
+		java::math::BigDecimal ulp();
+		java::math::BigInteger unscaledValue();
 	};
 } // namespace java::math
 

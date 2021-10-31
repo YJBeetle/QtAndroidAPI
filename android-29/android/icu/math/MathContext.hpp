@@ -9,7 +9,7 @@ namespace android::icu::math
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEFAULT();
+		static android::icu::math::MathContext DEFAULT();
 		static jint ENGINEERING();
 		static jint PLAIN();
 		static jint ROUND_CEILING();

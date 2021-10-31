@@ -3,7 +3,7 @@
 namespace java::lang::annotation
 {
 	// Fields
-	QAndroidJniObject ElementType::ANNOTATION_TYPE()
+	java::lang::annotation::ElementType ElementType::ANNOTATION_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -11,7 +11,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::CONSTRUCTOR()
+	java::lang::annotation::ElementType ElementType::CONSTRUCTOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -19,7 +19,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::FIELD()
+	java::lang::annotation::ElementType ElementType::FIELD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -27,7 +27,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::LOCAL_VARIABLE()
+	java::lang::annotation::ElementType ElementType::LOCAL_VARIABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -35,7 +35,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::_METHOD()
+	java::lang::annotation::ElementType ElementType::_METHOD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -43,7 +43,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::MODULE()
+	java::lang::annotation::ElementType ElementType::MODULE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -51,7 +51,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::PACKAGE()
+	java::lang::annotation::ElementType ElementType::PACKAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -59,7 +59,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::PARAMETER()
+	java::lang::annotation::ElementType ElementType::PARAMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -67,7 +67,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::RECORD_COMPONENT()
+	java::lang::annotation::ElementType ElementType::RECORD_COMPONENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -75,7 +75,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::TYPE()
+	java::lang::annotation::ElementType ElementType::TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -83,7 +83,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::TYPE_PARAMETER()
+	java::lang::annotation::ElementType ElementType::TYPE_PARAMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -91,7 +91,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/ElementType;"
 		);
 	}
-	QAndroidJniObject ElementType::TYPE_USE()
+	java::lang::annotation::ElementType ElementType::TYPE_USE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
@@ -106,7 +106,7 @@ namespace java::lang::annotation
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ElementType::valueOf(jstring arg0)
+	java::lang::annotation::ElementType ElementType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.annotation.ElementType",

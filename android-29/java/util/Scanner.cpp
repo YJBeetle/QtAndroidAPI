@@ -94,14 +94,14 @@ namespace java::util
 			"()V"
 		);
 	}
-	QAndroidJniObject Scanner::delimiter()
+	java::util::regex::Pattern Scanner::delimiter()
 	{
 		return callObjectMethod(
 			"delimiter",
 			"()Ljava/util/regex/Pattern;"
 		);
 	}
-	QAndroidJniObject Scanner::findAll(jstring arg0)
+	__JniBaseClass Scanner::findAll(jstring arg0)
 	{
 		return callObjectMethod(
 			"findAll",
@@ -109,7 +109,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Scanner::findAll(java::util::regex::Pattern arg0)
+	__JniBaseClass Scanner::findAll(java::util::regex::Pattern arg0)
 	{
 		return callObjectMethod(
 			"findAll",
@@ -284,21 +284,21 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Scanner::ioException()
+	java::io::IOException Scanner::ioException()
 	{
 		return callObjectMethod(
 			"ioException",
 			"()Ljava/io/IOException;"
 		);
 	}
-	QAndroidJniObject Scanner::locale()
+	java::util::Locale Scanner::locale()
 	{
 		return callObjectMethod(
 			"locale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Scanner::match()
+	__JniBaseClass Scanner::match()
 	{
 		return callObjectMethod(
 			"match",
@@ -328,21 +328,21 @@ namespace java::util
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject Scanner::nextBigDecimal()
+	java::math::BigDecimal Scanner::nextBigDecimal()
 	{
 		return callObjectMethod(
 			"nextBigDecimal",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	QAndroidJniObject Scanner::nextBigInteger()
+	java::math::BigInteger Scanner::nextBigInteger()
 	{
 		return callObjectMethod(
 			"nextBigInteger",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject Scanner::nextBigInteger(jint arg0)
+	java::math::BigInteger Scanner::nextBigInteger(jint arg0)
 	{
 		return callObjectMethod(
 			"nextBigInteger",
@@ -452,14 +452,14 @@ namespace java::util
 			"()V"
 		);
 	}
-	QAndroidJniObject Scanner::reset()
+	java::util::Scanner Scanner::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/util/Scanner;"
 		);
 	}
-	QAndroidJniObject Scanner::skip(jstring arg0)
+	java::util::Scanner Scanner::skip(jstring arg0)
 	{
 		return callObjectMethod(
 			"skip",
@@ -467,7 +467,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Scanner::skip(java::util::regex::Pattern arg0)
+	java::util::Scanner Scanner::skip(java::util::regex::Pattern arg0)
 	{
 		return callObjectMethod(
 			"skip",
@@ -482,14 +482,14 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Scanner::tokens()
+	__JniBaseClass Scanner::tokens()
 	{
 		return callObjectMethod(
 			"tokens",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	QAndroidJniObject Scanner::useDelimiter(jstring arg0)
+	java::util::Scanner Scanner::useDelimiter(jstring arg0)
 	{
 		return callObjectMethod(
 			"useDelimiter",
@@ -497,7 +497,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Scanner::useDelimiter(java::util::regex::Pattern arg0)
+	java::util::Scanner Scanner::useDelimiter(java::util::regex::Pattern arg0)
 	{
 		return callObjectMethod(
 			"useDelimiter",
@@ -505,7 +505,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Scanner::useLocale(java::util::Locale arg0)
+	java::util::Scanner Scanner::useLocale(java::util::Locale arg0)
 	{
 		return callObjectMethod(
 			"useLocale",
@@ -513,7 +513,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Scanner::useRadix(jint arg0)
+	java::util::Scanner Scanner::useRadix(jint arg0)
 	{
 		return callObjectMethod(
 			"useRadix",

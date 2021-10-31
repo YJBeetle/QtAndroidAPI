@@ -35,7 +35,7 @@ namespace java::security::cert
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject PKIXCertPathChecker::getSupportedExtensions()
+	__JniBaseClass PKIXCertPathChecker::getSupportedExtensions()
 	{
 		return callObjectMethod(
 			"getSupportedExtensions",

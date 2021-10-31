@@ -13,7 +13,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ChangedPackages(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,7 +24,7 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getPackageNames();
+		__JniBaseClass getPackageNames();
 		jint getSequenceNumber();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

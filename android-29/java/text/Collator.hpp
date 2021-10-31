@@ -33,14 +33,14 @@ namespace java::text
 		
 		// Methods
 		static jarray getAvailableLocales();
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static java::text::Collator getInstance();
+		static java::text::Collator getInstance(java::util::Locale arg0);
 		jobject clone();
 		jint compare(jobject arg0, jobject arg1);
 		jint compare(jstring arg0, jstring arg1);
 		jboolean equals(jobject arg0);
 		jboolean equals(jstring arg0, jstring arg1);
-		QAndroidJniObject getCollationKey(jstring arg0);
+		java::text::CollationKey getCollationKey(jstring arg0);
 		jint getDecomposition();
 		jint getStrength();
 		jint hashCode();

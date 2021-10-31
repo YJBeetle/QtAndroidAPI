@@ -20,7 +20,7 @@ namespace android::sax
 		RootElement(jstring arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getContentHandler();
+		__JniBaseClass getContentHandler();
 	};
 } // namespace android::sax
 

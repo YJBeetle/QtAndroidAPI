@@ -115,7 +115,7 @@ namespace android::media::tv
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject TvView::getTracks(jint arg0)
+	__JniBaseClass TvView::getTracks(jint arg0)
 	{
 		return callObjectMethod(
 			"getTracks",

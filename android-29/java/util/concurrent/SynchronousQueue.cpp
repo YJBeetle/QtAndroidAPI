@@ -72,7 +72,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject SynchronousQueue::iterator()
+	__JniBaseClass SynchronousQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -166,7 +166,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject SynchronousQueue::spliterator()
+	__JniBaseClass SynchronousQueue::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

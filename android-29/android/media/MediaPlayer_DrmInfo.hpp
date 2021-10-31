@@ -21,7 +21,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getPssh();
+		__JniBaseClass getPssh();
 		jarray getSupportedSchemes();
 	};
 } // namespace android::media

@@ -33,14 +33,14 @@ namespace android::graphics::pdf
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PdfDocument::getPages()
+	__JniBaseClass PdfDocument::getPages()
 	{
 		return callObjectMethod(
 			"getPages",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PdfDocument::startPage(android::graphics::pdf::PdfDocument_PageInfo arg0)
+	android::graphics::pdf::PdfDocument_Page PdfDocument::startPage(android::graphics::pdf::PdfDocument_PageInfo arg0)
 	{
 		return callObjectMethod(
 			"startPage",

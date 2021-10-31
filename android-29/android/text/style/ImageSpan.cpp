@@ -100,7 +100,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject ImageSpan::getDrawable()
+	android::graphics::drawable::Drawable ImageSpan::getDrawable()
 	{
 		return callObjectMethod(
 			"getDrawable",

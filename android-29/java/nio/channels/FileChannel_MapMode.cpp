@@ -3,7 +3,7 @@
 namespace java::nio::channels
 {
 	// Fields
-	QAndroidJniObject FileChannel_MapMode::PRIVATE()
+	java::nio::channels::FileChannel_MapMode FileChannel_MapMode::PRIVATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.channels.FileChannel$MapMode",
@@ -11,7 +11,7 @@ namespace java::nio::channels
 			"Ljava/nio/channels/FileChannel$MapMode;"
 		);
 	}
-	QAndroidJniObject FileChannel_MapMode::READ_ONLY()
+	java::nio::channels::FileChannel_MapMode FileChannel_MapMode::READ_ONLY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.channels.FileChannel$MapMode",
@@ -19,7 +19,7 @@ namespace java::nio::channels
 			"Ljava/nio/channels/FileChannel$MapMode;"
 		);
 	}
-	QAndroidJniObject FileChannel_MapMode::READ_WRITE()
+	java::nio::channels::FileChannel_MapMode FileChannel_MapMode::READ_WRITE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.channels.FileChannel$MapMode",

@@ -42,7 +42,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaSession2::getConnectedControllers()
+	__JniBaseClass MediaSession2::getConnectedControllers()
 	{
 		return callObjectMethod(
 			"getConnectedControllers",
@@ -56,7 +56,7 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaSession2::getToken()
+	android::media::Session2Token MediaSession2::getToken()
 	{
 		return callObjectMethod(
 			"getToken",

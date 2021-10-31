@@ -21,8 +21,8 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createInstance(android::content::Context arg0);
-		static QAndroidJniObject getInstance();
+		static android::webkit::CookieSyncManager createInstance(android::content::Context arg0);
+		static android::webkit::CookieSyncManager getInstance();
 		void resetSync();
 		void run();
 		void startSync();

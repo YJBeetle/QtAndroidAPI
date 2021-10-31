@@ -24,8 +24,8 @@ namespace javax::sql
 		StatementEvent(__JniBaseClass arg0, __JniBaseClass arg1, java::sql::SQLException arg2);
 		
 		// Methods
-		QAndroidJniObject getSQLException();
-		QAndroidJniObject getStatement();
+		java::sql::SQLException getSQLException();
+		__JniBaseClass getStatement();
 	};
 } // namespace javax::sql
 

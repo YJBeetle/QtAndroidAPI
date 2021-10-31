@@ -19,7 +19,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject DigestOutputStream::getMessageDigest()
+	java::security::MessageDigest DigestOutputStream::getMessageDigest()
 	{
 		return callObjectMethod(
 			"getMessageDigest",

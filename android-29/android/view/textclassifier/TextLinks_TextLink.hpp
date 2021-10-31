@@ -17,7 +17,7 @@ namespace android::view::textclassifier
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextLinks_TextLink(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,7 +31,7 @@ namespace android::view::textclassifier
 		jint getEnd();
 		jstring getEntity(jint arg0);
 		jint getEntityCount();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jint getStart();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

@@ -275,7 +275,7 @@ namespace android::os
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Debug::getRuntimeStats()
+	__JniBaseClass Debug::getRuntimeStats()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Debug",

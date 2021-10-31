@@ -9,24 +9,24 @@ namespace java::util::jar
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CLASS_PATH();
-		static QAndroidJniObject CONTENT_TYPE();
-		static QAndroidJniObject EXTENSION_INSTALLATION();
-		static QAndroidJniObject EXTENSION_LIST();
-		static QAndroidJniObject EXTENSION_NAME();
-		static QAndroidJniObject IMPLEMENTATION_TITLE();
-		static QAndroidJniObject IMPLEMENTATION_URL();
-		static QAndroidJniObject IMPLEMENTATION_VENDOR();
-		static QAndroidJniObject IMPLEMENTATION_VENDOR_ID();
-		static QAndroidJniObject IMPLEMENTATION_VERSION();
-		static QAndroidJniObject MAIN_CLASS();
-		static QAndroidJniObject MANIFEST_VERSION();
-		static QAndroidJniObject MULTI_RELEASE();
-		static QAndroidJniObject SEALED();
-		static QAndroidJniObject SIGNATURE_VERSION();
-		static QAndroidJniObject SPECIFICATION_TITLE();
-		static QAndroidJniObject SPECIFICATION_VENDOR();
-		static QAndroidJniObject SPECIFICATION_VERSION();
+		static java::util::jar::Attributes_Name CLASS_PATH();
+		static java::util::jar::Attributes_Name CONTENT_TYPE();
+		static java::util::jar::Attributes_Name EXTENSION_INSTALLATION();
+		static java::util::jar::Attributes_Name EXTENSION_LIST();
+		static java::util::jar::Attributes_Name EXTENSION_NAME();
+		static java::util::jar::Attributes_Name IMPLEMENTATION_TITLE();
+		static java::util::jar::Attributes_Name IMPLEMENTATION_URL();
+		static java::util::jar::Attributes_Name IMPLEMENTATION_VENDOR();
+		static java::util::jar::Attributes_Name IMPLEMENTATION_VENDOR_ID();
+		static java::util::jar::Attributes_Name IMPLEMENTATION_VERSION();
+		static java::util::jar::Attributes_Name MAIN_CLASS();
+		static java::util::jar::Attributes_Name MANIFEST_VERSION();
+		static java::util::jar::Attributes_Name MULTI_RELEASE();
+		static java::util::jar::Attributes_Name SEALED();
+		static java::util::jar::Attributes_Name SIGNATURE_VERSION();
+		static java::util::jar::Attributes_Name SPECIFICATION_TITLE();
+		static java::util::jar::Attributes_Name SPECIFICATION_VENDOR();
+		static java::util::jar::Attributes_Name SPECIFICATION_VERSION();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Attributes_Name(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

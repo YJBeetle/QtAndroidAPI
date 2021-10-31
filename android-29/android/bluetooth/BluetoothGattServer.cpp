@@ -53,7 +53,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	QAndroidJniObject BluetoothGattServer::getConnectedDevices()
+	__JniBaseClass BluetoothGattServer::getConnectedDevices()
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -68,7 +68,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BluetoothGattServer::getDevicesMatchingConnectionStates(jintArray arg0)
+	__JniBaseClass BluetoothGattServer::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
@@ -76,7 +76,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	QAndroidJniObject BluetoothGattServer::getService(java::util::UUID arg0)
+	android::bluetooth::BluetoothGattService BluetoothGattServer::getService(java::util::UUID arg0)
 	{
 		return callObjectMethod(
 			"getService",
@@ -84,7 +84,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BluetoothGattServer::getServices()
+	__JniBaseClass BluetoothGattServer::getServices()
 	{
 		return callObjectMethod(
 			"getServices",

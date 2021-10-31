@@ -19,7 +19,7 @@ namespace android::opengl
 		) {}
 	
 	// Methods
-	QAndroidJniObject ETC1Util::compressTexture(java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	android::opengl::ETC1Util_ETC1Texture ETC1Util::compressTexture(java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.ETC1Util",
@@ -32,7 +32,7 @@ namespace android::opengl
 			arg4
 		);
 	}
-	QAndroidJniObject ETC1Util::createTexture(java::io::InputStream arg0)
+	android::opengl::ETC1Util_ETC1Texture ETC1Util::createTexture(java::io::InputStream arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.ETC1Util",

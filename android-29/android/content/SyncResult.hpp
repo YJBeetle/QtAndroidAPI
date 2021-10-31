@@ -17,14 +17,14 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ALREADY_IN_PROGRESS();
-		static QAndroidJniObject CREATOR();
+		static android::content::SyncResult ALREADY_IN_PROGRESS();
+		static __JniBaseClass CREATOR();
 		jboolean databaseError();
 		jlong delayUntil();
 		jboolean fullSyncRequested();
 		jboolean moreRecordsToGet();
 		jboolean partialSyncUnavailable();
-		QAndroidJniObject stats();
+		android::content::SyncStats stats();
 		jboolean syncAlreadyInProgress();
 		jboolean tooManyDeletions();
 		jboolean tooManyRetries();

@@ -26,7 +26,7 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject Certificate::getPublicKey()
+	__JniBaseClass Certificate::getPublicKey()
 	{
 		return callObjectMethod(
 			"getPublicKey",

@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject ClipDescription::CREATOR()
+	__JniBaseClass ClipDescription::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ClipDescription",
@@ -90,7 +90,7 @@ namespace android::content
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject ClipDescription::getExtras()
+	android::os::PersistableBundle ClipDescription::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

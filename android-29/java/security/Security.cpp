@@ -33,7 +33,7 @@ namespace java::security
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject Security::getAlgorithms(jstring arg0)
+	__JniBaseClass Security::getAlgorithms(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Security",
@@ -51,7 +51,7 @@ namespace java::security
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Security::getProvider(jstring arg0)
+	java::security::Provider Security::getProvider(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Security",

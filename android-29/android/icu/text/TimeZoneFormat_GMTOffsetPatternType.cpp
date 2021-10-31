@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject TimeZoneFormat_GMTOffsetPatternType::NEGATIVE_H()
+	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::NEGATIVE_H()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_GMTOffsetPatternType::NEGATIVE_HM()
+	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::NEGATIVE_HM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_GMTOffsetPatternType::NEGATIVE_HMS()
+	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::NEGATIVE_HMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_GMTOffsetPatternType::POSITIVE_H()
+	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::POSITIVE_H()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_GMTOffsetPatternType::POSITIVE_HM()
+	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::POSITIVE_HM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
@@ -43,7 +43,7 @@ namespace android::icu::text
 			"Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_GMTOffsetPatternType::POSITIVE_HMS()
+	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::POSITIVE_HMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
@@ -58,7 +58,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TimeZoneFormat_GMTOffsetPatternType::valueOf(jstring arg0)
+	android::icu::text::TimeZoneFormat_GMTOffsetPatternType TimeZoneFormat_GMTOffsetPatternType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",

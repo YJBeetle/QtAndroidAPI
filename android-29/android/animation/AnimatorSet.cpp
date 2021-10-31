@@ -25,7 +25,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	QAndroidJniObject AnimatorSet::clone()
+	android::animation::AnimatorSet AnimatorSet::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -39,7 +39,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	QAndroidJniObject AnimatorSet::getChildAnimations()
+	java::util::ArrayList AnimatorSet::getChildAnimations()
 	{
 		return callObjectMethod(
 			"getChildAnimations",
@@ -60,7 +60,7 @@ namespace android::animation
 			"()J"
 		);
 	}
-	QAndroidJniObject AnimatorSet::getInterpolator()
+	__JniBaseClass AnimatorSet::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -102,7 +102,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	QAndroidJniObject AnimatorSet::play(android::animation::Animator arg0)
+	android::animation::AnimatorSet_Builder AnimatorSet::play(android::animation::Animator arg0)
 	{
 		return callObjectMethod(
 			"play",
@@ -164,7 +164,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject AnimatorSet::setDuration(jlong arg0)
+	android::animation::AnimatorSet AnimatorSet::setDuration(jlong arg0)
 	{
 		return callObjectMethod(
 			"setDuration",

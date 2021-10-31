@@ -163,7 +163,7 @@ namespace android::bluetooth
 			"()Z"
 		);
 	}
-	QAndroidJniObject BluetoothGatt::getConnectedDevices()
+	__JniBaseClass BluetoothGatt::getConnectedDevices()
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -178,14 +178,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BluetoothGatt::getDevice()
+	android::bluetooth::BluetoothDevice BluetoothGatt::getDevice()
 	{
 		return callObjectMethod(
 			"getDevice",
 			"()Landroid/bluetooth/BluetoothDevice;"
 		);
 	}
-	QAndroidJniObject BluetoothGatt::getDevicesMatchingConnectionStates(jintArray arg0)
+	__JniBaseClass BluetoothGatt::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
@@ -193,7 +193,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	QAndroidJniObject BluetoothGatt::getService(java::util::UUID arg0)
+	android::bluetooth::BluetoothGattService BluetoothGatt::getService(java::util::UUID arg0)
 	{
 		return callObjectMethod(
 			"getService",
@@ -201,7 +201,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BluetoothGatt::getServices()
+	__JniBaseClass BluetoothGatt::getServices()
 	{
 		return callObjectMethod(
 			"getServices",

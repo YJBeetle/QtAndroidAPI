@@ -24,7 +24,7 @@ namespace android::net::wifi::aware
 			"()V"
 		);
 	}
-	QAndroidJniObject WifiAwareSession::createNetworkSpecifierOpen(jint arg0, jbyteArray arg1)
+	android::net::NetworkSpecifier WifiAwareSession::createNetworkSpecifierOpen(jint arg0, jbyteArray arg1)
 	{
 		return callObjectMethod(
 			"createNetworkSpecifierOpen",
@@ -33,7 +33,7 @@ namespace android::net::wifi::aware
 			arg1
 		);
 	}
-	QAndroidJniObject WifiAwareSession::createNetworkSpecifierPassphrase(jint arg0, jbyteArray arg1, jstring arg2)
+	android::net::NetworkSpecifier WifiAwareSession::createNetworkSpecifierPassphrase(jint arg0, jbyteArray arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"createNetworkSpecifierPassphrase",

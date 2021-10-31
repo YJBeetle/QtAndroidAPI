@@ -4,7 +4,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	QAndroidJniObject CorrectionInfo::CREATOR()
+	__JniBaseClass CorrectionInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.CorrectionInfo",

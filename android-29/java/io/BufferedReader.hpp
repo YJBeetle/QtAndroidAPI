@@ -25,7 +25,7 @@ namespace java::io
 		
 		// Methods
 		void close();
-		QAndroidJniObject lines();
+		__JniBaseClass lines();
 		void mark(jint arg0);
 		jboolean markSupported();
 		jint read();

@@ -23,7 +23,7 @@ namespace java::util::stream
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Collectors::averagingDouble(__JniBaseClass arg0)
+	__JniBaseClass Collectors::averagingDouble(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -32,7 +32,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::averagingInt(__JniBaseClass arg0)
+	__JniBaseClass Collectors::averagingInt(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -41,7 +41,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::averagingLong(__JniBaseClass arg0)
+	__JniBaseClass Collectors::averagingLong(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -50,7 +50,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::collectingAndThen(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::collectingAndThen(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -60,7 +60,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::counting()
+	__JniBaseClass Collectors::counting()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -68,7 +68,7 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	QAndroidJniObject Collectors::filtering(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::filtering(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -78,7 +78,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::flatMapping(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::flatMapping(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -88,7 +88,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::groupingBy(__JniBaseClass arg0)
+	__JniBaseClass Collectors::groupingBy(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -97,7 +97,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::groupingBy(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::groupingBy(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -107,7 +107,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::groupingBy(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	__JniBaseClass Collectors::groupingBy(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -118,7 +118,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Collectors::groupingByConcurrent(__JniBaseClass arg0)
+	__JniBaseClass Collectors::groupingByConcurrent(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -127,7 +127,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::groupingByConcurrent(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::groupingByConcurrent(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -137,7 +137,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::groupingByConcurrent(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	__JniBaseClass Collectors::groupingByConcurrent(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -148,7 +148,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Collectors::joining()
+	__JniBaseClass Collectors::joining()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -156,7 +156,7 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	QAndroidJniObject Collectors::joining(jstring arg0)
+	__JniBaseClass Collectors::joining(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -165,7 +165,7 @@ namespace java::util::stream
 			arg0
 		);
 	}
-	QAndroidJniObject Collectors::joining(jstring arg0, jstring arg1, jstring arg2)
+	__JniBaseClass Collectors::joining(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -176,7 +176,7 @@ namespace java::util::stream
 			arg2
 		);
 	}
-	QAndroidJniObject Collectors::mapping(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::mapping(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -186,7 +186,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::maxBy(__JniBaseClass arg0)
+	__JniBaseClass Collectors::maxBy(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -195,7 +195,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::minBy(__JniBaseClass arg0)
+	__JniBaseClass Collectors::minBy(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -204,7 +204,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::partitioningBy(__JniBaseClass arg0)
+	__JniBaseClass Collectors::partitioningBy(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -213,7 +213,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::partitioningBy(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::partitioningBy(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -223,7 +223,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::reducing(__JniBaseClass arg0)
+	__JniBaseClass Collectors::reducing(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -232,7 +232,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::reducing(jobject arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::reducing(jobject arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -242,7 +242,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::reducing(jobject arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	__JniBaseClass Collectors::reducing(jobject arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -253,7 +253,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Collectors::summarizingDouble(__JniBaseClass arg0)
+	__JniBaseClass Collectors::summarizingDouble(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -262,7 +262,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::summarizingInt(__JniBaseClass arg0)
+	__JniBaseClass Collectors::summarizingInt(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -271,7 +271,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::summarizingLong(__JniBaseClass arg0)
+	__JniBaseClass Collectors::summarizingLong(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -280,7 +280,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::summingDouble(__JniBaseClass arg0)
+	__JniBaseClass Collectors::summingDouble(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -289,7 +289,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::summingInt(__JniBaseClass arg0)
+	__JniBaseClass Collectors::summingInt(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -298,7 +298,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::summingLong(__JniBaseClass arg0)
+	__JniBaseClass Collectors::summingLong(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -307,7 +307,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::teeing(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	__JniBaseClass Collectors::teeing(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -318,7 +318,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Collectors::toCollection(__JniBaseClass arg0)
+	__JniBaseClass Collectors::toCollection(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -327,7 +327,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Collectors::toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -337,7 +337,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	__JniBaseClass Collectors::toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -348,7 +348,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Collectors::toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	__JniBaseClass Collectors::toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -360,7 +360,7 @@ namespace java::util::stream
 			arg3.object()
 		);
 	}
-	QAndroidJniObject Collectors::toList()
+	__JniBaseClass Collectors::toList()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -368,7 +368,7 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	QAndroidJniObject Collectors::toMap(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::toMap(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -378,7 +378,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::toMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	__JniBaseClass Collectors::toMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -389,7 +389,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Collectors::toMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	__JniBaseClass Collectors::toMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -401,7 +401,7 @@ namespace java::util::stream
 			arg3.object()
 		);
 	}
-	QAndroidJniObject Collectors::toSet()
+	__JniBaseClass Collectors::toSet()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -409,7 +409,7 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	QAndroidJniObject Collectors::toUnmodifiableList()
+	__JniBaseClass Collectors::toUnmodifiableList()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -417,7 +417,7 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	QAndroidJniObject Collectors::toUnmodifiableMap(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Collectors::toUnmodifiableMap(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -427,7 +427,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Collectors::toUnmodifiableMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	__JniBaseClass Collectors::toUnmodifiableMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -438,7 +438,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Collectors::toUnmodifiableSet()
+	__JniBaseClass Collectors::toUnmodifiableSet()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collectors",

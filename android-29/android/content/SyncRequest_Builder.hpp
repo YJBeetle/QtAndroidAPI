@@ -30,18 +30,18 @@ namespace android::content
 		SyncRequest_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setDisallowMetered(jboolean arg0);
-		QAndroidJniObject setExpedited(jboolean arg0);
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
-		QAndroidJniObject setIgnoreBackoff(jboolean arg0);
-		QAndroidJniObject setIgnoreSettings(jboolean arg0);
-		QAndroidJniObject setManual(jboolean arg0);
-		QAndroidJniObject setNoRetry(jboolean arg0);
-		QAndroidJniObject setRequiresCharging(jboolean arg0);
-		QAndroidJniObject setSyncAdapter(android::accounts::Account arg0, jstring arg1);
-		QAndroidJniObject syncOnce();
-		QAndroidJniObject syncPeriodic(jlong arg0, jlong arg1);
+		android::content::SyncRequest build();
+		android::content::SyncRequest_Builder setDisallowMetered(jboolean arg0);
+		android::content::SyncRequest_Builder setExpedited(jboolean arg0);
+		android::content::SyncRequest_Builder setExtras(android::os::Bundle arg0);
+		android::content::SyncRequest_Builder setIgnoreBackoff(jboolean arg0);
+		android::content::SyncRequest_Builder setIgnoreSettings(jboolean arg0);
+		android::content::SyncRequest_Builder setManual(jboolean arg0);
+		android::content::SyncRequest_Builder setNoRetry(jboolean arg0);
+		android::content::SyncRequest_Builder setRequiresCharging(jboolean arg0);
+		android::content::SyncRequest_Builder setSyncAdapter(android::accounts::Account arg0, jstring arg1);
+		android::content::SyncRequest_Builder syncOnce();
+		android::content::SyncRequest_Builder syncPeriodic(jlong arg0, jlong arg1);
 	};
 } // namespace android::content
 

@@ -26,7 +26,7 @@ namespace android::webkit
 		
 		// Methods
 		static jarray parseResult(jint arg0, android::content::Intent arg1);
-		QAndroidJniObject createIntent();
+		android::content::Intent createIntent();
 		jarray getAcceptTypes();
 		jstring getFilenameHint();
 		jint getMode();

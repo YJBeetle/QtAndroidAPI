@@ -10,10 +10,10 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NARROW();
-		static QAndroidJniObject NUMERIC();
-		static QAndroidJniObject SHORT();
-		static QAndroidJniObject WIDE();
+		static android::icu::text::MeasureFormat_FormatWidth NARROW();
+		static android::icu::text::MeasureFormat_FormatWidth NUMERIC();
+		static android::icu::text::MeasureFormat_FormatWidth SHORT();
+		static android::icu::text::MeasureFormat_FormatWidth WIDE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MeasureFormat_FormatWidth(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::MeasureFormat_FormatWidth valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

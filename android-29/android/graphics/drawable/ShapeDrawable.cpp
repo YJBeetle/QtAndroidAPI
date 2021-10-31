@@ -64,7 +64,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject ShapeDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState ShapeDrawable::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
@@ -108,21 +108,21 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShapeDrawable::getPaint()
+	android::graphics::Paint ShapeDrawable::getPaint()
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
 		);
 	}
-	QAndroidJniObject ShapeDrawable::getShaderFactory()
+	android::graphics::drawable::ShapeDrawable_ShaderFactory ShapeDrawable::getShaderFactory()
 	{
 		return callObjectMethod(
 			"getShaderFactory",
 			"()Landroid/graphics/drawable/ShapeDrawable$ShaderFactory;"
 		);
 	}
-	QAndroidJniObject ShapeDrawable::getShape()
+	android::graphics::drawable::shapes::Shape ShapeDrawable::getShape()
 	{
 		return callObjectMethod(
 			"getShape",
@@ -147,7 +147,7 @@ namespace android::graphics::drawable
 			"()Z"
 		);
 	}
-	QAndroidJniObject ShapeDrawable::mutate()
+	android::graphics::drawable::Drawable ShapeDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

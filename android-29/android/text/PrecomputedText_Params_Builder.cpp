@@ -24,14 +24,14 @@ namespace android::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrecomputedText_Params_Builder::build()
+	android::text::PrecomputedText_Params PrecomputedText_Params_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/text/PrecomputedText$Params;"
 		);
 	}
-	QAndroidJniObject PrecomputedText_Params_Builder::setBreakStrategy(jint arg0)
+	android::text::PrecomputedText_Params_Builder PrecomputedText_Params_Builder::setBreakStrategy(jint arg0)
 	{
 		return callObjectMethod(
 			"setBreakStrategy",
@@ -39,7 +39,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject PrecomputedText_Params_Builder::setHyphenationFrequency(jint arg0)
+	android::text::PrecomputedText_Params_Builder PrecomputedText_Params_Builder::setHyphenationFrequency(jint arg0)
 	{
 		return callObjectMethod(
 			"setHyphenationFrequency",
@@ -47,7 +47,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject PrecomputedText_Params_Builder::setTextDirection(__JniBaseClass arg0)
+	android::text::PrecomputedText_Params_Builder PrecomputedText_Params_Builder::setTextDirection(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setTextDirection",

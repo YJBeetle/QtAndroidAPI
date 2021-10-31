@@ -25,7 +25,7 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint TYPE_SESSION();
 		static jint TYPE_SESSION_SERVICE();
 		
@@ -39,7 +39,7 @@ namespace android::media
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jstring getPackageName();
 		jstring getServiceName();
 		jint getType();

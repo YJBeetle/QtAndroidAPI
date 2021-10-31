@@ -84,7 +84,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Service::getApplication()
+	android::app::Application Service::getApplication()
 	{
 		return callObjectMethod(
 			"getApplication",
@@ -98,7 +98,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Service::onBind(android::content::Intent arg0)
+	__JniBaseClass Service::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

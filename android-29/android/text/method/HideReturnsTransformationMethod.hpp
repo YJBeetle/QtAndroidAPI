@@ -19,7 +19,7 @@ namespace android::text::method
 		HideReturnsTransformationMethod();
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static android::text::method::HideReturnsTransformationMethod getInstance();
 	};
 } // namespace android::text::method
 

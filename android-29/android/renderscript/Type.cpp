@@ -12,7 +12,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Type::createX(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2)
+	android::renderscript::Type Type::createX(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Type",
@@ -23,7 +23,7 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	QAndroidJniObject Type::createXY(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3)
+	android::renderscript::Type Type::createXY(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Type",
@@ -35,7 +35,7 @@ namespace android::renderscript
 			arg3
 		);
 	}
-	QAndroidJniObject Type::createXYZ(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3, jint arg4)
+	android::renderscript::Type Type::createXYZ(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Type",
@@ -55,7 +55,7 @@ namespace android::renderscript
 			"()I"
 		);
 	}
-	QAndroidJniObject Type::getElement()
+	android::renderscript::Element Type::getElement()
 	{
 		return callObjectMethod(
 			"getElement",

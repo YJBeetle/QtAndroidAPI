@@ -42,7 +42,7 @@ namespace javax::xml::parsers
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
-	QAndroidJniObject FactoryConfigurationError::getException()
+	java::lang::Exception FactoryConfigurationError::getException()
 	{
 		return callObjectMethod(
 			"getException",

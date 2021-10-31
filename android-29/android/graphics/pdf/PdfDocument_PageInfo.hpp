@@ -21,7 +21,7 @@ namespace android::graphics::pdf
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getContentRect();
+		android::graphics::Rect getContentRect();
 		jint getPageHeight();
 		jint getPageNumber();
 		jint getPageWidth();

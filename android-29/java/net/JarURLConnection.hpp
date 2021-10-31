@@ -42,14 +42,14 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getAttributes();
+		java::util::jar::Attributes getAttributes();
 		jarray getCertificates();
 		jstring getEntryName();
-		QAndroidJniObject getJarEntry();
-		QAndroidJniObject getJarFile();
-		QAndroidJniObject getJarFileURL();
-		QAndroidJniObject getMainAttributes();
-		QAndroidJniObject getManifest();
+		java::util::jar::JarEntry getJarEntry();
+		java::util::jar::JarFile getJarFile();
+		java::net::URL getJarFileURL();
+		java::util::jar::Attributes getMainAttributes();
+		java::util::jar::Manifest getManifest();
 	};
 } // namespace java::net
 

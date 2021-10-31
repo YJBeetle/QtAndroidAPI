@@ -3,7 +3,7 @@
 namespace java::nio::file
 {
 	// Fields
-	QAndroidJniObject FileVisitOption::FOLLOW_LINKS()
+	java::nio::file::FileVisitOption FileVisitOption::FOLLOW_LINKS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitOption",
@@ -18,7 +18,7 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FileVisitOption::valueOf(jstring arg0)
+	java::nio::file::FileVisitOption FileVisitOption::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.FileVisitOption",

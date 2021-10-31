@@ -29,9 +29,9 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getColorSpace();
+		android::graphics::ColorSpace getColorSpace();
 		jstring getMimeType();
-		QAndroidJniObject getSize();
+		android::util::Size getSize();
 		jboolean isAnimated();
 	};
 } // namespace android::graphics

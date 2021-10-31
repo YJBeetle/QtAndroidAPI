@@ -13,7 +13,7 @@ namespace android::security::keystore
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject KeyGenParameterSpec::getAlgorithmParameterSpec()
+	__JniBaseClass KeyGenParameterSpec::getAlgorithmParameterSpec()
 	{
 		return callObjectMethod(
 			"getAlgorithmParameterSpec",
@@ -34,28 +34,28 @@ namespace android::security::keystore
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject KeyGenParameterSpec::getCertificateNotAfter()
+	java::util::Date KeyGenParameterSpec::getCertificateNotAfter()
 	{
 		return callObjectMethod(
 			"getCertificateNotAfter",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec::getCertificateNotBefore()
+	java::util::Date KeyGenParameterSpec::getCertificateNotBefore()
 	{
 		return callObjectMethod(
 			"getCertificateNotBefore",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec::getCertificateSerialNumber()
+	java::math::BigInteger KeyGenParameterSpec::getCertificateSerialNumber()
 	{
 		return callObjectMethod(
 			"getCertificateSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec::getCertificateSubject()
+	javax::security::auth::x500::X500Principal KeyGenParameterSpec::getCertificateSubject()
 	{
 		return callObjectMethod(
 			"getCertificateSubject",
@@ -83,21 +83,21 @@ namespace android::security::keystore
 			"()I"
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec::getKeyValidityForConsumptionEnd()
+	java::util::Date KeyGenParameterSpec::getKeyValidityForConsumptionEnd()
 	{
 		return callObjectMethod(
 			"getKeyValidityForConsumptionEnd",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec::getKeyValidityForOriginationEnd()
+	java::util::Date KeyGenParameterSpec::getKeyValidityForOriginationEnd()
 	{
 		return callObjectMethod(
 			"getKeyValidityForOriginationEnd",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec::getKeyValidityStart()
+	java::util::Date KeyGenParameterSpec::getKeyValidityStart()
 	{
 		return callObjectMethod(
 			"getKeyValidityStart",

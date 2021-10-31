@@ -13,7 +13,7 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DUE_TIME();
 		static jstring ERROR_CODE();
 		static jstring ERROR_TYPE();

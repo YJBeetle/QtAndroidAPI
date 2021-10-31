@@ -23,7 +23,7 @@ namespace android::webkit
 		
 		// Methods
 		static jboolean allowFileSchemeCookies();
-		static QAndroidJniObject getInstance();
+		static android::webkit::CookieManager getInstance();
 		static void setAcceptFileSchemeCookies(jboolean arg0);
 		jboolean acceptCookie();
 		jboolean acceptThirdPartyCookies(android::webkit::WebView arg0);

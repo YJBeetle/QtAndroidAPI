@@ -49,15 +49,15 @@ namespace android::widget
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getCheckMarkDrawable();
-		QAndroidJniObject getCheckMarkTintBlendMode();
-		QAndroidJniObject getCheckMarkTintList();
-		QAndroidJniObject getCheckMarkTintMode();
+		android::graphics::drawable::Drawable getCheckMarkDrawable();
+		android::graphics::BlendMode getCheckMarkTintBlendMode();
+		android::content::res::ColorStateList getCheckMarkTintList();
+		android::graphics::PorterDuff_Mode getCheckMarkTintMode();
 		jboolean isChecked();
 		void jumpDrawablesToCurrentState();
 		void onRestoreInstanceState(__JniBaseClass arg0);
 		void onRtlPropertiesChanged(jint arg0);
-		QAndroidJniObject onSaveInstanceState();
+		__JniBaseClass onSaveInstanceState();
 		void setCheckMarkDrawable(android::graphics::drawable::Drawable arg0);
 		void setCheckMarkDrawable(jint arg0);
 		void setCheckMarkTintBlendMode(android::graphics::BlendMode arg0);

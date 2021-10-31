@@ -25,14 +25,14 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	QAndroidJniObject ExecutorCompletionService::poll()
+	__JniBaseClass ExecutorCompletionService::poll()
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/util/concurrent/Future;"
 		);
 	}
-	QAndroidJniObject ExecutorCompletionService::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	__JniBaseClass ExecutorCompletionService::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
 		return callObjectMethod(
 			"poll",
@@ -41,7 +41,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ExecutorCompletionService::submit(__JniBaseClass arg0)
+	__JniBaseClass ExecutorCompletionService::submit(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"submit",
@@ -49,7 +49,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ExecutorCompletionService::submit(__JniBaseClass arg0, jobject arg1)
+	__JniBaseClass ExecutorCompletionService::submit(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"submit",
@@ -58,7 +58,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	QAndroidJniObject ExecutorCompletionService::take()
+	__JniBaseClass ExecutorCompletionService::take()
 	{
 		return callObjectMethod(
 			"take",

@@ -21,8 +21,8 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject accept();
-		QAndroidJniObject accept(jint arg0);
+		android::bluetooth::BluetoothSocket accept();
+		android::bluetooth::BluetoothSocket accept(jint arg0);
 		void close();
 		jint getPsm();
 		jstring toString();

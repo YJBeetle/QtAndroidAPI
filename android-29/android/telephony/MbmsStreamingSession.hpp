@@ -37,11 +37,11 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsStreamingSessionCallback arg2);
-		static QAndroidJniObject create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsStreamingSessionCallback arg3);
+		static android::telephony::MbmsStreamingSession create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsStreamingSessionCallback arg2);
+		static android::telephony::MbmsStreamingSession create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsStreamingSessionCallback arg3);
 		void close();
 		void requestUpdateStreamingServices(__JniBaseClass arg0);
-		QAndroidJniObject startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, __JniBaseClass arg1, android::telephony::mbms::StreamingServiceCallback arg2);
+		android::telephony::mbms::StreamingService startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, __JniBaseClass arg1, android::telephony::mbms::StreamingServiceCallback arg2);
 	};
 } // namespace android::telephony
 

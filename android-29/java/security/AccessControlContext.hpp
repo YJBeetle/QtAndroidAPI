@@ -29,7 +29,7 @@ namespace java::security
 		// Methods
 		void checkPermission(java::security::Permission arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getDomainCombiner();
+		__JniBaseClass getDomainCombiner();
 		jint hashCode();
 	};
 } // namespace java::security

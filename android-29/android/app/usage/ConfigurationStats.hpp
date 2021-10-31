@@ -17,7 +17,7 @@ namespace android::app::usage
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConfigurationStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -29,7 +29,7 @@ namespace android::app::usage
 		// Methods
 		jint describeContents();
 		jint getActivationCount();
-		QAndroidJniObject getConfiguration();
+		android::content::res::Configuration getConfiguration();
 		jlong getFirstTimeStamp();
 		jlong getLastTimeActive();
 		jlong getLastTimeStamp();

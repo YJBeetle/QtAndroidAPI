@@ -30,10 +30,10 @@ namespace android::view::textclassifier
 		TextLanguage_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject putLocale(android::icu::util::ULocale arg0, jfloat arg1);
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
-		QAndroidJniObject setId(jstring arg0);
+		android::view::textclassifier::TextLanguage build();
+		android::view::textclassifier::TextLanguage_Builder putLocale(android::icu::util::ULocale arg0, jfloat arg1);
+		android::view::textclassifier::TextLanguage_Builder setExtras(android::os::Bundle arg0);
+		android::view::textclassifier::TextLanguage_Builder setId(jstring arg0);
 	};
 } // namespace android::view::textclassifier
 

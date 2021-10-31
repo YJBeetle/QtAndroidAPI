@@ -15,7 +15,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject ListResourceBundle::getKeys()
+	__JniBaseClass ListResourceBundle::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",

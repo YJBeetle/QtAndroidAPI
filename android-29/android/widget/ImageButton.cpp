@@ -50,7 +50,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ImageButton::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon ImageButton::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",

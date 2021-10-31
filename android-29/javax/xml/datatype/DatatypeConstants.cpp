@@ -19,7 +19,7 @@ namespace javax::xml::datatype
 			"AUGUST"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::DATE()
+	javax::xml::_namespace::QName DatatypeConstants::DATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -27,7 +27,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::DATETIME()
+	javax::xml::_namespace::QName DatatypeConstants::DATETIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -35,7 +35,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::DAYS()
+	javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::DAYS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -50,7 +50,7 @@ namespace javax::xml::datatype
 			"DECEMBER"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::DURATION()
+	javax::xml::_namespace::QName DatatypeConstants::DURATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -58,7 +58,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::DURATION_DAYTIME()
+	javax::xml::_namespace::QName DatatypeConstants::DURATION_DAYTIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -66,7 +66,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::DURATION_YEARMONTH()
+	javax::xml::_namespace::QName DatatypeConstants::DURATION_YEARMONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -95,7 +95,7 @@ namespace javax::xml::datatype
 			"FIELD_UNDEFINED"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::GDAY()
+	javax::xml::_namespace::QName DatatypeConstants::GDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -103,7 +103,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::GMONTH()
+	javax::xml::_namespace::QName DatatypeConstants::GMONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -111,7 +111,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::GMONTHDAY()
+	javax::xml::_namespace::QName DatatypeConstants::GMONTHDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -126,7 +126,7 @@ namespace javax::xml::datatype
 			"GREATER"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::GYEAR()
+	javax::xml::_namespace::QName DatatypeConstants::GYEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -134,7 +134,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::GYEARMONTH()
+	javax::xml::_namespace::QName DatatypeConstants::GYEARMONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -142,7 +142,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::HOURS()
+	javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::HOURS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -206,7 +206,7 @@ namespace javax::xml::datatype
 			"MAY"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::MINUTES()
+	javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::MINUTES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -221,7 +221,7 @@ namespace javax::xml::datatype
 			"MIN_TIMEZONE_OFFSET"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::MONTHS()
+	javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::MONTHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -243,7 +243,7 @@ namespace javax::xml::datatype
 			"OCTOBER"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::SECONDS()
+	javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::SECONDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -258,7 +258,7 @@ namespace javax::xml::datatype
 			"SEPTEMBER"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::TIME()
+	javax::xml::_namespace::QName DatatypeConstants::TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
@@ -266,7 +266,7 @@ namespace javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::YEARS()
+	javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::YEARS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",

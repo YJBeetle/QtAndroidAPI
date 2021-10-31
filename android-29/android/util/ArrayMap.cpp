@@ -66,7 +66,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject ArrayMap::entrySet()
+	__JniBaseClass ArrayMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -127,7 +127,7 @@ namespace android::util
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject ArrayMap::keySet()
+	__JniBaseClass ArrayMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -222,7 +222,7 @@ namespace android::util
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject ArrayMap::values()
+	__JniBaseClass ArrayMap::values()
 	{
 		return callObjectMethod(
 			"values",

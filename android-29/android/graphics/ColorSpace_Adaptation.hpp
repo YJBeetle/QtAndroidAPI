@@ -10,9 +10,9 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BRADFORD();
-		static QAndroidJniObject CIECAT02();
-		static QAndroidJniObject VON_KRIES();
+		static android::graphics::ColorSpace_Adaptation BRADFORD();
+		static android::graphics::ColorSpace_Adaptation CIECAT02();
+		static android::graphics::ColorSpace_Adaptation VON_KRIES();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ColorSpace_Adaptation(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::ColorSpace_Adaptation valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

@@ -46,13 +46,13 @@ namespace java::util::zip
 		
 		// Methods
 		void close();
-		QAndroidJniObject entries();
+		__JniBaseClass entries();
 		jstring getComment();
-		QAndroidJniObject getEntry(jstring arg0);
-		QAndroidJniObject getInputStream(java::util::zip::ZipEntry arg0);
+		java::util::zip::ZipEntry getEntry(jstring arg0);
+		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0);
 		jstring getName();
 		jint size();
-		QAndroidJniObject stream();
+		__JniBaseClass stream();
 	};
 } // namespace java::util::zip
 

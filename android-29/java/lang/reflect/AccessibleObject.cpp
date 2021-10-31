@@ -28,7 +28,7 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibleObject::getAnnotation(jclass arg0)
+	__JniBaseClass AccessibleObject::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -51,7 +51,7 @@ namespace java::lang::reflect
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject AccessibleObject::getDeclaredAnnotation(jclass arg0)
+	__JniBaseClass AccessibleObject::getDeclaredAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotation",

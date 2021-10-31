@@ -15,7 +15,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	QAndroidJniObject OutputStream::nullOutputStream()
+	java::io::OutputStream OutputStream::nullOutputStream()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.io.OutputStream",

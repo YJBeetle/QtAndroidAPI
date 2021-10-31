@@ -32,14 +32,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MediaCodecInfo_EncoderCapabilities::getComplexityRange()
+	android::util::Range MediaCodecInfo_EncoderCapabilities::getComplexityRange()
 	{
 		return callObjectMethod(
 			"getComplexityRange",
 			"()Landroid/util/Range;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_EncoderCapabilities::getQualityRange()
+	android::util::Range MediaCodecInfo_EncoderCapabilities::getQualityRange()
 	{
 		return callObjectMethod(
 			"getQualityRange",

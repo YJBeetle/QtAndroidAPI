@@ -31,7 +31,7 @@ namespace android::speech
 		RecognitionService();
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onDestroy();
 	};
 } // namespace android::speech

@@ -17,7 +17,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SearchableInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,7 +31,7 @@ namespace android::app
 		jint getHintId();
 		jint getImeOptions();
 		jint getInputType();
-		QAndroidJniObject getSearchActivity();
+		android::content::ComponentName getSearchActivity();
 		jint getSettingsDescriptionId();
 		jstring getSuggestAuthority();
 		jstring getSuggestIntentAction();

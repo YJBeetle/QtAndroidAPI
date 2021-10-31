@@ -29,7 +29,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint INVALID_ID();
 		static jint STAGED_SESSION_ACTIVATION_FAILED();
 		static jint STAGED_SESSION_NO_ERROR();
@@ -43,9 +43,9 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject createDetailsIntent();
+		android::content::Intent createDetailsIntent();
 		jint describeContents();
-		QAndroidJniObject getAppIcon();
+		android::graphics::Bitmap getAppIcon();
 		jstring getAppLabel();
 		jstring getAppPackageName();
 		jintArray getChildSessionIds();
@@ -54,16 +54,16 @@ namespace android::content::pm
 		jstring getInstallerPackageName();
 		jint getMode();
 		jint getOriginatingUid();
-		QAndroidJniObject getOriginatingUri();
+		android::net::Uri getOriginatingUri();
 		jint getParentSessionId();
 		jfloat getProgress();
-		QAndroidJniObject getReferrerUri();
+		android::net::Uri getReferrerUri();
 		jint getSessionId();
 		jlong getSize();
 		jint getStagedSessionErrorCode();
 		jstring getStagedSessionErrorMessage();
 		jlong getUpdatedMillis();
-		QAndroidJniObject getUser();
+		android::os::UserHandle getUser();
 		jboolean isActive();
 		jboolean isCommitted();
 		jboolean isMultiPackage();

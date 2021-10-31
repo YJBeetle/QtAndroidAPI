@@ -39,7 +39,7 @@ namespace android::widget
 		SimpleCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, jint arg6, jint arg7, jarray arg8, jintArray arg9);
 		
 		// Methods
-		QAndroidJniObject getViewBinder();
+		__JniBaseClass getViewBinder();
 		void setViewBinder(__JniBaseClass arg0);
 		void setViewText(android::widget::TextView arg0, jstring arg1);
 	};

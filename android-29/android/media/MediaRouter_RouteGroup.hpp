@@ -32,7 +32,7 @@ namespace android::media
 		// Methods
 		void addRoute(android::media::MediaRouter_RouteInfo arg0);
 		void addRoute(android::media::MediaRouter_RouteInfo arg0, jint arg1);
-		QAndroidJniObject getRouteAt(jint arg0);
+		android::media::MediaRouter_RouteInfo getRouteAt(jint arg0);
 		jint getRouteCount();
 		void removeRoute(android::media::MediaRouter_RouteInfo arg0);
 		void removeRoute(jint arg0);

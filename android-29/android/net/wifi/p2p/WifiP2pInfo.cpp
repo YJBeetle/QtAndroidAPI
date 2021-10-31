@@ -5,7 +5,7 @@
 namespace android::net::wifi::p2p
 {
 	// Fields
-	QAndroidJniObject WifiP2pInfo::CREATOR()
+	__JniBaseClass WifiP2pInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pInfo",
@@ -19,7 +19,7 @@ namespace android::net::wifi::p2p
 			"groupFormed"
 		);
 	}
-	QAndroidJniObject WifiP2pInfo::groupOwnerAddress()
+	java::net::InetAddress WifiP2pInfo::groupOwnerAddress()
 	{
 		return getObjectField(
 			"groupOwnerAddress",

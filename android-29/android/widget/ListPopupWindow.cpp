@@ -102,7 +102,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	QAndroidJniObject ListPopupWindow::createDragToOpenListener(android::view::View arg0)
+	__JniBaseClass ListPopupWindow::createDragToOpenListener(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"createDragToOpenListener",
@@ -117,7 +117,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	QAndroidJniObject ListPopupWindow::getAnchorView()
+	android::view::View ListPopupWindow::getAnchorView()
 	{
 		return callObjectMethod(
 			"getAnchorView",
@@ -131,14 +131,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ListPopupWindow::getBackground()
+	android::graphics::drawable::Drawable ListPopupWindow::getBackground()
 	{
 		return callObjectMethod(
 			"getBackground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject ListPopupWindow::getEpicenterBounds()
+	android::graphics::Rect ListPopupWindow::getEpicenterBounds()
 	{
 		return callObjectMethod(
 			"getEpicenterBounds",
@@ -166,7 +166,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ListPopupWindow::getListView()
+	android::widget::ListView ListPopupWindow::getListView()
 	{
 		return callObjectMethod(
 			"getListView",
@@ -201,7 +201,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ListPopupWindow::getSelectedView()
+	android::view::View ListPopupWindow::getSelectedView()
 	{
 		return callObjectMethod(
 			"getSelectedView",

@@ -77,9 +77,9 @@ namespace java::time
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EPOCH();
-		static QAndroidJniObject MAX();
-		static QAndroidJniObject MIN();
+		static java::time::LocalDate EPOCH();
+		static java::time::LocalDate MAX();
+		static java::time::LocalDate MIN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocalDate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -88,39 +88,39 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject from(__JniBaseClass arg0);
-		static QAndroidJniObject now();
-		static QAndroidJniObject now(java::time::Clock arg0);
-		static QAndroidJniObject now(java::time::ZoneId arg0);
-		static QAndroidJniObject of(jint arg0, jint arg1, jint arg2);
-		static QAndroidJniObject of(jint arg0, java::time::Month arg1, jint arg2);
-		static QAndroidJniObject ofEpochDay(jlong arg0);
-		static QAndroidJniObject ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
-		static QAndroidJniObject ofYearDay(jint arg0, jint arg1);
-		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		QAndroidJniObject adjustInto(__JniBaseClass arg0);
-		QAndroidJniObject atStartOfDay();
-		QAndroidJniObject atStartOfDay(java::time::ZoneId arg0);
-		QAndroidJniObject atTime(java::time::LocalTime arg0);
-		QAndroidJniObject atTime(jint arg0, jint arg1);
-		QAndroidJniObject atTime(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject atTime(jint arg0, jint arg1, jint arg2, jint arg3);
-		QAndroidJniObject atTime(java::time::OffsetTime arg0);
+		static java::time::LocalDate from(__JniBaseClass arg0);
+		static java::time::LocalDate now();
+		static java::time::LocalDate now(java::time::Clock arg0);
+		static java::time::LocalDate now(java::time::ZoneId arg0);
+		static java::time::LocalDate of(jint arg0, jint arg1, jint arg2);
+		static java::time::LocalDate of(jint arg0, java::time::Month arg1, jint arg2);
+		static java::time::LocalDate ofEpochDay(jlong arg0);
+		static java::time::LocalDate ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
+		static java::time::LocalDate ofYearDay(jint arg0, jint arg1);
+		static java::time::LocalDate parse(jstring arg0);
+		static java::time::LocalDate parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
+		__JniBaseClass adjustInto(__JniBaseClass arg0);
+		java::time::LocalDateTime atStartOfDay();
+		java::time::ZonedDateTime atStartOfDay(java::time::ZoneId arg0);
+		java::time::LocalDateTime atTime(java::time::LocalTime arg0);
+		java::time::LocalDateTime atTime(jint arg0, jint arg1);
+		java::time::LocalDateTime atTime(jint arg0, jint arg1, jint arg2);
+		java::time::LocalDateTime atTime(jint arg0, jint arg1, jint arg2, jint arg3);
+		java::time::OffsetDateTime atTime(java::time::OffsetTime arg0);
 		jint compareTo(jobject arg0);
 		jint compareTo(__JniBaseClass arg0);
-		QAndroidJniObject datesUntil(java::time::LocalDate arg0);
-		QAndroidJniObject datesUntil(java::time::LocalDate arg0, java::time::Period arg1);
+		__JniBaseClass datesUntil(java::time::LocalDate arg0);
+		__JniBaseClass datesUntil(java::time::LocalDate arg0, java::time::Period arg1);
 		jboolean equals(jobject arg0);
 		jstring format(java::time::format::DateTimeFormatter arg0);
 		jint get(__JniBaseClass arg0);
-		QAndroidJniObject getChronology();
+		java::time::chrono::IsoChronology getChronology();
 		jint getDayOfMonth();
-		QAndroidJniObject getDayOfWeek();
+		java::time::DayOfWeek getDayOfWeek();
 		jint getDayOfYear();
-		QAndroidJniObject getEra();
+		java::time::chrono::IsoEra getEra();
 		jlong getLong(__JniBaseClass arg0);
-		QAndroidJniObject getMonth();
+		java::time::Month getMonth();
 		jint getMonthValue();
 		jint getYear();
 		jint hashCode();
@@ -131,31 +131,31 @@ namespace java::time
 		jboolean isSupported(__JniBaseClass arg0);
 		jint lengthOfMonth();
 		jint lengthOfYear();
-		QAndroidJniObject minus(__JniBaseClass arg0);
-		QAndroidJniObject minus(jlong arg0, __JniBaseClass arg1);
-		QAndroidJniObject minusDays(jlong arg0);
-		QAndroidJniObject minusMonths(jlong arg0);
-		QAndroidJniObject minusWeeks(jlong arg0);
-		QAndroidJniObject minusYears(jlong arg0);
-		QAndroidJniObject plus(__JniBaseClass arg0);
-		QAndroidJniObject plus(jlong arg0, __JniBaseClass arg1);
-		QAndroidJniObject plusDays(jlong arg0);
-		QAndroidJniObject plusMonths(jlong arg0);
-		QAndroidJniObject plusWeeks(jlong arg0);
-		QAndroidJniObject plusYears(jlong arg0);
+		java::time::LocalDate minus(__JniBaseClass arg0);
+		java::time::LocalDate minus(jlong arg0, __JniBaseClass arg1);
+		java::time::LocalDate minusDays(jlong arg0);
+		java::time::LocalDate minusMonths(jlong arg0);
+		java::time::LocalDate minusWeeks(jlong arg0);
+		java::time::LocalDate minusYears(jlong arg0);
+		java::time::LocalDate plus(__JniBaseClass arg0);
+		java::time::LocalDate plus(jlong arg0, __JniBaseClass arg1);
+		java::time::LocalDate plusDays(jlong arg0);
+		java::time::LocalDate plusMonths(jlong arg0);
+		java::time::LocalDate plusWeeks(jlong arg0);
+		java::time::LocalDate plusYears(jlong arg0);
 		jobject query(__JniBaseClass arg0);
-		QAndroidJniObject range(__JniBaseClass arg0);
+		java::time::temporal::ValueRange range(__JniBaseClass arg0);
 		jlong toEpochDay();
 		jlong toEpochSecond(java::time::LocalTime arg0, java::time::ZoneOffset arg1);
 		jstring toString();
-		QAndroidJniObject until(__JniBaseClass arg0);
+		java::time::Period until(__JniBaseClass arg0);
 		jlong until(__JniBaseClass arg0, __JniBaseClass arg1);
-		QAndroidJniObject with(__JniBaseClass arg0);
-		QAndroidJniObject with(__JniBaseClass arg0, jlong arg1);
-		QAndroidJniObject withDayOfMonth(jint arg0);
-		QAndroidJniObject withDayOfYear(jint arg0);
-		QAndroidJniObject withMonth(jint arg0);
-		QAndroidJniObject withYear(jint arg0);
+		java::time::LocalDate with(__JniBaseClass arg0);
+		java::time::LocalDate with(__JniBaseClass arg0, jlong arg1);
+		java::time::LocalDate withDayOfMonth(jint arg0);
+		java::time::LocalDate withDayOfYear(jint arg0);
+		java::time::LocalDate withMonth(jint arg0);
+		java::time::LocalDate withYear(jint arg0);
 	};
 } // namespace java::time
 

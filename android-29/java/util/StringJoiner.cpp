@@ -24,7 +24,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject StringJoiner::add(jstring arg0)
+	java::util::StringJoiner StringJoiner::add(jstring arg0)
 	{
 		return callObjectMethod(
 			"add",
@@ -39,7 +39,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject StringJoiner::merge(java::util::StringJoiner arg0)
+	java::util::StringJoiner StringJoiner::merge(java::util::StringJoiner arg0)
 	{
 		return callObjectMethod(
 			"merge",
@@ -47,7 +47,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject StringJoiner::setEmptyValue(jstring arg0)
+	java::util::StringJoiner StringJoiner::setEmptyValue(jstring arg0)
 	{
 		return callObjectMethod(
 			"setEmptyValue",

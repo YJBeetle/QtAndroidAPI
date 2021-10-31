@@ -18,7 +18,7 @@ namespace javax::security::cert
 		) {}
 	
 	// Methods
-	QAndroidJniObject X509Certificate::getInstance(jbyteArray arg0)
+	javax::security::cert::X509Certificate X509Certificate::getInstance(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.security.cert.X509Certificate",
@@ -27,7 +27,7 @@ namespace javax::security::cert
 			arg0
 		);
 	}
-	QAndroidJniObject X509Certificate::getInstance(java::io::InputStream arg0)
+	javax::security::cert::X509Certificate X509Certificate::getInstance(java::io::InputStream arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.security.cert.X509Certificate",
@@ -51,28 +51,28 @@ namespace javax::security::cert
 			arg0.object()
 		);
 	}
-	QAndroidJniObject X509Certificate::getIssuerDN()
+	__JniBaseClass X509Certificate::getIssuerDN()
 	{
 		return callObjectMethod(
 			"getIssuerDN",
 			"()Ljava/security/Principal;"
 		);
 	}
-	QAndroidJniObject X509Certificate::getNotAfter()
+	java::util::Date X509Certificate::getNotAfter()
 	{
 		return callObjectMethod(
 			"getNotAfter",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject X509Certificate::getNotBefore()
+	java::util::Date X509Certificate::getNotBefore()
 	{
 		return callObjectMethod(
 			"getNotBefore",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject X509Certificate::getSerialNumber()
+	java::math::BigInteger X509Certificate::getSerialNumber()
 	{
 		return callObjectMethod(
 			"getSerialNumber",
@@ -100,7 +100,7 @@ namespace javax::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject X509Certificate::getSubjectDN()
+	__JniBaseClass X509Certificate::getSubjectDN()
 	{
 		return callObjectMethod(
 			"getSubjectDN",

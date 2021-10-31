@@ -100,7 +100,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DreamService::findViewById(jint arg0)
+	android::view::View DreamService::findViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"findViewById",
@@ -115,14 +115,14 @@ namespace android::service::dreams
 			"()V"
 		);
 	}
-	QAndroidJniObject DreamService::getWindow()
+	android::view::Window DreamService::getWindow()
 	{
 		return callObjectMethod(
 			"getWindow",
 			"()Landroid/view/Window;"
 		);
 	}
-	QAndroidJniObject DreamService::getWindowManager()
+	__JniBaseClass DreamService::getWindowManager()
 	{
 		return callObjectMethod(
 			"getWindowManager",
@@ -173,7 +173,7 @@ namespace android::service::dreams
 			"()V"
 		);
 	}
-	QAndroidJniObject DreamService::onBind(android::content::Intent arg0)
+	__JniBaseClass DreamService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -204,7 +204,7 @@ namespace android::service::dreams
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DreamService::onCreatePanelView(jint arg0)
+	android::view::View DreamService::onCreatePanelView(jint arg0)
 	{
 		return callObjectMethod(
 			"onCreatePanelView",
@@ -315,7 +315,7 @@ namespace android::service::dreams
 			arg0
 		);
 	}
-	QAndroidJniObject DreamService::onWindowStartingActionMode(__JniBaseClass arg0)
+	android::view::ActionMode DreamService::onWindowStartingActionMode(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -323,7 +323,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DreamService::onWindowStartingActionMode(__JniBaseClass arg0, jint arg1)
+	android::view::ActionMode DreamService::onWindowStartingActionMode(__JniBaseClass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -332,7 +332,7 @@ namespace android::service::dreams
 			arg1
 		);
 	}
-	QAndroidJniObject DreamService::requireViewById(jint arg0)
+	android::view::View DreamService::requireViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"requireViewById",

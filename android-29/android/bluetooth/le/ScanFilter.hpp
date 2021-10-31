@@ -21,7 +21,7 @@ namespace android::bluetooth::le
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScanFilter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -39,11 +39,11 @@ namespace android::bluetooth::le
 		jint getManufacturerId();
 		jbyteArray getServiceData();
 		jbyteArray getServiceDataMask();
-		QAndroidJniObject getServiceDataUuid();
-		QAndroidJniObject getServiceSolicitationUuid();
-		QAndroidJniObject getServiceSolicitationUuidMask();
-		QAndroidJniObject getServiceUuid();
-		QAndroidJniObject getServiceUuidMask();
+		android::os::ParcelUuid getServiceDataUuid();
+		android::os::ParcelUuid getServiceSolicitationUuid();
+		android::os::ParcelUuid getServiceSolicitationUuidMask();
+		android::os::ParcelUuid getServiceUuid();
+		android::os::ParcelUuid getServiceUuidMask();
 		jint hashCode();
 		jboolean matches(android::bluetooth::le::ScanResult arg0);
 		jstring toString();

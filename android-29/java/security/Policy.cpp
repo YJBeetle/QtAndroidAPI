@@ -10,7 +10,7 @@
 namespace java::security
 {
 	// Fields
-	QAndroidJniObject Policy::UNSUPPORTED_EMPTY_COLLECTION()
+	java::security::PermissionCollection Policy::UNSUPPORTED_EMPTY_COLLECTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.Policy",
@@ -30,7 +30,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject Policy::getInstance(jstring arg0, __JniBaseClass arg1)
+	java::security::Policy Policy::getInstance(jstring arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Policy",
@@ -40,7 +40,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Policy::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
+	java::security::Policy Policy::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Policy",
@@ -51,7 +51,7 @@ namespace java::security
 			arg2
 		);
 	}
-	QAndroidJniObject Policy::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
+	java::security::Policy Policy::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Policy",
@@ -62,7 +62,7 @@ namespace java::security
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Policy::getPolicy()
+	java::security::Policy Policy::getPolicy()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Policy",
@@ -79,14 +79,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Policy::getParameters()
+	__JniBaseClass Policy::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/Policy$Parameters;"
 		);
 	}
-	QAndroidJniObject Policy::getPermissions(java::security::CodeSource arg0)
+	java::security::PermissionCollection Policy::getPermissions(java::security::CodeSource arg0)
 	{
 		return callObjectMethod(
 			"getPermissions",
@@ -94,7 +94,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Policy::getPermissions(java::security::ProtectionDomain arg0)
+	java::security::PermissionCollection Policy::getPermissions(java::security::ProtectionDomain arg0)
 	{
 		return callObjectMethod(
 			"getPermissions",
@@ -102,7 +102,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Policy::getProvider()
+	java::security::Provider Policy::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

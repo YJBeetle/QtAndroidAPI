@@ -4,7 +4,7 @@
 namespace android::media
 {
 	// Fields
-	QAndroidJniObject Rating::CREATOR()
+	__JniBaseClass Rating::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.Rating",
@@ -68,7 +68,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Rating::newHeartRating(jboolean arg0)
+	android::media::Rating Rating::newHeartRating(jboolean arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.Rating",
@@ -77,7 +77,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject Rating::newPercentageRating(jfloat arg0)
+	android::media::Rating Rating::newPercentageRating(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.Rating",
@@ -86,7 +86,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject Rating::newStarRating(jint arg0, jfloat arg1)
+	android::media::Rating Rating::newStarRating(jint arg0, jfloat arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.Rating",
@@ -96,7 +96,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject Rating::newThumbRating(jboolean arg0)
+	android::media::Rating Rating::newThumbRating(jboolean arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.Rating",
@@ -105,7 +105,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject Rating::newUnratedRating(jint arg0)
+	android::media::Rating Rating::newUnratedRating(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.Rating",

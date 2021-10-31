@@ -1292,7 +1292,7 @@ namespace android::media
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject ExifInterface::getThumbnailBitmap()
+	android::graphics::Bitmap ExifInterface::getThumbnailBitmap()
 	{
 		return callObjectMethod(
 			"getThumbnailBitmap",

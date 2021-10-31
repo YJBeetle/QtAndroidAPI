@@ -24,7 +24,7 @@ namespace java::util::zip
 		CheckedOutputStream(java::io::OutputStream arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getChecksum();
+		__JniBaseClass getChecksum();
 		void write(jint arg0);
 		void write(jbyteArray arg0, jint arg1, jint arg2);
 	};

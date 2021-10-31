@@ -102,7 +102,7 @@ namespace android::media
 			"LOCATION_UNKNOWN"
 		);
 	}
-	QAndroidJniObject MicrophoneInfo::ORIENTATION_UNKNOWN()
+	android::media::MicrophoneInfo_Coordinate3F MicrophoneInfo::ORIENTATION_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MicrophoneInfo",
@@ -110,7 +110,7 @@ namespace android::media
 			"Landroid/media/MicrophoneInfo$Coordinate3F;"
 		);
 	}
-	QAndroidJniObject MicrophoneInfo::POSITION_UNKNOWN()
+	android::media::MicrophoneInfo_Coordinate3F MicrophoneInfo::POSITION_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MicrophoneInfo",
@@ -146,7 +146,7 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MicrophoneInfo::getChannelMapping()
+	__JniBaseClass MicrophoneInfo::getChannelMapping()
 	{
 		return callObjectMethod(
 			"getChannelMapping",
@@ -167,7 +167,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MicrophoneInfo::getFrequencyResponse()
+	__JniBaseClass MicrophoneInfo::getFrequencyResponse()
 	{
 		return callObjectMethod(
 			"getFrequencyResponse",
@@ -216,14 +216,14 @@ namespace android::media
 			"()F"
 		);
 	}
-	QAndroidJniObject MicrophoneInfo::getOrientation()
+	android::media::MicrophoneInfo_Coordinate3F MicrophoneInfo::getOrientation()
 	{
 		return callObjectMethod(
 			"getOrientation",
 			"()Landroid/media/MicrophoneInfo$Coordinate3F;"
 		);
 	}
-	QAndroidJniObject MicrophoneInfo::getPosition()
+	android::media::MicrophoneInfo_Coordinate3F MicrophoneInfo::getPosition()
 	{
 		return callObjectMethod(
 			"getPosition",

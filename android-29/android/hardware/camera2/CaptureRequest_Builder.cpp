@@ -21,7 +21,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CaptureRequest_Builder::build()
+	android::hardware::camera2::CaptureRequest CaptureRequest_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
@@ -62,7 +62,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	QAndroidJniObject CaptureRequest_Builder::setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2)
+	android::hardware::camera2::CaptureRequest_Builder CaptureRequest_Builder::setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"setPhysicalCameraKey",

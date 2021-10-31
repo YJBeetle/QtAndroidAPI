@@ -41,7 +41,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject AccessControlContext::getDomainCombiner()
+	__JniBaseClass AccessControlContext::getDomainCombiner()
 	{
 		return callObjectMethod(
 			"getDomainCombiner",

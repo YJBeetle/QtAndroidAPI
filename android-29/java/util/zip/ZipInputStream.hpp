@@ -41,7 +41,7 @@ namespace java::util::zip
 		jint available();
 		void close();
 		void closeEntry();
-		QAndroidJniObject getNextEntry();
+		java::util::zip::ZipEntry getNextEntry();
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		jlong skip(jlong arg0);
 	};

@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject AvailableNetworkInfo::CREATOR()
+	__JniBaseClass AvailableNetworkInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.AvailableNetworkInfo",
@@ -64,14 +64,14 @@ namespace android::telephony
 			arg0
 		);
 	}
-	QAndroidJniObject AvailableNetworkInfo::getBands()
+	__JniBaseClass AvailableNetworkInfo::getBands()
 	{
 		return callObjectMethod(
 			"getBands",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject AvailableNetworkInfo::getMccMncs()
+	__JniBaseClass AvailableNetworkInfo::getMccMncs()
 	{
 		return callObjectMethod(
 			"getMccMncs",

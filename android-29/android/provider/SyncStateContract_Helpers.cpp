@@ -31,7 +31,7 @@ namespace android::provider
 			arg2.object()
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject SyncStateContract_Helpers::getWithUri(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2)
+	android::util::Pair SyncStateContract_Helpers::getWithUri(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.SyncStateContract$Helpers",
@@ -42,7 +42,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject SyncStateContract_Helpers::insert(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, jbyteArray arg3)
+	android::net::Uri SyncStateContract_Helpers::insert(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, jbyteArray arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.SyncStateContract$Helpers",
@@ -54,7 +54,7 @@ namespace android::provider
 			arg3
 		);
 	}
-	QAndroidJniObject SyncStateContract_Helpers::newSetOperation(android::net::Uri arg0, android::accounts::Account arg1, jbyteArray arg2)
+	android::content::ContentProviderOperation SyncStateContract_Helpers::newSetOperation(android::net::Uri arg0, android::accounts::Account arg1, jbyteArray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.SyncStateContract$Helpers",
@@ -65,7 +65,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	QAndroidJniObject SyncStateContract_Helpers::newUpdateOperation(android::net::Uri arg0, jbyteArray arg1)
+	android::content::ContentProviderOperation SyncStateContract_Helpers::newUpdateOperation(android::net::Uri arg0, jbyteArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.SyncStateContract$Helpers",

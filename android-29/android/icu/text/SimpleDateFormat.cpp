@@ -93,7 +93,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer SimpleDateFormat::format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -103,7 +103,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::formatToCharacterIterator(jobject arg0)
+	__JniBaseClass SimpleDateFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -111,21 +111,21 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::get2DigitYearStart()
+	java::util::Date SimpleDateFormat::get2DigitYearStart()
 	{
 		return callObjectMethod(
 			"get2DigitYearStart",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::getDateFormatSymbols()
+	android::icu::text::DateFormatSymbols SimpleDateFormat::getDateFormatSymbols()
 	{
 		return callObjectMethod(
 			"getDateFormatSymbols",
 			"()Landroid/icu/text/DateFormatSymbols;"
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::getNumberFormat(jchar arg0)
+	android::icu::text::NumberFormat SimpleDateFormat::getNumberFormat(jchar arg0)
 	{
 		return callObjectMethod(
 			"getNumberFormat",
@@ -133,7 +133,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::getTimeZoneFormat()
+	android::icu::text::TimeZoneFormat SimpleDateFormat::getTimeZoneFormat()
 	{
 		return callObjectMethod(
 			"getTimeZoneFormat",

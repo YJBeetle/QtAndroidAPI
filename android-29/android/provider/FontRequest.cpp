@@ -27,7 +27,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject FontRequest::getCertificates()
+	__JniBaseClass FontRequest::getCertificates()
 	{
 		return callObjectMethod(
 			"getCertificates",

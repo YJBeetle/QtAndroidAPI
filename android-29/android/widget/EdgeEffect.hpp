@@ -21,7 +21,7 @@ namespace android::widget
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEFAULT_BLEND_MODE();
+		static android::graphics::BlendMode DEFAULT_BLEND_MODE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EdgeEffect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,7 +33,7 @@ namespace android::widget
 		// Methods
 		jboolean draw(android::graphics::Canvas arg0);
 		void finish();
-		QAndroidJniObject getBlendMode();
+		android::graphics::BlendMode getBlendMode();
 		jint getColor();
 		jint getMaxHeight();
 		jboolean isFinished();

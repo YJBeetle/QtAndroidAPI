@@ -35,7 +35,7 @@ namespace android::content::pm
 		static jint CATEGORY_SOCIAL();
 		static jint CATEGORY_UNDEFINED();
 		static jint CATEGORY_VIDEO();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_ALLOW_BACKUP();
 		static jint FLAG_ALLOW_CLEAR_USER_DATA();
 		static jint FLAG_ALLOW_TASK_REPARENTING();
@@ -91,7 +91,7 @@ namespace android::content::pm
 		jarray splitNames();
 		jarray splitPublicSourceDirs();
 		jarray splitSourceDirs();
-		QAndroidJniObject storageUuid();
+		java::util::UUID storageUuid();
 		jint targetSdkVersion();
 		jstring taskAffinity();
 		jint theme();

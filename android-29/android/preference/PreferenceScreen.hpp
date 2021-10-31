@@ -40,8 +40,8 @@ namespace android::preference
 		
 		// Methods
 		void bind(android::widget::ListView arg0);
-		QAndroidJniObject getDialog();
-		QAndroidJniObject getRootAdapter();
+		android::app::Dialog getDialog();
+		__JniBaseClass getRootAdapter();
 		void onDismiss(__JniBaseClass arg0);
 		void onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3);
 	};

@@ -24,14 +24,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PermissionCollection::elements()
+	__JniBaseClass PermissionCollection::elements()
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject PermissionCollection::elementsAsStream()
+	__JniBaseClass PermissionCollection::elementsAsStream()
 	{
 		return callObjectMethod(
 			"elementsAsStream",

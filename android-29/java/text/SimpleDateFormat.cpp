@@ -75,7 +75,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer SimpleDateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -85,7 +85,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::formatToCharacterIterator(jobject arg0)
+	__JniBaseClass SimpleDateFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -93,14 +93,14 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::get2DigitYearStart()
+	java::util::Date SimpleDateFormat::get2DigitYearStart()
 	{
 		return callObjectMethod(
 			"get2DigitYearStart",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::getDateFormatSymbols()
+	java::text::DateFormatSymbols SimpleDateFormat::getDateFormatSymbols()
 	{
 		return callObjectMethod(
 			"getDateFormatSymbols",
@@ -114,7 +114,7 @@ namespace java::text
 			"()I"
 		);
 	}
-	QAndroidJniObject SimpleDateFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::util::Date SimpleDateFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",

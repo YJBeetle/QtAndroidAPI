@@ -4,7 +4,7 @@
 namespace android::telephony::euicc
 {
 	// Fields
-	QAndroidJniObject DownloadableSubscription::CREATOR()
+	__JniBaseClass DownloadableSubscription::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.euicc.DownloadableSubscription",
@@ -19,7 +19,7 @@ namespace android::telephony::euicc
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DownloadableSubscription::forActivationCode(jstring arg0)
+	android::telephony::euicc::DownloadableSubscription DownloadableSubscription::forActivationCode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.euicc.DownloadableSubscription",

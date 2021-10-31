@@ -19,10 +19,10 @@ namespace java::util
 		StringJoiner(jstring arg0, jstring arg1, jstring arg2);
 		
 		// Methods
-		QAndroidJniObject add(jstring arg0);
+		java::util::StringJoiner add(jstring arg0);
 		jint length();
-		QAndroidJniObject merge(java::util::StringJoiner arg0);
-		QAndroidJniObject setEmptyValue(jstring arg0);
+		java::util::StringJoiner merge(java::util::StringJoiner arg0);
+		java::util::StringJoiner setEmptyValue(jstring arg0);
 		jstring toString();
 	};
 } // namespace java::util

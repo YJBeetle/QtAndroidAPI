@@ -85,7 +85,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TabWidget::getChildTabViewAt(jint arg0)
+	android::view::View TabWidget::getChildTabViewAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getChildTabViewAt",
@@ -93,14 +93,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject TabWidget::getLeftStripDrawable()
+	android::graphics::drawable::Drawable TabWidget::getLeftStripDrawable()
 	{
 		return callObjectMethod(
 			"getLeftStripDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject TabWidget::getRightStripDrawable()
+	android::graphics::drawable::Drawable TabWidget::getRightStripDrawable()
 	{
 		return callObjectMethod(
 			"getRightStripDrawable",
@@ -130,7 +130,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject TabWidget::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon TabWidget::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",

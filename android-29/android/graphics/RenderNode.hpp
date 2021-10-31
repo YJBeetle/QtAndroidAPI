@@ -38,8 +38,8 @@ namespace android::graphics
 		RenderNode(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject beginRecording();
-		QAndroidJniObject beginRecording(jint arg0, jint arg1);
+		android::graphics::RecordingCanvas beginRecording();
+		android::graphics::RecordingCanvas beginRecording(jint arg0, jint arg1);
 		jlong computeApproximateMemoryUsage();
 		void discardDisplayList();
 		void endRecording();

@@ -28,15 +28,15 @@ namespace java::lang::reflect
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAnnotatedReturnType();
-		QAndroidJniObject getAnnotation(jclass arg0);
+		__JniBaseClass getAnnotatedReturnType();
+		__JniBaseClass getAnnotation(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jclass getDeclaringClass();
 		jobject getDefaultValue();
 		jarray getExceptionTypes();
 		jarray getGenericExceptionTypes();
 		jarray getGenericParameterTypes();
-		QAndroidJniObject getGenericReturnType();
+		__JniBaseClass getGenericReturnType();
 		jint getModifiers();
 		jstring getName();
 		jarray getParameterAnnotations();

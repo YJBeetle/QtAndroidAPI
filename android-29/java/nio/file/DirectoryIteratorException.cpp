@@ -18,7 +18,7 @@ namespace java::nio::file
 		) {}
 	
 	// Methods
-	QAndroidJniObject DirectoryIteratorException::getCause()
+	java::io::IOException DirectoryIteratorException::getCause()
 	{
 		return callObjectMethod(
 			"getCause",

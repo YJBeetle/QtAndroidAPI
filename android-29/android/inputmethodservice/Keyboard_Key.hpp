@@ -25,8 +25,8 @@ namespace android::inputmethodservice
 		jint edgeFlags();
 		jint gap();
 		jint height();
-		QAndroidJniObject icon();
-		QAndroidJniObject iconPreview();
+		android::graphics::drawable::Drawable icon();
+		android::graphics::drawable::Drawable iconPreview();
 		jstring label();
 		jboolean modifier();
 		jboolean on();

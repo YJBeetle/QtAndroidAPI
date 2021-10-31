@@ -45,7 +45,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	QAndroidJniObject PopupMenu::getDragToOpenListener()
+	__JniBaseClass PopupMenu::getDragToOpenListener()
 	{
 		return callObjectMethod(
 			"getDragToOpenListener",
@@ -59,14 +59,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject PopupMenu::getMenu()
+	__JniBaseClass PopupMenu::getMenu()
 	{
 		return callObjectMethod(
 			"getMenu",
 			"()Landroid/view/Menu;"
 		);
 	}
-	QAndroidJniObject PopupMenu::getMenuInflater()
+	android::view::MenuInflater PopupMenu::getMenuInflater()
 	{
 		return callObjectMethod(
 			"getMenuInflater",

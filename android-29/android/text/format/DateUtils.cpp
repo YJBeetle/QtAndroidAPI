@@ -349,7 +349,7 @@ namespace android::text::format
 			arg3
 		).object<jstring>();
 	}
-	QAndroidJniObject DateUtils::formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4)
+	java::util::Formatter DateUtils::formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateUtils",
@@ -362,7 +362,7 @@ namespace android::text::format
 			arg4
 		);
 	}
-	QAndroidJniObject DateUtils::formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4, jstring arg5)
+	java::util::Formatter DateUtils::formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4, jstring arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateUtils",

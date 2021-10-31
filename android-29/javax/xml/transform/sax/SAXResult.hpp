@@ -20,8 +20,8 @@ namespace javax::xml::transform::sax
 		SAXResult(__JniBaseClass arg0);
 		
 		// Methods
-		QAndroidJniObject getHandler();
-		QAndroidJniObject getLexicalHandler();
+		__JniBaseClass getHandler();
+		__JniBaseClass getLexicalHandler();
 		jstring getSystemId();
 		void setHandler(__JniBaseClass arg0);
 		void setLexicalHandler(__JniBaseClass arg0);

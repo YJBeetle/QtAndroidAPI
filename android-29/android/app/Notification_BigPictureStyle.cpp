@@ -24,7 +24,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Notification_BigPictureStyle::bigLargeIcon(android::graphics::Bitmap arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigLargeIcon(android::graphics::Bitmap arg0)
 	{
 		return callObjectMethod(
 			"bigLargeIcon",
@@ -32,7 +32,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_BigPictureStyle::bigLargeIcon(android::graphics::drawable::Icon arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigLargeIcon(android::graphics::drawable::Icon arg0)
 	{
 		return callObjectMethod(
 			"bigLargeIcon",
@@ -40,7 +40,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_BigPictureStyle::bigPicture(android::graphics::Bitmap arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigPicture(android::graphics::Bitmap arg0)
 	{
 		return callObjectMethod(
 			"bigPicture",
@@ -48,7 +48,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_BigPictureStyle::setBigContentTitle(jstring arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::setBigContentTitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setBigContentTitle",
@@ -56,7 +56,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_BigPictureStyle::setSummaryText(jstring arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::setSummaryText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSummaryText",

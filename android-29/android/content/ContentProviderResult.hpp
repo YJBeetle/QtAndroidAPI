@@ -21,9 +21,9 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
-		QAndroidJniObject count();
-		QAndroidJniObject uri();
+		static __JniBaseClass CREATOR();
+		java::lang::Integer count();
+		android::net::Uri uri();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentProviderResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

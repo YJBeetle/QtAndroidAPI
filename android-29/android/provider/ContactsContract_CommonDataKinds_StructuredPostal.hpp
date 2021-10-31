@@ -20,7 +20,7 @@ namespace android::provider
 		static jstring CITY();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring COUNTRY();
 		static jstring EXTRA_ADDRESS_BOOK_INDEX();
 		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();

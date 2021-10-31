@@ -67,7 +67,7 @@ namespace javax::crypto
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Cipher::getInstance(jstring arg0)
+	javax::crypto::Cipher Cipher::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.Cipher",
@@ -76,7 +76,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	QAndroidJniObject Cipher::getInstance(jstring arg0, jstring arg1)
+	javax::crypto::Cipher Cipher::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.Cipher",
@@ -86,7 +86,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	QAndroidJniObject Cipher::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::crypto::Cipher Cipher::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.Cipher",
@@ -105,7 +105,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	QAndroidJniObject Cipher::getMaxAllowedParameterSpec(jstring arg0)
+	__JniBaseClass Cipher::getMaxAllowedParameterSpec(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.Cipher",
@@ -194,7 +194,7 @@ namespace javax::crypto
 			"()I"
 		);
 	}
-	QAndroidJniObject Cipher::getExemptionMechanism()
+	javax::crypto::ExemptionMechanism Cipher::getExemptionMechanism()
 	{
 		return callObjectMethod(
 			"getExemptionMechanism",
@@ -216,14 +216,14 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	QAndroidJniObject Cipher::getParameters()
+	java::security::AlgorithmParameters Cipher::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
-	QAndroidJniObject Cipher::getProvider()
+	java::security::Provider Cipher::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",
@@ -317,7 +317,7 @@ namespace javax::crypto
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Cipher::unwrap(jbyteArray arg0, jstring arg1, jint arg2)
+	__JniBaseClass Cipher::unwrap(jbyteArray arg0, jstring arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"unwrap",

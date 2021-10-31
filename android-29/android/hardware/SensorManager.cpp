@@ -516,7 +516,7 @@ namespace android::hardware
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SensorManager::createDirectChannel(android::hardware::HardwareBuffer arg0)
+	android::hardware::SensorDirectChannel SensorManager::createDirectChannel(android::hardware::HardwareBuffer arg0)
 	{
 		return callObjectMethod(
 			"createDirectChannel",
@@ -524,7 +524,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SensorManager::createDirectChannel(android::os::MemoryFile arg0)
+	android::hardware::SensorDirectChannel SensorManager::createDirectChannel(android::os::MemoryFile arg0)
 	{
 		return callObjectMethod(
 			"createDirectChannel",
@@ -540,7 +540,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SensorManager::getDefaultSensor(jint arg0)
+	android::hardware::Sensor SensorManager::getDefaultSensor(jint arg0)
 	{
 		return callObjectMethod(
 			"getDefaultSensor",
@@ -548,7 +548,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	QAndroidJniObject SensorManager::getDefaultSensor(jint arg0, jboolean arg1)
+	android::hardware::Sensor SensorManager::getDefaultSensor(jint arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"getDefaultSensor",
@@ -557,7 +557,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	QAndroidJniObject SensorManager::getDynamicSensorList(jint arg0)
+	__JniBaseClass SensorManager::getDynamicSensorList(jint arg0)
 	{
 		return callObjectMethod(
 			"getDynamicSensorList",
@@ -565,7 +565,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	QAndroidJniObject SensorManager::getSensorList(jint arg0)
+	__JniBaseClass SensorManager::getSensorList(jint arg0)
 	{
 		return callObjectMethod(
 			"getSensorList",

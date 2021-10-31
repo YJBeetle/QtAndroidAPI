@@ -35,7 +35,7 @@ namespace org::xml::sax::helpers
 		void ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2);
 		void notationDecl(jstring arg0, jstring arg1, jstring arg2);
 		void processingInstruction(jstring arg0, jstring arg1);
-		QAndroidJniObject resolveEntity(jstring arg0, jstring arg1);
+		org::xml::sax::InputSource resolveEntity(jstring arg0, jstring arg1);
 		void setDocumentLocator(__JniBaseClass arg0);
 		void skippedEntity(jstring arg0);
 		void startDocument();

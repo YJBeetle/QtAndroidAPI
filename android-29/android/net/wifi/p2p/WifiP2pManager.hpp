@@ -71,7 +71,7 @@ namespace android::net::wifi::p2p
 		void createGroup(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::WifiP2pConfig arg1, __JniBaseClass arg2);
 		void discoverPeers(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
 		void discoverServices(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		QAndroidJniObject initialize(android::content::Context arg0, android::os::Looper arg1, __JniBaseClass arg2);
+		android::net::wifi::p2p::WifiP2pManager_Channel initialize(android::content::Context arg0, android::os::Looper arg1, __JniBaseClass arg2);
 		void removeGroup(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
 		void removeLocalService(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, __JniBaseClass arg2);
 		void removeServiceRequest(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, __JniBaseClass arg2);

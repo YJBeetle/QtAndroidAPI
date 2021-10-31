@@ -34,7 +34,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	QAndroidJniObject ShareActionProvider::onCreateActionView()
+	android::view::View ShareActionProvider::onCreateActionView()
 	{
 		return callObjectMethod(
 			"onCreateActionView",

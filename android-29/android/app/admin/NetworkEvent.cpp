@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	QAndroidJniObject NetworkEvent::CREATOR()
+	__JniBaseClass NetworkEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.NetworkEvent",

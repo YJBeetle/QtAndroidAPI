@@ -11,7 +11,7 @@ namespace android::nfc::tech
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject NfcA::get(android::nfc::Tag arg0)
+	android::nfc::tech::NfcA NfcA::get(android::nfc::Tag arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.tech.NfcA",
@@ -55,7 +55,7 @@ namespace android::nfc::tech
 			"()S"
 		);
 	}
-	QAndroidJniObject NfcA::getTag()
+	android::nfc::Tag NfcA::getTag()
 	{
 		return callObjectMethod(
 			"getTag",

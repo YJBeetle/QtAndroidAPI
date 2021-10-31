@@ -17,7 +17,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ParcelUuid(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,10 +27,10 @@ namespace android::os
 		ParcelUuid(java::util::UUID arg0);
 		
 		// Methods
-		static QAndroidJniObject fromString(jstring arg0);
+		static android::os::ParcelUuid fromString(jstring arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getUuid();
+		java::util::UUID getUuid();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

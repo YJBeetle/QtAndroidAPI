@@ -21,7 +21,7 @@ namespace android::widget
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TabHost_TabSpec::setContent(android::content::Intent arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"setContent",
@@ -29,7 +29,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TabHost_TabSpec::setContent(__JniBaseClass arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setContent",
@@ -37,7 +37,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TabHost_TabSpec::setContent(jint arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setContent(jint arg0)
 	{
 		return callObjectMethod(
 			"setContent",
@@ -45,7 +45,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject TabHost_TabSpec::setIndicator(android::view::View arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"setIndicator",
@@ -53,7 +53,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TabHost_TabSpec::setIndicator(jstring arg0)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(jstring arg0)
 	{
 		return callObjectMethod(
 			"setIndicator",
@@ -61,7 +61,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject TabHost_TabSpec::setIndicator(jstring arg0, android::graphics::drawable::Drawable arg1)
+	android::widget::TabHost_TabSpec TabHost_TabSpec::setIndicator(jstring arg0, android::graphics::drawable::Drawable arg1)
 	{
 		return callObjectMethod(
 			"setIndicator",

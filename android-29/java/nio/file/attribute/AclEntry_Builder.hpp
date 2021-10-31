@@ -25,13 +25,13 @@ namespace java::nio::file::attribute
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setFlags(jarray arg0);
-		QAndroidJniObject setFlags(__JniBaseClass arg0);
-		QAndroidJniObject setPermissions(jarray arg0);
-		QAndroidJniObject setPermissions(__JniBaseClass arg0);
-		QAndroidJniObject setPrincipal(__JniBaseClass arg0);
-		QAndroidJniObject setType(java::nio::file::attribute::AclEntryType arg0);
+		java::nio::file::attribute::AclEntry build();
+		java::nio::file::attribute::AclEntry_Builder setFlags(jarray arg0);
+		java::nio::file::attribute::AclEntry_Builder setFlags(__JniBaseClass arg0);
+		java::nio::file::attribute::AclEntry_Builder setPermissions(jarray arg0);
+		java::nio::file::attribute::AclEntry_Builder setPermissions(__JniBaseClass arg0);
+		java::nio::file::attribute::AclEntry_Builder setPrincipal(__JniBaseClass arg0);
+		java::nio::file::attribute::AclEntry_Builder setType(java::nio::file::attribute::AclEntryType arg0);
 	};
 } // namespace java::nio::file::attribute
 

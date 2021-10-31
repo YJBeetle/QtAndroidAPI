@@ -15,7 +15,7 @@ namespace android::widget
 		// Fields
 		jlong id();
 		jint position();
-		QAndroidJniObject targetView();
+		android::view::View targetView();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AdapterView_AdapterContextMenuInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

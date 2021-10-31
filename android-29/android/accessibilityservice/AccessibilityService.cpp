@@ -256,7 +256,7 @@ namespace android::accessibilityservice
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AccessibilityService::findFocus(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityService::findFocus(jint arg0)
 	{
 		return callObjectMethod(
 			"findFocus",
@@ -264,42 +264,42 @@ namespace android::accessibilityservice
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityService::getAccessibilityButtonController()
+	android::accessibilityservice::AccessibilityButtonController AccessibilityService::getAccessibilityButtonController()
 	{
 		return callObjectMethod(
 			"getAccessibilityButtonController",
 			"()Landroid/accessibilityservice/AccessibilityButtonController;"
 		);
 	}
-	QAndroidJniObject AccessibilityService::getFingerprintGestureController()
+	android::accessibilityservice::FingerprintGestureController AccessibilityService::getFingerprintGestureController()
 	{
 		return callObjectMethod(
 			"getFingerprintGestureController",
 			"()Landroid/accessibilityservice/FingerprintGestureController;"
 		);
 	}
-	QAndroidJniObject AccessibilityService::getMagnificationController()
+	android::accessibilityservice::AccessibilityService_MagnificationController AccessibilityService::getMagnificationController()
 	{
 		return callObjectMethod(
 			"getMagnificationController",
 			"()Landroid/accessibilityservice/AccessibilityService$MagnificationController;"
 		);
 	}
-	QAndroidJniObject AccessibilityService::getRootInActiveWindow()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityService::getRootInActiveWindow()
 	{
 		return callObjectMethod(
 			"getRootInActiveWindow",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	QAndroidJniObject AccessibilityService::getServiceInfo()
+	android::accessibilityservice::AccessibilityServiceInfo AccessibilityService::getServiceInfo()
 	{
 		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
 		);
 	}
-	QAndroidJniObject AccessibilityService::getSoftKeyboardController()
+	android::accessibilityservice::AccessibilityService_SoftKeyboardController AccessibilityService::getSoftKeyboardController()
 	{
 		return callObjectMethod(
 			"getSoftKeyboardController",
@@ -314,7 +314,7 @@ namespace android::accessibilityservice
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject AccessibilityService::getWindows()
+	__JniBaseClass AccessibilityService::getWindows()
 	{
 		return callObjectMethod(
 			"getWindows",
@@ -329,7 +329,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AccessibilityService::onBind(android::content::Intent arg0)
+	__JniBaseClass AccessibilityService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

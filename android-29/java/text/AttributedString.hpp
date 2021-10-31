@@ -33,9 +33,9 @@ namespace java::text
 		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, jobject arg1);
 		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, jobject arg1, jint arg2, jint arg3);
 		void addAttributes(__JniBaseClass arg0, jint arg1, jint arg2);
-		QAndroidJniObject getIterator();
-		QAndroidJniObject getIterator(jarray arg0);
-		QAndroidJniObject getIterator(jarray arg0, jint arg1, jint arg2);
+		__JniBaseClass getIterator();
+		__JniBaseClass getIterator(jarray arg0);
+		__JniBaseClass getIterator(jarray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::text
 

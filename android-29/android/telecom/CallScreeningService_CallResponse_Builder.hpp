@@ -22,12 +22,12 @@ namespace android::telecom
 		CallScreeningService_CallResponse_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setDisallowCall(jboolean arg0);
-		QAndroidJniObject setRejectCall(jboolean arg0);
-		QAndroidJniObject setSilenceCall(jboolean arg0);
-		QAndroidJniObject setSkipCallLog(jboolean arg0);
-		QAndroidJniObject setSkipNotification(jboolean arg0);
+		android::telecom::CallScreeningService_CallResponse build();
+		android::telecom::CallScreeningService_CallResponse_Builder setDisallowCall(jboolean arg0);
+		android::telecom::CallScreeningService_CallResponse_Builder setRejectCall(jboolean arg0);
+		android::telecom::CallScreeningService_CallResponse_Builder setSilenceCall(jboolean arg0);
+		android::telecom::CallScreeningService_CallResponse_Builder setSkipCallLog(jboolean arg0);
+		android::telecom::CallScreeningService_CallResponse_Builder setSkipNotification(jboolean arg0);
 	};
 } // namespace android::telecom
 

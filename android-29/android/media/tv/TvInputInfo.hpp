@@ -33,7 +33,7 @@ namespace android::media::tv
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring EXTRA_INPUT_ID();
 		static jint TYPE_COMPONENT();
 		static jint TYPE_COMPOSITE();
@@ -54,21 +54,21 @@ namespace android::media::tv
 		
 		// Methods
 		jboolean canRecord();
-		QAndroidJniObject createSettingsIntent();
-		QAndroidJniObject createSetupIntent();
+		android::content::Intent createSettingsIntent();
+		android::content::Intent createSetupIntent();
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jstring getId();
 		jstring getParentId();
-		QAndroidJniObject getServiceInfo();
+		android::content::pm::ServiceInfo getServiceInfo();
 		jint getTunerCount();
 		jint getType();
 		jint hashCode();
 		jboolean isHidden(android::content::Context arg0);
 		jboolean isPassthroughInput();
 		jstring loadCustomLabel(android::content::Context arg0);
-		QAndroidJniObject loadIcon(android::content::Context arg0);
+		android::graphics::drawable::Drawable loadIcon(android::content::Context arg0);
 		jstring loadLabel(android::content::Context arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

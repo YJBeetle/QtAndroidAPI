@@ -76,7 +76,7 @@ namespace android::printservice
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrintService::generatePrinterId(jstring arg0)
+	android::print::PrinterId PrintService::generatePrinterId(jstring arg0)
 	{
 		return callObjectMethod(
 			"generatePrinterId",
@@ -84,14 +84,14 @@ namespace android::printservice
 			arg0
 		);
 	}
-	QAndroidJniObject PrintService::getActivePrintJobs()
+	__JniBaseClass PrintService::getActivePrintJobs()
 	{
 		return callObjectMethod(
 			"getActivePrintJobs",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PrintService::onBind(android::content::Intent arg0)
+	__JniBaseClass PrintService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

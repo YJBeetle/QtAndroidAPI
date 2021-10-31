@@ -26,21 +26,21 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	QAndroidJniObject RSAPublicKeySpec::getModulus()
+	java::math::BigInteger RSAPublicKeySpec::getModulus()
 	{
 		return callObjectMethod(
 			"getModulus",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAPublicKeySpec::getParams()
+	__JniBaseClass RSAPublicKeySpec::getParams()
 	{
 		return callObjectMethod(
 			"getParams",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	QAndroidJniObject RSAPublicKeySpec::getPublicExponent()
+	java::math::BigInteger RSAPublicKeySpec::getPublicExponent()
 	{
 		return callObjectMethod(
 			"getPublicExponent",

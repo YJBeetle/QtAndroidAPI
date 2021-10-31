@@ -62,13 +62,13 @@ namespace android::graphics::drawable
 		jint getAlpha();
 		jint getChangingConfigurations();
 		jint getColor();
-		QAndroidJniObject getColorFilter();
-		QAndroidJniObject getConstantState();
+		android::graphics::ColorFilter getColorFilter();
+		android::graphics::drawable::Drawable_ConstantState getConstantState();
 		jint getOpacity();
 		void getOutline(android::graphics::Outline arg0);
 		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
 		jboolean isStateful();
-		QAndroidJniObject mutate();
+		android::graphics::drawable::Drawable mutate();
 		void setAlpha(jint arg0);
 		void setColor(jint arg0);
 		void setColorFilter(android::graphics::ColorFilter arg0);

@@ -11,7 +11,7 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject VelocityTracker::obtain()
+	android::view::VelocityTracker VelocityTracker::obtain()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.VelocityTracker",

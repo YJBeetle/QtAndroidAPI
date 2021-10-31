@@ -69,7 +69,7 @@ namespace android::icu::lang
 		static jstring foldCase(jstring arg0, jboolean arg1);
 		static jstring foldCase(jstring arg0, jint arg1);
 		static jchar forDigit(jint arg0, jint arg1);
-		static QAndroidJniObject getAge(jint arg0);
+		static android::icu::util::VersionInfo getAge(jint arg0);
 		static jint getBidiPairedBracket(jint arg0);
 		static jint getCharFromExtendedName(jstring arg0);
 		static jint getCharFromName(jstring arg0);
@@ -80,7 +80,7 @@ namespace android::icu::lang
 		static jint getDirection(jint arg0);
 		static jbyte getDirectionality(jint arg0);
 		static jstring getExtendedName(jint arg0);
-		static QAndroidJniObject getExtendedNameIterator();
+		static __JniBaseClass getExtendedNameIterator();
 		static jint getHanNumericValue(jint arg0);
 		static jint getIntPropertyMaxValue(jint arg0);
 		static jint getIntPropertyMinValue(jint arg0);
@@ -89,16 +89,16 @@ namespace android::icu::lang
 		static jstring getName(jint arg0);
 		static jstring getName(jstring arg0, jstring arg1);
 		static jstring getNameAlias(jint arg0);
-		static QAndroidJniObject getNameIterator();
+		static __JniBaseClass getNameIterator();
 		static jint getNumericValue(jint arg0);
 		static jint getPropertyEnum(jstring arg0);
 		static jstring getPropertyName(jint arg0, jint arg1);
 		static jint getPropertyValueEnum(jint arg0, jstring arg1);
 		static jstring getPropertyValueName(jint arg0, jint arg1, jint arg2);
 		static jint getType(jint arg0);
-		static QAndroidJniObject getTypeIterator();
+		static __JniBaseClass getTypeIterator();
 		static jdouble getUnicodeNumericValue(jint arg0);
-		static QAndroidJniObject getUnicodeVersion();
+		static android::icu::util::VersionInfo getUnicodeVersion();
 		static jboolean hasBinaryProperty(jint arg0, jint arg1);
 		static jboolean isBMP(jint arg0);
 		static jboolean isBaseForm(jint arg0);

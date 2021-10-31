@@ -20,7 +20,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Groups::CONTENT_URI()
+	android::net::Uri Contacts_Groups::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Groups",
@@ -36,7 +36,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Groups::DELETED_CONTENT_URI()
+	android::net::Uri Contacts_Groups::DELETED_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Groups",

@@ -33,7 +33,7 @@ namespace android::view::textservice
 		void cancel();
 		void close();
 		void getSentenceSuggestions(jarray arg0, jint arg1);
-		QAndroidJniObject getSpellChecker();
+		android::view::textservice::SpellCheckerInfo getSpellChecker();
 		void getSuggestions(android::view::textservice::TextInfo arg0, jint arg1);
 		void getSuggestions(jarray arg0, jint arg1, jboolean arg2);
 		jboolean isSessionDisconnected();

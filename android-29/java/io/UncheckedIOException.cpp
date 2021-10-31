@@ -25,7 +25,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	QAndroidJniObject UncheckedIOException::getCause()
+	java::io::IOException UncheckedIOException::getCause()
 	{
 		return callObjectMethod(
 			"getCause",

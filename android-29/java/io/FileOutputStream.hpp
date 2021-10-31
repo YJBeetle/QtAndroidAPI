@@ -36,8 +36,8 @@ namespace java::io
 		
 		// Methods
 		void close();
-		QAndroidJniObject getChannel();
-		QAndroidJniObject getFD();
+		java::nio::channels::FileChannel getChannel();
+		java::io::FileDescriptor getFD();
 		void write(jbyteArray arg0);
 		void write(jint arg0);
 		void write(jbyteArray arg0, jint arg1, jint arg2);

@@ -13,7 +13,7 @@ namespace android::accounts
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jint accountPreferencesId();
 		jboolean customTokens();
 		jint iconId();
@@ -31,7 +31,7 @@ namespace android::accounts
 		AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6);
 		
 		// Methods
-		static QAndroidJniObject newKey(jstring arg0);
+		static android::accounts::AuthenticatorDescription newKey(jstring arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint hashCode();

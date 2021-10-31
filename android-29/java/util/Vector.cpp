@@ -131,7 +131,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject Vector::elements()
+	__JniBaseClass Vector::elements()
 	{
 		return callObjectMethod(
 			"elements",
@@ -217,7 +217,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject Vector::iterator()
+	__JniBaseClass Vector::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -248,14 +248,14 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Vector::listIterator()
+	__JniBaseClass Vector::listIterator()
 	{
 		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	QAndroidJniObject Vector::listIterator(jint arg0)
+	__JniBaseClass Vector::listIterator(jint arg0)
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -375,14 +375,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Vector::spliterator()
+	__JniBaseClass Vector::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	QAndroidJniObject Vector::subList(jint arg0, jint arg1)
+	__JniBaseClass Vector::subList(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subList",

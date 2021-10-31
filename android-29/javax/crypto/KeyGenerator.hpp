@@ -29,12 +29,12 @@ namespace javax::crypto
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		QAndroidJniObject generateKey();
+		static javax::crypto::KeyGenerator getInstance(jstring arg0);
+		static javax::crypto::KeyGenerator getInstance(jstring arg0, jstring arg1);
+		static javax::crypto::KeyGenerator getInstance(jstring arg0, java::security::Provider arg1);
+		__JniBaseClass generateKey();
 		jstring getAlgorithm();
-		QAndroidJniObject getProvider();
+		java::security::Provider getProvider();
 		void init(jint arg0);
 		void init(java::security::SecureRandom arg0);
 		void init(__JniBaseClass arg0);

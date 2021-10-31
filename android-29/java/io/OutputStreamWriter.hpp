@@ -38,8 +38,8 @@ namespace java::io
 		OutputStreamWriter(java::io::OutputStream arg0, java::nio::charset::CharsetEncoder arg1);
 		
 		// Methods
-		QAndroidJniObject append(jstring arg0);
-		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
+		java::io::Writer append(jstring arg0);
+		java::io::Writer append(jstring arg0, jint arg1, jint arg2);
 		void close();
 		void flush();
 		jstring getEncoding();

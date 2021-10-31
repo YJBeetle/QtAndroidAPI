@@ -25,8 +25,8 @@ namespace javax::xml::validation
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject newValidator();
-		QAndroidJniObject newValidatorHandler();
+		javax::xml::validation::Validator newValidator();
+		javax::xml::validation::ValidatorHandler newValidatorHandler();
 	};
 } // namespace javax::xml::validation
 

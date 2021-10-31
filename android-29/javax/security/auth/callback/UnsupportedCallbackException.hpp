@@ -20,7 +20,7 @@ namespace javax::security::auth::callback
 		UnsupportedCallbackException(__JniBaseClass arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getCallback();
+		__JniBaseClass getCallback();
 	};
 } // namespace javax::security::auth::callback
 

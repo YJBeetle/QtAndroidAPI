@@ -62,14 +62,14 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Identity::getPublicKey()
+	__JniBaseClass Identity::getPublicKey()
 	{
 		return callObjectMethod(
 			"getPublicKey",
 			"()Ljava/security/PublicKey;"
 		);
 	}
-	QAndroidJniObject Identity::getScope()
+	java::security::IdentityScope Identity::getScope()
 	{
 		return callObjectMethod(
 			"getScope",

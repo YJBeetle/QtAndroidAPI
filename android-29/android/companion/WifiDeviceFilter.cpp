@@ -5,7 +5,7 @@
 namespace android::companion
 {
 	// Fields
-	QAndroidJniObject WifiDeviceFilter::CREATOR()
+	__JniBaseClass WifiDeviceFilter::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.companion.WifiDeviceFilter",

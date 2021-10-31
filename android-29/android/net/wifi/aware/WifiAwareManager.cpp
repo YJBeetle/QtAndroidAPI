@@ -55,7 +55,7 @@ namespace android::net::wifi::aware
 			arg2.object()
 		);
 	}
-	QAndroidJniObject WifiAwareManager::getCharacteristics()
+	android::net::wifi::aware::Characteristics WifiAwareManager::getCharacteristics()
 	{
 		return callObjectMethod(
 			"getCharacteristics",

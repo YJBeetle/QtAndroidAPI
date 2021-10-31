@@ -42,14 +42,14 @@ namespace java::util::logging
 		LogRecord(java::util::logging::Level arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getInstant();
-		QAndroidJniObject getLevel();
+		java::time::Instant getInstant();
+		java::util::logging::Level getLevel();
 		jstring getLoggerName();
 		jlong getLongThreadID();
 		jstring getMessage();
 		jlong getMillis();
 		jobjectArray getParameters();
-		QAndroidJniObject getResourceBundle();
+		java::util::ResourceBundle getResourceBundle();
 		jstring getResourceBundleName();
 		jlong getSequenceNumber();
 		jstring getSourceClassName();
@@ -59,7 +59,7 @@ namespace java::util::logging
 		void setInstant(java::time::Instant arg0);
 		void setLevel(java::util::logging::Level arg0);
 		void setLoggerName(jstring arg0);
-		QAndroidJniObject setLongThreadID(jlong arg0);
+		java::util::logging::LogRecord setLongThreadID(jlong arg0);
 		void setMessage(jstring arg0);
 		void setMillis(jlong arg0);
 		void setParameters(jobjectArray arg0);

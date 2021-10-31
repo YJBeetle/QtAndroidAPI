@@ -10,9 +10,9 @@ namespace java::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject INET();
-		static QAndroidJniObject INET6();
-		static QAndroidJniObject UNIX();
+		static java::net::StandardProtocolFamily INET();
+		static java::net::StandardProtocolFamily INET6();
+		static java::net::StandardProtocolFamily UNIX();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StandardProtocolFamily(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::net::StandardProtocolFamily valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::net

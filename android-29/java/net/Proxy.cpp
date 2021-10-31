@@ -5,7 +5,7 @@
 namespace java::net
 {
 	// Fields
-	QAndroidJniObject Proxy::NO_PROXY()
+	java::net::Proxy Proxy::NO_PROXY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Proxy",
@@ -27,7 +27,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject Proxy::address()
+	java::net::SocketAddress Proxy::address()
 	{
 		return callObjectMethod(
 			"address",
@@ -56,7 +56,7 @@ namespace java::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Proxy::type()
+	java::net::Proxy_Type Proxy::type()
 	{
 		return callObjectMethod(
 			"type",

@@ -16,7 +16,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CompactDecimalFormat::getInstance(android::icu::util::ULocale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1)
+	android::icu::text::CompactDecimalFormat CompactDecimalFormat::getInstance(android::icu::util::ULocale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CompactDecimalFormat",
@@ -26,7 +26,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject CompactDecimalFormat::getInstance(java::util::Locale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1)
+	android::icu::text::CompactDecimalFormat CompactDecimalFormat::getInstance(java::util::Locale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CompactDecimalFormat",
@@ -36,7 +36,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject CompactDecimalFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number CompactDecimalFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
@@ -45,7 +45,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject CompactDecimalFormat::parseCurrency(jstring arg0, java::text::ParsePosition arg1)
+	android::icu::util::CurrencyAmount CompactDecimalFormat::parseCurrency(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseCurrency",

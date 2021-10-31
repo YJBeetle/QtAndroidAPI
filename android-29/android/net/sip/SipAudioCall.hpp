@@ -43,8 +43,8 @@ namespace android::net::sip
 		void close();
 		void continueCall(jint arg0);
 		void endCall();
-		QAndroidJniObject getLocalProfile();
-		QAndroidJniObject getPeerProfile();
+		android::net::sip::SipProfile getLocalProfile();
+		android::net::sip::SipProfile getPeerProfile();
 		jint getState();
 		void holdCall(jint arg0);
 		jboolean isInCall();

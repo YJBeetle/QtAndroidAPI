@@ -62,19 +62,19 @@ namespace java::net
 		void close();
 		void connect(java::net::SocketAddress arg0);
 		void connect(java::net::SocketAddress arg0, jint arg1);
-		QAndroidJniObject getChannel();
-		QAndroidJniObject getInetAddress();
-		QAndroidJniObject getInputStream();
+		java::nio::channels::SocketChannel getChannel();
+		java::net::InetAddress getInetAddress();
+		java::io::InputStream getInputStream();
 		jboolean getKeepAlive();
-		QAndroidJniObject getLocalAddress();
+		java::net::InetAddress getLocalAddress();
 		jint getLocalPort();
-		QAndroidJniObject getLocalSocketAddress();
+		java::net::SocketAddress getLocalSocketAddress();
 		jboolean getOOBInline();
 		jobject getOption(__JniBaseClass arg0);
-		QAndroidJniObject getOutputStream();
+		java::io::OutputStream getOutputStream();
 		jint getPort();
 		jint getReceiveBufferSize();
-		QAndroidJniObject getRemoteSocketAddress();
+		java::net::SocketAddress getRemoteSocketAddress();
 		jboolean getReuseAddress();
 		jint getSendBufferSize();
 		jint getSoLinger();
@@ -89,7 +89,7 @@ namespace java::net
 		void sendUrgentData(jint arg0);
 		void setKeepAlive(jboolean arg0);
 		void setOOBInline(jboolean arg0);
-		QAndroidJniObject setOption(__JniBaseClass arg0, jobject arg1);
+		java::net::Socket setOption(__JniBaseClass arg0, jobject arg1);
 		void setPerformancePreferences(jint arg0, jint arg1, jint arg2);
 		void setReceiveBufferSize(jint arg0);
 		void setReuseAddress(jboolean arg0);
@@ -100,7 +100,7 @@ namespace java::net
 		void setTrafficClass(jint arg0);
 		void shutdownInput();
 		void shutdownOutput();
-		QAndroidJniObject supportedOptions();
+		__JniBaseClass supportedOptions();
 		jstring toString();
 	};
 } // namespace java::net

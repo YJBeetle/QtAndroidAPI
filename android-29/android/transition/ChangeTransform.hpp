@@ -38,7 +38,7 @@ namespace android::transition
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);
 		void captureStartValues(android::transition::TransitionValues arg0);
-		QAndroidJniObject createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2);
+		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2);
 		jboolean getReparent();
 		jboolean getReparentWithOverlay();
 		jarray getTransitionProperties();

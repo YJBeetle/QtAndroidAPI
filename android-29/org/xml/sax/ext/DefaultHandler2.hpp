@@ -30,10 +30,10 @@ namespace org::xml::sax::ext
 		void endDTD();
 		void endEntity(jstring arg0);
 		void externalEntityDecl(jstring arg0, jstring arg1, jstring arg2);
-		QAndroidJniObject getExternalSubset(jstring arg0, jstring arg1);
+		org::xml::sax::InputSource getExternalSubset(jstring arg0, jstring arg1);
 		void internalEntityDecl(jstring arg0, jstring arg1);
-		QAndroidJniObject resolveEntity(jstring arg0, jstring arg1);
-		QAndroidJniObject resolveEntity(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		org::xml::sax::InputSource resolveEntity(jstring arg0, jstring arg1);
+		org::xml::sax::InputSource resolveEntity(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
 		void startCDATA();
 		void startDTD(jstring arg0, jstring arg1, jstring arg2);
 		void startEntity(jstring arg0);

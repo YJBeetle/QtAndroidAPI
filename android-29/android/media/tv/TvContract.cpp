@@ -85,7 +85,7 @@ namespace android::media::tv
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TvContract::buildChannelLogoUri(android::net::Uri arg0)
+	android::net::Uri TvContract::buildChannelLogoUri(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -94,7 +94,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TvContract::buildChannelLogoUri(jlong arg0)
+	android::net::Uri TvContract::buildChannelLogoUri(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -103,7 +103,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvContract::buildChannelUri(jlong arg0)
+	android::net::Uri TvContract::buildChannelUri(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -112,7 +112,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvContract::buildChannelUriForPassthroughInput(jstring arg0)
+	android::net::Uri TvContract::buildChannelUriForPassthroughInput(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -121,7 +121,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvContract::buildChannelsUriForInput(jstring arg0)
+	android::net::Uri TvContract::buildChannelsUriForInput(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -139,7 +139,7 @@ namespace android::media::tv
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject TvContract::buildPreviewProgramUri(jlong arg0)
+	android::net::Uri TvContract::buildPreviewProgramUri(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -148,7 +148,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvContract::buildPreviewProgramsUriForChannel(android::net::Uri arg0)
+	android::net::Uri TvContract::buildPreviewProgramsUriForChannel(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -157,7 +157,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TvContract::buildPreviewProgramsUriForChannel(jlong arg0)
+	android::net::Uri TvContract::buildPreviewProgramsUriForChannel(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -166,7 +166,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvContract::buildProgramUri(jlong arg0)
+	android::net::Uri TvContract::buildProgramUri(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -175,7 +175,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvContract::buildProgramsUriForChannel(android::net::Uri arg0)
+	android::net::Uri TvContract::buildProgramsUriForChannel(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -184,7 +184,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TvContract::buildProgramsUriForChannel(jlong arg0)
+	android::net::Uri TvContract::buildProgramsUriForChannel(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -193,7 +193,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvContract::buildProgramsUriForChannel(android::net::Uri arg0, jlong arg1, jlong arg2)
+	android::net::Uri TvContract::buildProgramsUriForChannel(android::net::Uri arg0, jlong arg1, jlong arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -204,7 +204,7 @@ namespace android::media::tv
 			arg2
 		);
 	}
-	QAndroidJniObject TvContract::buildProgramsUriForChannel(jlong arg0, jlong arg1, jlong arg2)
+	android::net::Uri TvContract::buildProgramsUriForChannel(jlong arg0, jlong arg1, jlong arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -215,7 +215,7 @@ namespace android::media::tv
 			arg2
 		);
 	}
-	QAndroidJniObject TvContract::buildRecordedProgramUri(jlong arg0)
+	android::net::Uri TvContract::buildRecordedProgramUri(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",
@@ -224,7 +224,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvContract::buildWatchNextProgramUri(jlong arg0)
+	android::net::Uri TvContract::buildWatchNextProgramUri(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract",

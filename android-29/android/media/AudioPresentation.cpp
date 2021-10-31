@@ -55,14 +55,14 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioPresentation::getLabels()
+	__JniBaseClass AudioPresentation::getLabels()
 	{
 		return callObjectMethod(
 			"getLabels",
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject AudioPresentation::getLocale()
+	java::util::Locale AudioPresentation::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",

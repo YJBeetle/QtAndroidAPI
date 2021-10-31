@@ -64,14 +64,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextureView::getBitmap()
+	android::graphics::Bitmap TextureView::getBitmap()
 	{
 		return callObjectMethod(
 			"getBitmap",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	QAndroidJniObject TextureView::getBitmap(android::graphics::Bitmap arg0)
+	android::graphics::Bitmap TextureView::getBitmap(android::graphics::Bitmap arg0)
 	{
 		return callObjectMethod(
 			"getBitmap",
@@ -79,7 +79,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextureView::getBitmap(jint arg0, jint arg1)
+	android::graphics::Bitmap TextureView::getBitmap(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getBitmap",
@@ -95,21 +95,21 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject TextureView::getSurfaceTexture()
+	android::graphics::SurfaceTexture TextureView::getSurfaceTexture()
 	{
 		return callObjectMethod(
 			"getSurfaceTexture",
 			"()Landroid/graphics/SurfaceTexture;"
 		);
 	}
-	QAndroidJniObject TextureView::getSurfaceTextureListener()
+	__JniBaseClass TextureView::getSurfaceTextureListener()
 	{
 		return callObjectMethod(
 			"getSurfaceTextureListener",
 			"()Landroid/view/TextureView$SurfaceTextureListener;"
 		);
 	}
-	QAndroidJniObject TextureView::getTransform(android::graphics::Matrix arg0)
+	android::graphics::Matrix TextureView::getTransform(android::graphics::Matrix arg0)
 	{
 		return callObjectMethod(
 			"getTransform",
@@ -131,14 +131,14 @@ namespace android::view
 			"()Z"
 		);
 	}
-	QAndroidJniObject TextureView::lockCanvas()
+	android::graphics::Canvas TextureView::lockCanvas()
 	{
 		return callObjectMethod(
 			"lockCanvas",
 			"()Landroid/graphics/Canvas;"
 		);
 	}
-	QAndroidJniObject TextureView::lockCanvas(android::graphics::Rect arg0)
+	android::graphics::Canvas TextureView::lockCanvas(android::graphics::Rect arg0)
 	{
 		return callObjectMethod(
 			"lockCanvas",

@@ -62,42 +62,42 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ProgressBar::getCurrentDrawable()
+	android::graphics::drawable::Drawable ProgressBar::getCurrentDrawable()
 	{
 		return callObjectMethod(
 			"getCurrentDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getIndeterminateDrawable()
+	android::graphics::drawable::Drawable ProgressBar::getIndeterminateDrawable()
 	{
 		return callObjectMethod(
 			"getIndeterminateDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getIndeterminateTintBlendMode()
+	android::graphics::BlendMode ProgressBar::getIndeterminateTintBlendMode()
 	{
 		return callObjectMethod(
 			"getIndeterminateTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getIndeterminateTintList()
+	android::content::res::ColorStateList ProgressBar::getIndeterminateTintList()
 	{
 		return callObjectMethod(
 			"getIndeterminateTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getIndeterminateTintMode()
+	android::graphics::PorterDuff_Mode ProgressBar::getIndeterminateTintMode()
 	{
 		return callObjectMethod(
 			"getIndeterminateTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getInterpolator()
+	__JniBaseClass ProgressBar::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -153,49 +153,49 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ProgressBar::getProgressBackgroundTintBlendMode()
+	android::graphics::BlendMode ProgressBar::getProgressBackgroundTintBlendMode()
 	{
 		return callObjectMethod(
 			"getProgressBackgroundTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getProgressBackgroundTintList()
+	android::content::res::ColorStateList ProgressBar::getProgressBackgroundTintList()
 	{
 		return callObjectMethod(
 			"getProgressBackgroundTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getProgressBackgroundTintMode()
+	android::graphics::PorterDuff_Mode ProgressBar::getProgressBackgroundTintMode()
 	{
 		return callObjectMethod(
 			"getProgressBackgroundTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getProgressDrawable()
+	android::graphics::drawable::Drawable ProgressBar::getProgressDrawable()
 	{
 		return callObjectMethod(
 			"getProgressDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getProgressTintBlendMode()
+	android::graphics::BlendMode ProgressBar::getProgressTintBlendMode()
 	{
 		return callObjectMethod(
 			"getProgressTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getProgressTintList()
+	android::content::res::ColorStateList ProgressBar::getProgressTintList()
 	{
 		return callObjectMethod(
 			"getProgressTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getProgressTintMode()
+	android::graphics::PorterDuff_Mode ProgressBar::getProgressTintMode()
 	{
 		return callObjectMethod(
 			"getProgressTintMode",
@@ -209,21 +209,21 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ProgressBar::getSecondaryProgressTintBlendMode()
+	android::graphics::BlendMode ProgressBar::getSecondaryProgressTintBlendMode()
 	{
 		return callObjectMethod(
 			"getSecondaryProgressTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getSecondaryProgressTintList()
+	android::content::res::ColorStateList ProgressBar::getSecondaryProgressTintList()
 	{
 		return callObjectMethod(
 			"getSecondaryProgressTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject ProgressBar::getSecondaryProgressTintMode()
+	android::graphics::PorterDuff_Mode ProgressBar::getSecondaryProgressTintMode()
 	{
 		return callObjectMethod(
 			"getSecondaryProgressTintMode",
@@ -283,7 +283,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProgressBar::onSaveInstanceState()
+	__JniBaseClass ProgressBar::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

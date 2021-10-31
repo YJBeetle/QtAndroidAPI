@@ -14,7 +14,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MediaRouter_UserRouteInfo::getRemoteControlClient()
+	android::media::RemoteControlClient MediaRouter_UserRouteInfo::getRemoteControlClient()
 	{
 		return callObjectMethod(
 			"getRemoteControlClient",

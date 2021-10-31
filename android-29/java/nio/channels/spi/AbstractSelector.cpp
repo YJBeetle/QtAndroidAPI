@@ -28,7 +28,7 @@ namespace java::nio::channels::spi
 			"()Z"
 		);
 	}
-	QAndroidJniObject AbstractSelector::provider()
+	java::nio::channels::spi::SelectorProvider AbstractSelector::provider()
 	{
 		return callObjectMethod(
 			"provider",

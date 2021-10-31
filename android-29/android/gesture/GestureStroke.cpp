@@ -7,7 +7,7 @@
 namespace android::gesture
 {
 	// Fields
-	QAndroidJniObject GestureStroke::boundingBox()
+	android::graphics::RectF GestureStroke::boundingBox()
 	{
 		return getObjectField(
 			"boundingBox",
@@ -54,21 +54,21 @@ namespace android::gesture
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject GestureStroke::computeOrientedBoundingBox()
+	android::gesture::OrientedBoundingBox GestureStroke::computeOrientedBoundingBox()
 	{
 		return callObjectMethod(
 			"computeOrientedBoundingBox",
 			"()Landroid/gesture/OrientedBoundingBox;"
 		);
 	}
-	QAndroidJniObject GestureStroke::getPath()
+	android::graphics::Path GestureStroke::getPath()
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
-	QAndroidJniObject GestureStroke::toPath(jfloat arg0, jfloat arg1, jint arg2)
+	android::graphics::Path GestureStroke::toPath(jfloat arg0, jfloat arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"toPath",

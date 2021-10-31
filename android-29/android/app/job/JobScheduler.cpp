@@ -55,14 +55,14 @@ namespace android::app::job
 			arg1.object()
 		);
 	}
-	QAndroidJniObject JobScheduler::getAllPendingJobs()
+	__JniBaseClass JobScheduler::getAllPendingJobs()
 	{
 		return callObjectMethod(
 			"getAllPendingJobs",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject JobScheduler::getPendingJob(jint arg0)
+	android::app::job::JobInfo JobScheduler::getPendingJob(jint arg0)
 	{
 		return callObjectMethod(
 			"getPendingJob",

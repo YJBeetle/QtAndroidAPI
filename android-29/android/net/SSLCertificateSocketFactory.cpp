@@ -21,7 +21,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject SSLCertificateSocketFactory::getDefault(jint arg0)
+	javax::net::SocketFactory SSLCertificateSocketFactory::getDefault(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.SSLCertificateSocketFactory",
@@ -30,7 +30,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject SSLCertificateSocketFactory::getDefault(jint arg0, android::net::SSLSessionCache arg1)
+	javax::net::ssl::SSLSocketFactory SSLCertificateSocketFactory::getDefault(jint arg0, android::net::SSLSessionCache arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.SSLCertificateSocketFactory",
@@ -40,7 +40,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SSLCertificateSocketFactory::getInsecure(jint arg0, android::net::SSLSessionCache arg1)
+	javax::net::ssl::SSLSocketFactory SSLCertificateSocketFactory::getInsecure(jint arg0, android::net::SSLSessionCache arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.SSLCertificateSocketFactory",
@@ -50,14 +50,14 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket()
+	java::net::Socket SSLCertificateSocketFactory::createSocket()
 	{
 		return callObjectMethod(
 			"createSocket",
 			"()Ljava/net/Socket;"
 		);
 	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(jstring arg0, jint arg1)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -66,7 +66,7 @@ namespace android::net
 			arg1
 		);
 	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(java::net::InetAddress arg0, jint arg1)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::InetAddress arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -75,7 +75,7 @@ namespace android::net
 			arg1
 		);
 	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -86,7 +86,7 @@ namespace android::net
 			arg3
 		);
 	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -97,7 +97,7 @@ namespace android::net
 			arg3
 		);
 	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
+	java::net::Socket SSLCertificateSocketFactory::createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"createSocket",

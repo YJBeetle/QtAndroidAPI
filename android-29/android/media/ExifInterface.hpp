@@ -195,7 +195,7 @@ namespace android::media
 		jlongArray getAttributeRange(jstring arg0);
 		jboolean getLatLong(jfloatArray arg0);
 		jbyteArray getThumbnail();
-		QAndroidJniObject getThumbnailBitmap();
+		android::graphics::Bitmap getThumbnailBitmap();
 		jbyteArray getThumbnailBytes();
 		jlongArray getThumbnailRange();
 		jboolean hasAttribute(jstring arg0);

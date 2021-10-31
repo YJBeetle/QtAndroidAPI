@@ -5,7 +5,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject NumberingSystem::LATIN()
+	android::icu::text::NumberingSystem NumberingSystem::LATIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberingSystem",
@@ -33,7 +33,7 @@ namespace android::icu::text
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject NumberingSystem::getInstance()
+	android::icu::text::NumberingSystem NumberingSystem::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
@@ -41,7 +41,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/NumberingSystem;"
 		);
 	}
-	QAndroidJniObject NumberingSystem::getInstance(android::icu::util::ULocale arg0)
+	android::icu::text::NumberingSystem NumberingSystem::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
@@ -50,7 +50,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NumberingSystem::getInstance(java::util::Locale arg0)
+	android::icu::text::NumberingSystem NumberingSystem::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
@@ -59,7 +59,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NumberingSystem::getInstance(jint arg0, jboolean arg1, jstring arg2)
+	android::icu::text::NumberingSystem NumberingSystem::getInstance(jint arg0, jboolean arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",
@@ -70,7 +70,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	QAndroidJniObject NumberingSystem::getInstanceByName(jstring arg0)
+	android::icu::text::NumberingSystem NumberingSystem::getInstanceByName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.NumberingSystem",

@@ -161,7 +161,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject IslamicCalendar::getCalculationType()
+	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar::getCalculationType()
 	{
 		return callObjectMethod(
 			"getCalculationType",

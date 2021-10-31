@@ -18,7 +18,7 @@ namespace android::telephony
 			"BYTES_UNLIMITED"
 		);
 	}
-	QAndroidJniObject SubscriptionPlan::CREATOR()
+	__JniBaseClass SubscriptionPlan::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.SubscriptionPlan",
@@ -68,7 +68,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SubscriptionPlan::cycleIterator()
+	__JniBaseClass SubscriptionPlan::cycleIterator()
 	{
 		return callObjectMethod(
 			"cycleIterator",

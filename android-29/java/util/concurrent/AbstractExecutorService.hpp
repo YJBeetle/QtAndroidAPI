@@ -26,12 +26,12 @@ namespace java::util::concurrent
 		AbstractExecutorService();
 		
 		// Methods
-		QAndroidJniObject invokeAll(__JniBaseClass arg0);
-		QAndroidJniObject invokeAll(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		__JniBaseClass invokeAll(__JniBaseClass arg0);
+		__JniBaseClass invokeAll(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
 		jobject invokeAny(__JniBaseClass arg0);
 		jobject invokeAny(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		QAndroidJniObject submit(__JniBaseClass arg0);
-		QAndroidJniObject submit(__JniBaseClass arg0, jobject arg1);
+		__JniBaseClass submit(__JniBaseClass arg0);
+		__JniBaseClass submit(__JniBaseClass arg0, jobject arg1);
 	};
 } // namespace java::util::concurrent
 

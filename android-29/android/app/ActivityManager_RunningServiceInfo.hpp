@@ -17,7 +17,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_FOREGROUND();
 		static jint FLAG_PERSISTENT_PROCESS();
 		static jint FLAG_STARTED();
@@ -33,7 +33,7 @@ namespace android::app
 		jint pid();
 		jstring process();
 		jlong restarting();
-		QAndroidJniObject service();
+		android::content::ComponentName service();
 		jboolean started();
 		jint uid();
 		

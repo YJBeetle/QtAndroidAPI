@@ -66,7 +66,7 @@ namespace android::database::sqlite
 			"()I"
 		);
 	}
-	QAndroidJniObject SQLiteCursor::getDatabase()
+	android::database::sqlite::SQLiteDatabase SQLiteCursor::getDatabase()
 	{
 		return callObjectMethod(
 			"getDatabase",

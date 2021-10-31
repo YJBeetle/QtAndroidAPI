@@ -17,14 +17,14 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_Builder::build()
+	android::text::style::TtsSpan TtsSpan_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/text/style/TtsSpan;"
 		);
 	}
-	QAndroidJniObject TtsSpan_Builder::setIntArgument(jstring arg0, jint arg1)
+	android::text::style::TtsSpan_Builder TtsSpan_Builder::setIntArgument(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setIntArgument",
@@ -33,7 +33,7 @@ namespace android::text::style
 			arg1
 		);
 	}
-	QAndroidJniObject TtsSpan_Builder::setLongArgument(jstring arg0, jlong arg1)
+	android::text::style::TtsSpan_Builder TtsSpan_Builder::setLongArgument(jstring arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"setLongArgument",
@@ -42,7 +42,7 @@ namespace android::text::style
 			arg1
 		);
 	}
-	QAndroidJniObject TtsSpan_Builder::setStringArgument(jstring arg0, jstring arg1)
+	android::text::style::TtsSpan_Builder TtsSpan_Builder::setStringArgument(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"setStringArgument",

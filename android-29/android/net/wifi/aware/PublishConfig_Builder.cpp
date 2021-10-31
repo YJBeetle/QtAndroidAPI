@@ -16,14 +16,14 @@ namespace android::net::wifi::aware
 		) {}
 	
 	// Methods
-	QAndroidJniObject PublishConfig_Builder::build()
+	android::net::wifi::aware::PublishConfig PublishConfig_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/aware/PublishConfig;"
 		);
 	}
-	QAndroidJniObject PublishConfig_Builder::setMatchFilter(__JniBaseClass arg0)
+	android::net::wifi::aware::PublishConfig_Builder PublishConfig_Builder::setMatchFilter(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setMatchFilter",
@@ -31,7 +31,7 @@ namespace android::net::wifi::aware
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PublishConfig_Builder::setPublishType(jint arg0)
+	android::net::wifi::aware::PublishConfig_Builder PublishConfig_Builder::setPublishType(jint arg0)
 	{
 		return callObjectMethod(
 			"setPublishType",
@@ -39,7 +39,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	QAndroidJniObject PublishConfig_Builder::setRangingEnabled(jboolean arg0)
+	android::net::wifi::aware::PublishConfig_Builder PublishConfig_Builder::setRangingEnabled(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setRangingEnabled",
@@ -47,7 +47,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	QAndroidJniObject PublishConfig_Builder::setServiceName(jstring arg0)
+	android::net::wifi::aware::PublishConfig_Builder PublishConfig_Builder::setServiceName(jstring arg0)
 	{
 		return callObjectMethod(
 			"setServiceName",
@@ -55,7 +55,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	QAndroidJniObject PublishConfig_Builder::setServiceSpecificInfo(jbyteArray arg0)
+	android::net::wifi::aware::PublishConfig_Builder PublishConfig_Builder::setServiceSpecificInfo(jbyteArray arg0)
 	{
 		return callObjectMethod(
 			"setServiceSpecificInfo",
@@ -63,7 +63,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	QAndroidJniObject PublishConfig_Builder::setTerminateNotificationEnabled(jboolean arg0)
+	android::net::wifi::aware::PublishConfig_Builder PublishConfig_Builder::setTerminateNotificationEnabled(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setTerminateNotificationEnabled",
@@ -71,7 +71,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	QAndroidJniObject PublishConfig_Builder::setTtlSec(jint arg0)
+	android::net::wifi::aware::PublishConfig_Builder PublishConfig_Builder::setTtlSec(jint arg0)
 	{
 		return callObjectMethod(
 			"setTtlSec",

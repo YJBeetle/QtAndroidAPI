@@ -25,7 +25,7 @@ namespace android::hardware::camera2::params
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MandatoryStreamCombination::getStreamsInformation()
+	__JniBaseClass MandatoryStreamCombination::getStreamsInformation()
 	{
 		return callObjectMethod(
 			"getStreamsInformation",

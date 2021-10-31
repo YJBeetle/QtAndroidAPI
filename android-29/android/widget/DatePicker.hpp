@@ -52,8 +52,8 @@ namespace android::widget
 		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
 		jstring getAccessibilityClassName();
 		jint getAutofillType();
-		QAndroidJniObject getAutofillValue();
-		QAndroidJniObject getCalendarView();
+		android::view::autofill::AutofillValue getAutofillValue();
+		android::widget::CalendarView getCalendarView();
 		jboolean getCalendarViewShown();
 		jint getDayOfMonth();
 		jint getFirstDayOfWeek();

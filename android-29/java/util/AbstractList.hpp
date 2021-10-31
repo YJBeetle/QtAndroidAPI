@@ -26,13 +26,13 @@ namespace java::util
 		jobject get(jint arg0);
 		jint hashCode();
 		jint indexOf(jobject arg0);
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jint lastIndexOf(jobject arg0);
-		QAndroidJniObject listIterator();
-		QAndroidJniObject listIterator(jint arg0);
+		__JniBaseClass listIterator();
+		__JniBaseClass listIterator(jint arg0);
 		jobject remove(jint arg0);
 		jobject set(jint arg0, jobject arg1);
-		QAndroidJniObject subList(jint arg0, jint arg1);
+		__JniBaseClass subList(jint arg0, jint arg1);
 	};
 } // namespace java::util
 

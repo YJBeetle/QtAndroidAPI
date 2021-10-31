@@ -174,11 +174,11 @@ namespace java::lang
 		static jint toTitleCase(jint arg0);
 		static jchar toUpperCase(jchar arg0);
 		static jint toUpperCase(jint arg0);
-		static QAndroidJniObject valueOf(jchar arg0);
+		static java::lang::Character valueOf(jchar arg0);
 		jchar charValue();
 		jint compareTo(java::lang::Character arg0);
 		jint compareTo(jobject arg0);
-		QAndroidJniObject describeConstable();
+		java::util::Optional describeConstable();
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jstring toString();

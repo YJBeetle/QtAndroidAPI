@@ -35,7 +35,7 @@ namespace android::service::vr
 		
 		// Methods
 		static jboolean isVrModePackageEnabled(android::content::Context arg0, android::content::ComponentName arg1);
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onCurrentVrActivityChanged(android::content::ComponentName arg0);
 	};
 } // namespace android::service::vr

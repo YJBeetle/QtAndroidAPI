@@ -29,10 +29,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newInstance(android::view::Surface arg0, jint arg1);
-		static QAndroidJniObject newInstance(android::view::Surface arg0, jint arg1, jint arg2);
+		static android::media::ImageWriter newInstance(android::view::Surface arg0, jint arg1);
+		static android::media::ImageWriter newInstance(android::view::Surface arg0, jint arg1, jint arg2);
 		void close();
-		QAndroidJniObject dequeueInputImage();
+		android::media::Image dequeueInputImage();
 		jint getFormat();
 		jint getMaxImages();
 		void queueInputImage(android::media::Image arg0);

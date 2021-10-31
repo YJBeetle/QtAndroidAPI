@@ -18,7 +18,7 @@ namespace android::provider
 		static jstring BEARER();
 		static jstring CARRIER_ENABLED();
 		static jstring CARRIER_ID();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring CURRENT();
 		static jstring DEFAULT_SORT_ORDER();
 		static jstring MCC();
@@ -37,7 +37,7 @@ namespace android::provider
 		static jstring PROXY();
 		static jstring ROAMING_PROTOCOL();
 		static jstring SERVER();
-		static QAndroidJniObject SIM_APN_URI();
+		static android::net::Uri SIM_APN_URI();
 		static jstring SUBSCRIPTION_ID();
 		static jstring TYPE();
 		static jstring USER();

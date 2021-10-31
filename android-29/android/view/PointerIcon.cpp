@@ -7,7 +7,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject PointerIcon::CREATOR()
+	__JniBaseClass PointerIcon::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.PointerIcon",
@@ -183,7 +183,7 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PointerIcon::create(android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2)
+	android::view::PointerIcon PointerIcon::create(android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.PointerIcon",
@@ -194,7 +194,7 @@ namespace android::view
 			arg2
 		);
 	}
-	QAndroidJniObject PointerIcon::getSystemIcon(android::content::Context arg0, jint arg1)
+	android::view::PointerIcon PointerIcon::getSystemIcon(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.PointerIcon",
@@ -204,7 +204,7 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject PointerIcon::load(android::content::res::Resources arg0, jint arg1)
+	android::view::PointerIcon PointerIcon::load(android::content::res::Resources arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.PointerIcon",

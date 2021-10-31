@@ -44,7 +44,7 @@ namespace android::accessibilityservice
 			"()F"
 		);
 	}
-	QAndroidJniObject AccessibilityService_MagnificationController::getMagnificationRegion()
+	android::graphics::Region AccessibilityService_MagnificationController::getMagnificationRegion()
 	{
 		return callObjectMethod(
 			"getMagnificationRegion",

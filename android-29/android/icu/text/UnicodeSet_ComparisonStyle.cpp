@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject UnicodeSet_ComparisonStyle::LEXICOGRAPHIC()
+	android::icu::text::UnicodeSet_ComparisonStyle UnicodeSet_ComparisonStyle::LEXICOGRAPHIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$ComparisonStyle",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/UnicodeSet$ComparisonStyle;"
 		);
 	}
-	QAndroidJniObject UnicodeSet_ComparisonStyle::LONGER_FIRST()
+	android::icu::text::UnicodeSet_ComparisonStyle UnicodeSet_ComparisonStyle::LONGER_FIRST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$ComparisonStyle",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/UnicodeSet$ComparisonStyle;"
 		);
 	}
-	QAndroidJniObject UnicodeSet_ComparisonStyle::SHORTER_FIRST()
+	android::icu::text::UnicodeSet_ComparisonStyle UnicodeSet_ComparisonStyle::SHORTER_FIRST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$ComparisonStyle",
@@ -34,7 +34,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject UnicodeSet_ComparisonStyle::valueOf(jstring arg0)
+	android::icu::text::UnicodeSet_ComparisonStyle UnicodeSet_ComparisonStyle::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UnicodeSet$ComparisonStyle",

@@ -19,14 +19,14 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	QAndroidJniObject ECPrivateKeySpec::getParams()
+	java::security::spec::ECParameterSpec ECPrivateKeySpec::getParams()
 	{
 		return callObjectMethod(
 			"getParams",
 			"()Ljava/security/spec/ECParameterSpec;"
 		);
 	}
-	QAndroidJniObject ECPrivateKeySpec::getS()
+	java::math::BigInteger ECPrivateKeySpec::getS()
 	{
 		return callObjectMethod(
 			"getS",

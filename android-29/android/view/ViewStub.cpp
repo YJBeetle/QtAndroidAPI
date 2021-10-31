@@ -66,7 +66,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewStub::getLayoutInflater()
+	android::view::LayoutInflater ViewStub::getLayoutInflater()
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
@@ -80,7 +80,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewStub::inflate()
+	android::view::View ViewStub::inflate()
 	{
 		return callObjectMethod(
 			"inflate",

@@ -47,14 +47,14 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	QAndroidJniObject SignalStrength::getCellSignalStrengths()
+	__JniBaseClass SignalStrength::getCellSignalStrengths()
 	{
 		return callObjectMethod(
 			"getCellSignalStrengths",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject SignalStrength::getCellSignalStrengths(jclass arg0)
+	__JniBaseClass SignalStrength::getCellSignalStrengths(jclass arg0)
 	{
 		return callObjectMethod(
 			"getCellSignalStrengths",

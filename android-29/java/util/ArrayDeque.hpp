@@ -34,15 +34,15 @@ namespace java::util
 		void addFirst(jobject arg0);
 		void addLast(jobject arg0);
 		void clear();
-		QAndroidJniObject clone();
+		java::util::ArrayDeque clone();
 		jboolean contains(jobject arg0);
-		QAndroidJniObject descendingIterator();
+		__JniBaseClass descendingIterator();
 		jobject element();
 		void forEach(__JniBaseClass arg0);
 		jobject getFirst();
 		jobject getLast();
 		jboolean isEmpty();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jboolean offer(jobject arg0);
 		jboolean offerFirst(jobject arg0);
 		jboolean offerLast(jobject arg0);
@@ -64,7 +64,7 @@ namespace java::util
 		jboolean removeLastOccurrence(jobject arg0);
 		jboolean retainAll(__JniBaseClass arg0);
 		jint size();
-		QAndroidJniObject spliterator();
+		__JniBaseClass spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 	};

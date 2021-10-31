@@ -35,8 +35,8 @@ namespace java::io
 		// Methods
 		jint available();
 		void close();
-		QAndroidJniObject getChannel();
-		QAndroidJniObject getFD();
+		java::nio::channels::FileChannel getChannel();
+		java::io::FileDescriptor getFD();
 		jint read();
 		jint read(jbyteArray arg0);
 		jint read(jbyteArray arg0, jint arg1, jint arg2);

@@ -10,10 +10,10 @@ namespace android::text::method
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CHARACTERS();
-		static QAndroidJniObject NONE();
-		static QAndroidJniObject SENTENCES();
-		static QAndroidJniObject WORDS();
+		static android::text::method::TextKeyListener_Capitalize CHARACTERS();
+		static android::text::method::TextKeyListener_Capitalize NONE();
+		static android::text::method::TextKeyListener_Capitalize SENTENCES();
+		static android::text::method::TextKeyListener_Capitalize WORDS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextKeyListener_Capitalize(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::text::method
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::text::method::TextKeyListener_Capitalize valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::text::method

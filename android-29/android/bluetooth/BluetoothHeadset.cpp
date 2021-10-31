@@ -132,7 +132,7 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject BluetoothHeadset::getConnectedDevices()
+	__JniBaseClass BluetoothHeadset::getConnectedDevices()
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -147,7 +147,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BluetoothHeadset::getDevicesMatchingConnectionStates(jintArray arg0)
+	__JniBaseClass BluetoothHeadset::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",

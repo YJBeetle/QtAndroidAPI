@@ -17,14 +17,14 @@ namespace android::print
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrintDocumentInfo_Builder::build()
+	android::print::PrintDocumentInfo PrintDocumentInfo_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/print/PrintDocumentInfo;"
 		);
 	}
-	QAndroidJniObject PrintDocumentInfo_Builder::setContentType(jint arg0)
+	android::print::PrintDocumentInfo_Builder PrintDocumentInfo_Builder::setContentType(jint arg0)
 	{
 		return callObjectMethod(
 			"setContentType",
@@ -32,7 +32,7 @@ namespace android::print
 			arg0
 		);
 	}
-	QAndroidJniObject PrintDocumentInfo_Builder::setPageCount(jint arg0)
+	android::print::PrintDocumentInfo_Builder PrintDocumentInfo_Builder::setPageCount(jint arg0)
 	{
 		return callObjectMethod(
 			"setPageCount",

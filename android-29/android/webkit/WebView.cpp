@@ -162,7 +162,7 @@ namespace android::webkit
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject WebView::getCurrentWebViewPackage()
+	android::content::pm::PackageInfo WebView::getCurrentWebViewPackage()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebView",
@@ -170,7 +170,7 @@ namespace android::webkit
 			"()Landroid/content/pm/PackageInfo;"
 		);
 	}
-	QAndroidJniObject WebView::getSafeBrowsingPrivacyPolicyUrl()
+	android::net::Uri WebView::getSafeBrowsingPrivacyPolicyUrl()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebView",
@@ -178,7 +178,7 @@ namespace android::webkit
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject WebView::getWebViewClassLoader()
+	java::lang::ClassLoader WebView::getWebViewClassLoader()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebView",
@@ -277,7 +277,7 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	QAndroidJniObject WebView::capturePicture()
+	android::graphics::Picture WebView::capturePicture()
 	{
 		return callObjectMethod(
 			"capturePicture",
@@ -334,21 +334,21 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	QAndroidJniObject WebView::copyBackForwardList()
+	android::webkit::WebBackForwardList WebView::copyBackForwardList()
 	{
 		return callObjectMethod(
 			"copyBackForwardList",
 			"()Landroid/webkit/WebBackForwardList;"
 		);
 	}
-	QAndroidJniObject WebView::createPrintDocumentAdapter()
+	android::print::PrintDocumentAdapter WebView::createPrintDocumentAdapter()
 	{
 		return callObjectMethod(
 			"createPrintDocumentAdapter",
 			"()Landroid/print/PrintDocumentAdapter;"
 		);
 	}
-	QAndroidJniObject WebView::createPrintDocumentAdapter(jstring arg0)
+	android::print::PrintDocumentAdapter WebView::createPrintDocumentAdapter(jstring arg0)
 	{
 		return callObjectMethod(
 			"createPrintDocumentAdapter",
@@ -411,7 +411,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	QAndroidJniObject WebView::findFocus()
+	android::view::View WebView::findFocus()
 	{
 		return callObjectMethod(
 			"findFocus",
@@ -449,14 +449,14 @@ namespace android::webkit
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WebView::getAccessibilityNodeProvider()
+	android::view::accessibility::AccessibilityNodeProvider WebView::getAccessibilityNodeProvider()
 	{
 		return callObjectMethod(
 			"getAccessibilityNodeProvider",
 			"()Landroid/view/accessibility/AccessibilityNodeProvider;"
 		);
 	}
-	QAndroidJniObject WebView::getCertificate()
+	android::net::http::SslCertificate WebView::getCertificate()
 	{
 		return callObjectMethod(
 			"getCertificate",
@@ -470,21 +470,21 @@ namespace android::webkit
 			"()I"
 		);
 	}
-	QAndroidJniObject WebView::getFavicon()
+	android::graphics::Bitmap WebView::getFavicon()
 	{
 		return callObjectMethod(
 			"getFavicon",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	QAndroidJniObject WebView::getHandler()
+	android::os::Handler WebView::getHandler()
 	{
 		return callObjectMethod(
 			"getHandler",
 			"()Landroid/os/Handler;"
 		);
 	}
-	QAndroidJniObject WebView::getHitTestResult()
+	android::webkit::WebView_HitTestResult WebView::getHitTestResult()
 	{
 		return callObjectMethod(
 			"getHitTestResult",
@@ -535,14 +535,14 @@ namespace android::webkit
 			"()F"
 		);
 	}
-	QAndroidJniObject WebView::getSettings()
+	android::webkit::WebSettings WebView::getSettings()
 	{
 		return callObjectMethod(
 			"getSettings",
 			"()Landroid/webkit/WebSettings;"
 		);
 	}
-	QAndroidJniObject WebView::getTextClassifier()
+	__JniBaseClass WebView::getTextClassifier()
 	{
 		return callObjectMethod(
 			"getTextClassifier",
@@ -563,35 +563,35 @@ namespace android::webkit
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WebView::getWebChromeClient()
+	android::webkit::WebChromeClient WebView::getWebChromeClient()
 	{
 		return callObjectMethod(
 			"getWebChromeClient",
 			"()Landroid/webkit/WebChromeClient;"
 		);
 	}
-	QAndroidJniObject WebView::getWebViewClient()
+	android::webkit::WebViewClient WebView::getWebViewClient()
 	{
 		return callObjectMethod(
 			"getWebViewClient",
 			"()Landroid/webkit/WebViewClient;"
 		);
 	}
-	QAndroidJniObject WebView::getWebViewLooper()
+	android::os::Looper WebView::getWebViewLooper()
 	{
 		return callObjectMethod(
 			"getWebViewLooper",
 			"()Landroid/os/Looper;"
 		);
 	}
-	QAndroidJniObject WebView::getWebViewRenderProcess()
+	android::webkit::WebViewRenderProcess WebView::getWebViewRenderProcess()
 	{
 		return callObjectMethod(
 			"getWebViewRenderProcess",
 			"()Landroid/webkit/WebViewRenderProcess;"
 		);
 	}
-	QAndroidJniObject WebView::getWebViewRenderProcessClient()
+	android::webkit::WebViewRenderProcessClient WebView::getWebViewRenderProcessClient()
 	{
 		return callObjectMethod(
 			"getWebViewRenderProcessClient",
@@ -706,7 +706,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	QAndroidJniObject WebView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	__JniBaseClass WebView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -965,7 +965,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WebView::restoreState(android::os::Bundle arg0)
+	android::webkit::WebBackForwardList WebView::restoreState(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"restoreState",
@@ -990,7 +990,7 @@ namespace android::webkit
 			arg2
 		);
 	}
-	QAndroidJniObject WebView::saveState(android::os::Bundle arg0)
+	android::webkit::WebBackForwardList WebView::saveState(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"saveState",

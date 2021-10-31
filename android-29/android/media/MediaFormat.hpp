@@ -140,24 +140,24 @@ namespace android::media
 		MediaFormat(android::media::MediaFormat &arg0);
 		
 		// Methods
-		static QAndroidJniObject createAudioFormat(jstring arg0, jint arg1, jint arg2);
-		static QAndroidJniObject createSubtitleFormat(jstring arg0, jstring arg1);
-		static QAndroidJniObject createVideoFormat(jstring arg0, jint arg1, jint arg2);
+		static android::media::MediaFormat createAudioFormat(jstring arg0, jint arg1, jint arg2);
+		static android::media::MediaFormat createSubtitleFormat(jstring arg0, jstring arg1);
+		static android::media::MediaFormat createVideoFormat(jstring arg0, jint arg1, jint arg2);
 		jboolean containsFeature(jstring arg0);
 		jboolean containsKey(jstring arg0);
-		QAndroidJniObject getByteBuffer(jstring arg0);
-		QAndroidJniObject getByteBuffer(jstring arg0, java::nio::ByteBuffer arg1);
+		java::nio::ByteBuffer getByteBuffer(jstring arg0);
+		java::nio::ByteBuffer getByteBuffer(jstring arg0, java::nio::ByteBuffer arg1);
 		jboolean getFeatureEnabled(jstring arg0);
-		QAndroidJniObject getFeatures();
+		__JniBaseClass getFeatures();
 		jfloat getFloat(jstring arg0);
 		jfloat getFloat(jstring arg0, jfloat arg1);
 		jint getInteger(jstring arg0);
 		jint getInteger(jstring arg0, jint arg1);
-		QAndroidJniObject getKeys();
+		__JniBaseClass getKeys();
 		jlong getLong(jstring arg0);
 		jlong getLong(jstring arg0, jlong arg1);
-		QAndroidJniObject getNumber(jstring arg0);
-		QAndroidJniObject getNumber(jstring arg0, java::lang::Number arg1);
+		java::lang::Number getNumber(jstring arg0);
+		java::lang::Number getNumber(jstring arg0, java::lang::Number arg1);
 		jstring getString(jstring arg0);
 		jstring getString(jstring arg0, jstring arg1);
 		jint getValueTypeForKey(jstring arg0);

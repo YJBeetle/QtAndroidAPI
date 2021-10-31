@@ -22,10 +22,10 @@ namespace android::text::style
 		TtsSpan_DecimalBuilder(jdouble arg0, jint arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2);
-		QAndroidJniObject setFractionalPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(jlong arg0);
+		android::text::style::TtsSpan_DecimalBuilder setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2);
+		android::text::style::TtsSpan_DecimalBuilder setFractionalPart(jstring arg0);
+		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(jstring arg0);
+		android::text::style::TtsSpan_DecimalBuilder setIntegerPart(jlong arg0);
 	};
 } // namespace android::text::style
 

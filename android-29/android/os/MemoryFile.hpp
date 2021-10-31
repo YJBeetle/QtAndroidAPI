@@ -28,8 +28,8 @@ namespace android::os
 		// Methods
 		jboolean allowPurging(jboolean arg0);
 		void close();
-		QAndroidJniObject getInputStream();
-		QAndroidJniObject getOutputStream();
+		java::io::InputStream getInputStream();
+		java::io::OutputStream getOutputStream();
 		jboolean isPurgingAllowed();
 		jint length();
 		jint readBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3);

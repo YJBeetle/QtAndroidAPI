@@ -13,7 +13,7 @@ namespace javax::crypto
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject KeyGenerator::getInstance(jstring arg0)
+	javax::crypto::KeyGenerator KeyGenerator::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.KeyGenerator",
@@ -22,7 +22,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenerator::getInstance(jstring arg0, jstring arg1)
+	javax::crypto::KeyGenerator KeyGenerator::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.KeyGenerator",
@@ -32,7 +32,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	QAndroidJniObject KeyGenerator::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::crypto::KeyGenerator KeyGenerator::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.KeyGenerator",
@@ -42,7 +42,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	QAndroidJniObject KeyGenerator::generateKey()
+	__JniBaseClass KeyGenerator::generateKey()
 	{
 		return callObjectMethod(
 			"generateKey",
@@ -56,7 +56,7 @@ namespace javax::crypto
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject KeyGenerator::getProvider()
+	java::security::Provider KeyGenerator::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

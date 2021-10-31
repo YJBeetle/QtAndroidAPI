@@ -6,7 +6,7 @@
 namespace android::hardware::camera2::params
 {
 	// Fields
-	QAndroidJniObject OutputConfiguration::CREATOR()
+	__JniBaseClass OutputConfiguration::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.params.OutputConfiguration",
@@ -85,7 +85,7 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	QAndroidJniObject OutputConfiguration::getSurface()
+	android::view::Surface OutputConfiguration::getSurface()
 	{
 		return callObjectMethod(
 			"getSurface",
@@ -99,7 +99,7 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	QAndroidJniObject OutputConfiguration::getSurfaces()
+	__JniBaseClass OutputConfiguration::getSurfaces()
 	{
 		return callObjectMethod(
 			"getSurfaces",

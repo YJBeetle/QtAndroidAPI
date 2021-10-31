@@ -32,7 +32,7 @@ namespace android::net::wifi
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDetailedStateOf(android::net::wifi::SupplicantState arg0);
+		static android::net::NetworkInfo_DetailedState getDetailedStateOf(android::net::wifi::SupplicantState arg0);
 		jint describeContents();
 		jstring getBSSID();
 		jint getFrequency();
@@ -46,7 +46,7 @@ namespace android::net::wifi
 		jint getRssi();
 		jint getRxLinkSpeedMbps();
 		jstring getSSID();
-		QAndroidJniObject getSupplicantState();
+		android::net::wifi::SupplicantState getSupplicantState();
 		jint getTxLinkSpeedMbps();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

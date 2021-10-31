@@ -92,7 +92,7 @@ namespace android::speech
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SpeechRecognizer::createSpeechRecognizer(android::content::Context arg0)
+	android::speech::SpeechRecognizer SpeechRecognizer::createSpeechRecognizer(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.speech.SpeechRecognizer",
@@ -101,7 +101,7 @@ namespace android::speech
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SpeechRecognizer::createSpeechRecognizer(android::content::Context arg0, android::content::ComponentName arg1)
+	android::speech::SpeechRecognizer SpeechRecognizer::createSpeechRecognizer(android::content::Context arg0, android::content::ComponentName arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.speech.SpeechRecognizer",

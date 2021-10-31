@@ -20,14 +20,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject ListFragment::getListAdapter()
+	__JniBaseClass ListFragment::getListAdapter()
 	{
 		return callObjectMethod(
 			"getListAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	QAndroidJniObject ListFragment::getListView()
+	android::widget::ListView ListFragment::getListView()
 	{
 		return callObjectMethod(
 			"getListView",
@@ -48,7 +48,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject ListFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
+	android::view::View ListFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"onCreateView",

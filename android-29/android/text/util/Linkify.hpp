@@ -22,9 +22,9 @@ namespace android::text::util
 		static jint MAP_ADDRESSES();
 		static jint PHONE_NUMBERS();
 		static jint WEB_URLS();
-		static QAndroidJniObject sPhoneNumberMatchFilter();
-		static QAndroidJniObject sPhoneNumberTransformFilter();
-		static QAndroidJniObject sUrlMatchFilter();
+		static __JniBaseClass sPhoneNumberMatchFilter();
+		static __JniBaseClass sPhoneNumberTransformFilter();
+		static __JniBaseClass sUrlMatchFilter();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Linkify(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

@@ -16,9 +16,9 @@ namespace android::provider
 		static jstring CONTENT_TYPE();
 		static jstring DEFAULT_SORT_ORDER();
 		static jstring ENTRY_CONTENT_TYPE();
-		static QAndroidJniObject EXTERNAL_CONTENT_URI();
+		static android::net::Uri EXTERNAL_CONTENT_URI();
 		static jstring EXTRA_MAX_BYTES();
-		static QAndroidJniObject INTERNAL_CONTENT_URI();
+		static android::net::Uri INTERNAL_CONTENT_URI();
 		static jstring RECORD_SOUND_ACTION();
 		
 		// QAndroidJniObject forward
@@ -29,8 +29,8 @@ namespace android::provider
 		MediaStore_Audio_Media();
 		
 		// Methods
-		static QAndroidJniObject getContentUri(jstring arg0);
-		static QAndroidJniObject getContentUriForPath(jstring arg0);
+		static android::net::Uri getContentUri(jstring arg0);
+		static android::net::Uri getContentUriForPath(jstring arg0);
 	};
 } // namespace android::provider
 

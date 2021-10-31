@@ -10,9 +10,9 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ANY_BASE_WEIGHT_IS_WILDCARD();
-		static QAndroidJniObject PATTERN_BASE_WEIGHT_IS_WILDCARD();
-		static QAndroidJniObject STANDARD_ELEMENT_COMPARISON();
+		static android::icu::text::SearchIterator_ElementComparisonType ANY_BASE_WEIGHT_IS_WILDCARD();
+		static android::icu::text::SearchIterator_ElementComparisonType PATTERN_BASE_WEIGHT_IS_WILDCARD();
+		static android::icu::text::SearchIterator_ElementComparisonType STANDARD_ELEMENT_COMPARISON();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SearchIterator_ElementComparisonType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::SearchIterator_ElementComparisonType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

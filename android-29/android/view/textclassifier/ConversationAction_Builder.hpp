@@ -30,11 +30,11 @@ namespace android::view::textclassifier
 		ConversationAction_Builder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setAction(android::app::RemoteAction arg0);
-		QAndroidJniObject setConfidenceScore(jfloat arg0);
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
-		QAndroidJniObject setTextReply(jstring arg0);
+		android::view::textclassifier::ConversationAction build();
+		android::view::textclassifier::ConversationAction_Builder setAction(android::app::RemoteAction arg0);
+		android::view::textclassifier::ConversationAction_Builder setConfidenceScore(jfloat arg0);
+		android::view::textclassifier::ConversationAction_Builder setExtras(android::os::Bundle arg0);
+		android::view::textclassifier::ConversationAction_Builder setTextReply(jstring arg0);
 	};
 } // namespace android::view::textclassifier
 

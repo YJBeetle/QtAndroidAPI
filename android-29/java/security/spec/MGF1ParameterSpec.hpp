@@ -9,17 +9,17 @@ namespace java::security::spec
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SHA1();
-		static QAndroidJniObject SHA224();
-		static QAndroidJniObject SHA256();
-		static QAndroidJniObject SHA384();
-		static QAndroidJniObject SHA3_224();
-		static QAndroidJniObject SHA3_256();
-		static QAndroidJniObject SHA3_384();
-		static QAndroidJniObject SHA3_512();
-		static QAndroidJniObject SHA512();
-		static QAndroidJniObject SHA512_224();
-		static QAndroidJniObject SHA512_256();
+		static java::security::spec::MGF1ParameterSpec SHA1();
+		static java::security::spec::MGF1ParameterSpec SHA224();
+		static java::security::spec::MGF1ParameterSpec SHA256();
+		static java::security::spec::MGF1ParameterSpec SHA384();
+		static java::security::spec::MGF1ParameterSpec SHA3_224();
+		static java::security::spec::MGF1ParameterSpec SHA3_256();
+		static java::security::spec::MGF1ParameterSpec SHA3_384();
+		static java::security::spec::MGF1ParameterSpec SHA3_512();
+		static java::security::spec::MGF1ParameterSpec SHA512();
+		static java::security::spec::MGF1ParameterSpec SHA512_224();
+		static java::security::spec::MGF1ParameterSpec SHA512_256();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MGF1ParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

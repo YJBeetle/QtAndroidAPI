@@ -66,13 +66,13 @@ namespace java::util::logging
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getLogManager();
-		static QAndroidJniObject getLoggingMXBean();
-		QAndroidJniObject addConfigurationListener(__JniBaseClass arg0);
+		static java::util::logging::LogManager getLogManager();
+		static __JniBaseClass getLoggingMXBean();
+		java::util::logging::LogManager addConfigurationListener(__JniBaseClass arg0);
 		jboolean addLogger(java::util::logging::Logger arg0);
 		void checkAccess();
-		QAndroidJniObject getLogger(jstring arg0);
-		QAndroidJniObject getLoggerNames();
+		java::util::logging::Logger getLogger(jstring arg0);
+		__JniBaseClass getLoggerNames();
 		jstring getProperty(jstring arg0);
 		void readConfiguration();
 		void readConfiguration(java::io::InputStream arg0);

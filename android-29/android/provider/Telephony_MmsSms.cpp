@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject Telephony_MmsSms::CONTENT_CONVERSATIONS_URI()
+	android::net::Uri Telephony_MmsSms::CONTENT_CONVERSATIONS_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms",
@@ -12,7 +12,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Telephony_MmsSms::CONTENT_DRAFT_URI()
+	android::net::Uri Telephony_MmsSms::CONTENT_DRAFT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms",
@@ -20,7 +20,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Telephony_MmsSms::CONTENT_FILTER_BYPHONE_URI()
+	android::net::Uri Telephony_MmsSms::CONTENT_FILTER_BYPHONE_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms",
@@ -28,7 +28,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Telephony_MmsSms::CONTENT_LOCKED_URI()
+	android::net::Uri Telephony_MmsSms::CONTENT_LOCKED_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms",
@@ -36,7 +36,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Telephony_MmsSms::CONTENT_UNDELIVERED_URI()
+	android::net::Uri Telephony_MmsSms::CONTENT_UNDELIVERED_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms",
@@ -44,7 +44,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Telephony_MmsSms::CONTENT_URI()
+	android::net::Uri Telephony_MmsSms::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms",
@@ -115,7 +115,7 @@ namespace android::provider
 			"NO_ERROR"
 		);
 	}
-	QAndroidJniObject Telephony_MmsSms::SEARCH_URI()
+	android::net::Uri Telephony_MmsSms::SEARCH_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms",

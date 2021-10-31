@@ -21,8 +21,8 @@ namespace java::nio::file::attribute
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject asFileAttribute(__JniBaseClass arg0);
-		static QAndroidJniObject fromString(jstring arg0);
+		static __JniBaseClass asFileAttribute(__JniBaseClass arg0);
+		static __JniBaseClass fromString(jstring arg0);
 		static jstring toString(__JniBaseClass arg0);
 	};
 } // namespace java::nio::file::attribute

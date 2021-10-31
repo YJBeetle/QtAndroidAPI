@@ -95,7 +95,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SipManager::newInstance(android::content::Context arg0)
+	android::net::sip::SipManager SipManager::newInstance(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.sip.SipManager",
@@ -112,7 +112,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipManager::createSipSession(android::net::sip::SipProfile arg0, android::net::sip::SipSession_Listener arg1)
+	android::net::sip::SipSession SipManager::createSipSession(android::net::sip::SipProfile arg0, android::net::sip::SipSession_Listener arg1)
 	{
 		return callObjectMethod(
 			"createSipSession",
@@ -121,7 +121,7 @@ namespace android::net::sip
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SipManager::getSessionFor(android::content::Intent arg0)
+	android::net::sip::SipSession SipManager::getSessionFor(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"getSessionFor",
@@ -145,7 +145,7 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipManager::makeAudioCall(android::net::sip::SipProfile arg0, android::net::sip::SipProfile arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
+	android::net::sip::SipAudioCall SipManager::makeAudioCall(android::net::sip::SipProfile arg0, android::net::sip::SipProfile arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"makeAudioCall",
@@ -156,7 +156,7 @@ namespace android::net::sip
 			arg3
 		);
 	}
-	QAndroidJniObject SipManager::makeAudioCall(jstring arg0, jstring arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
+	android::net::sip::SipAudioCall SipManager::makeAudioCall(jstring arg0, jstring arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"makeAudioCall",
@@ -204,7 +204,7 @@ namespace android::net::sip
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SipManager::takeAudioCall(android::content::Intent arg0, android::net::sip::SipAudioCall_Listener arg1)
+	android::net::sip::SipAudioCall SipManager::takeAudioCall(android::content::Intent arg0, android::net::sip::SipAudioCall_Listener arg1)
 	{
 		return callObjectMethod(
 			"takeAudioCall",

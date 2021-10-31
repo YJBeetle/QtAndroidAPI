@@ -33,13 +33,13 @@ namespace android::app::usage
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject queryDetails(jint arg0, jstring arg1, jlong arg2, jlong arg3);
-		QAndroidJniObject queryDetailsForUid(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4);
-		QAndroidJniObject queryDetailsForUidTag(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4, jint arg5);
-		QAndroidJniObject queryDetailsForUidTagState(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4, jint arg5, jint arg6);
-		QAndroidJniObject querySummary(jint arg0, jstring arg1, jlong arg2, jlong arg3);
-		QAndroidJniObject querySummaryForDevice(jint arg0, jstring arg1, jlong arg2, jlong arg3);
-		QAndroidJniObject querySummaryForUser(jint arg0, jstring arg1, jlong arg2, jlong arg3);
+		android::app::usage::NetworkStats queryDetails(jint arg0, jstring arg1, jlong arg2, jlong arg3);
+		android::app::usage::NetworkStats queryDetailsForUid(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4);
+		android::app::usage::NetworkStats queryDetailsForUidTag(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4, jint arg5);
+		android::app::usage::NetworkStats queryDetailsForUidTagState(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4, jint arg5, jint arg6);
+		android::app::usage::NetworkStats querySummary(jint arg0, jstring arg1, jlong arg2, jlong arg3);
+		android::app::usage::NetworkStats_Bucket querySummaryForDevice(jint arg0, jstring arg1, jlong arg2, jlong arg3);
+		android::app::usage::NetworkStats_Bucket querySummaryForUser(jint arg0, jstring arg1, jlong arg2, jlong arg3);
 		void registerUsageCallback(jint arg0, jstring arg1, jlong arg2, android::app::usage::NetworkStatsManager_UsageCallback arg3);
 		void registerUsageCallback(jint arg0, jstring arg1, jlong arg2, android::app::usage::NetworkStatsManager_UsageCallback arg3, android::os::Handler arg4);
 		void unregisterUsageCallback(android::app::usage::NetworkStatsManager_UsageCallback arg0);

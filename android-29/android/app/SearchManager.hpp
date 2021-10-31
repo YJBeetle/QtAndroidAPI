@@ -81,9 +81,9 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getGlobalSearchActivity();
-		QAndroidJniObject getSearchableInfo(android::content::ComponentName arg0);
-		QAndroidJniObject getSearchablesInGlobalSearch();
+		android::content::ComponentName getGlobalSearchActivity();
+		android::app::SearchableInfo getSearchableInfo(android::content::ComponentName arg0);
+		__JniBaseClass getSearchablesInGlobalSearch();
 		void onCancel(__JniBaseClass arg0);
 		void onDismiss(__JniBaseClass arg0);
 		void setOnCancelListener(__JniBaseClass arg0);

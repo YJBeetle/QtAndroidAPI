@@ -37,7 +37,7 @@ namespace android::database
 		jstring getString(jint arg0);
 		jint getType(jint arg0);
 		jboolean isNull(jint arg0);
-		QAndroidJniObject newRow();
+		android::database::MatrixCursor_RowBuilder newRow();
 	};
 } // namespace android::database
 

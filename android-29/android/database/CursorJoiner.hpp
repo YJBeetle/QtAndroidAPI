@@ -23,8 +23,8 @@ namespace android::database
 		
 		// Methods
 		jboolean hasNext();
-		QAndroidJniObject iterator();
-		QAndroidJniObject next();
+		__JniBaseClass iterator();
+		android::database::CursorJoiner_Result next();
 		void remove();
 	};
 } // namespace android::database

@@ -20,7 +20,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject InetAddresses::parseNumericAddress(jstring arg0)
+	java::net::InetAddress InetAddresses::parseNumericAddress(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.InetAddresses",

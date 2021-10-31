@@ -27,7 +27,7 @@ namespace android::text::style
 		MaskFilterSpan(android::graphics::MaskFilter arg0);
 		
 		// Methods
-		QAndroidJniObject getMaskFilter();
+		android::graphics::MaskFilter getMaskFilter();
 		void updateDrawState(android::text::TextPaint arg0);
 	};
 } // namespace android::text::style

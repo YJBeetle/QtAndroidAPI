@@ -60,7 +60,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject DownloadManager_Request::addRequestHeader(jstring arg0, jstring arg1)
+	android::app::DownloadManager_Request DownloadManager_Request::addRequestHeader(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"addRequestHeader",
@@ -76,7 +76,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setAllowedNetworkTypes(jint arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setAllowedNetworkTypes(jint arg0)
 	{
 		return callObjectMethod(
 			"setAllowedNetworkTypes",
@@ -84,7 +84,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setAllowedOverMetered(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setAllowedOverMetered(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setAllowedOverMetered",
@@ -92,7 +92,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setAllowedOverRoaming(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setAllowedOverRoaming(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setAllowedOverRoaming",
@@ -100,7 +100,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setDescription(jstring arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setDescription(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -108,7 +108,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setDestinationInExternalFilesDir(android::content::Context arg0, jstring arg1, jstring arg2)
+	android::app::DownloadManager_Request DownloadManager_Request::setDestinationInExternalFilesDir(android::content::Context arg0, jstring arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"setDestinationInExternalFilesDir",
@@ -118,7 +118,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setDestinationInExternalPublicDir(jstring arg0, jstring arg1)
+	android::app::DownloadManager_Request DownloadManager_Request::setDestinationInExternalPublicDir(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"setDestinationInExternalPublicDir",
@@ -127,7 +127,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setDestinationUri(android::net::Uri arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setDestinationUri(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"setDestinationUri",
@@ -135,7 +135,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setMimeType(jstring arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setMimeType(jstring arg0)
 	{
 		return callObjectMethod(
 			"setMimeType",
@@ -143,7 +143,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setNotificationVisibility(jint arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setNotificationVisibility(jint arg0)
 	{
 		return callObjectMethod(
 			"setNotificationVisibility",
@@ -151,7 +151,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setRequiresCharging(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setRequiresCharging(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setRequiresCharging",
@@ -159,7 +159,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setRequiresDeviceIdle(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setRequiresDeviceIdle(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setRequiresDeviceIdle",
@@ -167,7 +167,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setShowRunningNotification(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setShowRunningNotification(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setShowRunningNotification",
@@ -175,7 +175,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setTitle(jstring arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setTitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setTitle",
@@ -183,7 +183,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Request::setVisibleInDownloadsUi(jboolean arg0)
+	android::app::DownloadManager_Request DownloadManager_Request::setVisibleInDownloadsUi(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setVisibleInDownloadsUi",

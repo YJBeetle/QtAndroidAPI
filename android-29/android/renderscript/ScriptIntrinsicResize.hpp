@@ -40,11 +40,11 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::renderscript::RenderScript arg0);
+		static android::renderscript::ScriptIntrinsicResize create(android::renderscript::RenderScript arg0);
 		void forEach_bicubic(android::renderscript::Allocation arg0);
 		void forEach_bicubic(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1);
-		QAndroidJniObject getFieldID_Input();
-		QAndroidJniObject getKernelID_bicubic();
+		android::renderscript::Script_FieldID getFieldID_Input();
+		android::renderscript::Script_KernelID getKernelID_bicubic();
 		void setInput(android::renderscript::Allocation arg0);
 	};
 } // namespace android::renderscript

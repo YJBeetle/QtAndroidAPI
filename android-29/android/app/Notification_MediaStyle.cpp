@@ -23,7 +23,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Notification_MediaStyle::setMediaSession(android::media::session::MediaSession_Token arg0)
+	android::app::Notification_MediaStyle Notification_MediaStyle::setMediaSession(android::media::session::MediaSession_Token arg0)
 	{
 		return callObjectMethod(
 			"setMediaSession",
@@ -31,7 +31,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_MediaStyle::setShowActionsInCompactView(jintArray arg0)
+	android::app::Notification_MediaStyle Notification_MediaStyle::setShowActionsInCompactView(jintArray arg0)
 	{
 		return callObjectMethod(
 			"setShowActionsInCompactView",

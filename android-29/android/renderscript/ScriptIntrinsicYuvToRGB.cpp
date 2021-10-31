@@ -15,7 +15,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ScriptIntrinsicYuvToRGB::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
+	android::renderscript::ScriptIntrinsicYuvToRGB ScriptIntrinsicYuvToRGB::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicYuvToRGB",
@@ -33,14 +33,14 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicYuvToRGB::getFieldID_Input()
+	android::renderscript::Script_FieldID ScriptIntrinsicYuvToRGB::getFieldID_Input()
 	{
 		return callObjectMethod(
 			"getFieldID_Input",
 			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicYuvToRGB::getKernelID()
+	android::renderscript::Script_KernelID ScriptIntrinsicYuvToRGB::getKernelID()
 	{
 		return callObjectMethod(
 			"getKernelID",

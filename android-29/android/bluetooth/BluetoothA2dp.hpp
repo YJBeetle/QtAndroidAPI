@@ -30,9 +30,9 @@ namespace android::bluetooth
 		
 		// Methods
 		void finalize();
-		QAndroidJniObject getConnectedDevices();
+		__JniBaseClass getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
+		__JniBaseClass getDevicesMatchingConnectionStates(jintArray arg0);
 		jboolean isA2dpPlaying(android::bluetooth::BluetoothDevice arg0);
 	};
 } // namespace android::bluetooth

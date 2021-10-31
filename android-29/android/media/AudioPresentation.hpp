@@ -31,8 +31,8 @@ namespace android::media
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getLabels();
-		QAndroidJniObject getLocale();
+		__JniBaseClass getLabels();
+		java::util::Locale getLocale();
 		jint getMasteringIndication();
 		jint getPresentationId();
 		jint getProgramId();

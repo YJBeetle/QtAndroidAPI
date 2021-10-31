@@ -15,7 +15,7 @@ namespace android::telephony
 		// Fields
 		static jlong BYTES_UNKNOWN();
 		static jlong BYTES_UNLIMITED();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint LIMIT_BEHAVIOR_BILLED();
 		static jint LIMIT_BEHAVIOR_DISABLED();
 		static jint LIMIT_BEHAVIOR_THROTTLED();
@@ -29,7 +29,7 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject cycleIterator();
+		__JniBaseClass cycleIterator();
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getDataLimitBehavior();

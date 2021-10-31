@@ -24,14 +24,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject KeyStore_TrustedCertificateEntry::getAttributes()
+	__JniBaseClass KeyStore_TrustedCertificateEntry::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject KeyStore_TrustedCertificateEntry::getTrustedCertificate()
+	java::security::cert::Certificate KeyStore_TrustedCertificateEntry::getTrustedCertificate()
 	{
 		return callObjectMethod(
 			"getTrustedCertificate",

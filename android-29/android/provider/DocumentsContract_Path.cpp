@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject DocumentsContract_Path::CREATOR()
+	__JniBaseClass DocumentsContract_Path::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Path",
@@ -41,7 +41,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject DocumentsContract_Path::getPath()
+	__JniBaseClass DocumentsContract_Path::getPath()
 	{
 		return callObjectMethod(
 			"getPath",

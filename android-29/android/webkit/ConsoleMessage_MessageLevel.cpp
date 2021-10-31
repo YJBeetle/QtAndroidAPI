@@ -3,7 +3,7 @@
 namespace android::webkit
 {
 	// Fields
-	QAndroidJniObject ConsoleMessage_MessageLevel::DEBUG()
+	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage_MessageLevel::DEBUG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.ConsoleMessage$MessageLevel",
@@ -11,7 +11,7 @@ namespace android::webkit
 			"Landroid/webkit/ConsoleMessage$MessageLevel;"
 		);
 	}
-	QAndroidJniObject ConsoleMessage_MessageLevel::ERROR()
+	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage_MessageLevel::ERROR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.ConsoleMessage$MessageLevel",
@@ -19,7 +19,7 @@ namespace android::webkit
 			"Landroid/webkit/ConsoleMessage$MessageLevel;"
 		);
 	}
-	QAndroidJniObject ConsoleMessage_MessageLevel::LOG()
+	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage_MessageLevel::LOG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.ConsoleMessage$MessageLevel",
@@ -27,7 +27,7 @@ namespace android::webkit
 			"Landroid/webkit/ConsoleMessage$MessageLevel;"
 		);
 	}
-	QAndroidJniObject ConsoleMessage_MessageLevel::TIP()
+	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage_MessageLevel::TIP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.ConsoleMessage$MessageLevel",
@@ -35,7 +35,7 @@ namespace android::webkit
 			"Landroid/webkit/ConsoleMessage$MessageLevel;"
 		);
 	}
-	QAndroidJniObject ConsoleMessage_MessageLevel::WARNING()
+	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage_MessageLevel::WARNING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.ConsoleMessage$MessageLevel",
@@ -50,7 +50,7 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ConsoleMessage_MessageLevel::valueOf(jstring arg0)
+	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage_MessageLevel::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.ConsoleMessage$MessageLevel",

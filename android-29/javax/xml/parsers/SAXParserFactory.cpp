@@ -13,7 +13,7 @@ namespace javax::xml::parsers
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SAXParserFactory::newDefaultInstance()
+	javax::xml::parsers::SAXParserFactory SAXParserFactory::newDefaultInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
@@ -21,7 +21,7 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/SAXParserFactory;"
 		);
 	}
-	QAndroidJniObject SAXParserFactory::newDefaultNSInstance()
+	javax::xml::parsers::SAXParserFactory SAXParserFactory::newDefaultNSInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
@@ -29,7 +29,7 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/SAXParserFactory;"
 		);
 	}
-	QAndroidJniObject SAXParserFactory::newInstance()
+	javax::xml::parsers::SAXParserFactory SAXParserFactory::newInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
@@ -37,7 +37,7 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/SAXParserFactory;"
 		);
 	}
-	QAndroidJniObject SAXParserFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::parsers::SAXParserFactory SAXParserFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
@@ -47,7 +47,7 @@ namespace javax::xml::parsers
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SAXParserFactory::newNSInstance()
+	javax::xml::parsers::SAXParserFactory SAXParserFactory::newNSInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
@@ -55,7 +55,7 @@ namespace javax::xml::parsers
 			"()Ljavax/xml/parsers/SAXParserFactory;"
 		);
 	}
-	QAndroidJniObject SAXParserFactory::newNSInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::parsers::SAXParserFactory SAXParserFactory::newNSInstance(jstring arg0, java::lang::ClassLoader arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.SAXParserFactory",
@@ -73,7 +73,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	QAndroidJniObject SAXParserFactory::getSchema()
+	javax::xml::validation::Schema SAXParserFactory::getSchema()
 	{
 		return callObjectMethod(
 			"getSchema",
@@ -101,7 +101,7 @@ namespace javax::xml::parsers
 			"()Z"
 		);
 	}
-	QAndroidJniObject SAXParserFactory::newSAXParser()
+	javax::xml::parsers::SAXParser SAXParserFactory::newSAXParser()
 	{
 		return callObjectMethod(
 			"newSAXParser",

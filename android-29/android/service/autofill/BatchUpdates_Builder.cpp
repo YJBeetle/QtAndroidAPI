@@ -17,14 +17,14 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	QAndroidJniObject BatchUpdates_Builder::build()
+	android::service::autofill::BatchUpdates BatchUpdates_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/BatchUpdates;"
 		);
 	}
-	QAndroidJniObject BatchUpdates_Builder::transformChild(jint arg0, __JniBaseClass arg1)
+	android::service::autofill::BatchUpdates_Builder BatchUpdates_Builder::transformChild(jint arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"transformChild",
@@ -33,7 +33,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	QAndroidJniObject BatchUpdates_Builder::updateTemplate(android::widget::RemoteViews arg0)
+	android::service::autofill::BatchUpdates_Builder BatchUpdates_Builder::updateTemplate(android::widget::RemoteViews arg0)
 	{
 		return callObjectMethod(
 			"updateTemplate",

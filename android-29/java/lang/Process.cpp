@@ -19,14 +19,14 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	QAndroidJniObject Process::children()
+	__JniBaseClass Process::children()
 	{
 		return callObjectMethod(
 			"children",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	QAndroidJniObject Process::descendants()
+	__JniBaseClass Process::descendants()
 	{
 		return callObjectMethod(
 			"descendants",
@@ -40,7 +40,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	QAndroidJniObject Process::destroyForcibly()
+	java::lang::Process Process::destroyForcibly()
 	{
 		return callObjectMethod(
 			"destroyForcibly",
@@ -54,28 +54,28 @@ namespace java::lang
 			"()I"
 		);
 	}
-	QAndroidJniObject Process::getErrorStream()
+	java::io::InputStream Process::getErrorStream()
 	{
 		return callObjectMethod(
 			"getErrorStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	QAndroidJniObject Process::getInputStream()
+	java::io::InputStream Process::getInputStream()
 	{
 		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	QAndroidJniObject Process::getOutputStream()
+	java::io::OutputStream Process::getOutputStream()
 	{
 		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	QAndroidJniObject Process::info()
+	__JniBaseClass Process::info()
 	{
 		return callObjectMethod(
 			"info",
@@ -89,7 +89,7 @@ namespace java::lang
 			"()Z"
 		);
 	}
-	QAndroidJniObject Process::onExit()
+	java::util::concurrent::CompletableFuture Process::onExit()
 	{
 		return callObjectMethod(
 			"onExit",
@@ -110,7 +110,7 @@ namespace java::lang
 			"()Z"
 		);
 	}
-	QAndroidJniObject Process::toHandle()
+	__JniBaseClass Process::toHandle()
 	{
 		return callObjectMethod(
 			"toHandle",

@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject Paint_Cap::BUTT()
+	android::graphics::Paint_Cap Paint_Cap::BUTT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Cap",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/Paint$Cap;"
 		);
 	}
-	QAndroidJniObject Paint_Cap::ROUND()
+	android::graphics::Paint_Cap Paint_Cap::ROUND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Cap",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/Paint$Cap;"
 		);
 	}
-	QAndroidJniObject Paint_Cap::SQUARE()
+	android::graphics::Paint_Cap Paint_Cap::SQUARE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Cap",
@@ -34,7 +34,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Paint_Cap::valueOf(jstring arg0)
+	android::graphics::Paint_Cap Paint_Cap::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Paint$Cap",

@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject Telephony_MmsSms_PendingMessages::CONTENT_URI()
+	android::net::Uri Telephony_MmsSms_PendingMessages::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",

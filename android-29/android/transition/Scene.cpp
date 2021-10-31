@@ -33,7 +33,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	QAndroidJniObject Scene::getCurrentScene(android::view::ViewGroup arg0)
+	android::transition::Scene Scene::getCurrentScene(android::view::ViewGroup arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.transition.Scene",
@@ -42,7 +42,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Scene::getSceneForLayout(android::view::ViewGroup arg0, jint arg1, android::content::Context arg2)
+	android::transition::Scene Scene::getSceneForLayout(android::view::ViewGroup arg0, jint arg1, android::content::Context arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.transition.Scene",
@@ -67,7 +67,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	QAndroidJniObject Scene::getSceneRoot()
+	android::view::ViewGroup Scene::getSceneRoot()
 	{
 		return callObjectMethod(
 			"getSceneRoot",

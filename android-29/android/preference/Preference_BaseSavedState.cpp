@@ -4,7 +4,7 @@
 namespace android::preference
 {
 	// Fields
-	QAndroidJniObject Preference_BaseSavedState::CREATOR()
+	__JniBaseClass Preference_BaseSavedState::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.preference.Preference$BaseSavedState",

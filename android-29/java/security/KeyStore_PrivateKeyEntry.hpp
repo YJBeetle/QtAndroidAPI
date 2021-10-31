@@ -23,10 +23,10 @@ namespace java::security
 		KeyStore_PrivateKeyEntry(__JniBaseClass arg0, jarray arg1, __JniBaseClass arg2);
 		
 		// Methods
-		QAndroidJniObject getAttributes();
-		QAndroidJniObject getCertificate();
+		__JniBaseClass getAttributes();
+		java::security::cert::Certificate getCertificate();
 		jarray getCertificateChain();
-		QAndroidJniObject getPrivateKey();
+		__JniBaseClass getPrivateKey();
 		jstring toString();
 	};
 } // namespace java::security

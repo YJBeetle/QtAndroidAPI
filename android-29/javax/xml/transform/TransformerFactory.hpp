@@ -25,17 +25,17 @@ namespace javax::xml::transform
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newDefaultInstance();
-		static QAndroidJniObject newInstance();
-		static QAndroidJniObject newInstance(jstring arg0, java::lang::ClassLoader arg1);
-		QAndroidJniObject getAssociatedStylesheet(__JniBaseClass arg0, jstring arg1, jstring arg2, jstring arg3);
+		static javax::xml::transform::TransformerFactory newDefaultInstance();
+		static javax::xml::transform::TransformerFactory newInstance();
+		static javax::xml::transform::TransformerFactory newInstance(jstring arg0, java::lang::ClassLoader arg1);
+		__JniBaseClass getAssociatedStylesheet(__JniBaseClass arg0, jstring arg1, jstring arg2, jstring arg3);
 		jobject getAttribute(jstring arg0);
-		QAndroidJniObject getErrorListener();
+		__JniBaseClass getErrorListener();
 		jboolean getFeature(jstring arg0);
-		QAndroidJniObject getURIResolver();
-		QAndroidJniObject newTemplates(__JniBaseClass arg0);
-		QAndroidJniObject newTransformer();
-		QAndroidJniObject newTransformer(__JniBaseClass arg0);
+		__JniBaseClass getURIResolver();
+		__JniBaseClass newTemplates(__JniBaseClass arg0);
+		javax::xml::transform::Transformer newTransformer();
+		javax::xml::transform::Transformer newTransformer(__JniBaseClass arg0);
 		void setAttribute(jstring arg0, jobject arg1);
 		void setErrorListener(__JniBaseClass arg0);
 		void setFeature(jstring arg0, jboolean arg1);

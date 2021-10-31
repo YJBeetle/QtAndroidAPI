@@ -21,7 +21,7 @@ namespace android::print
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint STATUS_BUSY();
 		static jint STATUS_IDLE();
 		static jint STATUS_UNAVAILABLE();
@@ -35,9 +35,9 @@ namespace android::print
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCapabilities();
+		android::print::PrinterCapabilitiesInfo getCapabilities();
 		jstring getDescription();
-		QAndroidJniObject getId();
+		android::print::PrinterId getId();
 		jstring getName();
 		jint getStatus();
 		jint hashCode();

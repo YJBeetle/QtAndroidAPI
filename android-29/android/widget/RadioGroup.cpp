@@ -62,7 +62,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	QAndroidJniObject RadioGroup::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::RadioGroup_LayoutParams RadioGroup::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -84,7 +84,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject RadioGroup::getAutofillValue()
+	android::view::autofill::AutofillValue RadioGroup::getAutofillValue()
 	{
 		return callObjectMethod(
 			"getAutofillValue",

@@ -99,7 +99,7 @@ namespace android::net::http
 			arg0
 		);
 	}
-	QAndroidJniObject SslError::getCertificate()
+	android::net::http::SslCertificate SslError::getCertificate()
 	{
 		return callObjectMethod(
 			"getCertificate",

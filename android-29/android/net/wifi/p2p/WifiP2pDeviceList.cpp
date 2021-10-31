@@ -5,7 +5,7 @@
 namespace android::net::wifi::p2p
 {
 	// Fields
-	QAndroidJniObject WifiP2pDeviceList::CREATOR()
+	__JniBaseClass WifiP2pDeviceList::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pDeviceList",
@@ -38,7 +38,7 @@ namespace android::net::wifi::p2p
 			"()I"
 		);
 	}
-	QAndroidJniObject WifiP2pDeviceList::get(jstring arg0)
+	android::net::wifi::p2p::WifiP2pDevice WifiP2pDeviceList::get(jstring arg0)
 	{
 		return callObjectMethod(
 			"get",
@@ -46,7 +46,7 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	QAndroidJniObject WifiP2pDeviceList::getDeviceList()
+	__JniBaseClass WifiP2pDeviceList::getDeviceList()
 	{
 		return callObjectMethod(
 			"getDeviceList",

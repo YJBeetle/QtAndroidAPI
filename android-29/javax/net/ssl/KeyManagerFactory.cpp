@@ -21,7 +21,7 @@ namespace javax::net::ssl
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject KeyManagerFactory::getInstance(jstring arg0)
+	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
@@ -30,7 +30,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	QAndroidJniObject KeyManagerFactory::getInstance(jstring arg0, jstring arg1)
+	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
@@ -40,7 +40,7 @@ namespace javax::net::ssl
 			arg1
 		);
 	}
-	QAndroidJniObject KeyManagerFactory::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::net::ssl::KeyManagerFactory KeyManagerFactory::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.KeyManagerFactory",
@@ -64,7 +64,7 @@ namespace javax::net::ssl
 			"()[Ljavax/net/ssl/KeyManager;"
 		).object<jarray>();
 	}
-	QAndroidJniObject KeyManagerFactory::getProvider()
+	java::security::Provider KeyManagerFactory::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

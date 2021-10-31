@@ -59,7 +59,7 @@ namespace android::hardware::display
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DisplayManager::createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5)
+	android::hardware::display::VirtualDisplay DisplayManager::createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"createVirtualDisplay",
@@ -72,7 +72,7 @@ namespace android::hardware::display
 			arg5
 		);
 	}
-	QAndroidJniObject DisplayManager::createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7)
+	android::hardware::display::VirtualDisplay DisplayManager::createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7)
 	{
 		return callObjectMethod(
 			"createVirtualDisplay",
@@ -87,7 +87,7 @@ namespace android::hardware::display
 			arg7.object()
 		);
 	}
-	QAndroidJniObject DisplayManager::getDisplay(jint arg0)
+	android::view::Display DisplayManager::getDisplay(jint arg0)
 	{
 		return callObjectMethod(
 			"getDisplay",

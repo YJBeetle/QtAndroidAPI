@@ -25,7 +25,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	QAndroidJniObject DynamicsProcessing_Mbc::getBand(jint arg0)
+	android::media::audiofx::DynamicsProcessing_MbcBand DynamicsProcessing_Mbc::getBand(jint arg0)
 	{
 		return callObjectMethod(
 			"getBand",

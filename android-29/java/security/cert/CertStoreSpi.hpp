@@ -18,8 +18,8 @@ namespace java::security::cert
 		CertStoreSpi(__JniBaseClass arg0);
 		
 		// Methods
-		QAndroidJniObject engineGetCRLs(__JniBaseClass arg0);
-		QAndroidJniObject engineGetCertificates(__JniBaseClass arg0);
+		__JniBaseClass engineGetCRLs(__JniBaseClass arg0);
+		__JniBaseClass engineGetCertificates(__JniBaseClass arg0);
 	};
 } // namespace java::security::cert
 

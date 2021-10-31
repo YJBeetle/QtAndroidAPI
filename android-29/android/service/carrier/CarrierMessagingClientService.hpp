@@ -25,7 +25,7 @@ namespace android::service::carrier
 		CarrierMessagingClientService();
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 	};
 } // namespace android::service::carrier
 

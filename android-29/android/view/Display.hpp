@@ -61,17 +61,17 @@ namespace android::view
 		// Methods
 		jlong getAppVsyncOffsetNanos();
 		void getCurrentSizeRange(android::graphics::Point arg0, android::graphics::Point arg1);
-		QAndroidJniObject getCutout();
+		android::view::DisplayCutout getCutout();
 		jint getDisplayId();
 		jint getFlags();
-		QAndroidJniObject getHdrCapabilities();
+		android::view::Display_HdrCapabilities getHdrCapabilities();
 		jint getHeight();
 		void getMetrics(android::util::DisplayMetrics arg0);
-		QAndroidJniObject getMode();
+		android::view::Display_Mode getMode();
 		jstring getName();
 		jint getOrientation();
 		jint getPixelFormat();
-		QAndroidJniObject getPreferredWideGamutColorSpace();
+		android::graphics::ColorSpace getPreferredWideGamutColorSpace();
 		jlong getPresentationDeadlineNanos();
 		void getRealMetrics(android::util::DisplayMetrics arg0);
 		void getRealSize(android::graphics::Point arg0);

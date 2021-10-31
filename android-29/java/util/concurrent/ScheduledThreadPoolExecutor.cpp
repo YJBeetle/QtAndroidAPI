@@ -55,7 +55,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::getQueue()
+	__JniBaseClass ScheduledThreadPoolExecutor::getQueue()
 	{
 		return callObjectMethod(
 			"getQueue",
@@ -69,7 +69,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::schedule(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	__JniBaseClass ScheduledThreadPoolExecutor::schedule(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callObjectMethod(
 			"schedule",
@@ -79,7 +79,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::scheduleAtFixedRate(__JniBaseClass arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3)
+	__JniBaseClass ScheduledThreadPoolExecutor::scheduleAtFixedRate(__JniBaseClass arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3)
 	{
 		return callObjectMethod(
 			"scheduleAtFixedRate",
@@ -90,7 +90,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::scheduleWithFixedDelay(__JniBaseClass arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3)
+	__JniBaseClass ScheduledThreadPoolExecutor::scheduleWithFixedDelay(__JniBaseClass arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3)
 	{
 		return callObjectMethod(
 			"scheduleWithFixedDelay",
@@ -132,14 +132,14 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::shutdownNow()
+	__JniBaseClass ScheduledThreadPoolExecutor::shutdownNow()
 	{
 		return callObjectMethod(
 			"shutdownNow",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::submit(__JniBaseClass arg0)
+	__JniBaseClass ScheduledThreadPoolExecutor::submit(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"submit",
@@ -147,7 +147,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::submit(__JniBaseClass arg0, jobject arg1)
+	__JniBaseClass ScheduledThreadPoolExecutor::submit(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"submit",

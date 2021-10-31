@@ -26,8 +26,8 @@ namespace android::media::session
 		PlaybackState_CustomAction_Builder(jstring arg0, jstring arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
+		android::media::session::PlaybackState_CustomAction build();
+		android::media::session::PlaybackState_CustomAction_Builder setExtras(android::os::Bundle arg0);
 	};
 } // namespace android::media::session
 

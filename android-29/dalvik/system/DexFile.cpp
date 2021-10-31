@@ -33,7 +33,7 @@ namespace dalvik::system
 			arg0
 		);
 	}
-	QAndroidJniObject DexFile::loadDex(jstring arg0, jstring arg1, jint arg2)
+	dalvik::system::DexFile DexFile::loadDex(jstring arg0, jstring arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"dalvik.system.DexFile",
@@ -51,7 +51,7 @@ namespace dalvik::system
 			"()V"
 		);
 	}
-	QAndroidJniObject DexFile::entries()
+	__JniBaseClass DexFile::entries()
 	{
 		return callObjectMethod(
 			"entries",

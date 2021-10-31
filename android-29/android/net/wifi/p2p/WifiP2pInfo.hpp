@@ -17,9 +17,9 @@ namespace android::net::wifi::p2p
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jboolean groupFormed();
-		QAndroidJniObject groupOwnerAddress();
+		java::net::InetAddress groupOwnerAddress();
 		jboolean isGroupOwner();
 		
 		// QAndroidJniObject forward

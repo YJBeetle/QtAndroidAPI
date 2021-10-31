@@ -32,8 +32,8 @@ namespace android::graphics::pdf
 		// Methods
 		void close();
 		void finishPage(android::graphics::pdf::PdfDocument_Page arg0);
-		QAndroidJniObject getPages();
-		QAndroidJniObject startPage(android::graphics::pdf::PdfDocument_PageInfo arg0);
+		__JniBaseClass getPages();
+		android::graphics::pdf::PdfDocument_Page startPage(android::graphics::pdf::PdfDocument_PageInfo arg0);
 		void writeTo(java::io::OutputStream arg0);
 	};
 } // namespace android::graphics::pdf

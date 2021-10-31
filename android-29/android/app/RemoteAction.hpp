@@ -25,7 +25,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RemoteAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -35,12 +35,12 @@ namespace android::app
 		RemoteAction(android::graphics::drawable::Icon arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3);
 		
 		// Methods
-		QAndroidJniObject clone();
+		android::app::RemoteAction clone();
 		jint describeContents();
 		void dump(jstring arg0, java::io::PrintWriter arg1);
-		QAndroidJniObject getActionIntent();
+		android::app::PendingIntent getActionIntent();
 		jstring getContentDescription();
-		QAndroidJniObject getIcon();
+		android::graphics::drawable::Icon getIcon();
 		jstring getTitle();
 		jboolean isEnabled();
 		void setEnabled(jboolean arg0);

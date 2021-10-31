@@ -41,7 +41,7 @@ namespace java::time::chrono
 		jint compareTo(__JniBaseClass arg0);
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1);
+		__JniBaseClass resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1);
 		jstring toString();
 	};
 } // namespace java::time::chrono

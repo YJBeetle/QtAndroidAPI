@@ -6,7 +6,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject LinkAddress::CREATOR()
+	__JniBaseClass LinkAddress::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.LinkAddress",
@@ -36,7 +36,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject LinkAddress::getAddress()
+	java::net::InetAddress LinkAddress::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",

@@ -46,14 +46,14 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	QAndroidJniObject DialogPreference::getDialog()
+	android::app::Dialog DialogPreference::getDialog()
 	{
 		return callObjectMethod(
 			"getDialog",
 			"()Landroid/app/Dialog;"
 		);
 	}
-	QAndroidJniObject DialogPreference::getDialogIcon()
+	android::graphics::drawable::Drawable DialogPreference::getDialogIcon()
 	{
 		return callObjectMethod(
 			"getDialogIcon",

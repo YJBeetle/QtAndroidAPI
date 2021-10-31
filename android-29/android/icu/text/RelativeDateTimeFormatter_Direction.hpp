@@ -10,12 +10,12 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject LAST();
-		static QAndroidJniObject LAST_2();
-		static QAndroidJniObject NEXT();
-		static QAndroidJniObject NEXT_2();
-		static QAndroidJniObject PLAIN();
-		static QAndroidJniObject THIS();
+		static android::icu::text::RelativeDateTimeFormatter_Direction LAST();
+		static android::icu::text::RelativeDateTimeFormatter_Direction LAST_2();
+		static android::icu::text::RelativeDateTimeFormatter_Direction NEXT();
+		static android::icu::text::RelativeDateTimeFormatter_Direction NEXT_2();
+		static android::icu::text::RelativeDateTimeFormatter_Direction PLAIN();
+		static android::icu::text::RelativeDateTimeFormatter_Direction THIS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RelativeDateTimeFormatter_Direction(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,7 +24,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::RelativeDateTimeFormatter_Direction valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

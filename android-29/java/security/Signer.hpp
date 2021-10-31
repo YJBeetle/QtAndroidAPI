@@ -28,7 +28,7 @@ namespace java::security
 		Signer(jstring arg0, java::security::IdentityScope arg1);
 		
 		// Methods
-		QAndroidJniObject getPrivateKey();
+		__JniBaseClass getPrivateKey();
 		void setKeyPair(java::security::KeyPair arg0);
 		jstring toString();
 	};

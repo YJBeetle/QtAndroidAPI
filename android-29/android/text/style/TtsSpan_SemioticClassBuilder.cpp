@@ -16,7 +16,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_SemioticClassBuilder::setAnimacy(jstring arg0)
+	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setAnimacy(jstring arg0)
 	{
 		return callObjectMethod(
 			"setAnimacy",
@@ -24,7 +24,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_SemioticClassBuilder::setCase(jstring arg0)
+	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setCase(jstring arg0)
 	{
 		return callObjectMethod(
 			"setCase",
@@ -32,7 +32,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_SemioticClassBuilder::setGender(jstring arg0)
+	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setGender(jstring arg0)
 	{
 		return callObjectMethod(
 			"setGender",
@@ -40,7 +40,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_SemioticClassBuilder::setMultiplicity(jstring arg0)
+	android::text::style::TtsSpan_SemioticClassBuilder TtsSpan_SemioticClassBuilder::setMultiplicity(jstring arg0)
 	{
 		return callObjectMethod(
 			"setMultiplicity",

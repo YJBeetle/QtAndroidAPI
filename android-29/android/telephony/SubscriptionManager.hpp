@@ -53,7 +53,7 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject from(android::content::Context arg0);
+		static android::telephony::SubscriptionManager from(android::content::Context arg0);
 		static jint getDefaultDataSubscriptionId();
 		static jint getDefaultSmsSubscriptionId();
 		static jint getDefaultSubscriptionId();
@@ -65,17 +65,17 @@ namespace android::telephony
 		void addOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0);
 		void addSubscriptionsIntoGroup(__JniBaseClass arg0, android::os::ParcelUuid arg1);
 		jboolean canManageSubscription(android::telephony::SubscriptionInfo arg0);
-		QAndroidJniObject createSubscriptionGroup(__JniBaseClass arg0);
-		QAndroidJniObject getAccessibleSubscriptionInfoList();
-		QAndroidJniObject getActiveSubscriptionInfo(jint arg0);
+		android::os::ParcelUuid createSubscriptionGroup(__JniBaseClass arg0);
+		__JniBaseClass getAccessibleSubscriptionInfoList();
+		android::telephony::SubscriptionInfo getActiveSubscriptionInfo(jint arg0);
 		jint getActiveSubscriptionInfoCount();
 		jint getActiveSubscriptionInfoCountMax();
-		QAndroidJniObject getActiveSubscriptionInfoForSimSlotIndex(jint arg0);
-		QAndroidJniObject getActiveSubscriptionInfoList();
-		QAndroidJniObject getOpportunisticSubscriptions();
+		android::telephony::SubscriptionInfo getActiveSubscriptionInfoForSimSlotIndex(jint arg0);
+		__JniBaseClass getActiveSubscriptionInfoList();
+		__JniBaseClass getOpportunisticSubscriptions();
 		jintArray getSubscriptionIds(jint arg0);
-		QAndroidJniObject getSubscriptionPlans(jint arg0);
-		QAndroidJniObject getSubscriptionsInGroup(android::os::ParcelUuid arg0);
+		__JniBaseClass getSubscriptionPlans(jint arg0);
+		__JniBaseClass getSubscriptionsInGroup(android::os::ParcelUuid arg0);
 		jboolean isActiveSubscriptionId(jint arg0);
 		jboolean isNetworkRoaming(jint arg0);
 		void removeOnOpportunisticSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener arg0);

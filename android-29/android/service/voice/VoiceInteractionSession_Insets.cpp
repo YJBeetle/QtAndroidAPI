@@ -26,7 +26,7 @@ namespace android::service::voice
 			"TOUCHABLE_INSETS_REGION"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession_Insets::contentInsets()
+	android::graphics::Rect VoiceInteractionSession_Insets::contentInsets()
 	{
 		return getObjectField(
 			"contentInsets",
@@ -39,7 +39,7 @@ namespace android::service::voice
 			"touchableInsets"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession_Insets::touchableRegion()
+	android::graphics::Region VoiceInteractionSession_Insets::touchableRegion()
 	{
 		return getObjectField(
 			"touchableRegion",

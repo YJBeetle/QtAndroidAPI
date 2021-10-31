@@ -36,7 +36,7 @@ namespace android::view::textclassifier
 		static jint ACTION_SELECT_ALL();
 		static jint ACTION_SHARE();
 		static jint ACTION_SMART_SHARE();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint EVENT_AUTO_SELECTION();
 		static jint EVENT_SELECTION_MODIFIED();
 		static jint EVENT_SELECTION_STARTED();
@@ -53,12 +53,12 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createSelectionActionEvent(jint arg0, jint arg1, jint arg2);
-		static QAndroidJniObject createSelectionActionEvent(jint arg0, jint arg1, jint arg2, android::view::textclassifier::TextClassification arg3);
-		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1);
-		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1, android::view::textclassifier::TextClassification arg2);
-		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1, android::view::textclassifier::TextSelection arg2);
-		static QAndroidJniObject createSelectionStartedEvent(jint arg0, jint arg1);
+		static android::view::textclassifier::SelectionEvent createSelectionActionEvent(jint arg0, jint arg1, jint arg2);
+		static android::view::textclassifier::SelectionEvent createSelectionActionEvent(jint arg0, jint arg1, jint arg2, android::view::textclassifier::TextClassification arg3);
+		static android::view::textclassifier::SelectionEvent createSelectionModifiedEvent(jint arg0, jint arg1);
+		static android::view::textclassifier::SelectionEvent createSelectionModifiedEvent(jint arg0, jint arg1, android::view::textclassifier::TextClassification arg2);
+		static android::view::textclassifier::SelectionEvent createSelectionModifiedEvent(jint arg0, jint arg1, android::view::textclassifier::TextSelection arg2);
+		static android::view::textclassifier::SelectionEvent createSelectionStartedEvent(jint arg0, jint arg1);
 		static jboolean isTerminal(jint arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
@@ -72,7 +72,7 @@ namespace android::view::textclassifier
 		jint getInvocationMethod();
 		jstring getPackageName();
 		jstring getResultId();
-		QAndroidJniObject getSessionId();
+		android::view::textclassifier::TextClassificationSessionId getSessionId();
 		jint getSmartEnd();
 		jint getSmartStart();
 		jint getStart();

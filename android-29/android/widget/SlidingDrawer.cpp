@@ -87,14 +87,14 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SlidingDrawer::getContent()
+	android::view::View SlidingDrawer::getContent()
 	{
 		return callObjectMethod(
 			"getContent",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject SlidingDrawer::getHandle()
+	android::view::View SlidingDrawer::getHandle()
 	{
 		return callObjectMethod(
 			"getHandle",

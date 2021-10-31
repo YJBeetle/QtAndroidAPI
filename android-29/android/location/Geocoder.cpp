@@ -33,7 +33,7 @@ namespace android::location
 			"()Z"
 		);
 	}
-	QAndroidJniObject Geocoder::getFromLocation(jdouble arg0, jdouble arg1, jint arg2)
+	__JniBaseClass Geocoder::getFromLocation(jdouble arg0, jdouble arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"getFromLocation",
@@ -43,7 +43,7 @@ namespace android::location
 			arg2
 		);
 	}
-	QAndroidJniObject Geocoder::getFromLocationName(jstring arg0, jint arg1)
+	__JniBaseClass Geocoder::getFromLocationName(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getFromLocationName",
@@ -52,7 +52,7 @@ namespace android::location
 			arg1
 		);
 	}
-	QAndroidJniObject Geocoder::getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
+	__JniBaseClass Geocoder::getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
 	{
 		return callObjectMethod(
 			"getFromLocationName",

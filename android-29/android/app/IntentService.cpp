@@ -17,7 +17,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject IntentService::onBind(android::content::Intent arg0)
+	__JniBaseClass IntentService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

@@ -21,7 +21,7 @@ namespace javax::net::ssl
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TrustManagerFactory::getInstance(jstring arg0)
+	javax::net::ssl::TrustManagerFactory TrustManagerFactory::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.TrustManagerFactory",
@@ -30,7 +30,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	QAndroidJniObject TrustManagerFactory::getInstance(jstring arg0, jstring arg1)
+	javax::net::ssl::TrustManagerFactory TrustManagerFactory::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.TrustManagerFactory",
@@ -40,7 +40,7 @@ namespace javax::net::ssl
 			arg1
 		);
 	}
-	QAndroidJniObject TrustManagerFactory::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::net::ssl::TrustManagerFactory TrustManagerFactory::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.TrustManagerFactory",
@@ -57,7 +57,7 @@ namespace javax::net::ssl
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TrustManagerFactory::getProvider()
+	java::security::Provider TrustManagerFactory::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

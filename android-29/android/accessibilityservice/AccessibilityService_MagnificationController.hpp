@@ -33,7 +33,7 @@ namespace android::accessibilityservice
 		void addListener(__JniBaseClass arg0, android::os::Handler arg1);
 		jfloat getCenterX();
 		jfloat getCenterY();
-		QAndroidJniObject getMagnificationRegion();
+		android::graphics::Region getMagnificationRegion();
 		jfloat getScale();
 		jboolean removeListener(__JniBaseClass arg0);
 		jboolean reset(jboolean arg0);

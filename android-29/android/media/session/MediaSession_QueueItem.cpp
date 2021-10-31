@@ -5,7 +5,7 @@
 namespace android::media::session
 {
 	// Fields
-	QAndroidJniObject MediaSession_QueueItem::CREATOR()
+	__JniBaseClass MediaSession_QueueItem::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.session.MediaSession$QueueItem",
@@ -49,7 +49,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	QAndroidJniObject MediaSession_QueueItem::getDescription()
+	android::media::MediaDescription MediaSession_QueueItem::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",

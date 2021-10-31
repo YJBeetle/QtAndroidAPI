@@ -12,7 +12,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AsynchronousChannelGroup::withCachedThreadPool(__JniBaseClass arg0, jint arg1)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withCachedThreadPool(__JniBaseClass arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.AsynchronousChannelGroup",
@@ -22,7 +22,7 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	QAndroidJniObject AsynchronousChannelGroup::withFixedThreadPool(jint arg0, __JniBaseClass arg1)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withFixedThreadPool(jint arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.AsynchronousChannelGroup",
@@ -32,7 +32,7 @@ namespace java::nio::channels
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AsynchronousChannelGroup::withThreadPool(__JniBaseClass arg0)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelGroup::withThreadPool(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.AsynchronousChannelGroup",
@@ -64,7 +64,7 @@ namespace java::nio::channels
 			"()Z"
 		);
 	}
-	QAndroidJniObject AsynchronousChannelGroup::provider()
+	java::nio::channels::spi::AsynchronousChannelProvider AsynchronousChannelGroup::provider()
 	{
 		return callObjectMethod(
 			"provider",

@@ -4,7 +4,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	QAndroidJniObject LuhnChecksumValidator::CREATOR()
+	__JniBaseClass LuhnChecksumValidator::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.LuhnChecksumValidator",

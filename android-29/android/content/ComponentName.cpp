@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject ComponentName::CREATOR()
+	__JniBaseClass ComponentName::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ComponentName",
@@ -47,7 +47,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	QAndroidJniObject ComponentName::createRelative(android::content::Context arg0, jstring arg1)
+	android::content::ComponentName ComponentName::createRelative(android::content::Context arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ComponentName",
@@ -57,7 +57,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ComponentName::createRelative(jstring arg0, jstring arg1)
+	android::content::ComponentName ComponentName::createRelative(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ComponentName",
@@ -67,7 +67,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ComponentName::readFromParcel(android::os::Parcel arg0)
+	android::content::ComponentName ComponentName::readFromParcel(android::os::Parcel arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ComponentName",
@@ -76,7 +76,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ComponentName::unflattenFromString(jstring arg0)
+	android::content::ComponentName ComponentName::unflattenFromString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ComponentName",
@@ -95,7 +95,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ComponentName::clone()
+	android::content::ComponentName ComponentName::clone()
 	{
 		return callObjectMethod(
 			"clone",

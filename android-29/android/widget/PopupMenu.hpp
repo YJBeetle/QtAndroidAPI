@@ -33,10 +33,10 @@ namespace android::widget
 		
 		// Methods
 		void dismiss();
-		QAndroidJniObject getDragToOpenListener();
+		__JniBaseClass getDragToOpenListener();
 		jint getGravity();
-		QAndroidJniObject getMenu();
-		QAndroidJniObject getMenuInflater();
+		__JniBaseClass getMenu();
+		android::view::MenuInflater getMenuInflater();
 		void inflate(jint arg0);
 		void setForceShowIcon(jboolean arg0);
 		void setGravity(jint arg0);

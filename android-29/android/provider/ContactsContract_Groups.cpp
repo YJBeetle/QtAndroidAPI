@@ -12,7 +12,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Groups::CONTENT_SUMMARY_URI()
+	android::net::Uri ContactsContract_Groups::CONTENT_SUMMARY_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Groups",
@@ -28,7 +28,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Groups::CONTENT_URI()
+	android::net::Uri ContactsContract_Groups::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Groups",
@@ -43,7 +43,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ContactsContract_Groups::newEntityIterator(__JniBaseClass arg0)
+	__JniBaseClass ContactsContract_Groups::newEntityIterator(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$Groups",

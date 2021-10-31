@@ -8,7 +8,7 @@
 namespace java::time
 {
 	// Fields
-	QAndroidJniObject ZoneId::SHORT_IDS()
+	__JniBaseClass ZoneId::SHORT_IDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.ZoneId",
@@ -23,7 +23,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ZoneId::from(__JniBaseClass arg0)
+	java::time::ZoneId ZoneId::from(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneId",
@@ -32,7 +32,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ZoneId::getAvailableZoneIds()
+	__JniBaseClass ZoneId::getAvailableZoneIds()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneId",
@@ -40,7 +40,7 @@ namespace java::time
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject ZoneId::of(jstring arg0)
+	java::time::ZoneId ZoneId::of(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneId",
@@ -49,7 +49,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject ZoneId::of(jstring arg0, __JniBaseClass arg1)
+	java::time::ZoneId ZoneId::of(jstring arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneId",
@@ -59,7 +59,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ZoneId::ofOffset(jstring arg0, java::time::ZoneOffset arg1)
+	java::time::ZoneId ZoneId::ofOffset(jstring arg0, java::time::ZoneOffset arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneId",
@@ -69,7 +69,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ZoneId::systemDefault()
+	java::time::ZoneId ZoneId::systemDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneId",
@@ -101,7 +101,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ZoneId::getRules()
+	java::time::zone::ZoneRules ZoneId::getRules()
 	{
 		return callObjectMethod(
 			"getRules",
@@ -115,7 +115,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	QAndroidJniObject ZoneId::normalized()
+	java::time::ZoneId ZoneId::normalized()
 	{
 		return callObjectMethod(
 			"normalized",

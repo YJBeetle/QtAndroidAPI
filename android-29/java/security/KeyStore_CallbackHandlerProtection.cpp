@@ -16,7 +16,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject KeyStore_CallbackHandlerProtection::getCallbackHandler()
+	__JniBaseClass KeyStore_CallbackHandlerProtection::getCallbackHandler()
 	{
 		return callObjectMethod(
 			"getCallbackHandler",

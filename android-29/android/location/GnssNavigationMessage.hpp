@@ -13,7 +13,7 @@ namespace android::location
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint STATUS_PARITY_PASSED();
 		static jint STATUS_PARITY_REBUILT();
 		static jint STATUS_UNKNOWN();

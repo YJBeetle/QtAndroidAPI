@@ -11,7 +11,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SystemClock::currentGnssTimeClock()
+	java::time::Clock SystemClock::currentGnssTimeClock()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.SystemClock",

@@ -33,28 +33,28 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject Edits::getCoarseChangesIterator()
+	android::icu::text::Edits_Iterator Edits::getCoarseChangesIterator()
 	{
 		return callObjectMethod(
 			"getCoarseChangesIterator",
 			"()Landroid/icu/text/Edits$Iterator;"
 		);
 	}
-	QAndroidJniObject Edits::getCoarseIterator()
+	android::icu::text::Edits_Iterator Edits::getCoarseIterator()
 	{
 		return callObjectMethod(
 			"getCoarseIterator",
 			"()Landroid/icu/text/Edits$Iterator;"
 		);
 	}
-	QAndroidJniObject Edits::getFineChangesIterator()
+	android::icu::text::Edits_Iterator Edits::getFineChangesIterator()
 	{
 		return callObjectMethod(
 			"getFineChangesIterator",
 			"()Landroid/icu/text/Edits$Iterator;"
 		);
 	}
-	QAndroidJniObject Edits::getFineIterator()
+	android::icu::text::Edits_Iterator Edits::getFineIterator()
 	{
 		return callObjectMethod(
 			"getFineIterator",
@@ -75,7 +75,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject Edits::mergeAndAppend(android::icu::text::Edits arg0, android::icu::text::Edits arg1)
+	android::icu::text::Edits Edits::mergeAndAppend(android::icu::text::Edits arg0, android::icu::text::Edits arg1)
 	{
 		return callObjectMethod(
 			"mergeAndAppend",

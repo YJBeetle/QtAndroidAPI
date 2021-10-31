@@ -6,7 +6,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	QAndroidJniObject RegexValidator::CREATOR()
+	__JniBaseClass RegexValidator::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.RegexValidator",

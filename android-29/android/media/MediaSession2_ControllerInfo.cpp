@@ -20,7 +20,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaSession2_ControllerInfo::getConnectionHints()
+	android::os::Bundle MediaSession2_ControllerInfo::getConnectionHints()
 	{
 		return callObjectMethod(
 			"getConnectionHints",
@@ -34,7 +34,7 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaSession2_ControllerInfo::getRemoteUserInfo()
+	android::media::session::MediaSessionManager_RemoteUserInfo MediaSession2_ControllerInfo::getRemoteUserInfo()
 	{
 		return callObjectMethod(
 			"getRemoteUserInfo",

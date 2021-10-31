@@ -17,14 +17,14 @@ namespace java::util::stream
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject doubleStream(__JniBaseClass arg0, jboolean arg1);
-		static QAndroidJniObject doubleStream(__JniBaseClass arg0, jint arg1, jboolean arg2);
-		static QAndroidJniObject intStream(__JniBaseClass arg0, jboolean arg1);
-		static QAndroidJniObject intStream(__JniBaseClass arg0, jint arg1, jboolean arg2);
-		static QAndroidJniObject longStream(__JniBaseClass arg0, jboolean arg1);
-		static QAndroidJniObject longStream(__JniBaseClass arg0, jint arg1, jboolean arg2);
-		static QAndroidJniObject stream(__JniBaseClass arg0, jboolean arg1);
-		static QAndroidJniObject stream(__JniBaseClass arg0, jint arg1, jboolean arg2);
+		static __JniBaseClass doubleStream(__JniBaseClass arg0, jboolean arg1);
+		static __JniBaseClass doubleStream(__JniBaseClass arg0, jint arg1, jboolean arg2);
+		static __JniBaseClass intStream(__JniBaseClass arg0, jboolean arg1);
+		static __JniBaseClass intStream(__JniBaseClass arg0, jint arg1, jboolean arg2);
+		static __JniBaseClass longStream(__JniBaseClass arg0, jboolean arg1);
+		static __JniBaseClass longStream(__JniBaseClass arg0, jint arg1, jboolean arg2);
+		static __JniBaseClass stream(__JniBaseClass arg0, jboolean arg1);
+		static __JniBaseClass stream(__JniBaseClass arg0, jint arg1, jboolean arg2);
 	};
 } // namespace java::util::stream
 

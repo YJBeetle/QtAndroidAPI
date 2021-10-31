@@ -6,7 +6,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	QAndroidJniObject InputContentInfo::CREATOR()
+	__JniBaseClass InputContentInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.InputContentInfo",
@@ -43,21 +43,21 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	QAndroidJniObject InputContentInfo::getContentUri()
+	android::net::Uri InputContentInfo::getContentUri()
 	{
 		return callObjectMethod(
 			"getContentUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject InputContentInfo::getDescription()
+	android::content::ClipDescription InputContentInfo::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Landroid/content/ClipDescription;"
 		);
 	}
-	QAndroidJniObject InputContentInfo::getLinkUri()
+	android::net::Uri InputContentInfo::getLinkUri()
 	{
 		return callObjectMethod(
 			"getLinkUri",

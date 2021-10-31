@@ -25,13 +25,13 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(jstring arg0, android::text::PrecomputedText_Params arg1);
+		static android::text::PrecomputedText create(jstring arg0, android::text::PrecomputedText_Params arg1);
 		jchar charAt(jint arg0);
 		void getBounds(jint arg0, jint arg1, android::graphics::Rect arg2);
 		jint getParagraphCount();
 		jint getParagraphEnd(jint arg0);
 		jint getParagraphStart(jint arg0);
-		QAndroidJniObject getParams();
+		android::text::PrecomputedText_Params getParams();
 		jint getSpanEnd(jobject arg0);
 		jint getSpanFlags(jobject arg0);
 		jint getSpanStart(jobject arg0);

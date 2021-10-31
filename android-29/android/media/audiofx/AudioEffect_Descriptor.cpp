@@ -25,14 +25,14 @@ namespace android::media::audiofx
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AudioEffect_Descriptor::type()
+	java::util::UUID AudioEffect_Descriptor::type()
 	{
 		return getObjectField(
 			"type",
 			"Ljava/util/UUID;"
 		);
 	}
-	QAndroidJniObject AudioEffect_Descriptor::uuid()
+	java::util::UUID AudioEffect_Descriptor::uuid()
 	{
 		return getObjectField(
 			"uuid",

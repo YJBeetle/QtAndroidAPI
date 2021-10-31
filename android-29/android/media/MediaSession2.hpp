@@ -48,9 +48,9 @@ namespace android::media
 		void broadcastSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1);
 		void cancelSessionCommand(android::media::MediaSession2_ControllerInfo arg0, jobject arg1);
 		void close();
-		QAndroidJniObject getConnectedControllers();
+		__JniBaseClass getConnectedControllers();
 		jstring getId();
-		QAndroidJniObject getToken();
+		android::media::Session2Token getToken();
 		jboolean isPlaybackActive();
 		jobject sendSessionCommand(android::media::MediaSession2_ControllerInfo arg0, android::media::Session2Command arg1, android::os::Bundle arg2);
 		void setPlaybackActive(jboolean arg0);

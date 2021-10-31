@@ -84,14 +84,14 @@ namespace android::view::accessibility
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AccessibilityManager::getAccessibilityServiceList()
+	__JniBaseClass AccessibilityManager::getAccessibilityServiceList()
 	{
 		return callObjectMethod(
 			"getAccessibilityServiceList",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject AccessibilityManager::getEnabledAccessibilityServiceList(jint arg0)
+	__JniBaseClass AccessibilityManager::getEnabledAccessibilityServiceList(jint arg0)
 	{
 		return callObjectMethod(
 			"getEnabledAccessibilityServiceList",
@@ -99,7 +99,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityManager::getInstalledAccessibilityServiceList()
+	__JniBaseClass AccessibilityManager::getInstalledAccessibilityServiceList()
 	{
 		return callObjectMethod(
 			"getInstalledAccessibilityServiceList",

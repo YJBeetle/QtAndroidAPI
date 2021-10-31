@@ -10,9 +10,9 @@ namespace android::renderscript
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEBUG();
-		static QAndroidJniObject NORMAL();
-		static QAndroidJniObject PROFILE();
+		static android::renderscript::RenderScript_ContextType DEBUG();
+		static android::renderscript::RenderScript_ContextType NORMAL();
+		static android::renderscript::RenderScript_ContextType PROFILE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RenderScript_ContextType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::renderscript::RenderScript_ContextType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::renderscript

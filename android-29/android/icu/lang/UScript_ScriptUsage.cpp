@@ -3,7 +3,7 @@
 namespace android::icu::lang
 {
 	// Fields
-	QAndroidJniObject UScript_ScriptUsage::ASPIRATIONAL()
+	android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::ASPIRATIONAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
@@ -11,7 +11,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UScript$ScriptUsage;"
 		);
 	}
-	QAndroidJniObject UScript_ScriptUsage::EXCLUDED()
+	android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::EXCLUDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
@@ -19,7 +19,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UScript$ScriptUsage;"
 		);
 	}
-	QAndroidJniObject UScript_ScriptUsage::LIMITED_USE()
+	android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::LIMITED_USE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
@@ -27,7 +27,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UScript$ScriptUsage;"
 		);
 	}
-	QAndroidJniObject UScript_ScriptUsage::NOT_ENCODED()
+	android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::NOT_ENCODED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
@@ -35,7 +35,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UScript$ScriptUsage;"
 		);
 	}
-	QAndroidJniObject UScript_ScriptUsage::RECOMMENDED()
+	android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::RECOMMENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
@@ -43,7 +43,7 @@ namespace android::icu::lang
 			"Landroid/icu/lang/UScript$ScriptUsage;"
 		);
 	}
-	QAndroidJniObject UScript_ScriptUsage::UNKNOWN()
+	android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
@@ -58,7 +58,7 @@ namespace android::icu::lang
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject UScript_ScriptUsage::valueOf(jstring arg0)
+	android::icu::lang::UScript_ScriptUsage UScript_ScriptUsage::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UScript$ScriptUsage",

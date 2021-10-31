@@ -352,7 +352,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	QAndroidJniObject WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, __JniBaseClass arg1)
+	android::webkit::WebResourceResponse WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"shouldInterceptRequest",
@@ -361,7 +361,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	QAndroidJniObject WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, jstring arg1)
+	android::webkit::WebResourceResponse WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"shouldInterceptRequest",

@@ -35,7 +35,7 @@ namespace android::app
 		// Methods
 		void onClick(__JniBaseClass arg0, jint arg1);
 		void onRestoreInstanceState(android::os::Bundle arg0);
-		QAndroidJniObject onSaveInstanceState();
+		android::os::Bundle onSaveInstanceState();
 		void onTimeChanged(android::widget::TimePicker arg0, jint arg1, jint arg2);
 		void show();
 		void updateTime(jint arg0, jint arg1);

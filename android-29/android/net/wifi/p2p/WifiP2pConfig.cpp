@@ -5,7 +5,7 @@
 namespace android::net::wifi::p2p
 {
 	// Fields
-	QAndroidJniObject WifiP2pConfig::CREATOR()
+	__JniBaseClass WifiP2pConfig::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pConfig",
@@ -47,7 +47,7 @@ namespace android::net::wifi::p2p
 			"groupOwnerIntent"
 		);
 	}
-	QAndroidJniObject WifiP2pConfig::wps()
+	android::net::wifi::WpsInfo WifiP2pConfig::wps()
 	{
 		return getObjectField(
 			"wps",

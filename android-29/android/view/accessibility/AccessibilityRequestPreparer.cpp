@@ -27,7 +27,7 @@ namespace android::view::accessibility
 		) {}
 	
 	// Methods
-	QAndroidJniObject AccessibilityRequestPreparer::getView()
+	android::view::View AccessibilityRequestPreparer::getView()
 	{
 		return callObjectMethod(
 			"getView",

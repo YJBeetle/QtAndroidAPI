@@ -25,7 +25,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Intent_FilterComparison::getIntent()
+	android::content::Intent Intent_FilterComparison::getIntent()
 	{
 		return callObjectMethod(
 			"getIntent",

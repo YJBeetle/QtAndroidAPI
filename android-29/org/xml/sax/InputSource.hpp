@@ -29,8 +29,8 @@ namespace org::xml::sax
 		InputSource(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getByteStream();
-		QAndroidJniObject getCharacterStream();
+		java::io::InputStream getByteStream();
+		java::io::Reader getCharacterStream();
 		jstring getEncoding();
 		jstring getPublicId();
 		jstring getSystemId();

@@ -17,9 +17,9 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject _and(jarray arg0);
-		static QAndroidJniObject _not(__JniBaseClass arg0);
-		static QAndroidJniObject _or(jarray arg0);
+		static __JniBaseClass _and(jarray arg0);
+		static __JniBaseClass _not(__JniBaseClass arg0);
+		static __JniBaseClass _or(jarray arg0);
 	};
 } // namespace android::service::autofill
 

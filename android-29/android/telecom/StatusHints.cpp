@@ -6,7 +6,7 @@
 namespace android::telecom
 {
 	// Fields
-	QAndroidJniObject StatusHints::CREATOR()
+	__JniBaseClass StatusHints::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.StatusHints",
@@ -44,14 +44,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject StatusHints::getExtras()
+	android::os::Bundle StatusHints::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject StatusHints::getIcon()
+	android::graphics::drawable::Icon StatusHints::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",

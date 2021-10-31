@@ -38,8 +38,8 @@ namespace android::telephony::mbms
 		
 		// Methods
 		void close();
-		QAndroidJniObject getInfo();
-		QAndroidJniObject getPlaybackUri();
+		android::telephony::mbms::StreamingServiceInfo getInfo();
+		android::net::Uri getPlaybackUri();
 	};
 } // namespace android::telephony::mbms
 

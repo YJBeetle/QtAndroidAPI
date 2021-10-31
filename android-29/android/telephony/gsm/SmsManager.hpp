@@ -34,8 +34,8 @@ namespace android::telephony::gsm
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDefault();
-		QAndroidJniObject divideMessage(jstring arg0);
+		static android::telephony::gsm::SmsManager getDefault();
+		java::util::ArrayList divideMessage(jstring arg0);
 		void sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);
 		void sendMultipartTextMessage(jstring arg0, jstring arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4);
 		void sendTextMessage(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);

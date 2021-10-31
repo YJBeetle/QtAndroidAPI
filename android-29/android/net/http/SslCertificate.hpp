@@ -36,15 +36,15 @@ namespace android::net::http
 		SslCertificate(jstring arg0, jstring arg1, java::util::Date arg2, java::util::Date arg3);
 		
 		// Methods
-		static QAndroidJniObject restoreState(android::os::Bundle arg0);
-		static QAndroidJniObject saveState(android::net::http::SslCertificate arg0);
-		QAndroidJniObject getIssuedBy();
-		QAndroidJniObject getIssuedTo();
+		static android::net::http::SslCertificate restoreState(android::os::Bundle arg0);
+		static android::os::Bundle saveState(android::net::http::SslCertificate arg0);
+		android::net::http::SslCertificate_DName getIssuedBy();
+		android::net::http::SslCertificate_DName getIssuedTo();
 		jstring getValidNotAfter();
-		QAndroidJniObject getValidNotAfterDate();
+		java::util::Date getValidNotAfterDate();
 		jstring getValidNotBefore();
-		QAndroidJniObject getValidNotBeforeDate();
-		QAndroidJniObject getX509Certificate();
+		java::util::Date getValidNotBeforeDate();
+		java::security::cert::X509Certificate getX509Certificate();
 		jstring toString();
 	};
 } // namespace android::net::http

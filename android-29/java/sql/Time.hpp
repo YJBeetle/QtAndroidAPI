@@ -28,8 +28,8 @@ namespace java::sql
 		Time(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(java::time::LocalTime arg0);
+		static java::sql::Time valueOf(jstring arg0);
+		static java::sql::Time valueOf(java::time::LocalTime arg0);
 		jint getDate();
 		jint getDay();
 		jint getMonth();
@@ -38,8 +38,8 @@ namespace java::sql
 		void setMonth(jint arg0);
 		void setTime(jlong arg0);
 		void setYear(jint arg0);
-		QAndroidJniObject toInstant();
-		QAndroidJniObject toLocalTime();
+		java::time::Instant toInstant();
+		java::time::LocalTime toLocalTime();
 		jstring toString();
 	};
 } // namespace java::sql

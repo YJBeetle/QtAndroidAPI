@@ -7,7 +7,7 @@
 namespace android::net::wifi::rtt
 {
 	// Fields
-	QAndroidJniObject RangingResult::CREATOR()
+	__JniBaseClass RangingResult::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.rtt.RangingResult",
@@ -72,7 +72,7 @@ namespace android::net::wifi::rtt
 			"()I"
 		);
 	}
-	QAndroidJniObject RangingResult::getMacAddress()
+	android::net::MacAddress RangingResult::getMacAddress()
 	{
 		return callObjectMethod(
 			"getMacAddress",
@@ -93,7 +93,7 @@ namespace android::net::wifi::rtt
 			"()I"
 		);
 	}
-	QAndroidJniObject RangingResult::getPeerHandle()
+	android::net::wifi::aware::PeerHandle RangingResult::getPeerHandle()
 	{
 		return callObjectMethod(
 			"getPeerHandle",
@@ -121,7 +121,7 @@ namespace android::net::wifi::rtt
 			"()I"
 		);
 	}
-	QAndroidJniObject RangingResult::getUnverifiedResponderLocation()
+	android::net::wifi::rtt::ResponderLocation RangingResult::getUnverifiedResponderLocation()
 	{
 		return callObjectMethod(
 			"getUnverifiedResponderLocation",

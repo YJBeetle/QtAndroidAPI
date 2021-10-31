@@ -48,7 +48,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Instrumentation::newApplication(jclass arg0, android::content::Context arg1)
+	android::app::Application Instrumentation::newApplication(jclass arg0, android::content::Context arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.Instrumentation",
@@ -58,7 +58,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Instrumentation::acquireLooperManager(android::os::Looper arg0)
+	android::os::TestLooperManager Instrumentation::acquireLooperManager(android::os::Looper arg0)
 	{
 		return callObjectMethod(
 			"acquireLooperManager",
@@ -66,7 +66,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instrumentation::addMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
+	android::app::Instrumentation_ActivityMonitor Instrumentation::addMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"addMonitor",
@@ -76,7 +76,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject Instrumentation::addMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
+	android::app::Instrumentation_ActivityMonitor Instrumentation::addMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"addMonitor",
@@ -276,28 +276,28 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Instrumentation::getAllocCounts()
+	android::os::Bundle Instrumentation::getAllocCounts()
 	{
 		return callObjectMethod(
 			"getAllocCounts",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Instrumentation::getBinderCounts()
+	android::os::Bundle Instrumentation::getBinderCounts()
 	{
 		return callObjectMethod(
 			"getBinderCounts",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Instrumentation::getComponentName()
+	android::content::ComponentName Instrumentation::getComponentName()
 	{
 		return callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject Instrumentation::getContext()
+	android::content::Context Instrumentation::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
@@ -311,21 +311,21 @@ namespace android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Instrumentation::getTargetContext()
+	android::content::Context Instrumentation::getTargetContext()
 	{
 		return callObjectMethod(
 			"getTargetContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject Instrumentation::getUiAutomation()
+	android::app::UiAutomation Instrumentation::getUiAutomation()
 	{
 		return callObjectMethod(
 			"getUiAutomation",
 			"()Landroid/app/UiAutomation;"
 		);
 	}
-	QAndroidJniObject Instrumentation::getUiAutomation(jint arg0)
+	android::app::UiAutomation Instrumentation::getUiAutomation(jint arg0)
 	{
 		return callObjectMethod(
 			"getUiAutomation",
@@ -360,7 +360,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject Instrumentation::newActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2)
+	android::app::Activity Instrumentation::newActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2)
 	{
 		return callObjectMethod(
 			"newActivity",
@@ -370,7 +370,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Instrumentation::newActivity(jclass arg0, android::content::Context arg1, __JniBaseClass arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9)
+	android::app::Activity Instrumentation::newActivity(jclass arg0, android::content::Context arg1, __JniBaseClass arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9)
 	{
 		return callObjectMethod(
 			"newActivity",
@@ -387,7 +387,7 @@ namespace android::app
 			arg9
 		);
 	}
-	QAndroidJniObject Instrumentation::newApplication(java::lang::ClassLoader arg0, jstring arg1, android::content::Context arg2)
+	android::app::Application Instrumentation::newApplication(java::lang::ClassLoader arg0, jstring arg1, android::content::Context arg2)
 	{
 		return callObjectMethod(
 			"newApplication",
@@ -523,7 +523,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject Instrumentation::startActivitySync(android::content::Intent arg0)
+	android::app::Activity Instrumentation::startActivitySync(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"startActivitySync",
@@ -531,7 +531,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instrumentation::startActivitySync(android::content::Intent arg0, android::os::Bundle arg1)
+	android::app::Activity Instrumentation::startActivitySync(android::content::Intent arg0, android::os::Bundle arg1)
 	{
 		return callObjectMethod(
 			"startActivitySync",
@@ -590,7 +590,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject Instrumentation::waitForMonitor(android::app::Instrumentation_ActivityMonitor arg0)
+	android::app::Activity Instrumentation::waitForMonitor(android::app::Instrumentation_ActivityMonitor arg0)
 	{
 		return callObjectMethod(
 			"waitForMonitor",
@@ -598,7 +598,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instrumentation::waitForMonitorWithTimeout(android::app::Instrumentation_ActivityMonitor arg0, jlong arg1)
+	android::app::Activity Instrumentation::waitForMonitorWithTimeout(android::app::Instrumentation_ActivityMonitor arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"waitForMonitorWithTimeout",

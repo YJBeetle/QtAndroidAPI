@@ -98,7 +98,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessageFormat::format(jobjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MessageFormat::format(jobjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -108,7 +108,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MessageFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MessageFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -118,7 +118,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MessageFormat::format(__JniBaseClass arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MessageFormat::format(__JniBaseClass arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -128,7 +128,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MessageFormat::formatToCharacterIterator(jobject arg0)
+	__JniBaseClass MessageFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -136,21 +136,21 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessageFormat::getApostropheMode()
+	android::icu::text::MessagePattern_ApostropheMode MessageFormat::getApostropheMode()
 	{
 		return callObjectMethod(
 			"getApostropheMode",
 			"()Landroid/icu/text/MessagePattern$ApostropheMode;"
 		);
 	}
-	QAndroidJniObject MessageFormat::getArgumentNames()
+	__JniBaseClass MessageFormat::getArgumentNames()
 	{
 		return callObjectMethod(
 			"getArgumentNames",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject MessageFormat::getFormatByArgumentName(jstring arg0)
+	java::text::Format MessageFormat::getFormatByArgumentName(jstring arg0)
 	{
 		return callObjectMethod(
 			"getFormatByArgumentName",
@@ -172,14 +172,14 @@ namespace android::icu::text
 			"()[Ljava/text/Format;"
 		).object<jarray>();
 	}
-	QAndroidJniObject MessageFormat::getLocale()
+	java::util::Locale MessageFormat::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject MessageFormat::getULocale()
+	android::icu::util::ULocale MessageFormat::getULocale()
 	{
 		return callObjectMethod(
 			"getULocale",
@@ -219,7 +219,7 @@ namespace android::icu::text
 			arg1.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject MessageFormat::parseToMap(jstring arg0)
+	__JniBaseClass MessageFormat::parseToMap(jstring arg0)
 	{
 		return callObjectMethod(
 			"parseToMap",
@@ -227,7 +227,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessageFormat::parseToMap(jstring arg0, java::text::ParsePosition arg1)
+	__JniBaseClass MessageFormat::parseToMap(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseToMap",

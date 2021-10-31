@@ -3,7 +3,7 @@
 namespace java::text
 {
 	// Fields
-	QAndroidJniObject DateFormat_Field::AM_PM()
+	java::text::DateFormat_Field DateFormat_Field::AM_PM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -11,7 +11,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::DAY_OF_MONTH()
+	java::text::DateFormat_Field DateFormat_Field::DAY_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -19,7 +19,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::DAY_OF_WEEK()
+	java::text::DateFormat_Field DateFormat_Field::DAY_OF_WEEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -27,7 +27,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::DAY_OF_WEEK_IN_MONTH()
+	java::text::DateFormat_Field DateFormat_Field::DAY_OF_WEEK_IN_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -35,7 +35,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::DAY_OF_YEAR()
+	java::text::DateFormat_Field DateFormat_Field::DAY_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -43,7 +43,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::ERA()
+	java::text::DateFormat_Field DateFormat_Field::ERA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -51,7 +51,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::HOUR0()
+	java::text::DateFormat_Field DateFormat_Field::HOUR0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -59,7 +59,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::HOUR1()
+	java::text::DateFormat_Field DateFormat_Field::HOUR1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -67,7 +67,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::HOUR_OF_DAY0()
+	java::text::DateFormat_Field DateFormat_Field::HOUR_OF_DAY0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -75,7 +75,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::HOUR_OF_DAY1()
+	java::text::DateFormat_Field DateFormat_Field::HOUR_OF_DAY1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -83,7 +83,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::MILLISECOND()
+	java::text::DateFormat_Field DateFormat_Field::MILLISECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -91,7 +91,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::MINUTE()
+	java::text::DateFormat_Field DateFormat_Field::MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -99,7 +99,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::MONTH()
+	java::text::DateFormat_Field DateFormat_Field::MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -107,7 +107,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::SECOND()
+	java::text::DateFormat_Field DateFormat_Field::SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -115,7 +115,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::TIME_ZONE()
+	java::text::DateFormat_Field DateFormat_Field::TIME_ZONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -123,7 +123,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::WEEK_OF_MONTH()
+	java::text::DateFormat_Field DateFormat_Field::WEEK_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -131,7 +131,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::WEEK_OF_YEAR()
+	java::text::DateFormat_Field DateFormat_Field::WEEK_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -139,7 +139,7 @@ namespace java::text
 			"Ljava/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::YEAR()
+	java::text::DateFormat_Field DateFormat_Field::YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.DateFormat$Field",
@@ -154,7 +154,7 @@ namespace java::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DateFormat_Field::ofCalendarField(jint arg0)
+	java::text::DateFormat_Field DateFormat_Field::ofCalendarField(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat$Field",

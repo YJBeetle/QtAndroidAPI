@@ -38,10 +38,10 @@ namespace android::widget
 		jint getDefaultVerticalSourceToMagnifierOffset();
 		jfloat getElevation();
 		jint getHeight();
-		QAndroidJniObject getOverlay();
-		QAndroidJniObject getPosition();
+		android::graphics::drawable::Drawable getOverlay();
+		android::graphics::Point getPosition();
 		jint getSourceHeight();
-		QAndroidJniObject getSourcePosition();
+		android::graphics::Point getSourcePosition();
 		jint getSourceWidth();
 		jint getWidth();
 		jfloat getZoom();

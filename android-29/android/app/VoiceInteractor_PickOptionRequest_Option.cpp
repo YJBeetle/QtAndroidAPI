@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject VoiceInteractor_PickOptionRequest_Option::CREATOR()
+	__JniBaseClass VoiceInteractor_PickOptionRequest_Option::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.VoiceInteractor$PickOptionRequest$Option",
@@ -27,7 +27,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject VoiceInteractor_PickOptionRequest_Option::addSynonym(jstring arg0)
+	android::app::VoiceInteractor_PickOptionRequest_Option VoiceInteractor_PickOptionRequest_Option::addSynonym(jstring arg0)
 	{
 		return callObjectMethod(
 			"addSynonym",
@@ -49,7 +49,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject VoiceInteractor_PickOptionRequest_Option::getExtras()
+	android::os::Bundle VoiceInteractor_PickOptionRequest_Option::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

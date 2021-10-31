@@ -41,7 +41,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2)
+	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ProgressDialog",
@@ -52,7 +52,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3)
+	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ProgressDialog",
@@ -64,7 +64,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4)
+	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ProgressDialog",
@@ -77,7 +77,7 @@ namespace android::app
 			arg4
 		);
 	}
-	QAndroidJniObject ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __JniBaseClass arg5)
+	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __JniBaseClass arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ProgressDialog",

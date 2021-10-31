@@ -290,7 +290,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject Window::findViewById(jint arg0)
+	android::view::View Window::findViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"findViewById",
@@ -312,14 +312,14 @@ namespace android::view
 			"()Z"
 		);
 	}
-	QAndroidJniObject Window::getAttributes()
+	android::view::WindowManager_LayoutParams Window::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Landroid/view/WindowManager$LayoutParams;"
 		);
 	}
-	QAndroidJniObject Window::getCallback()
+	__JniBaseClass Window::getCallback()
 	{
 		return callObjectMethod(
 			"getCallback",
@@ -333,63 +333,63 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject Window::getContainer()
+	android::view::Window Window::getContainer()
 	{
 		return callObjectMethod(
 			"getContainer",
 			"()Landroid/view/Window;"
 		);
 	}
-	QAndroidJniObject Window::getContentScene()
+	android::transition::Scene Window::getContentScene()
 	{
 		return callObjectMethod(
 			"getContentScene",
 			"()Landroid/transition/Scene;"
 		);
 	}
-	QAndroidJniObject Window::getContext()
+	android::content::Context Window::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject Window::getCurrentFocus()
+	android::view::View Window::getCurrentFocus()
 	{
 		return callObjectMethod(
 			"getCurrentFocus",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject Window::getDecorView()
+	android::view::View Window::getDecorView()
 	{
 		return callObjectMethod(
 			"getDecorView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject Window::getEnterTransition()
+	android::transition::Transition Window::getEnterTransition()
 	{
 		return callObjectMethod(
 			"getEnterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Window::getExitTransition()
+	android::transition::Transition Window::getExitTransition()
 	{
 		return callObjectMethod(
 			"getExitTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Window::getLayoutInflater()
+	android::view::LayoutInflater Window::getLayoutInflater()
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	QAndroidJniObject Window::getMediaController()
+	android::media::session::MediaController Window::getMediaController()
 	{
 		return callObjectMethod(
 			"getMediaController",
@@ -410,42 +410,42 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject Window::getReenterTransition()
+	android::transition::Transition Window::getReenterTransition()
 	{
 		return callObjectMethod(
 			"getReenterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Window::getReturnTransition()
+	android::transition::Transition Window::getReturnTransition()
 	{
 		return callObjectMethod(
 			"getReturnTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Window::getSharedElementEnterTransition()
+	android::transition::Transition Window::getSharedElementEnterTransition()
 	{
 		return callObjectMethod(
 			"getSharedElementEnterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Window::getSharedElementExitTransition()
+	android::transition::Transition Window::getSharedElementExitTransition()
 	{
 		return callObjectMethod(
 			"getSharedElementExitTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Window::getSharedElementReenterTransition()
+	android::transition::Transition Window::getSharedElementReenterTransition()
 	{
 		return callObjectMethod(
 			"getSharedElementReenterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Window::getSharedElementReturnTransition()
+	android::transition::Transition Window::getSharedElementReturnTransition()
 	{
 		return callObjectMethod(
 			"getSharedElementReturnTransition",
@@ -466,7 +466,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject Window::getSystemGestureExclusionRects()
+	__JniBaseClass Window::getSystemGestureExclusionRects()
 	{
 		return callObjectMethod(
 			"getSystemGestureExclusionRects",
@@ -480,7 +480,7 @@ namespace android::view
 			"()J"
 		);
 	}
-	QAndroidJniObject Window::getTransitionManager()
+	android::transition::TransitionManager Window::getTransitionManager()
 	{
 		return callObjectMethod(
 			"getTransitionManager",
@@ -494,14 +494,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject Window::getWindowManager()
+	__JniBaseClass Window::getWindowManager()
 	{
 		return callObjectMethod(
 			"getWindowManager",
 			"()Landroid/view/WindowManager;"
 		);
 	}
-	QAndroidJniObject Window::getWindowStyle()
+	android::content::res::TypedArray Window::getWindowStyle()
 	{
 		return callObjectMethod(
 			"getWindowStyle",
@@ -607,7 +607,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Window::peekDecorView()
+	android::view::View Window::peekDecorView()
 	{
 		return callObjectMethod(
 			"peekDecorView",
@@ -660,7 +660,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject Window::requireViewById(jint arg0)
+	android::view::View Window::requireViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"requireViewById",
@@ -676,7 +676,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Window::saveHierarchyState()
+	android::os::Bundle Window::saveHierarchyState()
 	{
 		return callObjectMethod(
 			"saveHierarchyState",

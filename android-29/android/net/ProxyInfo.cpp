@@ -5,7 +5,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject ProxyInfo::CREATOR()
+	__JniBaseClass ProxyInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ProxyInfo",
@@ -20,7 +20,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ProxyInfo::buildDirectProxy(jstring arg0, jint arg1)
+	android::net::ProxyInfo ProxyInfo::buildDirectProxy(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.ProxyInfo",
@@ -30,7 +30,7 @@ namespace android::net
 			arg1
 		);
 	}
-	QAndroidJniObject ProxyInfo::buildDirectProxy(jstring arg0, jint arg1, __JniBaseClass arg2)
+	android::net::ProxyInfo ProxyInfo::buildDirectProxy(jstring arg0, jint arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.ProxyInfo",
@@ -41,7 +41,7 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ProxyInfo::buildPacProxy(android::net::Uri arg0)
+	android::net::ProxyInfo ProxyInfo::buildPacProxy(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.ProxyInfo",
@@ -79,7 +79,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ProxyInfo::getPacFileUrl()
+	android::net::Uri ProxyInfo::getPacFileUrl()
 	{
 		return callObjectMethod(
 			"getPacFileUrl",

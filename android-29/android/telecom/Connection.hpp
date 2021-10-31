@@ -99,26 +99,26 @@ namespace android::telecom
 		
 		// Methods
 		static jstring capabilitiesToString(jint arg0);
-		static QAndroidJniObject createCanceledConnection();
-		static QAndroidJniObject createFailedConnection(android::telecom::DisconnectCause arg0);
+		static android::telecom::Connection createCanceledConnection();
+		static android::telecom::Connection createFailedConnection(android::telecom::DisconnectCause arg0);
 		static jstring propertiesToString(jint arg0);
 		static jstring stateToString(jint arg0);
 		void destroy();
-		QAndroidJniObject getAddress();
+		android::net::Uri getAddress();
 		jint getAddressPresentation();
 		jboolean getAudioModeIsVoip();
-		QAndroidJniObject getCallAudioState();
+		android::telecom::CallAudioState getCallAudioState();
 		jstring getCallerDisplayName();
 		jint getCallerDisplayNamePresentation();
-		QAndroidJniObject getConference();
-		QAndroidJniObject getConferenceables();
+		android::telecom::Conference getConference();
+		__JniBaseClass getConferenceables();
 		jint getConnectionCapabilities();
 		jint getConnectionProperties();
-		QAndroidJniObject getDisconnectCause();
-		QAndroidJniObject getExtras();
+		android::telecom::DisconnectCause getDisconnectCause();
+		android::os::Bundle getExtras();
 		jint getState();
-		QAndroidJniObject getStatusHints();
-		QAndroidJniObject getVideoProvider();
+		android::telecom::StatusHints getStatusHints();
+		android::telecom::Connection_VideoProvider getVideoProvider();
 		void handleRttUpgradeResponse(android::telecom::Connection_RttTextStream arg0);
 		jboolean isRingbackRequested();
 		void onAbort();

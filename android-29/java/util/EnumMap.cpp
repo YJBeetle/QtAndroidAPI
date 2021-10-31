@@ -38,7 +38,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	QAndroidJniObject EnumMap::clone()
+	java::util::EnumMap EnumMap::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -61,7 +61,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject EnumMap::entrySet()
+	__JniBaseClass EnumMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -91,7 +91,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject EnumMap::keySet()
+	__JniBaseClass EnumMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -139,7 +139,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject EnumMap::values()
+	__JniBaseClass EnumMap::values()
 	{
 		return callObjectMethod(
 			"values",

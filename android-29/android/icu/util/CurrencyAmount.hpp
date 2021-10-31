@@ -34,7 +34,7 @@ namespace android::icu::util
 		CurrencyAmount(java::lang::Number arg0, java::util::Currency arg1);
 		
 		// Methods
-		QAndroidJniObject getCurrency();
+		android::icu::util::Currency getCurrency();
 	};
 } // namespace android::icu::util
 

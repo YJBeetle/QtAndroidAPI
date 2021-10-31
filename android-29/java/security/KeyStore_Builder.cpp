@@ -13,7 +13,7 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject KeyStore_Builder::newInstance(java::io::File arg0, __JniBaseClass arg1)
+	java::security::KeyStore_Builder KeyStore_Builder::newInstance(java::io::File arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
@@ -23,7 +23,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	QAndroidJniObject KeyStore_Builder::newInstance(java::security::KeyStore arg0, __JniBaseClass arg1)
+	java::security::KeyStore_Builder KeyStore_Builder::newInstance(java::security::KeyStore arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
@@ -33,7 +33,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	QAndroidJniObject KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, __JniBaseClass arg2)
+	java::security::KeyStore_Builder KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
@@ -44,7 +44,7 @@ namespace java::security
 			arg2.object()
 		);
 	}
-	QAndroidJniObject KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3)
+	java::security::KeyStore_Builder KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyStore$Builder",
@@ -56,14 +56,14 @@ namespace java::security
 			arg3.object()
 		);
 	}
-	QAndroidJniObject KeyStore_Builder::getKeyStore()
+	java::security::KeyStore KeyStore_Builder::getKeyStore()
 	{
 		return callObjectMethod(
 			"getKeyStore",
 			"()Ljava/security/KeyStore;"
 		);
 	}
-	QAndroidJniObject KeyStore_Builder::getProtectionParameter(jstring arg0)
+	__JniBaseClass KeyStore_Builder::getProtectionParameter(jstring arg0)
 	{
 		return callObjectMethod(
 			"getProtectionParameter",

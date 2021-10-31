@@ -35,9 +35,9 @@ namespace java::security
 		// Methods
 		static jint addProvider(java::security::Provider arg0);
 		static jstring getAlgorithmProperty(jstring arg0, jstring arg1);
-		static QAndroidJniObject getAlgorithms(jstring arg0);
+		static __JniBaseClass getAlgorithms(jstring arg0);
 		static jstring getProperty(jstring arg0);
-		static QAndroidJniObject getProvider(jstring arg0);
+		static java::security::Provider getProvider(jstring arg0);
 		static jarray getProviders();
 		static jarray getProviders(jstring arg0);
 		static jarray getProviders(__JniBaseClass arg0);

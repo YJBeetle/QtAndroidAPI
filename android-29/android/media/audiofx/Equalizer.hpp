@@ -42,7 +42,7 @@ namespace android::media::audiofx
 		jshort getNumberOfBands();
 		jshort getNumberOfPresets();
 		jstring getPresetName(jshort arg0);
-		QAndroidJniObject getProperties();
+		android::media::audiofx::Equalizer_Settings getProperties();
 		void setBandLevel(jshort arg0, jshort arg1);
 		void setParameterListener(__JniBaseClass arg0);
 		void setProperties(android::media::audiofx::Equalizer_Settings arg0);

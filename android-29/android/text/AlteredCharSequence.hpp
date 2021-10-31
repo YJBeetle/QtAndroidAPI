@@ -17,7 +17,7 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject make(jstring arg0, jcharArray arg1, jint arg2, jint arg3);
+		static android::text::AlteredCharSequence make(jstring arg0, jcharArray arg1, jint arg2, jint arg3);
 		jchar charAt(jint arg0);
 		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);
 		jint length();

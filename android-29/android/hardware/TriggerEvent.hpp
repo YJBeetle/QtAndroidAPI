@@ -13,7 +13,7 @@ namespace android::hardware
 	{
 	public:
 		// Fields
-		QAndroidJniObject sensor();
+		android::hardware::Sensor sensor();
 		jlong timestamp();
 		jfloatArray values();
 		

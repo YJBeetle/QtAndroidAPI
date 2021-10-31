@@ -47,12 +47,12 @@ namespace android::graphics::fonts
 		Font_Builder(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setFontVariationSettings(jarray arg0);
-		QAndroidJniObject setFontVariationSettings(jstring arg0);
-		QAndroidJniObject setSlant(jint arg0);
-		QAndroidJniObject setTtcIndex(jint arg0);
-		QAndroidJniObject setWeight(jint arg0);
+		android::graphics::fonts::Font build();
+		android::graphics::fonts::Font_Builder setFontVariationSettings(jarray arg0);
+		android::graphics::fonts::Font_Builder setFontVariationSettings(jstring arg0);
+		android::graphics::fonts::Font_Builder setSlant(jint arg0);
+		android::graphics::fonts::Font_Builder setTtcIndex(jint arg0);
+		android::graphics::fonts::Font_Builder setWeight(jint arg0);
 	};
 } // namespace android::graphics::fonts
 

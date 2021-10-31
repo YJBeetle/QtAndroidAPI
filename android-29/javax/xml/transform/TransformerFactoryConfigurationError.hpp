@@ -27,7 +27,7 @@ namespace javax::xml::transform
 		
 		// Methods
 		jthrowable getCause();
-		QAndroidJniObject getException();
+		java::lang::Exception getException();
 		jstring getMessage();
 	};
 } // namespace javax::xml::transform

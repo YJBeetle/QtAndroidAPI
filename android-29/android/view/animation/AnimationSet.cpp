@@ -41,7 +41,7 @@ namespace android::view::animation
 			"()J"
 		);
 	}
-	QAndroidJniObject AnimationSet::getAnimations()
+	__JniBaseClass AnimationSet::getAnimations()
 	{
 		return callObjectMethod(
 			"getAnimations",

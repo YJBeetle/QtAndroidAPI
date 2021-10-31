@@ -15,7 +15,7 @@ namespace android::provider
 		// Fields
 		static jstring CARRIER_ID();
 		static jstring CARRIER_NAME();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring SPECIFIC_CARRIER_ID();
 		static jstring SPECIFIC_CARRIER_ID_NAME();
 		
@@ -26,8 +26,8 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getSpecificCarrierIdUriForSubscriptionId(jint arg0);
-		static QAndroidJniObject getUriForSubscriptionId(jint arg0);
+		static android::net::Uri getSpecificCarrierIdUriForSubscriptionId(jint arg0);
+		static android::net::Uri getUriForSubscriptionId(jint arg0);
 	};
 } // namespace android::provider
 

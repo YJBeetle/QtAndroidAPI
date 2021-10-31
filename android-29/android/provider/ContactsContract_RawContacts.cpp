@@ -49,7 +49,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_RawContacts::CONTENT_URI()
+	android::net::Uri ContactsContract_RawContacts::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts",
@@ -64,7 +64,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ContactsContract_RawContacts::getContactLookupUri(android::content::ContentResolver arg0, android::net::Uri arg1)
+	android::net::Uri ContactsContract_RawContacts::getContactLookupUri(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$RawContacts",
@@ -74,7 +74,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ContactsContract_RawContacts::newEntityIterator(__JniBaseClass arg0)
+	__JniBaseClass ContactsContract_RawContacts::newEntityIterator(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$RawContacts",

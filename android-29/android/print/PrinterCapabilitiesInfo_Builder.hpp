@@ -38,12 +38,12 @@ namespace android::print
 		PrinterCapabilitiesInfo_Builder(android::print::PrinterId arg0);
 		
 		// Methods
-		QAndroidJniObject addMediaSize(android::print::PrintAttributes_MediaSize arg0, jboolean arg1);
-		QAndroidJniObject addResolution(android::print::PrintAttributes_Resolution arg0, jboolean arg1);
-		QAndroidJniObject build();
-		QAndroidJniObject setColorModes(jint arg0, jint arg1);
-		QAndroidJniObject setDuplexModes(jint arg0, jint arg1);
-		QAndroidJniObject setMinMargins(android::print::PrintAttributes_Margins arg0);
+		android::print::PrinterCapabilitiesInfo_Builder addMediaSize(android::print::PrintAttributes_MediaSize arg0, jboolean arg1);
+		android::print::PrinterCapabilitiesInfo_Builder addResolution(android::print::PrintAttributes_Resolution arg0, jboolean arg1);
+		android::print::PrinterCapabilitiesInfo build();
+		android::print::PrinterCapabilitiesInfo_Builder setColorModes(jint arg0, jint arg1);
+		android::print::PrinterCapabilitiesInfo_Builder setDuplexModes(jint arg0, jint arg1);
+		android::print::PrinterCapabilitiesInfo_Builder setMinMargins(android::print::PrintAttributes_Margins arg0);
 	};
 } // namespace android::print
 

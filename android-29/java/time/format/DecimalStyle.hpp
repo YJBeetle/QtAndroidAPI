@@ -13,7 +13,7 @@ namespace java::time::format
 	{
 	public:
 		// Fields
-		static QAndroidJniObject STANDARD();
+		static java::time::format::DecimalStyle STANDARD();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DecimalStyle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,9 +22,9 @@ namespace java::time::format
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getAvailableLocales();
-		static QAndroidJniObject of(java::util::Locale arg0);
-		static QAndroidJniObject ofDefaultLocale();
+		static __JniBaseClass getAvailableLocales();
+		static java::time::format::DecimalStyle of(java::util::Locale arg0);
+		static java::time::format::DecimalStyle ofDefaultLocale();
 		jboolean equals(jobject arg0);
 		jchar getDecimalSeparator();
 		jchar getNegativeSign();
@@ -32,10 +32,10 @@ namespace java::time::format
 		jchar getZeroDigit();
 		jint hashCode();
 		jstring toString();
-		QAndroidJniObject withDecimalSeparator(jchar arg0);
-		QAndroidJniObject withNegativeSign(jchar arg0);
-		QAndroidJniObject withPositiveSign(jchar arg0);
-		QAndroidJniObject withZeroDigit(jchar arg0);
+		java::time::format::DecimalStyle withDecimalSeparator(jchar arg0);
+		java::time::format::DecimalStyle withNegativeSign(jchar arg0);
+		java::time::format::DecimalStyle withPositiveSign(jchar arg0);
+		java::time::format::DecimalStyle withZeroDigit(jchar arg0);
 	};
 } // namespace java::time::format
 

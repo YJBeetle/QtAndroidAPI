@@ -98,7 +98,7 @@ namespace android::nfc::tech
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MifareClassic::get(android::nfc::Tag arg0)
+	android::nfc::tech::MifareClassic MifareClassic::get(android::nfc::Tag arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.tech.MifareClassic",
@@ -192,7 +192,7 @@ namespace android::nfc::tech
 			"()I"
 		);
 	}
-	QAndroidJniObject MifareClassic::getTag()
+	android::nfc::Tag MifareClassic::getTag()
 	{
 		return callObjectMethod(
 			"getTag",

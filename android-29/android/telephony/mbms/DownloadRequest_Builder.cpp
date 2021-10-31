@@ -21,7 +21,7 @@ namespace android::telephony::mbms
 		) {}
 	
 	// Methods
-	QAndroidJniObject DownloadRequest_Builder::fromDownloadRequest(android::telephony::mbms::DownloadRequest arg0)
+	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::fromDownloadRequest(android::telephony::mbms::DownloadRequest arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.mbms.DownloadRequest$Builder",
@@ -30,7 +30,7 @@ namespace android::telephony::mbms
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DownloadRequest_Builder::fromSerializedRequest(jbyteArray arg0)
+	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::fromSerializedRequest(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.mbms.DownloadRequest$Builder",
@@ -39,14 +39,14 @@ namespace android::telephony::mbms
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadRequest_Builder::build()
+	android::telephony::mbms::DownloadRequest DownloadRequest_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/mbms/DownloadRequest;"
 		);
 	}
-	QAndroidJniObject DownloadRequest_Builder::setAppIntent(android::content::Intent arg0)
+	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::setAppIntent(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"setAppIntent",
@@ -54,7 +54,7 @@ namespace android::telephony::mbms
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DownloadRequest_Builder::setServiceInfo(android::telephony::mbms::FileServiceInfo arg0)
+	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::setServiceInfo(android::telephony::mbms::FileServiceInfo arg0)
 	{
 		return callObjectMethod(
 			"setServiceInfo",
@@ -62,7 +62,7 @@ namespace android::telephony::mbms
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DownloadRequest_Builder::setSubscriptionId(jint arg0)
+	android::telephony::mbms::DownloadRequest_Builder DownloadRequest_Builder::setSubscriptionId(jint arg0)
 	{
 		return callObjectMethod(
 			"setSubscriptionId",

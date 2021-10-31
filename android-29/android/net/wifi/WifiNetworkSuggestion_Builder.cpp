@@ -18,14 +18,14 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	QAndroidJniObject WifiNetworkSuggestion_Builder::build()
+	android::net::wifi::WifiNetworkSuggestion WifiNetworkSuggestion_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/WifiNetworkSuggestion;"
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setBssid(android::net::MacAddress arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setBssid(android::net::MacAddress arg0)
 	{
 		return callObjectMethod(
 			"setBssid",
@@ -33,7 +33,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setIsAppInteractionRequired(jboolean arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsAppInteractionRequired(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIsAppInteractionRequired",
@@ -41,7 +41,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setIsEnhancedOpen(jboolean arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsEnhancedOpen(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIsEnhancedOpen",
@@ -49,7 +49,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setIsHiddenSsid(jboolean arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsHiddenSsid(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIsHiddenSsid",
@@ -57,7 +57,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setIsMetered(jboolean arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsMetered(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIsMetered",
@@ -65,7 +65,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setIsUserInteractionRequired(jboolean arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setIsUserInteractionRequired(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIsUserInteractionRequired",
@@ -73,7 +73,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setPriority(jint arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setPriority(jint arg0)
 	{
 		return callObjectMethod(
 			"setPriority",
@@ -81,7 +81,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setSsid(jstring arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setSsid(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSsid",
@@ -89,7 +89,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0)
 	{
 		return callObjectMethod(
 			"setWpa2EnterpriseConfig",
@@ -97,7 +97,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setWpa2Passphrase(jstring arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa2Passphrase(jstring arg0)
 	{
 		return callObjectMethod(
 			"setWpa2Passphrase",
@@ -105,7 +105,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0)
 	{
 		return callObjectMethod(
 			"setWpa3EnterpriseConfig",
@@ -113,7 +113,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WifiNetworkSuggestion_Builder::setWpa3Passphrase(jstring arg0)
+	android::net::wifi::WifiNetworkSuggestion_Builder WifiNetworkSuggestion_Builder::setWpa3Passphrase(jstring arg0)
 	{
 		return callObjectMethod(
 			"setWpa3Passphrase",

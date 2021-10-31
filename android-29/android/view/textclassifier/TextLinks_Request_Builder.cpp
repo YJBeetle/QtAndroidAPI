@@ -20,14 +20,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	QAndroidJniObject TextLinks_Request_Builder::build()
+	android::view::textclassifier::TextLinks_Request TextLinks_Request_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextLinks$Request;"
 		);
 	}
-	QAndroidJniObject TextLinks_Request_Builder::setDefaultLocales(android::os::LocaleList arg0)
+	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setDefaultLocales(android::os::LocaleList arg0)
 	{
 		return callObjectMethod(
 			"setDefaultLocales",
@@ -35,7 +35,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextLinks_Request_Builder::setEntityConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0)
+	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setEntityConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0)
 	{
 		return callObjectMethod(
 			"setEntityConfig",
@@ -43,7 +43,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextLinks_Request_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::TextLinks_Request_Builder TextLinks_Request_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",

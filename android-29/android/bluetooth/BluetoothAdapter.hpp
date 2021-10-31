@@ -70,21 +70,21 @@ namespace android::bluetooth
 		
 		// Methods
 		static jboolean checkBluetoothAddress(jstring arg0);
-		static QAndroidJniObject getDefaultAdapter();
+		static android::bluetooth::BluetoothAdapter getDefaultAdapter();
 		jboolean cancelDiscovery();
 		void closeProfileProxy(jint arg0, __JniBaseClass arg1);
 		jboolean disable();
 		jboolean enable();
 		jstring getAddress();
-		QAndroidJniObject getBluetoothLeAdvertiser();
-		QAndroidJniObject getBluetoothLeScanner();
-		QAndroidJniObject getBondedDevices();
+		android::bluetooth::le::BluetoothLeAdvertiser getBluetoothLeAdvertiser();
+		android::bluetooth::le::BluetoothLeScanner getBluetoothLeScanner();
+		__JniBaseClass getBondedDevices();
 		jint getLeMaximumAdvertisingDataLength();
 		jstring getName();
 		jint getProfileConnectionState(jint arg0);
 		jboolean getProfileProxy(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		QAndroidJniObject getRemoteDevice(jbyteArray arg0);
-		QAndroidJniObject getRemoteDevice(jstring arg0);
+		android::bluetooth::BluetoothDevice getRemoteDevice(jbyteArray arg0);
+		android::bluetooth::BluetoothDevice getRemoteDevice(jstring arg0);
 		jint getScanMode();
 		jint getState();
 		jboolean isDiscovering();
@@ -96,10 +96,10 @@ namespace android::bluetooth
 		jboolean isMultipleAdvertisementSupported();
 		jboolean isOffloadedFilteringSupported();
 		jboolean isOffloadedScanBatchingSupported();
-		QAndroidJniObject listenUsingInsecureL2capChannel();
-		QAndroidJniObject listenUsingInsecureRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1);
-		QAndroidJniObject listenUsingL2capChannel();
-		QAndroidJniObject listenUsingRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1);
+		android::bluetooth::BluetoothServerSocket listenUsingInsecureL2capChannel();
+		android::bluetooth::BluetoothServerSocket listenUsingInsecureRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1);
+		android::bluetooth::BluetoothServerSocket listenUsingL2capChannel();
+		android::bluetooth::BluetoothServerSocket listenUsingRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1);
 		jboolean setName(jstring arg0);
 		jboolean startDiscovery();
 		jboolean startLeScan(__JniBaseClass arg0);

@@ -12,14 +12,14 @@ namespace android::graphics::pdf
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PdfDocument_Page::getCanvas()
+	android::graphics::Canvas PdfDocument_Page::getCanvas()
 	{
 		return callObjectMethod(
 			"getCanvas",
 			"()Landroid/graphics/Canvas;"
 		);
 	}
-	QAndroidJniObject PdfDocument_Page::getInfo()
+	android::graphics::pdf::PdfDocument_PageInfo PdfDocument_Page::getInfo()
 	{
 		return callObjectMethod(
 			"getInfo",

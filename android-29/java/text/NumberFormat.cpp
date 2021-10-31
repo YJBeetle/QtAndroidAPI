@@ -41,7 +41,7 @@ namespace java::text
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject NumberFormat::getCompactNumberInstance()
+	java::text::NumberFormat NumberFormat::getCompactNumberInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -49,7 +49,7 @@ namespace java::text
 			"()Ljava/text/NumberFormat;"
 		);
 	}
-	QAndroidJniObject NumberFormat::getCompactNumberInstance(java::util::Locale arg0, __JniBaseClass arg1)
+	java::text::NumberFormat NumberFormat::getCompactNumberInstance(java::util::Locale arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -59,7 +59,7 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject NumberFormat::getCurrencyInstance()
+	java::text::NumberFormat NumberFormat::getCurrencyInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -67,7 +67,7 @@ namespace java::text
 			"()Ljava/text/NumberFormat;"
 		);
 	}
-	QAndroidJniObject NumberFormat::getCurrencyInstance(java::util::Locale arg0)
+	java::text::NumberFormat NumberFormat::getCurrencyInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -76,7 +76,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NumberFormat::getInstance()
+	java::text::NumberFormat NumberFormat::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -84,7 +84,7 @@ namespace java::text
 			"()Ljava/text/NumberFormat;"
 		);
 	}
-	QAndroidJniObject NumberFormat::getInstance(java::util::Locale arg0)
+	java::text::NumberFormat NumberFormat::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -93,7 +93,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NumberFormat::getIntegerInstance()
+	java::text::NumberFormat NumberFormat::getIntegerInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -101,7 +101,7 @@ namespace java::text
 			"()Ljava/text/NumberFormat;"
 		);
 	}
-	QAndroidJniObject NumberFormat::getIntegerInstance(java::util::Locale arg0)
+	java::text::NumberFormat NumberFormat::getIntegerInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -110,7 +110,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NumberFormat::getNumberInstance()
+	java::text::NumberFormat NumberFormat::getNumberInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -118,7 +118,7 @@ namespace java::text
 			"()Ljava/text/NumberFormat;"
 		);
 	}
-	QAndroidJniObject NumberFormat::getNumberInstance(java::util::Locale arg0)
+	java::text::NumberFormat NumberFormat::getNumberInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -127,7 +127,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NumberFormat::getPercentInstance()
+	java::text::NumberFormat NumberFormat::getPercentInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -135,7 +135,7 @@ namespace java::text
 			"()Ljava/text/NumberFormat;"
 		);
 	}
-	QAndroidJniObject NumberFormat::getPercentInstance(java::util::Locale arg0)
+	java::text::NumberFormat NumberFormat::getPercentInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.NumberFormat",
@@ -175,7 +175,7 @@ namespace java::text
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject NumberFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -185,7 +185,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject NumberFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -195,7 +195,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject NumberFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -205,7 +205,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject NumberFormat::getCurrency()
+	java::util::Currency NumberFormat::getCurrency()
 	{
 		return callObjectMethod(
 			"getCurrency",
@@ -240,7 +240,7 @@ namespace java::text
 			"()I"
 		);
 	}
-	QAndroidJniObject NumberFormat::getRoundingMode()
+	java::math::RoundingMode NumberFormat::getRoundingMode()
 	{
 		return callObjectMethod(
 			"getRoundingMode",
@@ -268,7 +268,7 @@ namespace java::text
 			"()Z"
 		);
 	}
-	QAndroidJniObject NumberFormat::parse(jstring arg0)
+	java::lang::Number NumberFormat::parse(jstring arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -276,7 +276,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject NumberFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number NumberFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",

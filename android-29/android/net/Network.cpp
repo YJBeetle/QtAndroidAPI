@@ -12,7 +12,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject Network::CREATOR()
+	__JniBaseClass Network::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.Network",
@@ -27,7 +27,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Network::fromNetworkHandle(jlong arg0)
+	android::net::Network Network::fromNetworkHandle(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.Network",
@@ -83,7 +83,7 @@ namespace android::net
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject Network::getByName(jstring arg0)
+	java::net::InetAddress Network::getByName(jstring arg0)
 	{
 		return callObjectMethod(
 			"getByName",
@@ -98,7 +98,7 @@ namespace android::net
 			"()J"
 		);
 	}
-	QAndroidJniObject Network::getSocketFactory()
+	javax::net::SocketFactory Network::getSocketFactory()
 	{
 		return callObjectMethod(
 			"getSocketFactory",
@@ -112,7 +112,7 @@ namespace android::net
 			"()I"
 		);
 	}
-	QAndroidJniObject Network::openConnection(java::net::URL arg0)
+	java::net::URLConnection Network::openConnection(java::net::URL arg0)
 	{
 		return callObjectMethod(
 			"openConnection",
@@ -120,7 +120,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Network::openConnection(java::net::URL arg0, java::net::Proxy arg1)
+	java::net::URLConnection Network::openConnection(java::net::URL arg0, java::net::Proxy arg1)
 	{
 		return callObjectMethod(
 			"openConnection",

@@ -13,7 +13,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint PATTERN_ADVANCED_GLOB();
 		static jint PATTERN_LITERAL();
 		static jint PATTERN_PREFIX();

@@ -38,25 +38,25 @@ namespace android::net
 		VpnService_Builder(android::net::VpnService arg0);
 		
 		// Methods
-		QAndroidJniObject addAddress(jstring arg0, jint arg1);
-		QAndroidJniObject addAddress(java::net::InetAddress arg0, jint arg1);
-		QAndroidJniObject addAllowedApplication(jstring arg0);
-		QAndroidJniObject addDisallowedApplication(jstring arg0);
-		QAndroidJniObject addDnsServer(jstring arg0);
-		QAndroidJniObject addDnsServer(java::net::InetAddress arg0);
-		QAndroidJniObject addRoute(jstring arg0, jint arg1);
-		QAndroidJniObject addRoute(java::net::InetAddress arg0, jint arg1);
-		QAndroidJniObject addSearchDomain(jstring arg0);
-		QAndroidJniObject allowBypass();
-		QAndroidJniObject allowFamily(jint arg0);
-		QAndroidJniObject establish();
-		QAndroidJniObject setBlocking(jboolean arg0);
-		QAndroidJniObject setConfigureIntent(android::app::PendingIntent arg0);
-		QAndroidJniObject setHttpProxy(android::net::ProxyInfo arg0);
-		QAndroidJniObject setMetered(jboolean arg0);
-		QAndroidJniObject setMtu(jint arg0);
-		QAndroidJniObject setSession(jstring arg0);
-		QAndroidJniObject setUnderlyingNetworks(jarray arg0);
+		android::net::VpnService_Builder addAddress(jstring arg0, jint arg1);
+		android::net::VpnService_Builder addAddress(java::net::InetAddress arg0, jint arg1);
+		android::net::VpnService_Builder addAllowedApplication(jstring arg0);
+		android::net::VpnService_Builder addDisallowedApplication(jstring arg0);
+		android::net::VpnService_Builder addDnsServer(jstring arg0);
+		android::net::VpnService_Builder addDnsServer(java::net::InetAddress arg0);
+		android::net::VpnService_Builder addRoute(jstring arg0, jint arg1);
+		android::net::VpnService_Builder addRoute(java::net::InetAddress arg0, jint arg1);
+		android::net::VpnService_Builder addSearchDomain(jstring arg0);
+		android::net::VpnService_Builder allowBypass();
+		android::net::VpnService_Builder allowFamily(jint arg0);
+		android::os::ParcelFileDescriptor establish();
+		android::net::VpnService_Builder setBlocking(jboolean arg0);
+		android::net::VpnService_Builder setConfigureIntent(android::app::PendingIntent arg0);
+		android::net::VpnService_Builder setHttpProxy(android::net::ProxyInfo arg0);
+		android::net::VpnService_Builder setMetered(jboolean arg0);
+		android::net::VpnService_Builder setMtu(jint arg0);
+		android::net::VpnService_Builder setSession(jstring arg0);
+		android::net::VpnService_Builder setUnderlyingNetworks(jarray arg0);
 	};
 } // namespace android::net
 

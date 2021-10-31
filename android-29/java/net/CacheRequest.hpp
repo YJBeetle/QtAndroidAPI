@@ -23,7 +23,7 @@ namespace java::net
 		
 		// Methods
 		void abort();
-		QAndroidJniObject getBody();
+		java::io::OutputStream getBody();
 	};
 } // namespace java::net
 

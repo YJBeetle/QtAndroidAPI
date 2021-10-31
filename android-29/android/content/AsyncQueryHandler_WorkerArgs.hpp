@@ -22,14 +22,14 @@ namespace android::content
 	public:
 		// Fields
 		jobject cookie();
-		QAndroidJniObject handler();
+		android::os::Handler handler();
 		jstring orderBy();
 		jarray projection();
 		jobject result();
 		jstring selection();
 		jarray selectionArgs();
-		QAndroidJniObject uri();
-		QAndroidJniObject values();
+		android::net::Uri uri();
+		android::content::ContentValues values();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AsyncQueryHandler_WorkerArgs(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

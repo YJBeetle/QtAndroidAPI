@@ -14,7 +14,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Normalizer2::getInstance(java::io::InputStream arg0, jstring arg1, android::icu::text::Normalizer2_Mode arg2)
+	android::icu::text::Normalizer2 Normalizer2::getInstance(java::io::InputStream arg0, jstring arg1, android::icu::text::Normalizer2_Mode arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
@@ -25,7 +25,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Normalizer2::getNFCInstance()
+	android::icu::text::Normalizer2 Normalizer2::getNFCInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
@@ -33,7 +33,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/Normalizer2;"
 		);
 	}
-	QAndroidJniObject Normalizer2::getNFDInstance()
+	android::icu::text::Normalizer2 Normalizer2::getNFDInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
@@ -41,7 +41,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/Normalizer2;"
 		);
 	}
-	QAndroidJniObject Normalizer2::getNFKCCasefoldInstance()
+	android::icu::text::Normalizer2 Normalizer2::getNFKCCasefoldInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
@@ -49,7 +49,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/Normalizer2;"
 		);
 	}
-	QAndroidJniObject Normalizer2::getNFKCInstance()
+	android::icu::text::Normalizer2 Normalizer2::getNFKCInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
@@ -57,7 +57,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/Normalizer2;"
 		);
 	}
-	QAndroidJniObject Normalizer2::getNFKDInstance()
+	android::icu::text::Normalizer2 Normalizer2::getNFKDInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Normalizer2",
@@ -65,7 +65,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/Normalizer2;"
 		);
 	}
-	QAndroidJniObject Normalizer2::append(java::lang::StringBuilder arg0, jstring arg1)
+	java::lang::StringBuilder Normalizer2::append(java::lang::StringBuilder arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"append",
@@ -139,7 +139,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject Normalizer2::normalize(jstring arg0, __JniBaseClass arg1)
+	__JniBaseClass Normalizer2::normalize(jstring arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"normalize",
@@ -156,7 +156,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Normalizer2::normalize(jstring arg0, java::lang::StringBuilder arg1)
+	java::lang::StringBuilder Normalizer2::normalize(jstring arg0, java::lang::StringBuilder arg1)
 	{
 		return callObjectMethod(
 			"normalize",
@@ -165,7 +165,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Normalizer2::normalizeSecondAndAppend(java::lang::StringBuilder arg0, jstring arg1)
+	java::lang::StringBuilder Normalizer2::normalizeSecondAndAppend(java::lang::StringBuilder arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"normalizeSecondAndAppend",
@@ -174,7 +174,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	QAndroidJniObject Normalizer2::quickCheck(jstring arg0)
+	android::icu::text::Normalizer_QuickCheckResult Normalizer2::quickCheck(jstring arg0)
 	{
 		return callObjectMethod(
 			"quickCheck",

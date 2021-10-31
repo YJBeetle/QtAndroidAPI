@@ -10,10 +10,10 @@ namespace java::sql
 	{
 	public:
 		// Fields
-		static QAndroidJniObject REASON_UNKNOWN();
-		static QAndroidJniObject REASON_UNKNOWN_PROPERTY();
-		static QAndroidJniObject REASON_VALUE_INVALID();
-		static QAndroidJniObject REASON_VALUE_TRUNCATED();
+		static java::sql::ClientInfoStatus REASON_UNKNOWN();
+		static java::sql::ClientInfoStatus REASON_UNKNOWN_PROPERTY();
+		static java::sql::ClientInfoStatus REASON_VALUE_INVALID();
+		static java::sql::ClientInfoStatus REASON_VALUE_TRUNCATED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ClientInfoStatus(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace java::sql
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::sql::ClientInfoStatus valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::sql

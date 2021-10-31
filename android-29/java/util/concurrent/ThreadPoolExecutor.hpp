@@ -56,10 +56,10 @@ namespace java::util::concurrent
 		jint getLargestPoolSize();
 		jint getMaximumPoolSize();
 		jint getPoolSize();
-		QAndroidJniObject getQueue();
-		QAndroidJniObject getRejectedExecutionHandler();
+		__JniBaseClass getQueue();
+		__JniBaseClass getRejectedExecutionHandler();
 		jlong getTaskCount();
-		QAndroidJniObject getThreadFactory();
+		__JniBaseClass getThreadFactory();
 		jboolean isShutdown();
 		jboolean isTerminated();
 		jboolean isTerminating();
@@ -73,7 +73,7 @@ namespace java::util::concurrent
 		void setRejectedExecutionHandler(__JniBaseClass arg0);
 		void setThreadFactory(__JniBaseClass arg0);
 		void shutdown();
-		QAndroidJniObject shutdownNow();
+		__JniBaseClass shutdownNow();
 		jstring toString();
 	};
 } // namespace java::util::concurrent

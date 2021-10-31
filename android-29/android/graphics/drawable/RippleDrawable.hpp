@@ -56,8 +56,8 @@ namespace android::graphics::drawable
 		void applyTheme(android::content::res::Resources_Theme arg0);
 		jboolean canApplyTheme();
 		void draw(android::graphics::Canvas arg0);
-		QAndroidJniObject getConstantState();
-		QAndroidJniObject getDirtyBounds();
+		android::graphics::drawable::Drawable_ConstantState getConstantState();
+		android::graphics::Rect getDirtyBounds();
 		void getHotspotBounds(android::graphics::Rect arg0);
 		jint getOpacity();
 		void getOutline(android::graphics::Outline arg0);
@@ -67,7 +67,7 @@ namespace android::graphics::drawable
 		jboolean isProjected();
 		jboolean isStateful();
 		void jumpToCurrentState();
-		QAndroidJniObject mutate();
+		android::graphics::drawable::Drawable mutate();
 		void setColor(android::content::res::ColorStateList arg0);
 		jboolean setDrawableByLayerId(jint arg0, android::graphics::drawable::Drawable arg1);
 		void setHotspot(jfloat arg0, jfloat arg1);

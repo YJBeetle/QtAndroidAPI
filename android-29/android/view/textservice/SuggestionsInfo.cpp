@@ -4,7 +4,7 @@
 namespace android::view::textservice
 {
 	// Fields
-	QAndroidJniObject SuggestionsInfo::CREATOR()
+	__JniBaseClass SuggestionsInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textservice.SuggestionsInfo",

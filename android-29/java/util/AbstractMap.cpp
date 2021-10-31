@@ -33,7 +33,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject AbstractMap::entrySet()
+	__JniBaseClass AbstractMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -70,7 +70,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject AbstractMap::keySet()
+	__JniBaseClass AbstractMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -116,7 +116,7 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AbstractMap::values()
+	__JniBaseClass AbstractMap::values()
 	{
 		return callObjectMethod(
 			"values",

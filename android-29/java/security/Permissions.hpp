@@ -40,7 +40,7 @@ namespace java::security
 		
 		// Methods
 		void add(java::security::Permission arg0);
-		QAndroidJniObject elements();
+		__JniBaseClass elements();
 		jboolean implies(java::security::Permission arg0);
 	};
 } // namespace java::security

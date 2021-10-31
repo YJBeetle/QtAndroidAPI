@@ -7,7 +7,7 @@
 namespace android::service::notification
 {
 	// Fields
-	QAndroidJniObject Condition::CREATOR()
+	__JniBaseClass Condition::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.notification.Condition",
@@ -77,7 +77,7 @@ namespace android::service::notification
 			"icon"
 		);
 	}
-	QAndroidJniObject Condition::id()
+	android::net::Uri Condition::id()
 	{
 		return getObjectField(
 			"id",
@@ -154,7 +154,7 @@ namespace android::service::notification
 			arg1
 		);
 	}
-	QAndroidJniObject Condition::newId(android::content::Context arg0)
+	android::net::Uri_Builder Condition::newId(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.service.notification.Condition",
@@ -181,7 +181,7 @@ namespace android::service::notification
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Condition::copy()
+	android::service::notification::Condition Condition::copy()
 	{
 		return callObjectMethod(
 			"copy",

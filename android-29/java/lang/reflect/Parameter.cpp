@@ -19,14 +19,14 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	QAndroidJniObject Parameter::getAnnotatedType()
+	__JniBaseClass Parameter::getAnnotatedType()
 	{
 		return callObjectMethod(
 			"getAnnotatedType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	QAndroidJniObject Parameter::getAnnotation(jclass arg0)
+	__JniBaseClass Parameter::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -49,7 +49,7 @@ namespace java::lang::reflect
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject Parameter::getDeclaredAnnotation(jclass arg0)
+	__JniBaseClass Parameter::getDeclaredAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotation",
@@ -72,7 +72,7 @@ namespace java::lang::reflect
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject Parameter::getDeclaringExecutable()
+	java::lang::reflect::Executable Parameter::getDeclaringExecutable()
 	{
 		return callObjectMethod(
 			"getDeclaringExecutable",
@@ -93,7 +93,7 @@ namespace java::lang::reflect
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Parameter::getParameterizedType()
+	__JniBaseClass Parameter::getParameterizedType()
 	{
 		return callObjectMethod(
 			"getParameterizedType",

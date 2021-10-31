@@ -12,7 +12,7 @@ namespace java::nio
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DoubleBuffer::allocate(jint arg0)
+	java::nio::DoubleBuffer DoubleBuffer::allocate(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.DoubleBuffer",
@@ -21,7 +21,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject DoubleBuffer::wrap(jdoubleArray arg0)
+	java::nio::DoubleBuffer DoubleBuffer::wrap(jdoubleArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.DoubleBuffer",
@@ -30,7 +30,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject DoubleBuffer::wrap(jdoubleArray arg0, jint arg1, jint arg2)
+	java::nio::DoubleBuffer DoubleBuffer::wrap(jdoubleArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.DoubleBuffer",
@@ -55,21 +55,21 @@ namespace java::nio
 			"()I"
 		);
 	}
-	QAndroidJniObject DoubleBuffer::asReadOnlyBuffer()
+	java::nio::DoubleBuffer DoubleBuffer::asReadOnlyBuffer()
 	{
 		return callObjectMethod(
 			"asReadOnlyBuffer",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
-	QAndroidJniObject DoubleBuffer::clear()
+	java::nio::DoubleBuffer DoubleBuffer::clear()
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
-	QAndroidJniObject DoubleBuffer::compact()
+	java::nio::DoubleBuffer DoubleBuffer::compact()
 	{
 		return callObjectMethod(
 			"compact",
@@ -92,7 +92,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DoubleBuffer::duplicate()
+	java::nio::DoubleBuffer DoubleBuffer::duplicate()
 	{
 		return callObjectMethod(
 			"duplicate",
@@ -107,7 +107,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject DoubleBuffer::flip()
+	java::nio::DoubleBuffer DoubleBuffer::flip()
 	{
 		return callObjectMethod(
 			"flip",
@@ -129,7 +129,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject DoubleBuffer::get(jdoubleArray arg0)
+	java::nio::DoubleBuffer DoubleBuffer::get(jdoubleArray arg0)
 	{
 		return callObjectMethod(
 			"get",
@@ -137,7 +137,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject DoubleBuffer::get(jint arg0, jdoubleArray arg1)
+	java::nio::DoubleBuffer DoubleBuffer::get(jint arg0, jdoubleArray arg1)
 	{
 		return callObjectMethod(
 			"get",
@@ -146,7 +146,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject DoubleBuffer::get(jdoubleArray arg0, jint arg1, jint arg2)
+	java::nio::DoubleBuffer DoubleBuffer::get(jdoubleArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
@@ -156,7 +156,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject DoubleBuffer::get(jint arg0, jdoubleArray arg1, jint arg2, jint arg3)
+	java::nio::DoubleBuffer DoubleBuffer::get(jint arg0, jdoubleArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
@@ -188,7 +188,7 @@ namespace java::nio
 			"()Z"
 		);
 	}
-	QAndroidJniObject DoubleBuffer::limit(jint arg0)
+	java::nio::DoubleBuffer DoubleBuffer::limit(jint arg0)
 	{
 		return callObjectMethod(
 			"limit",
@@ -196,7 +196,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject DoubleBuffer::mark()
+	java::nio::DoubleBuffer DoubleBuffer::mark()
 	{
 		return callObjectMethod(
 			"mark",
@@ -211,14 +211,14 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DoubleBuffer::order()
+	java::nio::ByteOrder DoubleBuffer::order()
 	{
 		return callObjectMethod(
 			"order",
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
-	QAndroidJniObject DoubleBuffer::position(jint arg0)
+	java::nio::DoubleBuffer DoubleBuffer::position(jint arg0)
 	{
 		return callObjectMethod(
 			"position",
@@ -226,7 +226,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject DoubleBuffer::put(jdoubleArray arg0)
+	java::nio::DoubleBuffer DoubleBuffer::put(jdoubleArray arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -234,7 +234,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject DoubleBuffer::put(jdouble arg0)
+	java::nio::DoubleBuffer DoubleBuffer::put(jdouble arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -242,7 +242,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject DoubleBuffer::put(java::nio::DoubleBuffer arg0)
+	java::nio::DoubleBuffer DoubleBuffer::put(java::nio::DoubleBuffer arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -250,7 +250,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DoubleBuffer::put(jint arg0, jdoubleArray arg1)
+	java::nio::DoubleBuffer DoubleBuffer::put(jint arg0, jdoubleArray arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -259,7 +259,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject DoubleBuffer::put(jint arg0, jdouble arg1)
+	java::nio::DoubleBuffer DoubleBuffer::put(jint arg0, jdouble arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -268,7 +268,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject DoubleBuffer::put(jdoubleArray arg0, jint arg1, jint arg2)
+	java::nio::DoubleBuffer DoubleBuffer::put(jdoubleArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
@@ -278,7 +278,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject DoubleBuffer::put(jint arg0, jdoubleArray arg1, jint arg2, jint arg3)
+	java::nio::DoubleBuffer DoubleBuffer::put(jint arg0, jdoubleArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -289,7 +289,7 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject DoubleBuffer::put(jint arg0, java::nio::DoubleBuffer arg1, jint arg2, jint arg3)
+	java::nio::DoubleBuffer DoubleBuffer::put(jint arg0, java::nio::DoubleBuffer arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -300,28 +300,28 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject DoubleBuffer::reset()
+	java::nio::DoubleBuffer DoubleBuffer::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
-	QAndroidJniObject DoubleBuffer::rewind()
+	java::nio::DoubleBuffer DoubleBuffer::rewind()
 	{
 		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
-	QAndroidJniObject DoubleBuffer::slice()
+	java::nio::DoubleBuffer DoubleBuffer::slice()
 	{
 		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
-	QAndroidJniObject DoubleBuffer::slice(jint arg0, jint arg1)
+	java::nio::DoubleBuffer DoubleBuffer::slice(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"slice",

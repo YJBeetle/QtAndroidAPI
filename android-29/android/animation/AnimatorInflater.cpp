@@ -18,7 +18,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	QAndroidJniObject AnimatorInflater::loadAnimator(android::content::Context arg0, jint arg1)
+	android::animation::Animator AnimatorInflater::loadAnimator(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.AnimatorInflater",
@@ -28,7 +28,7 @@ namespace android::animation
 			arg1
 		);
 	}
-	QAndroidJniObject AnimatorInflater::loadStateListAnimator(android::content::Context arg0, jint arg1)
+	android::animation::StateListAnimator AnimatorInflater::loadStateListAnimator(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.AnimatorInflater",

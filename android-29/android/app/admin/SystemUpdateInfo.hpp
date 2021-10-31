@@ -13,7 +13,7 @@ namespace android::app::admin
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint SECURITY_PATCH_STATE_FALSE();
 		static jint SECURITY_PATCH_STATE_TRUE();
 		static jint SECURITY_PATCH_STATE_UNKNOWN();

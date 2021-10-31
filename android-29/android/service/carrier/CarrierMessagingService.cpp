@@ -96,7 +96,7 @@ namespace android::service::carrier
 		) {}
 	
 	// Methods
-	QAndroidJniObject CarrierMessagingService::onBind(android::content::Intent arg0)
+	__JniBaseClass CarrierMessagingService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

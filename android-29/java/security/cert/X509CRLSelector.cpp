@@ -52,42 +52,42 @@ namespace java::security::cert
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject X509CRLSelector::getCertificateChecking()
+	java::security::cert::X509Certificate X509CRLSelector::getCertificateChecking()
 	{
 		return callObjectMethod(
 			"getCertificateChecking",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getDateAndTime()
+	java::util::Date X509CRLSelector::getDateAndTime()
 	{
 		return callObjectMethod(
 			"getDateAndTime",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getIssuerNames()
+	__JniBaseClass X509CRLSelector::getIssuerNames()
 	{
 		return callObjectMethod(
 			"getIssuerNames",
 			"()Ljava/util/Collection;"
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getIssuers()
+	__JniBaseClass X509CRLSelector::getIssuers()
 	{
 		return callObjectMethod(
 			"getIssuers",
 			"()Ljava/util/Collection;"
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getMaxCRL()
+	java::math::BigInteger X509CRLSelector::getMaxCRL()
 	{
 		return callObjectMethod(
 			"getMaxCRL",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getMinCRL()
+	java::math::BigInteger X509CRLSelector::getMinCRL()
 	{
 		return callObjectMethod(
 			"getMinCRL",

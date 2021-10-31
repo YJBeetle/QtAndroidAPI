@@ -18,9 +18,9 @@ namespace android::icu::text
 		static jint FOLD_CASE_DEFAULT();
 		static jint FOLD_CASE_EXCLUDE_SPECIAL_I();
 		static jint INPUT_IS_FCD();
-		static QAndroidJniObject MAYBE();
-		static QAndroidJniObject NO();
-		static QAndroidJniObject YES();
+		static android::icu::text::Normalizer_QuickCheckResult MAYBE();
+		static android::icu::text::Normalizer_QuickCheckResult NO();
+		static android::icu::text::Normalizer_QuickCheckResult YES();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Normalizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

@@ -42,12 +42,12 @@ namespace android::telecom
 		
 		// Methods
 		void disconnect();
-		QAndroidJniObject getConferenceableConnections();
+		__JniBaseClass getConferenceableConnections();
 		jint getConnectionCapabilities();
 		jint getConnectionProperties();
-		QAndroidJniObject getConnections();
-		QAndroidJniObject getDisconnectCause();
-		QAndroidJniObject getExtras();
+		__JniBaseClass getConnections();
+		android::telecom::DisconnectCause getDisconnectCause();
+		android::os::Bundle getExtras();
 		jint getState();
 		void hold();
 		void merge();

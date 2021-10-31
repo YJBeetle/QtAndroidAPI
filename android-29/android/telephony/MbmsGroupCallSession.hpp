@@ -25,10 +25,10 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static QAndroidJniObject create(android::content::Context arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		static android::telephony::MbmsGroupCallSession create(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		static android::telephony::MbmsGroupCallSession create(android::content::Context arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
 		void close();
-		QAndroidJniObject startGroupCall(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4);
+		android::telephony::mbms::GroupCall startGroupCall(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4);
 	};
 } // namespace android::telephony
 

@@ -4,7 +4,7 @@
 namespace android::companion
 {
 	// Fields
-	QAndroidJniObject BluetoothDeviceFilter::CREATOR()
+	__JniBaseClass BluetoothDeviceFilter::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.companion.BluetoothDeviceFilter",

@@ -22,7 +22,7 @@ namespace android::webkit
 		WebHistoryItem();
 		
 		// Methods
-		QAndroidJniObject getFavicon();
+		android::graphics::Bitmap getFavicon();
 		jstring getOriginalUrl();
 		jstring getTitle();
 		jstring getUrl();

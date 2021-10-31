@@ -7,7 +7,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject TextLinks_Request::CREATOR()
+	__JniBaseClass TextLinks_Request::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextLinks$Request",
@@ -36,21 +36,21 @@ namespace android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextLinks_Request::getDefaultLocales()
+	android::os::LocaleList TextLinks_Request::getDefaultLocales()
 	{
 		return callObjectMethod(
 			"getDefaultLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	QAndroidJniObject TextLinks_Request::getEntityConfig()
+	android::view::textclassifier::TextClassifier_EntityConfig TextLinks_Request::getEntityConfig()
 	{
 		return callObjectMethod(
 			"getEntityConfig",
 			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;"
 		);
 	}
-	QAndroidJniObject TextLinks_Request::getExtras()
+	android::os::Bundle TextLinks_Request::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

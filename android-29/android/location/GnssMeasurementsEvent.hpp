@@ -17,7 +17,7 @@ namespace android::location
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GnssMeasurementsEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,8 +27,8 @@ namespace android::location
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getClock();
-		QAndroidJniObject getMeasurements();
+		android::location::GnssClock getClock();
+		__JniBaseClass getMeasurements();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

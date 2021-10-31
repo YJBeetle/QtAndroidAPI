@@ -9,7 +9,7 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject TIMESTAMP_UNKNOWN();
+		static android::media::MediaTimestamp TIMESTAMP_UNKNOWN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaTimestamp(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

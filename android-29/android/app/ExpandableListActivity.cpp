@@ -18,14 +18,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject ExpandableListActivity::getExpandableListAdapter()
+	__JniBaseClass ExpandableListActivity::getExpandableListAdapter()
 	{
 		return callObjectMethod(
 			"getExpandableListAdapter",
 			"()Landroid/widget/ExpandableListAdapter;"
 		);
 	}
-	QAndroidJniObject ExpandableListActivity::getExpandableListView()
+	android::widget::ExpandableListView ExpandableListActivity::getExpandableListView()
 	{
 		return callObjectMethod(
 			"getExpandableListView",

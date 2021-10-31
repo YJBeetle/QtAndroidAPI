@@ -69,7 +69,7 @@ namespace android::graphics::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject LineBreaker::computeLineBreaks(android::graphics::text::MeasuredText arg0, android::graphics::text::LineBreaker_ParagraphConstraints arg1, jint arg2)
+	android::graphics::text::LineBreaker_Result LineBreaker::computeLineBreaks(android::graphics::text::MeasuredText arg0, android::graphics::text::LineBreaker_ParagraphConstraints arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"computeLineBreaks",

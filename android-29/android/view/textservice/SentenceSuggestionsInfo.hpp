@@ -17,7 +17,7 @@ namespace android::view::textservice
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SentenceSuggestionsInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,7 +32,7 @@ namespace android::view::textservice
 		jint getLengthAt(jint arg0);
 		jint getOffsetAt(jint arg0);
 		jint getSuggestionsCount();
-		QAndroidJniObject getSuggestionsInfoAt(jint arg0);
+		android::view::textservice::SuggestionsInfo getSuggestionsInfoAt(jint arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textservice

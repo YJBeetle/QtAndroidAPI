@@ -249,7 +249,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject PowerManager::newWakeLock(jint arg0, jstring arg1)
+	android::os::PowerManager_WakeLock PowerManager::newWakeLock(jint arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"newWakeLock",

@@ -32,7 +32,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject MulticastSocket::getInterface()
+	java::net::InetAddress MulticastSocket::getInterface()
 	{
 		return callObjectMethod(
 			"getInterface",
@@ -46,7 +46,7 @@ namespace java::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject MulticastSocket::getNetworkInterface()
+	java::net::NetworkInterface MulticastSocket::getNetworkInterface()
 	{
 		return callObjectMethod(
 			"getNetworkInterface",

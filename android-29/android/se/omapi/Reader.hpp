@@ -27,9 +27,9 @@ namespace android::se::omapi
 		// Methods
 		void closeSessions();
 		jstring getName();
-		QAndroidJniObject getSEService();
+		android::se::omapi::SEService getSEService();
 		jboolean isSecureElementPresent();
-		QAndroidJniObject openSession();
+		android::se::omapi::Session openSession();
 	};
 } // namespace android::se::omapi
 

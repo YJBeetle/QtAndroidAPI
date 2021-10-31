@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject ActivityManager_RunningServiceInfo::CREATOR()
+	__JniBaseClass ActivityManager_RunningServiceInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$RunningServiceInfo",
@@ -109,7 +109,7 @@ namespace android::app
 			"restarting"
 		);
 	}
-	QAndroidJniObject ActivityManager_RunningServiceInfo::service()
+	android::content::ComponentName ActivityManager_RunningServiceInfo::service()
 	{
 		return getObjectField(
 			"service",

@@ -23,8 +23,8 @@ namespace java::security
 		
 		// Methods
 		void add(java::security::Permission arg0);
-		QAndroidJniObject elements();
-		QAndroidJniObject elementsAsStream();
+		__JniBaseClass elements();
+		__JniBaseClass elementsAsStream();
 		jboolean implies(java::security::Permission arg0);
 		jboolean isReadOnly();
 		void setReadOnly();

@@ -28,22 +28,22 @@ namespace android::app
 		
 		// Methods
 		jstring getContentDescription();
-		QAndroidJniObject getCustomView();
-		QAndroidJniObject getIcon();
+		android::view::View getCustomView();
+		android::graphics::drawable::Drawable getIcon();
 		jint getPosition();
 		jobject getTag();
 		jstring getText();
 		void select();
-		QAndroidJniObject setContentDescription(jint arg0);
-		QAndroidJniObject setContentDescription(jstring arg0);
-		QAndroidJniObject setCustomView(android::view::View arg0);
-		QAndroidJniObject setCustomView(jint arg0);
-		QAndroidJniObject setIcon(android::graphics::drawable::Drawable arg0);
-		QAndroidJniObject setIcon(jint arg0);
-		QAndroidJniObject setTabListener(__JniBaseClass arg0);
-		QAndroidJniObject setTag(jobject arg0);
-		QAndroidJniObject setText(jint arg0);
-		QAndroidJniObject setText(jstring arg0);
+		android::app::ActionBar_Tab setContentDescription(jint arg0);
+		android::app::ActionBar_Tab setContentDescription(jstring arg0);
+		android::app::ActionBar_Tab setCustomView(android::view::View arg0);
+		android::app::ActionBar_Tab setCustomView(jint arg0);
+		android::app::ActionBar_Tab setIcon(android::graphics::drawable::Drawable arg0);
+		android::app::ActionBar_Tab setIcon(jint arg0);
+		android::app::ActionBar_Tab setTabListener(__JniBaseClass arg0);
+		android::app::ActionBar_Tab setTag(jobject arg0);
+		android::app::ActionBar_Tab setText(jint arg0);
+		android::app::ActionBar_Tab setText(jstring arg0);
 	};
 } // namespace android::app
 

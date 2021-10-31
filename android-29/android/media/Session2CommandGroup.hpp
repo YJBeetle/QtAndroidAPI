@@ -17,7 +17,7 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Session2CommandGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,7 +27,7 @@ namespace android::media
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getCommands();
+		__JniBaseClass getCommands();
 		jboolean hasCommand(android::media::Session2Command arg0);
 		jboolean hasCommand(jint arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

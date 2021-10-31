@@ -35,8 +35,8 @@ namespace java::text
 		// Methods
 		jobject clone();
 		jstring format(jobject arg0);
-		QAndroidJniObject format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		QAndroidJniObject formatToCharacterIterator(jobject arg0);
+		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		__JniBaseClass formatToCharacterIterator(jobject arg0);
 		jobject parseObject(jstring arg0);
 		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
 	};

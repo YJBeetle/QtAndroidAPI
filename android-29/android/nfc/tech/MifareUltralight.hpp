@@ -25,11 +25,11 @@ namespace android::nfc::tech
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject get(android::nfc::Tag arg0);
+		static android::nfc::tech::MifareUltralight get(android::nfc::Tag arg0);
 		void close();
 		void connect();
 		jint getMaxTransceiveLength();
-		QAndroidJniObject getTag();
+		android::nfc::Tag getTag();
 		jint getTimeout();
 		jint getType();
 		jboolean isConnected();

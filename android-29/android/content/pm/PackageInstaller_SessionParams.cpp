@@ -6,7 +6,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject PackageInstaller_SessionParams::CREATOR()
+	__JniBaseClass PackageInstaller_SessionParams::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.PackageInstaller$SessionParams",
@@ -28,7 +28,7 @@ namespace android::content::pm
 			"MODE_INHERIT_EXISTING"
 		);
 	}
-	QAndroidJniObject PackageInstaller_SessionParams::RESTRICTED_PERMISSIONS_ALL()
+	__JniBaseClass PackageInstaller_SessionParams::RESTRICTED_PERMISSIONS_ALL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.PackageInstaller$SessionParams",

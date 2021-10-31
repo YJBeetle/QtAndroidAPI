@@ -27,8 +27,8 @@ namespace android::drm
 		jobject get(jstring arg0);
 		jint getInfoType();
 		jstring getMimeType();
-		QAndroidJniObject iterator();
-		QAndroidJniObject keyIterator();
+		__JniBaseClass iterator();
+		__JniBaseClass keyIterator();
 		void put(jstring arg0, jobject arg1);
 	};
 } // namespace android::drm

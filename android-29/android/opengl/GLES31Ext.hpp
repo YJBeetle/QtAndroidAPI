@@ -239,7 +239,7 @@ namespace android::opengl
 		static void glDisableiEXT(jint arg0, jint arg1);
 		static void glEnableiEXT(jint arg0, jint arg1);
 		static void glFramebufferTextureEXT(jint arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject glGetDebugMessageCallbackKHR();
+		static __JniBaseClass glGetDebugMessageCallbackKHR();
 		static jarray glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4);
 		static jarray glGetDebugMessageLogKHR(jint arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8);
 		static jint glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4, java::nio::IntBuffer arg5, java::nio::ByteBuffer arg6);

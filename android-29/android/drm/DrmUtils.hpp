@@ -22,7 +22,7 @@ namespace android::drm
 		DrmUtils();
 		
 		// Methods
-		static QAndroidJniObject getExtendedMetadataParser(jbyteArray arg0);
+		static android::drm::DrmUtils_ExtendedMetadataParser getExtendedMetadataParser(jbyteArray arg0);
 	};
 } // namespace android::drm
 

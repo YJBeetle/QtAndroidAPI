@@ -21,7 +21,7 @@ namespace android::hardware::usb
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UsbDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -34,14 +34,14 @@ namespace android::hardware::usb
 		static jstring getDeviceName(jint arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getConfiguration(jint arg0);
+		android::hardware::usb::UsbConfiguration getConfiguration(jint arg0);
 		jint getConfigurationCount();
 		jint getDeviceClass();
 		jint getDeviceId();
 		jstring getDeviceName();
 		jint getDeviceProtocol();
 		jint getDeviceSubclass();
-		QAndroidJniObject getInterface(jint arg0);
+		android::hardware::usb::UsbInterface getInterface(jint arg0);
 		jint getInterfaceCount();
 		jstring getManufacturerName();
 		jint getProductId();

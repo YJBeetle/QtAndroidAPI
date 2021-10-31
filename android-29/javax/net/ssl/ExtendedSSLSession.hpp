@@ -20,8 +20,8 @@ namespace javax::net::ssl
 		// Methods
 		jarray getLocalSupportedSignatureAlgorithms();
 		jarray getPeerSupportedSignatureAlgorithms();
-		QAndroidJniObject getRequestedServerNames();
-		QAndroidJniObject getStatusResponses();
+		__JniBaseClass getRequestedServerNames();
+		__JniBaseClass getStatusResponses();
 	};
 } // namespace javax::net::ssl
 

@@ -19,10 +19,10 @@ namespace android::text::style
 		TtsSpan_SemioticClassBuilder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject setAnimacy(jstring arg0);
-		QAndroidJniObject setCase(jstring arg0);
-		QAndroidJniObject setGender(jstring arg0);
-		QAndroidJniObject setMultiplicity(jstring arg0);
+		android::text::style::TtsSpan_SemioticClassBuilder setAnimacy(jstring arg0);
+		android::text::style::TtsSpan_SemioticClassBuilder setCase(jstring arg0);
+		android::text::style::TtsSpan_SemioticClassBuilder setGender(jstring arg0);
+		android::text::style::TtsSpan_SemioticClassBuilder setMultiplicity(jstring arg0);
 	};
 } // namespace android::text::style
 

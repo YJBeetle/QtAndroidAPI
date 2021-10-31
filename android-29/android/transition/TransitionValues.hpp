@@ -13,8 +13,8 @@ namespace android::transition
 	{
 	public:
 		// Fields
-		QAndroidJniObject values();
-		QAndroidJniObject view();
+		__JniBaseClass values();
+		android::view::View view();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TransitionValues(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

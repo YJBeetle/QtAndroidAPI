@@ -7,7 +7,7 @@
 namespace android::print
 {
 	// Fields
-	QAndroidJniObject PrintJobInfo::CREATOR()
+	__JniBaseClass PrintJobInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintJobInfo",
@@ -94,7 +94,7 @@ namespace android::print
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject PrintJobInfo::getAttributes()
+	android::print::PrintAttributes PrintJobInfo::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",
@@ -115,7 +115,7 @@ namespace android::print
 			"()J"
 		);
 	}
-	QAndroidJniObject PrintJobInfo::getId()
+	android::print::PrintJobId PrintJobInfo::getId()
 	{
 		return callObjectMethod(
 			"getId",
@@ -136,7 +136,7 @@ namespace android::print
 			"()[Landroid/print/PageRange;"
 		).object<jarray>();
 	}
-	QAndroidJniObject PrintJobInfo::getPrinterId()
+	android::print::PrinterId PrintJobInfo::getPrinterId()
 	{
 		return callObjectMethod(
 			"getPrinterId",

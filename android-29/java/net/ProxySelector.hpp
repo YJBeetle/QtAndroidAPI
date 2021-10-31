@@ -34,11 +34,11 @@ namespace java::net
 		ProxySelector();
 		
 		// Methods
-		static QAndroidJniObject getDefault();
-		static QAndroidJniObject of(java::net::InetSocketAddress arg0);
+		static java::net::ProxySelector getDefault();
+		static java::net::ProxySelector of(java::net::InetSocketAddress arg0);
 		static void setDefault(java::net::ProxySelector arg0);
 		void connectFailed(java::net::URI arg0, java::net::SocketAddress arg1, java::io::IOException arg2);
-		QAndroidJniObject select(java::net::URI arg0);
+		__JniBaseClass select(java::net::URI arg0);
 	};
 } // namespace java::net
 

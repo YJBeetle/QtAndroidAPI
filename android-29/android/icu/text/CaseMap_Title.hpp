@@ -34,14 +34,14 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject adjustToCased();
-		QAndroidJniObject apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2, __JniBaseClass arg3, android::icu::text::Edits arg4);
+		android::icu::text::CaseMap_Title adjustToCased();
+		__JniBaseClass apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2, __JniBaseClass arg3, android::icu::text::Edits arg4);
 		jstring apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2);
-		QAndroidJniObject noBreakAdjustment();
-		QAndroidJniObject noLowercase();
-		QAndroidJniObject omitUnchangedText();
-		QAndroidJniObject sentences();
-		QAndroidJniObject wholeString();
+		android::icu::text::CaseMap_Title noBreakAdjustment();
+		android::icu::text::CaseMap_Title noLowercase();
+		android::icu::text::CaseMap_Title omitUnchangedText();
+		android::icu::text::CaseMap_Title sentences();
+		android::icu::text::CaseMap_Title wholeString();
 	};
 } // namespace android::icu::text
 

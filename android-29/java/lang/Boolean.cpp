@@ -4,7 +4,7 @@
 namespace java::lang
 {
 	// Fields
-	QAndroidJniObject Boolean::FALSE()
+	java::lang::Boolean Boolean::FALSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Boolean",
@@ -12,7 +12,7 @@ namespace java::lang
 			"Ljava/lang/Boolean;"
 		);
 	}
-	QAndroidJniObject Boolean::TRUE()
+	java::lang::Boolean Boolean::TRUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Boolean",
@@ -123,7 +123,7 @@ namespace java::lang
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Boolean::valueOf(jboolean arg0)
+	java::lang::Boolean Boolean::valueOf(jboolean arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Boolean",
@@ -132,7 +132,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Boolean::valueOf(jstring arg0)
+	java::lang::Boolean Boolean::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Boolean",
@@ -164,7 +164,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Boolean::describeConstable()
+	java::util::Optional Boolean::describeConstable()
 	{
 		return callObjectMethod(
 			"describeConstable",

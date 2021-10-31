@@ -28,14 +28,14 @@ namespace android::print
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrinterInfo_Builder::build()
+	android::print::PrinterInfo PrinterInfo_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/print/PrinterInfo;"
 		);
 	}
-	QAndroidJniObject PrinterInfo_Builder::setCapabilities(android::print::PrinterCapabilitiesInfo arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setCapabilities(android::print::PrinterCapabilitiesInfo arg0)
 	{
 		return callObjectMethod(
 			"setCapabilities",
@@ -43,7 +43,7 @@ namespace android::print
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PrinterInfo_Builder::setDescription(jstring arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setDescription(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -51,7 +51,7 @@ namespace android::print
 			arg0
 		);
 	}
-	QAndroidJniObject PrinterInfo_Builder::setHasCustomPrinterIcon(jboolean arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setHasCustomPrinterIcon(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setHasCustomPrinterIcon",
@@ -59,7 +59,7 @@ namespace android::print
 			arg0
 		);
 	}
-	QAndroidJniObject PrinterInfo_Builder::setIconResourceId(jint arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setIconResourceId(jint arg0)
 	{
 		return callObjectMethod(
 			"setIconResourceId",
@@ -67,7 +67,7 @@ namespace android::print
 			arg0
 		);
 	}
-	QAndroidJniObject PrinterInfo_Builder::setInfoIntent(android::app::PendingIntent arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setInfoIntent(android::app::PendingIntent arg0)
 	{
 		return callObjectMethod(
 			"setInfoIntent",
@@ -75,7 +75,7 @@ namespace android::print
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PrinterInfo_Builder::setName(jstring arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setName(jstring arg0)
 	{
 		return callObjectMethod(
 			"setName",
@@ -83,7 +83,7 @@ namespace android::print
 			arg0
 		);
 	}
-	QAndroidJniObject PrinterInfo_Builder::setStatus(jint arg0)
+	android::print::PrinterInfo_Builder PrinterInfo_Builder::setStatus(jint arg0)
 	{
 		return callObjectMethod(
 			"setStatus",

@@ -13,7 +13,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jstring accountType();
 		jstring authority();
 		jboolean isKey();
@@ -27,7 +27,7 @@ namespace android::content
 		SyncAdapterType(jstring arg0, jstring arg1, jboolean arg2, jboolean arg3);
 		
 		// Methods
-		static QAndroidJniObject newKey(jstring arg0, jstring arg1);
+		static android::content::SyncAdapterType newKey(jstring arg0, jstring arg1);
 		jboolean allowParallelSyncs();
 		jint describeContents();
 		jboolean equals(jobject arg0);

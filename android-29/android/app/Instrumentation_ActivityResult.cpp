@@ -25,7 +25,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Instrumentation_ActivityResult::getResultData()
+	android::content::Intent Instrumentation_ActivityResult::getResultData()
 	{
 		return callObjectMethod(
 			"getResultData",

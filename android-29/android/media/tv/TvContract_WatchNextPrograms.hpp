@@ -70,7 +70,7 @@ namespace android::media::tv
 		static jstring COLUMN_WATCH_NEXT_TYPE();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jint INTERACTION_TYPE_FANS();
 		static jint INTERACTION_TYPE_FOLLOWERS();
 		static jint INTERACTION_TYPE_LIKES();

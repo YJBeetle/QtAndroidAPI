@@ -36,7 +36,7 @@ namespace android::os::storage
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject StorageManager::UUID_DEFAULT()
+	java::util::UUID StorageManager::UUID_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.storage.StorageManager",
@@ -101,14 +101,14 @@ namespace android::os::storage
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject StorageManager::getPrimaryStorageVolume()
+	android::os::storage::StorageVolume StorageManager::getPrimaryStorageVolume()
 	{
 		return callObjectMethod(
 			"getPrimaryStorageVolume",
 			"()Landroid/os/storage/StorageVolume;"
 		);
 	}
-	QAndroidJniObject StorageManager::getStorageVolume(android::net::Uri arg0)
+	android::os::storage::StorageVolume StorageManager::getStorageVolume(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"getStorageVolume",
@@ -116,7 +116,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	QAndroidJniObject StorageManager::getStorageVolume(java::io::File arg0)
+	android::os::storage::StorageVolume StorageManager::getStorageVolume(java::io::File arg0)
 	{
 		return callObjectMethod(
 			"getStorageVolume",
@@ -124,14 +124,14 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	QAndroidJniObject StorageManager::getStorageVolumes()
+	__JniBaseClass StorageManager::getStorageVolumes()
 	{
 		return callObjectMethod(
 			"getStorageVolumes",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject StorageManager::getUuidForPath(java::io::File arg0)
+	java::util::UUID StorageManager::getUuidForPath(java::io::File arg0)
 	{
 		return callObjectMethod(
 			"getUuidForPath",
@@ -189,7 +189,7 @@ namespace android::os::storage
 			arg2.object()
 		);
 	}
-	QAndroidJniObject StorageManager::openProxyFileDescriptor(jint arg0, android::os::ProxyFileDescriptorCallback arg1, android::os::Handler arg2)
+	android::os::ParcelFileDescriptor StorageManager::openProxyFileDescriptor(jint arg0, android::os::ProxyFileDescriptorCallback arg1, android::os::Handler arg2)
 	{
 		return callObjectMethod(
 			"openProxyFileDescriptor",

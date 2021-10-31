@@ -25,7 +25,7 @@ namespace android::view
 		static jint MATCH_PARENT();
 		static jint WRAP_CONTENT();
 		jint height();
-		QAndroidJniObject layoutAnimationParameters();
+		android::view::animation::LayoutAnimationController_AnimationParameters layoutAnimationParameters();
 		jint width();
 		
 		// QAndroidJniObject forward

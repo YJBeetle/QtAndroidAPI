@@ -4,7 +4,7 @@
 namespace android::net::wifi::rtt
 {
 	// Fields
-	QAndroidJniObject RangingRequest::CREATOR()
+	__JniBaseClass RangingRequest::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.rtt.RangingRequest",

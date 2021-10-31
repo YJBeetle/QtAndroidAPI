@@ -20,7 +20,7 @@ namespace java::nio::channels
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject SelectableChannel::configureBlocking(jboolean arg0)
+	java::nio::channels::SelectableChannel SelectableChannel::configureBlocking(jboolean arg0)
 	{
 		return callObjectMethod(
 			"configureBlocking",
@@ -42,7 +42,7 @@ namespace java::nio::channels
 			"()Z"
 		);
 	}
-	QAndroidJniObject SelectableChannel::keyFor(java::nio::channels::Selector arg0)
+	java::nio::channels::SelectionKey SelectableChannel::keyFor(java::nio::channels::Selector arg0)
 	{
 		return callObjectMethod(
 			"keyFor",
@@ -50,14 +50,14 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SelectableChannel::provider()
+	java::nio::channels::spi::SelectorProvider SelectableChannel::provider()
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
-	QAndroidJniObject SelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1)
+	java::nio::channels::SelectionKey SelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"register",
@@ -66,7 +66,7 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	QAndroidJniObject SelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, jobject arg2)
+	java::nio::channels::SelectionKey SelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, jobject arg2)
 	{
 		return callObjectMethod(
 			"register",

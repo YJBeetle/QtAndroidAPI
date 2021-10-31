@@ -13,7 +13,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint PRIORITY_CATEGORY_ALARMS();
 		static jint PRIORITY_CATEGORY_CALLS();
 		static jint PRIORITY_CATEGORY_EVENTS();

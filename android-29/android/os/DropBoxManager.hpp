@@ -35,7 +35,7 @@ namespace android::os
 		void addData(jstring arg0, jbyteArray arg1, jint arg2);
 		void addFile(jstring arg0, java::io::File arg1, jint arg2);
 		void addText(jstring arg0, jstring arg1);
-		QAndroidJniObject getNextEntry(jstring arg0, jlong arg1);
+		android::os::DropBoxManager_Entry getNextEntry(jstring arg0, jlong arg1);
 		jboolean isTagEnabled(jstring arg0);
 	};
 } // namespace android::os

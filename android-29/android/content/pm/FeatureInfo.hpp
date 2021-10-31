@@ -13,7 +13,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_REQUIRED();
 		static jint GL_ES_VERSION_UNDEFINED();
 		jint flags();

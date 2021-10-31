@@ -29,7 +29,7 @@ namespace android::net::wifi::hotspot2::pps
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Credential(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -42,13 +42,13 @@ namespace android::net::wifi::hotspot2::pps
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCaCertificate();
-		QAndroidJniObject getCertCredential();
+		java::security::cert::X509Certificate getCaCertificate();
+		android::net::wifi::hotspot2::pps::Credential_CertificateCredential getCertCredential();
 		jarray getClientCertificateChain();
-		QAndroidJniObject getClientPrivateKey();
+		__JniBaseClass getClientPrivateKey();
 		jstring getRealm();
-		QAndroidJniObject getSimCredential();
-		QAndroidJniObject getUserCredential();
+		android::net::wifi::hotspot2::pps::Credential_SimCredential getSimCredential();
+		android::net::wifi::hotspot2::pps::Credential_UserCredential getUserCredential();
 		jint hashCode();
 		void setCaCertificate(java::security::cert::X509Certificate arg0);
 		void setCertCredential(android::net::wifi::hotspot2::pps::Credential_CertificateCredential arg0);

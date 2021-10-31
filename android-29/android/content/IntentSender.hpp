@@ -29,7 +29,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IntentSender(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -38,13 +38,13 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject readIntentSenderOrNullFromParcel(android::os::Parcel arg0);
+		static android::content::IntentSender readIntentSenderOrNullFromParcel(android::os::Parcel arg0);
 		static void writeIntentSenderOrNullToParcel(android::content::IntentSender arg0, android::os::Parcel arg1);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jstring getCreatorPackage();
 		jint getCreatorUid();
-		QAndroidJniObject getCreatorUserHandle();
+		android::os::UserHandle getCreatorUserHandle();
 		jstring getTargetPackage();
 		jint hashCode();
 		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4);

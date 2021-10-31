@@ -49,9 +49,9 @@ namespace android::icu::text
 		
 		// Methods
 		static jarray getAvailableLocales();
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static android::icu::text::DateFormatSymbols getInstance();
+		static android::icu::text::DateFormatSymbols getInstance(android::icu::util::ULocale arg0);
+		static android::icu::text::DateFormatSymbols getInstance(java::util::Locale arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
 		jarray getAmPmStrings();

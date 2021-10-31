@@ -163,7 +163,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DocumentsContract::buildChildDocumentsUri(jstring arg0, jstring arg1)
+	android::net::Uri DocumentsContract::buildChildDocumentsUri(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -173,7 +173,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsContract::buildChildDocumentsUriUsingTree(android::net::Uri arg0, jstring arg1)
+	android::net::Uri DocumentsContract::buildChildDocumentsUriUsingTree(android::net::Uri arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -183,7 +183,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsContract::buildDocumentUri(jstring arg0, jstring arg1)
+	android::net::Uri DocumentsContract::buildDocumentUri(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -193,7 +193,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsContract::buildDocumentUriUsingTree(android::net::Uri arg0, jstring arg1)
+	android::net::Uri DocumentsContract::buildDocumentUriUsingTree(android::net::Uri arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -203,7 +203,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsContract::buildRecentDocumentsUri(jstring arg0, jstring arg1)
+	android::net::Uri DocumentsContract::buildRecentDocumentsUri(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -213,7 +213,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsContract::buildRootUri(jstring arg0, jstring arg1)
+	android::net::Uri DocumentsContract::buildRootUri(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -223,7 +223,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsContract::buildRootsUri(jstring arg0)
+	android::net::Uri DocumentsContract::buildRootsUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -232,7 +232,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject DocumentsContract::buildSearchDocumentsUri(jstring arg0, jstring arg1, jstring arg2)
+	android::net::Uri DocumentsContract::buildSearchDocumentsUri(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -243,7 +243,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	QAndroidJniObject DocumentsContract::buildTreeDocumentUri(jstring arg0, jstring arg1)
+	android::net::Uri DocumentsContract::buildTreeDocumentUri(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -253,7 +253,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsContract::copyDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2)
+	android::net::Uri DocumentsContract::copyDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -264,7 +264,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DocumentsContract::createDocument(android::content::ContentResolver arg0, android::net::Uri arg1, jstring arg2, jstring arg3)
+	android::net::Uri DocumentsContract::createDocument(android::content::ContentResolver arg0, android::net::Uri arg1, jstring arg2, jstring arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -276,7 +276,7 @@ namespace android::provider
 			arg3
 		);
 	}
-	QAndroidJniObject DocumentsContract::createWebLinkIntent(android::content::ContentResolver arg0, android::net::Uri arg1, android::os::Bundle arg2)
+	android::content::IntentSender DocumentsContract::createWebLinkIntent(android::content::ContentResolver arg0, android::net::Uri arg1, android::os::Bundle arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -307,7 +307,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DocumentsContract::findDocumentPath(android::content::ContentResolver arg0, android::net::Uri arg1)
+	android::provider::DocumentsContract_Path DocumentsContract::findDocumentPath(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -326,7 +326,7 @@ namespace android::provider
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsContract::getDocumentMetadata(android::content::ContentResolver arg0, android::net::Uri arg1)
+	android::os::Bundle DocumentsContract::getDocumentMetadata(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -336,7 +336,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DocumentsContract::getDocumentThumbnail(android::content::ContentResolver arg0, android::net::Uri arg1, android::graphics::Point arg2, android::os::CancellationSignal arg3)
+	android::graphics::Bitmap DocumentsContract::getDocumentThumbnail(android::content::ContentResolver arg0, android::net::Uri arg1, android::graphics::Point arg2, android::os::CancellationSignal arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -425,7 +425,7 @@ namespace android::provider
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DocumentsContract::moveDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2, android::net::Uri arg3)
+	android::net::Uri DocumentsContract::moveDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2, android::net::Uri arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",
@@ -448,7 +448,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DocumentsContract::renameDocument(android::content::ContentResolver arg0, android::net::Uri arg1, jstring arg2)
+	android::net::Uri DocumentsContract::renameDocument(android::content::ContentResolver arg0, android::net::Uri arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.DocumentsContract",

@@ -12,7 +12,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DrmInitData::get(java::util::UUID arg0)
+	android::media::DrmInitData_SchemeInitData DrmInitData::get(java::util::UUID arg0)
 	{
 		return callObjectMethod(
 			"get",

@@ -40,18 +40,18 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::content::Context arg0);
-		static QAndroidJniObject create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1);
-		static QAndroidJniObject create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2);
-		static QAndroidJniObject createMultiContext(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2, jint arg3);
+		static android::renderscript::RenderScript create(android::content::Context arg0);
+		static android::renderscript::RenderScript create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1);
+		static android::renderscript::RenderScript create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2);
+		static android::renderscript::RenderScript createMultiContext(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2, jint arg3);
 		static jlong getMinorVersion();
 		static void releaseAllContexts();
 		void contextDump();
 		void destroy();
 		void finish();
-		QAndroidJniObject getApplicationContext();
-		QAndroidJniObject getErrorHandler();
-		QAndroidJniObject getMessageHandler();
+		android::content::Context getApplicationContext();
+		android::renderscript::RenderScript_RSErrorHandler getErrorHandler();
+		android::renderscript::RenderScript_RSMessageHandler getMessageHandler();
 		void sendMessage(jint arg0, jintArray arg1);
 		void setErrorHandler(android::renderscript::RenderScript_RSErrorHandler arg0);
 		void setMessageHandler(android::renderscript::RenderScript_RSMessageHandler arg0);

@@ -28,9 +28,9 @@ namespace android::text
 		BidiFormatter_Builder(java::util::Locale arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setTextDirectionHeuristic(__JniBaseClass arg0);
-		QAndroidJniObject stereoReset(jboolean arg0);
+		android::text::BidiFormatter build();
+		android::text::BidiFormatter_Builder setTextDirectionHeuristic(__JniBaseClass arg0);
+		android::text::BidiFormatter_Builder stereoReset(jboolean arg0);
 	};
 } // namespace android::text
 

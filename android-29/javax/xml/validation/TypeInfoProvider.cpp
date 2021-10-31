@@ -10,7 +10,7 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TypeInfoProvider::getAttributeTypeInfo(jint arg0)
+	__JniBaseClass TypeInfoProvider::getAttributeTypeInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getAttributeTypeInfo",
@@ -18,7 +18,7 @@ namespace javax::xml::validation
 			arg0
 		);
 	}
-	QAndroidJniObject TypeInfoProvider::getElementTypeInfo()
+	__JniBaseClass TypeInfoProvider::getElementTypeInfo()
 	{
 		return callObjectMethod(
 			"getElementTypeInfo",

@@ -40,21 +40,21 @@ namespace android::app
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Notification_CarExtender_UnreadConversation::getReadPendingIntent()
+	android::app::PendingIntent Notification_CarExtender_UnreadConversation::getReadPendingIntent()
 	{
 		return callObjectMethod(
 			"getReadPendingIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	QAndroidJniObject Notification_CarExtender_UnreadConversation::getRemoteInput()
+	android::app::RemoteInput Notification_CarExtender_UnreadConversation::getRemoteInput()
 	{
 		return callObjectMethod(
 			"getRemoteInput",
 			"()Landroid/app/RemoteInput;"
 		);
 	}
-	QAndroidJniObject Notification_CarExtender_UnreadConversation::getReplyPendingIntent()
+	android::app::PendingIntent Notification_CarExtender_UnreadConversation::getReplyPendingIntent()
 	{
 		return callObjectMethod(
 			"getReplyPendingIntent",

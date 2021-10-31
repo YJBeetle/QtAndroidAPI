@@ -54,7 +54,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	QAndroidJniObject PriorityBlockingQueue::comparator()
+	__JniBaseClass PriorityBlockingQueue::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
@@ -94,7 +94,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PriorityBlockingQueue::iterator()
+	__JniBaseClass PriorityBlockingQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -196,7 +196,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject PriorityBlockingQueue::spliterator()
+	__JniBaseClass PriorityBlockingQueue::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

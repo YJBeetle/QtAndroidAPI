@@ -22,16 +22,16 @@ namespace android::media
 		
 		// Methods
 		jboolean areSizeAndRateSupported(jint arg0, jint arg1, jdouble arg2);
-		QAndroidJniObject getAchievableFrameRatesFor(jint arg0, jint arg1);
-		QAndroidJniObject getBitrateRange();
+		android::util::Range getAchievableFrameRatesFor(jint arg0, jint arg1);
+		android::util::Range getBitrateRange();
 		jint getHeightAlignment();
-		QAndroidJniObject getSupportedFrameRates();
-		QAndroidJniObject getSupportedFrameRatesFor(jint arg0, jint arg1);
-		QAndroidJniObject getSupportedHeights();
-		QAndroidJniObject getSupportedHeightsFor(jint arg0);
-		QAndroidJniObject getSupportedPerformancePoints();
-		QAndroidJniObject getSupportedWidths();
-		QAndroidJniObject getSupportedWidthsFor(jint arg0);
+		android::util::Range getSupportedFrameRates();
+		android::util::Range getSupportedFrameRatesFor(jint arg0, jint arg1);
+		android::util::Range getSupportedHeights();
+		android::util::Range getSupportedHeightsFor(jint arg0);
+		__JniBaseClass getSupportedPerformancePoints();
+		android::util::Range getSupportedWidths();
+		android::util::Range getSupportedWidthsFor(jint arg0);
 		jint getWidthAlignment();
 		jboolean isSizeSupported(jint arg0, jint arg1);
 	};

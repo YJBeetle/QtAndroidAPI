@@ -41,7 +41,7 @@ namespace android::os::health
 			"()I"
 		);
 	}
-	QAndroidJniObject HealthStats::getMeasurements(jint arg0)
+	__JniBaseClass HealthStats::getMeasurements(jint arg0)
 	{
 		return callObjectMethod(
 			"getMeasurements",
@@ -64,7 +64,7 @@ namespace android::os::health
 			"()I"
 		);
 	}
-	QAndroidJniObject HealthStats::getStats(jint arg0)
+	__JniBaseClass HealthStats::getStats(jint arg0)
 	{
 		return callObjectMethod(
 			"getStats",
@@ -87,7 +87,7 @@ namespace android::os::health
 			"()I"
 		);
 	}
-	QAndroidJniObject HealthStats::getTimer(jint arg0)
+	android::os::health::TimerStat HealthStats::getTimer(jint arg0)
 	{
 		return callObjectMethod(
 			"getTimer",
@@ -126,7 +126,7 @@ namespace android::os::health
 			arg0
 		);
 	}
-	QAndroidJniObject HealthStats::getTimers(jint arg0)
+	__JniBaseClass HealthStats::getTimers(jint arg0)
 	{
 		return callObjectMethod(
 			"getTimers",

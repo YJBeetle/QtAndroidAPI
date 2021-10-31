@@ -30,11 +30,11 @@ namespace java::net
 		
 		// Methods
 		static jarray getAllByName(jstring arg0);
-		static QAndroidJniObject getByAddress(jbyteArray arg0);
-		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1);
-		static QAndroidJniObject getByName(jstring arg0);
-		static QAndroidJniObject getLocalHost();
-		static QAndroidJniObject getLoopbackAddress();
+		static java::net::InetAddress getByAddress(jbyteArray arg0);
+		static java::net::InetAddress getByAddress(jstring arg0, jbyteArray arg1);
+		static java::net::InetAddress getByName(jstring arg0);
+		static java::net::InetAddress getLocalHost();
+		static java::net::InetAddress getLoopbackAddress();
 		jboolean equals(jobject arg0);
 		jbyteArray getAddress();
 		jstring getCanonicalHostName();

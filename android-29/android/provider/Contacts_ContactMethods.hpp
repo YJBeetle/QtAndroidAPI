@@ -19,12 +19,12 @@ namespace android::provider
 		// Fields
 		static jstring CONTENT_EMAIL_ITEM_TYPE();
 		static jstring CONTENT_EMAIL_TYPE();
-		static QAndroidJniObject CONTENT_EMAIL_URI();
+		static android::net::Uri CONTENT_EMAIL_URI();
 		static jstring CONTENT_IM_ITEM_TYPE();
 		static jstring CONTENT_POSTAL_ITEM_TYPE();
 		static jstring CONTENT_POSTAL_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
 		static jstring PERSON_ID();
 		static jstring POSTAL_LOCATION_LATITUDE();

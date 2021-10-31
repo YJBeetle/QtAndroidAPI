@@ -31,17 +31,17 @@ namespace java::nio
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject clear();
-		QAndroidJniObject flip();
-		QAndroidJniObject force();
-		QAndroidJniObject force(jint arg0, jint arg1);
+		java::nio::MappedByteBuffer clear();
+		java::nio::MappedByteBuffer flip();
+		java::nio::MappedByteBuffer force();
+		java::nio::MappedByteBuffer force(jint arg0, jint arg1);
 		jboolean isLoaded();
-		QAndroidJniObject limit(jint arg0);
-		QAndroidJniObject load();
-		QAndroidJniObject mark();
-		QAndroidJniObject position(jint arg0);
-		QAndroidJniObject reset();
-		QAndroidJniObject rewind();
+		java::nio::MappedByteBuffer limit(jint arg0);
+		java::nio::MappedByteBuffer load();
+		java::nio::MappedByteBuffer mark();
+		java::nio::MappedByteBuffer position(jint arg0);
+		java::nio::MappedByteBuffer reset();
+		java::nio::MappedByteBuffer rewind();
 	};
 } // namespace java::nio
 

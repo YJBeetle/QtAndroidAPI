@@ -21,13 +21,13 @@ namespace android::nfc::tech
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject get(android::nfc::Tag arg0);
+		static android::nfc::tech::IsoDep get(android::nfc::Tag arg0);
 		void close();
 		void connect();
 		jbyteArray getHiLayerResponse();
 		jbyteArray getHistoricalBytes();
 		jint getMaxTransceiveLength();
-		QAndroidJniObject getTag();
+		android::nfc::Tag getTag();
 		jint getTimeout();
 		jboolean isConnected();
 		jboolean isExtendedLengthApduSupported();

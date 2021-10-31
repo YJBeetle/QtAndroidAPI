@@ -404,7 +404,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject Half::valueOf(jfloat arg0)
+	android::util::Half Half::valueOf(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Half",
@@ -413,7 +413,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject Half::valueOf(jstring arg0)
+	android::util::Half Half::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Half",
@@ -422,7 +422,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject Half::valueOf(jshort arg0)
+	android::util::Half Half::valueOf(jshort arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Half",

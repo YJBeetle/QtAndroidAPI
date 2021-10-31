@@ -176,7 +176,7 @@ namespace android::telephony
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject PhoneNumberUtils::createTtsSpan(jstring arg0)
+	android::text::style::TtsSpan PhoneNumberUtils::createTtsSpan(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.PhoneNumberUtils",

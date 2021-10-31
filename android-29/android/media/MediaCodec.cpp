@@ -170,7 +170,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MediaCodec::createByCodecName(jstring arg0)
+	android::media::MediaCodec MediaCodec::createByCodecName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaCodec",
@@ -179,7 +179,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaCodec::createDecoderByType(jstring arg0)
+	android::media::MediaCodec MediaCodec::createDecoderByType(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaCodec",
@@ -188,7 +188,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaCodec::createEncoderByType(jstring arg0)
+	android::media::MediaCodec MediaCodec::createEncoderByType(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaCodec",
@@ -197,7 +197,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaCodec::createPersistentInputSurface()
+	android::view::Surface MediaCodec::createPersistentInputSurface()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaCodec",
@@ -227,7 +227,7 @@ namespace android::media
 			arg3.object()
 		);
 	}
-	QAndroidJniObject MediaCodec::createInputSurface()
+	android::view::Surface MediaCodec::createInputSurface()
 	{
 		return callObjectMethod(
 			"createInputSurface",
@@ -265,14 +265,14 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec::getCodecInfo()
+	android::media::MediaCodecInfo MediaCodec::getCodecInfo()
 	{
 		return callObjectMethod(
 			"getCodecInfo",
 			"()Landroid/media/MediaCodecInfo;"
 		);
 	}
-	QAndroidJniObject MediaCodec::getInputBuffer(jint arg0)
+	java::nio::ByteBuffer MediaCodec::getInputBuffer(jint arg0)
 	{
 		return callObjectMethod(
 			"getInputBuffer",
@@ -287,14 +287,14 @@ namespace android::media
 			"()[Ljava/nio/ByteBuffer;"
 		).object<jarray>();
 	}
-	QAndroidJniObject MediaCodec::getInputFormat()
+	android::media::MediaFormat MediaCodec::getInputFormat()
 	{
 		return callObjectMethod(
 			"getInputFormat",
 			"()Landroid/media/MediaFormat;"
 		);
 	}
-	QAndroidJniObject MediaCodec::getInputImage(jint arg0)
+	android::media::Image MediaCodec::getInputImage(jint arg0)
 	{
 		return callObjectMethod(
 			"getInputImage",
@@ -302,7 +302,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaCodec::getMetrics()
+	android::os::PersistableBundle MediaCodec::getMetrics()
 	{
 		return callObjectMethod(
 			"getMetrics",
@@ -316,7 +316,7 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec::getOutputBuffer(jint arg0)
+	java::nio::ByteBuffer MediaCodec::getOutputBuffer(jint arg0)
 	{
 		return callObjectMethod(
 			"getOutputBuffer",
@@ -331,14 +331,14 @@ namespace android::media
 			"()[Ljava/nio/ByteBuffer;"
 		).object<jarray>();
 	}
-	QAndroidJniObject MediaCodec::getOutputFormat()
+	android::media::MediaFormat MediaCodec::getOutputFormat()
 	{
 		return callObjectMethod(
 			"getOutputFormat",
 			"()Landroid/media/MediaFormat;"
 		);
 	}
-	QAndroidJniObject MediaCodec::getOutputFormat(jint arg0)
+	android::media::MediaFormat MediaCodec::getOutputFormat(jint arg0)
 	{
 		return callObjectMethod(
 			"getOutputFormat",
@@ -346,7 +346,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaCodec::getOutputImage(jint arg0)
+	android::media::Image MediaCodec::getOutputImage(jint arg0)
 	{
 		return callObjectMethod(
 			"getOutputImage",

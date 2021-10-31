@@ -33,9 +33,9 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getAllocation();
-		QAndroidJniObject getElement();
-		QAndroidJniObject getType();
+		android::renderscript::Allocation getAllocation();
+		android::renderscript::Element getElement();
+		android::renderscript::Type getType();
 		void updateAllocation();
 	};
 } // namespace android::renderscript

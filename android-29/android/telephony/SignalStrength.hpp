@@ -26,8 +26,8 @@ namespace android::telephony
 		jboolean equals(jobject arg0);
 		jint getCdmaDbm();
 		jint getCdmaEcio();
-		QAndroidJniObject getCellSignalStrengths();
-		QAndroidJniObject getCellSignalStrengths(jclass arg0);
+		__JniBaseClass getCellSignalStrengths();
+		__JniBaseClass getCellSignalStrengths(jclass arg0);
 		jint getEvdoDbm();
 		jint getEvdoEcio();
 		jint getEvdoSnr();

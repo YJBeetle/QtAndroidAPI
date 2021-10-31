@@ -18,7 +18,7 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodecInfo::getCapabilitiesForType(jstring arg0)
+	android::media::MediaCodecInfo_CodecCapabilities MediaCodecInfo::getCapabilitiesForType(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCapabilitiesForType",

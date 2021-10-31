@@ -30,7 +30,7 @@ namespace java::util::logging
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject LogManager::getLogManager()
+	java::util::logging::LogManager LogManager::getLogManager()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.logging.LogManager",
@@ -38,7 +38,7 @@ namespace java::util::logging
 			"()Ljava/util/logging/LogManager;"
 		);
 	}
-	QAndroidJniObject LogManager::getLoggingMXBean()
+	__JniBaseClass LogManager::getLoggingMXBean()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.logging.LogManager",
@@ -46,7 +46,7 @@ namespace java::util::logging
 			"()Ljava/util/logging/LoggingMXBean;"
 		);
 	}
-	QAndroidJniObject LogManager::addConfigurationListener(__JniBaseClass arg0)
+	java::util::logging::LogManager LogManager::addConfigurationListener(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"addConfigurationListener",
@@ -69,7 +69,7 @@ namespace java::util::logging
 			"()V"
 		);
 	}
-	QAndroidJniObject LogManager::getLogger(jstring arg0)
+	java::util::logging::Logger LogManager::getLogger(jstring arg0)
 	{
 		return callObjectMethod(
 			"getLogger",
@@ -77,7 +77,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	QAndroidJniObject LogManager::getLoggerNames()
+	__JniBaseClass LogManager::getLoggerNames()
 	{
 		return callObjectMethod(
 			"getLoggerNames",

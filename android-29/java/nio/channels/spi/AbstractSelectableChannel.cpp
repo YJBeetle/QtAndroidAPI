@@ -21,7 +21,7 @@ namespace java::nio::channels::spi
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject AbstractSelectableChannel::configureBlocking(jboolean arg0)
+	java::nio::channels::SelectableChannel AbstractSelectableChannel::configureBlocking(jboolean arg0)
 	{
 		return callObjectMethod(
 			"configureBlocking",
@@ -43,7 +43,7 @@ namespace java::nio::channels::spi
 			"()Z"
 		);
 	}
-	QAndroidJniObject AbstractSelectableChannel::keyFor(java::nio::channels::Selector arg0)
+	java::nio::channels::SelectionKey AbstractSelectableChannel::keyFor(java::nio::channels::Selector arg0)
 	{
 		return callObjectMethod(
 			"keyFor",
@@ -51,14 +51,14 @@ namespace java::nio::channels::spi
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AbstractSelectableChannel::provider()
+	java::nio::channels::spi::SelectorProvider AbstractSelectableChannel::provider()
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
-	QAndroidJniObject AbstractSelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, jobject arg2)
+	java::nio::channels::SelectionKey AbstractSelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, jobject arg2)
 	{
 		return callObjectMethod(
 			"register",

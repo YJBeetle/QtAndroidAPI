@@ -13,7 +13,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint GL_ES_VERSION_UNDEFINED();
 		static jint INPUT_FEATURE_FIVE_WAY_NAV();
 		static jint INPUT_FEATURE_HARD_KEYBOARD();

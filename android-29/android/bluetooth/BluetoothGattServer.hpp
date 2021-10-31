@@ -38,11 +38,11 @@ namespace android::bluetooth
 		void clearServices();
 		void close();
 		jboolean connect(android::bluetooth::BluetoothDevice arg0, jboolean arg1);
-		QAndroidJniObject getConnectedDevices();
+		__JniBaseClass getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
-		QAndroidJniObject getService(java::util::UUID arg0);
-		QAndroidJniObject getServices();
+		__JniBaseClass getDevicesMatchingConnectionStates(jintArray arg0);
+		android::bluetooth::BluetoothGattService getService(java::util::UUID arg0);
+		__JniBaseClass getServices();
 		jboolean notifyCharacteristicChanged(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jboolean arg2);
 		void readPhy(android::bluetooth::BluetoothDevice arg0);
 		jboolean removeService(android::bluetooth::BluetoothGattService arg0);

@@ -25,13 +25,13 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDecoder();
-		static QAndroidJniObject getEncoder();
-		static QAndroidJniObject getMimeDecoder();
-		static QAndroidJniObject getMimeEncoder();
-		static QAndroidJniObject getMimeEncoder(jint arg0, jbyteArray arg1);
-		static QAndroidJniObject getUrlDecoder();
-		static QAndroidJniObject getUrlEncoder();
+		static java::util::Base64_Decoder getDecoder();
+		static java::util::Base64_Encoder getEncoder();
+		static java::util::Base64_Decoder getMimeDecoder();
+		static java::util::Base64_Encoder getMimeEncoder();
+		static java::util::Base64_Encoder getMimeEncoder(jint arg0, jbyteArray arg1);
+		static java::util::Base64_Decoder getUrlDecoder();
+		static java::util::Base64_Encoder getUrlEncoder();
 	};
 } // namespace java::util
 

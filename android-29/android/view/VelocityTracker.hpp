@@ -21,7 +21,7 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject obtain();
+		static android::view::VelocityTracker obtain();
 		void addMovement(android::view::MotionEvent arg0);
 		void clear();
 		void computeCurrentVelocity(jint arg0);

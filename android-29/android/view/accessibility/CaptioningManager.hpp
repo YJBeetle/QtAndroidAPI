@@ -35,8 +35,8 @@ namespace android::view::accessibility
 		// Methods
 		void addCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0);
 		jfloat getFontScale();
-		QAndroidJniObject getLocale();
-		QAndroidJniObject getUserStyle();
+		java::util::Locale getLocale();
+		android::view::accessibility::CaptioningManager_CaptionStyle getUserStyle();
 		jboolean isEnabled();
 		void removeCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0);
 	};

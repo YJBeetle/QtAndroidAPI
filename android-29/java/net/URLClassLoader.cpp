@@ -57,7 +57,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject URLClassLoader::newInstance(jarray arg0)
+	java::net::URLClassLoader URLClassLoader::newInstance(jarray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLClassLoader",
@@ -66,7 +66,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject URLClassLoader::newInstance(jarray arg0, java::lang::ClassLoader arg1)
+	java::net::URLClassLoader URLClassLoader::newInstance(jarray arg0, java::lang::ClassLoader arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLClassLoader",
@@ -83,7 +83,7 @@ namespace java::net
 			"()V"
 		);
 	}
-	QAndroidJniObject URLClassLoader::findResource(jstring arg0)
+	java::net::URL URLClassLoader::findResource(jstring arg0)
 	{
 		return callObjectMethod(
 			"findResource",
@@ -91,7 +91,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject URLClassLoader::findResources(jstring arg0)
+	__JniBaseClass URLClassLoader::findResources(jstring arg0)
 	{
 		return callObjectMethod(
 			"findResources",
@@ -99,7 +99,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject URLClassLoader::getResourceAsStream(jstring arg0)
+	java::io::InputStream URLClassLoader::getResourceAsStream(jstring arg0)
 	{
 		return callObjectMethod(
 			"getResourceAsStream",

@@ -26,17 +26,17 @@ namespace android::bluetooth::le
 		ScanFilter_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setDeviceAddress(jstring arg0);
-		QAndroidJniObject setDeviceName(jstring arg0);
-		QAndroidJniObject setManufacturerData(jint arg0, jbyteArray arg1);
-		QAndroidJniObject setManufacturerData(jint arg0, jbyteArray arg1, jbyteArray arg2);
-		QAndroidJniObject setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1);
-		QAndroidJniObject setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1, jbyteArray arg2);
-		QAndroidJniObject setServiceSolicitationUuid(android::os::ParcelUuid arg0);
-		QAndroidJniObject setServiceSolicitationUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1);
-		QAndroidJniObject setServiceUuid(android::os::ParcelUuid arg0);
-		QAndroidJniObject setServiceUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1);
+		android::bluetooth::le::ScanFilter build();
+		android::bluetooth::le::ScanFilter_Builder setDeviceAddress(jstring arg0);
+		android::bluetooth::le::ScanFilter_Builder setDeviceName(jstring arg0);
+		android::bluetooth::le::ScanFilter_Builder setManufacturerData(jint arg0, jbyteArray arg1);
+		android::bluetooth::le::ScanFilter_Builder setManufacturerData(jint arg0, jbyteArray arg1, jbyteArray arg2);
+		android::bluetooth::le::ScanFilter_Builder setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1);
+		android::bluetooth::le::ScanFilter_Builder setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1, jbyteArray arg2);
+		android::bluetooth::le::ScanFilter_Builder setServiceSolicitationUuid(android::os::ParcelUuid arg0);
+		android::bluetooth::le::ScanFilter_Builder setServiceSolicitationUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1);
+		android::bluetooth::le::ScanFilter_Builder setServiceUuid(android::os::ParcelUuid arg0);
+		android::bluetooth::le::ScanFilter_Builder setServiceUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1);
 	};
 } // namespace android::bluetooth::le
 

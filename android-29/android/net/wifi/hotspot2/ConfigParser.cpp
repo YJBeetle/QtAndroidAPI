@@ -11,7 +11,7 @@ namespace android::net::wifi::hotspot2
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ConfigParser::parsePasspointConfig(jstring arg0, jbyteArray arg1)
+	android::net::wifi::hotspot2::PasspointConfiguration ConfigParser::parsePasspointConfig(jstring arg0, jbyteArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.wifi.hotspot2.ConfigParser",

@@ -16,21 +16,21 @@ namespace java::lang::ref
 		) {}
 	
 	// Methods
-	QAndroidJniObject ReferenceQueue::poll()
+	java::lang::ref::Reference ReferenceQueue::poll()
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/ref/Reference;"
 		);
 	}
-	QAndroidJniObject ReferenceQueue::remove()
+	java::lang::ref::Reference ReferenceQueue::remove()
 	{
 		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/ref/Reference;"
 		);
 	}
-	QAndroidJniObject ReferenceQueue::remove(jlong arg0)
+	java::lang::ref::Reference ReferenceQueue::remove(jlong arg0)
 	{
 		return callObjectMethod(
 			"remove",

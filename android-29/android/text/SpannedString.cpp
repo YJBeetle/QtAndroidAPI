@@ -16,7 +16,7 @@ namespace android::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject SpannedString::valueOf(jstring arg0)
+	android::text::SpannedString SpannedString::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.SpannedString",

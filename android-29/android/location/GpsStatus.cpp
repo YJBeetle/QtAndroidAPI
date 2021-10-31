@@ -45,7 +45,7 @@ namespace android::location
 			"()I"
 		);
 	}
-	QAndroidJniObject GpsStatus::getSatellites()
+	__JniBaseClass GpsStatus::getSatellites()
 	{
 		return callObjectMethod(
 			"getSatellites",

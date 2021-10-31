@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject Display_Mode::CREATOR()
+	__JniBaseClass Display_Mode::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.Display$Mode",

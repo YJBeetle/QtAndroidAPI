@@ -31,7 +31,7 @@ namespace android::transition
 		jfloat getMaximumAngle();
 		jfloat getMinimumHorizontalAngle();
 		jfloat getMinimumVerticalAngle();
-		QAndroidJniObject getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		android::graphics::Path getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void setMaximumAngle(jfloat arg0);
 		void setMinimumHorizontalAngle(jfloat arg0);
 		void setMinimumVerticalAngle(jfloat arg0);

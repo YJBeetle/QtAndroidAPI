@@ -34,15 +34,15 @@ namespace android::media
 		MediaDescription_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setDescription(jstring arg0);
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
-		QAndroidJniObject setIconBitmap(android::graphics::Bitmap arg0);
-		QAndroidJniObject setIconUri(android::net::Uri arg0);
-		QAndroidJniObject setMediaId(jstring arg0);
-		QAndroidJniObject setMediaUri(android::net::Uri arg0);
-		QAndroidJniObject setSubtitle(jstring arg0);
-		QAndroidJniObject setTitle(jstring arg0);
+		android::media::MediaDescription build();
+		android::media::MediaDescription_Builder setDescription(jstring arg0);
+		android::media::MediaDescription_Builder setExtras(android::os::Bundle arg0);
+		android::media::MediaDescription_Builder setIconBitmap(android::graphics::Bitmap arg0);
+		android::media::MediaDescription_Builder setIconUri(android::net::Uri arg0);
+		android::media::MediaDescription_Builder setMediaId(jstring arg0);
+		android::media::MediaDescription_Builder setMediaUri(android::net::Uri arg0);
+		android::media::MediaDescription_Builder setSubtitle(jstring arg0);
+		android::media::MediaDescription_Builder setTitle(jstring arg0);
 	};
 } // namespace android::media
 

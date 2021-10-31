@@ -104,14 +104,14 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Properties::elements()
+	__JniBaseClass Properties::elements()
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject Properties::entrySet()
+	__JniBaseClass Properties::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -182,14 +182,14 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject Properties::keySet()
+	__JniBaseClass Properties::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject Properties::keys()
+	__JniBaseClass Properties::keys()
 	{
 		return callObjectMethod(
 			"keys",
@@ -246,7 +246,7 @@ namespace java::util
 			arg2.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject Properties::propertyNames()
+	__JniBaseClass Properties::propertyNames()
 	{
 		return callObjectMethod(
 			"propertyNames",
@@ -395,7 +395,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Properties::stringPropertyNames()
+	__JniBaseClass Properties::stringPropertyNames()
 	{
 		return callObjectMethod(
 			"stringPropertyNames",
@@ -409,7 +409,7 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Properties::values()
+	__JniBaseClass Properties::values()
 	{
 		return callObjectMethod(
 			"values",

@@ -28,8 +28,8 @@ namespace android::content
 		// Methods
 		void addPrimaryClipChangedListener(__JniBaseClass arg0);
 		void clearPrimaryClip();
-		QAndroidJniObject getPrimaryClip();
-		QAndroidJniObject getPrimaryClipDescription();
+		android::content::ClipData getPrimaryClip();
+		android::content::ClipDescription getPrimaryClipDescription();
 		jstring getText();
 		jboolean hasPrimaryClip();
 		jboolean hasText();

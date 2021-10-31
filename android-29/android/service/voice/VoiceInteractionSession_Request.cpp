@@ -32,7 +32,7 @@ namespace android::service::voice
 			"()I"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession_Request::getExtras()
+	android::os::Bundle VoiceInteractionSession_Request::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

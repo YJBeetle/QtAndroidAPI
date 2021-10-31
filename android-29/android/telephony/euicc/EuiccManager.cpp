@@ -77,7 +77,7 @@ namespace android::telephony::euicc
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject EuiccManager::createForCardId(jint arg0)
+	android::telephony::euicc::EuiccManager EuiccManager::createForCardId(jint arg0)
 	{
 		return callObjectMethod(
 			"createForCardId",
@@ -111,7 +111,7 @@ namespace android::telephony::euicc
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject EuiccManager::getEuiccInfo()
+	android::telephony::euicc::EuiccInfo EuiccManager::getEuiccInfo()
 	{
 		return callObjectMethod(
 			"getEuiccInfo",

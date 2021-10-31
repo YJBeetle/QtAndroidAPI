@@ -17,7 +17,7 @@ namespace android::view::textclassifier
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextSelection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,7 +30,7 @@ namespace android::view::textclassifier
 		jfloat getConfidenceScore(jstring arg0);
 		jstring getEntity(jint arg0);
 		jint getEntityCount();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jstring getId();
 		jint getSelectionEndIndex();
 		jint getSelectionStartIndex();

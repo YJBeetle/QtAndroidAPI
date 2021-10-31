@@ -4,7 +4,7 @@
 namespace android::system
 {
 	// Fields
-	QAndroidJniObject StructStat::st_atim()
+	android::system::StructTimespec StructStat::st_atim()
 	{
 		return getObjectField(
 			"st_atim",
@@ -29,7 +29,7 @@ namespace android::system
 			"st_blocks"
 		);
 	}
-	QAndroidJniObject StructStat::st_ctim()
+	android::system::StructTimespec StructStat::st_ctim()
 	{
 		return getObjectField(
 			"st_ctim",
@@ -66,7 +66,7 @@ namespace android::system
 			"st_mode"
 		);
 	}
-	QAndroidJniObject StructStat::st_mtim()
+	android::system::StructTimespec StructStat::st_mtim()
 	{
 		return getObjectField(
 			"st_mtim",

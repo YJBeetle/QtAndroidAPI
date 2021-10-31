@@ -10,18 +10,18 @@ namespace java::lang::annotation
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ANNOTATION_TYPE();
-		static QAndroidJniObject CONSTRUCTOR();
-		static QAndroidJniObject FIELD();
-		static QAndroidJniObject LOCAL_VARIABLE();
-		static QAndroidJniObject _METHOD();
-		static QAndroidJniObject MODULE();
-		static QAndroidJniObject PACKAGE();
-		static QAndroidJniObject PARAMETER();
-		static QAndroidJniObject RECORD_COMPONENT();
-		static QAndroidJniObject TYPE();
-		static QAndroidJniObject TYPE_PARAMETER();
-		static QAndroidJniObject TYPE_USE();
+		static java::lang::annotation::ElementType ANNOTATION_TYPE();
+		static java::lang::annotation::ElementType CONSTRUCTOR();
+		static java::lang::annotation::ElementType FIELD();
+		static java::lang::annotation::ElementType LOCAL_VARIABLE();
+		static java::lang::annotation::ElementType _METHOD();
+		static java::lang::annotation::ElementType MODULE();
+		static java::lang::annotation::ElementType PACKAGE();
+		static java::lang::annotation::ElementType PARAMETER();
+		static java::lang::annotation::ElementType RECORD_COMPONENT();
+		static java::lang::annotation::ElementType TYPE();
+		static java::lang::annotation::ElementType TYPE_PARAMETER();
+		static java::lang::annotation::ElementType TYPE_USE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ElementType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,7 +30,7 @@ namespace java::lang::annotation
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::lang::annotation::ElementType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::lang::annotation

@@ -90,7 +90,7 @@ namespace android::database
 			arg0
 		);
 	}
-	QAndroidJniObject AbstractWindowedCursor::getWindow()
+	android::database::CursorWindow AbstractWindowedCursor::getWindow()
 	{
 		return callObjectMethod(
 			"getWindow",

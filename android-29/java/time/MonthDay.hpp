@@ -45,16 +45,16 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject from(__JniBaseClass arg0);
-		static QAndroidJniObject now();
-		static QAndroidJniObject now(java::time::Clock arg0);
-		static QAndroidJniObject now(java::time::ZoneId arg0);
-		static QAndroidJniObject of(jint arg0, jint arg1);
-		static QAndroidJniObject of(java::time::Month arg0, jint arg1);
-		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		QAndroidJniObject adjustInto(__JniBaseClass arg0);
-		QAndroidJniObject atYear(jint arg0);
+		static java::time::MonthDay from(__JniBaseClass arg0);
+		static java::time::MonthDay now();
+		static java::time::MonthDay now(java::time::Clock arg0);
+		static java::time::MonthDay now(java::time::ZoneId arg0);
+		static java::time::MonthDay of(jint arg0, jint arg1);
+		static java::time::MonthDay of(java::time::Month arg0, jint arg1);
+		static java::time::MonthDay parse(jstring arg0);
+		static java::time::MonthDay parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
+		__JniBaseClass adjustInto(__JniBaseClass arg0);
+		java::time::LocalDate atYear(jint arg0);
 		jint compareTo(jobject arg0);
 		jint compareTo(java::time::MonthDay arg0);
 		jboolean equals(jobject arg0);
@@ -62,7 +62,7 @@ namespace java::time
 		jint get(__JniBaseClass arg0);
 		jint getDayOfMonth();
 		jlong getLong(__JniBaseClass arg0);
-		QAndroidJniObject getMonth();
+		java::time::Month getMonth();
 		jint getMonthValue();
 		jint hashCode();
 		jboolean isAfter(java::time::MonthDay arg0);
@@ -70,11 +70,11 @@ namespace java::time
 		jboolean isSupported(__JniBaseClass arg0);
 		jboolean isValidYear(jint arg0);
 		jobject query(__JniBaseClass arg0);
-		QAndroidJniObject range(__JniBaseClass arg0);
+		java::time::temporal::ValueRange range(__JniBaseClass arg0);
 		jstring toString();
-		QAndroidJniObject with(java::time::Month arg0);
-		QAndroidJniObject withDayOfMonth(jint arg0);
-		QAndroidJniObject withMonth(jint arg0);
+		java::time::MonthDay with(java::time::Month arg0);
+		java::time::MonthDay withDayOfMonth(jint arg0);
+		java::time::MonthDay withMonth(jint arg0);
 	};
 } // namespace java::time
 

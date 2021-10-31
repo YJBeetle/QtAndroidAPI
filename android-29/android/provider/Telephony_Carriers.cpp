@@ -44,7 +44,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::CONTENT_URI()
+	android::net::Uri Telephony_Carriers::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
@@ -196,7 +196,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::SIM_APN_URI()
+	android::net::Uri Telephony_Carriers::SIM_APN_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",

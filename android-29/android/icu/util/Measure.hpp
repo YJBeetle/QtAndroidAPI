@@ -27,8 +27,8 @@ namespace android::icu::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getNumber();
-		QAndroidJniObject getUnit();
+		java::lang::Number getNumber();
+		android::icu::util::MeasureUnit getUnit();
 		jint hashCode();
 		jstring toString();
 	};

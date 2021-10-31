@@ -23,7 +23,7 @@ namespace java::net
 		
 		// Methods
 		static jboolean domainMatches(jstring arg0, jstring arg1);
-		static QAndroidJniObject parse(jstring arg0);
+		static __JniBaseClass parse(jstring arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
 		jstring getComment();

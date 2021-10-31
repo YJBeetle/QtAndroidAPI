@@ -244,7 +244,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioTrack::createVolumeShaper(android::media::VolumeShaper_Configuration arg0)
+	android::media::VolumeShaper AudioTrack::createVolumeShaper(android::media::VolumeShaper_Configuration arg0)
 	{
 		return callObjectMethod(
 			"createVolumeShaper",
@@ -259,7 +259,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject AudioTrack::getAudioAttributes()
+	android::media::AudioAttributes AudioTrack::getAudioAttributes()
 	{
 		return callObjectMethod(
 			"getAudioAttributes",
@@ -308,14 +308,14 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject AudioTrack::getFormat()
+	android::media::AudioFormat AudioTrack::getFormat()
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
-	QAndroidJniObject AudioTrack::getMetrics()
+	android::os::PersistableBundle AudioTrack::getMetrics()
 	{
 		return callObjectMethod(
 			"getMetrics",
@@ -364,7 +364,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject AudioTrack::getPlaybackParams()
+	android::media::PlaybackParams AudioTrack::getPlaybackParams()
 	{
 		return callObjectMethod(
 			"getPlaybackParams",
@@ -385,14 +385,14 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject AudioTrack::getPreferredDevice()
+	android::media::AudioDeviceInfo AudioTrack::getPreferredDevice()
 	{
 		return callObjectMethod(
 			"getPreferredDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	QAndroidJniObject AudioTrack::getRoutedDevice()
+	android::media::AudioDeviceInfo AudioTrack::getRoutedDevice()
 	{
 		return callObjectMethod(
 			"getRoutedDevice",

@@ -245,7 +245,7 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RestrictionsManager::convertRestrictionsToBundle(__JniBaseClass arg0)
+	android::os::Bundle RestrictionsManager::convertRestrictionsToBundle(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.RestrictionsManager",
@@ -254,21 +254,21 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RestrictionsManager::createLocalApprovalIntent()
+	android::content::Intent RestrictionsManager::createLocalApprovalIntent()
 	{
 		return callObjectMethod(
 			"createLocalApprovalIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	QAndroidJniObject RestrictionsManager::getApplicationRestrictions()
+	android::os::Bundle RestrictionsManager::getApplicationRestrictions()
 	{
 		return callObjectMethod(
 			"getApplicationRestrictions",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject RestrictionsManager::getManifestRestrictions(jstring arg0)
+	__JniBaseClass RestrictionsManager::getManifestRestrictions(jstring arg0)
 	{
 		return callObjectMethod(
 			"getManifestRestrictions",

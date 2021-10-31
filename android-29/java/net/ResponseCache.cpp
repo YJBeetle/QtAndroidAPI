@@ -19,7 +19,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject ResponseCache::getDefault()
+	java::net::ResponseCache ResponseCache::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.ResponseCache",
@@ -36,7 +36,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ResponseCache::get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2)
+	java::net::CacheResponse ResponseCache::get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"get",
@@ -46,7 +46,7 @@ namespace java::net
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ResponseCache::put(java::net::URI arg0, java::net::URLConnection arg1)
+	java::net::CacheRequest ResponseCache::put(java::net::URI arg0, java::net::URLConnection arg1)
 	{
 		return callObjectMethod(
 			"put",

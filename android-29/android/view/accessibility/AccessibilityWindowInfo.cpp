@@ -6,7 +6,7 @@
 namespace android::view::accessibility
 {
 	// Fields
-	QAndroidJniObject AccessibilityWindowInfo::CREATOR()
+	__JniBaseClass AccessibilityWindowInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityWindowInfo",
@@ -56,7 +56,7 @@ namespace android::view::accessibility
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AccessibilityWindowInfo::obtain()
+	android::view::accessibility::AccessibilityWindowInfo AccessibilityWindowInfo::obtain()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityWindowInfo",
@@ -64,7 +64,7 @@ namespace android::view::accessibility
 			"()Landroid/view/accessibility/AccessibilityWindowInfo;"
 		);
 	}
-	QAndroidJniObject AccessibilityWindowInfo::obtain(android::view::accessibility::AccessibilityWindowInfo arg0)
+	android::view::accessibility::AccessibilityWindowInfo AccessibilityWindowInfo::obtain(android::view::accessibility::AccessibilityWindowInfo arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityWindowInfo",
@@ -88,7 +88,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityWindowInfo::getAnchor()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityWindowInfo::getAnchor()
 	{
 		return callObjectMethod(
 			"getAnchor",
@@ -103,7 +103,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AccessibilityWindowInfo::getChild(jint arg0)
+	android::view::accessibility::AccessibilityWindowInfo AccessibilityWindowInfo::getChild(jint arg0)
 	{
 		return callObjectMethod(
 			"getChild",
@@ -132,14 +132,14 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	QAndroidJniObject AccessibilityWindowInfo::getParent()
+	android::view::accessibility::AccessibilityWindowInfo AccessibilityWindowInfo::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/view/accessibility/AccessibilityWindowInfo;"
 		);
 	}
-	QAndroidJniObject AccessibilityWindowInfo::getRoot()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityWindowInfo::getRoot()
 	{
 		return callObjectMethod(
 			"getRoot",

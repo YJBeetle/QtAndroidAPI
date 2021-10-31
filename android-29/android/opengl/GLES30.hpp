@@ -404,7 +404,7 @@ namespace android::opengl
 		static void glGetActiveUniformsiv(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6);
 		static void glGetBufferParameteri64v(jint arg0, jint arg1, java::nio::LongBuffer arg2);
 		static void glGetBufferParameteri64v(jint arg0, jint arg1, jlongArray arg2, jint arg3);
-		static QAndroidJniObject glGetBufferPointerv(jint arg0, jint arg1);
+		static java::nio::Buffer glGetBufferPointerv(jint arg0, jint arg1);
 		static jint glGetFragDataLocation(jint arg0, jstring arg1);
 		static void glGetInteger64i_v(jint arg0, jint arg1, java::nio::LongBuffer arg2);
 		static void glGetInteger64i_v(jint arg0, jint arg1, jlongArray arg2, jint arg3);
@@ -450,7 +450,7 @@ namespace android::opengl
 		static jboolean glIsSync(jlong arg0);
 		static jboolean glIsTransformFeedback(jint arg0);
 		static jboolean glIsVertexArray(jint arg0);
-		static QAndroidJniObject glMapBufferRange(jint arg0, jint arg1, jint arg2, jint arg3);
+		static java::nio::Buffer glMapBufferRange(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glPauseTransformFeedback();
 		static void glProgramBinary(jint arg0, jint arg1, java::nio::Buffer arg2, jint arg3);
 		static void glProgramParameteri(jint arg0, jint arg1, jint arg2);

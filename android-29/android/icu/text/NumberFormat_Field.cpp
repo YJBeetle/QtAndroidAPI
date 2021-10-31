@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject NumberFormat_Field::CURRENCY()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::CURRENCY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::DECIMAL_SEPARATOR()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::DECIMAL_SEPARATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::EXPONENT()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::EXPONENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::EXPONENT_SIGN()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::EXPONENT_SIGN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			"Landroid/icu/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::EXPONENT_SYMBOL()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::EXPONENT_SYMBOL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",
@@ -43,7 +43,7 @@ namespace android::icu::text
 			"Landroid/icu/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::FRACTION()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::FRACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",
@@ -51,7 +51,7 @@ namespace android::icu::text
 			"Landroid/icu/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::GROUPING_SEPARATOR()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::GROUPING_SEPARATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",
@@ -59,7 +59,7 @@ namespace android::icu::text
 			"Landroid/icu/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::INTEGER()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::INTEGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",
@@ -67,7 +67,7 @@ namespace android::icu::text
 			"Landroid/icu/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::PERCENT()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::PERCENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",
@@ -75,7 +75,7 @@ namespace android::icu::text
 			"Landroid/icu/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::PERMILLE()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::PERMILLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",
@@ -83,7 +83,7 @@ namespace android::icu::text
 			"Landroid/icu/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::SIGN()
+	android::icu::text::NumberFormat_Field NumberFormat_Field::SIGN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.NumberFormat$Field",

@@ -28,12 +28,12 @@ namespace android::se::omapi
 		void close();
 		void closeChannels();
 		jbyteArray getATR();
-		QAndroidJniObject getReader();
+		android::se::omapi::Reader getReader();
 		jboolean isClosed();
-		QAndroidJniObject openBasicChannel(jbyteArray arg0);
-		QAndroidJniObject openBasicChannel(jbyteArray arg0, jbyte arg1);
-		QAndroidJniObject openLogicalChannel(jbyteArray arg0);
-		QAndroidJniObject openLogicalChannel(jbyteArray arg0, jbyte arg1);
+		android::se::omapi::Channel openBasicChannel(jbyteArray arg0);
+		android::se::omapi::Channel openBasicChannel(jbyteArray arg0, jbyte arg1);
+		android::se::omapi::Channel openLogicalChannel(jbyteArray arg0);
+		android::se::omapi::Channel openLogicalChannel(jbyteArray arg0, jbyte arg1);
 	};
 } // namespace android::se::omapi
 

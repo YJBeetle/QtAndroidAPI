@@ -42,7 +42,7 @@ namespace android::app::usage
 		// Methods
 		jint getAppStandbyBucket();
 		jstring getClassName();
-		QAndroidJniObject getConfiguration();
+		android::content::res::Configuration getConfiguration();
 		jint getEventType();
 		jstring getPackageName();
 		jstring getShortcutId();

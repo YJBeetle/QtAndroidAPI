@@ -21,7 +21,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Notification_BubbleMetadata(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,11 +32,11 @@ namespace android::app
 		// Methods
 		jint describeContents();
 		jboolean getAutoExpandBubble();
-		QAndroidJniObject getDeleteIntent();
+		android::app::PendingIntent getDeleteIntent();
 		jint getDesiredHeight();
 		jint getDesiredHeightResId();
-		QAndroidJniObject getIcon();
-		QAndroidJniObject getIntent();
+		android::graphics::drawable::Icon getIcon();
+		android::app::PendingIntent getIntent();
 		jboolean isNotificationSuppressed();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

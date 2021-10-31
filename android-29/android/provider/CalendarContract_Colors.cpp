@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject CalendarContract_Colors::CONTENT_URI()
+	android::net::Uri CalendarContract_Colors::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Colors",

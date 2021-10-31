@@ -40,15 +40,15 @@ namespace android::widget
 		// Methods
 		jboolean areAllItemsEnabled();
 		jint getCount();
-		QAndroidJniObject getFilter();
+		android::widget::Filter getFilter();
 		jint getFootersCount();
 		jint getHeadersCount();
 		jobject getItem(jint arg0);
 		jlong getItemId(jint arg0);
 		jint getItemViewType(jint arg0);
-		QAndroidJniObject getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
+		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		jint getViewTypeCount();
-		QAndroidJniObject getWrappedAdapter();
+		__JniBaseClass getWrappedAdapter();
 		jboolean hasStableIds();
 		jboolean isEmpty();
 		jboolean isEnabled(jint arg0);

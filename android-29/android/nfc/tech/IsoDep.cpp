@@ -11,7 +11,7 @@ namespace android::nfc::tech
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject IsoDep::get(android::nfc::Tag arg0)
+	android::nfc::tech::IsoDep IsoDep::get(android::nfc::Tag arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.tech.IsoDep",
@@ -55,7 +55,7 @@ namespace android::nfc::tech
 			"()I"
 		);
 	}
-	QAndroidJniObject IsoDep::getTag()
+	android::nfc::Tag IsoDep::getTag()
 	{
 		return callObjectMethod(
 			"getTag",

@@ -49,7 +49,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject CollationKey::getBound(jint arg0, jint arg1)
+	android::icu::text::CollationKey CollationKey::getBound(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getBound",
@@ -72,7 +72,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject CollationKey::merge(android::icu::text::CollationKey arg0)
+	android::icu::text::CollationKey CollationKey::merge(android::icu::text::CollationKey arg0)
 	{
 		return callObjectMethod(
 			"merge",

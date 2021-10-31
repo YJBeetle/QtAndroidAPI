@@ -12,7 +12,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Sampler::CLAMP_LINEAR(android::renderscript::RenderScript arg0)
+	android::renderscript::Sampler Sampler::CLAMP_LINEAR(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler",
@@ -21,7 +21,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Sampler::CLAMP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0)
+	android::renderscript::Sampler Sampler::CLAMP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler",
@@ -30,7 +30,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Sampler::CLAMP_NEAREST(android::renderscript::RenderScript arg0)
+	android::renderscript::Sampler Sampler::CLAMP_NEAREST(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler",
@@ -39,7 +39,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Sampler::MIRRORED_REPEAT_LINEAR(android::renderscript::RenderScript arg0)
+	android::renderscript::Sampler Sampler::MIRRORED_REPEAT_LINEAR(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler",
@@ -48,7 +48,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Sampler::MIRRORED_REPEAT_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0)
+	android::renderscript::Sampler Sampler::MIRRORED_REPEAT_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler",
@@ -57,7 +57,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Sampler::MIRRORED_REPEAT_NEAREST(android::renderscript::RenderScript arg0)
+	android::renderscript::Sampler Sampler::MIRRORED_REPEAT_NEAREST(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler",
@@ -66,7 +66,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Sampler::WRAP_LINEAR(android::renderscript::RenderScript arg0)
+	android::renderscript::Sampler Sampler::WRAP_LINEAR(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler",
@@ -75,7 +75,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Sampler::WRAP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0)
+	android::renderscript::Sampler Sampler::WRAP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler",
@@ -84,7 +84,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Sampler::WRAP_NEAREST(android::renderscript::RenderScript arg0)
+	android::renderscript::Sampler Sampler::WRAP_NEAREST(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler",
@@ -100,28 +100,28 @@ namespace android::renderscript
 			"()F"
 		);
 	}
-	QAndroidJniObject Sampler::getMagnification()
+	android::renderscript::Sampler_Value Sampler::getMagnification()
 	{
 		return callObjectMethod(
 			"getMagnification",
 			"()Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	QAndroidJniObject Sampler::getMinification()
+	android::renderscript::Sampler_Value Sampler::getMinification()
 	{
 		return callObjectMethod(
 			"getMinification",
 			"()Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	QAndroidJniObject Sampler::getWrapS()
+	android::renderscript::Sampler_Value Sampler::getWrapS()
 	{
 		return callObjectMethod(
 			"getWrapS",
 			"()Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	QAndroidJniObject Sampler::getWrapT()
+	android::renderscript::Sampler_Value Sampler::getWrapT()
 	{
 		return callObjectMethod(
 			"getWrapT",

@@ -32,7 +32,7 @@ namespace android::view::accessibility
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getTypeface();
+		android::graphics::Typeface getTypeface();
 		jboolean hasBackgroundColor();
 		jboolean hasEdgeColor();
 		jboolean hasEdgeType();

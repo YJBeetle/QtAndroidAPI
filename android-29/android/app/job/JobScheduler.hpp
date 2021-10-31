@@ -31,8 +31,8 @@ namespace android::app::job
 		void cancel(jint arg0);
 		void cancelAll();
 		jint enqueue(android::app::job::JobInfo arg0, android::app::job::JobWorkItem arg1);
-		QAndroidJniObject getAllPendingJobs();
-		QAndroidJniObject getPendingJob(jint arg0);
+		__JniBaseClass getAllPendingJobs();
+		android::app::job::JobInfo getPendingJob(jint arg0);
 		jint schedule(android::app::job::JobInfo arg0);
 	};
 } // namespace android::app::job

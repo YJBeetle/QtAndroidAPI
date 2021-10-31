@@ -47,23 +47,23 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject makeBasic();
-		static QAndroidJniObject makeClipRevealAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static QAndroidJniObject makeCustomAnimation(android::content::Context arg0, jint arg1, jint arg2);
-		static QAndroidJniObject makeScaleUpAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static QAndroidJniObject makeSceneTransitionAnimation(android::app::Activity arg0, jarray arg1);
-		static QAndroidJniObject makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, jstring arg2);
-		static QAndroidJniObject makeTaskLaunchBehind();
-		static QAndroidJniObject makeThumbnailScaleUpAnimation(android::view::View arg0, android::graphics::Bitmap arg1, jint arg2, jint arg3);
-		QAndroidJniObject getLaunchBounds();
+		static android::app::ActivityOptions makeBasic();
+		static android::app::ActivityOptions makeClipRevealAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static android::app::ActivityOptions makeCustomAnimation(android::content::Context arg0, jint arg1, jint arg2);
+		static android::app::ActivityOptions makeScaleUpAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static android::app::ActivityOptions makeSceneTransitionAnimation(android::app::Activity arg0, jarray arg1);
+		static android::app::ActivityOptions makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, jstring arg2);
+		static android::app::ActivityOptions makeTaskLaunchBehind();
+		static android::app::ActivityOptions makeThumbnailScaleUpAnimation(android::view::View arg0, android::graphics::Bitmap arg1, jint arg2, jint arg3);
+		android::graphics::Rect getLaunchBounds();
 		jint getLaunchDisplayId();
 		jboolean getLockTaskMode();
 		void requestUsageTimeReport(android::app::PendingIntent arg0);
-		QAndroidJniObject setAppVerificationBundle(android::os::Bundle arg0);
-		QAndroidJniObject setLaunchBounds(android::graphics::Rect arg0);
-		QAndroidJniObject setLaunchDisplayId(jint arg0);
-		QAndroidJniObject setLockTaskEnabled(jboolean arg0);
-		QAndroidJniObject toBundle();
+		android::app::ActivityOptions setAppVerificationBundle(android::os::Bundle arg0);
+		android::app::ActivityOptions setLaunchBounds(android::graphics::Rect arg0);
+		android::app::ActivityOptions setLaunchDisplayId(jint arg0);
+		android::app::ActivityOptions setLockTaskEnabled(jboolean arg0);
+		android::os::Bundle toBundle();
 		jstring toString();
 		void update(android::app::ActivityOptions arg0);
 	};

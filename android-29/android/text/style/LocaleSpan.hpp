@@ -39,8 +39,8 @@ namespace android::text::style
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getLocale();
-		QAndroidJniObject getLocales();
+		java::util::Locale getLocale();
+		android::os::LocaleList getLocales();
 		jint getSpanTypeId();
 		void updateDrawState(android::text::TextPaint arg0);
 		void updateMeasureState(android::text::TextPaint arg0);

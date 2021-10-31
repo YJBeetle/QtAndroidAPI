@@ -13,7 +13,7 @@ namespace android::view::inputmethod
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_SELECTING();
 		static jint FLAG_SINGLE_LINE();
 		jint flags();

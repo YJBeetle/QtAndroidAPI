@@ -17,7 +17,7 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	QAndroidJniObject CursorAnchorInfo_Builder::addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5)
+	android::view::inputmethod::CursorAnchorInfo_Builder CursorAnchorInfo_Builder::addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"addCharacterBounds",
@@ -30,7 +30,7 @@ namespace android::view::inputmethod
 			arg5
 		);
 	}
-	QAndroidJniObject CursorAnchorInfo_Builder::build()
+	android::view::inputmethod::CursorAnchorInfo CursorAnchorInfo_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
@@ -44,7 +44,7 @@ namespace android::view::inputmethod
 			"()V"
 		);
 	}
-	QAndroidJniObject CursorAnchorInfo_Builder::setComposingText(jint arg0, jstring arg1)
+	android::view::inputmethod::CursorAnchorInfo_Builder CursorAnchorInfo_Builder::setComposingText(jint arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"setComposingText",
@@ -53,7 +53,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	QAndroidJniObject CursorAnchorInfo_Builder::setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4)
+	android::view::inputmethod::CursorAnchorInfo_Builder CursorAnchorInfo_Builder::setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"setInsertionMarkerLocation",
@@ -65,7 +65,7 @@ namespace android::view::inputmethod
 			arg4
 		);
 	}
-	QAndroidJniObject CursorAnchorInfo_Builder::setMatrix(android::graphics::Matrix arg0)
+	android::view::inputmethod::CursorAnchorInfo_Builder CursorAnchorInfo_Builder::setMatrix(android::graphics::Matrix arg0)
 	{
 		return callObjectMethod(
 			"setMatrix",
@@ -73,7 +73,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CursorAnchorInfo_Builder::setSelectionRange(jint arg0, jint arg1)
+	android::view::inputmethod::CursorAnchorInfo_Builder CursorAnchorInfo_Builder::setSelectionRange(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setSelectionRange",

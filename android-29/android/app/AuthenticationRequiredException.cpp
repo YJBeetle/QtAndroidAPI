@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject AuthenticationRequiredException::CREATOR()
+	__JniBaseClass AuthenticationRequiredException::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AuthenticationRequiredException",
@@ -34,7 +34,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject AuthenticationRequiredException::getUserAction()
+	android::app::PendingIntent AuthenticationRequiredException::getUserAction()
 	{
 		return callObjectMethod(
 			"getUserAction",

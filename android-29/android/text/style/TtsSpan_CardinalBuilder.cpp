@@ -27,7 +27,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_CardinalBuilder::setNumber(jstring arg0)
+	android::text::style::TtsSpan_CardinalBuilder TtsSpan_CardinalBuilder::setNumber(jstring arg0)
 	{
 		return callObjectMethod(
 			"setNumber",
@@ -35,7 +35,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_CardinalBuilder::setNumber(jlong arg0)
+	android::text::style::TtsSpan_CardinalBuilder TtsSpan_CardinalBuilder::setNumber(jlong arg0)
 	{
 		return callObjectMethod(
 			"setNumber",

@@ -30,7 +30,7 @@ namespace javax::net::ssl
 		jarray getEnabledCipherSuites();
 		jarray getEnabledProtocols();
 		jboolean getNeedClientAuth();
-		QAndroidJniObject getSSLParameters();
+		javax::net::ssl::SSLParameters getSSLParameters();
 		jarray getSupportedCipherSuites();
 		jarray getSupportedProtocols();
 		jboolean getUseClientMode();

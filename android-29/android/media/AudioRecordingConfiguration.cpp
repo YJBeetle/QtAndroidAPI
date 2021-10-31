@@ -6,7 +6,7 @@
 namespace android::media
 {
 	// Fields
-	QAndroidJniObject AudioRecordingConfiguration::CREATOR()
+	__JniBaseClass AudioRecordingConfiguration::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioRecordingConfiguration",
@@ -36,7 +36,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioRecordingConfiguration::getAudioDevice()
+	android::media::AudioDeviceInfo AudioRecordingConfiguration::getAudioDevice()
 	{
 		return callObjectMethod(
 			"getAudioDevice",
@@ -64,28 +64,28 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject AudioRecordingConfiguration::getClientEffects()
+	__JniBaseClass AudioRecordingConfiguration::getClientEffects()
 	{
 		return callObjectMethod(
 			"getClientEffects",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject AudioRecordingConfiguration::getClientFormat()
+	android::media::AudioFormat AudioRecordingConfiguration::getClientFormat()
 	{
 		return callObjectMethod(
 			"getClientFormat",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
-	QAndroidJniObject AudioRecordingConfiguration::getEffects()
+	__JniBaseClass AudioRecordingConfiguration::getEffects()
 	{
 		return callObjectMethod(
 			"getEffects",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject AudioRecordingConfiguration::getFormat()
+	android::media::AudioFormat AudioRecordingConfiguration::getFormat()
 	{
 		return callObjectMethod(
 			"getFormat",

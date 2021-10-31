@@ -53,7 +53,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AlertDialog::getButton(jint arg0)
+	android::widget::Button AlertDialog::getButton(jint arg0)
 	{
 		return callObjectMethod(
 			"getButton",
@@ -61,7 +61,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog::getListView()
+	android::widget::ListView AlertDialog::getListView()
 	{
 		return callObjectMethod(
 			"getListView",

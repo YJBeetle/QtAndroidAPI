@@ -69,9 +69,9 @@ namespace android::icu::text
 		jboolean baseIsLeftToRight();
 		jint countParagraphs();
 		jint countRuns();
-		QAndroidJniObject createLineBidi(jint arg0, jint arg1);
+		android::icu::text::Bidi createLineBidi(jint arg0, jint arg1);
 		jint getBaseLevel();
-		QAndroidJniObject getCustomClassifier();
+		android::icu::text::BidiClassifier getCustomClassifier();
 		jint getCustomizedClass(jint arg0);
 		jbyte getDirection();
 		jint getLength();
@@ -79,10 +79,10 @@ namespace android::icu::text
 		jbyteArray getLevels();
 		jint getLogicalIndex(jint arg0);
 		jintArray getLogicalMap();
-		QAndroidJniObject getLogicalRun(jint arg0);
+		android::icu::text::BidiRun getLogicalRun(jint arg0);
 		jbyte getParaLevel();
-		QAndroidJniObject getParagraph(jint arg0);
-		QAndroidJniObject getParagraphByIndex(jint arg0);
+		android::icu::text::BidiRun getParagraph(jint arg0);
+		android::icu::text::BidiRun getParagraphByIndex(jint arg0);
 		jint getParagraphIndex(jint arg0);
 		jint getProcessedLength();
 		jint getReorderingMode();
@@ -96,7 +96,7 @@ namespace android::icu::text
 		jstring getTextAsString();
 		jint getVisualIndex(jint arg0);
 		jintArray getVisualMap();
-		QAndroidJniObject getVisualRun(jint arg0);
+		android::icu::text::BidiRun getVisualRun(jint arg0);
 		jboolean isInverse();
 		jboolean isLeftToRight();
 		jboolean isMixed();
@@ -106,7 +106,7 @@ namespace android::icu::text
 		void setContext(jstring arg0, jstring arg1);
 		void setCustomClassifier(android::icu::text::BidiClassifier arg0);
 		void setInverse(jboolean arg0);
-		QAndroidJniObject setLine(jint arg0, jint arg1);
+		android::icu::text::Bidi setLine(jint arg0, jint arg1);
 		void setPara(__JniBaseClass arg0);
 		void setPara(jcharArray arg0, jbyte arg1, jbyteArray arg2);
 		void setPara(jstring arg0, jbyte arg1, jbyteArray arg2);

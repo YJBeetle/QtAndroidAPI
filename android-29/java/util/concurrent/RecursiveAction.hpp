@@ -23,7 +23,7 @@ namespace java::util::concurrent
 		RecursiveAction();
 		
 		// Methods
-		QAndroidJniObject getRawResult();
+		java::lang::Void getRawResult();
 	};
 } // namespace java::util::concurrent
 

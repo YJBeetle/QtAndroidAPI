@@ -22,28 +22,28 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject VolumeShaper_Configuration_Builder::build()
+	android::media::VolumeShaper_Configuration VolumeShaper_Configuration_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/VolumeShaper$Configuration;"
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::invertVolumes()
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::invertVolumes()
 	{
 		return callObjectMethod(
 			"invertVolumes",
 			"()Landroid/media/VolumeShaper$Configuration$Builder;"
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::reflectTimes()
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::reflectTimes()
 	{
 		return callObjectMethod(
 			"reflectTimes",
 			"()Landroid/media/VolumeShaper$Configuration$Builder;"
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::scaleToEndVolume(jfloat arg0)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::scaleToEndVolume(jfloat arg0)
 	{
 		return callObjectMethod(
 			"scaleToEndVolume",
@@ -51,7 +51,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::scaleToStartVolume(jfloat arg0)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::scaleToStartVolume(jfloat arg0)
 	{
 		return callObjectMethod(
 			"scaleToStartVolume",
@@ -59,7 +59,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::setCurve(jfloatArray arg0, jfloatArray arg1)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setCurve(jfloatArray arg0, jfloatArray arg1)
 	{
 		return callObjectMethod(
 			"setCurve",
@@ -68,7 +68,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::setDuration(jlong arg0)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setDuration(jlong arg0)
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -76,7 +76,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::setInterpolatorType(jint arg0)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setInterpolatorType(jint arg0)
 	{
 		return callObjectMethod(
 			"setInterpolatorType",

@@ -43,7 +43,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject FrameLayout::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::FrameLayout_LayoutParams FrameLayout::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",

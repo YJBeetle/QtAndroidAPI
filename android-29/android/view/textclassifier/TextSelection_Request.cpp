@@ -6,7 +6,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject TextSelection_Request::CREATOR()
+	__JniBaseClass TextSelection_Request::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextSelection$Request",
@@ -35,7 +35,7 @@ namespace android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextSelection_Request::getDefaultLocales()
+	android::os::LocaleList TextSelection_Request::getDefaultLocales()
 	{
 		return callObjectMethod(
 			"getDefaultLocales",
@@ -49,7 +49,7 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject TextSelection_Request::getExtras()
+	android::os::Bundle TextSelection_Request::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

@@ -54,7 +54,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaMetadataEditor::getBitmap(jint arg0, android::graphics::Bitmap arg1)
+	android::graphics::Bitmap MediaMetadataEditor::getBitmap(jint arg0, android::graphics::Bitmap arg1)
 	{
 		return callObjectMethod(
 			"getBitmap",
@@ -97,7 +97,7 @@ namespace android::media
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaMetadataEditor::putBitmap(jint arg0, android::graphics::Bitmap arg1)
+	android::media::MediaMetadataEditor MediaMetadataEditor::putBitmap(jint arg0, android::graphics::Bitmap arg1)
 	{
 		return callObjectMethod(
 			"putBitmap",
@@ -106,7 +106,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaMetadataEditor::putLong(jint arg0, jlong arg1)
+	android::media::MediaMetadataEditor MediaMetadataEditor::putLong(jint arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"putLong",
@@ -115,7 +115,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaMetadataEditor::putObject(jint arg0, jobject arg1)
+	android::media::MediaMetadataEditor MediaMetadataEditor::putObject(jint arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"putObject",
@@ -124,7 +124,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaMetadataEditor::putString(jint arg0, jstring arg1)
+	android::media::MediaMetadataEditor MediaMetadataEditor::putString(jint arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"putString",

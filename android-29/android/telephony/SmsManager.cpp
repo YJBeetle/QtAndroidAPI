@@ -420,7 +420,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SmsManager::getDefault()
+	android::telephony::SmsManager SmsManager::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.SmsManager",
@@ -436,7 +436,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	QAndroidJniObject SmsManager::getSmsManagerForSubscriptionId(jint arg0)
+	android::telephony::SmsManager SmsManager::getSmsManagerForSubscriptionId(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.SmsManager",
@@ -462,7 +462,7 @@ namespace android::telephony
 			arg1.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject SmsManager::divideMessage(jstring arg0)
+	java::util::ArrayList SmsManager::divideMessage(jstring arg0)
 	{
 		return callObjectMethod(
 			"divideMessage",
@@ -482,7 +482,7 @@ namespace android::telephony
 			arg4.object()
 		);
 	}
-	QAndroidJniObject SmsManager::getCarrierConfigValues()
+	android::os::Bundle SmsManager::getCarrierConfigValues()
 	{
 		return callObjectMethod(
 			"getCarrierConfigValues",

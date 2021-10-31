@@ -10,9 +10,9 @@ namespace android::database
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BOTH();
-		static QAndroidJniObject LEFT();
-		static QAndroidJniObject RIGHT();
+		static android::database::CursorJoiner_Result BOTH();
+		static android::database::CursorJoiner_Result LEFT();
+		static android::database::CursorJoiner_Result RIGHT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CursorJoiner_Result(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::database
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::database::CursorJoiner_Result valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::database

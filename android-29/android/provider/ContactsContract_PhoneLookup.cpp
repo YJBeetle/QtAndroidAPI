@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_PhoneLookup::CONTENT_FILTER_URI()
+	android::net::Uri ContactsContract_PhoneLookup::CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$PhoneLookup",
@@ -12,7 +12,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_PhoneLookup::ENTERPRISE_CONTENT_FILTER_URI()
+	android::net::Uri ContactsContract_PhoneLookup::ENTERPRISE_CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$PhoneLookup",

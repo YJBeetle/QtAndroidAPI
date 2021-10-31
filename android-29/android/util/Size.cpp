@@ -17,7 +17,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject Size::parseSize(jstring arg0)
+	android::util::Size Size::parseSize(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Size",

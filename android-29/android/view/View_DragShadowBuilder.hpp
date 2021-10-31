@@ -31,7 +31,7 @@ namespace android::view
 		View_DragShadowBuilder(android::view::View arg0);
 		
 		// Methods
-		QAndroidJniObject getView();
+		android::view::View getView();
 		void onDrawShadow(android::graphics::Canvas arg0);
 		void onProvideShadowMetrics(android::graphics::Point arg0, android::graphics::Point arg1);
 	};

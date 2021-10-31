@@ -65,8 +65,8 @@ namespace android::app::admin
 		DeviceAdminReceiver();
 		
 		// Methods
-		QAndroidJniObject getManager(android::content::Context arg0);
-		QAndroidJniObject getWho(android::content::Context arg0);
+		android::app::admin::DevicePolicyManager getManager(android::content::Context arg0);
+		android::content::ComponentName getWho(android::content::Context arg0);
 		void onBugreportFailed(android::content::Context arg0, android::content::Intent arg1, jint arg2);
 		void onBugreportShared(android::content::Context arg0, android::content::Intent arg1, jstring arg2);
 		void onBugreportSharingDeclined(android::content::Context arg0, android::content::Intent arg1);

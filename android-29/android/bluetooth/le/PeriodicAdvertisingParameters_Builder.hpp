@@ -22,9 +22,9 @@ namespace android::bluetooth::le
 		PeriodicAdvertisingParameters_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setIncludeTxPower(jboolean arg0);
-		QAndroidJniObject setInterval(jint arg0);
+		android::bluetooth::le::PeriodicAdvertisingParameters build();
+		android::bluetooth::le::PeriodicAdvertisingParameters_Builder setIncludeTxPower(jboolean arg0);
+		android::bluetooth::le::PeriodicAdvertisingParameters_Builder setInterval(jint arg0);
 	};
 } // namespace android::bluetooth::le
 

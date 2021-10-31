@@ -41,7 +41,7 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getCameraCharacteristics(jstring arg0);
+		android::hardware::camera2::CameraCharacteristics getCameraCharacteristics(jstring arg0);
 		jarray getCameraIdList();
 		void openCamera(jstring arg0, android::hardware::camera2::CameraDevice_StateCallback arg1, android::os::Handler arg2);
 		void openCamera(jstring arg0, __JniBaseClass arg1, android::hardware::camera2::CameraDevice_StateCallback arg2);

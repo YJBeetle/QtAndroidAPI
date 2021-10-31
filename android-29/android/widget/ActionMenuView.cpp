@@ -36,7 +36,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	QAndroidJniObject ActionMenuView::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::ActionMenuView_LayoutParams ActionMenuView::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -44,14 +44,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ActionMenuView::getMenu()
+	__JniBaseClass ActionMenuView::getMenu()
 	{
 		return callObjectMethod(
 			"getMenu",
 			"()Landroid/view/Menu;"
 		);
 	}
-	QAndroidJniObject ActionMenuView::getOverflowIcon()
+	android::graphics::drawable::Drawable ActionMenuView::getOverflowIcon()
 	{
 		return callObjectMethod(
 			"getOverflowIcon",

@@ -116,7 +116,7 @@ namespace android::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject JsonReader::peek()
+	android::util::JsonToken JsonReader::peek()
 	{
 		return callObjectMethod(
 			"peek",

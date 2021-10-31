@@ -44,7 +44,7 @@ namespace java::security
 			"()[Ljava/security/CodeSigner;"
 		).object<jarray>();
 	}
-	QAndroidJniObject CodeSource::getLocation()
+	java::net::URL CodeSource::getLocation()
 	{
 		return callObjectMethod(
 			"getLocation",

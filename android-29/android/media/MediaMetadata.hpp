@@ -29,7 +29,7 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring METADATA_KEY_ALBUM();
 		static jstring METADATA_KEY_ALBUM_ART();
 		static jstring METADATA_KEY_ALBUM_ARTIST();
@@ -70,14 +70,14 @@ namespace android::media
 		jboolean containsKey(jstring arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getBitmap(jstring arg0);
-		QAndroidJniObject getDescription();
+		android::graphics::Bitmap getBitmap(jstring arg0);
+		android::media::MediaDescription getDescription();
 		jlong getLong(jstring arg0);
-		QAndroidJniObject getRating(jstring arg0);
+		android::media::Rating getRating(jstring arg0);
 		jstring getString(jstring arg0);
 		jstring getText(jstring arg0);
 		jint hashCode();
-		QAndroidJniObject keySet();
+		__JniBaseClass keySet();
 		jint size();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

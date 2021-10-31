@@ -16,8 +16,8 @@ namespace android::media::audiofx
 		jstring connectMode();
 		jstring implementor();
 		jstring name();
-		QAndroidJniObject type();
-		QAndroidJniObject uuid();
+		java::util::UUID type();
+		java::util::UUID uuid();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioEffect_Descriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

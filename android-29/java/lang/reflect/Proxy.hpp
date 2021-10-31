@@ -45,7 +45,7 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInvocationHandler(jobject arg0);
+		static __JniBaseClass getInvocationHandler(jobject arg0);
 		static jclass getProxyClass(java::lang::ClassLoader arg0, jarray arg1);
 		static jboolean isProxyClass(jclass arg0);
 		static jobject newProxyInstance(java::lang::ClassLoader arg0, jarray arg1, __JniBaseClass arg2);

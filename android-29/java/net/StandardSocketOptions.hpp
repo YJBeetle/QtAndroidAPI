@@ -9,18 +9,18 @@ namespace java::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject IP_MULTICAST_IF();
-		static QAndroidJniObject IP_MULTICAST_LOOP();
-		static QAndroidJniObject IP_MULTICAST_TTL();
-		static QAndroidJniObject IP_TOS();
-		static QAndroidJniObject SO_BROADCAST();
-		static QAndroidJniObject SO_KEEPALIVE();
-		static QAndroidJniObject SO_LINGER();
-		static QAndroidJniObject SO_RCVBUF();
-		static QAndroidJniObject SO_REUSEADDR();
-		static QAndroidJniObject SO_REUSEPORT();
-		static QAndroidJniObject SO_SNDBUF();
-		static QAndroidJniObject TCP_NODELAY();
+		static __JniBaseClass IP_MULTICAST_IF();
+		static __JniBaseClass IP_MULTICAST_LOOP();
+		static __JniBaseClass IP_MULTICAST_TTL();
+		static __JniBaseClass IP_TOS();
+		static __JniBaseClass SO_BROADCAST();
+		static __JniBaseClass SO_KEEPALIVE();
+		static __JniBaseClass SO_LINGER();
+		static __JniBaseClass SO_RCVBUF();
+		static __JniBaseClass SO_REUSEADDR();
+		static __JniBaseClass SO_REUSEPORT();
+		static __JniBaseClass SO_SNDBUF();
+		static __JniBaseClass TCP_NODELAY();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StandardSocketOptions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

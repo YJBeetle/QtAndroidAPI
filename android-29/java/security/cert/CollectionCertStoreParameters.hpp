@@ -20,7 +20,7 @@ namespace java::security::cert
 		
 		// Methods
 		jobject clone();
-		QAndroidJniObject getCollection();
+		__JniBaseClass getCollection();
 		jstring toString();
 	};
 } // namespace java::security::cert

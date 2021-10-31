@@ -42,7 +42,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject AbsoluteLayout::generateLayoutParams(__JniBaseClass arg0)
+	android::view::ViewGroup_LayoutParams AbsoluteLayout::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",

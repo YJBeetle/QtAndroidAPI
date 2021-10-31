@@ -34,7 +34,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getRemoteControlClient();
+		android::media::RemoteControlClient getRemoteControlClient();
 		void requestSetVolume(jint arg0);
 		void requestUpdateVolume(jint arg0);
 		void setDescription(jstring arg0);

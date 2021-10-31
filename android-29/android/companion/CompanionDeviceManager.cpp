@@ -40,7 +40,7 @@ namespace android::companion
 			arg0
 		);
 	}
-	QAndroidJniObject CompanionDeviceManager::getAssociations()
+	__JniBaseClass CompanionDeviceManager::getAssociations()
 	{
 		return callObjectMethod(
 			"getAssociations",

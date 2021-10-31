@@ -34,12 +34,12 @@ namespace android::companion
 		BluetoothLeDeviceFilter_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setNamePattern(java::util::regex::Pattern arg0);
-		QAndroidJniObject setRawDataFilter(jbyteArray arg0, jbyteArray arg1);
-		QAndroidJniObject setRenameFromBytes(jstring arg0, jstring arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4);
-		QAndroidJniObject setRenameFromName(jstring arg0, jstring arg1, jint arg2, jint arg3);
-		QAndroidJniObject setScanFilter(android::bluetooth::le::ScanFilter arg0);
+		android::companion::BluetoothLeDeviceFilter build();
+		android::companion::BluetoothLeDeviceFilter_Builder setNamePattern(java::util::regex::Pattern arg0);
+		android::companion::BluetoothLeDeviceFilter_Builder setRawDataFilter(jbyteArray arg0, jbyteArray arg1);
+		android::companion::BluetoothLeDeviceFilter_Builder setRenameFromBytes(jstring arg0, jstring arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4);
+		android::companion::BluetoothLeDeviceFilter_Builder setRenameFromName(jstring arg0, jstring arg1, jint arg2, jint arg3);
+		android::companion::BluetoothLeDeviceFilter_Builder setScanFilter(android::bluetooth::le::ScanFilter arg0);
 	};
 } // namespace android::companion
 

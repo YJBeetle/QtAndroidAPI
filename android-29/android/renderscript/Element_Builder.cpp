@@ -18,7 +18,7 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	QAndroidJniObject Element_Builder::add(android::renderscript::Element arg0, jstring arg1)
+	android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"add",
@@ -27,7 +27,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	QAndroidJniObject Element_Builder::add(android::renderscript::Element arg0, jstring arg1, jint arg2)
+	android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, jstring arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"add",
@@ -37,7 +37,7 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	QAndroidJniObject Element_Builder::create()
+	android::renderscript::Element Element_Builder::create()
 	{
 		return callObjectMethod(
 			"create",

@@ -25,7 +25,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject LocalServerSocket::accept()
+	android::net::LocalSocket LocalServerSocket::accept()
 	{
 		return callObjectMethod(
 			"accept",
@@ -39,14 +39,14 @@ namespace android::net
 			"()V"
 		);
 	}
-	QAndroidJniObject LocalServerSocket::getFileDescriptor()
+	java::io::FileDescriptor LocalServerSocket::getFileDescriptor()
 	{
 		return callObjectMethod(
 			"getFileDescriptor",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
-	QAndroidJniObject LocalServerSocket::getLocalSocketAddress()
+	android::net::LocalSocketAddress LocalServerSocket::getLocalSocketAddress()
 	{
 		return callObjectMethod(
 			"getLocalSocketAddress",

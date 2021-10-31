@@ -24,7 +24,7 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	QAndroidJniObject CookieManager::getInstance()
+	android::webkit::CookieManager CookieManager::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.CookieManager",

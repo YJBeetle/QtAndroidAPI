@@ -17,7 +17,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	QAndroidJniObject AbstractExecutorService::invokeAll(__JniBaseClass arg0)
+	__JniBaseClass AbstractExecutorService::invokeAll(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"invokeAll",
@@ -25,7 +25,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AbstractExecutorService::invokeAll(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	__JniBaseClass AbstractExecutorService::invokeAll(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callObjectMethod(
 			"invokeAll",
@@ -53,7 +53,7 @@ namespace java::util::concurrent
 			arg2.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject AbstractExecutorService::submit(__JniBaseClass arg0)
+	__JniBaseClass AbstractExecutorService::submit(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"submit",
@@ -61,7 +61,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AbstractExecutorService::submit(__JniBaseClass arg0, jobject arg1)
+	__JniBaseClass AbstractExecutorService::submit(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"submit",

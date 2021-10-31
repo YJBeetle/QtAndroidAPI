@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject DateFormat_Field::AM_PM()
+	android::icu::text::DateFormat_Field DateFormat_Field::AM_PM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::AM_PM_MIDNIGHT_NOON()
+	android::icu::text::DateFormat_Field DateFormat_Field::AM_PM_MIDNIGHT_NOON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::DAY_OF_MONTH()
+	android::icu::text::DateFormat_Field DateFormat_Field::DAY_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::DAY_OF_WEEK()
+	android::icu::text::DateFormat_Field DateFormat_Field::DAY_OF_WEEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::DAY_OF_WEEK_IN_MONTH()
+	android::icu::text::DateFormat_Field DateFormat_Field::DAY_OF_WEEK_IN_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -43,7 +43,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::DAY_OF_YEAR()
+	android::icu::text::DateFormat_Field DateFormat_Field::DAY_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -51,7 +51,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::DOW_LOCAL()
+	android::icu::text::DateFormat_Field DateFormat_Field::DOW_LOCAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -59,7 +59,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::ERA()
+	android::icu::text::DateFormat_Field DateFormat_Field::ERA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -67,7 +67,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::EXTENDED_YEAR()
+	android::icu::text::DateFormat_Field DateFormat_Field::EXTENDED_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -75,7 +75,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::FLEXIBLE_DAY_PERIOD()
+	android::icu::text::DateFormat_Field DateFormat_Field::FLEXIBLE_DAY_PERIOD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -83,7 +83,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::HOUR0()
+	android::icu::text::DateFormat_Field DateFormat_Field::HOUR0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -91,7 +91,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::HOUR1()
+	android::icu::text::DateFormat_Field DateFormat_Field::HOUR1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -99,7 +99,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::HOUR_OF_DAY0()
+	android::icu::text::DateFormat_Field DateFormat_Field::HOUR_OF_DAY0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -107,7 +107,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::HOUR_OF_DAY1()
+	android::icu::text::DateFormat_Field DateFormat_Field::HOUR_OF_DAY1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -115,7 +115,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::JULIAN_DAY()
+	android::icu::text::DateFormat_Field DateFormat_Field::JULIAN_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -123,7 +123,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::MILLISECOND()
+	android::icu::text::DateFormat_Field DateFormat_Field::MILLISECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -131,7 +131,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::MILLISECONDS_IN_DAY()
+	android::icu::text::DateFormat_Field DateFormat_Field::MILLISECONDS_IN_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -139,7 +139,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::MINUTE()
+	android::icu::text::DateFormat_Field DateFormat_Field::MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -147,7 +147,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::MONTH()
+	android::icu::text::DateFormat_Field DateFormat_Field::MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -155,7 +155,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::QUARTER()
+	android::icu::text::DateFormat_Field DateFormat_Field::QUARTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -163,7 +163,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::SECOND()
+	android::icu::text::DateFormat_Field DateFormat_Field::SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -171,7 +171,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::TIME_ZONE()
+	android::icu::text::DateFormat_Field DateFormat_Field::TIME_ZONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -179,7 +179,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::WEEK_OF_MONTH()
+	android::icu::text::DateFormat_Field DateFormat_Field::WEEK_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -187,7 +187,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::WEEK_OF_YEAR()
+	android::icu::text::DateFormat_Field DateFormat_Field::WEEK_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -195,7 +195,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::YEAR()
+	android::icu::text::DateFormat_Field DateFormat_Field::YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -203,7 +203,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$Field;"
 		);
 	}
-	QAndroidJniObject DateFormat_Field::YEAR_WOY()
+	android::icu::text::DateFormat_Field DateFormat_Field::YEAR_WOY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$Field",
@@ -218,7 +218,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DateFormat_Field::ofCalendarField(jint arg0)
+	android::icu::text::DateFormat_Field DateFormat_Field::ofCalendarField(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateFormat$Field",

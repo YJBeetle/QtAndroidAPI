@@ -44,21 +44,21 @@ namespace android::widget
 		ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, __JniBaseClass arg3);
 		
 		// Methods
-		static QAndroidJniObject createFromResource(android::content::Context arg0, jint arg1, jint arg2);
+		static android::widget::ArrayAdapter createFromResource(android::content::Context arg0, jint arg1, jint arg2);
 		void add(jobject arg0);
 		void addAll(jobjectArray arg0);
 		void addAll(__JniBaseClass arg0);
 		void clear();
 		jarray getAutofillOptions();
-		QAndroidJniObject getContext();
+		android::content::Context getContext();
 		jint getCount();
-		QAndroidJniObject getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
-		QAndroidJniObject getDropDownViewTheme();
-		QAndroidJniObject getFilter();
+		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
+		android::content::res::Resources_Theme getDropDownViewTheme();
+		android::widget::Filter getFilter();
 		jobject getItem(jint arg0);
 		jlong getItemId(jint arg0);
 		jint getPosition(jobject arg0);
-		QAndroidJniObject getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
+		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		void insert(jobject arg0, jint arg1);
 		void notifyDataSetChanged();
 		void remove(jobject arg0);

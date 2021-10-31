@@ -29,11 +29,11 @@ namespace android::bluetooth::le
 		jbyteArray getBytes();
 		jstring getDeviceName();
 		jbyteArray getManufacturerSpecificData(jint arg0);
-		QAndroidJniObject getManufacturerSpecificData();
+		android::util::SparseArray getManufacturerSpecificData();
 		jbyteArray getServiceData(android::os::ParcelUuid arg0);
-		QAndroidJniObject getServiceData();
-		QAndroidJniObject getServiceSolicitationUuids();
-		QAndroidJniObject getServiceUuids();
+		__JniBaseClass getServiceData();
+		__JniBaseClass getServiceSolicitationUuids();
+		__JniBaseClass getServiceUuids();
 		jint getTxPowerLevel();
 		jstring toString();
 	};

@@ -8,7 +8,7 @@
 namespace java::time::chrono
 {
 	// Fields
-	QAndroidJniObject JapaneseEra::HEISEI()
+	java::time::chrono::JapaneseEra JapaneseEra::HEISEI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
@@ -16,7 +16,7 @@ namespace java::time::chrono
 			"Ljava/time/chrono/JapaneseEra;"
 		);
 	}
-	QAndroidJniObject JapaneseEra::MEIJI()
+	java::time::chrono::JapaneseEra JapaneseEra::MEIJI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
@@ -24,7 +24,7 @@ namespace java::time::chrono
 			"Ljava/time/chrono/JapaneseEra;"
 		);
 	}
-	QAndroidJniObject JapaneseEra::REIWA()
+	java::time::chrono::JapaneseEra JapaneseEra::REIWA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
@@ -32,7 +32,7 @@ namespace java::time::chrono
 			"Ljava/time/chrono/JapaneseEra;"
 		);
 	}
-	QAndroidJniObject JapaneseEra::SHOWA()
+	java::time::chrono::JapaneseEra JapaneseEra::SHOWA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
@@ -40,7 +40,7 @@ namespace java::time::chrono
 			"Ljava/time/chrono/JapaneseEra;"
 		);
 	}
-	QAndroidJniObject JapaneseEra::TAISHO()
+	java::time::chrono::JapaneseEra JapaneseEra::TAISHO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
@@ -55,7 +55,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject JapaneseEra::of(jint arg0)
+	java::time::chrono::JapaneseEra JapaneseEra::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.JapaneseEra",
@@ -64,7 +64,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject JapaneseEra::valueOf(jstring arg0)
+	java::time::chrono::JapaneseEra JapaneseEra::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.JapaneseEra",
@@ -97,7 +97,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	QAndroidJniObject JapaneseEra::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange JapaneseEra::range(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"range",

@@ -28,9 +28,9 @@ namespace android::view::accessibility
 		
 		// Methods
 		void addExtraDataToAccessibilityNodeInfo(jint arg0, android::view::accessibility::AccessibilityNodeInfo arg1, jstring arg2, android::os::Bundle arg3);
-		QAndroidJniObject createAccessibilityNodeInfo(jint arg0);
-		QAndroidJniObject findAccessibilityNodeInfosByText(jstring arg0, jint arg1);
-		QAndroidJniObject findFocus(jint arg0);
+		android::view::accessibility::AccessibilityNodeInfo createAccessibilityNodeInfo(jint arg0);
+		__JniBaseClass findAccessibilityNodeInfosByText(jstring arg0, jint arg1);
+		android::view::accessibility::AccessibilityNodeInfo findFocus(jint arg0);
 		jboolean performAction(jint arg0, jint arg1, android::os::Bundle arg2);
 	};
 } // namespace android::view::accessibility

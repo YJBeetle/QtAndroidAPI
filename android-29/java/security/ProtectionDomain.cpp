@@ -30,21 +30,21 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject ProtectionDomain::getClassLoader()
+	java::lang::ClassLoader ProtectionDomain::getClassLoader()
 	{
 		return callObjectMethod(
 			"getClassLoader",
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	QAndroidJniObject ProtectionDomain::getCodeSource()
+	java::security::CodeSource ProtectionDomain::getCodeSource()
 	{
 		return callObjectMethod(
 			"getCodeSource",
 			"()Ljava/security/CodeSource;"
 		);
 	}
-	QAndroidJniObject ProtectionDomain::getPermissions()
+	java::security::PermissionCollection ProtectionDomain::getPermissions()
 	{
 		return callObjectMethod(
 			"getPermissions",

@@ -45,8 +45,8 @@ namespace android::widget
 		void animateToggle();
 		void close();
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getContent();
-		QAndroidJniObject getHandle();
+		android::view::View getContent();
+		android::view::View getHandle();
 		jboolean isMoving();
 		jboolean isOpened();
 		void lock();

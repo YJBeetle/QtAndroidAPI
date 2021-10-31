@@ -36,7 +36,7 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Currency::fromJavaCurrency(java::util::Currency arg0)
+	android::icu::util::Currency Currency::fromJavaCurrency(java::util::Currency arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Currency",
@@ -45,7 +45,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Currency::getAvailableCurrencies()
+	__JniBaseClass Currency::getAvailableCurrencies()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Currency",
@@ -89,7 +89,7 @@ namespace android::icu::util
 			"()[Landroid/icu/util/ULocale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Currency::getInstance(android::icu::util::ULocale arg0)
+	android::icu::util::Currency Currency::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Currency",
@@ -98,7 +98,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Currency::getInstance(jstring arg0)
+	android::icu::util::Currency Currency::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Currency",
@@ -107,7 +107,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject Currency::getInstance(java::util::Locale arg0)
+	android::icu::util::Currency Currency::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Currency",
@@ -262,7 +262,7 @@ namespace android::icu::util
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject Currency::toJavaCurrency()
+	java::util::Currency Currency::toJavaCurrency()
 	{
 		return callObjectMethod(
 			"toJavaCurrency",

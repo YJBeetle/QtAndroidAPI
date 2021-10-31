@@ -39,13 +39,13 @@ namespace android::icu::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject bigDecimalFrom(android::icu::math::BigDecimal arg0, jint arg1);
-		static QAndroidJniObject bigDecimalFrom(jdouble arg0, jint arg1);
-		static QAndroidJniObject bigDecimalFrom(jlong arg0, jint arg1);
+		static android::icu::math::BigDecimal bigDecimalFrom(android::icu::math::BigDecimal arg0, jint arg1);
+		static android::icu::math::BigDecimal bigDecimalFrom(jdouble arg0, jint arg1);
+		static android::icu::math::BigDecimal bigDecimalFrom(jlong arg0, jint arg1);
 		static jlong from(jlong arg0, jint arg1);
 		static jlong getTimeScaleValue(jint arg0, jint arg1);
-		static QAndroidJniObject toBigDecimal(android::icu::math::BigDecimal arg0, jint arg1);
-		static QAndroidJniObject toBigDecimal(jlong arg0, jint arg1);
+		static android::icu::math::BigDecimal toBigDecimal(android::icu::math::BigDecimal arg0, jint arg1);
+		static android::icu::math::BigDecimal toBigDecimal(jlong arg0, jint arg1);
 		static jlong toLong(jlong arg0, jint arg1);
 	};
 } // namespace android::icu::util

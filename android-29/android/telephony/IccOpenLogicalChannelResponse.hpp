@@ -13,7 +13,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint INVALID_CHANNEL();
 		static jint STATUS_MISSING_RESOURCE();
 		static jint STATUS_NO_ERROR();

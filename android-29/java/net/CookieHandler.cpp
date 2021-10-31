@@ -16,7 +16,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject CookieHandler::getDefault()
+	java::net::CookieHandler CookieHandler::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.CookieHandler",
@@ -33,7 +33,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CookieHandler::get(java::net::URI arg0, __JniBaseClass arg1)
+	__JniBaseClass CookieHandler::get(java::net::URI arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"get",

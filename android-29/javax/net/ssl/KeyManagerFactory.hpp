@@ -30,12 +30,12 @@ namespace javax::net::ssl
 		
 		// Methods
 		static jstring getDefaultAlgorithm();
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
+		static javax::net::ssl::KeyManagerFactory getInstance(jstring arg0);
+		static javax::net::ssl::KeyManagerFactory getInstance(jstring arg0, jstring arg1);
+		static javax::net::ssl::KeyManagerFactory getInstance(jstring arg0, java::security::Provider arg1);
 		jstring getAlgorithm();
 		jarray getKeyManagers();
-		QAndroidJniObject getProvider();
+		java::security::Provider getProvider();
 		void init(__JniBaseClass arg0);
 		void init(java::security::KeyStore arg0, jcharArray arg1);
 	};

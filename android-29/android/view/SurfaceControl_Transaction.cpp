@@ -31,7 +31,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	QAndroidJniObject SurfaceControl_Transaction::merge(android::view::SurfaceControl_Transaction arg0)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::merge(android::view::SurfaceControl_Transaction arg0)
 	{
 		return callObjectMethod(
 			"merge",
@@ -39,7 +39,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SurfaceControl_Transaction::reparent(android::view::SurfaceControl arg0, android::view::SurfaceControl arg1)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::reparent(android::view::SurfaceControl arg0, android::view::SurfaceControl arg1)
 	{
 		return callObjectMethod(
 			"reparent",
@@ -48,7 +48,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject SurfaceControl_Transaction::setAlpha(android::view::SurfaceControl arg0, jfloat arg1)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setAlpha(android::view::SurfaceControl arg0, jfloat arg1)
 	{
 		return callObjectMethod(
 			"setAlpha",
@@ -57,7 +57,7 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject SurfaceControl_Transaction::setBufferSize(android::view::SurfaceControl arg0, jint arg1, jint arg2)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setBufferSize(android::view::SurfaceControl arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"setBufferSize",
@@ -67,7 +67,7 @@ namespace android::view
 			arg2
 		);
 	}
-	QAndroidJniObject SurfaceControl_Transaction::setGeometry(android::view::SurfaceControl arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, jint arg3)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setGeometry(android::view::SurfaceControl arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"setGeometry",
@@ -78,7 +78,7 @@ namespace android::view
 			arg3
 		);
 	}
-	QAndroidJniObject SurfaceControl_Transaction::setLayer(android::view::SurfaceControl arg0, jint arg1)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setLayer(android::view::SurfaceControl arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setLayer",
@@ -87,7 +87,7 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject SurfaceControl_Transaction::setVisibility(android::view::SurfaceControl arg0, jboolean arg1)
+	android::view::SurfaceControl_Transaction SurfaceControl_Transaction::setVisibility(android::view::SurfaceControl arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"setVisibility",

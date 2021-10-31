@@ -4,7 +4,7 @@
 namespace android::nfc
 {
 	// Fields
-	QAndroidJniObject NfcEvent::nfcAdapter()
+	android::nfc::NfcAdapter NfcEvent::nfcAdapter()
 	{
 		return getObjectField(
 			"nfcAdapter",

@@ -6,7 +6,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject VisualVoicemailSms::CREATOR()
+	__JniBaseClass VisualVoicemailSms::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.VisualVoicemailSms",
@@ -28,7 +28,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	QAndroidJniObject VisualVoicemailSms::getFields()
+	android::os::Bundle VisualVoicemailSms::getFields()
 	{
 		return callObjectMethod(
 			"getFields",
@@ -42,7 +42,7 @@ namespace android::telephony
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject VisualVoicemailSms::getPhoneAccountHandle()
+	android::telecom::PhoneAccountHandle VisualVoicemailSms::getPhoneAccountHandle()
 	{
 		return callObjectMethod(
 			"getPhoneAccountHandle",

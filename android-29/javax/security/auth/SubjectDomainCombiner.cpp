@@ -27,7 +27,7 @@ namespace javax::security::auth
 			arg1
 		).object<jarray>();
 	}
-	QAndroidJniObject SubjectDomainCombiner::getSubject()
+	javax::security::auth::Subject SubjectDomainCombiner::getSubject()
 	{
 		return callObjectMethod(
 			"getSubject",

@@ -71,20 +71,20 @@ namespace android::preference
 		// Methods
 		void addPreferencesFromIntent(android::content::Intent arg0);
 		void addPreferencesFromResource(jint arg0);
-		QAndroidJniObject findPreference(jstring arg0);
+		android::preference::Preference findPreference(jstring arg0);
 		void finishPreferencePanel(android::app::Fragment arg0, jint arg1, android::content::Intent arg2);
-		QAndroidJniObject getPreferenceManager();
-		QAndroidJniObject getPreferenceScreen();
+		android::preference::PreferenceManager getPreferenceManager();
+		android::preference::PreferenceScreen getPreferenceScreen();
 		jboolean hasHeaders();
 		void invalidateHeaders();
 		jboolean isMultiPane();
 		void loadHeadersFromResource(jint arg0, __JniBaseClass arg1);
 		void onBackPressed();
 		void onBuildHeaders(__JniBaseClass arg0);
-		QAndroidJniObject onBuildStartFragmentIntent(jstring arg0, android::os::Bundle arg1, jint arg2, jint arg3);
+		android::content::Intent onBuildStartFragmentIntent(jstring arg0, android::os::Bundle arg1, jint arg2, jint arg3);
 		void onContentChanged();
-		QAndroidJniObject onGetInitialHeader();
-		QAndroidJniObject onGetNewHeader();
+		android::preference::PreferenceActivity_Header onGetInitialHeader();
+		android::preference::PreferenceActivity_Header onGetNewHeader();
 		void onHeaderClick(android::preference::PreferenceActivity_Header arg0, jint arg1);
 		jboolean onIsHidingHeaders();
 		jboolean onIsMultiPane();

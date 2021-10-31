@@ -7,7 +7,7 @@
 namespace android::preference
 {
 	// Fields
-	QAndroidJniObject PreferenceActivity_Header::CREATOR()
+	__JniBaseClass PreferenceActivity_Header::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.preference.PreferenceActivity$Header",
@@ -41,7 +41,7 @@ namespace android::preference
 			"breadCrumbTitleRes"
 		);
 	}
-	QAndroidJniObject PreferenceActivity_Header::extras()
+	android::os::Bundle PreferenceActivity_Header::extras()
 	{
 		return getObjectField(
 			"extras",
@@ -55,7 +55,7 @@ namespace android::preference
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PreferenceActivity_Header::fragmentArguments()
+	android::os::Bundle PreferenceActivity_Header::fragmentArguments()
 	{
 		return getObjectField(
 			"fragmentArguments",
@@ -74,7 +74,7 @@ namespace android::preference
 			"id"
 		);
 	}
-	QAndroidJniObject PreferenceActivity_Header::intent()
+	android::content::Intent PreferenceActivity_Header::intent()
 	{
 		return getObjectField(
 			"intent",

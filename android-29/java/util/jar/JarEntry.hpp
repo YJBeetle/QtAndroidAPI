@@ -29,7 +29,7 @@ namespace java::util::jar
 		JarEntry(java::util::zip::ZipEntry arg0);
 		
 		// Methods
-		QAndroidJniObject getAttributes();
+		java::util::jar::Attributes getAttributes();
 		jarray getCertificates();
 		jarray getCodeSigners();
 		jstring getRealName();

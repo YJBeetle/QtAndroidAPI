@@ -17,8 +17,8 @@ namespace android::view
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject EMPTY_STATE();
+		static __JniBaseClass CREATOR();
+		static android::view::AbsSavedState EMPTY_STATE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbsSavedState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,7 +28,7 @@ namespace android::view
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getSuperState();
+		__JniBaseClass getSuperState();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view

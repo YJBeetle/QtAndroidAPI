@@ -30,7 +30,7 @@ namespace android::app::usage
 			arg0.object()
 		);
 	}
-	QAndroidJniObject StorageStatsManager::queryExternalStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1)
+	android::app::usage::ExternalStorageStats StorageStatsManager::queryExternalStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"queryExternalStatsForUser",
@@ -39,7 +39,7 @@ namespace android::app::usage
 			arg1.object()
 		);
 	}
-	QAndroidJniObject StorageStatsManager::queryStatsForPackage(java::util::UUID arg0, jstring arg1, android::os::UserHandle arg2)
+	android::app::usage::StorageStats StorageStatsManager::queryStatsForPackage(java::util::UUID arg0, jstring arg1, android::os::UserHandle arg2)
 	{
 		return callObjectMethod(
 			"queryStatsForPackage",
@@ -49,7 +49,7 @@ namespace android::app::usage
 			arg2.object()
 		);
 	}
-	QAndroidJniObject StorageStatsManager::queryStatsForUid(java::util::UUID arg0, jint arg1)
+	android::app::usage::StorageStats StorageStatsManager::queryStatsForUid(java::util::UUID arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryStatsForUid",
@@ -58,7 +58,7 @@ namespace android::app::usage
 			arg1
 		);
 	}
-	QAndroidJniObject StorageStatsManager::queryStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1)
+	android::app::usage::StorageStats StorageStatsManager::queryStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"queryStatsForUser",

@@ -16,7 +16,7 @@ namespace android::widget
 			"packedPosition"
 		);
 	}
-	QAndroidJniObject ExpandableListView_ExpandableListContextMenuInfo::targetView()
+	android::view::View ExpandableListView_ExpandableListContextMenuInfo::targetView()
 	{
 		return getObjectField(
 			"targetView",

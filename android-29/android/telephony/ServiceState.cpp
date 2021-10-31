@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject ServiceState::CREATOR()
+	__JniBaseClass ServiceState::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.ServiceState",

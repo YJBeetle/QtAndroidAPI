@@ -17,7 +17,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	QAndroidJniObject Transition_EpicenterCallback::onGetEpicenter(android::transition::Transition arg0)
+	android::graphics::Rect Transition_EpicenterCallback::onGetEpicenter(android::transition::Transition arg0)
 	{
 		return callObjectMethod(
 			"onGetEpicenter",

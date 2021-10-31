@@ -35,7 +35,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::call(jstring arg0, jstring arg1, android::os::Bundle arg2)
+	android::os::Bundle DocumentsProvider::call(jstring arg0, jstring arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"call",
@@ -45,7 +45,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::canonicalize(android::net::Uri arg0)
+	android::net::Uri DocumentsProvider::canonicalize(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"canonicalize",
@@ -72,7 +72,7 @@ namespace android::provider
 			arg2
 		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsProvider::createWebLinkIntent(jstring arg0, android::os::Bundle arg1)
+	android::content::IntentSender DocumentsProvider::createWebLinkIntent(jstring arg0, android::os::Bundle arg1)
 	{
 		return callObjectMethod(
 			"createWebLinkIntent",
@@ -107,7 +107,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject DocumentsProvider::findDocumentPath(jstring arg0, jstring arg1)
+	android::provider::DocumentsContract_Path DocumentsProvider::findDocumentPath(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"findDocumentPath",
@@ -116,7 +116,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsProvider::getDocumentMetadata(jstring arg0)
+	android::os::Bundle DocumentsProvider::getDocumentMetadata(jstring arg0)
 	{
 		return callObjectMethod(
 			"getDocumentMetadata",
@@ -158,7 +158,7 @@ namespace android::provider
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
+	android::net::Uri DocumentsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
 	{
 		return callObjectMethod(
 			"insert",
@@ -186,7 +186,7 @@ namespace android::provider
 			arg2
 		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsProvider::openAssetFile(android::net::Uri arg0, jstring arg1)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openAssetFile(android::net::Uri arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"openAssetFile",
@@ -195,7 +195,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsProvider::openAssetFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openAssetFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openAssetFile",
@@ -205,7 +205,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::openDocument(jstring arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor DocumentsProvider::openDocument(jstring arg0, jstring arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openDocument",
@@ -215,7 +215,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::openDocumentThumbnail(jstring arg0, android::graphics::Point arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openDocumentThumbnail(jstring arg0, android::graphics::Point arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openDocumentThumbnail",
@@ -225,7 +225,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::openFile(android::net::Uri arg0, jstring arg1)
+	android::os::ParcelFileDescriptor DocumentsProvider::openFile(android::net::Uri arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"openFile",
@@ -234,7 +234,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsProvider::openFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor DocumentsProvider::openFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openFile",
@@ -244,7 +244,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
@@ -254,7 +254,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
@@ -265,7 +265,7 @@ namespace android::provider
 			arg3.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::openTypedDocument(jstring arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor DocumentsProvider::openTypedDocument(jstring arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"openTypedDocument",
@@ -276,7 +276,7 @@ namespace android::provider
 			arg3.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	__JniBaseClass DocumentsProvider::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"query",
@@ -287,7 +287,7 @@ namespace android::provider
 			arg3.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	__JniBaseClass DocumentsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"query",
@@ -299,7 +299,7 @@ namespace android::provider
 			arg4
 		);
 	}
-	QAndroidJniObject DocumentsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
+	__JniBaseClass DocumentsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
 	{
 		return callObjectMethod(
 			"query",
@@ -312,7 +312,7 @@ namespace android::provider
 			arg5.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::queryChildDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2)
+	__JniBaseClass DocumentsProvider::queryChildDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"queryChildDocuments",
@@ -322,7 +322,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::queryChildDocuments(jstring arg0, jarray arg1, jstring arg2)
+	__JniBaseClass DocumentsProvider::queryChildDocuments(jstring arg0, jarray arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"queryChildDocuments",
@@ -332,7 +332,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	QAndroidJniObject DocumentsProvider::queryDocument(jstring arg0, jarray arg1)
+	__JniBaseClass DocumentsProvider::queryDocument(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"queryDocument",
@@ -341,7 +341,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsProvider::queryRecentDocuments(jstring arg0, jarray arg1)
+	__JniBaseClass DocumentsProvider::queryRecentDocuments(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"queryRecentDocuments",
@@ -350,7 +350,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject DocumentsProvider::queryRecentDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	__JniBaseClass DocumentsProvider::queryRecentDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"queryRecentDocuments",
@@ -361,7 +361,7 @@ namespace android::provider
 			arg3.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::queryRoots(jarray arg0)
+	__JniBaseClass DocumentsProvider::queryRoots(jarray arg0)
 	{
 		return callObjectMethod(
 			"queryRoots",
@@ -369,7 +369,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject DocumentsProvider::querySearchDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2)
+	__JniBaseClass DocumentsProvider::querySearchDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"querySearchDocuments",
@@ -379,7 +379,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DocumentsProvider::querySearchDocuments(jstring arg0, jstring arg1, jarray arg2)
+	__JniBaseClass DocumentsProvider::querySearchDocuments(jstring arg0, jstring arg1, jarray arg2)
 	{
 		return callObjectMethod(
 			"querySearchDocuments",

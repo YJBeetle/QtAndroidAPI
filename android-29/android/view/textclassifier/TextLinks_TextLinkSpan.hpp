@@ -28,7 +28,7 @@ namespace android::view::textclassifier
 		TextLinks_TextLinkSpan(android::view::textclassifier::TextLinks_TextLink arg0);
 		
 		// Methods
-		QAndroidJniObject getTextLink();
+		android::view::textclassifier::TextLinks_TextLink getTextLink();
 		void onClick(android::view::View arg0);
 	};
 } // namespace android::view::textclassifier

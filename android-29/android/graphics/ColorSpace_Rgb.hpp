@@ -32,15 +32,15 @@ namespace android::graphics
 		jfloatArray fromLinear(jfloatArray arg0);
 		jfloatArray fromLinear(jfloat arg0, jfloat arg1, jfloat arg2);
 		jfloatArray fromXyz(jfloatArray arg0);
-		QAndroidJniObject getEotf();
+		__JniBaseClass getEotf();
 		jfloatArray getInverseTransform();
 		jfloatArray getInverseTransform(jfloatArray arg0);
 		jfloat getMaxValue(jint arg0);
 		jfloat getMinValue(jint arg0);
-		QAndroidJniObject getOetf();
+		__JniBaseClass getOetf();
 		jfloatArray getPrimaries();
 		jfloatArray getPrimaries(jfloatArray arg0);
-		QAndroidJniObject getTransferParameters();
+		android::graphics::ColorSpace_Rgb_TransferParameters getTransferParameters();
 		jfloatArray getTransform();
 		jfloatArray getTransform(jfloatArray arg0);
 		jfloatArray getWhitePoint();

@@ -27,10 +27,10 @@ namespace android::text
 		PrecomputedText_Params_Builder(android::text::TextPaint arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setBreakStrategy(jint arg0);
-		QAndroidJniObject setHyphenationFrequency(jint arg0);
-		QAndroidJniObject setTextDirection(__JniBaseClass arg0);
+		android::text::PrecomputedText_Params build();
+		android::text::PrecomputedText_Params_Builder setBreakStrategy(jint arg0);
+		android::text::PrecomputedText_Params_Builder setHyphenationFrequency(jint arg0);
+		android::text::PrecomputedText_Params_Builder setTextDirection(__JniBaseClass arg0);
 	};
 } // namespace android::text
 

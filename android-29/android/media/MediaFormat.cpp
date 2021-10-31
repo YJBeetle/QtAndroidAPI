@@ -911,7 +911,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaFormat::createAudioFormat(jstring arg0, jint arg1, jint arg2)
+	android::media::MediaFormat MediaFormat::createAudioFormat(jstring arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaFormat",
@@ -922,7 +922,7 @@ namespace android::media
 			arg2
 		);
 	}
-	QAndroidJniObject MediaFormat::createSubtitleFormat(jstring arg0, jstring arg1)
+	android::media::MediaFormat MediaFormat::createSubtitleFormat(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaFormat",
@@ -932,7 +932,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaFormat::createVideoFormat(jstring arg0, jint arg1, jint arg2)
+	android::media::MediaFormat MediaFormat::createVideoFormat(jstring arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaFormat",
@@ -959,7 +959,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaFormat::getByteBuffer(jstring arg0)
+	java::nio::ByteBuffer MediaFormat::getByteBuffer(jstring arg0)
 	{
 		return callObjectMethod(
 			"getByteBuffer",
@@ -967,7 +967,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaFormat::getByteBuffer(jstring arg0, java::nio::ByteBuffer arg1)
+	java::nio::ByteBuffer MediaFormat::getByteBuffer(jstring arg0, java::nio::ByteBuffer arg1)
 	{
 		return callObjectMethod(
 			"getByteBuffer",
@@ -984,7 +984,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaFormat::getFeatures()
+	__JniBaseClass MediaFormat::getFeatures()
 	{
 		return callObjectMethod(
 			"getFeatures",
@@ -1025,7 +1025,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaFormat::getKeys()
+	__JniBaseClass MediaFormat::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",
@@ -1049,7 +1049,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaFormat::getNumber(jstring arg0)
+	java::lang::Number MediaFormat::getNumber(jstring arg0)
 	{
 		return callObjectMethod(
 			"getNumber",
@@ -1057,7 +1057,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaFormat::getNumber(jstring arg0, java::lang::Number arg1)
+	java::lang::Number MediaFormat::getNumber(jstring arg0, java::lang::Number arg1)
 	{
 		return callObjectMethod(
 			"getNumber",

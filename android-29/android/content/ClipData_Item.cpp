@@ -86,7 +86,7 @@ namespace android::content
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ClipData_Item::getIntent()
+	android::content::Intent ClipData_Item::getIntent()
 	{
 		return callObjectMethod(
 			"getIntent",
@@ -100,7 +100,7 @@ namespace android::content
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ClipData_Item::getUri()
+	android::net::Uri ClipData_Item::getUri()
 	{
 		return callObjectMethod(
 			"getUri",

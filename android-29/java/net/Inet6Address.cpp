@@ -13,7 +13,7 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Inet6Address::getByAddress(jstring arg0, jbyteArray arg1, jint arg2)
+	java::net::Inet6Address Inet6Address::getByAddress(jstring arg0, jbyteArray arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Inet6Address",
@@ -24,7 +24,7 @@ namespace java::net
 			arg2
 		);
 	}
-	QAndroidJniObject Inet6Address::getByAddress(jstring arg0, jbyteArray arg1, java::net::NetworkInterface arg2)
+	java::net::Inet6Address Inet6Address::getByAddress(jstring arg0, jbyteArray arg1, java::net::NetworkInterface arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Inet6Address",
@@ -64,7 +64,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject Inet6Address::getScopedInterface()
+	java::net::NetworkInterface Inet6Address::getScopedInterface()
 	{
 		return callObjectMethod(
 			"getScopedInterface",

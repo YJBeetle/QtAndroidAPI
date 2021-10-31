@@ -5,7 +5,7 @@
 namespace android::media::browse
 {
 	// Fields
-	QAndroidJniObject MediaBrowser_MediaItem::CREATOR()
+	__JniBaseClass MediaBrowser_MediaItem::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.browse.MediaBrowser$MediaItem",
@@ -48,7 +48,7 @@ namespace android::media::browse
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaBrowser_MediaItem::getDescription()
+	android::media::MediaDescription MediaBrowser_MediaItem::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",

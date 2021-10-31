@@ -105,7 +105,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject Phaser::getParent()
+	java::util::concurrent::Phaser Phaser::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
@@ -126,7 +126,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject Phaser::getRoot()
+	java::util::concurrent::Phaser Phaser::getRoot()
 	{
 		return callObjectMethod(
 			"getRoot",

@@ -41,7 +41,7 @@ namespace android::view::inputmethod
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputMethodInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -55,17 +55,17 @@ namespace android::view::inputmethod
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getComponent();
+		android::content::ComponentName getComponent();
 		jstring getId();
 		jint getIsDefaultResourceId();
 		jstring getPackageName();
-		QAndroidJniObject getServiceInfo();
+		android::content::pm::ServiceInfo getServiceInfo();
 		jstring getServiceName();
 		jstring getSettingsActivity();
-		QAndroidJniObject getSubtypeAt(jint arg0);
+		android::view::inputmethod::InputMethodSubtype getSubtypeAt(jint arg0);
 		jint getSubtypeCount();
 		jint hashCode();
-		QAndroidJniObject loadIcon(android::content::pm::PackageManager arg0);
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
 		jstring loadLabel(android::content::pm::PackageManager arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

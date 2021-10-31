@@ -31,7 +31,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Notification_MessagingStyle::addHistoricMessage(android::app::Notification_MessagingStyle_Message arg0)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::addHistoricMessage(android::app::Notification_MessagingStyle_Message arg0)
 	{
 		return callObjectMethod(
 			"addHistoricMessage",
@@ -39,7 +39,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_MessagingStyle::addMessage(android::app::Notification_MessagingStyle_Message arg0)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::addMessage(android::app::Notification_MessagingStyle_Message arg0)
 	{
 		return callObjectMethod(
 			"addMessage",
@@ -47,7 +47,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_MessagingStyle::addMessage(jstring arg0, jlong arg1, android::app::Person arg2)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::addMessage(jstring arg0, jlong arg1, android::app::Person arg2)
 	{
 		return callObjectMethod(
 			"addMessage",
@@ -57,7 +57,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Notification_MessagingStyle::addMessage(jstring arg0, jlong arg1, jstring arg2)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::addMessage(jstring arg0, jlong arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"addMessage",
@@ -74,21 +74,21 @@ namespace android::app
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Notification_MessagingStyle::getHistoricMessages()
+	__JniBaseClass Notification_MessagingStyle::getHistoricMessages()
 	{
 		return callObjectMethod(
 			"getHistoricMessages",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Notification_MessagingStyle::getMessages()
+	__JniBaseClass Notification_MessagingStyle::getMessages()
 	{
 		return callObjectMethod(
 			"getMessages",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Notification_MessagingStyle::getUser()
+	android::app::Person Notification_MessagingStyle::getUser()
 	{
 		return callObjectMethod(
 			"getUser",
@@ -109,7 +109,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject Notification_MessagingStyle::setConversationTitle(jstring arg0)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::setConversationTitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setConversationTitle",
@@ -117,7 +117,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_MessagingStyle::setGroupConversation(jboolean arg0)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::setGroupConversation(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setGroupConversation",

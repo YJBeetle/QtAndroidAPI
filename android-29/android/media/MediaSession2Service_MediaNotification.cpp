@@ -18,7 +18,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaSession2Service_MediaNotification::getNotification()
+	android::app::Notification MediaSession2Service_MediaNotification::getNotification()
 	{
 		return callObjectMethod(
 			"getNotification",

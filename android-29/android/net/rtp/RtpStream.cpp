@@ -41,7 +41,7 @@ namespace android::net::rtp
 			arg1
 		);
 	}
-	QAndroidJniObject RtpStream::getLocalAddress()
+	java::net::InetAddress RtpStream::getLocalAddress()
 	{
 		return callObjectMethod(
 			"getLocalAddress",
@@ -62,7 +62,7 @@ namespace android::net::rtp
 			"()I"
 		);
 	}
-	QAndroidJniObject RtpStream::getRemoteAddress()
+	java::net::InetAddress RtpStream::getRemoteAddress()
 	{
 		return callObjectMethod(
 			"getRemoteAddress",

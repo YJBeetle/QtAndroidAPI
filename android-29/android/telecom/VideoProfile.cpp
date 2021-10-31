@@ -4,7 +4,7 @@
 namespace android::telecom
 {
 	// Fields
-	QAndroidJniObject VideoProfile::CREATOR()
+	__JniBaseClass VideoProfile::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.VideoProfile",

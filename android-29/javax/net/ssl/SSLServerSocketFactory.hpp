@@ -22,7 +22,7 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDefault();
+		static javax::net::ServerSocketFactory getDefault();
 		jarray getDefaultCipherSuites();
 		jarray getSupportedCipherSuites();
 	};

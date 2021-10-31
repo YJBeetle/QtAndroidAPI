@@ -16,7 +16,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::addNameParameter(jstring arg0)
+	android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder ContactsContract_Contacts_AggregationSuggestions_Builder::addNameParameter(jstring arg0)
 	{
 		return callObjectMethod(
 			"addNameParameter",
@@ -24,14 +24,14 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::build()
+	android::net::Uri ContactsContract_Contacts_AggregationSuggestions_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::setContactId(jlong arg0)
+	android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder ContactsContract_Contacts_AggregationSuggestions_Builder::setContactId(jlong arg0)
 	{
 		return callObjectMethod(
 			"setContactId",
@@ -39,7 +39,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::setLimit(jint arg0)
+	android::provider::ContactsContract_Contacts_AggregationSuggestions_Builder ContactsContract_Contacts_AggregationSuggestions_Builder::setLimit(jint arg0)
 	{
 		return callObjectMethod(
 			"setLimit",

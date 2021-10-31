@@ -34,12 +34,12 @@ namespace android::widget
 		
 		// Methods
 		jstring getTag();
-		QAndroidJniObject setContent(android::content::Intent arg0);
-		QAndroidJniObject setContent(__JniBaseClass arg0);
-		QAndroidJniObject setContent(jint arg0);
-		QAndroidJniObject setIndicator(android::view::View arg0);
-		QAndroidJniObject setIndicator(jstring arg0);
-		QAndroidJniObject setIndicator(jstring arg0, android::graphics::drawable::Drawable arg1);
+		android::widget::TabHost_TabSpec setContent(android::content::Intent arg0);
+		android::widget::TabHost_TabSpec setContent(__JniBaseClass arg0);
+		android::widget::TabHost_TabSpec setContent(jint arg0);
+		android::widget::TabHost_TabSpec setIndicator(android::view::View arg0);
+		android::widget::TabHost_TabSpec setIndicator(jstring arg0);
+		android::widget::TabHost_TabSpec setIndicator(jstring arg0, android::graphics::drawable::Drawable arg1);
 	};
 } // namespace android::widget
 

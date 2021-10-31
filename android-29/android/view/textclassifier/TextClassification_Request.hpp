@@ -25,7 +25,7 @@ namespace android::view::textclassifier
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextClassification_Request(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -36,10 +36,10 @@ namespace android::view::textclassifier
 		// Methods
 		jint describeContents();
 		jstring getCallingPackageName();
-		QAndroidJniObject getDefaultLocales();
+		android::os::LocaleList getDefaultLocales();
 		jint getEndIndex();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getReferenceTime();
+		android::os::Bundle getExtras();
+		java::time::ZonedDateTime getReferenceTime();
 		jint getStartIndex();
 		jstring getText();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

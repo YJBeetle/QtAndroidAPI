@@ -23,7 +23,7 @@ namespace android::widget
 			"ALIGN_MARGINS"
 		);
 	}
-	QAndroidJniObject GridLayout::BASELINE()
+	android::widget::GridLayout_Alignment GridLayout::BASELINE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.GridLayout",
@@ -31,7 +31,7 @@ namespace android::widget
 			"Landroid/widget/GridLayout$Alignment;"
 		);
 	}
-	QAndroidJniObject GridLayout::BOTTOM()
+	android::widget::GridLayout_Alignment GridLayout::BOTTOM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.GridLayout",
@@ -39,7 +39,7 @@ namespace android::widget
 			"Landroid/widget/GridLayout$Alignment;"
 		);
 	}
-	QAndroidJniObject GridLayout::CENTER()
+	android::widget::GridLayout_Alignment GridLayout::CENTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.GridLayout",
@@ -47,7 +47,7 @@ namespace android::widget
 			"Landroid/widget/GridLayout$Alignment;"
 		);
 	}
-	QAndroidJniObject GridLayout::END()
+	android::widget::GridLayout_Alignment GridLayout::END()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.GridLayout",
@@ -55,7 +55,7 @@ namespace android::widget
 			"Landroid/widget/GridLayout$Alignment;"
 		);
 	}
-	QAndroidJniObject GridLayout::FILL()
+	android::widget::GridLayout_Alignment GridLayout::FILL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.GridLayout",
@@ -70,7 +70,7 @@ namespace android::widget
 			"HORIZONTAL"
 		);
 	}
-	QAndroidJniObject GridLayout::LEFT()
+	android::widget::GridLayout_Alignment GridLayout::LEFT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.GridLayout",
@@ -78,7 +78,7 @@ namespace android::widget
 			"Landroid/widget/GridLayout$Alignment;"
 		);
 	}
-	QAndroidJniObject GridLayout::RIGHT()
+	android::widget::GridLayout_Alignment GridLayout::RIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.GridLayout",
@@ -86,7 +86,7 @@ namespace android::widget
 			"Landroid/widget/GridLayout$Alignment;"
 		);
 	}
-	QAndroidJniObject GridLayout::START()
+	android::widget::GridLayout_Alignment GridLayout::START()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.GridLayout",
@@ -94,7 +94,7 @@ namespace android::widget
 			"Landroid/widget/GridLayout$Alignment;"
 		);
 	}
-	QAndroidJniObject GridLayout::TOP()
+	android::widget::GridLayout_Alignment GridLayout::TOP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.GridLayout",
@@ -153,7 +153,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject GridLayout::spec(jint arg0)
+	android::widget::GridLayout_Spec GridLayout::spec(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.GridLayout",
@@ -162,7 +162,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject GridLayout::spec(jint arg0, android::widget::GridLayout_Alignment arg1)
+	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, android::widget::GridLayout_Alignment arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.GridLayout",
@@ -172,7 +172,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	QAndroidJniObject GridLayout::spec(jint arg0, jfloat arg1)
+	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, jfloat arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.GridLayout",
@@ -182,7 +182,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject GridLayout::spec(jint arg0, jint arg1)
+	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.GridLayout",
@@ -192,7 +192,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject GridLayout::spec(jint arg0, android::widget::GridLayout_Alignment arg1, jfloat arg2)
+	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, android::widget::GridLayout_Alignment arg1, jfloat arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.GridLayout",
@@ -203,7 +203,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	QAndroidJniObject GridLayout::spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2)
+	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.GridLayout",
@@ -214,7 +214,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	QAndroidJniObject GridLayout::spec(jint arg0, jint arg1, jfloat arg2)
+	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, jint arg1, jfloat arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.GridLayout",
@@ -225,7 +225,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	QAndroidJniObject GridLayout::spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2, jfloat arg3)
+	android::widget::GridLayout_Spec GridLayout::spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2, jfloat arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.GridLayout",
@@ -237,7 +237,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	QAndroidJniObject GridLayout::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::GridLayout_LayoutParams GridLayout::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",

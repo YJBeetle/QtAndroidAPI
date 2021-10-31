@@ -23,7 +23,7 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	QAndroidJniObject RemoteConference::getConferenceableConnections()
+	__JniBaseClass RemoteConference::getConferenceableConnections()
 	{
 		return callObjectMethod(
 			"getConferenceableConnections",
@@ -44,21 +44,21 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject RemoteConference::getConnections()
+	__JniBaseClass RemoteConference::getConnections()
 	{
 		return callObjectMethod(
 			"getConnections",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject RemoteConference::getDisconnectCause()
+	android::telecom::DisconnectCause RemoteConference::getDisconnectCause()
 	{
 		return callObjectMethod(
 			"getDisconnectCause",
 			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
-	QAndroidJniObject RemoteConference::getExtras()
+	android::os::Bundle RemoteConference::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

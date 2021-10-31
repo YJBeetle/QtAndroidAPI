@@ -16,7 +16,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_ProfileSyncState::CONTENT_URI()
+	android::net::Uri ContactsContract_ProfileSyncState::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$ProfileSyncState",
@@ -41,7 +41,7 @@ namespace android::provider
 			arg1.object()
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject ContactsContract_ProfileSyncState::getWithUri(android::content::ContentProviderClient arg0, android::accounts::Account arg1)
+	android::util::Pair ContactsContract_ProfileSyncState::getWithUri(android::content::ContentProviderClient arg0, android::accounts::Account arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$ProfileSyncState",
@@ -51,7 +51,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ContactsContract_ProfileSyncState::newSetOperation(android::accounts::Account arg0, jbyteArray arg1)
+	android::content::ContentProviderOperation ContactsContract_ProfileSyncState::newSetOperation(android::accounts::Account arg0, jbyteArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$ProfileSyncState",

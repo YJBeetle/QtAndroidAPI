@@ -16,7 +16,7 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	QAndroidJniObject CertPathTrustManagerParameters::getParameters()
+	__JniBaseClass CertPathTrustManagerParameters::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",

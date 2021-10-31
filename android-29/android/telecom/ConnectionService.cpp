@@ -63,7 +63,7 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	QAndroidJniObject ConnectionService::createRemoteIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::RemoteConnection ConnectionService::createRemoteIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
 	{
 		return callObjectMethod(
 			"createRemoteIncomingConnection",
@@ -72,7 +72,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ConnectionService::createRemoteOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::RemoteConnection ConnectionService::createRemoteOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
 	{
 		return callObjectMethod(
 			"createRemoteOutgoingConnection",
@@ -81,21 +81,21 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ConnectionService::getAllConferences()
+	__JniBaseClass ConnectionService::getAllConferences()
 	{
 		return callObjectMethod(
 			"getAllConferences",
 			"()Ljava/util/Collection;"
 		);
 	}
-	QAndroidJniObject ConnectionService::getAllConnections()
+	__JniBaseClass ConnectionService::getAllConnections()
 	{
 		return callObjectMethod(
 			"getAllConnections",
 			"()Ljava/util/Collection;"
 		);
 	}
-	QAndroidJniObject ConnectionService::onBind(android::content::Intent arg0)
+	__JniBaseClass ConnectionService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -126,7 +126,7 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	QAndroidJniObject ConnectionService::onCreateIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::Connection ConnectionService::onCreateIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
 	{
 		return callObjectMethod(
 			"onCreateIncomingConnection",
@@ -144,7 +144,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ConnectionService::onCreateIncomingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::Connection ConnectionService::onCreateIncomingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
 	{
 		return callObjectMethod(
 			"onCreateIncomingHandoverConnection",
@@ -153,7 +153,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ConnectionService::onCreateOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::Connection ConnectionService::onCreateOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
 	{
 		return callObjectMethod(
 			"onCreateOutgoingConnection",
@@ -171,7 +171,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ConnectionService::onCreateOutgoingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::Connection ConnectionService::onCreateOutgoingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
 	{
 		return callObjectMethod(
 			"onCreateOutgoingHandoverConnection",

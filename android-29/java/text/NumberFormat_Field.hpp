@@ -11,19 +11,19 @@ namespace java::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CURRENCY();
-		static QAndroidJniObject DECIMAL_SEPARATOR();
-		static QAndroidJniObject EXPONENT();
-		static QAndroidJniObject EXPONENT_SIGN();
-		static QAndroidJniObject EXPONENT_SYMBOL();
-		static QAndroidJniObject FRACTION();
-		static QAndroidJniObject GROUPING_SEPARATOR();
-		static QAndroidJniObject INTEGER();
-		static QAndroidJniObject PERCENT();
-		static QAndroidJniObject PERMILLE();
-		static QAndroidJniObject PREFIX();
-		static QAndroidJniObject SIGN();
-		static QAndroidJniObject SUFFIX();
+		static java::text::NumberFormat_Field CURRENCY();
+		static java::text::NumberFormat_Field DECIMAL_SEPARATOR();
+		static java::text::NumberFormat_Field EXPONENT();
+		static java::text::NumberFormat_Field EXPONENT_SIGN();
+		static java::text::NumberFormat_Field EXPONENT_SYMBOL();
+		static java::text::NumberFormat_Field FRACTION();
+		static java::text::NumberFormat_Field GROUPING_SEPARATOR();
+		static java::text::NumberFormat_Field INTEGER();
+		static java::text::NumberFormat_Field PERCENT();
+		static java::text::NumberFormat_Field PERMILLE();
+		static java::text::NumberFormat_Field PREFIX();
+		static java::text::NumberFormat_Field SIGN();
+		static java::text::NumberFormat_Field SUFFIX();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumberFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}

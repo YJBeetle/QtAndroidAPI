@@ -13,14 +13,14 @@ namespace android::app
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject LauncherActivity_ListItem::extras()
+	android::os::Bundle LauncherActivity_ListItem::extras()
 	{
 		return getObjectField(
 			"extras",
 			"Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject LauncherActivity_ListItem::icon()
+	android::graphics::drawable::Drawable LauncherActivity_ListItem::icon()
 	{
 		return getObjectField(
 			"icon",
@@ -41,7 +41,7 @@ namespace android::app
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject LauncherActivity_ListItem::resolveInfo()
+	android::content::pm::ResolveInfo LauncherActivity_ListItem::resolveInfo()
 	{
 		return getObjectField(
 			"resolveInfo",

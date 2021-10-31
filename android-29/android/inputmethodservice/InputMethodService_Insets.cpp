@@ -44,7 +44,7 @@ namespace android::inputmethodservice
 			"touchableInsets"
 		);
 	}
-	QAndroidJniObject InputMethodService_Insets::touchableRegion()
+	android::graphics::Region InputMethodService_Insets::touchableRegion()
 	{
 		return getObjectField(
 			"touchableRegion",

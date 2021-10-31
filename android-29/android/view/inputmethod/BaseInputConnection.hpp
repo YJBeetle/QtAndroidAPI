@@ -70,9 +70,9 @@ namespace android::view::inputmethod
 		jboolean endBatchEdit();
 		jboolean finishComposingText();
 		jint getCursorCapsMode(jint arg0);
-		QAndroidJniObject getEditable();
-		QAndroidJniObject getExtractedText(android::view::inputmethod::ExtractedTextRequest arg0, jint arg1);
-		QAndroidJniObject getHandler();
+		__JniBaseClass getEditable();
+		android::view::inputmethod::ExtractedText getExtractedText(android::view::inputmethod::ExtractedTextRequest arg0, jint arg1);
+		android::os::Handler getHandler();
 		jstring getSelectedText(jint arg0);
 		jstring getTextAfterCursor(jint arg0, jint arg1);
 		jstring getTextBeforeCursor(jint arg0, jint arg1);

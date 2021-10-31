@@ -21,7 +21,7 @@ namespace android::location
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Address(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -38,10 +38,10 @@ namespace android::location
 		jstring getAdminArea();
 		jstring getCountryCode();
 		jstring getCountryName();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jstring getFeatureName();
 		jdouble getLatitude();
-		QAndroidJniObject getLocale();
+		java::util::Locale getLocale();
 		jstring getLocality();
 		jdouble getLongitude();
 		jint getMaxAddressLineIndex();

@@ -16,14 +16,14 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject CacheResponse::getBody()
+	java::io::InputStream CacheResponse::getBody()
 	{
 		return callObjectMethod(
 			"getBody",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	QAndroidJniObject CacheResponse::getHeaders()
+	__JniBaseClass CacheResponse::getHeaders()
 	{
 		return callObjectMethod(
 			"getHeaders",

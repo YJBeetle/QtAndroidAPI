@@ -20,7 +20,7 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	QAndroidJniObject ScriptGroup_Closure::getGlobal(android::renderscript::Script_FieldID arg0)
+	android::renderscript::ScriptGroup_Future ScriptGroup_Closure::getGlobal(android::renderscript::Script_FieldID arg0)
 	{
 		return callObjectMethod(
 			"getGlobal",
@@ -28,7 +28,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ScriptGroup_Closure::getReturn()
+	android::renderscript::ScriptGroup_Future ScriptGroup_Closure::getReturn()
 	{
 		return callObjectMethod(
 			"getReturn",

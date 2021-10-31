@@ -4,7 +4,7 @@
 namespace javax::crypto::spec
 {
 	// Fields
-	QAndroidJniObject OAEPParameterSpec::DEFAULT()
+	javax::crypto::spec::OAEPParameterSpec OAEPParameterSpec::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.crypto.spec.OAEPParameterSpec",
@@ -42,14 +42,14 @@ namespace javax::crypto::spec
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject OAEPParameterSpec::getMGFParameters()
+	__JniBaseClass OAEPParameterSpec::getMGFParameters()
 	{
 		return callObjectMethod(
 			"getMGFParameters",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	QAndroidJniObject OAEPParameterSpec::getPSource()
+	javax::crypto::spec::PSource OAEPParameterSpec::getPSource()
 	{
 		return callObjectMethod(
 			"getPSource",

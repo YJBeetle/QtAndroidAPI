@@ -36,7 +36,7 @@ namespace dalvik::system
 		) {}
 	
 	// Methods
-	QAndroidJniObject DelegateLastClassLoader::getResource(jstring arg0)
+	java::net::URL DelegateLastClassLoader::getResource(jstring arg0)
 	{
 		return callObjectMethod(
 			"getResource",
@@ -44,7 +44,7 @@ namespace dalvik::system
 			arg0
 		);
 	}
-	QAndroidJniObject DelegateLastClassLoader::getResources(jstring arg0)
+	__JniBaseClass DelegateLastClassLoader::getResources(jstring arg0)
 	{
 		return callObjectMethod(
 			"getResources",

@@ -30,8 +30,8 @@ namespace android::net::wifi::aware
 		
 		// Methods
 		void close();
-		QAndroidJniObject createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0);
-		QAndroidJniObject createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, jstring arg1);
+		android::net::NetworkSpecifier createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0);
+		android::net::NetworkSpecifier createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, jstring arg1);
 		void sendMessage(android::net::wifi::aware::PeerHandle arg0, jint arg1, jbyteArray arg2);
 	};
 } // namespace android::net::wifi::aware

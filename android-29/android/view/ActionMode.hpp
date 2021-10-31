@@ -30,9 +30,9 @@ namespace android::view
 		
 		// Methods
 		void finish();
-		QAndroidJniObject getCustomView();
-		QAndroidJniObject getMenu();
-		QAndroidJniObject getMenuInflater();
+		android::view::View getCustomView();
+		__JniBaseClass getMenu();
+		android::view::MenuInflater getMenuInflater();
 		jstring getSubtitle();
 		jobject getTag();
 		jstring getTitle();

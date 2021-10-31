@@ -56,14 +56,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RippleDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState RippleDrawable::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	QAndroidJniObject RippleDrawable::getDirtyBounds()
+	android::graphics::Rect RippleDrawable::getDirtyBounds()
 	{
 		return callObjectMethod(
 			"getDirtyBounds",
@@ -139,7 +139,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	QAndroidJniObject RippleDrawable::mutate()
+	android::graphics::drawable::Drawable RippleDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

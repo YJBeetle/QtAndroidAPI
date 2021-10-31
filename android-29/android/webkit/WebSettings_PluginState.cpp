@@ -3,7 +3,7 @@
 namespace android::webkit
 {
 	// Fields
-	QAndroidJniObject WebSettings_PluginState::OFF()
+	android::webkit::WebSettings_PluginState WebSettings_PluginState::OFF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$PluginState",
@@ -11,7 +11,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$PluginState;"
 		);
 	}
-	QAndroidJniObject WebSettings_PluginState::ON()
+	android::webkit::WebSettings_PluginState WebSettings_PluginState::ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$PluginState",
@@ -19,7 +19,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$PluginState;"
 		);
 	}
-	QAndroidJniObject WebSettings_PluginState::ON_DEMAND()
+	android::webkit::WebSettings_PluginState WebSettings_PluginState::ON_DEMAND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$PluginState",
@@ -34,7 +34,7 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WebSettings_PluginState::valueOf(jstring arg0)
+	android::webkit::WebSettings_PluginState WebSettings_PluginState::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebSettings$PluginState",

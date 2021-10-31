@@ -21,7 +21,7 @@ namespace android::view
 		static jint BUILT_IN_KEYBOARD();
 		static jint COMBINING_ACCENT();
 		static jint COMBINING_ACCENT_MASK();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FULL();
 		static jchar HEX_INPUT();
 		static jint MODIFIER_BEHAVIOR_CHORDED();
@@ -42,7 +42,7 @@ namespace android::view
 		static jboolean deviceHasKey(jint arg0);
 		static jbooleanArray deviceHasKeys(jintArray arg0);
 		static jint getDeadChar(jint arg0, jint arg1);
-		static QAndroidJniObject load(jint arg0);
+		static android::view::KeyCharacterMap load(jint arg0);
 		jint describeContents();
 		jint get(jint arg0, jint arg1);
 		jchar getDisplayLabel(jint arg0);

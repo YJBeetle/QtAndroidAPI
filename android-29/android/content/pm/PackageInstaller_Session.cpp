@@ -86,7 +86,7 @@ namespace android::content::pm
 			"()Z"
 		);
 	}
-	QAndroidJniObject PackageInstaller_Session::openRead(jstring arg0)
+	java::io::InputStream PackageInstaller_Session::openRead(jstring arg0)
 	{
 		return callObjectMethod(
 			"openRead",
@@ -94,7 +94,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageInstaller_Session::openWrite(jstring arg0, jlong arg1, jlong arg2)
+	java::io::OutputStream PackageInstaller_Session::openWrite(jstring arg0, jlong arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"openWrite",

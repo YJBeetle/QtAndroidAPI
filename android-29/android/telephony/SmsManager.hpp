@@ -94,14 +94,14 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDefault();
+		static android::telephony::SmsManager getDefault();
 		static jint getDefaultSmsSubscriptionId();
-		static QAndroidJniObject getSmsManagerForSubscriptionId(jint arg0);
+		static android::telephony::SmsManager getSmsManagerForSubscriptionId(jint arg0);
 		jstring createAppSpecificSmsToken(android::app::PendingIntent arg0);
 		jstring createAppSpecificSmsTokenWithPackageInfo(jstring arg0, android::app::PendingIntent arg1);
-		QAndroidJniObject divideMessage(jstring arg0);
+		java::util::ArrayList divideMessage(jstring arg0);
 		void downloadMultimediaMessage(android::content::Context arg0, jstring arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
-		QAndroidJniObject getCarrierConfigValues();
+		android::os::Bundle getCarrierConfigValues();
 		void getSmsMessagesForFinancialApp(android::os::Bundle arg0, __JniBaseClass arg1, android::telephony::SmsManager_FinancialSmsCallback arg2);
 		jint getSubscriptionId();
 		void injectSmsPdu(jbyteArray arg0, jstring arg1, android::app::PendingIntent arg2);

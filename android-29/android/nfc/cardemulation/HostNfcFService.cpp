@@ -40,7 +40,7 @@ namespace android::nfc::cardemulation
 		) {}
 	
 	// Methods
-	QAndroidJniObject HostNfcFService::onBind(android::content::Intent arg0)
+	__JniBaseClass HostNfcFService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

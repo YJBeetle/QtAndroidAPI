@@ -117,7 +117,7 @@ namespace org::json
 			arg0
 		);
 	}
-	QAndroidJniObject JSONTokener::syntaxError(jstring arg0)
+	org::json::JSONException JSONTokener::syntaxError(jstring arg0)
 	{
 		return callObjectMethod(
 			"syntaxError",

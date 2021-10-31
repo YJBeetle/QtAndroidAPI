@@ -4,7 +4,7 @@
 namespace android::app::slice
 {
 	// Fields
-	QAndroidJniObject SliceSpec::CREATOR()
+	__JniBaseClass SliceSpec::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceSpec",

@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject SyncResult::ALREADY_IN_PROGRESS()
+	android::content::SyncResult SyncResult::ALREADY_IN_PROGRESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.SyncResult",
@@ -13,7 +13,7 @@ namespace android::content
 			"Landroid/content/SyncResult;"
 		);
 	}
-	QAndroidJniObject SyncResult::CREATOR()
+	__JniBaseClass SyncResult::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.SyncResult",
@@ -51,7 +51,7 @@ namespace android::content
 			"partialSyncUnavailable"
 		);
 	}
-	QAndroidJniObject SyncResult::stats()
+	android::content::SyncStats SyncResult::stats()
 	{
 		return getObjectField(
 			"stats",

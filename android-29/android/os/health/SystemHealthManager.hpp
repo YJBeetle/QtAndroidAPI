@@ -21,8 +21,8 @@ namespace android::os::health
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject takeMyUidSnapshot();
-		QAndroidJniObject takeUidSnapshot(jint arg0);
+		android::os::health::HealthStats takeMyUidSnapshot();
+		android::os::health::HealthStats takeUidSnapshot(jint arg0);
 		jarray takeUidSnapshots(jintArray arg0);
 	};
 } // namespace android::os::health

@@ -47,7 +47,7 @@ namespace android::webkit
 			arg1.object()
 		).object<jarray>();
 	}
-	QAndroidJniObject WebChromeClient_FileChooserParams::createIntent()
+	android::content::Intent WebChromeClient_FileChooserParams::createIntent()
 	{
 		return callObjectMethod(
 			"createIntent",

@@ -6,7 +6,7 @@
 namespace android::location
 {
 	// Fields
-	QAndroidJniObject Address::CREATOR()
+	__JniBaseClass Address::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.Address",
@@ -77,7 +77,7 @@ namespace android::location
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Address::getExtras()
+	android::os::Bundle Address::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -98,7 +98,7 @@ namespace android::location
 			"()D"
 		);
 	}
-	QAndroidJniObject Address::getLocale()
+	java::util::Locale Address::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",

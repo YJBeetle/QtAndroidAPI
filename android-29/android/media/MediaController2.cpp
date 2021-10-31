@@ -30,7 +30,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaController2::getConnectedToken()
+	android::media::Session2Token MediaController2::getConnectedToken()
 	{
 		return callObjectMethod(
 			"getConnectedToken",

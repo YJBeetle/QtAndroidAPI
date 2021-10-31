@@ -25,11 +25,11 @@ namespace org::apache::http::conn::ssl
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ALLOW_ALL_HOSTNAME_VERIFIER();
-		static QAndroidJniObject BROWSER_COMPATIBLE_HOSTNAME_VERIFIER();
+		static __JniBaseClass ALLOW_ALL_HOSTNAME_VERIFIER();
+		static __JniBaseClass BROWSER_COMPATIBLE_HOSTNAME_VERIFIER();
 		static jstring SSL();
 		static jstring SSLV2();
-		static QAndroidJniObject STRICT_HOSTNAME_VERIFIER();
+		static __JniBaseClass STRICT_HOSTNAME_VERIFIER();
 		static jstring TLS();
 		
 		// QAndroidJniObject forward
@@ -43,11 +43,11 @@ namespace org::apache::http::conn::ssl
 		SSLSocketFactory(jstring arg0, java::security::KeyStore arg1, jstring arg2, java::security::KeyStore arg3, java::security::SecureRandom arg4, __JniBaseClass arg5);
 		
 		// Methods
-		static QAndroidJniObject getSocketFactory();
-		QAndroidJniObject connectSocket(java::net::Socket arg0, jstring arg1, jint arg2, java::net::InetAddress arg3, jint arg4, __JniBaseClass arg5);
-		QAndroidJniObject createSocket();
-		QAndroidJniObject createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
-		QAndroidJniObject getHostnameVerifier();
+		static org::apache::http::conn::ssl::SSLSocketFactory getSocketFactory();
+		java::net::Socket connectSocket(java::net::Socket arg0, jstring arg1, jint arg2, java::net::InetAddress arg3, jint arg4, __JniBaseClass arg5);
+		java::net::Socket createSocket();
+		java::net::Socket createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
+		__JniBaseClass getHostnameVerifier();
 		jboolean isSecure(java::net::Socket arg0);
 		void setHostnameVerifier(__JniBaseClass arg0);
 	};

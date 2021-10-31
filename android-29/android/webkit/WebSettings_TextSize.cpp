@@ -3,7 +3,7 @@
 namespace android::webkit
 {
 	// Fields
-	QAndroidJniObject WebSettings_TextSize::LARGER()
+	android::webkit::WebSettings_TextSize WebSettings_TextSize::LARGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$TextSize",
@@ -11,7 +11,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$TextSize;"
 		);
 	}
-	QAndroidJniObject WebSettings_TextSize::LARGEST()
+	android::webkit::WebSettings_TextSize WebSettings_TextSize::LARGEST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$TextSize",
@@ -19,7 +19,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$TextSize;"
 		);
 	}
-	QAndroidJniObject WebSettings_TextSize::NORMAL()
+	android::webkit::WebSettings_TextSize WebSettings_TextSize::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$TextSize",
@@ -27,7 +27,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$TextSize;"
 		);
 	}
-	QAndroidJniObject WebSettings_TextSize::SMALLER()
+	android::webkit::WebSettings_TextSize WebSettings_TextSize::SMALLER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$TextSize",
@@ -35,7 +35,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$TextSize;"
 		);
 	}
-	QAndroidJniObject WebSettings_TextSize::SMALLEST()
+	android::webkit::WebSettings_TextSize WebSettings_TextSize::SMALLEST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$TextSize",
@@ -50,7 +50,7 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WebSettings_TextSize::valueOf(jstring arg0)
+	android::webkit::WebSettings_TextSize WebSettings_TextSize::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebSettings$TextSize",

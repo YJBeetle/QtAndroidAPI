@@ -64,7 +64,7 @@ namespace javax::xml::transform::stream
 		) {}
 	
 	// Methods
-	QAndroidJniObject StreamSource::getInputStream()
+	java::io::InputStream StreamSource::getInputStream()
 	{
 		return callObjectMethod(
 			"getInputStream",
@@ -78,7 +78,7 @@ namespace javax::xml::transform::stream
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject StreamSource::getReader()
+	java::io::Reader StreamSource::getReader()
 	{
 		return callObjectMethod(
 			"getReader",

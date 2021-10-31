@@ -47,17 +47,17 @@ namespace android::app::slice
 		Slice_Builder(android::net::Uri arg0, android::app::slice::SliceSpec arg1);
 		
 		// Methods
-		QAndroidJniObject addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, jstring arg2);
-		QAndroidJniObject addBundle(android::os::Bundle arg0, jstring arg1, __JniBaseClass arg2);
-		QAndroidJniObject addHints(__JniBaseClass arg0);
-		QAndroidJniObject addIcon(android::graphics::drawable::Icon arg0, jstring arg1, __JniBaseClass arg2);
-		QAndroidJniObject addInt(jint arg0, jstring arg1, __JniBaseClass arg2);
-		QAndroidJniObject addLong(jlong arg0, jstring arg1, __JniBaseClass arg2);
-		QAndroidJniObject addRemoteInput(android::app::RemoteInput arg0, jstring arg1, __JniBaseClass arg2);
-		QAndroidJniObject addSubSlice(android::app::slice::Slice arg0, jstring arg1);
-		QAndroidJniObject addText(jstring arg0, jstring arg1, __JniBaseClass arg2);
-		QAndroidJniObject build();
-		QAndroidJniObject setCallerNeeded(jboolean arg0);
+		android::app::slice::Slice_Builder addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, jstring arg2);
+		android::app::slice::Slice_Builder addBundle(android::os::Bundle arg0, jstring arg1, __JniBaseClass arg2);
+		android::app::slice::Slice_Builder addHints(__JniBaseClass arg0);
+		android::app::slice::Slice_Builder addIcon(android::graphics::drawable::Icon arg0, jstring arg1, __JniBaseClass arg2);
+		android::app::slice::Slice_Builder addInt(jint arg0, jstring arg1, __JniBaseClass arg2);
+		android::app::slice::Slice_Builder addLong(jlong arg0, jstring arg1, __JniBaseClass arg2);
+		android::app::slice::Slice_Builder addRemoteInput(android::app::RemoteInput arg0, jstring arg1, __JniBaseClass arg2);
+		android::app::slice::Slice_Builder addSubSlice(android::app::slice::Slice arg0, jstring arg1);
+		android::app::slice::Slice_Builder addText(jstring arg0, jstring arg1, __JniBaseClass arg2);
+		android::app::slice::Slice build();
+		android::app::slice::Slice_Builder setCallerNeeded(jboolean arg0);
 	};
 } // namespace android::app::slice
 

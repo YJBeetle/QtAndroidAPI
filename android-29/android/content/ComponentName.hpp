@@ -17,7 +17,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ComponentName(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,12 +30,12 @@ namespace android::content
 		ComponentName(jstring arg0, jstring arg1);
 		
 		// Methods
-		static QAndroidJniObject createRelative(android::content::Context arg0, jstring arg1);
-		static QAndroidJniObject createRelative(jstring arg0, jstring arg1);
-		static QAndroidJniObject readFromParcel(android::os::Parcel arg0);
-		static QAndroidJniObject unflattenFromString(jstring arg0);
+		static android::content::ComponentName createRelative(android::content::Context arg0, jstring arg1);
+		static android::content::ComponentName createRelative(jstring arg0, jstring arg1);
+		static android::content::ComponentName readFromParcel(android::os::Parcel arg0);
+		static android::content::ComponentName unflattenFromString(jstring arg0);
 		static void writeToParcel(android::content::ComponentName arg0, android::os::Parcel arg1);
-		QAndroidJniObject clone();
+		android::content::ComponentName clone();
 		jint compareTo(android::content::ComponentName arg0);
 		jint compareTo(jobject arg0);
 		jint describeContents();

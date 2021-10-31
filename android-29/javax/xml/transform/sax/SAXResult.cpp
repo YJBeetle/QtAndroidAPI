@@ -29,14 +29,14 @@ namespace javax::xml::transform::sax
 		) {}
 	
 	// Methods
-	QAndroidJniObject SAXResult::getHandler()
+	__JniBaseClass SAXResult::getHandler()
 	{
 		return callObjectMethod(
 			"getHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	QAndroidJniObject SAXResult::getLexicalHandler()
+	__JniBaseClass SAXResult::getLexicalHandler()
 	{
 		return callObjectMethod(
 			"getLexicalHandler",

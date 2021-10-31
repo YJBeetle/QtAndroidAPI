@@ -9,8 +9,8 @@ namespace java::nio
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BIG_ENDIAN();
-		static QAndroidJniObject LITTLE_ENDIAN();
+		static java::nio::ByteOrder BIG_ENDIAN();
+		static java::nio::ByteOrder LITTLE_ENDIAN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ByteOrder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -19,7 +19,7 @@ namespace java::nio
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject nativeOrder();
+		static java::nio::ByteOrder nativeOrder();
 		jstring toString();
 	};
 } // namespace java::nio

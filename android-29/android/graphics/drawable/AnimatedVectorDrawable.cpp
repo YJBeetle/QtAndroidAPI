@@ -71,14 +71,14 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject AnimatedVectorDrawable::getColorFilter()
+	android::graphics::ColorFilter AnimatedVectorDrawable::getColorFilter()
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	QAndroidJniObject AnimatedVectorDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState AnimatedVectorDrawable::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
@@ -106,7 +106,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject AnimatedVectorDrawable::getOpticalInsets()
+	android::graphics::Insets AnimatedVectorDrawable::getOpticalInsets()
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
@@ -146,7 +146,7 @@ namespace android::graphics::drawable
 			"()Z"
 		);
 	}
-	QAndroidJniObject AnimatedVectorDrawable::mutate()
+	android::graphics::drawable::Drawable AnimatedVectorDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

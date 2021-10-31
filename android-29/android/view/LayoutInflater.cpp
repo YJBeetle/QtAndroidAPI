@@ -13,7 +13,7 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject LayoutInflater::from(android::content::Context arg0)
+	android::view::LayoutInflater LayoutInflater::from(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.LayoutInflater",
@@ -22,7 +22,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LayoutInflater::cloneInContext(android::content::Context arg0)
+	android::view::LayoutInflater LayoutInflater::cloneInContext(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"cloneInContext",
@@ -30,7 +30,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LayoutInflater::createView(jstring arg0, jstring arg1, __JniBaseClass arg2)
+	android::view::View LayoutInflater::createView(jstring arg0, jstring arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"createView",
@@ -40,7 +40,7 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	QAndroidJniObject LayoutInflater::createView(android::content::Context arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
+	android::view::View LayoutInflater::createView(android::content::Context arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
 	{
 		return callObjectMethod(
 			"createView",
@@ -51,35 +51,35 @@ namespace android::view
 			arg3.object()
 		);
 	}
-	QAndroidJniObject LayoutInflater::getContext()
+	android::content::Context LayoutInflater::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject LayoutInflater::getFactory()
+	__JniBaseClass LayoutInflater::getFactory()
 	{
 		return callObjectMethod(
 			"getFactory",
 			"()Landroid/view/LayoutInflater$Factory;"
 		);
 	}
-	QAndroidJniObject LayoutInflater::getFactory2()
+	__JniBaseClass LayoutInflater::getFactory2()
 	{
 		return callObjectMethod(
 			"getFactory2",
 			"()Landroid/view/LayoutInflater$Factory2;"
 		);
 	}
-	QAndroidJniObject LayoutInflater::getFilter()
+	__JniBaseClass LayoutInflater::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/view/LayoutInflater$Filter;"
 		);
 	}
-	QAndroidJniObject LayoutInflater::inflate(jint arg0, android::view::ViewGroup arg1)
+	android::view::View LayoutInflater::inflate(jint arg0, android::view::ViewGroup arg1)
 	{
 		return callObjectMethod(
 			"inflate",
@@ -88,7 +88,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject LayoutInflater::inflate(__JniBaseClass arg0, android::view::ViewGroup arg1)
+	android::view::View LayoutInflater::inflate(__JniBaseClass arg0, android::view::ViewGroup arg1)
 	{
 		return callObjectMethod(
 			"inflate",
@@ -97,7 +97,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject LayoutInflater::inflate(jint arg0, android::view::ViewGroup arg1, jboolean arg2)
+	android::view::View LayoutInflater::inflate(jint arg0, android::view::ViewGroup arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"inflate",
@@ -107,7 +107,7 @@ namespace android::view
 			arg2
 		);
 	}
-	QAndroidJniObject LayoutInflater::inflate(__JniBaseClass arg0, android::view::ViewGroup arg1, jboolean arg2)
+	android::view::View LayoutInflater::inflate(__JniBaseClass arg0, android::view::ViewGroup arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"inflate",
@@ -117,7 +117,7 @@ namespace android::view
 			arg2
 		);
 	}
-	QAndroidJniObject LayoutInflater::onCreateView(android::content::Context arg0, android::view::View arg1, jstring arg2, __JniBaseClass arg3)
+	android::view::View LayoutInflater::onCreateView(android::content::Context arg0, android::view::View arg1, jstring arg2, __JniBaseClass arg3)
 	{
 		return callObjectMethod(
 			"onCreateView",

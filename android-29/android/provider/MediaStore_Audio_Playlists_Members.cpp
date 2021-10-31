@@ -65,7 +65,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaStore_Audio_Playlists_Members::getContentUri(jstring arg0, jlong arg1)
+	android::net::Uri MediaStore_Audio_Playlists_Members::getContentUri(jstring arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Playlists$Members",

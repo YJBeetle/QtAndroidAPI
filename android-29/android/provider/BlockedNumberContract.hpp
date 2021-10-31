@@ -18,7 +18,7 @@ namespace android::provider
 	public:
 		// Fields
 		static jstring AUTHORITY();
-		static QAndroidJniObject AUTHORITY_URI();
+		static android::net::Uri AUTHORITY_URI();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BlockedNumberContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

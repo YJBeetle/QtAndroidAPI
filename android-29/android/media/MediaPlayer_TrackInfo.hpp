@@ -32,7 +32,7 @@ namespace android::media
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getFormat();
+		android::media::MediaFormat getFormat();
 		jstring getLanguage();
 		jint getTrackType();
 		jstring toString();

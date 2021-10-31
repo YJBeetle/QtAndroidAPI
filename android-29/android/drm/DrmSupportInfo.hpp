@@ -23,8 +23,8 @@ namespace android::drm
 		jboolean equals(jobject arg0);
 		jstring getDescriprition();
 		jstring getDescription();
-		QAndroidJniObject getFileSuffixIterator();
-		QAndroidJniObject getMimeTypeIterator();
+		__JniBaseClass getFileSuffixIterator();
+		__JniBaseClass getMimeTypeIterator();
 		jint hashCode();
 		void setDescription(jstring arg0);
 	};

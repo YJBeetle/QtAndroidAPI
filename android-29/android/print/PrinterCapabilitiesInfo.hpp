@@ -21,7 +21,7 @@ namespace android::print
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrinterCapabilitiesInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,11 +33,11 @@ namespace android::print
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getColorModes();
-		QAndroidJniObject getDefaults();
+		android::print::PrintAttributes getDefaults();
 		jint getDuplexModes();
-		QAndroidJniObject getMediaSizes();
-		QAndroidJniObject getMinMargins();
-		QAndroidJniObject getResolutions();
+		__JniBaseClass getMediaSizes();
+		android::print::PrintAttributes_Margins getMinMargins();
+		__JniBaseClass getResolutions();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

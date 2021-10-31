@@ -24,8 +24,8 @@ namespace android::text
 		jboolean equals(jobject arg0);
 		jint getBreakStrategy();
 		jint getHyphenationFrequency();
-		QAndroidJniObject getTextDirection();
-		QAndroidJniObject getTextPaint();
+		__JniBaseClass getTextDirection();
+		android::text::TextPaint getTextPaint();
 		jint hashCode();
 		jstring toString();
 	};

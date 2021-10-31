@@ -20,7 +20,7 @@ namespace javax::security::cert
 		// Methods
 		jboolean equals(jobject arg0);
 		jbyteArray getEncoded();
-		QAndroidJniObject getPublicKey();
+		__JniBaseClass getPublicKey();
 		jint hashCode();
 		jstring toString();
 		void verify(__JniBaseClass arg0);

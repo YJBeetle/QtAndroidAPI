@@ -129,7 +129,7 @@ namespace android::service::voice
 			"()V"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession::getContext()
+	android::content::Context VoiceInteractionSession::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
@@ -143,7 +143,7 @@ namespace android::service::voice
 			"()I"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession::getLayoutInflater()
+	android::view::LayoutInflater VoiceInteractionSession::getLayoutInflater()
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
@@ -157,7 +157,7 @@ namespace android::service::voice
 			"()I"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession::getWindow()
+	android::app::Dialog VoiceInteractionSession::getWindow()
 	{
 		return callObjectMethod(
 			"getWindow",
@@ -224,7 +224,7 @@ namespace android::service::voice
 			"()V"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession::onCreateContentView()
+	android::view::View VoiceInteractionSession::onCreateContentView()
 	{
 		return callObjectMethod(
 			"onCreateContentView",

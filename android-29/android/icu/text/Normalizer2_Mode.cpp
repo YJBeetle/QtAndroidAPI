@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject Normalizer2_Mode::COMPOSE()
+	android::icu::text::Normalizer2_Mode Normalizer2_Mode::COMPOSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer2$Mode",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/Normalizer2$Mode;"
 		);
 	}
-	QAndroidJniObject Normalizer2_Mode::COMPOSE_CONTIGUOUS()
+	android::icu::text::Normalizer2_Mode Normalizer2_Mode::COMPOSE_CONTIGUOUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer2$Mode",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/Normalizer2$Mode;"
 		);
 	}
-	QAndroidJniObject Normalizer2_Mode::DECOMPOSE()
+	android::icu::text::Normalizer2_Mode Normalizer2_Mode::DECOMPOSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer2$Mode",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/Normalizer2$Mode;"
 		);
 	}
-	QAndroidJniObject Normalizer2_Mode::FCD()
+	android::icu::text::Normalizer2_Mode Normalizer2_Mode::FCD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer2$Mode",
@@ -42,7 +42,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Normalizer2_Mode::valueOf(jstring arg0)
+	android::icu::text::Normalizer2_Mode Normalizer2_Mode::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Normalizer2$Mode",

@@ -27,8 +27,8 @@ namespace android::media
 		static jint LOCATION_MAINBODY_MOVABLE();
 		static jint LOCATION_PERIPHERAL();
 		static jint LOCATION_UNKNOWN();
-		static QAndroidJniObject ORIENTATION_UNKNOWN();
-		static QAndroidJniObject POSITION_UNKNOWN();
+		static android::media::MicrophoneInfo_Coordinate3F ORIENTATION_UNKNOWN();
+		static android::media::MicrophoneInfo_Coordinate3F POSITION_UNKNOWN();
 		static jfloat SENSITIVITY_UNKNOWN();
 		static jfloat SPL_UNKNOWN();
 		
@@ -40,18 +40,18 @@ namespace android::media
 		
 		// Methods
 		jstring getAddress();
-		QAndroidJniObject getChannelMapping();
+		__JniBaseClass getChannelMapping();
 		jstring getDescription();
 		jint getDirectionality();
-		QAndroidJniObject getFrequencyResponse();
+		__JniBaseClass getFrequencyResponse();
 		jint getGroup();
 		jint getId();
 		jint getIndexInTheGroup();
 		jint getLocation();
 		jfloat getMaxSpl();
 		jfloat getMinSpl();
-		QAndroidJniObject getOrientation();
-		QAndroidJniObject getPosition();
+		android::media::MicrophoneInfo_Coordinate3F getOrientation();
+		android::media::MicrophoneInfo_Coordinate3F getPosition();
 		jfloat getSensitivity();
 		jint getType();
 	};

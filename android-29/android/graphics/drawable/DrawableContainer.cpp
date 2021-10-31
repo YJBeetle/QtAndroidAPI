@@ -63,14 +63,14 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject DrawableContainer::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState DrawableContainer::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	QAndroidJniObject DrawableContainer::getCurrent()
+	android::graphics::drawable::Drawable DrawableContainer::getCurrent()
 	{
 		return callObjectMethod(
 			"getCurrent",
@@ -120,7 +120,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject DrawableContainer::getOpticalInsets()
+	android::graphics::Insets DrawableContainer::getOpticalInsets()
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
@@ -172,7 +172,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	QAndroidJniObject DrawableContainer::mutate()
+	android::graphics::drawable::Drawable DrawableContainer::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

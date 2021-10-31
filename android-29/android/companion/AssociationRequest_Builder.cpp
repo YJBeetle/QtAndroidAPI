@@ -16,7 +16,7 @@ namespace android::companion
 		) {}
 	
 	// Methods
-	QAndroidJniObject AssociationRequest_Builder::addDeviceFilter(__JniBaseClass arg0)
+	android::companion::AssociationRequest_Builder AssociationRequest_Builder::addDeviceFilter(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"addDeviceFilter",
@@ -24,14 +24,14 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AssociationRequest_Builder::build()
+	android::companion::AssociationRequest AssociationRequest_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/companion/AssociationRequest;"
 		);
 	}
-	QAndroidJniObject AssociationRequest_Builder::setSingleDevice(jboolean arg0)
+	android::companion::AssociationRequest_Builder AssociationRequest_Builder::setSingleDevice(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setSingleDevice",

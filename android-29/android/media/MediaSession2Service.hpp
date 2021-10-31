@@ -39,12 +39,12 @@ namespace android::media
 		
 		// Methods
 		void addSession(android::media::MediaSession2 arg0);
-		QAndroidJniObject getSessions();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass getSessions();
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
-		QAndroidJniObject onGetSession(android::media::MediaSession2_ControllerInfo arg0);
-		QAndroidJniObject onUpdateNotification(android::media::MediaSession2 arg0);
+		android::media::MediaSession2 onGetSession(android::media::MediaSession2_ControllerInfo arg0);
+		android::media::MediaSession2Service_MediaNotification onUpdateNotification(android::media::MediaSession2 arg0);
 		void removeSession(android::media::MediaSession2 arg0);
 	};
 } // namespace android::media

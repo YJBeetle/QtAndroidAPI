@@ -4,7 +4,7 @@
 namespace android::os::health
 {
 	// Fields
-	QAndroidJniObject TimerStat::CREATOR()
+	__JniBaseClass TimerStat::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.health.TimerStat",

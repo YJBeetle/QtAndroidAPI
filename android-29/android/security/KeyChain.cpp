@@ -120,7 +120,7 @@ namespace android::security
 			arg6
 		);
 	}
-	QAndroidJniObject KeyChain::createInstallIntent()
+	android::content::Intent KeyChain::createInstallIntent()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.security.KeyChain",
@@ -138,7 +138,7 @@ namespace android::security
 			arg1
 		).object<jarray>();
 	}
-	QAndroidJniObject KeyChain::getPrivateKey(android::content::Context arg0, jstring arg1)
+	__JniBaseClass KeyChain::getPrivateKey(android::content::Context arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.security.KeyChain",

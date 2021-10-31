@@ -32,14 +32,14 @@ namespace android::view
 			"()Z"
 		);
 	}
-	QAndroidJniObject ActionProvider::onCreateActionView()
+	android::view::View ActionProvider::onCreateActionView()
 	{
 		return callObjectMethod(
 			"onCreateActionView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject ActionProvider::onCreateActionView(__JniBaseClass arg0)
+	android::view::View ActionProvider::onCreateActionView(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"onCreateActionView",

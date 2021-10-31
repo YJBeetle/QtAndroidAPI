@@ -29,19 +29,19 @@ namespace android::security::keystore
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getAlgorithmParameterSpec();
+		__JniBaseClass getAlgorithmParameterSpec();
 		jbyteArray getAttestationChallenge();
 		jarray getBlockModes();
-		QAndroidJniObject getCertificateNotAfter();
-		QAndroidJniObject getCertificateNotBefore();
-		QAndroidJniObject getCertificateSerialNumber();
-		QAndroidJniObject getCertificateSubject();
+		java::util::Date getCertificateNotAfter();
+		java::util::Date getCertificateNotBefore();
+		java::math::BigInteger getCertificateSerialNumber();
+		javax::security::auth::x500::X500Principal getCertificateSubject();
 		jarray getDigests();
 		jarray getEncryptionPaddings();
 		jint getKeySize();
-		QAndroidJniObject getKeyValidityForConsumptionEnd();
-		QAndroidJniObject getKeyValidityForOriginationEnd();
-		QAndroidJniObject getKeyValidityStart();
+		java::util::Date getKeyValidityForConsumptionEnd();
+		java::util::Date getKeyValidityForOriginationEnd();
+		java::util::Date getKeyValidityStart();
 		jstring getKeystoreAlias();
 		jint getPurposes();
 		jarray getSignaturePaddings();

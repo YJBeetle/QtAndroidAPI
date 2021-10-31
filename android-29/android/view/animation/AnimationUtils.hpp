@@ -31,12 +31,12 @@ namespace android::view::animation
 		
 		// Methods
 		static jlong currentAnimationTimeMillis();
-		static QAndroidJniObject loadAnimation(android::content::Context arg0, jint arg1);
-		static QAndroidJniObject loadInterpolator(android::content::Context arg0, jint arg1);
-		static QAndroidJniObject loadLayoutAnimation(android::content::Context arg0, jint arg1);
-		static QAndroidJniObject makeInAnimation(android::content::Context arg0, jboolean arg1);
-		static QAndroidJniObject makeInChildBottomAnimation(android::content::Context arg0);
-		static QAndroidJniObject makeOutAnimation(android::content::Context arg0, jboolean arg1);
+		static android::view::animation::Animation loadAnimation(android::content::Context arg0, jint arg1);
+		static __JniBaseClass loadInterpolator(android::content::Context arg0, jint arg1);
+		static android::view::animation::LayoutAnimationController loadLayoutAnimation(android::content::Context arg0, jint arg1);
+		static android::view::animation::Animation makeInAnimation(android::content::Context arg0, jboolean arg1);
+		static android::view::animation::Animation makeInChildBottomAnimation(android::content::Context arg0);
+		static android::view::animation::Animation makeOutAnimation(android::content::Context arg0, jboolean arg1);
 	};
 } // namespace android::view::animation
 

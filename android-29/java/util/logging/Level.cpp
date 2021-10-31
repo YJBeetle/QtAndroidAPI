@@ -4,7 +4,7 @@
 namespace java::util::logging
 {
 	// Fields
-	QAndroidJniObject Level::ALL()
+	java::util::logging::Level Level::ALL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.Level",
@@ -12,7 +12,7 @@ namespace java::util::logging
 			"Ljava/util/logging/Level;"
 		);
 	}
-	QAndroidJniObject Level::CONFIG()
+	java::util::logging::Level Level::CONFIG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.Level",
@@ -20,7 +20,7 @@ namespace java::util::logging
 			"Ljava/util/logging/Level;"
 		);
 	}
-	QAndroidJniObject Level::FINE()
+	java::util::logging::Level Level::FINE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.Level",
@@ -28,7 +28,7 @@ namespace java::util::logging
 			"Ljava/util/logging/Level;"
 		);
 	}
-	QAndroidJniObject Level::FINER()
+	java::util::logging::Level Level::FINER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.Level",
@@ -36,7 +36,7 @@ namespace java::util::logging
 			"Ljava/util/logging/Level;"
 		);
 	}
-	QAndroidJniObject Level::FINEST()
+	java::util::logging::Level Level::FINEST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.Level",
@@ -44,7 +44,7 @@ namespace java::util::logging
 			"Ljava/util/logging/Level;"
 		);
 	}
-	QAndroidJniObject Level::INFO()
+	java::util::logging::Level Level::INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.Level",
@@ -52,7 +52,7 @@ namespace java::util::logging
 			"Ljava/util/logging/Level;"
 		);
 	}
-	QAndroidJniObject Level::OFF()
+	java::util::logging::Level Level::OFF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.Level",
@@ -60,7 +60,7 @@ namespace java::util::logging
 			"Ljava/util/logging/Level;"
 		);
 	}
-	QAndroidJniObject Level::SEVERE()
+	java::util::logging::Level Level::SEVERE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.Level",
@@ -68,7 +68,7 @@ namespace java::util::logging
 			"Ljava/util/logging/Level;"
 		);
 	}
-	QAndroidJniObject Level::WARNING()
+	java::util::logging::Level Level::WARNING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.Level",
@@ -83,7 +83,7 @@ namespace java::util::logging
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Level::parse(jstring arg0)
+	java::util::logging::Level Level::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.logging.Level",

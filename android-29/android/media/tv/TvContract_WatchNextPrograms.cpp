@@ -452,7 +452,7 @@ namespace android::media::tv
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_WatchNextPrograms::CONTENT_URI()
+	android::net::Uri TvContract_WatchNextPrograms::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",

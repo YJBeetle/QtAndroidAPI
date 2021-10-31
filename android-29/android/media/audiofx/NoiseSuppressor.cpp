@@ -10,7 +10,7 @@ namespace android::media::audiofx
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject NoiseSuppressor::create(jint arg0)
+	android::media::audiofx::NoiseSuppressor NoiseSuppressor::create(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.audiofx.NoiseSuppressor",

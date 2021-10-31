@@ -10,14 +10,14 @@ namespace android::renderscript
 	{
 	public:
 		// Fields
-		static QAndroidJniObject PIXEL_A();
-		static QAndroidJniObject PIXEL_DEPTH();
-		static QAndroidJniObject PIXEL_L();
-		static QAndroidJniObject PIXEL_LA();
-		static QAndroidJniObject PIXEL_RGB();
-		static QAndroidJniObject PIXEL_RGBA();
-		static QAndroidJniObject PIXEL_YUV();
-		static QAndroidJniObject USER();
+		static android::renderscript::Element_DataKind PIXEL_A();
+		static android::renderscript::Element_DataKind PIXEL_DEPTH();
+		static android::renderscript::Element_DataKind PIXEL_L();
+		static android::renderscript::Element_DataKind PIXEL_LA();
+		static android::renderscript::Element_DataKind PIXEL_RGB();
+		static android::renderscript::Element_DataKind PIXEL_RGBA();
+		static android::renderscript::Element_DataKind PIXEL_YUV();
+		static android::renderscript::Element_DataKind USER();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Element_DataKind(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,7 +26,7 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::renderscript::Element_DataKind valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::renderscript

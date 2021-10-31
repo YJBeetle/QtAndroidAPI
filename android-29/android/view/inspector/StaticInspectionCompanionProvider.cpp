@@ -15,7 +15,7 @@ namespace android::view::inspector
 		) {}
 	
 	// Methods
-	QAndroidJniObject StaticInspectionCompanionProvider::provide(jclass arg0)
+	__JniBaseClass StaticInspectionCompanionProvider::provide(jclass arg0)
 	{
 		return callObjectMethod(
 			"provide",

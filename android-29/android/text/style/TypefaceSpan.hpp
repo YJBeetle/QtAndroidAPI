@@ -37,7 +37,7 @@ namespace android::text::style
 		jint describeContents();
 		jstring getFamily();
 		jint getSpanTypeId();
-		QAndroidJniObject getTypeface();
+		android::graphics::Typeface getTypeface();
 		void updateDrawState(android::text::TextPaint arg0);
 		void updateMeasureState(android::text::TextPaint arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

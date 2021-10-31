@@ -26,7 +26,7 @@ namespace java::security
 		KeyPairGeneratorSpi();
 		
 		// Methods
-		QAndroidJniObject generateKeyPair();
+		java::security::KeyPair generateKeyPair();
 		void initialize(jint arg0, java::security::SecureRandom arg1);
 		void initialize(__JniBaseClass arg0, java::security::SecureRandom arg1);
 	};

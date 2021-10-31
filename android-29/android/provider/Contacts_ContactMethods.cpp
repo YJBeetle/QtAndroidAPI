@@ -21,7 +21,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_ContactMethods::CONTENT_EMAIL_URI()
+	android::net::Uri Contacts_ContactMethods::CONTENT_EMAIL_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",
@@ -61,7 +61,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_ContactMethods::CONTENT_URI()
+	android::net::Uri Contacts_ContactMethods::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$ContactMethods",

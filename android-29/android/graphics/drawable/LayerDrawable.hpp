@@ -66,13 +66,13 @@ namespace android::graphics::drawable
 		void applyTheme(android::content::res::Resources_Theme arg0);
 		jboolean canApplyTheme();
 		void draw(android::graphics::Canvas arg0);
-		QAndroidJniObject findDrawableByLayerId(jint arg0);
+		android::graphics::drawable::Drawable findDrawableByLayerId(jint arg0);
 		jint findIndexByLayerId(jint arg0);
 		jint getAlpha();
 		jint getBottomPadding();
 		jint getChangingConfigurations();
-		QAndroidJniObject getConstantState();
-		QAndroidJniObject getDrawable(jint arg0);
+		android::graphics::drawable::Drawable_ConstantState getConstantState();
+		android::graphics::drawable::Drawable getDrawable(jint arg0);
 		jint getEndPadding();
 		void getHotspotBounds(android::graphics::Rect arg0);
 		jint getId(jint arg0);
@@ -102,7 +102,7 @@ namespace android::graphics::drawable
 		jboolean isProjected();
 		jboolean isStateful();
 		void jumpToCurrentState();
-		QAndroidJniObject mutate();
+		android::graphics::drawable::Drawable mutate();
 		jboolean onLayoutDirectionChanged(jint arg0);
 		void scheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1, jlong arg2);
 		void setAlpha(jint arg0);

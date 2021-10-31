@@ -18,14 +18,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	QAndroidJniObject TextLanguage_Request_Builder::build()
+	android::view::textclassifier::TextLanguage_Request TextLanguage_Request_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextLanguage$Request;"
 		);
 	}
-	QAndroidJniObject TextLanguage_Request_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::TextLanguage_Request_Builder TextLanguage_Request_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",

@@ -24,7 +24,7 @@ namespace javax::net::ssl
 		SNIHostName(jstring arg0);
 		
 		// Methods
-		static QAndroidJniObject createSNIMatcher(jstring arg0);
+		static javax::net::ssl::SNIMatcher createSNIMatcher(jstring arg0);
 		jboolean equals(jobject arg0);
 		jstring getAsciiName();
 		jint hashCode();

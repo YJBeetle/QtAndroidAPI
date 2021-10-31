@@ -62,10 +62,10 @@ namespace android::appwidget
 		AppWidgetHostView(android::content::Context arg0, jint arg1, jint arg2);
 		
 		// Methods
-		static QAndroidJniObject getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2);
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		static android::graphics::Rect getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2);
+		android::widget::FrameLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jint getAppWidgetId();
-		QAndroidJniObject getAppWidgetInfo();
+		android::appwidget::AppWidgetProviderInfo getAppWidgetInfo();
 		void setAppWidget(jint arg0, android::appwidget::AppWidgetProviderInfo arg1);
 		void setExecutor(__JniBaseClass arg0);
 		void setOnLightBackground(jboolean arg0);

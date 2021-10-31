@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject RelativeDateTimeFormatter_Style::LONG()
+	android::icu::text::RelativeDateTimeFormatter_Style RelativeDateTimeFormatter_Style::LONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$Style",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$Style;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_Style::NARROW()
+	android::icu::text::RelativeDateTimeFormatter_Style RelativeDateTimeFormatter_Style::NARROW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$Style",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$Style;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_Style::SHORT()
+	android::icu::text::RelativeDateTimeFormatter_Style RelativeDateTimeFormatter_Style::SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$Style",
@@ -34,7 +34,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RelativeDateTimeFormatter_Style::valueOf(jstring arg0)
+	android::icu::text::RelativeDateTimeFormatter_Style RelativeDateTimeFormatter_Style::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter$Style",

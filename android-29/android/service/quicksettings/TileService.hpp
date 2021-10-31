@@ -45,10 +45,10 @@ namespace android::service::quicksettings
 		
 		// Methods
 		static void requestListeningState(android::content::Context arg0, android::content::ComponentName arg1);
-		QAndroidJniObject getQsTile();
+		android::service::quicksettings::Tile getQsTile();
 		jboolean isLocked();
 		jboolean isSecure();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onClick();
 		void onDestroy();
 		void onStartListening();

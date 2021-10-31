@@ -13,7 +13,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint UNKNOWN_CID();
 		static jint UNKNOWN_RSSI();
 		

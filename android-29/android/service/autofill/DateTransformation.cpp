@@ -6,7 +6,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	QAndroidJniObject DateTransformation::CREATOR()
+	__JniBaseClass DateTransformation::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.DateTransformation",

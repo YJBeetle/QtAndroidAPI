@@ -42,14 +42,14 @@ namespace java::sql
 		
 		// Methods
 		static void deregisterDriver(__JniBaseClass arg0);
-		static QAndroidJniObject drivers();
-		static QAndroidJniObject getConnection(jstring arg0);
-		static QAndroidJniObject getConnection(jstring arg0, java::util::Properties arg1);
-		static QAndroidJniObject getConnection(jstring arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject getDriver(jstring arg0);
-		static QAndroidJniObject getDrivers();
-		static QAndroidJniObject getLogStream();
-		static QAndroidJniObject getLogWriter();
+		static __JniBaseClass drivers();
+		static __JniBaseClass getConnection(jstring arg0);
+		static __JniBaseClass getConnection(jstring arg0, java::util::Properties arg1);
+		static __JniBaseClass getConnection(jstring arg0, jstring arg1, jstring arg2);
+		static __JniBaseClass getDriver(jstring arg0);
+		static __JniBaseClass getDrivers();
+		static java::io::PrintStream getLogStream();
+		static java::io::PrintWriter getLogWriter();
 		static jint getLoginTimeout();
 		static void println(jstring arg0);
 		static void registerDriver(__JniBaseClass arg0);

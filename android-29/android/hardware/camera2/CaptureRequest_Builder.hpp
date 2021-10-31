@@ -30,12 +30,12 @@ namespace android::hardware::camera2
 		
 		// Methods
 		void addTarget(android::view::Surface arg0);
-		QAndroidJniObject build();
+		android::hardware::camera2::CaptureRequest build();
 		jobject get(android::hardware::camera2::CaptureRequest_Key arg0);
 		jobject getPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, jstring arg1);
 		void removeTarget(android::view::Surface arg0);
 		void set(android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1);
-		QAndroidJniObject setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2);
+		android::hardware::camera2::CaptureRequest_Builder setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2);
 		void setTag(jobject arg0);
 	};
 } // namespace android::hardware::camera2

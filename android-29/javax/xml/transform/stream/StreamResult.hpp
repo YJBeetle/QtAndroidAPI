@@ -35,9 +35,9 @@ namespace javax::xml::transform::stream
 		StreamResult(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getOutputStream();
+		java::io::OutputStream getOutputStream();
 		jstring getSystemId();
-		QAndroidJniObject getWriter();
+		java::io::Writer getWriter();
 		void setOutputStream(java::io::OutputStream arg0);
 		void setSystemId(java::io::File arg0);
 		void setSystemId(jstring arg0);

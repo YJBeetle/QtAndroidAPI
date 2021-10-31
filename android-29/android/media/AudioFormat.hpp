@@ -54,7 +54,7 @@ namespace android::media
 		static jint CHANNEL_OUT_SIDE_RIGHT();
 		static jint CHANNEL_OUT_STEREO();
 		static jint CHANNEL_OUT_SURROUND();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint ENCODING_AAC_ELD();
 		static jint ENCODING_AAC_HE_V1();
 		static jint ENCODING_AAC_HE_V2();

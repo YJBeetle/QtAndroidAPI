@@ -29,10 +29,10 @@ namespace android::gesture
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject fromFile(java::io::File arg0);
-		static QAndroidJniObject fromFile(jstring arg0);
-		static QAndroidJniObject fromPrivateFile(android::content::Context arg0, jstring arg1);
-		static QAndroidJniObject fromRawResource(android::content::Context arg0, jint arg1);
+		static android::gesture::GestureLibrary fromFile(java::io::File arg0);
+		static android::gesture::GestureLibrary fromFile(jstring arg0);
+		static android::gesture::GestureLibrary fromPrivateFile(android::content::Context arg0, jstring arg1);
+		static android::gesture::GestureLibrary fromRawResource(android::content::Context arg0, jint arg1);
 	};
 } // namespace android::gesture
 

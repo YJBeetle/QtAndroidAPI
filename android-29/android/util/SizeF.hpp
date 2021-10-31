@@ -18,7 +18,7 @@ namespace android::util
 		SizeF(jfloat arg0, jfloat arg1);
 		
 		// Methods
-		static QAndroidJniObject parseSizeF(jstring arg0);
+		static android::util::SizeF parseSizeF(jstring arg0);
 		jboolean equals(jobject arg0);
 		jfloat getHeight();
 		jfloat getWidth();

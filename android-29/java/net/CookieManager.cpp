@@ -24,7 +24,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject CookieManager::get(java::net::URI arg0, __JniBaseClass arg1)
+	__JniBaseClass CookieManager::get(java::net::URI arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"get",
@@ -33,7 +33,7 @@ namespace java::net
 			arg1.object()
 		);
 	}
-	QAndroidJniObject CookieManager::getCookieStore()
+	__JniBaseClass CookieManager::getCookieStore()
 	{
 		return callObjectMethod(
 			"getCookieStore",

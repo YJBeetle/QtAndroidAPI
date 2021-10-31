@@ -12,7 +12,7 @@ namespace java::nio
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FloatBuffer::allocate(jint arg0)
+	java::nio::FloatBuffer FloatBuffer::allocate(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.FloatBuffer",
@@ -21,7 +21,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject FloatBuffer::wrap(jfloatArray arg0)
+	java::nio::FloatBuffer FloatBuffer::wrap(jfloatArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.FloatBuffer",
@@ -30,7 +30,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject FloatBuffer::wrap(jfloatArray arg0, jint arg1, jint arg2)
+	java::nio::FloatBuffer FloatBuffer::wrap(jfloatArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.FloatBuffer",
@@ -55,21 +55,21 @@ namespace java::nio
 			"()I"
 		);
 	}
-	QAndroidJniObject FloatBuffer::asReadOnlyBuffer()
+	java::nio::FloatBuffer FloatBuffer::asReadOnlyBuffer()
 	{
 		return callObjectMethod(
 			"asReadOnlyBuffer",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	QAndroidJniObject FloatBuffer::clear()
+	java::nio::FloatBuffer FloatBuffer::clear()
 	{
 		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	QAndroidJniObject FloatBuffer::compact()
+	java::nio::FloatBuffer FloatBuffer::compact()
 	{
 		return callObjectMethod(
 			"compact",
@@ -92,7 +92,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FloatBuffer::duplicate()
+	java::nio::FloatBuffer FloatBuffer::duplicate()
 	{
 		return callObjectMethod(
 			"duplicate",
@@ -107,7 +107,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject FloatBuffer::flip()
+	java::nio::FloatBuffer FloatBuffer::flip()
 	{
 		return callObjectMethod(
 			"flip",
@@ -129,7 +129,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject FloatBuffer::get(jfloatArray arg0)
+	java::nio::FloatBuffer FloatBuffer::get(jfloatArray arg0)
 	{
 		return callObjectMethod(
 			"get",
@@ -137,7 +137,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject FloatBuffer::get(jint arg0, jfloatArray arg1)
+	java::nio::FloatBuffer FloatBuffer::get(jint arg0, jfloatArray arg1)
 	{
 		return callObjectMethod(
 			"get",
@@ -146,7 +146,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject FloatBuffer::get(jfloatArray arg0, jint arg1, jint arg2)
+	java::nio::FloatBuffer FloatBuffer::get(jfloatArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"get",
@@ -156,7 +156,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject FloatBuffer::get(jint arg0, jfloatArray arg1, jint arg2, jint arg3)
+	java::nio::FloatBuffer FloatBuffer::get(jint arg0, jfloatArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"get",
@@ -188,7 +188,7 @@ namespace java::nio
 			"()Z"
 		);
 	}
-	QAndroidJniObject FloatBuffer::limit(jint arg0)
+	java::nio::FloatBuffer FloatBuffer::limit(jint arg0)
 	{
 		return callObjectMethod(
 			"limit",
@@ -196,7 +196,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject FloatBuffer::mark()
+	java::nio::FloatBuffer FloatBuffer::mark()
 	{
 		return callObjectMethod(
 			"mark",
@@ -211,14 +211,14 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FloatBuffer::order()
+	java::nio::ByteOrder FloatBuffer::order()
 	{
 		return callObjectMethod(
 			"order",
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
-	QAndroidJniObject FloatBuffer::position(jint arg0)
+	java::nio::FloatBuffer FloatBuffer::position(jint arg0)
 	{
 		return callObjectMethod(
 			"position",
@@ -226,7 +226,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject FloatBuffer::put(jfloatArray arg0)
+	java::nio::FloatBuffer FloatBuffer::put(jfloatArray arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -234,7 +234,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject FloatBuffer::put(jfloat arg0)
+	java::nio::FloatBuffer FloatBuffer::put(jfloat arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -242,7 +242,7 @@ namespace java::nio
 			arg0
 		);
 	}
-	QAndroidJniObject FloatBuffer::put(java::nio::FloatBuffer arg0)
+	java::nio::FloatBuffer FloatBuffer::put(java::nio::FloatBuffer arg0)
 	{
 		return callObjectMethod(
 			"put",
@@ -250,7 +250,7 @@ namespace java::nio
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FloatBuffer::put(jint arg0, jfloatArray arg1)
+	java::nio::FloatBuffer FloatBuffer::put(jint arg0, jfloatArray arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -259,7 +259,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject FloatBuffer::put(jint arg0, jfloat arg1)
+	java::nio::FloatBuffer FloatBuffer::put(jint arg0, jfloat arg1)
 	{
 		return callObjectMethod(
 			"put",
@@ -268,7 +268,7 @@ namespace java::nio
 			arg1
 		);
 	}
-	QAndroidJniObject FloatBuffer::put(jfloatArray arg0, jint arg1, jint arg2)
+	java::nio::FloatBuffer FloatBuffer::put(jfloatArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"put",
@@ -278,7 +278,7 @@ namespace java::nio
 			arg2
 		);
 	}
-	QAndroidJniObject FloatBuffer::put(jint arg0, jfloatArray arg1, jint arg2, jint arg3)
+	java::nio::FloatBuffer FloatBuffer::put(jint arg0, jfloatArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -289,7 +289,7 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject FloatBuffer::put(jint arg0, java::nio::FloatBuffer arg1, jint arg2, jint arg3)
+	java::nio::FloatBuffer FloatBuffer::put(jint arg0, java::nio::FloatBuffer arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"put",
@@ -300,28 +300,28 @@ namespace java::nio
 			arg3
 		);
 	}
-	QAndroidJniObject FloatBuffer::reset()
+	java::nio::FloatBuffer FloatBuffer::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	QAndroidJniObject FloatBuffer::rewind()
+	java::nio::FloatBuffer FloatBuffer::rewind()
 	{
 		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	QAndroidJniObject FloatBuffer::slice()
+	java::nio::FloatBuffer FloatBuffer::slice()
 	{
 		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/FloatBuffer;"
 		);
 	}
-	QAndroidJniObject FloatBuffer::slice(jint arg0, jint arg1)
+	java::nio::FloatBuffer FloatBuffer::slice(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"slice",

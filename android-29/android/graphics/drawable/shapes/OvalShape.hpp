@@ -40,7 +40,7 @@ namespace android::graphics::drawable::shapes
 		OvalShape();
 		
 		// Methods
-		QAndroidJniObject clone();
+		android::graphics::drawable::shapes::OvalShape clone();
 		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
 		void getOutline(android::graphics::Outline arg0);
 	};

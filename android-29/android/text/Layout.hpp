@@ -61,7 +61,7 @@ namespace android::text
 		static jfloat getDesiredWidth(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3);
 		void draw(android::graphics::Canvas arg0);
 		void draw(android::graphics::Canvas arg0, android::graphics::Path arg1, android::graphics::Paint arg2, jint arg3);
-		QAndroidJniObject getAlignment();
+		android::text::Layout_Alignment getAlignment();
 		jint getBottomPadding();
 		void getCursorPath(jint arg0, android::graphics::Path arg1, jstring arg2);
 		jint getEllipsisCount(jint arg0);
@@ -75,7 +75,7 @@ namespace android::text
 		jboolean getLineContainsTab(jint arg0);
 		jint getLineCount();
 		jint getLineDescent(jint arg0);
-		QAndroidJniObject getLineDirections(jint arg0);
+		android::text::Layout_Directions getLineDirections(jint arg0);
 		jint getLineEnd(jint arg0);
 		jint getLineForOffset(jint arg0);
 		jint getLineForVertical(jint arg0);
@@ -89,8 +89,8 @@ namespace android::text
 		jint getOffsetForHorizontal(jint arg0, jfloat arg1);
 		jint getOffsetToLeftOf(jint arg0);
 		jint getOffsetToRightOf(jint arg0);
-		QAndroidJniObject getPaint();
-		QAndroidJniObject getParagraphAlignment(jint arg0);
+		android::text::TextPaint getPaint();
+		android::text::Layout_Alignment getParagraphAlignment(jint arg0);
 		jint getParagraphDirection(jint arg0);
 		jint getParagraphLeft(jint arg0);
 		jint getParagraphRight(jint arg0);

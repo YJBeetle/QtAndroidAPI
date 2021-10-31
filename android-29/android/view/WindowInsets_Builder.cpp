@@ -24,14 +24,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	QAndroidJniObject WindowInsets_Builder::build()
+	android::view::WindowInsets WindowInsets_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/WindowInsets;"
 		);
 	}
-	QAndroidJniObject WindowInsets_Builder::setDisplayCutout(android::view::DisplayCutout arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setDisplayCutout(android::view::DisplayCutout arg0)
 	{
 		return callObjectMethod(
 			"setDisplayCutout",
@@ -39,7 +39,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WindowInsets_Builder::setMandatorySystemGestureInsets(android::graphics::Insets arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setMandatorySystemGestureInsets(android::graphics::Insets arg0)
 	{
 		return callObjectMethod(
 			"setMandatorySystemGestureInsets",
@@ -47,7 +47,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WindowInsets_Builder::setStableInsets(android::graphics::Insets arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setStableInsets(android::graphics::Insets arg0)
 	{
 		return callObjectMethod(
 			"setStableInsets",
@@ -55,7 +55,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WindowInsets_Builder::setSystemGestureInsets(android::graphics::Insets arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setSystemGestureInsets(android::graphics::Insets arg0)
 	{
 		return callObjectMethod(
 			"setSystemGestureInsets",
@@ -63,7 +63,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WindowInsets_Builder::setSystemWindowInsets(android::graphics::Insets arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setSystemWindowInsets(android::graphics::Insets arg0)
 	{
 		return callObjectMethod(
 			"setSystemWindowInsets",
@@ -71,7 +71,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WindowInsets_Builder::setTappableElementInsets(android::graphics::Insets arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setTappableElementInsets(android::graphics::Insets arg0)
 	{
 		return callObjectMethod(
 			"setTappableElementInsets",

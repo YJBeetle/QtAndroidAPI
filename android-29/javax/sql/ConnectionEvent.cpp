@@ -24,7 +24,7 @@ namespace javax::sql
 		) {}
 	
 	// Methods
-	QAndroidJniObject ConnectionEvent::getSQLException()
+	java::sql::SQLException ConnectionEvent::getSQLException()
 	{
 		return callObjectMethod(
 			"getSQLException",

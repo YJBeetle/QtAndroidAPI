@@ -18,7 +18,7 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	QAndroidJniObject MandatoryStreamCombination_MandatoryStreamInformation::getAvailableSizes()
+	__JniBaseClass MandatoryStreamCombination_MandatoryStreamInformation::getAvailableSizes()
 	{
 		return callObjectMethod(
 			"getAvailableSizes",

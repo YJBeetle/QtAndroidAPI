@@ -35,16 +35,16 @@ namespace android::widget
 		// Methods
 		jobject getChild(jint arg0, jint arg1);
 		jlong getChildId(jint arg0, jint arg1);
-		QAndroidJniObject getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4);
+		android::view::View getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4);
 		jint getChildrenCount(jint arg0);
 		jobject getGroup(jint arg0);
 		jint getGroupCount();
 		jlong getGroupId(jint arg0);
-		QAndroidJniObject getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3);
+		android::view::View getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3);
 		jboolean hasStableIds();
 		jboolean isChildSelectable(jint arg0, jint arg1);
-		QAndroidJniObject newChildView(jboolean arg0, android::view::ViewGroup arg1);
-		QAndroidJniObject newGroupView(jboolean arg0, android::view::ViewGroup arg1);
+		android::view::View newChildView(jboolean arg0, android::view::ViewGroup arg1);
+		android::view::View newGroupView(jboolean arg0, android::view::ViewGroup arg1);
 	};
 } // namespace android::widget
 

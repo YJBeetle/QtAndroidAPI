@@ -19,7 +19,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject KeyStoreSpi::engineAliases()
+	__JniBaseClass KeyStoreSpi::engineAliases()
 	{
 		return callObjectMethod(
 			"engineAliases",
@@ -51,7 +51,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject KeyStoreSpi::engineGetCertificate(jstring arg0)
+	java::security::cert::Certificate KeyStoreSpi::engineGetCertificate(jstring arg0)
 	{
 		return callObjectMethod(
 			"engineGetCertificate",
@@ -75,7 +75,7 @@ namespace java::security
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject KeyStoreSpi::engineGetCreationDate(jstring arg0)
+	java::util::Date KeyStoreSpi::engineGetCreationDate(jstring arg0)
 	{
 		return callObjectMethod(
 			"engineGetCreationDate",
@@ -83,7 +83,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject KeyStoreSpi::engineGetEntry(jstring arg0, __JniBaseClass arg1)
+	__JniBaseClass KeyStoreSpi::engineGetEntry(jstring arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"engineGetEntry",
@@ -92,7 +92,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	QAndroidJniObject KeyStoreSpi::engineGetKey(jstring arg0, jcharArray arg1)
+	__JniBaseClass KeyStoreSpi::engineGetKey(jstring arg0, jcharArray arg1)
 	{
 		return callObjectMethod(
 			"engineGetKey",

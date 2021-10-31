@@ -15,7 +15,7 @@ namespace javax::microedition::khronos::egl
 		) {}
 	
 	// Methods
-	QAndroidJniObject EGLContext::getEGL()
+	__JniBaseClass EGLContext::getEGL()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.microedition.khronos.egl.EGLContext",
@@ -23,7 +23,7 @@ namespace javax::microedition::khronos::egl
 			"()Ljavax/microedition/khronos/egl/EGL;"
 		);
 	}
-	QAndroidJniObject EGLContext::getGL()
+	__JniBaseClass EGLContext::getGL()
 	{
 		return callObjectMethod(
 			"getGL",

@@ -21,8 +21,8 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject EMPTY();
+		static __JniBaseClass CREATOR();
+		static android::net::Uri EMPTY();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Uri(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -34,12 +34,12 @@ namespace android::net
 		static jstring decode(jstring arg0);
 		static jstring encode(jstring arg0);
 		static jstring encode(jstring arg0, jstring arg1);
-		static QAndroidJniObject fromFile(java::io::File arg0);
-		static QAndroidJniObject fromParts(jstring arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject withAppendedPath(android::net::Uri arg0, jstring arg1);
+		static android::net::Uri fromFile(java::io::File arg0);
+		static android::net::Uri fromParts(jstring arg0, jstring arg1, jstring arg2);
+		static android::net::Uri parse(jstring arg0);
+		static android::net::Uri withAppendedPath(android::net::Uri arg0, jstring arg1);
 		static void writeToParcel(android::os::Parcel arg0, android::net::Uri arg1);
-		QAndroidJniObject buildUpon();
+		android::net::Uri_Builder buildUpon();
 		jint compareTo(android::net::Uri arg0);
 		jint compareTo(jobject arg0);
 		jboolean equals(jobject arg0);
@@ -55,12 +55,12 @@ namespace android::net
 		jstring getHost();
 		jstring getLastPathSegment();
 		jstring getPath();
-		QAndroidJniObject getPathSegments();
+		__JniBaseClass getPathSegments();
 		jint getPort();
 		jstring getQuery();
 		jstring getQueryParameter(jstring arg0);
-		QAndroidJniObject getQueryParameterNames();
-		QAndroidJniObject getQueryParameters(jstring arg0);
+		__JniBaseClass getQueryParameterNames();
+		__JniBaseClass getQueryParameters(jstring arg0);
 		jstring getScheme();
 		jstring getSchemeSpecificPart();
 		jstring getUserInfo();
@@ -69,7 +69,7 @@ namespace android::net
 		jboolean isHierarchical();
 		jboolean isOpaque();
 		jboolean isRelative();
-		QAndroidJniObject normalizeScheme();
+		android::net::Uri normalizeScheme();
 		jstring toString();
 	};
 } // namespace android::net

@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	QAndroidJniObject DateValueSanitizer::CREATOR()
+	__JniBaseClass DateValueSanitizer::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.DateValueSanitizer",

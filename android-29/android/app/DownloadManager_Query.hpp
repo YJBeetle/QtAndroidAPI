@@ -18,8 +18,8 @@ namespace android::app
 		DownloadManager_Query();
 		
 		// Methods
-		QAndroidJniObject setFilterById(jlongArray arg0);
-		QAndroidJniObject setFilterByStatus(jint arg0);
+		android::app::DownloadManager_Query setFilterById(jlongArray arg0);
+		android::app::DownloadManager_Query setFilterByStatus(jint arg0);
 	};
 } // namespace android::app
 

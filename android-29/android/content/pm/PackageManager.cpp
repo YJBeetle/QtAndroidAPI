@@ -1428,7 +1428,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	QAndroidJniObject PackageManager::getActivityBanner(android::content::ComponentName arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityBanner(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getActivityBanner",
@@ -1436,7 +1436,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getActivityBanner(android::content::Intent arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityBanner(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"getActivityBanner",
@@ -1444,7 +1444,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getActivityIcon(android::content::ComponentName arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityIcon(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getActivityIcon",
@@ -1452,7 +1452,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getActivityIcon(android::content::Intent arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityIcon(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"getActivityIcon",
@@ -1460,7 +1460,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getActivityInfo(android::content::ComponentName arg0, jint arg1)
+	android::content::pm::ActivityInfo PackageManager::getActivityInfo(android::content::ComponentName arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getActivityInfo",
@@ -1469,7 +1469,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getActivityLogo(android::content::ComponentName arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityLogo(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getActivityLogo",
@@ -1477,7 +1477,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getActivityLogo(android::content::Intent arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityLogo(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"getActivityLogo",
@@ -1485,7 +1485,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getAllPermissionGroups(jint arg0)
+	__JniBaseClass PackageManager::getAllPermissionGroups(jint arg0)
 	{
 		return callObjectMethod(
 			"getAllPermissionGroups",
@@ -1493,7 +1493,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getApplicationBanner(android::content::pm::ApplicationInfo arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationBanner(android::content::pm::ApplicationInfo arg0)
 	{
 		return callObjectMethod(
 			"getApplicationBanner",
@@ -1501,7 +1501,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getApplicationBanner(jstring arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationBanner(jstring arg0)
 	{
 		return callObjectMethod(
 			"getApplicationBanner",
@@ -1517,7 +1517,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getApplicationIcon(android::content::pm::ApplicationInfo arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationIcon(android::content::pm::ApplicationInfo arg0)
 	{
 		return callObjectMethod(
 			"getApplicationIcon",
@@ -1525,7 +1525,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getApplicationIcon(jstring arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationIcon(jstring arg0)
 	{
 		return callObjectMethod(
 			"getApplicationIcon",
@@ -1533,7 +1533,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getApplicationInfo(jstring arg0, jint arg1)
+	android::content::pm::ApplicationInfo PackageManager::getApplicationInfo(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getApplicationInfo",
@@ -1550,7 +1550,7 @@ namespace android::content::pm
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject PackageManager::getApplicationLogo(android::content::pm::ApplicationInfo arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationLogo(android::content::pm::ApplicationInfo arg0)
 	{
 		return callObjectMethod(
 			"getApplicationLogo",
@@ -1558,7 +1558,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getApplicationLogo(jstring arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationLogo(jstring arg0)
 	{
 		return callObjectMethod(
 			"getApplicationLogo",
@@ -1566,7 +1566,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getChangedPackages(jint arg0)
+	android::content::pm::ChangedPackages PackageManager::getChangedPackages(jint arg0)
 	{
 		return callObjectMethod(
 			"getChangedPackages",
@@ -1582,14 +1582,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getDefaultActivityIcon()
+	android::graphics::drawable::Drawable PackageManager::getDefaultActivityIcon()
 	{
 		return callObjectMethod(
 			"getDefaultActivityIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject PackageManager::getDrawable(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
+	android::graphics::drawable::Drawable PackageManager::getDrawable(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -1599,7 +1599,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getInstalledApplications(jint arg0)
+	__JniBaseClass PackageManager::getInstalledApplications(jint arg0)
 	{
 		return callObjectMethod(
 			"getInstalledApplications",
@@ -1607,7 +1607,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getInstalledModules(jint arg0)
+	__JniBaseClass PackageManager::getInstalledModules(jint arg0)
 	{
 		return callObjectMethod(
 			"getInstalledModules",
@@ -1615,7 +1615,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getInstalledPackages(jint arg0)
+	__JniBaseClass PackageManager::getInstalledPackages(jint arg0)
 	{
 		return callObjectMethod(
 			"getInstalledPackages",
@@ -1645,7 +1645,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject PackageManager::getInstrumentationInfo(android::content::ComponentName arg0, jint arg1)
+	android::content::pm::InstrumentationInfo PackageManager::getInstrumentationInfo(android::content::ComponentName arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getInstrumentationInfo",
@@ -1654,7 +1654,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getLaunchIntentForPackage(jstring arg0)
+	android::content::Intent PackageManager::getLaunchIntentForPackage(jstring arg0)
 	{
 		return callObjectMethod(
 			"getLaunchIntentForPackage",
@@ -1662,7 +1662,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getLeanbackLaunchIntentForPackage(jstring arg0)
+	android::content::Intent PackageManager::getLeanbackLaunchIntentForPackage(jstring arg0)
 	{
 		return callObjectMethod(
 			"getLeanbackLaunchIntentForPackage",
@@ -1670,7 +1670,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getModuleInfo(jstring arg0, jint arg1)
+	android::content::pm::ModuleInfo PackageManager::getModuleInfo(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getModuleInfo",
@@ -1687,7 +1687,7 @@ namespace android::content::pm
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject PackageManager::getPackageArchiveInfo(jstring arg0, jint arg1)
+	android::content::pm::PackageInfo PackageManager::getPackageArchiveInfo(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPackageArchiveInfo",
@@ -1713,7 +1713,7 @@ namespace android::content::pm
 			arg1
 		).object<jintArray>();
 	}
-	QAndroidJniObject PackageManager::getPackageInfo(android::content::pm::VersionedPackage arg0, jint arg1)
+	android::content::pm::PackageInfo PackageManager::getPackageInfo(android::content::pm::VersionedPackage arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPackageInfo",
@@ -1722,7 +1722,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getPackageInfo(jstring arg0, jint arg1)
+	android::content::pm::PackageInfo PackageManager::getPackageInfo(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPackageInfo",
@@ -1731,7 +1731,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getPackageInstaller()
+	android::content::pm::PackageInstaller PackageManager::getPackageInstaller()
 	{
 		return callObjectMethod(
 			"getPackageInstaller",
@@ -1755,7 +1755,7 @@ namespace android::content::pm
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject PackageManager::getPackagesHoldingPermissions(jarray arg0, jint arg1)
+	__JniBaseClass PackageManager::getPackagesHoldingPermissions(jarray arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPackagesHoldingPermissions",
@@ -1764,7 +1764,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getPermissionGroupInfo(jstring arg0, jint arg1)
+	android::content::pm::PermissionGroupInfo PackageManager::getPermissionGroupInfo(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPermissionGroupInfo",
@@ -1773,7 +1773,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getPermissionInfo(jstring arg0, jint arg1)
+	android::content::pm::PermissionInfo PackageManager::getPermissionInfo(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPermissionInfo",
@@ -1792,7 +1792,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	QAndroidJniObject PackageManager::getPreferredPackages(jint arg0)
+	__JniBaseClass PackageManager::getPreferredPackages(jint arg0)
 	{
 		return callObjectMethod(
 			"getPreferredPackages",
@@ -1800,7 +1800,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getProviderInfo(android::content::ComponentName arg0, jint arg1)
+	android::content::pm::ProviderInfo PackageManager::getProviderInfo(android::content::ComponentName arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getProviderInfo",
@@ -1809,7 +1809,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getReceiverInfo(android::content::ComponentName arg0, jint arg1)
+	android::content::pm::ActivityInfo PackageManager::getReceiverInfo(android::content::ComponentName arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getReceiverInfo",
@@ -1818,7 +1818,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getResourcesForActivity(android::content::ComponentName arg0)
+	android::content::res::Resources PackageManager::getResourcesForActivity(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getResourcesForActivity",
@@ -1826,7 +1826,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getResourcesForApplication(android::content::pm::ApplicationInfo arg0)
+	android::content::res::Resources PackageManager::getResourcesForApplication(android::content::pm::ApplicationInfo arg0)
 	{
 		return callObjectMethod(
 			"getResourcesForApplication",
@@ -1834,7 +1834,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageManager::getResourcesForApplication(jstring arg0)
+	android::content::res::Resources PackageManager::getResourcesForApplication(jstring arg0)
 	{
 		return callObjectMethod(
 			"getResourcesForApplication",
@@ -1842,7 +1842,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getServiceInfo(android::content::ComponentName arg0, jint arg1)
+	android::content::pm::ServiceInfo PackageManager::getServiceInfo(android::content::ComponentName arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getServiceInfo",
@@ -1851,7 +1851,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getSharedLibraries(jint arg0)
+	__JniBaseClass PackageManager::getSharedLibraries(jint arg0)
 	{
 		return callObjectMethod(
 			"getSharedLibraries",
@@ -1859,7 +1859,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getSuspendedPackageAppExtras()
+	android::os::Bundle PackageManager::getSuspendedPackageAppExtras()
 	{
 		return callObjectMethod(
 			"getSuspendedPackageAppExtras",
@@ -1898,7 +1898,7 @@ namespace android::content::pm
 			arg2.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject PackageManager::getUserBadgedDrawableForDensity(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, jint arg3)
+	android::graphics::drawable::Drawable PackageManager::getUserBadgedDrawableForDensity(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"getUserBadgedDrawableForDensity",
@@ -1909,7 +1909,7 @@ namespace android::content::pm
 			arg3
 		);
 	}
-	QAndroidJniObject PackageManager::getUserBadgedIcon(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1)
+	android::graphics::drawable::Drawable PackageManager::getUserBadgedIcon(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getUserBadgedIcon",
@@ -1927,7 +1927,7 @@ namespace android::content::pm
 			arg1.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject PackageManager::getWhitelistedRestrictedPermissions(jstring arg0, jint arg1)
+	__JniBaseClass PackageManager::getWhitelistedRestrictedPermissions(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getWhitelistedRestrictedPermissions",
@@ -1936,7 +1936,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getXml(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
+	__JniBaseClass PackageManager::getXml(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
 	{
 		return callObjectMethod(
 			"getXml",
@@ -2036,7 +2036,7 @@ namespace android::content::pm
 			"()Z"
 		);
 	}
-	QAndroidJniObject PackageManager::queryBroadcastReceivers(android::content::Intent arg0, jint arg1)
+	__JniBaseClass PackageManager::queryBroadcastReceivers(android::content::Intent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryBroadcastReceivers",
@@ -2045,7 +2045,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::queryContentProviders(jstring arg0, jint arg1, jint arg2)
+	__JniBaseClass PackageManager::queryContentProviders(jstring arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"queryContentProviders",
@@ -2055,7 +2055,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	QAndroidJniObject PackageManager::queryInstrumentation(jstring arg0, jint arg1)
+	__JniBaseClass PackageManager::queryInstrumentation(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryInstrumentation",
@@ -2064,7 +2064,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::queryIntentActivities(android::content::Intent arg0, jint arg1)
+	__JniBaseClass PackageManager::queryIntentActivities(android::content::Intent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryIntentActivities",
@@ -2073,7 +2073,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::queryIntentActivityOptions(android::content::ComponentName arg0, jarray arg1, android::content::Intent arg2, jint arg3)
+	__JniBaseClass PackageManager::queryIntentActivityOptions(android::content::ComponentName arg0, jarray arg1, android::content::Intent arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"queryIntentActivityOptions",
@@ -2084,7 +2084,7 @@ namespace android::content::pm
 			arg3
 		);
 	}
-	QAndroidJniObject PackageManager::queryIntentContentProviders(android::content::Intent arg0, jint arg1)
+	__JniBaseClass PackageManager::queryIntentContentProviders(android::content::Intent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryIntentContentProviders",
@@ -2093,7 +2093,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::queryIntentServices(android::content::Intent arg0, jint arg1)
+	__JniBaseClass PackageManager::queryIntentServices(android::content::Intent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryIntentServices",
@@ -2102,7 +2102,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::queryPermissionsByGroup(jstring arg0, jint arg1)
+	__JniBaseClass PackageManager::queryPermissionsByGroup(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryPermissionsByGroup",
@@ -2137,7 +2137,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	QAndroidJniObject PackageManager::resolveActivity(android::content::Intent arg0, jint arg1)
+	android::content::pm::ResolveInfo PackageManager::resolveActivity(android::content::Intent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resolveActivity",
@@ -2146,7 +2146,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::resolveContentProvider(jstring arg0, jint arg1)
+	android::content::pm::ProviderInfo PackageManager::resolveContentProvider(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resolveContentProvider",
@@ -2155,7 +2155,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::resolveService(android::content::Intent arg0, jint arg1)
+	android::content::pm::ResolveInfo PackageManager::resolveService(android::content::Intent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"resolveService",

@@ -17,7 +17,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject UUID::fromString(jstring arg0)
+	java::util::UUID UUID::fromString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.UUID",
@@ -26,7 +26,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject UUID::nameUUIDFromBytes(jbyteArray arg0)
+	java::util::UUID UUID::nameUUIDFromBytes(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.UUID",
@@ -35,7 +35,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject UUID::randomUUID()
+	java::util::UUID UUID::randomUUID()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.UUID",

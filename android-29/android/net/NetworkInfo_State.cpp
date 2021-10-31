@@ -3,7 +3,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject NetworkInfo_State::CONNECTED()
+	android::net::NetworkInfo_State NetworkInfo_State::CONNECTED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo$State",
@@ -11,7 +11,7 @@ namespace android::net
 			"Landroid/net/NetworkInfo$State;"
 		);
 	}
-	QAndroidJniObject NetworkInfo_State::CONNECTING()
+	android::net::NetworkInfo_State NetworkInfo_State::CONNECTING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo$State",
@@ -19,7 +19,7 @@ namespace android::net
 			"Landroid/net/NetworkInfo$State;"
 		);
 	}
-	QAndroidJniObject NetworkInfo_State::DISCONNECTED()
+	android::net::NetworkInfo_State NetworkInfo_State::DISCONNECTED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo$State",
@@ -27,7 +27,7 @@ namespace android::net
 			"Landroid/net/NetworkInfo$State;"
 		);
 	}
-	QAndroidJniObject NetworkInfo_State::DISCONNECTING()
+	android::net::NetworkInfo_State NetworkInfo_State::DISCONNECTING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo$State",
@@ -35,7 +35,7 @@ namespace android::net
 			"Landroid/net/NetworkInfo$State;"
 		);
 	}
-	QAndroidJniObject NetworkInfo_State::SUSPENDED()
+	android::net::NetworkInfo_State NetworkInfo_State::SUSPENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo$State",
@@ -43,7 +43,7 @@ namespace android::net
 			"Landroid/net/NetworkInfo$State;"
 		);
 	}
-	QAndroidJniObject NetworkInfo_State::UNKNOWN()
+	android::net::NetworkInfo_State NetworkInfo_State::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo$State",
@@ -58,7 +58,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject NetworkInfo_State::valueOf(jstring arg0)
+	android::net::NetworkInfo_State NetworkInfo_State::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.NetworkInfo$State",

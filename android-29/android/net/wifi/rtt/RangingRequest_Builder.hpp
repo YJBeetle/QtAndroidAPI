@@ -34,11 +34,11 @@ namespace android::net::wifi::rtt
 		RangingRequest_Builder();
 		
 		// Methods
-		QAndroidJniObject addAccessPoint(android::net::wifi::ScanResult arg0);
-		QAndroidJniObject addAccessPoints(__JniBaseClass arg0);
-		QAndroidJniObject addWifiAwarePeer(android::net::MacAddress arg0);
-		QAndroidJniObject addWifiAwarePeer(android::net::wifi::aware::PeerHandle arg0);
-		QAndroidJniObject build();
+		android::net::wifi::rtt::RangingRequest_Builder addAccessPoint(android::net::wifi::ScanResult arg0);
+		android::net::wifi::rtt::RangingRequest_Builder addAccessPoints(__JniBaseClass arg0);
+		android::net::wifi::rtt::RangingRequest_Builder addWifiAwarePeer(android::net::MacAddress arg0);
+		android::net::wifi::rtt::RangingRequest_Builder addWifiAwarePeer(android::net::wifi::aware::PeerHandle arg0);
+		android::net::wifi::rtt::RangingRequest build();
 	};
 } // namespace android::net::wifi::rtt
 

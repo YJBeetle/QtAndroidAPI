@@ -3,7 +3,7 @@
 namespace java::nio::charset
 {
 	// Fields
-	QAndroidJniObject CodingErrorAction::IGNORE()
+	java::nio::charset::CodingErrorAction CodingErrorAction::IGNORE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CodingErrorAction",
@@ -11,7 +11,7 @@ namespace java::nio::charset
 			"Ljava/nio/charset/CodingErrorAction;"
 		);
 	}
-	QAndroidJniObject CodingErrorAction::REPLACE()
+	java::nio::charset::CodingErrorAction CodingErrorAction::REPLACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CodingErrorAction",
@@ -19,7 +19,7 @@ namespace java::nio::charset
 			"Ljava/nio/charset/CodingErrorAction;"
 		);
 	}
-	QAndroidJniObject CodingErrorAction::REPORT()
+	java::nio::charset::CodingErrorAction CodingErrorAction::REPORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CodingErrorAction",

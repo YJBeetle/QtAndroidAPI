@@ -32,7 +32,7 @@ namespace android::widget
 			"()[Ljava/lang/CharSequence;"
 		).object<jarray>();
 	}
-	QAndroidJniObject BaseAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View BaseAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"getDropDownView",

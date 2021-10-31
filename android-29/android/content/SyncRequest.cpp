@@ -4,7 +4,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject SyncRequest::CREATOR()
+	__JniBaseClass SyncRequest::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.SyncRequest",

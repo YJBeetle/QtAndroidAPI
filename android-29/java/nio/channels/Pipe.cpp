@@ -12,7 +12,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Pipe::open()
+	java::nio::channels::Pipe Pipe::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.Pipe",
@@ -20,14 +20,14 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/Pipe;"
 		);
 	}
-	QAndroidJniObject Pipe::sink()
+	java::nio::channels::Pipe_SinkChannel Pipe::sink()
 	{
 		return callObjectMethod(
 			"sink",
 			"()Ljava/nio/channels/Pipe$SinkChannel;"
 		);
 	}
-	QAndroidJniObject Pipe::source()
+	java::nio::channels::Pipe_SourceChannel Pipe::source()
 	{
 		return callObjectMethod(
 			"source",

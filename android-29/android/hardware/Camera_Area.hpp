@@ -13,7 +13,7 @@ namespace android::hardware
 	{
 	public:
 		// Fields
-		QAndroidJniObject rect();
+		android::graphics::Rect rect();
 		jint weight();
 		
 		// QAndroidJniObject forward

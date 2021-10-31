@@ -33,7 +33,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ActivityOptions::makeBasic()
+	android::app::ActivityOptions ActivityOptions::makeBasic()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ActivityOptions",
@@ -41,7 +41,7 @@ namespace android::app
 			"()Landroid/app/ActivityOptions;"
 		);
 	}
-	QAndroidJniObject ActivityOptions::makeClipRevealAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	android::app::ActivityOptions ActivityOptions::makeClipRevealAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ActivityOptions",
@@ -54,7 +54,7 @@ namespace android::app
 			arg4
 		);
 	}
-	QAndroidJniObject ActivityOptions::makeCustomAnimation(android::content::Context arg0, jint arg1, jint arg2)
+	android::app::ActivityOptions ActivityOptions::makeCustomAnimation(android::content::Context arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ActivityOptions",
@@ -65,7 +65,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject ActivityOptions::makeScaleUpAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	android::app::ActivityOptions ActivityOptions::makeScaleUpAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ActivityOptions",
@@ -78,7 +78,7 @@ namespace android::app
 			arg4
 		);
 	}
-	QAndroidJniObject ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, jarray arg1)
+	android::app::ActivityOptions ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ActivityOptions",
@@ -88,7 +88,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, jstring arg2)
+	android::app::ActivityOptions ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ActivityOptions",
@@ -99,7 +99,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject ActivityOptions::makeTaskLaunchBehind()
+	android::app::ActivityOptions ActivityOptions::makeTaskLaunchBehind()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ActivityOptions",
@@ -107,7 +107,7 @@ namespace android::app
 			"()Landroid/app/ActivityOptions;"
 		);
 	}
-	QAndroidJniObject ActivityOptions::makeThumbnailScaleUpAnimation(android::view::View arg0, android::graphics::Bitmap arg1, jint arg2, jint arg3)
+	android::app::ActivityOptions ActivityOptions::makeThumbnailScaleUpAnimation(android::view::View arg0, android::graphics::Bitmap arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ActivityOptions",
@@ -119,7 +119,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject ActivityOptions::getLaunchBounds()
+	android::graphics::Rect ActivityOptions::getLaunchBounds()
 	{
 		return callObjectMethod(
 			"getLaunchBounds",
@@ -148,7 +148,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ActivityOptions::setAppVerificationBundle(android::os::Bundle arg0)
+	android::app::ActivityOptions ActivityOptions::setAppVerificationBundle(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setAppVerificationBundle",
@@ -156,7 +156,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ActivityOptions::setLaunchBounds(android::graphics::Rect arg0)
+	android::app::ActivityOptions ActivityOptions::setLaunchBounds(android::graphics::Rect arg0)
 	{
 		return callObjectMethod(
 			"setLaunchBounds",
@@ -164,7 +164,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ActivityOptions::setLaunchDisplayId(jint arg0)
+	android::app::ActivityOptions ActivityOptions::setLaunchDisplayId(jint arg0)
 	{
 		return callObjectMethod(
 			"setLaunchDisplayId",
@@ -172,7 +172,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject ActivityOptions::setLockTaskEnabled(jboolean arg0)
+	android::app::ActivityOptions ActivityOptions::setLockTaskEnabled(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setLockTaskEnabled",
@@ -180,7 +180,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject ActivityOptions::toBundle()
+	android::os::Bundle ActivityOptions::toBundle()
 	{
 		return callObjectMethod(
 			"toBundle",

@@ -6,7 +6,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	QAndroidJniObject InputMethodSubtype::CREATOR()
+	__JniBaseClass InputMethodSubtype::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.InputMethodSubtype",

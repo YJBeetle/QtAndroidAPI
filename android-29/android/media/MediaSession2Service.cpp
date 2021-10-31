@@ -35,14 +35,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaSession2Service::getSessions()
+	__JniBaseClass MediaSession2Service::getSessions()
 	{
 		return callObjectMethod(
 			"getSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject MediaSession2Service::onBind(android::content::Intent arg0)
+	__JniBaseClass MediaSession2Service::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -64,7 +64,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaSession2Service::onGetSession(android::media::MediaSession2_ControllerInfo arg0)
+	android::media::MediaSession2 MediaSession2Service::onGetSession(android::media::MediaSession2_ControllerInfo arg0)
 	{
 		return callObjectMethod(
 			"onGetSession",
@@ -72,7 +72,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaSession2Service::onUpdateNotification(android::media::MediaSession2 arg0)
+	android::media::MediaSession2Service_MediaNotification MediaSession2Service::onUpdateNotification(android::media::MediaSession2 arg0)
 	{
 		return callObjectMethod(
 			"onUpdateNotification",

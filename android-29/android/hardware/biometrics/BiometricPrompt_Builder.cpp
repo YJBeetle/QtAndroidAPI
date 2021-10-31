@@ -18,14 +18,14 @@ namespace android::hardware::biometrics
 		) {}
 	
 	// Methods
-	QAndroidJniObject BiometricPrompt_Builder::build()
+	android::hardware::biometrics::BiometricPrompt BiometricPrompt_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/hardware/biometrics/BiometricPrompt;"
 		);
 	}
-	QAndroidJniObject BiometricPrompt_Builder::setConfirmationRequired(jboolean arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setConfirmationRequired(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setConfirmationRequired",
@@ -33,7 +33,7 @@ namespace android::hardware::biometrics
 			arg0
 		);
 	}
-	QAndroidJniObject BiometricPrompt_Builder::setDescription(jstring arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setDescription(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -41,7 +41,7 @@ namespace android::hardware::biometrics
 			arg0
 		);
 	}
-	QAndroidJniObject BiometricPrompt_Builder::setDeviceCredentialAllowed(jboolean arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setDeviceCredentialAllowed(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setDeviceCredentialAllowed",
@@ -49,7 +49,7 @@ namespace android::hardware::biometrics
 			arg0
 		);
 	}
-	QAndroidJniObject BiometricPrompt_Builder::setNegativeButton(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setNegativeButton(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"setNegativeButton",
@@ -59,7 +59,7 @@ namespace android::hardware::biometrics
 			arg2.object()
 		);
 	}
-	QAndroidJniObject BiometricPrompt_Builder::setSubtitle(jstring arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setSubtitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSubtitle",
@@ -67,7 +67,7 @@ namespace android::hardware::biometrics
 			arg0
 		);
 	}
-	QAndroidJniObject BiometricPrompt_Builder::setTitle(jstring arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setTitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setTitle",

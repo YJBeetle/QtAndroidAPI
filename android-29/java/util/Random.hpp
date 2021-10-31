@@ -31,18 +31,18 @@ namespace java::util
 		Random(jlong arg0);
 		
 		// Methods
-		QAndroidJniObject doubles();
-		QAndroidJniObject doubles(jlong arg0);
-		QAndroidJniObject doubles(jdouble arg0, jdouble arg1);
-		QAndroidJniObject doubles(jlong arg0, jdouble arg1, jdouble arg2);
-		QAndroidJniObject ints();
-		QAndroidJniObject ints(jlong arg0);
-		QAndroidJniObject ints(jint arg0, jint arg1);
-		QAndroidJniObject ints(jlong arg0, jint arg1, jint arg2);
-		QAndroidJniObject longs();
-		QAndroidJniObject longs(jlong arg0);
-		QAndroidJniObject longs(jlong arg0, jlong arg1);
-		QAndroidJniObject longs(jlong arg0, jlong arg1, jlong arg2);
+		__JniBaseClass doubles();
+		__JniBaseClass doubles(jlong arg0);
+		__JniBaseClass doubles(jdouble arg0, jdouble arg1);
+		__JniBaseClass doubles(jlong arg0, jdouble arg1, jdouble arg2);
+		__JniBaseClass ints();
+		__JniBaseClass ints(jlong arg0);
+		__JniBaseClass ints(jint arg0, jint arg1);
+		__JniBaseClass ints(jlong arg0, jint arg1, jint arg2);
+		__JniBaseClass longs();
+		__JniBaseClass longs(jlong arg0);
+		__JniBaseClass longs(jlong arg0, jlong arg1);
+		__JniBaseClass longs(jlong arg0, jlong arg1, jlong arg2);
 		jboolean nextBoolean();
 		void nextBytes(jbyteArray arg0);
 		jdouble nextDouble();

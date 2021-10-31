@@ -9,7 +9,7 @@
 namespace android::content::res
 {
 	// Fields
-	QAndroidJniObject AssetFileDescriptor::CREATOR()
+	__JniBaseClass AssetFileDescriptor::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.res.AssetFileDescriptor",
@@ -55,14 +55,14 @@ namespace android::content::res
 			"()V"
 		);
 	}
-	QAndroidJniObject AssetFileDescriptor::createInputStream()
+	java::io::FileInputStream AssetFileDescriptor::createInputStream()
 	{
 		return callObjectMethod(
 			"createInputStream",
 			"()Ljava/io/FileInputStream;"
 		);
 	}
-	QAndroidJniObject AssetFileDescriptor::createOutputStream()
+	java::io::FileOutputStream AssetFileDescriptor::createOutputStream()
 	{
 		return callObjectMethod(
 			"createOutputStream",
@@ -83,14 +83,14 @@ namespace android::content::res
 			"()J"
 		);
 	}
-	QAndroidJniObject AssetFileDescriptor::getExtras()
+	android::os::Bundle AssetFileDescriptor::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject AssetFileDescriptor::getFileDescriptor()
+	java::io::FileDescriptor AssetFileDescriptor::getFileDescriptor()
 	{
 		return callObjectMethod(
 			"getFileDescriptor",
@@ -104,7 +104,7 @@ namespace android::content::res
 			"()J"
 		);
 	}
-	QAndroidJniObject AssetFileDescriptor::getParcelFileDescriptor()
+	android::os::ParcelFileDescriptor AssetFileDescriptor::getParcelFileDescriptor()
 	{
 		return callObjectMethod(
 			"getParcelFileDescriptor",

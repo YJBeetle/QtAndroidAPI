@@ -857,7 +857,7 @@ namespace android::content
 			"()V"
 		);
 	}
-	QAndroidJniObject Context::createConfigurationContext(android::content::res::Configuration arg0)
+	android::content::Context Context::createConfigurationContext(android::content::res::Configuration arg0)
 	{
 		return callObjectMethod(
 			"createConfigurationContext",
@@ -865,7 +865,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Context::createContextForSplit(jstring arg0)
+	android::content::Context Context::createContextForSplit(jstring arg0)
 	{
 		return callObjectMethod(
 			"createContextForSplit",
@@ -873,14 +873,14 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::createDeviceProtectedStorageContext()
+	android::content::Context Context::createDeviceProtectedStorageContext()
 	{
 		return callObjectMethod(
 			"createDeviceProtectedStorageContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject Context::createDisplayContext(android::view::Display arg0)
+	android::content::Context Context::createDisplayContext(android::view::Display arg0)
 	{
 		return callObjectMethod(
 			"createDisplayContext",
@@ -888,7 +888,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Context::createPackageContext(jstring arg0, jint arg1)
+	android::content::Context Context::createPackageContext(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"createPackageContext",
@@ -1010,42 +1010,42 @@ namespace android::content
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Context::getApplicationContext()
+	android::content::Context Context::getApplicationContext()
 	{
 		return callObjectMethod(
 			"getApplicationContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject Context::getApplicationInfo()
+	android::content::pm::ApplicationInfo Context::getApplicationInfo()
 	{
 		return callObjectMethod(
 			"getApplicationInfo",
 			"()Landroid/content/pm/ApplicationInfo;"
 		);
 	}
-	QAndroidJniObject Context::getAssets()
+	android::content::res::AssetManager Context::getAssets()
 	{
 		return callObjectMethod(
 			"getAssets",
 			"()Landroid/content/res/AssetManager;"
 		);
 	}
-	QAndroidJniObject Context::getCacheDir()
+	java::io::File Context::getCacheDir()
 	{
 		return callObjectMethod(
 			"getCacheDir",
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject Context::getClassLoader()
+	java::lang::ClassLoader Context::getClassLoader()
 	{
 		return callObjectMethod(
 			"getClassLoader",
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	QAndroidJniObject Context::getCodeCacheDir()
+	java::io::File Context::getCodeCacheDir()
 	{
 		return callObjectMethod(
 			"getCodeCacheDir",
@@ -1060,7 +1060,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::getColorStateList(jint arg0)
+	android::content::res::ColorStateList Context::getColorStateList(jint arg0)
 	{
 		return callObjectMethod(
 			"getColorStateList",
@@ -1068,21 +1068,21 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::getContentResolver()
+	android::content::ContentResolver Context::getContentResolver()
 	{
 		return callObjectMethod(
 			"getContentResolver",
 			"()Landroid/content/ContentResolver;"
 		);
 	}
-	QAndroidJniObject Context::getDataDir()
+	java::io::File Context::getDataDir()
 	{
 		return callObjectMethod(
 			"getDataDir",
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject Context::getDatabasePath(jstring arg0)
+	java::io::File Context::getDatabasePath(jstring arg0)
 	{
 		return callObjectMethod(
 			"getDatabasePath",
@@ -1090,7 +1090,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::getDir(jstring arg0, jint arg1)
+	java::io::File Context::getDir(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getDir",
@@ -1099,7 +1099,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject Context::getDrawable(jint arg0)
+	android::graphics::drawable::Drawable Context::getDrawable(jint arg0)
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -1107,7 +1107,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::getExternalCacheDir()
+	java::io::File Context::getExternalCacheDir()
 	{
 		return callObjectMethod(
 			"getExternalCacheDir",
@@ -1121,7 +1121,7 @@ namespace android::content
 			"()[Ljava/io/File;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Context::getExternalFilesDir(jstring arg0)
+	java::io::File Context::getExternalFilesDir(jstring arg0)
 	{
 		return callObjectMethod(
 			"getExternalFilesDir",
@@ -1144,7 +1144,7 @@ namespace android::content
 			"()[Ljava/io/File;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Context::getFileStreamPath(jstring arg0)
+	java::io::File Context::getFileStreamPath(jstring arg0)
 	{
 		return callObjectMethod(
 			"getFileStreamPath",
@@ -1152,35 +1152,35 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::getFilesDir()
+	java::io::File Context::getFilesDir()
 	{
 		return callObjectMethod(
 			"getFilesDir",
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject Context::getMainExecutor()
+	__JniBaseClass Context::getMainExecutor()
 	{
 		return callObjectMethod(
 			"getMainExecutor",
 			"()Ljava/util/concurrent/Executor;"
 		);
 	}
-	QAndroidJniObject Context::getMainLooper()
+	android::os::Looper Context::getMainLooper()
 	{
 		return callObjectMethod(
 			"getMainLooper",
 			"()Landroid/os/Looper;"
 		);
 	}
-	QAndroidJniObject Context::getNoBackupFilesDir()
+	java::io::File Context::getNoBackupFilesDir()
 	{
 		return callObjectMethod(
 			"getNoBackupFilesDir",
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject Context::getObbDir()
+	java::io::File Context::getObbDir()
 	{
 		return callObjectMethod(
 			"getObbDir",
@@ -1208,7 +1208,7 @@ namespace android::content
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Context::getPackageManager()
+	android::content::pm::PackageManager Context::getPackageManager()
 	{
 		return callObjectMethod(
 			"getPackageManager",
@@ -1229,14 +1229,14 @@ namespace android::content
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Context::getResources()
+	android::content::res::Resources Context::getResources()
 	{
 		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	QAndroidJniObject Context::getSharedPreferences(jstring arg0, jint arg1)
+	__JniBaseClass Context::getSharedPreferences(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getSharedPreferences",
@@ -1294,14 +1294,14 @@ namespace android::content
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Context::getTheme()
+	android::content::res::Resources_Theme Context::getTheme()
 	{
 		return callObjectMethod(
 			"getTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	QAndroidJniObject Context::getWallpaper()
+	android::graphics::drawable::Drawable Context::getWallpaper()
 	{
 		return callObjectMethod(
 			"getWallpaper",
@@ -1364,7 +1364,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject Context::obtainStyledAttributes(jintArray arg0)
+	android::content::res::TypedArray Context::obtainStyledAttributes(jintArray arg0)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -1372,7 +1372,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1)
+	android::content::res::TypedArray Context::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -1381,7 +1381,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject Context::obtainStyledAttributes(jint arg0, jintArray arg1)
+	android::content::res::TypedArray Context::obtainStyledAttributes(jint arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -1390,7 +1390,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject Context::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
+	android::content::res::TypedArray Context::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -1401,7 +1401,7 @@ namespace android::content
 			arg3
 		);
 	}
-	QAndroidJniObject Context::openFileInput(jstring arg0)
+	java::io::FileInputStream Context::openFileInput(jstring arg0)
 	{
 		return callObjectMethod(
 			"openFileInput",
@@ -1409,7 +1409,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::openFileOutput(jstring arg0, jint arg1)
+	java::io::FileOutputStream Context::openFileOutput(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"openFileOutput",
@@ -1418,7 +1418,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject Context::openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2)
+	android::database::sqlite::SQLiteDatabase Context::openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"openOrCreateDatabase",
@@ -1428,7 +1428,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Context::openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	android::database::sqlite::SQLiteDatabase Context::openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
 		return callObjectMethod(
 			"openOrCreateDatabase",
@@ -1439,7 +1439,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	QAndroidJniObject Context::peekWallpaper()
+	android::graphics::drawable::Drawable Context::peekWallpaper()
 	{
 		return callObjectMethod(
 			"peekWallpaper",
@@ -1454,7 +1454,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1)
+	android::content::Intent Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1)
 	{
 		return callObjectMethod(
 			"registerReceiver",
@@ -1463,7 +1463,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jint arg2)
+	android::content::Intent Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"registerReceiver",
@@ -1473,7 +1473,7 @@ namespace android::content
 			arg2
 		);
 	}
-	QAndroidJniObject Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jstring arg2, android::os::Handler arg3)
+	android::content::Intent Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jstring arg2, android::os::Handler arg3)
 	{
 		return callObjectMethod(
 			"registerReceiver",
@@ -1484,7 +1484,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	QAndroidJniObject Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jstring arg2, android::os::Handler arg3, jint arg4)
+	android::content::Intent Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jstring arg2, android::os::Handler arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"registerReceiver",
@@ -1708,7 +1708,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Context::startForegroundService(android::content::Intent arg0)
+	android::content::ComponentName Context::startForegroundService(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"startForegroundService",
@@ -1751,7 +1751,7 @@ namespace android::content
 			arg5.object()
 		);
 	}
-	QAndroidJniObject Context::startService(android::content::Intent arg0)
+	android::content::ComponentName Context::startService(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"startService",

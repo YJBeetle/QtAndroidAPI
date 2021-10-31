@@ -37,9 +37,9 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
-		QAndroidJniObject activityInfo();
-		QAndroidJniObject filter();
+		static __JniBaseClass CREATOR();
+		android::content::pm::ActivityInfo activityInfo();
+		android::content::IntentFilter filter();
 		jint icon();
 		jboolean isDefault();
 		jboolean isInstantAppAvailable();
@@ -48,9 +48,9 @@ namespace android::content::pm
 		jstring nonLocalizedLabel();
 		jint preferredOrder();
 		jint priority();
-		QAndroidJniObject providerInfo();
+		android::content::pm::ProviderInfo providerInfo();
 		jstring resolvePackageName();
-		QAndroidJniObject serviceInfo();
+		android::content::pm::ServiceInfo serviceInfo();
 		jint specificIndex();
 		
 		// QAndroidJniObject forward
@@ -65,7 +65,7 @@ namespace android::content::pm
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
 		jint getIconResource();
-		QAndroidJniObject loadIcon(android::content::pm::PackageManager arg0);
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
 		jstring loadLabel(android::content::pm::PackageManager arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

@@ -10,7 +10,7 @@ namespace android::hardware
 			"accuracy"
 		);
 	}
-	QAndroidJniObject SensorEvent::sensor()
+	android::hardware::Sensor SensorEvent::sensor()
 	{
 		return getObjectField(
 			"sensor",

@@ -22,7 +22,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortcutManager::createShortcutResultIntent(android::content::pm::ShortcutInfo arg0)
+	android::content::Intent ShortcutManager::createShortcutResultIntent(android::content::pm::ShortcutInfo arg0)
 	{
 		return callObjectMethod(
 			"createShortcutResultIntent",
@@ -55,7 +55,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortcutManager::getDynamicShortcuts()
+	__JniBaseClass ShortcutManager::getDynamicShortcuts()
 	{
 		return callObjectMethod(
 			"getDynamicShortcuts",
@@ -76,7 +76,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject ShortcutManager::getManifestShortcuts()
+	__JniBaseClass ShortcutManager::getManifestShortcuts()
 	{
 		return callObjectMethod(
 			"getManifestShortcuts",
@@ -90,7 +90,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject ShortcutManager::getPinnedShortcuts()
+	__JniBaseClass ShortcutManager::getPinnedShortcuts()
 	{
 		return callObjectMethod(
 			"getPinnedShortcuts",

@@ -16,7 +16,7 @@ namespace android::service::notification
 		) {}
 	
 	// Methods
-	QAndroidJniObject ZenPolicy_Builder::allowAlarms(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::allowAlarms(jboolean arg0)
 	{
 		return callObjectMethod(
 			"allowAlarms",
@@ -24,14 +24,14 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::allowAllSounds()
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::allowAllSounds()
 	{
 		return callObjectMethod(
 			"allowAllSounds",
 			"()Landroid/service/notification/ZenPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::allowCalls(jint arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::allowCalls(jint arg0)
 	{
 		return callObjectMethod(
 			"allowCalls",
@@ -39,7 +39,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::allowEvents(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::allowEvents(jboolean arg0)
 	{
 		return callObjectMethod(
 			"allowEvents",
@@ -47,7 +47,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::allowMedia(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::allowMedia(jboolean arg0)
 	{
 		return callObjectMethod(
 			"allowMedia",
@@ -55,7 +55,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::allowMessages(jint arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::allowMessages(jint arg0)
 	{
 		return callObjectMethod(
 			"allowMessages",
@@ -63,7 +63,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::allowReminders(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::allowReminders(jboolean arg0)
 	{
 		return callObjectMethod(
 			"allowReminders",
@@ -71,7 +71,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::allowRepeatCallers(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::allowRepeatCallers(jboolean arg0)
 	{
 		return callObjectMethod(
 			"allowRepeatCallers",
@@ -79,7 +79,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::allowSystem(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::allowSystem(jboolean arg0)
 	{
 		return callObjectMethod(
 			"allowSystem",
@@ -87,35 +87,35 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::build()
+	android::service::notification::ZenPolicy ZenPolicy_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/notification/ZenPolicy;"
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::disallowAllSounds()
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::disallowAllSounds()
 	{
 		return callObjectMethod(
 			"disallowAllSounds",
 			"()Landroid/service/notification/ZenPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::hideAllVisualEffects()
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::hideAllVisualEffects()
 	{
 		return callObjectMethod(
 			"hideAllVisualEffects",
 			"()Landroid/service/notification/ZenPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::showAllVisualEffects()
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::showAllVisualEffects()
 	{
 		return callObjectMethod(
 			"showAllVisualEffects",
 			"()Landroid/service/notification/ZenPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::showBadges(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::showBadges(jboolean arg0)
 	{
 		return callObjectMethod(
 			"showBadges",
@@ -123,7 +123,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::showFullScreenIntent(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::showFullScreenIntent(jboolean arg0)
 	{
 		return callObjectMethod(
 			"showFullScreenIntent",
@@ -131,7 +131,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::showInAmbientDisplay(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::showInAmbientDisplay(jboolean arg0)
 	{
 		return callObjectMethod(
 			"showInAmbientDisplay",
@@ -139,7 +139,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::showInNotificationList(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::showInNotificationList(jboolean arg0)
 	{
 		return callObjectMethod(
 			"showInNotificationList",
@@ -147,7 +147,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::showLights(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::showLights(jboolean arg0)
 	{
 		return callObjectMethod(
 			"showLights",
@@ -155,7 +155,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::showPeeking(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::showPeeking(jboolean arg0)
 	{
 		return callObjectMethod(
 			"showPeeking",
@@ -163,7 +163,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject ZenPolicy_Builder::showStatusBarIcons(jboolean arg0)
+	android::service::notification::ZenPolicy_Builder ZenPolicy_Builder::showStatusBarIcons(jboolean arg0)
 	{
 		return callObjectMethod(
 			"showStatusBarIcons",

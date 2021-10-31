@@ -31,7 +31,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	QAndroidJniObject BufferedReader::lines()
+	__JniBaseClass BufferedReader::lines()
 	{
 		return callObjectMethod(
 			"lines",

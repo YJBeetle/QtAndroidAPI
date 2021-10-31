@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject DirectAction::CREATOR()
+	__JniBaseClass DirectAction::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DirectAction",
@@ -36,7 +36,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DirectAction::getExtras()
+	android::os::Bundle DirectAction::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -50,7 +50,7 @@ namespace android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject DirectAction::getLocusId()
+	android::content::LocusId DirectAction::getLocusId()
 	{
 		return callObjectMethod(
 			"getLocusId",

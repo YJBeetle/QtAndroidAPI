@@ -17,7 +17,7 @@ namespace java::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NO_PROXY();
+		static java::net::Proxy NO_PROXY();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Proxy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,11 +27,11 @@ namespace java::net
 		Proxy(java::net::Proxy_Type arg0, java::net::SocketAddress arg1);
 		
 		// Methods
-		QAndroidJniObject address();
+		java::net::SocketAddress address();
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jstring toString();
-		QAndroidJniObject type();
+		java::net::Proxy_Type type();
 	};
 } // namespace java::net
 

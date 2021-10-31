@@ -51,7 +51,7 @@ namespace android::graphics::drawable
 		jint getIntrinsicHeight();
 		jint getIntrinsicWidth();
 		jint getOpacity();
-		QAndroidJniObject getOpticalInsets();
+		android::graphics::Insets getOpticalInsets();
 		void getOutline(android::graphics::Outline arg0);
 		jboolean getPadding(android::graphics::Rect arg0);
 		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);

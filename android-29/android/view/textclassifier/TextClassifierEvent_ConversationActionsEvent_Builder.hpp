@@ -23,7 +23,7 @@ namespace android::view::textclassifier
 		TextClassifierEvent_ConversationActionsEvent_Builder(jint arg0);
 		
 		// Methods
-		QAndroidJniObject build();
+		android::view::textclassifier::TextClassifierEvent_ConversationActionsEvent build();
 	};
 } // namespace android::view::textclassifier
 

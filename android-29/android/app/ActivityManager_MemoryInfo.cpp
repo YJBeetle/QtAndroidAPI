@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject ActivityManager_MemoryInfo::CREATOR()
+	__JniBaseClass ActivityManager_MemoryInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$MemoryInfo",

@@ -24,8 +24,8 @@ namespace java::lang::reflect
 		// Methods
 		jboolean equals(jobject arg0);
 		jobject get(jobject arg0);
-		QAndroidJniObject getAnnotatedType();
-		QAndroidJniObject getAnnotation(jclass arg0);
+		__JniBaseClass getAnnotatedType();
+		__JniBaseClass getAnnotation(jclass arg0);
 		jarray getAnnotationsByType(jclass arg0);
 		jboolean getBoolean(jobject arg0);
 		jbyte getByte(jobject arg0);
@@ -34,7 +34,7 @@ namespace java::lang::reflect
 		jclass getDeclaringClass();
 		jdouble getDouble(jobject arg0);
 		jfloat getFloat(jobject arg0);
-		QAndroidJniObject getGenericType();
+		__JniBaseClass getGenericType();
 		jint getInt(jobject arg0);
 		jlong getLong(jobject arg0);
 		jint getModifiers();

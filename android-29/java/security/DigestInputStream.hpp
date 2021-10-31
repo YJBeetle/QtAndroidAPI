@@ -28,7 +28,7 @@ namespace java::security
 		DigestInputStream(java::io::InputStream arg0, java::security::MessageDigest arg1);
 		
 		// Methods
-		QAndroidJniObject getMessageDigest();
+		java::security::MessageDigest getMessageDigest();
 		void on(jboolean arg0);
 		jint read();
 		jint read(jbyteArray arg0, jint arg1, jint arg2);

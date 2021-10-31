@@ -20,7 +20,7 @@ namespace android::system
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Os::accept(java::io::FileDescriptor arg0, java::net::InetSocketAddress arg1)
+	java::io::FileDescriptor Os::accept(java::io::FileDescriptor arg0, java::net::InetSocketAddress arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -112,7 +112,7 @@ namespace android::system
 			arg2
 		);
 	}
-	QAndroidJniObject Os::dup(java::io::FileDescriptor arg0)
+	java::io::FileDescriptor Os::dup(java::io::FileDescriptor arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -121,7 +121,7 @@ namespace android::system
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Os::dup2(java::io::FileDescriptor arg0, jint arg1)
+	java::io::FileDescriptor Os::dup2(java::io::FileDescriptor arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -190,7 +190,7 @@ namespace android::system
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Os::fstat(java::io::FileDescriptor arg0)
+	android::system::StructStat Os::fstat(java::io::FileDescriptor arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -199,7 +199,7 @@ namespace android::system
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Os::fstatvfs(java::io::FileDescriptor arg0)
+	android::system::StructStatVfs Os::fstatvfs(java::io::FileDescriptor arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -269,7 +269,7 @@ namespace android::system
 			"()I"
 		);
 	}
-	QAndroidJniObject Os::getpeername(java::io::FileDescriptor arg0)
+	java::net::SocketAddress Os::getpeername(java::io::FileDescriptor arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -294,7 +294,7 @@ namespace android::system
 			"()I"
 		);
 	}
-	QAndroidJniObject Os::getsockname(java::io::FileDescriptor arg0)
+	java::net::SocketAddress Os::getsockname(java::io::FileDescriptor arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -303,7 +303,7 @@ namespace android::system
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Os::getsockoptTimeval(java::io::FileDescriptor arg0, jint arg1, jint arg2)
+	android::system::StructTimeval Os::getsockoptTimeval(java::io::FileDescriptor arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -358,7 +358,7 @@ namespace android::system
 			arg0
 		);
 	}
-	QAndroidJniObject Os::inet_pton(jint arg0, jstring arg1)
+	java::net::InetAddress Os::inet_pton(jint arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -438,7 +438,7 @@ namespace android::system
 			arg2
 		);
 	}
-	QAndroidJniObject Os::lstat(jstring arg0)
+	android::system::StructStat Os::lstat(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -533,7 +533,7 @@ namespace android::system
 			arg1
 		);
 	}
-	QAndroidJniObject Os::open(jstring arg0, jint arg1, jint arg2)
+	java::io::FileDescriptor Os::open(jstring arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -887,7 +887,7 @@ namespace android::system
 			arg1
 		);
 	}
-	QAndroidJniObject Os::socket(jint arg0, jint arg1, jint arg2)
+	java::io::FileDescriptor Os::socket(jint arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -911,7 +911,7 @@ namespace android::system
 			arg4.object()
 		);
 	}
-	QAndroidJniObject Os::stat(jstring arg0)
+	android::system::StructStat Os::stat(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -920,7 +920,7 @@ namespace android::system
 			arg0
 		);
 	}
-	QAndroidJniObject Os::statvfs(jstring arg0)
+	android::system::StructStatVfs Os::statvfs(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",
@@ -994,7 +994,7 @@ namespace android::system
 			arg0
 		);
 	}
-	QAndroidJniObject Os::uname()
+	android::system::StructUtsname Os::uname()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.Os",

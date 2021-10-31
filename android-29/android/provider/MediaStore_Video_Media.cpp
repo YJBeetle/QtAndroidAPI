@@ -20,7 +20,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Video_Media::EXTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Video_Media::EXTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Video$Media",
@@ -28,7 +28,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject MediaStore_Video_Media::INTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Video_Media::INTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Video$Media",
@@ -48,7 +48,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaStore_Video_Media::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Video_Media::getContentUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Video$Media",

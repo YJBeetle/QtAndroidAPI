@@ -43,7 +43,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject DrawableContainer_DrawableContainerState::getChild(jint arg0)
+	android::graphics::drawable::Drawable DrawableContainer_DrawableContainerState::getChild(jint arg0)
 	{
 		return callObjectMethod(
 			"getChild",
@@ -86,7 +86,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject DrawableContainer_DrawableContainerState::getConstantPadding()
+	android::graphics::Rect DrawableContainer_DrawableContainerState::getConstantPadding()
 	{
 		return callObjectMethod(
 			"getConstantPadding",

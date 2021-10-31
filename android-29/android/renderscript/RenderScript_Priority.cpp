@@ -3,7 +3,7 @@
 namespace android::renderscript
 {
 	// Fields
-	QAndroidJniObject RenderScript_Priority::LOW()
+	android::renderscript::RenderScript_Priority RenderScript_Priority::LOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.RenderScript$Priority",
@@ -11,7 +11,7 @@ namespace android::renderscript
 			"Landroid/renderscript/RenderScript$Priority;"
 		);
 	}
-	QAndroidJniObject RenderScript_Priority::NORMAL()
+	android::renderscript::RenderScript_Priority RenderScript_Priority::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.RenderScript$Priority",
@@ -26,7 +26,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RenderScript_Priority::valueOf(jstring arg0)
+	android::renderscript::RenderScript_Priority RenderScript_Priority::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.RenderScript$Priority",

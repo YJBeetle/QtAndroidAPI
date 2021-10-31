@@ -41,7 +41,7 @@ namespace android::app
 		// Methods
 		void cancel(__JniBaseClass arg0);
 		void cancel(android::app::PendingIntent arg0);
-		QAndroidJniObject getNextAlarmClock();
+		android::app::AlarmManager_AlarmClockInfo getNextAlarmClock();
 		void set(jint arg0, jlong arg1, android::app::PendingIntent arg2);
 		void set(jint arg0, jlong arg1, jstring arg2, __JniBaseClass arg3, android::os::Handler arg4);
 		void setAlarmClock(android::app::AlarmManager_AlarmClockInfo arg0, android::app::PendingIntent arg1);

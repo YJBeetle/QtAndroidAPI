@@ -16,14 +16,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	QAndroidJniObject SurfaceControl_Builder::build()
+	android::view::SurfaceControl SurfaceControl_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/SurfaceControl;"
 		);
 	}
-	QAndroidJniObject SurfaceControl_Builder::setBufferSize(jint arg0, jint arg1)
+	android::view::SurfaceControl_Builder SurfaceControl_Builder::setBufferSize(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setBufferSize",
@@ -32,7 +32,7 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject SurfaceControl_Builder::setFormat(jint arg0)
+	android::view::SurfaceControl_Builder SurfaceControl_Builder::setFormat(jint arg0)
 	{
 		return callObjectMethod(
 			"setFormat",
@@ -40,7 +40,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject SurfaceControl_Builder::setName(jstring arg0)
+	android::view::SurfaceControl_Builder SurfaceControl_Builder::setName(jstring arg0)
 	{
 		return callObjectMethod(
 			"setName",
@@ -48,7 +48,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject SurfaceControl_Builder::setOpaque(jboolean arg0)
+	android::view::SurfaceControl_Builder SurfaceControl_Builder::setOpaque(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setOpaque",
@@ -56,7 +56,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject SurfaceControl_Builder::setParent(android::view::SurfaceControl arg0)
+	android::view::SurfaceControl_Builder SurfaceControl_Builder::setParent(android::view::SurfaceControl arg0)
 	{
 		return callObjectMethod(
 			"setParent",

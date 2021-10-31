@@ -49,10 +49,10 @@ namespace android::inputmethodservice
 		AbstractInputMethodService();
 		
 		// Methods
-		QAndroidJniObject getKeyDispatcherState();
-		QAndroidJniObject onBind(android::content::Intent arg0);
-		QAndroidJniObject onCreateInputMethodInterface();
-		QAndroidJniObject onCreateInputMethodSessionInterface();
+		android::view::KeyEvent_DispatcherState getKeyDispatcherState();
+		__JniBaseClass onBind(android::content::Intent arg0);
+		android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl onCreateInputMethodInterface();
+		android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
 		jboolean onTrackballEvent(android::view::MotionEvent arg0);
 	};

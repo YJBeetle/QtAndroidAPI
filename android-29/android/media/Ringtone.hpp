@@ -25,7 +25,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getAudioAttributes();
+		android::media::AudioAttributes getAudioAttributes();
 		jint getStreamType();
 		jstring getTitle(android::content::Context arg0);
 		jfloat getVolume();

@@ -83,7 +83,7 @@ namespace android::view::accessibility
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CaptioningManager_CaptionStyle::getTypeface()
+	android::graphics::Typeface CaptioningManager_CaptionStyle::getTypeface()
 	{
 		return callObjectMethod(
 			"getTypeface",

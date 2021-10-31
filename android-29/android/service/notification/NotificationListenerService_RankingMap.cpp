@@ -5,7 +5,7 @@
 namespace android::service::notification
 {
 	// Fields
-	QAndroidJniObject NotificationListenerService_RankingMap::CREATOR()
+	__JniBaseClass NotificationListenerService_RankingMap::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.notification.NotificationListenerService$RankingMap",

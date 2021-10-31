@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject Person::CREATOR()
+	__JniBaseClass Person::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Person",
@@ -36,7 +36,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Person::getIcon()
+	android::graphics::drawable::Icon Person::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",
@@ -85,7 +85,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject Person::toBuilder()
+	android::app::Person_Builder Person::toBuilder()
 	{
 		return callObjectMethod(
 			"toBuilder",

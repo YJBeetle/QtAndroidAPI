@@ -26,7 +26,7 @@ namespace android::provider
 		MediaStore_Audio_Genres_Members();
 		
 		// Methods
-		static QAndroidJniObject getContentUri(jstring arg0, jlong arg1);
+		static android::net::Uri getContentUri(jstring arg0, jlong arg1);
 	};
 } // namespace android::provider
 

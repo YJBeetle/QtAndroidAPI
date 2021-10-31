@@ -40,10 +40,10 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
+		static android::renderscript::ScriptIntrinsicYuvToRGB create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);
 		void forEach(android::renderscript::Allocation arg0);
-		QAndroidJniObject getFieldID_Input();
-		QAndroidJniObject getKernelID();
+		android::renderscript::Script_FieldID getFieldID_Input();
+		android::renderscript::Script_KernelID getKernelID();
 		void setInput(android::renderscript::Allocation arg0);
 	};
 } // namespace android::renderscript

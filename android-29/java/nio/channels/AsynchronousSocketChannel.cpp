@@ -15,7 +15,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AsynchronousSocketChannel::open()
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.AsynchronousSocketChannel",
@@ -23,7 +23,7 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/AsynchronousSocketChannel;"
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::open(java::nio::channels::AsynchronousChannelGroup arg0)
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::open(java::nio::channels::AsynchronousChannelGroup arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.AsynchronousSocketChannel",
@@ -32,7 +32,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::bind(java::net::SocketAddress arg0)
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::bind(java::net::SocketAddress arg0)
 	{
 		return callObjectMethod(
 			"bind",
@@ -40,7 +40,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::connect(java::net::SocketAddress arg0)
+	__JniBaseClass AsynchronousSocketChannel::connect(java::net::SocketAddress arg0)
 	{
 		return callObjectMethod(
 			"connect",
@@ -58,28 +58,28 @@ namespace java::nio::channels
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::getLocalAddress()
+	java::net::SocketAddress AsynchronousSocketChannel::getLocalAddress()
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::getRemoteAddress()
+	java::net::SocketAddress AsynchronousSocketChannel::getRemoteAddress()
 	{
 		return callObjectMethod(
 			"getRemoteAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::provider()
+	java::nio::channels::spi::AsynchronousChannelProvider AsynchronousSocketChannel::provider()
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0)
+	__JniBaseClass AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0)
 	{
 		return callObjectMethod(
 			"read",
@@ -123,7 +123,7 @@ namespace java::nio::channels
 			arg6.object()
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -132,21 +132,21 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::shutdownInput()
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::shutdownInput()
 	{
 		return callObjectMethod(
 			"shutdownInput",
 			"()Ljava/nio/channels/AsynchronousSocketChannel;"
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::shutdownOutput()
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::shutdownOutput()
 	{
 		return callObjectMethod(
 			"shutdownOutput",
 			"()Ljava/nio/channels/AsynchronousSocketChannel;"
 		);
 	}
-	QAndroidJniObject AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0)
+	__JniBaseClass AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0)
 	{
 		return callObjectMethod(
 			"write",

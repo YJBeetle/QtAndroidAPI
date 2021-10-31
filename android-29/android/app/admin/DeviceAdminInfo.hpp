@@ -37,7 +37,7 @@ namespace android::app::admin
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint USES_ENCRYPTED_STORAGE();
 		static jint USES_POLICY_DISABLE_CAMERA();
 		static jint USES_POLICY_DISABLE_KEYGUARD_FEATURES();
@@ -58,14 +58,14 @@ namespace android::app::admin
 		// Methods
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		QAndroidJniObject getActivityInfo();
-		QAndroidJniObject getComponent();
+		android::content::pm::ActivityInfo getActivityInfo();
+		android::content::ComponentName getComponent();
 		jstring getPackageName();
 		jstring getReceiverName();
 		jstring getTagForPolicy(jint arg0);
 		jboolean isVisible();
 		jstring loadDescription(android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadIcon(android::content::pm::PackageManager arg0);
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
 		jstring loadLabel(android::content::pm::PackageManager arg0);
 		jboolean supportsTransferOwnership();
 		jstring toString();

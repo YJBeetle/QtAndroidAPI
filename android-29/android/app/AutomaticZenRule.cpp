@@ -7,7 +7,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject AutomaticZenRule::CREATOR()
+	__JniBaseClass AutomaticZenRule::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AutomaticZenRule",
@@ -65,14 +65,14 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AutomaticZenRule::getConditionId()
+	android::net::Uri AutomaticZenRule::getConditionId()
 	{
 		return callObjectMethod(
 			"getConditionId",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject AutomaticZenRule::getConfigurationActivity()
+	android::content::ComponentName AutomaticZenRule::getConfigurationActivity()
 	{
 		return callObjectMethod(
 			"getConfigurationActivity",
@@ -100,14 +100,14 @@ namespace android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AutomaticZenRule::getOwner()
+	android::content::ComponentName AutomaticZenRule::getOwner()
 	{
 		return callObjectMethod(
 			"getOwner",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject AutomaticZenRule::getZenPolicy()
+	android::service::notification::ZenPolicy AutomaticZenRule::getZenPolicy()
 	{
 		return callObjectMethod(
 			"getZenPolicy",

@@ -88,10 +88,10 @@ namespace android::app
 		Instrumentation();
 		
 		// Methods
-		static QAndroidJniObject newApplication(jclass arg0, android::content::Context arg1);
-		QAndroidJniObject acquireLooperManager(android::os::Looper arg0);
-		QAndroidJniObject addMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
-		QAndroidJniObject addMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
+		static android::app::Application newApplication(jclass arg0, android::content::Context arg1);
+		android::os::TestLooperManager acquireLooperManager(android::os::Looper arg0);
+		android::app::Instrumentation_ActivityMonitor addMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
+		android::app::Instrumentation_ActivityMonitor addMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		void addMonitor(android::app::Instrumentation_ActivityMonitor arg0);
 		void addResults(android::os::Bundle arg0);
 		void callActivityOnCreate(android::app::Activity arg0, android::os::Bundle arg1);
@@ -114,20 +114,20 @@ namespace android::app
 		jboolean checkMonitorHit(android::app::Instrumentation_ActivityMonitor arg0, jint arg1);
 		void endPerformanceSnapshot();
 		void finish(jint arg0, android::os::Bundle arg1);
-		QAndroidJniObject getAllocCounts();
-		QAndroidJniObject getBinderCounts();
-		QAndroidJniObject getComponentName();
-		QAndroidJniObject getContext();
+		android::os::Bundle getAllocCounts();
+		android::os::Bundle getBinderCounts();
+		android::content::ComponentName getComponentName();
+		android::content::Context getContext();
 		jstring getProcessName();
-		QAndroidJniObject getTargetContext();
-		QAndroidJniObject getUiAutomation();
-		QAndroidJniObject getUiAutomation(jint arg0);
+		android::content::Context getTargetContext();
+		android::app::UiAutomation getUiAutomation();
+		android::app::UiAutomation getUiAutomation(jint arg0);
 		jboolean invokeContextMenuAction(android::app::Activity arg0, jint arg1, jint arg2);
 		jboolean invokeMenuActionSync(android::app::Activity arg0, jint arg1, jint arg2);
 		jboolean isProfiling();
-		QAndroidJniObject newActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2);
-		QAndroidJniObject newActivity(jclass arg0, android::content::Context arg1, __JniBaseClass arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9);
-		QAndroidJniObject newApplication(java::lang::ClassLoader arg0, jstring arg1, android::content::Context arg2);
+		android::app::Activity newActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2);
+		android::app::Activity newActivity(jclass arg0, android::content::Context arg1, __JniBaseClass arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9);
+		android::app::Application newApplication(java::lang::ClassLoader arg0, jstring arg1, android::content::Context arg2);
 		void onCreate(android::os::Bundle arg0);
 		void onDestroy();
 		jboolean onException(jobject arg0, jthrowable arg1);
@@ -144,8 +144,8 @@ namespace android::app
 		void setAutomaticPerformanceSnapshots();
 		void setInTouchMode(jboolean arg0);
 		void start();
-		QAndroidJniObject startActivitySync(android::content::Intent arg0);
-		QAndroidJniObject startActivitySync(android::content::Intent arg0, android::os::Bundle arg1);
+		android::app::Activity startActivitySync(android::content::Intent arg0);
+		android::app::Activity startActivitySync(android::content::Intent arg0, android::os::Bundle arg1);
 		void startAllocCounting();
 		void startPerformanceSnapshot();
 		void startProfiling();
@@ -153,8 +153,8 @@ namespace android::app
 		void stopProfiling();
 		void waitForIdle(__JniBaseClass arg0);
 		void waitForIdleSync();
-		QAndroidJniObject waitForMonitor(android::app::Instrumentation_ActivityMonitor arg0);
-		QAndroidJniObject waitForMonitorWithTimeout(android::app::Instrumentation_ActivityMonitor arg0, jlong arg1);
+		android::app::Activity waitForMonitor(android::app::Instrumentation_ActivityMonitor arg0);
+		android::app::Activity waitForMonitorWithTimeout(android::app::Instrumentation_ActivityMonitor arg0, jlong arg1);
 	};
 } // namespace android::app
 

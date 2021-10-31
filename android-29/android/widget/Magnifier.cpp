@@ -75,14 +75,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject Magnifier::getOverlay()
+	android::graphics::drawable::Drawable Magnifier::getOverlay()
 	{
 		return callObjectMethod(
 			"getOverlay",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject Magnifier::getPosition()
+	android::graphics::Point Magnifier::getPosition()
 	{
 		return callObjectMethod(
 			"getPosition",
@@ -96,7 +96,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject Magnifier::getSourcePosition()
+	android::graphics::Point Magnifier::getSourcePosition()
 	{
 		return callObjectMethod(
 			"getSourcePosition",

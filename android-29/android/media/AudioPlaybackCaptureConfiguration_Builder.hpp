@@ -26,11 +26,11 @@ namespace android::media
 		AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection arg0);
 		
 		// Methods
-		QAndroidJniObject addMatchingUid(jint arg0);
-		QAndroidJniObject addMatchingUsage(jint arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject excludeUid(jint arg0);
-		QAndroidJniObject excludeUsage(jint arg0);
+		android::media::AudioPlaybackCaptureConfiguration_Builder addMatchingUid(jint arg0);
+		android::media::AudioPlaybackCaptureConfiguration_Builder addMatchingUsage(jint arg0);
+		android::media::AudioPlaybackCaptureConfiguration build();
+		android::media::AudioPlaybackCaptureConfiguration_Builder excludeUid(jint arg0);
+		android::media::AudioPlaybackCaptureConfiguration_Builder excludeUsage(jint arg0);
 	};
 } // namespace android::media
 

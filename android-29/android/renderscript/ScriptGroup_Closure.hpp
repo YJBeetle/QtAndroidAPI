@@ -31,8 +31,8 @@ namespace android::renderscript
 		
 		// Methods
 		void destroy();
-		QAndroidJniObject getGlobal(android::renderscript::Script_FieldID arg0);
-		QAndroidJniObject getReturn();
+		android::renderscript::ScriptGroup_Future getGlobal(android::renderscript::Script_FieldID arg0);
+		android::renderscript::ScriptGroup_Future getReturn();
 	};
 } // namespace android::renderscript
 

@@ -36,7 +36,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	QAndroidJniObject AnimationDrawable::getFrame(jint arg0)
+	android::graphics::drawable::Drawable AnimationDrawable::getFrame(jint arg0)
 	{
 		return callObjectMethod(
 			"getFrame",
@@ -76,7 +76,7 @@ namespace android::graphics::drawable
 			"()Z"
 		);
 	}
-	QAndroidJniObject AnimationDrawable::mutate()
+	android::graphics::drawable::Drawable AnimationDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

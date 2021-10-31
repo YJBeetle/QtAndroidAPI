@@ -29,21 +29,21 @@ namespace java::security::spec
 			"()I"
 		);
 	}
-	QAndroidJniObject ECParameterSpec::getCurve()
+	java::security::spec::EllipticCurve ECParameterSpec::getCurve()
 	{
 		return callObjectMethod(
 			"getCurve",
 			"()Ljava/security/spec/EllipticCurve;"
 		);
 	}
-	QAndroidJniObject ECParameterSpec::getGenerator()
+	java::security::spec::ECPoint ECParameterSpec::getGenerator()
 	{
 		return callObjectMethod(
 			"getGenerator",
 			"()Ljava/security/spec/ECPoint;"
 		);
 	}
-	QAndroidJniObject ECParameterSpec::getOrder()
+	java::math::BigInteger ECParameterSpec::getOrder()
 	{
 		return callObjectMethod(
 			"getOrder",

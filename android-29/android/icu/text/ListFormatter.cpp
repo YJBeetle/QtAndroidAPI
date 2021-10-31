@@ -12,7 +12,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ListFormatter::getInstance()
+	android::icu::text::ListFormatter ListFormatter::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.ListFormatter",
@@ -20,7 +20,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/ListFormatter;"
 		);
 	}
-	QAndroidJniObject ListFormatter::getInstance(android::icu::util::ULocale arg0)
+	android::icu::text::ListFormatter ListFormatter::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.ListFormatter",
@@ -29,7 +29,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ListFormatter::getInstance(java::util::Locale arg0)
+	android::icu::text::ListFormatter ListFormatter::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.ListFormatter",

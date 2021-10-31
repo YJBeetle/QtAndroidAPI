@@ -30,7 +30,7 @@ namespace android::database::sqlite
 		void execute();
 		jlong executeInsert();
 		jint executeUpdateDelete();
-		QAndroidJniObject simpleQueryForBlobFileDescriptor();
+		android::os::ParcelFileDescriptor simpleQueryForBlobFileDescriptor();
 		jlong simpleQueryForLong();
 		jstring simpleQueryForString();
 		jstring toString();

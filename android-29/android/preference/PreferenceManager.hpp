@@ -31,14 +31,14 @@ namespace android::preference
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDefaultSharedPreferences(android::content::Context arg0);
+		static __JniBaseClass getDefaultSharedPreferences(android::content::Context arg0);
 		static jstring getDefaultSharedPreferencesName(android::content::Context arg0);
 		static void setDefaultValues(android::content::Context arg0, jint arg1, jboolean arg2);
 		static void setDefaultValues(android::content::Context arg0, jstring arg1, jint arg2, jint arg3, jboolean arg4);
-		QAndroidJniObject createPreferenceScreen(android::content::Context arg0);
-		QAndroidJniObject findPreference(jstring arg0);
-		QAndroidJniObject getPreferenceDataStore();
-		QAndroidJniObject getSharedPreferences();
+		android::preference::PreferenceScreen createPreferenceScreen(android::content::Context arg0);
+		android::preference::Preference findPreference(jstring arg0);
+		__JniBaseClass getPreferenceDataStore();
+		__JniBaseClass getSharedPreferences();
 		jint getSharedPreferencesMode();
 		jstring getSharedPreferencesName();
 		jboolean isStorageDefault();

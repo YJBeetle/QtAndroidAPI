@@ -5,7 +5,7 @@
 namespace android::net::wifi::aware
 {
 	// Fields
-	QAndroidJniObject Characteristics::CREATOR()
+	__JniBaseClass Characteristics::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.aware.Characteristics",

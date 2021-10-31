@@ -4,7 +4,7 @@
 namespace java::security::spec
 {
 	// Fields
-	QAndroidJniObject ECPoint::POINT_INFINITY()
+	java::security::spec::ECPoint ECPoint::POINT_INFINITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.ECPoint",
@@ -34,14 +34,14 @@ namespace java::security::spec
 			arg0
 		);
 	}
-	QAndroidJniObject ECPoint::getAffineX()
+	java::math::BigInteger ECPoint::getAffineX()
 	{
 		return callObjectMethod(
 			"getAffineX",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject ECPoint::getAffineY()
+	java::math::BigInteger ECPoint::getAffineY()
 	{
 		return callObjectMethod(
 			"getAffineY",

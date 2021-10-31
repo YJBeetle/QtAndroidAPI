@@ -8,7 +8,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject LauncherApps_PinItemRequest::CREATOR()
+	__JniBaseClass LauncherApps_PinItemRequest::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.LauncherApps$PinItemRequest",
@@ -59,7 +59,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject LauncherApps_PinItemRequest::getAppWidgetProviderInfo(android::content::Context arg0)
+	android::appwidget::AppWidgetProviderInfo LauncherApps_PinItemRequest::getAppWidgetProviderInfo(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"getAppWidgetProviderInfo",
@@ -67,7 +67,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LauncherApps_PinItemRequest::getExtras()
+	android::os::Bundle LauncherApps_PinItemRequest::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -81,7 +81,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject LauncherApps_PinItemRequest::getShortcutInfo()
+	android::content::pm::ShortcutInfo LauncherApps_PinItemRequest::getShortcutInfo()
 	{
 		return callObjectMethod(
 			"getShortcutInfo",

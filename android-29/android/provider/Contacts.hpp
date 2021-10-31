@@ -14,7 +14,7 @@ namespace android::provider
 	public:
 		// Fields
 		static jstring AUTHORITY();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jint KIND_EMAIL();
 		static jint KIND_IM();
 		static jint KIND_ORGANIZATION();

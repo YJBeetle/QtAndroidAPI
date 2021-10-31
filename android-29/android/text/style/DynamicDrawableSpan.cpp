@@ -56,7 +56,7 @@ namespace android::text::style
 			arg8.object()
 		);
 	}
-	QAndroidJniObject DynamicDrawableSpan::getDrawable()
+	android::graphics::drawable::Drawable DynamicDrawableSpan::getDrawable()
 	{
 		return callObjectMethod(
 			"getDrawable",

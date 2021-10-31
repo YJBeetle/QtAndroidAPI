@@ -38,14 +38,14 @@ namespace android::service::wallpaper
 			"()I"
 		);
 	}
-	QAndroidJniObject WallpaperService_Engine::getDisplayContext()
+	android::content::Context WallpaperService_Engine::getDisplayContext()
 	{
 		return callObjectMethod(
 			"getDisplayContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject WallpaperService_Engine::getSurfaceHolder()
+	__JniBaseClass WallpaperService_Engine::getSurfaceHolder()
 	{
 		return callObjectMethod(
 			"getSurfaceHolder",
@@ -81,7 +81,7 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WallpaperService_Engine::onCommand(jstring arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5)
+	android::os::Bundle WallpaperService_Engine::onCommand(jstring arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5)
 	{
 		return callObjectMethod(
 			"onCommand",
@@ -94,7 +94,7 @@ namespace android::service::wallpaper
 			arg5
 		);
 	}
-	QAndroidJniObject WallpaperService_Engine::onComputeColors()
+	android::app::WallpaperColors WallpaperService_Engine::onComputeColors()
 	{
 		return callObjectMethod(
 			"onComputeColors",

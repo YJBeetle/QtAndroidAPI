@@ -26,9 +26,9 @@ namespace android::media
 		SoundPool_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setAudioAttributes(android::media::AudioAttributes arg0);
-		QAndroidJniObject setMaxStreams(jint arg0);
+		android::media::SoundPool build();
+		android::media::SoundPool_Builder setAudioAttributes(android::media::AudioAttributes arg0);
+		android::media::SoundPool_Builder setMaxStreams(jint arg0);
 	};
 } // namespace android::media
 

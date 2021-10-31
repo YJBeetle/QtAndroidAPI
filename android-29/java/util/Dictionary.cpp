@@ -15,7 +15,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject Dictionary::elements()
+	__JniBaseClass Dictionary::elements()
 	{
 		return callObjectMethod(
 			"elements",
@@ -37,7 +37,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject Dictionary::keys()
+	__JniBaseClass Dictionary::keys()
 	{
 		return callObjectMethod(
 			"keys",

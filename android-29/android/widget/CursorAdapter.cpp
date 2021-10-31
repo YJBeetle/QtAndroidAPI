@@ -85,14 +85,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject CursorAdapter::getCursor()
+	__JniBaseClass CursorAdapter::getCursor()
 	{
 		return callObjectMethod(
 			"getCursor",
 			"()Landroid/database/Cursor;"
 		);
 	}
-	QAndroidJniObject CursorAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View CursorAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"getDropDownView",
@@ -102,21 +102,21 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	QAndroidJniObject CursorAdapter::getDropDownViewTheme()
+	android::content::res::Resources_Theme CursorAdapter::getDropDownViewTheme()
 	{
 		return callObjectMethod(
 			"getDropDownViewTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	QAndroidJniObject CursorAdapter::getFilter()
+	android::widget::Filter CursorAdapter::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/widget/Filter;"
 		);
 	}
-	QAndroidJniObject CursorAdapter::getFilterQueryProvider()
+	__JniBaseClass CursorAdapter::getFilterQueryProvider()
 	{
 		return callObjectMethod(
 			"getFilterQueryProvider",
@@ -139,7 +139,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject CursorAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View CursorAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"getView",
@@ -156,7 +156,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	QAndroidJniObject CursorAdapter::newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
+	android::view::View CursorAdapter::newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"newDropDownView",
@@ -166,7 +166,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	QAndroidJniObject CursorAdapter::newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
+	android::view::View CursorAdapter::newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"newView",
@@ -176,7 +176,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	QAndroidJniObject CursorAdapter::runQueryOnBackgroundThread(jstring arg0)
+	__JniBaseClass CursorAdapter::runQueryOnBackgroundThread(jstring arg0)
 	{
 		return callObjectMethod(
 			"runQueryOnBackgroundThread",
@@ -200,7 +200,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CursorAdapter::swapCursor(__JniBaseClass arg0)
+	__JniBaseClass CursorAdapter::swapCursor(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"swapCursor",

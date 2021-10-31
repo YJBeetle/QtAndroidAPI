@@ -35,9 +35,9 @@ namespace java::security
 		ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1, java::lang::ClassLoader arg2, jarray arg3);
 		
 		// Methods
-		QAndroidJniObject getClassLoader();
-		QAndroidJniObject getCodeSource();
-		QAndroidJniObject getPermissions();
+		java::lang::ClassLoader getClassLoader();
+		java::security::CodeSource getCodeSource();
+		java::security::PermissionCollection getPermissions();
 		jarray getPrincipals();
 		jboolean implies(java::security::Permission arg0);
 		jboolean staticPermissionsOnly();

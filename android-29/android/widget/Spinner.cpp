@@ -129,14 +129,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject Spinner::getPopupBackground()
+	android::graphics::drawable::Drawable Spinner::getPopupBackground()
 	{
 		return callObjectMethod(
 			"getPopupBackground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject Spinner::getPopupContext()
+	android::content::Context Spinner::getPopupContext()
 	{
 		return callObjectMethod(
 			"getPopupContext",
@@ -159,7 +159,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject Spinner::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon Spinner::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -176,7 +176,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Spinner::onSaveInstanceState()
+	__JniBaseClass Spinner::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

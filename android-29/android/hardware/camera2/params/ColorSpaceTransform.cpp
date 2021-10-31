@@ -49,7 +49,7 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	QAndroidJniObject ColorSpaceTransform::getElement(jint arg0, jint arg1)
+	android::util::Rational ColorSpaceTransform::getElement(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getElement",

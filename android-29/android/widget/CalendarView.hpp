@@ -43,7 +43,7 @@ namespace android::widget
 		jint getFocusedMonthDateColor();
 		jlong getMaxDate();
 		jlong getMinDate();
-		QAndroidJniObject getSelectedDateVerticalBar();
+		android::graphics::drawable::Drawable getSelectedDateVerticalBar();
 		jint getSelectedWeekBackgroundColor();
 		jboolean getShowWeekNumber();
 		jint getShownWeekCount();

@@ -18,7 +18,7 @@ namespace android::net::wifi::p2p
 			"CONNECTED"
 		);
 	}
-	QAndroidJniObject WifiP2pDevice::CREATOR()
+	__JniBaseClass WifiP2pDevice::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pDevice",

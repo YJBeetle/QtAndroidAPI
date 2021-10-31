@@ -20,7 +20,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract_Voicemails::CONTENT_URI()
+	android::net::Uri VoicemailContract_Voicemails::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Voicemails",
@@ -194,7 +194,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject VoicemailContract_Voicemails::buildSourceUri(jstring arg0)
+	android::net::Uri VoicemailContract_Voicemails::buildSourceUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.VoicemailContract$Voicemails",

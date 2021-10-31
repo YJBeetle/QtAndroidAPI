@@ -10,9 +10,9 @@ namespace java::lang::annotation
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CLASS();
-		static QAndroidJniObject RUNTIME();
-		static QAndroidJniObject SOURCE();
+		static java::lang::annotation::RetentionPolicy CLASS();
+		static java::lang::annotation::RetentionPolicy RUNTIME();
+		static java::lang::annotation::RetentionPolicy SOURCE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RetentionPolicy(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace java::lang::annotation
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::lang::annotation::RetentionPolicy valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::lang::annotation

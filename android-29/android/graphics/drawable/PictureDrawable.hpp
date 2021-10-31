@@ -35,7 +35,7 @@ namespace android::graphics::drawable
 		jint getIntrinsicHeight();
 		jint getIntrinsicWidth();
 		jint getOpacity();
-		QAndroidJniObject getPicture();
+		android::graphics::Picture getPicture();
 		void setAlpha(jint arg0);
 		void setColorFilter(android::graphics::ColorFilter arg0);
 		void setPicture(android::graphics::Picture arg0);

@@ -4,7 +4,7 @@
 namespace android::media::session
 {
 	// Fields
-	QAndroidJniObject MediaSession_Token::CREATOR()
+	__JniBaseClass MediaSession_Token::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.session.MediaSession$Token",

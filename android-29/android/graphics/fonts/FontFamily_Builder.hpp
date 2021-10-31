@@ -26,8 +26,8 @@ namespace android::graphics::fonts
 		FontFamily_Builder(android::graphics::fonts::Font arg0);
 		
 		// Methods
-		QAndroidJniObject addFont(android::graphics::fonts::Font arg0);
-		QAndroidJniObject build();
+		android::graphics::fonts::FontFamily_Builder addFont(android::graphics::fonts::Font arg0);
+		android::graphics::fonts::FontFamily build();
 	};
 } // namespace android::graphics::fonts
 

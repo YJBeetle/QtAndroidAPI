@@ -65,7 +65,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	QAndroidJniObject EditText::getText()
+	__JniBaseClass EditText::getText()
 	{
 		return callObjectMethod(
 			"getText",

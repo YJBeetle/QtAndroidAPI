@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject AbsSavedState::CREATOR()
+	__JniBaseClass AbsSavedState::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.AbsSavedState",
@@ -13,7 +13,7 @@ namespace android::view
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject AbsSavedState::EMPTY_STATE()
+	android::view::AbsSavedState AbsSavedState::EMPTY_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.AbsSavedState",
@@ -35,7 +35,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject AbsSavedState::getSuperState()
+	__JniBaseClass AbsSavedState::getSuperState()
 	{
 		return callObjectMethod(
 			"getSuperState",

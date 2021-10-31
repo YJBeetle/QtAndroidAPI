@@ -10,12 +10,12 @@ namespace android::view
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BIND_VIEW();
-		static QAndroidJniObject MOVE_FROM_ACTIVE_TO_SCRAP_HEAP();
-		static QAndroidJniObject MOVE_TO_SCRAP_HEAP();
-		static QAndroidJniObject NEW_VIEW();
-		static QAndroidJniObject RECYCLE_FROM_ACTIVE_HEAP();
-		static QAndroidJniObject RECYCLE_FROM_SCRAP_HEAP();
+		static android::view::ViewDebug_RecyclerTraceType BIND_VIEW();
+		static android::view::ViewDebug_RecyclerTraceType MOVE_FROM_ACTIVE_TO_SCRAP_HEAP();
+		static android::view::ViewDebug_RecyclerTraceType MOVE_TO_SCRAP_HEAP();
+		static android::view::ViewDebug_RecyclerTraceType NEW_VIEW();
+		static android::view::ViewDebug_RecyclerTraceType RECYCLE_FROM_ACTIVE_HEAP();
+		static android::view::ViewDebug_RecyclerTraceType RECYCLE_FROM_SCRAP_HEAP();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewDebug_RecyclerTraceType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,7 +24,7 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::view::ViewDebug_RecyclerTraceType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::view

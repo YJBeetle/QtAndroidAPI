@@ -17,10 +17,10 @@ namespace android::sax
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getChild(jstring arg0);
-		QAndroidJniObject getChild(jstring arg0, jstring arg1);
-		QAndroidJniObject requireChild(jstring arg0);
-		QAndroidJniObject requireChild(jstring arg0, jstring arg1);
+		android::sax::Element getChild(jstring arg0);
+		android::sax::Element getChild(jstring arg0, jstring arg1);
+		android::sax::Element requireChild(jstring arg0);
+		android::sax::Element requireChild(jstring arg0, jstring arg1);
 		void setElementListener(__JniBaseClass arg0);
 		void setEndElementListener(__JniBaseClass arg0);
 		void setEndTextElementListener(__JniBaseClass arg0);

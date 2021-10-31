@@ -57,7 +57,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaController2_ControllerCallback::onSessionCommand(android::media::MediaController2 arg0, android::media::Session2Command arg1, android::os::Bundle arg2)
+	android::media::Session2Command_Result MediaController2_ControllerCallback::onSessionCommand(android::media::MediaController2 arg0, android::media::Session2Command arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"onSessionCommand",

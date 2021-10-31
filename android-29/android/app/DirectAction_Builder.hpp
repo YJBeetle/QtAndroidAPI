@@ -30,9 +30,9 @@ namespace android::app
 		DirectAction_Builder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
-		QAndroidJniObject setLocusId(android::content::LocusId arg0);
+		android::app::DirectAction build();
+		android::app::DirectAction_Builder setExtras(android::os::Bundle arg0);
+		android::app::DirectAction_Builder setLocusId(android::content::LocusId arg0);
 	};
 } // namespace android::app
 

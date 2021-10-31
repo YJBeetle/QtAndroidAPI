@@ -14,7 +14,7 @@ namespace javax::crypto
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject KeyAgreement::getInstance(jstring arg0)
+	javax::crypto::KeyAgreement KeyAgreement::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.KeyAgreement",
@@ -23,7 +23,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	QAndroidJniObject KeyAgreement::getInstance(jstring arg0, jstring arg1)
+	javax::crypto::KeyAgreement KeyAgreement::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.KeyAgreement",
@@ -33,7 +33,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	QAndroidJniObject KeyAgreement::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::crypto::KeyAgreement KeyAgreement::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.crypto.KeyAgreement",
@@ -43,7 +43,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	QAndroidJniObject KeyAgreement::doPhase(__JniBaseClass arg0, jboolean arg1)
+	__JniBaseClass KeyAgreement::doPhase(__JniBaseClass arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"doPhase",
@@ -68,7 +68,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	QAndroidJniObject KeyAgreement::generateSecret(jstring arg0)
+	__JniBaseClass KeyAgreement::generateSecret(jstring arg0)
 	{
 		return callObjectMethod(
 			"generateSecret",
@@ -83,7 +83,7 @@ namespace javax::crypto
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject KeyAgreement::getProvider()
+	java::security::Provider KeyAgreement::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

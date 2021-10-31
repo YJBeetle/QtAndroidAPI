@@ -38,9 +38,9 @@ namespace android::media
 		MediaController2_Builder(android::content::Context arg0, android::media::Session2Token arg1);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setConnectionHints(android::os::Bundle arg0);
-		QAndroidJniObject setControllerCallback(__JniBaseClass arg0, android::media::MediaController2_ControllerCallback arg1);
+		android::media::MediaController2 build();
+		android::media::MediaController2_Builder setConnectionHints(android::os::Bundle arg0);
+		android::media::MediaController2_Builder setControllerCallback(__JniBaseClass arg0, android::media::MediaController2_ControllerCallback arg1);
 	};
 } // namespace android::media
 

@@ -240,7 +240,7 @@ namespace android::webkit
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WebSettings::getDefaultZoom()
+	android::webkit::WebSettings_ZoomDensity WebSettings::getDefaultZoom()
 	{
 		return callObjectMethod(
 			"getDefaultZoom",
@@ -303,7 +303,7 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	QAndroidJniObject WebSettings::getLayoutAlgorithm()
+	android::webkit::WebSettings_LayoutAlgorithm WebSettings::getLayoutAlgorithm()
 	{
 		return callObjectMethod(
 			"getLayoutAlgorithm",
@@ -366,7 +366,7 @@ namespace android::webkit
 			"()Z"
 		);
 	}
-	QAndroidJniObject WebSettings::getPluginState()
+	android::webkit::WebSettings_PluginState WebSettings::getPluginState()
 	{
 		return callObjectMethod(
 			"getPluginState",
@@ -415,7 +415,7 @@ namespace android::webkit
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WebSettings::getTextSize()
+	android::webkit::WebSettings_TextSize WebSettings::getTextSize()
 	{
 		return callObjectMethod(
 			"getTextSize",

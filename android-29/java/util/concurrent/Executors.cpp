@@ -10,7 +10,7 @@ namespace java::util::concurrent
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Executors::callable(__JniBaseClass arg0)
+	__JniBaseClass Executors::callable(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -19,7 +19,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Executors::callable(__JniBaseClass arg0, jobject arg1)
+	__JniBaseClass Executors::callable(__JniBaseClass arg0, jobject arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -29,7 +29,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	QAndroidJniObject Executors::defaultThreadFactory()
+	__JniBaseClass Executors::defaultThreadFactory()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -37,7 +37,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ThreadFactory;"
 		);
 	}
-	QAndroidJniObject Executors::newCachedThreadPool()
+	__JniBaseClass Executors::newCachedThreadPool()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -45,7 +45,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ExecutorService;"
 		);
 	}
-	QAndroidJniObject Executors::newCachedThreadPool(__JniBaseClass arg0)
+	__JniBaseClass Executors::newCachedThreadPool(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -54,7 +54,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Executors::newFixedThreadPool(jint arg0)
+	__JniBaseClass Executors::newFixedThreadPool(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -63,7 +63,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject Executors::newFixedThreadPool(jint arg0, __JniBaseClass arg1)
+	__JniBaseClass Executors::newFixedThreadPool(jint arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -73,7 +73,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Executors::newScheduledThreadPool(jint arg0)
+	__JniBaseClass Executors::newScheduledThreadPool(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -82,7 +82,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject Executors::newScheduledThreadPool(jint arg0, __JniBaseClass arg1)
+	__JniBaseClass Executors::newScheduledThreadPool(jint arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -92,7 +92,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Executors::newSingleThreadExecutor()
+	__JniBaseClass Executors::newSingleThreadExecutor()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -100,7 +100,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ExecutorService;"
 		);
 	}
-	QAndroidJniObject Executors::newSingleThreadExecutor(__JniBaseClass arg0)
+	__JniBaseClass Executors::newSingleThreadExecutor(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -109,7 +109,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Executors::newSingleThreadScheduledExecutor()
+	__JniBaseClass Executors::newSingleThreadScheduledExecutor()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -117,7 +117,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ScheduledExecutorService;"
 		);
 	}
-	QAndroidJniObject Executors::newSingleThreadScheduledExecutor(__JniBaseClass arg0)
+	__JniBaseClass Executors::newSingleThreadScheduledExecutor(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -126,7 +126,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Executors::newWorkStealingPool()
+	__JniBaseClass Executors::newWorkStealingPool()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -134,7 +134,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ExecutorService;"
 		);
 	}
-	QAndroidJniObject Executors::newWorkStealingPool(jint arg0)
+	__JniBaseClass Executors::newWorkStealingPool(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -143,7 +143,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject Executors::privilegedCallable(__JniBaseClass arg0)
+	__JniBaseClass Executors::privilegedCallable(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -152,7 +152,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Executors::privilegedCallableUsingCurrentClassLoader(__JniBaseClass arg0)
+	__JniBaseClass Executors::privilegedCallableUsingCurrentClassLoader(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -161,7 +161,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Executors::privilegedThreadFactory()
+	__JniBaseClass Executors::privilegedThreadFactory()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -169,7 +169,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ThreadFactory;"
 		);
 	}
-	QAndroidJniObject Executors::unconfigurableExecutorService(__JniBaseClass arg0)
+	__JniBaseClass Executors::unconfigurableExecutorService(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -178,7 +178,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Executors::unconfigurableScheduledExecutorService(__JniBaseClass arg0)
+	__JniBaseClass Executors::unconfigurableScheduledExecutorService(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.Executors",

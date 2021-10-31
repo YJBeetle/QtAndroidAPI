@@ -15,7 +15,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject DownloadManager_Query::setFilterById(jlongArray arg0)
+	android::app::DownloadManager_Query DownloadManager_Query::setFilterById(jlongArray arg0)
 	{
 		return callObjectMethod(
 			"setFilterById",
@@ -23,7 +23,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadManager_Query::setFilterByStatus(jint arg0)
+	android::app::DownloadManager_Query DownloadManager_Query::setFilterByStatus(jint arg0)
 	{
 		return callObjectMethod(
 			"setFilterByStatus",

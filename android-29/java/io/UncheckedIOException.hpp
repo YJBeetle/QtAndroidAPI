@@ -29,7 +29,7 @@ namespace java::io
 		UncheckedIOException(jstring arg0, java::io::IOException arg1);
 		
 		// Methods
-		QAndroidJniObject getCause();
+		java::io::IOException getCause();
 	};
 } // namespace java::io
 

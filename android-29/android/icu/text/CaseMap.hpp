@@ -33,11 +33,11 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject fold();
-		static QAndroidJniObject toLower();
-		static QAndroidJniObject toTitle();
-		static QAndroidJniObject toUpper();
-		QAndroidJniObject omitUnchangedText();
+		static android::icu::text::CaseMap_Fold fold();
+		static android::icu::text::CaseMap_Lower toLower();
+		static android::icu::text::CaseMap_Title toTitle();
+		static android::icu::text::CaseMap_Upper toUpper();
+		android::icu::text::CaseMap omitUnchangedText();
 	};
 } // namespace android::icu::text
 

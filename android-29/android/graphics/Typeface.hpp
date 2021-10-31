@@ -19,13 +19,13 @@ namespace android::graphics
 		// Fields
 		static jint BOLD();
 		static jint BOLD_ITALIC();
-		static QAndroidJniObject DEFAULT();
-		static QAndroidJniObject DEFAULT_BOLD();
+		static android::graphics::Typeface DEFAULT();
+		static android::graphics::Typeface DEFAULT_BOLD();
 		static jint ITALIC();
-		static QAndroidJniObject MONOSPACE();
+		static android::graphics::Typeface MONOSPACE();
 		static jint NORMAL();
-		static QAndroidJniObject SANS_SERIF();
-		static QAndroidJniObject SERIF();
+		static android::graphics::Typeface SANS_SERIF();
+		static android::graphics::Typeface SERIF();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Typeface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -34,13 +34,13 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::graphics::Typeface arg0, jint arg1);
-		static QAndroidJniObject create(jstring arg0, jint arg1);
-		static QAndroidJniObject create(android::graphics::Typeface arg0, jint arg1, jboolean arg2);
-		static QAndroidJniObject createFromAsset(android::content::res::AssetManager arg0, jstring arg1);
-		static QAndroidJniObject createFromFile(java::io::File arg0);
-		static QAndroidJniObject createFromFile(jstring arg0);
-		static QAndroidJniObject defaultFromStyle(jint arg0);
+		static android::graphics::Typeface create(android::graphics::Typeface arg0, jint arg1);
+		static android::graphics::Typeface create(jstring arg0, jint arg1);
+		static android::graphics::Typeface create(android::graphics::Typeface arg0, jint arg1, jboolean arg2);
+		static android::graphics::Typeface createFromAsset(android::content::res::AssetManager arg0, jstring arg1);
+		static android::graphics::Typeface createFromFile(java::io::File arg0);
+		static android::graphics::Typeface createFromFile(jstring arg0);
+		static android::graphics::Typeface defaultFromStyle(jint arg0);
 		jboolean equals(jobject arg0);
 		jint getStyle();
 		jint getWeight();

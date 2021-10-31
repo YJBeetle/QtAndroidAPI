@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject ActivityManager_RunningAppProcessInfo::CREATOR()
+	__JniBaseClass ActivityManager_RunningAppProcessInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$RunningAppProcessInfo",
@@ -137,7 +137,7 @@ namespace android::app
 			"importanceReasonCode"
 		);
 	}
-	QAndroidJniObject ActivityManager_RunningAppProcessInfo::importanceReasonComponent()
+	android::content::ComponentName ActivityManager_RunningAppProcessInfo::importanceReasonComponent()
 	{
 		return getObjectField(
 			"importanceReasonComponent",

@@ -38,10 +38,10 @@ namespace java::util::concurrent
 		jint bulkRegister(jint arg0);
 		void forceTermination();
 		jint getArrivedParties();
-		QAndroidJniObject getParent();
+		java::util::concurrent::Phaser getParent();
 		jint getPhase();
 		jint getRegisteredParties();
-		QAndroidJniObject getRoot();
+		java::util::concurrent::Phaser getRoot();
 		jint getUnarrivedParties();
 		jboolean isTerminated();
 		jint _register();

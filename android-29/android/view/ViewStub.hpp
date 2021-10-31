@@ -41,9 +41,9 @@ namespace android::view
 		// Methods
 		void draw(android::graphics::Canvas arg0);
 		jint getInflatedId();
-		QAndroidJniObject getLayoutInflater();
+		android::view::LayoutInflater getLayoutInflater();
 		jint getLayoutResource();
-		QAndroidJniObject inflate();
+		android::view::View inflate();
 		void setInflatedId(jint arg0);
 		void setLayoutInflater(android::view::LayoutInflater arg0);
 		void setLayoutResource(jint arg0);

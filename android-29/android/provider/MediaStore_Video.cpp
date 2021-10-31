@@ -25,7 +25,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaStore_Video::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
+	__JniBaseClass MediaStore_Video::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Video",

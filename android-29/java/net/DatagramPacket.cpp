@@ -63,7 +63,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject DatagramPacket::getAddress()
+	java::net::InetAddress DatagramPacket::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
@@ -98,7 +98,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject DatagramPacket::getSocketAddress()
+	java::net::SocketAddress DatagramPacket::getSocketAddress()
 	{
 		return callObjectMethod(
 			"getSocketAddress",

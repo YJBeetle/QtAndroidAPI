@@ -23,7 +23,7 @@ namespace android::animation
 		
 		// Methods
 		void addState(jintArray arg0, android::animation::Animator arg1);
-		QAndroidJniObject clone();
+		android::animation::StateListAnimator clone();
 		void jumpToCurrentState();
 	};
 } // namespace android::animation

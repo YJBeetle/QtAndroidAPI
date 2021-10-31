@@ -4,7 +4,7 @@
 namespace java::security::spec
 {
 	// Fields
-	QAndroidJniObject RSAKeyGenParameterSpec::F0()
+	java::math::BigInteger RSAKeyGenParameterSpec::F0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.RSAKeyGenParameterSpec",
@@ -12,7 +12,7 @@ namespace java::security::spec
 			"Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAKeyGenParameterSpec::F4()
+	java::math::BigInteger RSAKeyGenParameterSpec::F4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.RSAKeyGenParameterSpec",
@@ -42,7 +42,7 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	QAndroidJniObject RSAKeyGenParameterSpec::getKeyParams()
+	__JniBaseClass RSAKeyGenParameterSpec::getKeyParams()
 	{
 		return callObjectMethod(
 			"getKeyParams",
@@ -56,7 +56,7 @@ namespace java::security::spec
 			"()I"
 		);
 	}
-	QAndroidJniObject RSAKeyGenParameterSpec::getPublicExponent()
+	java::math::BigInteger RSAKeyGenParameterSpec::getPublicExponent()
 	{
 		return callObjectMethod(
 			"getPublicExponent",

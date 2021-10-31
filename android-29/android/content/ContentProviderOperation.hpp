@@ -33,7 +33,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentProviderOperation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -42,13 +42,13 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newAssertQuery(android::net::Uri arg0);
-		static QAndroidJniObject newDelete(android::net::Uri arg0);
-		static QAndroidJniObject newInsert(android::net::Uri arg0);
-		static QAndroidJniObject newUpdate(android::net::Uri arg0);
-		QAndroidJniObject apply(android::content::ContentProvider arg0, jarray arg1, jint arg2);
+		static android::content::ContentProviderOperation_Builder newAssertQuery(android::net::Uri arg0);
+		static android::content::ContentProviderOperation_Builder newDelete(android::net::Uri arg0);
+		static android::content::ContentProviderOperation_Builder newInsert(android::net::Uri arg0);
+		static android::content::ContentProviderOperation_Builder newUpdate(android::net::Uri arg0);
+		android::content::ContentProviderResult apply(android::content::ContentProvider arg0, jarray arg1, jint arg2);
 		jint describeContents();
-		QAndroidJniObject getUri();
+		android::net::Uri getUri();
 		jboolean isAssertQuery();
 		jboolean isDelete();
 		jboolean isInsert();
@@ -57,7 +57,7 @@ namespace android::content
 		jboolean isWriteOperation();
 		jboolean isYieldAllowed();
 		jarray resolveSelectionArgsBackReferences(jarray arg0, jint arg1);
-		QAndroidJniObject resolveValueBackReferences(jarray arg0, jint arg1);
+		android::content::ContentValues resolveValueBackReferences(jarray arg0, jint arg1);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

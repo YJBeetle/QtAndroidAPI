@@ -10,12 +10,12 @@ namespace java::lang
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BLOCKED();
-		static QAndroidJniObject NEW();
-		static QAndroidJniObject RUNNABLE();
-		static QAndroidJniObject TERMINATED();
-		static QAndroidJniObject TIMED_WAITING();
-		static QAndroidJniObject WAITING();
+		static java::lang::Thread_State BLOCKED();
+		static java::lang::Thread_State NEW();
+		static java::lang::Thread_State RUNNABLE();
+		static java::lang::Thread_State TERMINATED();
+		static java::lang::Thread_State TIMED_WAITING();
+		static java::lang::Thread_State WAITING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Thread_State(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,7 +24,7 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::lang::Thread_State valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::lang

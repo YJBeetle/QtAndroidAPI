@@ -26,9 +26,9 @@ namespace android::security
 		ConfirmationPrompt_Builder(android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setExtraData(jbyteArray arg0);
-		QAndroidJniObject setPromptText(jstring arg0);
+		android::security::ConfirmationPrompt build();
+		android::security::ConfirmationPrompt_Builder setExtraData(jbyteArray arg0);
+		android::security::ConfirmationPrompt_Builder setPromptText(jstring arg0);
 	};
 } // namespace android::security
 

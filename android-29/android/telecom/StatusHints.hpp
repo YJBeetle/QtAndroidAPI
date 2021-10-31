@@ -21,7 +21,7 @@ namespace android::telecom
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StatusHints(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,8 +33,8 @@ namespace android::telecom
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getIcon();
+		android::os::Bundle getExtras();
+		android::graphics::drawable::Icon getIcon();
 		jstring getLabel();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

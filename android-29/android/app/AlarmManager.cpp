@@ -100,7 +100,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AlarmManager::getNextAlarmClock()
+	android::app::AlarmManager_AlarmClockInfo AlarmManager::getNextAlarmClock()
 	{
 		return callObjectMethod(
 			"getNextAlarmClock",

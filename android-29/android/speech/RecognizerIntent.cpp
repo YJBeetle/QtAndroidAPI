@@ -263,7 +263,7 @@ namespace android::speech
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RecognizerIntent::getVoiceDetailsIntent(android::content::Context arg0)
+	android::content::Intent RecognizerIntent::getVoiceDetailsIntent(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.speech.RecognizerIntent",

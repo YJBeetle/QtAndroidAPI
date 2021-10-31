@@ -30,7 +30,7 @@ namespace android::app
 		Notification_Style();
 		
 		// Methods
-		QAndroidJniObject build();
+		android::app::Notification build();
 		void setBuilder(android::app::Notification_Builder arg0);
 	};
 } // namespace android::app

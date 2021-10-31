@@ -38,7 +38,7 @@ namespace android::database::sqlite
 		jint getColumnIndex(jstring arg0);
 		jarray getColumnNames();
 		jint getCount();
-		QAndroidJniObject getDatabase();
+		android::database::sqlite::SQLiteDatabase getDatabase();
 		jboolean onMove(jint arg0, jint arg1);
 		jboolean requery();
 		void setFillWindowForwardOnly(jboolean arg0);

@@ -22,11 +22,11 @@ namespace android::view::textclassifier
 		TextClassifier_EntityConfig_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject includeTypesFromTextClassifier(jboolean arg0);
-		QAndroidJniObject setExcludedTypes(__JniBaseClass arg0);
-		QAndroidJniObject setHints(__JniBaseClass arg0);
-		QAndroidJniObject setIncludedTypes(__JniBaseClass arg0);
+		android::view::textclassifier::TextClassifier_EntityConfig build();
+		android::view::textclassifier::TextClassifier_EntityConfig_Builder includeTypesFromTextClassifier(jboolean arg0);
+		android::view::textclassifier::TextClassifier_EntityConfig_Builder setExcludedTypes(__JniBaseClass arg0);
+		android::view::textclassifier::TextClassifier_EntityConfig_Builder setHints(__JniBaseClass arg0);
+		android::view::textclassifier::TextClassifier_EntityConfig_Builder setIncludedTypes(__JniBaseClass arg0);
 	};
 } // namespace android::view::textclassifier
 

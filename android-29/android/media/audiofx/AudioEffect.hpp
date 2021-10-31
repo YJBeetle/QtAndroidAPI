@@ -27,16 +27,16 @@ namespace android::media::audiofx
 		static jint CONTENT_TYPE_VOICE();
 		static jstring EFFECT_AUXILIARY();
 		static jstring EFFECT_INSERT();
-		static QAndroidJniObject EFFECT_TYPE_AEC();
-		static QAndroidJniObject EFFECT_TYPE_AGC();
-		static QAndroidJniObject EFFECT_TYPE_BASS_BOOST();
-		static QAndroidJniObject EFFECT_TYPE_DYNAMICS_PROCESSING();
-		static QAndroidJniObject EFFECT_TYPE_ENV_REVERB();
-		static QAndroidJniObject EFFECT_TYPE_EQUALIZER();
-		static QAndroidJniObject EFFECT_TYPE_LOUDNESS_ENHANCER();
-		static QAndroidJniObject EFFECT_TYPE_NS();
-		static QAndroidJniObject EFFECT_TYPE_PRESET_REVERB();
-		static QAndroidJniObject EFFECT_TYPE_VIRTUALIZER();
+		static java::util::UUID EFFECT_TYPE_AEC();
+		static java::util::UUID EFFECT_TYPE_AGC();
+		static java::util::UUID EFFECT_TYPE_BASS_BOOST();
+		static java::util::UUID EFFECT_TYPE_DYNAMICS_PROCESSING();
+		static java::util::UUID EFFECT_TYPE_ENV_REVERB();
+		static java::util::UUID EFFECT_TYPE_EQUALIZER();
+		static java::util::UUID EFFECT_TYPE_LOUDNESS_ENHANCER();
+		static java::util::UUID EFFECT_TYPE_NS();
+		static java::util::UUID EFFECT_TYPE_PRESET_REVERB();
+		static java::util::UUID EFFECT_TYPE_VIRTUALIZER();
 		static jint ERROR();
 		static jint ERROR_BAD_VALUE();
 		static jint ERROR_DEAD_OBJECT();
@@ -56,7 +56,7 @@ namespace android::media::audiofx
 		
 		// Methods
 		static jarray queryEffects();
-		QAndroidJniObject getDescriptor();
+		android::media::audiofx::AudioEffect_Descriptor getDescriptor();
 		jboolean getEnabled();
 		jint getId();
 		jboolean hasControl();

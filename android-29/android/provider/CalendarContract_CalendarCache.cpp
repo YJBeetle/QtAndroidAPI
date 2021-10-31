@@ -44,7 +44,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract_CalendarCache::URI()
+	android::net::Uri CalendarContract_CalendarCache::URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$CalendarCache",

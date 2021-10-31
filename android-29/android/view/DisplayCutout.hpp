@@ -28,11 +28,11 @@ namespace android::view
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getBoundingRectBottom();
-		QAndroidJniObject getBoundingRectLeft();
-		QAndroidJniObject getBoundingRectRight();
-		QAndroidJniObject getBoundingRectTop();
-		QAndroidJniObject getBoundingRects();
+		android::graphics::Rect getBoundingRectBottom();
+		android::graphics::Rect getBoundingRectLeft();
+		android::graphics::Rect getBoundingRectRight();
+		android::graphics::Rect getBoundingRectTop();
+		__JniBaseClass getBoundingRects();
 		jint getSafeInsetBottom();
 		jint getSafeInsetLeft();
 		jint getSafeInsetRight();

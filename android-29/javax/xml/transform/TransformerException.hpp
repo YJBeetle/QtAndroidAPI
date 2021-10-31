@@ -38,7 +38,7 @@ namespace javax::xml::transform
 		jthrowable getCause();
 		jthrowable getException();
 		jstring getLocationAsString();
-		QAndroidJniObject getLocator();
+		__JniBaseClass getLocator();
 		jstring getMessageAndLocation();
 		jthrowable initCause(jthrowable arg0);
 		void printStackTrace();

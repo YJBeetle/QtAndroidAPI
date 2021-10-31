@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject Fragment_SavedState::CREATOR()
+	__JniBaseClass Fragment_SavedState::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Fragment$SavedState",

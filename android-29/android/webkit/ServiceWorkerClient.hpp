@@ -22,7 +22,7 @@ namespace android::webkit
 		ServiceWorkerClient();
 		
 		// Methods
-		QAndroidJniObject shouldInterceptRequest(__JniBaseClass arg0);
+		android::webkit::WebResourceResponse shouldInterceptRequest(__JniBaseClass arg0);
 	};
 } // namespace android::webkit
 

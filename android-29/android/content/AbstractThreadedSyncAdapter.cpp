@@ -38,14 +38,14 @@ namespace android::content
 		) {}
 	
 	// Methods
-	QAndroidJniObject AbstractThreadedSyncAdapter::getContext()
+	android::content::Context AbstractThreadedSyncAdapter::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject AbstractThreadedSyncAdapter::getSyncAdapterBinder()
+	__JniBaseClass AbstractThreadedSyncAdapter::getSyncAdapterBinder()
 	{
 		return callObjectMethod(
 			"getSyncAdapterBinder",

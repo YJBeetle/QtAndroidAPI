@@ -138,7 +138,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject PluralFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer PluralFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -155,7 +155,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject PluralFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number PluralFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",

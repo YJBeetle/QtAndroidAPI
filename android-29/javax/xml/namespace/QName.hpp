@@ -20,7 +20,7 @@ namespace javax::xml::_namespace
 		QName(jstring arg0, jstring arg1, jstring arg2);
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static javax::xml::_namespace::QName valueOf(jstring arg0);
 		jboolean equals(jobject arg0);
 		jstring getLocalPart();
 		jstring getNamespaceURI();

@@ -78,7 +78,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LayerDrawable::findDrawableByLayerId(jint arg0)
+	android::graphics::drawable::Drawable LayerDrawable::findDrawableByLayerId(jint arg0)
 	{
 		return callObjectMethod(
 			"findDrawableByLayerId",
@@ -115,14 +115,14 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject LayerDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState LayerDrawable::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	QAndroidJniObject LayerDrawable::getDrawable(jint arg0)
+	android::graphics::drawable::Drawable LayerDrawable::getDrawable(jint arg0)
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -351,7 +351,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	QAndroidJniObject LayerDrawable::mutate()
+	android::graphics::drawable::Drawable LayerDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

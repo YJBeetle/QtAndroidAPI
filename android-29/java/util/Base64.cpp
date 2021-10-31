@@ -12,7 +12,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Base64::getDecoder()
+	java::util::Base64_Decoder Base64::getDecoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
@@ -20,7 +20,7 @@ namespace java::util
 			"()Ljava/util/Base64$Decoder;"
 		);
 	}
-	QAndroidJniObject Base64::getEncoder()
+	java::util::Base64_Encoder Base64::getEncoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
@@ -28,7 +28,7 @@ namespace java::util
 			"()Ljava/util/Base64$Encoder;"
 		);
 	}
-	QAndroidJniObject Base64::getMimeDecoder()
+	java::util::Base64_Decoder Base64::getMimeDecoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
@@ -36,7 +36,7 @@ namespace java::util
 			"()Ljava/util/Base64$Decoder;"
 		);
 	}
-	QAndroidJniObject Base64::getMimeEncoder()
+	java::util::Base64_Encoder Base64::getMimeEncoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
@@ -44,7 +44,7 @@ namespace java::util
 			"()Ljava/util/Base64$Encoder;"
 		);
 	}
-	QAndroidJniObject Base64::getMimeEncoder(jint arg0, jbyteArray arg1)
+	java::util::Base64_Encoder Base64::getMimeEncoder(jint arg0, jbyteArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
@@ -54,7 +54,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Base64::getUrlDecoder()
+	java::util::Base64_Decoder Base64::getUrlDecoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
@@ -62,7 +62,7 @@ namespace java::util
 			"()Ljava/util/Base64$Decoder;"
 		);
 	}
-	QAndroidJniObject Base64::getUrlEncoder()
+	java::util::Base64_Encoder Base64::getUrlEncoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",

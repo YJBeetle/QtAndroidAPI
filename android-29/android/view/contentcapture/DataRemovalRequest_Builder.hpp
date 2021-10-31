@@ -26,9 +26,9 @@ namespace android::view::contentcapture
 		DataRemovalRequest_Builder();
 		
 		// Methods
-		QAndroidJniObject addLocusId(android::content::LocusId arg0, jint arg1);
-		QAndroidJniObject build();
-		QAndroidJniObject forEverything();
+		android::view::contentcapture::DataRemovalRequest_Builder addLocusId(android::content::LocusId arg0, jint arg1);
+		android::view::contentcapture::DataRemovalRequest build();
+		android::view::contentcapture::DataRemovalRequest_Builder forEverything();
 	};
 } // namespace android::view::contentcapture
 

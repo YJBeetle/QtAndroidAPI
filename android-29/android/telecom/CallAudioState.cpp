@@ -5,7 +5,7 @@
 namespace android::telecom
 {
 	// Fields
-	QAndroidJniObject CallAudioState::CREATOR()
+	__JniBaseClass CallAudioState::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.CallAudioState",
@@ -87,7 +87,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject CallAudioState::getActiveBluetoothDevice()
+	android::bluetooth::BluetoothDevice CallAudioState::getActiveBluetoothDevice()
 	{
 		return callObjectMethod(
 			"getActiveBluetoothDevice",
@@ -101,7 +101,7 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject CallAudioState::getSupportedBluetoothDevices()
+	__JniBaseClass CallAudioState::getSupportedBluetoothDevices()
 	{
 		return callObjectMethod(
 			"getSupportedBluetoothDevices",

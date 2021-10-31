@@ -23,7 +23,7 @@ namespace android::provider
 		static jstring ACTION_VIEW_MANAGED_PROFILE_CALENDAR_EVENT();
 		static jstring AUTHORITY();
 		static jstring CALLER_IS_SYNCADAPTER();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring EXTRA_CUSTOM_APP_URI();
 		static jstring EXTRA_EVENT_ALL_DAY();
 		static jstring EXTRA_EVENT_BEGIN_TIME();

@@ -18,7 +18,7 @@ namespace android::database
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CursorWindow(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteClosable(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,7 +30,7 @@ namespace android::database
 		CursorWindow(jstring arg0, jlong arg1);
 		
 		// Methods
-		static QAndroidJniObject newFromParcel(android::os::Parcel arg0);
+		static android::database::CursorWindow newFromParcel(android::os::Parcel arg0);
 		jboolean allocRow();
 		void clear();
 		void copyStringToBuffer(jint arg0, jint arg1, android::database::CharArrayBuffer arg2);

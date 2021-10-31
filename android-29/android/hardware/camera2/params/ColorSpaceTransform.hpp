@@ -26,7 +26,7 @@ namespace android::hardware::camera2::params
 		void copyElements(jintArray arg0, jint arg1);
 		void copyElements(jarray arg0, jint arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getElement(jint arg0, jint arg1);
+		android::util::Rational getElement(jint arg0, jint arg1);
 		jint hashCode();
 		jstring toString();
 	};

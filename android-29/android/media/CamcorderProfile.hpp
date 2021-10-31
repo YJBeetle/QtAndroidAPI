@@ -53,8 +53,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject get(jint arg0);
-		static QAndroidJniObject get(jint arg0, jint arg1);
+		static android::media::CamcorderProfile get(jint arg0);
+		static android::media::CamcorderProfile get(jint arg0, jint arg1);
 		static jboolean hasProfile(jint arg0);
 		static jboolean hasProfile(jint arg0, jint arg1);
 	};

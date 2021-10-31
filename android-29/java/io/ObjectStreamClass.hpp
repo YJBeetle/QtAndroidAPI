@@ -58,10 +58,10 @@ namespace java::io
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject lookup(jclass arg0);
-		static QAndroidJniObject lookupAny(jclass arg0);
+		static java::io::ObjectStreamClass lookup(jclass arg0);
+		static java::io::ObjectStreamClass lookupAny(jclass arg0);
 		jclass forClass();
-		QAndroidJniObject getField(jstring arg0);
+		java::io::ObjectStreamField getField(jstring arg0);
 		jarray getFields();
 		jstring getName();
 		jlong getSerialVersionUID();

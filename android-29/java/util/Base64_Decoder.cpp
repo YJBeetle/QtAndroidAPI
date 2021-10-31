@@ -37,7 +37,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Base64_Decoder::decode(java::nio::ByteBuffer arg0)
+	java::nio::ByteBuffer Base64_Decoder::decode(java::nio::ByteBuffer arg0)
 	{
 		return callObjectMethod(
 			"decode",
@@ -45,7 +45,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Base64_Decoder::wrap(java::io::InputStream arg0)
+	java::io::InputStream Base64_Decoder::wrap(java::io::InputStream arg0)
 	{
 		return callObjectMethod(
 			"wrap",

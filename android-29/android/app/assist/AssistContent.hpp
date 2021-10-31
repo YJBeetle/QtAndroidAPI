@@ -29,7 +29,7 @@ namespace android::app::assist
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AssistContent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -40,11 +40,11 @@ namespace android::app::assist
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getClipData();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getIntent();
+		android::content::ClipData getClipData();
+		android::os::Bundle getExtras();
+		android::content::Intent getIntent();
 		jstring getStructuredData();
-		QAndroidJniObject getWebUri();
+		android::net::Uri getWebUri();
 		jboolean isAppProvidedIntent();
 		jboolean isAppProvidedWebUri();
 		void setClipData(android::content::ClipData arg0);

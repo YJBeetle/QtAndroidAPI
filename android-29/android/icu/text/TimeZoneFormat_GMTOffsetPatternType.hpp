@@ -10,12 +10,12 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NEGATIVE_H();
-		static QAndroidJniObject NEGATIVE_HM();
-		static QAndroidJniObject NEGATIVE_HMS();
-		static QAndroidJniObject POSITIVE_H();
-		static QAndroidJniObject POSITIVE_HM();
-		static QAndroidJniObject POSITIVE_HMS();
+		static android::icu::text::TimeZoneFormat_GMTOffsetPatternType NEGATIVE_H();
+		static android::icu::text::TimeZoneFormat_GMTOffsetPatternType NEGATIVE_HM();
+		static android::icu::text::TimeZoneFormat_GMTOffsetPatternType NEGATIVE_HMS();
+		static android::icu::text::TimeZoneFormat_GMTOffsetPatternType POSITIVE_H();
+		static android::icu::text::TimeZoneFormat_GMTOffsetPatternType POSITIVE_HM();
+		static android::icu::text::TimeZoneFormat_GMTOffsetPatternType POSITIVE_HMS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimeZoneFormat_GMTOffsetPatternType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,7 +24,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::TimeZoneFormat_GMTOffsetPatternType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

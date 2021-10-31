@@ -4,7 +4,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	QAndroidJniObject InputBinding::CREATOR()
+	__JniBaseClass InputBinding::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.InputBinding",
@@ -42,14 +42,14 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	QAndroidJniObject InputBinding::getConnection()
+	__JniBaseClass InputBinding::getConnection()
 	{
 		return callObjectMethod(
 			"getConnection",
 			"()Landroid/view/inputmethod/InputConnection;"
 		);
 	}
-	QAndroidJniObject InputBinding::getConnectionToken()
+	__JniBaseClass InputBinding::getConnectionToken()
 	{
 		return callObjectMethod(
 			"getConnectionToken",

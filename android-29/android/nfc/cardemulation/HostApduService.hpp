@@ -34,7 +34,7 @@ namespace android::nfc::cardemulation
 		
 		// Methods
 		void notifyUnhandled();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onDeactivated(jint arg0);
 		jbyteArray processCommandApdu(jbyteArray arg0, android::os::Bundle arg1);
 		void sendResponseApdu(jbyteArray arg0);

@@ -19,7 +19,7 @@ namespace android::inputmethodservice
 		static jint TOUCHABLE_INSETS_VISIBLE();
 		jint contentTopInsets();
 		jint touchableInsets();
-		QAndroidJniObject touchableRegion();
+		android::graphics::Region touchableRegion();
 		jint visibleTopInsets();
 		
 		// QAndroidJniObject forward

@@ -4,7 +4,7 @@
 namespace android::media
 {
 	// Fields
-	QAndroidJniObject VolumeShaper_Operation::CREATOR()
+	__JniBaseClass VolumeShaper_Operation::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Operation",
@@ -12,7 +12,7 @@ namespace android::media
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject VolumeShaper_Operation::PLAY()
+	android::media::VolumeShaper_Operation VolumeShaper_Operation::PLAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Operation",
@@ -20,7 +20,7 @@ namespace android::media
 			"Landroid/media/VolumeShaper$Operation;"
 		);
 	}
-	QAndroidJniObject VolumeShaper_Operation::REVERSE()
+	android::media::VolumeShaper_Operation VolumeShaper_Operation::REVERSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Operation",

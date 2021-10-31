@@ -21,12 +21,12 @@ namespace javax::xml::validation
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getContentHandler();
-		QAndroidJniObject getErrorHandler();
+		__JniBaseClass getContentHandler();
+		__JniBaseClass getErrorHandler();
 		jboolean getFeature(jstring arg0);
 		jobject getProperty(jstring arg0);
-		QAndroidJniObject getResourceResolver();
-		QAndroidJniObject getTypeInfoProvider();
+		__JniBaseClass getResourceResolver();
+		javax::xml::validation::TypeInfoProvider getTypeInfoProvider();
 		void setContentHandler(__JniBaseClass arg0);
 		void setErrorHandler(__JniBaseClass arg0);
 		void setFeature(jstring arg0, jboolean arg1);

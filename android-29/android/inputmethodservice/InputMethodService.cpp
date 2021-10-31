@@ -83,21 +83,21 @@ namespace android::inputmethodservice
 			"()I"
 		);
 	}
-	QAndroidJniObject InputMethodService::getCurrentInputBinding()
+	android::view::inputmethod::InputBinding InputMethodService::getCurrentInputBinding()
 	{
 		return callObjectMethod(
 			"getCurrentInputBinding",
 			"()Landroid/view/inputmethod/InputBinding;"
 		);
 	}
-	QAndroidJniObject InputMethodService::getCurrentInputConnection()
+	__JniBaseClass InputMethodService::getCurrentInputConnection()
 	{
 		return callObjectMethod(
 			"getCurrentInputConnection",
 			"()Landroid/view/inputmethod/InputConnection;"
 		);
 	}
-	QAndroidJniObject InputMethodService::getCurrentInputEditorInfo()
+	android::view::inputmethod::EditorInfo InputMethodService::getCurrentInputEditorInfo()
 	{
 		return callObjectMethod(
 			"getCurrentInputEditorInfo",
@@ -118,7 +118,7 @@ namespace android::inputmethodservice
 			"()I"
 		);
 	}
-	QAndroidJniObject InputMethodService::getLayoutInflater()
+	android::view::LayoutInflater InputMethodService::getLayoutInflater()
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
@@ -140,7 +140,7 @@ namespace android::inputmethodservice
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject InputMethodService::getWindow()
+	android::app::Dialog InputMethodService::getWindow()
 	{
 		return callObjectMethod(
 			"getWindow",
@@ -238,35 +238,35 @@ namespace android::inputmethodservice
 			"()V"
 		);
 	}
-	QAndroidJniObject InputMethodService::onCreateCandidatesView()
+	android::view::View InputMethodService::onCreateCandidatesView()
 	{
 		return callObjectMethod(
 			"onCreateCandidatesView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject InputMethodService::onCreateExtractTextView()
+	android::view::View InputMethodService::onCreateExtractTextView()
 	{
 		return callObjectMethod(
 			"onCreateExtractTextView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject InputMethodService::onCreateInputMethodInterface()
+	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl InputMethodService::onCreateInputMethodInterface()
 	{
 		return callObjectMethod(
 			"onCreateInputMethodInterface",
 			"()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodImpl;"
 		);
 	}
-	QAndroidJniObject InputMethodService::onCreateInputMethodSessionInterface()
+	android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl InputMethodService::onCreateInputMethodSessionInterface()
 	{
 		return callObjectMethod(
 			"onCreateInputMethodSessionInterface",
 			"()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;"
 		);
 	}
-	QAndroidJniObject InputMethodService::onCreateInputView()
+	android::view::View InputMethodService::onCreateInputView()
 	{
 		return callObjectMethod(
 			"onCreateInputView",

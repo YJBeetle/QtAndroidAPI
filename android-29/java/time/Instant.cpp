@@ -10,7 +10,7 @@
 namespace java::time
 {
 	// Fields
-	QAndroidJniObject Instant::EPOCH()
+	java::time::Instant Instant::EPOCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.Instant",
@@ -18,7 +18,7 @@ namespace java::time
 			"Ljava/time/Instant;"
 		);
 	}
-	QAndroidJniObject Instant::MAX()
+	java::time::Instant Instant::MAX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.Instant",
@@ -26,7 +26,7 @@ namespace java::time
 			"Ljava/time/Instant;"
 		);
 	}
-	QAndroidJniObject Instant::MIN()
+	java::time::Instant Instant::MIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.Instant",
@@ -41,7 +41,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Instant::from(__JniBaseClass arg0)
+	java::time::Instant Instant::from(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Instant",
@@ -50,7 +50,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instant::now()
+	java::time::Instant Instant::now()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Instant",
@@ -58,7 +58,7 @@ namespace java::time
 			"()Ljava/time/Instant;"
 		);
 	}
-	QAndroidJniObject Instant::now(java::time::Clock arg0)
+	java::time::Instant Instant::now(java::time::Clock arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Instant",
@@ -67,7 +67,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instant::ofEpochMilli(jlong arg0)
+	java::time::Instant Instant::ofEpochMilli(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Instant",
@@ -76,7 +76,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Instant::ofEpochSecond(jlong arg0)
+	java::time::Instant Instant::ofEpochSecond(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Instant",
@@ -85,7 +85,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Instant::ofEpochSecond(jlong arg0, jlong arg1)
+	java::time::Instant Instant::ofEpochSecond(jlong arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Instant",
@@ -95,7 +95,7 @@ namespace java::time
 			arg1
 		);
 	}
-	QAndroidJniObject Instant::parse(jstring arg0)
+	java::time::Instant Instant::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Instant",
@@ -104,7 +104,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Instant::adjustInto(__JniBaseClass arg0)
+	__JniBaseClass Instant::adjustInto(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -112,7 +112,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instant::atOffset(java::time::ZoneOffset arg0)
+	java::time::OffsetDateTime Instant::atOffset(java::time::ZoneOffset arg0)
 	{
 		return callObjectMethod(
 			"atOffset",
@@ -120,7 +120,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instant::atZone(java::time::ZoneId arg0)
+	java::time::ZonedDateTime Instant::atZone(java::time::ZoneId arg0)
 	{
 		return callObjectMethod(
 			"atZone",
@@ -213,7 +213,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instant::minus(__JniBaseClass arg0)
+	java::time::Instant Instant::minus(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -221,7 +221,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instant::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::Instant Instant::minus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -230,7 +230,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Instant::minusMillis(jlong arg0)
+	java::time::Instant Instant::minusMillis(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusMillis",
@@ -238,7 +238,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Instant::minusNanos(jlong arg0)
+	java::time::Instant Instant::minusNanos(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusNanos",
@@ -246,7 +246,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Instant::minusSeconds(jlong arg0)
+	java::time::Instant Instant::minusSeconds(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusSeconds",
@@ -254,7 +254,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Instant::plus(__JniBaseClass arg0)
+	java::time::Instant Instant::plus(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -262,7 +262,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instant::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::Instant Instant::plus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -271,7 +271,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Instant::plusMillis(jlong arg0)
+	java::time::Instant Instant::plusMillis(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusMillis",
@@ -279,7 +279,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Instant::plusNanos(jlong arg0)
+	java::time::Instant Instant::plusNanos(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusNanos",
@@ -287,7 +287,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Instant::plusSeconds(jlong arg0)
+	java::time::Instant Instant::plusSeconds(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusSeconds",
@@ -303,7 +303,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject Instant::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange Instant::range(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -325,7 +325,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Instant::truncatedTo(__JniBaseClass arg0)
+	java::time::Instant Instant::truncatedTo(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -342,7 +342,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Instant::with(__JniBaseClass arg0)
+	java::time::Instant Instant::with(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -350,7 +350,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Instant::with(__JniBaseClass arg0, jlong arg1)
+	java::time::Instant Instant::with(__JniBaseClass arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

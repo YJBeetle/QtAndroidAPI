@@ -51,8 +51,8 @@ namespace android::service::autofill
 		AutofillService();
 		
 		// Methods
-		QAndroidJniObject getFillEventHistory();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		android::service::autofill::FillEventHistory getFillEventHistory();
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onConnected();
 		void onCreate();
 		void onDisconnected();

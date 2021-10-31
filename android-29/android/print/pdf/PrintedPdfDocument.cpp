@@ -21,7 +21,7 @@ namespace android::print::pdf
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrintedPdfDocument::getPageContentRect()
+	android::graphics::Rect PrintedPdfDocument::getPageContentRect()
 	{
 		return callObjectMethod(
 			"getPageContentRect",
@@ -42,7 +42,7 @@ namespace android::print::pdf
 			"()I"
 		);
 	}
-	QAndroidJniObject PrintedPdfDocument::startPage(jint arg0)
+	android::graphics::pdf::PdfDocument_Page PrintedPdfDocument::startPage(jint arg0)
 	{
 		return callObjectMethod(
 			"startPage",

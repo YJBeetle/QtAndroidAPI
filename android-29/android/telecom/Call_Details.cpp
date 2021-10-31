@@ -308,7 +308,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject Call_Details::getAccountHandle()
+	android::telecom::PhoneAccountHandle Call_Details::getAccountHandle()
 	{
 		return callObjectMethod(
 			"getAccountHandle",
@@ -364,28 +364,28 @@ namespace android::telecom
 			"()J"
 		);
 	}
-	QAndroidJniObject Call_Details::getDisconnectCause()
+	android::telecom::DisconnectCause Call_Details::getDisconnectCause()
 	{
 		return callObjectMethod(
 			"getDisconnectCause",
 			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
-	QAndroidJniObject Call_Details::getExtras()
+	android::os::Bundle Call_Details::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Call_Details::getGatewayInfo()
+	android::telecom::GatewayInfo Call_Details::getGatewayInfo()
 	{
 		return callObjectMethod(
 			"getGatewayInfo",
 			"()Landroid/telecom/GatewayInfo;"
 		);
 	}
-	QAndroidJniObject Call_Details::getHandle()
+	android::net::Uri Call_Details::getHandle()
 	{
 		return callObjectMethod(
 			"getHandle",
@@ -399,14 +399,14 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject Call_Details::getIntentExtras()
+	android::os::Bundle Call_Details::getIntentExtras()
 	{
 		return callObjectMethod(
 			"getIntentExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Call_Details::getStatusHints()
+	android::telecom::StatusHints Call_Details::getStatusHints()
 	{
 		return callObjectMethod(
 			"getStatusHints",

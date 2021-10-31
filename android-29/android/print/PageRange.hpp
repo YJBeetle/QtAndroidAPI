@@ -13,8 +13,8 @@ namespace android::print
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ALL_PAGES();
-		static QAndroidJniObject CREATOR();
+		static android::print::PageRange ALL_PAGES();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PageRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

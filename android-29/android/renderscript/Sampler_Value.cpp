@@ -3,7 +3,7 @@
 namespace android::renderscript
 {
 	// Fields
-	QAndroidJniObject Sampler_Value::CLAMP()
+	android::renderscript::Sampler_Value Sampler_Value::CLAMP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
@@ -11,7 +11,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	QAndroidJniObject Sampler_Value::LINEAR()
+	android::renderscript::Sampler_Value Sampler_Value::LINEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
@@ -19,7 +19,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	QAndroidJniObject Sampler_Value::LINEAR_MIP_LINEAR()
+	android::renderscript::Sampler_Value Sampler_Value::LINEAR_MIP_LINEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
@@ -27,7 +27,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	QAndroidJniObject Sampler_Value::LINEAR_MIP_NEAREST()
+	android::renderscript::Sampler_Value Sampler_Value::LINEAR_MIP_NEAREST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
@@ -35,7 +35,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	QAndroidJniObject Sampler_Value::MIRRORED_REPEAT()
+	android::renderscript::Sampler_Value Sampler_Value::MIRRORED_REPEAT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
@@ -43,7 +43,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	QAndroidJniObject Sampler_Value::NEAREST()
+	android::renderscript::Sampler_Value Sampler_Value::NEAREST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
@@ -51,7 +51,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Sampler$Value;"
 		);
 	}
-	QAndroidJniObject Sampler_Value::WRAP()
+	android::renderscript::Sampler_Value Sampler_Value::WRAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
@@ -66,7 +66,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Sampler_Value::valueOf(jstring arg0)
+	android::renderscript::Sampler_Value Sampler_Value::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler$Value",

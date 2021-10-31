@@ -26,8 +26,8 @@ namespace android::accessibilityservice
 		GestureDescription_Builder();
 		
 		// Methods
-		QAndroidJniObject addStroke(android::accessibilityservice::GestureDescription_StrokeDescription arg0);
-		QAndroidJniObject build();
+		android::accessibilityservice::GestureDescription_Builder addStroke(android::accessibilityservice::GestureDescription_StrokeDescription arg0);
+		android::accessibilityservice::GestureDescription build();
 	};
 } // namespace android::accessibilityservice
 

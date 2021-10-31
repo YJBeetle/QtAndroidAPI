@@ -14,17 +14,17 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CAPITALIZATION_FOR_BEGINNING_OF_SENTENCE();
-		static QAndroidJniObject CAPITALIZATION_FOR_MIDDLE_OF_SENTENCE();
-		static QAndroidJniObject CAPITALIZATION_FOR_STANDALONE();
-		static QAndroidJniObject CAPITALIZATION_FOR_UI_LIST_OR_MENU();
-		static QAndroidJniObject CAPITALIZATION_NONE();
-		static QAndroidJniObject DIALECT_NAMES();
-		static QAndroidJniObject LENGTH_FULL();
-		static QAndroidJniObject LENGTH_SHORT();
-		static QAndroidJniObject NO_SUBSTITUTE();
-		static QAndroidJniObject STANDARD_NAMES();
-		static QAndroidJniObject SUBSTITUTE();
+		static android::icu::text::DisplayContext CAPITALIZATION_FOR_BEGINNING_OF_SENTENCE();
+		static android::icu::text::DisplayContext CAPITALIZATION_FOR_MIDDLE_OF_SENTENCE();
+		static android::icu::text::DisplayContext CAPITALIZATION_FOR_STANDALONE();
+		static android::icu::text::DisplayContext CAPITALIZATION_FOR_UI_LIST_OR_MENU();
+		static android::icu::text::DisplayContext CAPITALIZATION_NONE();
+		static android::icu::text::DisplayContext DIALECT_NAMES();
+		static android::icu::text::DisplayContext LENGTH_FULL();
+		static android::icu::text::DisplayContext LENGTH_SHORT();
+		static android::icu::text::DisplayContext NO_SUBSTITUTE();
+		static android::icu::text::DisplayContext STANDARD_NAMES();
+		static android::icu::text::DisplayContext SUBSTITUTE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DisplayContext(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,9 +33,9 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::DisplayContext valueOf(jstring arg0);
 		static jarray values();
-		QAndroidJniObject type();
+		android::icu::text::DisplayContext_Type type();
 		jint value();
 	};
 } // namespace android::icu::text

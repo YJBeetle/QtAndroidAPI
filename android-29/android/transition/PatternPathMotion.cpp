@@ -30,7 +30,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	QAndroidJniObject PatternPathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	android::graphics::Path PatternPathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		return callObjectMethod(
 			"getPath",
@@ -41,7 +41,7 @@ namespace android::transition
 			arg3
 		);
 	}
-	QAndroidJniObject PatternPathMotion::getPatternPath()
+	android::graphics::Path PatternPathMotion::getPatternPath()
 	{
 		return callObjectMethod(
 			"getPatternPath",

@@ -7,7 +7,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject SubscriptionInfo::CREATOR()
+	__JniBaseClass SubscriptionInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.SubscriptionInfo",
@@ -22,7 +22,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SubscriptionInfo::createIconBitmap(android::content::Context arg0)
+	android::graphics::Bitmap SubscriptionInfo::createIconBitmap(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"createIconBitmap",
@@ -87,7 +87,7 @@ namespace android::telephony
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SubscriptionInfo::getGroupUuid()
+	android::os::ParcelUuid SubscriptionInfo::getGroupUuid()
 	{
 		return callObjectMethod(
 			"getGroupUuid",

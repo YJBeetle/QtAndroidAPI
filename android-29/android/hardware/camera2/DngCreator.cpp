@@ -40,7 +40,7 @@ namespace android::hardware::camera2
 			"()V"
 		);
 	}
-	QAndroidJniObject DngCreator::setDescription(jstring arg0)
+	android::hardware::camera2::DngCreator DngCreator::setDescription(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -48,7 +48,7 @@ namespace android::hardware::camera2
 			arg0
 		);
 	}
-	QAndroidJniObject DngCreator::setLocation(android::location::Location arg0)
+	android::hardware::camera2::DngCreator DngCreator::setLocation(android::location::Location arg0)
 	{
 		return callObjectMethod(
 			"setLocation",
@@ -56,7 +56,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DngCreator::setOrientation(jint arg0)
+	android::hardware::camera2::DngCreator DngCreator::setOrientation(jint arg0)
 	{
 		return callObjectMethod(
 			"setOrientation",
@@ -64,7 +64,7 @@ namespace android::hardware::camera2
 			arg0
 		);
 	}
-	QAndroidJniObject DngCreator::setThumbnail(android::graphics::Bitmap arg0)
+	android::hardware::camera2::DngCreator DngCreator::setThumbnail(android::graphics::Bitmap arg0)
 	{
 		return callObjectMethod(
 			"setThumbnail",
@@ -72,7 +72,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DngCreator::setThumbnail(android::media::Image arg0)
+	android::hardware::camera2::DngCreator DngCreator::setThumbnail(android::media::Image arg0)
 	{
 		return callObjectMethod(
 			"setThumbnail",

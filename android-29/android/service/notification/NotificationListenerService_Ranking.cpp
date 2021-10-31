@@ -59,7 +59,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	QAndroidJniObject NotificationListenerService_Ranking::getChannel()
+	android::app::NotificationChannel NotificationListenerService_Ranking::getChannel()
 	{
 		return callObjectMethod(
 			"getChannel",
@@ -108,14 +108,14 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	QAndroidJniObject NotificationListenerService_Ranking::getSmartActions()
+	__JniBaseClass NotificationListenerService_Ranking::getSmartActions()
 	{
 		return callObjectMethod(
 			"getSmartActions",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject NotificationListenerService_Ranking::getSmartReplies()
+	__JniBaseClass NotificationListenerService_Ranking::getSmartReplies()
 	{
 		return callObjectMethod(
 			"getSmartReplies",

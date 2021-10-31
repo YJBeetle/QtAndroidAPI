@@ -5,7 +5,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject TextLanguage_Request::CREATOR()
+	__JniBaseClass TextLanguage_Request::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextLanguage$Request",
@@ -34,7 +34,7 @@ namespace android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextLanguage_Request::getExtras()
+	android::os::Bundle TextLanguage_Request::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

@@ -22,18 +22,18 @@ namespace java::time
 	{
 	public:
 		// Fields
-		static QAndroidJniObject APRIL();
-		static QAndroidJniObject AUGUST();
-		static QAndroidJniObject DECEMBER();
-		static QAndroidJniObject FEBRUARY();
-		static QAndroidJniObject JANUARY();
-		static QAndroidJniObject JULY();
-		static QAndroidJniObject JUNE();
-		static QAndroidJniObject MARCH();
-		static QAndroidJniObject MAY();
-		static QAndroidJniObject NOVEMBER();
-		static QAndroidJniObject OCTOBER();
-		static QAndroidJniObject SEPTEMBER();
+		static java::time::Month APRIL();
+		static java::time::Month AUGUST();
+		static java::time::Month DECEMBER();
+		static java::time::Month FEBRUARY();
+		static java::time::Month JANUARY();
+		static java::time::Month JULY();
+		static java::time::Month JUNE();
+		static java::time::Month MARCH();
+		static java::time::Month MAY();
+		static java::time::Month NOVEMBER();
+		static java::time::Month OCTOBER();
+		static java::time::Month SEPTEMBER();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Month(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -42,13 +42,13 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject from(__JniBaseClass arg0);
-		static QAndroidJniObject of(jint arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::time::Month from(__JniBaseClass arg0);
+		static java::time::Month of(jint arg0);
+		static java::time::Month valueOf(jstring arg0);
 		static jarray values();
-		QAndroidJniObject adjustInto(__JniBaseClass arg0);
+		__JniBaseClass adjustInto(__JniBaseClass arg0);
 		jint firstDayOfYear(jboolean arg0);
-		QAndroidJniObject firstMonthOfQuarter();
+		java::time::Month firstMonthOfQuarter();
 		jint get(__JniBaseClass arg0);
 		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
 		jlong getLong(__JniBaseClass arg0);
@@ -57,10 +57,10 @@ namespace java::time
 		jint length(jboolean arg0);
 		jint maxLength();
 		jint minLength();
-		QAndroidJniObject minus(jlong arg0);
-		QAndroidJniObject plus(jlong arg0);
+		java::time::Month minus(jlong arg0);
+		java::time::Month plus(jlong arg0);
 		jobject query(__JniBaseClass arg0);
-		QAndroidJniObject range(__JniBaseClass arg0);
+		java::time::temporal::ValueRange range(__JniBaseClass arg0);
 	};
 } // namespace java::time
 

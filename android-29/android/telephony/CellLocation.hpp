@@ -18,7 +18,7 @@ namespace android::telephony
 		CellLocation();
 		
 		// Methods
-		static QAndroidJniObject getEmpty();
+		static android::telephony::CellLocation getEmpty();
 		static void requestLocationUpdate();
 	};
 } // namespace android::telephony

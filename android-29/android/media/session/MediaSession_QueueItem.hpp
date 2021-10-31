@@ -17,7 +17,7 @@ namespace android::media::session
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint UNKNOWN_ID();
 		
 		// QAndroidJniObject forward
@@ -30,7 +30,7 @@ namespace android::media::session
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getDescription();
+		android::media::MediaDescription getDescription();
 		jlong getQueueId();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

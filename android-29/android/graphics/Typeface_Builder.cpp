@@ -39,14 +39,14 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	QAndroidJniObject Typeface_Builder::build()
+	android::graphics::Typeface Typeface_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/graphics/Typeface;"
 		);
 	}
-	QAndroidJniObject Typeface_Builder::setFallback(jstring arg0)
+	android::graphics::Typeface_Builder Typeface_Builder::setFallback(jstring arg0)
 	{
 		return callObjectMethod(
 			"setFallback",
@@ -54,7 +54,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Typeface_Builder::setFontVariationSettings(jarray arg0)
+	android::graphics::Typeface_Builder Typeface_Builder::setFontVariationSettings(jarray arg0)
 	{
 		return callObjectMethod(
 			"setFontVariationSettings",
@@ -62,7 +62,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Typeface_Builder::setFontVariationSettings(jstring arg0)
+	android::graphics::Typeface_Builder Typeface_Builder::setFontVariationSettings(jstring arg0)
 	{
 		return callObjectMethod(
 			"setFontVariationSettings",
@@ -70,7 +70,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Typeface_Builder::setItalic(jboolean arg0)
+	android::graphics::Typeface_Builder Typeface_Builder::setItalic(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setItalic",
@@ -78,7 +78,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Typeface_Builder::setTtcIndex(jint arg0)
+	android::graphics::Typeface_Builder Typeface_Builder::setTtcIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"setTtcIndex",
@@ -86,7 +86,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Typeface_Builder::setWeight(jint arg0)
+	android::graphics::Typeface_Builder Typeface_Builder::setWeight(jint arg0)
 	{
 		return callObjectMethod(
 			"setWeight",

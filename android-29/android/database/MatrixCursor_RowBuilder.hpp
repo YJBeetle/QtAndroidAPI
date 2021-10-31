@@ -21,8 +21,8 @@ namespace android::database
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject add(jobject arg0);
-		QAndroidJniObject add(jstring arg0, jobject arg1);
+		android::database::MatrixCursor_RowBuilder add(jobject arg0);
+		android::database::MatrixCursor_RowBuilder add(jstring arg0, jobject arg1);
 	};
 } // namespace android::database
 

@@ -23,7 +23,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject EventLogTags::get(jint arg0)
+	android::util::EventLogTags_Description EventLogTags::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",
@@ -31,7 +31,7 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject EventLogTags::get(jstring arg0)
+	android::util::EventLogTags_Description EventLogTags::get(jstring arg0)
 	{
 		return callObjectMethod(
 			"get",

@@ -33,7 +33,7 @@ namespace android::se::omapi
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject Session::getReader()
+	android::se::omapi::Reader Session::getReader()
 	{
 		return callObjectMethod(
 			"getReader",
@@ -47,7 +47,7 @@ namespace android::se::omapi
 			"()Z"
 		);
 	}
-	QAndroidJniObject Session::openBasicChannel(jbyteArray arg0)
+	android::se::omapi::Channel Session::openBasicChannel(jbyteArray arg0)
 	{
 		return callObjectMethod(
 			"openBasicChannel",
@@ -55,7 +55,7 @@ namespace android::se::omapi
 			arg0
 		);
 	}
-	QAndroidJniObject Session::openBasicChannel(jbyteArray arg0, jbyte arg1)
+	android::se::omapi::Channel Session::openBasicChannel(jbyteArray arg0, jbyte arg1)
 	{
 		return callObjectMethod(
 			"openBasicChannel",
@@ -64,7 +64,7 @@ namespace android::se::omapi
 			arg1
 		);
 	}
-	QAndroidJniObject Session::openLogicalChannel(jbyteArray arg0)
+	android::se::omapi::Channel Session::openLogicalChannel(jbyteArray arg0)
 	{
 		return callObjectMethod(
 			"openLogicalChannel",
@@ -72,7 +72,7 @@ namespace android::se::omapi
 			arg0
 		);
 	}
-	QAndroidJniObject Session::openLogicalChannel(jbyteArray arg0, jbyte arg1)
+	android::se::omapi::Channel Session::openLogicalChannel(jbyteArray arg0, jbyte arg1)
 	{
 		return callObjectMethod(
 			"openLogicalChannel",

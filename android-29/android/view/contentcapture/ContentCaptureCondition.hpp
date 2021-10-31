@@ -17,7 +17,7 @@ namespace android::view::contentcapture
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_IS_REGEX();
 		
 		// QAndroidJniObject forward
@@ -31,7 +31,7 @@ namespace android::view::contentcapture
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getFlags();
-		QAndroidJniObject getLocusId();
+		android::content::LocusId getLocusId();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

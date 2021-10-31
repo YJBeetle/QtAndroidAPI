@@ -9,7 +9,7 @@
 namespace android::view::textservice
 {
 	// Fields
-	QAndroidJniObject SpellCheckerInfo::CREATOR()
+	__JniBaseClass SpellCheckerInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textservice.SpellCheckerInfo",
@@ -31,7 +31,7 @@ namespace android::view::textservice
 			"()I"
 		);
 	}
-	QAndroidJniObject SpellCheckerInfo::getComponent()
+	android::content::ComponentName SpellCheckerInfo::getComponent()
 	{
 		return callObjectMethod(
 			"getComponent",
@@ -52,7 +52,7 @@ namespace android::view::textservice
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SpellCheckerInfo::getServiceInfo()
+	android::content::pm::ServiceInfo SpellCheckerInfo::getServiceInfo()
 	{
 		return callObjectMethod(
 			"getServiceInfo",
@@ -66,7 +66,7 @@ namespace android::view::textservice
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SpellCheckerInfo::getSubtypeAt(jint arg0)
+	android::view::textservice::SpellCheckerSubtype SpellCheckerInfo::getSubtypeAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getSubtypeAt",
@@ -81,7 +81,7 @@ namespace android::view::textservice
 			"()I"
 		);
 	}
-	QAndroidJniObject SpellCheckerInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable SpellCheckerInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadIcon",

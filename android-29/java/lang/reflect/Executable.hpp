@@ -24,9 +24,9 @@ namespace java::lang::reflect
 		// Methods
 		jarray getAnnotatedExceptionTypes();
 		jarray getAnnotatedParameterTypes();
-		QAndroidJniObject getAnnotatedReceiverType();
-		QAndroidJniObject getAnnotatedReturnType();
-		QAndroidJniObject getAnnotation(jclass arg0);
+		__JniBaseClass getAnnotatedReceiverType();
+		__JniBaseClass getAnnotatedReturnType();
+		__JniBaseClass getAnnotation(jclass arg0);
 		jarray getAnnotationsByType(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jclass getDeclaringClass();

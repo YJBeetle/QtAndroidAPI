@@ -28,7 +28,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_GroupMembership::CONTENT_URI()
+	android::net::Uri Contacts_GroupMembership::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
@@ -84,7 +84,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_GroupMembership::RAW_CONTENT_URI()
+	android::net::Uri Contacts_GroupMembership::RAW_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",

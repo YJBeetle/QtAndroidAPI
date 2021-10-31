@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject MessageFormat_Field::ARGUMENT()
+	android::icu::text::MessageFormat_Field MessageFormat_Field::ARGUMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessageFormat$Field",

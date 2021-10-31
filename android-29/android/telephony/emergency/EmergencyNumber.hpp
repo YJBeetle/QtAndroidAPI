@@ -13,7 +13,7 @@ namespace android::telephony::emergency
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint EMERGENCY_CALL_ROUTING_EMERGENCY();
 		static jint EMERGENCY_CALL_ROUTING_NORMAL();
 		static jint EMERGENCY_CALL_ROUTING_UNKNOWN();
@@ -44,9 +44,9 @@ namespace android::telephony::emergency
 		jboolean equals(jobject arg0);
 		jstring getCountryIso();
 		jint getEmergencyCallRouting();
-		QAndroidJniObject getEmergencyNumberSources();
-		QAndroidJniObject getEmergencyServiceCategories();
-		QAndroidJniObject getEmergencyUrns();
+		__JniBaseClass getEmergencyNumberSources();
+		__JniBaseClass getEmergencyServiceCategories();
+		__JniBaseClass getEmergencyUrns();
 		jstring getMnc();
 		jstring getNumber();
 		jint hashCode();

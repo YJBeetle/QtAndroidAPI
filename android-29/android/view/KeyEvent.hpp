@@ -29,7 +29,7 @@ namespace android::view
 		static jint ACTION_DOWN();
 		static jint ACTION_MULTIPLE();
 		static jint ACTION_UP();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_CANCELED();
 		static jint FLAG_CANCELED_LONG_PRESS();
 		static jint FLAG_EDITOR_ACTION();
@@ -369,10 +369,10 @@ namespace android::view
 		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
 		
 		// Methods
-		static QAndroidJniObject changeAction(android::view::KeyEvent arg0, jint arg1);
-		static QAndroidJniObject changeFlags(android::view::KeyEvent arg0, jint arg1);
-		static QAndroidJniObject changeTimeRepeat(android::view::KeyEvent arg0, jlong arg1, jint arg2);
-		static QAndroidJniObject changeTimeRepeat(android::view::KeyEvent arg0, jlong arg1, jint arg2, jint arg3);
+		static android::view::KeyEvent changeAction(android::view::KeyEvent arg0, jint arg1);
+		static android::view::KeyEvent changeFlags(android::view::KeyEvent arg0, jint arg1);
+		static android::view::KeyEvent changeTimeRepeat(android::view::KeyEvent arg0, jlong arg1, jint arg2);
+		static android::view::KeyEvent changeTimeRepeat(android::view::KeyEvent arg0, jlong arg1, jint arg2, jint arg3);
 		static jint getDeadChar(jint arg0, jint arg1);
 		static jint getMaxKeyCode();
 		static jint getModifierMetaStateMask();
@@ -392,7 +392,7 @@ namespace android::view
 		jlong getDownTime();
 		jlong getEventTime();
 		jint getFlags();
-		QAndroidJniObject getKeyCharacterMap();
+		android::view::KeyCharacterMap getKeyCharacterMap();
 		jint getKeyCode();
 		jboolean getKeyData(android::view::KeyCharacterMap_KeyData arg0);
 		jchar getMatch(jcharArray arg0);

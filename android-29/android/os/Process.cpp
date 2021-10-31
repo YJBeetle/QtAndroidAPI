@@ -287,7 +287,7 @@ namespace android::os
 			"()I"
 		);
 	}
-	QAndroidJniObject Process::myUserHandle()
+	android::os::UserHandle Process::myUserHandle()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Process",

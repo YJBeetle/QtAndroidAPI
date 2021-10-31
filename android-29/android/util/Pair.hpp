@@ -20,7 +20,7 @@ namespace android::util
 		Pair(jobject arg0, jobject arg1);
 		
 		// Methods
-		static QAndroidJniObject create(jobject arg0, jobject arg1);
+		static android::util::Pair create(jobject arg0, jobject arg1);
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jstring toString();

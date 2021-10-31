@@ -12,14 +12,14 @@ namespace android::hardware::display
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject VirtualDisplay::getDisplay()
+	android::view::Display VirtualDisplay::getDisplay()
 	{
 		return callObjectMethod(
 			"getDisplay",
 			"()Landroid/view/Display;"
 		);
 	}
-	QAndroidJniObject VirtualDisplay::getSurface()
+	android::view::Surface VirtualDisplay::getSurface()
 	{
 		return callObjectMethod(
 			"getSurface",

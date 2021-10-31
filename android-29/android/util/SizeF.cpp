@@ -17,7 +17,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject SizeF::parseSizeF(jstring arg0)
+	android::util::SizeF SizeF::parseSizeF(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.SizeF",

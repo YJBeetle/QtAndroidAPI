@@ -62,28 +62,28 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CheckedTextView::getCheckMarkDrawable()
+	android::graphics::drawable::Drawable CheckedTextView::getCheckMarkDrawable()
 	{
 		return callObjectMethod(
 			"getCheckMarkDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject CheckedTextView::getCheckMarkTintBlendMode()
+	android::graphics::BlendMode CheckedTextView::getCheckMarkTintBlendMode()
 	{
 		return callObjectMethod(
 			"getCheckMarkTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject CheckedTextView::getCheckMarkTintList()
+	android::content::res::ColorStateList CheckedTextView::getCheckMarkTintList()
 	{
 		return callObjectMethod(
 			"getCheckMarkTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject CheckedTextView::getCheckMarkTintMode()
+	android::graphics::PorterDuff_Mode CheckedTextView::getCheckMarkTintMode()
 	{
 		return callObjectMethod(
 			"getCheckMarkTintMode",
@@ -120,7 +120,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject CheckedTextView::onSaveInstanceState()
+	__JniBaseClass CheckedTextView::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

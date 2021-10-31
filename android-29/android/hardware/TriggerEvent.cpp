@@ -4,7 +4,7 @@
 namespace android::hardware
 {
 	// Fields
-	QAndroidJniObject TriggerEvent::sensor()
+	android::hardware::Sensor TriggerEvent::sensor()
 	{
 		return getObjectField(
 			"sensor",

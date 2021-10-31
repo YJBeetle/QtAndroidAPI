@@ -17,8 +17,8 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SERIAL_EXECUTOR();
-		static QAndroidJniObject THREAD_POOL_EXECUTOR();
+		static __JniBaseClass SERIAL_EXECUTOR();
+		static __JniBaseClass THREAD_POOL_EXECUTOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AsyncTask(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,11 +30,11 @@ namespace android::os
 		// Methods
 		static void execute(__JniBaseClass arg0);
 		jboolean cancel(jboolean arg0);
-		QAndroidJniObject execute(jobjectArray arg0);
-		QAndroidJniObject executeOnExecutor(__JniBaseClass arg0, jobjectArray arg1);
+		android::os::AsyncTask execute(jobjectArray arg0);
+		android::os::AsyncTask executeOnExecutor(__JniBaseClass arg0, jobjectArray arg1);
 		jobject get();
 		jobject get(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		QAndroidJniObject getStatus();
+		android::os::AsyncTask_Status getStatus();
 		jboolean isCancelled();
 	};
 } // namespace android::os

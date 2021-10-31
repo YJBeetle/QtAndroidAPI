@@ -3,7 +3,7 @@
 namespace java::text
 {
 	// Fields
-	QAndroidJniObject MessageFormat_Field::ARGUMENT()
+	java::text::MessageFormat_Field MessageFormat_Field::ARGUMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.MessageFormat$Field",

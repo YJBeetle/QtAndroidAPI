@@ -26,7 +26,7 @@ namespace java::lang
 		ThreadLocal();
 		
 		// Methods
-		static QAndroidJniObject withInitial(__JniBaseClass arg0);
+		static java::lang::ThreadLocal withInitial(__JniBaseClass arg0);
 		jobject get();
 		void remove();
 		void set(jobject arg0);

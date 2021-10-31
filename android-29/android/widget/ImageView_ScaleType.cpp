@@ -3,7 +3,7 @@
 namespace android::widget
 {
 	// Fields
-	QAndroidJniObject ImageView_ScaleType::CENTER()
+	android::widget::ImageView_ScaleType ImageView_ScaleType::CENTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.ImageView$ScaleType",
@@ -11,7 +11,7 @@ namespace android::widget
 			"Landroid/widget/ImageView$ScaleType;"
 		);
 	}
-	QAndroidJniObject ImageView_ScaleType::CENTER_CROP()
+	android::widget::ImageView_ScaleType ImageView_ScaleType::CENTER_CROP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.ImageView$ScaleType",
@@ -19,7 +19,7 @@ namespace android::widget
 			"Landroid/widget/ImageView$ScaleType;"
 		);
 	}
-	QAndroidJniObject ImageView_ScaleType::CENTER_INSIDE()
+	android::widget::ImageView_ScaleType ImageView_ScaleType::CENTER_INSIDE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.ImageView$ScaleType",
@@ -27,7 +27,7 @@ namespace android::widget
 			"Landroid/widget/ImageView$ScaleType;"
 		);
 	}
-	QAndroidJniObject ImageView_ScaleType::FIT_CENTER()
+	android::widget::ImageView_ScaleType ImageView_ScaleType::FIT_CENTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.ImageView$ScaleType",
@@ -35,7 +35,7 @@ namespace android::widget
 			"Landroid/widget/ImageView$ScaleType;"
 		);
 	}
-	QAndroidJniObject ImageView_ScaleType::FIT_END()
+	android::widget::ImageView_ScaleType ImageView_ScaleType::FIT_END()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.ImageView$ScaleType",
@@ -43,7 +43,7 @@ namespace android::widget
 			"Landroid/widget/ImageView$ScaleType;"
 		);
 	}
-	QAndroidJniObject ImageView_ScaleType::FIT_START()
+	android::widget::ImageView_ScaleType ImageView_ScaleType::FIT_START()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.ImageView$ScaleType",
@@ -51,7 +51,7 @@ namespace android::widget
 			"Landroid/widget/ImageView$ScaleType;"
 		);
 	}
-	QAndroidJniObject ImageView_ScaleType::FIT_XY()
+	android::widget::ImageView_ScaleType ImageView_ScaleType::FIT_XY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.ImageView$ScaleType",
@@ -59,7 +59,7 @@ namespace android::widget
 			"Landroid/widget/ImageView$ScaleType;"
 		);
 	}
-	QAndroidJniObject ImageView_ScaleType::MATRIX()
+	android::widget::ImageView_ScaleType ImageView_ScaleType::MATRIX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.ImageView$ScaleType",
@@ -74,7 +74,7 @@ namespace android::widget
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ImageView_ScaleType::valueOf(jstring arg0)
+	android::widget::ImageView_ScaleType ImageView_ScaleType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.ImageView$ScaleType",

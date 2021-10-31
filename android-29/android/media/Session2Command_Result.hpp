@@ -26,7 +26,7 @@ namespace android::media
 		
 		// Methods
 		jint getResultCode();
-		QAndroidJniObject getResultData();
+		android::os::Bundle getResultData();
 	};
 } // namespace android::media
 

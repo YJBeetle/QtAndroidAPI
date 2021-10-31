@@ -23,8 +23,8 @@ namespace javax::xml::transform::dom
 		DOMResult(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2);
 		
 		// Methods
-		QAndroidJniObject getNextSibling();
-		QAndroidJniObject getNode();
+		__JniBaseClass getNextSibling();
+		__JniBaseClass getNode();
 		jstring getSystemId();
 		void setNextSibling(__JniBaseClass arg0);
 		void setNode(__JniBaseClass arg0);

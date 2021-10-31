@@ -24,11 +24,11 @@ namespace java::net
 		
 		// Methods
 		jstring getCipherSuite();
-		QAndroidJniObject getLocalCertificateChain();
-		QAndroidJniObject getLocalPrincipal();
-		QAndroidJniObject getPeerPrincipal();
-		QAndroidJniObject getSSLSession();
-		QAndroidJniObject getServerCertificateChain();
+		__JniBaseClass getLocalCertificateChain();
+		__JniBaseClass getLocalPrincipal();
+		__JniBaseClass getPeerPrincipal();
+		java::util::Optional getSSLSession();
+		__JniBaseClass getServerCertificateChain();
 	};
 } // namespace java::net
 

@@ -3,7 +3,7 @@
 namespace android::text
 {
 	// Fields
-	QAndroidJniObject TextUtils_TruncateAt::END()
+	android::text::TextUtils_TruncateAt TextUtils_TruncateAt::END()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextUtils$TruncateAt",
@@ -11,7 +11,7 @@ namespace android::text
 			"Landroid/text/TextUtils$TruncateAt;"
 		);
 	}
-	QAndroidJniObject TextUtils_TruncateAt::MARQUEE()
+	android::text::TextUtils_TruncateAt TextUtils_TruncateAt::MARQUEE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextUtils$TruncateAt",
@@ -19,7 +19,7 @@ namespace android::text
 			"Landroid/text/TextUtils$TruncateAt;"
 		);
 	}
-	QAndroidJniObject TextUtils_TruncateAt::MIDDLE()
+	android::text::TextUtils_TruncateAt TextUtils_TruncateAt::MIDDLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextUtils$TruncateAt",
@@ -27,7 +27,7 @@ namespace android::text
 			"Landroid/text/TextUtils$TruncateAt;"
 		);
 	}
-	QAndroidJniObject TextUtils_TruncateAt::START()
+	android::text::TextUtils_TruncateAt TextUtils_TruncateAt::START()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextUtils$TruncateAt",
@@ -42,7 +42,7 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TextUtils_TruncateAt::valueOf(jstring arg0)
+	android::text::TextUtils_TruncateAt TextUtils_TruncateAt::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils$TruncateAt",

@@ -59,10 +59,10 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject convertRestrictionsToBundle(__JniBaseClass arg0);
-		QAndroidJniObject createLocalApprovalIntent();
-		QAndroidJniObject getApplicationRestrictions();
-		QAndroidJniObject getManifestRestrictions(jstring arg0);
+		static android::os::Bundle convertRestrictionsToBundle(__JniBaseClass arg0);
+		android::content::Intent createLocalApprovalIntent();
+		android::os::Bundle getApplicationRestrictions();
+		__JniBaseClass getManifestRestrictions(jstring arg0);
 		jboolean hasRestrictionsProvider();
 		void notifyPermissionResponse(jstring arg0, android::os::PersistableBundle arg1);
 		void requestPermission(jstring arg0, jstring arg1, android::os::PersistableBundle arg2);

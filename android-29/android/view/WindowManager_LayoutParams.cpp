@@ -39,7 +39,7 @@ namespace android::view
 			"BRIGHTNESS_OVERRIDE_OFF"
 		);
 	}
-	QAndroidJniObject WindowManager_LayoutParams::CREATOR()
+	__JniBaseClass WindowManager_LayoutParams::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.WindowManager$LayoutParams",
@@ -835,7 +835,7 @@ namespace android::view
 			"systemUiVisibility"
 		);
 	}
-	QAndroidJniObject WindowManager_LayoutParams::token()
+	__JniBaseClass WindowManager_LayoutParams::token()
 	{
 		return getObjectField(
 			"token",

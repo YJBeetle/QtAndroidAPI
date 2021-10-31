@@ -20,7 +20,7 @@ namespace javax::crypto::spec
 		
 		// Methods
 		jint getIterationCount();
-		QAndroidJniObject getParameterSpec();
+		__JniBaseClass getParameterSpec();
 		jbyteArray getSalt();
 	};
 } // namespace javax::crypto::spec

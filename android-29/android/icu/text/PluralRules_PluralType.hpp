@@ -10,8 +10,8 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CARDINAL();
-		static QAndroidJniObject ORDINAL();
+		static android::icu::text::PluralRules_PluralType CARDINAL();
+		static android::icu::text::PluralRules_PluralType ORDINAL();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PluralRules_PluralType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,7 +20,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::PluralRules_PluralType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

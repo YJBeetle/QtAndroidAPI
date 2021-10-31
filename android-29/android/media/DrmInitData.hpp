@@ -25,7 +25,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject get(java::util::UUID arg0);
+		android::media::DrmInitData_SchemeInitData get(java::util::UUID arg0);
 	};
 } // namespace android::media
 

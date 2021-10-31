@@ -4,7 +4,7 @@
 namespace android::nfc
 {
 	// Fields
-	QAndroidJniObject Tag::CREATOR()
+	__JniBaseClass Tag::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.Tag",

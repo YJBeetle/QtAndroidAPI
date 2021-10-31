@@ -11,7 +11,7 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject NetworkInterface::getByIndex(jint arg0)
+	java::net::NetworkInterface NetworkInterface::getByIndex(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.NetworkInterface",
@@ -20,7 +20,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject NetworkInterface::getByInetAddress(java::net::InetAddress arg0)
+	java::net::NetworkInterface NetworkInterface::getByInetAddress(java::net::InetAddress arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.NetworkInterface",
@@ -29,7 +29,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NetworkInterface::getByName(jstring arg0)
+	java::net::NetworkInterface NetworkInterface::getByName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.NetworkInterface",
@@ -38,7 +38,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject NetworkInterface::getNetworkInterfaces()
+	__JniBaseClass NetworkInterface::getNetworkInterfaces()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.NetworkInterface",
@@ -46,7 +46,7 @@ namespace java::net
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject NetworkInterface::networkInterfaces()
+	__JniBaseClass NetworkInterface::networkInterfaces()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.NetworkInterface",
@@ -83,14 +83,14 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject NetworkInterface::getInetAddresses()
+	__JniBaseClass NetworkInterface::getInetAddresses()
 	{
 		return callObjectMethod(
 			"getInetAddresses",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject NetworkInterface::getInterfaceAddresses()
+	__JniBaseClass NetworkInterface::getInterfaceAddresses()
 	{
 		return callObjectMethod(
 			"getInterfaceAddresses",
@@ -111,14 +111,14 @@ namespace java::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject NetworkInterface::getParent()
+	java::net::NetworkInterface NetworkInterface::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Ljava/net/NetworkInterface;"
 		);
 	}
-	QAndroidJniObject NetworkInterface::getSubInterfaces()
+	__JniBaseClass NetworkInterface::getSubInterfaces()
 	{
 		return callObjectMethod(
 			"getSubInterfaces",
@@ -132,7 +132,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject NetworkInterface::inetAddresses()
+	__JniBaseClass NetworkInterface::inetAddresses()
 	{
 		return callObjectMethod(
 			"inetAddresses",
@@ -167,7 +167,7 @@ namespace java::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject NetworkInterface::subInterfaces()
+	__JniBaseClass NetworkInterface::subInterfaces()
 	{
 		return callObjectMethod(
 			"subInterfaces",

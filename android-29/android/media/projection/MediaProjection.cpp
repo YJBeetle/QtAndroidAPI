@@ -15,7 +15,7 @@ namespace android::media::projection
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MediaProjection::createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::view::Surface arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7)
+	android::hardware::display::VirtualDisplay MediaProjection::createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::view::Surface arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7)
 	{
 		return callObjectMethod(
 			"createVirtualDisplay",

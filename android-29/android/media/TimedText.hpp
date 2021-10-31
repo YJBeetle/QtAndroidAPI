@@ -25,7 +25,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getBounds();
+		android::graphics::Rect getBounds();
 		jstring getText();
 	};
 } // namespace android::media

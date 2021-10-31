@@ -28,7 +28,7 @@ namespace android::accessibilityservice
 		) {}
 	
 	// Methods
-	QAndroidJniObject GestureDescription_StrokeDescription::continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3)
+	android::accessibilityservice::GestureDescription_StrokeDescription GestureDescription_StrokeDescription::continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"continueStroke",
@@ -46,7 +46,7 @@ namespace android::accessibilityservice
 			"()J"
 		);
 	}
-	QAndroidJniObject GestureDescription_StrokeDescription::getPath()
+	android::graphics::Path GestureDescription_StrokeDescription::getPath()
 	{
 		return callObjectMethod(
 			"getPath",

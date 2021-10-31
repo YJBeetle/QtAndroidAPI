@@ -17,7 +17,7 @@ namespace android::speech::tts
 		) {}
 	
 	// Methods
-	QAndroidJniObject TextToSpeechService::onBind(android::content::Intent arg0)
+	__JniBaseClass TextToSpeechService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -49,7 +49,7 @@ namespace android::speech::tts
 			arg2
 		).object<jstring>();
 	}
-	QAndroidJniObject TextToSpeechService::onGetVoices()
+	__JniBaseClass TextToSpeechService::onGetVoices()
 	{
 		return callObjectMethod(
 			"onGetVoices",

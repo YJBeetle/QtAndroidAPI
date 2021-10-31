@@ -11,7 +11,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject VoiceInteractor::getActiveRequest(jstring arg0)
+	android::app::VoiceInteractor_Request VoiceInteractor::getActiveRequest(jstring arg0)
 	{
 		return callObjectMethod(
 			"getActiveRequest",

@@ -49,28 +49,28 @@ namespace java::security::cert
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject PKIXParameters::getCertPathCheckers()
+	__JniBaseClass PKIXParameters::getCertPathCheckers()
 	{
 		return callObjectMethod(
 			"getCertPathCheckers",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PKIXParameters::getCertStores()
+	__JniBaseClass PKIXParameters::getCertStores()
 	{
 		return callObjectMethod(
 			"getCertStores",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PKIXParameters::getDate()
+	java::util::Date PKIXParameters::getDate()
 	{
 		return callObjectMethod(
 			"getDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject PKIXParameters::getInitialPolicies()
+	__JniBaseClass PKIXParameters::getInitialPolicies()
 	{
 		return callObjectMethod(
 			"getInitialPolicies",
@@ -91,14 +91,14 @@ namespace java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PKIXParameters::getTargetCertConstraints()
+	__JniBaseClass PKIXParameters::getTargetCertConstraints()
 	{
 		return callObjectMethod(
 			"getTargetCertConstraints",
 			"()Ljava/security/cert/CertSelector;"
 		);
 	}
-	QAndroidJniObject PKIXParameters::getTrustAnchors()
+	__JniBaseClass PKIXParameters::getTrustAnchors()
 	{
 		return callObjectMethod(
 			"getTrustAnchors",

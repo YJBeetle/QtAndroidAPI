@@ -18,7 +18,7 @@ namespace android::location
 		static jint ACCURACY_HIGH();
 		static jint ACCURACY_LOW();
 		static jint ACCURACY_MEDIUM();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint NO_REQUIREMENT();
 		static jint POWER_HIGH();
 		static jint POWER_LOW();

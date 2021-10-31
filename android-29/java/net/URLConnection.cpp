@@ -43,7 +43,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject URLConnection::getFileNameMap()
+	__JniBaseClass URLConnection::getFileNameMap()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLConnection",
@@ -275,7 +275,7 @@ namespace java::net
 			arg1
 		);
 	}
-	QAndroidJniObject URLConnection::getHeaderFields()
+	__JniBaseClass URLConnection::getHeaderFields()
 	{
 		return callObjectMethod(
 			"getHeaderFields",
@@ -289,7 +289,7 @@ namespace java::net
 			"()J"
 		);
 	}
-	QAndroidJniObject URLConnection::getInputStream()
+	java::io::InputStream URLConnection::getInputStream()
 	{
 		return callObjectMethod(
 			"getInputStream",
@@ -303,14 +303,14 @@ namespace java::net
 			"()J"
 		);
 	}
-	QAndroidJniObject URLConnection::getOutputStream()
+	java::io::OutputStream URLConnection::getOutputStream()
 	{
 		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	QAndroidJniObject URLConnection::getPermission()
+	java::security::Permission URLConnection::getPermission()
 	{
 		return callObjectMethod(
 			"getPermission",
@@ -324,7 +324,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject URLConnection::getRequestProperties()
+	__JniBaseClass URLConnection::getRequestProperties()
 	{
 		return callObjectMethod(
 			"getRequestProperties",
@@ -339,7 +339,7 @@ namespace java::net
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject URLConnection::getURL()
+	java::net::URL URLConnection::getURL()
 	{
 		return callObjectMethod(
 			"getURL",

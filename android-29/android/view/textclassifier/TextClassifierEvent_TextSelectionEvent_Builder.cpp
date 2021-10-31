@@ -17,14 +17,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::build()
+	android::view::textclassifier::TextClassifierEvent_TextSelectionEvent TextClassifierEvent_TextSelectionEvent_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent;"
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeSuggestedWordEndIndex(jint arg0)
+	android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder TextClassifierEvent_TextSelectionEvent_Builder::setRelativeSuggestedWordEndIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"setRelativeSuggestedWordEndIndex",
@@ -32,7 +32,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeSuggestedWordStartIndex(jint arg0)
+	android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder TextClassifierEvent_TextSelectionEvent_Builder::setRelativeSuggestedWordStartIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"setRelativeSuggestedWordStartIndex",
@@ -40,7 +40,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeWordEndIndex(jint arg0)
+	android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder TextClassifierEvent_TextSelectionEvent_Builder::setRelativeWordEndIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"setRelativeWordEndIndex",
@@ -48,7 +48,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeWordStartIndex(jint arg0)
+	android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder TextClassifierEvent_TextSelectionEvent_Builder::setRelativeWordStartIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"setRelativeWordStartIndex",

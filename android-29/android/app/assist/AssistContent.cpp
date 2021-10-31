@@ -8,7 +8,7 @@
 namespace android::app::assist
 {
 	// Fields
-	QAndroidJniObject AssistContent::CREATOR()
+	__JniBaseClass AssistContent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.assist.AssistContent",
@@ -35,21 +35,21 @@ namespace android::app::assist
 			"()I"
 		);
 	}
-	QAndroidJniObject AssistContent::getClipData()
+	android::content::ClipData AssistContent::getClipData()
 	{
 		return callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
 		);
 	}
-	QAndroidJniObject AssistContent::getExtras()
+	android::os::Bundle AssistContent::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject AssistContent::getIntent()
+	android::content::Intent AssistContent::getIntent()
 	{
 		return callObjectMethod(
 			"getIntent",
@@ -63,7 +63,7 @@ namespace android::app::assist
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AssistContent::getWebUri()
+	android::net::Uri AssistContent::getWebUri()
 	{
 		return callObjectMethod(
 			"getWebUri",

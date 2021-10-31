@@ -17,7 +17,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FontsContract::buildTypeface(android::content::Context arg0, android::os::CancellationSignal arg1, jarray arg2)
+	android::graphics::Typeface FontsContract::buildTypeface(android::content::Context arg0, android::os::CancellationSignal arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.FontsContract",
@@ -28,7 +28,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	QAndroidJniObject FontsContract::fetchFonts(android::content::Context arg0, android::os::CancellationSignal arg1, android::provider::FontRequest arg2)
+	android::provider::FontsContract_FontFamilyResult FontsContract::fetchFonts(android::content::Context arg0, android::os::CancellationSignal arg1, android::provider::FontRequest arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.FontsContract",

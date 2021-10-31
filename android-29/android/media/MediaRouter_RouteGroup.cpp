@@ -30,7 +30,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaRouter_RouteGroup::getRouteAt(jint arg0)
+	android::media::MediaRouter_RouteInfo MediaRouter_RouteGroup::getRouteAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getRouteAt",

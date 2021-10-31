@@ -6,7 +6,7 @@
 namespace android::widget
 {
 	// Fields
-	QAndroidJniObject EdgeEffect::DEFAULT_BLEND_MODE()
+	android::graphics::BlendMode EdgeEffect::DEFAULT_BLEND_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.EdgeEffect",
@@ -42,7 +42,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	QAndroidJniObject EdgeEffect::getBlendMode()
+	android::graphics::BlendMode EdgeEffect::getBlendMode()
 	{
 		return callObjectMethod(
 			"getBlendMode",

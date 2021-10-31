@@ -653,7 +653,7 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	QAndroidJniObject TtsSpan::getArgs()
+	android::os::PersistableBundle TtsSpan::getArgs()
 	{
 		return callObjectMethod(
 			"getArgs",

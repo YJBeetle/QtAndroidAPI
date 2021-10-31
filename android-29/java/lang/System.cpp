@@ -10,7 +10,7 @@
 namespace java::lang
 {
 	// Fields
-	QAndroidJniObject System::err()
+	java::io::PrintStream System::err()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.System",
@@ -18,7 +18,7 @@ namespace java::lang
 			"Ljava/io/PrintStream;"
 		);
 	}
-	QAndroidJniObject System::in()
+	java::io::InputStream System::in()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.System",
@@ -26,7 +26,7 @@ namespace java::lang
 			"Ljava/io/InputStream;"
 		);
 	}
-	QAndroidJniObject System::out()
+	java::io::PrintStream System::out()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.System",
@@ -63,7 +63,7 @@ namespace java::lang
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject System::console()
+	java::io::Console System::console()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.System",
@@ -96,7 +96,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	QAndroidJniObject System::getLogger(jstring arg0)
+	__JniBaseClass System::getLogger(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.System",
@@ -105,7 +105,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject System::getLogger(jstring arg0, java::util::ResourceBundle arg1)
+	__JniBaseClass System::getLogger(jstring arg0, java::util::ResourceBundle arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.System",
@@ -115,7 +115,7 @@ namespace java::lang
 			arg1.object()
 		);
 	}
-	QAndroidJniObject System::getProperties()
+	java::util::Properties System::getProperties()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.System",
@@ -142,7 +142,7 @@ namespace java::lang
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject System::getSecurityManager()
+	java::lang::SecurityManager System::getSecurityManager()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.System",
@@ -159,7 +159,7 @@ namespace java::lang
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject System::getenv()
+	__JniBaseClass System::getenv()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.System",
@@ -176,7 +176,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject System::inheritedChannel()
+	__JniBaseClass System::inheritedChannel()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.System",

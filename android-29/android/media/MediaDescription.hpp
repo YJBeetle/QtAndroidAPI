@@ -32,7 +32,7 @@ namespace android::media
 		static jlong BT_FOLDER_TYPE_PLAYLISTS();
 		static jlong BT_FOLDER_TYPE_TITLES();
 		static jlong BT_FOLDER_TYPE_YEARS();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring EXTRA_BT_FOLDER_TYPE();
 		
 		// QAndroidJniObject forward
@@ -45,11 +45,11 @@ namespace android::media
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jstring getDescription();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getIconBitmap();
-		QAndroidJniObject getIconUri();
+		android::os::Bundle getExtras();
+		android::graphics::Bitmap getIconBitmap();
+		android::net::Uri getIconUri();
 		jstring getMediaId();
-		QAndroidJniObject getMediaUri();
+		android::net::Uri getMediaUri();
 		jstring getSubtitle();
 		jstring getTitle();
 		jstring toString();

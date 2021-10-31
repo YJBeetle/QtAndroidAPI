@@ -23,19 +23,19 @@ namespace java::text
 		
 		// Methods
 		static jarray getAvailableLocales();
-		static QAndroidJniObject getCharacterInstance();
-		static QAndroidJniObject getCharacterInstance(java::util::Locale arg0);
-		static QAndroidJniObject getLineInstance();
-		static QAndroidJniObject getLineInstance(java::util::Locale arg0);
-		static QAndroidJniObject getSentenceInstance();
-		static QAndroidJniObject getSentenceInstance(java::util::Locale arg0);
-		static QAndroidJniObject getWordInstance();
-		static QAndroidJniObject getWordInstance(java::util::Locale arg0);
+		static java::text::BreakIterator getCharacterInstance();
+		static java::text::BreakIterator getCharacterInstance(java::util::Locale arg0);
+		static java::text::BreakIterator getLineInstance();
+		static java::text::BreakIterator getLineInstance(java::util::Locale arg0);
+		static java::text::BreakIterator getSentenceInstance();
+		static java::text::BreakIterator getSentenceInstance(java::util::Locale arg0);
+		static java::text::BreakIterator getWordInstance();
+		static java::text::BreakIterator getWordInstance(java::util::Locale arg0);
 		jobject clone();
 		jint current();
 		jint first();
 		jint following(jint arg0);
-		QAndroidJniObject getText();
+		__JniBaseClass getText();
 		jboolean isBoundary(jint arg0);
 		jint last();
 		jint next();

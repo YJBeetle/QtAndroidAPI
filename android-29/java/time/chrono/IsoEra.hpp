@@ -10,8 +10,8 @@ namespace java::time::chrono
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BCE();
-		static QAndroidJniObject CE();
+		static java::time::chrono::IsoEra BCE();
+		static java::time::chrono::IsoEra CE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IsoEra(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,8 +20,8 @@ namespace java::time::chrono
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject of(jint arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::time::chrono::IsoEra of(jint arg0);
+		static java::time::chrono::IsoEra valueOf(jstring arg0);
 		static jarray values();
 		jint getValue();
 	};

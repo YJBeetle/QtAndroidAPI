@@ -198,8 +198,8 @@ namespace android::telephony
 		
 		// Methods
 		static jboolean isConfigForIdentifiedCarrier(android::os::PersistableBundle arg0);
-		QAndroidJniObject getConfig();
-		QAndroidJniObject getConfigForSubId(jint arg0);
+		android::os::PersistableBundle getConfig();
+		android::os::PersistableBundle getConfigForSubId(jint arg0);
 		void notifyConfigChangedForSubId(jint arg0);
 	};
 } // namespace android::telephony

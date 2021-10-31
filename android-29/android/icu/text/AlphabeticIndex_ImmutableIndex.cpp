@@ -11,7 +11,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AlphabeticIndex_ImmutableIndex::getBucket(jint arg0)
+	android::icu::text::AlphabeticIndex_Bucket AlphabeticIndex_ImmutableIndex::getBucket(jint arg0)
 	{
 		return callObjectMethod(
 			"getBucket",
@@ -34,7 +34,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject AlphabeticIndex_ImmutableIndex::iterator()
+	__JniBaseClass AlphabeticIndex_ImmutableIndex::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

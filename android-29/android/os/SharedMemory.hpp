@@ -21,7 +21,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SharedMemory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,14 +30,14 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(jstring arg0, jint arg1);
+		static android::os::SharedMemory create(jstring arg0, jint arg1);
 		static void unmap(java::nio::ByteBuffer arg0);
 		void close();
 		jint describeContents();
 		jint getSize();
-		QAndroidJniObject map(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject mapReadOnly();
-		QAndroidJniObject mapReadWrite();
+		java::nio::ByteBuffer map(jint arg0, jint arg1, jint arg2);
+		java::nio::ByteBuffer mapReadOnly();
+		java::nio::ByteBuffer mapReadWrite();
 		jboolean setProtect(jint arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

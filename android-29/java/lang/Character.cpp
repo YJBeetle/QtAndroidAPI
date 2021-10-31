@@ -1272,7 +1272,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Character::valueOf(jchar arg0)
+	java::lang::Character Character::valueOf(jchar arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Character",
@@ -1304,7 +1304,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Character::describeConstable()
+	java::util::Optional Character::describeConstable()
 	{
 		return callObjectMethod(
 			"describeConstable",

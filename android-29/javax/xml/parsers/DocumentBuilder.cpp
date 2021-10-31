@@ -14,14 +14,14 @@ namespace javax::xml::parsers
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DocumentBuilder::getDOMImplementation()
+	__JniBaseClass DocumentBuilder::getDOMImplementation()
 	{
 		return callObjectMethod(
 			"getDOMImplementation",
 			"()Lorg/w3c/dom/DOMImplementation;"
 		);
 	}
-	QAndroidJniObject DocumentBuilder::getSchema()
+	javax::xml::validation::Schema DocumentBuilder::getSchema()
 	{
 		return callObjectMethod(
 			"getSchema",
@@ -49,14 +49,14 @@ namespace javax::xml::parsers
 			"()Z"
 		);
 	}
-	QAndroidJniObject DocumentBuilder::newDocument()
+	__JniBaseClass DocumentBuilder::newDocument()
 	{
 		return callObjectMethod(
 			"newDocument",
 			"()Lorg/w3c/dom/Document;"
 		);
 	}
-	QAndroidJniObject DocumentBuilder::parse(java::io::File arg0)
+	__JniBaseClass DocumentBuilder::parse(java::io::File arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -64,7 +64,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DocumentBuilder::parse(java::io::InputStream arg0)
+	__JniBaseClass DocumentBuilder::parse(java::io::InputStream arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -72,7 +72,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DocumentBuilder::parse(jstring arg0)
+	__JniBaseClass DocumentBuilder::parse(jstring arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -80,7 +80,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	QAndroidJniObject DocumentBuilder::parse(org::xml::sax::InputSource arg0)
+	__JniBaseClass DocumentBuilder::parse(org::xml::sax::InputSource arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -88,7 +88,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DocumentBuilder::parse(java::io::InputStream arg0, jstring arg1)
+	__JniBaseClass DocumentBuilder::parse(java::io::InputStream arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"parse",

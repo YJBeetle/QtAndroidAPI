@@ -50,11 +50,11 @@ namespace android::media::browse
 		// Methods
 		void connect();
 		void disconnect();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		void getItem(jstring arg0, android::media::browse::MediaBrowser_ItemCallback arg1);
 		jstring getRoot();
-		QAndroidJniObject getServiceComponent();
-		QAndroidJniObject getSessionToken();
+		android::content::ComponentName getServiceComponent();
+		android::media::session::MediaSession_Token getSessionToken();
 		jboolean isConnected();
 		void subscribe(jstring arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1);
 		void subscribe(jstring arg0, android::os::Bundle arg1, android::media::browse::MediaBrowser_SubscriptionCallback arg2);

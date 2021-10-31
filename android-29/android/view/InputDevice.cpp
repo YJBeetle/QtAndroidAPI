@@ -7,7 +7,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject InputDevice::CREATOR()
+	__JniBaseClass InputDevice::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.InputDevice",
@@ -267,7 +267,7 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject InputDevice::getDevice(jint arg0)
+	android::view::InputDevice InputDevice::getDevice(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.InputDevice",
@@ -312,7 +312,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject InputDevice::getKeyCharacterMap()
+	android::view::KeyCharacterMap InputDevice::getKeyCharacterMap()
 	{
 		return callObjectMethod(
 			"getKeyCharacterMap",
@@ -326,7 +326,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject InputDevice::getMotionRange(jint arg0)
+	android::view::InputDevice_MotionRange InputDevice::getMotionRange(jint arg0)
 	{
 		return callObjectMethod(
 			"getMotionRange",
@@ -334,7 +334,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject InputDevice::getMotionRange(jint arg0, jint arg1)
+	android::view::InputDevice_MotionRange InputDevice::getMotionRange(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getMotionRange",
@@ -343,7 +343,7 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject InputDevice::getMotionRanges()
+	__JniBaseClass InputDevice::getMotionRanges()
 	{
 		return callObjectMethod(
 			"getMotionRanges",
@@ -378,7 +378,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject InputDevice::getVibrator()
+	android::os::Vibrator InputDevice::getVibrator()
 	{
 		return callObjectMethod(
 			"getVibrator",

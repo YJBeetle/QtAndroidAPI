@@ -32,7 +32,7 @@ namespace java::security::spec
 			"()I"
 		);
 	}
-	QAndroidJniObject ECFieldFp::getP()
+	java::math::BigInteger ECFieldFp::getP()
 	{
 		return callObjectMethod(
 			"getP",

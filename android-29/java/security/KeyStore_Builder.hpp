@@ -29,12 +29,12 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newInstance(java::io::File arg0, __JniBaseClass arg1);
-		static QAndroidJniObject newInstance(java::security::KeyStore arg0, __JniBaseClass arg1);
-		static QAndroidJniObject newInstance(jstring arg0, java::security::Provider arg1, __JniBaseClass arg2);
-		static QAndroidJniObject newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3);
-		QAndroidJniObject getKeyStore();
-		QAndroidJniObject getProtectionParameter(jstring arg0);
+		static java::security::KeyStore_Builder newInstance(java::io::File arg0, __JniBaseClass arg1);
+		static java::security::KeyStore_Builder newInstance(java::security::KeyStore arg0, __JniBaseClass arg1);
+		static java::security::KeyStore_Builder newInstance(jstring arg0, java::security::Provider arg1, __JniBaseClass arg2);
+		static java::security::KeyStore_Builder newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3);
+		java::security::KeyStore getKeyStore();
+		__JniBaseClass getProtectionParameter(jstring arg0);
 	};
 } // namespace java::security
 

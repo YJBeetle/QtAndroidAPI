@@ -4,7 +4,7 @@
 namespace android::bluetooth
 {
 	// Fields
-	QAndroidJniObject BluetoothHidDeviceAppQosSettings::CREATOR()
+	__JniBaseClass BluetoothHidDeviceAppQosSettings::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",

@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	QAndroidJniObject SystemUpdatePolicy_ValidationFailedException::CREATOR()
+	__JniBaseClass SystemUpdatePolicy_ValidationFailedException::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",

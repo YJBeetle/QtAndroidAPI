@@ -18,7 +18,7 @@ namespace android::print
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrintJobInfo_Builder::build()
+	android::print::PrintJobInfo PrintJobInfo_Builder::build()
 	{
 		return callObjectMethod(
 			"build",

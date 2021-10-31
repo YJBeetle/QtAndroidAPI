@@ -25,7 +25,7 @@ namespace android::service::notification
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_RELEVANT_ALWAYS();
 		static jint FLAG_RELEVANT_NOW();
 		static jstring SCHEME();
@@ -35,7 +35,7 @@ namespace android::service::notification
 		static jint STATE_UNKNOWN();
 		jint flags();
 		jint icon();
-		QAndroidJniObject id();
+		android::net::Uri id();
 		jstring line1();
 		jstring line2();
 		jint state();
@@ -52,10 +52,10 @@ namespace android::service::notification
 		
 		// Methods
 		static jboolean isValidId(android::net::Uri arg0, jstring arg1);
-		static QAndroidJniObject newId(android::content::Context arg0);
+		static android::net::Uri_Builder newId(android::content::Context arg0);
 		static jstring relevanceToString(jint arg0);
 		static jstring stateToString(jint arg0);
-		QAndroidJniObject copy();
+		android::service::notification::Condition copy();
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint hashCode();

@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject Notification_BubbleMetadata::CREATOR()
+	__JniBaseClass Notification_BubbleMetadata::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification$BubbleMetadata",
@@ -35,7 +35,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject Notification_BubbleMetadata::getDeleteIntent()
+	android::app::PendingIntent Notification_BubbleMetadata::getDeleteIntent()
 	{
 		return callObjectMethod(
 			"getDeleteIntent",
@@ -56,14 +56,14 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Notification_BubbleMetadata::getIcon()
+	android::graphics::drawable::Icon Notification_BubbleMetadata::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	QAndroidJniObject Notification_BubbleMetadata::getIntent()
+	android::app::PendingIntent Notification_BubbleMetadata::getIntent()
 	{
 		return callObjectMethod(
 			"getIntent",

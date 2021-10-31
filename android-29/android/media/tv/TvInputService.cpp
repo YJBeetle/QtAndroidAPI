@@ -34,7 +34,7 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	QAndroidJniObject TvInputService::onBind(android::content::Intent arg0)
+	__JniBaseClass TvInputService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -42,7 +42,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TvInputService::onCreateRecordingSession(jstring arg0)
+	android::media::tv::TvInputService_RecordingSession TvInputService::onCreateRecordingSession(jstring arg0)
 	{
 		return callObjectMethod(
 			"onCreateRecordingSession",
@@ -50,7 +50,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvInputService::onCreateSession(jstring arg0)
+	android::media::tv::TvInputService_Session TvInputService::onCreateSession(jstring arg0)
 	{
 		return callObjectMethod(
 			"onCreateSession",

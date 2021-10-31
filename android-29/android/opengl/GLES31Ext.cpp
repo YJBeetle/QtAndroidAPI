@@ -1584,7 +1584,7 @@ namespace android::opengl
 			arg3
 		);
 	}
-	QAndroidJniObject GLES31Ext::glGetDebugMessageCallbackKHR()
+	__JniBaseClass GLES31Ext::glGetDebugMessageCallbackKHR()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.GLES31Ext",

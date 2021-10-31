@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject ColorSpace_RenderIntent::ABSOLUTE()
+	android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::ABSOLUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$RenderIntent",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$RenderIntent;"
 		);
 	}
-	QAndroidJniObject ColorSpace_RenderIntent::PERCEPTUAL()
+	android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::PERCEPTUAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$RenderIntent",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$RenderIntent;"
 		);
 	}
-	QAndroidJniObject ColorSpace_RenderIntent::RELATIVE()
+	android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::RELATIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$RenderIntent",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$RenderIntent;"
 		);
 	}
-	QAndroidJniObject ColorSpace_RenderIntent::SATURATION()
+	android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::SATURATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$RenderIntent",
@@ -42,7 +42,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ColorSpace_RenderIntent::valueOf(jstring arg0)
+	android::graphics::ColorSpace_RenderIntent ColorSpace_RenderIntent::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace$RenderIntent",

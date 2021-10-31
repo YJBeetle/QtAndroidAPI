@@ -73,7 +73,7 @@ namespace android::os
 			"()I"
 		);
 	}
-	QAndroidJniObject Binder::getCallingUserHandle()
+	android::os::UserHandle Binder::getCallingUserHandle()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Binder",
@@ -181,7 +181,7 @@ namespace android::os
 			"()Z"
 		);
 	}
-	QAndroidJniObject Binder::queryLocalInterface(jstring arg0)
+	__JniBaseClass Binder::queryLocalInterface(jstring arg0)
 	{
 		return callObjectMethod(
 			"queryLocalInterface",

@@ -79,7 +79,7 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	QAndroidJniObject SQLClientInfoException::getFailedProperties()
+	__JniBaseClass SQLClientInfoException::getFailedProperties()
 	{
 		return callObjectMethod(
 			"getFailedProperties",

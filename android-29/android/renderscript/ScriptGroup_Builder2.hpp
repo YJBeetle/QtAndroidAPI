@@ -46,10 +46,10 @@ namespace android::renderscript
 		ScriptGroup_Builder2(android::renderscript::RenderScript arg0);
 		
 		// Methods
-		QAndroidJniObject addInput();
-		QAndroidJniObject addInvoke(android::renderscript::Script_InvokeID arg0, jobjectArray arg1);
-		QAndroidJniObject addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, jobjectArray arg2);
-		QAndroidJniObject create(jstring arg0, jarray arg1);
+		android::renderscript::ScriptGroup_Input addInput();
+		android::renderscript::ScriptGroup_Closure addInvoke(android::renderscript::Script_InvokeID arg0, jobjectArray arg1);
+		android::renderscript::ScriptGroup_Closure addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, jobjectArray arg2);
+		android::renderscript::ScriptGroup create(jstring arg0, jarray arg1);
 	};
 } // namespace android::renderscript
 

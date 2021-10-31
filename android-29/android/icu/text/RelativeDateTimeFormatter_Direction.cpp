@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject RelativeDateTimeFormatter_Direction::LAST()
+	android::icu::text::RelativeDateTimeFormatter_Direction RelativeDateTimeFormatter_Direction::LAST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$Direction",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$Direction;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_Direction::LAST_2()
+	android::icu::text::RelativeDateTimeFormatter_Direction RelativeDateTimeFormatter_Direction::LAST_2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$Direction",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$Direction;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_Direction::NEXT()
+	android::icu::text::RelativeDateTimeFormatter_Direction RelativeDateTimeFormatter_Direction::NEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$Direction",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$Direction;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_Direction::NEXT_2()
+	android::icu::text::RelativeDateTimeFormatter_Direction RelativeDateTimeFormatter_Direction::NEXT_2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$Direction",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$Direction;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_Direction::PLAIN()
+	android::icu::text::RelativeDateTimeFormatter_Direction RelativeDateTimeFormatter_Direction::PLAIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$Direction",
@@ -43,7 +43,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$Direction;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_Direction::THIS()
+	android::icu::text::RelativeDateTimeFormatter_Direction RelativeDateTimeFormatter_Direction::THIS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$Direction",
@@ -58,7 +58,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RelativeDateTimeFormatter_Direction::valueOf(jstring arg0)
+	android::icu::text::RelativeDateTimeFormatter_Direction RelativeDateTimeFormatter_Direction::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter$Direction",

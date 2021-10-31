@@ -36,7 +36,7 @@ namespace android::graphics
 		
 		// Methods
 		void clearContent();
-		QAndroidJniObject createRenderRequest();
+		android::graphics::HardwareRenderer_FrameRenderRequest createRenderRequest();
 		void destroy();
 		jboolean isOpaque();
 		void notifyFramePending();

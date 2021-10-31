@@ -17,7 +17,7 @@ namespace android::media::midi
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MidiDeviceStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,7 +27,7 @@ namespace android::media::midi
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getDeviceInfo();
+		android::media::midi::MidiDeviceInfo getDeviceInfo();
 		jint getOutputPortOpenCount(jint arg0);
 		jboolean isInputPortOpen(jint arg0);
 		jstring toString();

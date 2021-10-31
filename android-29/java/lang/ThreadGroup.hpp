@@ -40,7 +40,7 @@ namespace java::lang
 		jint enumerate(jarray arg0, jboolean arg1);
 		jint getMaxPriority();
 		jstring getName();
-		QAndroidJniObject getParent();
+		java::lang::ThreadGroup getParent();
 		void interrupt();
 		jboolean isDaemon();
 		jboolean isDestroyed();

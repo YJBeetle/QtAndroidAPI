@@ -13,7 +13,7 @@ namespace android::view::inputmethod
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jint flags();
 		jint hintMaxChars();
 		jint hintMaxLines();

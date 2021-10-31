@@ -33,17 +33,17 @@ namespace javax::xml::parsers
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getDOMImplementation();
-		QAndroidJniObject getSchema();
+		__JniBaseClass getDOMImplementation();
+		javax::xml::validation::Schema getSchema();
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		jboolean isXIncludeAware();
-		QAndroidJniObject newDocument();
-		QAndroidJniObject parse(java::io::File arg0);
-		QAndroidJniObject parse(java::io::InputStream arg0);
-		QAndroidJniObject parse(jstring arg0);
-		QAndroidJniObject parse(org::xml::sax::InputSource arg0);
-		QAndroidJniObject parse(java::io::InputStream arg0, jstring arg1);
+		__JniBaseClass newDocument();
+		__JniBaseClass parse(java::io::File arg0);
+		__JniBaseClass parse(java::io::InputStream arg0);
+		__JniBaseClass parse(jstring arg0);
+		__JniBaseClass parse(org::xml::sax::InputSource arg0);
+		__JniBaseClass parse(java::io::InputStream arg0, jstring arg1);
 		void reset();
 		void setEntityResolver(__JniBaseClass arg0);
 		void setErrorHandler(__JniBaseClass arg0);

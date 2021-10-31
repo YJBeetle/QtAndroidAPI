@@ -27,7 +27,7 @@ namespace android::service::voice
 		
 		// Methods
 		jstring getMessage();
-		QAndroidJniObject getVoicePrompt();
+		android::app::VoiceInteractor_Prompt getVoicePrompt();
 		void sendAbortResult(android::os::Bundle arg0);
 	};
 } // namespace android::service::voice

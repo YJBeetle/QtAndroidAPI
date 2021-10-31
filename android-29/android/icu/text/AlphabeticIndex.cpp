@@ -33,7 +33,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject AlphabeticIndex::addLabels(jarray arg0)
+	android::icu::text::AlphabeticIndex AlphabeticIndex::addLabels(jarray arg0)
 	{
 		return callObjectMethod(
 			"addLabels",
@@ -41,7 +41,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject AlphabeticIndex::addLabels(android::icu::text::UnicodeSet arg0)
+	android::icu::text::AlphabeticIndex AlphabeticIndex::addLabels(android::icu::text::UnicodeSet arg0)
 	{
 		return callObjectMethod(
 			"addLabels",
@@ -49,7 +49,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AlphabeticIndex::addRecord(jstring arg0, jobject arg1)
+	android::icu::text::AlphabeticIndex AlphabeticIndex::addRecord(jstring arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"addRecord",
@@ -58,14 +58,14 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	QAndroidJniObject AlphabeticIndex::buildImmutableIndex()
+	android::icu::text::AlphabeticIndex_ImmutableIndex AlphabeticIndex::buildImmutableIndex()
 	{
 		return callObjectMethod(
 			"buildImmutableIndex",
 			"()Landroid/icu/text/AlphabeticIndex$ImmutableIndex;"
 		);
 	}
-	QAndroidJniObject AlphabeticIndex::clearRecords()
+	android::icu::text::AlphabeticIndex AlphabeticIndex::clearRecords()
 	{
 		return callObjectMethod(
 			"clearRecords",
@@ -87,14 +87,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject AlphabeticIndex::getBucketLabels()
+	__JniBaseClass AlphabeticIndex::getBucketLabels()
 	{
 		return callObjectMethod(
 			"getBucketLabels",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject AlphabeticIndex::getCollator()
+	android::icu::text::RuleBasedCollator AlphabeticIndex::getCollator()
 	{
 		return callObjectMethod(
 			"getCollator",
@@ -136,14 +136,14 @@ namespace android::icu::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AlphabeticIndex::iterator()
+	__JniBaseClass AlphabeticIndex::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject AlphabeticIndex::setInflowLabel(jstring arg0)
+	android::icu::text::AlphabeticIndex AlphabeticIndex::setInflowLabel(jstring arg0)
 	{
 		return callObjectMethod(
 			"setInflowLabel",
@@ -151,7 +151,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject AlphabeticIndex::setMaxLabelCount(jint arg0)
+	android::icu::text::AlphabeticIndex AlphabeticIndex::setMaxLabelCount(jint arg0)
 	{
 		return callObjectMethod(
 			"setMaxLabelCount",
@@ -159,7 +159,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject AlphabeticIndex::setOverflowLabel(jstring arg0)
+	android::icu::text::AlphabeticIndex AlphabeticIndex::setOverflowLabel(jstring arg0)
 	{
 		return callObjectMethod(
 			"setOverflowLabel",
@@ -167,7 +167,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject AlphabeticIndex::setUnderflowLabel(jstring arg0)
+	android::icu::text::AlphabeticIndex AlphabeticIndex::setUnderflowLabel(jstring arg0)
 	{
 		return callObjectMethod(
 			"setUnderflowLabel",

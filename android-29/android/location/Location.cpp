@@ -5,7 +5,7 @@
 namespace android::location
 {
 	// Fields
-	QAndroidJniObject Location::CREATOR()
+	__JniBaseClass Location::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.Location",
@@ -159,7 +159,7 @@ namespace android::location
 			"()D"
 		);
 	}
-	QAndroidJniObject Location::getExtras()
+	android::os::Bundle Location::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

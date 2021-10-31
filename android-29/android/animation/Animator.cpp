@@ -46,7 +46,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	QAndroidJniObject Animator::clone()
+	android::animation::Animator Animator::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -67,14 +67,14 @@ namespace android::animation
 			"()J"
 		);
 	}
-	QAndroidJniObject Animator::getInterpolator()
+	__JniBaseClass Animator::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
-	QAndroidJniObject Animator::getListeners()
+	java::util::ArrayList Animator::getListeners()
 	{
 		return callObjectMethod(
 			"getListeners",
@@ -153,7 +153,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	QAndroidJniObject Animator::setDuration(jlong arg0)
+	android::animation::Animator Animator::setDuration(jlong arg0)
 	{
 		return callObjectMethod(
 			"setDuration",

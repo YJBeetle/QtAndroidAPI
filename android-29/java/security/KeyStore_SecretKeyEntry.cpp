@@ -23,14 +23,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject KeyStore_SecretKeyEntry::getAttributes()
+	__JniBaseClass KeyStore_SecretKeyEntry::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject KeyStore_SecretKeyEntry::getSecretKey()
+	__JniBaseClass KeyStore_SecretKeyEntry::getSecretKey()
 	{
 		return callObjectMethod(
 			"getSecretKey",

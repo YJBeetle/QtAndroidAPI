@@ -19,7 +19,7 @@ namespace android::hardware::camera2::params
 		// Methods
 		jboolean equals(jobject arg0);
 		jstring getDescription();
-		QAndroidJniObject getStreamsInformation();
+		__JniBaseClass getStreamsInformation();
 		jint hashCode();
 		jboolean isReprocessable();
 	};

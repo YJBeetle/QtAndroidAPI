@@ -156,7 +156,7 @@ namespace android::media::audiofx
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Equalizer::getProperties()
+	android::media::audiofx::Equalizer_Settings Equalizer::getProperties()
 	{
 		return callObjectMethod(
 			"getProperties",

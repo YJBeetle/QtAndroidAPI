@@ -10,19 +10,19 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUTHENTICATING();
-		static QAndroidJniObject BLOCKED();
-		static QAndroidJniObject CAPTIVE_PORTAL_CHECK();
-		static QAndroidJniObject CONNECTED();
-		static QAndroidJniObject CONNECTING();
-		static QAndroidJniObject DISCONNECTED();
-		static QAndroidJniObject DISCONNECTING();
-		static QAndroidJniObject FAILED();
-		static QAndroidJniObject IDLE();
-		static QAndroidJniObject OBTAINING_IPADDR();
-		static QAndroidJniObject SCANNING();
-		static QAndroidJniObject SUSPENDED();
-		static QAndroidJniObject VERIFYING_POOR_LINK();
+		static android::net::NetworkInfo_DetailedState AUTHENTICATING();
+		static android::net::NetworkInfo_DetailedState BLOCKED();
+		static android::net::NetworkInfo_DetailedState CAPTIVE_PORTAL_CHECK();
+		static android::net::NetworkInfo_DetailedState CONNECTED();
+		static android::net::NetworkInfo_DetailedState CONNECTING();
+		static android::net::NetworkInfo_DetailedState DISCONNECTED();
+		static android::net::NetworkInfo_DetailedState DISCONNECTING();
+		static android::net::NetworkInfo_DetailedState FAILED();
+		static android::net::NetworkInfo_DetailedState IDLE();
+		static android::net::NetworkInfo_DetailedState OBTAINING_IPADDR();
+		static android::net::NetworkInfo_DetailedState SCANNING();
+		static android::net::NetworkInfo_DetailedState SUSPENDED();
+		static android::net::NetworkInfo_DetailedState VERIFYING_POOR_LINK();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkInfo_DetailedState(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,7 +31,7 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::net::NetworkInfo_DetailedState valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::net

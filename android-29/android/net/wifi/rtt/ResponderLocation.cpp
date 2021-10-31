@@ -29,7 +29,7 @@ namespace android::net::wifi::rtt
 			"ALTITUDE_UNDEFINED"
 		);
 	}
-	QAndroidJniObject ResponderLocation::CREATOR()
+	__JniBaseClass ResponderLocation::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.rtt.ResponderLocation",
@@ -143,7 +143,7 @@ namespace android::net::wifi::rtt
 			"()D"
 		);
 	}
-	QAndroidJniObject ResponderLocation::getColocatedBssids()
+	__JniBaseClass ResponderLocation::getColocatedBssids()
 	{
 		return callObjectMethod(
 			"getColocatedBssids",
@@ -227,7 +227,7 @@ namespace android::net::wifi::rtt
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ResponderLocation::getMapImageUri()
+	android::net::Uri ResponderLocation::getMapImageUri()
 	{
 		return callObjectMethod(
 			"getMapImageUri",
@@ -262,21 +262,21 @@ namespace android::net::wifi::rtt
 			"()Z"
 		);
 	}
-	QAndroidJniObject ResponderLocation::toCivicLocationAddress()
+	android::location::Address ResponderLocation::toCivicLocationAddress()
 	{
 		return callObjectMethod(
 			"toCivicLocationAddress",
 			"()Landroid/location/Address;"
 		);
 	}
-	QAndroidJniObject ResponderLocation::toCivicLocationSparseArray()
+	android::util::SparseArray ResponderLocation::toCivicLocationSparseArray()
 	{
 		return callObjectMethod(
 			"toCivicLocationSparseArray",
 			"()Landroid/util/SparseArray;"
 		);
 	}
-	QAndroidJniObject ResponderLocation::toLocation()
+	android::location::Location ResponderLocation::toLocation()
 	{
 		return callObjectMethod(
 			"toLocation",

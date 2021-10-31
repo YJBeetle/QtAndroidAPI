@@ -273,7 +273,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	QAndroidJniObject ViewGroup::dispatchApplyWindowInsets(android::view::WindowInsets arg0)
+	android::view::WindowInsets ViewGroup::dispatchApplyWindowInsets(android::view::WindowInsets arg0)
 	{
 		return callObjectMethod(
 			"dispatchApplyWindowInsets",
@@ -466,7 +466,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ViewGroup::findFocus()
+	android::view::View ViewGroup::findFocus()
 	{
 		return callObjectMethod(
 			"findFocus",
@@ -483,7 +483,7 @@ namespace android::view
 			arg2
 		);
 	}
-	QAndroidJniObject ViewGroup::focusSearch(android::view::View arg0, jint arg1)
+	android::view::View ViewGroup::focusSearch(android::view::View arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"focusSearch",
@@ -508,7 +508,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ViewGroup::generateLayoutParams(__JniBaseClass arg0)
+	android::view::ViewGroup_LayoutParams ViewGroup::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -523,7 +523,7 @@ namespace android::view
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ViewGroup::getChildAt(jint arg0)
+	android::view::View ViewGroup::getChildAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getChildAt",
@@ -577,21 +577,21 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewGroup::getFocusedChild()
+	android::view::View ViewGroup::getFocusedChild()
 	{
 		return callObjectMethod(
 			"getFocusedChild",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject ViewGroup::getLayoutAnimation()
+	android::view::animation::LayoutAnimationController ViewGroup::getLayoutAnimation()
 	{
 		return callObjectMethod(
 			"getLayoutAnimation",
 			"()Landroid/view/animation/LayoutAnimationController;"
 		);
 	}
-	QAndroidJniObject ViewGroup::getLayoutAnimationListener()
+	__JniBaseClass ViewGroup::getLayoutAnimationListener()
 	{
 		return callObjectMethod(
 			"getLayoutAnimationListener",
@@ -605,7 +605,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewGroup::getLayoutTransition()
+	android::animation::LayoutTransition ViewGroup::getLayoutTransition()
 	{
 		return callObjectMethod(
 			"getLayoutTransition",
@@ -619,7 +619,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewGroup::getOverlay()
+	android::view::ViewGroupOverlay ViewGroup::getOverlay()
 	{
 		return callObjectMethod(
 			"getOverlay",
@@ -671,7 +671,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ViewGroup::invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1)
+	__JniBaseClass ViewGroup::invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1)
 	{
 		return callObjectMethod(
 			"invalidateChildInParent",
@@ -859,7 +859,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ViewGroup::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon ViewGroup::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -1178,7 +1178,7 @@ namespace android::view
 			arg2
 		);
 	}
-	QAndroidJniObject ViewGroup::startActionModeForChild(android::view::View arg0, __JniBaseClass arg1)
+	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"startActionModeForChild",
@@ -1187,7 +1187,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ViewGroup::startActionModeForChild(android::view::View arg0, __JniBaseClass arg1, jint arg2)
+	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, __JniBaseClass arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"startActionModeForChild",

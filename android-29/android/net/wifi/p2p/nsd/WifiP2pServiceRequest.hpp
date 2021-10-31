@@ -21,8 +21,8 @@ namespace android::net::wifi::p2p::nsd
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newInstance(jint arg0);
-		static QAndroidJniObject newInstance(jint arg0, jstring arg1);
+		static android::net::wifi::p2p::nsd::WifiP2pServiceRequest newInstance(jint arg0);
+		static android::net::wifi::p2p::nsd::WifiP2pServiceRequest newInstance(jint arg0, jstring arg1);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint hashCode();

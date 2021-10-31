@@ -34,9 +34,9 @@ namespace android::media::midi
 		MidiDeviceService();
 		
 		// Methods
-		QAndroidJniObject getDeviceInfo();
+		android::media::midi::MidiDeviceInfo getDeviceInfo();
 		jarray getOutputPortReceivers();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onClose();
 		void onCreate();
 		void onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0);

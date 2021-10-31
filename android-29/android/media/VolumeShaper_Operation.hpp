@@ -13,9 +13,9 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject PLAY();
-		static QAndroidJniObject REVERSE();
+		static __JniBaseClass CREATOR();
+		static android::media::VolumeShaper_Operation PLAY();
+		static android::media::VolumeShaper_Operation REVERSE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VolumeShaper_Operation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

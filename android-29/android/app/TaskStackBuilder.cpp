@@ -16,7 +16,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TaskStackBuilder::create(android::content::Context arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::create(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.TaskStackBuilder",
@@ -25,7 +25,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TaskStackBuilder::addNextIntent(android::content::Intent arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addNextIntent(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"addNextIntent",
@@ -33,7 +33,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TaskStackBuilder::addNextIntentWithParentStack(android::content::Intent arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addNextIntentWithParentStack(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"addNextIntentWithParentStack",
@@ -41,7 +41,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TaskStackBuilder::addParentStack(android::app::Activity arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(android::app::Activity arg0)
 	{
 		return callObjectMethod(
 			"addParentStack",
@@ -49,7 +49,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TaskStackBuilder::addParentStack(android::content::ComponentName arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"addParentStack",
@@ -57,7 +57,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TaskStackBuilder::addParentStack(jclass arg0)
+	android::app::TaskStackBuilder TaskStackBuilder::addParentStack(jclass arg0)
 	{
 		return callObjectMethod(
 			"addParentStack",
@@ -65,7 +65,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject TaskStackBuilder::editIntentAt(jint arg0)
+	android::content::Intent TaskStackBuilder::editIntentAt(jint arg0)
 	{
 		return callObjectMethod(
 			"editIntentAt",
@@ -87,7 +87,7 @@ namespace android::app
 			"()[Landroid/content/Intent;"
 		).object<jarray>();
 	}
-	QAndroidJniObject TaskStackBuilder::getPendingIntent(jint arg0, jint arg1)
+	android::app::PendingIntent TaskStackBuilder::getPendingIntent(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPendingIntent",
@@ -96,7 +96,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject TaskStackBuilder::getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2)
+	android::app::PendingIntent TaskStackBuilder::getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"getPendingIntent",

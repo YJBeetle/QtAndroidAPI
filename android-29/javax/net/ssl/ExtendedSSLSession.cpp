@@ -29,14 +29,14 @@ namespace javax::net::ssl
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject ExtendedSSLSession::getRequestedServerNames()
+	__JniBaseClass ExtendedSSLSession::getRequestedServerNames()
 	{
 		return callObjectMethod(
 			"getRequestedServerNames",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ExtendedSSLSession::getStatusResponses()
+	__JniBaseClass ExtendedSSLSession::getStatusResponses()
 	{
 		return callObjectMethod(
 			"getStatusResponses",

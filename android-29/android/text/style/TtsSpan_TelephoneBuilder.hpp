@@ -21,9 +21,9 @@ namespace android::text::style
 		TtsSpan_TelephoneBuilder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject setCountryCode(jstring arg0);
-		QAndroidJniObject setExtension(jstring arg0);
-		QAndroidJniObject setNumberParts(jstring arg0);
+		android::text::style::TtsSpan_TelephoneBuilder setCountryCode(jstring arg0);
+		android::text::style::TtsSpan_TelephoneBuilder setExtension(jstring arg0);
+		android::text::style::TtsSpan_TelephoneBuilder setNumberParts(jstring arg0);
 	};
 } // namespace android::text::style
 

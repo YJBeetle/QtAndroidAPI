@@ -22,7 +22,7 @@ namespace android::view
 		ViewConfiguration();
 		
 		// Methods
-		static QAndroidJniObject get(android::content::Context arg0);
+		static android::view::ViewConfiguration get(android::content::Context arg0);
 		static jfloat getAmbiguousGestureMultiplier();
 		static jlong getDefaultActionModeHideDuration();
 		static jint getDoubleTapTimeout();

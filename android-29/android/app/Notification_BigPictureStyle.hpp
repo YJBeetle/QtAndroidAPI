@@ -32,11 +32,11 @@ namespace android::app
 		Notification_BigPictureStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
-		QAndroidJniObject bigLargeIcon(android::graphics::Bitmap arg0);
-		QAndroidJniObject bigLargeIcon(android::graphics::drawable::Icon arg0);
-		QAndroidJniObject bigPicture(android::graphics::Bitmap arg0);
-		QAndroidJniObject setBigContentTitle(jstring arg0);
-		QAndroidJniObject setSummaryText(jstring arg0);
+		android::app::Notification_BigPictureStyle bigLargeIcon(android::graphics::Bitmap arg0);
+		android::app::Notification_BigPictureStyle bigLargeIcon(android::graphics::drawable::Icon arg0);
+		android::app::Notification_BigPictureStyle bigPicture(android::graphics::Bitmap arg0);
+		android::app::Notification_BigPictureStyle setBigContentTitle(jstring arg0);
+		android::app::Notification_BigPictureStyle setSummaryText(jstring arg0);
 	};
 } // namespace android::app
 

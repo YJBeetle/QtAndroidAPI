@@ -41,7 +41,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WallpaperInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -53,20 +53,20 @@ namespace android::app
 		// Methods
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		QAndroidJniObject getComponent();
+		android::content::ComponentName getComponent();
 		jstring getPackageName();
-		QAndroidJniObject getServiceInfo();
+		android::content::pm::ServiceInfo getServiceInfo();
 		jstring getServiceName();
 		jstring getSettingsActivity();
-		QAndroidJniObject getSettingsSliceUri();
+		android::net::Uri getSettingsSliceUri();
 		jboolean getShowMetadataInPreview();
 		jstring loadAuthor(android::content::pm::PackageManager arg0);
 		jstring loadContextDescription(android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadContextUri(android::content::pm::PackageManager arg0);
+		android::net::Uri loadContextUri(android::content::pm::PackageManager arg0);
 		jstring loadDescription(android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadIcon(android::content::pm::PackageManager arg0);
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
 		jstring loadLabel(android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadThumbnail(android::content::pm::PackageManager arg0);
+		android::graphics::drawable::Drawable loadThumbnail(android::content::pm::PackageManager arg0);
 		jboolean supportsMultipleDisplays();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

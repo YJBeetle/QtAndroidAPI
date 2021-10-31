@@ -25,11 +25,11 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject allowThreadDiskReads();
-		static QAndroidJniObject allowThreadDiskWrites();
+		static android::os::StrictMode_ThreadPolicy allowThreadDiskReads();
+		static android::os::StrictMode_ThreadPolicy allowThreadDiskWrites();
 		static void enableDefaults();
-		static QAndroidJniObject getThreadPolicy();
-		static QAndroidJniObject getVmPolicy();
+		static android::os::StrictMode_ThreadPolicy getThreadPolicy();
+		static android::os::StrictMode_VmPolicy getVmPolicy();
 		static void noteSlowCall(jstring arg0);
 		static void setThreadPolicy(android::os::StrictMode_ThreadPolicy arg0);
 		static void setVmPolicy(android::os::StrictMode_VmPolicy arg0);

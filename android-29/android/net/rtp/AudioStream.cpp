@@ -19,7 +19,7 @@ namespace android::net::rtp
 		) {}
 	
 	// Methods
-	QAndroidJniObject AudioStream::getCodec()
+	android::net::rtp::AudioCodec AudioStream::getCodec()
 	{
 		return callObjectMethod(
 			"getCodec",
@@ -33,7 +33,7 @@ namespace android::net::rtp
 			"()I"
 		);
 	}
-	QAndroidJniObject AudioStream::getGroup()
+	android::net::rtp::AudioGroup AudioStream::getGroup()
 	{
 		return callObjectMethod(
 			"getGroup",

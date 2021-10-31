@@ -118,21 +118,21 @@ namespace java::net
 			arg1
 		);
 	}
-	QAndroidJniObject Socket::getChannel()
+	java::nio::channels::SocketChannel Socket::getChannel()
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	QAndroidJniObject Socket::getInetAddress()
+	java::net::InetAddress Socket::getInetAddress()
 	{
 		return callObjectMethod(
 			"getInetAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	QAndroidJniObject Socket::getInputStream()
+	java::io::InputStream Socket::getInputStream()
 	{
 		return callObjectMethod(
 			"getInputStream",
@@ -146,7 +146,7 @@ namespace java::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject Socket::getLocalAddress()
+	java::net::InetAddress Socket::getLocalAddress()
 	{
 		return callObjectMethod(
 			"getLocalAddress",
@@ -160,7 +160,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject Socket::getLocalSocketAddress()
+	java::net::SocketAddress Socket::getLocalSocketAddress()
 	{
 		return callObjectMethod(
 			"getLocalSocketAddress",
@@ -182,7 +182,7 @@ namespace java::net
 			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject Socket::getOutputStream()
+	java::io::OutputStream Socket::getOutputStream()
 	{
 		return callObjectMethod(
 			"getOutputStream",
@@ -203,7 +203,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject Socket::getRemoteSocketAddress()
+	java::net::SocketAddress Socket::getRemoteSocketAddress()
 	{
 		return callObjectMethod(
 			"getRemoteSocketAddress",
@@ -311,7 +311,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject Socket::setOption(__JniBaseClass arg0, jobject arg1)
+	java::net::Socket Socket::setOption(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -401,7 +401,7 @@ namespace java::net
 			"()V"
 		);
 	}
-	QAndroidJniObject Socket::supportedOptions()
+	__JniBaseClass Socket::supportedOptions()
 	{
 		return callObjectMethod(
 			"supportedOptions",

@@ -4,7 +4,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject UserHandle::CREATOR()
+	__JniBaseClass UserHandle::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.UserHandle",
@@ -25,7 +25,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	QAndroidJniObject UserHandle::getUserHandleForUid(jint arg0)
+	android::os::UserHandle UserHandle::getUserHandleForUid(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.UserHandle",
@@ -34,7 +34,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject UserHandle::readFromParcel(android::os::Parcel arg0)
+	android::os::UserHandle UserHandle::readFromParcel(android::os::Parcel arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.UserHandle",

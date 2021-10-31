@@ -7,7 +7,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject DropBoxManager_Entry::CREATOR()
+	__JniBaseClass DropBoxManager_Entry::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.DropBoxManager$Entry",
@@ -85,7 +85,7 @@ namespace android::os
 			"()I"
 		);
 	}
-	QAndroidJniObject DropBoxManager_Entry::getInputStream()
+	java::io::InputStream DropBoxManager_Entry::getInputStream()
 	{
 		return callObjectMethod(
 			"getInputStream",

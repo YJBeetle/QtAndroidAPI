@@ -41,17 +41,17 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::content::Context arg0);
-		QAndroidJniObject addNextIntent(android::content::Intent arg0);
-		QAndroidJniObject addNextIntentWithParentStack(android::content::Intent arg0);
-		QAndroidJniObject addParentStack(android::app::Activity arg0);
-		QAndroidJniObject addParentStack(android::content::ComponentName arg0);
-		QAndroidJniObject addParentStack(jclass arg0);
-		QAndroidJniObject editIntentAt(jint arg0);
+		static android::app::TaskStackBuilder create(android::content::Context arg0);
+		android::app::TaskStackBuilder addNextIntent(android::content::Intent arg0);
+		android::app::TaskStackBuilder addNextIntentWithParentStack(android::content::Intent arg0);
+		android::app::TaskStackBuilder addParentStack(android::app::Activity arg0);
+		android::app::TaskStackBuilder addParentStack(android::content::ComponentName arg0);
+		android::app::TaskStackBuilder addParentStack(jclass arg0);
+		android::content::Intent editIntentAt(jint arg0);
 		jint getIntentCount();
 		jarray getIntents();
-		QAndroidJniObject getPendingIntent(jint arg0, jint arg1);
-		QAndroidJniObject getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2);
+		android::app::PendingIntent getPendingIntent(jint arg0, jint arg1);
+		android::app::PendingIntent getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2);
 		void startActivities();
 		void startActivities(android::os::Bundle arg0);
 	};

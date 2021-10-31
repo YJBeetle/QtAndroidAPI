@@ -10,8 +10,8 @@ namespace java::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DECIMAL_FLOAT();
-		static QAndroidJniObject SCIENTIFIC();
+		static java::util::Formatter_BigDecimalLayoutForm DECIMAL_FLOAT();
+		static java::util::Formatter_BigDecimalLayoutForm SCIENTIFIC();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Formatter_BigDecimalLayoutForm(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,7 +20,7 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::util::Formatter_BigDecimalLayoutForm valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::util

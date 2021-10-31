@@ -8,7 +8,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject IntentSender::CREATOR()
+	__JniBaseClass IntentSender::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.IntentSender",
@@ -23,7 +23,7 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject IntentSender::readIntentSenderOrNullFromParcel(android::os::Parcel arg0)
+	android::content::IntentSender IntentSender::readIntentSenderOrNullFromParcel(android::os::Parcel arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.IntentSender",
@@ -71,7 +71,7 @@ namespace android::content
 			"()I"
 		);
 	}
-	QAndroidJniObject IntentSender::getCreatorUserHandle()
+	android::os::UserHandle IntentSender::getCreatorUserHandle()
 	{
 		return callObjectMethod(
 			"getCreatorUserHandle",

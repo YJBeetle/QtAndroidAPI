@@ -34,7 +34,7 @@ namespace android::appwidget
 		) {}
 	
 	// Methods
-	QAndroidJniObject AppWidgetHostView::getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2)
+	android::graphics::Rect AppWidgetHostView::getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.appwidget.AppWidgetHostView",
@@ -45,7 +45,7 @@ namespace android::appwidget
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AppWidgetHostView::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::FrameLayout_LayoutParams AppWidgetHostView::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -60,7 +60,7 @@ namespace android::appwidget
 			"()I"
 		);
 	}
-	QAndroidJniObject AppWidgetHostView::getAppWidgetInfo()
+	android::appwidget::AppWidgetProviderInfo AppWidgetHostView::getAppWidgetInfo()
 	{
 		return callObjectMethod(
 			"getAppWidgetInfo",

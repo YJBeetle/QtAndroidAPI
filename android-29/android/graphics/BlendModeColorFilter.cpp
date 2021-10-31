@@ -33,7 +33,7 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	QAndroidJniObject BlendModeColorFilter::getMode()
+	android::graphics::BlendMode BlendModeColorFilter::getMode()
 	{
 		return callObjectMethod(
 			"getMode",

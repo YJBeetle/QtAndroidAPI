@@ -22,14 +22,14 @@ namespace android::mtp
 		) {}
 	
 	// Methods
-	QAndroidJniObject MtpObjectInfo_Builder::build()
+	android::mtp::MtpObjectInfo MtpObjectInfo_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/mtp/MtpObjectInfo;"
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setAssociationDesc(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setAssociationDesc(jint arg0)
 	{
 		return callObjectMethod(
 			"setAssociationDesc",
@@ -37,7 +37,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setAssociationType(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setAssociationType(jint arg0)
 	{
 		return callObjectMethod(
 			"setAssociationType",
@@ -45,7 +45,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setCompressedSize(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setCompressedSize(jlong arg0)
 	{
 		return callObjectMethod(
 			"setCompressedSize",
@@ -53,7 +53,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setDateCreated(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setDateCreated(jlong arg0)
 	{
 		return callObjectMethod(
 			"setDateCreated",
@@ -61,7 +61,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setDateModified(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setDateModified(jlong arg0)
 	{
 		return callObjectMethod(
 			"setDateModified",
@@ -69,7 +69,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setFormat(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setFormat(jint arg0)
 	{
 		return callObjectMethod(
 			"setFormat",
@@ -77,7 +77,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setImagePixDepth(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setImagePixDepth(jlong arg0)
 	{
 		return callObjectMethod(
 			"setImagePixDepth",
@@ -85,7 +85,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setImagePixHeight(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setImagePixHeight(jlong arg0)
 	{
 		return callObjectMethod(
 			"setImagePixHeight",
@@ -93,7 +93,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setImagePixWidth(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setImagePixWidth(jlong arg0)
 	{
 		return callObjectMethod(
 			"setImagePixWidth",
@@ -101,7 +101,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setKeywords(jstring arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setKeywords(jstring arg0)
 	{
 		return callObjectMethod(
 			"setKeywords",
@@ -109,7 +109,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setName(jstring arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setName(jstring arg0)
 	{
 		return callObjectMethod(
 			"setName",
@@ -117,7 +117,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setObjectHandle(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setObjectHandle(jint arg0)
 	{
 		return callObjectMethod(
 			"setObjectHandle",
@@ -125,7 +125,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setParent(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setParent(jint arg0)
 	{
 		return callObjectMethod(
 			"setParent",
@@ -133,7 +133,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setProtectionStatus(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setProtectionStatus(jint arg0)
 	{
 		return callObjectMethod(
 			"setProtectionStatus",
@@ -141,7 +141,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setSequenceNumber(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setSequenceNumber(jlong arg0)
 	{
 		return callObjectMethod(
 			"setSequenceNumber",
@@ -149,7 +149,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setStorageId(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setStorageId(jint arg0)
 	{
 		return callObjectMethod(
 			"setStorageId",
@@ -157,7 +157,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setThumbCompressedSize(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbCompressedSize(jlong arg0)
 	{
 		return callObjectMethod(
 			"setThumbCompressedSize",
@@ -165,7 +165,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setThumbFormat(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbFormat(jint arg0)
 	{
 		return callObjectMethod(
 			"setThumbFormat",
@@ -173,7 +173,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setThumbPixHeight(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbPixHeight(jlong arg0)
 	{
 		return callObjectMethod(
 			"setThumbPixHeight",
@@ -181,7 +181,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setThumbPixWidth(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbPixWidth(jlong arg0)
 	{
 		return callObjectMethod(
 			"setThumbPixWidth",

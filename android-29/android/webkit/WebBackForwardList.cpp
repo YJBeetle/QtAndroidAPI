@@ -23,14 +23,14 @@ namespace android::webkit
 			"()I"
 		);
 	}
-	QAndroidJniObject WebBackForwardList::getCurrentItem()
+	android::webkit::WebHistoryItem WebBackForwardList::getCurrentItem()
 	{
 		return callObjectMethod(
 			"getCurrentItem",
 			"()Landroid/webkit/WebHistoryItem;"
 		);
 	}
-	QAndroidJniObject WebBackForwardList::getItemAtIndex(jint arg0)
+	android::webkit::WebHistoryItem WebBackForwardList::getItemAtIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"getItemAtIndex",

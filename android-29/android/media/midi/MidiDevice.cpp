@@ -21,7 +21,7 @@ namespace android::media::midi
 			"()V"
 		);
 	}
-	QAndroidJniObject MidiDevice::connectPorts(android::media::midi::MidiInputPort arg0, jint arg1)
+	android::media::midi::MidiDevice_MidiConnection MidiDevice::connectPorts(android::media::midi::MidiInputPort arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"connectPorts",
@@ -30,14 +30,14 @@ namespace android::media::midi
 			arg1
 		);
 	}
-	QAndroidJniObject MidiDevice::getInfo()
+	android::media::midi::MidiDeviceInfo MidiDevice::getInfo()
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Landroid/media/midi/MidiDeviceInfo;"
 		);
 	}
-	QAndroidJniObject MidiDevice::openInputPort(jint arg0)
+	android::media::midi::MidiInputPort MidiDevice::openInputPort(jint arg0)
 	{
 		return callObjectMethod(
 			"openInputPort",
@@ -45,7 +45,7 @@ namespace android::media::midi
 			arg0
 		);
 	}
-	QAndroidJniObject MidiDevice::openOutputPort(jint arg0)
+	android::media::midi::MidiOutputPort MidiDevice::openOutputPort(jint arg0)
 	{
 		return callObjectMethod(
 			"openOutputPort",

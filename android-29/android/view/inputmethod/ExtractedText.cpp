@@ -4,7 +4,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	QAndroidJniObject ExtractedText::CREATOR()
+	__JniBaseClass ExtractedText::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.ExtractedText",

@@ -72,7 +72,7 @@ namespace android::view
 			"ACCESSIBILITY_LIVE_REGION_POLITE"
 		);
 	}
-	QAndroidJniObject View::ALPHA()
+	android::util::Property View::ALPHA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -576,7 +576,7 @@ namespace android::view
 			"OVER_SCROLL_NEVER"
 		);
 	}
-	QAndroidJniObject View::ROTATION()
+	android::util::Property View::ROTATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -584,7 +584,7 @@ namespace android::view
 			"Landroid/util/Property;"
 		);
 	}
-	QAndroidJniObject View::ROTATION_X()
+	android::util::Property View::ROTATION_X()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -592,7 +592,7 @@ namespace android::view
 			"Landroid/util/Property;"
 		);
 	}
-	QAndroidJniObject View::ROTATION_Y()
+	android::util::Property View::ROTATION_Y()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -600,7 +600,7 @@ namespace android::view
 			"Landroid/util/Property;"
 		);
 	}
-	QAndroidJniObject View::SCALE_X()
+	android::util::Property View::SCALE_X()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -608,7 +608,7 @@ namespace android::view
 			"Landroid/util/Property;"
 		);
 	}
-	QAndroidJniObject View::SCALE_Y()
+	android::util::Property View::SCALE_Y()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -952,7 +952,7 @@ namespace android::view
 			"TEXT_DIRECTION_RTL"
 		);
 	}
-	QAndroidJniObject View::TRANSLATION_X()
+	android::util::Property View::TRANSLATION_X()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -960,7 +960,7 @@ namespace android::view
 			"Landroid/util/Property;"
 		);
 	}
-	QAndroidJniObject View::TRANSLATION_Y()
+	android::util::Property View::TRANSLATION_Y()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -968,7 +968,7 @@ namespace android::view
 			"Landroid/util/Property;"
 		);
 	}
-	QAndroidJniObject View::TRANSLATION_Z()
+	android::util::Property View::TRANSLATION_Z()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -983,7 +983,7 @@ namespace android::view
 			"VISIBLE"
 		);
 	}
-	QAndroidJniObject View::X()
+	android::util::Property View::X()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -991,7 +991,7 @@ namespace android::view
 			"Landroid/util/Property;"
 		);
 	}
-	QAndroidJniObject View::Y()
+	android::util::Property View::Y()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -999,7 +999,7 @@ namespace android::view
 			"Landroid/util/Property;"
 		);
 	}
-	QAndroidJniObject View::Z()
+	android::util::Property View::Z()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.View",
@@ -1072,7 +1072,7 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject View::inflate(android::content::Context arg0, jint arg1, android::view::ViewGroup arg2)
+	android::view::View View::inflate(android::content::Context arg0, jint arg1, android::view::ViewGroup arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.View",
@@ -1182,7 +1182,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject View::animate()
+	android::view::ViewPropertyAnimator View::animate()
 	{
 		return callObjectMethod(
 			"animate",
@@ -1336,7 +1336,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	QAndroidJniObject View::computeSystemWindowInsets(android::view::WindowInsets arg0, android::graphics::Rect arg1)
+	android::view::WindowInsets View::computeSystemWindowInsets(android::view::WindowInsets arg0, android::graphics::Rect arg1)
 	{
 		return callObjectMethod(
 			"computeSystemWindowInsets",
@@ -1345,7 +1345,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject View::createAccessibilityNodeInfo()
+	android::view::accessibility::AccessibilityNodeInfo View::createAccessibilityNodeInfo()
 	{
 		return callObjectMethod(
 			"createAccessibilityNodeInfo",
@@ -1367,7 +1367,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	QAndroidJniObject View::dispatchApplyWindowInsets(android::view::WindowInsets arg0)
+	android::view::WindowInsets View::dispatchApplyWindowInsets(android::view::WindowInsets arg0)
 	{
 		return callObjectMethod(
 			"dispatchApplyWindowInsets",
@@ -1620,14 +1620,14 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject View::findFocus()
+	android::view::View View::findFocus()
 	{
 		return callObjectMethod(
 			"findFocus",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject View::findViewById(jint arg0)
+	android::view::View View::findViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"findViewById",
@@ -1635,7 +1635,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject View::findViewWithTag(jobject arg0)
+	android::view::View View::findViewWithTag(jobject arg0)
 	{
 		return callObjectMethod(
 			"findViewWithTag",
@@ -1653,7 +1653,7 @@ namespace android::view
 			arg2
 		);
 	}
-	QAndroidJniObject View::focusSearch(jint arg0)
+	android::view::View View::focusSearch(jint arg0)
 	{
 		return callObjectMethod(
 			"focusSearch",
@@ -1683,7 +1683,7 @@ namespace android::view
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject View::getAccessibilityDelegate()
+	android::view::View_AccessibilityDelegate View::getAccessibilityDelegate()
 	{
 		return callObjectMethod(
 			"getAccessibilityDelegate",
@@ -1697,7 +1697,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getAccessibilityNodeProvider()
+	android::view::accessibility::AccessibilityNodeProvider View::getAccessibilityNodeProvider()
 	{
 		return callObjectMethod(
 			"getAccessibilityNodeProvider",
@@ -1732,21 +1732,21 @@ namespace android::view
 			"()F"
 		);
 	}
-	QAndroidJniObject View::getAnimation()
+	android::view::animation::Animation View::getAnimation()
 	{
 		return callObjectMethod(
 			"getAnimation",
 			"()Landroid/view/animation/Animation;"
 		);
 	}
-	QAndroidJniObject View::getAnimationMatrix()
+	android::graphics::Matrix View::getAnimationMatrix()
 	{
 		return callObjectMethod(
 			"getAnimationMatrix",
 			"()Landroid/graphics/Matrix;"
 		);
 	}
-	QAndroidJniObject View::getApplicationWindowToken()
+	__JniBaseClass View::getApplicationWindowToken()
 	{
 		return callObjectMethod(
 			"getApplicationWindowToken",
@@ -1761,7 +1761,7 @@ namespace android::view
 			arg0
 		).object<jintArray>();
 	}
-	QAndroidJniObject View::getAttributeSourceResourceMap()
+	__JniBaseClass View::getAttributeSourceResourceMap()
 	{
 		return callObjectMethod(
 			"getAttributeSourceResourceMap",
@@ -1775,7 +1775,7 @@ namespace android::view
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject View::getAutofillId()
+	android::view::autofill::AutofillId View::getAutofillId()
 	{
 		return callObjectMethod(
 			"getAutofillId",
@@ -1789,35 +1789,35 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getAutofillValue()
+	android::view::autofill::AutofillValue View::getAutofillValue()
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	QAndroidJniObject View::getBackground()
+	android::graphics::drawable::Drawable View::getBackground()
 	{
 		return callObjectMethod(
 			"getBackground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject View::getBackgroundTintBlendMode()
+	android::graphics::BlendMode View::getBackgroundTintBlendMode()
 	{
 		return callObjectMethod(
 			"getBackgroundTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject View::getBackgroundTintList()
+	android::content::res::ColorStateList View::getBackgroundTintList()
 	{
 		return callObjectMethod(
 			"getBackgroundTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject View::getBackgroundTintMode()
+	android::graphics::PorterDuff_Mode View::getBackgroundTintMode()
 	{
 		return callObjectMethod(
 			"getBackgroundTintMode",
@@ -1845,7 +1845,7 @@ namespace android::view
 			"()F"
 		);
 	}
-	QAndroidJniObject View::getClipBounds()
+	android::graphics::Rect View::getClipBounds()
 	{
 		return callObjectMethod(
 			"getClipBounds",
@@ -1867,7 +1867,7 @@ namespace android::view
 			"()Z"
 		);
 	}
-	QAndroidJniObject View::getContentCaptureSession()
+	android::view::contentcapture::ContentCaptureSession View::getContentCaptureSession()
 	{
 		return callObjectMethod(
 			"getContentCaptureSession",
@@ -1881,7 +1881,7 @@ namespace android::view
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject View::getContext()
+	android::content::Context View::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
@@ -1895,7 +1895,7 @@ namespace android::view
 			"()Z"
 		);
 	}
-	QAndroidJniObject View::getDisplay()
+	android::view::Display View::getDisplay()
 	{
 		return callObjectMethod(
 			"getDisplay",
@@ -1909,14 +1909,14 @@ namespace android::view
 			"()[I"
 		).object<jintArray>();
 	}
-	QAndroidJniObject View::getDrawingCache()
+	android::graphics::Bitmap View::getDrawingCache()
 	{
 		return callObjectMethod(
 			"getDrawingCache",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	QAndroidJniObject View::getDrawingCache(jboolean arg0)
+	android::graphics::Bitmap View::getDrawingCache(jboolean arg0)
 	{
 		return callObjectMethod(
 			"getDrawingCache",
@@ -1988,7 +1988,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getFocusables(jint arg0)
+	java::util::ArrayList View::getFocusables(jint arg0)
 	{
 		return callObjectMethod(
 			"getFocusables",
@@ -2004,7 +2004,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject View::getForeground()
+	android::graphics::drawable::Drawable View::getForeground()
 	{
 		return callObjectMethod(
 			"getForeground",
@@ -2018,21 +2018,21 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getForegroundTintBlendMode()
+	android::graphics::BlendMode View::getForegroundTintBlendMode()
 	{
 		return callObjectMethod(
 			"getForegroundTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject View::getForegroundTintList()
+	android::content::res::ColorStateList View::getForegroundTintList()
 	{
 		return callObjectMethod(
 			"getForegroundTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject View::getForegroundTintMode()
+	android::graphics::PorterDuff_Mode View::getForegroundTintMode()
 	{
 		return callObjectMethod(
 			"getForegroundTintMode",
@@ -2056,7 +2056,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject View::getHandler()
+	android::os::Handler View::getHandler()
 	{
 		return callObjectMethod(
 			"getHandler",
@@ -2092,14 +2092,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getHorizontalScrollbarThumbDrawable()
+	android::graphics::drawable::Drawable View::getHorizontalScrollbarThumbDrawable()
 	{
 		return callObjectMethod(
 			"getHorizontalScrollbarThumbDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject View::getHorizontalScrollbarTrackDrawable()
+	android::graphics::drawable::Drawable View::getHorizontalScrollbarTrackDrawable()
 	{
 		return callObjectMethod(
 			"getHorizontalScrollbarTrackDrawable",
@@ -2134,7 +2134,7 @@ namespace android::view
 			"()Z"
 		);
 	}
-	QAndroidJniObject View::getKeyDispatcherState()
+	android::view::KeyEvent_DispatcherState View::getKeyDispatcherState()
 	{
 		return callObjectMethod(
 			"getKeyDispatcherState",
@@ -2162,7 +2162,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getLayoutParams()
+	android::view::ViewGroup_LayoutParams View::getLayoutParams()
 	{
 		return callObjectMethod(
 			"getLayoutParams",
@@ -2208,7 +2208,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject View::getMatrix()
+	android::graphics::Matrix View::getMatrix()
 	{
 		return callObjectMethod(
 			"getMatrix",
@@ -2306,7 +2306,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getOnFocusChangeListener()
+	__JniBaseClass View::getOnFocusChangeListener()
 	{
 		return callObjectMethod(
 			"getOnFocusChangeListener",
@@ -2320,7 +2320,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getOutlineProvider()
+	android::view::ViewOutlineProvider View::getOutlineProvider()
 	{
 		return callObjectMethod(
 			"getOutlineProvider",
@@ -2341,7 +2341,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getOverlay()
+	android::view::ViewOverlay View::getOverlay()
 	{
 		return callObjectMethod(
 			"getOverlay",
@@ -2390,14 +2390,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getParent()
+	__JniBaseClass View::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/view/ViewParent;"
 		);
 	}
-	QAndroidJniObject View::getParentForAccessibility()
+	__JniBaseClass View::getParentForAccessibility()
 	{
 		return callObjectMethod(
 			"getParentForAccessibility",
@@ -2418,14 +2418,14 @@ namespace android::view
 			"()F"
 		);
 	}
-	QAndroidJniObject View::getPointerIcon()
+	android::view::PointerIcon View::getPointerIcon()
 	{
 		return callObjectMethod(
 			"getPointerIcon",
 			"()Landroid/view/PointerIcon;"
 		);
 	}
-	QAndroidJniObject View::getResources()
+	android::content::res::Resources View::getResources()
 	{
 		return callObjectMethod(
 			"getResources",
@@ -2446,14 +2446,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getRootView()
+	android::view::View View::getRootView()
 	{
 		return callObjectMethod(
 			"getRootView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject View::getRootWindowInsets()
+	android::view::WindowInsets View::getRootWindowInsets()
 	{
 		return callObjectMethod(
 			"getRootWindowInsets",
@@ -2558,14 +2558,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getStateListAnimator()
+	android::animation::StateListAnimator View::getStateListAnimator()
 	{
 		return callObjectMethod(
 			"getStateListAnimator",
 			"()Landroid/animation/StateListAnimator;"
 		);
 	}
-	QAndroidJniObject View::getSystemGestureExclusionRects()
+	__JniBaseClass View::getSystemGestureExclusionRects()
 	{
 		return callObjectMethod(
 			"getSystemGestureExclusionRects",
@@ -2622,14 +2622,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getTouchDelegate()
+	android::view::TouchDelegate View::getTouchDelegate()
 	{
 		return callObjectMethod(
 			"getTouchDelegate",
 			"()Landroid/view/TouchDelegate;"
 		);
 	}
-	QAndroidJniObject View::getTouchables()
+	java::util::ArrayList View::getTouchables()
 	{
 		return callObjectMethod(
 			"getTouchables",
@@ -2692,14 +2692,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getVerticalScrollbarThumbDrawable()
+	android::graphics::drawable::Drawable View::getVerticalScrollbarThumbDrawable()
 	{
 		return callObjectMethod(
 			"getVerticalScrollbarThumbDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject View::getVerticalScrollbarTrackDrawable()
+	android::graphics::drawable::Drawable View::getVerticalScrollbarTrackDrawable()
 	{
 		return callObjectMethod(
 			"getVerticalScrollbarTrackDrawable",
@@ -2713,7 +2713,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getViewTreeObserver()
+	android::view::ViewTreeObserver View::getViewTreeObserver()
 	{
 		return callObjectMethod(
 			"getViewTreeObserver",
@@ -2734,7 +2734,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getWindowId()
+	android::view::WindowId View::getWindowId()
 	{
 		return callObjectMethod(
 			"getWindowId",
@@ -2748,7 +2748,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject View::getWindowToken()
+	__JniBaseClass View::getWindowToken()
 	{
 		return callObjectMethod(
 			"getWindowToken",
@@ -3246,7 +3246,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	QAndroidJniObject View::keyboardNavigationClusterSearch(android::view::View arg0, jint arg1)
+	android::view::View View::keyboardNavigationClusterSearch(android::view::View arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"keyboardNavigationClusterSearch",
@@ -3291,7 +3291,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject View::onApplyWindowInsets(android::view::WindowInsets arg0)
+	android::view::WindowInsets View::onApplyWindowInsets(android::view::WindowInsets arg0)
 	{
 		return callObjectMethod(
 			"onApplyWindowInsets",
@@ -3321,7 +3321,7 @@ namespace android::view
 			"()Z"
 		);
 	}
-	QAndroidJniObject View::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	__JniBaseClass View::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -3505,7 +3505,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject View::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon View::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -3870,7 +3870,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject View::requireViewById(jint arg0)
+	android::view::View View::requireViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"requireViewById",
@@ -5185,7 +5185,7 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject View::startActionMode(__JniBaseClass arg0)
+	android::view::ActionMode View::startActionMode(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"startActionMode",
@@ -5193,7 +5193,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject View::startActionMode(__JniBaseClass arg0, jint arg1)
+	android::view::ActionMode View::startActionMode(__JniBaseClass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"startActionMode",

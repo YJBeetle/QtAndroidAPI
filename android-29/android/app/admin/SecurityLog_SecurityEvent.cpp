@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	QAndroidJniObject SecurityLog_SecurityEvent::CREATOR()
+	__JniBaseClass SecurityLog_SecurityEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.SecurityLog$SecurityEvent",

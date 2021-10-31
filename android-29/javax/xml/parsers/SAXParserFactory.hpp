@@ -29,18 +29,18 @@ namespace javax::xml::parsers
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newDefaultInstance();
-		static QAndroidJniObject newDefaultNSInstance();
-		static QAndroidJniObject newInstance();
-		static QAndroidJniObject newInstance(jstring arg0, java::lang::ClassLoader arg1);
-		static QAndroidJniObject newNSInstance();
-		static QAndroidJniObject newNSInstance(jstring arg0, java::lang::ClassLoader arg1);
+		static javax::xml::parsers::SAXParserFactory newDefaultInstance();
+		static javax::xml::parsers::SAXParserFactory newDefaultNSInstance();
+		static javax::xml::parsers::SAXParserFactory newInstance();
+		static javax::xml::parsers::SAXParserFactory newInstance(jstring arg0, java::lang::ClassLoader arg1);
+		static javax::xml::parsers::SAXParserFactory newNSInstance();
+		static javax::xml::parsers::SAXParserFactory newNSInstance(jstring arg0, java::lang::ClassLoader arg1);
 		jboolean getFeature(jstring arg0);
-		QAndroidJniObject getSchema();
+		javax::xml::validation::Schema getSchema();
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		jboolean isXIncludeAware();
-		QAndroidJniObject newSAXParser();
+		javax::xml::parsers::SAXParser newSAXParser();
 		void setFeature(jstring arg0, jboolean arg1);
 		void setNamespaceAware(jboolean arg0);
 		void setSchema(javax::xml::validation::Schema arg0);

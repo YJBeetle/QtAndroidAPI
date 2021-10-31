@@ -17,7 +17,7 @@ namespace android::telecom
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint ROUTE_BLUETOOTH();
 		static jint ROUTE_EARPIECE();
 		static jint ROUTE_SPEAKER();
@@ -35,9 +35,9 @@ namespace android::telecom
 		static jstring audioRouteToString(jint arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getActiveBluetoothDevice();
+		android::bluetooth::BluetoothDevice getActiveBluetoothDevice();
 		jint getRoute();
-		QAndroidJniObject getSupportedBluetoothDevices();
+		__JniBaseClass getSupportedBluetoothDevices();
 		jint getSupportedRouteMask();
 		jboolean isMuted();
 		jstring toString();

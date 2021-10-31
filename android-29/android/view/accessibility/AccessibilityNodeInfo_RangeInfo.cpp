@@ -31,7 +31,7 @@ namespace android::view::accessibility
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AccessibilityNodeInfo_RangeInfo::obtain(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	android::view::accessibility::AccessibilityNodeInfo_RangeInfo AccessibilityNodeInfo_RangeInfo::obtain(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityNodeInfo$RangeInfo",

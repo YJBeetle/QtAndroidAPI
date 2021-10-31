@@ -13,7 +13,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint PRIORITY_HIGH();
 		static jint PRIORITY_LOW();
 		static jint PRIORITY_MED();
@@ -28,8 +28,8 @@ namespace android::telephony
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getBands();
-		QAndroidJniObject getMccMncs();
+		__JniBaseClass getBands();
+		__JniBaseClass getMccMncs();
 		jint getPriority();
 		jint getSubId();
 		jint hashCode();

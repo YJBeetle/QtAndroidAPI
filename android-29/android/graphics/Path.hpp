@@ -60,7 +60,7 @@ namespace android::graphics
 		void close();
 		void computeBounds(android::graphics::RectF arg0, jboolean arg1);
 		void cubicTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5);
-		QAndroidJniObject getFillType();
+		android::graphics::Path_FillType getFillType();
 		void incReserve(jint arg0);
 		jboolean isConvex();
 		jboolean isEmpty();

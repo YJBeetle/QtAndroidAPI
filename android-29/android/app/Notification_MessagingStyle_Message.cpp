@@ -36,14 +36,14 @@ namespace android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Notification_MessagingStyle_Message::getDataUri()
+	android::net::Uri Notification_MessagingStyle_Message::getDataUri()
 	{
 		return callObjectMethod(
 			"getDataUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Notification_MessagingStyle_Message::getExtras()
+	android::os::Bundle Notification_MessagingStyle_Message::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -57,7 +57,7 @@ namespace android::app
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Notification_MessagingStyle_Message::getSenderPerson()
+	android::app::Person Notification_MessagingStyle_Message::getSenderPerson()
 	{
 		return callObjectMethod(
 			"getSenderPerson",
@@ -78,7 +78,7 @@ namespace android::app
 			"()J"
 		);
 	}
-	QAndroidJniObject Notification_MessagingStyle_Message::setData(jstring arg0, android::net::Uri arg1)
+	android::app::Notification_MessagingStyle_Message Notification_MessagingStyle_Message::setData(jstring arg0, android::net::Uri arg1)
 	{
 		return callObjectMethod(
 			"setData",

@@ -26,7 +26,7 @@ namespace android::app
 		LauncherActivity_IconResizer(android::app::LauncherActivity arg0);
 		
 		// Methods
-		QAndroidJniObject createIconThumbnail(android::graphics::drawable::Drawable arg0);
+		android::graphics::drawable::Drawable createIconThumbnail(android::graphics::drawable::Drawable arg0);
 	};
 } // namespace android::app
 

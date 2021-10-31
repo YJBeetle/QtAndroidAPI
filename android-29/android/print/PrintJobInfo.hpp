@@ -25,7 +25,7 @@ namespace android::print
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint STATE_BLOCKED();
 		static jint STATE_CANCELED();
 		static jint STATE_COMPLETED();
@@ -44,13 +44,13 @@ namespace android::print
 		jint describeContents();
 		jint getAdvancedIntOption(jstring arg0);
 		jstring getAdvancedStringOption(jstring arg0);
-		QAndroidJniObject getAttributes();
+		android::print::PrintAttributes getAttributes();
 		jint getCopies();
 		jlong getCreationTime();
-		QAndroidJniObject getId();
+		android::print::PrintJobId getId();
 		jstring getLabel();
 		jarray getPages();
-		QAndroidJniObject getPrinterId();
+		android::print::PrinterId getPrinterId();
 		jint getState();
 		jboolean hasAdvancedOption(jstring arg0);
 		jstring toString();

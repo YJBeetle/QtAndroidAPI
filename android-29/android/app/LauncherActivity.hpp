@@ -43,7 +43,7 @@ namespace android::app
 		LauncherActivity();
 		
 		// Methods
-		QAndroidJniObject makeListItems();
+		__JniBaseClass makeListItems();
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
 	};

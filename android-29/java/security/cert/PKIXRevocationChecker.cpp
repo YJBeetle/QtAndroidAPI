@@ -12,49 +12,49 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PKIXRevocationChecker::clone()
+	java::security::cert::PKIXRevocationChecker PKIXRevocationChecker::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/security/cert/PKIXRevocationChecker;"
 		);
 	}
-	QAndroidJniObject PKIXRevocationChecker::getOcspExtensions()
+	__JniBaseClass PKIXRevocationChecker::getOcspExtensions()
 	{
 		return callObjectMethod(
 			"getOcspExtensions",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PKIXRevocationChecker::getOcspResponder()
+	java::net::URI PKIXRevocationChecker::getOcspResponder()
 	{
 		return callObjectMethod(
 			"getOcspResponder",
 			"()Ljava/net/URI;"
 		);
 	}
-	QAndroidJniObject PKIXRevocationChecker::getOcspResponderCert()
+	java::security::cert::X509Certificate PKIXRevocationChecker::getOcspResponderCert()
 	{
 		return callObjectMethod(
 			"getOcspResponderCert",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	QAndroidJniObject PKIXRevocationChecker::getOcspResponses()
+	__JniBaseClass PKIXRevocationChecker::getOcspResponses()
 	{
 		return callObjectMethod(
 			"getOcspResponses",
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject PKIXRevocationChecker::getOptions()
+	__JniBaseClass PKIXRevocationChecker::getOptions()
 	{
 		return callObjectMethod(
 			"getOptions",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject PKIXRevocationChecker::getSoftFailExceptions()
+	__JniBaseClass PKIXRevocationChecker::getSoftFailExceptions()
 	{
 		return callObjectMethod(
 			"getSoftFailExceptions",

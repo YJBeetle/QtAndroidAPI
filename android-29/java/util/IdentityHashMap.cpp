@@ -59,7 +59,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject IdentityHashMap::entrySet()
+	__JniBaseClass IdentityHashMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -104,7 +104,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject IdentityHashMap::keySet()
+	__JniBaseClass IdentityHashMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -151,7 +151,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject IdentityHashMap::values()
+	__JniBaseClass IdentityHashMap::values()
 	{
 		return callObjectMethod(
 			"values",

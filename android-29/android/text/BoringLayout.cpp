@@ -46,7 +46,7 @@ namespace android::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject BoringLayout::isBoring(jstring arg0, android::text::TextPaint arg1)
+	android::text::BoringLayout_Metrics BoringLayout::isBoring(jstring arg0, android::text::TextPaint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.BoringLayout",
@@ -56,7 +56,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject BoringLayout::isBoring(jstring arg0, android::text::TextPaint arg1, android::text::BoringLayout_Metrics arg2)
+	android::text::BoringLayout_Metrics BoringLayout::isBoring(jstring arg0, android::text::TextPaint arg1, android::text::BoringLayout_Metrics arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.BoringLayout",
@@ -67,7 +67,7 @@ namespace android::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject BoringLayout::make(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
+	android::text::BoringLayout BoringLayout::make(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.BoringLayout",
@@ -83,7 +83,7 @@ namespace android::text
 			arg7
 		);
 	}
-	QAndroidJniObject BoringLayout::make(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
+	android::text::BoringLayout BoringLayout::make(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.BoringLayout",
@@ -181,7 +181,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject BoringLayout::getLineDirections(jint arg0)
+	android::text::Layout_Directions BoringLayout::getLineDirections(jint arg0)
 	{
 		return callObjectMethod(
 			"getLineDirections",
@@ -236,7 +236,7 @@ namespace android::text
 			"()I"
 		);
 	}
-	QAndroidJniObject BoringLayout::replaceOrMake(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
+	android::text::BoringLayout BoringLayout::replaceOrMake(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
 	{
 		return callObjectMethod(
 			"replaceOrMake",
@@ -251,7 +251,7 @@ namespace android::text
 			arg7
 		);
 	}
-	QAndroidJniObject BoringLayout::replaceOrMake(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
+	android::text::BoringLayout BoringLayout::replaceOrMake(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
 	{
 		return callObjectMethod(
 			"replaceOrMake",

@@ -34,7 +34,7 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static android::net::DnsResolver getInstance();
 		void query(android::net::Network arg0, jstring arg1, jint arg2, __JniBaseClass arg3, android::os::CancellationSignal arg4, __JniBaseClass arg5);
 		void query(android::net::Network arg0, jstring arg1, jint arg2, jint arg3, __JniBaseClass arg4, android::os::CancellationSignal arg5, __JniBaseClass arg6);
 		void rawQuery(android::net::Network arg0, jbyteArray arg1, jint arg2, __JniBaseClass arg3, android::os::CancellationSignal arg4, __JniBaseClass arg5);

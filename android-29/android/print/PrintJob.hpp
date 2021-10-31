@@ -31,8 +31,8 @@ namespace android::print
 		// Methods
 		void cancel();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getId();
-		QAndroidJniObject getInfo();
+		android::print::PrintJobId getId();
+		android::print::PrintJobInfo getInfo();
 		jint hashCode();
 		jboolean isBlocked();
 		jboolean isCancelled();

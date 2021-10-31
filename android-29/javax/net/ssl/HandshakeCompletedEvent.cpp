@@ -32,7 +32,7 @@ namespace javax::net::ssl
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
-	QAndroidJniObject HandshakeCompletedEvent::getLocalPrincipal()
+	__JniBaseClass HandshakeCompletedEvent::getLocalPrincipal()
 	{
 		return callObjectMethod(
 			"getLocalPrincipal",
@@ -53,21 +53,21 @@ namespace javax::net::ssl
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
-	QAndroidJniObject HandshakeCompletedEvent::getPeerPrincipal()
+	__JniBaseClass HandshakeCompletedEvent::getPeerPrincipal()
 	{
 		return callObjectMethod(
 			"getPeerPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	QAndroidJniObject HandshakeCompletedEvent::getSession()
+	__JniBaseClass HandshakeCompletedEvent::getSession()
 	{
 		return callObjectMethod(
 			"getSession",
 			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
-	QAndroidJniObject HandshakeCompletedEvent::getSocket()
+	javax::net::ssl::SSLSocket HandshakeCompletedEvent::getSocket()
 	{
 		return callObjectMethod(
 			"getSocket",

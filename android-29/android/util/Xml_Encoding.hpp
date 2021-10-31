@@ -10,10 +10,10 @@ namespace android::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ISO_8859_1();
-		static QAndroidJniObject US_ASCII();
-		static QAndroidJniObject UTF_16();
-		static QAndroidJniObject UTF_8();
+		static android::util::Xml_Encoding ISO_8859_1();
+		static android::util::Xml_Encoding US_ASCII();
+		static android::util::Xml_Encoding UTF_16();
+		static android::util::Xml_Encoding UTF_8();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Xml_Encoding(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::util::Xml_Encoding valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::util

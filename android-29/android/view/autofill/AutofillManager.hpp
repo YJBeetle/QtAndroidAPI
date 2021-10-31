@@ -51,11 +51,11 @@ namespace android::view::autofill
 		void cancel();
 		void commit();
 		void disableAutofillServices();
-		QAndroidJniObject getAutofillServiceComponentName();
-		QAndroidJniObject getAvailableFieldClassificationAlgorithms();
+		android::content::ComponentName getAutofillServiceComponentName();
+		__JniBaseClass getAvailableFieldClassificationAlgorithms();
 		jstring getDefaultFieldClassificationAlgorithm();
-		QAndroidJniObject getNextAutofillId();
-		QAndroidJniObject getUserData();
+		android::view::autofill::AutofillId getNextAutofillId();
+		android::service::autofill::UserData getUserData();
 		jstring getUserDataId();
 		jboolean hasEnabledAutofillServices();
 		jboolean isAutofillSupported();

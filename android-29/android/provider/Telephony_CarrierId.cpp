@@ -20,7 +20,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_CarrierId::CONTENT_URI()
+	android::net::Uri Telephony_CarrierId::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$CarrierId",
@@ -51,7 +51,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Telephony_CarrierId::getSpecificCarrierIdUriForSubscriptionId(jint arg0)
+	android::net::Uri Telephony_CarrierId::getSpecificCarrierIdUriForSubscriptionId(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Telephony$CarrierId",
@@ -60,7 +60,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject Telephony_CarrierId::getUriForSubscriptionId(jint arg0)
+	android::net::Uri Telephony_CarrierId::getUriForSubscriptionId(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Telephony$CarrierId",

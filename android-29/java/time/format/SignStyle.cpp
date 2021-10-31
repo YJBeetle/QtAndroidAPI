@@ -3,7 +3,7 @@
 namespace java::time::format
 {
 	// Fields
-	QAndroidJniObject SignStyle::ALWAYS()
+	java::time::format::SignStyle SignStyle::ALWAYS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.SignStyle",
@@ -11,7 +11,7 @@ namespace java::time::format
 			"Ljava/time/format/SignStyle;"
 		);
 	}
-	QAndroidJniObject SignStyle::EXCEEDS_PAD()
+	java::time::format::SignStyle SignStyle::EXCEEDS_PAD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.SignStyle",
@@ -19,7 +19,7 @@ namespace java::time::format
 			"Ljava/time/format/SignStyle;"
 		);
 	}
-	QAndroidJniObject SignStyle::NEVER()
+	java::time::format::SignStyle SignStyle::NEVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.SignStyle",
@@ -27,7 +27,7 @@ namespace java::time::format
 			"Ljava/time/format/SignStyle;"
 		);
 	}
-	QAndroidJniObject SignStyle::NORMAL()
+	java::time::format::SignStyle SignStyle::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.SignStyle",
@@ -35,7 +35,7 @@ namespace java::time::format
 			"Ljava/time/format/SignStyle;"
 		);
 	}
-	QAndroidJniObject SignStyle::NOT_NEGATIVE()
+	java::time::format::SignStyle SignStyle::NOT_NEGATIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.SignStyle",
@@ -50,7 +50,7 @@ namespace java::time::format
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SignStyle::valueOf(jstring arg0)
+	java::time::format::SignStyle SignStyle::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.SignStyle",

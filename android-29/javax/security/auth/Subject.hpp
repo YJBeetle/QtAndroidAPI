@@ -37,14 +37,14 @@ namespace javax::security::auth
 		// Methods
 		static jobject doAs(javax::security::auth::Subject arg0, __JniBaseClass arg1);
 		static jobject doAsPrivileged(javax::security::auth::Subject arg0, __JniBaseClass arg1, java::security::AccessControlContext arg2);
-		static QAndroidJniObject getSubject(java::security::AccessControlContext arg0);
+		static javax::security::auth::Subject getSubject(java::security::AccessControlContext arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getPrincipals();
-		QAndroidJniObject getPrincipals(jclass arg0);
-		QAndroidJniObject getPrivateCredentials();
-		QAndroidJniObject getPrivateCredentials(jclass arg0);
-		QAndroidJniObject getPublicCredentials();
-		QAndroidJniObject getPublicCredentials(jclass arg0);
+		__JniBaseClass getPrincipals();
+		__JniBaseClass getPrincipals(jclass arg0);
+		__JniBaseClass getPrivateCredentials();
+		__JniBaseClass getPrivateCredentials(jclass arg0);
+		__JniBaseClass getPublicCredentials();
+		__JniBaseClass getPublicCredentials(jclass arg0);
 		jint hashCode();
 		jboolean isReadOnly();
 		void setReadOnly();

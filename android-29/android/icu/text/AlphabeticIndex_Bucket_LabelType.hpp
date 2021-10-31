@@ -10,10 +10,10 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject INFLOW();
-		static QAndroidJniObject NORMAL();
-		static QAndroidJniObject OVERFLOW();
-		static QAndroidJniObject UNDERFLOW();
+		static android::icu::text::AlphabeticIndex_Bucket_LabelType INFLOW();
+		static android::icu::text::AlphabeticIndex_Bucket_LabelType NORMAL();
+		static android::icu::text::AlphabeticIndex_Bucket_LabelType OVERFLOW();
+		static android::icu::text::AlphabeticIndex_Bucket_LabelType UNDERFLOW();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlphabeticIndex_Bucket_LabelType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::AlphabeticIndex_Bucket_LabelType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

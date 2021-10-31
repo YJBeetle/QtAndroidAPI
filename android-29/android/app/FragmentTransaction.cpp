@@ -66,7 +66,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject FragmentTransaction::add(android::app::Fragment arg0, jstring arg1)
+	android::app::FragmentTransaction FragmentTransaction::add(android::app::Fragment arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"add",
@@ -75,7 +75,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject FragmentTransaction::add(jint arg0, android::app::Fragment arg1)
+	android::app::FragmentTransaction FragmentTransaction::add(jint arg0, android::app::Fragment arg1)
 	{
 		return callObjectMethod(
 			"add",
@@ -84,7 +84,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject FragmentTransaction::add(jint arg0, android::app::Fragment arg1, jstring arg2)
+	android::app::FragmentTransaction FragmentTransaction::add(jint arg0, android::app::Fragment arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"add",
@@ -94,7 +94,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject FragmentTransaction::addSharedElement(android::view::View arg0, jstring arg1)
+	android::app::FragmentTransaction FragmentTransaction::addSharedElement(android::view::View arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"addSharedElement",
@@ -103,7 +103,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject FragmentTransaction::addToBackStack(jstring arg0)
+	android::app::FragmentTransaction FragmentTransaction::addToBackStack(jstring arg0)
 	{
 		return callObjectMethod(
 			"addToBackStack",
@@ -111,7 +111,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentTransaction::attach(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::attach(android::app::Fragment arg0)
 	{
 		return callObjectMethod(
 			"attach",
@@ -147,7 +147,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject FragmentTransaction::detach(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::detach(android::app::Fragment arg0)
 	{
 		return callObjectMethod(
 			"detach",
@@ -155,14 +155,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FragmentTransaction::disallowAddToBackStack()
+	android::app::FragmentTransaction FragmentTransaction::disallowAddToBackStack()
 	{
 		return callObjectMethod(
 			"disallowAddToBackStack",
 			"()Landroid/app/FragmentTransaction;"
 		);
 	}
-	QAndroidJniObject FragmentTransaction::hide(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::hide(android::app::Fragment arg0)
 	{
 		return callObjectMethod(
 			"hide",
@@ -184,7 +184,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject FragmentTransaction::remove(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::remove(android::app::Fragment arg0)
 	{
 		return callObjectMethod(
 			"remove",
@@ -192,7 +192,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FragmentTransaction::replace(jint arg0, android::app::Fragment arg1)
+	android::app::FragmentTransaction FragmentTransaction::replace(jint arg0, android::app::Fragment arg1)
 	{
 		return callObjectMethod(
 			"replace",
@@ -201,7 +201,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject FragmentTransaction::replace(jint arg0, android::app::Fragment arg1, jstring arg2)
+	android::app::FragmentTransaction FragmentTransaction::replace(jint arg0, android::app::Fragment arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"replace",
@@ -211,7 +211,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject FragmentTransaction::runOnCommit(__JniBaseClass arg0)
+	android::app::FragmentTransaction FragmentTransaction::runOnCommit(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"runOnCommit",
@@ -219,7 +219,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setBreadCrumbShortTitle(jint arg0)
+	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbShortTitle(jint arg0)
 	{
 		return callObjectMethod(
 			"setBreadCrumbShortTitle",
@@ -227,7 +227,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setBreadCrumbShortTitle(jstring arg0)
+	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbShortTitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setBreadCrumbShortTitle",
@@ -235,7 +235,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setBreadCrumbTitle(jint arg0)
+	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbTitle(jint arg0)
 	{
 		return callObjectMethod(
 			"setBreadCrumbTitle",
@@ -243,7 +243,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setBreadCrumbTitle(jstring arg0)
+	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbTitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setBreadCrumbTitle",
@@ -251,7 +251,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setCustomAnimations(jint arg0, jint arg1)
+	android::app::FragmentTransaction FragmentTransaction::setCustomAnimations(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setCustomAnimations",
@@ -260,7 +260,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setCustomAnimations(jint arg0, jint arg1, jint arg2, jint arg3)
+	android::app::FragmentTransaction FragmentTransaction::setCustomAnimations(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"setCustomAnimations",
@@ -271,7 +271,7 @@ namespace android::app
 			arg3
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setPrimaryNavigationFragment(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::setPrimaryNavigationFragment(android::app::Fragment arg0)
 	{
 		return callObjectMethod(
 			"setPrimaryNavigationFragment",
@@ -279,7 +279,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setReorderingAllowed(jboolean arg0)
+	android::app::FragmentTransaction FragmentTransaction::setReorderingAllowed(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setReorderingAllowed",
@@ -287,7 +287,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setTransition(jint arg0)
+	android::app::FragmentTransaction FragmentTransaction::setTransition(jint arg0)
 	{
 		return callObjectMethod(
 			"setTransition",
@@ -295,7 +295,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setTransitionStyle(jint arg0)
+	android::app::FragmentTransaction FragmentTransaction::setTransitionStyle(jint arg0)
 	{
 		return callObjectMethod(
 			"setTransitionStyle",
@@ -303,7 +303,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentTransaction::show(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::show(android::app::Fragment arg0)
 	{
 		return callObjectMethod(
 			"show",

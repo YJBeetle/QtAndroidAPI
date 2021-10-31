@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject DateFormat_BooleanAttribute::PARSE_ALLOW_NUMERIC()
+	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_ALLOW_NUMERIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$BooleanAttribute",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$BooleanAttribute;"
 		);
 	}
-	QAndroidJniObject DateFormat_BooleanAttribute::PARSE_ALLOW_WHITESPACE()
+	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_ALLOW_WHITESPACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$BooleanAttribute",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$BooleanAttribute;"
 		);
 	}
-	QAndroidJniObject DateFormat_BooleanAttribute::PARSE_MULTIPLE_PATTERNS_FOR_MATCH()
+	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_MULTIPLE_PATTERNS_FOR_MATCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$BooleanAttribute",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/DateFormat$BooleanAttribute;"
 		);
 	}
-	QAndroidJniObject DateFormat_BooleanAttribute::PARSE_PARTIAL_LITERAL_MATCH()
+	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::PARSE_PARTIAL_LITERAL_MATCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$BooleanAttribute",
@@ -42,7 +42,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DateFormat_BooleanAttribute::valueOf(jstring arg0)
+	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateFormat$BooleanAttribute",

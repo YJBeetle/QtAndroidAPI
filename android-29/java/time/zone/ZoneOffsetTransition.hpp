@@ -37,16 +37,16 @@ namespace java::time::zone
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject of(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2);
+		static java::time::zone::ZoneOffsetTransition of(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2);
 		jint compareTo(jobject arg0);
 		jint compareTo(java::time::zone::ZoneOffsetTransition arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getDateTimeAfter();
-		QAndroidJniObject getDateTimeBefore();
-		QAndroidJniObject getDuration();
-		QAndroidJniObject getInstant();
-		QAndroidJniObject getOffsetAfter();
-		QAndroidJniObject getOffsetBefore();
+		java::time::LocalDateTime getDateTimeAfter();
+		java::time::LocalDateTime getDateTimeBefore();
+		java::time::Duration getDuration();
+		java::time::Instant getInstant();
+		java::time::ZoneOffset getOffsetAfter();
+		java::time::ZoneOffset getOffsetBefore();
 		jint hashCode();
 		jboolean isGap();
 		jboolean isOverlap();

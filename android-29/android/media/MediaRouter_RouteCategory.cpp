@@ -26,7 +26,7 @@ namespace android::media
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaRouter_RouteCategory::getRoutes(__JniBaseClass arg0)
+	__JniBaseClass MediaRouter_RouteCategory::getRoutes(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"getRoutes",

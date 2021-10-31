@@ -11,7 +11,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MediaPlayer_DrmInfo::getPssh()
+	__JniBaseClass MediaPlayer_DrmInfo::getPssh()
 	{
 		return callObjectMethod(
 			"getPssh",

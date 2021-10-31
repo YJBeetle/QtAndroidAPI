@@ -94,7 +94,7 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject DropBoxManager::getNextEntry(jstring arg0, jlong arg1)
+	android::os::DropBoxManager_Entry DropBoxManager::getNextEntry(jstring arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"getNextEntry",

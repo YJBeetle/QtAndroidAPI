@@ -14,7 +14,7 @@ namespace android::hardware
 	public:
 		// Fields
 		jint accuracy();
-		QAndroidJniObject sensor();
+		android::hardware::Sensor sensor();
 		jlong timestamp();
 		jfloatArray values();
 		

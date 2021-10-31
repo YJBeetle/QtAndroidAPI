@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject MessagePattern_Part_Type::ARG_DOUBLE()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_DOUBLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::ARG_INT()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_INT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::ARG_LIMIT()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_LIMIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::ARG_NAME()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::ARG_NUMBER()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_NUMBER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -43,7 +43,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::ARG_SELECTOR()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_SELECTOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -51,7 +51,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::ARG_START()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_START()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -59,7 +59,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::ARG_STYLE()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_STYLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -67,7 +67,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::ARG_TYPE()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -75,7 +75,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::INSERT_CHAR()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::INSERT_CHAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -83,7 +83,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::MSG_LIMIT()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::MSG_LIMIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -91,7 +91,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::MSG_START()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::MSG_START()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -99,7 +99,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::REPLACE_NUMBER()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::REPLACE_NUMBER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -107,7 +107,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part_Type::SKIP_SYNTAX()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::SKIP_SYNTAX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$Part$Type",
@@ -122,7 +122,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MessagePattern_Part_Type::valueOf(jstring arg0)
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MessagePattern$Part$Type",

@@ -21,9 +21,9 @@ namespace java::time::temporal
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ISO();
-		static QAndroidJniObject SUNDAY_START();
-		static QAndroidJniObject WEEK_BASED_YEARS();
+		static java::time::temporal::WeekFields ISO();
+		static java::time::temporal::WeekFields SUNDAY_START();
+		static __JniBaseClass WEEK_BASED_YEARS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WeekFields(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,18 +32,18 @@ namespace java::time::temporal
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject of(java::util::Locale arg0);
-		static QAndroidJniObject of(java::time::DayOfWeek arg0, jint arg1);
-		QAndroidJniObject dayOfWeek();
+		static java::time::temporal::WeekFields of(java::util::Locale arg0);
+		static java::time::temporal::WeekFields of(java::time::DayOfWeek arg0, jint arg1);
+		__JniBaseClass dayOfWeek();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getFirstDayOfWeek();
+		java::time::DayOfWeek getFirstDayOfWeek();
 		jint getMinimalDaysInFirstWeek();
 		jint hashCode();
 		jstring toString();
-		QAndroidJniObject weekBasedYear();
-		QAndroidJniObject weekOfMonth();
-		QAndroidJniObject weekOfWeekBasedYear();
-		QAndroidJniObject weekOfYear();
+		__JniBaseClass weekBasedYear();
+		__JniBaseClass weekOfMonth();
+		__JniBaseClass weekOfWeekBasedYear();
+		__JniBaseClass weekOfYear();
 	};
 } // namespace java::time::temporal
 

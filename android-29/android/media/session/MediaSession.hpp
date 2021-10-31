@@ -69,9 +69,9 @@ namespace android::media::session
 		MediaSession(android::content::Context arg0, jstring arg1, android::os::Bundle arg2);
 		
 		// Methods
-		QAndroidJniObject getController();
-		QAndroidJniObject getCurrentControllerInfo();
-		QAndroidJniObject getSessionToken();
+		android::media::session::MediaController getController();
+		android::media::session::MediaSessionManager_RemoteUserInfo getCurrentControllerInfo();
+		android::media::session::MediaSession_Token getSessionToken();
 		jboolean isActive();
 		void release();
 		void sendSessionEvent(jstring arg0, android::os::Bundle arg1);

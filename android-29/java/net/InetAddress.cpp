@@ -22,7 +22,7 @@ namespace java::net
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject InetAddress::getByAddress(jbyteArray arg0)
+	java::net::InetAddress InetAddress::getByAddress(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.InetAddress",
@@ -31,7 +31,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject InetAddress::getByAddress(jstring arg0, jbyteArray arg1)
+	java::net::InetAddress InetAddress::getByAddress(jstring arg0, jbyteArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.InetAddress",
@@ -41,7 +41,7 @@ namespace java::net
 			arg1
 		);
 	}
-	QAndroidJniObject InetAddress::getByName(jstring arg0)
+	java::net::InetAddress InetAddress::getByName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.InetAddress",
@@ -50,7 +50,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject InetAddress::getLocalHost()
+	java::net::InetAddress InetAddress::getLocalHost()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.InetAddress",
@@ -58,7 +58,7 @@ namespace java::net
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	QAndroidJniObject InetAddress::getLoopbackAddress()
+	java::net::InetAddress InetAddress::getLoopbackAddress()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.InetAddress",

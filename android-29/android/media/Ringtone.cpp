@@ -12,7 +12,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Ringtone::getAudioAttributes()
+	android::media::AudioAttributes Ringtone::getAudioAttributes()
 	{
 		return callObjectMethod(
 			"getAudioAttributes",

@@ -23,9 +23,9 @@ namespace java::security::spec
 		RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, __JniBaseClass arg2);
 		
 		// Methods
-		QAndroidJniObject getModulus();
-		QAndroidJniObject getParams();
-		QAndroidJniObject getPrivateExponent();
+		java::math::BigInteger getModulus();
+		__JniBaseClass getParams();
+		java::math::BigInteger getPrivateExponent();
 	};
 } // namespace java::security::spec
 

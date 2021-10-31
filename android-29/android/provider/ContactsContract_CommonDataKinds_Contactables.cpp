@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_CommonDataKinds_Contactables::CONTENT_FILTER_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_Contactables::CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
@@ -12,7 +12,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Contactables::CONTENT_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_Contactables::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",

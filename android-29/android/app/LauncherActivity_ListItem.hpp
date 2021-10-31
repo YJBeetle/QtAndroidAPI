@@ -22,11 +22,11 @@ namespace android::app
 	public:
 		// Fields
 		jstring className();
-		QAndroidJniObject extras();
-		QAndroidJniObject icon();
+		android::os::Bundle extras();
+		android::graphics::drawable::Drawable icon();
 		jstring label();
 		jstring packageName();
-		QAndroidJniObject resolveInfo();
+		android::content::pm::ResolveInfo resolveInfo();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LauncherActivity_ListItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

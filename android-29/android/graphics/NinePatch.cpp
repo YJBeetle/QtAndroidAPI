@@ -68,7 +68,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	QAndroidJniObject NinePatch::getBitmap()
+	android::graphics::Bitmap NinePatch::getBitmap()
 	{
 		return callObjectMethod(
 			"getBitmap",
@@ -96,14 +96,14 @@ namespace android::graphics
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject NinePatch::getPaint()
+	android::graphics::Paint NinePatch::getPaint()
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
 		);
 	}
-	QAndroidJniObject NinePatch::getTransparentRegion(android::graphics::Rect arg0)
+	android::graphics::Region NinePatch::getTransparentRegion(android::graphics::Rect arg0)
 	{
 		return callObjectMethod(
 			"getTransparentRegion",

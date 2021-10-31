@@ -326,7 +326,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaDrm::getCryptoSession(jbyteArray arg0, jstring arg1, jstring arg2)
+	android::media::MediaDrm_CryptoSession MediaDrm::getCryptoSession(jbyteArray arg0, jstring arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"getCryptoSession",
@@ -336,7 +336,7 @@ namespace android::media
 			arg2
 		);
 	}
-	QAndroidJniObject MediaDrm::getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, java::util::HashMap arg4)
+	android::media::MediaDrm_KeyRequest MediaDrm::getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, java::util::HashMap arg4)
 	{
 		return callObjectMethod(
 			"getKeyRequest",
@@ -362,14 +362,14 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaDrm::getMetrics()
+	android::os::PersistableBundle MediaDrm::getMetrics()
 	{
 		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	QAndroidJniObject MediaDrm::getOfflineLicenseKeySetIds()
+	__JniBaseClass MediaDrm::getOfflineLicenseKeySetIds()
 	{
 		return callObjectMethod(
 			"getOfflineLicenseKeySetIds",
@@ -407,7 +407,7 @@ namespace android::media
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaDrm::getProvisionRequest()
+	android::media::MediaDrm_ProvisionRequest MediaDrm::getProvisionRequest()
 	{
 		return callObjectMethod(
 			"getProvisionRequest",
@@ -422,14 +422,14 @@ namespace android::media
 			arg0
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject MediaDrm::getSecureStopIds()
+	__JniBaseClass MediaDrm::getSecureStopIds()
 	{
 		return callObjectMethod(
 			"getSecureStopIds",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject MediaDrm::getSecureStops()
+	__JniBaseClass MediaDrm::getSecureStops()
 	{
 		return callObjectMethod(
 			"getSecureStops",
@@ -476,7 +476,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaDrm::queryKeyStatus(jbyteArray arg0)
+	java::util::HashMap MediaDrm::queryKeyStatus(jbyteArray arg0)
 	{
 		return callObjectMethod(
 			"queryKeyStatus",

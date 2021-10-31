@@ -52,9 +52,9 @@ namespace java::util::prefs
 		jboolean isUserNode();
 		jarray keys();
 		jstring name();
-		QAndroidJniObject node(jstring arg0);
+		java::util::prefs::Preferences node(jstring arg0);
 		jboolean nodeExists(jstring arg0);
-		QAndroidJniObject parent();
+		java::util::prefs::Preferences parent();
 		void put(jstring arg0, jstring arg1);
 		void putBoolean(jstring arg0, jboolean arg1);
 		void putByteArray(jstring arg0, jbyteArray arg1);

@@ -21,7 +21,7 @@ namespace android::hardware::camera2::params
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint SURFACE_GROUP_ID_NONE();
 		
 		// QAndroidJniObject forward
@@ -39,9 +39,9 @@ namespace android::hardware::camera2::params
 		void enableSurfaceSharing();
 		jboolean equals(jobject arg0);
 		jint getMaxSharedSurfaceCount();
-		QAndroidJniObject getSurface();
+		android::view::Surface getSurface();
 		jint getSurfaceGroupId();
-		QAndroidJniObject getSurfaces();
+		__JniBaseClass getSurfaces();
 		jint hashCode();
 		void removeSurface(android::view::Surface arg0);
 		void setPhysicalCameraId(jstring arg0);

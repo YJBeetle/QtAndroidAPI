@@ -5,7 +5,7 @@
 namespace java::math
 {
 	// Fields
-	QAndroidJniObject MathContext::DECIMAL128()
+	java::math::MathContext MathContext::DECIMAL128()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.MathContext",
@@ -13,7 +13,7 @@ namespace java::math
 			"Ljava/math/MathContext;"
 		);
 	}
-	QAndroidJniObject MathContext::DECIMAL32()
+	java::math::MathContext MathContext::DECIMAL32()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.MathContext",
@@ -21,7 +21,7 @@ namespace java::math
 			"Ljava/math/MathContext;"
 		);
 	}
-	QAndroidJniObject MathContext::DECIMAL64()
+	java::math::MathContext MathContext::DECIMAL64()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.MathContext",
@@ -29,7 +29,7 @@ namespace java::math
 			"Ljava/math/MathContext;"
 		);
 	}
-	QAndroidJniObject MathContext::UNLIMITED()
+	java::math::MathContext MathContext::UNLIMITED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.MathContext",
@@ -78,7 +78,7 @@ namespace java::math
 			"()I"
 		);
 	}
-	QAndroidJniObject MathContext::getRoundingMode()
+	java::math::RoundingMode MathContext::getRoundingMode()
 	{
 		return callObjectMethod(
 			"getRoundingMode",

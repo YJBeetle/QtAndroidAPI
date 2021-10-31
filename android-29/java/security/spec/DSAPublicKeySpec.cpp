@@ -20,28 +20,28 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	QAndroidJniObject DSAPublicKeySpec::getG()
+	java::math::BigInteger DSAPublicKeySpec::getG()
 	{
 		return callObjectMethod(
 			"getG",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject DSAPublicKeySpec::getP()
+	java::math::BigInteger DSAPublicKeySpec::getP()
 	{
 		return callObjectMethod(
 			"getP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject DSAPublicKeySpec::getQ()
+	java::math::BigInteger DSAPublicKeySpec::getQ()
 	{
 		return callObjectMethod(
 			"getQ",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject DSAPublicKeySpec::getY()
+	java::math::BigInteger DSAPublicKeySpec::getY()
 	{
 		return callObjectMethod(
 			"getY",

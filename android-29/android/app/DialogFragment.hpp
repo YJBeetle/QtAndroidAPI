@@ -58,7 +58,7 @@ namespace android::app
 		void dismiss();
 		void dismissAllowingStateLoss();
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		QAndroidJniObject getDialog();
+		android::app::Dialog getDialog();
 		jboolean getShowsDialog();
 		jint getTheme();
 		jboolean isCancelable();
@@ -66,11 +66,11 @@ namespace android::app
 		void onAttach(android::content::Context arg0);
 		void onCancel(__JniBaseClass arg0);
 		void onCreate(android::os::Bundle arg0);
-		QAndroidJniObject onCreateDialog(android::os::Bundle arg0);
+		android::app::Dialog onCreateDialog(android::os::Bundle arg0);
 		void onDestroyView();
 		void onDetach();
 		void onDismiss(__JniBaseClass arg0);
-		QAndroidJniObject onGetLayoutInflater(android::os::Bundle arg0);
+		android::view::LayoutInflater onGetLayoutInflater(android::os::Bundle arg0);
 		void onSaveInstanceState(android::os::Bundle arg0);
 		void onStart();
 		void onStop();

@@ -11,7 +11,7 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PosixFilePermissions::asFileAttribute(__JniBaseClass arg0)
+	__JniBaseClass PosixFilePermissions::asFileAttribute(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.attribute.PosixFilePermissions",
@@ -20,7 +20,7 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PosixFilePermissions::fromString(jstring arg0)
+	__JniBaseClass PosixFilePermissions::fromString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.attribute.PosixFilePermissions",

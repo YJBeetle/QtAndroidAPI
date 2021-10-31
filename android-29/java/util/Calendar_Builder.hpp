@@ -34,20 +34,20 @@ namespace java::util
 		Calendar_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject set(jint arg0, jint arg1);
-		QAndroidJniObject setCalendarType(jstring arg0);
-		QAndroidJniObject setDate(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject setFields(jintArray arg0);
-		QAndroidJniObject setInstant(java::util::Date arg0);
-		QAndroidJniObject setInstant(jlong arg0);
-		QAndroidJniObject setLenient(jboolean arg0);
-		QAndroidJniObject setLocale(java::util::Locale arg0);
-		QAndroidJniObject setTimeOfDay(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject setTimeOfDay(jint arg0, jint arg1, jint arg2, jint arg3);
-		QAndroidJniObject setTimeZone(java::util::TimeZone arg0);
-		QAndroidJniObject setWeekDate(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject setWeekDefinition(jint arg0, jint arg1);
+		java::util::Calendar build();
+		java::util::Calendar_Builder set(jint arg0, jint arg1);
+		java::util::Calendar_Builder setCalendarType(jstring arg0);
+		java::util::Calendar_Builder setDate(jint arg0, jint arg1, jint arg2);
+		java::util::Calendar_Builder setFields(jintArray arg0);
+		java::util::Calendar_Builder setInstant(java::util::Date arg0);
+		java::util::Calendar_Builder setInstant(jlong arg0);
+		java::util::Calendar_Builder setLenient(jboolean arg0);
+		java::util::Calendar_Builder setLocale(java::util::Locale arg0);
+		java::util::Calendar_Builder setTimeOfDay(jint arg0, jint arg1, jint arg2);
+		java::util::Calendar_Builder setTimeOfDay(jint arg0, jint arg1, jint arg2, jint arg3);
+		java::util::Calendar_Builder setTimeZone(java::util::TimeZone arg0);
+		java::util::Calendar_Builder setWeekDate(jint arg0, jint arg1, jint arg2);
+		java::util::Calendar_Builder setWeekDefinition(jint arg0, jint arg1);
 	};
 } // namespace java::util
 

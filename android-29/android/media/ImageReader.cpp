@@ -13,7 +13,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ImageReader::newInstance(jint arg0, jint arg1, jint arg2, jint arg3)
+	android::media::ImageReader ImageReader::newInstance(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ImageReader",
@@ -25,7 +25,7 @@ namespace android::media
 			arg3
 		);
 	}
-	QAndroidJniObject ImageReader::newInstance(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4)
+	android::media::ImageReader ImageReader::newInstance(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ImageReader",
@@ -38,14 +38,14 @@ namespace android::media
 			arg4
 		);
 	}
-	QAndroidJniObject ImageReader::acquireLatestImage()
+	android::media::Image ImageReader::acquireLatestImage()
 	{
 		return callObjectMethod(
 			"acquireLatestImage",
 			"()Landroid/media/Image;"
 		);
 	}
-	QAndroidJniObject ImageReader::acquireNextImage()
+	android::media::Image ImageReader::acquireNextImage()
 	{
 		return callObjectMethod(
 			"acquireNextImage",
@@ -87,7 +87,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject ImageReader::getSurface()
+	android::view::Surface ImageReader::getSurface()
 	{
 		return callObjectMethod(
 			"getSurface",

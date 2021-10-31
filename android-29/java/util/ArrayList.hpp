@@ -44,10 +44,10 @@ namespace java::util
 		jint hashCode();
 		jint indexOf(jobject arg0);
 		jboolean isEmpty();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jint lastIndexOf(jobject arg0);
-		QAndroidJniObject listIterator();
-		QAndroidJniObject listIterator(jint arg0);
+		__JniBaseClass listIterator();
+		__JniBaseClass listIterator(jint arg0);
 		jboolean remove(jobject arg0);
 		jobject remove(jint arg0);
 		jboolean removeAll(__JniBaseClass arg0);
@@ -57,8 +57,8 @@ namespace java::util
 		jobject set(jint arg0, jobject arg1);
 		jint size();
 		void sort(__JniBaseClass arg0);
-		QAndroidJniObject spliterator();
-		QAndroidJniObject subList(jint arg0, jint arg1);
+		__JniBaseClass spliterator();
+		__JniBaseClass subList(jint arg0, jint arg1);
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 		void trimToSize();

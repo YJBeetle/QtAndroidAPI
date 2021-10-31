@@ -37,11 +37,11 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getAdapter();
-		QAndroidJniObject getConnectedDevices(jint arg0);
+		android::bluetooth::BluetoothAdapter getAdapter();
+		__JniBaseClass getConnectedDevices(jint arg0);
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0, jint arg1);
-		QAndroidJniObject getDevicesMatchingConnectionStates(jint arg0, jintArray arg1);
-		QAndroidJniObject openGattServer(android::content::Context arg0, android::bluetooth::BluetoothGattServerCallback arg1);
+		__JniBaseClass getDevicesMatchingConnectionStates(jint arg0, jintArray arg1);
+		android::bluetooth::BluetoothGattServer openGattServer(android::content::Context arg0, android::bluetooth::BluetoothGattServerCallback arg1);
 	};
 } // namespace android::bluetooth
 

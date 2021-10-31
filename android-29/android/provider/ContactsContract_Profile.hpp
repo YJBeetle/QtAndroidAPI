@@ -13,9 +13,9 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_RAW_CONTACTS_URI();
-		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject CONTENT_VCARD_URI();
+		static android::net::Uri CONTENT_RAW_CONTACTS_URI();
+		static android::net::Uri CONTENT_URI();
+		static android::net::Uri CONTENT_VCARD_URI();
 		static jlong MIN_ID();
 		
 		// QAndroidJniObject forward

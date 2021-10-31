@@ -31,7 +31,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject LocalSocketAddress::getNamespace()
+	android::net::LocalSocketAddress_Namespace LocalSocketAddress::getNamespace()
 	{
 		return callObjectMethod(
 			"getNamespace",

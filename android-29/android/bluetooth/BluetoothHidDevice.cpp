@@ -193,7 +193,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BluetoothHidDevice::getConnectedDevices()
+	__JniBaseClass BluetoothHidDevice::getConnectedDevices()
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -208,7 +208,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BluetoothHidDevice::getDevicesMatchingConnectionStates(jintArray arg0)
+	__JniBaseClass BluetoothHidDevice::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",

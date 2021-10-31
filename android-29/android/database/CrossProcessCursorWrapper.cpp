@@ -26,7 +26,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	QAndroidJniObject CrossProcessCursorWrapper::getWindow()
+	android::database::CursorWindow CrossProcessCursorWrapper::getWindow()
 	{
 		return callObjectMethod(
 			"getWindow",

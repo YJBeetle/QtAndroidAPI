@@ -8,7 +8,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject Surface::CREATOR()
+	__JniBaseClass Surface::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.Surface",
@@ -77,7 +77,7 @@ namespace android::view
 			"()Z"
 		);
 	}
-	QAndroidJniObject Surface::lockCanvas(android::graphics::Rect arg0)
+	android::graphics::Canvas Surface::lockCanvas(android::graphics::Rect arg0)
 	{
 		return callObjectMethod(
 			"lockCanvas",
@@ -85,7 +85,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Surface::lockHardwareCanvas()
+	android::graphics::Canvas Surface::lockHardwareCanvas()
 	{
 		return callObjectMethod(
 			"lockHardwareCanvas",

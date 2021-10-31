@@ -24,23 +24,23 @@ namespace java::nio
 		jobject array();
 		jint arrayOffset();
 		jint capacity();
-		QAndroidJniObject clear();
-		QAndroidJniObject duplicate();
-		QAndroidJniObject flip();
+		java::nio::Buffer clear();
+		java::nio::Buffer duplicate();
+		java::nio::Buffer flip();
 		jboolean hasArray();
 		jboolean hasRemaining();
 		jboolean isDirect();
 		jboolean isReadOnly();
 		jint limit();
-		QAndroidJniObject limit(jint arg0);
-		QAndroidJniObject mark();
+		java::nio::Buffer limit(jint arg0);
+		java::nio::Buffer mark();
 		jint position();
-		QAndroidJniObject position(jint arg0);
+		java::nio::Buffer position(jint arg0);
 		jint remaining();
-		QAndroidJniObject reset();
-		QAndroidJniObject rewind();
-		QAndroidJniObject slice();
-		QAndroidJniObject slice(jint arg0, jint arg1);
+		java::nio::Buffer reset();
+		java::nio::Buffer rewind();
+		java::nio::Buffer slice();
+		java::nio::Buffer slice(jint arg0, jint arg1);
 	};
 } // namespace java::nio
 

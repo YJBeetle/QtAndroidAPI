@@ -39,7 +39,7 @@ namespace android::telecom
 			"CONNECTION_MANAGER_NOT_SUPPORTED"
 		);
 	}
-	QAndroidJniObject DisconnectCause::CREATOR()
+	__JniBaseClass DisconnectCause::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.DisconnectCause",

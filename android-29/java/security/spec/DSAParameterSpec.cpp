@@ -19,21 +19,21 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	QAndroidJniObject DSAParameterSpec::getG()
+	java::math::BigInteger DSAParameterSpec::getG()
 	{
 		return callObjectMethod(
 			"getG",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject DSAParameterSpec::getP()
+	java::math::BigInteger DSAParameterSpec::getP()
 	{
 		return callObjectMethod(
 			"getP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject DSAParameterSpec::getQ()
+	java::math::BigInteger DSAParameterSpec::getQ()
 	{
 		return callObjectMethod(
 			"getQ",

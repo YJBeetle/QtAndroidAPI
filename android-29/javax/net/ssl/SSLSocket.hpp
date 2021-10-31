@@ -32,11 +32,11 @@ namespace javax::net::ssl
 		jarray getEnabledCipherSuites();
 		jarray getEnabledProtocols();
 		jstring getHandshakeApplicationProtocol();
-		QAndroidJniObject getHandshakeApplicationProtocolSelector();
-		QAndroidJniObject getHandshakeSession();
+		__JniBaseClass getHandshakeApplicationProtocolSelector();
+		__JniBaseClass getHandshakeSession();
 		jboolean getNeedClientAuth();
-		QAndroidJniObject getSSLParameters();
-		QAndroidJniObject getSession();
+		javax::net::ssl::SSLParameters getSSLParameters();
+		__JniBaseClass getSession();
 		jarray getSupportedCipherSuites();
 		jarray getSupportedProtocols();
 		jboolean getUseClientMode();

@@ -10,13 +10,13 @@ namespace android::renderscript
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CLAMP();
-		static QAndroidJniObject LINEAR();
-		static QAndroidJniObject LINEAR_MIP_LINEAR();
-		static QAndroidJniObject LINEAR_MIP_NEAREST();
-		static QAndroidJniObject MIRRORED_REPEAT();
-		static QAndroidJniObject NEAREST();
-		static QAndroidJniObject WRAP();
+		static android::renderscript::Sampler_Value CLAMP();
+		static android::renderscript::Sampler_Value LINEAR();
+		static android::renderscript::Sampler_Value LINEAR_MIP_LINEAR();
+		static android::renderscript::Sampler_Value LINEAR_MIP_NEAREST();
+		static android::renderscript::Sampler_Value MIRRORED_REPEAT();
+		static android::renderscript::Sampler_Value NEAREST();
+		static android::renderscript::Sampler_Value WRAP();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Sampler_Value(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -25,7 +25,7 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::renderscript::Sampler_Value valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::renderscript

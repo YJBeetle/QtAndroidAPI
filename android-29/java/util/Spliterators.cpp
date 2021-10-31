@@ -10,7 +10,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Spliterators::emptyDoubleSpliterator()
+	__JniBaseClass Spliterators::emptyDoubleSpliterator()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -18,7 +18,7 @@ namespace java::util
 			"()Ljava/util/Spliterator$OfDouble;"
 		);
 	}
-	QAndroidJniObject Spliterators::emptyIntSpliterator()
+	__JniBaseClass Spliterators::emptyIntSpliterator()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -26,7 +26,7 @@ namespace java::util
 			"()Ljava/util/Spliterator$OfInt;"
 		);
 	}
-	QAndroidJniObject Spliterators::emptyLongSpliterator()
+	__JniBaseClass Spliterators::emptyLongSpliterator()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -34,7 +34,7 @@ namespace java::util
 			"()Ljava/util/Spliterator$OfLong;"
 		);
 	}
-	QAndroidJniObject Spliterators::emptySpliterator()
+	__JniBaseClass Spliterators::emptySpliterator()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -42,7 +42,7 @@ namespace java::util
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	QAndroidJniObject Spliterators::iterator(__JniBaseClass arg0)
+	__JniBaseClass Spliterators::iterator(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -51,7 +51,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Spliterators::spliterator(jobjectArray arg0, jint arg1)
+	__JniBaseClass Spliterators::spliterator(jobjectArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -61,7 +61,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Spliterators::spliterator(__JniBaseClass arg0, jint arg1)
+	__JniBaseClass Spliterators::spliterator(__JniBaseClass arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -71,7 +71,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Spliterators::spliterator(__JniBaseClass arg0, jlong arg1, jint arg2)
+	__JniBaseClass Spliterators::spliterator(__JniBaseClass arg0, jlong arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -82,7 +82,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Spliterators::spliterator(jobjectArray arg0, jint arg1, jint arg2, jint arg3)
+	__JniBaseClass Spliterators::spliterator(jobjectArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -94,7 +94,7 @@ namespace java::util
 			arg3
 		);
 	}
-	QAndroidJniObject Spliterators::spliterator(jdoubleArray arg0, jint arg1)
+	__JniBaseClass Spliterators::spliterator(jdoubleArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -104,7 +104,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Spliterators::spliterator(jdoubleArray arg0, jint arg1, jint arg2, jint arg3)
+	__JniBaseClass Spliterators::spliterator(jdoubleArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -116,7 +116,7 @@ namespace java::util
 			arg3
 		);
 	}
-	QAndroidJniObject Spliterators::spliterator(jintArray arg0, jint arg1)
+	__JniBaseClass Spliterators::spliterator(jintArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -126,7 +126,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Spliterators::spliterator(jintArray arg0, jint arg1, jint arg2, jint arg3)
+	__JniBaseClass Spliterators::spliterator(jintArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -138,7 +138,7 @@ namespace java::util
 			arg3
 		);
 	}
-	QAndroidJniObject Spliterators::spliterator(jlongArray arg0, jint arg1)
+	__JniBaseClass Spliterators::spliterator(jlongArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -148,7 +148,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Spliterators::spliterator(jlongArray arg0, jint arg1, jint arg2, jint arg3)
+	__JniBaseClass Spliterators::spliterator(jlongArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -160,7 +160,7 @@ namespace java::util
 			arg3
 		);
 	}
-	QAndroidJniObject Spliterators::spliteratorUnknownSize(__JniBaseClass arg0, jint arg1)
+	__JniBaseClass Spliterators::spliteratorUnknownSize(__JniBaseClass arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Spliterators",

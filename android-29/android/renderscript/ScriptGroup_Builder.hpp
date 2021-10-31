@@ -38,10 +38,10 @@ namespace android::renderscript
 		ScriptGroup_Builder(android::renderscript::RenderScript arg0);
 		
 		// Methods
-		QAndroidJniObject addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_FieldID arg2);
-		QAndroidJniObject addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_KernelID arg2);
-		QAndroidJniObject addKernel(android::renderscript::Script_KernelID arg0);
-		QAndroidJniObject create();
+		android::renderscript::ScriptGroup_Builder addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_FieldID arg2);
+		android::renderscript::ScriptGroup_Builder addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_KernelID arg2);
+		android::renderscript::ScriptGroup_Builder addKernel(android::renderscript::Script_KernelID arg0);
+		android::renderscript::ScriptGroup create();
 	};
 } // namespace android::renderscript
 

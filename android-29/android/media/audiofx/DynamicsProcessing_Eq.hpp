@@ -25,7 +25,7 @@ namespace android::media::audiofx
 		DynamicsProcessing_Eq(jboolean arg0, jboolean arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject getBand(jint arg0);
+		android::media::audiofx::DynamicsProcessing_EqBand getBand(jint arg0);
 		void setBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1);
 		jstring toString();
 	};

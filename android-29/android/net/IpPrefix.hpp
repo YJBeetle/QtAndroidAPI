@@ -17,7 +17,7 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IpPrefix(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -29,7 +29,7 @@ namespace android::net
 		jboolean contains(java::net::InetAddress arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAddress();
+		java::net::InetAddress getAddress();
 		jint getPrefixLength();
 		jbyteArray getRawAddress();
 		jint hashCode();

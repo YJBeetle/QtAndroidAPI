@@ -31,12 +31,12 @@ namespace java::net
 		DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::InetAddress arg3, jint arg4);
 		
 		// Methods
-		QAndroidJniObject getAddress();
+		java::net::InetAddress getAddress();
 		jbyteArray getData();
 		jint getLength();
 		jint getOffset();
 		jint getPort();
-		QAndroidJniObject getSocketAddress();
+		java::net::SocketAddress getSocketAddress();
 		void setAddress(java::net::InetAddress arg0);
 		void setData(jbyteArray arg0);
 		void setData(jbyteArray arg0, jint arg1, jint arg2);

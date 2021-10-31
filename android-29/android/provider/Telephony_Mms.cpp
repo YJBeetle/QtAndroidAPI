@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject Telephony_Mms::CONTENT_URI()
+	android::net::Uri Telephony_Mms::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms",
@@ -20,7 +20,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms::REPORT_REQUEST_URI()
+	android::net::Uri Telephony_Mms::REPORT_REQUEST_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms",
@@ -28,7 +28,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Telephony_Mms::REPORT_STATUS_URI()
+	android::net::Uri Telephony_Mms::REPORT_STATUS_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms",

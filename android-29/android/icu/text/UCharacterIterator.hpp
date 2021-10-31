@@ -22,15 +22,15 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(jcharArray arg0);
-		static QAndroidJniObject getInstance(__JniBaseClass arg0);
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(java::lang::StringBuffer arg0);
-		static QAndroidJniObject getInstance(jcharArray arg0, jint arg1, jint arg2);
+		static android::icu::text::UCharacterIterator getInstance(jcharArray arg0);
+		static android::icu::text::UCharacterIterator getInstance(__JniBaseClass arg0);
+		static android::icu::text::UCharacterIterator getInstance(jstring arg0);
+		static android::icu::text::UCharacterIterator getInstance(java::lang::StringBuffer arg0);
+		static android::icu::text::UCharacterIterator getInstance(jcharArray arg0, jint arg1, jint arg2);
 		jobject clone();
 		jint current();
 		jint currentCodePoint();
-		QAndroidJniObject getCharacterIterator();
+		__JniBaseClass getCharacterIterator();
 		jint getIndex();
 		jint getLength();
 		jint getText(jcharArray arg0);

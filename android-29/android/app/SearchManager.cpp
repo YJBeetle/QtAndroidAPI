@@ -426,14 +426,14 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SearchManager::getGlobalSearchActivity()
+	android::content::ComponentName SearchManager::getGlobalSearchActivity()
 	{
 		return callObjectMethod(
 			"getGlobalSearchActivity",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject SearchManager::getSearchableInfo(android::content::ComponentName arg0)
+	android::app::SearchableInfo SearchManager::getSearchableInfo(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getSearchableInfo",
@@ -441,7 +441,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SearchManager::getSearchablesInGlobalSearch()
+	__JniBaseClass SearchManager::getSearchablesInGlobalSearch()
 	{
 		return callObjectMethod(
 			"getSearchablesInGlobalSearch",

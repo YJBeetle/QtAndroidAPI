@@ -5,7 +5,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject PermissionInfo::CREATOR()
+	__JniBaseClass PermissionInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.PermissionInfo",

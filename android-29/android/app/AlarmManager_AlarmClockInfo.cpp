@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject AlarmManager_AlarmClockInfo::CREATOR()
+	__JniBaseClass AlarmManager_AlarmClockInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AlarmManager$AlarmClockInfo",
@@ -34,7 +34,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject AlarmManager_AlarmClockInfo::getShowIntent()
+	android::app::PendingIntent AlarmManager_AlarmClockInfo::getShowIntent()
 	{
 		return callObjectMethod(
 			"getShowIntent",

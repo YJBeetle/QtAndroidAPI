@@ -4,7 +4,7 @@
 namespace android::hardware::usb
 {
 	// Fields
-	QAndroidJniObject UsbEndpoint::CREATOR()
+	__JniBaseClass UsbEndpoint::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.usb.UsbEndpoint",

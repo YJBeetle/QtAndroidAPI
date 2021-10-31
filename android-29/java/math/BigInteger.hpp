@@ -26,10 +26,10 @@ namespace java::math
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ONE();
-		static QAndroidJniObject TEN();
-		static QAndroidJniObject TWO();
-		static QAndroidJniObject ZERO();
+		static java::math::BigInteger ONE();
+		static java::math::BigInteger TEN();
+		static java::math::BigInteger TWO();
+		static java::math::BigInteger ZERO();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BigInteger(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
@@ -46,25 +46,25 @@ namespace java::math
 		BigInteger(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
 		
 		// Methods
-		static QAndroidJniObject probablePrime(jint arg0, java::util::Random arg1);
-		static QAndroidJniObject valueOf(jlong arg0);
-		QAndroidJniObject abs();
-		QAndroidJniObject add(java::math::BigInteger arg0);
-		QAndroidJniObject _and(java::math::BigInteger arg0);
-		QAndroidJniObject andNot(java::math::BigInteger arg0);
+		static java::math::BigInteger probablePrime(jint arg0, java::util::Random arg1);
+		static java::math::BigInteger valueOf(jlong arg0);
+		java::math::BigInteger abs();
+		java::math::BigInteger add(java::math::BigInteger arg0);
+		java::math::BigInteger _and(java::math::BigInteger arg0);
+		java::math::BigInteger andNot(java::math::BigInteger arg0);
 		jint bitCount();
 		jint bitLength();
 		jbyte byteValueExact();
-		QAndroidJniObject clearBit(jint arg0);
+		java::math::BigInteger clearBit(jint arg0);
 		jint compareTo(jobject arg0);
 		jint compareTo(java::math::BigInteger arg0);
-		QAndroidJniObject divide(java::math::BigInteger arg0);
+		java::math::BigInteger divide(java::math::BigInteger arg0);
 		jarray divideAndRemainder(java::math::BigInteger arg0);
 		jdouble doubleValue();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject flipBit(jint arg0);
+		java::math::BigInteger flipBit(jint arg0);
 		jfloat floatValue();
-		QAndroidJniObject gcd(java::math::BigInteger arg0);
+		java::math::BigInteger gcd(java::math::BigInteger arg0);
 		jint getLowestSetBit();
 		jint hashCode();
 		jint intValue();
@@ -72,31 +72,31 @@ namespace java::math
 		jboolean isProbablePrime(jint arg0);
 		jlong longValue();
 		jlong longValueExact();
-		QAndroidJniObject max(java::math::BigInteger arg0);
-		QAndroidJniObject min(java::math::BigInteger arg0);
-		QAndroidJniObject mod(java::math::BigInteger arg0);
-		QAndroidJniObject modInverse(java::math::BigInteger arg0);
-		QAndroidJniObject modPow(java::math::BigInteger arg0, java::math::BigInteger arg1);
-		QAndroidJniObject multiply(java::math::BigInteger arg0);
-		QAndroidJniObject negate();
-		QAndroidJniObject nextProbablePrime();
-		QAndroidJniObject _not();
-		QAndroidJniObject _or(java::math::BigInteger arg0);
-		QAndroidJniObject pow(jint arg0);
-		QAndroidJniObject remainder(java::math::BigInteger arg0);
-		QAndroidJniObject setBit(jint arg0);
-		QAndroidJniObject shiftLeft(jint arg0);
-		QAndroidJniObject shiftRight(jint arg0);
+		java::math::BigInteger max(java::math::BigInteger arg0);
+		java::math::BigInteger min(java::math::BigInteger arg0);
+		java::math::BigInteger mod(java::math::BigInteger arg0);
+		java::math::BigInteger modInverse(java::math::BigInteger arg0);
+		java::math::BigInteger modPow(java::math::BigInteger arg0, java::math::BigInteger arg1);
+		java::math::BigInteger multiply(java::math::BigInteger arg0);
+		java::math::BigInteger negate();
+		java::math::BigInteger nextProbablePrime();
+		java::math::BigInteger _not();
+		java::math::BigInteger _or(java::math::BigInteger arg0);
+		java::math::BigInteger pow(jint arg0);
+		java::math::BigInteger remainder(java::math::BigInteger arg0);
+		java::math::BigInteger setBit(jint arg0);
+		java::math::BigInteger shiftLeft(jint arg0);
+		java::math::BigInteger shiftRight(jint arg0);
 		jshort shortValueExact();
 		jint signum();
-		QAndroidJniObject sqrt();
+		java::math::BigInteger sqrt();
 		jarray sqrtAndRemainder();
-		QAndroidJniObject subtract(java::math::BigInteger arg0);
+		java::math::BigInteger subtract(java::math::BigInteger arg0);
 		jboolean testBit(jint arg0);
 		jbyteArray toByteArray();
 		jstring toString();
 		jstring toString(jint arg0);
-		QAndroidJniObject _xor(java::math::BigInteger arg0);
+		java::math::BigInteger _xor(java::math::BigInteger arg0);
 	};
 } // namespace java::math
 

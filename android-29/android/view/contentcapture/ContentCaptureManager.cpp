@@ -12,14 +12,14 @@ namespace android::view::contentcapture
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ContentCaptureManager::getContentCaptureConditions()
+	__JniBaseClass ContentCaptureManager::getContentCaptureConditions()
 	{
 		return callObjectMethod(
 			"getContentCaptureConditions",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject ContentCaptureManager::getServiceComponentName()
+	android::content::ComponentName ContentCaptureManager::getServiceComponentName()
 	{
 		return callObjectMethod(
 			"getServiceComponentName",

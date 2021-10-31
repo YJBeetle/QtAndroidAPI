@@ -61,7 +61,7 @@ namespace android::content
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject BroadcastReceiver::getResultExtras(jboolean arg0)
+	android::os::Bundle BroadcastReceiver::getResultExtras(jboolean arg0)
 	{
 		return callObjectMethod(
 			"getResultExtras",
@@ -69,7 +69,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject BroadcastReceiver::goAsync()
+	android::content::BroadcastReceiver_PendingResult BroadcastReceiver::goAsync()
 	{
 		return callObjectMethod(
 			"goAsync",
@@ -99,7 +99,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	QAndroidJniObject BroadcastReceiver::peekService(android::content::Context arg0, android::content::Intent arg1)
+	__JniBaseClass BroadcastReceiver::peekService(android::content::Context arg0, android::content::Intent arg1)
 	{
 		return callObjectMethod(
 			"peekService",

@@ -37,7 +37,7 @@ namespace android::net::http
 		
 		// Methods
 		jboolean addError(jint arg0);
-		QAndroidJniObject getCertificate();
+		android::net::http::SslCertificate getCertificate();
 		jint getPrimaryError();
 		jstring getUrl();
 		jboolean hasError(jint arg0);

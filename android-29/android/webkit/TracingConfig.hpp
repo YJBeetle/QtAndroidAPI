@@ -27,7 +27,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getCustomIncludedCategories();
+		__JniBaseClass getCustomIncludedCategories();
 		jint getPredefinedCategories();
 		jint getTracingMode();
 	};

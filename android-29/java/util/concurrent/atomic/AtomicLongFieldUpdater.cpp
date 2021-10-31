@@ -11,7 +11,7 @@ namespace java::util::concurrent::atomic
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AtomicLongFieldUpdater::newUpdater(jclass arg0, jstring arg1)
+	java::util::concurrent::atomic::AtomicLongFieldUpdater AtomicLongFieldUpdater::newUpdater(jclass arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.atomic.AtomicLongFieldUpdater",

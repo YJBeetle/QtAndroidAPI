@@ -12,14 +12,14 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Schema::newValidator()
+	javax::xml::validation::Validator Schema::newValidator()
 	{
 		return callObjectMethod(
 			"newValidator",
 			"()Ljavax/xml/validation/Validator;"
 		);
 	}
-	QAndroidJniObject Schema::newValidatorHandler()
+	javax::xml::validation::ValidatorHandler Schema::newValidatorHandler()
 	{
 		return callObjectMethod(
 			"newValidatorHandler",

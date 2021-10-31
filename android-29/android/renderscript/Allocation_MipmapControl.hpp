@@ -10,9 +10,9 @@ namespace android::renderscript
 	{
 	public:
 		// Fields
-		static QAndroidJniObject MIPMAP_FULL();
-		static QAndroidJniObject MIPMAP_NONE();
-		static QAndroidJniObject MIPMAP_ON_SYNC_TO_TEXTURE();
+		static android::renderscript::Allocation_MipmapControl MIPMAP_FULL();
+		static android::renderscript::Allocation_MipmapControl MIPMAP_NONE();
+		static android::renderscript::Allocation_MipmapControl MIPMAP_ON_SYNC_TO_TEXTURE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Allocation_MipmapControl(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::renderscript::Allocation_MipmapControl valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::renderscript

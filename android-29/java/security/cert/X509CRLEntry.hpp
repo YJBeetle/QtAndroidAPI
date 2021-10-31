@@ -35,11 +35,11 @@ namespace java::security::cert
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCertificateIssuer();
+		javax::security::auth::x500::X500Principal getCertificateIssuer();
 		jbyteArray getEncoded();
-		QAndroidJniObject getRevocationDate();
-		QAndroidJniObject getRevocationReason();
-		QAndroidJniObject getSerialNumber();
+		java::util::Date getRevocationDate();
+		java::security::cert::CRLReason getRevocationReason();
+		java::math::BigInteger getSerialNumber();
 		jboolean hasExtensions();
 		jint hashCode();
 		jstring toString();

@@ -17,7 +17,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint TYPE_BOOLEAN();
 		static jint TYPE_BUNDLE();
 		static jint TYPE_BUNDLE_ARRAY();
@@ -40,8 +40,8 @@ namespace android::content
 		RestrictionEntry(jstring arg0, jstring arg1);
 		
 		// Methods
-		static QAndroidJniObject createBundleArrayEntry(jstring arg0, jarray arg1);
-		static QAndroidJniObject createBundleEntry(jstring arg0, jarray arg1);
+		static android::content::RestrictionEntry createBundleArrayEntry(jstring arg0, jarray arg1);
+		static android::content::RestrictionEntry createBundleEntry(jstring arg0, jarray arg1);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jarray getAllSelectedStrings();

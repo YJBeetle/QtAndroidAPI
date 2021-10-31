@@ -5,7 +5,7 @@
 namespace android::bluetooth::le
 {
 	// Fields
-	QAndroidJniObject AdvertiseData::CREATOR()
+	__JniBaseClass AdvertiseData::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.le.AdvertiseData",
@@ -49,21 +49,21 @@ namespace android::bluetooth::le
 			"()Z"
 		);
 	}
-	QAndroidJniObject AdvertiseData::getManufacturerSpecificData()
+	android::util::SparseArray AdvertiseData::getManufacturerSpecificData()
 	{
 		return callObjectMethod(
 			"getManufacturerSpecificData",
 			"()Landroid/util/SparseArray;"
 		);
 	}
-	QAndroidJniObject AdvertiseData::getServiceData()
+	__JniBaseClass AdvertiseData::getServiceData()
 	{
 		return callObjectMethod(
 			"getServiceData",
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject AdvertiseData::getServiceUuids()
+	__JniBaseClass AdvertiseData::getServiceUuids()
 	{
 		return callObjectMethod(
 			"getServiceUuids",

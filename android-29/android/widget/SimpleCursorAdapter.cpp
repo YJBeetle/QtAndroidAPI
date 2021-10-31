@@ -63,7 +63,7 @@ namespace android::widget
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject SimpleCursorAdapter::getCursorToStringConverter()
+	__JniBaseClass SimpleCursorAdapter::getCursorToStringConverter()
 	{
 		return callObjectMethod(
 			"getCursorToStringConverter",
@@ -77,7 +77,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject SimpleCursorAdapter::getViewBinder()
+	__JniBaseClass SimpleCursorAdapter::getViewBinder()
 	{
 		return callObjectMethod(
 			"getViewBinder",
@@ -126,7 +126,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject SimpleCursorAdapter::swapCursor(__JniBaseClass arg0)
+	__JniBaseClass SimpleCursorAdapter::swapCursor(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"swapCursor",

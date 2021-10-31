@@ -3,7 +3,7 @@
 namespace java::security::spec
 {
 	// Fields
-	QAndroidJniObject PSSParameterSpec::DEFAULT()
+	java::security::spec::PSSParameterSpec PSSParameterSpec::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.PSSParameterSpec",
@@ -55,7 +55,7 @@ namespace java::security::spec
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PSSParameterSpec::getMGFParameters()
+	__JniBaseClass PSSParameterSpec::getMGFParameters()
 	{
 		return callObjectMethod(
 			"getMGFParameters",

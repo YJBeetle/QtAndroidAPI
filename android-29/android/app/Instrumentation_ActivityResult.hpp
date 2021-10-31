@@ -23,7 +23,7 @@ namespace android::app
 		
 		// Methods
 		jint getResultCode();
-		QAndroidJniObject getResultData();
+		android::content::Intent getResultData();
 	};
 } // namespace android::app
 

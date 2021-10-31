@@ -120,14 +120,14 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject GradientDrawable::getColor()
+	android::content::res::ColorStateList GradientDrawable::getColor()
 	{
 		return callObjectMethod(
 			"getColor",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject GradientDrawable::getColorFilter()
+	android::graphics::ColorFilter GradientDrawable::getColorFilter()
 	{
 		return callObjectMethod(
 			"getColorFilter",
@@ -141,7 +141,7 @@ namespace android::graphics::drawable
 			"()[I"
 		).object<jintArray>();
 	}
-	QAndroidJniObject GradientDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState GradientDrawable::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
@@ -225,14 +225,14 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject GradientDrawable::getOpticalInsets()
+	android::graphics::Insets GradientDrawable::getOpticalInsets()
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	QAndroidJniObject GradientDrawable::getOrientation()
+	android::graphics::drawable::GradientDrawable_Orientation GradientDrawable::getOrientation()
 	{
 		return callObjectMethod(
 			"getOrientation",
@@ -301,7 +301,7 @@ namespace android::graphics::drawable
 			"()Z"
 		);
 	}
-	QAndroidJniObject GradientDrawable::mutate()
+	android::graphics::drawable::Drawable GradientDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

@@ -32,13 +32,13 @@ namespace android::app
 		
 		// Methods
 		jstring getDataMimeType();
-		QAndroidJniObject getDataUri();
-		QAndroidJniObject getExtras();
+		android::net::Uri getDataUri();
+		android::os::Bundle getExtras();
 		jstring getSender();
-		QAndroidJniObject getSenderPerson();
+		android::app::Person getSenderPerson();
 		jstring getText();
 		jlong getTimestamp();
-		QAndroidJniObject setData(jstring arg0, android::net::Uri arg1);
+		android::app::Notification_MessagingStyle_Message setData(jstring arg0, android::net::Uri arg1);
 	};
 } // namespace android::app
 

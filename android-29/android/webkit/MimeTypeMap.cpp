@@ -19,7 +19,7 @@ namespace android::webkit
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject MimeTypeMap::getSingleton()
+	android::webkit::MimeTypeMap MimeTypeMap::getSingleton()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.MimeTypeMap",

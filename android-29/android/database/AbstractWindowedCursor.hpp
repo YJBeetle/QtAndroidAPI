@@ -36,7 +36,7 @@ namespace android::database
 		jshort getShort(jint arg0);
 		jstring getString(jint arg0);
 		jint getType(jint arg0);
-		QAndroidJniObject getWindow();
+		android::database::CursorWindow getWindow();
 		jboolean hasWindow();
 		jboolean isBlob(jint arg0);
 		jboolean isFloat(jint arg0);

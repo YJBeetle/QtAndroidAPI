@@ -7,7 +7,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject WallpaperColors::CREATOR()
+	__JniBaseClass WallpaperColors::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.WallpaperColors",
@@ -36,7 +36,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject WallpaperColors::fromBitmap(android::graphics::Bitmap arg0)
+	android::app::WallpaperColors WallpaperColors::fromBitmap(android::graphics::Bitmap arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.WallpaperColors",
@@ -45,7 +45,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WallpaperColors::fromDrawable(android::graphics::drawable::Drawable arg0)
+	android::app::WallpaperColors WallpaperColors::fromDrawable(android::graphics::drawable::Drawable arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.WallpaperColors",
@@ -69,21 +69,21 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject WallpaperColors::getPrimaryColor()
+	android::graphics::Color WallpaperColors::getPrimaryColor()
 	{
 		return callObjectMethod(
 			"getPrimaryColor",
 			"()Landroid/graphics/Color;"
 		);
 	}
-	QAndroidJniObject WallpaperColors::getSecondaryColor()
+	android::graphics::Color WallpaperColors::getSecondaryColor()
 	{
 		return callObjectMethod(
 			"getSecondaryColor",
 			"()Landroid/graphics/Color;"
 		);
 	}
-	QAndroidJniObject WallpaperColors::getTertiaryColor()
+	android::graphics::Color WallpaperColors::getTertiaryColor()
 	{
 		return callObjectMethod(
 			"getTertiaryColor",

@@ -6,7 +6,7 @@
 namespace android::print
 {
 	// Fields
-	QAndroidJniObject PrinterCapabilitiesInfo::CREATOR()
+	__JniBaseClass PrinterCapabilitiesInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrinterCapabilitiesInfo",
@@ -43,7 +43,7 @@ namespace android::print
 			"()I"
 		);
 	}
-	QAndroidJniObject PrinterCapabilitiesInfo::getDefaults()
+	android::print::PrintAttributes PrinterCapabilitiesInfo::getDefaults()
 	{
 		return callObjectMethod(
 			"getDefaults",
@@ -57,21 +57,21 @@ namespace android::print
 			"()I"
 		);
 	}
-	QAndroidJniObject PrinterCapabilitiesInfo::getMediaSizes()
+	__JniBaseClass PrinterCapabilitiesInfo::getMediaSizes()
 	{
 		return callObjectMethod(
 			"getMediaSizes",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PrinterCapabilitiesInfo::getMinMargins()
+	android::print::PrintAttributes_Margins PrinterCapabilitiesInfo::getMinMargins()
 	{
 		return callObjectMethod(
 			"getMinMargins",
 			"()Landroid/print/PrintAttributes$Margins;"
 		);
 	}
-	QAndroidJniObject PrinterCapabilitiesInfo::getResolutions()
+	__JniBaseClass PrinterCapabilitiesInfo::getResolutions()
 	{
 		return callObjectMethod(
 			"getResolutions",

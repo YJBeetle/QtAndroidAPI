@@ -81,7 +81,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	QAndroidJniObject UnresolvedPermission::newPermissionCollection()
+	java::security::PermissionCollection UnresolvedPermission::newPermissionCollection()
 	{
 		return callObjectMethod(
 			"newPermissionCollection",

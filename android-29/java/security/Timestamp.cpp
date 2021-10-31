@@ -28,14 +28,14 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject Timestamp::getSignerCertPath()
+	java::security::cert::CertPath Timestamp::getSignerCertPath()
 	{
 		return callObjectMethod(
 			"getSignerCertPath",
 			"()Ljava/security/cert/CertPath;"
 		);
 	}
-	QAndroidJniObject Timestamp::getTimestamp()
+	java::util::Date Timestamp::getTimestamp()
 	{
 		return callObjectMethod(
 			"getTimestamp",

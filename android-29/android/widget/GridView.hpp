@@ -59,7 +59,7 @@ namespace android::widget
 		
 		// Methods
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getAdapter();
+		__JniBaseClass getAdapter();
 		jint getColumnWidth();
 		jint getGravity();
 		jint getHorizontalSpacing();

@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject Interpolator_Result::FREEZE_END()
+	android::graphics::Interpolator_Result Interpolator_Result::FREEZE_END()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Interpolator$Result",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/Interpolator$Result;"
 		);
 	}
-	QAndroidJniObject Interpolator_Result::FREEZE_START()
+	android::graphics::Interpolator_Result Interpolator_Result::FREEZE_START()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Interpolator$Result",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/Interpolator$Result;"
 		);
 	}
-	QAndroidJniObject Interpolator_Result::NORMAL()
+	android::graphics::Interpolator_Result Interpolator_Result::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Interpolator$Result",
@@ -34,7 +34,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Interpolator_Result::valueOf(jstring arg0)
+	android::graphics::Interpolator_Result Interpolator_Result::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Interpolator$Result",

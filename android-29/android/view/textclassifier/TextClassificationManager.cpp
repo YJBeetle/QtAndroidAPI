@@ -12,7 +12,7 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TextClassificationManager::createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0)
+	__JniBaseClass TextClassificationManager::createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0)
 	{
 		return callObjectMethod(
 			"createTextClassificationSession",
@@ -20,7 +20,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextClassificationManager::getTextClassifier()
+	__JniBaseClass TextClassificationManager::getTextClassifier()
 	{
 		return callObjectMethod(
 			"getTextClassifier",

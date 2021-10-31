@@ -21,7 +21,7 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FillContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,9 +31,9 @@ namespace android::service::autofill
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getFocusedId();
+		android::view::autofill::AutofillId getFocusedId();
 		jint getRequestId();
-		QAndroidJniObject getStructure();
+		android::app::assist::AssistStructure getStructure();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

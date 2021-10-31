@@ -232,7 +232,7 @@ namespace java::lang
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Double::valueOf(jdouble arg0)
+	java::lang::Double Double::valueOf(jdouble arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Double",
@@ -241,7 +241,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Double::valueOf(jstring arg0)
+	java::lang::Double Double::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Double",
@@ -273,7 +273,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Double::describeConstable()
+	java::util::Optional Double::describeConstable()
 	{
 		return callObjectMethod(
 			"describeConstable",
@@ -337,7 +337,7 @@ namespace java::lang
 			"()J"
 		);
 	}
-	QAndroidJniObject Double::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
+	java::lang::Double Double::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
 	{
 		return callObjectMethod(
 			"resolveConstantDesc",

@@ -60,7 +60,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AbsSpinner::getAdapter()
+	__JniBaseClass AbsSpinner::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
@@ -74,7 +74,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AbsSpinner::getAutofillValue()
+	android::view::autofill::AutofillValue AbsSpinner::getAutofillValue()
 	{
 		return callObjectMethod(
 			"getAutofillValue",
@@ -88,7 +88,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AbsSpinner::getSelectedView()
+	android::view::View AbsSpinner::getSelectedView()
 	{
 		return callObjectMethod(
 			"getSelectedView",
@@ -103,7 +103,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AbsSpinner::onSaveInstanceState()
+	__JniBaseClass AbsSpinner::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

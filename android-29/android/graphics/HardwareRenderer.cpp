@@ -60,7 +60,7 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	QAndroidJniObject HardwareRenderer::createRenderRequest()
+	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer::createRenderRequest()
 	{
 		return callObjectMethod(
 			"createRenderRequest",

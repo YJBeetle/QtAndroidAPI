@@ -9,7 +9,7 @@
 namespace android::app::job
 {
 	// Fields
-	QAndroidJniObject JobParameters::CREATOR()
+	__JniBaseClass JobParameters::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.job.JobParameters",
@@ -32,7 +32,7 @@ namespace android::app::job
 			arg0.object()
 		);
 	}
-	QAndroidJniObject JobParameters::dequeueWork()
+	android::app::job::JobWorkItem JobParameters::dequeueWork()
 	{
 		return callObjectMethod(
 			"dequeueWork",
@@ -46,7 +46,7 @@ namespace android::app::job
 			"()I"
 		);
 	}
-	QAndroidJniObject JobParameters::getClipData()
+	android::content::ClipData JobParameters::getClipData()
 	{
 		return callObjectMethod(
 			"getClipData",
@@ -60,7 +60,7 @@ namespace android::app::job
 			"()I"
 		);
 	}
-	QAndroidJniObject JobParameters::getExtras()
+	android::os::PersistableBundle JobParameters::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -74,14 +74,14 @@ namespace android::app::job
 			"()I"
 		);
 	}
-	QAndroidJniObject JobParameters::getNetwork()
+	android::net::Network JobParameters::getNetwork()
 	{
 		return callObjectMethod(
 			"getNetwork",
 			"()Landroid/net/Network;"
 		);
 	}
-	QAndroidJniObject JobParameters::getTransientExtras()
+	android::os::Bundle JobParameters::getTransientExtras()
 	{
 		return callObjectMethod(
 			"getTransientExtras",

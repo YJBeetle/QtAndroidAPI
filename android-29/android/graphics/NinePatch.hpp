@@ -47,12 +47,12 @@ namespace android::graphics
 		void draw(android::graphics::Canvas arg0, android::graphics::Rect arg1);
 		void draw(android::graphics::Canvas arg0, android::graphics::RectF arg1);
 		void draw(android::graphics::Canvas arg0, android::graphics::Rect arg1, android::graphics::Paint arg2);
-		QAndroidJniObject getBitmap();
+		android::graphics::Bitmap getBitmap();
 		jint getDensity();
 		jint getHeight();
 		jstring getName();
-		QAndroidJniObject getPaint();
-		QAndroidJniObject getTransparentRegion(android::graphics::Rect arg0);
+		android::graphics::Paint getPaint();
+		android::graphics::Region getTransparentRegion(android::graphics::Rect arg0);
 		jint getWidth();
 		jboolean hasAlpha();
 		void setPaint(android::graphics::Paint arg0);

@@ -6,7 +6,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject ContentProviderResult::CREATOR()
+	__JniBaseClass ContentProviderResult::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ContentProviderResult",
@@ -14,14 +14,14 @@ namespace android::content
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject ContentProviderResult::count()
+	java::lang::Integer ContentProviderResult::count()
 	{
 		return getObjectField(
 			"count",
 			"Ljava/lang/Integer;"
 		);
 	}
-	QAndroidJniObject ContentProviderResult::uri()
+	android::net::Uri ContentProviderResult::uri()
 	{
 		return getObjectField(
 			"uri",

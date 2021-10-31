@@ -11,7 +11,7 @@ namespace android::database
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MatrixCursor_RowBuilder::add(jobject arg0)
+	android::database::MatrixCursor_RowBuilder MatrixCursor_RowBuilder::add(jobject arg0)
 	{
 		return callObjectMethod(
 			"add",
@@ -19,7 +19,7 @@ namespace android::database
 			arg0
 		);
 	}
-	QAndroidJniObject MatrixCursor_RowBuilder::add(jstring arg0, jobject arg1)
+	android::database::MatrixCursor_RowBuilder MatrixCursor_RowBuilder::add(jstring arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"add",

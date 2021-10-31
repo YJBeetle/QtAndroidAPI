@@ -20,7 +20,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessagePattern_Part::getArgType()
+	android::icu::text::MessagePattern_ArgType MessagePattern_Part::getArgType()
 	{
 		return callObjectMethod(
 			"getArgType",
@@ -48,7 +48,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part::getType()
+	android::icu::text::MessagePattern_Part_Type MessagePattern_Part::getType()
 	{
 		return callObjectMethod(
 			"getType",

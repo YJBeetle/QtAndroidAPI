@@ -22,98 +22,98 @@ namespace android::os
 		) {}
 	
 	// Methods
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::build()
+	android::os::StrictMode_ThreadPolicy StrictMode_ThreadPolicy_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/os/StrictMode$ThreadPolicy;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectAll()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectAll()
 	{
 		return callObjectMethod(
 			"detectAll",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectCustomSlowCalls()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectCustomSlowCalls()
 	{
 		return callObjectMethod(
 			"detectCustomSlowCalls",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectDiskReads()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectDiskReads()
 	{
 		return callObjectMethod(
 			"detectDiskReads",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectDiskWrites()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectDiskWrites()
 	{
 		return callObjectMethod(
 			"detectDiskWrites",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectNetwork()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectNetwork()
 	{
 		return callObjectMethod(
 			"detectNetwork",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectResourceMismatches()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectResourceMismatches()
 	{
 		return callObjectMethod(
 			"detectResourceMismatches",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectUnbufferedIo()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::detectUnbufferedIo()
 	{
 		return callObjectMethod(
 			"detectUnbufferedIo",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyDeath()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDeath()
 	{
 		return callObjectMethod(
 			"penaltyDeath",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyDeathOnNetwork()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDeathOnNetwork()
 	{
 		return callObjectMethod(
 			"penaltyDeathOnNetwork",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyDialog()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDialog()
 	{
 		return callObjectMethod(
 			"penaltyDialog",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyDropBox()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyDropBox()
 	{
 		return callObjectMethod(
 			"penaltyDropBox",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyFlashScreen()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyFlashScreen()
 	{
 		return callObjectMethod(
 			"penaltyFlashScreen",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyListener(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"penaltyListener",
@@ -122,56 +122,56 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyLog()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyLog()
 	{
 		return callObjectMethod(
 			"penaltyLog",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitAll()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitAll()
 	{
 		return callObjectMethod(
 			"permitAll",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitCustomSlowCalls()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitCustomSlowCalls()
 	{
 		return callObjectMethod(
 			"permitCustomSlowCalls",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitDiskReads()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitDiskReads()
 	{
 		return callObjectMethod(
 			"permitDiskReads",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitDiskWrites()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitDiskWrites()
 	{
 		return callObjectMethod(
 			"permitDiskWrites",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitNetwork()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitNetwork()
 	{
 		return callObjectMethod(
 			"permitNetwork",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitResourceMismatches()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitResourceMismatches()
 	{
 		return callObjectMethod(
 			"permitResourceMismatches",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitUnbufferedIo()
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::permitUnbufferedIo()
 	{
 		return callObjectMethod(
 			"permitUnbufferedIo",

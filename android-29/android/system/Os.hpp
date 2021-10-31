@@ -57,7 +57,7 @@ namespace android::system
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject accept(java::io::FileDescriptor arg0, java::net::InetSocketAddress arg1);
+		static java::io::FileDescriptor accept(java::io::FileDescriptor arg0, java::net::InetSocketAddress arg1);
 		static jboolean access(jstring arg0, jint arg1);
 		static void bind(java::io::FileDescriptor arg0, java::net::SocketAddress arg1);
 		static void bind(java::io::FileDescriptor arg0, java::net::InetAddress arg1, jint arg2);
@@ -66,16 +66,16 @@ namespace android::system
 		static void close(java::io::FileDescriptor arg0);
 		static void connect(java::io::FileDescriptor arg0, java::net::SocketAddress arg1);
 		static void connect(java::io::FileDescriptor arg0, java::net::InetAddress arg1, jint arg2);
-		static QAndroidJniObject dup(java::io::FileDescriptor arg0);
-		static QAndroidJniObject dup2(java::io::FileDescriptor arg0, jint arg1);
+		static java::io::FileDescriptor dup(java::io::FileDescriptor arg0);
+		static java::io::FileDescriptor dup2(java::io::FileDescriptor arg0, jint arg1);
 		static jarray environ();
 		static void execv(jstring arg0, jarray arg1);
 		static void execve(jstring arg0, jarray arg1, jarray arg2);
 		static void fchmod(java::io::FileDescriptor arg0, jint arg1);
 		static void fchown(java::io::FileDescriptor arg0, jint arg1, jint arg2);
 		static void fdatasync(java::io::FileDescriptor arg0);
-		static QAndroidJniObject fstat(java::io::FileDescriptor arg0);
-		static QAndroidJniObject fstatvfs(java::io::FileDescriptor arg0);
+		static android::system::StructStat fstat(java::io::FileDescriptor arg0);
+		static android::system::StructStatVfs fstatvfs(java::io::FileDescriptor arg0);
 		static void fsync(java::io::FileDescriptor arg0);
 		static void ftruncate(java::io::FileDescriptor arg0, jlong arg1);
 		static jstring gai_strerror(jint arg0);
@@ -83,17 +83,17 @@ namespace android::system
 		static jstring getenv(jstring arg0);
 		static jint geteuid();
 		static jint getgid();
-		static QAndroidJniObject getpeername(java::io::FileDescriptor arg0);
+		static java::net::SocketAddress getpeername(java::io::FileDescriptor arg0);
 		static jint getpid();
 		static jint getppid();
-		static QAndroidJniObject getsockname(java::io::FileDescriptor arg0);
-		static QAndroidJniObject getsockoptTimeval(java::io::FileDescriptor arg0, jint arg1, jint arg2);
+		static java::net::SocketAddress getsockname(java::io::FileDescriptor arg0);
+		static android::system::StructTimeval getsockoptTimeval(java::io::FileDescriptor arg0, jint arg1, jint arg2);
 		static jint gettid();
 		static jint getuid();
 		static jbyteArray getxattr(jstring arg0, jstring arg1);
 		static jstring if_indextoname(jint arg0);
 		static jint if_nametoindex(jstring arg0);
-		static QAndroidJniObject inet_pton(jint arg0, jstring arg1);
+		static java::net::InetAddress inet_pton(jint arg0, jstring arg1);
 		static jboolean isatty(java::io::FileDescriptor arg0);
 		static void kill(jint arg0, jint arg1);
 		static void lchown(jstring arg0, jint arg1, jint arg2);
@@ -101,7 +101,7 @@ namespace android::system
 		static void listen(java::io::FileDescriptor arg0, jint arg1);
 		static jarray listxattr(jstring arg0);
 		static jlong lseek(java::io::FileDescriptor arg0, jlong arg1, jint arg2);
-		static QAndroidJniObject lstat(jstring arg0);
+		static android::system::StructStat lstat(jstring arg0);
 		static void mincore(jlong arg0, jlong arg1, jbyteArray arg2);
 		static void mkdir(jstring arg0, jint arg1);
 		static void mkfifo(jstring arg0, jint arg1);
@@ -110,7 +110,7 @@ namespace android::system
 		static void msync(jlong arg0, jlong arg1, jint arg2);
 		static void munlock(jlong arg0, jlong arg1);
 		static void munmap(jlong arg0, jlong arg1);
-		static QAndroidJniObject open(jstring arg0, jint arg1, jint arg2);
+		static java::io::FileDescriptor open(jstring arg0, jint arg1, jint arg2);
 		static jarray pipe();
 		static jint poll(jarray arg0, jint arg1);
 		static void posix_fallocate(java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
@@ -142,10 +142,10 @@ namespace android::system
 		static void setuid(jint arg0);
 		static void setxattr(jstring arg0, jstring arg1, jbyteArray arg2, jint arg3);
 		static void shutdown(java::io::FileDescriptor arg0, jint arg1);
-		static QAndroidJniObject socket(jint arg0, jint arg1, jint arg2);
+		static java::io::FileDescriptor socket(jint arg0, jint arg1, jint arg2);
 		static void socketpair(jint arg0, jint arg1, jint arg2, java::io::FileDescriptor arg3, java::io::FileDescriptor arg4);
-		static QAndroidJniObject stat(jstring arg0);
-		static QAndroidJniObject statvfs(jstring arg0);
+		static android::system::StructStat stat(jstring arg0);
+		static android::system::StructStatVfs statvfs(jstring arg0);
 		static jstring strerror(jint arg0);
 		static jstring strsignal(jint arg0);
 		static void symlink(jstring arg0, jstring arg1);
@@ -153,7 +153,7 @@ namespace android::system
 		static void tcdrain(java::io::FileDescriptor arg0);
 		static void tcsendbreak(java::io::FileDescriptor arg0, jint arg1);
 		static jint umask(jint arg0);
-		static QAndroidJniObject uname();
+		static android::system::StructUtsname uname();
 		static void unsetenv(jstring arg0);
 		static jint write(java::io::FileDescriptor arg0, java::nio::ByteBuffer arg1);
 		static jint write(java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3);

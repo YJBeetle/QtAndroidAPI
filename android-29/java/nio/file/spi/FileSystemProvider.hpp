@@ -49,7 +49,7 @@ namespace java::nio::file::spi
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject installedProviders();
+		static __JniBaseClass installedProviders();
 		void checkAccess(__JniBaseClass arg0, jarray arg1);
 		void copy(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
 		void createDirectory(__JniBaseClass arg0, jarray arg1);
@@ -57,25 +57,25 @@ namespace java::nio::file::spi
 		void createSymbolicLink(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
 		void _delete(__JniBaseClass arg0);
 		jboolean deleteIfExists(__JniBaseClass arg0);
-		QAndroidJniObject getFileAttributeView(__JniBaseClass arg0, jclass arg1, jarray arg2);
-		QAndroidJniObject getFileStore(__JniBaseClass arg0);
-		QAndroidJniObject getFileSystem(java::net::URI arg0);
-		QAndroidJniObject getPath(java::net::URI arg0);
+		__JniBaseClass getFileAttributeView(__JniBaseClass arg0, jclass arg1, jarray arg2);
+		java::nio::file::FileStore getFileStore(__JniBaseClass arg0);
+		java::nio::file::FileSystem getFileSystem(java::net::URI arg0);
+		__JniBaseClass getPath(java::net::URI arg0);
 		jstring getScheme();
 		jboolean isHidden(__JniBaseClass arg0);
 		jboolean isSameFile(__JniBaseClass arg0, __JniBaseClass arg1);
 		void move(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
-		QAndroidJniObject newAsynchronousFileChannel(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, jarray arg3);
-		QAndroidJniObject newByteChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
-		QAndroidJniObject newDirectoryStream(__JniBaseClass arg0, __JniBaseClass arg1);
-		QAndroidJniObject newFileChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
-		QAndroidJniObject newFileSystem(java::net::URI arg0, __JniBaseClass arg1);
-		QAndroidJniObject newFileSystem(__JniBaseClass arg0, __JniBaseClass arg1);
-		QAndroidJniObject newInputStream(__JniBaseClass arg0, jarray arg1);
-		QAndroidJniObject newOutputStream(__JniBaseClass arg0, jarray arg1);
-		QAndroidJniObject readAttributes(__JniBaseClass arg0, jclass arg1, jarray arg2);
-		QAndroidJniObject readAttributes(__JniBaseClass arg0, jstring arg1, jarray arg2);
-		QAndroidJniObject readSymbolicLink(__JniBaseClass arg0);
+		java::nio::channels::AsynchronousFileChannel newAsynchronousFileChannel(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, jarray arg3);
+		__JniBaseClass newByteChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
+		__JniBaseClass newDirectoryStream(__JniBaseClass arg0, __JniBaseClass arg1);
+		java::nio::channels::FileChannel newFileChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
+		java::nio::file::FileSystem newFileSystem(java::net::URI arg0, __JniBaseClass arg1);
+		java::nio::file::FileSystem newFileSystem(__JniBaseClass arg0, __JniBaseClass arg1);
+		java::io::InputStream newInputStream(__JniBaseClass arg0, jarray arg1);
+		java::io::OutputStream newOutputStream(__JniBaseClass arg0, jarray arg1);
+		__JniBaseClass readAttributes(__JniBaseClass arg0, jclass arg1, jarray arg2);
+		__JniBaseClass readAttributes(__JniBaseClass arg0, jstring arg1, jarray arg2);
+		__JniBaseClass readSymbolicLink(__JniBaseClass arg0);
 		void setAttribute(__JniBaseClass arg0, jstring arg1, jobject arg2, jarray arg3);
 	};
 } // namespace java::nio::file::spi

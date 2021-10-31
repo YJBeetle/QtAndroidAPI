@@ -9,12 +9,12 @@ namespace android::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ANYRTL_LTR();
-		static QAndroidJniObject FIRSTSTRONG_LTR();
-		static QAndroidJniObject FIRSTSTRONG_RTL();
-		static QAndroidJniObject LOCALE();
-		static QAndroidJniObject LTR();
-		static QAndroidJniObject RTL();
+		static __JniBaseClass ANYRTL_LTR();
+		static __JniBaseClass FIRSTSTRONG_LTR();
+		static __JniBaseClass FIRSTSTRONG_RTL();
+		static __JniBaseClass LOCALE();
+		static __JniBaseClass LTR();
+		static __JniBaseClass RTL();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextDirectionHeuristics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

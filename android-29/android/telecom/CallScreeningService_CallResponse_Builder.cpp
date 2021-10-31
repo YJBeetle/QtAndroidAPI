@@ -16,14 +16,14 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	QAndroidJniObject CallScreeningService_CallResponse_Builder::build()
+	android::telecom::CallScreeningService_CallResponse CallScreeningService_CallResponse_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telecom/CallScreeningService$CallResponse;"
 		);
 	}
-	QAndroidJniObject CallScreeningService_CallResponse_Builder::setDisallowCall(jboolean arg0)
+	android::telecom::CallScreeningService_CallResponse_Builder CallScreeningService_CallResponse_Builder::setDisallowCall(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setDisallowCall",
@@ -31,7 +31,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject CallScreeningService_CallResponse_Builder::setRejectCall(jboolean arg0)
+	android::telecom::CallScreeningService_CallResponse_Builder CallScreeningService_CallResponse_Builder::setRejectCall(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setRejectCall",
@@ -39,7 +39,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject CallScreeningService_CallResponse_Builder::setSilenceCall(jboolean arg0)
+	android::telecom::CallScreeningService_CallResponse_Builder CallScreeningService_CallResponse_Builder::setSilenceCall(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setSilenceCall",
@@ -47,7 +47,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject CallScreeningService_CallResponse_Builder::setSkipCallLog(jboolean arg0)
+	android::telecom::CallScreeningService_CallResponse_Builder CallScreeningService_CallResponse_Builder::setSkipCallLog(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setSkipCallLog",
@@ -55,7 +55,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject CallScreeningService_CallResponse_Builder::setSkipNotification(jboolean arg0)
+	android::telecom::CallScreeningService_CallResponse_Builder CallScreeningService_CallResponse_Builder::setSkipNotification(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setSkipNotification",

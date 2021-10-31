@@ -13,12 +13,12 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_CONVERSATIONS_URI();
-		static QAndroidJniObject CONTENT_DRAFT_URI();
-		static QAndroidJniObject CONTENT_FILTER_BYPHONE_URI();
-		static QAndroidJniObject CONTENT_LOCKED_URI();
-		static QAndroidJniObject CONTENT_UNDELIVERED_URI();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_CONVERSATIONS_URI();
+		static android::net::Uri CONTENT_DRAFT_URI();
+		static android::net::Uri CONTENT_FILTER_BYPHONE_URI();
+		static android::net::Uri CONTENT_LOCKED_URI();
+		static android::net::Uri CONTENT_UNDELIVERED_URI();
+		static android::net::Uri CONTENT_URI();
 		static jint ERR_TYPE_GENERIC();
 		static jint ERR_TYPE_GENERIC_PERMANENT();
 		static jint ERR_TYPE_MMS_PROTO_PERMANENT();
@@ -28,7 +28,7 @@ namespace android::provider
 		static jint ERR_TYPE_TRANSPORT_FAILURE();
 		static jint MMS_PROTO();
 		static jint NO_ERROR();
-		static QAndroidJniObject SEARCH_URI();
+		static android::net::Uri SEARCH_URI();
 		static jint SMS_PROTO();
 		static jstring TYPE_DISCRIMINATOR_COLUMN();
 		

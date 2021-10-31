@@ -74,7 +74,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject HashSet::iterator()
+	__JniBaseClass HashSet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -96,7 +96,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject HashSet::spliterator()
+	__JniBaseClass HashSet::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

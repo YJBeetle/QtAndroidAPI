@@ -368,7 +368,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Calendar::getAvailableCalendarTypes()
+	__JniBaseClass Calendar::getAvailableCalendarTypes()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Calendar",
@@ -384,7 +384,7 @@ namespace java::util
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Calendar::getInstance()
+	java::util::Calendar Calendar::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Calendar",
@@ -392,7 +392,7 @@ namespace java::util
 			"()Ljava/util/Calendar;"
 		);
 	}
-	QAndroidJniObject Calendar::getInstance(java::util::Locale arg0)
+	java::util::Calendar Calendar::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Calendar",
@@ -401,7 +401,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Calendar::getInstance(java::util::TimeZone arg0)
+	java::util::Calendar Calendar::getInstance(java::util::TimeZone arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Calendar",
@@ -410,7 +410,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Calendar::getInstance(java::util::TimeZone arg0, java::util::Locale arg1)
+	java::util::Calendar Calendar::getInstance(java::util::TimeZone arg0, java::util::Locale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Calendar",
@@ -532,7 +532,7 @@ namespace java::util
 			arg2.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject Calendar::getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2)
+	__JniBaseClass Calendar::getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2)
 	{
 		return callObjectMethod(
 			"getDisplayNames",
@@ -588,7 +588,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Calendar::getTime()
+	java::util::Date Calendar::getTime()
 	{
 		return callObjectMethod(
 			"getTime",
@@ -602,7 +602,7 @@ namespace java::util
 			"()J"
 		);
 	}
-	QAndroidJniObject Calendar::getTimeZone()
+	java::util::TimeZone Calendar::getTimeZone()
 	{
 		return callObjectMethod(
 			"getTimeZone",
@@ -772,7 +772,7 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Calendar::toInstant()
+	java::time::Instant Calendar::toInstant()
 	{
 		return callObjectMethod(
 			"toInstant",

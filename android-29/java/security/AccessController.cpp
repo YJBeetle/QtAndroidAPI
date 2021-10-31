@@ -74,7 +74,7 @@ namespace java::security
 			arg2
 		).object<jobject>();
 	}
-	QAndroidJniObject AccessController::getContext()
+	java::security::AccessControlContext AccessController::getContext()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AccessController",

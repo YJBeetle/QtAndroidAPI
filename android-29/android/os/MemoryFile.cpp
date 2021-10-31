@@ -34,14 +34,14 @@ namespace android::os
 			"()V"
 		);
 	}
-	QAndroidJniObject MemoryFile::getInputStream()
+	java::io::InputStream MemoryFile::getInputStream()
 	{
 		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	QAndroidJniObject MemoryFile::getOutputStream()
+	java::io::OutputStream MemoryFile::getOutputStream()
 	{
 		return callObjectMethod(
 			"getOutputStream",

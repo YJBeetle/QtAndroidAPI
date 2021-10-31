@@ -39,7 +39,7 @@ namespace android::media
 			"()[I"
 		).object<jintArray>();
 	}
-	QAndroidJniObject AudioPlaybackCaptureConfiguration::getMediaProjection()
+	android::media::projection::MediaProjection AudioPlaybackCaptureConfiguration::getMediaProjection()
 	{
 		return callObjectMethod(
 			"getMediaProjection",

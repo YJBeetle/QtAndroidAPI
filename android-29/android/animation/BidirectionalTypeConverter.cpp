@@ -25,7 +25,7 @@ namespace android::animation
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject BidirectionalTypeConverter::invert()
+	android::animation::BidirectionalTypeConverter BidirectionalTypeConverter::invert()
 	{
 		return callObjectMethod(
 			"invert",

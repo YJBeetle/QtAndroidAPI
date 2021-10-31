@@ -39,7 +39,7 @@ namespace java::net
 		jstring getActions();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
-		QAndroidJniObject newPermissionCollection();
+		java::security::PermissionCollection newPermissionCollection();
 	};
 } // namespace java::net
 

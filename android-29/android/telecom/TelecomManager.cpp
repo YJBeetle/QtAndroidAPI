@@ -395,7 +395,7 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	QAndroidJniObject TelecomManager::createManageBlockedNumbersIntent()
+	android::content::Intent TelecomManager::createManageBlockedNumbersIntent()
 	{
 		return callObjectMethod(
 			"createManageBlockedNumbersIntent",
@@ -409,7 +409,7 @@ namespace android::telecom
 			"()Z"
 		);
 	}
-	QAndroidJniObject TelecomManager::getAdnUriForPhoneAccount(android::telecom::PhoneAccountHandle arg0)
+	android::net::Uri TelecomManager::getAdnUriForPhoneAccount(android::telecom::PhoneAccountHandle arg0)
 	{
 		return callObjectMethod(
 			"getAdnUriForPhoneAccount",
@@ -417,7 +417,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TelecomManager::getCallCapablePhoneAccounts()
+	__JniBaseClass TelecomManager::getCallCapablePhoneAccounts()
 	{
 		return callObjectMethod(
 			"getCallCapablePhoneAccounts",
@@ -431,7 +431,7 @@ namespace android::telecom
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TelecomManager::getDefaultOutgoingPhoneAccount(jstring arg0)
+	android::telecom::PhoneAccountHandle TelecomManager::getDefaultOutgoingPhoneAccount(jstring arg0)
 	{
 		return callObjectMethod(
 			"getDefaultOutgoingPhoneAccount",
@@ -447,7 +447,7 @@ namespace android::telecom
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject TelecomManager::getPhoneAccount(android::telecom::PhoneAccountHandle arg0)
+	android::telecom::PhoneAccount TelecomManager::getPhoneAccount(android::telecom::PhoneAccountHandle arg0)
 	{
 		return callObjectMethod(
 			"getPhoneAccount",
@@ -455,14 +455,14 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TelecomManager::getSelfManagedPhoneAccounts()
+	__JniBaseClass TelecomManager::getSelfManagedPhoneAccounts()
 	{
 		return callObjectMethod(
 			"getSelfManagedPhoneAccounts",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject TelecomManager::getSimCallManager()
+	android::telecom::PhoneAccountHandle TelecomManager::getSimCallManager()
 	{
 		return callObjectMethod(
 			"getSimCallManager",
@@ -476,7 +476,7 @@ namespace android::telecom
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TelecomManager::getUserSelectedOutgoingPhoneAccount()
+	android::telecom::PhoneAccountHandle TelecomManager::getUserSelectedOutgoingPhoneAccount()
 	{
 		return callObjectMethod(
 			"getUserSelectedOutgoingPhoneAccount",

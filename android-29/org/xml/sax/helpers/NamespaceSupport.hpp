@@ -21,10 +21,10 @@ namespace org::xml::sax::helpers
 		
 		// Methods
 		jboolean declarePrefix(jstring arg0, jstring arg1);
-		QAndroidJniObject getDeclaredPrefixes();
+		__JniBaseClass getDeclaredPrefixes();
 		jstring getPrefix(jstring arg0);
-		QAndroidJniObject getPrefixes();
-		QAndroidJniObject getPrefixes(jstring arg0);
+		__JniBaseClass getPrefixes();
+		__JniBaseClass getPrefixes(jstring arg0);
 		jstring getURI(jstring arg0);
 		jboolean isNamespaceDeclUris();
 		void popContext();

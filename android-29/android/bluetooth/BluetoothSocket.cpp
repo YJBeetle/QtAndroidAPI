@@ -55,7 +55,7 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	QAndroidJniObject BluetoothSocket::getInputStream()
+	java::io::InputStream BluetoothSocket::getInputStream()
 	{
 		return callObjectMethod(
 			"getInputStream",
@@ -76,14 +76,14 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	QAndroidJniObject BluetoothSocket::getOutputStream()
+	java::io::OutputStream BluetoothSocket::getOutputStream()
 	{
 		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	QAndroidJniObject BluetoothSocket::getRemoteDevice()
+	android::bluetooth::BluetoothDevice BluetoothSocket::getRemoteDevice()
 	{
 		return callObjectMethod(
 			"getRemoteDevice",

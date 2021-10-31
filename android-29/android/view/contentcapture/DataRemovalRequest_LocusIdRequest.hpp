@@ -26,7 +26,7 @@ namespace android::view::contentcapture
 		
 		// Methods
 		jint getFlags();
-		QAndroidJniObject getLocusId();
+		android::content::LocusId getLocusId();
 	};
 } // namespace android::view::contentcapture
 

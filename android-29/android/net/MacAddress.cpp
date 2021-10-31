@@ -4,7 +4,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject MacAddress::BROADCAST_ADDRESS()
+	android::net::MacAddress MacAddress::BROADCAST_ADDRESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.MacAddress",
@@ -12,7 +12,7 @@ namespace android::net
 			"Landroid/net/MacAddress;"
 		);
 	}
-	QAndroidJniObject MacAddress::CREATOR()
+	__JniBaseClass MacAddress::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.MacAddress",
@@ -48,7 +48,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MacAddress::fromBytes(jbyteArray arg0)
+	android::net::MacAddress MacAddress::fromBytes(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.MacAddress",
@@ -57,7 +57,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject MacAddress::fromString(jstring arg0)
+	android::net::MacAddress MacAddress::fromString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.MacAddress",

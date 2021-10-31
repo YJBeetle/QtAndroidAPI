@@ -41,7 +41,7 @@ namespace java::security
 		jboolean equals(jobject arg0);
 		jarray getCertificates();
 		jarray getCodeSigners();
-		QAndroidJniObject getLocation();
+		java::net::URL getLocation();
 		jint hashCode();
 		jboolean implies(java::security::CodeSource arg0);
 		jstring toString();

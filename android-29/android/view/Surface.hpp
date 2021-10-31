@@ -29,7 +29,7 @@ namespace android::view
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint ROTATION_0();
 		static jint ROTATION_180();
 		static jint ROTATION_270();
@@ -46,8 +46,8 @@ namespace android::view
 		// Methods
 		jint describeContents();
 		jboolean isValid();
-		QAndroidJniObject lockCanvas(android::graphics::Rect arg0);
-		QAndroidJniObject lockHardwareCanvas();
+		android::graphics::Canvas lockCanvas(android::graphics::Rect arg0);
+		android::graphics::Canvas lockHardwareCanvas();
 		void readFromParcel(android::os::Parcel arg0);
 		void release();
 		jstring toString();

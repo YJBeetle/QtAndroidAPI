@@ -42,8 +42,8 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject EMPTY();
+		static __JniBaseClass CREATOR();
+		static android::os::Bundle EMPTY();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Bundle(const char *className, const char *sig, Ts...agv) : android::os::BaseBundle(className, sig, std::forward<Ts>(agv)...) {}
@@ -59,12 +59,12 @@ namespace android::os
 		// Methods
 		void clear();
 		jobject clone();
-		QAndroidJniObject deepCopy();
+		android::os::Bundle deepCopy();
 		jint describeContents();
-		QAndroidJniObject getBinder(jstring arg0);
-		QAndroidJniObject getBundle(jstring arg0);
+		__JniBaseClass getBinder(jstring arg0);
+		android::os::Bundle getBundle(jstring arg0);
 		jbyte getByte(jstring arg0);
-		QAndroidJniObject getByte(jstring arg0, jbyte arg1);
+		java::lang::Byte getByte(jstring arg0, jbyte arg1);
 		jbyteArray getByteArray(jstring arg0);
 		jchar getChar(jstring arg0);
 		jchar getChar(jstring arg0, jchar arg1);
@@ -72,23 +72,23 @@ namespace android::os
 		jstring getCharSequence(jstring arg0);
 		jstring getCharSequence(jstring arg0, jstring arg1);
 		jarray getCharSequenceArray(jstring arg0);
-		QAndroidJniObject getCharSequenceArrayList(jstring arg0);
-		QAndroidJniObject getClassLoader();
+		java::util::ArrayList getCharSequenceArrayList(jstring arg0);
+		java::lang::ClassLoader getClassLoader();
 		jfloat getFloat(jstring arg0);
 		jfloat getFloat(jstring arg0, jfloat arg1);
 		jfloatArray getFloatArray(jstring arg0);
-		QAndroidJniObject getIntegerArrayList(jstring arg0);
-		QAndroidJniObject getParcelable(jstring arg0);
+		java::util::ArrayList getIntegerArrayList(jstring arg0);
+		__JniBaseClass getParcelable(jstring arg0);
 		jarray getParcelableArray(jstring arg0);
-		QAndroidJniObject getParcelableArrayList(jstring arg0);
-		QAndroidJniObject getSerializable(jstring arg0);
+		java::util::ArrayList getParcelableArrayList(jstring arg0);
+		__JniBaseClass getSerializable(jstring arg0);
 		jshort getShort(jstring arg0);
 		jshort getShort(jstring arg0, jshort arg1);
 		jshortArray getShortArray(jstring arg0);
-		QAndroidJniObject getSize(jstring arg0);
-		QAndroidJniObject getSizeF(jstring arg0);
-		QAndroidJniObject getSparseParcelableArray(jstring arg0);
-		QAndroidJniObject getStringArrayList(jstring arg0);
+		android::util::Size getSize(jstring arg0);
+		android::util::SizeF getSizeF(jstring arg0);
+		android::util::SparseArray getSparseParcelableArray(jstring arg0);
+		java::util::ArrayList getStringArrayList(jstring arg0);
 		jboolean hasFileDescriptors();
 		void putAll(android::os::Bundle arg0);
 		void putBinder(jstring arg0, __JniBaseClass arg1);

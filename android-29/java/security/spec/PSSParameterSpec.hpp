@@ -9,7 +9,7 @@ namespace java::security::spec
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEFAULT();
+		static java::security::spec::PSSParameterSpec DEFAULT();
 		static jint TRAILER_FIELD_BC();
 		
 		// QAndroidJniObject forward
@@ -23,7 +23,7 @@ namespace java::security::spec
 		// Methods
 		jstring getDigestAlgorithm();
 		jstring getMGFAlgorithm();
-		QAndroidJniObject getMGFParameters();
+		__JniBaseClass getMGFParameters();
 		jint getSaltLength();
 		jint getTrailerField();
 		jstring toString();

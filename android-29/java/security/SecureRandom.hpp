@@ -32,18 +32,18 @@ namespace java::security
 		SecureRandom(jbyteArray arg0);
 		
 		// Methods
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		static QAndroidJniObject getInstance(jstring arg0, __JniBaseClass arg1);
-		static QAndroidJniObject getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2);
-		static QAndroidJniObject getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2);
-		static QAndroidJniObject getInstanceStrong();
+		static java::security::SecureRandom getInstance(jstring arg0);
+		static java::security::SecureRandom getInstance(jstring arg0, jstring arg1);
+		static java::security::SecureRandom getInstance(jstring arg0, java::security::Provider arg1);
+		static java::security::SecureRandom getInstance(jstring arg0, __JniBaseClass arg1);
+		static java::security::SecureRandom getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2);
+		static java::security::SecureRandom getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2);
+		static java::security::SecureRandom getInstanceStrong();
 		static jbyteArray getSeed(jint arg0);
 		jbyteArray generateSeed(jint arg0);
 		jstring getAlgorithm();
-		QAndroidJniObject getParameters();
-		QAndroidJniObject getProvider();
+		__JniBaseClass getParameters();
+		java::security::Provider getProvider();
 		void nextBytes(jbyteArray arg0);
 		void nextBytes(jbyteArray arg0, __JniBaseClass arg1);
 		void reseed();

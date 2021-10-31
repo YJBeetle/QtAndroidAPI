@@ -28,7 +28,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	QAndroidJniObject PhoneAccount_Builder::addSupportedUriScheme(jstring arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::addSupportedUriScheme(jstring arg0)
 	{
 		return callObjectMethod(
 			"addSupportedUriScheme",
@@ -36,14 +36,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject PhoneAccount_Builder::build()
+	android::telecom::PhoneAccount PhoneAccount_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telecom/PhoneAccount;"
 		);
 	}
-	QAndroidJniObject PhoneAccount_Builder::setAddress(android::net::Uri arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setAddress(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"setAddress",
@@ -51,7 +51,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PhoneAccount_Builder::setCapabilities(jint arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setCapabilities(jint arg0)
 	{
 		return callObjectMethod(
 			"setCapabilities",
@@ -59,7 +59,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject PhoneAccount_Builder::setExtras(android::os::Bundle arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -67,7 +67,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PhoneAccount_Builder::setHighlightColor(jint arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setHighlightColor(jint arg0)
 	{
 		return callObjectMethod(
 			"setHighlightColor",
@@ -75,7 +75,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject PhoneAccount_Builder::setIcon(android::graphics::drawable::Icon arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setIcon(android::graphics::drawable::Icon arg0)
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -83,7 +83,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PhoneAccount_Builder::setShortDescription(jstring arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setShortDescription(jstring arg0)
 	{
 		return callObjectMethod(
 			"setShortDescription",
@@ -91,7 +91,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject PhoneAccount_Builder::setSubscriptionAddress(android::net::Uri arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setSubscriptionAddress(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"setSubscriptionAddress",
@@ -99,7 +99,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PhoneAccount_Builder::setSupportedUriSchemes(__JniBaseClass arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setSupportedUriSchemes(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setSupportedUriSchemes",

@@ -30,13 +30,13 @@ namespace java::util
 		// Methods
 		void clear();
 		jboolean containsValue(jobject arg0);
-		QAndroidJniObject entrySet();
+		__JniBaseClass entrySet();
 		void forEach(__JniBaseClass arg0);
 		jobject get(jobject arg0);
 		jobject getOrDefault(jobject arg0, jobject arg1);
-		QAndroidJniObject keySet();
+		__JniBaseClass keySet();
 		void replaceAll(__JniBaseClass arg0);
-		QAndroidJniObject values();
+		__JniBaseClass values();
 	};
 } // namespace java::util
 

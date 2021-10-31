@@ -89,7 +89,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject GridView::getAdapter()
+	__JniBaseClass GridView::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",

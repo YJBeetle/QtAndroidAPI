@@ -18,7 +18,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		QAndroidJniObject applicationInfo();
+		android::content::pm::ApplicationInfo applicationInfo();
 		jint descriptionRes();
 		jboolean directBootAware();
 		jboolean enabled();

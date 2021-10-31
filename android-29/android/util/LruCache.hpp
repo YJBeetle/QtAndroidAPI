@@ -30,7 +30,7 @@ namespace android::util
 		jobject remove(jobject arg0);
 		void resize(jint arg0);
 		jint size();
-		QAndroidJniObject snapshot();
+		__JniBaseClass snapshot();
 		jstring toString();
 		void trimToSize(jint arg0);
 	};

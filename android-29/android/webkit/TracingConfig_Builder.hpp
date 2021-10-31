@@ -22,11 +22,11 @@ namespace android::webkit
 		TracingConfig_Builder();
 		
 		// Methods
-		QAndroidJniObject addCategories(jintArray arg0);
-		QAndroidJniObject addCategories(jarray arg0);
-		QAndroidJniObject addCategories(__JniBaseClass arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject setTracingMode(jint arg0);
+		android::webkit::TracingConfig_Builder addCategories(jintArray arg0);
+		android::webkit::TracingConfig_Builder addCategories(jarray arg0);
+		android::webkit::TracingConfig_Builder addCategories(__JniBaseClass arg0);
+		android::webkit::TracingConfig build();
+		android::webkit::TracingConfig_Builder setTracingMode(jint arg0);
 	};
 } // namespace android::webkit
 

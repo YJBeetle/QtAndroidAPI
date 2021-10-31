@@ -18,7 +18,7 @@ namespace android::icu::text
 		IDNA_Info();
 		
 		// Methods
-		QAndroidJniObject getErrors();
+		__JniBaseClass getErrors();
 		jboolean hasErrors();
 		jboolean isTransitionalDifferent();
 	};

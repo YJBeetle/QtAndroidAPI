@@ -16,7 +16,7 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CameraManager::getCameraCharacteristics(jstring arg0)
+	android::hardware::camera2::CameraCharacteristics CameraManager::getCameraCharacteristics(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCameraCharacteristics",

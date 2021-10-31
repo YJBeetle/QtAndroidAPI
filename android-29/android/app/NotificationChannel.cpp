@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject NotificationChannel::CREATOR()
+	__JniBaseClass NotificationChannel::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.NotificationChannel",
@@ -89,7 +89,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject NotificationChannel::getAudioAttributes()
+	android::media::AudioAttributes NotificationChannel::getAudioAttributes()
 	{
 		return callObjectMethod(
 			"getAudioAttributes",
@@ -145,7 +145,7 @@ namespace android::app
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject NotificationChannel::getSound()
+	android::net::Uri NotificationChannel::getSound()
 	{
 		return callObjectMethod(
 			"getSound",

@@ -73,19 +73,19 @@ namespace android::media
 		
 		// Methods
 		jboolean advance();
-		QAndroidJniObject getAudioPresentations(jint arg0);
+		__JniBaseClass getAudioPresentations(jint arg0);
 		jlong getCachedDuration();
-		QAndroidJniObject getCasInfo(jint arg0);
-		QAndroidJniObject getDrmInitData();
-		QAndroidJniObject getMetrics();
-		QAndroidJniObject getPsshInfo();
+		android::media::MediaExtractor_CasInfo getCasInfo(jint arg0);
+		android::media::DrmInitData getDrmInitData();
+		android::os::PersistableBundle getMetrics();
+		__JniBaseClass getPsshInfo();
 		jboolean getSampleCryptoInfo(android::media::MediaCodec_CryptoInfo arg0);
 		jint getSampleFlags();
 		jlong getSampleSize();
 		jlong getSampleTime();
 		jint getSampleTrackIndex();
 		jint getTrackCount();
-		QAndroidJniObject getTrackFormat(jint arg0);
+		android::media::MediaFormat getTrackFormat(jint arg0);
 		jboolean hasCacheReachedEndOfStream();
 		jint readSampleData(java::nio::ByteBuffer arg0, jint arg1);
 		void release();

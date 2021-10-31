@@ -51,7 +51,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaSessionManager::getActiveSessions(android::content::ComponentName arg0)
+	__JniBaseClass MediaSessionManager::getActiveSessions(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getActiveSessions",
@@ -59,7 +59,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaSessionManager::getSession2Tokens()
+	__JniBaseClass MediaSessionManager::getSession2Tokens()
 	{
 		return callObjectMethod(
 			"getSession2Tokens",

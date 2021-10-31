@@ -23,13 +23,13 @@ namespace java::util::concurrent
 		void complete(jobject arg0);
 		void compute();
 		jint decrementPendingCountUnlessZero();
-		QAndroidJniObject firstComplete();
-		QAndroidJniObject getCompleter();
+		java::util::concurrent::CountedCompleter firstComplete();
+		java::util::concurrent::CountedCompleter getCompleter();
 		jint getPendingCount();
 		jobject getRawResult();
-		QAndroidJniObject getRoot();
+		java::util::concurrent::CountedCompleter getRoot();
 		void helpComplete(jint arg0);
-		QAndroidJniObject nextComplete();
+		java::util::concurrent::CountedCompleter nextComplete();
 		void onCompletion(java::util::concurrent::CountedCompleter arg0);
 		jboolean onExceptionalCompletion(jthrowable arg0, java::util::concurrent::CountedCompleter arg1);
 		void propagateCompletion();

@@ -25,14 +25,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	QAndroidJniObject ShortcutInfo_Builder::build()
+	android::content::pm::ShortcutInfo ShortcutInfo_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/content/pm/ShortcutInfo;"
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setActivity(android::content::ComponentName arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setActivity(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"setActivity",
@@ -40,7 +40,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setCategories(__JniBaseClass arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setCategories(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setCategories",
@@ -48,7 +48,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setDisabledMessage(jstring arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setDisabledMessage(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDisabledMessage",
@@ -56,7 +56,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setExtras(android::os::PersistableBundle arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setExtras(android::os::PersistableBundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -64,7 +64,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setIcon(android::graphics::drawable::Icon arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIcon(android::graphics::drawable::Icon arg0)
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -72,7 +72,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setIntent(android::content::Intent arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIntent(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"setIntent",
@@ -80,7 +80,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setIntents(jarray arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIntents(jarray arg0)
 	{
 		return callObjectMethod(
 			"setIntents",
@@ -88,7 +88,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setLocusId(android::content::LocusId arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setLocusId(android::content::LocusId arg0)
 	{
 		return callObjectMethod(
 			"setLocusId",
@@ -96,7 +96,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setLongLabel(jstring arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setLongLabel(jstring arg0)
 	{
 		return callObjectMethod(
 			"setLongLabel",
@@ -104,7 +104,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setLongLived(jboolean arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setLongLived(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setLongLived",
@@ -112,7 +112,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setPerson(android::app::Person arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setPerson(android::app::Person arg0)
 	{
 		return callObjectMethod(
 			"setPerson",
@@ -120,7 +120,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setPersons(jarray arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setPersons(jarray arg0)
 	{
 		return callObjectMethod(
 			"setPersons",
@@ -128,7 +128,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setRank(jint arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setRank(jint arg0)
 	{
 		return callObjectMethod(
 			"setRank",
@@ -136,7 +136,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setShortLabel(jstring arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setShortLabel(jstring arg0)
 	{
 		return callObjectMethod(
 			"setShortLabel",

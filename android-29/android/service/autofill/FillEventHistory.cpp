@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	QAndroidJniObject FillEventHistory::CREATOR()
+	__JniBaseClass FillEventHistory::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.FillEventHistory",
@@ -27,14 +27,14 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	QAndroidJniObject FillEventHistory::getClientState()
+	android::os::Bundle FillEventHistory::getClientState()
 	{
 		return callObjectMethod(
 			"getClientState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject FillEventHistory::getEvents()
+	__JniBaseClass FillEventHistory::getEvents()
 	{
 		return callObjectMethod(
 			"getEvents",

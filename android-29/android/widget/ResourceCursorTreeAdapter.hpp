@@ -34,8 +34,8 @@ namespace android::widget
 		ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		QAndroidJniObject newChildView(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2, android::view::ViewGroup arg3);
-		QAndroidJniObject newGroupView(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2, android::view::ViewGroup arg3);
+		android::view::View newChildView(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2, android::view::ViewGroup arg3);
+		android::view::View newGroupView(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2, android::view::ViewGroup arg3);
 	};
 } // namespace android::widget
 

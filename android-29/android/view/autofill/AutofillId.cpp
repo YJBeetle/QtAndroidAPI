@@ -4,7 +4,7 @@
 namespace android::view::autofill
 {
 	// Fields
-	QAndroidJniObject AutofillId::CREATOR()
+	__JniBaseClass AutofillId::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.autofill.AutofillId",

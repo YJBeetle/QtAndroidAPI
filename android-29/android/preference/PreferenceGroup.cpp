@@ -53,7 +53,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PreferenceGroup::findPreference(jstring arg0)
+	android::preference::Preference PreferenceGroup::findPreference(jstring arg0)
 	{
 		return callObjectMethod(
 			"findPreference",
@@ -61,7 +61,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	QAndroidJniObject PreferenceGroup::getPreference(jint arg0)
+	android::preference::Preference PreferenceGroup::getPreference(jint arg0)
 	{
 		return callObjectMethod(
 			"getPreference",

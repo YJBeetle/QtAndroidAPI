@@ -20,7 +20,7 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	QAndroidJniObject RectShape::clone()
+	android::graphics::drawable::shapes::RectShape RectShape::clone()
 	{
 		return callObjectMethod(
 			"clone",

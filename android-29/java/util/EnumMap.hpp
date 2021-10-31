@@ -34,20 +34,20 @@ namespace java::util
 		
 		// Methods
 		void clear();
-		QAndroidJniObject clone();
+		java::util::EnumMap clone();
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		QAndroidJniObject entrySet();
+		__JniBaseClass entrySet();
 		jboolean equals(jobject arg0);
 		jobject get(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject keySet();
+		__JniBaseClass keySet();
 		jobject put(java::lang::Enum arg0, jobject arg1);
 		jobject put(jobject arg0, jobject arg1);
 		void putAll(__JniBaseClass arg0);
 		jobject remove(jobject arg0);
 		jint size();
-		QAndroidJniObject values();
+		__JniBaseClass values();
 	};
 } // namespace java::util
 

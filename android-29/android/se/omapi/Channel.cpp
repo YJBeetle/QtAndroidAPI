@@ -25,7 +25,7 @@ namespace android::se::omapi
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject Channel::getSession()
+	android::se::omapi::Session Channel::getSession()
 	{
 		return callObjectMethod(
 			"getSession",

@@ -50,7 +50,7 @@ namespace android::service::voice
 			arg1.object()
 		);
 	}
-	QAndroidJniObject VoiceInteractionService::createAlwaysOnHotwordDetector(jstring arg0, java::util::Locale arg1, android::service::voice::AlwaysOnHotwordDetector_Callback arg2)
+	android::service::voice::AlwaysOnHotwordDetector VoiceInteractionService::createAlwaysOnHotwordDetector(jstring arg0, java::util::Locale arg1, android::service::voice::AlwaysOnHotwordDetector_Callback arg2)
 	{
 		return callObjectMethod(
 			"createAlwaysOnHotwordDetector",
@@ -67,7 +67,7 @@ namespace android::service::voice
 			"()I"
 		);
 	}
-	QAndroidJniObject VoiceInteractionService::onBind(android::content::Intent arg0)
+	__JniBaseClass VoiceInteractionService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -75,7 +75,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	QAndroidJniObject VoiceInteractionService::onGetSupportedVoiceActions(__JniBaseClass arg0)
+	__JniBaseClass VoiceInteractionService::onGetSupportedVoiceActions(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"onGetSupportedVoiceActions",

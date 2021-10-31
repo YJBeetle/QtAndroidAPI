@@ -20,7 +20,7 @@ namespace android::view::accessibility
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject obtain(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		static android::view::accessibility::AccessibilityNodeInfo_RangeInfo obtain(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		jfloat getCurrent();
 		jfloat getMax();
 		jfloat getMin();

@@ -6,7 +6,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject LocaleList::CREATOR()
+	__JniBaseClass LocaleList::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.LocaleList",
@@ -27,7 +27,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	QAndroidJniObject LocaleList::forLanguageTags(jstring arg0)
+	android::os::LocaleList LocaleList::forLanguageTags(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.LocaleList",
@@ -36,7 +36,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject LocaleList::getAdjustedDefault()
+	android::os::LocaleList LocaleList::getAdjustedDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.LocaleList",
@@ -44,7 +44,7 @@ namespace android::os
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	QAndroidJniObject LocaleList::getDefault()
+	android::os::LocaleList LocaleList::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.LocaleList",
@@ -52,7 +52,7 @@ namespace android::os
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	QAndroidJniObject LocaleList::getEmptyLocaleList()
+	android::os::LocaleList LocaleList::getEmptyLocaleList()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.LocaleList",
@@ -93,7 +93,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject LocaleList::get(jint arg0)
+	java::util::Locale LocaleList::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",
@@ -101,7 +101,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject LocaleList::getFirstMatch(jarray arg0)
+	java::util::Locale LocaleList::getFirstMatch(jarray arg0)
 	{
 		return callObjectMethod(
 			"getFirstMatch",

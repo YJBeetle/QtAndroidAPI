@@ -30,9 +30,9 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject apply(java::util::Locale arg0, jstring arg1, __JniBaseClass arg2, android::icu::text::Edits arg3);
+		__JniBaseClass apply(java::util::Locale arg0, jstring arg1, __JniBaseClass arg2, android::icu::text::Edits arg3);
 		jstring apply(java::util::Locale arg0, jstring arg1);
-		QAndroidJniObject omitUnchangedText();
+		android::icu::text::CaseMap_Lower omitUnchangedText();
 	};
 } // namespace android::icu::text
 

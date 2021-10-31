@@ -40,7 +40,7 @@ namespace java::util
 		
 		// Methods
 		static jlong UTC(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		static QAndroidJniObject from(java::time::Instant arg0);
+		static java::util::Date from(java::time::Instant arg0);
 		static jlong parse(jstring arg0);
 		jboolean after(java::util::Date arg0);
 		jboolean before(java::util::Date arg0);
@@ -66,7 +66,7 @@ namespace java::util
 		void setTime(jlong arg0);
 		void setYear(jint arg0);
 		jstring toGMTString();
-		QAndroidJniObject toInstant();
+		java::time::Instant toInstant();
 		jstring toLocaleString();
 		jstring toString();
 	};

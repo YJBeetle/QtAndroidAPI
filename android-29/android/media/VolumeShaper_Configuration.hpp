@@ -13,15 +13,15 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject CUBIC_RAMP();
+		static __JniBaseClass CREATOR();
+		static android::media::VolumeShaper_Configuration CUBIC_RAMP();
 		static jint INTERPOLATOR_TYPE_CUBIC();
 		static jint INTERPOLATOR_TYPE_CUBIC_MONOTONIC();
 		static jint INTERPOLATOR_TYPE_LINEAR();
 		static jint INTERPOLATOR_TYPE_STEP();
-		static QAndroidJniObject LINEAR_RAMP();
-		static QAndroidJniObject SCURVE_RAMP();
-		static QAndroidJniObject SINE_RAMP();
+		static android::media::VolumeShaper_Configuration LINEAR_RAMP();
+		static android::media::VolumeShaper_Configuration SCURVE_RAMP();
+		static android::media::VolumeShaper_Configuration SINE_RAMP();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VolumeShaper_Configuration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

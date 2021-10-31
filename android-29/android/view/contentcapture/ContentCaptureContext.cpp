@@ -7,7 +7,7 @@
 namespace android::view::contentcapture
 {
 	// Fields
-	QAndroidJniObject ContentCaptureContext::CREATOR()
+	__JniBaseClass ContentCaptureContext::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.contentcapture.ContentCaptureContext",
@@ -22,7 +22,7 @@ namespace android::view::contentcapture
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ContentCaptureContext::forLocusId(jstring arg0)
+	android::view::contentcapture::ContentCaptureContext ContentCaptureContext::forLocusId(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.contentcapture.ContentCaptureContext",
@@ -38,14 +38,14 @@ namespace android::view::contentcapture
 			"()I"
 		);
 	}
-	QAndroidJniObject ContentCaptureContext::getExtras()
+	android::os::Bundle ContentCaptureContext::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject ContentCaptureContext::getLocusId()
+	android::content::LocusId ContentCaptureContext::getLocusId()
 	{
 		return callObjectMethod(
 			"getLocusId",

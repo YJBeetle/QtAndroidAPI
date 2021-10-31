@@ -21,7 +21,7 @@ namespace android::view::textclassifier
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring TYPE_CALL_PHONE();
 		static jstring TYPE_CREATE_REMINDER();
 		static jstring TYPE_OPEN_URL();
@@ -41,9 +41,9 @@ namespace android::view::textclassifier
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getAction();
+		android::app::RemoteAction getAction();
 		jfloat getConfidenceScore();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jstring getTextReply();
 		jstring getType();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

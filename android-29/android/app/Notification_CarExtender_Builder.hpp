@@ -30,11 +30,11 @@ namespace android::app
 		Notification_CarExtender_Builder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject addMessage(jstring arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject setLatestTimestamp(jlong arg0);
-		QAndroidJniObject setReadPendingIntent(android::app::PendingIntent arg0);
-		QAndroidJniObject setReplyAction(android::app::PendingIntent arg0, android::app::RemoteInput arg1);
+		android::app::Notification_CarExtender_Builder addMessage(jstring arg0);
+		android::app::Notification_CarExtender_UnreadConversation build();
+		android::app::Notification_CarExtender_Builder setLatestTimestamp(jlong arg0);
+		android::app::Notification_CarExtender_Builder setReadPendingIntent(android::app::PendingIntent arg0);
+		android::app::Notification_CarExtender_Builder setReplyAction(android::app::PendingIntent arg0, android::app::RemoteInput arg1);
 	};
 } // namespace android::app
 

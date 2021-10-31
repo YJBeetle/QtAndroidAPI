@@ -5,7 +5,7 @@
 namespace android::app::admin
 {
 	// Fields
-	QAndroidJniObject ConnectEvent::CREATOR()
+	__JniBaseClass ConnectEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.ConnectEvent",
@@ -27,7 +27,7 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	QAndroidJniObject ConnectEvent::getInetAddress()
+	java::net::InetAddress ConnectEvent::getInetAddress()
 	{
 		return callObjectMethod(
 			"getInetAddress",

@@ -22,7 +22,7 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	QAndroidJniObject ArcShape::clone()
+	android::graphics::drawable::shapes::ArcShape ArcShape::clone()
 	{
 		return callObjectMethod(
 			"clone",

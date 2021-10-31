@@ -28,7 +28,7 @@ namespace android::accounts
 		) {}
 	
 	// Methods
-	QAndroidJniObject AbstractAccountAuthenticator::addAccount(android::accounts::AccountAuthenticatorResponse arg0, jstring arg1, jstring arg2, jarray arg3, android::os::Bundle arg4)
+	android::os::Bundle AbstractAccountAuthenticator::addAccount(android::accounts::AccountAuthenticatorResponse arg0, jstring arg1, jstring arg2, jarray arg3, android::os::Bundle arg4)
 	{
 		return callObjectMethod(
 			"addAccount",
@@ -40,7 +40,7 @@ namespace android::accounts
 			arg4.object()
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::addAccountFromCredentials(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, android::os::Bundle arg2)
+	android::os::Bundle AbstractAccountAuthenticator::addAccountFromCredentials(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"addAccountFromCredentials",
@@ -50,7 +50,7 @@ namespace android::accounts
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::confirmCredentials(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, android::os::Bundle arg2)
+	android::os::Bundle AbstractAccountAuthenticator::confirmCredentials(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"confirmCredentials",
@@ -60,7 +60,7 @@ namespace android::accounts
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::editProperties(android::accounts::AccountAuthenticatorResponse arg0, jstring arg1)
+	android::os::Bundle AbstractAccountAuthenticator::editProperties(android::accounts::AccountAuthenticatorResponse arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"editProperties",
@@ -69,7 +69,7 @@ namespace android::accounts
 			arg1
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::finishSession(android::accounts::AccountAuthenticatorResponse arg0, jstring arg1, android::os::Bundle arg2)
+	android::os::Bundle AbstractAccountAuthenticator::finishSession(android::accounts::AccountAuthenticatorResponse arg0, jstring arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"finishSession",
@@ -79,7 +79,7 @@ namespace android::accounts
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::getAccountCredentialsForCloning(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1)
+	android::os::Bundle AbstractAccountAuthenticator::getAccountCredentialsForCloning(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1)
 	{
 		return callObjectMethod(
 			"getAccountCredentialsForCloning",
@@ -88,7 +88,7 @@ namespace android::accounts
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::getAccountRemovalAllowed(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1)
+	android::os::Bundle AbstractAccountAuthenticator::getAccountRemovalAllowed(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1)
 	{
 		return callObjectMethod(
 			"getAccountRemovalAllowed",
@@ -97,7 +97,7 @@ namespace android::accounts
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::getAuthToken(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jstring arg2, android::os::Bundle arg3)
+	android::os::Bundle AbstractAccountAuthenticator::getAuthToken(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jstring arg2, android::os::Bundle arg3)
 	{
 		return callObjectMethod(
 			"getAuthToken",
@@ -116,14 +116,14 @@ namespace android::accounts
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::getIBinder()
+	__JniBaseClass AbstractAccountAuthenticator::getIBinder()
 	{
 		return callObjectMethod(
 			"getIBinder",
 			"()Landroid/os/IBinder;"
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::hasFeatures(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jarray arg2)
+	android::os::Bundle AbstractAccountAuthenticator::hasFeatures(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jarray arg2)
 	{
 		return callObjectMethod(
 			"hasFeatures",
@@ -133,7 +133,7 @@ namespace android::accounts
 			arg2
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::isCredentialsUpdateSuggested(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jstring arg2)
+	android::os::Bundle AbstractAccountAuthenticator::isCredentialsUpdateSuggested(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"isCredentialsUpdateSuggested",
@@ -143,7 +143,7 @@ namespace android::accounts
 			arg2
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::startAddAccountSession(android::accounts::AccountAuthenticatorResponse arg0, jstring arg1, jstring arg2, jarray arg3, android::os::Bundle arg4)
+	android::os::Bundle AbstractAccountAuthenticator::startAddAccountSession(android::accounts::AccountAuthenticatorResponse arg0, jstring arg1, jstring arg2, jarray arg3, android::os::Bundle arg4)
 	{
 		return callObjectMethod(
 			"startAddAccountSession",
@@ -155,7 +155,7 @@ namespace android::accounts
 			arg4.object()
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::startUpdateCredentialsSession(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jstring arg2, android::os::Bundle arg3)
+	android::os::Bundle AbstractAccountAuthenticator::startUpdateCredentialsSession(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jstring arg2, android::os::Bundle arg3)
 	{
 		return callObjectMethod(
 			"startUpdateCredentialsSession",
@@ -166,7 +166,7 @@ namespace android::accounts
 			arg3.object()
 		);
 	}
-	QAndroidJniObject AbstractAccountAuthenticator::updateCredentials(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jstring arg2, android::os::Bundle arg3)
+	android::os::Bundle AbstractAccountAuthenticator::updateCredentials(android::accounts::AccountAuthenticatorResponse arg0, android::accounts::Account arg1, jstring arg2, android::os::Bundle arg3)
 	{
 		return callObjectMethod(
 			"updateCredentials",

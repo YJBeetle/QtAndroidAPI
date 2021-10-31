@@ -37,7 +37,7 @@ namespace android::appwidget
 			"()I"
 		);
 	}
-	QAndroidJniObject AppWidgetHost::createView(android::content::Context arg0, jint arg1, android::appwidget::AppWidgetProviderInfo arg2)
+	android::appwidget::AppWidgetHostView AppWidgetHost::createView(android::content::Context arg0, jint arg1, android::appwidget::AppWidgetProviderInfo arg2)
 	{
 		return callObjectMethod(
 			"createView",

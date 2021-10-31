@@ -18,7 +18,7 @@ namespace android::content
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContentResolver_MimeTypeInfo::getIcon()
+	android::graphics::drawable::Icon ContentResolver_MimeTypeInfo::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",

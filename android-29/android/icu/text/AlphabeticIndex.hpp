@@ -40,25 +40,25 @@ namespace android::icu::text
 		AlphabeticIndex(java::util::Locale arg0);
 		
 		// Methods
-		QAndroidJniObject addLabels(jarray arg0);
-		QAndroidJniObject addLabels(android::icu::text::UnicodeSet arg0);
-		QAndroidJniObject addRecord(jstring arg0, jobject arg1);
-		QAndroidJniObject buildImmutableIndex();
-		QAndroidJniObject clearRecords();
+		android::icu::text::AlphabeticIndex addLabels(jarray arg0);
+		android::icu::text::AlphabeticIndex addLabels(android::icu::text::UnicodeSet arg0);
+		android::icu::text::AlphabeticIndex addRecord(jstring arg0, jobject arg1);
+		android::icu::text::AlphabeticIndex_ImmutableIndex buildImmutableIndex();
+		android::icu::text::AlphabeticIndex clearRecords();
 		jint getBucketCount();
 		jint getBucketIndex(jstring arg0);
-		QAndroidJniObject getBucketLabels();
-		QAndroidJniObject getCollator();
+		__JniBaseClass getBucketLabels();
+		android::icu::text::RuleBasedCollator getCollator();
 		jstring getInflowLabel();
 		jint getMaxLabelCount();
 		jstring getOverflowLabel();
 		jint getRecordCount();
 		jstring getUnderflowLabel();
-		QAndroidJniObject iterator();
-		QAndroidJniObject setInflowLabel(jstring arg0);
-		QAndroidJniObject setMaxLabelCount(jint arg0);
-		QAndroidJniObject setOverflowLabel(jstring arg0);
-		QAndroidJniObject setUnderflowLabel(jstring arg0);
+		__JniBaseClass iterator();
+		android::icu::text::AlphabeticIndex setInflowLabel(jstring arg0);
+		android::icu::text::AlphabeticIndex setMaxLabelCount(jint arg0);
+		android::icu::text::AlphabeticIndex setOverflowLabel(jstring arg0);
+		android::icu::text::AlphabeticIndex setUnderflowLabel(jstring arg0);
 	};
 } // namespace android::icu::text
 

@@ -54,8 +54,8 @@ namespace android::webkit
 		WebChromeClient();
 		
 		// Methods
-		QAndroidJniObject getDefaultVideoPoster();
-		QAndroidJniObject getVideoLoadingProgressView();
+		android::graphics::Bitmap getDefaultVideoPoster();
+		android::view::View getVideoLoadingProgressView();
 		void getVisitedHistory(__JniBaseClass arg0);
 		void onCloseWindow(android::webkit::WebView arg0);
 		jboolean onConsoleMessage(android::webkit::ConsoleMessage arg0);

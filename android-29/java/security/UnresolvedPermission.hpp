@@ -43,7 +43,7 @@ namespace java::security
 		jstring getUnresolvedType();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
-		QAndroidJniObject newPermissionCollection();
+		java::security::PermissionCollection newPermissionCollection();
 		jstring toString();
 	};
 } // namespace java::security

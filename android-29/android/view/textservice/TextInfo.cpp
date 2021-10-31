@@ -4,7 +4,7 @@
 namespace android::view::textservice
 {
 	// Fields
-	QAndroidJniObject TextInfo::CREATOR()
+	__JniBaseClass TextInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textservice.TextInfo",

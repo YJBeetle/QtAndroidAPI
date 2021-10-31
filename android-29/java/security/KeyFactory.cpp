@@ -12,7 +12,7 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject KeyFactory::getInstance(jstring arg0)
+	java::security::KeyFactory KeyFactory::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyFactory",
@@ -21,7 +21,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject KeyFactory::getInstance(jstring arg0, jstring arg1)
+	java::security::KeyFactory KeyFactory::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyFactory",
@@ -31,7 +31,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject KeyFactory::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::KeyFactory KeyFactory::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyFactory",
@@ -41,7 +41,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	QAndroidJniObject KeyFactory::generatePrivate(__JniBaseClass arg0)
+	__JniBaseClass KeyFactory::generatePrivate(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generatePrivate",
@@ -49,7 +49,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	QAndroidJniObject KeyFactory::generatePublic(__JniBaseClass arg0)
+	__JniBaseClass KeyFactory::generatePublic(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generatePublic",
@@ -64,7 +64,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject KeyFactory::getKeySpec(__JniBaseClass arg0, jclass arg1)
+	__JniBaseClass KeyFactory::getKeySpec(__JniBaseClass arg0, jclass arg1)
 	{
 		return callObjectMethod(
 			"getKeySpec",
@@ -73,14 +73,14 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject KeyFactory::getProvider()
+	java::security::Provider KeyFactory::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	QAndroidJniObject KeyFactory::translateKey(__JniBaseClass arg0)
+	__JniBaseClass KeyFactory::translateKey(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"translateKey",

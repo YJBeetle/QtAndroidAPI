@@ -22,8 +22,8 @@ namespace android::text::style
 		TtsSpan_CardinalBuilder(jlong arg0);
 		
 		// Methods
-		QAndroidJniObject setNumber(jstring arg0);
-		QAndroidJniObject setNumber(jlong arg0);
+		android::text::style::TtsSpan_CardinalBuilder setNumber(jstring arg0);
+		android::text::style::TtsSpan_CardinalBuilder setNumber(jlong arg0);
 	};
 } // namespace android::text::style
 

@@ -19,7 +19,7 @@ namespace android::system
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject fromMillis(jlong arg0);
+		static android::system::StructTimeval fromMillis(jlong arg0);
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jlong toMillis();

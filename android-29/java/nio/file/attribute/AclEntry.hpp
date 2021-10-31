@@ -25,15 +25,15 @@ namespace java::nio::file::attribute
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newBuilder();
-		static QAndroidJniObject newBuilder(java::nio::file::attribute::AclEntry arg0);
+		static java::nio::file::attribute::AclEntry_Builder newBuilder();
+		static java::nio::file::attribute::AclEntry_Builder newBuilder(java::nio::file::attribute::AclEntry arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject flags();
+		__JniBaseClass flags();
 		jint hashCode();
-		QAndroidJniObject permissions();
-		QAndroidJniObject principal();
+		__JniBaseClass permissions();
+		__JniBaseClass principal();
 		jstring toString();
-		QAndroidJniObject type();
+		java::nio::file::attribute::AclEntryType type();
 	};
 } // namespace java::nio::file::attribute
 

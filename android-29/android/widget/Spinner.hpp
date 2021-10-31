@@ -56,13 +56,13 @@ namespace android::widget
 		jint getDropDownVerticalOffset();
 		jint getDropDownWidth();
 		jint getGravity();
-		QAndroidJniObject getPopupBackground();
-		QAndroidJniObject getPopupContext();
+		android::graphics::drawable::Drawable getPopupBackground();
+		android::content::Context getPopupContext();
 		jstring getPrompt();
 		void onClick(__JniBaseClass arg0, jint arg1);
-		QAndroidJniObject onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
+		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
 		void onRestoreInstanceState(__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
+		__JniBaseClass onSaveInstanceState();
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
 		jboolean performClick();
 		void setAdapter(__JniBaseClass arg0);

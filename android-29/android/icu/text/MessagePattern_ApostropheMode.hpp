@@ -10,8 +10,8 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DOUBLE_OPTIONAL();
-		static QAndroidJniObject DOUBLE_REQUIRED();
+		static android::icu::text::MessagePattern_ApostropheMode DOUBLE_OPTIONAL();
+		static android::icu::text::MessagePattern_ApostropheMode DOUBLE_REQUIRED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessagePattern_ApostropheMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,7 +20,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::MessagePattern_ApostropheMode valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

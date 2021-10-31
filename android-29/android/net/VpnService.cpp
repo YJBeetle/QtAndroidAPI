@@ -35,7 +35,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject VpnService::prepare(android::content::Context arg0)
+	android::content::Intent VpnService::prepare(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.VpnService",
@@ -58,7 +58,7 @@ namespace android::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject VpnService::onBind(android::content::Intent arg0)
+	__JniBaseClass VpnService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

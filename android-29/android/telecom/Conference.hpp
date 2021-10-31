@@ -50,18 +50,18 @@ namespace android::telecom
 		// Methods
 		jboolean addConnection(android::telecom::Connection arg0);
 		void destroy();
-		QAndroidJniObject getCallAudioState();
-		QAndroidJniObject getConferenceableConnections();
+		android::telecom::CallAudioState getCallAudioState();
+		__JniBaseClass getConferenceableConnections();
 		jint getConnectionCapabilities();
 		jint getConnectionProperties();
 		jlong getConnectionTime();
-		QAndroidJniObject getConnections();
-		QAndroidJniObject getDisconnectCause();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getPhoneAccountHandle();
+		__JniBaseClass getConnections();
+		android::telecom::DisconnectCause getDisconnectCause();
+		android::os::Bundle getExtras();
+		android::telecom::PhoneAccountHandle getPhoneAccountHandle();
 		jint getState();
-		QAndroidJniObject getStatusHints();
-		QAndroidJniObject getVideoProvider();
+		android::telecom::StatusHints getStatusHints();
+		android::telecom::Connection_VideoProvider getVideoProvider();
 		jint getVideoState();
 		void onCallAudioStateChanged(android::telecom::CallAudioState arg0);
 		void onConnectionAdded(android::telecom::Connection arg0);

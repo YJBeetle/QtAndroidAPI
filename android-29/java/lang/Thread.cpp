@@ -109,7 +109,7 @@ namespace java::lang
 			"()I"
 		);
 	}
-	QAndroidJniObject Thread::currentThread()
+	java::lang::Thread Thread::currentThread()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Thread",
@@ -134,7 +134,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Thread::getAllStackTraces()
+	__JniBaseClass Thread::getAllStackTraces()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Thread",
@@ -142,7 +142,7 @@ namespace java::lang
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject Thread::getDefaultUncaughtExceptionHandler()
+	__JniBaseClass Thread::getDefaultUncaughtExceptionHandler()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Thread",
@@ -225,7 +225,7 @@ namespace java::lang
 			"()I"
 		);
 	}
-	QAndroidJniObject Thread::getContextClassLoader()
+	java::lang::ClassLoader Thread::getContextClassLoader()
 	{
 		return callObjectMethod(
 			"getContextClassLoader",
@@ -260,21 +260,21 @@ namespace java::lang
 			"()[Ljava/lang/StackTraceElement;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Thread::getState()
+	java::lang::Thread_State Thread::getState()
 	{
 		return callObjectMethod(
 			"getState",
 			"()Ljava/lang/Thread$State;"
 		);
 	}
-	QAndroidJniObject Thread::getThreadGroup()
+	java::lang::ThreadGroup Thread::getThreadGroup()
 	{
 		return callObjectMethod(
 			"getThreadGroup",
 			"()Ljava/lang/ThreadGroup;"
 		);
 	}
-	QAndroidJniObject Thread::getUncaughtExceptionHandler()
+	__JniBaseClass Thread::getUncaughtExceptionHandler()
 	{
 		return callObjectMethod(
 			"getUncaughtExceptionHandler",

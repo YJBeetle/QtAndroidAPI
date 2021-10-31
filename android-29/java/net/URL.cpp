@@ -178,14 +178,14 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject URL::openConnection()
+	java::net::URLConnection URL::openConnection()
 	{
 		return callObjectMethod(
 			"openConnection",
 			"()Ljava/net/URLConnection;"
 		);
 	}
-	QAndroidJniObject URL::openConnection(java::net::Proxy arg0)
+	java::net::URLConnection URL::openConnection(java::net::Proxy arg0)
 	{
 		return callObjectMethod(
 			"openConnection",
@@ -193,7 +193,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject URL::openStream()
+	java::io::InputStream URL::openStream()
 	{
 		return callObjectMethod(
 			"openStream",
@@ -222,7 +222,7 @@ namespace java::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject URL::toURI()
+	java::net::URI URL::toURI()
 	{
 		return callObjectMethod(
 			"toURI",

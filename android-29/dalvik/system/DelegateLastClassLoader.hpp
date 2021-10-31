@@ -31,8 +31,8 @@ namespace dalvik::system
 		DelegateLastClassLoader(jstring arg0, jstring arg1, java::lang::ClassLoader arg2, jboolean arg3);
 		
 		// Methods
-		QAndroidJniObject getResource(jstring arg0);
-		QAndroidJniObject getResources(jstring arg0);
+		java::net::URL getResource(jstring arg0);
+		__JniBaseClass getResources(jstring arg0);
 	};
 } // namespace dalvik::system
 

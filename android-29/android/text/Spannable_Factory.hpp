@@ -18,8 +18,8 @@ namespace android::text
 		Spannable_Factory();
 		
 		// Methods
-		static QAndroidJniObject getInstance();
-		QAndroidJniObject newSpannable(jstring arg0);
+		static android::text::Spannable_Factory getInstance();
+		__JniBaseClass newSpannable(jstring arg0);
 	};
 } // namespace android::text
 

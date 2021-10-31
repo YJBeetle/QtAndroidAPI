@@ -19,7 +19,7 @@ namespace android::security::keystore
 		) {}
 	
 	// Methods
-	QAndroidJniObject WrappedKeyEntry::getAlgorithmParameterSpec()
+	__JniBaseClass WrappedKeyEntry::getAlgorithmParameterSpec()
 	{
 		return callObjectMethod(
 			"getAlgorithmParameterSpec",

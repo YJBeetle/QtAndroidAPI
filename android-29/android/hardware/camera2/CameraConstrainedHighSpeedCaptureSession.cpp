@@ -16,7 +16,7 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	QAndroidJniObject CameraConstrainedHighSpeedCaptureSession::createHighSpeedRequestList(android::hardware::camera2::CaptureRequest arg0)
+	__JniBaseClass CameraConstrainedHighSpeedCaptureSession::createHighSpeedRequestList(android::hardware::camera2::CaptureRequest arg0)
 	{
 		return callObjectMethod(
 			"createHighSpeedRequestList",

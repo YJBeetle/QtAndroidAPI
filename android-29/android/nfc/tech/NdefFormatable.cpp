@@ -12,7 +12,7 @@ namespace android::nfc::tech
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject NdefFormatable::get(android::nfc::Tag arg0)
+	android::nfc::tech::NdefFormatable NdefFormatable::get(android::nfc::Tag arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.tech.NdefFormatable",
@@ -51,7 +51,7 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NdefFormatable::getTag()
+	android::nfc::Tag NdefFormatable::getTag()
 	{
 		return callObjectMethod(
 			"getTag",

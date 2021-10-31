@@ -22,9 +22,9 @@ namespace android::companion
 		AssociationRequest_Builder();
 		
 		// Methods
-		QAndroidJniObject addDeviceFilter(__JniBaseClass arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject setSingleDevice(jboolean arg0);
+		android::companion::AssociationRequest_Builder addDeviceFilter(__JniBaseClass arg0);
+		android::companion::AssociationRequest build();
+		android::companion::AssociationRequest_Builder setSingleDevice(jboolean arg0);
 	};
 } // namespace android::companion
 

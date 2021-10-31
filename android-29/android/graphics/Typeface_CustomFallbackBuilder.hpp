@@ -31,10 +31,10 @@ namespace android::graphics
 		
 		// Methods
 		static jint getMaxCustomFallbackCount();
-		QAndroidJniObject addCustomFallback(android::graphics::fonts::FontFamily arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject setStyle(android::graphics::fonts::FontStyle arg0);
-		QAndroidJniObject setSystemFallback(jstring arg0);
+		android::graphics::Typeface_CustomFallbackBuilder addCustomFallback(android::graphics::fonts::FontFamily arg0);
+		android::graphics::Typeface build();
+		android::graphics::Typeface_CustomFallbackBuilder setStyle(android::graphics::fonts::FontStyle arg0);
+		android::graphics::Typeface_CustomFallbackBuilder setSystemFallback(jstring arg0);
 	};
 } // namespace android::graphics
 

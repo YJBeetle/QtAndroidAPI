@@ -344,7 +344,7 @@ namespace android::telecom
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Connection::createCanceledConnection()
+	android::telecom::Connection Connection::createCanceledConnection()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telecom.Connection",
@@ -352,7 +352,7 @@ namespace android::telecom
 			"()Landroid/telecom/Connection;"
 		);
 	}
-	QAndroidJniObject Connection::createFailedConnection(android::telecom::DisconnectCause arg0)
+	android::telecom::Connection Connection::createFailedConnection(android::telecom::DisconnectCause arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telecom.Connection",
@@ -386,7 +386,7 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	QAndroidJniObject Connection::getAddress()
+	android::net::Uri Connection::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
@@ -407,7 +407,7 @@ namespace android::telecom
 			"()Z"
 		);
 	}
-	QAndroidJniObject Connection::getCallAudioState()
+	android::telecom::CallAudioState Connection::getCallAudioState()
 	{
 		return callObjectMethod(
 			"getCallAudioState",
@@ -428,14 +428,14 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject Connection::getConference()
+	android::telecom::Conference Connection::getConference()
 	{
 		return callObjectMethod(
 			"getConference",
 			"()Landroid/telecom/Conference;"
 		);
 	}
-	QAndroidJniObject Connection::getConferenceables()
+	__JniBaseClass Connection::getConferenceables()
 	{
 		return callObjectMethod(
 			"getConferenceables",
@@ -456,14 +456,14 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject Connection::getDisconnectCause()
+	android::telecom::DisconnectCause Connection::getDisconnectCause()
 	{
 		return callObjectMethod(
 			"getDisconnectCause",
 			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
-	QAndroidJniObject Connection::getExtras()
+	android::os::Bundle Connection::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -477,14 +477,14 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject Connection::getStatusHints()
+	android::telecom::StatusHints Connection::getStatusHints()
 	{
 		return callObjectMethod(
 			"getStatusHints",
 			"()Landroid/telecom/StatusHints;"
 		);
 	}
-	QAndroidJniObject Connection::getVideoProvider()
+	android::telecom::Connection_VideoProvider Connection::getVideoProvider()
 	{
 		return callObjectMethod(
 			"getVideoProvider",

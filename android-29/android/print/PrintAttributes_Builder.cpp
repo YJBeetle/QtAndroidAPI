@@ -19,14 +19,14 @@ namespace android::print
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrintAttributes_Builder::build()
+	android::print::PrintAttributes PrintAttributes_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/print/PrintAttributes;"
 		);
 	}
-	QAndroidJniObject PrintAttributes_Builder::setColorMode(jint arg0)
+	android::print::PrintAttributes_Builder PrintAttributes_Builder::setColorMode(jint arg0)
 	{
 		return callObjectMethod(
 			"setColorMode",
@@ -34,7 +34,7 @@ namespace android::print
 			arg0
 		);
 	}
-	QAndroidJniObject PrintAttributes_Builder::setDuplexMode(jint arg0)
+	android::print::PrintAttributes_Builder PrintAttributes_Builder::setDuplexMode(jint arg0)
 	{
 		return callObjectMethod(
 			"setDuplexMode",
@@ -42,7 +42,7 @@ namespace android::print
 			arg0
 		);
 	}
-	QAndroidJniObject PrintAttributes_Builder::setMediaSize(android::print::PrintAttributes_MediaSize arg0)
+	android::print::PrintAttributes_Builder PrintAttributes_Builder::setMediaSize(android::print::PrintAttributes_MediaSize arg0)
 	{
 		return callObjectMethod(
 			"setMediaSize",
@@ -50,7 +50,7 @@ namespace android::print
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PrintAttributes_Builder::setMinMargins(android::print::PrintAttributes_Margins arg0)
+	android::print::PrintAttributes_Builder PrintAttributes_Builder::setMinMargins(android::print::PrintAttributes_Margins arg0)
 	{
 		return callObjectMethod(
 			"setMinMargins",
@@ -58,7 +58,7 @@ namespace android::print
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PrintAttributes_Builder::setResolution(android::print::PrintAttributes_Resolution arg0)
+	android::print::PrintAttributes_Builder PrintAttributes_Builder::setResolution(android::print::PrintAttributes_Resolution arg0)
 	{
 		return callObjectMethod(
 			"setResolution",

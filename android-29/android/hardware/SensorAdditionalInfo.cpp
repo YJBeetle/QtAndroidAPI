@@ -67,7 +67,7 @@ namespace android::hardware
 			"[I"
 		).object<jintArray>();
 	}
-	QAndroidJniObject SensorAdditionalInfo::sensor()
+	android::hardware::Sensor SensorAdditionalInfo::sensor()
 	{
 		return getObjectField(
 			"sensor",

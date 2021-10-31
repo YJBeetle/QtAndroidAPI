@@ -46,12 +46,12 @@ namespace java::security::cert
 		void addIssuerName(jbyteArray arg0);
 		void addIssuerName(jstring arg0);
 		jobject clone();
-		QAndroidJniObject getCertificateChecking();
-		QAndroidJniObject getDateAndTime();
-		QAndroidJniObject getIssuerNames();
-		QAndroidJniObject getIssuers();
-		QAndroidJniObject getMaxCRL();
-		QAndroidJniObject getMinCRL();
+		java::security::cert::X509Certificate getCertificateChecking();
+		java::util::Date getDateAndTime();
+		__JniBaseClass getIssuerNames();
+		__JniBaseClass getIssuers();
+		java::math::BigInteger getMaxCRL();
+		java::math::BigInteger getMinCRL();
 		jboolean match(java::security::cert::CRL arg0);
 		void setCertificateChecking(java::security::cert::X509Certificate arg0);
 		void setDateAndTime(java::util::Date arg0);

@@ -28,7 +28,7 @@ namespace java::sql
 		SQLClientInfoException(jstring arg0, jstring arg1, jint arg2, __JniBaseClass arg3, jthrowable arg4);
 		
 		// Methods
-		QAndroidJniObject getFailedProperties();
+		__JniBaseClass getFailedProperties();
 	};
 } // namespace java::sql
 

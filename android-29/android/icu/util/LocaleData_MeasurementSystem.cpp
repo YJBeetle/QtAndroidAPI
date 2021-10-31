@@ -3,7 +3,7 @@
 namespace android::icu::util
 {
 	// Fields
-	QAndroidJniObject LocaleData_MeasurementSystem::SI()
+	android::icu::util::LocaleData_MeasurementSystem LocaleData_MeasurementSystem::SI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.LocaleData$MeasurementSystem",
@@ -11,7 +11,7 @@ namespace android::icu::util
 			"Landroid/icu/util/LocaleData$MeasurementSystem;"
 		);
 	}
-	QAndroidJniObject LocaleData_MeasurementSystem::UK()
+	android::icu::util::LocaleData_MeasurementSystem LocaleData_MeasurementSystem::UK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.LocaleData$MeasurementSystem",
@@ -19,7 +19,7 @@ namespace android::icu::util
 			"Landroid/icu/util/LocaleData$MeasurementSystem;"
 		);
 	}
-	QAndroidJniObject LocaleData_MeasurementSystem::US()
+	android::icu::util::LocaleData_MeasurementSystem LocaleData_MeasurementSystem::US()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.LocaleData$MeasurementSystem",

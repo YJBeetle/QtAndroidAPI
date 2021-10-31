@@ -6,7 +6,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject ConversationAction::CREATOR()
+	__JniBaseClass ConversationAction::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
@@ -108,7 +108,7 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject ConversationAction::getAction()
+	android::app::RemoteAction ConversationAction::getAction()
 	{
 		return callObjectMethod(
 			"getAction",
@@ -122,7 +122,7 @@ namespace android::view::textclassifier
 			"()F"
 		);
 	}
-	QAndroidJniObject ConversationAction::getExtras()
+	android::os::Bundle ConversationAction::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

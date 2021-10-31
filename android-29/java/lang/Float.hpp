@@ -54,12 +54,12 @@ namespace java::lang
 		static jfloat sum(jfloat arg0, jfloat arg1);
 		static jstring toHexString(jfloat arg0);
 		static jstring toString(jfloat arg0);
-		static QAndroidJniObject valueOf(jfloat arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::lang::Float valueOf(jfloat arg0);
+		static java::lang::Float valueOf(jstring arg0);
 		jbyte byteValue();
 		jint compareTo(java::lang::Float arg0);
 		jint compareTo(jobject arg0);
-		QAndroidJniObject describeConstable();
+		java::util::Optional describeConstable();
 		jdouble doubleValue();
 		jboolean equals(jobject arg0);
 		jfloat floatValue();
@@ -68,7 +68,7 @@ namespace java::lang
 		jboolean isInfinite();
 		jboolean isNaN();
 		jlong longValue();
-		QAndroidJniObject resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0);
+		java::lang::Float resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0);
 		jshort shortValue();
 		jstring toString();
 	};

@@ -49,10 +49,10 @@ namespace java::time
 	{
 	public:
 		// Fields
-		static QAndroidJniObject MAX();
-		static QAndroidJniObject MIDNIGHT();
-		static QAndroidJniObject MIN();
-		static QAndroidJniObject NOON();
+		static java::time::LocalTime MAX();
+		static java::time::LocalTime MIDNIGHT();
+		static java::time::LocalTime MIN();
+		static java::time::LocalTime NOON();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocalTime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -61,21 +61,21 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject from(__JniBaseClass arg0);
-		static QAndroidJniObject now();
-		static QAndroidJniObject now(java::time::Clock arg0);
-		static QAndroidJniObject now(java::time::ZoneId arg0);
-		static QAndroidJniObject of(jint arg0, jint arg1);
-		static QAndroidJniObject of(jint arg0, jint arg1, jint arg2);
-		static QAndroidJniObject of(jint arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
-		static QAndroidJniObject ofNanoOfDay(jlong arg0);
-		static QAndroidJniObject ofSecondOfDay(jlong arg0);
-		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		QAndroidJniObject adjustInto(__JniBaseClass arg0);
-		QAndroidJniObject atDate(java::time::LocalDate arg0);
-		QAndroidJniObject atOffset(java::time::ZoneOffset arg0);
+		static java::time::LocalTime from(__JniBaseClass arg0);
+		static java::time::LocalTime now();
+		static java::time::LocalTime now(java::time::Clock arg0);
+		static java::time::LocalTime now(java::time::ZoneId arg0);
+		static java::time::LocalTime of(jint arg0, jint arg1);
+		static java::time::LocalTime of(jint arg0, jint arg1, jint arg2);
+		static java::time::LocalTime of(jint arg0, jint arg1, jint arg2, jint arg3);
+		static java::time::LocalTime ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
+		static java::time::LocalTime ofNanoOfDay(jlong arg0);
+		static java::time::LocalTime ofSecondOfDay(jlong arg0);
+		static java::time::LocalTime parse(jstring arg0);
+		static java::time::LocalTime parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
+		__JniBaseClass adjustInto(__JniBaseClass arg0);
+		java::time::LocalDateTime atDate(java::time::LocalDate arg0);
+		java::time::OffsetTime atOffset(java::time::ZoneOffset arg0);
 		jint compareTo(jobject arg0);
 		jint compareTo(java::time::LocalTime arg0);
 		jboolean equals(jobject arg0);
@@ -90,32 +90,32 @@ namespace java::time
 		jboolean isAfter(java::time::LocalTime arg0);
 		jboolean isBefore(java::time::LocalTime arg0);
 		jboolean isSupported(__JniBaseClass arg0);
-		QAndroidJniObject minus(__JniBaseClass arg0);
-		QAndroidJniObject minus(jlong arg0, __JniBaseClass arg1);
-		QAndroidJniObject minusHours(jlong arg0);
-		QAndroidJniObject minusMinutes(jlong arg0);
-		QAndroidJniObject minusNanos(jlong arg0);
-		QAndroidJniObject minusSeconds(jlong arg0);
-		QAndroidJniObject plus(__JniBaseClass arg0);
-		QAndroidJniObject plus(jlong arg0, __JniBaseClass arg1);
-		QAndroidJniObject plusHours(jlong arg0);
-		QAndroidJniObject plusMinutes(jlong arg0);
-		QAndroidJniObject plusNanos(jlong arg0);
-		QAndroidJniObject plusSeconds(jlong arg0);
+		java::time::LocalTime minus(__JniBaseClass arg0);
+		java::time::LocalTime minus(jlong arg0, __JniBaseClass arg1);
+		java::time::LocalTime minusHours(jlong arg0);
+		java::time::LocalTime minusMinutes(jlong arg0);
+		java::time::LocalTime minusNanos(jlong arg0);
+		java::time::LocalTime minusSeconds(jlong arg0);
+		java::time::LocalTime plus(__JniBaseClass arg0);
+		java::time::LocalTime plus(jlong arg0, __JniBaseClass arg1);
+		java::time::LocalTime plusHours(jlong arg0);
+		java::time::LocalTime plusMinutes(jlong arg0);
+		java::time::LocalTime plusNanos(jlong arg0);
+		java::time::LocalTime plusSeconds(jlong arg0);
 		jobject query(__JniBaseClass arg0);
-		QAndroidJniObject range(__JniBaseClass arg0);
+		java::time::temporal::ValueRange range(__JniBaseClass arg0);
 		jlong toEpochSecond(java::time::LocalDate arg0, java::time::ZoneOffset arg1);
 		jlong toNanoOfDay();
 		jint toSecondOfDay();
 		jstring toString();
-		QAndroidJniObject truncatedTo(__JniBaseClass arg0);
+		java::time::LocalTime truncatedTo(__JniBaseClass arg0);
 		jlong until(__JniBaseClass arg0, __JniBaseClass arg1);
-		QAndroidJniObject with(__JniBaseClass arg0);
-		QAndroidJniObject with(__JniBaseClass arg0, jlong arg1);
-		QAndroidJniObject withHour(jint arg0);
-		QAndroidJniObject withMinute(jint arg0);
-		QAndroidJniObject withNano(jint arg0);
-		QAndroidJniObject withSecond(jint arg0);
+		java::time::LocalTime with(__JniBaseClass arg0);
+		java::time::LocalTime with(__JniBaseClass arg0, jlong arg1);
+		java::time::LocalTime withHour(jint arg0);
+		java::time::LocalTime withMinute(jint arg0);
+		java::time::LocalTime withNano(jint arg0);
+		java::time::LocalTime withSecond(jint arg0);
 	};
 } // namespace java::time
 

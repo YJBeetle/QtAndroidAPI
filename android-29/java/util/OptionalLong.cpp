@@ -10,7 +10,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject OptionalLong::empty()
+	java::util::OptionalLong OptionalLong::empty()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.OptionalLong",
@@ -18,7 +18,7 @@ namespace java::util
 			"()Ljava/util/OptionalLong;"
 		);
 	}
-	QAndroidJniObject OptionalLong::of(jlong arg0)
+	java::util::OptionalLong OptionalLong::of(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.OptionalLong",
@@ -111,7 +111,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OptionalLong::stream()
+	__JniBaseClass OptionalLong::stream()
 	{
 		return callObjectMethod(
 			"stream",

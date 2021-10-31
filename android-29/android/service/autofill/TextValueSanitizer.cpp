@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	QAndroidJniObject TextValueSanitizer::CREATOR()
+	__JniBaseClass TextValueSanitizer::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.TextValueSanitizer",

@@ -3,7 +3,7 @@
 namespace android::print
 {
 	// Fields
-	QAndroidJniObject PrintAttributes_Margins::NO_MARGINS()
+	android::print::PrintAttributes_Margins PrintAttributes_Margins::NO_MARGINS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes$Margins",

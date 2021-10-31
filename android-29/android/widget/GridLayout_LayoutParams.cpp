@@ -8,14 +8,14 @@
 namespace android::widget
 {
 	// Fields
-	QAndroidJniObject GridLayout_LayoutParams::columnSpec()
+	android::widget::GridLayout_Spec GridLayout_LayoutParams::columnSpec()
 	{
 		return getObjectField(
 			"columnSpec",
 			"Landroid/widget/GridLayout$Spec;"
 		);
 	}
-	QAndroidJniObject GridLayout_LayoutParams::rowSpec()
+	android::widget::GridLayout_Spec GridLayout_LayoutParams::rowSpec()
 	{
 		return getObjectField(
 			"rowSpec",

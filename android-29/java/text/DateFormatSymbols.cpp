@@ -31,7 +31,7 @@ namespace java::text
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject DateFormatSymbols::getInstance()
+	java::text::DateFormatSymbols DateFormatSymbols::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormatSymbols",
@@ -39,7 +39,7 @@ namespace java::text
 			"()Ljava/text/DateFormatSymbols;"
 		);
 	}
-	QAndroidJniObject DateFormatSymbols::getInstance(java::util::Locale arg0)
+	java::text::DateFormatSymbols DateFormatSymbols::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormatSymbols",

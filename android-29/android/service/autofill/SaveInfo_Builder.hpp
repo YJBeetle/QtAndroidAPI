@@ -35,15 +35,15 @@ namespace android::service::autofill
 		SaveInfo_Builder(jint arg0, jarray arg1);
 		
 		// Methods
-		QAndroidJniObject addSanitizer(__JniBaseClass arg0, jarray arg1);
-		QAndroidJniObject build();
-		QAndroidJniObject setCustomDescription(android::service::autofill::CustomDescription arg0);
-		QAndroidJniObject setDescription(jstring arg0);
-		QAndroidJniObject setFlags(jint arg0);
-		QAndroidJniObject setNegativeAction(jint arg0, android::content::IntentSender arg1);
-		QAndroidJniObject setOptionalIds(jarray arg0);
-		QAndroidJniObject setTriggerId(android::view::autofill::AutofillId arg0);
-		QAndroidJniObject setValidator(__JniBaseClass arg0);
+		android::service::autofill::SaveInfo_Builder addSanitizer(__JniBaseClass arg0, jarray arg1);
+		android::service::autofill::SaveInfo build();
+		android::service::autofill::SaveInfo_Builder setCustomDescription(android::service::autofill::CustomDescription arg0);
+		android::service::autofill::SaveInfo_Builder setDescription(jstring arg0);
+		android::service::autofill::SaveInfo_Builder setFlags(jint arg0);
+		android::service::autofill::SaveInfo_Builder setNegativeAction(jint arg0, android::content::IntentSender arg1);
+		android::service::autofill::SaveInfo_Builder setOptionalIds(jarray arg0);
+		android::service::autofill::SaveInfo_Builder setTriggerId(android::view::autofill::AutofillId arg0);
+		android::service::autofill::SaveInfo_Builder setValidator(__JniBaseClass arg0);
 	};
 } // namespace android::service::autofill
 

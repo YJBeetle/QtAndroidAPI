@@ -26,17 +26,17 @@ namespace java::nio::file
 		
 		// Methods
 		void close();
-		QAndroidJniObject getFileStores();
-		QAndroidJniObject getPath(jstring arg0, jarray arg1);
-		QAndroidJniObject getPathMatcher(jstring arg0);
-		QAndroidJniObject getRootDirectories();
+		__JniBaseClass getFileStores();
+		__JniBaseClass getPath(jstring arg0, jarray arg1);
+		__JniBaseClass getPathMatcher(jstring arg0);
+		__JniBaseClass getRootDirectories();
 		jstring getSeparator();
-		QAndroidJniObject getUserPrincipalLookupService();
+		java::nio::file::attribute::UserPrincipalLookupService getUserPrincipalLookupService();
 		jboolean isOpen();
 		jboolean isReadOnly();
-		QAndroidJniObject newWatchService();
-		QAndroidJniObject provider();
-		QAndroidJniObject supportedFileAttributeViews();
+		__JniBaseClass newWatchService();
+		java::nio::file::spi::FileSystemProvider provider();
+		__JniBaseClass supportedFileAttributeViews();
 	};
 } // namespace java::nio::file
 

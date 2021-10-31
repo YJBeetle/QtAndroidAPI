@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject MessagePattern_ArgType::CHOICE()
+	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::CHOICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$ArgType;"
 		);
 	}
-	QAndroidJniObject MessagePattern_ArgType::NONE()
+	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::NONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$ArgType;"
 		);
 	}
-	QAndroidJniObject MessagePattern_ArgType::PLURAL()
+	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::PLURAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$ArgType;"
 		);
 	}
-	QAndroidJniObject MessagePattern_ArgType::SELECT()
+	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::SELECT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$ArgType;"
 		);
 	}
-	QAndroidJniObject MessagePattern_ArgType::SELECTORDINAL()
+	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::SELECTORDINAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
@@ -43,7 +43,7 @@ namespace android::icu::text
 			"Landroid/icu/text/MessagePattern$ArgType;"
 		);
 	}
-	QAndroidJniObject MessagePattern_ArgType::SIMPLE()
+	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::SIMPLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$ArgType",
@@ -58,7 +58,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MessagePattern_ArgType::valueOf(jstring arg0)
+	android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MessagePattern$ArgType",

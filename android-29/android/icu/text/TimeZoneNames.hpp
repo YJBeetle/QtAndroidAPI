@@ -29,11 +29,11 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
-		static QAndroidJniObject getTZDBInstance(android::icu::util::ULocale arg0);
-		QAndroidJniObject getAvailableMetaZoneIDs();
-		QAndroidJniObject getAvailableMetaZoneIDs(jstring arg0);
+		static android::icu::text::TimeZoneNames getInstance(android::icu::util::ULocale arg0);
+		static android::icu::text::TimeZoneNames getInstance(java::util::Locale arg0);
+		static android::icu::text::TimeZoneNames getTZDBInstance(android::icu::util::ULocale arg0);
+		__JniBaseClass getAvailableMetaZoneIDs();
+		__JniBaseClass getAvailableMetaZoneIDs(jstring arg0);
 		jstring getDisplayName(jstring arg0, android::icu::text::TimeZoneNames_NameType arg1, jlong arg2);
 		jstring getExemplarLocationName(jstring arg0);
 		jstring getMetaZoneDisplayName(jstring arg0, android::icu::text::TimeZoneNames_NameType arg1);

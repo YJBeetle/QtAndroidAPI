@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject InstrumentationInfo::CREATOR()
+	__JniBaseClass InstrumentationInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.InstrumentationInfo",

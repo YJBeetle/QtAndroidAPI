@@ -18,15 +18,15 @@ namespace android::animation
 		Keyframe();
 		
 		// Methods
-		static QAndroidJniObject ofFloat(jfloat arg0);
-		static QAndroidJniObject ofFloat(jfloat arg0, jfloat arg1);
-		static QAndroidJniObject ofInt(jfloat arg0);
-		static QAndroidJniObject ofInt(jfloat arg0, jint arg1);
-		static QAndroidJniObject ofObject(jfloat arg0);
-		static QAndroidJniObject ofObject(jfloat arg0, jobject arg1);
-		QAndroidJniObject clone();
+		static android::animation::Keyframe ofFloat(jfloat arg0);
+		static android::animation::Keyframe ofFloat(jfloat arg0, jfloat arg1);
+		static android::animation::Keyframe ofInt(jfloat arg0);
+		static android::animation::Keyframe ofInt(jfloat arg0, jint arg1);
+		static android::animation::Keyframe ofObject(jfloat arg0);
+		static android::animation::Keyframe ofObject(jfloat arg0, jobject arg1);
+		android::animation::Keyframe clone();
 		jfloat getFraction();
-		QAndroidJniObject getInterpolator();
+		__JniBaseClass getInterpolator();
 		jclass getType();
 		jobject getValue();
 		jboolean hasValue();

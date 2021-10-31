@@ -31,28 +31,28 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject X509CRL::getIssuerDN()
+	__JniBaseClass X509CRL::getIssuerDN()
 	{
 		return callObjectMethod(
 			"getIssuerDN",
 			"()Ljava/security/Principal;"
 		);
 	}
-	QAndroidJniObject X509CRL::getIssuerX500Principal()
+	javax::security::auth::x500::X500Principal X509CRL::getIssuerX500Principal()
 	{
 		return callObjectMethod(
 			"getIssuerX500Principal",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	QAndroidJniObject X509CRL::getNextUpdate()
+	java::util::Date X509CRL::getNextUpdate()
 	{
 		return callObjectMethod(
 			"getNextUpdate",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject X509CRL::getRevokedCertificate(java::math::BigInteger arg0)
+	java::security::cert::X509CRLEntry X509CRL::getRevokedCertificate(java::math::BigInteger arg0)
 	{
 		return callObjectMethod(
 			"getRevokedCertificate",
@@ -60,7 +60,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	QAndroidJniObject X509CRL::getRevokedCertificate(java::security::cert::X509Certificate arg0)
+	java::security::cert::X509CRLEntry X509CRL::getRevokedCertificate(java::security::cert::X509Certificate arg0)
 	{
 		return callObjectMethod(
 			"getRevokedCertificate",
@@ -68,7 +68,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	QAndroidJniObject X509CRL::getRevokedCertificates()
+	__JniBaseClass X509CRL::getRevokedCertificates()
 	{
 		return callObjectMethod(
 			"getRevokedCertificates",
@@ -110,7 +110,7 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject X509CRL::getThisUpdate()
+	java::util::Date X509CRL::getThisUpdate()
 	{
 		return callObjectMethod(
 			"getThisUpdate",

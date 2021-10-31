@@ -33,21 +33,21 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject obtain(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4);
-		QAndroidJniObject build();
-		QAndroidJniObject setAlignment(android::text::Layout_Alignment arg0);
-		QAndroidJniObject setBreakStrategy(jint arg0);
-		QAndroidJniObject setEllipsize(android::text::TextUtils_TruncateAt arg0);
-		QAndroidJniObject setEllipsizedWidth(jint arg0);
-		QAndroidJniObject setHyphenationFrequency(jint arg0);
-		QAndroidJniObject setIncludePad(jboolean arg0);
-		QAndroidJniObject setIndents(jintArray arg0, jintArray arg1);
-		QAndroidJniObject setJustificationMode(jint arg0);
-		QAndroidJniObject setLineSpacing(jfloat arg0, jfloat arg1);
-		QAndroidJniObject setMaxLines(jint arg0);
-		QAndroidJniObject setText(jstring arg0);
-		QAndroidJniObject setTextDirection(__JniBaseClass arg0);
-		QAndroidJniObject setUseLineSpacingFromFallbacks(jboolean arg0);
+		static android::text::StaticLayout_Builder obtain(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4);
+		android::text::StaticLayout build();
+		android::text::StaticLayout_Builder setAlignment(android::text::Layout_Alignment arg0);
+		android::text::StaticLayout_Builder setBreakStrategy(jint arg0);
+		android::text::StaticLayout_Builder setEllipsize(android::text::TextUtils_TruncateAt arg0);
+		android::text::StaticLayout_Builder setEllipsizedWidth(jint arg0);
+		android::text::StaticLayout_Builder setHyphenationFrequency(jint arg0);
+		android::text::StaticLayout_Builder setIncludePad(jboolean arg0);
+		android::text::StaticLayout_Builder setIndents(jintArray arg0, jintArray arg1);
+		android::text::StaticLayout_Builder setJustificationMode(jint arg0);
+		android::text::StaticLayout_Builder setLineSpacing(jfloat arg0, jfloat arg1);
+		android::text::StaticLayout_Builder setMaxLines(jint arg0);
+		android::text::StaticLayout_Builder setText(jstring arg0);
+		android::text::StaticLayout_Builder setTextDirection(__JniBaseClass arg0);
+		android::text::StaticLayout_Builder setUseLineSpacingFromFallbacks(jboolean arg0);
 	};
 } // namespace android::text
 

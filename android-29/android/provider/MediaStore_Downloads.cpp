@@ -12,7 +12,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Downloads::EXTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Downloads::EXTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Downloads",
@@ -20,7 +20,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject MediaStore_Downloads::INTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Downloads::INTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Downloads",
@@ -35,7 +35,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MediaStore_Downloads::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Downloads::getContentUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Downloads",

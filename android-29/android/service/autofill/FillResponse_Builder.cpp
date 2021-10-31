@@ -22,7 +22,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	QAndroidJniObject FillResponse_Builder::addDataset(android::service::autofill::Dataset arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::addDataset(android::service::autofill::Dataset arg0)
 	{
 		return callObjectMethod(
 			"addDataset",
@@ -30,14 +30,14 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::build()
+	android::service::autofill::FillResponse FillResponse_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/FillResponse;"
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::disableAutofill(jlong arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::disableAutofill(jlong arg0)
 	{
 		return callObjectMethod(
 			"disableAutofill",
@@ -45,7 +45,7 @@ namespace android::service::autofill
 			arg0
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::setAuthentication(jarray arg0, android::content::IntentSender arg1, android::widget::RemoteViews arg2)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setAuthentication(jarray arg0, android::content::IntentSender arg1, android::widget::RemoteViews arg2)
 	{
 		return callObjectMethod(
 			"setAuthentication",
@@ -55,7 +55,7 @@ namespace android::service::autofill
 			arg2.object()
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::setClientState(android::os::Bundle arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setClientState(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setClientState",
@@ -63,7 +63,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::setFieldClassificationIds(jarray arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setFieldClassificationIds(jarray arg0)
 	{
 		return callObjectMethod(
 			"setFieldClassificationIds",
@@ -71,7 +71,7 @@ namespace android::service::autofill
 			arg0
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::setFlags(jint arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setFlags(jint arg0)
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -79,7 +79,7 @@ namespace android::service::autofill
 			arg0
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::setFooter(android::widget::RemoteViews arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setFooter(android::widget::RemoteViews arg0)
 	{
 		return callObjectMethod(
 			"setFooter",
@@ -87,7 +87,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::setHeader(android::widget::RemoteViews arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setHeader(android::widget::RemoteViews arg0)
 	{
 		return callObjectMethod(
 			"setHeader",
@@ -95,7 +95,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::setIgnoredIds(jarray arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setIgnoredIds(jarray arg0)
 	{
 		return callObjectMethod(
 			"setIgnoredIds",
@@ -103,7 +103,7 @@ namespace android::service::autofill
 			arg0
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::setSaveInfo(android::service::autofill::SaveInfo arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setSaveInfo(android::service::autofill::SaveInfo arg0)
 	{
 		return callObjectMethod(
 			"setSaveInfo",
@@ -111,7 +111,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::setUserData(android::service::autofill::UserData arg0)
+	android::service::autofill::FillResponse_Builder FillResponse_Builder::setUserData(android::service::autofill::UserData arg0)
 	{
 		return callObjectMethod(
 			"setUserData",

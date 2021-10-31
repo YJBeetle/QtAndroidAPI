@@ -28,11 +28,11 @@ namespace java::security::cert
 		TrustAnchor(javax::security::auth::x500::X500Principal arg0, __JniBaseClass arg1, jbyteArray arg2);
 		
 		// Methods
-		QAndroidJniObject getCA();
+		javax::security::auth::x500::X500Principal getCA();
 		jstring getCAName();
-		QAndroidJniObject getCAPublicKey();
+		__JniBaseClass getCAPublicKey();
 		jbyteArray getNameConstraints();
-		QAndroidJniObject getTrustedCert();
+		java::security::cert::X509Certificate getTrustedCert();
 		jstring toString();
 	};
 } // namespace java::security::cert

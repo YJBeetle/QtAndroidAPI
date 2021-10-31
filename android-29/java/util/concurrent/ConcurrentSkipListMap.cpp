@@ -25,7 +25,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	QAndroidJniObject ConcurrentSkipListMap::ceilingEntry(jobject arg0)
+	__JniBaseClass ConcurrentSkipListMap::ceilingEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"ceilingEntry",
@@ -48,14 +48,14 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::clone()
+	java::util::concurrent::ConcurrentSkipListMap ConcurrentSkipListMap::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/util/concurrent/ConcurrentSkipListMap;"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::comparator()
+	__JniBaseClass ConcurrentSkipListMap::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
@@ -105,21 +105,21 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::descendingKeySet()
+	__JniBaseClass ConcurrentSkipListMap::descendingKeySet()
 	{
 		return callObjectMethod(
 			"descendingKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::descendingMap()
+	__JniBaseClass ConcurrentSkipListMap::descendingMap()
 	{
 		return callObjectMethod(
 			"descendingMap",
 			"()Ljava/util/concurrent/ConcurrentNavigableMap;"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::entrySet()
+	__JniBaseClass ConcurrentSkipListMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -134,7 +134,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::firstEntry()
+	__JniBaseClass ConcurrentSkipListMap::firstEntry()
 	{
 		return callObjectMethod(
 			"firstEntry",
@@ -148,7 +148,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentSkipListMap::floorEntry(jobject arg0)
+	__JniBaseClass ConcurrentSkipListMap::floorEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"floorEntry",
@@ -189,7 +189,7 @@ namespace java::util::concurrent
 			arg1
 		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentSkipListMap::headMap(jobject arg0)
+	__JniBaseClass ConcurrentSkipListMap::headMap(jobject arg0)
 	{
 		return callObjectMethod(
 			"headMap",
@@ -197,7 +197,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::headMap(jobject arg0, jboolean arg1)
+	__JniBaseClass ConcurrentSkipListMap::headMap(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headMap",
@@ -206,7 +206,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::higherEntry(jobject arg0)
+	__JniBaseClass ConcurrentSkipListMap::higherEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"higherEntry",
@@ -229,14 +229,14 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::keySet()
+	__JniBaseClass ConcurrentSkipListMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::lastEntry()
+	__JniBaseClass ConcurrentSkipListMap::lastEntry()
 	{
 		return callObjectMethod(
 			"lastEntry",
@@ -250,7 +250,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentSkipListMap::lowerEntry(jobject arg0)
+	__JniBaseClass ConcurrentSkipListMap::lowerEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"lowerEntry",
@@ -276,21 +276,21 @@ namespace java::util::concurrent
 			arg2.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentSkipListMap::navigableKeySet()
+	__JniBaseClass ConcurrentSkipListMap::navigableKeySet()
 	{
 		return callObjectMethod(
 			"navigableKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::pollFirstEntry()
+	__JniBaseClass ConcurrentSkipListMap::pollFirstEntry()
 	{
 		return callObjectMethod(
 			"pollFirstEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::pollLastEntry()
+	__JniBaseClass ConcurrentSkipListMap::pollLastEntry()
 	{
 		return callObjectMethod(
 			"pollLastEntry",
@@ -366,7 +366,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::subMap(jobject arg0, jobject arg1)
+	__JniBaseClass ConcurrentSkipListMap::subMap(jobject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"subMap",
@@ -375,7 +375,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	__JniBaseClass ConcurrentSkipListMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subMap",
@@ -386,7 +386,7 @@ namespace java::util::concurrent
 			arg3
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::tailMap(jobject arg0)
+	__JniBaseClass ConcurrentSkipListMap::tailMap(jobject arg0)
 	{
 		return callObjectMethod(
 			"tailMap",
@@ -394,7 +394,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::tailMap(jobject arg0, jboolean arg1)
+	__JniBaseClass ConcurrentSkipListMap::tailMap(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailMap",
@@ -403,7 +403,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListMap::values()
+	__JniBaseClass ConcurrentSkipListMap::values()
 	{
 		return callObjectMethod(
 			"values",

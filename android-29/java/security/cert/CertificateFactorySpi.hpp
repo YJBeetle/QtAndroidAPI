@@ -34,14 +34,14 @@ namespace java::security::cert
 		CertificateFactorySpi();
 		
 		// Methods
-		QAndroidJniObject engineGenerateCRL(java::io::InputStream arg0);
-		QAndroidJniObject engineGenerateCRLs(java::io::InputStream arg0);
-		QAndroidJniObject engineGenerateCertPath(java::io::InputStream arg0);
-		QAndroidJniObject engineGenerateCertPath(__JniBaseClass arg0);
-		QAndroidJniObject engineGenerateCertPath(java::io::InputStream arg0, jstring arg1);
-		QAndroidJniObject engineGenerateCertificate(java::io::InputStream arg0);
-		QAndroidJniObject engineGenerateCertificates(java::io::InputStream arg0);
-		QAndroidJniObject engineGetCertPathEncodings();
+		java::security::cert::CRL engineGenerateCRL(java::io::InputStream arg0);
+		__JniBaseClass engineGenerateCRLs(java::io::InputStream arg0);
+		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0);
+		java::security::cert::CertPath engineGenerateCertPath(__JniBaseClass arg0);
+		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0, jstring arg1);
+		java::security::cert::Certificate engineGenerateCertificate(java::io::InputStream arg0);
+		__JniBaseClass engineGenerateCertificates(java::io::InputStream arg0);
+		__JniBaseClass engineGetCertPathEncodings();
 	};
 } // namespace java::security::cert
 

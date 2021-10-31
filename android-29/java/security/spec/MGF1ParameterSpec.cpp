@@ -3,7 +3,7 @@
 namespace java::security::spec
 {
 	// Fields
-	QAndroidJniObject MGF1ParameterSpec::SHA1()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
@@ -11,7 +11,7 @@ namespace java::security::spec
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
-	QAndroidJniObject MGF1ParameterSpec::SHA224()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA224()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
@@ -19,7 +19,7 @@ namespace java::security::spec
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
-	QAndroidJniObject MGF1ParameterSpec::SHA256()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA256()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
@@ -27,7 +27,7 @@ namespace java::security::spec
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
-	QAndroidJniObject MGF1ParameterSpec::SHA384()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA384()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
@@ -35,7 +35,7 @@ namespace java::security::spec
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
-	QAndroidJniObject MGF1ParameterSpec::SHA3_224()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA3_224()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
@@ -43,7 +43,7 @@ namespace java::security::spec
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
-	QAndroidJniObject MGF1ParameterSpec::SHA3_256()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA3_256()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
@@ -51,7 +51,7 @@ namespace java::security::spec
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
-	QAndroidJniObject MGF1ParameterSpec::SHA3_384()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA3_384()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
@@ -59,7 +59,7 @@ namespace java::security::spec
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
-	QAndroidJniObject MGF1ParameterSpec::SHA3_512()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA3_512()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
@@ -67,7 +67,7 @@ namespace java::security::spec
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
-	QAndroidJniObject MGF1ParameterSpec::SHA512()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA512()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
@@ -75,7 +75,7 @@ namespace java::security::spec
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
-	QAndroidJniObject MGF1ParameterSpec::SHA512_224()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA512_224()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
@@ -83,7 +83,7 @@ namespace java::security::spec
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
-	QAndroidJniObject MGF1ParameterSpec::SHA512_256()
+	java::security::spec::MGF1ParameterSpec MGF1ParameterSpec::SHA512_256()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",

@@ -19,23 +19,23 @@ namespace android::net
 		UrlQuerySanitizer(jstring arg0);
 		
 		// Methods
-		static QAndroidJniObject getAllButNulAndAngleBracketsLegal();
-		static QAndroidJniObject getAllButNulLegal();
-		static QAndroidJniObject getAllButWhitespaceLegal();
-		static QAndroidJniObject getAllIllegal();
-		static QAndroidJniObject getAmpAndSpaceLegal();
-		static QAndroidJniObject getAmpLegal();
-		static QAndroidJniObject getSpaceLegal();
-		static QAndroidJniObject getUrlAndSpaceLegal();
-		static QAndroidJniObject getUrlLegal();
+		static __JniBaseClass getAllButNulAndAngleBracketsLegal();
+		static __JniBaseClass getAllButNulLegal();
+		static __JniBaseClass getAllButWhitespaceLegal();
+		static __JniBaseClass getAllIllegal();
+		static __JniBaseClass getAmpAndSpaceLegal();
+		static __JniBaseClass getAmpLegal();
+		static __JniBaseClass getSpaceLegal();
+		static __JniBaseClass getUrlAndSpaceLegal();
+		static __JniBaseClass getUrlLegal();
 		jboolean getAllowUnregisteredParamaters();
-		QAndroidJniObject getEffectiveValueSanitizer(jstring arg0);
-		QAndroidJniObject getParameterList();
-		QAndroidJniObject getParameterSet();
+		__JniBaseClass getEffectiveValueSanitizer(jstring arg0);
+		__JniBaseClass getParameterList();
+		__JniBaseClass getParameterSet();
 		jboolean getPreferFirstRepeatedParameter();
-		QAndroidJniObject getUnregisteredParameterValueSanitizer();
+		__JniBaseClass getUnregisteredParameterValueSanitizer();
 		jstring getValue(jstring arg0);
-		QAndroidJniObject getValueSanitizer(jstring arg0);
+		__JniBaseClass getValueSanitizer(jstring arg0);
 		jboolean hasParameter(jstring arg0);
 		void parseQuery(jstring arg0);
 		void parseUrl(jstring arg0);

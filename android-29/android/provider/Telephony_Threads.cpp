@@ -19,7 +19,7 @@ namespace android::provider
 			"COMMON_THREAD"
 		);
 	}
-	QAndroidJniObject Telephony_Threads::CONTENT_URI()
+	android::net::Uri Telephony_Threads::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Threads",
@@ -27,7 +27,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Telephony_Threads::OBSOLETE_THREADS_URI()
+	android::net::Uri Telephony_Threads::OBSOLETE_THREADS_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Threads",

@@ -22,7 +22,7 @@ namespace android::net
 		
 		// Methods
 		void close();
-		QAndroidJniObject getFileDescriptor();
+		java::io::FileDescriptor getFileDescriptor();
 		jint getPort();
 		jstring toString();
 	};

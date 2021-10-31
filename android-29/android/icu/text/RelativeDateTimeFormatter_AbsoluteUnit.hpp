@@ -10,18 +10,18 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DAY();
-		static QAndroidJniObject FRIDAY();
-		static QAndroidJniObject MONDAY();
-		static QAndroidJniObject MONTH();
-		static QAndroidJniObject NOW();
-		static QAndroidJniObject SATURDAY();
-		static QAndroidJniObject SUNDAY();
-		static QAndroidJniObject THURSDAY();
-		static QAndroidJniObject TUESDAY();
-		static QAndroidJniObject WEDNESDAY();
-		static QAndroidJniObject WEEK();
-		static QAndroidJniObject YEAR();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit DAY();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit FRIDAY();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit MONDAY();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit MONTH();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit NOW();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit SATURDAY();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit SUNDAY();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit THURSDAY();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit TUESDAY();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit WEDNESDAY();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit WEEK();
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit YEAR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RelativeDateTimeFormatter_AbsoluteUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -30,7 +30,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

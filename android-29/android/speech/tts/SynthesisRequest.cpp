@@ -46,7 +46,7 @@ namespace android::speech::tts
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SynthesisRequest::getParams()
+	android::os::Bundle SynthesisRequest::getParams()
 	{
 		return callObjectMethod(
 			"getParams",

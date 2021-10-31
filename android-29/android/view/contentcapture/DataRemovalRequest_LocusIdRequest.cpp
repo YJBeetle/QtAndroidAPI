@@ -19,7 +19,7 @@ namespace android::view::contentcapture
 			"()I"
 		);
 	}
-	QAndroidJniObject DataRemovalRequest_LocusIdRequest::getLocusId()
+	android::content::LocusId DataRemovalRequest_LocusIdRequest::getLocusId()
 	{
 		return callObjectMethod(
 			"getLocusId",

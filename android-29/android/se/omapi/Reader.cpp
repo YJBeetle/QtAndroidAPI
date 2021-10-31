@@ -26,7 +26,7 @@ namespace android::se::omapi
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Reader::getSEService()
+	android::se::omapi::SEService Reader::getSEService()
 	{
 		return callObjectMethod(
 			"getSEService",
@@ -40,7 +40,7 @@ namespace android::se::omapi
 			"()Z"
 		);
 	}
-	QAndroidJniObject Reader::openSession()
+	android::se::omapi::Session Reader::openSession()
 	{
 		return callObjectMethod(
 			"openSession",

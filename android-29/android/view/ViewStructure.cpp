@@ -37,7 +37,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	QAndroidJniObject ViewStructure::asyncNewChild(jint arg0)
+	android::view::ViewStructure ViewStructure::asyncNewChild(jint arg0)
 	{
 		return callObjectMethod(
 			"asyncNewChild",
@@ -45,7 +45,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewStructure::getAutofillId()
+	android::view::autofill::AutofillId ViewStructure::getAutofillId()
 	{
 		return callObjectMethod(
 			"getAutofillId",
@@ -59,7 +59,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewStructure::getExtras()
+	android::os::Bundle ViewStructure::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -101,7 +101,7 @@ namespace android::view
 			"()Z"
 		);
 	}
-	QAndroidJniObject ViewStructure::newChild(jint arg0)
+	android::view::ViewStructure ViewStructure::newChild(jint arg0)
 	{
 		return callObjectMethod(
 			"newChild",
@@ -109,7 +109,7 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewStructure::newHtmlInfoBuilder(jstring arg0)
+	android::view::ViewStructure_HtmlInfo_Builder ViewStructure::newHtmlInfoBuilder(jstring arg0)
 	{
 		return callObjectMethod(
 			"newHtmlInfoBuilder",

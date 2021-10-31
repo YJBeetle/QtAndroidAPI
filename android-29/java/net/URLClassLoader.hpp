@@ -60,12 +60,12 @@ namespace java::net
 		URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2, __JniBaseClass arg3);
 		
 		// Methods
-		static QAndroidJniObject newInstance(jarray arg0);
-		static QAndroidJniObject newInstance(jarray arg0, java::lang::ClassLoader arg1);
+		static java::net::URLClassLoader newInstance(jarray arg0);
+		static java::net::URLClassLoader newInstance(jarray arg0, java::lang::ClassLoader arg1);
 		void close();
-		QAndroidJniObject findResource(jstring arg0);
-		QAndroidJniObject findResources(jstring arg0);
-		QAndroidJniObject getResourceAsStream(jstring arg0);
+		java::net::URL findResource(jstring arg0);
+		__JniBaseClass findResources(jstring arg0);
+		java::io::InputStream getResourceAsStream(jstring arg0);
 		jarray getURLs();
 	};
 } // namespace java::net

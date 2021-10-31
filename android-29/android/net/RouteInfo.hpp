@@ -21,7 +21,7 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RouteInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,8 +32,8 @@ namespace android::net
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getDestination();
-		QAndroidJniObject getGateway();
+		android::net::IpPrefix getDestination();
+		java::net::InetAddress getGateway();
 		jstring getInterface();
 		jboolean hasGateway();
 		jint hashCode();

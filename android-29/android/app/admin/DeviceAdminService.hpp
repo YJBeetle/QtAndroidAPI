@@ -25,7 +25,7 @@ namespace android::app::admin
 		DeviceAdminService();
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 	};
 } // namespace android::app::admin
 

@@ -88,7 +88,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	QAndroidJniObject PreferenceActivity::findPreference(jstring arg0)
+	android::preference::Preference PreferenceActivity::findPreference(jstring arg0)
 	{
 		return callObjectMethod(
 			"findPreference",
@@ -106,14 +106,14 @@ namespace android::preference
 			arg2.object()
 		);
 	}
-	QAndroidJniObject PreferenceActivity::getPreferenceManager()
+	android::preference::PreferenceManager PreferenceActivity::getPreferenceManager()
 	{
 		return callObjectMethod(
 			"getPreferenceManager",
 			"()Landroid/preference/PreferenceManager;"
 		);
 	}
-	QAndroidJniObject PreferenceActivity::getPreferenceScreen()
+	android::preference::PreferenceScreen PreferenceActivity::getPreferenceScreen()
 	{
 		return callObjectMethod(
 			"getPreferenceScreen",
@@ -165,7 +165,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PreferenceActivity::onBuildStartFragmentIntent(jstring arg0, android::os::Bundle arg1, jint arg2, jint arg3)
+	android::content::Intent PreferenceActivity::onBuildStartFragmentIntent(jstring arg0, android::os::Bundle arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"onBuildStartFragmentIntent",
@@ -183,14 +183,14 @@ namespace android::preference
 			"()V"
 		);
 	}
-	QAndroidJniObject PreferenceActivity::onGetInitialHeader()
+	android::preference::PreferenceActivity_Header PreferenceActivity::onGetInitialHeader()
 	{
 		return callObjectMethod(
 			"onGetInitialHeader",
 			"()Landroid/preference/PreferenceActivity$Header;"
 		);
 	}
-	QAndroidJniObject PreferenceActivity::onGetNewHeader()
+	android::preference::PreferenceActivity_Header PreferenceActivity::onGetNewHeader()
 	{
 		return callObjectMethod(
 			"onGetNewHeader",

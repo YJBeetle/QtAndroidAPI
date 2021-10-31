@@ -19,7 +19,7 @@ namespace android::graphics
 			"BOLD_ITALIC"
 		);
 	}
-	QAndroidJniObject Typeface::DEFAULT()
+	android::graphics::Typeface Typeface::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Typeface",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"Landroid/graphics/Typeface;"
 		);
 	}
-	QAndroidJniObject Typeface::DEFAULT_BOLD()
+	android::graphics::Typeface Typeface::DEFAULT_BOLD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Typeface",
@@ -42,7 +42,7 @@ namespace android::graphics
 			"ITALIC"
 		);
 	}
-	QAndroidJniObject Typeface::MONOSPACE()
+	android::graphics::Typeface Typeface::MONOSPACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Typeface",
@@ -57,7 +57,7 @@ namespace android::graphics
 			"NORMAL"
 		);
 	}
-	QAndroidJniObject Typeface::SANS_SERIF()
+	android::graphics::Typeface Typeface::SANS_SERIF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Typeface",
@@ -65,7 +65,7 @@ namespace android::graphics
 			"Landroid/graphics/Typeface;"
 		);
 	}
-	QAndroidJniObject Typeface::SERIF()
+	android::graphics::Typeface Typeface::SERIF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Typeface",
@@ -80,7 +80,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Typeface::create(android::graphics::Typeface arg0, jint arg1)
+	android::graphics::Typeface Typeface::create(android::graphics::Typeface arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Typeface",
@@ -90,7 +90,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject Typeface::create(jstring arg0, jint arg1)
+	android::graphics::Typeface Typeface::create(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Typeface",
@@ -100,7 +100,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject Typeface::create(android::graphics::Typeface arg0, jint arg1, jboolean arg2)
+	android::graphics::Typeface Typeface::create(android::graphics::Typeface arg0, jint arg1, jboolean arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Typeface",
@@ -111,7 +111,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	QAndroidJniObject Typeface::createFromAsset(android::content::res::AssetManager arg0, jstring arg1)
+	android::graphics::Typeface Typeface::createFromAsset(android::content::res::AssetManager arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Typeface",
@@ -121,7 +121,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject Typeface::createFromFile(java::io::File arg0)
+	android::graphics::Typeface Typeface::createFromFile(java::io::File arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Typeface",
@@ -130,7 +130,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Typeface::createFromFile(jstring arg0)
+	android::graphics::Typeface Typeface::createFromFile(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Typeface",
@@ -139,7 +139,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Typeface::defaultFromStyle(jint arg0)
+	android::graphics::Typeface Typeface::defaultFromStyle(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Typeface",

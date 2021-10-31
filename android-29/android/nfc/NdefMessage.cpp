@@ -5,7 +5,7 @@
 namespace android::nfc
 {
 	// Fields
-	QAndroidJniObject NdefMessage::CREATOR()
+	__JniBaseClass NdefMessage::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NdefMessage",

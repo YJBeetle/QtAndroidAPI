@@ -105,8 +105,8 @@ namespace android::webkit
 		void onScaleChanged(android::webkit::WebView arg0, jfloat arg1, jfloat arg2);
 		void onTooManyRedirects(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2);
 		void onUnhandledKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1);
-		QAndroidJniObject shouldInterceptRequest(android::webkit::WebView arg0, __JniBaseClass arg1);
-		QAndroidJniObject shouldInterceptRequest(android::webkit::WebView arg0, jstring arg1);
+		android::webkit::WebResourceResponse shouldInterceptRequest(android::webkit::WebView arg0, __JniBaseClass arg1);
+		android::webkit::WebResourceResponse shouldInterceptRequest(android::webkit::WebView arg0, jstring arg1);
 		jboolean shouldOverrideKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1);
 		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, __JniBaseClass arg1);
 		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, jstring arg1);

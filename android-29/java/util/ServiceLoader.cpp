@@ -17,7 +17,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ServiceLoader::load(jclass arg0)
+	java::util::ServiceLoader ServiceLoader::load(jclass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.ServiceLoader",
@@ -26,7 +26,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject ServiceLoader::load(jclass arg0, java::lang::ClassLoader arg1)
+	java::util::ServiceLoader ServiceLoader::load(jclass arg0, java::lang::ClassLoader arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.ServiceLoader",
@@ -36,7 +36,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ServiceLoader::load(__JniBaseClass arg0, jclass arg1)
+	java::util::ServiceLoader ServiceLoader::load(__JniBaseClass arg0, jclass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.ServiceLoader",
@@ -46,7 +46,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject ServiceLoader::loadInstalled(jclass arg0)
+	java::util::ServiceLoader ServiceLoader::loadInstalled(jclass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.ServiceLoader",
@@ -55,14 +55,14 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject ServiceLoader::findFirst()
+	java::util::Optional ServiceLoader::findFirst()
 	{
 		return callObjectMethod(
 			"findFirst",
 			"()Ljava/util/Optional;"
 		);
 	}
-	QAndroidJniObject ServiceLoader::iterator()
+	__JniBaseClass ServiceLoader::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -76,7 +76,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	QAndroidJniObject ServiceLoader::stream()
+	__JniBaseClass ServiceLoader::stream()
 	{
 		return callObjectMethod(
 			"stream",

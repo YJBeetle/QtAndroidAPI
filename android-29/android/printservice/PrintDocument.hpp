@@ -25,8 +25,8 @@ namespace android::printservice
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getData();
-		QAndroidJniObject getInfo();
+		android::os::ParcelFileDescriptor getData();
+		android::print::PrintDocumentInfo getInfo();
 	};
 } // namespace android::printservice
 

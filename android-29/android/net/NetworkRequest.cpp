@@ -4,7 +4,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject NetworkRequest::CREATOR()
+	__JniBaseClass NetworkRequest::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkRequest",

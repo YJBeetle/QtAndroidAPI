@@ -19,14 +19,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	QAndroidJniObject TextSelection_Builder::build()
+	android::view::textclassifier::TextSelection TextSelection_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextSelection;"
 		);
 	}
-	QAndroidJniObject TextSelection_Builder::setEntityType(jstring arg0, jfloat arg1)
+	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setEntityType(jstring arg0, jfloat arg1)
 	{
 		return callObjectMethod(
 			"setEntityType",
@@ -35,7 +35,7 @@ namespace android::view::textclassifier
 			arg1
 		);
 	}
-	QAndroidJniObject TextSelection_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -43,7 +43,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextSelection_Builder::setId(jstring arg0)
+	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setId(jstring arg0)
 	{
 		return callObjectMethod(
 			"setId",

@@ -10,14 +10,14 @@ namespace java::math
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CEILING();
-		static QAndroidJniObject DOWN();
-		static QAndroidJniObject FLOOR();
-		static QAndroidJniObject HALF_DOWN();
-		static QAndroidJniObject HALF_EVEN();
-		static QAndroidJniObject HALF_UP();
-		static QAndroidJniObject UNNECESSARY();
-		static QAndroidJniObject UP();
+		static java::math::RoundingMode CEILING();
+		static java::math::RoundingMode DOWN();
+		static java::math::RoundingMode FLOOR();
+		static java::math::RoundingMode HALF_DOWN();
+		static java::math::RoundingMode HALF_EVEN();
+		static java::math::RoundingMode HALF_UP();
+		static java::math::RoundingMode UNNECESSARY();
+		static java::math::RoundingMode UP();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RoundingMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,8 +26,8 @@ namespace java::math
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jint arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::math::RoundingMode valueOf(jint arg0);
+		static java::math::RoundingMode valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::math

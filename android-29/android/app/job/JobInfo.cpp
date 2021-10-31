@@ -23,7 +23,7 @@ namespace android::app::job
 			"BACKOFF_POLICY_LINEAR"
 		);
 	}
-	QAndroidJniObject JobInfo::CREATOR()
+	__JniBaseClass JobInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.job.JobInfo",
@@ -139,7 +139,7 @@ namespace android::app::job
 			"()I"
 		);
 	}
-	QAndroidJniObject JobInfo::getClipData()
+	android::content::ClipData JobInfo::getClipData()
 	{
 		return callObjectMethod(
 			"getClipData",
@@ -167,7 +167,7 @@ namespace android::app::job
 			"()J"
 		);
 	}
-	QAndroidJniObject JobInfo::getExtras()
+	android::os::PersistableBundle JobInfo::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -223,21 +223,21 @@ namespace android::app::job
 			"()I"
 		);
 	}
-	QAndroidJniObject JobInfo::getRequiredNetwork()
+	android::net::NetworkRequest JobInfo::getRequiredNetwork()
 	{
 		return callObjectMethod(
 			"getRequiredNetwork",
 			"()Landroid/net/NetworkRequest;"
 		);
 	}
-	QAndroidJniObject JobInfo::getService()
+	android::content::ComponentName JobInfo::getService()
 	{
 		return callObjectMethod(
 			"getService",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject JobInfo::getTransientExtras()
+	android::os::Bundle JobInfo::getTransientExtras()
 	{
 		return callObjectMethod(
 			"getTransientExtras",

@@ -3,7 +3,7 @@
 namespace java::awt::font
 {
 	// Fields
-	QAndroidJniObject NumericShaper_Range::ARABIC()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::ARABIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -11,7 +11,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::BALINESE()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::BALINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -19,7 +19,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::BENGALI()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::BENGALI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -27,7 +27,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::CHAM()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::CHAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -35,7 +35,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::DEVANAGARI()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::DEVANAGARI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -43,7 +43,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::EASTERN_ARABIC()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::EASTERN_ARABIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -51,7 +51,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::ETHIOPIC()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::ETHIOPIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -59,7 +59,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::EUROPEAN()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::EUROPEAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -67,7 +67,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::GUJARATI()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::GUJARATI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -75,7 +75,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::GURMUKHI()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::GURMUKHI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -83,7 +83,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::JAVANESE()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::JAVANESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -91,7 +91,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::KANNADA()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::KANNADA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -99,7 +99,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::KAYAH_LI()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::KAYAH_LI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -107,7 +107,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::KHMER()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::KHMER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -115,7 +115,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::LAO()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::LAO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -123,7 +123,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::LEPCHA()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::LEPCHA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -131,7 +131,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::LIMBU()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::LIMBU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -139,7 +139,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::MALAYALAM()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::MALAYALAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -147,7 +147,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::MEETEI_MAYEK()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::MEETEI_MAYEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -155,7 +155,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::MONGOLIAN()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::MONGOLIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -163,7 +163,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::MYANMAR()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::MYANMAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -171,7 +171,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::MYANMAR_SHAN()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::MYANMAR_SHAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -179,7 +179,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::MYANMAR_TAI_LAING()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::MYANMAR_TAI_LAING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -187,7 +187,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::NEW_TAI_LUE()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::NEW_TAI_LUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -195,7 +195,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::NKO()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::NKO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -203,7 +203,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::OL_CHIKI()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::OL_CHIKI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -211,7 +211,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::ORIYA()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::ORIYA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -219,7 +219,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::SAURASHTRA()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::SAURASHTRA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -227,7 +227,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::SINHALA()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::SINHALA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -235,7 +235,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::SUNDANESE()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::SUNDANESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -243,7 +243,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::TAI_THAM_HORA()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::TAI_THAM_HORA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -251,7 +251,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::TAI_THAM_THAM()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::TAI_THAM_THAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -259,7 +259,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::TAMIL()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::TAMIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -267,7 +267,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::TELUGU()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::TELUGU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -275,7 +275,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::THAI()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::THAI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -283,7 +283,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::TIBETAN()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::TIBETAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -291,7 +291,7 @@ namespace java::awt::font
 			"Ljava/awt/font/NumericShaper$Range;"
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::VAI()
+	java::awt::font::NumericShaper_Range NumericShaper_Range::VAI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.awt.font.NumericShaper$Range",
@@ -306,7 +306,7 @@ namespace java::awt::font
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject NumericShaper_Range::valueOf(jstring arg0)
+	java::awt::font::NumericShaper_Range NumericShaper_Range::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.awt.font.NumericShaper$Range",

@@ -21,9 +21,9 @@ namespace java::util
 		Locale_LanguageRange(jstring arg0, jdouble arg1);
 		
 		// Methods
-		static QAndroidJniObject mapEquivalents(__JniBaseClass arg0, __JniBaseClass arg1);
-		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(jstring arg0, __JniBaseClass arg1);
+		static __JniBaseClass mapEquivalents(__JniBaseClass arg0, __JniBaseClass arg1);
+		static __JniBaseClass parse(jstring arg0);
+		static __JniBaseClass parse(jstring arg0, __JniBaseClass arg1);
 		jboolean equals(jobject arg0);
 		jstring getRange();
 		jdouble getWeight();

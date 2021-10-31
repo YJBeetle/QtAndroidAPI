@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject UnicodeSetSpanner_CountMethod::MIN_ELEMENTS()
+	android::icu::text::UnicodeSetSpanner_CountMethod UnicodeSetSpanner_CountMethod::MIN_ELEMENTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSetSpanner$CountMethod",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/UnicodeSetSpanner$CountMethod;"
 		);
 	}
-	QAndroidJniObject UnicodeSetSpanner_CountMethod::WHOLE_SPAN()
+	android::icu::text::UnicodeSetSpanner_CountMethod UnicodeSetSpanner_CountMethod::WHOLE_SPAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSetSpanner$CountMethod",
@@ -26,7 +26,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject UnicodeSetSpanner_CountMethod::valueOf(jstring arg0)
+	android::icu::text::UnicodeSetSpanner_CountMethod UnicodeSetSpanner_CountMethod::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UnicodeSetSpanner$CountMethod",

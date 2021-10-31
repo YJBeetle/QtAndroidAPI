@@ -21,7 +21,7 @@ namespace android::os::storage
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring EXTRA_STORAGE_VOLUME();
 		
 		// QAndroidJniObject forward
@@ -31,8 +31,8 @@ namespace android::os::storage
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject createAccessIntent(jstring arg0);
-		QAndroidJniObject createOpenDocumentTreeIntent();
+		android::content::Intent createAccessIntent(jstring arg0);
+		android::content::Intent createOpenDocumentTreeIntent();
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jstring getDescription(android::content::Context arg0);

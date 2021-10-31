@@ -111,7 +111,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject GregorianCalendar::getGregorianChange()
+	java::util::Date GregorianCalendar::getGregorianChange()
 	{
 		return callObjectMethod(
 			"getGregorianChange",

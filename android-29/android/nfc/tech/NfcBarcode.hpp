@@ -23,11 +23,11 @@ namespace android::nfc::tech
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject get(android::nfc::Tag arg0);
+		static android::nfc::tech::NfcBarcode get(android::nfc::Tag arg0);
 		void close();
 		void connect();
 		jbyteArray getBarcode();
-		QAndroidJniObject getTag();
+		android::nfc::Tag getTag();
 		jint getType();
 		jboolean isConnected();
 	};

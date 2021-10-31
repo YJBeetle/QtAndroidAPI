@@ -25,15 +25,15 @@ namespace android::media
 		SyncParams();
 		
 		// Methods
-		QAndroidJniObject allowDefaults();
+		android::media::SyncParams allowDefaults();
 		jint getAudioAdjustMode();
 		jfloat getFrameRate();
 		jint getSyncSource();
 		jfloat getTolerance();
-		QAndroidJniObject setAudioAdjustMode(jint arg0);
-		QAndroidJniObject setFrameRate(jfloat arg0);
-		QAndroidJniObject setSyncSource(jint arg0);
-		QAndroidJniObject setTolerance(jfloat arg0);
+		android::media::SyncParams setAudioAdjustMode(jint arg0);
+		android::media::SyncParams setFrameRate(jfloat arg0);
+		android::media::SyncParams setSyncSource(jint arg0);
+		android::media::SyncParams setTolerance(jfloat arg0);
 	};
 } // namespace android::media
 

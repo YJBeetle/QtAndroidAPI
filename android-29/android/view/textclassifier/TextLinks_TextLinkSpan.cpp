@@ -18,7 +18,7 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	QAndroidJniObject TextLinks_TextLinkSpan::getTextLink()
+	android::view::textclassifier::TextLinks_TextLink TextLinks_TextLinkSpan::getTextLink()
 	{
 		return callObjectMethod(
 			"getTextLink",

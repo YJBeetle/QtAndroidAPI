@@ -26,7 +26,7 @@ namespace java::security
 		AccessControlException(jstring arg0, java::security::Permission arg1);
 		
 		// Methods
-		QAndroidJniObject getPermission();
+		java::security::Permission getPermission();
 	};
 } // namespace java::security
 

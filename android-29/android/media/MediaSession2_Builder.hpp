@@ -38,11 +38,11 @@ namespace android::media
 		MediaSession2_Builder(android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
-		QAndroidJniObject setId(jstring arg0);
-		QAndroidJniObject setSessionActivity(android::app::PendingIntent arg0);
-		QAndroidJniObject setSessionCallback(__JniBaseClass arg0, android::media::MediaSession2_SessionCallback arg1);
+		android::media::MediaSession2 build();
+		android::media::MediaSession2_Builder setExtras(android::os::Bundle arg0);
+		android::media::MediaSession2_Builder setId(jstring arg0);
+		android::media::MediaSession2_Builder setSessionActivity(android::app::PendingIntent arg0);
+		android::media::MediaSession2_Builder setSessionCallback(__JniBaseClass arg0, android::media::MediaSession2_SessionCallback arg1);
 	};
 } // namespace android::media
 

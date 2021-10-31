@@ -33,8 +33,8 @@ namespace android::text::method
 		
 		// Methods
 		static void clear(__JniBaseClass arg0);
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);
+		static android::text::method::TextKeyListener getInstance();
+		static android::text::method::TextKeyListener getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);
 		static jboolean shouldCap(android::text::method::TextKeyListener_Capitalize arg0, jstring arg1, jint arg2);
 		jint getInputType();
 		jboolean onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3);

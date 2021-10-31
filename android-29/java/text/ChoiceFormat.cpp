@@ -79,7 +79,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject ChoiceFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer ChoiceFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -89,7 +89,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ChoiceFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer ChoiceFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -120,7 +120,7 @@ namespace java::text
 			"()I"
 		);
 	}
-	QAndroidJniObject ChoiceFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number ChoiceFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",

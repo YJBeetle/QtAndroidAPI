@@ -16,8 +16,8 @@ namespace android::provider
 		static jstring CONTENT_TYPE();
 		static jstring DEFAULT_SORT_ORDER();
 		static jstring ENTRY_CONTENT_TYPE();
-		static QAndroidJniObject EXTERNAL_CONTENT_URI();
-		static QAndroidJniObject INTERNAL_CONTENT_URI();
+		static android::net::Uri EXTERNAL_CONTENT_URI();
+		static android::net::Uri INTERNAL_CONTENT_URI();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaStore_Audio_Playlists(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,7 +27,7 @@ namespace android::provider
 		MediaStore_Audio_Playlists();
 		
 		// Methods
-		static QAndroidJniObject getContentUri(jstring arg0);
+		static android::net::Uri getContentUri(jstring arg0);
 	};
 } // namespace android::provider
 

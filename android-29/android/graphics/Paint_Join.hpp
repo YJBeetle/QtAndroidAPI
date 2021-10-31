@@ -10,9 +10,9 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BEVEL();
-		static QAndroidJniObject MITER();
-		static QAndroidJniObject ROUND();
+		static android::graphics::Paint_Join BEVEL();
+		static android::graphics::Paint_Join MITER();
+		static android::graphics::Paint_Join ROUND();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Paint_Join(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Paint_Join valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

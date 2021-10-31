@@ -32,14 +32,14 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject Drawable_ConstantState::newDrawable()
+	android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable()
 	{
 		return callObjectMethod(
 			"newDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject Drawable_ConstantState::newDrawable(android::content::res::Resources arg0)
+	android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable(android::content::res::Resources arg0)
 	{
 		return callObjectMethod(
 			"newDrawable",
@@ -47,7 +47,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Drawable_ConstantState::newDrawable(android::content::res::Resources arg0, android::content::res::Resources_Theme arg1)
+	android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable(android::content::res::Resources arg0, android::content::res::Resources_Theme arg1)
 	{
 		return callObjectMethod(
 			"newDrawable",

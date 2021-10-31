@@ -142,7 +142,7 @@ namespace android::text
 			arg3
 		);
 	}
-	QAndroidJniObject Layout::getAlignment()
+	android::text::Layout_Alignment Layout::getAlignment()
 	{
 		return callObjectMethod(
 			"getAlignment",
@@ -252,7 +252,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject Layout::getLineDirections(jint arg0)
+	android::text::Layout_Directions Layout::getLineDirections(jint arg0)
 	{
 		return callObjectMethod(
 			"getLineDirections",
@@ -365,14 +365,14 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject Layout::getPaint()
+	android::text::TextPaint Layout::getPaint()
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/text/TextPaint;"
 		);
 	}
-	QAndroidJniObject Layout::getParagraphAlignment(jint arg0)
+	android::text::Layout_Alignment Layout::getParagraphAlignment(jint arg0)
 	{
 		return callObjectMethod(
 			"getParagraphAlignment",

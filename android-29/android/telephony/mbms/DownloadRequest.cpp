@@ -5,7 +5,7 @@
 namespace android::telephony::mbms
 {
 	// Fields
-	QAndroidJniObject DownloadRequest::CREATOR()
+	__JniBaseClass DownloadRequest::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.mbms.DownloadRequest",
@@ -51,7 +51,7 @@ namespace android::telephony::mbms
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadRequest::getDestinationUri()
+	android::net::Uri DownloadRequest::getDestinationUri()
 	{
 		return callObjectMethod(
 			"getDestinationUri",
@@ -65,7 +65,7 @@ namespace android::telephony::mbms
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject DownloadRequest::getSourceUri()
+	android::net::Uri DownloadRequest::getSourceUri()
 	{
 		return callObjectMethod(
 			"getSourceUri",

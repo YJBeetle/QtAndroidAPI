@@ -22,7 +22,7 @@ namespace android::app
 		FragmentContainer();
 		
 		// Methods
-		QAndroidJniObject onFindViewById(jint arg0);
+		android::view::View onFindViewById(jint arg0);
 		jboolean onHasView();
 	};
 } // namespace android::app

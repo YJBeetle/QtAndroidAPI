@@ -27,7 +27,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	QAndroidJniObject X509CRLEntry::getCertificateIssuer()
+	javax::security::auth::x500::X500Principal X509CRLEntry::getCertificateIssuer()
 	{
 		return callObjectMethod(
 			"getCertificateIssuer",
@@ -41,21 +41,21 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject X509CRLEntry::getRevocationDate()
+	java::util::Date X509CRLEntry::getRevocationDate()
 	{
 		return callObjectMethod(
 			"getRevocationDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject X509CRLEntry::getRevocationReason()
+	java::security::cert::CRLReason X509CRLEntry::getRevocationReason()
 	{
 		return callObjectMethod(
 			"getRevocationReason",
 			"()Ljava/security/cert/CRLReason;"
 		);
 	}
-	QAndroidJniObject X509CRLEntry::getSerialNumber()
+	java::math::BigInteger X509CRLEntry::getSerialNumber()
 	{
 		return callObjectMethod(
 			"getSerialNumber",

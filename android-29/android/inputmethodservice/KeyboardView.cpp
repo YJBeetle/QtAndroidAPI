@@ -47,7 +47,7 @@ namespace android::inputmethodservice
 			"()V"
 		);
 	}
-	QAndroidJniObject KeyboardView::getKeyboard()
+	android::inputmethodservice::Keyboard KeyboardView::getKeyboard()
 	{
 		return callObjectMethod(
 			"getKeyboard",

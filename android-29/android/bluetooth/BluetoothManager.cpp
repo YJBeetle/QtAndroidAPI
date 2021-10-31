@@ -15,14 +15,14 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject BluetoothManager::getAdapter()
+	android::bluetooth::BluetoothAdapter BluetoothManager::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/bluetooth/BluetoothAdapter;"
 		);
 	}
-	QAndroidJniObject BluetoothManager::getConnectedDevices(jint arg0)
+	__JniBaseClass BluetoothManager::getConnectedDevices(jint arg0)
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -39,7 +39,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	QAndroidJniObject BluetoothManager::getDevicesMatchingConnectionStates(jint arg0, jintArray arg1)
+	__JniBaseClass BluetoothManager::getDevicesMatchingConnectionStates(jint arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
@@ -48,7 +48,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	QAndroidJniObject BluetoothManager::openGattServer(android::content::Context arg0, android::bluetooth::BluetoothGattServerCallback arg1)
+	android::bluetooth::BluetoothGattServer BluetoothManager::openGattServer(android::content::Context arg0, android::bluetooth::BluetoothGattServerCallback arg1)
 	{
 		return callObjectMethod(
 			"openGattServer",

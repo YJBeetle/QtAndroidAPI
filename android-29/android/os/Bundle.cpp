@@ -11,7 +11,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject Bundle::CREATOR()
+	__JniBaseClass Bundle::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.Bundle",
@@ -19,7 +19,7 @@ namespace android::os
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject Bundle::EMPTY()
+	android::os::Bundle Bundle::EMPTY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.Bundle",
@@ -77,7 +77,7 @@ namespace android::os
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject Bundle::deepCopy()
+	android::os::Bundle Bundle::deepCopy()
 	{
 		return callObjectMethod(
 			"deepCopy",
@@ -91,7 +91,7 @@ namespace android::os
 			"()I"
 		);
 	}
-	QAndroidJniObject Bundle::getBinder(jstring arg0)
+	__JniBaseClass Bundle::getBinder(jstring arg0)
 	{
 		return callObjectMethod(
 			"getBinder",
@@ -99,7 +99,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Bundle::getBundle(jstring arg0)
+	android::os::Bundle Bundle::getBundle(jstring arg0)
 	{
 		return callObjectMethod(
 			"getBundle",
@@ -115,7 +115,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Bundle::getByte(jstring arg0, jbyte arg1)
+	java::lang::Byte Bundle::getByte(jstring arg0, jbyte arg1)
 	{
 		return callObjectMethod(
 			"getByte",
@@ -182,7 +182,7 @@ namespace android::os
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject Bundle::getCharSequenceArrayList(jstring arg0)
+	java::util::ArrayList Bundle::getCharSequenceArrayList(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCharSequenceArrayList",
@@ -190,7 +190,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Bundle::getClassLoader()
+	java::lang::ClassLoader Bundle::getClassLoader()
 	{
 		return callObjectMethod(
 			"getClassLoader",
@@ -222,7 +222,7 @@ namespace android::os
 			arg0
 		).object<jfloatArray>();
 	}
-	QAndroidJniObject Bundle::getIntegerArrayList(jstring arg0)
+	java::util::ArrayList Bundle::getIntegerArrayList(jstring arg0)
 	{
 		return callObjectMethod(
 			"getIntegerArrayList",
@@ -230,7 +230,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Bundle::getParcelable(jstring arg0)
+	__JniBaseClass Bundle::getParcelable(jstring arg0)
 	{
 		return callObjectMethod(
 			"getParcelable",
@@ -246,7 +246,7 @@ namespace android::os
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject Bundle::getParcelableArrayList(jstring arg0)
+	java::util::ArrayList Bundle::getParcelableArrayList(jstring arg0)
 	{
 		return callObjectMethod(
 			"getParcelableArrayList",
@@ -254,7 +254,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Bundle::getSerializable(jstring arg0)
+	__JniBaseClass Bundle::getSerializable(jstring arg0)
 	{
 		return callObjectMethod(
 			"getSerializable",
@@ -287,7 +287,7 @@ namespace android::os
 			arg0
 		).object<jshortArray>();
 	}
-	QAndroidJniObject Bundle::getSize(jstring arg0)
+	android::util::Size Bundle::getSize(jstring arg0)
 	{
 		return callObjectMethod(
 			"getSize",
@@ -295,7 +295,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Bundle::getSizeF(jstring arg0)
+	android::util::SizeF Bundle::getSizeF(jstring arg0)
 	{
 		return callObjectMethod(
 			"getSizeF",
@@ -303,7 +303,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Bundle::getSparseParcelableArray(jstring arg0)
+	android::util::SparseArray Bundle::getSparseParcelableArray(jstring arg0)
 	{
 		return callObjectMethod(
 			"getSparseParcelableArray",
@@ -311,7 +311,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Bundle::getStringArrayList(jstring arg0)
+	java::util::ArrayList Bundle::getStringArrayList(jstring arg0)
 	{
 		return callObjectMethod(
 			"getStringArrayList",

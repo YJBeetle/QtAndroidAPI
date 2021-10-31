@@ -38,7 +38,7 @@ namespace android::net::wifi::aware
 		// Methods
 		void attach(android::net::wifi::aware::AttachCallback arg0, android::os::Handler arg1);
 		void attach(android::net::wifi::aware::AttachCallback arg0, android::net::wifi::aware::IdentityChangedListener arg1, android::os::Handler arg2);
-		QAndroidJniObject getCharacteristics();
+		android::net::wifi::aware::Characteristics getCharacteristics();
 		jboolean isAvailable();
 	};
 } // namespace android::net::wifi::aware

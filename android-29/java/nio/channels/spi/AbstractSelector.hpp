@@ -36,7 +36,7 @@ namespace java::nio::channels::spi
 		// Methods
 		void close();
 		jboolean isOpen();
-		QAndroidJniObject provider();
+		java::nio::channels::spi::SelectorProvider provider();
 	};
 } // namespace java::nio::channels::spi
 

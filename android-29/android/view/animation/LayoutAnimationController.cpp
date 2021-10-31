@@ -56,14 +56,14 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	QAndroidJniObject LayoutAnimationController::getAnimation()
+	android::view::animation::Animation LayoutAnimationController::getAnimation()
 	{
 		return callObjectMethod(
 			"getAnimation",
 			"()Landroid/view/animation/Animation;"
 		);
 	}
-	QAndroidJniObject LayoutAnimationController::getAnimationForView(android::view::View arg0)
+	android::view::animation::Animation LayoutAnimationController::getAnimationForView(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"getAnimationForView",
@@ -78,7 +78,7 @@ namespace android::view::animation
 			"()F"
 		);
 	}
-	QAndroidJniObject LayoutAnimationController::getInterpolator()
+	__JniBaseClass LayoutAnimationController::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",

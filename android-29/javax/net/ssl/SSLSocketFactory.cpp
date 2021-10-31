@@ -18,7 +18,7 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	QAndroidJniObject SSLSocketFactory::getDefault()
+	javax::net::SocketFactory SSLSocketFactory::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.SSLSocketFactory",
@@ -26,7 +26,7 @@ namespace javax::net::ssl
 			"()Ljavax/net/SocketFactory;"
 		);
 	}
-	QAndroidJniObject SSLSocketFactory::createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2)
+	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -36,7 +36,7 @@ namespace javax::net::ssl
 			arg2
 		);
 	}
-	QAndroidJniObject SSLSocketFactory::createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
+	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"createSocket",

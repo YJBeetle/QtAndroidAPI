@@ -21,20 +21,20 @@ namespace java::time::temporal
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject dayOfWeekInMonth(jint arg0, java::time::DayOfWeek arg1);
-		static QAndroidJniObject firstDayOfMonth();
-		static QAndroidJniObject firstDayOfNextMonth();
-		static QAndroidJniObject firstDayOfNextYear();
-		static QAndroidJniObject firstDayOfYear();
-		static QAndroidJniObject firstInMonth(java::time::DayOfWeek arg0);
-		static QAndroidJniObject lastDayOfMonth();
-		static QAndroidJniObject lastDayOfYear();
-		static QAndroidJniObject lastInMonth(java::time::DayOfWeek arg0);
-		static QAndroidJniObject next(java::time::DayOfWeek arg0);
-		static QAndroidJniObject nextOrSame(java::time::DayOfWeek arg0);
-		static QAndroidJniObject ofDateAdjuster(__JniBaseClass arg0);
-		static QAndroidJniObject previous(java::time::DayOfWeek arg0);
-		static QAndroidJniObject previousOrSame(java::time::DayOfWeek arg0);
+		static __JniBaseClass dayOfWeekInMonth(jint arg0, java::time::DayOfWeek arg1);
+		static __JniBaseClass firstDayOfMonth();
+		static __JniBaseClass firstDayOfNextMonth();
+		static __JniBaseClass firstDayOfNextYear();
+		static __JniBaseClass firstDayOfYear();
+		static __JniBaseClass firstInMonth(java::time::DayOfWeek arg0);
+		static __JniBaseClass lastDayOfMonth();
+		static __JniBaseClass lastDayOfYear();
+		static __JniBaseClass lastInMonth(java::time::DayOfWeek arg0);
+		static __JniBaseClass next(java::time::DayOfWeek arg0);
+		static __JniBaseClass nextOrSame(java::time::DayOfWeek arg0);
+		static __JniBaseClass ofDateAdjuster(__JniBaseClass arg0);
+		static __JniBaseClass previous(java::time::DayOfWeek arg0);
+		static __JniBaseClass previousOrSame(java::time::DayOfWeek arg0);
 	};
 } // namespace java::time::temporal
 

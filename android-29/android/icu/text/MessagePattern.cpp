@@ -89,7 +89,7 @@ namespace android::icu::text
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject MessagePattern::cloneAsThawed()
+	android::icu::text::MessagePattern MessagePattern::cloneAsThawed()
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
@@ -111,14 +111,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessagePattern::freeze()
+	android::icu::text::MessagePattern MessagePattern::freeze()
 	{
 		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/text/MessagePattern;"
 		);
 	}
-	QAndroidJniObject MessagePattern::getApostropheMode()
+	android::icu::text::MessagePattern_ApostropheMode MessagePattern::getApostropheMode()
 	{
 		return callObjectMethod(
 			"getApostropheMode",
@@ -141,7 +141,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MessagePattern::getPart(jint arg0)
+	android::icu::text::MessagePattern_Part MessagePattern::getPart(jint arg0)
 	{
 		return callObjectMethod(
 			"getPart",
@@ -149,7 +149,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessagePattern::getPartType(jint arg0)
+	android::icu::text::MessagePattern_Part_Type MessagePattern::getPartType(jint arg0)
 	{
 		return callObjectMethod(
 			"getPartType",
@@ -216,7 +216,7 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	QAndroidJniObject MessagePattern::parse(jstring arg0)
+	android::icu::text::MessagePattern MessagePattern::parse(jstring arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -224,7 +224,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessagePattern::parseChoiceStyle(jstring arg0)
+	android::icu::text::MessagePattern MessagePattern::parseChoiceStyle(jstring arg0)
 	{
 		return callObjectMethod(
 			"parseChoiceStyle",
@@ -232,7 +232,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessagePattern::parsePluralStyle(jstring arg0)
+	android::icu::text::MessagePattern MessagePattern::parsePluralStyle(jstring arg0)
 	{
 		return callObjectMethod(
 			"parsePluralStyle",
@@ -240,7 +240,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessagePattern::parseSelectStyle(jstring arg0)
+	android::icu::text::MessagePattern MessagePattern::parseSelectStyle(jstring arg0)
 	{
 		return callObjectMethod(
 			"parseSelectStyle",

@@ -34,9 +34,9 @@ namespace android::telephony::gsm
 		
 		// Methods
 		static jintArray calculateLength(jstring arg0, jboolean arg1);
-		static QAndroidJniObject createFromPdu(jbyteArray arg0);
-		static QAndroidJniObject getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3);
-		static QAndroidJniObject getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
+		static android::telephony::gsm::SmsMessage createFromPdu(jbyteArray arg0);
+		static android::telephony::gsm::SmsMessage_SubmitPdu getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3);
+		static android::telephony::gsm::SmsMessage_SubmitPdu getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
 		static jint getTPLayerLengthForPDU(jstring arg0);
 		jstring getDisplayMessageBody();
 		jstring getDisplayOriginatingAddress();
@@ -44,7 +44,7 @@ namespace android::telephony::gsm
 		jstring getEmailFrom();
 		jint getIndexOnSim();
 		jstring getMessageBody();
-		QAndroidJniObject getMessageClass();
+		android::telephony::gsm::SmsMessage_MessageClass getMessageClass();
 		jstring getOriginatingAddress();
 		jbyteArray getPdu();
 		jint getProtocolIdentifier();

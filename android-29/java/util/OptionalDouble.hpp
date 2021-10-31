@@ -17,8 +17,8 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject empty();
-		static QAndroidJniObject of(jdouble arg0);
+		static java::util::OptionalDouble empty();
+		static java::util::OptionalDouble of(jdouble arg0);
 		jboolean equals(jobject arg0);
 		jdouble getAsDouble();
 		jint hashCode();
@@ -30,7 +30,7 @@ namespace java::util
 		jdouble orElseGet(__JniBaseClass arg0);
 		jdouble orElseThrow();
 		jdouble orElseThrow(__JniBaseClass arg0);
-		QAndroidJniObject stream();
+		__JniBaseClass stream();
 		jstring toString();
 	};
 } // namespace java::util

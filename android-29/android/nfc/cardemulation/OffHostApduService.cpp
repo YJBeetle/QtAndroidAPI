@@ -32,7 +32,7 @@ namespace android::nfc::cardemulation
 		) {}
 	
 	// Methods
-	QAndroidJniObject OffHostApduService::onBind(android::content::Intent arg0)
+	__JniBaseClass OffHostApduService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

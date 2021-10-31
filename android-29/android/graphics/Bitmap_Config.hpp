@@ -10,12 +10,12 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ALPHA_8();
-		static QAndroidJniObject ARGB_4444();
-		static QAndroidJniObject ARGB_8888();
-		static QAndroidJniObject HARDWARE();
-		static QAndroidJniObject RGBA_F16();
-		static QAndroidJniObject RGB_565();
+		static android::graphics::Bitmap_Config ALPHA_8();
+		static android::graphics::Bitmap_Config ARGB_4444();
+		static android::graphics::Bitmap_Config ARGB_8888();
+		static android::graphics::Bitmap_Config HARDWARE();
+		static android::graphics::Bitmap_Config RGBA_F16();
+		static android::graphics::Bitmap_Config RGB_565();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Bitmap_Config(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -24,7 +24,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Bitmap_Config valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

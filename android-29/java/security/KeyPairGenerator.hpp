@@ -30,13 +30,13 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		QAndroidJniObject genKeyPair();
-		QAndroidJniObject generateKeyPair();
+		static java::security::KeyPairGenerator getInstance(jstring arg0);
+		static java::security::KeyPairGenerator getInstance(jstring arg0, jstring arg1);
+		static java::security::KeyPairGenerator getInstance(jstring arg0, java::security::Provider arg1);
+		java::security::KeyPair genKeyPair();
+		java::security::KeyPair generateKeyPair();
 		jstring getAlgorithm();
-		QAndroidJniObject getProvider();
+		java::security::Provider getProvider();
 		void initialize(jint arg0);
 		void initialize(__JniBaseClass arg0);
 		void initialize(jint arg0, java::security::SecureRandom arg1);

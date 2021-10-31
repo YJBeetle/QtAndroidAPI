@@ -37,11 +37,11 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newInstance(java::io::FileDescriptor arg0, jboolean arg1);
-		static QAndroidJniObject newInstance(java::io::InputStream arg0, jboolean arg1);
-		static QAndroidJniObject newInstance(jstring arg0, jboolean arg1);
-		static QAndroidJniObject newInstance(jbyteArray arg0, jint arg1, jint arg2, jboolean arg3);
-		QAndroidJniObject decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1);
+		static android::graphics::BitmapRegionDecoder newInstance(java::io::FileDescriptor arg0, jboolean arg1);
+		static android::graphics::BitmapRegionDecoder newInstance(java::io::InputStream arg0, jboolean arg1);
+		static android::graphics::BitmapRegionDecoder newInstance(jstring arg0, jboolean arg1);
+		static android::graphics::BitmapRegionDecoder newInstance(jbyteArray arg0, jint arg1, jint arg2, jboolean arg3);
+		android::graphics::Bitmap decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1);
 		jint getHeight();
 		jint getWidth();
 		jboolean isRecycled();

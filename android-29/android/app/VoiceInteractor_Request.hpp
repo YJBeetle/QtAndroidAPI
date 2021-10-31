@@ -26,8 +26,8 @@ namespace android::app
 		
 		// Methods
 		void cancel();
-		QAndroidJniObject getActivity();
-		QAndroidJniObject getContext();
+		android::app::Activity getActivity();
+		android::content::Context getContext();
 		jstring getName();
 		void onAttached(android::app::Activity arg0);
 		void onCancel();

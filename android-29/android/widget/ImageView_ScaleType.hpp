@@ -10,14 +10,14 @@ namespace android::widget
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CENTER();
-		static QAndroidJniObject CENTER_CROP();
-		static QAndroidJniObject CENTER_INSIDE();
-		static QAndroidJniObject FIT_CENTER();
-		static QAndroidJniObject FIT_END();
-		static QAndroidJniObject FIT_START();
-		static QAndroidJniObject FIT_XY();
-		static QAndroidJniObject MATRIX();
+		static android::widget::ImageView_ScaleType CENTER();
+		static android::widget::ImageView_ScaleType CENTER_CROP();
+		static android::widget::ImageView_ScaleType CENTER_INSIDE();
+		static android::widget::ImageView_ScaleType FIT_CENTER();
+		static android::widget::ImageView_ScaleType FIT_END();
+		static android::widget::ImageView_ScaleType FIT_START();
+		static android::widget::ImageView_ScaleType FIT_XY();
+		static android::widget::ImageView_ScaleType MATRIX();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImageView_ScaleType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,7 +26,7 @@ namespace android::widget
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::widget::ImageView_ScaleType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::widget

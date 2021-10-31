@@ -53,13 +53,13 @@ namespace android::widget
 		void dispatchDraw(android::graphics::Canvas arg0);
 		void focusCurrentTab(jint arg0);
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getChildTabViewAt(jint arg0);
-		QAndroidJniObject getLeftStripDrawable();
-		QAndroidJniObject getRightStripDrawable();
+		android::view::View getChildTabViewAt(jint arg0);
+		android::graphics::drawable::Drawable getLeftStripDrawable();
+		android::graphics::drawable::Drawable getRightStripDrawable();
 		jint getTabCount();
 		jboolean isStripEnabled();
 		void onFocusChange(android::view::View arg0, jboolean arg1);
-		QAndroidJniObject onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
+		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
 		void removeAllViews();
 		void setCurrentTab(jint arg0);
 		void setDividerDrawable(android::graphics::drawable::Drawable arg0);

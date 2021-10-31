@@ -33,7 +33,7 @@ namespace android::content::res
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jlong UNKNOWN_LENGTH();
 		
 		// QAndroidJniObject forward
@@ -46,14 +46,14 @@ namespace android::content::res
 		
 		// Methods
 		void close();
-		QAndroidJniObject createInputStream();
-		QAndroidJniObject createOutputStream();
+		java::io::FileInputStream createInputStream();
+		java::io::FileOutputStream createOutputStream();
 		jint describeContents();
 		jlong getDeclaredLength();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getFileDescriptor();
+		android::os::Bundle getExtras();
+		java::io::FileDescriptor getFileDescriptor();
 		jlong getLength();
-		QAndroidJniObject getParcelFileDescriptor();
+		android::os::ParcelFileDescriptor getParcelFileDescriptor();
 		jlong getStartOffset();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

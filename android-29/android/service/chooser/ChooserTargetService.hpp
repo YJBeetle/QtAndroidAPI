@@ -36,8 +36,8 @@ namespace android::service::chooser
 		ChooserTargetService();
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
-		QAndroidJniObject onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1);
+		__JniBaseClass onBind(android::content::Intent arg0);
+		__JniBaseClass onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1);
 	};
 } // namespace android::service::chooser
 

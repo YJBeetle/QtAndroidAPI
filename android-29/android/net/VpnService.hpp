@@ -39,10 +39,10 @@ namespace android::net
 		VpnService();
 		
 		// Methods
-		static QAndroidJniObject prepare(android::content::Context arg0);
+		static android::content::Intent prepare(android::content::Context arg0);
 		jboolean isAlwaysOn();
 		jboolean isLockdownEnabled();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onRevoke();
 		jboolean protect(jint arg0);
 		jboolean protect(java::net::DatagramSocket arg0);

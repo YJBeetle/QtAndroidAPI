@@ -23,8 +23,8 @@ namespace android::webkit
 		
 		// Methods
 		jint getCurrentIndex();
-		QAndroidJniObject getCurrentItem();
-		QAndroidJniObject getItemAtIndex(jint arg0);
+		android::webkit::WebHistoryItem getCurrentItem();
+		android::webkit::WebHistoryItem getItemAtIndex(jint arg0);
 		jint getSize();
 	};
 } // namespace android::webkit

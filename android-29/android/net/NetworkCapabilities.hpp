@@ -13,7 +13,7 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint NET_CAPABILITY_CAPTIVE_PORTAL();
 		static jint NET_CAPABILITY_CBS();
 		static jint NET_CAPABILITY_DUN();
@@ -59,7 +59,7 @@ namespace android::net
 		jint getLinkDownstreamBandwidthKbps();
 		jint getLinkUpstreamBandwidthKbps();
 		jint getSignalStrength();
-		QAndroidJniObject getTransportInfo();
+		__JniBaseClass getTransportInfo();
 		jboolean hasCapability(jint arg0);
 		jboolean hasTransport(jint arg0);
 		jint hashCode();

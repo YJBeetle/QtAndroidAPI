@@ -146,12 +146,12 @@ namespace android::graphics
 		void drawTextRun(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8);
 		void drawVertices(android::graphics::Canvas_VertexMode arg0, jint arg1, jfloatArray arg2, jint arg3, jfloatArray arg4, jint arg5, jintArray arg6, jint arg7, jshortArray arg8, jint arg9, jint arg10, android::graphics::Paint arg11);
 		void enableZ();
-		QAndroidJniObject getClipBounds();
+		android::graphics::Rect getClipBounds();
 		jboolean getClipBounds(android::graphics::Rect arg0);
 		jint getDensity();
-		QAndroidJniObject getDrawFilter();
+		android::graphics::DrawFilter getDrawFilter();
 		jint getHeight();
-		QAndroidJniObject getMatrix();
+		android::graphics::Matrix getMatrix();
 		void getMatrix(android::graphics::Matrix arg0);
 		jint getMaximumBitmapHeight();
 		jint getMaximumBitmapWidth();

@@ -38,16 +38,16 @@ namespace android::view::textclassifier
 		TextClassification_Builder();
 		
 		// Methods
-		QAndroidJniObject addAction(android::app::RemoteAction arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject setEntityType(jstring arg0, jfloat arg1);
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
-		QAndroidJniObject setIcon(android::graphics::drawable::Drawable arg0);
-		QAndroidJniObject setId(jstring arg0);
-		QAndroidJniObject setIntent(android::content::Intent arg0);
-		QAndroidJniObject setLabel(jstring arg0);
-		QAndroidJniObject setOnClickListener(__JniBaseClass arg0);
-		QAndroidJniObject setText(jstring arg0);
+		android::view::textclassifier::TextClassification_Builder addAction(android::app::RemoteAction arg0);
+		android::view::textclassifier::TextClassification build();
+		android::view::textclassifier::TextClassification_Builder setEntityType(jstring arg0, jfloat arg1);
+		android::view::textclassifier::TextClassification_Builder setExtras(android::os::Bundle arg0);
+		android::view::textclassifier::TextClassification_Builder setIcon(android::graphics::drawable::Drawable arg0);
+		android::view::textclassifier::TextClassification_Builder setId(jstring arg0);
+		android::view::textclassifier::TextClassification_Builder setIntent(android::content::Intent arg0);
+		android::view::textclassifier::TextClassification_Builder setLabel(jstring arg0);
+		android::view::textclassifier::TextClassification_Builder setOnClickListener(__JniBaseClass arg0);
+		android::view::textclassifier::TextClassification_Builder setText(jstring arg0);
 	};
 } // namespace android::view::textclassifier
 

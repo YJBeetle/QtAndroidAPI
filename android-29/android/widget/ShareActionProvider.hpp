@@ -33,7 +33,7 @@ namespace android::widget
 		
 		// Methods
 		jboolean hasSubMenu();
-		QAndroidJniObject onCreateActionView();
+		android::view::View onCreateActionView();
 		void onPrepareSubMenu(__JniBaseClass arg0);
 		void setOnShareTargetSelectedListener(__JniBaseClass arg0);
 		void setShareHistoryFileName(jstring arg0);

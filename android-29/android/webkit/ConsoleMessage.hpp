@@ -24,7 +24,7 @@ namespace android::webkit
 		// Methods
 		jint lineNumber();
 		jstring message();
-		QAndroidJniObject messageLevel();
+		android::webkit::ConsoleMessage_MessageLevel messageLevel();
 		jstring sourceId();
 	};
 } // namespace android::webkit

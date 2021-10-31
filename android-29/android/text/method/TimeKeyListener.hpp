@@ -27,8 +27,8 @@ namespace android::text::method
 		TimeKeyListener(java::util::Locale arg0);
 		
 		// Methods
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static android::text::method::TimeKeyListener getInstance();
+		static android::text::method::TimeKeyListener getInstance(java::util::Locale arg0);
 		jint getInputType();
 	};
 } // namespace android::text::method

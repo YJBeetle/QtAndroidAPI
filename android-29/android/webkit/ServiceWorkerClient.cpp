@@ -16,7 +16,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	QAndroidJniObject ServiceWorkerClient::shouldInterceptRequest(__JniBaseClass arg0)
+	android::webkit::WebResourceResponse ServiceWorkerClient::shouldInterceptRequest(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"shouldInterceptRequest",

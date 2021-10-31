@@ -64,7 +64,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject ArrayAdapter::createFromResource(android::content::Context arg0, jint arg1, jint arg2)
+	android::widget::ArrayAdapter ArrayAdapter::createFromResource(android::content::Context arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.ArrayAdapter",
@@ -113,7 +113,7 @@ namespace android::widget
 			"()[Ljava/lang/CharSequence;"
 		).object<jarray>();
 	}
-	QAndroidJniObject ArrayAdapter::getContext()
+	android::content::Context ArrayAdapter::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
@@ -127,7 +127,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ArrayAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View ArrayAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"getDropDownView",
@@ -137,14 +137,14 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ArrayAdapter::getDropDownViewTheme()
+	android::content::res::Resources_Theme ArrayAdapter::getDropDownViewTheme()
 	{
 		return callObjectMethod(
 			"getDropDownViewTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	QAndroidJniObject ArrayAdapter::getFilter()
+	android::widget::Filter ArrayAdapter::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
@@ -175,7 +175,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject ArrayAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View ArrayAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"getView",

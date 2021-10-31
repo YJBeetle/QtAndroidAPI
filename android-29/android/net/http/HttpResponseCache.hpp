@@ -38,17 +38,17 @@ namespace android::net::http
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstalled();
-		static QAndroidJniObject install(java::io::File arg0, jlong arg1);
+		static android::net::http::HttpResponseCache getInstalled();
+		static android::net::http::HttpResponseCache install(java::io::File arg0, jlong arg1);
 		void close();
 		void _delete();
 		void flush();
-		QAndroidJniObject get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2);
+		java::net::CacheResponse get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2);
 		jint getHitCount();
 		jint getNetworkCount();
 		jint getRequestCount();
 		jlong maxSize();
-		QAndroidJniObject put(java::net::URI arg0, java::net::URLConnection arg1);
+		java::net::CacheRequest put(java::net::URI arg0, java::net::URLConnection arg1);
 		jlong size();
 	};
 } // namespace android::net::http

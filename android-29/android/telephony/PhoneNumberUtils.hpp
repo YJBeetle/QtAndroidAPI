@@ -52,7 +52,7 @@ namespace android::telephony
 		static jboolean compare(jstring arg0, jstring arg1);
 		static jboolean compare(android::content::Context arg0, jstring arg1, jstring arg2);
 		static jstring convertKeypadLettersToDigits(jstring arg0);
-		static QAndroidJniObject createTtsSpan(jstring arg0);
+		static android::text::style::TtsSpan createTtsSpan(jstring arg0);
 		static jstring createTtsSpannable(jstring arg0);
 		static jstring extractNetworkPortion(jstring arg0);
 		static jstring extractPostDialPortion(jstring arg0);

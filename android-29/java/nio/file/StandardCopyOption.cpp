@@ -3,7 +3,7 @@
 namespace java::nio::file
 {
 	// Fields
-	QAndroidJniObject StandardCopyOption::ATOMIC_MOVE()
+	java::nio::file::StandardCopyOption StandardCopyOption::ATOMIC_MOVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardCopyOption",
@@ -11,7 +11,7 @@ namespace java::nio::file
 			"Ljava/nio/file/StandardCopyOption;"
 		);
 	}
-	QAndroidJniObject StandardCopyOption::COPY_ATTRIBUTES()
+	java::nio::file::StandardCopyOption StandardCopyOption::COPY_ATTRIBUTES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardCopyOption",
@@ -19,7 +19,7 @@ namespace java::nio::file
 			"Ljava/nio/file/StandardCopyOption;"
 		);
 	}
-	QAndroidJniObject StandardCopyOption::REPLACE_EXISTING()
+	java::nio::file::StandardCopyOption StandardCopyOption::REPLACE_EXISTING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardCopyOption",
@@ -34,7 +34,7 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject StandardCopyOption::valueOf(jstring arg0)
+	java::nio::file::StandardCopyOption StandardCopyOption::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.StandardCopyOption",

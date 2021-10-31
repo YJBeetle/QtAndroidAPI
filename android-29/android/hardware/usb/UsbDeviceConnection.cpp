@@ -112,14 +112,14 @@ namespace android::hardware::usb
 			arg0.object()
 		);
 	}
-	QAndroidJniObject UsbDeviceConnection::requestWait()
+	android::hardware::usb::UsbRequest UsbDeviceConnection::requestWait()
 	{
 		return callObjectMethod(
 			"requestWait",
 			"()Landroid/hardware/usb/UsbRequest;"
 		);
 	}
-	QAndroidJniObject UsbDeviceConnection::requestWait(jlong arg0)
+	android::hardware::usb::UsbRequest UsbDeviceConnection::requestWait(jlong arg0)
 	{
 		return callObjectMethod(
 			"requestWait",

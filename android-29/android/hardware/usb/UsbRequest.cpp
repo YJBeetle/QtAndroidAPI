@@ -39,7 +39,7 @@ namespace android::hardware::usb
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject UsbRequest::getEndpoint()
+	android::hardware::usb::UsbEndpoint UsbRequest::getEndpoint()
 	{
 		return callObjectMethod(
 			"getEndpoint",

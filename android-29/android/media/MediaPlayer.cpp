@@ -251,7 +251,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaPlayer::create(android::content::Context arg0, android::net::Uri arg1)
+	android::media::MediaPlayer MediaPlayer::create(android::content::Context arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaPlayer",
@@ -261,7 +261,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaPlayer::create(android::content::Context arg0, jint arg1)
+	android::media::MediaPlayer MediaPlayer::create(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaPlayer",
@@ -271,7 +271,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaPlayer::create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2)
+	android::media::MediaPlayer MediaPlayer::create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaPlayer",
@@ -282,7 +282,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MediaPlayer::create(android::content::Context arg0, jint arg1, android::media::AudioAttributes arg2, jint arg3)
+	android::media::MediaPlayer MediaPlayer::create(android::content::Context arg0, jint arg1, android::media::AudioAttributes arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaPlayer",
@@ -294,7 +294,7 @@ namespace android::media
 			arg3
 		);
 	}
-	QAndroidJniObject MediaPlayer::create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2, android::media::AudioAttributes arg3, jint arg4)
+	android::media::MediaPlayer MediaPlayer::create(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2, android::media::AudioAttributes arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaPlayer",
@@ -377,7 +377,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaPlayer::createVolumeShaper(android::media::VolumeShaper_Configuration arg0)
+	android::media::VolumeShaper MediaPlayer::createVolumeShaper(android::media::VolumeShaper_Configuration arg0)
 	{
 		return callObjectMethod(
 			"createVolumeShaper",
@@ -407,7 +407,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaPlayer::getDrmInfo()
+	android::media::MediaPlayer_DrmInfo MediaPlayer::getDrmInfo()
 	{
 		return callObjectMethod(
 			"getDrmInfo",
@@ -429,7 +429,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaPlayer::getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, __JniBaseClass arg4)
+	android::media::MediaDrm_KeyRequest MediaPlayer::getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, __JniBaseClass arg4)
 	{
 		return callObjectMethod(
 			"getKeyRequest",
@@ -441,28 +441,28 @@ namespace android::media
 			arg4.object()
 		);
 	}
-	QAndroidJniObject MediaPlayer::getMetrics()
+	android::os::PersistableBundle MediaPlayer::getMetrics()
 	{
 		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	QAndroidJniObject MediaPlayer::getPlaybackParams()
+	android::media::PlaybackParams MediaPlayer::getPlaybackParams()
 	{
 		return callObjectMethod(
 			"getPlaybackParams",
 			"()Landroid/media/PlaybackParams;"
 		);
 	}
-	QAndroidJniObject MediaPlayer::getPreferredDevice()
+	android::media::AudioDeviceInfo MediaPlayer::getPreferredDevice()
 	{
 		return callObjectMethod(
 			"getPreferredDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
-	QAndroidJniObject MediaPlayer::getRoutedDevice()
+	android::media::AudioDeviceInfo MediaPlayer::getRoutedDevice()
 	{
 		return callObjectMethod(
 			"getRoutedDevice",
@@ -477,14 +477,14 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaPlayer::getSyncParams()
+	android::media::SyncParams MediaPlayer::getSyncParams()
 	{
 		return callObjectMethod(
 			"getSyncParams",
 			"()Landroid/media/SyncParams;"
 		);
 	}
-	QAndroidJniObject MediaPlayer::getTimestamp()
+	android::media::MediaTimestamp MediaPlayer::getTimestamp()
 	{
 		return callObjectMethod(
 			"getTimestamp",

@@ -40,7 +40,7 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getCrtCoefficient()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getCrtCoefficient()
 	{
 		return callObjectMethod(
 			"getCrtCoefficient",
@@ -54,35 +54,35 @@ namespace java::security::spec
 			"()[Ljava/security/spec/RSAOtherPrimeInfo;"
 		).object<jarray>();
 	}
-	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentP()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentP()
 	{
 		return callObjectMethod(
 			"getPrimeExponentP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentQ()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentQ()
 	{
 		return callObjectMethod(
 			"getPrimeExponentQ",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPrimeP()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeP()
 	{
 		return callObjectMethod(
 			"getPrimeP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPrimeQ()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeQ()
 	{
 		return callObjectMethod(
 			"getPrimeQ",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPublicExponent()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPublicExponent()
 	{
 		return callObjectMethod(
 			"getPublicExponent",

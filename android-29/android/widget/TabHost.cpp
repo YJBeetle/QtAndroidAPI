@@ -99,35 +99,35 @@ namespace android::widget
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TabHost::getCurrentTabView()
+	android::view::View TabHost::getCurrentTabView()
 	{
 		return callObjectMethod(
 			"getCurrentTabView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject TabHost::getCurrentView()
+	android::view::View TabHost::getCurrentView()
 	{
 		return callObjectMethod(
 			"getCurrentView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject TabHost::getTabContentView()
+	android::widget::FrameLayout TabHost::getTabContentView()
 	{
 		return callObjectMethod(
 			"getTabContentView",
 			"()Landroid/widget/FrameLayout;"
 		);
 	}
-	QAndroidJniObject TabHost::getTabWidget()
+	android::widget::TabWidget TabHost::getTabWidget()
 	{
 		return callObjectMethod(
 			"getTabWidget",
 			"()Landroid/widget/TabWidget;"
 		);
 	}
-	QAndroidJniObject TabHost::newTabSpec(jstring arg0)
+	android::widget::TabHost_TabSpec TabHost::newTabSpec(jstring arg0)
 	{
 		return callObjectMethod(
 			"newTabSpec",

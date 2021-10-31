@@ -18,14 +18,14 @@ namespace android::content
 		) {}
 	
 	// Methods
-	QAndroidJniObject SyncRequest_Builder::build()
+	android::content::SyncRequest SyncRequest_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/content/SyncRequest;"
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::setDisallowMetered(jboolean arg0)
+	android::content::SyncRequest_Builder SyncRequest_Builder::setDisallowMetered(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setDisallowMetered",
@@ -33,7 +33,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::setExpedited(jboolean arg0)
+	android::content::SyncRequest_Builder SyncRequest_Builder::setExpedited(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setExpedited",
@@ -41,7 +41,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::setExtras(android::os::Bundle arg0)
+	android::content::SyncRequest_Builder SyncRequest_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -49,7 +49,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::setIgnoreBackoff(jboolean arg0)
+	android::content::SyncRequest_Builder SyncRequest_Builder::setIgnoreBackoff(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIgnoreBackoff",
@@ -57,7 +57,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::setIgnoreSettings(jboolean arg0)
+	android::content::SyncRequest_Builder SyncRequest_Builder::setIgnoreSettings(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIgnoreSettings",
@@ -65,7 +65,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::setManual(jboolean arg0)
+	android::content::SyncRequest_Builder SyncRequest_Builder::setManual(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setManual",
@@ -73,7 +73,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::setNoRetry(jboolean arg0)
+	android::content::SyncRequest_Builder SyncRequest_Builder::setNoRetry(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setNoRetry",
@@ -81,7 +81,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::setRequiresCharging(jboolean arg0)
+	android::content::SyncRequest_Builder SyncRequest_Builder::setRequiresCharging(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setRequiresCharging",
@@ -89,7 +89,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::setSyncAdapter(android::accounts::Account arg0, jstring arg1)
+	android::content::SyncRequest_Builder SyncRequest_Builder::setSyncAdapter(android::accounts::Account arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"setSyncAdapter",
@@ -98,14 +98,14 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::syncOnce()
+	android::content::SyncRequest_Builder SyncRequest_Builder::syncOnce()
 	{
 		return callObjectMethod(
 			"syncOnce",
 			"()Landroid/content/SyncRequest$Builder;"
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::syncPeriodic(jlong arg0, jlong arg1)
+	android::content::SyncRequest_Builder SyncRequest_Builder::syncPeriodic(jlong arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"syncPeriodic",

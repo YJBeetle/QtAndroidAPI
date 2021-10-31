@@ -13,7 +13,7 @@ namespace android::gesture
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject GestureLibraries::fromFile(java::io::File arg0)
+	android::gesture::GestureLibrary GestureLibraries::fromFile(java::io::File arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.gesture.GestureLibraries",
@@ -22,7 +22,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	QAndroidJniObject GestureLibraries::fromFile(jstring arg0)
+	android::gesture::GestureLibrary GestureLibraries::fromFile(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.gesture.GestureLibraries",
@@ -31,7 +31,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	QAndroidJniObject GestureLibraries::fromPrivateFile(android::content::Context arg0, jstring arg1)
+	android::gesture::GestureLibrary GestureLibraries::fromPrivateFile(android::content::Context arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.gesture.GestureLibraries",
@@ -41,7 +41,7 @@ namespace android::gesture
 			arg1
 		);
 	}
-	QAndroidJniObject GestureLibraries::fromRawResource(android::content::Context arg0, jint arg1)
+	android::gesture::GestureLibrary GestureLibraries::fromRawResource(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.gesture.GestureLibraries",

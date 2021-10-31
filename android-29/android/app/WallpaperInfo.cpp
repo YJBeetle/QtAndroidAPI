@@ -11,7 +11,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject WallpaperInfo::CREATOR()
+	__JniBaseClass WallpaperInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.WallpaperInfo",
@@ -49,7 +49,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject WallpaperInfo::getComponent()
+	android::content::ComponentName WallpaperInfo::getComponent()
 	{
 		return callObjectMethod(
 			"getComponent",
@@ -63,7 +63,7 @@ namespace android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WallpaperInfo::getServiceInfo()
+	android::content::pm::ServiceInfo WallpaperInfo::getServiceInfo()
 	{
 		return callObjectMethod(
 			"getServiceInfo",
@@ -84,7 +84,7 @@ namespace android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WallpaperInfo::getSettingsSliceUri()
+	android::net::Uri WallpaperInfo::getSettingsSliceUri()
 	{
 		return callObjectMethod(
 			"getSettingsSliceUri",
@@ -114,7 +114,7 @@ namespace android::app
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject WallpaperInfo::loadContextUri(android::content::pm::PackageManager arg0)
+	android::net::Uri WallpaperInfo::loadContextUri(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadContextUri",
@@ -130,7 +130,7 @@ namespace android::app
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject WallpaperInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable WallpaperInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -146,7 +146,7 @@ namespace android::app
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject WallpaperInfo::loadThumbnail(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable WallpaperInfo::loadThumbnail(android::content::pm::PackageManager arg0)
 	{
 		return callObjectMethod(
 			"loadThumbnail",

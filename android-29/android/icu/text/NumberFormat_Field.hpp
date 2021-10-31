@@ -11,17 +11,17 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CURRENCY();
-		static QAndroidJniObject DECIMAL_SEPARATOR();
-		static QAndroidJniObject EXPONENT();
-		static QAndroidJniObject EXPONENT_SIGN();
-		static QAndroidJniObject EXPONENT_SYMBOL();
-		static QAndroidJniObject FRACTION();
-		static QAndroidJniObject GROUPING_SEPARATOR();
-		static QAndroidJniObject INTEGER();
-		static QAndroidJniObject PERCENT();
-		static QAndroidJniObject PERMILLE();
-		static QAndroidJniObject SIGN();
+		static android::icu::text::NumberFormat_Field CURRENCY();
+		static android::icu::text::NumberFormat_Field DECIMAL_SEPARATOR();
+		static android::icu::text::NumberFormat_Field EXPONENT();
+		static android::icu::text::NumberFormat_Field EXPONENT_SIGN();
+		static android::icu::text::NumberFormat_Field EXPONENT_SYMBOL();
+		static android::icu::text::NumberFormat_Field FRACTION();
+		static android::icu::text::NumberFormat_Field GROUPING_SEPARATOR();
+		static android::icu::text::NumberFormat_Field INTEGER();
+		static android::icu::text::NumberFormat_Field PERCENT();
+		static android::icu::text::NumberFormat_Field PERMILLE();
+		static android::icu::text::NumberFormat_Field SIGN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumberFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}

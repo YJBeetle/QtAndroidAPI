@@ -28,7 +28,7 @@ namespace java::net
 			arg1
 		);
 	}
-	QAndroidJniObject HttpCookie::parse(jstring arg0)
+	__JniBaseClass HttpCookie::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.HttpCookie",

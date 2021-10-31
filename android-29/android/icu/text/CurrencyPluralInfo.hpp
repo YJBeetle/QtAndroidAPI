@@ -32,14 +32,14 @@ namespace android::icu::text
 		CurrencyPluralInfo(java::util::Locale arg0);
 		
 		// Methods
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static android::icu::text::CurrencyPluralInfo getInstance();
+		static android::icu::text::CurrencyPluralInfo getInstance(android::icu::util::ULocale arg0);
+		static android::icu::text::CurrencyPluralInfo getInstance(java::util::Locale arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
 		jstring getCurrencyPluralPattern(jstring arg0);
-		QAndroidJniObject getLocale();
-		QAndroidJniObject getPluralRules();
+		android::icu::util::ULocale getLocale();
+		android::icu::text::PluralRules getPluralRules();
 		jint hashCode();
 		void setCurrencyPluralPattern(jstring arg0, jstring arg1);
 		void setLocale(android::icu::util::ULocale arg0);

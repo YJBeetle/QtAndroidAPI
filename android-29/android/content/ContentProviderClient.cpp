@@ -44,7 +44,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ContentProviderClient::call(jstring arg0, jstring arg1, android::os::Bundle arg2)
+	android::os::Bundle ContentProviderClient::call(jstring arg0, jstring arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"call",
@@ -54,7 +54,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ContentProviderClient::call(jstring arg0, jstring arg1, jstring arg2, android::os::Bundle arg3)
+	android::os::Bundle ContentProviderClient::call(jstring arg0, jstring arg1, jstring arg2, android::os::Bundle arg3)
 	{
 		return callObjectMethod(
 			"call",
@@ -65,7 +65,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	QAndroidJniObject ContentProviderClient::canonicalize(android::net::Uri arg0)
+	android::net::Uri ContentProviderClient::canonicalize(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"canonicalize",
@@ -90,7 +90,7 @@ namespace android::content
 			arg2
 		);
 	}
-	QAndroidJniObject ContentProviderClient::getLocalContentProvider()
+	android::content::ContentProvider ContentProviderClient::getLocalContentProvider()
 	{
 		return callObjectMethod(
 			"getLocalContentProvider",
@@ -114,7 +114,7 @@ namespace android::content
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject ContentProviderClient::insert(android::net::Uri arg0, android::content::ContentValues arg1)
+	android::net::Uri ContentProviderClient::insert(android::net::Uri arg0, android::content::ContentValues arg1)
 	{
 		return callObjectMethod(
 			"insert",
@@ -123,7 +123,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ContentProviderClient::openAssetFile(android::net::Uri arg0, jstring arg1)
+	android::content::res::AssetFileDescriptor ContentProviderClient::openAssetFile(android::net::Uri arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"openAssetFile",
@@ -132,7 +132,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ContentProviderClient::openAssetFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor ContentProviderClient::openAssetFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openAssetFile",
@@ -142,7 +142,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ContentProviderClient::openFile(android::net::Uri arg0, jstring arg1)
+	android::os::ParcelFileDescriptor ContentProviderClient::openFile(android::net::Uri arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"openFile",
@@ -151,7 +151,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ContentProviderClient::openFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor ContentProviderClient::openFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"openFile",
@@ -161,7 +161,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ContentProviderClient::openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor ContentProviderClient::openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
@@ -172,7 +172,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	QAndroidJniObject ContentProviderClient::openTypedAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2)
+	android::content::res::AssetFileDescriptor ContentProviderClient::openTypedAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"openTypedAssetFileDescriptor",
@@ -182,7 +182,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ContentProviderClient::openTypedAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor ContentProviderClient::openTypedAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"openTypedAssetFileDescriptor",
@@ -193,7 +193,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	QAndroidJniObject ContentProviderClient::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	__JniBaseClass ContentProviderClient::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"query",
@@ -204,7 +204,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	QAndroidJniObject ContentProviderClient::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	__JniBaseClass ContentProviderClient::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"query",
@@ -216,7 +216,7 @@ namespace android::content
 			arg4
 		);
 	}
-	QAndroidJniObject ContentProviderClient::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
+	__JniBaseClass ContentProviderClient::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
 	{
 		return callObjectMethod(
 			"query",
@@ -246,7 +246,7 @@ namespace android::content
 			"()Z"
 		);
 	}
-	QAndroidJniObject ContentProviderClient::uncanonicalize(android::net::Uri arg0)
+	android::net::Uri ContentProviderClient::uncanonicalize(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"uncanonicalize",

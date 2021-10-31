@@ -6,7 +6,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject NetworkInfo::CREATOR()
+	__JniBaseClass NetworkInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo",
@@ -28,7 +28,7 @@ namespace android::net
 			"()I"
 		);
 	}
-	QAndroidJniObject NetworkInfo::getDetailedState()
+	android::net::NetworkInfo_DetailedState NetworkInfo::getDetailedState()
 	{
 		return callObjectMethod(
 			"getDetailedState",
@@ -49,7 +49,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject NetworkInfo::getState()
+	android::net::NetworkInfo_State NetworkInfo::getState()
 	{
 		return callObjectMethod(
 			"getState",

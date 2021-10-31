@@ -39,8 +39,8 @@ namespace android::webkit
 		WebViewFragment();
 		
 		// Methods
-		QAndroidJniObject getWebView();
-		QAndroidJniObject onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2);
+		android::webkit::WebView getWebView();
+		android::view::View onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2);
 		void onDestroy();
 		void onDestroyView();
 		void onPause();

@@ -16,14 +16,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaMetadataRetriever_BitmapParams::getActualConfig()
+	android::graphics::Bitmap_Config MediaMetadataRetriever_BitmapParams::getActualConfig()
 	{
 		return callObjectMethod(
 			"getActualConfig",
 			"()Landroid/graphics/Bitmap$Config;"
 		);
 	}
-	QAndroidJniObject MediaMetadataRetriever_BitmapParams::getPreferredConfig()
+	android::graphics::Bitmap_Config MediaMetadataRetriever_BitmapParams::getPreferredConfig()
 	{
 		return callObjectMethod(
 			"getPreferredConfig",

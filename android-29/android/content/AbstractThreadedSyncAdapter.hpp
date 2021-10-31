@@ -44,8 +44,8 @@ namespace android::content
 		AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1, jboolean arg2);
 		
 		// Methods
-		QAndroidJniObject getContext();
-		QAndroidJniObject getSyncAdapterBinder();
+		android::content::Context getContext();
+		__JniBaseClass getSyncAdapterBinder();
 		void onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4);
 		void onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::SyncResult arg3);
 		void onSyncCanceled();

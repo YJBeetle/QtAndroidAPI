@@ -17,7 +17,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityManager_TaskDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -34,7 +34,7 @@ namespace android::app
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getIcon();
+		android::graphics::Bitmap getIcon();
 		jstring getLabel();
 		jint getPrimaryColor();
 		void readFromParcel(android::os::Parcel arg0);

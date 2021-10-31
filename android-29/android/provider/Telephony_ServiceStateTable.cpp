@@ -12,7 +12,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_ServiceStateTable::CONTENT_URI()
+	android::net::Uri Telephony_ServiceStateTable::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$ServiceStateTable",
@@ -51,7 +51,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Telephony_ServiceStateTable::getUriForSubscriptionId(jint arg0)
+	android::net::Uri Telephony_ServiceStateTable::getUriForSubscriptionId(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Telephony$ServiceStateTable",
@@ -60,7 +60,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject Telephony_ServiceStateTable::getUriForSubscriptionIdAndField(jint arg0, jstring arg1)
+	android::net::Uri Telephony_ServiceStateTable::getUriForSubscriptionIdAndField(jint arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Telephony$ServiceStateTable",

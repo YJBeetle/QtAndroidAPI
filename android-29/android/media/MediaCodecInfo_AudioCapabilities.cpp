@@ -11,7 +11,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MediaCodecInfo_AudioCapabilities::getBitrateRange()
+	android::util::Range MediaCodecInfo_AudioCapabilities::getBitrateRange()
 	{
 		return callObjectMethod(
 			"getBitrateRange",

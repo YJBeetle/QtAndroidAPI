@@ -148,7 +148,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	QAndroidJniObject Formatter::format(jstring arg0, jobjectArray arg1)
+	java::util::Formatter Formatter::format(jstring arg0, jobjectArray arg1)
 	{
 		return callObjectMethod(
 			"format",
@@ -157,7 +157,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Formatter::format(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
+	java::util::Formatter Formatter::format(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -167,21 +167,21 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject Formatter::ioException()
+	java::io::IOException Formatter::ioException()
 	{
 		return callObjectMethod(
 			"ioException",
 			"()Ljava/io/IOException;"
 		);
 	}
-	QAndroidJniObject Formatter::locale()
+	java::util::Locale Formatter::locale()
 	{
 		return callObjectMethod(
 			"locale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Formatter::out()
+	__JniBaseClass Formatter::out()
 	{
 		return callObjectMethod(
 			"out",

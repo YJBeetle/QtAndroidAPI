@@ -16,7 +16,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject Uri_Builder::appendEncodedPath(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::appendEncodedPath(jstring arg0)
 	{
 		return callObjectMethod(
 			"appendEncodedPath",
@@ -24,7 +24,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::appendPath(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::appendPath(jstring arg0)
 	{
 		return callObjectMethod(
 			"appendPath",
@@ -32,7 +32,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::appendQueryParameter(jstring arg0, jstring arg1)
+	android::net::Uri_Builder Uri_Builder::appendQueryParameter(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"appendQueryParameter",
@@ -41,7 +41,7 @@ namespace android::net
 			arg1
 		);
 	}
-	QAndroidJniObject Uri_Builder::authority(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::authority(jstring arg0)
 	{
 		return callObjectMethod(
 			"authority",
@@ -49,21 +49,21 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::build()
+	android::net::Uri Uri_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Uri_Builder::clearQuery()
+	android::net::Uri_Builder Uri_Builder::clearQuery()
 	{
 		return callObjectMethod(
 			"clearQuery",
 			"()Landroid/net/Uri$Builder;"
 		);
 	}
-	QAndroidJniObject Uri_Builder::encodedAuthority(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::encodedAuthority(jstring arg0)
 	{
 		return callObjectMethod(
 			"encodedAuthority",
@@ -71,7 +71,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::encodedFragment(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::encodedFragment(jstring arg0)
 	{
 		return callObjectMethod(
 			"encodedFragment",
@@ -79,7 +79,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::encodedOpaquePart(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::encodedOpaquePart(jstring arg0)
 	{
 		return callObjectMethod(
 			"encodedOpaquePart",
@@ -87,7 +87,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::encodedPath(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::encodedPath(jstring arg0)
 	{
 		return callObjectMethod(
 			"encodedPath",
@@ -95,7 +95,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::encodedQuery(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::encodedQuery(jstring arg0)
 	{
 		return callObjectMethod(
 			"encodedQuery",
@@ -103,7 +103,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::fragment(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::fragment(jstring arg0)
 	{
 		return callObjectMethod(
 			"fragment",
@@ -111,7 +111,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::opaquePart(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::opaquePart(jstring arg0)
 	{
 		return callObjectMethod(
 			"opaquePart",
@@ -119,7 +119,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::path(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::path(jstring arg0)
 	{
 		return callObjectMethod(
 			"path",
@@ -127,7 +127,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::query(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::query(jstring arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -135,7 +135,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri_Builder::scheme(jstring arg0)
+	android::net::Uri_Builder Uri_Builder::scheme(jstring arg0)
 	{
 		return callObjectMethod(
 			"scheme",

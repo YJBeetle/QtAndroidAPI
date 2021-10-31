@@ -21,7 +21,7 @@ namespace android::text::style
 		TtsSpan_DigitsBuilder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject setDigits(jstring arg0);
+		android::text::style::TtsSpan_DigitsBuilder setDigits(jstring arg0);
 	};
 } // namespace android::text::style
 

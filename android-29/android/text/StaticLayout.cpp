@@ -109,7 +109,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject StaticLayout::getLineDirections(jint arg0)
+	android::text::Layout_Directions StaticLayout::getLineDirections(jint arg0)
 	{
 		return callObjectMethod(
 			"getLineDirections",

@@ -31,7 +31,7 @@ namespace android::widget
 		AbsoluteLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::view::ViewGroup_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jboolean shouldDelayChildPressedState();
 	};
 } // namespace android::widget

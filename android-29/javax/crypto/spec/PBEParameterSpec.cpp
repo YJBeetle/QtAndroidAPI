@@ -32,7 +32,7 @@ namespace javax::crypto::spec
 			"()I"
 		);
 	}
-	QAndroidJniObject PBEParameterSpec::getParameterSpec()
+	__JniBaseClass PBEParameterSpec::getParameterSpec()
 	{
 		return callObjectMethod(
 			"getParameterSpec",

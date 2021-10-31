@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject Paint_Style::FILL()
+	android::graphics::Paint_Style Paint_Style::FILL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Style",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/Paint$Style;"
 		);
 	}
-	QAndroidJniObject Paint_Style::FILL_AND_STROKE()
+	android::graphics::Paint_Style Paint_Style::FILL_AND_STROKE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Style",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/Paint$Style;"
 		);
 	}
-	QAndroidJniObject Paint_Style::STROKE()
+	android::graphics::Paint_Style Paint_Style::STROKE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Style",
@@ -34,7 +34,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Paint_Style::valueOf(jstring arg0)
+	android::graphics::Paint_Style Paint_Style::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Paint$Style",

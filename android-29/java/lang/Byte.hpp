@@ -31,20 +31,20 @@ namespace java::lang
 		// Methods
 		static jint compare(jbyte arg0, jbyte arg1);
 		static jint compareUnsigned(jbyte arg0, jbyte arg1);
-		static QAndroidJniObject decode(jstring arg0);
+		static java::lang::Byte decode(jstring arg0);
 		static jint hashCode(jbyte arg0);
 		static jbyte parseByte(jstring arg0);
 		static jbyte parseByte(jstring arg0, jint arg1);
 		static jstring toString(jbyte arg0);
 		static jint toUnsignedInt(jbyte arg0);
 		static jlong toUnsignedLong(jbyte arg0);
-		static QAndroidJniObject valueOf(jbyte arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(jstring arg0, jint arg1);
+		static java::lang::Byte valueOf(jbyte arg0);
+		static java::lang::Byte valueOf(jstring arg0);
+		static java::lang::Byte valueOf(jstring arg0, jint arg1);
 		jbyte byteValue();
 		jint compareTo(java::lang::Byte arg0);
 		jint compareTo(jobject arg0);
-		QAndroidJniObject describeConstable();
+		java::util::Optional describeConstable();
 		jdouble doubleValue();
 		jboolean equals(jobject arg0);
 		jfloat floatValue();

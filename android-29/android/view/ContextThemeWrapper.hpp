@@ -43,10 +43,10 @@ namespace android::view
 		
 		// Methods
 		void applyOverrideConfiguration(android::content::res::Configuration arg0);
-		QAndroidJniObject getAssets();
-		QAndroidJniObject getResources();
+		android::content::res::AssetManager getAssets();
+		android::content::res::Resources getResources();
 		jobject getSystemService(jstring arg0);
-		QAndroidJniObject getTheme();
+		android::content::res::Resources_Theme getTheme();
 		void setTheme(android::content::res::Resources_Theme arg0);
 		void setTheme(jint arg0);
 	};

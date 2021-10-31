@@ -9,7 +9,7 @@
 namespace android::media::tv
 {
 	// Fields
-	QAndroidJniObject TvInputInfo::CREATOR()
+	__JniBaseClass TvInputInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvInputInfo",
@@ -109,14 +109,14 @@ namespace android::media::tv
 			"()Z"
 		);
 	}
-	QAndroidJniObject TvInputInfo::createSettingsIntent()
+	android::content::Intent TvInputInfo::createSettingsIntent()
 	{
 		return callObjectMethod(
 			"createSettingsIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	QAndroidJniObject TvInputInfo::createSetupIntent()
+	android::content::Intent TvInputInfo::createSetupIntent()
 	{
 		return callObjectMethod(
 			"createSetupIntent",
@@ -138,7 +138,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvInputInfo::getExtras()
+	android::os::Bundle TvInputInfo::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -159,7 +159,7 @@ namespace android::media::tv
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TvInputInfo::getServiceInfo()
+	android::content::pm::ServiceInfo TvInputInfo::getServiceInfo()
 	{
 		return callObjectMethod(
 			"getServiceInfo",
@@ -210,7 +210,7 @@ namespace android::media::tv
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject TvInputInfo::loadIcon(android::content::Context arg0)
+	android::graphics::drawable::Drawable TvInputInfo::loadIcon(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"loadIcon",

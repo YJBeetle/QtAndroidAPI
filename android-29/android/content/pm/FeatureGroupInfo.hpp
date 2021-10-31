@@ -13,7 +13,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jarray features();
 		
 		// QAndroidJniObject forward

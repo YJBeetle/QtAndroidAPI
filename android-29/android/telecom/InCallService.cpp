@@ -35,21 +35,21 @@ namespace android::telecom
 			"()Z"
 		);
 	}
-	QAndroidJniObject InCallService::getCallAudioState()
+	android::telecom::CallAudioState InCallService::getCallAudioState()
 	{
 		return callObjectMethod(
 			"getCallAudioState",
 			"()Landroid/telecom/CallAudioState;"
 		);
 	}
-	QAndroidJniObject InCallService::getCalls()
+	__JniBaseClass InCallService::getCalls()
 	{
 		return callObjectMethod(
 			"getCalls",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject InCallService::onBind(android::content::Intent arg0)
+	__JniBaseClass InCallService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

@@ -24,9 +24,9 @@ namespace android::app
 		Notification_InboxStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
-		QAndroidJniObject addLine(jstring arg0);
-		QAndroidJniObject setBigContentTitle(jstring arg0);
-		QAndroidJniObject setSummaryText(jstring arg0);
+		android::app::Notification_InboxStyle addLine(jstring arg0);
+		android::app::Notification_InboxStyle setBigContentTitle(jstring arg0);
+		android::app::Notification_InboxStyle setSummaryText(jstring arg0);
 	};
 } // namespace android::app
 

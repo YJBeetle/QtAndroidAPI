@@ -10,14 +10,14 @@ namespace android::view
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BUILD_CACHE();
-		static QAndroidJniObject DRAW();
-		static QAndroidJniObject INVALIDATE();
-		static QAndroidJniObject INVALIDATE_CHILD();
-		static QAndroidJniObject INVALIDATE_CHILD_IN_PARENT();
-		static QAndroidJniObject ON_LAYOUT();
-		static QAndroidJniObject ON_MEASURE();
-		static QAndroidJniObject REQUEST_LAYOUT();
+		static android::view::ViewDebug_HierarchyTraceType BUILD_CACHE();
+		static android::view::ViewDebug_HierarchyTraceType DRAW();
+		static android::view::ViewDebug_HierarchyTraceType INVALIDATE();
+		static android::view::ViewDebug_HierarchyTraceType INVALIDATE_CHILD();
+		static android::view::ViewDebug_HierarchyTraceType INVALIDATE_CHILD_IN_PARENT();
+		static android::view::ViewDebug_HierarchyTraceType ON_LAYOUT();
+		static android::view::ViewDebug_HierarchyTraceType ON_MEASURE();
+		static android::view::ViewDebug_HierarchyTraceType REQUEST_LAYOUT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewDebug_HierarchyTraceType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,7 +26,7 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::view::ViewDebug_HierarchyTraceType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::view

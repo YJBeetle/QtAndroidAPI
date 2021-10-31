@@ -38,7 +38,7 @@ namespace android::graphics::drawable
 		// Methods
 		void addLevel(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2);
 		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
-		QAndroidJniObject mutate();
+		android::graphics::drawable::Drawable mutate();
 	};
 } // namespace android::graphics::drawable
 

@@ -30,7 +30,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	QAndroidJniObject ImageTransformation_Builder::addOption(java::util::regex::Pattern arg0, jint arg1)
+	android::service::autofill::ImageTransformation_Builder ImageTransformation_Builder::addOption(java::util::regex::Pattern arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"addOption",
@@ -39,7 +39,7 @@ namespace android::service::autofill
 			arg1
 		);
 	}
-	QAndroidJniObject ImageTransformation_Builder::addOption(java::util::regex::Pattern arg0, jint arg1, jstring arg2)
+	android::service::autofill::ImageTransformation_Builder ImageTransformation_Builder::addOption(java::util::regex::Pattern arg0, jint arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"addOption",
@@ -49,7 +49,7 @@ namespace android::service::autofill
 			arg2
 		);
 	}
-	QAndroidJniObject ImageTransformation_Builder::build()
+	android::service::autofill::ImageTransformation ImageTransformation_Builder::build()
 	{
 		return callObjectMethod(
 			"build",

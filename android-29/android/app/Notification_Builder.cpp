@@ -37,7 +37,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Notification_Builder::recoverBuilder(android::content::Context arg0, android::app::Notification arg1)
+	android::app::Notification_Builder Notification_Builder::recoverBuilder(android::content::Context arg0, android::app::Notification arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.Notification$Builder",
@@ -47,7 +47,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::addAction(android::app::Notification_Action arg0)
+	android::app::Notification_Builder Notification_Builder::addAction(android::app::Notification_Action arg0)
 	{
 		return callObjectMethod(
 			"addAction",
@@ -55,7 +55,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::addAction(jint arg0, jstring arg1, android::app::PendingIntent arg2)
+	android::app::Notification_Builder Notification_Builder::addAction(jint arg0, jstring arg1, android::app::PendingIntent arg2)
 	{
 		return callObjectMethod(
 			"addAction",
@@ -65,7 +65,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::addExtras(android::os::Bundle arg0)
+	android::app::Notification_Builder Notification_Builder::addExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"addExtras",
@@ -73,7 +73,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::addPerson(android::app::Person arg0)
+	android::app::Notification_Builder Notification_Builder::addPerson(android::app::Person arg0)
 	{
 		return callObjectMethod(
 			"addPerson",
@@ -81,7 +81,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::addPerson(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::addPerson(jstring arg0)
 	{
 		return callObjectMethod(
 			"addPerson",
@@ -89,35 +89,35 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::build()
+	android::app::Notification Notification_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/Notification;"
 		);
 	}
-	QAndroidJniObject Notification_Builder::createBigContentView()
+	android::widget::RemoteViews Notification_Builder::createBigContentView()
 	{
 		return callObjectMethod(
 			"createBigContentView",
 			"()Landroid/widget/RemoteViews;"
 		);
 	}
-	QAndroidJniObject Notification_Builder::createContentView()
+	android::widget::RemoteViews Notification_Builder::createContentView()
 	{
 		return callObjectMethod(
 			"createContentView",
 			"()Landroid/widget/RemoteViews;"
 		);
 	}
-	QAndroidJniObject Notification_Builder::createHeadsUpContentView()
+	android::widget::RemoteViews Notification_Builder::createHeadsUpContentView()
 	{
 		return callObjectMethod(
 			"createHeadsUpContentView",
 			"()Landroid/widget/RemoteViews;"
 		);
 	}
-	QAndroidJniObject Notification_Builder::extend(__JniBaseClass arg0)
+	android::app::Notification_Builder Notification_Builder::extend(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"extend",
@@ -125,28 +125,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::getExtras()
+	android::os::Bundle Notification_Builder::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Notification_Builder::getNotification()
+	android::app::Notification Notification_Builder::getNotification()
 	{
 		return callObjectMethod(
 			"getNotification",
 			"()Landroid/app/Notification;"
 		);
 	}
-	QAndroidJniObject Notification_Builder::getStyle()
+	android::app::Notification_Style Notification_Builder::getStyle()
 	{
 		return callObjectMethod(
 			"getStyle",
 			"()Landroid/app/Notification$Style;"
 		);
 	}
-	QAndroidJniObject Notification_Builder::setActions(jarray arg0)
+	android::app::Notification_Builder Notification_Builder::setActions(jarray arg0)
 	{
 		return callObjectMethod(
 			"setActions",
@@ -154,7 +154,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setAllowSystemGeneratedContextualActions(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setAllowSystemGeneratedContextualActions(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setAllowSystemGeneratedContextualActions",
@@ -162,7 +162,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setAutoCancel(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setAutoCancel(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setAutoCancel",
@@ -170,7 +170,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setBadgeIconType(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setBadgeIconType(jint arg0)
 	{
 		return callObjectMethod(
 			"setBadgeIconType",
@@ -178,7 +178,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setBubbleMetadata(android::app::Notification_BubbleMetadata arg0)
+	android::app::Notification_Builder Notification_Builder::setBubbleMetadata(android::app::Notification_BubbleMetadata arg0)
 	{
 		return callObjectMethod(
 			"setBubbleMetadata",
@@ -186,7 +186,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setCategory(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setCategory(jstring arg0)
 	{
 		return callObjectMethod(
 			"setCategory",
@@ -194,7 +194,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setChannelId(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setChannelId(jstring arg0)
 	{
 		return callObjectMethod(
 			"setChannelId",
@@ -202,7 +202,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setChronometerCountDown(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setChronometerCountDown(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setChronometerCountDown",
@@ -210,7 +210,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setColor(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setColor(jint arg0)
 	{
 		return callObjectMethod(
 			"setColor",
@@ -218,7 +218,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setColorized(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setColorized(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setColorized",
@@ -226,7 +226,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setContent(android::widget::RemoteViews arg0)
+	android::app::Notification_Builder Notification_Builder::setContent(android::widget::RemoteViews arg0)
 	{
 		return callObjectMethod(
 			"setContent",
@@ -234,7 +234,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setContentInfo(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setContentInfo(jstring arg0)
 	{
 		return callObjectMethod(
 			"setContentInfo",
@@ -242,7 +242,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setContentIntent(android::app::PendingIntent arg0)
+	android::app::Notification_Builder Notification_Builder::setContentIntent(android::app::PendingIntent arg0)
 	{
 		return callObjectMethod(
 			"setContentIntent",
@@ -250,7 +250,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setContentText(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setContentText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setContentText",
@@ -258,7 +258,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setContentTitle(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setContentTitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setContentTitle",
@@ -266,7 +266,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setCustomBigContentView(android::widget::RemoteViews arg0)
+	android::app::Notification_Builder Notification_Builder::setCustomBigContentView(android::widget::RemoteViews arg0)
 	{
 		return callObjectMethod(
 			"setCustomBigContentView",
@@ -274,7 +274,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setCustomContentView(android::widget::RemoteViews arg0)
+	android::app::Notification_Builder Notification_Builder::setCustomContentView(android::widget::RemoteViews arg0)
 	{
 		return callObjectMethod(
 			"setCustomContentView",
@@ -282,7 +282,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setCustomHeadsUpContentView(android::widget::RemoteViews arg0)
+	android::app::Notification_Builder Notification_Builder::setCustomHeadsUpContentView(android::widget::RemoteViews arg0)
 	{
 		return callObjectMethod(
 			"setCustomHeadsUpContentView",
@@ -290,7 +290,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setDefaults(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setDefaults(jint arg0)
 	{
 		return callObjectMethod(
 			"setDefaults",
@@ -298,7 +298,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setDeleteIntent(android::app::PendingIntent arg0)
+	android::app::Notification_Builder Notification_Builder::setDeleteIntent(android::app::PendingIntent arg0)
 	{
 		return callObjectMethod(
 			"setDeleteIntent",
@@ -306,7 +306,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setExtras(android::os::Bundle arg0)
+	android::app::Notification_Builder Notification_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -314,7 +314,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setFullScreenIntent(android::app::PendingIntent arg0, jboolean arg1)
+	android::app::Notification_Builder Notification_Builder::setFullScreenIntent(android::app::PendingIntent arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"setFullScreenIntent",
@@ -323,7 +323,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject Notification_Builder::setGroup(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setGroup(jstring arg0)
 	{
 		return callObjectMethod(
 			"setGroup",
@@ -331,7 +331,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setGroupAlertBehavior(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setGroupAlertBehavior(jint arg0)
 	{
 		return callObjectMethod(
 			"setGroupAlertBehavior",
@@ -339,7 +339,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setGroupSummary(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setGroupSummary(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setGroupSummary",
@@ -347,7 +347,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setLargeIcon(android::graphics::Bitmap arg0)
+	android::app::Notification_Builder Notification_Builder::setLargeIcon(android::graphics::Bitmap arg0)
 	{
 		return callObjectMethod(
 			"setLargeIcon",
@@ -355,7 +355,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setLargeIcon(android::graphics::drawable::Icon arg0)
+	android::app::Notification_Builder Notification_Builder::setLargeIcon(android::graphics::drawable::Icon arg0)
 	{
 		return callObjectMethod(
 			"setLargeIcon",
@@ -363,7 +363,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setLights(jint arg0, jint arg1, jint arg2)
+	android::app::Notification_Builder Notification_Builder::setLights(jint arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"setLights",
@@ -373,7 +373,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject Notification_Builder::setLocalOnly(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setLocalOnly(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setLocalOnly",
@@ -381,7 +381,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setLocusId(android::content::LocusId arg0)
+	android::app::Notification_Builder Notification_Builder::setLocusId(android::content::LocusId arg0)
 	{
 		return callObjectMethod(
 			"setLocusId",
@@ -389,7 +389,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setNumber(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setNumber(jint arg0)
 	{
 		return callObjectMethod(
 			"setNumber",
@@ -397,7 +397,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setOngoing(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setOngoing(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setOngoing",
@@ -405,7 +405,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setOnlyAlertOnce(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setOnlyAlertOnce(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setOnlyAlertOnce",
@@ -413,7 +413,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setPriority(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setPriority(jint arg0)
 	{
 		return callObjectMethod(
 			"setPriority",
@@ -421,7 +421,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setProgress(jint arg0, jint arg1, jboolean arg2)
+	android::app::Notification_Builder Notification_Builder::setProgress(jint arg0, jint arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"setProgress",
@@ -431,7 +431,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject Notification_Builder::setPublicVersion(android::app::Notification arg0)
+	android::app::Notification_Builder Notification_Builder::setPublicVersion(android::app::Notification arg0)
 	{
 		return callObjectMethod(
 			"setPublicVersion",
@@ -439,7 +439,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setRemoteInputHistory(jarray arg0)
+	android::app::Notification_Builder Notification_Builder::setRemoteInputHistory(jarray arg0)
 	{
 		return callObjectMethod(
 			"setRemoteInputHistory",
@@ -447,7 +447,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSettingsText(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setSettingsText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSettingsText",
@@ -455,7 +455,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setShortcutId(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setShortcutId(jstring arg0)
 	{
 		return callObjectMethod(
 			"setShortcutId",
@@ -463,7 +463,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setShowWhen(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setShowWhen(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setShowWhen",
@@ -471,7 +471,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSmallIcon(android::graphics::drawable::Icon arg0)
+	android::app::Notification_Builder Notification_Builder::setSmallIcon(android::graphics::drawable::Icon arg0)
 	{
 		return callObjectMethod(
 			"setSmallIcon",
@@ -479,7 +479,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSmallIcon(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setSmallIcon(jint arg0)
 	{
 		return callObjectMethod(
 			"setSmallIcon",
@@ -487,7 +487,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSmallIcon(jint arg0, jint arg1)
+	android::app::Notification_Builder Notification_Builder::setSmallIcon(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setSmallIcon",
@@ -496,7 +496,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSortKey(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setSortKey(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSortKey",
@@ -504,7 +504,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSound(android::net::Uri arg0)
+	android::app::Notification_Builder Notification_Builder::setSound(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"setSound",
@@ -512,7 +512,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSound(android::net::Uri arg0, android::media::AudioAttributes arg1)
+	android::app::Notification_Builder Notification_Builder::setSound(android::net::Uri arg0, android::media::AudioAttributes arg1)
 	{
 		return callObjectMethod(
 			"setSound",
@@ -521,7 +521,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSound(android::net::Uri arg0, jint arg1)
+	android::app::Notification_Builder Notification_Builder::setSound(android::net::Uri arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setSound",
@@ -530,7 +530,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject Notification_Builder::setStyle(android::app::Notification_Style arg0)
+	android::app::Notification_Builder Notification_Builder::setStyle(android::app::Notification_Style arg0)
 	{
 		return callObjectMethod(
 			"setStyle",
@@ -538,7 +538,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSubText(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setSubText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSubText",
@@ -546,7 +546,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setTicker(jstring arg0)
+	android::app::Notification_Builder Notification_Builder::setTicker(jstring arg0)
 	{
 		return callObjectMethod(
 			"setTicker",
@@ -554,7 +554,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setTicker(jstring arg0, android::widget::RemoteViews arg1)
+	android::app::Notification_Builder Notification_Builder::setTicker(jstring arg0, android::widget::RemoteViews arg1)
 	{
 		return callObjectMethod(
 			"setTicker",
@@ -563,7 +563,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::setTimeoutAfter(jlong arg0)
+	android::app::Notification_Builder Notification_Builder::setTimeoutAfter(jlong arg0)
 	{
 		return callObjectMethod(
 			"setTimeoutAfter",
@@ -571,7 +571,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setUsesChronometer(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setUsesChronometer(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setUsesChronometer",
@@ -579,7 +579,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setVibrate(jlongArray arg0)
+	android::app::Notification_Builder Notification_Builder::setVibrate(jlongArray arg0)
 	{
 		return callObjectMethod(
 			"setVibrate",
@@ -587,7 +587,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setVisibility(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setVisibility(jint arg0)
 	{
 		return callObjectMethod(
 			"setVisibility",
@@ -595,7 +595,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setWhen(jlong arg0)
+	android::app::Notification_Builder Notification_Builder::setWhen(jlong arg0)
 	{
 		return callObjectMethod(
 			"setWhen",

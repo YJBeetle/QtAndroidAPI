@@ -18,7 +18,7 @@ namespace android::media
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject MediaExtractor_CasInfo::getSession()
+	android::media::MediaCas_Session MediaExtractor_CasInfo::getSession()
 	{
 		return callObjectMethod(
 			"getSession",

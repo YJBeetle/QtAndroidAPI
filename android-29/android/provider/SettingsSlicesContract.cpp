@@ -12,7 +12,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SettingsSlicesContract::BASE_URI()
+	android::net::Uri SettingsSlicesContract::BASE_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SettingsSlicesContract",

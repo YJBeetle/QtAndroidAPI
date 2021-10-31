@@ -32,7 +32,7 @@ namespace android::media::audiofx
 		
 		// Methods
 		jshort getPreset();
-		QAndroidJniObject getProperties();
+		android::media::audiofx::PresetReverb_Settings getProperties();
 		void setParameterListener(__JniBaseClass arg0);
 		void setPreset(jshort arg0);
 		void setProperties(android::media::audiofx::PresetReverb_Settings arg0);

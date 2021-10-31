@@ -44,7 +44,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::CONTENT_URI()
+	android::net::Uri Telephony_Mms_Part::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",

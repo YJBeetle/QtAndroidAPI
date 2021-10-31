@@ -45,21 +45,21 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDefault();
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
+		static javax::net::ssl::SSLContext getDefault();
+		static javax::net::ssl::SSLContext getInstance(jstring arg0);
+		static javax::net::ssl::SSLContext getInstance(jstring arg0, jstring arg1);
+		static javax::net::ssl::SSLContext getInstance(jstring arg0, java::security::Provider arg1);
 		static void setDefault(javax::net::ssl::SSLContext arg0);
-		QAndroidJniObject createSSLEngine();
-		QAndroidJniObject createSSLEngine(jstring arg0, jint arg1);
-		QAndroidJniObject getClientSessionContext();
-		QAndroidJniObject getDefaultSSLParameters();
+		javax::net::ssl::SSLEngine createSSLEngine();
+		javax::net::ssl::SSLEngine createSSLEngine(jstring arg0, jint arg1);
+		__JniBaseClass getClientSessionContext();
+		javax::net::ssl::SSLParameters getDefaultSSLParameters();
 		jstring getProtocol();
-		QAndroidJniObject getProvider();
-		QAndroidJniObject getServerSessionContext();
-		QAndroidJniObject getServerSocketFactory();
-		QAndroidJniObject getSocketFactory();
-		QAndroidJniObject getSupportedSSLParameters();
+		java::security::Provider getProvider();
+		__JniBaseClass getServerSessionContext();
+		javax::net::ssl::SSLServerSocketFactory getServerSocketFactory();
+		javax::net::ssl::SSLSocketFactory getSocketFactory();
+		javax::net::ssl::SSLParameters getSupportedSSLParameters();
 		void init(jarray arg0, jarray arg1, java::security::SecureRandom arg2);
 	};
 } // namespace javax::net::ssl

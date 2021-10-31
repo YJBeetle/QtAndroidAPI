@@ -29,18 +29,18 @@ namespace android::app
 		Notification_MessagingStyle(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject addHistoricMessage(android::app::Notification_MessagingStyle_Message arg0);
-		QAndroidJniObject addMessage(android::app::Notification_MessagingStyle_Message arg0);
-		QAndroidJniObject addMessage(jstring arg0, jlong arg1, android::app::Person arg2);
-		QAndroidJniObject addMessage(jstring arg0, jlong arg1, jstring arg2);
+		android::app::Notification_MessagingStyle addHistoricMessage(android::app::Notification_MessagingStyle_Message arg0);
+		android::app::Notification_MessagingStyle addMessage(android::app::Notification_MessagingStyle_Message arg0);
+		android::app::Notification_MessagingStyle addMessage(jstring arg0, jlong arg1, android::app::Person arg2);
+		android::app::Notification_MessagingStyle addMessage(jstring arg0, jlong arg1, jstring arg2);
 		jstring getConversationTitle();
-		QAndroidJniObject getHistoricMessages();
-		QAndroidJniObject getMessages();
-		QAndroidJniObject getUser();
+		__JniBaseClass getHistoricMessages();
+		__JniBaseClass getMessages();
+		android::app::Person getUser();
 		jstring getUserDisplayName();
 		jboolean isGroupConversation();
-		QAndroidJniObject setConversationTitle(jstring arg0);
-		QAndroidJniObject setGroupConversation(jboolean arg0);
+		android::app::Notification_MessagingStyle setConversationTitle(jstring arg0);
+		android::app::Notification_MessagingStyle setGroupConversation(jboolean arg0);
 	};
 } // namespace android::app
 

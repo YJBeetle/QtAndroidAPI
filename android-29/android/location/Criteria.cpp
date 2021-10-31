@@ -39,7 +39,7 @@ namespace android::location
 			"ACCURACY_MEDIUM"
 		);
 	}
-	QAndroidJniObject Criteria::CREATOR()
+	__JniBaseClass Criteria::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.Criteria",

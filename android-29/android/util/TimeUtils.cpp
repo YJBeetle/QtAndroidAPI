@@ -11,7 +11,7 @@ namespace android::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TimeUtils::getTimeZone(jint arg0, jboolean arg1, jlong arg2, jstring arg3)
+	java::util::TimeZone TimeUtils::getTimeZone(jint arg0, jboolean arg1, jlong arg2, jstring arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.TimeUtils",
@@ -31,7 +31,7 @@ namespace android::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TimeUtils::getTimeZoneIdsForCountryCode(jstring arg0)
+	__JniBaseClass TimeUtils::getTimeZoneIdsForCountryCode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.TimeUtils",

@@ -34,13 +34,13 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getChangedFields();
-		QAndroidJniObject getClientState();
+		__JniBaseClass getChangedFields();
+		android::os::Bundle getClientState();
 		jstring getDatasetId();
-		QAndroidJniObject getFieldsClassification();
-		QAndroidJniObject getIgnoredDatasetIds();
-		QAndroidJniObject getManuallyEnteredField();
-		QAndroidJniObject getSelectedDatasetIds();
+		__JniBaseClass getFieldsClassification();
+		__JniBaseClass getIgnoredDatasetIds();
+		__JniBaseClass getManuallyEnteredField();
+		__JniBaseClass getSelectedDatasetIds();
 		jint getType();
 		jstring toString();
 	};

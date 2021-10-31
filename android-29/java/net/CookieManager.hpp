@@ -28,8 +28,8 @@ namespace java::net
 		CookieManager(__JniBaseClass arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject get(java::net::URI arg0, __JniBaseClass arg1);
-		QAndroidJniObject getCookieStore();
+		__JniBaseClass get(java::net::URI arg0, __JniBaseClass arg1);
+		__JniBaseClass getCookieStore();
 		void put(java::net::URI arg0, __JniBaseClass arg1);
 		void setCookiePolicy(__JniBaseClass arg0);
 	};

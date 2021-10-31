@@ -65,12 +65,12 @@ namespace android::opengl
 		static jint EGL_GL_TEXTURE_ZOFFSET();
 		static jint EGL_IMAGE_PRESERVED();
 		static jint EGL_LOSE_CONTEXT_ON_RESET();
-		static QAndroidJniObject EGL_NO_CONTEXT();
-		static QAndroidJniObject EGL_NO_DISPLAY();
-		static QAndroidJniObject EGL_NO_IMAGE();
+		static android::opengl::EGLContext EGL_NO_CONTEXT();
+		static android::opengl::EGLDisplay EGL_NO_DISPLAY();
+		static android::opengl::EGLImage EGL_NO_IMAGE();
 		static jint EGL_NO_RESET_NOTIFICATION();
-		static QAndroidJniObject EGL_NO_SURFACE();
-		static QAndroidJniObject EGL_NO_SYNC();
+		static android::opengl::EGLSurface EGL_NO_SURFACE();
+		static android::opengl::EGLSync EGL_NO_SYNC();
 		static jint EGL_OPENGL_ES3_BIT();
 		static jint EGL_PLATFORM_ANDROID_KHR();
 		static jint EGL_SIGNALED();
@@ -93,13 +93,13 @@ namespace android::opengl
 		
 		// Methods
 		static jint eglClientWaitSync(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1, jint arg2, jlong arg3);
-		static QAndroidJniObject eglCreateImage(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, jlong arg3, jlongArray arg4, jint arg5);
-		static QAndroidJniObject eglCreatePlatformPixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4);
-		static QAndroidJniObject eglCreatePlatformWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4);
-		static QAndroidJniObject eglCreateSync(android::opengl::EGLDisplay arg0, jint arg1, jlongArray arg2, jint arg3);
+		static android::opengl::EGLImage eglCreateImage(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, jlong arg3, jlongArray arg4, jint arg5);
+		static android::opengl::EGLSurface eglCreatePlatformPixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4);
+		static android::opengl::EGLSurface eglCreatePlatformWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4);
+		static android::opengl::EGLSync eglCreateSync(android::opengl::EGLDisplay arg0, jint arg1, jlongArray arg2, jint arg3);
 		static jboolean eglDestroyImage(android::opengl::EGLDisplay arg0, android::opengl::EGLImage arg1);
 		static jboolean eglDestroySync(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1);
-		static QAndroidJniObject eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3);
+		static android::opengl::EGLDisplay eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3);
 		static jboolean eglGetSyncAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1, jint arg2, jlongArray arg3, jint arg4);
 		static jboolean eglWaitSync(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1, jint arg2);
 	};

@@ -36,21 +36,21 @@ namespace java::security::spec
 			arg0
 		);
 	}
-	QAndroidJniObject EllipticCurve::getA()
+	java::math::BigInteger EllipticCurve::getA()
 	{
 		return callObjectMethod(
 			"getA",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject EllipticCurve::getB()
+	java::math::BigInteger EllipticCurve::getB()
 	{
 		return callObjectMethod(
 			"getB",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject EllipticCurve::getField()
+	__JniBaseClass EllipticCurve::getField()
 	{
 		return callObjectMethod(
 			"getField",

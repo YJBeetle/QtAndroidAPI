@@ -156,7 +156,7 @@ namespace android::app::usage
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject UsageEvents_Event::getConfiguration()
+	android::content::res::Configuration UsageEvents_Event::getConfiguration()
 	{
 		return callObjectMethod(
 			"getConfiguration",

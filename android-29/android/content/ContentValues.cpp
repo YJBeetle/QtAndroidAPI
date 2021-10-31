@@ -11,7 +11,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject ContentValues::CREATOR()
+	__JniBaseClass ContentValues::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ContentValues",
@@ -89,7 +89,7 @@ namespace android::content
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject ContentValues::getAsBoolean(jstring arg0)
+	java::lang::Boolean ContentValues::getAsBoolean(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAsBoolean",
@@ -97,7 +97,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject ContentValues::getAsByte(jstring arg0)
+	java::lang::Byte ContentValues::getAsByte(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAsByte",
@@ -113,7 +113,7 @@ namespace android::content
 			arg0
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject ContentValues::getAsDouble(jstring arg0)
+	java::lang::Double ContentValues::getAsDouble(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAsDouble",
@@ -121,7 +121,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject ContentValues::getAsFloat(jstring arg0)
+	java::lang::Float ContentValues::getAsFloat(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAsFloat",
@@ -129,7 +129,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject ContentValues::getAsInteger(jstring arg0)
+	java::lang::Integer ContentValues::getAsInteger(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAsInteger",
@@ -137,7 +137,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject ContentValues::getAsLong(jstring arg0)
+	java::lang::Long ContentValues::getAsLong(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAsLong",
@@ -145,7 +145,7 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject ContentValues::getAsShort(jstring arg0)
+	java::lang::Short ContentValues::getAsShort(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAsShort",
@@ -168,7 +168,7 @@ namespace android::content
 			"()I"
 		);
 	}
-	QAndroidJniObject ContentValues::keySet()
+	__JniBaseClass ContentValues::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -294,7 +294,7 @@ namespace android::content
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContentValues::valueSet()
+	__JniBaseClass ContentValues::valueSet()
 	{
 		return callObjectMethod(
 			"valueSet",

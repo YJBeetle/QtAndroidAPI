@@ -58,7 +58,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject LinkedHashMap::entrySet()
+	__JniBaseClass LinkedHashMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -90,7 +90,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	QAndroidJniObject LinkedHashMap::keySet()
+	__JniBaseClass LinkedHashMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -105,7 +105,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LinkedHashMap::values()
+	__JniBaseClass LinkedHashMap::values()
 	{
 		return callObjectMethod(
 			"values",

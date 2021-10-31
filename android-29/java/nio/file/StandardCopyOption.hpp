@@ -10,9 +10,9 @@ namespace java::nio::file
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ATOMIC_MOVE();
-		static QAndroidJniObject COPY_ATTRIBUTES();
-		static QAndroidJniObject REPLACE_EXISTING();
+		static java::nio::file::StandardCopyOption ATOMIC_MOVE();
+		static java::nio::file::StandardCopyOption COPY_ATTRIBUTES();
+		static java::nio::file::StandardCopyOption REPLACE_EXISTING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StandardCopyOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace java::nio::file
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::nio::file::StandardCopyOption valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::nio::file

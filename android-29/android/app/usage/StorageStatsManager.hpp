@@ -35,10 +35,10 @@ namespace android::app::usage
 		// Methods
 		jlong getFreeBytes(java::util::UUID arg0);
 		jlong getTotalBytes(java::util::UUID arg0);
-		QAndroidJniObject queryExternalStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1);
-		QAndroidJniObject queryStatsForPackage(java::util::UUID arg0, jstring arg1, android::os::UserHandle arg2);
-		QAndroidJniObject queryStatsForUid(java::util::UUID arg0, jint arg1);
-		QAndroidJniObject queryStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1);
+		android::app::usage::ExternalStorageStats queryExternalStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1);
+		android::app::usage::StorageStats queryStatsForPackage(java::util::UUID arg0, jstring arg1, android::os::UserHandle arg2);
+		android::app::usage::StorageStats queryStatsForUid(java::util::UUID arg0, jint arg1);
+		android::app::usage::StorageStats queryStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1);
 	};
 } // namespace android::app::usage
 

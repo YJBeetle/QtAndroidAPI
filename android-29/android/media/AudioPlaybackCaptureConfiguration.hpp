@@ -25,7 +25,7 @@ namespace android::media
 		jintArray getExcludeUsages();
 		jintArray getMatchingUids();
 		jintArray getMatchingUsages();
-		QAndroidJniObject getMediaProjection();
+		android::media::projection::MediaProjection getMediaProjection();
 	};
 } // namespace android::media
 

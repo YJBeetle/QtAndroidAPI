@@ -24,7 +24,7 @@ namespace android::provider
 		jarray getAxes();
 		jint getResultCode();
 		jint getTtcIndex();
-		QAndroidJniObject getUri();
+		android::net::Uri getUri();
 		jint getWeight();
 		jboolean isItalic();
 	};

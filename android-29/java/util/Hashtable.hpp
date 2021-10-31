@@ -42,16 +42,16 @@ namespace java::util
 		jboolean contains(jobject arg0);
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		QAndroidJniObject elements();
-		QAndroidJniObject entrySet();
+		__JniBaseClass elements();
+		__JniBaseClass entrySet();
 		jboolean equals(jobject arg0);
 		void forEach(__JniBaseClass arg0);
 		jobject get(jobject arg0);
 		jobject getOrDefault(jobject arg0, jobject arg1);
 		jint hashCode();
 		jboolean isEmpty();
-		QAndroidJniObject keySet();
-		QAndroidJniObject keys();
+		__JniBaseClass keySet();
+		__JniBaseClass keys();
 		jobject merge(jobject arg0, jobject arg1, __JniBaseClass arg2);
 		jobject put(jobject arg0, jobject arg1);
 		void putAll(__JniBaseClass arg0);
@@ -63,7 +63,7 @@ namespace java::util
 		void replaceAll(__JniBaseClass arg0);
 		jint size();
 		jstring toString();
-		QAndroidJniObject values();
+		__JniBaseClass values();
 	};
 } // namespace java::util
 

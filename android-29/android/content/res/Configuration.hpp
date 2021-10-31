@@ -31,7 +31,7 @@ namespace android::content::res
 		static jint COLOR_MODE_WIDE_COLOR_GAMUT_NO();
 		static jint COLOR_MODE_WIDE_COLOR_GAMUT_UNDEFINED();
 		static jint COLOR_MODE_WIDE_COLOR_GAMUT_YES();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DENSITY_DPI_UNDEFINED();
 		static jint HARDKEYBOARDHIDDEN_NO();
 		static jint HARDKEYBOARDHIDDEN_UNDEFINED();
@@ -102,7 +102,7 @@ namespace android::content::res
 		jint hardKeyboardHidden();
 		jint keyboard();
 		jint keyboardHidden();
-		QAndroidJniObject locale();
+		java::util::Locale locale();
 		jint mcc();
 		jint mnc();
 		jint navigation();
@@ -132,7 +132,7 @@ namespace android::content::res
 		jboolean equals(android::content::res::Configuration arg0);
 		jboolean equals(jobject arg0);
 		jint getLayoutDirection();
-		QAndroidJniObject getLocales();
+		android::os::LocaleList getLocales();
 		jint hashCode();
 		jboolean isLayoutSizeAtLeast(jint arg0);
 		jboolean isScreenHdr();

@@ -25,7 +25,7 @@ namespace android::util
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
 		void ensureCapacity(jint arg0);
-		QAndroidJniObject entrySet();
+		__JniBaseClass entrySet();
 		jboolean equals(jobject arg0);
 		jobject get(jobject arg0);
 		jint hashCode();
@@ -33,7 +33,7 @@ namespace android::util
 		jint indexOfValue(jobject arg0);
 		jboolean isEmpty();
 		jobject keyAt(jint arg0);
-		QAndroidJniObject keySet();
+		__JniBaseClass keySet();
 		jobject put(jobject arg0, jobject arg1);
 		void putAll(android::util::ArrayMap arg0);
 		void putAll(__JniBaseClass arg0);
@@ -45,7 +45,7 @@ namespace android::util
 		jint size();
 		jstring toString();
 		jobject valueAt(jint arg0);
-		QAndroidJniObject values();
+		__JniBaseClass values();
 	};
 } // namespace android::util
 

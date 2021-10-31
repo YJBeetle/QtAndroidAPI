@@ -13,7 +13,7 @@ namespace android::accounts
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jstring name();
 		jstring type();
 		

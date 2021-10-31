@@ -22,7 +22,7 @@ namespace android::media
 		
 		// Methods
 		jstring getCanonicalName();
-		QAndroidJniObject getCapabilitiesForType(jstring arg0);
+		android::media::MediaCodecInfo_CodecCapabilities getCapabilitiesForType(jstring arg0);
 		jstring getName();
 		jarray getSupportedTypes();
 		jboolean isAlias();

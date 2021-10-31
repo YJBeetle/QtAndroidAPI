@@ -10,9 +10,9 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ABSTRACT();
-		static QAndroidJniObject FILESYSTEM();
-		static QAndroidJniObject RESERVED();
+		static android::net::LocalSocketAddress_Namespace ABSTRACT();
+		static android::net::LocalSocketAddress_Namespace FILESYSTEM();
+		static android::net::LocalSocketAddress_Namespace RESERVED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocalSocketAddress_Namespace(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::net::LocalSocketAddress_Namespace valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::net

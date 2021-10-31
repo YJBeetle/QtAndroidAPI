@@ -10,9 +10,9 @@ namespace java::util::stream
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONCURRENT();
-		static QAndroidJniObject IDENTITY_FINISH();
-		static QAndroidJniObject UNORDERED();
+		static java::util::stream::Collector_Characteristics CONCURRENT();
+		static java::util::stream::Collector_Characteristics IDENTITY_FINISH();
+		static java::util::stream::Collector_Characteristics UNORDERED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Collector_Characteristics(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace java::util::stream
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::util::stream::Collector_Characteristics valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::util::stream

@@ -13,7 +13,7 @@
 namespace java::time
 {
 	// Fields
-	QAndroidJniObject OffsetTime::MAX()
+	java::time::OffsetTime OffsetTime::MAX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.OffsetTime",
@@ -21,7 +21,7 @@ namespace java::time
 			"Ljava/time/OffsetTime;"
 		);
 	}
-	QAndroidJniObject OffsetTime::MIN()
+	java::time::OffsetTime OffsetTime::MIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.OffsetTime",
@@ -36,7 +36,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject OffsetTime::from(__JniBaseClass arg0)
+	java::time::OffsetTime OffsetTime::from(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.OffsetTime",
@@ -45,7 +45,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::now()
+	java::time::OffsetTime OffsetTime::now()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.OffsetTime",
@@ -53,7 +53,7 @@ namespace java::time
 			"()Ljava/time/OffsetTime;"
 		);
 	}
-	QAndroidJniObject OffsetTime::now(java::time::Clock arg0)
+	java::time::OffsetTime OffsetTime::now(java::time::Clock arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.OffsetTime",
@@ -62,7 +62,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::now(java::time::ZoneId arg0)
+	java::time::OffsetTime OffsetTime::now(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.OffsetTime",
@@ -71,7 +71,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::of(java::time::LocalTime arg0, java::time::ZoneOffset arg1)
+	java::time::OffsetTime OffsetTime::of(java::time::LocalTime arg0, java::time::ZoneOffset arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.OffsetTime",
@@ -81,7 +81,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::of(jint arg0, jint arg1, jint arg2, jint arg3, java::time::ZoneOffset arg4)
+	java::time::OffsetTime OffsetTime::of(jint arg0, jint arg1, jint arg2, jint arg3, java::time::ZoneOffset arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.OffsetTime",
@@ -94,7 +94,7 @@ namespace java::time
 			arg4.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::ofInstant(java::time::Instant arg0, java::time::ZoneId arg1)
+	java::time::OffsetTime OffsetTime::ofInstant(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.OffsetTime",
@@ -104,7 +104,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::parse(jstring arg0)
+	java::time::OffsetTime OffsetTime::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.OffsetTime",
@@ -113,7 +113,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
+	java::time::OffsetTime OffsetTime::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.OffsetTime",
@@ -123,7 +123,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::adjustInto(__JniBaseClass arg0)
+	__JniBaseClass OffsetTime::adjustInto(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -131,7 +131,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::atDate(java::time::LocalDate arg0)
+	java::time::OffsetDateTime OffsetTime::atDate(java::time::LocalDate arg0)
 	{
 		return callObjectMethod(
 			"atDate",
@@ -208,7 +208,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	QAndroidJniObject OffsetTime::getOffset()
+	java::time::ZoneOffset OffsetTime::getOffset()
 	{
 		return callObjectMethod(
 			"getOffset",
@@ -261,7 +261,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::minus(__JniBaseClass arg0)
+	java::time::OffsetTime OffsetTime::minus(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -269,7 +269,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::OffsetTime OffsetTime::minus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -278,7 +278,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::minusHours(jlong arg0)
+	java::time::OffsetTime OffsetTime::minusHours(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusHours",
@@ -286,7 +286,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::minusMinutes(jlong arg0)
+	java::time::OffsetTime OffsetTime::minusMinutes(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusMinutes",
@@ -294,7 +294,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::minusNanos(jlong arg0)
+	java::time::OffsetTime OffsetTime::minusNanos(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusNanos",
@@ -302,7 +302,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::minusSeconds(jlong arg0)
+	java::time::OffsetTime OffsetTime::minusSeconds(jlong arg0)
 	{
 		return callObjectMethod(
 			"minusSeconds",
@@ -310,7 +310,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::plus(__JniBaseClass arg0)
+	java::time::OffsetTime OffsetTime::plus(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -318,7 +318,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::OffsetTime OffsetTime::plus(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -327,7 +327,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::plusHours(jlong arg0)
+	java::time::OffsetTime OffsetTime::plusHours(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusHours",
@@ -335,7 +335,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::plusMinutes(jlong arg0)
+	java::time::OffsetTime OffsetTime::plusMinutes(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusMinutes",
@@ -343,7 +343,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::plusNanos(jlong arg0)
+	java::time::OffsetTime OffsetTime::plusNanos(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusNanos",
@@ -351,7 +351,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::plusSeconds(jlong arg0)
+	java::time::OffsetTime OffsetTime::plusSeconds(jlong arg0)
 	{
 		return callObjectMethod(
 			"plusSeconds",
@@ -367,7 +367,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject OffsetTime::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange OffsetTime::range(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -383,7 +383,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::toLocalTime()
+	java::time::LocalTime OffsetTime::toLocalTime()
 	{
 		return callObjectMethod(
 			"toLocalTime",
@@ -397,7 +397,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject OffsetTime::truncatedTo(__JniBaseClass arg0)
+	java::time::OffsetTime OffsetTime::truncatedTo(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -414,7 +414,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::with(__JniBaseClass arg0)
+	java::time::OffsetTime OffsetTime::with(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -422,7 +422,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::with(__JniBaseClass arg0, jlong arg1)
+	java::time::OffsetTime OffsetTime::with(__JniBaseClass arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",
@@ -431,7 +431,7 @@ namespace java::time
 			arg1
 		);
 	}
-	QAndroidJniObject OffsetTime::withHour(jint arg0)
+	java::time::OffsetTime OffsetTime::withHour(jint arg0)
 	{
 		return callObjectMethod(
 			"withHour",
@@ -439,7 +439,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::withMinute(jint arg0)
+	java::time::OffsetTime OffsetTime::withMinute(jint arg0)
 	{
 		return callObjectMethod(
 			"withMinute",
@@ -447,7 +447,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::withNano(jint arg0)
+	java::time::OffsetTime OffsetTime::withNano(jint arg0)
 	{
 		return callObjectMethod(
 			"withNano",
@@ -455,7 +455,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::withOffsetSameInstant(java::time::ZoneOffset arg0)
+	java::time::OffsetTime OffsetTime::withOffsetSameInstant(java::time::ZoneOffset arg0)
 	{
 		return callObjectMethod(
 			"withOffsetSameInstant",
@@ -463,7 +463,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::withOffsetSameLocal(java::time::ZoneOffset arg0)
+	java::time::OffsetTime OffsetTime::withOffsetSameLocal(java::time::ZoneOffset arg0)
 	{
 		return callObjectMethod(
 			"withOffsetSameLocal",
@@ -471,7 +471,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject OffsetTime::withSecond(jint arg0)
+	java::time::OffsetTime OffsetTime::withSecond(jint arg0)
 	{
 		return callObjectMethod(
 			"withSecond",

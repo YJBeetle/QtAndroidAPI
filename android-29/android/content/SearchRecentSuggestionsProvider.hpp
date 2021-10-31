@@ -31,9 +31,9 @@ namespace android::content
 		// Methods
 		jint _delete(android::net::Uri arg0, jstring arg1, jarray arg2);
 		jstring getType(android::net::Uri arg0);
-		QAndroidJniObject insert(android::net::Uri arg0, android::content::ContentValues arg1);
+		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1);
 		jboolean onCreate();
-		QAndroidJniObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
+		__JniBaseClass query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
 		jint update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3);
 	};
 } // namespace android::content

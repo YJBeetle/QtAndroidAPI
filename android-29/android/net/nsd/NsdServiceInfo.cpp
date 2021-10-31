@@ -5,7 +5,7 @@
 namespace android::net::nsd
 {
 	// Fields
-	QAndroidJniObject NsdServiceInfo::CREATOR()
+	__JniBaseClass NsdServiceInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.nsd.NsdServiceInfo",
@@ -32,14 +32,14 @@ namespace android::net::nsd
 			"()I"
 		);
 	}
-	QAndroidJniObject NsdServiceInfo::getAttributes()
+	__JniBaseClass NsdServiceInfo::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject NsdServiceInfo::getHost()
+	java::net::InetAddress NsdServiceInfo::getHost()
 	{
 		return callObjectMethod(
 			"getHost",

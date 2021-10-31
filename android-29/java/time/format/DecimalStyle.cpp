@@ -4,7 +4,7 @@
 namespace java::time::format
 {
 	// Fields
-	QAndroidJniObject DecimalStyle::STANDARD()
+	java::time::format::DecimalStyle DecimalStyle::STANDARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.DecimalStyle",
@@ -19,7 +19,7 @@ namespace java::time::format
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DecimalStyle::getAvailableLocales()
+	__JniBaseClass DecimalStyle::getAvailableLocales()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.DecimalStyle",
@@ -27,7 +27,7 @@ namespace java::time::format
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject DecimalStyle::of(java::util::Locale arg0)
+	java::time::format::DecimalStyle DecimalStyle::of(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.DecimalStyle",
@@ -36,7 +36,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DecimalStyle::ofDefaultLocale()
+	java::time::format::DecimalStyle DecimalStyle::ofDefaultLocale()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.DecimalStyle",
@@ -94,7 +94,7 @@ namespace java::time::format
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject DecimalStyle::withDecimalSeparator(jchar arg0)
+	java::time::format::DecimalStyle DecimalStyle::withDecimalSeparator(jchar arg0)
 	{
 		return callObjectMethod(
 			"withDecimalSeparator",
@@ -102,7 +102,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	QAndroidJniObject DecimalStyle::withNegativeSign(jchar arg0)
+	java::time::format::DecimalStyle DecimalStyle::withNegativeSign(jchar arg0)
 	{
 		return callObjectMethod(
 			"withNegativeSign",
@@ -110,7 +110,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	QAndroidJniObject DecimalStyle::withPositiveSign(jchar arg0)
+	java::time::format::DecimalStyle DecimalStyle::withPositiveSign(jchar arg0)
 	{
 		return callObjectMethod(
 			"withPositiveSign",
@@ -118,7 +118,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	QAndroidJniObject DecimalStyle::withZeroDigit(jchar arg0)
+	java::time::format::DecimalStyle DecimalStyle::withZeroDigit(jchar arg0)
 	{
 		return callObjectMethod(
 			"withZeroDigit",

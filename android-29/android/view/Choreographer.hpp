@@ -21,7 +21,7 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static android::view::Choreographer getInstance();
 		void postFrameCallback(__JniBaseClass arg0);
 		void postFrameCallbackDelayed(__JniBaseClass arg0, jlong arg1);
 		void removeFrameCallback(__JniBaseClass arg0);

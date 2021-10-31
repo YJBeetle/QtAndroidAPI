@@ -18,14 +18,14 @@ namespace android::icu::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AlphabeticIndex_Bucket::getLabelType()
+	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket::getLabelType()
 	{
 		return callObjectMethod(
 			"getLabelType",
 			"()Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
 		);
 	}
-	QAndroidJniObject AlphabeticIndex_Bucket::iterator()
+	__JniBaseClass AlphabeticIndex_Bucket::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

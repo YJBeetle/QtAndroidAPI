@@ -22,14 +22,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject SplittableRandom::doubles()
+	__JniBaseClass SplittableRandom::doubles()
 	{
 		return callObjectMethod(
 			"doubles",
 			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
-	QAndroidJniObject SplittableRandom::doubles(jlong arg0)
+	__JniBaseClass SplittableRandom::doubles(jlong arg0)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -37,7 +37,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject SplittableRandom::doubles(jdouble arg0, jdouble arg1)
+	__JniBaseClass SplittableRandom::doubles(jdouble arg0, jdouble arg1)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -46,7 +46,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject SplittableRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2)
+	__JniBaseClass SplittableRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -56,14 +56,14 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject SplittableRandom::ints()
+	__JniBaseClass SplittableRandom::ints()
 	{
 		return callObjectMethod(
 			"ints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	QAndroidJniObject SplittableRandom::ints(jlong arg0)
+	__JniBaseClass SplittableRandom::ints(jlong arg0)
 	{
 		return callObjectMethod(
 			"ints",
@@ -71,7 +71,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject SplittableRandom::ints(jint arg0, jint arg1)
+	__JniBaseClass SplittableRandom::ints(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"ints",
@@ -80,7 +80,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject SplittableRandom::ints(jlong arg0, jint arg1, jint arg2)
+	__JniBaseClass SplittableRandom::ints(jlong arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"ints",
@@ -90,14 +90,14 @@ namespace java::util
 			arg2
 		);
 	}
-	QAndroidJniObject SplittableRandom::longs()
+	__JniBaseClass SplittableRandom::longs()
 	{
 		return callObjectMethod(
 			"longs",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
-	QAndroidJniObject SplittableRandom::longs(jlong arg0)
+	__JniBaseClass SplittableRandom::longs(jlong arg0)
 	{
 		return callObjectMethod(
 			"longs",
@@ -105,7 +105,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject SplittableRandom::longs(jlong arg0, jlong arg1)
+	__JniBaseClass SplittableRandom::longs(jlong arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"longs",
@@ -114,7 +114,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject SplittableRandom::longs(jlong arg0, jlong arg1, jlong arg2)
+	__JniBaseClass SplittableRandom::longs(jlong arg0, jlong arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"longs",
@@ -211,7 +211,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject SplittableRandom::split()
+	java::util::SplittableRandom SplittableRandom::split()
 	{
 		return callObjectMethod(
 			"split",

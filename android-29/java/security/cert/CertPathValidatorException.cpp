@@ -55,7 +55,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	QAndroidJniObject CertPathValidatorException::getCertPath()
+	java::security::cert::CertPath CertPathValidatorException::getCertPath()
 	{
 		return callObjectMethod(
 			"getCertPath",
@@ -69,7 +69,7 @@ namespace java::security::cert
 			"()I"
 		);
 	}
-	QAndroidJniObject CertPathValidatorException::getReason()
+	__JniBaseClass CertPathValidatorException::getReason()
 	{
 		return callObjectMethod(
 			"getReason",

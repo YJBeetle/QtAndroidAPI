@@ -118,7 +118,7 @@ namespace android::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject ArraySet::iterator()
+	__JniBaseClass ArraySet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

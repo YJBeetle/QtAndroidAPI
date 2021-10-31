@@ -27,19 +27,19 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject allOf(jclass arg0);
-		static QAndroidJniObject complementOf(java::util::EnumSet arg0);
-		static QAndroidJniObject copyOf(__JniBaseClass arg0);
-		static QAndroidJniObject copyOf(java::util::EnumSet arg0);
-		static QAndroidJniObject noneOf(jclass arg0);
-		static QAndroidJniObject of(java::lang::Enum arg0);
-		static QAndroidJniObject of(java::lang::Enum arg0, jarray arg1);
-		static QAndroidJniObject of(java::lang::Enum arg0, java::lang::Enum arg1);
-		static QAndroidJniObject of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2);
-		static QAndroidJniObject of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3);
-		static QAndroidJniObject of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3, java::lang::Enum arg4);
-		static QAndroidJniObject range(java::lang::Enum arg0, java::lang::Enum arg1);
-		QAndroidJniObject clone();
+		static java::util::EnumSet allOf(jclass arg0);
+		static java::util::EnumSet complementOf(java::util::EnumSet arg0);
+		static java::util::EnumSet copyOf(__JniBaseClass arg0);
+		static java::util::EnumSet copyOf(java::util::EnumSet arg0);
+		static java::util::EnumSet noneOf(jclass arg0);
+		static java::util::EnumSet of(java::lang::Enum arg0);
+		static java::util::EnumSet of(java::lang::Enum arg0, jarray arg1);
+		static java::util::EnumSet of(java::lang::Enum arg0, java::lang::Enum arg1);
+		static java::util::EnumSet of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2);
+		static java::util::EnumSet of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3);
+		static java::util::EnumSet of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3, java::lang::Enum arg4);
+		static java::util::EnumSet range(java::lang::Enum arg0, java::lang::Enum arg1);
+		java::util::EnumSet clone();
 	};
 } // namespace java::util
 

@@ -18,7 +18,7 @@ namespace android::util
 		Property(jclass arg0, jstring arg1);
 		
 		// Methods
-		static QAndroidJniObject of(jclass arg0, jclass arg1, jstring arg2);
+		static android::util::Property of(jclass arg0, jclass arg1, jstring arg2);
 		jobject get(jobject arg0);
 		jstring getName();
 		jclass getType();

@@ -24,7 +24,7 @@ namespace android::provider
 		static jstring APP_ID();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
 		static jstring FREQUENCY();
 		static jstring LOCALE();

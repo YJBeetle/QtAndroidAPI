@@ -15,7 +15,7 @@ namespace android::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject Editable_Factory::getInstance()
+	android::text::Editable_Factory Editable_Factory::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.Editable$Factory",
@@ -23,7 +23,7 @@ namespace android::text
 			"()Landroid/text/Editable$Factory;"
 		);
 	}
-	QAndroidJniObject Editable_Factory::newEditable(jstring arg0)
+	__JniBaseClass Editable_Factory::newEditable(jstring arg0)
 	{
 		return callObjectMethod(
 			"newEditable",

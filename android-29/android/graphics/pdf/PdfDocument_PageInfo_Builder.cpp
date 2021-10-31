@@ -20,14 +20,14 @@ namespace android::graphics::pdf
 		) {}
 	
 	// Methods
-	QAndroidJniObject PdfDocument_PageInfo_Builder::create()
+	android::graphics::pdf::PdfDocument_PageInfo PdfDocument_PageInfo_Builder::create()
 	{
 		return callObjectMethod(
 			"create",
 			"()Landroid/graphics/pdf/PdfDocument$PageInfo;"
 		);
 	}
-	QAndroidJniObject PdfDocument_PageInfo_Builder::setContentRect(android::graphics::Rect arg0)
+	android::graphics::pdf::PdfDocument_PageInfo_Builder PdfDocument_PageInfo_Builder::setContentRect(android::graphics::Rect arg0)
 	{
 		return callObjectMethod(
 			"setContentRect",

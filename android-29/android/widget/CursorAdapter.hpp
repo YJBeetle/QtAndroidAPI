@@ -47,21 +47,21 @@ namespace android::widget
 		void changeCursor(__JniBaseClass arg0);
 		jstring convertToString(__JniBaseClass arg0);
 		jint getCount();
-		QAndroidJniObject getCursor();
-		QAndroidJniObject getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
-		QAndroidJniObject getDropDownViewTheme();
-		QAndroidJniObject getFilter();
-		QAndroidJniObject getFilterQueryProvider();
+		__JniBaseClass getCursor();
+		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
+		android::content::res::Resources_Theme getDropDownViewTheme();
+		android::widget::Filter getFilter();
+		__JniBaseClass getFilterQueryProvider();
 		jobject getItem(jint arg0);
 		jlong getItemId(jint arg0);
-		QAndroidJniObject getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
+		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		jboolean hasStableIds();
-		QAndroidJniObject newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
-		QAndroidJniObject newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
-		QAndroidJniObject runQueryOnBackgroundThread(jstring arg0);
+		android::view::View newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
+		android::view::View newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
+		__JniBaseClass runQueryOnBackgroundThread(jstring arg0);
 		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
 		void setFilterQueryProvider(__JniBaseClass arg0);
-		QAndroidJniObject swapCursor(__JniBaseClass arg0);
+		__JniBaseClass swapCursor(__JniBaseClass arg0);
 	};
 } // namespace android::widget
 

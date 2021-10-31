@@ -25,7 +25,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SubscriptionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -34,7 +34,7 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject createIconBitmap(android::content::Context arg0);
+		android::graphics::Bitmap createIconBitmap(android::content::Context arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getCardId();
@@ -43,7 +43,7 @@ namespace android::telephony
 		jstring getCountryIso();
 		jint getDataRoaming();
 		jstring getDisplayName();
-		QAndroidJniObject getGroupUuid();
+		android::os::ParcelUuid getGroupUuid();
 		jstring getIccId();
 		jint getIconTint();
 		jint getMcc();

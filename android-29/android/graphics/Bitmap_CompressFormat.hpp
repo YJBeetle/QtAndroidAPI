@@ -10,9 +10,9 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject JPEG();
-		static QAndroidJniObject PNG();
-		static QAndroidJniObject WEBP();
+		static android::graphics::Bitmap_CompressFormat JPEG();
+		static android::graphics::Bitmap_CompressFormat PNG();
+		static android::graphics::Bitmap_CompressFormat WEBP();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Bitmap_CompressFormat(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Bitmap_CompressFormat valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

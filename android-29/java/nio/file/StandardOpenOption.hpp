@@ -10,16 +10,16 @@ namespace java::nio::file
 	{
 	public:
 		// Fields
-		static QAndroidJniObject APPEND();
-		static QAndroidJniObject CREATE();
-		static QAndroidJniObject CREATE_NEW();
-		static QAndroidJniObject DELETE_ON_CLOSE();
-		static QAndroidJniObject DSYNC();
-		static QAndroidJniObject READ();
-		static QAndroidJniObject SPARSE();
-		static QAndroidJniObject SYNC();
-		static QAndroidJniObject TRUNCATE_EXISTING();
-		static QAndroidJniObject WRITE();
+		static java::nio::file::StandardOpenOption APPEND();
+		static java::nio::file::StandardOpenOption CREATE();
+		static java::nio::file::StandardOpenOption CREATE_NEW();
+		static java::nio::file::StandardOpenOption DELETE_ON_CLOSE();
+		static java::nio::file::StandardOpenOption DSYNC();
+		static java::nio::file::StandardOpenOption READ();
+		static java::nio::file::StandardOpenOption SPARSE();
+		static java::nio::file::StandardOpenOption SYNC();
+		static java::nio::file::StandardOpenOption TRUNCATE_EXISTING();
+		static java::nio::file::StandardOpenOption WRITE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StandardOpenOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,7 +28,7 @@ namespace java::nio::file
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::nio::file::StandardOpenOption valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::nio::file

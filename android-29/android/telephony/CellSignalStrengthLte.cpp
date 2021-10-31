@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject CellSignalStrengthLte::CREATOR()
+	__JniBaseClass CellSignalStrengthLte::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellSignalStrengthLte",

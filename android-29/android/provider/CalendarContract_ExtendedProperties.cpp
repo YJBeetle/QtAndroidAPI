@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject CalendarContract_ExtendedProperties::CONTENT_URI()
+	android::net::Uri CalendarContract_ExtendedProperties::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$ExtendedProperties",

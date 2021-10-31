@@ -15,7 +15,7 @@ namespace java::time::zone
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ZoneOffsetTransition::of(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2)
+	java::time::zone::ZoneOffsetTransition ZoneOffsetTransition::of(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.zone.ZoneOffsetTransition",
@@ -50,42 +50,42 @@ namespace java::time::zone
 			arg0
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransition::getDateTimeAfter()
+	java::time::LocalDateTime ZoneOffsetTransition::getDateTimeAfter()
 	{
 		return callObjectMethod(
 			"getDateTimeAfter",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransition::getDateTimeBefore()
+	java::time::LocalDateTime ZoneOffsetTransition::getDateTimeBefore()
 	{
 		return callObjectMethod(
 			"getDateTimeBefore",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransition::getDuration()
+	java::time::Duration ZoneOffsetTransition::getDuration()
 	{
 		return callObjectMethod(
 			"getDuration",
 			"()Ljava/time/Duration;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransition::getInstant()
+	java::time::Instant ZoneOffsetTransition::getInstant()
 	{
 		return callObjectMethod(
 			"getInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransition::getOffsetAfter()
+	java::time::ZoneOffset ZoneOffsetTransition::getOffsetAfter()
 	{
 		return callObjectMethod(
 			"getOffsetAfter",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransition::getOffsetBefore()
+	java::time::ZoneOffset ZoneOffsetTransition::getOffsetBefore()
 	{
 		return callObjectMethod(
 			"getOffsetBefore",

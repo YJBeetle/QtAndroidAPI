@@ -40,12 +40,12 @@ namespace android::content
 		jboolean getDebugUnregister();
 		jint getResultCode();
 		jstring getResultData();
-		QAndroidJniObject getResultExtras(jboolean arg0);
-		QAndroidJniObject goAsync();
+		android::os::Bundle getResultExtras(jboolean arg0);
+		android::content::BroadcastReceiver_PendingResult goAsync();
 		jboolean isInitialStickyBroadcast();
 		jboolean isOrderedBroadcast();
 		void onReceive(android::content::Context arg0, android::content::Intent arg1);
-		QAndroidJniObject peekService(android::content::Context arg0, android::content::Intent arg1);
+		__JniBaseClass peekService(android::content::Context arg0, android::content::Intent arg1);
 		void setDebugUnregister(jboolean arg0);
 		void setOrderedHint(jboolean arg0);
 		void setResult(jint arg0, jstring arg1, android::os::Bundle arg2);

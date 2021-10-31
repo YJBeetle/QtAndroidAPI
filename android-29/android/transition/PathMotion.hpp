@@ -27,7 +27,7 @@ namespace android::transition
 		PathMotion(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		android::graphics::Path getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 	};
 } // namespace android::transition
 

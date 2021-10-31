@@ -39,7 +39,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	QAndroidJniObject PreferenceFragment::findPreference(jstring arg0)
+	android::preference::Preference PreferenceFragment::findPreference(jstring arg0)
 	{
 		return callObjectMethod(
 			"findPreference",
@@ -47,14 +47,14 @@ namespace android::preference
 			arg0
 		);
 	}
-	QAndroidJniObject PreferenceFragment::getPreferenceManager()
+	android::preference::PreferenceManager PreferenceFragment::getPreferenceManager()
 	{
 		return callObjectMethod(
 			"getPreferenceManager",
 			"()Landroid/preference/PreferenceManager;"
 		);
 	}
-	QAndroidJniObject PreferenceFragment::getPreferenceScreen()
+	android::preference::PreferenceScreen PreferenceFragment::getPreferenceScreen()
 	{
 		return callObjectMethod(
 			"getPreferenceScreen",
@@ -87,7 +87,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PreferenceFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
+	android::view::View PreferenceFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"onCreateView",

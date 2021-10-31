@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject TimeZoneFormat_ParseOption::ALL_STYLES()
+	android::icu::text::TimeZoneFormat_ParseOption TimeZoneFormat_ParseOption::ALL_STYLES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$ParseOption",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/TimeZoneFormat$ParseOption;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_ParseOption::TZ_DATABASE_ABBREVIATIONS()
+	android::icu::text::TimeZoneFormat_ParseOption TimeZoneFormat_ParseOption::TZ_DATABASE_ABBREVIATIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$ParseOption",
@@ -26,7 +26,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TimeZoneFormat_ParseOption::valueOf(jstring arg0)
+	android::icu::text::TimeZoneFormat_ParseOption TimeZoneFormat_ParseOption::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$ParseOption",

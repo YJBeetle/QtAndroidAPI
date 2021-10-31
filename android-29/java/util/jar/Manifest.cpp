@@ -53,7 +53,7 @@ namespace java::util::jar
 			arg0
 		);
 	}
-	QAndroidJniObject Manifest::getAttributes(jstring arg0)
+	java::util::jar::Attributes Manifest::getAttributes(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAttributes",
@@ -61,14 +61,14 @@ namespace java::util::jar
 			arg0
 		);
 	}
-	QAndroidJniObject Manifest::getEntries()
+	__JniBaseClass Manifest::getEntries()
 	{
 		return callObjectMethod(
 			"getEntries",
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject Manifest::getMainAttributes()
+	java::util::jar::Attributes Manifest::getMainAttributes()
 	{
 		return callObjectMethod(
 			"getMainAttributes",

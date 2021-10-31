@@ -274,7 +274,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject TextView::getAutofillValue()
+	android::view::autofill::AutofillValue TextView::getAutofillValue()
 	{
 		return callObjectMethod(
 			"getAutofillValue",
@@ -302,21 +302,21 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject TextView::getCompoundDrawableTintBlendMode()
+	android::graphics::BlendMode TextView::getCompoundDrawableTintBlendMode()
 	{
 		return callObjectMethod(
 			"getCompoundDrawableTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject TextView::getCompoundDrawableTintList()
+	android::content::res::ColorStateList TextView::getCompoundDrawableTintList()
 	{
 		return callObjectMethod(
 			"getCompoundDrawableTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject TextView::getCompoundDrawableTintMode()
+	android::graphics::PorterDuff_Mode TextView::getCompoundDrawableTintMode()
 	{
 		return callObjectMethod(
 			"getCompoundDrawableTintMode",
@@ -393,28 +393,28 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject TextView::getCustomInsertionActionModeCallback()
+	__JniBaseClass TextView::getCustomInsertionActionModeCallback()
 	{
 		return callObjectMethod(
 			"getCustomInsertionActionModeCallback",
 			"()Landroid/view/ActionMode$Callback;"
 		);
 	}
-	QAndroidJniObject TextView::getCustomSelectionActionModeCallback()
+	__JniBaseClass TextView::getCustomSelectionActionModeCallback()
 	{
 		return callObjectMethod(
 			"getCustomSelectionActionModeCallback",
 			"()Landroid/view/ActionMode$Callback;"
 		);
 	}
-	QAndroidJniObject TextView::getEditableText()
+	__JniBaseClass TextView::getEditableText()
 	{
 		return callObjectMethod(
 			"getEditableText",
 			"()Landroid/text/Editable;"
 		);
 	}
-	QAndroidJniObject TextView::getEllipsize()
+	android::text::TextUtils_TruncateAt TextView::getEllipsize()
 	{
 		return callObjectMethod(
 			"getEllipsize",
@@ -506,7 +506,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextView::getHintTextColors()
+	android::content::res::ColorStateList TextView::getHintTextColors()
 	{
 		return callObjectMethod(
 			"getHintTextColors",
@@ -534,7 +534,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextView::getImeHintLocales()
+	android::os::LocaleList TextView::getImeHintLocales()
 	{
 		return callObjectMethod(
 			"getImeHintLocales",
@@ -555,7 +555,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	QAndroidJniObject TextView::getInputExtras(jboolean arg0)
+	android::os::Bundle TextView::getInputExtras(jboolean arg0)
 	{
 		return callObjectMethod(
 			"getInputExtras",
@@ -577,7 +577,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject TextView::getKeyListener()
+	__JniBaseClass TextView::getKeyListener()
 	{
 		return callObjectMethod(
 			"getKeyListener",
@@ -591,7 +591,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject TextView::getLayout()
+	android::text::Layout TextView::getLayout()
 	{
 		return callObjectMethod(
 			"getLayout",
@@ -642,7 +642,7 @@ namespace android::widget
 			"()F"
 		);
 	}
-	QAndroidJniObject TextView::getLinkTextColors()
+	android::content::res::ColorStateList TextView::getLinkTextColors()
 	{
 		return callObjectMethod(
 			"getLinkTextColors",
@@ -719,7 +719,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject TextView::getMovementMethod()
+	__JniBaseClass TextView::getMovementMethod()
 	{
 		return callObjectMethod(
 			"getMovementMethod",
@@ -735,7 +735,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject TextView::getPaint()
+	android::text::TextPaint TextView::getPaint()
 	{
 		return callObjectMethod(
 			"getPaint",
@@ -812,49 +812,49 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextView::getTextClassifier()
+	__JniBaseClass TextView::getTextClassifier()
 	{
 		return callObjectMethod(
 			"getTextClassifier",
 			"()Landroid/view/textclassifier/TextClassifier;"
 		);
 	}
-	QAndroidJniObject TextView::getTextColors()
+	android::content::res::ColorStateList TextView::getTextColors()
 	{
 		return callObjectMethod(
 			"getTextColors",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject TextView::getTextCursorDrawable()
+	android::graphics::drawable::Drawable TextView::getTextCursorDrawable()
 	{
 		return callObjectMethod(
 			"getTextCursorDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject TextView::getTextDirectionHeuristic()
+	__JniBaseClass TextView::getTextDirectionHeuristic()
 	{
 		return callObjectMethod(
 			"getTextDirectionHeuristic",
 			"()Landroid/text/TextDirectionHeuristic;"
 		);
 	}
-	QAndroidJniObject TextView::getTextLocale()
+	java::util::Locale TextView::getTextLocale()
 	{
 		return callObjectMethod(
 			"getTextLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject TextView::getTextLocales()
+	android::os::LocaleList TextView::getTextLocales()
 	{
 		return callObjectMethod(
 			"getTextLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	QAndroidJniObject TextView::getTextMetricsParams()
+	android::text::PrecomputedText_Params TextView::getTextMetricsParams()
 	{
 		return callObjectMethod(
 			"getTextMetricsParams",
@@ -868,21 +868,21 @@ namespace android::widget
 			"()F"
 		);
 	}
-	QAndroidJniObject TextView::getTextSelectHandle()
+	android::graphics::drawable::Drawable TextView::getTextSelectHandle()
 	{
 		return callObjectMethod(
 			"getTextSelectHandle",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject TextView::getTextSelectHandleLeft()
+	android::graphics::drawable::Drawable TextView::getTextSelectHandleLeft()
 	{
 		return callObjectMethod(
 			"getTextSelectHandleLeft",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject TextView::getTextSelectHandleRight()
+	android::graphics::drawable::Drawable TextView::getTextSelectHandleRight()
 	{
 		return callObjectMethod(
 			"getTextSelectHandleRight",
@@ -938,14 +938,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject TextView::getTransformationMethod()
+	__JniBaseClass TextView::getTransformationMethod()
 	{
 		return callObjectMethod(
 			"getTransformationMethod",
 			"()Landroid/text/method/TransformationMethod;"
 		);
 	}
-	QAndroidJniObject TextView::getTypeface()
+	android::graphics::Typeface TextView::getTypeface()
 	{
 		return callObjectMethod(
 			"getTypeface",
@@ -1095,7 +1095,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TextView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	__JniBaseClass TextView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -1196,7 +1196,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	QAndroidJniObject TextView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon TextView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -1221,7 +1221,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject TextView::onSaveInstanceState()
+	__JniBaseClass TextView::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

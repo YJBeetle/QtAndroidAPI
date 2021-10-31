@@ -15,7 +15,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	QAndroidJniObject ViewStructure_HtmlInfo::getAttributes()
+	__JniBaseClass ViewStructure_HtmlInfo::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",

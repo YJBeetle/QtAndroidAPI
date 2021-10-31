@@ -21,7 +21,7 @@ namespace android::net::wifi::hotspot2::omadm
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject parseMoText(jstring arg0);
+		static android::net::wifi::hotspot2::PasspointConfiguration parseMoText(jstring arg0);
 	};
 } // namespace android::net::wifi::hotspot2::omadm
 

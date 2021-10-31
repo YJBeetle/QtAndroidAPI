@@ -74,28 +74,28 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	QAndroidJniObject XMLFilterImpl::getContentHandler()
+	__JniBaseClass XMLFilterImpl::getContentHandler()
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	QAndroidJniObject XMLFilterImpl::getDTDHandler()
+	__JniBaseClass XMLFilterImpl::getDTDHandler()
 	{
 		return callObjectMethod(
 			"getDTDHandler",
 			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
-	QAndroidJniObject XMLFilterImpl::getEntityResolver()
+	__JniBaseClass XMLFilterImpl::getEntityResolver()
 	{
 		return callObjectMethod(
 			"getEntityResolver",
 			"()Lorg/xml/sax/EntityResolver;"
 		);
 	}
-	QAndroidJniObject XMLFilterImpl::getErrorHandler()
+	__JniBaseClass XMLFilterImpl::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",
@@ -110,7 +110,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	QAndroidJniObject XMLFilterImpl::getParent()
+	__JniBaseClass XMLFilterImpl::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
@@ -170,7 +170,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	QAndroidJniObject XMLFilterImpl::resolveEntity(jstring arg0, jstring arg1)
+	org::xml::sax::InputSource XMLFilterImpl::resolveEntity(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"resolveEntity",

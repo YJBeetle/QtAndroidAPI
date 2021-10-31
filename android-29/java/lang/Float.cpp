@@ -238,7 +238,7 @@ namespace java::lang
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Float::valueOf(jfloat arg0)
+	java::lang::Float Float::valueOf(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Float",
@@ -247,7 +247,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Float::valueOf(jstring arg0)
+	java::lang::Float Float::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Float",
@@ -279,7 +279,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Float::describeConstable()
+	java::util::Optional Float::describeConstable()
 	{
 		return callObjectMethod(
 			"describeConstable",
@@ -343,7 +343,7 @@ namespace java::lang
 			"()J"
 		);
 	}
-	QAndroidJniObject Float::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
+	java::lang::Float Float::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
 	{
 		return callObjectMethod(
 			"resolveConstantDesc",

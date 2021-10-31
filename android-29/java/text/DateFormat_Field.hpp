@@ -11,24 +11,24 @@ namespace java::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AM_PM();
-		static QAndroidJniObject DAY_OF_MONTH();
-		static QAndroidJniObject DAY_OF_WEEK();
-		static QAndroidJniObject DAY_OF_WEEK_IN_MONTH();
-		static QAndroidJniObject DAY_OF_YEAR();
-		static QAndroidJniObject ERA();
-		static QAndroidJniObject HOUR0();
-		static QAndroidJniObject HOUR1();
-		static QAndroidJniObject HOUR_OF_DAY0();
-		static QAndroidJniObject HOUR_OF_DAY1();
-		static QAndroidJniObject MILLISECOND();
-		static QAndroidJniObject MINUTE();
-		static QAndroidJniObject MONTH();
-		static QAndroidJniObject SECOND();
-		static QAndroidJniObject TIME_ZONE();
-		static QAndroidJniObject WEEK_OF_MONTH();
-		static QAndroidJniObject WEEK_OF_YEAR();
-		static QAndroidJniObject YEAR();
+		static java::text::DateFormat_Field AM_PM();
+		static java::text::DateFormat_Field DAY_OF_MONTH();
+		static java::text::DateFormat_Field DAY_OF_WEEK();
+		static java::text::DateFormat_Field DAY_OF_WEEK_IN_MONTH();
+		static java::text::DateFormat_Field DAY_OF_YEAR();
+		static java::text::DateFormat_Field ERA();
+		static java::text::DateFormat_Field HOUR0();
+		static java::text::DateFormat_Field HOUR1();
+		static java::text::DateFormat_Field HOUR_OF_DAY0();
+		static java::text::DateFormat_Field HOUR_OF_DAY1();
+		static java::text::DateFormat_Field MILLISECOND();
+		static java::text::DateFormat_Field MINUTE();
+		static java::text::DateFormat_Field MONTH();
+		static java::text::DateFormat_Field SECOND();
+		static java::text::DateFormat_Field TIME_ZONE();
+		static java::text::DateFormat_Field WEEK_OF_MONTH();
+		static java::text::DateFormat_Field WEEK_OF_YEAR();
+		static java::text::DateFormat_Field YEAR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
@@ -37,7 +37,7 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject ofCalendarField(jint arg0);
+		static java::text::DateFormat_Field ofCalendarField(jint arg0);
 		jint getCalendarField();
 	};
 } // namespace java::text

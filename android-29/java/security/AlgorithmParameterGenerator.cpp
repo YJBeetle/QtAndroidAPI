@@ -14,7 +14,7 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AlgorithmParameterGenerator::getInstance(jstring arg0)
+	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
@@ -23,7 +23,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject AlgorithmParameterGenerator::getInstance(jstring arg0, jstring arg1)
+	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
@@ -33,7 +33,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject AlgorithmParameterGenerator::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
@@ -43,7 +43,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AlgorithmParameterGenerator::generateParameters()
+	java::security::AlgorithmParameters AlgorithmParameterGenerator::generateParameters()
 	{
 		return callObjectMethod(
 			"generateParameters",
@@ -57,7 +57,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AlgorithmParameterGenerator::getProvider()
+	java::security::Provider AlgorithmParameterGenerator::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

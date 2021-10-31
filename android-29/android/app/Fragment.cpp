@@ -34,7 +34,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Fragment::instantiate(android::content::Context arg0, jstring arg1)
+	android::app::Fragment Fragment::instantiate(android::content::Context arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.Fragment",
@@ -44,7 +44,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject Fragment::instantiate(android::content::Context arg0, jstring arg1, android::os::Bundle arg2)
+	android::app::Fragment Fragment::instantiate(android::content::Context arg0, jstring arg1, android::os::Bundle arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.Fragment",
@@ -74,7 +74,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Fragment::getActivity()
+	android::app::Activity Fragment::getActivity()
 	{
 		return callObjectMethod(
 			"getActivity",
@@ -95,42 +95,42 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject Fragment::getArguments()
+	android::os::Bundle Fragment::getArguments()
 	{
 		return callObjectMethod(
 			"getArguments",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Fragment::getChildFragmentManager()
+	android::app::FragmentManager Fragment::getChildFragmentManager()
 	{
 		return callObjectMethod(
 			"getChildFragmentManager",
 			"()Landroid/app/FragmentManager;"
 		);
 	}
-	QAndroidJniObject Fragment::getContext()
+	android::content::Context Fragment::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject Fragment::getEnterTransition()
+	android::transition::Transition Fragment::getEnterTransition()
 	{
 		return callObjectMethod(
 			"getEnterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Fragment::getExitTransition()
+	android::transition::Transition Fragment::getExitTransition()
 	{
 		return callObjectMethod(
 			"getExitTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Fragment::getFragmentManager()
+	android::app::FragmentManager Fragment::getFragmentManager()
 	{
 		return callObjectMethod(
 			"getFragmentManager",
@@ -151,35 +151,35 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Fragment::getLayoutInflater()
+	android::view::LayoutInflater Fragment::getLayoutInflater()
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	QAndroidJniObject Fragment::getLoaderManager()
+	android::app::LoaderManager Fragment::getLoaderManager()
 	{
 		return callObjectMethod(
 			"getLoaderManager",
 			"()Landroid/app/LoaderManager;"
 		);
 	}
-	QAndroidJniObject Fragment::getParentFragment()
+	android::app::Fragment Fragment::getParentFragment()
 	{
 		return callObjectMethod(
 			"getParentFragment",
 			"()Landroid/app/Fragment;"
 		);
 	}
-	QAndroidJniObject Fragment::getReenterTransition()
+	android::transition::Transition Fragment::getReenterTransition()
 	{
 		return callObjectMethod(
 			"getReenterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Fragment::getResources()
+	android::content::res::Resources Fragment::getResources()
 	{
 		return callObjectMethod(
 			"getResources",
@@ -193,21 +193,21 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject Fragment::getReturnTransition()
+	android::transition::Transition Fragment::getReturnTransition()
 	{
 		return callObjectMethod(
 			"getReturnTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Fragment::getSharedElementEnterTransition()
+	android::transition::Transition Fragment::getSharedElementEnterTransition()
 	{
 		return callObjectMethod(
 			"getSharedElementEnterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	QAndroidJniObject Fragment::getSharedElementReturnTransition()
+	android::transition::Transition Fragment::getSharedElementReturnTransition()
 	{
 		return callObjectMethod(
 			"getSharedElementReturnTransition",
@@ -238,7 +238,7 @@ namespace android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Fragment::getTargetFragment()
+	android::app::Fragment Fragment::getTargetFragment()
 	{
 		return callObjectMethod(
 			"getTargetFragment",
@@ -267,7 +267,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject Fragment::getView()
+	android::view::View Fragment::getView()
 	{
 		return callObjectMethod(
 			"getView",
@@ -403,7 +403,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Fragment::onCreateAnimator(jint arg0, jboolean arg1, jint arg2)
+	android::animation::Animator Fragment::onCreateAnimator(jint arg0, jboolean arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"onCreateAnimator",
@@ -432,7 +432,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Fragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
+	android::view::View Fragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -470,7 +470,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject Fragment::onGetLayoutInflater(android::os::Bundle arg0)
+	android::view::LayoutInflater Fragment::onGetLayoutInflater(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"onGetLayoutInflater",

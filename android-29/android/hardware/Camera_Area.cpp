@@ -4,7 +4,7 @@
 namespace android::hardware
 {
 	// Fields
-	QAndroidJniObject Camera_Area::rect()
+	android::graphics::Rect Camera_Area::rect()
 	{
 		return getObjectField(
 			"rect",

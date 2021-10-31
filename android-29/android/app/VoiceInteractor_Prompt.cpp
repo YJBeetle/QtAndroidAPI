@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject VoiceInteractor_Prompt::CREATOR()
+	__JniBaseClass VoiceInteractor_Prompt::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.VoiceInteractor$Prompt",

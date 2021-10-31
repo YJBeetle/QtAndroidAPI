@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject ConfigurationInfo::CREATOR()
+	__JniBaseClass ConfigurationInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ConfigurationInfo",

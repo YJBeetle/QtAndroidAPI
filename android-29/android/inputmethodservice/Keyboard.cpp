@@ -126,7 +126,7 @@ namespace android::inputmethodservice
 			"()I"
 		);
 	}
-	QAndroidJniObject Keyboard::getKeys()
+	__JniBaseClass Keyboard::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",
@@ -140,7 +140,7 @@ namespace android::inputmethodservice
 			"()I"
 		);
 	}
-	QAndroidJniObject Keyboard::getModifierKeys()
+	__JniBaseClass Keyboard::getModifierKeys()
 	{
 		return callObjectMethod(
 			"getModifierKeys",

@@ -46,8 +46,8 @@ namespace android::preference
 		DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject getDialog();
-		QAndroidJniObject getDialogIcon();
+		android::app::Dialog getDialog();
+		android::graphics::drawable::Drawable getDialogIcon();
 		jint getDialogLayoutResource();
 		jstring getDialogMessage();
 		jstring getDialogTitle();

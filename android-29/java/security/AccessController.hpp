@@ -43,7 +43,7 @@ namespace java::security
 		static jobject doPrivileged(__JniBaseClass arg0, java::security::AccessControlContext arg1, jarray arg2);
 		static jobject doPrivilegedWithCombiner(__JniBaseClass arg0);
 		static jobject doPrivilegedWithCombiner(__JniBaseClass arg0, java::security::AccessControlContext arg1, jarray arg2);
-		static QAndroidJniObject getContext();
+		static java::security::AccessControlContext getContext();
 	};
 } // namespace java::security
 

@@ -35,8 +35,8 @@ namespace android::app
 		ActivityGroup(jboolean arg0);
 		
 		// Methods
-		QAndroidJniObject getCurrentActivity();
-		QAndroidJniObject getLocalActivityManager();
+		android::app::Activity getCurrentActivity();
+		android::app::LocalActivityManager getLocalActivityManager();
 	};
 } // namespace android::app
 

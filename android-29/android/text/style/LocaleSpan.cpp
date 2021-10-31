@@ -39,14 +39,14 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	QAndroidJniObject LocaleSpan::getLocale()
+	java::util::Locale LocaleSpan::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject LocaleSpan::getLocales()
+	android::os::LocaleList LocaleSpan::getLocales()
 	{
 		return callObjectMethod(
 			"getLocales",

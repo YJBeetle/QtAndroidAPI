@@ -22,7 +22,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Images_Media::EXTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Images_Media::EXTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Media",
@@ -30,7 +30,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject MediaStore_Images_Media::INTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Images_Media::INTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Media",
@@ -50,7 +50,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaStore_Images_Media::getBitmap(android::content::ContentResolver arg0, android::net::Uri arg1)
+	android::graphics::Bitmap MediaStore_Images_Media::getBitmap(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
@@ -60,7 +60,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaStore_Images_Media::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Images_Media::getContentUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
@@ -93,7 +93,7 @@ namespace android::provider
 			arg3
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
+	__JniBaseClass MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
@@ -104,7 +104,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	QAndroidJniObject MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jstring arg4)
+	__JniBaseClass MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jstring arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",
@@ -117,7 +117,7 @@ namespace android::provider
 			arg4
 		);
 	}
-	QAndroidJniObject MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5)
+	__JniBaseClass MediaStore_Images_Media::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Media",

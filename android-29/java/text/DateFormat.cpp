@@ -187,7 +187,7 @@ namespace java::text
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject DateFormat::getDateInstance()
+	java::text::DateFormat DateFormat::getDateInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat",
@@ -195,7 +195,7 @@ namespace java::text
 			"()Ljava/text/DateFormat;"
 		);
 	}
-	QAndroidJniObject DateFormat::getDateInstance(jint arg0)
+	java::text::DateFormat DateFormat::getDateInstance(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat",
@@ -204,7 +204,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject DateFormat::getDateInstance(jint arg0, java::util::Locale arg1)
+	java::text::DateFormat DateFormat::getDateInstance(jint arg0, java::util::Locale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat",
@@ -214,7 +214,7 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DateFormat::getDateTimeInstance()
+	java::text::DateFormat DateFormat::getDateTimeInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat",
@@ -222,7 +222,7 @@ namespace java::text
 			"()Ljava/text/DateFormat;"
 		);
 	}
-	QAndroidJniObject DateFormat::getDateTimeInstance(jint arg0, jint arg1)
+	java::text::DateFormat DateFormat::getDateTimeInstance(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat",
@@ -232,7 +232,7 @@ namespace java::text
 			arg1
 		);
 	}
-	QAndroidJniObject DateFormat::getDateTimeInstance(jint arg0, jint arg1, java::util::Locale arg2)
+	java::text::DateFormat DateFormat::getDateTimeInstance(jint arg0, jint arg1, java::util::Locale arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat",
@@ -243,7 +243,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DateFormat::getInstance()
+	java::text::DateFormat DateFormat::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat",
@@ -251,7 +251,7 @@ namespace java::text
 			"()Ljava/text/DateFormat;"
 		);
 	}
-	QAndroidJniObject DateFormat::getTimeInstance()
+	java::text::DateFormat DateFormat::getTimeInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat",
@@ -259,7 +259,7 @@ namespace java::text
 			"()Ljava/text/DateFormat;"
 		);
 	}
-	QAndroidJniObject DateFormat::getTimeInstance(jint arg0)
+	java::text::DateFormat DateFormat::getTimeInstance(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat",
@@ -268,7 +268,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject DateFormat::getTimeInstance(jint arg0, java::util::Locale arg1)
+	java::text::DateFormat DateFormat::getTimeInstance(jint arg0, java::util::Locale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.DateFormat",
@@ -301,7 +301,7 @@ namespace java::text
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -311,7 +311,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -321,21 +321,21 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DateFormat::getCalendar()
+	java::util::Calendar DateFormat::getCalendar()
 	{
 		return callObjectMethod(
 			"getCalendar",
 			"()Ljava/util/Calendar;"
 		);
 	}
-	QAndroidJniObject DateFormat::getNumberFormat()
+	java::text::NumberFormat DateFormat::getNumberFormat()
 	{
 		return callObjectMethod(
 			"getNumberFormat",
 			"()Ljava/text/NumberFormat;"
 		);
 	}
-	QAndroidJniObject DateFormat::getTimeZone()
+	java::util::TimeZone DateFormat::getTimeZone()
 	{
 		return callObjectMethod(
 			"getTimeZone",
@@ -356,7 +356,7 @@ namespace java::text
 			"()Z"
 		);
 	}
-	QAndroidJniObject DateFormat::parse(jstring arg0)
+	java::util::Date DateFormat::parse(jstring arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -364,7 +364,7 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject DateFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::util::Date DateFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",

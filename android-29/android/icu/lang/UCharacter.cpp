@@ -316,7 +316,7 @@ namespace android::icu::lang
 			arg1
 		);
 	}
-	QAndroidJniObject UCharacter::getAge(jint arg0)
+	android::icu::util::VersionInfo UCharacter::getAge(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
@@ -416,7 +416,7 @@ namespace android::icu::lang
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject UCharacter::getExtendedNameIterator()
+	__JniBaseClass UCharacter::getExtendedNameIterator()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
@@ -498,7 +498,7 @@ namespace android::icu::lang
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject UCharacter::getNameIterator()
+	__JniBaseClass UCharacter::getNameIterator()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
@@ -564,7 +564,7 @@ namespace android::icu::lang
 			arg0
 		);
 	}
-	QAndroidJniObject UCharacter::getTypeIterator()
+	__JniBaseClass UCharacter::getTypeIterator()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
@@ -581,7 +581,7 @@ namespace android::icu::lang
 			arg0
 		);
 	}
-	QAndroidJniObject UCharacter::getUnicodeVersion()
+	android::icu::util::VersionInfo UCharacter::getUnicodeVersion()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UCharacter",

@@ -50,7 +50,7 @@ namespace android::content::res
 			"()I"
 		);
 	}
-	QAndroidJniObject Resources_Theme::getDrawable(jint arg0)
+	android::graphics::drawable::Drawable Resources_Theme::getDrawable(jint arg0)
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -66,14 +66,14 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Resources_Theme::getResources()
+	android::content::res::Resources Resources_Theme::getResources()
 	{
 		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	QAndroidJniObject Resources_Theme::obtainStyledAttributes(jintArray arg0)
+	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(jintArray arg0)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -81,7 +81,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources_Theme::obtainStyledAttributes(jint arg0, jintArray arg1)
+	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(jint arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -90,7 +90,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	QAndroidJniObject Resources_Theme::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
+	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",

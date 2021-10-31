@@ -76,7 +76,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NumberPicker::getAccessibilityNodeProvider()
+	android::view::accessibility::AccessibilityNodeProvider NumberPicker::getAccessibilityNodeProvider()
 	{
 		return callObjectMethod(
 			"getAccessibilityNodeProvider",

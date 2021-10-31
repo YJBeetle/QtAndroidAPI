@@ -10,10 +10,10 @@ namespace android::icu::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ISLAMIC();
-		static QAndroidJniObject ISLAMIC_CIVIL();
-		static QAndroidJniObject ISLAMIC_TBLA();
-		static QAndroidJniObject ISLAMIC_UMALQURA();
+		static android::icu::util::IslamicCalendar_CalculationType ISLAMIC();
+		static android::icu::util::IslamicCalendar_CalculationType ISLAMIC_CIVIL();
+		static android::icu::util::IslamicCalendar_CalculationType ISLAMIC_TBLA();
+		static android::icu::util::IslamicCalendar_CalculationType ISLAMIC_UMALQURA();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IslamicCalendar_CalculationType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::icu::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::util::IslamicCalendar_CalculationType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::util

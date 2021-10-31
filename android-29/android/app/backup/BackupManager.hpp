@@ -32,7 +32,7 @@ namespace android::app::backup
 		// Methods
 		static void dataChanged(jstring arg0);
 		void dataChanged();
-		QAndroidJniObject getUserForAncestralSerialNumber(jlong arg0);
+		android::os::UserHandle getUserForAncestralSerialNumber(jlong arg0);
 		jint requestRestore(android::app::backup::RestoreObserver arg0);
 	};
 } // namespace android::app::backup

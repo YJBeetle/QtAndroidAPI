@@ -17,7 +17,7 @@ namespace android::media::browse
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_BROWSABLE();
 		static jint FLAG_PLAYABLE();
 		
@@ -30,7 +30,7 @@ namespace android::media::browse
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getDescription();
+		android::media::MediaDescription getDescription();
 		jint getFlags();
 		jstring getMediaId();
 		jboolean isBrowsable();

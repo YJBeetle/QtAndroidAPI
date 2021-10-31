@@ -21,8 +21,8 @@ namespace android::security
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getAttestationRecord();
-		QAndroidJniObject getKeyPair();
+		__JniBaseClass getAttestationRecord();
+		java::security::KeyPair getKeyPair();
 	};
 } // namespace android::security
 

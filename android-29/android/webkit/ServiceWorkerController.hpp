@@ -26,8 +26,8 @@ namespace android::webkit
 		ServiceWorkerController();
 		
 		// Methods
-		static QAndroidJniObject getInstance();
-		QAndroidJniObject getServiceWorkerWebSettings();
+		static android::webkit::ServiceWorkerController getInstance();
+		android::webkit::ServiceWorkerWebSettings getServiceWorkerWebSettings();
 		void setServiceWorkerClient(android::webkit::ServiceWorkerClient arg0);
 	};
 } // namespace android::webkit

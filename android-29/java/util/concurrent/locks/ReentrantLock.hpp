@@ -38,7 +38,7 @@ namespace java::util::concurrent::locks
 		jboolean isLocked();
 		void lock();
 		void lockInterruptibly();
-		QAndroidJniObject newCondition();
+		__JniBaseClass newCondition();
 		jstring toString();
 		jboolean tryLock();
 		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1);

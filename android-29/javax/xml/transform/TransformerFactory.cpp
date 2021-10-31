@@ -12,7 +12,7 @@ namespace javax::xml::transform
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TransformerFactory::newDefaultInstance()
+	javax::xml::transform::TransformerFactory TransformerFactory::newDefaultInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.transform.TransformerFactory",
@@ -20,7 +20,7 @@ namespace javax::xml::transform
 			"()Ljavax/xml/transform/TransformerFactory;"
 		);
 	}
-	QAndroidJniObject TransformerFactory::newInstance()
+	javax::xml::transform::TransformerFactory TransformerFactory::newInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.transform.TransformerFactory",
@@ -28,7 +28,7 @@ namespace javax::xml::transform
 			"()Ljavax/xml/transform/TransformerFactory;"
 		);
 	}
-	QAndroidJniObject TransformerFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
+	javax::xml::transform::TransformerFactory TransformerFactory::newInstance(jstring arg0, java::lang::ClassLoader arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.transform.TransformerFactory",
@@ -38,7 +38,7 @@ namespace javax::xml::transform
 			arg1.object()
 		);
 	}
-	QAndroidJniObject TransformerFactory::getAssociatedStylesheet(__JniBaseClass arg0, jstring arg1, jstring arg2, jstring arg3)
+	__JniBaseClass TransformerFactory::getAssociatedStylesheet(__JniBaseClass arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
 		return callObjectMethod(
 			"getAssociatedStylesheet",
@@ -57,7 +57,7 @@ namespace javax::xml::transform
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject TransformerFactory::getErrorListener()
+	__JniBaseClass TransformerFactory::getErrorListener()
 	{
 		return callObjectMethod(
 			"getErrorListener",
@@ -72,14 +72,14 @@ namespace javax::xml::transform
 			arg0
 		);
 	}
-	QAndroidJniObject TransformerFactory::getURIResolver()
+	__JniBaseClass TransformerFactory::getURIResolver()
 	{
 		return callObjectMethod(
 			"getURIResolver",
 			"()Ljavax/xml/transform/URIResolver;"
 		);
 	}
-	QAndroidJniObject TransformerFactory::newTemplates(__JniBaseClass arg0)
+	__JniBaseClass TransformerFactory::newTemplates(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"newTemplates",
@@ -87,14 +87,14 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TransformerFactory::newTransformer()
+	javax::xml::transform::Transformer TransformerFactory::newTransformer()
 	{
 		return callObjectMethod(
 			"newTransformer",
 			"()Ljavax/xml/transform/Transformer;"
 		);
 	}
-	QAndroidJniObject TransformerFactory::newTransformer(__JniBaseClass arg0)
+	javax::xml::transform::Transformer TransformerFactory::newTransformer(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"newTransformer",

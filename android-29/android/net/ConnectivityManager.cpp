@@ -270,7 +270,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ConnectivityManager::getProcessDefaultNetwork()
+	android::net::Network ConnectivityManager::getProcessDefaultNetwork()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.ConnectivityManager",
@@ -312,7 +312,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ConnectivityManager::createSocketKeepalive(android::net::Network arg0, android::net::IpSecManager_UdpEncapsulationSocket arg1, java::net::InetAddress arg2, java::net::InetAddress arg3, __JniBaseClass arg4, android::net::SocketKeepalive_Callback arg5)
+	android::net::SocketKeepalive ConnectivityManager::createSocketKeepalive(android::net::Network arg0, android::net::IpSecManager_UdpEncapsulationSocket arg1, java::net::InetAddress arg2, java::net::InetAddress arg3, __JniBaseClass arg4, android::net::SocketKeepalive_Callback arg5)
 	{
 		return callObjectMethod(
 			"createSocketKeepalive",
@@ -325,14 +325,14 @@ namespace android::net
 			arg5.object()
 		);
 	}
-	QAndroidJniObject ConnectivityManager::getActiveNetwork()
+	android::net::Network ConnectivityManager::getActiveNetwork()
 	{
 		return callObjectMethod(
 			"getActiveNetwork",
 			"()Landroid/net/Network;"
 		);
 	}
-	QAndroidJniObject ConnectivityManager::getActiveNetworkInfo()
+	android::net::NetworkInfo ConnectivityManager::getActiveNetworkInfo()
 	{
 		return callObjectMethod(
 			"getActiveNetworkInfo",
@@ -360,7 +360,7 @@ namespace android::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject ConnectivityManager::getBoundNetworkForProcess()
+	android::net::Network ConnectivityManager::getBoundNetworkForProcess()
 	{
 		return callObjectMethod(
 			"getBoundNetworkForProcess",
@@ -377,14 +377,14 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ConnectivityManager::getDefaultProxy()
+	android::net::ProxyInfo ConnectivityManager::getDefaultProxy()
 	{
 		return callObjectMethod(
 			"getDefaultProxy",
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	QAndroidJniObject ConnectivityManager::getLinkProperties(android::net::Network arg0)
+	android::net::LinkProperties ConnectivityManager::getLinkProperties(android::net::Network arg0)
 	{
 		return callObjectMethod(
 			"getLinkProperties",
@@ -400,7 +400,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ConnectivityManager::getNetworkCapabilities(android::net::Network arg0)
+	android::net::NetworkCapabilities ConnectivityManager::getNetworkCapabilities(android::net::Network arg0)
 	{
 		return callObjectMethod(
 			"getNetworkCapabilities",
@@ -408,7 +408,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ConnectivityManager::getNetworkInfo(android::net::Network arg0)
+	android::net::NetworkInfo ConnectivityManager::getNetworkInfo(android::net::Network arg0)
 	{
 		return callObjectMethod(
 			"getNetworkInfo",
@@ -416,7 +416,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ConnectivityManager::getNetworkInfo(jint arg0)
+	android::net::NetworkInfo ConnectivityManager::getNetworkInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getNetworkInfo",

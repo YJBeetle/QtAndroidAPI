@@ -6,7 +6,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject Messenger::CREATOR()
+	__JniBaseClass Messenger::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.Messenger",
@@ -33,7 +33,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	QAndroidJniObject Messenger::readMessengerOrNullFromParcel(android::os::Parcel arg0)
+	android::os::Messenger Messenger::readMessengerOrNullFromParcel(android::os::Parcel arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Messenger",
@@ -67,7 +67,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Messenger::getBinder()
+	__JniBaseClass Messenger::getBinder()
 	{
 		return callObjectMethod(
 			"getBinder",

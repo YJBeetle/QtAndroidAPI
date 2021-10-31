@@ -5,7 +5,7 @@
 namespace android::icu::util
 {
 	// Fields
-	QAndroidJniObject ULocale::CANADA()
+	android::icu::util::ULocale ULocale::CANADA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -13,7 +13,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::CANADA_FRENCH()
+	android::icu::util::ULocale ULocale::CANADA_FRENCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -21,7 +21,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::CHINA()
+	android::icu::util::ULocale ULocale::CHINA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -29,7 +29,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::CHINESE()
+	android::icu::util::ULocale ULocale::CHINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -37,7 +37,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::ENGLISH()
+	android::icu::util::ULocale ULocale::ENGLISH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -45,7 +45,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::FRANCE()
+	android::icu::util::ULocale ULocale::FRANCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -53,7 +53,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::FRENCH()
+	android::icu::util::ULocale ULocale::FRENCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -61,7 +61,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::GERMAN()
+	android::icu::util::ULocale ULocale::GERMAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -69,7 +69,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::GERMANY()
+	android::icu::util::ULocale ULocale::GERMANY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -77,7 +77,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::ITALIAN()
+	android::icu::util::ULocale ULocale::ITALIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -85,7 +85,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::ITALY()
+	android::icu::util::ULocale ULocale::ITALY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -93,7 +93,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::JAPAN()
+	android::icu::util::ULocale ULocale::JAPAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -101,7 +101,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::JAPANESE()
+	android::icu::util::ULocale ULocale::JAPANESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -109,7 +109,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::KOREA()
+	android::icu::util::ULocale ULocale::KOREA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -117,7 +117,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::KOREAN()
+	android::icu::util::ULocale ULocale::KOREAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -125,7 +125,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::PRC()
+	android::icu::util::ULocale ULocale::PRC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -140,7 +140,7 @@ namespace android::icu::util
 			"PRIVATE_USE_EXTENSION"
 		);
 	}
-	QAndroidJniObject ULocale::ROOT()
+	android::icu::util::ULocale ULocale::ROOT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -148,7 +148,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::SIMPLIFIED_CHINESE()
+	android::icu::util::ULocale ULocale::SIMPLIFIED_CHINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -156,7 +156,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::TAIWAN()
+	android::icu::util::ULocale ULocale::TAIWAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -164,7 +164,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::TRADITIONAL_CHINESE()
+	android::icu::util::ULocale ULocale::TRADITIONAL_CHINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -172,7 +172,7 @@ namespace android::icu::util
 			"Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::UK()
+	android::icu::util::ULocale ULocale::UK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -187,7 +187,7 @@ namespace android::icu::util
 			"UNICODE_LOCALE_EXTENSION"
 		);
 	}
-	QAndroidJniObject ULocale::US()
+	android::icu::util::ULocale ULocale::US()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale",
@@ -223,7 +223,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject ULocale::acceptLanguage(jarray arg0, jbooleanArray arg1)
+	android::icu::util::ULocale ULocale::acceptLanguage(jarray arg0, jbooleanArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -233,7 +233,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	QAndroidJniObject ULocale::acceptLanguage(jstring arg0, jbooleanArray arg1)
+	android::icu::util::ULocale ULocale::acceptLanguage(jstring arg0, jbooleanArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -243,7 +243,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	QAndroidJniObject ULocale::acceptLanguage(jarray arg0, jarray arg1, jbooleanArray arg2)
+	android::icu::util::ULocale ULocale::acceptLanguage(jarray arg0, jarray arg1, jbooleanArray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -254,7 +254,7 @@ namespace android::icu::util
 			arg2
 		);
 	}
-	QAndroidJniObject ULocale::acceptLanguage(jstring arg0, jarray arg1, jbooleanArray arg2)
+	android::icu::util::ULocale ULocale::acceptLanguage(jstring arg0, jarray arg1, jbooleanArray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -265,7 +265,7 @@ namespace android::icu::util
 			arg2
 		);
 	}
-	QAndroidJniObject ULocale::addLikelySubtags(android::icu::util::ULocale arg0)
+	android::icu::util::ULocale ULocale::addLikelySubtags(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -283,7 +283,7 @@ namespace android::icu::util
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject ULocale::createCanonical(jstring arg0)
+	android::icu::util::ULocale ULocale::createCanonical(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -292,7 +292,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject ULocale::forLanguageTag(jstring arg0)
+	android::icu::util::ULocale ULocale::forLanguageTag(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -301,7 +301,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject ULocale::forLocale(java::util::Locale arg0)
+	android::icu::util::ULocale ULocale::forLocale(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -336,7 +336,7 @@ namespace android::icu::util
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject ULocale::getDefault()
+	android::icu::util::ULocale ULocale::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -344,7 +344,7 @@ namespace android::icu::util
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject ULocale::getDefault(android::icu::util::ULocale_Category arg0)
+	android::icu::util::ULocale ULocale::getDefault(android::icu::util::ULocale_Category arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -597,7 +597,7 @@ namespace android::icu::util
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject ULocale::getKeywords(jstring arg0)
+	__JniBaseClass ULocale::getKeywords(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -642,7 +642,7 @@ namespace android::icu::util
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject ULocale::minimizeSubtags(android::icu::util::ULocale arg0)
+	android::icu::util::ULocale ULocale::minimizeSubtags(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale",
@@ -882,14 +882,14 @@ namespace android::icu::util
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject ULocale::getExtensionKeys()
+	__JniBaseClass ULocale::getExtensionKeys()
 	{
 		return callObjectMethod(
 			"getExtensionKeys",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject ULocale::getFallback()
+	android::icu::util::ULocale ULocale::getFallback()
 	{
 		return callObjectMethod(
 			"getFallback",
@@ -918,7 +918,7 @@ namespace android::icu::util
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject ULocale::getKeywords()
+	__JniBaseClass ULocale::getKeywords()
 	{
 		return callObjectMethod(
 			"getKeywords",
@@ -953,14 +953,14 @@ namespace android::icu::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ULocale::getUnicodeLocaleAttributes()
+	__JniBaseClass ULocale::getUnicodeLocaleAttributes()
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject ULocale::getUnicodeLocaleKeys()
+	__JniBaseClass ULocale::getUnicodeLocaleKeys()
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleKeys",
@@ -996,7 +996,7 @@ namespace android::icu::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject ULocale::setKeywordValue(jstring arg0, jstring arg1)
+	android::icu::util::ULocale ULocale::setKeywordValue(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"setKeywordValue",
@@ -1012,7 +1012,7 @@ namespace android::icu::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ULocale::toLocale()
+	java::util::Locale ULocale::toLocale()
 	{
 		return callObjectMethod(
 			"toLocale",

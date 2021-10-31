@@ -14,8 +14,8 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject EMPTY();
+		static __JniBaseClass CREATOR();
+		static android::os::PersistableBundle EMPTY();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PersistableBundle(const char *className, const char *sig, Ts...agv) : android::os::BaseBundle(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,9 +28,9 @@ namespace android::os
 		
 		// Methods
 		jobject clone();
-		QAndroidJniObject deepCopy();
+		android::os::PersistableBundle deepCopy();
 		jint describeContents();
-		QAndroidJniObject getPersistableBundle(jstring arg0);
+		android::os::PersistableBundle getPersistableBundle(jstring arg0);
 		void putPersistableBundle(jstring arg0, android::os::PersistableBundle arg1);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

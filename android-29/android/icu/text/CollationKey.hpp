@@ -22,10 +22,10 @@ namespace android::icu::text
 		jint compareTo(jobject arg0);
 		jboolean equals(android::icu::text::CollationKey arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getBound(jint arg0, jint arg1);
+		android::icu::text::CollationKey getBound(jint arg0, jint arg1);
 		jstring getSourceString();
 		jint hashCode();
-		QAndroidJniObject merge(android::icu::text::CollationKey arg0);
+		android::icu::text::CollationKey merge(android::icu::text::CollationKey arg0);
 		jbyteArray toByteArray();
 	};
 } // namespace android::icu::text

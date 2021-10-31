@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject ActivityManager_TaskDescription::CREATOR()
+	__JniBaseClass ActivityManager_TaskDescription::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$TaskDescription",
@@ -74,7 +74,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject ActivityManager_TaskDescription::getIcon()
+	android::graphics::Bitmap ActivityManager_TaskDescription::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",

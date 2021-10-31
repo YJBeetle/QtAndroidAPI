@@ -10,9 +10,9 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BUTT();
-		static QAndroidJniObject ROUND();
-		static QAndroidJniObject SQUARE();
+		static android::graphics::Paint_Cap BUTT();
+		static android::graphics::Paint_Cap ROUND();
+		static android::graphics::Paint_Cap SQUARE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Paint_Cap(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Paint_Cap valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

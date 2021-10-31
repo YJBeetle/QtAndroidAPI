@@ -19,7 +19,7 @@ namespace android::view
 		static jfloat BRIGHTNESS_OVERRIDE_FULL();
 		static jfloat BRIGHTNESS_OVERRIDE_NONE();
 		static jfloat BRIGHTNESS_OVERRIDE_OFF();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DIM_AMOUNT_CHANGED();
 		static jint FIRST_APPLICATION_WINDOW();
 		static jint FIRST_SUB_WINDOW();
@@ -135,7 +135,7 @@ namespace android::view
 		jint screenOrientation();
 		jint softInputMode();
 		jint systemUiVisibility();
-		QAndroidJniObject token();
+		__JniBaseClass token();
 		jint type();
 		jfloat verticalMargin();
 		jfloat verticalWeight();

@@ -194,7 +194,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject AbsListView::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::AbsListView_LayoutParams AbsListView::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -244,7 +244,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AbsListView::getCheckedItemPositions()
+	android::util::SparseBooleanArray AbsListView::getCheckedItemPositions()
 	{
 		return callObjectMethod(
 			"getCheckedItemPositions",
@@ -294,14 +294,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AbsListView::getSelectedView()
+	android::view::View AbsListView::getSelectedView()
 	{
 		return callObjectMethod(
 			"getSelectedView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject AbsListView::getSelector()
+	android::graphics::drawable::Drawable AbsListView::getSelector()
 	{
 		return callObjectMethod(
 			"getSelector",
@@ -428,7 +428,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	QAndroidJniObject AbsListView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	__JniBaseClass AbsListView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -550,7 +550,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	QAndroidJniObject AbsListView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon AbsListView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onResolvePointerIcon",
@@ -575,7 +575,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject AbsListView::onSaveInstanceState()
+	__JniBaseClass AbsListView::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

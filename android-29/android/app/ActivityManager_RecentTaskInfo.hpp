@@ -14,7 +14,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jint affiliatedTaskId();
 		jstring description();
 		jint id();

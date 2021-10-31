@@ -14,21 +14,21 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Script_FieldBase::getAllocation()
+	android::renderscript::Allocation Script_FieldBase::getAllocation()
 	{
 		return callObjectMethod(
 			"getAllocation",
 			"()Landroid/renderscript/Allocation;"
 		);
 	}
-	QAndroidJniObject Script_FieldBase::getElement()
+	android::renderscript::Element Script_FieldBase::getElement()
 	{
 		return callObjectMethod(
 			"getElement",
 			"()Landroid/renderscript/Element;"
 		);
 	}
-	QAndroidJniObject Script_FieldBase::getType()
+	android::renderscript::Type Script_FieldBase::getType()
 	{
 		return callObjectMethod(
 			"getType",

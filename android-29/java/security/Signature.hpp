@@ -42,14 +42,14 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
+		static java::security::Signature getInstance(jstring arg0);
+		static java::security::Signature getInstance(jstring arg0, jstring arg1);
+		static java::security::Signature getInstance(jstring arg0, java::security::Provider arg1);
 		jobject clone();
 		jstring getAlgorithm();
 		jobject getParameter(jstring arg0);
-		QAndroidJniObject getParameters();
-		QAndroidJniObject getProvider();
+		java::security::AlgorithmParameters getParameters();
+		java::security::Provider getProvider();
 		void initSign(__JniBaseClass arg0);
 		void initSign(__JniBaseClass arg0, java::security::SecureRandom arg1);
 		void initVerify(__JniBaseClass arg0);

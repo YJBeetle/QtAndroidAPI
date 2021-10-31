@@ -23,7 +23,7 @@ namespace java::net
 			"()V"
 		);
 	}
-	QAndroidJniObject CacheRequest::getBody()
+	java::io::OutputStream CacheRequest::getBody()
 	{
 		return callObjectMethod(
 			"getBody",

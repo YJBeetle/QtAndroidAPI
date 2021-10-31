@@ -17,13 +17,13 @@ namespace java::time::temporal
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject chronology();
-		static QAndroidJniObject localDate();
-		static QAndroidJniObject localTime();
-		static QAndroidJniObject offset();
-		static QAndroidJniObject precision();
-		static QAndroidJniObject zone();
-		static QAndroidJniObject zoneId();
+		static __JniBaseClass chronology();
+		static __JniBaseClass localDate();
+		static __JniBaseClass localTime();
+		static __JniBaseClass offset();
+		static __JniBaseClass precision();
+		static __JniBaseClass zone();
+		static __JniBaseClass zoneId();
 	};
 } // namespace java::time::temporal
 

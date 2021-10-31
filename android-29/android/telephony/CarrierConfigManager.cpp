@@ -1396,14 +1396,14 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CarrierConfigManager::getConfig()
+	android::os::PersistableBundle CarrierConfigManager::getConfig()
 	{
 		return callObjectMethod(
 			"getConfig",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	QAndroidJniObject CarrierConfigManager::getConfigForSubId(jint arg0)
+	android::os::PersistableBundle CarrierConfigManager::getConfigForSubId(jint arg0)
 	{
 		return callObjectMethod(
 			"getConfigForSubId",

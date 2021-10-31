@@ -70,7 +70,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	QAndroidJniObject File::createTempFile(jstring arg0, jstring arg1)
+	java::io::File File::createTempFile(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.io.File",
@@ -80,7 +80,7 @@ namespace java::io
 			arg1
 		);
 	}
-	QAndroidJniObject File::createTempFile(jstring arg0, jstring arg1, java::io::File arg2)
+	java::io::File File::createTempFile(jstring arg0, jstring arg1, java::io::File arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.io.File",
@@ -172,7 +172,7 @@ namespace java::io
 			"()Z"
 		);
 	}
-	QAndroidJniObject File::getAbsoluteFile()
+	java::io::File File::getAbsoluteFile()
 	{
 		return callObjectMethod(
 			"getAbsoluteFile",
@@ -186,7 +186,7 @@ namespace java::io
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject File::getCanonicalFile()
+	java::io::File File::getCanonicalFile()
 	{
 		return callObjectMethod(
 			"getCanonicalFile",
@@ -221,7 +221,7 @@ namespace java::io
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject File::getParentFile()
+	java::io::File File::getParentFile()
 	{
 		return callObjectMethod(
 			"getParentFile",
@@ -416,7 +416,7 @@ namespace java::io
 			arg1
 		);
 	}
-	QAndroidJniObject File::toPath()
+	__JniBaseClass File::toPath()
 	{
 		return callObjectMethod(
 			"toPath",
@@ -430,14 +430,14 @@ namespace java::io
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject File::toURI()
+	java::net::URI File::toURI()
 	{
 		return callObjectMethod(
 			"toURI",
 			"()Ljava/net/URI;"
 		);
 	}
-	QAndroidJniObject File::toURL()
+	java::net::URL File::toURL()
 	{
 		return callObjectMethod(
 			"toURL",

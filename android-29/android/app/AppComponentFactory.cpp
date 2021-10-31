@@ -23,7 +23,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject AppComponentFactory::instantiateActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2)
+	android::app::Activity AppComponentFactory::instantiateActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2)
 	{
 		return callObjectMethod(
 			"instantiateActivity",
@@ -33,7 +33,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AppComponentFactory::instantiateApplication(java::lang::ClassLoader arg0, jstring arg1)
+	android::app::Application AppComponentFactory::instantiateApplication(java::lang::ClassLoader arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"instantiateApplication",
@@ -42,7 +42,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject AppComponentFactory::instantiateClassLoader(java::lang::ClassLoader arg0, android::content::pm::ApplicationInfo arg1)
+	java::lang::ClassLoader AppComponentFactory::instantiateClassLoader(java::lang::ClassLoader arg0, android::content::pm::ApplicationInfo arg1)
 	{
 		return callObjectMethod(
 			"instantiateClassLoader",
@@ -51,7 +51,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AppComponentFactory::instantiateProvider(java::lang::ClassLoader arg0, jstring arg1)
+	android::content::ContentProvider AppComponentFactory::instantiateProvider(java::lang::ClassLoader arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"instantiateProvider",
@@ -60,7 +60,7 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject AppComponentFactory::instantiateReceiver(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2)
+	android::content::BroadcastReceiver AppComponentFactory::instantiateReceiver(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2)
 	{
 		return callObjectMethod(
 			"instantiateReceiver",
@@ -70,7 +70,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	QAndroidJniObject AppComponentFactory::instantiateService(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2)
+	android::app::Service AppComponentFactory::instantiateService(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2)
 	{
 		return callObjectMethod(
 			"instantiateService",

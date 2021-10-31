@@ -80,10 +80,10 @@ namespace android::graphics::drawable
 		void draw(android::graphics::Canvas arg0);
 		jint getAlpha();
 		jint getChangingConfigurations();
-		QAndroidJniObject getColor();
-		QAndroidJniObject getColorFilter();
+		android::content::res::ColorStateList getColor();
+		android::graphics::ColorFilter getColorFilter();
 		jintArray getColors();
-		QAndroidJniObject getConstantState();
+		android::graphics::drawable::Drawable_ConstantState getConstantState();
 		jfloatArray getCornerRadii();
 		jfloat getCornerRadius();
 		jfloat getGradientCenterX();
@@ -95,8 +95,8 @@ namespace android::graphics::drawable
 		jint getIntrinsicHeight();
 		jint getIntrinsicWidth();
 		jint getOpacity();
-		QAndroidJniObject getOpticalInsets();
-		QAndroidJniObject getOrientation();
+		android::graphics::Insets getOpticalInsets();
+		android::graphics::drawable::GradientDrawable_Orientation getOrientation();
 		void getOutline(android::graphics::Outline arg0);
 		jboolean getPadding(android::graphics::Rect arg0);
 		jint getShape();
@@ -105,7 +105,7 @@ namespace android::graphics::drawable
 		jboolean getUseLevel();
 		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
 		jboolean isStateful();
-		QAndroidJniObject mutate();
+		android::graphics::drawable::Drawable mutate();
 		void setAlpha(jint arg0);
 		void setColor(android::content::res::ColorStateList arg0);
 		void setColor(jint arg0);

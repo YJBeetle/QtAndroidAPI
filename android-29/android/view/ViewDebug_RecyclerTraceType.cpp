@@ -3,7 +3,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject ViewDebug_RecyclerTraceType::BIND_VIEW()
+	android::view::ViewDebug_RecyclerTraceType ViewDebug_RecyclerTraceType::BIND_VIEW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewDebug$RecyclerTraceType",
@@ -11,7 +11,7 @@ namespace android::view
 			"Landroid/view/ViewDebug$RecyclerTraceType;"
 		);
 	}
-	QAndroidJniObject ViewDebug_RecyclerTraceType::MOVE_FROM_ACTIVE_TO_SCRAP_HEAP()
+	android::view::ViewDebug_RecyclerTraceType ViewDebug_RecyclerTraceType::MOVE_FROM_ACTIVE_TO_SCRAP_HEAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewDebug$RecyclerTraceType",
@@ -19,7 +19,7 @@ namespace android::view
 			"Landroid/view/ViewDebug$RecyclerTraceType;"
 		);
 	}
-	QAndroidJniObject ViewDebug_RecyclerTraceType::MOVE_TO_SCRAP_HEAP()
+	android::view::ViewDebug_RecyclerTraceType ViewDebug_RecyclerTraceType::MOVE_TO_SCRAP_HEAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewDebug$RecyclerTraceType",
@@ -27,7 +27,7 @@ namespace android::view
 			"Landroid/view/ViewDebug$RecyclerTraceType;"
 		);
 	}
-	QAndroidJniObject ViewDebug_RecyclerTraceType::NEW_VIEW()
+	android::view::ViewDebug_RecyclerTraceType ViewDebug_RecyclerTraceType::NEW_VIEW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewDebug$RecyclerTraceType",
@@ -35,7 +35,7 @@ namespace android::view
 			"Landroid/view/ViewDebug$RecyclerTraceType;"
 		);
 	}
-	QAndroidJniObject ViewDebug_RecyclerTraceType::RECYCLE_FROM_ACTIVE_HEAP()
+	android::view::ViewDebug_RecyclerTraceType ViewDebug_RecyclerTraceType::RECYCLE_FROM_ACTIVE_HEAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewDebug$RecyclerTraceType",
@@ -43,7 +43,7 @@ namespace android::view
 			"Landroid/view/ViewDebug$RecyclerTraceType;"
 		);
 	}
-	QAndroidJniObject ViewDebug_RecyclerTraceType::RECYCLE_FROM_SCRAP_HEAP()
+	android::view::ViewDebug_RecyclerTraceType ViewDebug_RecyclerTraceType::RECYCLE_FROM_SCRAP_HEAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewDebug$RecyclerTraceType",
@@ -58,7 +58,7 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ViewDebug_RecyclerTraceType::valueOf(jstring arg0)
+	android::view::ViewDebug_RecyclerTraceType ViewDebug_RecyclerTraceType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.ViewDebug$RecyclerTraceType",

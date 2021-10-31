@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject RestrictionEntry::CREATOR()
+	__JniBaseClass RestrictionEntry::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionEntry",
@@ -117,7 +117,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	QAndroidJniObject RestrictionEntry::createBundleArrayEntry(jstring arg0, jarray arg1)
+	android::content::RestrictionEntry RestrictionEntry::createBundleArrayEntry(jstring arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.RestrictionEntry",
@@ -127,7 +127,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject RestrictionEntry::createBundleEntry(jstring arg0, jarray arg1)
+	android::content::RestrictionEntry RestrictionEntry::createBundleEntry(jstring arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.RestrictionEntry",

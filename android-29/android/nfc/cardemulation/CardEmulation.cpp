@@ -74,7 +74,7 @@ namespace android::nfc::cardemulation
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CardEmulation::getInstance(android::nfc::NfcAdapter arg0)
+	android::nfc::cardemulation::CardEmulation CardEmulation::getInstance(android::nfc::NfcAdapter arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.cardemulation.CardEmulation",
@@ -91,7 +91,7 @@ namespace android::nfc::cardemulation
 			arg0
 		);
 	}
-	QAndroidJniObject CardEmulation::getAidsForService(android::content::ComponentName arg0, jstring arg1)
+	__JniBaseClass CardEmulation::getAidsForService(android::content::ComponentName arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getAidsForService",

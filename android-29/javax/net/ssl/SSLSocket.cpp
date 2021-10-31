@@ -55,14 +55,14 @@ namespace javax::net::ssl
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SSLSocket::getHandshakeApplicationProtocolSelector()
+	__JniBaseClass SSLSocket::getHandshakeApplicationProtocolSelector()
 	{
 		return callObjectMethod(
 			"getHandshakeApplicationProtocolSelector",
 			"()Ljava/util/function/BiFunction;"
 		);
 	}
-	QAndroidJniObject SSLSocket::getHandshakeSession()
+	__JniBaseClass SSLSocket::getHandshakeSession()
 	{
 		return callObjectMethod(
 			"getHandshakeSession",
@@ -76,14 +76,14 @@ namespace javax::net::ssl
 			"()Z"
 		);
 	}
-	QAndroidJniObject SSLSocket::getSSLParameters()
+	javax::net::ssl::SSLParameters SSLSocket::getSSLParameters()
 	{
 		return callObjectMethod(
 			"getSSLParameters",
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
-	QAndroidJniObject SSLSocket::getSession()
+	__JniBaseClass SSLSocket::getSession()
 	{
 		return callObjectMethod(
 			"getSession",

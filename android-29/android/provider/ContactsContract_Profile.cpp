@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_Profile::CONTENT_RAW_CONTACTS_URI()
+	android::net::Uri ContactsContract_Profile::CONTENT_RAW_CONTACTS_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Profile",
@@ -12,7 +12,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_Profile::CONTENT_URI()
+	android::net::Uri ContactsContract_Profile::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Profile",
@@ -20,7 +20,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_Profile::CONTENT_VCARD_URI()
+	android::net::Uri ContactsContract_Profile::CONTENT_VCARD_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Profile",

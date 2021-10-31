@@ -23,11 +23,11 @@ namespace android::view::textclassifier
 		TextClassifierEvent_TextSelectionEvent_Builder(jint arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setRelativeSuggestedWordEndIndex(jint arg0);
-		QAndroidJniObject setRelativeSuggestedWordStartIndex(jint arg0);
-		QAndroidJniObject setRelativeWordEndIndex(jint arg0);
-		QAndroidJniObject setRelativeWordStartIndex(jint arg0);
+		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent build();
+		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeSuggestedWordEndIndex(jint arg0);
+		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeSuggestedWordStartIndex(jint arg0);
+		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeWordEndIndex(jint arg0);
+		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeWordStartIndex(jint arg0);
 	};
 } // namespace android::view::textclassifier
 

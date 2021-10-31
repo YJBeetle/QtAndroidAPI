@@ -18,7 +18,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Notification_Style::build()
+	android::app::Notification Notification_Style::build()
 	{
 		return callObjectMethod(
 			"build",

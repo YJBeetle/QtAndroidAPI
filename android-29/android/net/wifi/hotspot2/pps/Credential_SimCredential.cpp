@@ -4,7 +4,7 @@
 namespace android::net::wifi::hotspot2::pps
 {
 	// Fields
-	QAndroidJniObject Credential_SimCredential::CREATOR()
+	__JniBaseClass Credential_SimCredential::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.hotspot2.pps.Credential$SimCredential",

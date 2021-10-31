@@ -37,7 +37,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject Notification_Action_Builder::addExtras(android::os::Bundle arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::addExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"addExtras",
@@ -45,7 +45,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Action_Builder::addRemoteInput(android::app::RemoteInput arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::addRemoteInput(android::app::RemoteInput arg0)
 	{
 		return callObjectMethod(
 			"addRemoteInput",
@@ -53,14 +53,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Action_Builder::build()
+	android::app::Notification_Action Notification_Action_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/Notification$Action;"
 		);
 	}
-	QAndroidJniObject Notification_Action_Builder::extend(__JniBaseClass arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::extend(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"extend",
@@ -68,14 +68,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_Action_Builder::getExtras()
+	android::os::Bundle Notification_Action_Builder::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Notification_Action_Builder::setAllowGeneratedReplies(jboolean arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::setAllowGeneratedReplies(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setAllowGeneratedReplies",
@@ -83,7 +83,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Action_Builder::setContextual(jboolean arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::setContextual(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setContextual",
@@ -91,7 +91,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Action_Builder::setSemanticAction(jint arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::setSemanticAction(jint arg0)
 	{
 		return callObjectMethod(
 			"setSemanticAction",

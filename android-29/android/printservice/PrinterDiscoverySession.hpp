@@ -31,8 +31,8 @@ namespace android::printservice
 		
 		// Methods
 		void addPrinters(__JniBaseClass arg0);
-		QAndroidJniObject getPrinters();
-		QAndroidJniObject getTrackedPrinters();
+		__JniBaseClass getPrinters();
+		__JniBaseClass getTrackedPrinters();
 		jboolean isDestroyed();
 		jboolean isPrinterDiscoveryStarted();
 		void onDestroy();

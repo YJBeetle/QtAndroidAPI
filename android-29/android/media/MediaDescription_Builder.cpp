@@ -19,14 +19,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaDescription_Builder::build()
+	android::media::MediaDescription MediaDescription_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/MediaDescription;"
 		);
 	}
-	QAndroidJniObject MediaDescription_Builder::setDescription(jstring arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setDescription(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -34,7 +34,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaDescription_Builder::setExtras(android::os::Bundle arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -42,7 +42,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaDescription_Builder::setIconBitmap(android::graphics::Bitmap arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setIconBitmap(android::graphics::Bitmap arg0)
 	{
 		return callObjectMethod(
 			"setIconBitmap",
@@ -50,7 +50,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaDescription_Builder::setIconUri(android::net::Uri arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setIconUri(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"setIconUri",
@@ -58,7 +58,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaDescription_Builder::setMediaId(jstring arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setMediaId(jstring arg0)
 	{
 		return callObjectMethod(
 			"setMediaId",
@@ -66,7 +66,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaDescription_Builder::setMediaUri(android::net::Uri arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setMediaUri(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"setMediaUri",
@@ -74,7 +74,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaDescription_Builder::setSubtitle(jstring arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setSubtitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setSubtitle",
@@ -82,7 +82,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaDescription_Builder::setTitle(jstring arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setTitle(jstring arg0)
 	{
 		return callObjectMethod(
 			"setTitle",

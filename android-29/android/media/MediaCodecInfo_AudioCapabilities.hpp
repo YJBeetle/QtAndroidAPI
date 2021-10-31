@@ -21,7 +21,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getBitrateRange();
+		android::util::Range getBitrateRange();
 		jint getMaxInputChannelCount();
 		jarray getSupportedSampleRateRanges();
 		jintArray getSupportedSampleRates();

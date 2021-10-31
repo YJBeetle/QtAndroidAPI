@@ -28,14 +28,14 @@ namespace android::widget
 		Toast(android::content::Context arg0);
 		
 		// Methods
-		static QAndroidJniObject makeText(android::content::Context arg0, jint arg1, jint arg2);
-		static QAndroidJniObject makeText(android::content::Context arg0, jstring arg1, jint arg2);
+		static android::widget::Toast makeText(android::content::Context arg0, jint arg1, jint arg2);
+		static android::widget::Toast makeText(android::content::Context arg0, jstring arg1, jint arg2);
 		void cancel();
 		jint getDuration();
 		jint getGravity();
 		jfloat getHorizontalMargin();
 		jfloat getVerticalMargin();
-		QAndroidJniObject getView();
+		android::view::View getView();
 		jint getXOffset();
 		jint getYOffset();
 		void setDuration(jint arg0);

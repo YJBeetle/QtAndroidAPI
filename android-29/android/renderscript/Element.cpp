@@ -13,7 +13,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Element::ALLOCATION(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::ALLOCATION(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -22,7 +22,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::A_8(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::A_8(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -31,7 +31,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::BOOLEAN(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::BOOLEAN(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -40,7 +40,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::ELEMENT(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::ELEMENT(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -49,7 +49,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F16(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F16(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -58,7 +58,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F16_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F16_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -67,7 +67,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F16_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F16_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -76,7 +76,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F16_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F16_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -85,7 +85,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F32(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F32(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -94,7 +94,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F32_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F32_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -103,7 +103,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F32_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F32_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -112,7 +112,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F32_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F32_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -121,7 +121,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F64(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F64(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -130,7 +130,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F64_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F64_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -139,7 +139,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F64_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F64_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -148,7 +148,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::F64_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::F64_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -157,7 +157,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::FONT(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::FONT(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -166,7 +166,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I16(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I16(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -175,7 +175,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I16_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I16_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -184,7 +184,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I16_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I16_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -193,7 +193,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I16_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I16_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -202,7 +202,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I32(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I32(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -211,7 +211,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I32_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I32_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -220,7 +220,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I32_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I32_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -229,7 +229,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I32_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I32_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -238,7 +238,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I64(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I64(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -247,7 +247,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I64_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I64_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -256,7 +256,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I64_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I64_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -265,7 +265,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I64_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I64_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -274,7 +274,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I8(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I8(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -283,7 +283,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I8_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I8_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -292,7 +292,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I8_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I8_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -301,7 +301,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::I8_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::I8_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -310,7 +310,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::MATRIX4X4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::MATRIX4X4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -319,7 +319,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::MATRIX_2X2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::MATRIX_2X2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -328,7 +328,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::MATRIX_3X3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::MATRIX_3X3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -337,7 +337,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::MATRIX_4X4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::MATRIX_4X4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -346,7 +346,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::MESH(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::MESH(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -355,7 +355,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::PROGRAM_FRAGMENT(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::PROGRAM_FRAGMENT(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -364,7 +364,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::PROGRAM_RASTER(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::PROGRAM_RASTER(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -373,7 +373,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::PROGRAM_STORE(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::PROGRAM_STORE(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -382,7 +382,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::PROGRAM_VERTEX(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::PROGRAM_VERTEX(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -391,7 +391,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::RGBA_4444(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::RGBA_4444(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -400,7 +400,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::RGBA_5551(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::RGBA_5551(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -409,7 +409,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::RGBA_8888(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::RGBA_8888(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -418,7 +418,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::RGB_565(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::RGB_565(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -427,7 +427,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::RGB_888(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::RGB_888(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -436,7 +436,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::SAMPLER(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::SAMPLER(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -445,7 +445,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::SCRIPT(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::SCRIPT(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -454,7 +454,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::TYPE(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::TYPE(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -463,7 +463,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U16(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U16(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -472,7 +472,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U16_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U16_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -481,7 +481,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U16_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U16_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -490,7 +490,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U16_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U16_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -499,7 +499,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U32(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U32(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -508,7 +508,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U32_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U32_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -517,7 +517,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U32_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U32_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -526,7 +526,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U32_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U32_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -535,7 +535,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U64(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U64(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -544,7 +544,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U64_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U64_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -553,7 +553,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U64_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U64_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -562,7 +562,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U64_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U64_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -571,7 +571,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U8(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U8(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -580,7 +580,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U8_2(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U8_2(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -589,7 +589,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U8_3(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U8_3(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -598,7 +598,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::U8_4(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::U8_4(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -607,7 +607,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::YUV(android::renderscript::RenderScript arg0)
+	android::renderscript::Element Element::YUV(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -616,7 +616,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Element::createPixel(android::renderscript::RenderScript arg0, android::renderscript::Element_DataType arg1, android::renderscript::Element_DataKind arg2)
+	android::renderscript::Element Element::createPixel(android::renderscript::RenderScript arg0, android::renderscript::Element_DataType arg1, android::renderscript::Element_DataKind arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -627,7 +627,7 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Element::createVector(android::renderscript::RenderScript arg0, android::renderscript::Element_DataType arg1, jint arg2)
+	android::renderscript::Element Element::createVector(android::renderscript::RenderScript arg0, android::renderscript::Element_DataType arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element",
@@ -645,21 +645,21 @@ namespace android::renderscript
 			"()I"
 		);
 	}
-	QAndroidJniObject Element::getDataKind()
+	android::renderscript::Element_DataKind Element::getDataKind()
 	{
 		return callObjectMethod(
 			"getDataKind",
 			"()Landroid/renderscript/Element$DataKind;"
 		);
 	}
-	QAndroidJniObject Element::getDataType()
+	android::renderscript::Element_DataType Element::getDataType()
 	{
 		return callObjectMethod(
 			"getDataType",
 			"()Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element::getSubElement(jint arg0)
+	android::renderscript::Element Element::getSubElement(jint arg0)
 	{
 		return callObjectMethod(
 			"getSubElement",

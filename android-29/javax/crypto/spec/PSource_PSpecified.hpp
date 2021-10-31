@@ -10,7 +10,7 @@ namespace javax::crypto::spec
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEFAULT();
+		static javax::crypto::spec::PSource_PSpecified DEFAULT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PSource_PSpecified(const char *className, const char *sig, Ts...agv) : javax::crypto::spec::PSource(className, sig, std::forward<Ts>(agv)...) {}

@@ -21,9 +21,9 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject setFrameCommitCallback(__JniBaseClass arg0, __JniBaseClass arg1);
-		QAndroidJniObject setVsyncTime(jlong arg0);
-		QAndroidJniObject setWaitForPresent(jboolean arg0);
+		android::graphics::HardwareRenderer_FrameRenderRequest setFrameCommitCallback(__JniBaseClass arg0, __JniBaseClass arg1);
+		android::graphics::HardwareRenderer_FrameRenderRequest setVsyncTime(jlong arg0);
+		android::graphics::HardwareRenderer_FrameRenderRequest setWaitForPresent(jboolean arg0);
 		jint syncAndDraw();
 	};
 } // namespace android::graphics

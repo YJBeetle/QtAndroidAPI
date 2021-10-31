@@ -41,7 +41,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring TAG();
 		
 		// QAndroidJniObject forward
@@ -59,17 +59,17 @@ namespace android::content
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jobject get(jstring arg0);
-		QAndroidJniObject getAsBoolean(jstring arg0);
-		QAndroidJniObject getAsByte(jstring arg0);
+		java::lang::Boolean getAsBoolean(jstring arg0);
+		java::lang::Byte getAsByte(jstring arg0);
 		jbyteArray getAsByteArray(jstring arg0);
-		QAndroidJniObject getAsDouble(jstring arg0);
-		QAndroidJniObject getAsFloat(jstring arg0);
-		QAndroidJniObject getAsInteger(jstring arg0);
-		QAndroidJniObject getAsLong(jstring arg0);
-		QAndroidJniObject getAsShort(jstring arg0);
+		java::lang::Double getAsDouble(jstring arg0);
+		java::lang::Float getAsFloat(jstring arg0);
+		java::lang::Integer getAsInteger(jstring arg0);
+		java::lang::Long getAsLong(jstring arg0);
+		java::lang::Short getAsShort(jstring arg0);
 		jstring getAsString(jstring arg0);
 		jint hashCode();
-		QAndroidJniObject keySet();
+		__JniBaseClass keySet();
 		void put(jstring arg0, jbyteArray arg1);
 		void put(jstring arg0, java::lang::Boolean arg1);
 		void put(jstring arg0, java::lang::Byte arg1);
@@ -84,7 +84,7 @@ namespace android::content
 		void remove(jstring arg0);
 		jint size();
 		jstring toString();
-		QAndroidJniObject valueSet();
+		__JniBaseClass valueSet();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

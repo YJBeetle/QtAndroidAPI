@@ -17,7 +17,7 @@ namespace android::app::job
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JobWorkItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,7 +32,7 @@ namespace android::app::job
 		jint getDeliveryCount();
 		jlong getEstimatedNetworkDownloadBytes();
 		jlong getEstimatedNetworkUploadBytes();
-		QAndroidJniObject getIntent();
+		android::content::Intent getIntent();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

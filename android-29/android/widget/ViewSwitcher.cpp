@@ -43,7 +43,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ViewSwitcher::getNextView()
+	android::view::View ViewSwitcher::getNextView()
 	{
 		return callObjectMethod(
 			"getNextView",

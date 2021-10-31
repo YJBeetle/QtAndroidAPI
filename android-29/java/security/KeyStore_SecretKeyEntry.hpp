@@ -19,8 +19,8 @@ namespace java::security
 		KeyStore_SecretKeyEntry(__JniBaseClass arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getAttributes();
-		QAndroidJniObject getSecretKey();
+		__JniBaseClass getAttributes();
+		__JniBaseClass getSecretKey();
 		jstring toString();
 	};
 } // namespace java::security

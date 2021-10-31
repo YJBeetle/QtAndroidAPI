@@ -37,7 +37,7 @@ namespace android::drm
 		) {}
 	
 	// Methods
-	QAndroidJniObject DrmManagerClient::acquireDrmInfo(android::drm::DrmInfoRequest arg0)
+	android::drm::DrmInfo DrmManagerClient::acquireDrmInfo(android::drm::DrmInfoRequest arg0)
 	{
 		return callObjectMethod(
 			"acquireDrmInfo",
@@ -112,7 +112,7 @@ namespace android::drm
 			"()V"
 		);
 	}
-	QAndroidJniObject DrmManagerClient::closeConvertSession(jint arg0)
+	android::drm::DrmConvertedStatus DrmManagerClient::closeConvertSession(jint arg0)
 	{
 		return callObjectMethod(
 			"closeConvertSession",
@@ -120,7 +120,7 @@ namespace android::drm
 			arg0
 		);
 	}
-	QAndroidJniObject DrmManagerClient::convertData(jint arg0, jbyteArray arg1)
+	android::drm::DrmConvertedStatus DrmManagerClient::convertData(jint arg0, jbyteArray arg1)
 	{
 		return callObjectMethod(
 			"convertData",
@@ -136,7 +136,7 @@ namespace android::drm
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject DrmManagerClient::getConstraints(android::net::Uri arg0, jint arg1)
+	android::content::ContentValues DrmManagerClient::getConstraints(android::net::Uri arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getConstraints",
@@ -145,7 +145,7 @@ namespace android::drm
 			arg1
 		);
 	}
-	QAndroidJniObject DrmManagerClient::getConstraints(jstring arg0, jint arg1)
+	android::content::ContentValues DrmManagerClient::getConstraints(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getConstraints",
@@ -172,7 +172,7 @@ namespace android::drm
 			arg1
 		);
 	}
-	QAndroidJniObject DrmManagerClient::getMetadata(android::net::Uri arg0)
+	android::content::ContentValues DrmManagerClient::getMetadata(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"getMetadata",
@@ -180,7 +180,7 @@ namespace android::drm
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DrmManagerClient::getMetadata(jstring arg0)
+	android::content::ContentValues DrmManagerClient::getMetadata(jstring arg0)
 	{
 		return callObjectMethod(
 			"getMetadata",

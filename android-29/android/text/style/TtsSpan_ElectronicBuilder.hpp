@@ -20,15 +20,15 @@ namespace android::text::style
 		TtsSpan_ElectronicBuilder();
 		
 		// Methods
-		QAndroidJniObject setDomain(jstring arg0);
-		QAndroidJniObject setEmailArguments(jstring arg0, jstring arg1);
-		QAndroidJniObject setFragmentId(jstring arg0);
-		QAndroidJniObject setPassword(jstring arg0);
-		QAndroidJniObject setPath(jstring arg0);
-		QAndroidJniObject setPort(jint arg0);
-		QAndroidJniObject setProtocol(jstring arg0);
-		QAndroidJniObject setQueryString(jstring arg0);
-		QAndroidJniObject setUsername(jstring arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setDomain(jstring arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setEmailArguments(jstring arg0, jstring arg1);
+		android::text::style::TtsSpan_ElectronicBuilder setFragmentId(jstring arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setPassword(jstring arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setPath(jstring arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setPort(jint arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setProtocol(jstring arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setQueryString(jstring arg0);
+		android::text::style::TtsSpan_ElectronicBuilder setUsername(jstring arg0);
 	};
 } // namespace android::text::style
 

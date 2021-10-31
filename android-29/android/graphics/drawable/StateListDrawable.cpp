@@ -51,7 +51,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject StateListDrawable::getStateDrawable(jint arg0)
+	android::graphics::drawable::Drawable StateListDrawable::getStateDrawable(jint arg0)
 	{
 		return callObjectMethod(
 			"getStateDrawable",
@@ -85,7 +85,7 @@ namespace android::graphics::drawable
 			"()Z"
 		);
 	}
-	QAndroidJniObject StateListDrawable::mutate()
+	android::graphics::drawable::Drawable StateListDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

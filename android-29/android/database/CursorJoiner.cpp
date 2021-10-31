@@ -27,14 +27,14 @@ namespace android::database
 			"()Z"
 		);
 	}
-	QAndroidJniObject CursorJoiner::iterator()
+	__JniBaseClass CursorJoiner::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject CursorJoiner::next()
+	android::database::CursorJoiner_Result CursorJoiner::next()
 	{
 		return callObjectMethod(
 			"next",

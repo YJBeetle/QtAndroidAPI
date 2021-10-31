@@ -22,7 +22,7 @@ namespace java::security
 		void destroy();
 		jcharArray getPassword();
 		jstring getProtectionAlgorithm();
-		QAndroidJniObject getProtectionParameters();
+		__JniBaseClass getProtectionParameters();
 		jboolean isDestroyed();
 	};
 } // namespace java::security

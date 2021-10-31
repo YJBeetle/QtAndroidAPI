@@ -4,7 +4,7 @@
 namespace java::lang
 {
 	// Fields
-	QAndroidJniObject Character_UnicodeScript::ADLAM()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::ADLAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -12,7 +12,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::AHOM()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::AHOM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -20,7 +20,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::ANATOLIAN_HIEROGLYPHS()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::ANATOLIAN_HIEROGLYPHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -28,7 +28,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::ARABIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::ARABIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -36,7 +36,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::ARMENIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::ARMENIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -44,7 +44,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::AVESTAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::AVESTAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -52,7 +52,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BALINESE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BALINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -60,7 +60,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BAMUM()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BAMUM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -68,7 +68,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BASSA_VAH()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BASSA_VAH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -76,7 +76,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BATAK()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BATAK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -84,7 +84,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BENGALI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BENGALI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -92,7 +92,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BHAIKSUKI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BHAIKSUKI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -100,7 +100,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BOPOMOFO()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BOPOMOFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -108,7 +108,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BRAHMI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BRAHMI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -116,7 +116,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BRAILLE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BRAILLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -124,7 +124,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BUGINESE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BUGINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -132,7 +132,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::BUHID()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::BUHID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -140,7 +140,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::CANADIAN_ABORIGINAL()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::CANADIAN_ABORIGINAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -148,7 +148,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::CARIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::CARIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -156,7 +156,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::CAUCASIAN_ALBANIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::CAUCASIAN_ALBANIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -164,7 +164,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::CHAKMA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::CHAKMA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -172,7 +172,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::CHAM()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::CHAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -180,7 +180,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::CHEROKEE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::CHEROKEE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -188,7 +188,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::CHORASMIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::CHORASMIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -196,7 +196,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::COMMON()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::COMMON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -204,7 +204,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::COPTIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::COPTIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -212,7 +212,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::CUNEIFORM()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::CUNEIFORM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -220,7 +220,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::CYPRIOT()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::CYPRIOT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -228,7 +228,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::CYRILLIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::CYRILLIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -236,7 +236,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::DESERET()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::DESERET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -244,7 +244,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::DEVANAGARI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::DEVANAGARI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -252,7 +252,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::DIVES_AKURU()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::DIVES_AKURU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -260,7 +260,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::DOGRA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::DOGRA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -268,7 +268,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::DUPLOYAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::DUPLOYAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -276,7 +276,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::EGYPTIAN_HIEROGLYPHS()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::EGYPTIAN_HIEROGLYPHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -284,7 +284,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::ELBASAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::ELBASAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -292,7 +292,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::ELYMAIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::ELYMAIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -300,7 +300,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::ETHIOPIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::ETHIOPIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -308,7 +308,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::GEORGIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::GEORGIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -316,7 +316,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::GLAGOLITIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::GLAGOLITIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -324,7 +324,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::GOTHIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::GOTHIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -332,7 +332,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::GRANTHA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::GRANTHA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -340,7 +340,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::GREEK()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::GREEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -348,7 +348,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::GUJARATI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::GUJARATI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -356,7 +356,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::GUNJALA_GONDI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::GUNJALA_GONDI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -364,7 +364,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::GURMUKHI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::GURMUKHI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -372,7 +372,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::HAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::HAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -380,7 +380,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::HANGUL()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::HANGUL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -388,7 +388,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::HANIFI_ROHINGYA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::HANIFI_ROHINGYA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -396,7 +396,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::HANUNOO()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::HANUNOO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -404,7 +404,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::HATRAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::HATRAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -412,7 +412,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::HEBREW()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::HEBREW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -420,7 +420,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::HIRAGANA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::HIRAGANA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -428,7 +428,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::IMPERIAL_ARAMAIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::IMPERIAL_ARAMAIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -436,7 +436,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::INHERITED()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::INHERITED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -444,7 +444,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::INSCRIPTIONAL_PAHLAVI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::INSCRIPTIONAL_PAHLAVI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -452,7 +452,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::INSCRIPTIONAL_PARTHIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::INSCRIPTIONAL_PARTHIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -460,7 +460,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::JAVANESE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::JAVANESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -468,7 +468,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::KAITHI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::KAITHI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -476,7 +476,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::KANNADA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::KANNADA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -484,7 +484,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::KATAKANA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::KATAKANA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -492,7 +492,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::KAYAH_LI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::KAYAH_LI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -500,7 +500,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::KHAROSHTHI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::KHAROSHTHI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -508,7 +508,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::KHITAN_SMALL_SCRIPT()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::KHITAN_SMALL_SCRIPT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -516,7 +516,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::KHMER()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::KHMER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -524,7 +524,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::KHOJKI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::KHOJKI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -532,7 +532,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::KHUDAWADI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::KHUDAWADI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -540,7 +540,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::LAO()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::LAO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -548,7 +548,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::LATIN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::LATIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -556,7 +556,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::LEPCHA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::LEPCHA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -564,7 +564,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::LIMBU()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::LIMBU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -572,7 +572,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::LINEAR_A()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::LINEAR_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -580,7 +580,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::LINEAR_B()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::LINEAR_B()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -588,7 +588,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::LISU()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::LISU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -596,7 +596,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::LYCIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::LYCIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -604,7 +604,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::LYDIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::LYDIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -612,7 +612,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MAHAJANI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MAHAJANI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -620,7 +620,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MAKASAR()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MAKASAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -628,7 +628,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MALAYALAM()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MALAYALAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -636,7 +636,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MANDAIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MANDAIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -644,7 +644,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MANICHAEAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MANICHAEAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -652,7 +652,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MARCHEN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MARCHEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -660,7 +660,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MASARAM_GONDI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MASARAM_GONDI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -668,7 +668,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MEDEFAIDRIN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MEDEFAIDRIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -676,7 +676,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MEETEI_MAYEK()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MEETEI_MAYEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -684,7 +684,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MENDE_KIKAKUI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MENDE_KIKAKUI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -692,7 +692,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MEROITIC_CURSIVE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MEROITIC_CURSIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -700,7 +700,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MEROITIC_HIEROGLYPHS()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MEROITIC_HIEROGLYPHS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -708,7 +708,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MIAO()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MIAO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -716,7 +716,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MODI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MODI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -724,7 +724,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MONGOLIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MONGOLIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -732,7 +732,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MRO()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MRO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -740,7 +740,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MULTANI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MULTANI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -748,7 +748,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::MYANMAR()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::MYANMAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -756,7 +756,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::NABATAEAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::NABATAEAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -764,7 +764,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::NANDINAGARI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::NANDINAGARI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -772,7 +772,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::NEWA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::NEWA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -780,7 +780,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::NEW_TAI_LUE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::NEW_TAI_LUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -788,7 +788,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::NKO()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::NKO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -796,7 +796,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::NUSHU()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::NUSHU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -804,7 +804,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::NYIAKENG_PUACHUE_HMONG()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::NYIAKENG_PUACHUE_HMONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -812,7 +812,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OGHAM()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OGHAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -820,7 +820,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OLD_HUNGARIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OLD_HUNGARIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -828,7 +828,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OLD_ITALIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OLD_ITALIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -836,7 +836,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OLD_NORTH_ARABIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OLD_NORTH_ARABIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -844,7 +844,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OLD_PERMIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OLD_PERMIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -852,7 +852,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OLD_PERSIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OLD_PERSIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -860,7 +860,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OLD_SOGDIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OLD_SOGDIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -868,7 +868,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OLD_SOUTH_ARABIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OLD_SOUTH_ARABIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -876,7 +876,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OLD_TURKIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OLD_TURKIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -884,7 +884,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OL_CHIKI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OL_CHIKI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -892,7 +892,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::ORIYA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::ORIYA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -900,7 +900,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OSAGE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OSAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -908,7 +908,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::OSMANYA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::OSMANYA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -916,7 +916,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::PAHAWH_HMONG()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::PAHAWH_HMONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -924,7 +924,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::PALMYRENE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::PALMYRENE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -932,7 +932,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::PAU_CIN_HAU()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::PAU_CIN_HAU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -940,7 +940,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::PHAGS_PA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::PHAGS_PA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -948,7 +948,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::PHOENICIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::PHOENICIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -956,7 +956,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::PSALTER_PAHLAVI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::PSALTER_PAHLAVI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -964,7 +964,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::REJANG()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::REJANG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -972,7 +972,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::RUNIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::RUNIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -980,7 +980,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SAMARITAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SAMARITAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -988,7 +988,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SAURASHTRA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SAURASHTRA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -996,7 +996,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SHARADA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SHARADA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1004,7 +1004,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SHAVIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SHAVIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1012,7 +1012,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SIDDHAM()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SIDDHAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1020,7 +1020,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SIGNWRITING()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SIGNWRITING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1028,7 +1028,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SINHALA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SINHALA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1036,7 +1036,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SOGDIAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SOGDIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1044,7 +1044,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SORA_SOMPENG()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SORA_SOMPENG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1052,7 +1052,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SOYOMBO()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SOYOMBO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1060,7 +1060,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SUNDANESE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SUNDANESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1068,7 +1068,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SYLOTI_NAGRI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SYLOTI_NAGRI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1076,7 +1076,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::SYRIAC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::SYRIAC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1084,7 +1084,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TAGALOG()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TAGALOG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1092,7 +1092,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TAGBANWA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TAGBANWA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1100,7 +1100,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TAI_LE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TAI_LE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1108,7 +1108,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TAI_THAM()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TAI_THAM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1116,7 +1116,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TAI_VIET()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TAI_VIET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1124,7 +1124,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TAKRI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TAKRI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1132,7 +1132,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TAMIL()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TAMIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1140,7 +1140,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TANGUT()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TANGUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1148,7 +1148,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TELUGU()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TELUGU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1156,7 +1156,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::THAANA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::THAANA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1164,7 +1164,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::THAI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::THAI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1172,7 +1172,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TIBETAN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TIBETAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1180,7 +1180,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TIFINAGH()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TIFINAGH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1188,7 +1188,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::TIRHUTA()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::TIRHUTA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1196,7 +1196,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::UGARITIC()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::UGARITIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1204,7 +1204,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::UNKNOWN()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1212,7 +1212,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::VAI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::VAI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1220,7 +1220,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::WANCHO()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::WANCHO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1228,7 +1228,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::WARANG_CITI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::WARANG_CITI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1236,7 +1236,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::YEZIDI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::YEZIDI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1244,7 +1244,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::YI()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::YI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1252,7 +1252,7 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::ZANABAZAR_SQUARE()
+	java::lang::Character_UnicodeScript Character_UnicodeScript::ZANABAZAR_SQUARE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
@@ -1267,7 +1267,7 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Character_UnicodeScript::forName(jstring arg0)
+	java::lang::Character_UnicodeScript Character_UnicodeScript::forName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Character$UnicodeScript",
@@ -1276,7 +1276,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::of(jint arg0)
+	java::lang::Character_UnicodeScript Character_UnicodeScript::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Character$UnicodeScript",
@@ -1285,7 +1285,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::valueOf(jstring arg0)
+	java::lang::Character_UnicodeScript Character_UnicodeScript::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Character$UnicodeScript",

@@ -131,7 +131,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Display::getCutout()
+	android::view::DisplayCutout Display::getCutout()
 	{
 		return callObjectMethod(
 			"getCutout",
@@ -152,7 +152,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject Display::getHdrCapabilities()
+	android::view::Display_HdrCapabilities Display::getHdrCapabilities()
 	{
 		return callObjectMethod(
 			"getHdrCapabilities",
@@ -174,7 +174,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Display::getMode()
+	android::view::Display_Mode Display::getMode()
 	{
 		return callObjectMethod(
 			"getMode",
@@ -202,7 +202,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject Display::getPreferredWideGamutColorSpace()
+	android::graphics::ColorSpace Display::getPreferredWideGamutColorSpace()
 	{
 		return callObjectMethod(
 			"getPreferredWideGamutColorSpace",

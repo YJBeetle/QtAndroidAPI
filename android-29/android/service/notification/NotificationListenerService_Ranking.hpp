@@ -28,15 +28,15 @@ namespace android::service::notification
 		jboolean canBubble();
 		jboolean canShowBadge();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getChannel();
+		android::app::NotificationChannel getChannel();
 		jint getImportance();
 		jstring getImportanceExplanation();
 		jstring getKey();
 		jlong getLastAudiblyAlertedMillis();
 		jstring getOverrideGroupKey();
 		jint getRank();
-		QAndroidJniObject getSmartActions();
-		QAndroidJniObject getSmartReplies();
+		__JniBaseClass getSmartActions();
+		__JniBaseClass getSmartReplies();
 		jint getSuppressedVisualEffects();
 		jint getUserSentiment();
 		jboolean isAmbient();

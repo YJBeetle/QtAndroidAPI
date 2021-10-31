@@ -17,7 +17,7 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SaveRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,9 +27,9 @@ namespace android::service::autofill
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getClientState();
-		QAndroidJniObject getDatasetIds();
-		QAndroidJniObject getFillContexts();
+		android::os::Bundle getClientState();
+		__JniBaseClass getDatasetIds();
+		__JniBaseClass getFillContexts();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::autofill

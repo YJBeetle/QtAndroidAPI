@@ -21,10 +21,10 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getBucket(jint arg0);
+		android::icu::text::AlphabeticIndex_Bucket getBucket(jint arg0);
 		jint getBucketCount();
 		jint getBucketIndex(jstring arg0);
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 	};
 } // namespace android::icu::text
 

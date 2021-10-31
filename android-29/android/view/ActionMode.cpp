@@ -45,21 +45,21 @@ namespace android::view
 			"()V"
 		);
 	}
-	QAndroidJniObject ActionMode::getCustomView()
+	android::view::View ActionMode::getCustomView()
 	{
 		return callObjectMethod(
 			"getCustomView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject ActionMode::getMenu()
+	__JniBaseClass ActionMode::getMenu()
 	{
 		return callObjectMethod(
 			"getMenu",
 			"()Landroid/view/Menu;"
 		);
 	}
-	QAndroidJniObject ActionMode::getMenuInflater()
+	android::view::MenuInflater ActionMode::getMenuInflater()
 	{
 		return callObjectMethod(
 			"getMenuInflater",

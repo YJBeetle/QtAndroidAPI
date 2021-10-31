@@ -9,7 +9,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject ClipData::CREATOR()
+	__JniBaseClass ClipData::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ClipData",
@@ -45,7 +45,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	QAndroidJniObject ClipData::newHtmlText(jstring arg0, jstring arg1, jstring arg2)
+	android::content::ClipData ClipData::newHtmlText(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ClipData",
@@ -56,7 +56,7 @@ namespace android::content
 			arg2
 		);
 	}
-	QAndroidJniObject ClipData::newIntent(jstring arg0, android::content::Intent arg1)
+	android::content::ClipData ClipData::newIntent(jstring arg0, android::content::Intent arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ClipData",
@@ -66,7 +66,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ClipData::newPlainText(jstring arg0, jstring arg1)
+	android::content::ClipData ClipData::newPlainText(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ClipData",
@@ -76,7 +76,7 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ClipData::newRawUri(jstring arg0, android::net::Uri arg1)
+	android::content::ClipData ClipData::newRawUri(jstring arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ClipData",
@@ -86,7 +86,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ClipData::newUri(android::content::ContentResolver arg0, jstring arg1, android::net::Uri arg2)
+	android::content::ClipData ClipData::newUri(android::content::ContentResolver arg0, jstring arg1, android::net::Uri arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.ClipData",
@@ -121,14 +121,14 @@ namespace android::content
 			"()I"
 		);
 	}
-	QAndroidJniObject ClipData::getDescription()
+	android::content::ClipDescription ClipData::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Landroid/content/ClipDescription;"
 		);
 	}
-	QAndroidJniObject ClipData::getItemAt(jint arg0)
+	android::content::ClipData_Item ClipData::getItemAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getItemAt",

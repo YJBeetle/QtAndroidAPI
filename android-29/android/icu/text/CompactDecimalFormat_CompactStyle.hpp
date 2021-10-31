@@ -10,8 +10,8 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject LONG();
-		static QAndroidJniObject SHORT();
+		static android::icu::text::CompactDecimalFormat_CompactStyle LONG();
+		static android::icu::text::CompactDecimalFormat_CompactStyle SHORT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CompactDecimalFormat_CompactStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,7 +20,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::CompactDecimalFormat_CompactStyle valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

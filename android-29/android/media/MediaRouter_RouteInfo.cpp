@@ -71,7 +71,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MediaRouter_RouteInfo::getCategory()
+	android::media::MediaRouter_RouteCategory MediaRouter_RouteInfo::getCategory()
 	{
 		return callObjectMethod(
 			"getCategory",
@@ -92,14 +92,14 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaRouter_RouteInfo::getGroup()
+	android::media::MediaRouter_RouteGroup MediaRouter_RouteInfo::getGroup()
 	{
 		return callObjectMethod(
 			"getGroup",
 			"()Landroid/media/MediaRouter$RouteGroup;"
 		);
 	}
-	QAndroidJniObject MediaRouter_RouteInfo::getIconDrawable()
+	android::graphics::drawable::Drawable MediaRouter_RouteInfo::getIconDrawable()
 	{
 		return callObjectMethod(
 			"getIconDrawable",
@@ -135,7 +135,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaRouter_RouteInfo::getPresentationDisplay()
+	android::view::Display MediaRouter_RouteInfo::getPresentationDisplay()
 	{
 		return callObjectMethod(
 			"getPresentationDisplay",

@@ -165,21 +165,21 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject ActivityManager::getAppTaskThumbnailSize()
+	android::util::Size ActivityManager::getAppTaskThumbnailSize()
 	{
 		return callObjectMethod(
 			"getAppTaskThumbnailSize",
 			"()Landroid/util/Size;"
 		);
 	}
-	QAndroidJniObject ActivityManager::getAppTasks()
+	__JniBaseClass ActivityManager::getAppTasks()
 	{
 		return callObjectMethod(
 			"getAppTasks",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ActivityManager::getDeviceConfigurationInfo()
+	android::content::pm::ConfigurationInfo ActivityManager::getDeviceConfigurationInfo()
 	{
 		return callObjectMethod(
 			"getDeviceConfigurationInfo",
@@ -237,14 +237,14 @@ namespace android::app
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject ActivityManager::getProcessesInErrorState()
+	__JniBaseClass ActivityManager::getProcessesInErrorState()
 	{
 		return callObjectMethod(
 			"getProcessesInErrorState",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ActivityManager::getRecentTasks(jint arg0, jint arg1)
+	__JniBaseClass ActivityManager::getRecentTasks(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getRecentTasks",
@@ -253,14 +253,14 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject ActivityManager::getRunningAppProcesses()
+	__JniBaseClass ActivityManager::getRunningAppProcesses()
 	{
 		return callObjectMethod(
 			"getRunningAppProcesses",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ActivityManager::getRunningServiceControlPanel(android::content::ComponentName arg0)
+	android::app::PendingIntent ActivityManager::getRunningServiceControlPanel(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getRunningServiceControlPanel",
@@ -268,7 +268,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ActivityManager::getRunningServices(jint arg0)
+	__JniBaseClass ActivityManager::getRunningServices(jint arg0)
 	{
 		return callObjectMethod(
 			"getRunningServices",
@@ -276,7 +276,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject ActivityManager::getRunningTasks(jint arg0)
+	__JniBaseClass ActivityManager::getRunningTasks(jint arg0)
 	{
 		return callObjectMethod(
 			"getRunningTasks",

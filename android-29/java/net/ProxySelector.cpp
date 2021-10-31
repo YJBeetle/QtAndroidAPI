@@ -19,7 +19,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject ProxySelector::getDefault()
+	java::net::ProxySelector ProxySelector::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.ProxySelector",
@@ -27,7 +27,7 @@ namespace java::net
 			"()Ljava/net/ProxySelector;"
 		);
 	}
-	QAndroidJniObject ProxySelector::of(java::net::InetSocketAddress arg0)
+	java::net::ProxySelector ProxySelector::of(java::net::InetSocketAddress arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.ProxySelector",
@@ -55,7 +55,7 @@ namespace java::net
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ProxySelector::select(java::net::URI arg0)
+	__JniBaseClass ProxySelector::select(java::net::URI arg0)
 	{
 		return callObjectMethod(
 			"select",

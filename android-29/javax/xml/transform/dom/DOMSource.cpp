@@ -36,7 +36,7 @@ namespace javax::xml::transform::dom
 		) {}
 	
 	// Methods
-	QAndroidJniObject DOMSource::getNode()
+	__JniBaseClass DOMSource::getNode()
 	{
 		return callObjectMethod(
 			"getNode",

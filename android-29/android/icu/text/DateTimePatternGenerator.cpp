@@ -146,7 +146,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DateTimePatternGenerator::getEmptyInstance()
+	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::getEmptyInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateTimePatternGenerator",
@@ -154,7 +154,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/DateTimePatternGenerator;"
 		);
 	}
-	QAndroidJniObject DateTimePatternGenerator::getInstance()
+	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateTimePatternGenerator",
@@ -162,7 +162,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/DateTimePatternGenerator;"
 		);
 	}
-	QAndroidJniObject DateTimePatternGenerator::getInstance(android::icu::util::ULocale arg0)
+	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateTimePatternGenerator",
@@ -171,7 +171,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DateTimePatternGenerator::getInstance(java::util::Locale arg0)
+	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateTimePatternGenerator",
@@ -180,7 +180,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DateTimePatternGenerator::addPattern(jstring arg0, jboolean arg1, android::icu::text::DateTimePatternGenerator_PatternInfo arg2)
+	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::addPattern(jstring arg0, jboolean arg1, android::icu::text::DateTimePatternGenerator_PatternInfo arg2)
 	{
 		return callObjectMethod(
 			"addPattern",
@@ -197,14 +197,14 @@ namespace android::icu::text
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject DateTimePatternGenerator::cloneAsThawed()
+	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::cloneAsThawed()
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
 			"()Landroid/icu/text/DateTimePatternGenerator;"
 		);
 	}
-	QAndroidJniObject DateTimePatternGenerator::freeze()
+	android::icu::text::DateTimePatternGenerator DateTimePatternGenerator::freeze()
 	{
 		return callObjectMethod(
 			"freeze",
@@ -235,7 +235,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject DateTimePatternGenerator::getBaseSkeletons(__JniBaseClass arg0)
+	__JniBaseClass DateTimePatternGenerator::getBaseSkeletons(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"getBaseSkeletons",
@@ -282,7 +282,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject DateTimePatternGenerator::getSkeletons(__JniBaseClass arg0)
+	__JniBaseClass DateTimePatternGenerator::getSkeletons(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"getSkeletons",

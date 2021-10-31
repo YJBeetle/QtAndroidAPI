@@ -21,7 +21,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TimeZoneFormat::getInstance(android::icu::util::ULocale arg0)
+	android::icu::text::TimeZoneFormat TimeZoneFormat::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat",
@@ -30,7 +30,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::getInstance(java::util::Locale arg0)
+	android::icu::text::TimeZoneFormat TimeZoneFormat::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat",
@@ -39,7 +39,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::cloneAsThawed()
+	android::icu::text::TimeZoneFormat TimeZoneFormat::cloneAsThawed()
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
@@ -67,7 +67,7 @@ namespace android::icu::text
 			arg3.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject TimeZoneFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer TimeZoneFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -115,7 +115,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject TimeZoneFormat::formatToCharacterIterator(jobject arg0)
+	__JniBaseClass TimeZoneFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -123,14 +123,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::freeze()
+	android::icu::text::TimeZoneFormat TimeZoneFormat::freeze()
 	{
 		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/text/TimeZoneFormat;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::getDefaultParseOptions()
+	java::util::EnumSet TimeZoneFormat::getDefaultParseOptions()
 	{
 		return callObjectMethod(
 			"getDefaultParseOptions",
@@ -166,7 +166,7 @@ namespace android::icu::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TimeZoneFormat::getTimeZoneNames()
+	android::icu::text::TimeZoneNames TimeZoneFormat::getTimeZoneNames()
 	{
 		return callObjectMethod(
 			"getTimeZoneNames",
@@ -180,7 +180,7 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::parse(jstring arg0)
+	android::icu::util::TimeZone TimeZoneFormat::parse(jstring arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -188,7 +188,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	android::icu::util::TimeZone TimeZoneFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
@@ -197,7 +197,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::parse(android::icu::text::TimeZoneFormat_Style arg0, jstring arg1, java::text::ParsePosition arg2, android::icu::util::Output arg3)
+	android::icu::util::TimeZone TimeZoneFormat::parse(android::icu::text::TimeZoneFormat_Style arg0, jstring arg1, java::text::ParsePosition arg2, android::icu::util::Output arg3)
 	{
 		return callObjectMethod(
 			"parse",
@@ -208,7 +208,7 @@ namespace android::icu::text
 			arg3.object()
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::parse(android::icu::text::TimeZoneFormat_Style arg0, jstring arg1, java::text::ParsePosition arg2, java::util::EnumSet arg3, android::icu::util::Output arg4)
+	android::icu::util::TimeZone TimeZoneFormat::parse(android::icu::text::TimeZoneFormat_Style arg0, jstring arg1, java::text::ParsePosition arg2, java::util::EnumSet arg3, android::icu::util::Output arg4)
 	{
 		return callObjectMethod(
 			"parse",
@@ -256,7 +256,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::setDefaultParseOptions(java::util::EnumSet arg0)
+	android::icu::text::TimeZoneFormat TimeZoneFormat::setDefaultParseOptions(java::util::EnumSet arg0)
 	{
 		return callObjectMethod(
 			"setDefaultParseOptions",
@@ -264,7 +264,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::setGMTOffsetDigits(jstring arg0)
+	android::icu::text::TimeZoneFormat TimeZoneFormat::setGMTOffsetDigits(jstring arg0)
 	{
 		return callObjectMethod(
 			"setGMTOffsetDigits",
@@ -272,7 +272,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::setGMTOffsetPattern(android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0, jstring arg1)
+	android::icu::text::TimeZoneFormat TimeZoneFormat::setGMTOffsetPattern(android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"setGMTOffsetPattern",
@@ -281,7 +281,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::setGMTPattern(jstring arg0)
+	android::icu::text::TimeZoneFormat TimeZoneFormat::setGMTPattern(jstring arg0)
 	{
 		return callObjectMethod(
 			"setGMTPattern",
@@ -289,7 +289,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::setGMTZeroFormat(jstring arg0)
+	android::icu::text::TimeZoneFormat TimeZoneFormat::setGMTZeroFormat(jstring arg0)
 	{
 		return callObjectMethod(
 			"setGMTZeroFormat",
@@ -297,7 +297,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::setTimeZoneNames(android::icu::text::TimeZoneNames arg0)
+	android::icu::text::TimeZoneFormat TimeZoneFormat::setTimeZoneNames(android::icu::text::TimeZoneNames arg0)
 	{
 		return callObjectMethod(
 			"setTimeZoneNames",

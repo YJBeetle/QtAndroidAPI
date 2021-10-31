@@ -20,7 +20,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	QAndroidJniObject MultiTapKeyListener::getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1)
+	android::text::method::MultiTapKeyListener MultiTapKeyListener::getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.MultiTapKeyListener",

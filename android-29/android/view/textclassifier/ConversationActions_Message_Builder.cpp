@@ -20,14 +20,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	QAndroidJniObject ConversationActions_Message_Builder::build()
+	android::view::textclassifier::ConversationActions_Message ConversationActions_Message_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/ConversationActions$Message;"
 		);
 	}
-	QAndroidJniObject ConversationActions_Message_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::ConversationActions_Message_Builder ConversationActions_Message_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -35,7 +35,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ConversationActions_Message_Builder::setReferenceTime(java::time::ZonedDateTime arg0)
+	android::view::textclassifier::ConversationActions_Message_Builder ConversationActions_Message_Builder::setReferenceTime(java::time::ZonedDateTime arg0)
 	{
 		return callObjectMethod(
 			"setReferenceTime",
@@ -43,7 +43,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ConversationActions_Message_Builder::setText(jstring arg0)
+	android::view::textclassifier::ConversationActions_Message_Builder ConversationActions_Message_Builder::setText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setText",

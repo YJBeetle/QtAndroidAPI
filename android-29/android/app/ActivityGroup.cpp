@@ -24,14 +24,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject ActivityGroup::getCurrentActivity()
+	android::app::Activity ActivityGroup::getCurrentActivity()
 	{
 		return callObjectMethod(
 			"getCurrentActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	QAndroidJniObject ActivityGroup::getLocalActivityManager()
+	android::app::LocalActivityManager ActivityGroup::getLocalActivityManager()
 	{
 		return callObjectMethod(
 			"getLocalActivityManager",

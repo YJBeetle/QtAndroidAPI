@@ -69,7 +69,7 @@ namespace java::text
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Collator::getInstance()
+	java::text::Collator Collator::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.Collator",
@@ -77,7 +77,7 @@ namespace java::text
 			"()Ljava/text/Collator;"
 		);
 	}
-	QAndroidJniObject Collator::getInstance(java::util::Locale arg0)
+	java::text::Collator Collator::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.Collator",
@@ -128,7 +128,7 @@ namespace java::text
 			arg1
 		);
 	}
-	QAndroidJniObject Collator::getCollationKey(jstring arg0)
+	java::text::CollationKey Collator::getCollationKey(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCollationKey",

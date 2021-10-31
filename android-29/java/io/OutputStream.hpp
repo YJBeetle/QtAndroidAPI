@@ -18,7 +18,7 @@ namespace java::io
 		OutputStream();
 		
 		// Methods
-		static QAndroidJniObject nullOutputStream();
+		static java::io::OutputStream nullOutputStream();
 		void close();
 		void flush();
 		void write(jbyteArray arg0);

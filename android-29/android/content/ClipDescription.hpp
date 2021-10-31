@@ -17,7 +17,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring MIMETYPE_TEXT_HTML();
 		static jstring MIMETYPE_TEXT_INTENT();
 		static jstring MIMETYPE_TEXT_PLAIN();
@@ -35,7 +35,7 @@ namespace android::content
 		static jboolean compareMimeTypes(jstring arg0, jstring arg1);
 		jint describeContents();
 		jarray filterMimeTypes(jstring arg0);
-		QAndroidJniObject getExtras();
+		android::os::PersistableBundle getExtras();
 		jstring getLabel();
 		jstring getMimeType(jint arg0);
 		jint getMimeTypeCount();

@@ -25,21 +25,21 @@ namespace java::lang::reflect
 			"()[Ljava/lang/reflect/AnnotatedType;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Executable::getAnnotatedReceiverType()
+	__JniBaseClass Executable::getAnnotatedReceiverType()
 	{
 		return callObjectMethod(
 			"getAnnotatedReceiverType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	QAndroidJniObject Executable::getAnnotatedReturnType()
+	__JniBaseClass Executable::getAnnotatedReturnType()
 	{
 		return callObjectMethod(
 			"getAnnotatedReturnType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	QAndroidJniObject Executable::getAnnotation(jclass arg0)
+	__JniBaseClass Executable::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",

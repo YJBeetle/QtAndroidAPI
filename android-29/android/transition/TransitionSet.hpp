@@ -50,35 +50,35 @@ namespace android::transition
 		TransitionSet(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject addListener(__JniBaseClass arg0);
-		QAndroidJniObject addTarget(android::view::View arg0);
-		QAndroidJniObject addTarget(jint arg0);
-		QAndroidJniObject addTarget(jclass arg0);
-		QAndroidJniObject addTarget(jstring arg0);
-		QAndroidJniObject addTransition(android::transition::Transition arg0);
+		android::transition::TransitionSet addListener(__JniBaseClass arg0);
+		android::transition::TransitionSet addTarget(android::view::View arg0);
+		android::transition::TransitionSet addTarget(jint arg0);
+		android::transition::TransitionSet addTarget(jclass arg0);
+		android::transition::TransitionSet addTarget(jstring arg0);
+		android::transition::TransitionSet addTransition(android::transition::Transition arg0);
 		void captureEndValues(android::transition::TransitionValues arg0);
 		void captureStartValues(android::transition::TransitionValues arg0);
-		QAndroidJniObject clone();
-		QAndroidJniObject excludeTarget(android::view::View arg0, jboolean arg1);
-		QAndroidJniObject excludeTarget(jint arg0, jboolean arg1);
-		QAndroidJniObject excludeTarget(jclass arg0, jboolean arg1);
-		QAndroidJniObject excludeTarget(jstring arg0, jboolean arg1);
+		android::transition::TransitionSet clone();
+		android::transition::Transition excludeTarget(android::view::View arg0, jboolean arg1);
+		android::transition::Transition excludeTarget(jint arg0, jboolean arg1);
+		android::transition::Transition excludeTarget(jclass arg0, jboolean arg1);
+		android::transition::Transition excludeTarget(jstring arg0, jboolean arg1);
 		jint getOrdering();
-		QAndroidJniObject getTransitionAt(jint arg0);
+		android::transition::Transition getTransitionAt(jint arg0);
 		jint getTransitionCount();
-		QAndroidJniObject removeListener(__JniBaseClass arg0);
-		QAndroidJniObject removeTarget(android::view::View arg0);
-		QAndroidJniObject removeTarget(jint arg0);
-		QAndroidJniObject removeTarget(jclass arg0);
-		QAndroidJniObject removeTarget(jstring arg0);
-		QAndroidJniObject removeTransition(android::transition::Transition arg0);
-		QAndroidJniObject setDuration(jlong arg0);
+		android::transition::TransitionSet removeListener(__JniBaseClass arg0);
+		android::transition::TransitionSet removeTarget(android::view::View arg0);
+		android::transition::TransitionSet removeTarget(jint arg0);
+		android::transition::TransitionSet removeTarget(jclass arg0);
+		android::transition::TransitionSet removeTarget(jstring arg0);
+		android::transition::TransitionSet removeTransition(android::transition::Transition arg0);
+		android::transition::TransitionSet setDuration(jlong arg0);
 		void setEpicenterCallback(android::transition::Transition_EpicenterCallback arg0);
-		QAndroidJniObject setInterpolator(__JniBaseClass arg0);
-		QAndroidJniObject setOrdering(jint arg0);
+		android::transition::TransitionSet setInterpolator(__JniBaseClass arg0);
+		android::transition::TransitionSet setOrdering(jint arg0);
 		void setPathMotion(android::transition::PathMotion arg0);
 		void setPropagation(android::transition::TransitionPropagation arg0);
-		QAndroidJniObject setStartDelay(jlong arg0);
+		android::transition::TransitionSet setStartDelay(jlong arg0);
 	};
 } // namespace android::transition
 

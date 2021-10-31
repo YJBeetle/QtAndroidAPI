@@ -24,7 +24,7 @@ namespace java::security::cert
 		void check(java::security::cert::Certificate arg0);
 		void check(java::security::cert::Certificate arg0, __JniBaseClass arg1);
 		jobject clone();
-		QAndroidJniObject getSupportedExtensions();
+		__JniBaseClass getSupportedExtensions();
 		void init(jboolean arg0);
 		jboolean isForwardCheckingSupported();
 	};

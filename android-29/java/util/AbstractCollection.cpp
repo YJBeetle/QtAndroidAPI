@@ -56,7 +56,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject AbstractCollection::iterator()
+	__JniBaseClass AbstractCollection::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

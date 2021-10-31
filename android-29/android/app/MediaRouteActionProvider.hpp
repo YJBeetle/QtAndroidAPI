@@ -28,8 +28,8 @@ namespace android::app
 		
 		// Methods
 		jboolean isVisible();
-		QAndroidJniObject onCreateActionView();
-		QAndroidJniObject onCreateActionView(__JniBaseClass arg0);
+		android::view::View onCreateActionView();
+		android::view::View onCreateActionView(__JniBaseClass arg0);
 		jboolean onPerformDefaultAction();
 		jboolean overridesItemVisibility();
 		void setExtendedSettingsClickListener(__JniBaseClass arg0);

@@ -44,7 +44,7 @@ namespace android::view::animation
 		jlong getDuration();
 		jboolean getFillAfter();
 		jboolean getFillBefore();
-		QAndroidJniObject getInterpolator();
+		__JniBaseClass getInterpolator();
 		jint getRepeatCount();
 		jint getRepeatMode();
 		jlong getStartOffset();

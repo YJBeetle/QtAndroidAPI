@@ -5,7 +5,7 @@
 namespace android::database
 {
 	// Fields
-	QAndroidJniObject CursorWindow::CREATOR()
+	__JniBaseClass CursorWindow::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.database.CursorWindow",
@@ -39,7 +39,7 @@ namespace android::database
 		) {}
 	
 	// Methods
-	QAndroidJniObject CursorWindow::newFromParcel(android::os::Parcel arg0)
+	android::database::CursorWindow CursorWindow::newFromParcel(android::os::Parcel arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.CursorWindow",

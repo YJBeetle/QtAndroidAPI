@@ -16,7 +16,7 @@ namespace android::app::admin
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint ERROR_COMBINED_FREEZE_PERIOD_TOO_CLOSE();
 		static jint ERROR_COMBINED_FREEZE_PERIOD_TOO_LONG();
 		static jint ERROR_DUPLICATE_OR_OVERLAP();

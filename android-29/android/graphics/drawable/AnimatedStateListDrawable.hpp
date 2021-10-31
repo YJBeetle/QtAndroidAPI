@@ -43,7 +43,7 @@ namespace android::graphics::drawable
 		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
 		jboolean isStateful();
 		void jumpToCurrentState();
-		QAndroidJniObject mutate();
+		android::graphics::drawable::Drawable mutate();
 		jboolean setVisible(jboolean arg0, jboolean arg1);
 	};
 } // namespace android::graphics::drawable

@@ -12,7 +12,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject JetPlayer::getJetPlayer()
+	android::media::JetPlayer JetPlayer::getJetPlayer()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.JetPlayer",

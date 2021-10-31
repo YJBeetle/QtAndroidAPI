@@ -5,7 +5,7 @@
 namespace android::media::midi
 {
 	// Fields
-	QAndroidJniObject MidiDeviceInfo::CREATOR()
+	__JniBaseClass MidiDeviceInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
@@ -140,7 +140,7 @@ namespace android::media::midi
 			"()[Landroid/media/midi/MidiDeviceInfo$PortInfo;"
 		).object<jarray>();
 	}
-	QAndroidJniObject MidiDeviceInfo::getProperties()
+	android::os::Bundle MidiDeviceInfo::getProperties()
 	{
 		return callObjectMethod(
 			"getProperties",

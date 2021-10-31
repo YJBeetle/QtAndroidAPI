@@ -68,7 +68,7 @@ namespace android::hardware
 			"()I"
 		);
 	}
-	QAndroidJniObject Camera::open()
+	android::hardware::Camera Camera::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.hardware.Camera",
@@ -76,7 +76,7 @@ namespace android::hardware
 			"()Landroid/hardware/Camera;"
 		);
 	}
-	QAndroidJniObject Camera::open(jint arg0)
+	android::hardware::Camera Camera::open(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.hardware.Camera",
@@ -116,7 +116,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	QAndroidJniObject Camera::getParameters()
+	android::hardware::Camera_Parameters Camera::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",

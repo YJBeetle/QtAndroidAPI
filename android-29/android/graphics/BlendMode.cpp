@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject BlendMode::CLEAR()
+	android::graphics::BlendMode BlendMode::CLEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::COLOR()
+	android::graphics::BlendMode BlendMode::COLOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::COLOR_BURN()
+	android::graphics::BlendMode BlendMode::COLOR_BURN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::COLOR_DODGE()
+	android::graphics::BlendMode BlendMode::COLOR_DODGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -35,7 +35,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::DARKEN()
+	android::graphics::BlendMode BlendMode::DARKEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -43,7 +43,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::DIFFERENCE()
+	android::graphics::BlendMode BlendMode::DIFFERENCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -51,7 +51,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::DST()
+	android::graphics::BlendMode BlendMode::DST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -59,7 +59,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::DST_ATOP()
+	android::graphics::BlendMode BlendMode::DST_ATOP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -67,7 +67,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::DST_IN()
+	android::graphics::BlendMode BlendMode::DST_IN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -75,7 +75,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::DST_OUT()
+	android::graphics::BlendMode BlendMode::DST_OUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -83,7 +83,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::DST_OVER()
+	android::graphics::BlendMode BlendMode::DST_OVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -91,7 +91,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::EXCLUSION()
+	android::graphics::BlendMode BlendMode::EXCLUSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -99,7 +99,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::HARD_LIGHT()
+	android::graphics::BlendMode BlendMode::HARD_LIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -107,7 +107,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::HUE()
+	android::graphics::BlendMode BlendMode::HUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -115,7 +115,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::LIGHTEN()
+	android::graphics::BlendMode BlendMode::LIGHTEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -123,7 +123,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::LUMINOSITY()
+	android::graphics::BlendMode BlendMode::LUMINOSITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -131,7 +131,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::MODULATE()
+	android::graphics::BlendMode BlendMode::MODULATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -139,7 +139,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::MULTIPLY()
+	android::graphics::BlendMode BlendMode::MULTIPLY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -147,7 +147,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::OVERLAY()
+	android::graphics::BlendMode BlendMode::OVERLAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -155,7 +155,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::PLUS()
+	android::graphics::BlendMode BlendMode::PLUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -163,7 +163,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::SATURATION()
+	android::graphics::BlendMode BlendMode::SATURATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -171,7 +171,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::SCREEN()
+	android::graphics::BlendMode BlendMode::SCREEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -179,7 +179,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::SOFT_LIGHT()
+	android::graphics::BlendMode BlendMode::SOFT_LIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -187,7 +187,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::SRC()
+	android::graphics::BlendMode BlendMode::SRC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -195,7 +195,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::SRC_ATOP()
+	android::graphics::BlendMode BlendMode::SRC_ATOP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -203,7 +203,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::SRC_IN()
+	android::graphics::BlendMode BlendMode::SRC_IN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -211,7 +211,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::SRC_OUT()
+	android::graphics::BlendMode BlendMode::SRC_OUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -219,7 +219,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::SRC_OVER()
+	android::graphics::BlendMode BlendMode::SRC_OVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -227,7 +227,7 @@ namespace android::graphics
 			"Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject BlendMode::XOR()
+	android::graphics::BlendMode BlendMode::XOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlendMode",
@@ -242,7 +242,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject BlendMode::valueOf(jstring arg0)
+	android::graphics::BlendMode BlendMode::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BlendMode",

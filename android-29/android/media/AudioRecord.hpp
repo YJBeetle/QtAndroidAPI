@@ -67,21 +67,21 @@ namespace android::media
 		// Methods
 		static jint getMinBufferSize(jint arg0, jint arg1, jint arg2);
 		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
-		QAndroidJniObject getActiveMicrophones();
-		QAndroidJniObject getActiveRecordingConfiguration();
+		__JniBaseClass getActiveMicrophones();
+		android::media::AudioRecordingConfiguration getActiveRecordingConfiguration();
 		jint getAudioFormat();
 		jint getAudioSessionId();
 		jint getAudioSource();
 		jint getBufferSizeInFrames();
 		jint getChannelConfiguration();
 		jint getChannelCount();
-		QAndroidJniObject getFormat();
-		QAndroidJniObject getMetrics();
+		android::media::AudioFormat getFormat();
+		android::os::PersistableBundle getMetrics();
 		jint getNotificationMarkerPosition();
 		jint getPositionNotificationPeriod();
-		QAndroidJniObject getPreferredDevice();
+		android::media::AudioDeviceInfo getPreferredDevice();
 		jint getRecordingState();
-		QAndroidJniObject getRoutedDevice();
+		android::media::AudioDeviceInfo getRoutedDevice();
 		jint getSampleRate();
 		jint getState();
 		jint getTimestamp(android::media::AudioTimestamp arg0, jint arg1);

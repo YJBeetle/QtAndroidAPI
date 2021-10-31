@@ -10,10 +10,10 @@ namespace java::nio::file::attribute
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DIRECTORY_INHERIT();
-		static QAndroidJniObject FILE_INHERIT();
-		static QAndroidJniObject INHERIT_ONLY();
-		static QAndroidJniObject NO_PROPAGATE_INHERIT();
+		static java::nio::file::attribute::AclEntryFlag DIRECTORY_INHERIT();
+		static java::nio::file::attribute::AclEntryFlag FILE_INHERIT();
+		static java::nio::file::attribute::AclEntryFlag INHERIT_ONLY();
+		static java::nio::file::attribute::AclEntryFlag NO_PROPAGATE_INHERIT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AclEntryFlag(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace java::nio::file::attribute
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::nio::file::attribute::AclEntryFlag valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::nio::file::attribute

@@ -15,7 +15,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_ElectronicBuilder::setDomain(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setDomain(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDomain",
@@ -23,7 +23,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_ElectronicBuilder::setEmailArguments(jstring arg0, jstring arg1)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setEmailArguments(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"setEmailArguments",
@@ -32,7 +32,7 @@ namespace android::text::style
 			arg1
 		);
 	}
-	QAndroidJniObject TtsSpan_ElectronicBuilder::setFragmentId(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setFragmentId(jstring arg0)
 	{
 		return callObjectMethod(
 			"setFragmentId",
@@ -40,7 +40,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_ElectronicBuilder::setPassword(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPassword(jstring arg0)
 	{
 		return callObjectMethod(
 			"setPassword",
@@ -48,7 +48,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_ElectronicBuilder::setPath(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPath(jstring arg0)
 	{
 		return callObjectMethod(
 			"setPath",
@@ -56,7 +56,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_ElectronicBuilder::setPort(jint arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setPort(jint arg0)
 	{
 		return callObjectMethod(
 			"setPort",
@@ -64,7 +64,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_ElectronicBuilder::setProtocol(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setProtocol(jstring arg0)
 	{
 		return callObjectMethod(
 			"setProtocol",
@@ -72,7 +72,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_ElectronicBuilder::setQueryString(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setQueryString(jstring arg0)
 	{
 		return callObjectMethod(
 			"setQueryString",
@@ -80,7 +80,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_ElectronicBuilder::setUsername(jstring arg0)
+	android::text::style::TtsSpan_ElectronicBuilder TtsSpan_ElectronicBuilder::setUsername(jstring arg0)
 	{
 		return callObjectMethod(
 			"setUsername",

@@ -65,9 +65,9 @@ namespace android::util
 		static jstring toHexString(jshort arg0);
 		static jstring toString(jshort arg0);
 		static jshort trunc(jshort arg0);
-		static QAndroidJniObject valueOf(jfloat arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(jshort arg0);
+		static android::util::Half valueOf(jfloat arg0);
+		static android::util::Half valueOf(jstring arg0);
+		static android::util::Half valueOf(jshort arg0);
 		jbyte byteValue();
 		jint compareTo(android::util::Half arg0);
 		jint compareTo(jobject arg0);

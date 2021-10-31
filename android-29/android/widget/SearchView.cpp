@@ -94,7 +94,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SearchView::getSuggestionsAdapter()
+	android::widget::CursorAdapter SearchView::getSuggestionsAdapter()
 	{
 		return callObjectMethod(
 			"getSuggestionsAdapter",

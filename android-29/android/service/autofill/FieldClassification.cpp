@@ -11,7 +11,7 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FieldClassification::getMatches()
+	__JniBaseClass FieldClassification::getMatches()
 	{
 		return callObjectMethod(
 			"getMatches",

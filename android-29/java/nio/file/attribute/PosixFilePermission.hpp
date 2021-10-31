@@ -10,15 +10,15 @@ namespace java::nio::file::attribute
 	{
 	public:
 		// Fields
-		static QAndroidJniObject GROUP_EXECUTE();
-		static QAndroidJniObject GROUP_READ();
-		static QAndroidJniObject GROUP_WRITE();
-		static QAndroidJniObject OTHERS_EXECUTE();
-		static QAndroidJniObject OTHERS_READ();
-		static QAndroidJniObject OTHERS_WRITE();
-		static QAndroidJniObject OWNER_EXECUTE();
-		static QAndroidJniObject OWNER_READ();
-		static QAndroidJniObject OWNER_WRITE();
+		static java::nio::file::attribute::PosixFilePermission GROUP_EXECUTE();
+		static java::nio::file::attribute::PosixFilePermission GROUP_READ();
+		static java::nio::file::attribute::PosixFilePermission GROUP_WRITE();
+		static java::nio::file::attribute::PosixFilePermission OTHERS_EXECUTE();
+		static java::nio::file::attribute::PosixFilePermission OTHERS_READ();
+		static java::nio::file::attribute::PosixFilePermission OTHERS_WRITE();
+		static java::nio::file::attribute::PosixFilePermission OWNER_EXECUTE();
+		static java::nio::file::attribute::PosixFilePermission OWNER_READ();
+		static java::nio::file::attribute::PosixFilePermission OWNER_WRITE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PosixFilePermission(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,7 +27,7 @@ namespace java::nio::file::attribute
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::nio::file::attribute::PosixFilePermission valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::nio::file::attribute

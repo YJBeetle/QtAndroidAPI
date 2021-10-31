@@ -19,7 +19,7 @@ namespace android::text::method
 		SingleLineTransformationMethod();
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static android::text::method::SingleLineTransformationMethod getInstance();
 	};
 } // namespace android::text::method
 

@@ -20,14 +20,14 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	QAndroidJniObject Type_Builder::create()
+	android::renderscript::Type Type_Builder::create()
 	{
 		return callObjectMethod(
 			"create",
 			"()Landroid/renderscript/Type;"
 		);
 	}
-	QAndroidJniObject Type_Builder::setFaces(jboolean arg0)
+	android::renderscript::Type_Builder Type_Builder::setFaces(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setFaces",
@@ -35,7 +35,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject Type_Builder::setMipmaps(jboolean arg0)
+	android::renderscript::Type_Builder Type_Builder::setMipmaps(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setMipmaps",
@@ -43,7 +43,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject Type_Builder::setX(jint arg0)
+	android::renderscript::Type_Builder Type_Builder::setX(jint arg0)
 	{
 		return callObjectMethod(
 			"setX",
@@ -51,7 +51,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject Type_Builder::setY(jint arg0)
+	android::renderscript::Type_Builder Type_Builder::setY(jint arg0)
 	{
 		return callObjectMethod(
 			"setY",
@@ -59,7 +59,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject Type_Builder::setYuvFormat(jint arg0)
+	android::renderscript::Type_Builder Type_Builder::setYuvFormat(jint arg0)
 	{
 		return callObjectMethod(
 			"setYuvFormat",
@@ -67,7 +67,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject Type_Builder::setZ(jint arg0)
+	android::renderscript::Type_Builder Type_Builder::setZ(jint arg0)
 	{
 		return callObjectMethod(
 			"setZ",

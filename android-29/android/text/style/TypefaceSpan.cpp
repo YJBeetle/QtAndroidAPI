@@ -52,7 +52,7 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	QAndroidJniObject TypefaceSpan::getTypeface()
+	android::graphics::Typeface TypefaceSpan::getTypeface()
 	{
 		return callObjectMethod(
 			"getTypeface",

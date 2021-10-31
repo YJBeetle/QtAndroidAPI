@@ -30,7 +30,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject CurrencyPluralInfo::getInstance()
+	android::icu::text::CurrencyPluralInfo CurrencyPluralInfo::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CurrencyPluralInfo",
@@ -38,7 +38,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/CurrencyPluralInfo;"
 		);
 	}
-	QAndroidJniObject CurrencyPluralInfo::getInstance(android::icu::util::ULocale arg0)
+	android::icu::text::CurrencyPluralInfo CurrencyPluralInfo::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CurrencyPluralInfo",
@@ -47,7 +47,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CurrencyPluralInfo::getInstance(java::util::Locale arg0)
+	android::icu::text::CurrencyPluralInfo CurrencyPluralInfo::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CurrencyPluralInfo",
@@ -79,14 +79,14 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject CurrencyPluralInfo::getLocale()
+	android::icu::util::ULocale CurrencyPluralInfo::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject CurrencyPluralInfo::getPluralRules()
+	android::icu::text::PluralRules CurrencyPluralInfo::getPluralRules()
 	{
 		return callObjectMethod(
 			"getPluralRules",

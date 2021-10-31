@@ -20,7 +20,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
@@ -29,7 +29,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, android::icu::text::DateIntervalInfo arg1)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0, android::icu::text::DateIntervalInfo arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
@@ -39,7 +39,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, android::icu::util::ULocale arg1)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0, android::icu::util::ULocale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
@@ -49,7 +49,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, java::util::Locale arg1)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0, java::util::Locale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
@@ -59,7 +59,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, android::icu::util::ULocale arg1, android::icu::text::DateIntervalInfo arg2)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0, android::icu::util::ULocale arg1, android::icu::text::DateIntervalInfo arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
@@ -70,7 +70,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2)
+	android::icu::text::DateIntervalFormat DateIntervalFormat::getInstance(jstring arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateIntervalFormat",
@@ -88,7 +88,7 @@ namespace android::icu::text
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject DateIntervalFormat::format(android::icu::util::DateInterval arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateIntervalFormat::format(android::icu::util::DateInterval arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -98,7 +98,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateIntervalFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -108,7 +108,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::format(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1, java::lang::StringBuffer arg2, java::text::FieldPosition arg3)
+	java::lang::StringBuffer DateIntervalFormat::format(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1, java::lang::StringBuffer arg2, java::text::FieldPosition arg3)
 	{
 		return callObjectMethod(
 			"format",
@@ -119,21 +119,21 @@ namespace android::icu::text
 			arg3.object()
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getDateFormat()
+	android::icu::text::DateFormat DateIntervalFormat::getDateFormat()
 	{
 		return callObjectMethod(
 			"getDateFormat",
 			"()Landroid/icu/text/DateFormat;"
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getDateIntervalInfo()
+	android::icu::text::DateIntervalInfo DateIntervalFormat::getDateIntervalInfo()
 	{
 		return callObjectMethod(
 			"getDateIntervalInfo",
 			"()Landroid/icu/text/DateIntervalInfo;"
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getTimeZone()
+	android::icu::util::TimeZone DateIntervalFormat::getTimeZone()
 	{
 		return callObjectMethod(
 			"getTimeZone",

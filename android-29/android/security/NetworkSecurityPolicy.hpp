@@ -17,7 +17,7 @@ namespace android::security
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static android::security::NetworkSecurityPolicy getInstance();
 		jboolean isCleartextTrafficPermitted();
 		jboolean isCleartextTrafficPermitted(jstring arg0);
 	};

@@ -33,10 +33,10 @@ namespace android::util
 		void _delete();
 		void failWrite(java::io::FileOutputStream arg0);
 		void finishWrite(java::io::FileOutputStream arg0);
-		QAndroidJniObject getBaseFile();
-		QAndroidJniObject openRead();
+		java::io::File getBaseFile();
+		java::io::FileInputStream openRead();
 		jbyteArray readFully();
-		QAndroidJniObject startWrite();
+		java::io::FileOutputStream startWrite();
 	};
 } // namespace android::util
 

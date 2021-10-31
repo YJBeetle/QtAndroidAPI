@@ -13,7 +13,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::CONTENT_FILTER_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_Email::CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
@@ -29,7 +29,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::CONTENT_LOOKUP_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_Email::CONTENT_LOOKUP_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
@@ -45,7 +45,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::CONTENT_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_Email::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
@@ -61,7 +61,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::ENTERPRISE_CONTENT_FILTER_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_Email::ENTERPRISE_CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
@@ -69,7 +69,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::ENTERPRISE_CONTENT_LOOKUP_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_Email::ENTERPRISE_CONTENT_LOOKUP_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",

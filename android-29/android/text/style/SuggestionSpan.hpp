@@ -27,7 +27,7 @@ namespace android::text::style
 	public:
 		// Fields
 		static jstring ACTION_SUGGESTION_PICKED();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_AUTO_CORRECTION();
 		static jint FLAG_EASY_CORRECT();
 		static jint FLAG_MISSPELLED();
@@ -51,7 +51,7 @@ namespace android::text::style
 		jboolean equals(jobject arg0);
 		jint getFlags();
 		jstring getLocale();
-		QAndroidJniObject getLocaleObject();
+		java::util::Locale getLocaleObject();
 		jint getSpanTypeId();
 		jarray getSuggestions();
 		jint getUnderlineColor();

@@ -26,13 +26,13 @@ namespace android::net::wifi::p2p
 		WifiP2pConfig_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject enablePersistentMode(jboolean arg0);
-		QAndroidJniObject setDeviceAddress(android::net::MacAddress arg0);
-		QAndroidJniObject setGroupOperatingBand(jint arg0);
-		QAndroidJniObject setGroupOperatingFrequency(jint arg0);
-		QAndroidJniObject setNetworkName(jstring arg0);
-		QAndroidJniObject setPassphrase(jstring arg0);
+		android::net::wifi::p2p::WifiP2pConfig build();
+		android::net::wifi::p2p::WifiP2pConfig_Builder enablePersistentMode(jboolean arg0);
+		android::net::wifi::p2p::WifiP2pConfig_Builder setDeviceAddress(android::net::MacAddress arg0);
+		android::net::wifi::p2p::WifiP2pConfig_Builder setGroupOperatingBand(jint arg0);
+		android::net::wifi::p2p::WifiP2pConfig_Builder setGroupOperatingFrequency(jint arg0);
+		android::net::wifi::p2p::WifiP2pConfig_Builder setNetworkName(jstring arg0);
+		android::net::wifi::p2p::WifiP2pConfig_Builder setPassphrase(jstring arg0);
 	};
 } // namespace android::net::wifi::p2p
 

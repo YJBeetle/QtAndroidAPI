@@ -12,7 +12,7 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AlgorithmParameters::getInstance(jstring arg0)
+	java::security::AlgorithmParameters AlgorithmParameters::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AlgorithmParameters",
@@ -21,7 +21,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject AlgorithmParameters::getInstance(jstring arg0, jstring arg1)
+	java::security::AlgorithmParameters AlgorithmParameters::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AlgorithmParameters",
@@ -31,7 +31,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject AlgorithmParameters::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::AlgorithmParameters AlgorithmParameters::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AlgorithmParameters",
@@ -63,7 +63,7 @@ namespace java::security
 			arg0
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject AlgorithmParameters::getParameterSpec(jclass arg0)
+	__JniBaseClass AlgorithmParameters::getParameterSpec(jclass arg0)
 	{
 		return callObjectMethod(
 			"getParameterSpec",
@@ -71,7 +71,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject AlgorithmParameters::getProvider()
+	java::security::Provider AlgorithmParameters::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

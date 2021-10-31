@@ -21,7 +21,7 @@ namespace android::content::res
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getObbInfo(jstring arg0);
+		static android::content::res::ObbInfo getObbInfo(jstring arg0);
 	};
 } // namespace android::content::res
 

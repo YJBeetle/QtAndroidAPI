@@ -22,7 +22,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	QAndroidJniObject Console::format(jstring arg0, jobjectArray arg1)
+	java::io::Console Console::format(jstring arg0, jobjectArray arg1)
 	{
 		return callObjectMethod(
 			"format",
@@ -31,7 +31,7 @@ namespace java::io
 			arg1
 		);
 	}
-	QAndroidJniObject Console::printf(jstring arg0, jobjectArray arg1)
+	java::io::Console Console::printf(jstring arg0, jobjectArray arg1)
 	{
 		return callObjectMethod(
 			"printf",
@@ -72,14 +72,14 @@ namespace java::io
 			arg1
 		).object<jcharArray>();
 	}
-	QAndroidJniObject Console::reader()
+	java::io::Reader Console::reader()
 	{
 		return callObjectMethod(
 			"reader",
 			"()Ljava/io/Reader;"
 		);
 	}
-	QAndroidJniObject Console::writer()
+	java::io::PrintWriter Console::writer()
 	{
 		return callObjectMethod(
 			"writer",

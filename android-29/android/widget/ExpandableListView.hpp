@@ -56,8 +56,8 @@ namespace android::widget
 		jboolean expandGroup(jint arg0);
 		jboolean expandGroup(jint arg0, jboolean arg1);
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getAdapter();
-		QAndroidJniObject getExpandableListAdapter();
+		__JniBaseClass getAdapter();
+		__JniBaseClass getExpandableListAdapter();
 		jlong getExpandableListPosition(jint arg0);
 		jint getFlatListPosition(jlong arg0);
 		jlong getSelectedId();
@@ -65,7 +65,7 @@ namespace android::widget
 		jboolean isGroupExpanded(jint arg0);
 		void onRestoreInstanceState(__JniBaseClass arg0);
 		void onRtlPropertiesChanged(jint arg0);
-		QAndroidJniObject onSaveInstanceState();
+		__JniBaseClass onSaveInstanceState();
 		jboolean performItemClick(android::view::View arg0, jint arg1, jlong arg2);
 		void setAdapter(__JniBaseClass arg0);
 		void setChildDivider(android::graphics::drawable::Drawable arg0);

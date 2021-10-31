@@ -151,35 +151,35 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	QAndroidJniObject Call::getCannedTextResponses()
+	__JniBaseClass Call::getCannedTextResponses()
 	{
 		return callObjectMethod(
 			"getCannedTextResponses",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Call::getChildren()
+	__JniBaseClass Call::getChildren()
 	{
 		return callObjectMethod(
 			"getChildren",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Call::getConferenceableCalls()
+	__JniBaseClass Call::getConferenceableCalls()
 	{
 		return callObjectMethod(
 			"getConferenceableCalls",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Call::getDetails()
+	android::telecom::Call_Details Call::getDetails()
 	{
 		return callObjectMethod(
 			"getDetails",
 			"()Landroid/telecom/Call$Details;"
 		);
 	}
-	QAndroidJniObject Call::getParent()
+	android::telecom::Call Call::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
@@ -193,7 +193,7 @@ namespace android::telecom
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Call::getRttCall()
+	android::telecom::Call_RttCall Call::getRttCall()
 	{
 		return callObjectMethod(
 			"getRttCall",
@@ -207,7 +207,7 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject Call::getVideoCall()
+	android::telecom::InCallService_VideoCall Call::getVideoCall()
 	{
 		return callObjectMethod(
 			"getVideoCall",

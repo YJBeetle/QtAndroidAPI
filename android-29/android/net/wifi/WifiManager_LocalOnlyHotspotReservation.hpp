@@ -26,7 +26,7 @@ namespace android::net::wifi
 		
 		// Methods
 		void close();
-		QAndroidJniObject getWifiConfiguration();
+		android::net::wifi::WifiConfiguration getWifiConfiguration();
 	};
 } // namespace android::net::wifi
 

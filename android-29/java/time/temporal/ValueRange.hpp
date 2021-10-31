@@ -21,9 +21,9 @@ namespace java::time::temporal
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject of(jlong arg0, jlong arg1);
-		static QAndroidJniObject of(jlong arg0, jlong arg1, jlong arg2);
-		static QAndroidJniObject of(jlong arg0, jlong arg1, jlong arg2, jlong arg3);
+		static java::time::temporal::ValueRange of(jlong arg0, jlong arg1);
+		static java::time::temporal::ValueRange of(jlong arg0, jlong arg1, jlong arg2);
+		static java::time::temporal::ValueRange of(jlong arg0, jlong arg1, jlong arg2, jlong arg3);
 		jint checkValidIntValue(jlong arg0, __JniBaseClass arg1);
 		jlong checkValidValue(jlong arg0, __JniBaseClass arg1);
 		jboolean equals(jobject arg0);

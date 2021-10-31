@@ -17,7 +17,7 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_COMPATIBILITY_MODE_REQUEST();
 		static jint FLAG_MANUAL_REQUEST();
 		
@@ -29,8 +29,8 @@ namespace android::service::autofill
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getClientState();
-		QAndroidJniObject getFillContexts();
+		android::os::Bundle getClientState();
+		__JniBaseClass getFillContexts();
 		jint getFlags();
 		jint getId();
 		jstring toString();

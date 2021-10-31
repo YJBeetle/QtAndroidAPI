@@ -21,7 +21,7 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	QAndroidJniObject ScriptGroup_Builder::addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_FieldID arg2)
+	android::renderscript::ScriptGroup_Builder ScriptGroup_Builder::addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_FieldID arg2)
 	{
 		return callObjectMethod(
 			"addConnection",
@@ -31,7 +31,7 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ScriptGroup_Builder::addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_KernelID arg2)
+	android::renderscript::ScriptGroup_Builder ScriptGroup_Builder::addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_KernelID arg2)
 	{
 		return callObjectMethod(
 			"addConnection",
@@ -41,7 +41,7 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ScriptGroup_Builder::addKernel(android::renderscript::Script_KernelID arg0)
+	android::renderscript::ScriptGroup_Builder ScriptGroup_Builder::addKernel(android::renderscript::Script_KernelID arg0)
 	{
 		return callObjectMethod(
 			"addKernel",
@@ -49,7 +49,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ScriptGroup_Builder::create()
+	android::renderscript::ScriptGroup ScriptGroup_Builder::create()
 	{
 		return callObjectMethod(
 			"create",

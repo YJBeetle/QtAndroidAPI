@@ -29,9 +29,9 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getProfileSwitchingIconDrawable(android::os::UserHandle arg0);
+		android::graphics::drawable::Drawable getProfileSwitchingIconDrawable(android::os::UserHandle arg0);
 		jstring getProfileSwitchingLabel(android::os::UserHandle arg0);
-		QAndroidJniObject getTargetUserProfiles();
+		__JniBaseClass getTargetUserProfiles();
 		void startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1);
 	};
 } // namespace android::content::pm

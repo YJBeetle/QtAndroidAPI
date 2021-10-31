@@ -40,7 +40,7 @@ namespace javax::net::ssl
 			"()Z"
 		);
 	}
-	QAndroidJniObject SSLServerSocket::getSSLParameters()
+	javax::net::ssl::SSLParameters SSLServerSocket::getSSLParameters()
 	{
 		return callObjectMethod(
 			"getSSLParameters",

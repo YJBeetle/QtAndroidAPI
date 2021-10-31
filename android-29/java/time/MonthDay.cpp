@@ -17,7 +17,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MonthDay::from(__JniBaseClass arg0)
+	java::time::MonthDay MonthDay::from(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.MonthDay",
@@ -26,7 +26,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MonthDay::now()
+	java::time::MonthDay MonthDay::now()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.MonthDay",
@@ -34,7 +34,7 @@ namespace java::time
 			"()Ljava/time/MonthDay;"
 		);
 	}
-	QAndroidJniObject MonthDay::now(java::time::Clock arg0)
+	java::time::MonthDay MonthDay::now(java::time::Clock arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.MonthDay",
@@ -43,7 +43,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MonthDay::now(java::time::ZoneId arg0)
+	java::time::MonthDay MonthDay::now(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.MonthDay",
@@ -52,7 +52,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MonthDay::of(jint arg0, jint arg1)
+	java::time::MonthDay MonthDay::of(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.MonthDay",
@@ -62,7 +62,7 @@ namespace java::time
 			arg1
 		);
 	}
-	QAndroidJniObject MonthDay::of(java::time::Month arg0, jint arg1)
+	java::time::MonthDay MonthDay::of(java::time::Month arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.MonthDay",
@@ -72,7 +72,7 @@ namespace java::time
 			arg1
 		);
 	}
-	QAndroidJniObject MonthDay::parse(jstring arg0)
+	java::time::MonthDay MonthDay::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.MonthDay",
@@ -81,7 +81,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject MonthDay::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
+	java::time::MonthDay MonthDay::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.MonthDay",
@@ -91,7 +91,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MonthDay::adjustInto(__JniBaseClass arg0)
+	__JniBaseClass MonthDay::adjustInto(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -99,7 +99,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MonthDay::atYear(jint arg0)
+	java::time::LocalDate MonthDay::atYear(jint arg0)
 	{
 		return callObjectMethod(
 			"atYear",
@@ -162,7 +162,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MonthDay::getMonth()
+	java::time::Month MonthDay::getMonth()
 	{
 		return callObjectMethod(
 			"getMonth",
@@ -223,7 +223,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject MonthDay::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange MonthDay::range(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -238,7 +238,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MonthDay::with(java::time::Month arg0)
+	java::time::MonthDay MonthDay::with(java::time::Month arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -246,7 +246,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MonthDay::withDayOfMonth(jint arg0)
+	java::time::MonthDay MonthDay::withDayOfMonth(jint arg0)
 	{
 		return callObjectMethod(
 			"withDayOfMonth",
@@ -254,7 +254,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject MonthDay::withMonth(jint arg0)
+	java::time::MonthDay MonthDay::withMonth(jint arg0)
 	{
 		return callObjectMethod(
 			"withMonth",

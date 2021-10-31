@@ -166,7 +166,7 @@ namespace android::os
 			"()Z"
 		);
 	}
-	QAndroidJniObject BaseBundle::keySet()
+	__JniBaseClass BaseBundle::keySet()
 	{
 		return callObjectMethod(
 			"keySet",

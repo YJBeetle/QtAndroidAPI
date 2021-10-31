@@ -10,11 +10,11 @@ namespace android::telephony::gsm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CLASS_0();
-		static QAndroidJniObject CLASS_1();
-		static QAndroidJniObject CLASS_2();
-		static QAndroidJniObject CLASS_3();
-		static QAndroidJniObject UNKNOWN();
+		static android::telephony::gsm::SmsMessage_MessageClass CLASS_0();
+		static android::telephony::gsm::SmsMessage_MessageClass CLASS_1();
+		static android::telephony::gsm::SmsMessage_MessageClass CLASS_2();
+		static android::telephony::gsm::SmsMessage_MessageClass CLASS_3();
+		static android::telephony::gsm::SmsMessage_MessageClass UNKNOWN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SmsMessage_MessageClass(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -23,7 +23,7 @@ namespace android::telephony::gsm
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::telephony::gsm::SmsMessage_MessageClass valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::telephony::gsm

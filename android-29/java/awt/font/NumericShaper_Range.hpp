@@ -10,43 +10,43 @@ namespace java::awt::font
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ARABIC();
-		static QAndroidJniObject BALINESE();
-		static QAndroidJniObject BENGALI();
-		static QAndroidJniObject CHAM();
-		static QAndroidJniObject DEVANAGARI();
-		static QAndroidJniObject EASTERN_ARABIC();
-		static QAndroidJniObject ETHIOPIC();
-		static QAndroidJniObject EUROPEAN();
-		static QAndroidJniObject GUJARATI();
-		static QAndroidJniObject GURMUKHI();
-		static QAndroidJniObject JAVANESE();
-		static QAndroidJniObject KANNADA();
-		static QAndroidJniObject KAYAH_LI();
-		static QAndroidJniObject KHMER();
-		static QAndroidJniObject LAO();
-		static QAndroidJniObject LEPCHA();
-		static QAndroidJniObject LIMBU();
-		static QAndroidJniObject MALAYALAM();
-		static QAndroidJniObject MEETEI_MAYEK();
-		static QAndroidJniObject MONGOLIAN();
-		static QAndroidJniObject MYANMAR();
-		static QAndroidJniObject MYANMAR_SHAN();
-		static QAndroidJniObject MYANMAR_TAI_LAING();
-		static QAndroidJniObject NEW_TAI_LUE();
-		static QAndroidJniObject NKO();
-		static QAndroidJniObject OL_CHIKI();
-		static QAndroidJniObject ORIYA();
-		static QAndroidJniObject SAURASHTRA();
-		static QAndroidJniObject SINHALA();
-		static QAndroidJniObject SUNDANESE();
-		static QAndroidJniObject TAI_THAM_HORA();
-		static QAndroidJniObject TAI_THAM_THAM();
-		static QAndroidJniObject TAMIL();
-		static QAndroidJniObject TELUGU();
-		static QAndroidJniObject THAI();
-		static QAndroidJniObject TIBETAN();
-		static QAndroidJniObject VAI();
+		static java::awt::font::NumericShaper_Range ARABIC();
+		static java::awt::font::NumericShaper_Range BALINESE();
+		static java::awt::font::NumericShaper_Range BENGALI();
+		static java::awt::font::NumericShaper_Range CHAM();
+		static java::awt::font::NumericShaper_Range DEVANAGARI();
+		static java::awt::font::NumericShaper_Range EASTERN_ARABIC();
+		static java::awt::font::NumericShaper_Range ETHIOPIC();
+		static java::awt::font::NumericShaper_Range EUROPEAN();
+		static java::awt::font::NumericShaper_Range GUJARATI();
+		static java::awt::font::NumericShaper_Range GURMUKHI();
+		static java::awt::font::NumericShaper_Range JAVANESE();
+		static java::awt::font::NumericShaper_Range KANNADA();
+		static java::awt::font::NumericShaper_Range KAYAH_LI();
+		static java::awt::font::NumericShaper_Range KHMER();
+		static java::awt::font::NumericShaper_Range LAO();
+		static java::awt::font::NumericShaper_Range LEPCHA();
+		static java::awt::font::NumericShaper_Range LIMBU();
+		static java::awt::font::NumericShaper_Range MALAYALAM();
+		static java::awt::font::NumericShaper_Range MEETEI_MAYEK();
+		static java::awt::font::NumericShaper_Range MONGOLIAN();
+		static java::awt::font::NumericShaper_Range MYANMAR();
+		static java::awt::font::NumericShaper_Range MYANMAR_SHAN();
+		static java::awt::font::NumericShaper_Range MYANMAR_TAI_LAING();
+		static java::awt::font::NumericShaper_Range NEW_TAI_LUE();
+		static java::awt::font::NumericShaper_Range NKO();
+		static java::awt::font::NumericShaper_Range OL_CHIKI();
+		static java::awt::font::NumericShaper_Range ORIYA();
+		static java::awt::font::NumericShaper_Range SAURASHTRA();
+		static java::awt::font::NumericShaper_Range SINHALA();
+		static java::awt::font::NumericShaper_Range SUNDANESE();
+		static java::awt::font::NumericShaper_Range TAI_THAM_HORA();
+		static java::awt::font::NumericShaper_Range TAI_THAM_THAM();
+		static java::awt::font::NumericShaper_Range TAMIL();
+		static java::awt::font::NumericShaper_Range TELUGU();
+		static java::awt::font::NumericShaper_Range THAI();
+		static java::awt::font::NumericShaper_Range TIBETAN();
+		static java::awt::font::NumericShaper_Range VAI();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumericShaper_Range(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -55,7 +55,7 @@ namespace java::awt::font
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::awt::font::NumericShaper_Range valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::awt::font

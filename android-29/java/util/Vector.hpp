@@ -43,7 +43,7 @@ namespace java::util
 		jboolean containsAll(__JniBaseClass arg0);
 		void copyInto(jobjectArray arg0);
 		jobject elementAt(jint arg0);
-		QAndroidJniObject elements();
+		__JniBaseClass elements();
 		void ensureCapacity(jint arg0);
 		jboolean equals(jobject arg0);
 		jobject firstElement();
@@ -54,12 +54,12 @@ namespace java::util
 		jint indexOf(jobject arg0, jint arg1);
 		void insertElementAt(jobject arg0, jint arg1);
 		jboolean isEmpty();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jobject lastElement();
 		jint lastIndexOf(jobject arg0);
 		jint lastIndexOf(jobject arg0, jint arg1);
-		QAndroidJniObject listIterator();
-		QAndroidJniObject listIterator(jint arg0);
+		__JniBaseClass listIterator();
+		__JniBaseClass listIterator(jint arg0);
 		jboolean remove(jobject arg0);
 		jobject remove(jint arg0);
 		jboolean removeAll(__JniBaseClass arg0);
@@ -74,8 +74,8 @@ namespace java::util
 		void setSize(jint arg0);
 		jint size();
 		void sort(__JniBaseClass arg0);
-		QAndroidJniObject spliterator();
-		QAndroidJniObject subList(jint arg0, jint arg1);
+		__JniBaseClass spliterator();
+		__JniBaseClass subList(jint arg0, jint arg1);
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 		jstring toString();

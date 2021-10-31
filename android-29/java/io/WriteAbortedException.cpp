@@ -4,7 +4,7 @@
 namespace java::io
 {
 	// Fields
-	QAndroidJniObject WriteAbortedException::detail()
+	java::lang::Exception WriteAbortedException::detail()
 	{
 		return getObjectField(
 			"detail",

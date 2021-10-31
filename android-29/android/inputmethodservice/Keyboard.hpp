@@ -48,9 +48,9 @@ namespace android::inputmethodservice
 		
 		// Methods
 		jint getHeight();
-		QAndroidJniObject getKeys();
+		__JniBaseClass getKeys();
 		jint getMinWidth();
-		QAndroidJniObject getModifierKeys();
+		__JniBaseClass getModifierKeys();
 		jintArray getNearestKeys(jint arg0, jint arg1);
 		jint getShiftKeyIndex();
 		jboolean isShifted();

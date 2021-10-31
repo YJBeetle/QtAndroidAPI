@@ -32,18 +32,18 @@ namespace android::animation
 		
 		// Methods
 		void cancel();
-		QAndroidJniObject clone();
+		android::animation::AnimatorSet clone();
 		void end();
-		QAndroidJniObject getChildAnimations();
+		java::util::ArrayList getChildAnimations();
 		jlong getCurrentPlayTime();
 		jlong getDuration();
-		QAndroidJniObject getInterpolator();
+		__JniBaseClass getInterpolator();
 		jlong getStartDelay();
 		jlong getTotalDuration();
 		jboolean isRunning();
 		jboolean isStarted();
 		void pause();
-		QAndroidJniObject play(android::animation::Animator arg0);
+		android::animation::AnimatorSet_Builder play(android::animation::Animator arg0);
 		void playSequentially(jarray arg0);
 		void playSequentially(__JniBaseClass arg0);
 		void playTogether(jarray arg0);
@@ -51,7 +51,7 @@ namespace android::animation
 		void resume();
 		void reverse();
 		void setCurrentPlayTime(jlong arg0);
-		QAndroidJniObject setDuration(jlong arg0);
+		android::animation::AnimatorSet setDuration(jlong arg0);
 		void setInterpolator(__JniBaseClass arg0);
 		void setStartDelay(jlong arg0);
 		void setTarget(jobject arg0);

@@ -79,7 +79,7 @@ namespace android::hardware::usb
 			"()[Landroid/hardware/usb/UsbAccessory;"
 		).object<jarray>();
 	}
-	QAndroidJniObject UsbManager::getDeviceList()
+	java::util::HashMap UsbManager::getDeviceList()
 	{
 		return callObjectMethod(
 			"getDeviceList",
@@ -102,7 +102,7 @@ namespace android::hardware::usb
 			arg0.object()
 		);
 	}
-	QAndroidJniObject UsbManager::openAccessory(android::hardware::usb::UsbAccessory arg0)
+	android::os::ParcelFileDescriptor UsbManager::openAccessory(android::hardware::usb::UsbAccessory arg0)
 	{
 		return callObjectMethod(
 			"openAccessory",
@@ -110,7 +110,7 @@ namespace android::hardware::usb
 			arg0.object()
 		);
 	}
-	QAndroidJniObject UsbManager::openDevice(android::hardware::usb::UsbDevice arg0)
+	android::hardware::usb::UsbDeviceConnection UsbManager::openDevice(android::hardware::usb::UsbDevice arg0)
 	{
 		return callObjectMethod(
 			"openDevice",

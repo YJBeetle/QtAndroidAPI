@@ -28,7 +28,7 @@ namespace java::text
 		jint getBeginIndex();
 		jint getEndIndex();
 		jint getField();
-		QAndroidJniObject getFieldAttribute();
+		java::text::Format_Field getFieldAttribute();
 		jint hashCode();
 		void setBeginIndex(jint arg0);
 		void setEndIndex(jint arg0);

@@ -33,8 +33,8 @@ namespace android::gesture
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject computeOrientedBoundingBox(jfloatArray arg0);
-		static QAndroidJniObject computeOrientedBoundingBox(java::util::ArrayList arg0);
+		static android::gesture::OrientedBoundingBox computeOrientedBoundingBox(jfloatArray arg0);
+		static android::gesture::OrientedBoundingBox computeOrientedBoundingBox(java::util::ArrayList arg0);
 		static jfloatArray spatialSampling(android::gesture::Gesture arg0, jint arg1);
 		static jfloatArray spatialSampling(android::gesture::Gesture arg0, jint arg1, jboolean arg2);
 		static jfloatArray temporalSampling(android::gesture::GestureStroke arg0, jint arg1);

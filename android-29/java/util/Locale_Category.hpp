@@ -10,8 +10,8 @@ namespace java::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DISPLAY();
-		static QAndroidJniObject FORMAT();
+		static java::util::Locale_Category DISPLAY();
+		static java::util::Locale_Category FORMAT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Locale_Category(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -20,7 +20,7 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::util::Locale_Category valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace java::util

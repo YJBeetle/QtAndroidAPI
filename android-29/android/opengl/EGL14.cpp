@@ -434,7 +434,7 @@ namespace android::opengl
 			"EGL_NOT_INITIALIZED"
 		);
 	}
-	QAndroidJniObject EGL14::EGL_NO_CONTEXT()
+	android::opengl::EGLContext EGL14::EGL_NO_CONTEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL14",
@@ -442,7 +442,7 @@ namespace android::opengl
 			"Landroid/opengl/EGLContext;"
 		);
 	}
-	QAndroidJniObject EGL14::EGL_NO_DISPLAY()
+	android::opengl::EGLDisplay EGL14::EGL_NO_DISPLAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL14",
@@ -450,7 +450,7 @@ namespace android::opengl
 			"Landroid/opengl/EGLDisplay;"
 		);
 	}
-	QAndroidJniObject EGL14::EGL_NO_SURFACE()
+	android::opengl::EGLSurface EGL14::EGL_NO_SURFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL14",
@@ -867,7 +867,7 @@ namespace android::opengl
 			arg2
 		);
 	}
-	QAndroidJniObject EGL14::eglCreateContext(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, android::opengl::EGLContext arg2, jintArray arg3, jint arg4)
+	android::opengl::EGLContext EGL14::eglCreateContext(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, android::opengl::EGLContext arg2, jintArray arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -880,7 +880,7 @@ namespace android::opengl
 			arg4
 		);
 	}
-	QAndroidJniObject EGL14::eglCreatePbufferFromClientBuffer(android::opengl::EGLDisplay arg0, jint arg1, jint arg2, android::opengl::EGLConfig arg3, jintArray arg4, jint arg5)
+	android::opengl::EGLSurface EGL14::eglCreatePbufferFromClientBuffer(android::opengl::EGLDisplay arg0, jint arg1, jint arg2, android::opengl::EGLConfig arg3, jintArray arg4, jint arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -894,7 +894,7 @@ namespace android::opengl
 			arg5
 		);
 	}
-	QAndroidJniObject EGL14::eglCreatePbufferSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jintArray arg2, jint arg3)
+	android::opengl::EGLSurface EGL14::eglCreatePbufferSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jintArray arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -906,7 +906,7 @@ namespace android::opengl
 			arg3
 		);
 	}
-	QAndroidJniObject EGL14::eglCreatePixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4)
+	android::opengl::EGLSurface EGL14::eglCreatePixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -919,7 +919,7 @@ namespace android::opengl
 			arg4
 		);
 	}
-	QAndroidJniObject EGL14::eglCreateWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jobject arg2, jintArray arg3, jint arg4)
+	android::opengl::EGLSurface EGL14::eglCreateWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jobject arg2, jintArray arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -979,7 +979,7 @@ namespace android::opengl
 			arg5
 		);
 	}
-	QAndroidJniObject EGL14::eglGetCurrentContext()
+	android::opengl::EGLContext EGL14::eglGetCurrentContext()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -987,7 +987,7 @@ namespace android::opengl
 			"()Landroid/opengl/EGLContext;"
 		);
 	}
-	QAndroidJniObject EGL14::eglGetCurrentDisplay()
+	android::opengl::EGLDisplay EGL14::eglGetCurrentDisplay()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -995,7 +995,7 @@ namespace android::opengl
 			"()Landroid/opengl/EGLDisplay;"
 		);
 	}
-	QAndroidJniObject EGL14::eglGetCurrentSurface(jint arg0)
+	android::opengl::EGLSurface EGL14::eglGetCurrentSurface(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
@@ -1004,7 +1004,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	QAndroidJniObject EGL14::eglGetDisplay(jint arg0)
+	android::opengl::EGLDisplay EGL14::eglGetDisplay(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",

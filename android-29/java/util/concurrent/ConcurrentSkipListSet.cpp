@@ -45,14 +45,14 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::clone()
+	java::util::concurrent::ConcurrentSkipListSet ConcurrentSkipListSet::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/util/concurrent/ConcurrentSkipListSet;"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::comparator()
+	__JniBaseClass ConcurrentSkipListSet::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
@@ -67,14 +67,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::descendingIterator()
+	__JniBaseClass ConcurrentSkipListSet::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::descendingSet()
+	__JniBaseClass ConcurrentSkipListSet::descendingSet()
 	{
 		return callObjectMethod(
 			"descendingSet",
@@ -104,7 +104,7 @@ namespace java::util::concurrent
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentSkipListSet::headSet(jobject arg0)
+	__JniBaseClass ConcurrentSkipListSet::headSet(jobject arg0)
 	{
 		return callObjectMethod(
 			"headSet",
@@ -112,7 +112,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::headSet(jobject arg0, jboolean arg1)
+	__JniBaseClass ConcurrentSkipListSet::headSet(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headSet",
@@ -136,7 +136,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::iterator()
+	__JniBaseClass ConcurrentSkipListSet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -195,14 +195,14 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::spliterator()
+	__JniBaseClass ConcurrentSkipListSet::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::subSet(jobject arg0, jobject arg1)
+	__JniBaseClass ConcurrentSkipListSet::subSet(jobject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"subSet",
@@ -211,7 +211,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	__JniBaseClass ConcurrentSkipListSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subSet",
@@ -222,7 +222,7 @@ namespace java::util::concurrent
 			arg3
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::tailSet(jobject arg0)
+	__JniBaseClass ConcurrentSkipListSet::tailSet(jobject arg0)
 	{
 		return callObjectMethod(
 			"tailSet",
@@ -230,7 +230,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::tailSet(jobject arg0, jboolean arg1)
+	__JniBaseClass ConcurrentSkipListSet::tailSet(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailSet",

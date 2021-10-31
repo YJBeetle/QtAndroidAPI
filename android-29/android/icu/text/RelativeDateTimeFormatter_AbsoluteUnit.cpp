@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::DAY()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::FRIDAY()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::FRIDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::MONDAY()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::MONDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::MONTH()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::NOW()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::NOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -43,7 +43,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::SATURDAY()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::SATURDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -51,7 +51,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::SUNDAY()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::SUNDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -59,7 +59,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::THURSDAY()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::THURSDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -67,7 +67,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::TUESDAY()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::TUESDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -75,7 +75,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::WEDNESDAY()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::WEDNESDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -83,7 +83,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::WEEK()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::WEEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -91,7 +91,7 @@ namespace android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::YEAR()
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
@@ -106,7 +106,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::valueOf(jstring arg0)
+	android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit RelativeDateTimeFormatter_AbsoluteUnit::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",

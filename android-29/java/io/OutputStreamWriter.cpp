@@ -41,7 +41,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	QAndroidJniObject OutputStreamWriter::append(jstring arg0)
+	java::io::Writer OutputStreamWriter::append(jstring arg0)
 	{
 		return callObjectMethod(
 			"append",
@@ -49,7 +49,7 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject OutputStreamWriter::append(jstring arg0, jint arg1, jint arg2)
+	java::io::Writer OutputStreamWriter::append(jstring arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",

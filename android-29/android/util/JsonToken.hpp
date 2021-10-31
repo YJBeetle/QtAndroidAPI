@@ -10,16 +10,16 @@ namespace android::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BEGIN_ARRAY();
-		static QAndroidJniObject BEGIN_OBJECT();
-		static QAndroidJniObject BOOLEAN();
-		static QAndroidJniObject END_ARRAY();
-		static QAndroidJniObject END_DOCUMENT();
-		static QAndroidJniObject END_OBJECT();
-		static QAndroidJniObject NAME();
-		static QAndroidJniObject _NULL();
-		static QAndroidJniObject NUMBER();
-		static QAndroidJniObject STRING();
+		static android::util::JsonToken BEGIN_ARRAY();
+		static android::util::JsonToken BEGIN_OBJECT();
+		static android::util::JsonToken BOOLEAN();
+		static android::util::JsonToken END_ARRAY();
+		static android::util::JsonToken END_DOCUMENT();
+		static android::util::JsonToken END_OBJECT();
+		static android::util::JsonToken NAME();
+		static android::util::JsonToken _NULL();
+		static android::util::JsonToken NUMBER();
+		static android::util::JsonToken STRING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JsonToken(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,7 +28,7 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::util::JsonToken valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::util

@@ -21,7 +21,7 @@ namespace android::util
 		// Methods
 		void append(jint arg0, jlong arg1);
 		void clear();
-		QAndroidJniObject clone();
+		android::util::SparseLongArray clone();
 		void _delete(jint arg0);
 		jlong get(jint arg0);
 		jlong get(jint arg0, jlong arg1);

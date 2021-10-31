@@ -34,7 +34,7 @@ namespace java::util::logging
 		// Methods
 		void close();
 		void flush();
-		QAndroidJniObject getPushLevel();
+		java::util::logging::Level getPushLevel();
 		jboolean isLoggable(java::util::logging::LogRecord arg0);
 		void publish(java::util::logging::LogRecord arg0);
 		void push();

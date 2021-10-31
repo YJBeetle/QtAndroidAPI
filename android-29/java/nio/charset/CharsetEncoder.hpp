@@ -44,19 +44,19 @@ namespace java::nio::charset
 		jfloat averageBytesPerChar();
 		jboolean canEncode(jchar arg0);
 		jboolean canEncode(jstring arg0);
-		QAndroidJniObject charset();
-		QAndroidJniObject encode(java::nio::CharBuffer arg0);
-		QAndroidJniObject encode(java::nio::CharBuffer arg0, java::nio::ByteBuffer arg1, jboolean arg2);
-		QAndroidJniObject flush(java::nio::ByteBuffer arg0);
+		java::nio::charset::Charset charset();
+		java::nio::ByteBuffer encode(java::nio::CharBuffer arg0);
+		java::nio::charset::CoderResult encode(java::nio::CharBuffer arg0, java::nio::ByteBuffer arg1, jboolean arg2);
+		java::nio::charset::CoderResult flush(java::nio::ByteBuffer arg0);
 		jboolean isLegalReplacement(jbyteArray arg0);
-		QAndroidJniObject malformedInputAction();
+		java::nio::charset::CodingErrorAction malformedInputAction();
 		jfloat maxBytesPerChar();
-		QAndroidJniObject onMalformedInput(java::nio::charset::CodingErrorAction arg0);
-		QAndroidJniObject onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0);
-		QAndroidJniObject replaceWith(jbyteArray arg0);
+		java::nio::charset::CharsetEncoder onMalformedInput(java::nio::charset::CodingErrorAction arg0);
+		java::nio::charset::CharsetEncoder onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0);
+		java::nio::charset::CharsetEncoder replaceWith(jbyteArray arg0);
 		jbyteArray replacement();
-		QAndroidJniObject reset();
-		QAndroidJniObject unmappableCharacterAction();
+		java::nio::charset::CharsetEncoder reset();
+		java::nio::charset::CodingErrorAction unmappableCharacterAction();
 	};
 } // namespace java::nio::charset
 

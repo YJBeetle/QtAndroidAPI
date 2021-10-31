@@ -34,8 +34,8 @@ namespace android::app
 		SharedElementCallback();
 		
 		// Methods
-		QAndroidJniObject onCaptureSharedElementSnapshot(android::view::View arg0, android::graphics::Matrix arg1, android::graphics::RectF arg2);
-		QAndroidJniObject onCreateSnapshotView(android::content::Context arg0, __JniBaseClass arg1);
+		__JniBaseClass onCaptureSharedElementSnapshot(android::view::View arg0, android::graphics::Matrix arg1, android::graphics::RectF arg2);
+		android::view::View onCreateSnapshotView(android::content::Context arg0, __JniBaseClass arg1);
 		void onMapSharedElements(__JniBaseClass arg0, __JniBaseClass arg1);
 		void onRejectSharedElements(__JniBaseClass arg0);
 		void onSharedElementEnd(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);

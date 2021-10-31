@@ -36,21 +36,21 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject open();
-		static QAndroidJniObject open(__JniBaseClass arg0);
-		QAndroidJniObject bind(java::net::SocketAddress arg0);
-		QAndroidJniObject connect(java::net::SocketAddress arg0);
-		QAndroidJniObject disconnect();
-		QAndroidJniObject getLocalAddress();
-		QAndroidJniObject getRemoteAddress();
+		static java::nio::channels::DatagramChannel open();
+		static java::nio::channels::DatagramChannel open(__JniBaseClass arg0);
+		java::nio::channels::DatagramChannel bind(java::net::SocketAddress arg0);
+		java::nio::channels::DatagramChannel connect(java::net::SocketAddress arg0);
+		java::nio::channels::DatagramChannel disconnect();
+		java::net::SocketAddress getLocalAddress();
+		java::net::SocketAddress getRemoteAddress();
 		jboolean isConnected();
 		jint read(java::nio::ByteBuffer arg0);
 		jlong read(jarray arg0);
 		jlong read(jarray arg0, jint arg1, jint arg2);
-		QAndroidJniObject receive(java::nio::ByteBuffer arg0);
+		java::net::SocketAddress receive(java::nio::ByteBuffer arg0);
 		jint send(java::nio::ByteBuffer arg0, java::net::SocketAddress arg1);
-		QAndroidJniObject setOption(__JniBaseClass arg0, jobject arg1);
-		QAndroidJniObject socket();
+		java::nio::channels::DatagramChannel setOption(__JniBaseClass arg0, jobject arg1);
+		java::net::DatagramSocket socket();
 		jint validOps();
 		jint write(java::nio::ByteBuffer arg0);
 		jlong write(jarray arg0);

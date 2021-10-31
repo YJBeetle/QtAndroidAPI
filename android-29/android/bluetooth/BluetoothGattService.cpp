@@ -6,7 +6,7 @@
 namespace android::bluetooth
 {
 	// Fields
-	QAndroidJniObject BluetoothGattService::CREATOR()
+	__JniBaseClass BluetoothGattService::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothGattService",
@@ -65,7 +65,7 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	QAndroidJniObject BluetoothGattService::getCharacteristic(java::util::UUID arg0)
+	android::bluetooth::BluetoothGattCharacteristic BluetoothGattService::getCharacteristic(java::util::UUID arg0)
 	{
 		return callObjectMethod(
 			"getCharacteristic",
@@ -73,14 +73,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	QAndroidJniObject BluetoothGattService::getCharacteristics()
+	__JniBaseClass BluetoothGattService::getCharacteristics()
 	{
 		return callObjectMethod(
 			"getCharacteristics",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject BluetoothGattService::getIncludedServices()
+	__JniBaseClass BluetoothGattService::getIncludedServices()
 	{
 		return callObjectMethod(
 			"getIncludedServices",
@@ -101,7 +101,7 @@ namespace android::bluetooth
 			"()I"
 		);
 	}
-	QAndroidJniObject BluetoothGattService::getUuid()
+	java::util::UUID BluetoothGattService::getUuid()
 	{
 		return callObjectMethod(
 			"getUuid",

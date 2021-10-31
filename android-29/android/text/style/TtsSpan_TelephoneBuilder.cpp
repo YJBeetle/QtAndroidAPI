@@ -21,7 +21,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_TelephoneBuilder::setCountryCode(jstring arg0)
+	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setCountryCode(jstring arg0)
 	{
 		return callObjectMethod(
 			"setCountryCode",
@@ -29,7 +29,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_TelephoneBuilder::setExtension(jstring arg0)
+	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setExtension(jstring arg0)
 	{
 		return callObjectMethod(
 			"setExtension",
@@ -37,7 +37,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_TelephoneBuilder::setNumberParts(jstring arg0)
+	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setNumberParts(jstring arg0)
 	{
 		return callObjectMethod(
 			"setNumberParts",

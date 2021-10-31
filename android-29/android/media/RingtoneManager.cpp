@@ -148,7 +148,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject RingtoneManager::getActualDefaultRingtoneUri(android::content::Context arg0, jint arg1)
+	android::net::Uri RingtoneManager::getActualDefaultRingtoneUri(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.RingtoneManager",
@@ -167,7 +167,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RingtoneManager::getDefaultUri(jint arg0)
+	android::net::Uri RingtoneManager::getDefaultUri(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.RingtoneManager",
@@ -176,7 +176,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject RingtoneManager::getRingtone(android::content::Context arg0, android::net::Uri arg1)
+	android::media::Ringtone RingtoneManager::getRingtone(android::content::Context arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.RingtoneManager",
@@ -186,7 +186,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	QAndroidJniObject RingtoneManager::getValidRingtoneUri(android::content::Context arg0)
+	android::net::Uri RingtoneManager::getValidRingtoneUri(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.RingtoneManager",
@@ -213,7 +213,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RingtoneManager::openDefaultRingtoneUri(android::content::Context arg0, android::net::Uri arg1)
+	android::content::res::AssetFileDescriptor RingtoneManager::openDefaultRingtoneUri(android::content::Context arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.RingtoneManager",
@@ -234,7 +234,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	QAndroidJniObject RingtoneManager::getCursor()
+	__JniBaseClass RingtoneManager::getCursor()
 	{
 		return callObjectMethod(
 			"getCursor",
@@ -248,7 +248,7 @@ namespace android::media
 			"()Z"
 		);
 	}
-	QAndroidJniObject RingtoneManager::getRingtone(jint arg0)
+	android::media::Ringtone RingtoneManager::getRingtone(jint arg0)
 	{
 		return callObjectMethod(
 			"getRingtone",
@@ -264,7 +264,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RingtoneManager::getRingtoneUri(jint arg0)
+	android::net::Uri RingtoneManager::getRingtoneUri(jint arg0)
 	{
 		return callObjectMethod(
 			"getRingtoneUri",

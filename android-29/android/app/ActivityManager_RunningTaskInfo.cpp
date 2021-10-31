@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject ActivityManager_RunningTaskInfo::CREATOR()
+	__JniBaseClass ActivityManager_RunningTaskInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$RunningTaskInfo",
@@ -32,7 +32,7 @@ namespace android::app
 			"numRunning"
 		);
 	}
-	QAndroidJniObject ActivityManager_RunningTaskInfo::thumbnail()
+	android::graphics::Bitmap ActivityManager_RunningTaskInfo::thumbnail()
 	{
 		return getObjectField(
 			"thumbnail",

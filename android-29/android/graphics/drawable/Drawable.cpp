@@ -30,7 +30,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	QAndroidJniObject Drawable::createFromPath(jstring arg0)
+	android::graphics::drawable::Drawable Drawable::createFromPath(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -39,7 +39,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	QAndroidJniObject Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3)
+	android::graphics::drawable::Drawable Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -51,7 +51,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	QAndroidJniObject Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3, android::graphics::BitmapFactory_Options arg4)
+	android::graphics::drawable::Drawable Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3, android::graphics::BitmapFactory_Options arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -64,7 +64,7 @@ namespace android::graphics::drawable
 			arg4.object()
 		);
 	}
-	QAndroidJniObject Drawable::createFromStream(java::io::InputStream arg0, jstring arg1)
+	android::graphics::drawable::Drawable Drawable::createFromStream(java::io::InputStream arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -74,7 +74,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	QAndroidJniObject Drawable::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1)
+	android::graphics::drawable::Drawable Drawable::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -84,7 +84,7 @@ namespace android::graphics::drawable
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Drawable::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2)
+	android::graphics::drawable::Drawable Drawable::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -95,7 +95,7 @@ namespace android::graphics::drawable
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Drawable::createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	android::graphics::drawable::Drawable Drawable::createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -106,7 +106,7 @@ namespace android::graphics::drawable
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Drawable::createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
+	android::graphics::drawable::Drawable Drawable::createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -150,7 +150,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	QAndroidJniObject Drawable::copyBounds()
+	android::graphics::Rect Drawable::copyBounds()
 	{
 		return callObjectMethod(
 			"copyBounds",
@@ -180,14 +180,14 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject Drawable::getBounds()
+	android::graphics::Rect Drawable::getBounds()
 	{
 		return callObjectMethod(
 			"getBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	QAndroidJniObject Drawable::getCallback()
+	__JniBaseClass Drawable::getCallback()
 	{
 		return callObjectMethod(
 			"getCallback",
@@ -201,28 +201,28 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject Drawable::getColorFilter()
+	android::graphics::ColorFilter Drawable::getColorFilter()
 	{
 		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
-	QAndroidJniObject Drawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState Drawable::getConstantState()
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	QAndroidJniObject Drawable::getCurrent()
+	android::graphics::drawable::Drawable Drawable::getCurrent()
 	{
 		return callObjectMethod(
 			"getCurrent",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject Drawable::getDirtyBounds()
+	android::graphics::Rect Drawable::getDirtyBounds()
 	{
 		return callObjectMethod(
 			"getDirtyBounds",
@@ -286,7 +286,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject Drawable::getOpticalInsets()
+	android::graphics::Insets Drawable::getOpticalInsets()
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
@@ -316,7 +316,7 @@ namespace android::graphics::drawable
 			"()[I"
 		).object<jintArray>();
 	}
-	QAndroidJniObject Drawable::getTransparentRegion()
+	android::graphics::Region Drawable::getTransparentRegion()
 	{
 		return callObjectMethod(
 			"getTransparentRegion",
@@ -393,7 +393,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	QAndroidJniObject Drawable::mutate()
+	android::graphics::drawable::Drawable Drawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

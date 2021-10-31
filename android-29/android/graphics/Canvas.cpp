@@ -755,7 +755,7 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	QAndroidJniObject Canvas::getClipBounds()
+	android::graphics::Rect Canvas::getClipBounds()
 	{
 		return callObjectMethod(
 			"getClipBounds",
@@ -777,7 +777,7 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	QAndroidJniObject Canvas::getDrawFilter()
+	android::graphics::DrawFilter Canvas::getDrawFilter()
 	{
 		return callObjectMethod(
 			"getDrawFilter",
@@ -791,7 +791,7 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	QAndroidJniObject Canvas::getMatrix()
+	android::graphics::Matrix Canvas::getMatrix()
 	{
 		return callObjectMethod(
 			"getMatrix",

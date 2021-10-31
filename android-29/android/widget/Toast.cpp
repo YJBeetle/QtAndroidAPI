@@ -32,7 +32,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject Toast::makeText(android::content::Context arg0, jint arg1, jint arg2)
+	android::widget::Toast Toast::makeText(android::content::Context arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.Toast",
@@ -43,7 +43,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	QAndroidJniObject Toast::makeText(android::content::Context arg0, jstring arg1, jint arg2)
+	android::widget::Toast Toast::makeText(android::content::Context arg0, jstring arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.Toast",
@@ -89,7 +89,7 @@ namespace android::widget
 			"()F"
 		);
 	}
-	QAndroidJniObject Toast::getView()
+	android::view::View Toast::getView()
 	{
 		return callObjectMethod(
 			"getView",

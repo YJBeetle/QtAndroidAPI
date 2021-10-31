@@ -38,13 +38,13 @@ namespace android::view::contentcapture
 		
 		// Methods
 		void close();
-		QAndroidJniObject createContentCaptureSession(android::view::contentcapture::ContentCaptureContext arg0);
+		android::view::contentcapture::ContentCaptureSession createContentCaptureSession(android::view::contentcapture::ContentCaptureContext arg0);
 		void destroy();
-		QAndroidJniObject getContentCaptureContext();
-		QAndroidJniObject getContentCaptureSessionId();
-		QAndroidJniObject newAutofillId(android::view::autofill::AutofillId arg0, jlong arg1);
-		QAndroidJniObject newViewStructure(android::view::View arg0);
-		QAndroidJniObject newVirtualViewStructure(android::view::autofill::AutofillId arg0, jlong arg1);
+		android::view::contentcapture::ContentCaptureContext getContentCaptureContext();
+		android::view::contentcapture::ContentCaptureSessionId getContentCaptureSessionId();
+		android::view::autofill::AutofillId newAutofillId(android::view::autofill::AutofillId arg0, jlong arg1);
+		android::view::ViewStructure newViewStructure(android::view::View arg0);
+		android::view::ViewStructure newVirtualViewStructure(android::view::autofill::AutofillId arg0, jlong arg1);
 		void notifyViewAppeared(android::view::ViewStructure arg0);
 		void notifyViewDisappeared(android::view::autofill::AutofillId arg0);
 		void notifyViewTextChanged(android::view::autofill::AutofillId arg0, jstring arg1);

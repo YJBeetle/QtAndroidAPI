@@ -22,9 +22,9 @@ namespace java::net
 		CookieHandler();
 		
 		// Methods
-		static QAndroidJniObject getDefault();
+		static java::net::CookieHandler getDefault();
 		static void setDefault(java::net::CookieHandler arg0);
-		QAndroidJniObject get(java::net::URI arg0, __JniBaseClass arg1);
+		__JniBaseClass get(java::net::URI arg0, __JniBaseClass arg1);
 		void put(java::net::URI arg0, __JniBaseClass arg1);
 	};
 } // namespace java::net

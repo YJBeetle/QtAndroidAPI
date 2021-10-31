@@ -25,7 +25,7 @@ namespace android::hardware::camera2::params
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint SESSION_HIGH_SPEED();
 		static jint SESSION_REGULAR();
 		
@@ -39,12 +39,12 @@ namespace android::hardware::camera2::params
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getExecutor();
-		QAndroidJniObject getInputConfiguration();
-		QAndroidJniObject getOutputConfigurations();
-		QAndroidJniObject getSessionParameters();
+		__JniBaseClass getExecutor();
+		android::hardware::camera2::params::InputConfiguration getInputConfiguration();
+		__JniBaseClass getOutputConfigurations();
+		android::hardware::camera2::CaptureRequest getSessionParameters();
 		jint getSessionType();
-		QAndroidJniObject getStateCallback();
+		android::hardware::camera2::CameraCaptureSession_StateCallback getStateCallback();
 		jint hashCode();
 		void setInputConfiguration(android::hardware::camera2::params::InputConfiguration arg0);
 		void setSessionParameters(android::hardware::camera2::CaptureRequest arg0);

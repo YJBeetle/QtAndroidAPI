@@ -75,7 +75,7 @@ namespace android::app::role
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RoleManager::createRequestRoleIntent(jstring arg0)
+	android::content::Intent RoleManager::createRequestRoleIntent(jstring arg0)
 	{
 		return callObjectMethod(
 			"createRequestRoleIntent",

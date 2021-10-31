@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject Region_Op::DIFFERENCE()
+	android::graphics::Region_Op Region_Op::DIFFERENCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Region$Op",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/Region$Op;"
 		);
 	}
-	QAndroidJniObject Region_Op::INTERSECT()
+	android::graphics::Region_Op Region_Op::INTERSECT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Region$Op",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/Region$Op;"
 		);
 	}
-	QAndroidJniObject Region_Op::REPLACE()
+	android::graphics::Region_Op Region_Op::REPLACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Region$Op",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"Landroid/graphics/Region$Op;"
 		);
 	}
-	QAndroidJniObject Region_Op::REVERSE_DIFFERENCE()
+	android::graphics::Region_Op Region_Op::REVERSE_DIFFERENCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Region$Op",
@@ -35,7 +35,7 @@ namespace android::graphics
 			"Landroid/graphics/Region$Op;"
 		);
 	}
-	QAndroidJniObject Region_Op::UNION()
+	android::graphics::Region_Op Region_Op::UNION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Region$Op",
@@ -43,7 +43,7 @@ namespace android::graphics
 			"Landroid/graphics/Region$Op;"
 		);
 	}
-	QAndroidJniObject Region_Op::XOR()
+	android::graphics::Region_Op Region_Op::XOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Region$Op",
@@ -58,7 +58,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Region_Op::valueOf(jstring arg0)
+	android::graphics::Region_Op Region_Op::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Region$Op",

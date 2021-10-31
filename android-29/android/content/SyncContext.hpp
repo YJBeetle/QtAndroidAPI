@@ -21,7 +21,7 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getSyncContextBinder();
+		__JniBaseClass getSyncContextBinder();
 		void onFinished(android::content::SyncResult arg0);
 	};
 } // namespace android::content

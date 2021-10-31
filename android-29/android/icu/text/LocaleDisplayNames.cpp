@@ -15,7 +15,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject LocaleDisplayNames::getInstance(android::icu::util::ULocale arg0)
+	android::icu::text::LocaleDisplayNames LocaleDisplayNames::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames",
@@ -24,7 +24,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames::getInstance(java::util::Locale arg0)
+	android::icu::text::LocaleDisplayNames LocaleDisplayNames::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames",
@@ -33,7 +33,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames::getInstance(android::icu::util::ULocale arg0, jarray arg1)
+	android::icu::text::LocaleDisplayNames LocaleDisplayNames::getInstance(android::icu::util::ULocale arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames",
@@ -43,7 +43,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames::getInstance(android::icu::util::ULocale arg0, android::icu::text::LocaleDisplayNames_DialectHandling arg1)
+	android::icu::text::LocaleDisplayNames LocaleDisplayNames::getInstance(android::icu::util::ULocale arg0, android::icu::text::LocaleDisplayNames_DialectHandling arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames",
@@ -53,7 +53,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames::getInstance(java::util::Locale arg0, jarray arg1)
+	android::icu::text::LocaleDisplayNames LocaleDisplayNames::getInstance(java::util::Locale arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames",
@@ -63,7 +63,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames::getContext(android::icu::text::DisplayContext_Type arg0)
+	android::icu::text::DisplayContext LocaleDisplayNames::getContext(android::icu::text::DisplayContext_Type arg0)
 	{
 		return callObjectMethod(
 			"getContext",
@@ -71,21 +71,21 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames::getDialectHandling()
+	android::icu::text::LocaleDisplayNames_DialectHandling LocaleDisplayNames::getDialectHandling()
 	{
 		return callObjectMethod(
 			"getDialectHandling",
 			"()Landroid/icu/text/LocaleDisplayNames$DialectHandling;"
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames::getLocale()
+	android::icu::util::ULocale LocaleDisplayNames::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames::getUiList(__JniBaseClass arg0, jboolean arg1, __JniBaseClass arg2)
+	__JniBaseClass LocaleDisplayNames::getUiList(__JniBaseClass arg0, jboolean arg1, __JniBaseClass arg2)
 	{
 		return callObjectMethod(
 			"getUiList",
@@ -95,7 +95,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames::getUiListCompareWholeItems(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass LocaleDisplayNames::getUiListCompareWholeItems(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"getUiListCompareWholeItems",

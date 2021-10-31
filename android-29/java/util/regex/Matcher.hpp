@@ -30,10 +30,10 @@ namespace java::util::regex
 		
 		// Methods
 		static jstring quoteReplacement(jstring arg0);
-		QAndroidJniObject appendReplacement(java::lang::StringBuffer arg0, jstring arg1);
-		QAndroidJniObject appendReplacement(java::lang::StringBuilder arg0, jstring arg1);
-		QAndroidJniObject appendTail(java::lang::StringBuffer arg0);
-		QAndroidJniObject appendTail(java::lang::StringBuilder arg0);
+		java::util::regex::Matcher appendReplacement(java::lang::StringBuffer arg0, jstring arg1);
+		java::util::regex::Matcher appendReplacement(java::lang::StringBuilder arg0, jstring arg1);
+		java::lang::StringBuffer appendTail(java::lang::StringBuffer arg0);
+		java::lang::StringBuilder appendTail(java::lang::StringBuilder arg0);
 		jint end();
 		jint end(jint arg0);
 		jint end(jstring arg0);
@@ -48,8 +48,8 @@ namespace java::util::regex
 		jboolean hitEnd();
 		jboolean lookingAt();
 		jboolean matches();
-		QAndroidJniObject pattern();
-		QAndroidJniObject region(jint arg0, jint arg1);
+		java::util::regex::Pattern pattern();
+		java::util::regex::Matcher region(jint arg0, jint arg1);
 		jint regionEnd();
 		jint regionStart();
 		jstring replaceAll(jstring arg0);
@@ -57,17 +57,17 @@ namespace java::util::regex
 		jstring replaceFirst(jstring arg0);
 		jstring replaceFirst(__JniBaseClass arg0);
 		jboolean requireEnd();
-		QAndroidJniObject reset();
-		QAndroidJniObject reset(jstring arg0);
-		QAndroidJniObject results();
+		java::util::regex::Matcher reset();
+		java::util::regex::Matcher reset(jstring arg0);
+		__JniBaseClass results();
 		jint start();
 		jint start(jint arg0);
 		jint start(jstring arg0);
-		QAndroidJniObject toMatchResult();
+		__JniBaseClass toMatchResult();
 		jstring toString();
-		QAndroidJniObject useAnchoringBounds(jboolean arg0);
-		QAndroidJniObject usePattern(java::util::regex::Pattern arg0);
-		QAndroidJniObject useTransparentBounds(jboolean arg0);
+		java::util::regex::Matcher useAnchoringBounds(jboolean arg0);
+		java::util::regex::Matcher usePattern(java::util::regex::Pattern arg0);
+		java::util::regex::Matcher useTransparentBounds(jboolean arg0);
 	};
 } // namespace java::util::regex
 

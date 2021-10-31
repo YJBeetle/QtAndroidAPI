@@ -3,7 +3,7 @@
 namespace android::net::rtp
 {
 	// Fields
-	QAndroidJniObject AudioCodec::AMR()
+	android::net::rtp::AudioCodec AudioCodec::AMR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.rtp.AudioCodec",
@@ -11,7 +11,7 @@ namespace android::net::rtp
 			"Landroid/net/rtp/AudioCodec;"
 		);
 	}
-	QAndroidJniObject AudioCodec::GSM()
+	android::net::rtp::AudioCodec AudioCodec::GSM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.rtp.AudioCodec",
@@ -19,7 +19,7 @@ namespace android::net::rtp
 			"Landroid/net/rtp/AudioCodec;"
 		);
 	}
-	QAndroidJniObject AudioCodec::GSM_EFR()
+	android::net::rtp::AudioCodec AudioCodec::GSM_EFR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.rtp.AudioCodec",
@@ -27,7 +27,7 @@ namespace android::net::rtp
 			"Landroid/net/rtp/AudioCodec;"
 		);
 	}
-	QAndroidJniObject AudioCodec::PCMA()
+	android::net::rtp::AudioCodec AudioCodec::PCMA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.rtp.AudioCodec",
@@ -35,7 +35,7 @@ namespace android::net::rtp
 			"Landroid/net/rtp/AudioCodec;"
 		);
 	}
-	QAndroidJniObject AudioCodec::PCMU()
+	android::net::rtp::AudioCodec AudioCodec::PCMU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.rtp.AudioCodec",
@@ -70,7 +70,7 @@ namespace android::net::rtp
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AudioCodec::getCodec(jint arg0, jstring arg1, jstring arg2)
+	android::net::rtp::AudioCodec AudioCodec::getCodec(jint arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.rtp.AudioCodec",

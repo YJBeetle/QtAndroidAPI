@@ -14,7 +14,7 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DynamicLayout_Builder::obtain(jstring arg0, android::text::TextPaint arg1, jint arg2)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::obtain(jstring arg0, android::text::TextPaint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.DynamicLayout$Builder",
@@ -25,14 +25,14 @@ namespace android::text
 			arg2
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::build()
+	android::text::DynamicLayout DynamicLayout_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/text/DynamicLayout;"
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setAlignment(android::text::Layout_Alignment arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setAlignment(android::text::Layout_Alignment arg0)
 	{
 		return callObjectMethod(
 			"setAlignment",
@@ -40,7 +40,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setBreakStrategy(jint arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setBreakStrategy(jint arg0)
 	{
 		return callObjectMethod(
 			"setBreakStrategy",
@@ -48,7 +48,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setDisplayText(jstring arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setDisplayText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setDisplayText",
@@ -56,7 +56,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0)
 	{
 		return callObjectMethod(
 			"setEllipsize",
@@ -64,7 +64,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setEllipsizedWidth(jint arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setEllipsizedWidth(jint arg0)
 	{
 		return callObjectMethod(
 			"setEllipsizedWidth",
@@ -72,7 +72,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setHyphenationFrequency(jint arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setHyphenationFrequency(jint arg0)
 	{
 		return callObjectMethod(
 			"setHyphenationFrequency",
@@ -80,7 +80,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setIncludePad(jboolean arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setIncludePad(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIncludePad",
@@ -88,7 +88,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setJustificationMode(jint arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setJustificationMode(jint arg0)
 	{
 		return callObjectMethod(
 			"setJustificationMode",
@@ -96,7 +96,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setLineSpacing(jfloat arg0, jfloat arg1)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setLineSpacing(jfloat arg0, jfloat arg1)
 	{
 		return callObjectMethod(
 			"setLineSpacing",
@@ -105,7 +105,7 @@ namespace android::text
 			arg1
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setTextDirection(__JniBaseClass arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setTextDirection(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setTextDirection",
@@ -113,7 +113,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::setUseLineSpacingFromFallbacks(jboolean arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setUseLineSpacingFromFallbacks(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setUseLineSpacingFromFallbacks",

@@ -158,7 +158,7 @@ namespace java::util::prefs
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AbstractPreferences::node(jstring arg0)
+	java::util::prefs::Preferences AbstractPreferences::node(jstring arg0)
 	{
 		return callObjectMethod(
 			"node",
@@ -174,7 +174,7 @@ namespace java::util::prefs
 			arg0
 		);
 	}
-	QAndroidJniObject AbstractPreferences::parent()
+	java::util::prefs::Preferences AbstractPreferences::parent()
 	{
 		return callObjectMethod(
 			"parent",

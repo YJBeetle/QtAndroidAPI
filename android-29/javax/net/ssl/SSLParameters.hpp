@@ -20,7 +20,7 @@ namespace javax::net::ssl
 		SSLParameters(jarray arg0, jarray arg1);
 		
 		// Methods
-		QAndroidJniObject getAlgorithmConstraints();
+		__JniBaseClass getAlgorithmConstraints();
 		jarray getApplicationProtocols();
 		jarray getCipherSuites();
 		jboolean getEnableRetransmissions();
@@ -28,8 +28,8 @@ namespace javax::net::ssl
 		jint getMaximumPacketSize();
 		jboolean getNeedClientAuth();
 		jarray getProtocols();
-		QAndroidJniObject getSNIMatchers();
-		QAndroidJniObject getServerNames();
+		__JniBaseClass getSNIMatchers();
+		__JniBaseClass getServerNames();
 		jboolean getUseCipherSuitesOrder();
 		jboolean getWantClientAuth();
 		void setAlgorithmConstraints(__JniBaseClass arg0);

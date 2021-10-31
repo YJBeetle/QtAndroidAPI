@@ -19,14 +19,14 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject VoiceInteractor_Request::getActivity()
+	android::app::Activity VoiceInteractor_Request::getActivity()
 	{
 		return callObjectMethod(
 			"getActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	QAndroidJniObject VoiceInteractor_Request::getContext()
+	android::content::Context VoiceInteractor_Request::getContext()
 	{
 		return callObjectMethod(
 			"getContext",

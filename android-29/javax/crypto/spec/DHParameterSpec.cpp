@@ -26,7 +26,7 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	QAndroidJniObject DHParameterSpec::getG()
+	java::math::BigInteger DHParameterSpec::getG()
 	{
 		return callObjectMethod(
 			"getG",
@@ -40,7 +40,7 @@ namespace javax::crypto::spec
 			"()I"
 		);
 	}
-	QAndroidJniObject DHParameterSpec::getP()
+	java::math::BigInteger DHParameterSpec::getP()
 	{
 		return callObjectMethod(
 			"getP",

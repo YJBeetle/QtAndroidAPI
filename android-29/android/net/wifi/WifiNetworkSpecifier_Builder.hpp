@@ -34,17 +34,17 @@ namespace android::net::wifi
 		WifiNetworkSpecifier_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setBssid(android::net::MacAddress arg0);
-		QAndroidJniObject setBssidPattern(android::net::MacAddress arg0, android::net::MacAddress arg1);
-		QAndroidJniObject setIsEnhancedOpen(jboolean arg0);
-		QAndroidJniObject setIsHiddenSsid(jboolean arg0);
-		QAndroidJniObject setSsid(jstring arg0);
-		QAndroidJniObject setSsidPattern(android::os::PatternMatcher arg0);
-		QAndroidJniObject setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		QAndroidJniObject setWpa2Passphrase(jstring arg0);
-		QAndroidJniObject setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		QAndroidJniObject setWpa3Passphrase(jstring arg0);
+		android::net::wifi::WifiNetworkSpecifier build();
+		android::net::wifi::WifiNetworkSpecifier_Builder setBssid(android::net::MacAddress arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setBssidPattern(android::net::MacAddress arg0, android::net::MacAddress arg1);
+		android::net::wifi::WifiNetworkSpecifier_Builder setIsEnhancedOpen(jboolean arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setIsHiddenSsid(jboolean arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setSsid(jstring arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setSsidPattern(android::os::PatternMatcher arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setWpa2Passphrase(jstring arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
+		android::net::wifi::WifiNetworkSpecifier_Builder setWpa3Passphrase(jstring arg0);
 	};
 } // namespace android::net::wifi
 

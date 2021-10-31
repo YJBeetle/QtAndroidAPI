@@ -39,7 +39,7 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	QAndroidJniObject ImageDecoder_DecodeException::getSource()
+	android::graphics::ImageDecoder_Source ImageDecoder_DecodeException::getSource()
 	{
 		return callObjectMethod(
 			"getSource",

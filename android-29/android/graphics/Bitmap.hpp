@@ -61,7 +61,7 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DENSITY_NONE();
 		
 		// QAndroidJniObject forward
@@ -71,37 +71,37 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createBitmap(android::graphics::Bitmap arg0);
-		static QAndroidJniObject createBitmap(android::graphics::Picture arg0);
-		static QAndroidJniObject createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2);
-		static QAndroidJniObject createBitmap(jintArray arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3);
-		static QAndroidJniObject createBitmap(android::graphics::Picture arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3);
-		static QAndroidJniObject createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3);
-		static QAndroidJniObject createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2, jboolean arg3);
-		static QAndroidJniObject createBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static QAndroidJniObject createBitmap(android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, android::graphics::Bitmap_Config arg4);
-		static QAndroidJniObject createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3, jboolean arg4);
-		static QAndroidJniObject createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2, jboolean arg3, android::graphics::ColorSpace arg4);
-		static QAndroidJniObject createBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Bitmap_Config arg5);
-		static QAndroidJniObject createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3, jboolean arg4, android::graphics::ColorSpace arg5);
-		static QAndroidJniObject createBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Matrix arg5, jboolean arg6);
-		static QAndroidJniObject createBitmap(android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::graphics::Bitmap_Config arg6);
-		static QAndroidJniObject createScaledBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jboolean arg3);
-		static QAndroidJniObject wrapHardwareBuffer(android::hardware::HardwareBuffer arg0, android::graphics::ColorSpace arg1);
+		static android::graphics::Bitmap createBitmap(android::graphics::Bitmap arg0);
+		static android::graphics::Bitmap createBitmap(android::graphics::Picture arg0);
+		static android::graphics::Bitmap createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2);
+		static android::graphics::Bitmap createBitmap(jintArray arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3);
+		static android::graphics::Bitmap createBitmap(android::graphics::Picture arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3);
+		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3);
+		static android::graphics::Bitmap createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2, jboolean arg3);
+		static android::graphics::Bitmap createBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, android::graphics::Bitmap_Config arg4);
+		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3, jboolean arg4);
+		static android::graphics::Bitmap createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2, jboolean arg3, android::graphics::ColorSpace arg4);
+		static android::graphics::Bitmap createBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Bitmap_Config arg5);
+		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3, jboolean arg4, android::graphics::ColorSpace arg5);
+		static android::graphics::Bitmap createBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Matrix arg5, jboolean arg6);
+		static android::graphics::Bitmap createBitmap(android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::graphics::Bitmap_Config arg6);
+		static android::graphics::Bitmap createScaledBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jboolean arg3);
+		static android::graphics::Bitmap wrapHardwareBuffer(android::hardware::HardwareBuffer arg0, android::graphics::ColorSpace arg1);
 		jboolean compress(android::graphics::Bitmap_CompressFormat arg0, jint arg1, java::io::OutputStream arg2);
-		QAndroidJniObject copy(android::graphics::Bitmap_Config arg0, jboolean arg1);
+		android::graphics::Bitmap copy(android::graphics::Bitmap_Config arg0, jboolean arg1);
 		void copyPixelsFromBuffer(java::nio::Buffer arg0);
 		void copyPixelsToBuffer(java::nio::Buffer arg0);
 		jint describeContents();
 		void eraseColor(jint arg0);
 		void eraseColor(jlong arg0);
-		QAndroidJniObject extractAlpha();
-		QAndroidJniObject extractAlpha(android::graphics::Paint arg0, jintArray arg1);
+		android::graphics::Bitmap extractAlpha();
+		android::graphics::Bitmap extractAlpha(android::graphics::Paint arg0, jintArray arg1);
 		jint getAllocationByteCount();
 		jint getByteCount();
-		QAndroidJniObject getColor(jint arg0, jint arg1);
-		QAndroidJniObject getColorSpace();
-		QAndroidJniObject getConfig();
+		android::graphics::Color getColor(jint arg0, jint arg1);
+		android::graphics::ColorSpace getColorSpace();
+		android::graphics::Bitmap_Config getConfig();
 		jint getDensity();
 		jint getGenerationId();
 		jint getHeight();

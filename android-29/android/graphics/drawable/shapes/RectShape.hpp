@@ -39,7 +39,7 @@ namespace android::graphics::drawable::shapes
 		RectShape();
 		
 		// Methods
-		QAndroidJniObject clone();
+		android::graphics::drawable::shapes::RectShape clone();
 		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
 		jboolean equals(jobject arg0);
 		void getOutline(android::graphics::Outline arg0);

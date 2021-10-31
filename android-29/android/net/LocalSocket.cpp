@@ -86,35 +86,35 @@ namespace android::net
 			"()[Ljava/io/FileDescriptor;"
 		).object<jarray>();
 	}
-	QAndroidJniObject LocalSocket::getFileDescriptor()
+	java::io::FileDescriptor LocalSocket::getFileDescriptor()
 	{
 		return callObjectMethod(
 			"getFileDescriptor",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
-	QAndroidJniObject LocalSocket::getInputStream()
+	java::io::InputStream LocalSocket::getInputStream()
 	{
 		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	QAndroidJniObject LocalSocket::getLocalSocketAddress()
+	android::net::LocalSocketAddress LocalSocket::getLocalSocketAddress()
 	{
 		return callObjectMethod(
 			"getLocalSocketAddress",
 			"()Landroid/net/LocalSocketAddress;"
 		);
 	}
-	QAndroidJniObject LocalSocket::getOutputStream()
+	java::io::OutputStream LocalSocket::getOutputStream()
 	{
 		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	QAndroidJniObject LocalSocket::getPeerCredentials()
+	android::net::Credentials LocalSocket::getPeerCredentials()
 	{
 		return callObjectMethod(
 			"getPeerCredentials",
@@ -128,7 +128,7 @@ namespace android::net
 			"()I"
 		);
 	}
-	QAndroidJniObject LocalSocket::getRemoteSocketAddress()
+	android::net::LocalSocketAddress LocalSocket::getRemoteSocketAddress()
 	{
 		return callObjectMethod(
 			"getRemoteSocketAddress",

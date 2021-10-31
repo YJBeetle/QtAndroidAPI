@@ -28,7 +28,7 @@ namespace java::security::cert
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject CollectionCertStoreParameters::getCollection()
+	__JniBaseClass CollectionCertStoreParameters::getCollection()
 	{
 		return callObjectMethod(
 			"getCollection",

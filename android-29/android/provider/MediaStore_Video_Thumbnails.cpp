@@ -23,7 +23,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Video_Thumbnails::EXTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Video_Thumbnails::EXTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
@@ -46,7 +46,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Video_Thumbnails::INTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Video_Thumbnails::INTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Video$Thumbnails",
@@ -125,7 +125,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	QAndroidJniObject MediaStore_Video_Thumbnails::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Video_Thumbnails::getContentUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Video$Thumbnails",
@@ -134,7 +134,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject MediaStore_Video_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
+	android::graphics::Bitmap MediaStore_Video_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Video$Thumbnails",
@@ -146,7 +146,7 @@ namespace android::provider
 			arg3.object()
 		);
 	}
-	QAndroidJniObject MediaStore_Video_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, android::graphics::BitmapFactory_Options arg4)
+	android::graphics::Bitmap MediaStore_Video_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, android::graphics::BitmapFactory_Options arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Video$Thumbnails",

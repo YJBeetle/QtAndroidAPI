@@ -19,21 +19,21 @@ namespace android::view
 		) {}
 	
 	// Methods
-	QAndroidJniObject WindowInsets::consumeDisplayCutout()
+	android::view::WindowInsets WindowInsets::consumeDisplayCutout()
 	{
 		return callObjectMethod(
 			"consumeDisplayCutout",
 			"()Landroid/view/WindowInsets;"
 		);
 	}
-	QAndroidJniObject WindowInsets::consumeStableInsets()
+	android::view::WindowInsets WindowInsets::consumeStableInsets()
 	{
 		return callObjectMethod(
 			"consumeStableInsets",
 			"()Landroid/view/WindowInsets;"
 		);
 	}
-	QAndroidJniObject WindowInsets::consumeSystemWindowInsets()
+	android::view::WindowInsets WindowInsets::consumeSystemWindowInsets()
 	{
 		return callObjectMethod(
 			"consumeSystemWindowInsets",
@@ -48,14 +48,14 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject WindowInsets::getDisplayCutout()
+	android::view::DisplayCutout WindowInsets::getDisplayCutout()
 	{
 		return callObjectMethod(
 			"getDisplayCutout",
 			"()Landroid/view/DisplayCutout;"
 		);
 	}
-	QAndroidJniObject WindowInsets::getMandatorySystemGestureInsets()
+	android::graphics::Insets WindowInsets::getMandatorySystemGestureInsets()
 	{
 		return callObjectMethod(
 			"getMandatorySystemGestureInsets",
@@ -90,14 +90,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject WindowInsets::getStableInsets()
+	android::graphics::Insets WindowInsets::getStableInsets()
 	{
 		return callObjectMethod(
 			"getStableInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	QAndroidJniObject WindowInsets::getSystemGestureInsets()
+	android::graphics::Insets WindowInsets::getSystemGestureInsets()
 	{
 		return callObjectMethod(
 			"getSystemGestureInsets",
@@ -132,14 +132,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject WindowInsets::getSystemWindowInsets()
+	android::graphics::Insets WindowInsets::getSystemWindowInsets()
 	{
 		return callObjectMethod(
 			"getSystemWindowInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	QAndroidJniObject WindowInsets::getTappableElementInsets()
+	android::graphics::Insets WindowInsets::getTappableElementInsets()
 	{
 		return callObjectMethod(
 			"getTappableElementInsets",
@@ -174,7 +174,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject WindowInsets::inset(jint arg0, jint arg1, jint arg2, jint arg3)
+	android::view::WindowInsets WindowInsets::inset(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"inset",
@@ -199,7 +199,7 @@ namespace android::view
 			"()Z"
 		);
 	}
-	QAndroidJniObject WindowInsets::replaceSystemWindowInsets(android::graphics::Rect arg0)
+	android::view::WindowInsets WindowInsets::replaceSystemWindowInsets(android::graphics::Rect arg0)
 	{
 		return callObjectMethod(
 			"replaceSystemWindowInsets",
@@ -207,7 +207,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject WindowInsets::replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3)
+	android::view::WindowInsets WindowInsets::replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"replaceSystemWindowInsets",

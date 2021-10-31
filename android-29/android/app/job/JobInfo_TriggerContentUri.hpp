@@ -17,7 +17,7 @@ namespace android::app::job
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_NOTIFY_FOR_DESCENDANTS();
 		
 		// QAndroidJniObject forward
@@ -31,7 +31,7 @@ namespace android::app::job
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getFlags();
-		QAndroidJniObject getUri();
+		android::net::Uri getUri();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

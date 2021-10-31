@@ -93,7 +93,7 @@ namespace java::lang
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ThreadGroup::getParent()
+	java::lang::ThreadGroup ThreadGroup::getParent()
 	{
 		return callObjectMethod(
 			"getParent",

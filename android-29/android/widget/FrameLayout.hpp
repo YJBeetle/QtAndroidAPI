@@ -35,7 +35,7 @@ namespace android::widget
 		FrameLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::widget::FrameLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getAccessibilityClassName();
 		jboolean getConsiderGoneChildrenWhenMeasuring();
 		jboolean getMeasureAllChildren();

@@ -10,14 +10,14 @@ namespace android::database::sqlite
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SQLiteDatabase_OpenParams::getCursorFactory()
+	__JniBaseClass SQLiteDatabase_OpenParams::getCursorFactory()
 	{
 		return callObjectMethod(
 			"getCursorFactory",
 			"()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;"
 		);
 	}
-	QAndroidJniObject SQLiteDatabase_OpenParams::getErrorHandler()
+	__JniBaseClass SQLiteDatabase_OpenParams::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",

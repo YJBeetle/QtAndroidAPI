@@ -45,7 +45,7 @@ namespace android::widget
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject CursorTreeAdapter::getChild(jint arg0, jint arg1)
+	__JniBaseClass CursorTreeAdapter::getChild(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getChild",
@@ -63,7 +63,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject CursorTreeAdapter::getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4)
+	android::view::View CursorTreeAdapter::getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4)
 	{
 		return callObjectMethod(
 			"getChildView",
@@ -83,28 +83,28 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject CursorTreeAdapter::getCursor()
+	__JniBaseClass CursorTreeAdapter::getCursor()
 	{
 		return callObjectMethod(
 			"getCursor",
 			"()Landroid/database/Cursor;"
 		);
 	}
-	QAndroidJniObject CursorTreeAdapter::getFilter()
+	android::widget::Filter CursorTreeAdapter::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/widget/Filter;"
 		);
 	}
-	QAndroidJniObject CursorTreeAdapter::getFilterQueryProvider()
+	__JniBaseClass CursorTreeAdapter::getFilterQueryProvider()
 	{
 		return callObjectMethod(
 			"getFilterQueryProvider",
 			"()Landroid/widget/FilterQueryProvider;"
 		);
 	}
-	QAndroidJniObject CursorTreeAdapter::getGroup(jint arg0)
+	__JniBaseClass CursorTreeAdapter::getGroup(jint arg0)
 	{
 		return callObjectMethod(
 			"getGroup",
@@ -127,7 +127,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject CursorTreeAdapter::getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3)
+	android::view::View CursorTreeAdapter::getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3)
 	{
 		return callObjectMethod(
 			"getGroupView",
@@ -184,7 +184,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject CursorTreeAdapter::runQueryOnBackgroundThread(jstring arg0)
+	__JniBaseClass CursorTreeAdapter::runQueryOnBackgroundThread(jstring arg0)
 	{
 		return callObjectMethod(
 			"runQueryOnBackgroundThread",

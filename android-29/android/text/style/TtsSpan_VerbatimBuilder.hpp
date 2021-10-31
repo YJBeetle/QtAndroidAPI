@@ -21,7 +21,7 @@ namespace android::text::style
 		TtsSpan_VerbatimBuilder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject setVerbatim(jstring arg0);
+		android::text::style::TtsSpan_VerbatimBuilder setVerbatim(jstring arg0);
 	};
 } // namespace android::text::style
 

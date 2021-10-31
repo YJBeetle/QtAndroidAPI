@@ -10,9 +10,9 @@ namespace android::webkit
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CLOSE();
-		static QAndroidJniObject FAR();
-		static QAndroidJniObject MEDIUM();
+		static android::webkit::WebSettings_ZoomDensity CLOSE();
+		static android::webkit::WebSettings_ZoomDensity FAR();
+		static android::webkit::WebSettings_ZoomDensity MEDIUM();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebSettings_ZoomDensity(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::webkit::WebSettings_ZoomDensity valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::webkit

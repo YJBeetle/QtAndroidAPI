@@ -17,7 +17,7 @@ namespace android::net::nsd
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NsdServiceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,8 +28,8 @@ namespace android::net::nsd
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getAttributes();
-		QAndroidJniObject getHost();
+		__JniBaseClass getAttributes();
+		java::net::InetAddress getHost();
 		jint getPort();
 		jstring getServiceName();
 		jstring getServiceType();

@@ -116,7 +116,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AdapterView::getAdapter()
+	__JniBaseClass AdapterView::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
@@ -130,7 +130,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AdapterView::getEmptyView()
+	android::view::View AdapterView::getEmptyView()
 	{
 		return callObjectMethod(
 			"getEmptyView",
@@ -167,21 +167,21 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AdapterView::getOnItemClickListener()
+	__JniBaseClass AdapterView::getOnItemClickListener()
 	{
 		return callObjectMethod(
 			"getOnItemClickListener",
 			"()Landroid/widget/AdapterView$OnItemClickListener;"
 		);
 	}
-	QAndroidJniObject AdapterView::getOnItemLongClickListener()
+	__JniBaseClass AdapterView::getOnItemLongClickListener()
 	{
 		return callObjectMethod(
 			"getOnItemLongClickListener",
 			"()Landroid/widget/AdapterView$OnItemLongClickListener;"
 		);
 	}
-	QAndroidJniObject AdapterView::getOnItemSelectedListener()
+	__JniBaseClass AdapterView::getOnItemSelectedListener()
 	{
 		return callObjectMethod(
 			"getOnItemSelectedListener",
@@ -217,7 +217,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AdapterView::getSelectedView()
+	android::view::View AdapterView::getSelectedView()
 	{
 		return callObjectMethod(
 			"getSelectedView",

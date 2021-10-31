@@ -60,14 +60,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SurfaceView::getHolder()
+	__JniBaseClass SurfaceView::getHolder()
 	{
 		return callObjectMethod(
 			"getHolder",
 			"()Landroid/view/SurfaceHolder;"
 		);
 	}
-	QAndroidJniObject SurfaceView::getSurfaceControl()
+	android::view::SurfaceControl SurfaceView::getSurfaceControl()
 	{
 		return callObjectMethod(
 			"getSurfaceControl",

@@ -40,7 +40,7 @@ namespace android::graphics::drawable::shapes
 		ArcShape(jfloat arg0, jfloat arg1);
 		
 		// Methods
-		QAndroidJniObject clone();
+		android::graphics::drawable::shapes::ArcShape clone();
 		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
 		jboolean equals(jobject arg0);
 		void getOutline(android::graphics::Outline arg0);

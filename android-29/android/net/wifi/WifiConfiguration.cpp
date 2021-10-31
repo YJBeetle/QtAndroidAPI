@@ -29,56 +29,56 @@ namespace android::net::wifi
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WifiConfiguration::allowedAuthAlgorithms()
+	java::util::BitSet WifiConfiguration::allowedAuthAlgorithms()
 	{
 		return getObjectField(
 			"allowedAuthAlgorithms",
 			"Ljava/util/BitSet;"
 		);
 	}
-	QAndroidJniObject WifiConfiguration::allowedGroupCiphers()
+	java::util::BitSet WifiConfiguration::allowedGroupCiphers()
 	{
 		return getObjectField(
 			"allowedGroupCiphers",
 			"Ljava/util/BitSet;"
 		);
 	}
-	QAndroidJniObject WifiConfiguration::allowedGroupManagementCiphers()
+	java::util::BitSet WifiConfiguration::allowedGroupManagementCiphers()
 	{
 		return getObjectField(
 			"allowedGroupManagementCiphers",
 			"Ljava/util/BitSet;"
 		);
 	}
-	QAndroidJniObject WifiConfiguration::allowedKeyManagement()
+	java::util::BitSet WifiConfiguration::allowedKeyManagement()
 	{
 		return getObjectField(
 			"allowedKeyManagement",
 			"Ljava/util/BitSet;"
 		);
 	}
-	QAndroidJniObject WifiConfiguration::allowedPairwiseCiphers()
+	java::util::BitSet WifiConfiguration::allowedPairwiseCiphers()
 	{
 		return getObjectField(
 			"allowedPairwiseCiphers",
 			"Ljava/util/BitSet;"
 		);
 	}
-	QAndroidJniObject WifiConfiguration::allowedProtocols()
+	java::util::BitSet WifiConfiguration::allowedProtocols()
 	{
 		return getObjectField(
 			"allowedProtocols",
 			"Ljava/util/BitSet;"
 		);
 	}
-	QAndroidJniObject WifiConfiguration::allowedSuiteBCiphers()
+	java::util::BitSet WifiConfiguration::allowedSuiteBCiphers()
 	{
 		return getObjectField(
 			"allowedSuiteBCiphers",
 			"Ljava/util/BitSet;"
 		);
 	}
-	QAndroidJniObject WifiConfiguration::enterpriseConfig()
+	android::net::wifi::WifiEnterpriseConfig WifiConfiguration::enterpriseConfig()
 	{
 		return getObjectField(
 			"enterpriseConfig",
@@ -168,14 +168,14 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	QAndroidJniObject WifiConfiguration::getHttpProxy()
+	android::net::ProxyInfo WifiConfiguration::getHttpProxy()
 	{
 		return callObjectMethod(
 			"getHttpProxy",
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	QAndroidJniObject WifiConfiguration::getRandomizedMacAddress()
+	android::net::MacAddress WifiConfiguration::getRandomizedMacAddress()
 	{
 		return callObjectMethod(
 			"getRandomizedMacAddress",

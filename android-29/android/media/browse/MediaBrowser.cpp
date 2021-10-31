@@ -56,7 +56,7 @@ namespace android::media::browse
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaBrowser::getExtras()
+	android::os::Bundle MediaBrowser::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -79,14 +79,14 @@ namespace android::media::browse
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaBrowser::getServiceComponent()
+	android::content::ComponentName MediaBrowser::getServiceComponent()
 	{
 		return callObjectMethod(
 			"getServiceComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject MediaBrowser::getSessionToken()
+	android::media::session::MediaSession_Token MediaBrowser::getSessionToken()
 	{
 		return callObjectMethod(
 			"getSessionToken",

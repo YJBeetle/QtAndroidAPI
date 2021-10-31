@@ -53,23 +53,23 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getPlatformClassLoader();
-		static QAndroidJniObject getSystemClassLoader();
-		static QAndroidJniObject getSystemResource(jstring arg0);
-		static QAndroidJniObject getSystemResourceAsStream(jstring arg0);
-		static QAndroidJniObject getSystemResources(jstring arg0);
+		static java::lang::ClassLoader getPlatformClassLoader();
+		static java::lang::ClassLoader getSystemClassLoader();
+		static java::net::URL getSystemResource(jstring arg0);
+		static java::io::InputStream getSystemResourceAsStream(jstring arg0);
+		static __JniBaseClass getSystemResources(jstring arg0);
 		void clearAssertionStatus();
-		QAndroidJniObject getDefinedPackage(jstring arg0);
+		java::lang::Package getDefinedPackage(jstring arg0);
 		jarray getDefinedPackages();
 		jstring getName();
-		QAndroidJniObject getParent();
-		QAndroidJniObject getResource(jstring arg0);
-		QAndroidJniObject getResourceAsStream(jstring arg0);
-		QAndroidJniObject getResources(jstring arg0);
-		QAndroidJniObject getUnnamedModule();
+		java::lang::ClassLoader getParent();
+		java::net::URL getResource(jstring arg0);
+		java::io::InputStream getResourceAsStream(jstring arg0);
+		__JniBaseClass getResources(jstring arg0);
+		__JniBaseClass getUnnamedModule();
 		jboolean isRegisteredAsParallelCapable();
 		jclass loadClass(jstring arg0);
-		QAndroidJniObject resources(jstring arg0);
+		__JniBaseClass resources(jstring arg0);
 		void setClassAssertionStatus(jstring arg0, jboolean arg1);
 		void setDefaultAssertionStatus(jboolean arg0);
 		void setPackageAssertionStatus(jstring arg0, jboolean arg1);

@@ -30,14 +30,14 @@ namespace android::nfc::tech
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject get(android::nfc::Tag arg0);
+		static android::nfc::tech::Ndef get(android::nfc::Tag arg0);
 		jboolean canMakeReadOnly();
 		void close();
 		void connect();
-		QAndroidJniObject getCachedNdefMessage();
+		android::nfc::NdefMessage getCachedNdefMessage();
 		jint getMaxSize();
-		QAndroidJniObject getNdefMessage();
-		QAndroidJniObject getTag();
+		android::nfc::NdefMessage getNdefMessage();
+		android::nfc::Tag getTag();
 		jstring getType();
 		jboolean isConnected();
 		jboolean isWritable();

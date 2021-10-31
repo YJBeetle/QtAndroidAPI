@@ -78,15 +78,15 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getMaxBytesOverMobile(android::content::Context arg0);
-		static QAndroidJniObject getRecommendedMaxBytesOverMobile(android::content::Context arg0);
+		static java::lang::Long getMaxBytesOverMobile(android::content::Context arg0);
+		static java::lang::Long getRecommendedMaxBytesOverMobile(android::content::Context arg0);
 		jlong addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6);
 		jlong addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8);
 		jlong enqueue(android::app::DownloadManager_Request arg0);
 		jstring getMimeTypeForDownloadedFile(jlong arg0);
-		QAndroidJniObject getUriForDownloadedFile(jlong arg0);
-		QAndroidJniObject openDownloadedFile(jlong arg0);
-		QAndroidJniObject query(android::app::DownloadManager_Query arg0);
+		android::net::Uri getUriForDownloadedFile(jlong arg0);
+		android::os::ParcelFileDescriptor openDownloadedFile(jlong arg0);
+		__JniBaseClass query(android::app::DownloadManager_Query arg0);
 		jint remove(jlongArray arg0);
 	};
 } // namespace android::app

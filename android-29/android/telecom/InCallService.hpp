@@ -43,9 +43,9 @@ namespace android::telecom
 		
 		// Methods
 		jboolean canAddCall();
-		QAndroidJniObject getCallAudioState();
-		QAndroidJniObject getCalls();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		android::telecom::CallAudioState getCallAudioState();
+		__JniBaseClass getCalls();
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onBringToForeground(jboolean arg0);
 		void onCallAdded(android::telecom::Call arg0);
 		void onCallAudioStateChanged(android::telecom::CallAudioState arg0);

@@ -25,14 +25,14 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject MediaRouteActionProvider::onCreateActionView()
+	android::view::View MediaRouteActionProvider::onCreateActionView()
 	{
 		return callObjectMethod(
 			"onCreateActionView",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject MediaRouteActionProvider::onCreateActionView(__JniBaseClass arg0)
+	android::view::View MediaRouteActionProvider::onCreateActionView(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"onCreateActionView",

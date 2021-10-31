@@ -65,7 +65,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	QAndroidJniObject DelayQueue::iterator()
+	__JniBaseClass DelayQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -108,21 +108,21 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	QAndroidJniObject DelayQueue::peek()
+	__JniBaseClass DelayQueue::peek()
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/util/concurrent/Delayed;"
 		);
 	}
-	QAndroidJniObject DelayQueue::poll()
+	__JniBaseClass DelayQueue::poll()
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/util/concurrent/Delayed;"
 		);
 	}
-	QAndroidJniObject DelayQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	__JniBaseClass DelayQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
 		return callObjectMethod(
 			"poll",
@@ -169,7 +169,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject DelayQueue::take()
+	__JniBaseClass DelayQueue::take()
 	{
 		return callObjectMethod(
 			"take",

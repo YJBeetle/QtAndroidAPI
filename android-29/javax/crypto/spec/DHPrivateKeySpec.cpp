@@ -19,21 +19,21 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	QAndroidJniObject DHPrivateKeySpec::getG()
+	java::math::BigInteger DHPrivateKeySpec::getG()
 	{
 		return callObjectMethod(
 			"getG",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject DHPrivateKeySpec::getP()
+	java::math::BigInteger DHPrivateKeySpec::getP()
 	{
 		return callObjectMethod(
 			"getP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject DHPrivateKeySpec::getX()
+	java::math::BigInteger DHPrivateKeySpec::getX()
 	{
 		return callObjectMethod(
 			"getX",

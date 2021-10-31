@@ -24,7 +24,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	QAndroidJniObject IdentityScope::getSystemScope()
+	java::security::IdentityScope IdentityScope::getSystemScope()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.IdentityScope",
@@ -40,7 +40,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IdentityScope::getIdentity(jstring arg0)
+	java::security::Identity IdentityScope::getIdentity(jstring arg0)
 	{
 		return callObjectMethod(
 			"getIdentity",
@@ -48,7 +48,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject IdentityScope::getIdentity(__JniBaseClass arg0)
+	java::security::Identity IdentityScope::getIdentity(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"getIdentity",
@@ -56,7 +56,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IdentityScope::identities()
+	__JniBaseClass IdentityScope::identities()
 	{
 		return callObjectMethod(
 			"identities",

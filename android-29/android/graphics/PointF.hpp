@@ -17,7 +17,7 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jfloat x();
 		jfloat y();
 		

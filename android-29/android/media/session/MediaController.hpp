@@ -68,19 +68,19 @@ namespace android::media::session
 		// Methods
 		void adjustVolume(jint arg0, jint arg1);
 		jboolean dispatchMediaButtonEvent(android::view::KeyEvent arg0);
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jlong getFlags();
-		QAndroidJniObject getMetadata();
+		android::media::MediaMetadata getMetadata();
 		jstring getPackageName();
-		QAndroidJniObject getPlaybackInfo();
-		QAndroidJniObject getPlaybackState();
-		QAndroidJniObject getQueue();
+		android::media::session::MediaController_PlaybackInfo getPlaybackInfo();
+		android::media::session::PlaybackState getPlaybackState();
+		__JniBaseClass getQueue();
 		jstring getQueueTitle();
 		jint getRatingType();
-		QAndroidJniObject getSessionActivity();
-		QAndroidJniObject getSessionInfo();
-		QAndroidJniObject getSessionToken();
-		QAndroidJniObject getTransportControls();
+		android::app::PendingIntent getSessionActivity();
+		android::os::Bundle getSessionInfo();
+		android::media::session::MediaSession_Token getSessionToken();
+		android::media::session::MediaController_TransportControls getTransportControls();
 		void registerCallback(android::media::session::MediaController_Callback arg0);
 		void registerCallback(android::media::session::MediaController_Callback arg0, android::os::Handler arg1);
 		void sendCommand(jstring arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2);

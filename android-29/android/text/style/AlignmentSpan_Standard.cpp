@@ -31,7 +31,7 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	QAndroidJniObject AlignmentSpan_Standard::getAlignment()
+	android::text::Layout_Alignment AlignmentSpan_Standard::getAlignment()
 	{
 		return callObjectMethod(
 			"getAlignment",

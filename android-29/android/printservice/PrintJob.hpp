@@ -36,9 +36,9 @@ namespace android::printservice
 		jboolean fail(jstring arg0);
 		jint getAdvancedIntOption(jstring arg0);
 		jstring getAdvancedStringOption(jstring arg0);
-		QAndroidJniObject getDocument();
-		QAndroidJniObject getId();
-		QAndroidJniObject getInfo();
+		android::printservice::PrintDocument getDocument();
+		android::print::PrintJobId getId();
+		android::print::PrintJobInfo getInfo();
 		jstring getTag();
 		jboolean hasAdvancedOption(jstring arg0);
 		jint hashCode();

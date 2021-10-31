@@ -10,7 +10,7 @@ namespace android::security
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject NetworkSecurityPolicy::getInstance()
+	android::security::NetworkSecurityPolicy NetworkSecurityPolicy::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.security.NetworkSecurityPolicy",

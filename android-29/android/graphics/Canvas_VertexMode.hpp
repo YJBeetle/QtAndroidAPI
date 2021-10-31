@@ -10,9 +10,9 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject TRIANGLES();
-		static QAndroidJniObject TRIANGLE_FAN();
-		static QAndroidJniObject TRIANGLE_STRIP();
+		static android::graphics::Canvas_VertexMode TRIANGLES();
+		static android::graphics::Canvas_VertexMode TRIANGLE_FAN();
+		static android::graphics::Canvas_VertexMode TRIANGLE_STRIP();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Canvas_VertexMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Canvas_VertexMode valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

@@ -52,11 +52,11 @@ namespace android::media
 		MediaSync();
 		
 		// Methods
-		QAndroidJniObject createInputSurface();
+		android::view::Surface createInputSurface();
 		void flush();
-		QAndroidJniObject getPlaybackParams();
-		QAndroidJniObject getSyncParams();
-		QAndroidJniObject getTimestamp();
+		android::media::PlaybackParams getPlaybackParams();
+		android::media::SyncParams getSyncParams();
+		android::media::MediaTimestamp getTimestamp();
 		void queueAudio(java::nio::ByteBuffer arg0, jint arg1, jlong arg2);
 		void release();
 		void setAudioTrack(android::media::AudioTrack arg0);

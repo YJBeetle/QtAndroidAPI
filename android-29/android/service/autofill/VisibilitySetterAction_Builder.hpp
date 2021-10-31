@@ -22,8 +22,8 @@ namespace android::service::autofill
 		VisibilitySetterAction_Builder(jint arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setVisibility(jint arg0, jint arg1);
+		android::service::autofill::VisibilitySetterAction build();
+		android::service::autofill::VisibilitySetterAction_Builder setVisibility(jint arg0, jint arg1);
 	};
 } // namespace android::service::autofill
 

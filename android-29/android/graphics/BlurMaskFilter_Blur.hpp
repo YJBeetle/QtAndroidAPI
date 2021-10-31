@@ -10,10 +10,10 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject INNER();
-		static QAndroidJniObject NORMAL();
-		static QAndroidJniObject OUTER();
-		static QAndroidJniObject SOLID();
+		static android::graphics::BlurMaskFilter_Blur INNER();
+		static android::graphics::BlurMaskFilter_Blur NORMAL();
+		static android::graphics::BlurMaskFilter_Blur OUTER();
+		static android::graphics::BlurMaskFilter_Blur SOLID();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BlurMaskFilter_Blur(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::BlurMaskFilter_Blur valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

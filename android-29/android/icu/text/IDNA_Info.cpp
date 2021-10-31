@@ -15,7 +15,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject IDNA_Info::getErrors()
+	__JniBaseClass IDNA_Info::getErrors()
 	{
 		return callObjectMethod(
 			"getErrors",

@@ -24,7 +24,7 @@ namespace android::database
 		
 		// Methods
 		void fillWindow(jint arg0, android::database::CursorWindow arg1);
-		QAndroidJniObject getWindow();
+		android::database::CursorWindow getWindow();
 		jboolean onMove(jint arg0, jint arg1);
 	};
 } // namespace android::database

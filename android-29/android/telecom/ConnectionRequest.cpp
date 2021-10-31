@@ -8,7 +8,7 @@
 namespace android::telecom
 {
 	// Fields
-	QAndroidJniObject ConnectionRequest::CREATOR()
+	__JniBaseClass ConnectionRequest::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.ConnectionRequest",
@@ -47,28 +47,28 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject ConnectionRequest::getAccountHandle()
+	android::telecom::PhoneAccountHandle ConnectionRequest::getAccountHandle()
 	{
 		return callObjectMethod(
 			"getAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	QAndroidJniObject ConnectionRequest::getAddress()
+	android::net::Uri ConnectionRequest::getAddress()
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ConnectionRequest::getExtras()
+	android::os::Bundle ConnectionRequest::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject ConnectionRequest::getRttTextStream()
+	android::telecom::Connection_RttTextStream ConnectionRequest::getRttTextStream()
 	{
 		return callObjectMethod(
 			"getRttTextStream",

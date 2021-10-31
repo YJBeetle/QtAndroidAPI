@@ -30,7 +30,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	QAndroidJniObject TimeKeyListener::getInstance()
+	android::text::method::TimeKeyListener TimeKeyListener::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.TimeKeyListener",
@@ -38,7 +38,7 @@ namespace android::text::method
 			"()Landroid/text/method/TimeKeyListener;"
 		);
 	}
-	QAndroidJniObject TimeKeyListener::getInstance(java::util::Locale arg0)
+	android::text::method::TimeKeyListener TimeKeyListener::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.TimeKeyListener",

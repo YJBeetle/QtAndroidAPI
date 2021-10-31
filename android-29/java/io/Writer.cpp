@@ -10,7 +10,7 @@ namespace java::io
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Writer::nullWriter()
+	java::io::Writer Writer::nullWriter()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.io.Writer",
@@ -18,7 +18,7 @@ namespace java::io
 			"()Ljava/io/Writer;"
 		);
 	}
-	QAndroidJniObject Writer::append(jchar arg0)
+	java::io::Writer Writer::append(jchar arg0)
 	{
 		return callObjectMethod(
 			"append",
@@ -26,7 +26,7 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject Writer::append(jstring arg0)
+	java::io::Writer Writer::append(jstring arg0)
 	{
 		return callObjectMethod(
 			"append",
@@ -34,7 +34,7 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject Writer::append(jstring arg0, jint arg1, jint arg2)
+	java::io::Writer Writer::append(jstring arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",

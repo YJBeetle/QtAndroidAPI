@@ -17,7 +17,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jstring packageName();
 		jstring resourceName();
 		
@@ -29,7 +29,7 @@ namespace android::content
 		Intent_ShortcutIconResource();
 		
 		// Methods
-		static QAndroidJniObject fromContext(android::content::Context arg0, jint arg1);
+		static android::content::Intent_ShortcutIconResource fromContext(android::content::Context arg0, jint arg1);
 		jint describeContents();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

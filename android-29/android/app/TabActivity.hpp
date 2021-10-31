@@ -39,8 +39,8 @@ namespace android::app
 		TabActivity();
 		
 		// Methods
-		QAndroidJniObject getTabHost();
-		QAndroidJniObject getTabWidget();
+		android::widget::TabHost getTabHost();
+		android::widget::TabWidget getTabWidget();
 		void onContentChanged();
 		void setDefaultTab(jint arg0);
 		void setDefaultTab(jstring arg0);

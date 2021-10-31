@@ -27,7 +27,7 @@ namespace android::hardware::input
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getInputDevice(jint arg0);
+		android::view::InputDevice getInputDevice(jint arg0);
 		jintArray getInputDeviceIds();
 		void registerInputDeviceListener(__JniBaseClass arg0, android::os::Handler arg1);
 		void unregisterInputDeviceListener(__JniBaseClass arg0);

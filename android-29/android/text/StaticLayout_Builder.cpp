@@ -14,7 +14,7 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject StaticLayout_Builder::obtain(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4)
+	android::text::StaticLayout_Builder StaticLayout_Builder::obtain(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.StaticLayout$Builder",
@@ -27,14 +27,14 @@ namespace android::text
 			arg4
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::build()
+	android::text::StaticLayout StaticLayout_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/text/StaticLayout;"
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setAlignment(android::text::Layout_Alignment arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setAlignment(android::text::Layout_Alignment arg0)
 	{
 		return callObjectMethod(
 			"setAlignment",
@@ -42,7 +42,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setBreakStrategy(jint arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setBreakStrategy(jint arg0)
 	{
 		return callObjectMethod(
 			"setBreakStrategy",
@@ -50,7 +50,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0)
 	{
 		return callObjectMethod(
 			"setEllipsize",
@@ -58,7 +58,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setEllipsizedWidth(jint arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setEllipsizedWidth(jint arg0)
 	{
 		return callObjectMethod(
 			"setEllipsizedWidth",
@@ -66,7 +66,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setHyphenationFrequency(jint arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setHyphenationFrequency(jint arg0)
 	{
 		return callObjectMethod(
 			"setHyphenationFrequency",
@@ -74,7 +74,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setIncludePad(jboolean arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setIncludePad(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIncludePad",
@@ -82,7 +82,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setIndents(jintArray arg0, jintArray arg1)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setIndents(jintArray arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"setIndents",
@@ -91,7 +91,7 @@ namespace android::text
 			arg1
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setJustificationMode(jint arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setJustificationMode(jint arg0)
 	{
 		return callObjectMethod(
 			"setJustificationMode",
@@ -99,7 +99,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setLineSpacing(jfloat arg0, jfloat arg1)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setLineSpacing(jfloat arg0, jfloat arg1)
 	{
 		return callObjectMethod(
 			"setLineSpacing",
@@ -108,7 +108,7 @@ namespace android::text
 			arg1
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setMaxLines(jint arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setMaxLines(jint arg0)
 	{
 		return callObjectMethod(
 			"setMaxLines",
@@ -116,7 +116,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setText(jstring arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setText",
@@ -124,7 +124,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setTextDirection(__JniBaseClass arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setTextDirection(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setTextDirection",
@@ -132,7 +132,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::setUseLineSpacingFromFallbacks(jboolean arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setUseLineSpacingFromFallbacks(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setUseLineSpacingFromFallbacks",

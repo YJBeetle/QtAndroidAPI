@@ -32,12 +32,12 @@ namespace android::app::usage
 		// Methods
 		jint getAppStandbyBucket();
 		jboolean isAppInactive(jstring arg0);
-		QAndroidJniObject queryAndAggregateUsageStats(jlong arg0, jlong arg1);
-		QAndroidJniObject queryConfigurations(jint arg0, jlong arg1, jlong arg2);
-		QAndroidJniObject queryEventStats(jint arg0, jlong arg1, jlong arg2);
-		QAndroidJniObject queryEvents(jlong arg0, jlong arg1);
-		QAndroidJniObject queryEventsForSelf(jlong arg0, jlong arg1);
-		QAndroidJniObject queryUsageStats(jint arg0, jlong arg1, jlong arg2);
+		__JniBaseClass queryAndAggregateUsageStats(jlong arg0, jlong arg1);
+		__JniBaseClass queryConfigurations(jint arg0, jlong arg1, jlong arg2);
+		__JniBaseClass queryEventStats(jint arg0, jlong arg1, jlong arg2);
+		android::app::usage::UsageEvents queryEvents(jlong arg0, jlong arg1);
+		android::app::usage::UsageEvents queryEventsForSelf(jlong arg0, jlong arg1);
+		__JniBaseClass queryUsageStats(jint arg0, jlong arg1, jlong arg2);
 	};
 } // namespace android::app::usage
 

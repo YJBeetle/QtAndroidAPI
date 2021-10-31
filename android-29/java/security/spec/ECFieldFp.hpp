@@ -24,7 +24,7 @@ namespace java::security::spec
 		// Methods
 		jboolean equals(jobject arg0);
 		jint getFieldSize();
-		QAndroidJniObject getP();
+		java::math::BigInteger getP();
 		jint hashCode();
 	};
 } // namespace java::security::spec

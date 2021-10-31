@@ -33,10 +33,10 @@ namespace java::util::prefs
 		
 		// Methods
 		static void importPreferences(java::io::InputStream arg0);
-		static QAndroidJniObject systemNodeForPackage(jclass arg0);
-		static QAndroidJniObject systemRoot();
-		static QAndroidJniObject userNodeForPackage(jclass arg0);
-		static QAndroidJniObject userRoot();
+		static java::util::prefs::Preferences systemNodeForPackage(jclass arg0);
+		static java::util::prefs::Preferences systemRoot();
+		static java::util::prefs::Preferences userNodeForPackage(jclass arg0);
+		static java::util::prefs::Preferences userRoot();
 		jstring absolutePath();
 		void addNodeChangeListener(__JniBaseClass arg0);
 		void addPreferenceChangeListener(__JniBaseClass arg0);
@@ -55,9 +55,9 @@ namespace java::util::prefs
 		jboolean isUserNode();
 		jarray keys();
 		jstring name();
-		QAndroidJniObject node(jstring arg0);
+		java::util::prefs::Preferences node(jstring arg0);
 		jboolean nodeExists(jstring arg0);
-		QAndroidJniObject parent();
+		java::util::prefs::Preferences parent();
 		void put(jstring arg0, jstring arg1);
 		void putBoolean(jstring arg0, jboolean arg1);
 		void putByteArray(jstring arg0, jbyteArray arg1);

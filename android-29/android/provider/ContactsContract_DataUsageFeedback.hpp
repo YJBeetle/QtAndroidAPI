@@ -13,8 +13,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DELETE_USAGE_URI();
-		static QAndroidJniObject FEEDBACK_URI();
+		static android::net::Uri DELETE_USAGE_URI();
+		static android::net::Uri FEEDBACK_URI();
 		static jstring USAGE_TYPE();
 		static jstring USAGE_TYPE_CALL();
 		static jstring USAGE_TYPE_LONG_TEXT();

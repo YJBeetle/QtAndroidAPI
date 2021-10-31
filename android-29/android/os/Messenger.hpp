@@ -21,7 +21,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Messenger(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,11 +32,11 @@ namespace android::os
 		Messenger(__JniBaseClass arg0);
 		
 		// Methods
-		static QAndroidJniObject readMessengerOrNullFromParcel(android::os::Parcel arg0);
+		static android::os::Messenger readMessengerOrNullFromParcel(android::os::Parcel arg0);
 		static void writeMessengerOrNullToParcel(android::os::Messenger arg0, android::os::Parcel arg1);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getBinder();
+		__JniBaseClass getBinder();
 		jint hashCode();
 		void send(android::os::Message arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

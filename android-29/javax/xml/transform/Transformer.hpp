@@ -22,11 +22,11 @@ namespace javax::xml::transform
 		
 		// Methods
 		void clearParameters();
-		QAndroidJniObject getErrorListener();
-		QAndroidJniObject getOutputProperties();
+		__JniBaseClass getErrorListener();
+		java::util::Properties getOutputProperties();
 		jstring getOutputProperty(jstring arg0);
 		jobject getParameter(jstring arg0);
-		QAndroidJniObject getURIResolver();
+		__JniBaseClass getURIResolver();
 		void reset();
 		void setErrorListener(__JniBaseClass arg0);
 		void setOutputProperties(java::util::Properties arg0);

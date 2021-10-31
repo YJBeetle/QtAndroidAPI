@@ -26,8 +26,8 @@ namespace android::companion
 		WifiDeviceFilter_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setNamePattern(java::util::regex::Pattern arg0);
+		android::companion::WifiDeviceFilter build();
+		android::companion::WifiDeviceFilter_Builder setNamePattern(java::util::regex::Pattern arg0);
 	};
 } // namespace android::companion
 

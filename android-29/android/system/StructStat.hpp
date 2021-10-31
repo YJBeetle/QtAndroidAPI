@@ -13,17 +13,17 @@ namespace android::system
 	{
 	public:
 		// Fields
-		QAndroidJniObject st_atim();
+		android::system::StructTimespec st_atim();
 		jlong st_atime();
 		jlong st_blksize();
 		jlong st_blocks();
-		QAndroidJniObject st_ctim();
+		android::system::StructTimespec st_ctim();
 		jlong st_ctime();
 		jlong st_dev();
 		jint st_gid();
 		jlong st_ino();
 		jint st_mode();
-		QAndroidJniObject st_mtim();
+		android::system::StructTimespec st_mtim();
 		jlong st_mtime();
 		jlong st_nlink();
 		jlong st_rdev();

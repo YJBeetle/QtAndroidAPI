@@ -6,7 +6,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_FILTER_URI()
+	android::net::Uri ContactsContract_Contacts::CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
@@ -14,7 +14,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_FREQUENT_URI()
+	android::net::Uri ContactsContract_Contacts::CONTENT_FREQUENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
@@ -22,7 +22,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_GROUP_URI()
+	android::net::Uri ContactsContract_Contacts::CONTENT_GROUP_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
@@ -38,7 +38,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_LOOKUP_URI()
+	android::net::Uri ContactsContract_Contacts::CONTENT_LOOKUP_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
@@ -46,7 +46,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_MULTI_VCARD_URI()
+	android::net::Uri ContactsContract_Contacts::CONTENT_MULTI_VCARD_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
@@ -54,7 +54,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_STREQUENT_FILTER_URI()
+	android::net::Uri ContactsContract_Contacts::CONTENT_STREQUENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
@@ -62,7 +62,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_STREQUENT_URI()
+	android::net::Uri ContactsContract_Contacts::CONTENT_STREQUENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
@@ -78,7 +78,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_URI()
+	android::net::Uri ContactsContract_Contacts::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
@@ -94,7 +94,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_VCARD_URI()
+	android::net::Uri ContactsContract_Contacts::CONTENT_VCARD_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
@@ -102,7 +102,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::ENTERPRISE_CONTENT_FILTER_URI()
+	android::net::Uri ContactsContract_Contacts::ENTERPRISE_CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
@@ -149,7 +149,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ContactsContract_Contacts::getLookupUri(android::content::ContentResolver arg0, android::net::Uri arg1)
+	android::net::Uri ContactsContract_Contacts::getLookupUri(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$Contacts",
@@ -159,7 +159,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::getLookupUri(jlong arg0, jstring arg1)
+	android::net::Uri ContactsContract_Contacts::getLookupUri(jlong arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$Contacts",
@@ -178,7 +178,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::lookupContact(android::content::ContentResolver arg0, android::net::Uri arg1)
+	android::net::Uri ContactsContract_Contacts::lookupContact(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$Contacts",
@@ -198,7 +198,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::openContactPhotoInputStream(android::content::ContentResolver arg0, android::net::Uri arg1)
+	java::io::InputStream ContactsContract_Contacts::openContactPhotoInputStream(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$Contacts",
@@ -208,7 +208,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::openContactPhotoInputStream(android::content::ContentResolver arg0, android::net::Uri arg1, jboolean arg2)
+	java::io::InputStream ContactsContract_Contacts::openContactPhotoInputStream(android::content::ContentResolver arg0, android::net::Uri arg1, jboolean arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$Contacts",

@@ -5,7 +5,7 @@
 namespace android::nfc
 {
 	// Fields
-	QAndroidJniObject NdefRecord::CREATOR()
+	__JniBaseClass NdefRecord::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NdefRecord",
@@ -140,7 +140,7 @@ namespace android::nfc
 		) {}
 	
 	// Methods
-	QAndroidJniObject NdefRecord::createApplicationRecord(jstring arg0)
+	android::nfc::NdefRecord NdefRecord::createApplicationRecord(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.NdefRecord",
@@ -149,7 +149,7 @@ namespace android::nfc
 			arg0
 		);
 	}
-	QAndroidJniObject NdefRecord::createExternal(jstring arg0, jstring arg1, jbyteArray arg2)
+	android::nfc::NdefRecord NdefRecord::createExternal(jstring arg0, jstring arg1, jbyteArray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.NdefRecord",
@@ -160,7 +160,7 @@ namespace android::nfc
 			arg2
 		);
 	}
-	QAndroidJniObject NdefRecord::createMime(jstring arg0, jbyteArray arg1)
+	android::nfc::NdefRecord NdefRecord::createMime(jstring arg0, jbyteArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.NdefRecord",
@@ -170,7 +170,7 @@ namespace android::nfc
 			arg1
 		);
 	}
-	QAndroidJniObject NdefRecord::createTextRecord(jstring arg0, jstring arg1)
+	android::nfc::NdefRecord NdefRecord::createTextRecord(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.NdefRecord",
@@ -180,7 +180,7 @@ namespace android::nfc
 			arg1
 		);
 	}
-	QAndroidJniObject NdefRecord::createUri(android::net::Uri arg0)
+	android::nfc::NdefRecord NdefRecord::createUri(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.NdefRecord",
@@ -189,7 +189,7 @@ namespace android::nfc
 			arg0.object()
 		);
 	}
-	QAndroidJniObject NdefRecord::createUri(jstring arg0)
+	android::nfc::NdefRecord NdefRecord::createUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.NdefRecord",
@@ -269,7 +269,7 @@ namespace android::nfc
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject NdefRecord::toUri()
+	android::net::Uri NdefRecord::toUri()
 	{
 		return callObjectMethod(
 			"toUri",

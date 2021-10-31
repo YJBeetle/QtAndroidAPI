@@ -41,16 +41,16 @@ namespace java::nio::channels::spi
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject provider();
-		QAndroidJniObject inheritedChannel();
-		QAndroidJniObject openDatagramChannel();
-		QAndroidJniObject openDatagramChannel(__JniBaseClass arg0);
-		QAndroidJniObject openPipe();
-		QAndroidJniObject openSelector();
-		QAndroidJniObject openServerSocketChannel();
-		QAndroidJniObject openServerSocketChannel(__JniBaseClass arg0);
-		QAndroidJniObject openSocketChannel();
-		QAndroidJniObject openSocketChannel(__JniBaseClass arg0);
+		static java::nio::channels::spi::SelectorProvider provider();
+		__JniBaseClass inheritedChannel();
+		java::nio::channels::DatagramChannel openDatagramChannel();
+		java::nio::channels::DatagramChannel openDatagramChannel(__JniBaseClass arg0);
+		java::nio::channels::Pipe openPipe();
+		java::nio::channels::spi::AbstractSelector openSelector();
+		java::nio::channels::ServerSocketChannel openServerSocketChannel();
+		java::nio::channels::ServerSocketChannel openServerSocketChannel(__JniBaseClass arg0);
+		java::nio::channels::SocketChannel openSocketChannel();
+		java::nio::channels::SocketChannel openSocketChannel(__JniBaseClass arg0);
 	};
 } // namespace java::nio::channels::spi
 

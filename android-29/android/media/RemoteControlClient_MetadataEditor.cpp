@@ -41,7 +41,7 @@ namespace android::media
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject RemoteControlClient_MetadataEditor::putBitmap(jint arg0, android::graphics::Bitmap arg1)
+	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putBitmap(jint arg0, android::graphics::Bitmap arg1)
 	{
 		return callObjectMethod(
 			"putBitmap",
@@ -50,7 +50,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	QAndroidJniObject RemoteControlClient_MetadataEditor::putLong(jint arg0, jlong arg1)
+	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putLong(jint arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"putLong",
@@ -59,7 +59,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject RemoteControlClient_MetadataEditor::putObject(jint arg0, jobject arg1)
+	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putObject(jint arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"putObject",
@@ -68,7 +68,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject RemoteControlClient_MetadataEditor::putString(jint arg0, jstring arg1)
+	android::media::RemoteControlClient_MetadataEditor RemoteControlClient_MetadataEditor::putString(jint arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"putString",

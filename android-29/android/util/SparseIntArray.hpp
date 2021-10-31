@@ -21,7 +21,7 @@ namespace android::util
 		// Methods
 		void append(jint arg0, jint arg1);
 		void clear();
-		QAndroidJniObject clone();
+		android::util::SparseIntArray clone();
 		void _delete(jint arg0);
 		jint get(jint arg0);
 		jint get(jint arg0, jint arg1);

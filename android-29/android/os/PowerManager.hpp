@@ -54,7 +54,7 @@ namespace android::os
 		jboolean isScreenOn();
 		jboolean isSustainedPerformanceModeSupported();
 		jboolean isWakeLockLevelSupported(jint arg0);
-		QAndroidJniObject newWakeLock(jint arg0, jstring arg1);
+		android::os::PowerManager_WakeLock newWakeLock(jint arg0, jstring arg1);
 		void reboot(jstring arg0);
 		void removeThermalStatusListener(__JniBaseClass arg0);
 	};

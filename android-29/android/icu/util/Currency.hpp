@@ -41,15 +41,15 @@ namespace android::icu::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject fromJavaCurrency(java::util::Currency arg0);
-		static QAndroidJniObject getAvailableCurrencies();
+		static android::icu::util::Currency fromJavaCurrency(java::util::Currency arg0);
+		static __JniBaseClass getAvailableCurrencies();
 		static jarray getAvailableCurrencyCodes(android::icu::util::ULocale arg0, java::util::Date arg1);
 		static jarray getAvailableCurrencyCodes(java::util::Locale arg0, java::util::Date arg1);
 		static jarray getAvailableLocales();
 		static jarray getAvailableULocales();
-		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static android::icu::util::Currency getInstance(android::icu::util::ULocale arg0);
+		static android::icu::util::Currency getInstance(jstring arg0);
+		static android::icu::util::Currency getInstance(java::util::Locale arg0);
 		static jarray getKeywordValuesForLocale(jstring arg0, android::icu::util::ULocale arg1, jboolean arg2);
 		static jboolean isAvailable(jstring arg0, java::util::Date arg1, java::util::Date arg2);
 		jstring getCurrencyCode();
@@ -67,7 +67,7 @@ namespace android::icu::util
 		jstring getSymbol();
 		jstring getSymbol(android::icu::util::ULocale arg0);
 		jstring getSymbol(java::util::Locale arg0);
-		QAndroidJniObject toJavaCurrency();
+		java::util::Currency toJavaCurrency();
 		jstring toString();
 	};
 } // namespace android::icu::util

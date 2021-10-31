@@ -10,10 +10,10 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CMYK();
-		static QAndroidJniObject LAB();
-		static QAndroidJniObject RGB();
-		static QAndroidJniObject XYZ();
+		static android::graphics::ColorSpace_Model CMYK();
+		static android::graphics::ColorSpace_Model LAB();
+		static android::graphics::ColorSpace_Model RGB();
+		static android::graphics::ColorSpace_Model XYZ();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ColorSpace_Model(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::ColorSpace_Model valueOf(jstring arg0);
 		static jarray values();
 		jint getComponentCount();
 	};

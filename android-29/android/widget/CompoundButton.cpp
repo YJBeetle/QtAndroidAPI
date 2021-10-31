@@ -78,35 +78,35 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject CompoundButton::getAutofillValue()
+	android::view::autofill::AutofillValue CompoundButton::getAutofillValue()
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	QAndroidJniObject CompoundButton::getButtonDrawable()
+	android::graphics::drawable::Drawable CompoundButton::getButtonDrawable()
 	{
 		return callObjectMethod(
 			"getButtonDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject CompoundButton::getButtonTintBlendMode()
+	android::graphics::BlendMode CompoundButton::getButtonTintBlendMode()
 	{
 		return callObjectMethod(
 			"getButtonTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject CompoundButton::getButtonTintList()
+	android::content::res::ColorStateList CompoundButton::getButtonTintList()
 	{
 		return callObjectMethod(
 			"getButtonTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject CompoundButton::getButtonTintMode()
+	android::graphics::PorterDuff_Mode CompoundButton::getButtonTintMode()
 	{
 		return callObjectMethod(
 			"getButtonTintMode",
@@ -149,7 +149,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CompoundButton::onSaveInstanceState()
+	__JniBaseClass CompoundButton::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

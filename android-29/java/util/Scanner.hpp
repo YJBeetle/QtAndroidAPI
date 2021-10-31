@@ -72,9 +72,9 @@ namespace java::util
 		
 		// Methods
 		void close();
-		QAndroidJniObject delimiter();
-		QAndroidJniObject findAll(jstring arg0);
-		QAndroidJniObject findAll(java::util::regex::Pattern arg0);
+		java::util::regex::Pattern delimiter();
+		__JniBaseClass findAll(jstring arg0);
+		__JniBaseClass findAll(java::util::regex::Pattern arg0);
 		jstring findInLine(jstring arg0);
 		jstring findInLine(java::util::regex::Pattern arg0);
 		jstring findWithinHorizon(jstring arg0, jint arg1);
@@ -97,15 +97,15 @@ namespace java::util
 		jboolean hasNextLong(jint arg0);
 		jboolean hasNextShort();
 		jboolean hasNextShort(jint arg0);
-		QAndroidJniObject ioException();
-		QAndroidJniObject locale();
-		QAndroidJniObject match();
+		java::io::IOException ioException();
+		java::util::Locale locale();
+		__JniBaseClass match();
 		jstring next();
 		jstring next(jstring arg0);
 		jstring next(java::util::regex::Pattern arg0);
-		QAndroidJniObject nextBigDecimal();
-		QAndroidJniObject nextBigInteger();
-		QAndroidJniObject nextBigInteger(jint arg0);
+		java::math::BigDecimal nextBigDecimal();
+		java::math::BigInteger nextBigInteger();
+		java::math::BigInteger nextBigInteger(jint arg0);
 		jboolean nextBoolean();
 		jbyte nextByte();
 		jbyte nextByte(jint arg0);
@@ -120,15 +120,15 @@ namespace java::util
 		jshort nextShort(jint arg0);
 		jint radix();
 		void remove();
-		QAndroidJniObject reset();
-		QAndroidJniObject skip(jstring arg0);
-		QAndroidJniObject skip(java::util::regex::Pattern arg0);
+		java::util::Scanner reset();
+		java::util::Scanner skip(jstring arg0);
+		java::util::Scanner skip(java::util::regex::Pattern arg0);
 		jstring toString();
-		QAndroidJniObject tokens();
-		QAndroidJniObject useDelimiter(jstring arg0);
-		QAndroidJniObject useDelimiter(java::util::regex::Pattern arg0);
-		QAndroidJniObject useLocale(java::util::Locale arg0);
-		QAndroidJniObject useRadix(jint arg0);
+		__JniBaseClass tokens();
+		java::util::Scanner useDelimiter(jstring arg0);
+		java::util::Scanner useDelimiter(java::util::regex::Pattern arg0);
+		java::util::Scanner useLocale(java::util::Locale arg0);
+		java::util::Scanner useRadix(jint arg0);
 	};
 } // namespace java::util
 

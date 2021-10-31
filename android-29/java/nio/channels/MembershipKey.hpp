@@ -25,14 +25,14 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject block(java::net::InetAddress arg0);
-		QAndroidJniObject channel();
+		java::nio::channels::MembershipKey block(java::net::InetAddress arg0);
+		__JniBaseClass channel();
 		void drop();
-		QAndroidJniObject group();
+		java::net::InetAddress group();
 		jboolean isValid();
-		QAndroidJniObject networkInterface();
-		QAndroidJniObject sourceAddress();
-		QAndroidJniObject unblock(java::net::InetAddress arg0);
+		java::net::NetworkInterface networkInterface();
+		java::net::InetAddress sourceAddress();
+		java::nio::channels::MembershipKey unblock(java::net::InetAddress arg0);
 	};
 } // namespace java::nio::channels
 

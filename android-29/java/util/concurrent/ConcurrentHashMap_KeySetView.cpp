@@ -51,7 +51,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ConcurrentHashMap_KeySetView::getMap()
+	java::util::concurrent::ConcurrentHashMap ConcurrentHashMap_KeySetView::getMap()
 	{
 		return callObjectMethod(
 			"getMap",
@@ -72,7 +72,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject ConcurrentHashMap_KeySetView::iterator()
+	__JniBaseClass ConcurrentHashMap_KeySetView::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -95,7 +95,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ConcurrentHashMap_KeySetView::spliterator()
+	__JniBaseClass ConcurrentHashMap_KeySetView::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

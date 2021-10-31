@@ -17,7 +17,7 @@ namespace android::graphics::fonts
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getAvailableFonts();
+		static __JniBaseClass getAvailableFonts();
 	};
 } // namespace android::graphics::fonts
 

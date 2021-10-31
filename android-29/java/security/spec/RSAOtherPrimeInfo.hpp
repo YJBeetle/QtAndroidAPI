@@ -22,9 +22,9 @@ namespace java::security::spec
 		RSAOtherPrimeInfo(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
 		
 		// Methods
-		QAndroidJniObject getCrtCoefficient();
-		QAndroidJniObject getExponent();
-		QAndroidJniObject getPrime();
+		java::math::BigInteger getCrtCoefficient();
+		java::math::BigInteger getExponent();
+		java::math::BigInteger getPrime();
 	};
 } // namespace java::security::spec
 

@@ -525,7 +525,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject UserManager::createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, android::os::PersistableBundle arg3)
+	android::content::Intent UserManager::createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, android::os::PersistableBundle arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.UserManager",
@@ -545,7 +545,7 @@ namespace android::os
 			"()Z"
 		);
 	}
-	QAndroidJniObject UserManager::getApplicationRestrictions(jstring arg0)
+	android::os::Bundle UserManager::getApplicationRestrictions(jstring arg0)
 	{
 		return callObjectMethod(
 			"getApplicationRestrictions",
@@ -576,7 +576,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	QAndroidJniObject UserManager::getUserForSerialNumber(jlong arg0)
+	android::os::UserHandle UserManager::getUserForSerialNumber(jlong arg0)
 	{
 		return callObjectMethod(
 			"getUserForSerialNumber",
@@ -591,21 +591,21 @@ namespace android::os
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject UserManager::getUserProfiles()
+	__JniBaseClass UserManager::getUserProfiles()
 	{
 		return callObjectMethod(
 			"getUserProfiles",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject UserManager::getUserRestrictions()
+	android::os::Bundle UserManager::getUserRestrictions()
 	{
 		return callObjectMethod(
 			"getUserRestrictions",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject UserManager::getUserRestrictions(android::os::UserHandle arg0)
+	android::os::Bundle UserManager::getUserRestrictions(android::os::UserHandle arg0)
 	{
 		return callObjectMethod(
 			"getUserRestrictions",

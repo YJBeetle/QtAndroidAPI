@@ -14,7 +14,7 @@ namespace java::nio::channels::spi
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AsynchronousChannelProvider::provider()
+	java::nio::channels::spi::AsynchronousChannelProvider AsynchronousChannelProvider::provider()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.spi.AsynchronousChannelProvider",
@@ -22,7 +22,7 @@ namespace java::nio::channels::spi
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
-	QAndroidJniObject AsynchronousChannelProvider::openAsynchronousChannelGroup(jint arg0, __JniBaseClass arg1)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelProvider::openAsynchronousChannelGroup(jint arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"openAsynchronousChannelGroup",
@@ -31,7 +31,7 @@ namespace java::nio::channels::spi
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AsynchronousChannelProvider::openAsynchronousChannelGroup(__JniBaseClass arg0, jint arg1)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelProvider::openAsynchronousChannelGroup(__JniBaseClass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"openAsynchronousChannelGroup",
@@ -40,7 +40,7 @@ namespace java::nio::channels::spi
 			arg1
 		);
 	}
-	QAndroidJniObject AsynchronousChannelProvider::openAsynchronousServerSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0)
+	java::nio::channels::AsynchronousServerSocketChannel AsynchronousChannelProvider::openAsynchronousServerSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0)
 	{
 		return callObjectMethod(
 			"openAsynchronousServerSocketChannel",
@@ -48,7 +48,7 @@ namespace java::nio::channels::spi
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AsynchronousChannelProvider::openAsynchronousSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0)
+	java::nio::channels::AsynchronousSocketChannel AsynchronousChannelProvider::openAsynchronousSocketChannel(java::nio::channels::AsynchronousChannelGroup arg0)
 	{
 		return callObjectMethod(
 			"openAsynchronousSocketChannel",

@@ -41,7 +41,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject CurrencyAmount::getCurrency()
+	android::icu::util::Currency CurrencyAmount::getCurrency()
 	{
 		return callObjectMethod(
 			"getCurrency",

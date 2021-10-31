@@ -17,7 +17,7 @@ namespace java::nio::charset
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Charset::availableCharsets()
+	__JniBaseClass Charset::availableCharsets()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.charset.Charset",
@@ -25,7 +25,7 @@ namespace java::nio::charset
 			"()Ljava/util/SortedMap;"
 		);
 	}
-	QAndroidJniObject Charset::defaultCharset()
+	java::nio::charset::Charset Charset::defaultCharset()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.charset.Charset",
@@ -33,7 +33,7 @@ namespace java::nio::charset
 			"()Ljava/nio/charset/Charset;"
 		);
 	}
-	QAndroidJniObject Charset::forName(jstring arg0)
+	java::nio::charset::Charset Charset::forName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.charset.Charset",
@@ -51,7 +51,7 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	QAndroidJniObject Charset::aliases()
+	__JniBaseClass Charset::aliases()
 	{
 		return callObjectMethod(
 			"aliases",
@@ -89,7 +89,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Charset::decode(java::nio::ByteBuffer arg0)
+	java::nio::CharBuffer Charset::decode(java::nio::ByteBuffer arg0)
 	{
 		return callObjectMethod(
 			"decode",
@@ -112,7 +112,7 @@ namespace java::nio::charset
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject Charset::encode(jstring arg0)
+	java::nio::ByteBuffer Charset::encode(jstring arg0)
 	{
 		return callObjectMethod(
 			"encode",
@@ -120,7 +120,7 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	QAndroidJniObject Charset::encode(java::nio::CharBuffer arg0)
+	java::nio::ByteBuffer Charset::encode(java::nio::CharBuffer arg0)
 	{
 		return callObjectMethod(
 			"encode",
@@ -157,14 +157,14 @@ namespace java::nio::charset
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Charset::newDecoder()
+	java::nio::charset::CharsetDecoder Charset::newDecoder()
 	{
 		return callObjectMethod(
 			"newDecoder",
 			"()Ljava/nio/charset/CharsetDecoder;"
 		);
 	}
-	QAndroidJniObject Charset::newEncoder()
+	java::nio::charset::CharsetEncoder Charset::newEncoder()
 	{
 		return callObjectMethod(
 			"newEncoder",

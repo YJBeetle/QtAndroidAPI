@@ -93,14 +93,14 @@ namespace android::content
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CursorLoader::getUri()
+	android::net::Uri CursorLoader::getUri()
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject CursorLoader::loadInBackground()
+	__JniBaseClass CursorLoader::loadInBackground()
 	{
 		return callObjectMethod(
 			"loadInBackground",

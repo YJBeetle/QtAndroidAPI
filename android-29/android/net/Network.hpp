@@ -45,7 +45,7 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Network(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -54,19 +54,19 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject fromNetworkHandle(jlong arg0);
+		static android::net::Network fromNetworkHandle(jlong arg0);
 		void bindSocket(java::io::FileDescriptor arg0);
 		void bindSocket(java::net::DatagramSocket arg0);
 		void bindSocket(java::net::Socket arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jarray getAllByName(jstring arg0);
-		QAndroidJniObject getByName(jstring arg0);
+		java::net::InetAddress getByName(jstring arg0);
 		jlong getNetworkHandle();
-		QAndroidJniObject getSocketFactory();
+		javax::net::SocketFactory getSocketFactory();
 		jint hashCode();
-		QAndroidJniObject openConnection(java::net::URL arg0);
-		QAndroidJniObject openConnection(java::net::URL arg0, java::net::Proxy arg1);
+		java::net::URLConnection openConnection(java::net::URL arg0);
+		java::net::URLConnection openConnection(java::net::URL arg0, java::net::Proxy arg1);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

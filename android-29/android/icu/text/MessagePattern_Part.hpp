@@ -26,11 +26,11 @@ namespace android::icu::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getArgType();
+		android::icu::text::MessagePattern_ArgType getArgType();
 		jint getIndex();
 		jint getLength();
 		jint getLimit();
-		QAndroidJniObject getType();
+		android::icu::text::MessagePattern_Part_Type getType();
 		jint getValue();
 		jint hashCode();
 		jstring toString();

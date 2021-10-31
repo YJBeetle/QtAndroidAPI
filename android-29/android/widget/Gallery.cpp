@@ -63,7 +63,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject Gallery::generateLayoutParams(__JniBaseClass arg0)
+	android::view::ViewGroup_LayoutParams Gallery::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",

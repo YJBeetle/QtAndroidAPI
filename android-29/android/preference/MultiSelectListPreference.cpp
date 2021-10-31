@@ -65,7 +65,7 @@ namespace android::preference
 			"()[Ljava/lang/CharSequence;"
 		).object<jarray>();
 	}
-	QAndroidJniObject MultiSelectListPreference::getValues()
+	__JniBaseClass MultiSelectListPreference::getValues()
 	{
 		return callObjectMethod(
 			"getValues",

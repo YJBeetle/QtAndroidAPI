@@ -10,10 +10,10 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject COMPOSE();
-		static QAndroidJniObject COMPOSE_CONTIGUOUS();
-		static QAndroidJniObject DECOMPOSE();
-		static QAndroidJniObject FCD();
+		static android::icu::text::Normalizer2_Mode COMPOSE();
+		static android::icu::text::Normalizer2_Mode COMPOSE_CONTIGUOUS();
+		static android::icu::text::Normalizer2_Mode DECOMPOSE();
+		static android::icu::text::Normalizer2_Mode FCD();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Normalizer2_Mode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::Normalizer2_Mode valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

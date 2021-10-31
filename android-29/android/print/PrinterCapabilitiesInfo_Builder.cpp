@@ -21,7 +21,7 @@ namespace android::print
 		) {}
 	
 	// Methods
-	QAndroidJniObject PrinterCapabilitiesInfo_Builder::addMediaSize(android::print::PrintAttributes_MediaSize arg0, jboolean arg1)
+	android::print::PrinterCapabilitiesInfo_Builder PrinterCapabilitiesInfo_Builder::addMediaSize(android::print::PrintAttributes_MediaSize arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"addMediaSize",
@@ -30,7 +30,7 @@ namespace android::print
 			arg1
 		);
 	}
-	QAndroidJniObject PrinterCapabilitiesInfo_Builder::addResolution(android::print::PrintAttributes_Resolution arg0, jboolean arg1)
+	android::print::PrinterCapabilitiesInfo_Builder PrinterCapabilitiesInfo_Builder::addResolution(android::print::PrintAttributes_Resolution arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"addResolution",
@@ -39,14 +39,14 @@ namespace android::print
 			arg1
 		);
 	}
-	QAndroidJniObject PrinterCapabilitiesInfo_Builder::build()
+	android::print::PrinterCapabilitiesInfo PrinterCapabilitiesInfo_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/print/PrinterCapabilitiesInfo;"
 		);
 	}
-	QAndroidJniObject PrinterCapabilitiesInfo_Builder::setColorModes(jint arg0, jint arg1)
+	android::print::PrinterCapabilitiesInfo_Builder PrinterCapabilitiesInfo_Builder::setColorModes(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setColorModes",
@@ -55,7 +55,7 @@ namespace android::print
 			arg1
 		);
 	}
-	QAndroidJniObject PrinterCapabilitiesInfo_Builder::setDuplexModes(jint arg0, jint arg1)
+	android::print::PrinterCapabilitiesInfo_Builder PrinterCapabilitiesInfo_Builder::setDuplexModes(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setDuplexModes",
@@ -64,7 +64,7 @@ namespace android::print
 			arg1
 		);
 	}
-	QAndroidJniObject PrinterCapabilitiesInfo_Builder::setMinMargins(android::print::PrintAttributes_Margins arg0)
+	android::print::PrinterCapabilitiesInfo_Builder PrinterCapabilitiesInfo_Builder::setMinMargins(android::print::PrintAttributes_Margins arg0)
 	{
 		return callObjectMethod(
 			"setMinMargins",

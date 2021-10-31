@@ -45,7 +45,7 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::renderscript::RenderScript arg0);
+		static android::renderscript::ScriptIntrinsicBLAS create(android::renderscript::RenderScript arg0);
 		void BNNM(android::renderscript::Allocation arg0, jint arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, jint arg6);
 		void CGBMV(jint arg0, jint arg1, jint arg2, android::renderscript::Float2 arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, android::renderscript::Float2 arg7, android::renderscript::Allocation arg8, jint arg9);
 		void CGEMM(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6);

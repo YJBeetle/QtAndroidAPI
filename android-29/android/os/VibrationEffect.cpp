@@ -3,7 +3,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject VibrationEffect::CREATOR()
+	__JniBaseClass VibrationEffect::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.VibrationEffect",
@@ -53,7 +53,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject VibrationEffect::createOneShot(jlong arg0, jint arg1)
+	android::os::VibrationEffect VibrationEffect::createOneShot(jlong arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.VibrationEffect",
@@ -63,7 +63,7 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject VibrationEffect::createPredefined(jint arg0)
+	android::os::VibrationEffect VibrationEffect::createPredefined(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.VibrationEffect",
@@ -72,7 +72,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject VibrationEffect::createWaveform(jlongArray arg0, jint arg1)
+	android::os::VibrationEffect VibrationEffect::createWaveform(jlongArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.VibrationEffect",
@@ -82,7 +82,7 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject VibrationEffect::createWaveform(jlongArray arg0, jintArray arg1, jint arg2)
+	android::os::VibrationEffect VibrationEffect::createWaveform(jlongArray arg0, jintArray arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.VibrationEffect",

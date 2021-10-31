@@ -37,7 +37,7 @@ namespace android::util
 			"()V"
 		);
 	}
-	QAndroidJniObject LongSparseArray::clone()
+	android::util::LongSparseArray LongSparseArray::clone()
 	{
 		return callObjectMethod(
 			"clone",

@@ -14,7 +14,7 @@ namespace android::net::wifi
 	public:
 		// Fields
 		jstring BSSID();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DISPLAY();
 		static jint INVALID();
 		static jint KEYPAD();

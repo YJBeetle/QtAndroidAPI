@@ -113,7 +113,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ListView::getAdapter()
+	__JniBaseClass ListView::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
@@ -127,7 +127,7 @@ namespace android::widget
 			"()[J"
 		).object<jlongArray>();
 	}
-	QAndroidJniObject ListView::getDivider()
+	android::graphics::drawable::Drawable ListView::getDivider()
 	{
 		return callObjectMethod(
 			"getDivider",
@@ -169,14 +169,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ListView::getOverscrollFooter()
+	android::graphics::drawable::Drawable ListView::getOverscrollFooter()
 	{
 		return callObjectMethod(
 			"getOverscrollFooter",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject ListView::getOverscrollHeader()
+	android::graphics::drawable::Drawable ListView::getOverscrollHeader()
 	{
 		return callObjectMethod(
 			"getOverscrollHeader",

@@ -41,12 +41,12 @@ namespace java::security::cert
 		CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, __JniBaseClass arg3);
 		
 		// Methods
-		QAndroidJniObject getAuthorityName();
-		QAndroidJniObject getExtensions();
-		QAndroidJniObject getInvalidityDate();
+		javax::security::auth::x500::X500Principal getAuthorityName();
+		__JniBaseClass getExtensions();
+		java::util::Date getInvalidityDate();
 		jstring getMessage();
-		QAndroidJniObject getRevocationDate();
-		QAndroidJniObject getRevocationReason();
+		java::util::Date getRevocationDate();
+		java::security::cert::CRLReason getRevocationReason();
 	};
 } // namespace java::security::cert
 

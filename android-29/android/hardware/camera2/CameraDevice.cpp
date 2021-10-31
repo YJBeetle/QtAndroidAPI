@@ -65,7 +65,7 @@ namespace android::hardware::camera2
 			"()V"
 		);
 	}
-	QAndroidJniObject CameraDevice::createCaptureRequest(jint arg0)
+	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createCaptureRequest(jint arg0)
 	{
 		return callObjectMethod(
 			"createCaptureRequest",
@@ -73,7 +73,7 @@ namespace android::hardware::camera2
 			arg0
 		);
 	}
-	QAndroidJniObject CameraDevice::createCaptureRequest(jint arg0, __JniBaseClass arg1)
+	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createCaptureRequest(jint arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"createCaptureRequest",
@@ -120,7 +120,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	QAndroidJniObject CameraDevice::createReprocessCaptureRequest(android::hardware::camera2::TotalCaptureResult arg0)
+	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createReprocessCaptureRequest(android::hardware::camera2::TotalCaptureResult arg0)
 	{
 		return callObjectMethod(
 			"createReprocessCaptureRequest",

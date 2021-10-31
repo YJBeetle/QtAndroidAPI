@@ -120,7 +120,7 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject ActionBar::getCustomView()
+	android::view::View ActionBar::getCustomView()
 	{
 		return callObjectMethod(
 			"getCustomView",
@@ -176,7 +176,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject ActionBar::getSelectedTab()
+	android::app::ActionBar_Tab ActionBar::getSelectedTab()
 	{
 		return callObjectMethod(
 			"getSelectedTab",
@@ -190,7 +190,7 @@ namespace android::app
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ActionBar::getTabAt(jint arg0)
+	android::app::ActionBar_Tab ActionBar::getTabAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getTabAt",
@@ -205,7 +205,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject ActionBar::getThemedContext()
+	android::content::Context ActionBar::getThemedContext()
 	{
 		return callObjectMethod(
 			"getThemedContext",
@@ -240,7 +240,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	QAndroidJniObject ActionBar::newTab()
+	android::app::ActionBar_Tab ActionBar::newTab()
 	{
 		return callObjectMethod(
 			"newTab",

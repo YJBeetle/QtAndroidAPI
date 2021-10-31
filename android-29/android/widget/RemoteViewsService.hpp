@@ -25,8 +25,8 @@ namespace android::widget
 		RemoteViewsService();
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
-		QAndroidJniObject onGetViewFactory(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
+		__JniBaseClass onGetViewFactory(android::content::Intent arg0);
 	};
 } // namespace android::widget
 

@@ -5,7 +5,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject CalendarContract_Reminders::CONTENT_URI()
+	android::net::Uri CalendarContract_Reminders::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Reminders",
@@ -20,7 +20,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CalendarContract_Reminders::query(android::content::ContentResolver arg0, jlong arg1, jarray arg2)
+	__JniBaseClass CalendarContract_Reminders::query(android::content::ContentResolver arg0, jlong arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.CalendarContract$Reminders",

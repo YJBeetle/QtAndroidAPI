@@ -44,7 +44,7 @@ namespace android::opengl
 		) {}
 	
 	// Methods
-	QAndroidJniObject GLDebugHelper::wrap(__JniBaseClass arg0, jint arg1, java::io::Writer arg2)
+	__JniBaseClass GLDebugHelper::wrap(__JniBaseClass arg0, jint arg1, java::io::Writer arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.GLDebugHelper",

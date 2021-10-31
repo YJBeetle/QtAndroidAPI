@@ -10,9 +10,9 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CLAMP();
-		static QAndroidJniObject MIRROR();
-		static QAndroidJniObject REPEAT();
+		static android::graphics::Shader_TileMode CLAMP();
+		static android::graphics::Shader_TileMode MIRROR();
+		static android::graphics::Shader_TileMode REPEAT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Shader_TileMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Shader_TileMode valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

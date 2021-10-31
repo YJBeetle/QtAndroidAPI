@@ -30,7 +30,7 @@ namespace android::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject SpannableStringBuilder::valueOf(jstring arg0)
+	android::text::SpannableStringBuilder SpannableStringBuilder::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.SpannableStringBuilder",
@@ -39,7 +39,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::append(jchar arg0)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(jchar arg0)
 	{
 		return callObjectMethod(
 			"append",
@@ -47,7 +47,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::append(jstring arg0)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(jstring arg0)
 	{
 		return callObjectMethod(
 			"append",
@@ -55,7 +55,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::append(jstring arg0, jint arg1, jint arg2)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(jstring arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
@@ -65,7 +65,7 @@ namespace android::text
 			arg2
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::append(jstring arg0, jobject arg1, jint arg2)
+	android::text::SpannableStringBuilder SpannableStringBuilder::append(jstring arg0, jobject arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"append",
@@ -97,7 +97,7 @@ namespace android::text
 			"()V"
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::_delete(jint arg0, jint arg1)
+	android::text::SpannableStringBuilder SpannableStringBuilder::_delete(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"delete",
@@ -193,7 +193,7 @@ namespace android::text
 			"()I"
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::insert(jint arg0, jstring arg1)
+	android::text::SpannableStringBuilder SpannableStringBuilder::insert(jint arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"insert",
@@ -202,7 +202,7 @@ namespace android::text
 			arg1
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::insert(jint arg0, jstring arg1, jint arg2, jint arg3)
+	android::text::SpannableStringBuilder SpannableStringBuilder::insert(jint arg0, jstring arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"insert",
@@ -238,7 +238,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2)
+	android::text::SpannableStringBuilder SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"replace",
@@ -248,7 +248,7 @@ namespace android::text
 			arg2
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
+	android::text::SpannableStringBuilder SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"replace",

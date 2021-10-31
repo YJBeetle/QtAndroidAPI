@@ -29,30 +29,30 @@ namespace java::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CANADA();
-		static QAndroidJniObject CANADA_FRENCH();
-		static QAndroidJniObject CHINA();
-		static QAndroidJniObject CHINESE();
-		static QAndroidJniObject ENGLISH();
-		static QAndroidJniObject FRANCE();
-		static QAndroidJniObject FRENCH();
-		static QAndroidJniObject GERMAN();
-		static QAndroidJniObject GERMANY();
-		static QAndroidJniObject ITALIAN();
-		static QAndroidJniObject ITALY();
-		static QAndroidJniObject JAPAN();
-		static QAndroidJniObject JAPANESE();
-		static QAndroidJniObject KOREA();
-		static QAndroidJniObject KOREAN();
-		static QAndroidJniObject PRC();
+		static java::util::Locale CANADA();
+		static java::util::Locale CANADA_FRENCH();
+		static java::util::Locale CHINA();
+		static java::util::Locale CHINESE();
+		static java::util::Locale ENGLISH();
+		static java::util::Locale FRANCE();
+		static java::util::Locale FRENCH();
+		static java::util::Locale GERMAN();
+		static java::util::Locale GERMANY();
+		static java::util::Locale ITALIAN();
+		static java::util::Locale ITALY();
+		static java::util::Locale JAPAN();
+		static java::util::Locale JAPANESE();
+		static java::util::Locale KOREA();
+		static java::util::Locale KOREAN();
+		static java::util::Locale PRC();
 		static jchar PRIVATE_USE_EXTENSION();
-		static QAndroidJniObject ROOT();
-		static QAndroidJniObject SIMPLIFIED_CHINESE();
-		static QAndroidJniObject TAIWAN();
-		static QAndroidJniObject TRADITIONAL_CHINESE();
-		static QAndroidJniObject UK();
+		static java::util::Locale ROOT();
+		static java::util::Locale SIMPLIFIED_CHINESE();
+		static java::util::Locale TAIWAN();
+		static java::util::Locale TRADITIONAL_CHINESE();
+		static java::util::Locale UK();
 		static jchar UNICODE_LOCALE_EXTENSION();
-		static QAndroidJniObject US();
+		static java::util::Locale US();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Locale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -64,18 +64,18 @@ namespace java::util
 		Locale(jstring arg0, jstring arg1, jstring arg2);
 		
 		// Methods
-		static QAndroidJniObject filter(__JniBaseClass arg0, __JniBaseClass arg1);
-		static QAndroidJniObject filter(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2);
-		static QAndroidJniObject filterTags(__JniBaseClass arg0, __JniBaseClass arg1);
-		static QAndroidJniObject filterTags(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2);
-		static QAndroidJniObject forLanguageTag(jstring arg0);
+		static __JniBaseClass filter(__JniBaseClass arg0, __JniBaseClass arg1);
+		static __JniBaseClass filter(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2);
+		static __JniBaseClass filterTags(__JniBaseClass arg0, __JniBaseClass arg1);
+		static __JniBaseClass filterTags(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2);
+		static java::util::Locale forLanguageTag(jstring arg0);
 		static jarray getAvailableLocales();
-		static QAndroidJniObject getDefault();
-		static QAndroidJniObject getDefault(java::util::Locale_Category arg0);
+		static java::util::Locale getDefault();
+		static java::util::Locale getDefault(java::util::Locale_Category arg0);
 		static jarray getISOCountries();
-		static QAndroidJniObject getISOCountries(__JniBaseClass arg0);
+		static __JniBaseClass getISOCountries(__JniBaseClass arg0);
 		static jarray getISOLanguages();
-		static QAndroidJniObject lookup(__JniBaseClass arg0, __JniBaseClass arg1);
+		static java::util::Locale lookup(__JniBaseClass arg0, __JniBaseClass arg1);
 		static jstring lookupTag(__JniBaseClass arg0, __JniBaseClass arg1);
 		static void setDefault(java::util::Locale arg0);
 		static void setDefault(java::util::Locale_Category arg0, java::util::Locale arg1);
@@ -93,18 +93,18 @@ namespace java::util
 		jstring getDisplayVariant();
 		jstring getDisplayVariant(java::util::Locale arg0);
 		jstring getExtension(jchar arg0);
-		QAndroidJniObject getExtensionKeys();
+		__JniBaseClass getExtensionKeys();
 		jstring getISO3Country();
 		jstring getISO3Language();
 		jstring getLanguage();
 		jstring getScript();
-		QAndroidJniObject getUnicodeLocaleAttributes();
-		QAndroidJniObject getUnicodeLocaleKeys();
+		__JniBaseClass getUnicodeLocaleAttributes();
+		__JniBaseClass getUnicodeLocaleKeys();
 		jstring getUnicodeLocaleType(jstring arg0);
 		jstring getVariant();
 		jboolean hasExtensions();
 		jint hashCode();
-		QAndroidJniObject stripExtensions();
+		java::util::Locale stripExtensions();
 		jstring toLanguageTag();
 		jstring toString();
 	};

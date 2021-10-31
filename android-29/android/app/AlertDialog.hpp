@@ -55,8 +55,8 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getButton(jint arg0);
-		QAndroidJniObject getListView();
+		android::widget::Button getButton(jint arg0);
+		android::widget::ListView getListView();
 		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
 		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
 		void setButton(jstring arg0, __JniBaseClass arg1);

@@ -22,7 +22,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TestLooperManager::getMessageQueue()
+	android::os::MessageQueue TestLooperManager::getMessageQueue()
 	{
 		return callObjectMethod(
 			"getMessageQueue",
@@ -49,7 +49,7 @@ namespace android::os
 			arg2.object()
 		);
 	}
-	QAndroidJniObject TestLooperManager::next()
+	android::os::Message TestLooperManager::next()
 	{
 		return callObjectMethod(
 			"next",

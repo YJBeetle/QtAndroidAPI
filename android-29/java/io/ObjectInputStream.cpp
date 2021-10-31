@@ -44,7 +44,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	QAndroidJniObject ObjectInputStream::getObjectInputFilter()
+	__JniBaseClass ObjectInputStream::getObjectInputFilter()
 	{
 		return callObjectMethod(
 			"getObjectInputFilter",
@@ -96,7 +96,7 @@ namespace java::io
 			"()D"
 		);
 	}
-	QAndroidJniObject ObjectInputStream::readFields()
+	java::io::ObjectInputStream_GetField ObjectInputStream::readFields()
 	{
 		return callObjectMethod(
 			"readFields",

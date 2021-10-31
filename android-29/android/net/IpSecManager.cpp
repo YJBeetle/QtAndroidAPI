@@ -31,7 +31,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject IpSecManager::allocateSecurityParameterIndex(java::net::InetAddress arg0)
+	android::net::IpSecManager_SecurityParameterIndex IpSecManager::allocateSecurityParameterIndex(java::net::InetAddress arg0)
 	{
 		return callObjectMethod(
 			"allocateSecurityParameterIndex",
@@ -39,7 +39,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject IpSecManager::allocateSecurityParameterIndex(java::net::InetAddress arg0, jint arg1)
+	android::net::IpSecManager_SecurityParameterIndex IpSecManager::allocateSecurityParameterIndex(java::net::InetAddress arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"allocateSecurityParameterIndex",
@@ -78,14 +78,14 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	QAndroidJniObject IpSecManager::openUdpEncapsulationSocket()
+	android::net::IpSecManager_UdpEncapsulationSocket IpSecManager::openUdpEncapsulationSocket()
 	{
 		return callObjectMethod(
 			"openUdpEncapsulationSocket",
 			"()Landroid/net/IpSecManager$UdpEncapsulationSocket;"
 		);
 	}
-	QAndroidJniObject IpSecManager::openUdpEncapsulationSocket(jint arg0)
+	android::net::IpSecManager_UdpEncapsulationSocket IpSecManager::openUdpEncapsulationSocket(jint arg0)
 	{
 		return callObjectMethod(
 			"openUdpEncapsulationSocket",

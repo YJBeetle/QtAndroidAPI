@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	QAndroidJniObject SystemUpdateInfo::CREATOR()
+	__JniBaseClass SystemUpdateInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.SystemUpdateInfo",

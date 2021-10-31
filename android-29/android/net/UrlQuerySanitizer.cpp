@@ -21,7 +21,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	QAndroidJniObject UrlQuerySanitizer::getAllButNulAndAngleBracketsLegal()
+	__JniBaseClass UrlQuerySanitizer::getAllButNulAndAngleBracketsLegal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -29,7 +29,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getAllButNulLegal()
+	__JniBaseClass UrlQuerySanitizer::getAllButNulLegal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -37,7 +37,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getAllButWhitespaceLegal()
+	__JniBaseClass UrlQuerySanitizer::getAllButWhitespaceLegal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -45,7 +45,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getAllIllegal()
+	__JniBaseClass UrlQuerySanitizer::getAllIllegal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -53,7 +53,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getAmpAndSpaceLegal()
+	__JniBaseClass UrlQuerySanitizer::getAmpAndSpaceLegal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -61,7 +61,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getAmpLegal()
+	__JniBaseClass UrlQuerySanitizer::getAmpLegal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -69,7 +69,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getSpaceLegal()
+	__JniBaseClass UrlQuerySanitizer::getSpaceLegal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -77,7 +77,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getUrlAndSpaceLegal()
+	__JniBaseClass UrlQuerySanitizer::getUrlAndSpaceLegal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -85,7 +85,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getUrlLegal()
+	__JniBaseClass UrlQuerySanitizer::getUrlLegal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -100,7 +100,7 @@ namespace android::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getEffectiveValueSanitizer(jstring arg0)
+	__JniBaseClass UrlQuerySanitizer::getEffectiveValueSanitizer(jstring arg0)
 	{
 		return callObjectMethod(
 			"getEffectiveValueSanitizer",
@@ -108,14 +108,14 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getParameterList()
+	__JniBaseClass UrlQuerySanitizer::getParameterList()
 	{
 		return callObjectMethod(
 			"getParameterList",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getParameterSet()
+	__JniBaseClass UrlQuerySanitizer::getParameterSet()
 	{
 		return callObjectMethod(
 			"getParameterSet",
@@ -129,7 +129,7 @@ namespace android::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject UrlQuerySanitizer::getUnregisteredParameterValueSanitizer()
+	__JniBaseClass UrlQuerySanitizer::getUnregisteredParameterValueSanitizer()
 	{
 		return callObjectMethod(
 			"getUnregisteredParameterValueSanitizer",
@@ -144,7 +144,7 @@ namespace android::net
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject UrlQuerySanitizer::getValueSanitizer(jstring arg0)
+	__JniBaseClass UrlQuerySanitizer::getValueSanitizer(jstring arg0)
 	{
 		return callObjectMethod(
 			"getValueSanitizer",

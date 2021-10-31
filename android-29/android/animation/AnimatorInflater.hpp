@@ -30,8 +30,8 @@ namespace android::animation
 		AnimatorInflater();
 		
 		// Methods
-		static QAndroidJniObject loadAnimator(android::content::Context arg0, jint arg1);
-		static QAndroidJniObject loadStateListAnimator(android::content::Context arg0, jint arg1);
+		static android::animation::Animator loadAnimator(android::content::Context arg0, jint arg1);
+		static android::animation::StateListAnimator loadStateListAnimator(android::content::Context arg0, jint arg1);
 	};
 } // namespace android::animation
 

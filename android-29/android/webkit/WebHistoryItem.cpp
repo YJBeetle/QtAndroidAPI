@@ -16,7 +16,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	QAndroidJniObject WebHistoryItem::getFavicon()
+	android::graphics::Bitmap WebHistoryItem::getFavicon()
 	{
 		return callObjectMethod(
 			"getFavicon",

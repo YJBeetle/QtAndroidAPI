@@ -30,7 +30,7 @@ namespace android::graphics::drawable::shapes
 		Shape();
 		
 		// Methods
-		QAndroidJniObject clone();
+		android::graphics::drawable::shapes::Shape clone();
 		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
 		jboolean equals(jobject arg0);
 		jfloat getHeight();

@@ -46,22 +46,22 @@ namespace java::security
 		
 		// Methods
 		static jstring getDefaultType();
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(java::io::File arg0, jcharArray arg1);
-		static QAndroidJniObject getInstance(java::io::File arg0, __JniBaseClass arg1);
-		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		QAndroidJniObject aliases();
+		static java::security::KeyStore getInstance(jstring arg0);
+		static java::security::KeyStore getInstance(java::io::File arg0, jcharArray arg1);
+		static java::security::KeyStore getInstance(java::io::File arg0, __JniBaseClass arg1);
+		static java::security::KeyStore getInstance(jstring arg0, jstring arg1);
+		static java::security::KeyStore getInstance(jstring arg0, java::security::Provider arg1);
+		__JniBaseClass aliases();
 		jboolean containsAlias(jstring arg0);
 		void deleteEntry(jstring arg0);
 		jboolean entryInstanceOf(jstring arg0, jclass arg1);
-		QAndroidJniObject getCertificate(jstring arg0);
+		java::security::cert::Certificate getCertificate(jstring arg0);
 		jstring getCertificateAlias(java::security::cert::Certificate arg0);
 		jarray getCertificateChain(jstring arg0);
-		QAndroidJniObject getCreationDate(jstring arg0);
-		QAndroidJniObject getEntry(jstring arg0, __JniBaseClass arg1);
-		QAndroidJniObject getKey(jstring arg0, jcharArray arg1);
-		QAndroidJniObject getProvider();
+		java::util::Date getCreationDate(jstring arg0);
+		__JniBaseClass getEntry(jstring arg0, __JniBaseClass arg1);
+		__JniBaseClass getKey(jstring arg0, jcharArray arg1);
+		java::security::Provider getProvider();
 		jstring getType();
 		jboolean isCertificateEntry(jstring arg0);
 		jboolean isKeyEntry(jstring arg0);

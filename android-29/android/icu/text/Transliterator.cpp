@@ -29,7 +29,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Transliterator::createFromRules(jstring arg0, jstring arg1, jint arg2)
+	android::icu::text::Transliterator Transliterator::createFromRules(jstring arg0, jstring arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -40,7 +40,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	QAndroidJniObject Transliterator::getAvailableIDs()
+	__JniBaseClass Transliterator::getAvailableIDs()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -48,7 +48,7 @@ namespace android::icu::text
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject Transliterator::getAvailableSources()
+	__JniBaseClass Transliterator::getAvailableSources()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -56,7 +56,7 @@ namespace android::icu::text
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject Transliterator::getAvailableTargets(jstring arg0)
+	__JniBaseClass Transliterator::getAvailableTargets(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -65,7 +65,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject Transliterator::getAvailableVariants(jstring arg0, jstring arg1)
+	__JniBaseClass Transliterator::getAvailableVariants(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -104,7 +104,7 @@ namespace android::icu::text
 			arg1.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject Transliterator::getInstance(jstring arg0)
+	android::icu::text::Transliterator Transliterator::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -113,7 +113,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject Transliterator::getInstance(jstring arg0, jint arg1)
+	android::icu::text::Transliterator Transliterator::getInstance(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -149,7 +149,7 @@ namespace android::icu::text
 			"()[Landroid/icu/text/Transliterator;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Transliterator::getFilter()
+	android::icu::text::UnicodeFilter Transliterator::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
@@ -163,7 +163,7 @@ namespace android::icu::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Transliterator::getInverse()
+	android::icu::text::Transliterator Transliterator::getInverse()
 	{
 		return callObjectMethod(
 			"getInverse",
@@ -177,14 +177,14 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject Transliterator::getSourceSet()
+	android::icu::text::UnicodeSet Transliterator::getSourceSet()
 	{
 		return callObjectMethod(
 			"getSourceSet",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
-	QAndroidJniObject Transliterator::getTargetSet()
+	android::icu::text::UnicodeSet Transliterator::getTargetSet()
 	{
 		return callObjectMethod(
 			"getTargetSet",

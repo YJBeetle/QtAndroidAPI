@@ -27,7 +27,7 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	QAndroidJniObject VisualVoicemailService::onBind(android::content::Intent arg0)
+	__JniBaseClass VisualVoicemailService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

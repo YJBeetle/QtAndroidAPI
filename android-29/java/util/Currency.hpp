@@ -41,9 +41,9 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getAvailableCurrencies();
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
+		static __JniBaseClass getAvailableCurrencies();
+		static java::util::Currency getInstance(jstring arg0);
+		static java::util::Currency getInstance(java::util::Locale arg0);
 		jstring getCurrencyCode();
 		jint getDefaultFractionDigits();
 		jstring getDisplayName();

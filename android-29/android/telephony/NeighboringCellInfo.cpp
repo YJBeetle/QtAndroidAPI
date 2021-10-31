@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject NeighboringCellInfo::CREATOR()
+	__JniBaseClass NeighboringCellInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.NeighboringCellInfo",

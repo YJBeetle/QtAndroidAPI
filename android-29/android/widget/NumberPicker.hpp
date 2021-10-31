@@ -48,7 +48,7 @@ namespace android::widget
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
 		jboolean dispatchTouchEvent(android::view::MotionEvent arg0);
 		jboolean dispatchTrackballEvent(android::view::MotionEvent arg0);
-		QAndroidJniObject getAccessibilityNodeProvider();
+		android::view::accessibility::AccessibilityNodeProvider getAccessibilityNodeProvider();
 		jarray getDisplayedValues();
 		jint getMaxValue();
 		jint getMinValue();

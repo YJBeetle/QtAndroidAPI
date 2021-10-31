@@ -10,9 +10,9 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CENTER();
-		static QAndroidJniObject LEFT();
-		static QAndroidJniObject RIGHT();
+		static android::graphics::Paint_Align CENTER();
+		static android::graphics::Paint_Align LEFT();
+		static android::graphics::Paint_Align RIGHT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Paint_Align(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Paint_Align valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

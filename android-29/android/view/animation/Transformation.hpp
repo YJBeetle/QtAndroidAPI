@@ -29,7 +29,7 @@ namespace android::view::animation
 		void clear();
 		void compose(android::view::animation::Transformation arg0);
 		jfloat getAlpha();
-		QAndroidJniObject getMatrix();
+		android::graphics::Matrix getMatrix();
 		jint getTransformationType();
 		void set(android::view::animation::Transformation arg0);
 		void setAlpha(jfloat arg0);

@@ -22,9 +22,9 @@ namespace java::lang::ref
 		ReferenceQueue();
 		
 		// Methods
-		QAndroidJniObject poll();
-		QAndroidJniObject remove();
-		QAndroidJniObject remove(jlong arg0);
+		java::lang::ref::Reference poll();
+		java::lang::ref::Reference remove();
+		java::lang::ref::Reference remove(jlong arg0);
 	};
 } // namespace java::lang::ref
 

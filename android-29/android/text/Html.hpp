@@ -29,10 +29,10 @@ namespace android::text
 		
 		// Methods
 		static jstring escapeHtml(jstring arg0);
-		static QAndroidJniObject fromHtml(jstring arg0);
-		static QAndroidJniObject fromHtml(jstring arg0, jint arg1);
-		static QAndroidJniObject fromHtml(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static QAndroidJniObject fromHtml(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		static __JniBaseClass fromHtml(jstring arg0);
+		static __JniBaseClass fromHtml(jstring arg0, jint arg1);
+		static __JniBaseClass fromHtml(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		static __JniBaseClass fromHtml(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
 		static jstring toHtml(__JniBaseClass arg0);
 		static jstring toHtml(__JniBaseClass arg0, jint arg1);
 	};

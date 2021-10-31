@@ -25,7 +25,7 @@ namespace java::io
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject nullReader();
+		static java::io::Reader nullReader();
 		void close();
 		void mark(jint arg0);
 		jboolean markSupported();

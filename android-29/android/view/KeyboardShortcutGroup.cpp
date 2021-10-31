@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject KeyboardShortcutGroup::CREATOR()
+	__JniBaseClass KeyboardShortcutGroup::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.KeyboardShortcutGroup",
@@ -48,7 +48,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject KeyboardShortcutGroup::getItems()
+	__JniBaseClass KeyboardShortcutGroup::getItems()
 	{
 		return callObjectMethod(
 			"getItems",

@@ -13,7 +13,7 @@ namespace android::app::admin
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint TYPE_INSTALL_AUTOMATIC();
 		static jint TYPE_INSTALL_WINDOWED();
 		static jint TYPE_POSTPONE();
@@ -25,15 +25,15 @@ namespace android::app::admin
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createAutomaticInstallPolicy();
-		static QAndroidJniObject createPostponeInstallPolicy();
-		static QAndroidJniObject createWindowedInstallPolicy(jint arg0, jint arg1);
+		static android::app::admin::SystemUpdatePolicy createAutomaticInstallPolicy();
+		static android::app::admin::SystemUpdatePolicy createPostponeInstallPolicy();
+		static android::app::admin::SystemUpdatePolicy createWindowedInstallPolicy(jint arg0, jint arg1);
 		jint describeContents();
-		QAndroidJniObject getFreezePeriods();
+		__JniBaseClass getFreezePeriods();
 		jint getInstallWindowEnd();
 		jint getInstallWindowStart();
 		jint getPolicyType();
-		QAndroidJniObject setFreezePeriods(__JniBaseClass arg0);
+		android::app::admin::SystemUpdatePolicy setFreezePeriods(__JniBaseClass arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

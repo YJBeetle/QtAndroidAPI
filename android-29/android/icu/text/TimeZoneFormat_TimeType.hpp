@@ -10,9 +10,9 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DAYLIGHT();
-		static QAndroidJniObject STANDARD();
-		static QAndroidJniObject UNKNOWN();
+		static android::icu::text::TimeZoneFormat_TimeType DAYLIGHT();
+		static android::icu::text::TimeZoneFormat_TimeType STANDARD();
+		static android::icu::text::TimeZoneFormat_TimeType UNKNOWN();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimeZoneFormat_TimeType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::TimeZoneFormat_TimeType valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

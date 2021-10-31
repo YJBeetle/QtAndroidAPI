@@ -55,7 +55,7 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	QAndroidJniObject PermissionRequest::getOrigin()
+	android::net::Uri PermissionRequest::getOrigin()
 	{
 		return callObjectMethod(
 			"getOrigin",

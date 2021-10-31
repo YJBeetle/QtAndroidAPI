@@ -59,7 +59,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	QAndroidJniObject SettingInjectorService::onBind(android::content::Intent arg0)
+	__JniBaseClass SettingInjectorService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

@@ -34,10 +34,10 @@ namespace android::media::tv
 		TvInputInfo_Builder(android::content::Context arg0, android::content::ComponentName arg1);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setCanRecord(jboolean arg0);
-		QAndroidJniObject setExtras(android::os::Bundle arg0);
-		QAndroidJniObject setTunerCount(jint arg0);
+		android::media::tv::TvInputInfo build();
+		android::media::tv::TvInputInfo_Builder setCanRecord(jboolean arg0);
+		android::media::tv::TvInputInfo_Builder setExtras(android::os::Bundle arg0);
+		android::media::tv::TvInputInfo_Builder setTunerCount(jint arg0);
 	};
 } // namespace android::media::tv
 

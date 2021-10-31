@@ -15,7 +15,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	QAndroidJniObject Keyframe::ofFloat(jfloat arg0)
+	android::animation::Keyframe Keyframe::ofFloat(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.Keyframe",
@@ -24,7 +24,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject Keyframe::ofFloat(jfloat arg0, jfloat arg1)
+	android::animation::Keyframe Keyframe::ofFloat(jfloat arg0, jfloat arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.Keyframe",
@@ -34,7 +34,7 @@ namespace android::animation
 			arg1
 		);
 	}
-	QAndroidJniObject Keyframe::ofInt(jfloat arg0)
+	android::animation::Keyframe Keyframe::ofInt(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.Keyframe",
@@ -43,7 +43,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject Keyframe::ofInt(jfloat arg0, jint arg1)
+	android::animation::Keyframe Keyframe::ofInt(jfloat arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.Keyframe",
@@ -53,7 +53,7 @@ namespace android::animation
 			arg1
 		);
 	}
-	QAndroidJniObject Keyframe::ofObject(jfloat arg0)
+	android::animation::Keyframe Keyframe::ofObject(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.Keyframe",
@@ -62,7 +62,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject Keyframe::ofObject(jfloat arg0, jobject arg1)
+	android::animation::Keyframe Keyframe::ofObject(jfloat arg0, jobject arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.Keyframe",
@@ -72,7 +72,7 @@ namespace android::animation
 			arg1
 		);
 	}
-	QAndroidJniObject Keyframe::clone()
+	android::animation::Keyframe Keyframe::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -86,7 +86,7 @@ namespace android::animation
 			"()F"
 		);
 	}
-	QAndroidJniObject Keyframe::getInterpolator()
+	__JniBaseClass Keyframe::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",

@@ -96,21 +96,21 @@ namespace java::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject DatagramSocket::getChannel()
+	java::nio::channels::DatagramChannel DatagramSocket::getChannel()
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/DatagramChannel;"
 		);
 	}
-	QAndroidJniObject DatagramSocket::getInetAddress()
+	java::net::InetAddress DatagramSocket::getInetAddress()
 	{
 		return callObjectMethod(
 			"getInetAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	QAndroidJniObject DatagramSocket::getLocalAddress()
+	java::net::InetAddress DatagramSocket::getLocalAddress()
 	{
 		return callObjectMethod(
 			"getLocalAddress",
@@ -124,7 +124,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject DatagramSocket::getLocalSocketAddress()
+	java::net::SocketAddress DatagramSocket::getLocalSocketAddress()
 	{
 		return callObjectMethod(
 			"getLocalSocketAddress",
@@ -153,7 +153,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject DatagramSocket::getRemoteSocketAddress()
+	java::net::SocketAddress DatagramSocket::getRemoteSocketAddress()
 	{
 		return callObjectMethod(
 			"getRemoteSocketAddress",
@@ -233,7 +233,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject DatagramSocket::setOption(__JniBaseClass arg0, jobject arg1)
+	java::net::DatagramSocket DatagramSocket::setOption(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -282,7 +282,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject DatagramSocket::supportedOptions()
+	__JniBaseClass DatagramSocket::supportedOptions()
 	{
 		return callObjectMethod(
 			"supportedOptions",

@@ -1442,7 +1442,7 @@ namespace android::icu::lang
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject UScript::getUsage(jint arg0)
+	android::icu::lang::UScript_ScriptUsage UScript::getUsage(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UScript",

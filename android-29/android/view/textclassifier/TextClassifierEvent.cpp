@@ -36,7 +36,7 @@ namespace android::view::textclassifier
 			"CATEGORY_SELECTION"
 		);
 	}
-	QAndroidJniObject TextClassifierEvent::CREATOR()
+	__JniBaseClass TextClassifierEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextClassifierEvent",
@@ -219,7 +219,7 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject TextClassifierEvent::getEventContext()
+	android::view::textclassifier::TextClassificationContext TextClassifierEvent::getEventContext()
 	{
 		return callObjectMethod(
 			"getEventContext",
@@ -240,14 +240,14 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject TextClassifierEvent::getExtras()
+	android::os::Bundle TextClassifierEvent::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject TextClassifierEvent::getLocale()
+	android::icu::util::ULocale TextClassifierEvent::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",

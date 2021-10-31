@@ -23,9 +23,9 @@ namespace java::security::cert
 		
 		// Methods
 		jobject clone();
-		QAndroidJniObject getPolicyTree();
-		QAndroidJniObject getPublicKey();
-		QAndroidJniObject getTrustAnchor();
+		__JniBaseClass getPolicyTree();
+		__JniBaseClass getPublicKey();
+		java::security::cert::TrustAnchor getTrustAnchor();
 		jstring toString();
 	};
 } // namespace java::security::cert

@@ -1494,7 +1494,7 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CameraMetadata::getKeys()
+	__JniBaseClass CameraMetadata::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",

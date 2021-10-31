@@ -28,7 +28,7 @@ namespace java::io
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ObjectStreamClass::lookup(jclass arg0)
+	java::io::ObjectStreamClass ObjectStreamClass::lookup(jclass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.io.ObjectStreamClass",
@@ -37,7 +37,7 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject ObjectStreamClass::lookupAny(jclass arg0)
+	java::io::ObjectStreamClass ObjectStreamClass::lookupAny(jclass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.io.ObjectStreamClass",
@@ -53,7 +53,7 @@ namespace java::io
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
-	QAndroidJniObject ObjectStreamClass::getField(jstring arg0)
+	java::io::ObjectStreamField ObjectStreamClass::getField(jstring arg0)
 	{
 		return callObjectMethod(
 			"getField",

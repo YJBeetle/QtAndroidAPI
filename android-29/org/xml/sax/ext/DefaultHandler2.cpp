@@ -79,7 +79,7 @@ namespace org::xml::sax::ext
 			arg2
 		);
 	}
-	QAndroidJniObject DefaultHandler2::getExternalSubset(jstring arg0, jstring arg1)
+	org::xml::sax::InputSource DefaultHandler2::getExternalSubset(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getExternalSubset",
@@ -97,7 +97,7 @@ namespace org::xml::sax::ext
 			arg1
 		);
 	}
-	QAndroidJniObject DefaultHandler2::resolveEntity(jstring arg0, jstring arg1)
+	org::xml::sax::InputSource DefaultHandler2::resolveEntity(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"resolveEntity",
@@ -106,7 +106,7 @@ namespace org::xml::sax::ext
 			arg1
 		);
 	}
-	QAndroidJniObject DefaultHandler2::resolveEntity(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	org::xml::sax::InputSource DefaultHandler2::resolveEntity(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
 		return callObjectMethod(
 			"resolveEntity",

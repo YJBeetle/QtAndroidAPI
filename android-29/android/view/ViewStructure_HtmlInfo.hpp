@@ -18,7 +18,7 @@ namespace android::view
 		ViewStructure_HtmlInfo();
 		
 		// Methods
-		QAndroidJniObject getAttributes();
+		__JniBaseClass getAttributes();
 		jstring getTag();
 	};
 } // namespace android::view

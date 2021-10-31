@@ -52,14 +52,14 @@ namespace java::io
 			"()V"
 		);
 	}
-	QAndroidJniObject FileOutputStream::getChannel()
+	java::nio::channels::FileChannel FileOutputStream::getChannel()
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/FileChannel;"
 		);
 	}
-	QAndroidJniObject FileOutputStream::getFD()
+	java::io::FileDescriptor FileOutputStream::getFD()
 	{
 		return callObjectMethod(
 			"getFD",

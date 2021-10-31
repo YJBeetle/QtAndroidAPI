@@ -36,14 +36,14 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject AbstractSequentialList::iterator()
+	__JniBaseClass AbstractSequentialList::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject AbstractSequentialList::listIterator(jint arg0)
+	__JniBaseClass AbstractSequentialList::listIterator(jint arg0)
 	{
 		return callObjectMethod(
 			"listIterator",

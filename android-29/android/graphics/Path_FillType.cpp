@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject Path_FillType::EVEN_ODD()
+	android::graphics::Path_FillType Path_FillType::EVEN_ODD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$FillType",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/Path$FillType;"
 		);
 	}
-	QAndroidJniObject Path_FillType::INVERSE_EVEN_ODD()
+	android::graphics::Path_FillType Path_FillType::INVERSE_EVEN_ODD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$FillType",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/Path$FillType;"
 		);
 	}
-	QAndroidJniObject Path_FillType::INVERSE_WINDING()
+	android::graphics::Path_FillType Path_FillType::INVERSE_WINDING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$FillType",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"Landroid/graphics/Path$FillType;"
 		);
 	}
-	QAndroidJniObject Path_FillType::WINDING()
+	android::graphics::Path_FillType Path_FillType::WINDING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$FillType",
@@ -42,7 +42,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Path_FillType::valueOf(jstring arg0)
+	android::graphics::Path_FillType Path_FillType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Path$FillType",

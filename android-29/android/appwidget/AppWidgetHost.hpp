@@ -40,7 +40,7 @@ namespace android::appwidget
 		// Methods
 		static void deleteAllHosts();
 		jint allocateAppWidgetId();
-		QAndroidJniObject createView(android::content::Context arg0, jint arg1, android::appwidget::AppWidgetProviderInfo arg2);
+		android::appwidget::AppWidgetHostView createView(android::content::Context arg0, jint arg1, android::appwidget::AppWidgetProviderInfo arg2);
 		void deleteAppWidgetId(jint arg0);
 		void deleteHost();
 		jintArray getAppWidgetIds();

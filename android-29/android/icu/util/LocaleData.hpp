@@ -37,11 +37,11 @@ namespace android::icu::util
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getCLDRVersion();
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);
-		static QAndroidJniObject getMeasurementSystem(android::icu::util::ULocale arg0);
-		static QAndroidJniObject getPaperSize(android::icu::util::ULocale arg0);
+		static android::icu::util::VersionInfo getCLDRVersion();
+		static android::icu::util::LocaleData getInstance();
+		static android::icu::util::LocaleData getInstance(android::icu::util::ULocale arg0);
+		static android::icu::util::LocaleData_MeasurementSystem getMeasurementSystem(android::icu::util::ULocale arg0);
+		static android::icu::util::LocaleData_PaperSize getPaperSize(android::icu::util::ULocale arg0);
 		jstring getDelimiter(jint arg0);
 		jboolean getNoSubstitute();
 		void setNoSubstitute(jboolean arg0);

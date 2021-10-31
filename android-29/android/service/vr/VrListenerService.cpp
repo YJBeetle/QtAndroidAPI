@@ -36,7 +36,7 @@ namespace android::service::vr
 			arg1.object()
 		);
 	}
-	QAndroidJniObject VrListenerService::onBind(android::content::Intent arg0)
+	__JniBaseClass VrListenerService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

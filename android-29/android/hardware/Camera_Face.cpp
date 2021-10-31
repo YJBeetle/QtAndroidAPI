@@ -11,28 +11,28 @@ namespace android::hardware
 			"id"
 		);
 	}
-	QAndroidJniObject Camera_Face::leftEye()
+	android::graphics::Point Camera_Face::leftEye()
 	{
 		return getObjectField(
 			"leftEye",
 			"Landroid/graphics/Point;"
 		);
 	}
-	QAndroidJniObject Camera_Face::mouth()
+	android::graphics::Point Camera_Face::mouth()
 	{
 		return getObjectField(
 			"mouth",
 			"Landroid/graphics/Point;"
 		);
 	}
-	QAndroidJniObject Camera_Face::rect()
+	android::graphics::Rect Camera_Face::rect()
 	{
 		return getObjectField(
 			"rect",
 			"Landroid/graphics/Rect;"
 		);
 	}
-	QAndroidJniObject Camera_Face::rightEye()
+	android::graphics::Point Camera_Face::rightEye()
 	{
 		return getObjectField(
 			"rightEye",

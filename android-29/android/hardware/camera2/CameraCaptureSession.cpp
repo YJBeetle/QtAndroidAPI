@@ -83,14 +83,14 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CameraCaptureSession::getDevice()
+	android::hardware::camera2::CameraDevice CameraCaptureSession::getDevice()
 	{
 		return callObjectMethod(
 			"getDevice",
 			"()Landroid/hardware/camera2/CameraDevice;"
 		);
 	}
-	QAndroidJniObject CameraCaptureSession::getInputSurface()
+	android::view::Surface CameraCaptureSession::getInputSurface()
 	{
 		return callObjectMethod(
 			"getInputSurface",

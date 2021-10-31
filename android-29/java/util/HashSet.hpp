@@ -40,10 +40,10 @@ namespace java::util
 		jobject clone();
 		jboolean contains(jobject arg0);
 		jboolean isEmpty();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jboolean remove(jobject arg0);
 		jint size();
-		QAndroidJniObject spliterator();
+		__JniBaseClass spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 	};

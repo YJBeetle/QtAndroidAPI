@@ -34,7 +34,7 @@ namespace android::service::carrier
 			arg0
 		);
 	}
-	QAndroidJniObject CarrierService::onBind(android::content::Intent arg0)
+	__JniBaseClass CarrierService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -42,7 +42,7 @@ namespace android::service::carrier
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CarrierService::onLoadConfig(android::service::carrier::CarrierIdentifier arg0)
+	android::os::PersistableBundle CarrierService::onLoadConfig(android::service::carrier::CarrierIdentifier arg0)
 	{
 		return callObjectMethod(
 			"onLoadConfig",

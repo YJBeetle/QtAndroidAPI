@@ -22,10 +22,10 @@ namespace android::telephony
 		VisualVoicemailSmsFilterSettings_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setClientPrefix(jstring arg0);
-		QAndroidJniObject setDestinationPort(jint arg0);
-		QAndroidJniObject setOriginatingNumbers(__JniBaseClass arg0);
+		android::telephony::VisualVoicemailSmsFilterSettings build();
+		android::telephony::VisualVoicemailSmsFilterSettings_Builder setClientPrefix(jstring arg0);
+		android::telephony::VisualVoicemailSmsFilterSettings_Builder setDestinationPort(jint arg0);
+		android::telephony::VisualVoicemailSmsFilterSettings_Builder setOriginatingNumbers(__JniBaseClass arg0);
 	};
 } // namespace android::telephony
 

@@ -24,7 +24,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	QAndroidJniObject View_DragShadowBuilder::getView()
+	android::view::View View_DragShadowBuilder::getView()
 	{
 		return callObjectMethod(
 			"getView",

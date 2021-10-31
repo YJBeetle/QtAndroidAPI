@@ -15,9 +15,9 @@ namespace android::provider
 		// Fields
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
-		static QAndroidJniObject DELETED_CONTENT_URI();
+		static android::net::Uri DELETED_CONTENT_URI();
 		static jstring GROUP_ANDROID_STARRED();
 		static jstring GROUP_MY_CONTACTS();
 		

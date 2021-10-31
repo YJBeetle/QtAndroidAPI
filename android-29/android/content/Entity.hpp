@@ -31,8 +31,8 @@ namespace android::content
 		
 		// Methods
 		void addSubValue(android::net::Uri arg0, android::content::ContentValues arg1);
-		QAndroidJniObject getEntityValues();
-		QAndroidJniObject getSubValues();
+		android::content::ContentValues getEntityValues();
+		java::util::ArrayList getSubValues();
 		jstring toString();
 	};
 } // namespace android::content

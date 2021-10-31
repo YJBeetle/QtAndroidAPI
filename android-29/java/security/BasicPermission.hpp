@@ -36,7 +36,7 @@ namespace java::security
 		jstring getActions();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
-		QAndroidJniObject newPermissionCollection();
+		java::security::PermissionCollection newPermissionCollection();
 	};
 } // namespace java::security
 

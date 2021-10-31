@@ -36,7 +36,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	QAndroidJniObject Handler::createAsync(android::os::Looper arg0)
+	android::os::Handler Handler::createAsync(android::os::Looper arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Handler",
@@ -45,7 +45,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Handler::createAsync(android::os::Looper arg0, __JniBaseClass arg1)
+	android::os::Handler Handler::createAsync(android::os::Looper arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Handler",
@@ -72,7 +72,7 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject Handler::getLooper()
+	android::os::Looper Handler::getLooper()
 	{
 		return callObjectMethod(
 			"getLooper",
@@ -120,14 +120,14 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject Handler::obtainMessage()
+	android::os::Message Handler::obtainMessage()
 	{
 		return callObjectMethod(
 			"obtainMessage",
 			"()Landroid/os/Message;"
 		);
 	}
-	QAndroidJniObject Handler::obtainMessage(jint arg0)
+	android::os::Message Handler::obtainMessage(jint arg0)
 	{
 		return callObjectMethod(
 			"obtainMessage",
@@ -135,7 +135,7 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Handler::obtainMessage(jint arg0, jobject arg1)
+	android::os::Message Handler::obtainMessage(jint arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"obtainMessage",
@@ -144,7 +144,7 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject Handler::obtainMessage(jint arg0, jint arg1, jint arg2)
+	android::os::Message Handler::obtainMessage(jint arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"obtainMessage",
@@ -154,7 +154,7 @@ namespace android::os
 			arg2
 		);
 	}
-	QAndroidJniObject Handler::obtainMessage(jint arg0, jint arg1, jint arg2, jobject arg3)
+	android::os::Message Handler::obtainMessage(jint arg0, jint arg1, jint arg2, jobject arg3)
 	{
 		return callObjectMethod(
 			"obtainMessage",

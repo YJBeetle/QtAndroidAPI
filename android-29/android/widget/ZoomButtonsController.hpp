@@ -30,8 +30,8 @@ namespace android::widget
 		ZoomButtonsController(android::view::View arg0);
 		
 		// Methods
-		QAndroidJniObject getContainer();
-		QAndroidJniObject getZoomControls();
+		android::view::ViewGroup getContainer();
+		android::view::View getZoomControls();
 		jboolean isAutoDismissed();
 		jboolean isVisible();
 		jboolean onTouch(android::view::View arg0, android::view::MotionEvent arg1);

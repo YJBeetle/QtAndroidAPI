@@ -4,7 +4,7 @@
 namespace android::app::usage
 {
 	// Fields
-	QAndroidJniObject UsageStats::CREATOR()
+	__JniBaseClass UsageStats::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.usage.UsageStats",

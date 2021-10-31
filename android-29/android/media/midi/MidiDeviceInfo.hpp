@@ -17,7 +17,7 @@ namespace android::media::midi
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring PROPERTY_BLUETOOTH_DEVICE();
 		static jstring PROPERTY_MANUFACTURER();
 		static jstring PROPERTY_NAME();
@@ -42,7 +42,7 @@ namespace android::media::midi
 		jint getInputPortCount();
 		jint getOutputPortCount();
 		jarray getPorts();
-		QAndroidJniObject getProperties();
+		android::os::Bundle getProperties();
 		jint getType();
 		jint hashCode();
 		jboolean isPrivate();

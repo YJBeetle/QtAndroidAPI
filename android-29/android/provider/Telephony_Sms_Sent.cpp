@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject Telephony_Sms_Sent::CONTENT_URI()
+	android::net::Uri Telephony_Sms_Sent::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Sms$Sent",

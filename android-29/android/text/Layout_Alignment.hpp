@@ -10,9 +10,9 @@ namespace android::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ALIGN_CENTER();
-		static QAndroidJniObject ALIGN_NORMAL();
-		static QAndroidJniObject ALIGN_OPPOSITE();
+		static android::text::Layout_Alignment ALIGN_CENTER();
+		static android::text::Layout_Alignment ALIGN_NORMAL();
+		static android::text::Layout_Alignment ALIGN_OPPOSITE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Layout_Alignment(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::text::Layout_Alignment valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::text

@@ -19,7 +19,7 @@ namespace android::opengl
 		) {}
 	
 	// Methods
-	QAndroidJniObject ETC1Util_ETC1Texture::getData()
+	java::nio::ByteBuffer ETC1Util_ETC1Texture::getData()
 	{
 		return callObjectMethod(
 			"getData",

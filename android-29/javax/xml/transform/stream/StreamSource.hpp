@@ -37,9 +37,9 @@ namespace javax::xml::transform::stream
 		StreamSource(java::io::Reader arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getInputStream();
+		java::io::InputStream getInputStream();
 		jstring getPublicId();
-		QAndroidJniObject getReader();
+		java::io::Reader getReader();
 		jstring getSystemId();
 		jboolean isEmpty();
 		void setInputStream(java::io::InputStream arg0);

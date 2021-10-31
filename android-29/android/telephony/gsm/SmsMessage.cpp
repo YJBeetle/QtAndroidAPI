@@ -76,7 +76,7 @@ namespace android::telephony::gsm
 			arg1
 		).object<jintArray>();
 	}
-	QAndroidJniObject SmsMessage::createFromPdu(jbyteArray arg0)
+	android::telephony::gsm::SmsMessage SmsMessage::createFromPdu(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
@@ -85,7 +85,7 @@ namespace android::telephony::gsm
 			arg0
 		);
 	}
-	QAndroidJniObject SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3)
+	android::telephony::gsm::SmsMessage_SubmitPdu SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
@@ -97,7 +97,7 @@ namespace android::telephony::gsm
 			arg3
 		);
 	}
-	QAndroidJniObject SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4)
+	android::telephony::gsm::SmsMessage_SubmitPdu SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.gsm.SmsMessage",
@@ -161,7 +161,7 @@ namespace android::telephony::gsm
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SmsMessage::getMessageClass()
+	android::telephony::gsm::SmsMessage_MessageClass SmsMessage::getMessageClass()
 	{
 		return callObjectMethod(
 			"getMessageClass",

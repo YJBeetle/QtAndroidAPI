@@ -24,9 +24,9 @@ namespace java::security::spec
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getA();
-		QAndroidJniObject getB();
-		QAndroidJniObject getField();
+		java::math::BigInteger getA();
+		java::math::BigInteger getB();
+		__JniBaseClass getField();
 		jbyteArray getSeed();
 		jint hashCode();
 	};

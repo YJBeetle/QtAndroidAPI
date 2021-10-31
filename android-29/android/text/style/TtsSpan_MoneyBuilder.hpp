@@ -20,11 +20,11 @@ namespace android::text::style
 		TtsSpan_MoneyBuilder();
 		
 		// Methods
-		QAndroidJniObject setCurrency(jstring arg0);
-		QAndroidJniObject setFractionalPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(jlong arg0);
-		QAndroidJniObject setQuantity(jstring arg0);
+		android::text::style::TtsSpan_MoneyBuilder setCurrency(jstring arg0);
+		android::text::style::TtsSpan_MoneyBuilder setFractionalPart(jstring arg0);
+		android::text::style::TtsSpan_MoneyBuilder setIntegerPart(jstring arg0);
+		android::text::style::TtsSpan_MoneyBuilder setIntegerPart(jlong arg0);
+		android::text::style::TtsSpan_MoneyBuilder setQuantity(jstring arg0);
 	};
 } // namespace android::text::style
 

@@ -28,9 +28,9 @@ namespace android::location
 		
 		// Methods
 		static jboolean isPresent();
-		QAndroidJniObject getFromLocation(jdouble arg0, jdouble arg1, jint arg2);
-		QAndroidJniObject getFromLocationName(jstring arg0, jint arg1);
-		QAndroidJniObject getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
+		__JniBaseClass getFromLocation(jdouble arg0, jdouble arg1, jint arg2);
+		__JniBaseClass getFromLocationName(jstring arg0, jint arg1);
+		__JniBaseClass getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
 	};
 } // namespace android::location
 

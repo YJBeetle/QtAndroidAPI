@@ -22,7 +22,7 @@ namespace android::webkit
 		WebViewDatabase();
 		
 		// Methods
-		static QAndroidJniObject getInstance(android::content::Context arg0);
+		static android::webkit::WebViewDatabase getInstance(android::content::Context arg0);
 		void clearFormData();
 		void clearHttpAuthUsernamePassword();
 		void clearUsernamePassword();

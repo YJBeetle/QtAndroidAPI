@@ -9,7 +9,7 @@ namespace android::print
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NO_MARGINS();
+		static android::print::PrintAttributes_Margins NO_MARGINS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintAttributes_Margins(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

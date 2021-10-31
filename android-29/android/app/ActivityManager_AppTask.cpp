@@ -21,7 +21,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject ActivityManager_AppTask::getTaskInfo()
+	android::app::ActivityManager_RecentTaskInfo ActivityManager_AppTask::getTaskInfo()
 	{
 		return callObjectMethod(
 			"getTaskInfo",

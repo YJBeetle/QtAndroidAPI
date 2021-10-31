@@ -49,14 +49,14 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TwoLineListItem::getText1()
+	android::widget::TextView TwoLineListItem::getText1()
 	{
 		return callObjectMethod(
 			"getText1",
 			"()Landroid/widget/TextView;"
 		);
 	}
-	QAndroidJniObject TwoLineListItem::getText2()
+	android::widget::TextView TwoLineListItem::getText2()
 	{
 		return callObjectMethod(
 			"getText2",

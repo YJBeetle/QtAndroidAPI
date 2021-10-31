@@ -41,18 +41,18 @@ namespace android::media::audiofx
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getChannelByChannelIndex(jint arg0);
+		android::media::audiofx::DynamicsProcessing_Channel getChannelByChannelIndex(jint arg0);
 		jfloat getInputGainByChannelIndex(jint arg0);
-		QAndroidJniObject getLimiterByChannelIndex(jint arg0);
-		QAndroidJniObject getMbcBandByChannelIndex(jint arg0, jint arg1);
+		android::media::audiofx::DynamicsProcessing_Limiter getLimiterByChannelIndex(jint arg0);
+		android::media::audiofx::DynamicsProcessing_MbcBand getMbcBandByChannelIndex(jint arg0, jint arg1);
 		jint getMbcBandCount();
-		QAndroidJniObject getMbcByChannelIndex(jint arg0);
-		QAndroidJniObject getPostEqBandByChannelIndex(jint arg0, jint arg1);
+		android::media::audiofx::DynamicsProcessing_Mbc getMbcByChannelIndex(jint arg0);
+		android::media::audiofx::DynamicsProcessing_EqBand getPostEqBandByChannelIndex(jint arg0, jint arg1);
 		jint getPostEqBandCount();
-		QAndroidJniObject getPostEqByChannelIndex(jint arg0);
-		QAndroidJniObject getPreEqBandByChannelIndex(jint arg0, jint arg1);
+		android::media::audiofx::DynamicsProcessing_Eq getPostEqByChannelIndex(jint arg0);
+		android::media::audiofx::DynamicsProcessing_EqBand getPreEqBandByChannelIndex(jint arg0, jint arg1);
 		jint getPreEqBandCount();
-		QAndroidJniObject getPreEqByChannelIndex(jint arg0);
+		android::media::audiofx::DynamicsProcessing_Eq getPreEqByChannelIndex(jint arg0);
 		jfloat getPreferredFrameDuration();
 		jint getVariant();
 		jboolean isLimiterInUse();

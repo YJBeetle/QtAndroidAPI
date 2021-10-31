@@ -52,7 +52,7 @@ namespace android::nfc::tech
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Ndef::get(android::nfc::Tag arg0)
+	android::nfc::tech::Ndef Ndef::get(android::nfc::Tag arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.tech.Ndef",
@@ -82,7 +82,7 @@ namespace android::nfc::tech
 			"()V"
 		);
 	}
-	QAndroidJniObject Ndef::getCachedNdefMessage()
+	android::nfc::NdefMessage Ndef::getCachedNdefMessage()
 	{
 		return callObjectMethod(
 			"getCachedNdefMessage",
@@ -96,14 +96,14 @@ namespace android::nfc::tech
 			"()I"
 		);
 	}
-	QAndroidJniObject Ndef::getNdefMessage()
+	android::nfc::NdefMessage Ndef::getNdefMessage()
 	{
 		return callObjectMethod(
 			"getNdefMessage",
 			"()Landroid/nfc/NdefMessage;"
 		);
 	}
-	QAndroidJniObject Ndef::getTag()
+	android::nfc::Tag Ndef::getTag()
 	{
 		return callObjectMethod(
 			"getTag",

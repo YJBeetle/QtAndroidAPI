@@ -34,7 +34,7 @@ namespace android::location
 		
 		// Methods
 		static void refreshSettings(android::content::Context arg0);
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onStart(android::content::Intent arg0, jint arg1);
 		jint onStartCommand(android::content::Intent arg0, jint arg1, jint arg2);
 	};

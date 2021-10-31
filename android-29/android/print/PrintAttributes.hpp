@@ -27,7 +27,7 @@ namespace android::print
 		// Fields
 		static jint COLOR_MODE_COLOR();
 		static jint COLOR_MODE_MONOCHROME();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DUPLEX_MODE_LONG_EDGE();
 		static jint DUPLEX_MODE_NONE();
 		static jint DUPLEX_MODE_SHORT_EDGE();
@@ -43,9 +43,9 @@ namespace android::print
 		jboolean equals(jobject arg0);
 		jint getColorMode();
 		jint getDuplexMode();
-		QAndroidJniObject getMediaSize();
-		QAndroidJniObject getMinMargins();
-		QAndroidJniObject getResolution();
+		android::print::PrintAttributes_MediaSize getMediaSize();
+		android::print::PrintAttributes_Margins getMinMargins();
+		android::print::PrintAttributes_Resolution getResolution();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

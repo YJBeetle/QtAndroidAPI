@@ -31,21 +31,21 @@ namespace android::hardware::biometrics
 		) {}
 	
 	// Methods
-	QAndroidJniObject BiometricPrompt_CryptoObject::getCipher()
+	javax::crypto::Cipher BiometricPrompt_CryptoObject::getCipher()
 	{
 		return callObjectMethod(
 			"getCipher",
 			"()Ljavax/crypto/Cipher;"
 		);
 	}
-	QAndroidJniObject BiometricPrompt_CryptoObject::getMac()
+	javax::crypto::Mac BiometricPrompt_CryptoObject::getMac()
 	{
 		return callObjectMethod(
 			"getMac",
 			"()Ljavax/crypto/Mac;"
 		);
 	}
-	QAndroidJniObject BiometricPrompt_CryptoObject::getSignature()
+	java::security::Signature BiometricPrompt_CryptoObject::getSignature()
 	{
 		return callObjectMethod(
 			"getSignature",

@@ -53,13 +53,13 @@ namespace android::preference
 		// Methods
 		void addPreferencesFromIntent(android::content::Intent arg0);
 		void addPreferencesFromResource(jint arg0);
-		QAndroidJniObject findPreference(jstring arg0);
-		QAndroidJniObject getPreferenceManager();
-		QAndroidJniObject getPreferenceScreen();
+		android::preference::Preference findPreference(jstring arg0);
+		android::preference::PreferenceManager getPreferenceManager();
+		android::preference::PreferenceScreen getPreferenceScreen();
 		void onActivityCreated(android::os::Bundle arg0);
 		void onActivityResult(jint arg0, jint arg1, android::content::Intent arg2);
 		void onCreate(android::os::Bundle arg0);
-		QAndroidJniObject onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2);
+		android::view::View onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2);
 		void onDestroy();
 		void onDestroyView();
 		jboolean onPreferenceTreeClick(android::preference::PreferenceScreen arg0, android::preference::Preference arg1);

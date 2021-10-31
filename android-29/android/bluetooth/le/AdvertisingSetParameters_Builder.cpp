@@ -16,14 +16,14 @@ namespace android::bluetooth::le
 		) {}
 	
 	// Methods
-	QAndroidJniObject AdvertisingSetParameters_Builder::build()
+	android::bluetooth::le::AdvertisingSetParameters AdvertisingSetParameters_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/bluetooth/le/AdvertisingSetParameters;"
 		);
 	}
-	QAndroidJniObject AdvertisingSetParameters_Builder::setAnonymous(jboolean arg0)
+	android::bluetooth::le::AdvertisingSetParameters_Builder AdvertisingSetParameters_Builder::setAnonymous(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setAnonymous",
@@ -31,7 +31,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject AdvertisingSetParameters_Builder::setConnectable(jboolean arg0)
+	android::bluetooth::le::AdvertisingSetParameters_Builder AdvertisingSetParameters_Builder::setConnectable(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setConnectable",
@@ -39,7 +39,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject AdvertisingSetParameters_Builder::setIncludeTxPower(jboolean arg0)
+	android::bluetooth::le::AdvertisingSetParameters_Builder AdvertisingSetParameters_Builder::setIncludeTxPower(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setIncludeTxPower",
@@ -47,7 +47,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject AdvertisingSetParameters_Builder::setInterval(jint arg0)
+	android::bluetooth::le::AdvertisingSetParameters_Builder AdvertisingSetParameters_Builder::setInterval(jint arg0)
 	{
 		return callObjectMethod(
 			"setInterval",
@@ -55,7 +55,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject AdvertisingSetParameters_Builder::setLegacyMode(jboolean arg0)
+	android::bluetooth::le::AdvertisingSetParameters_Builder AdvertisingSetParameters_Builder::setLegacyMode(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setLegacyMode",
@@ -63,7 +63,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject AdvertisingSetParameters_Builder::setPrimaryPhy(jint arg0)
+	android::bluetooth::le::AdvertisingSetParameters_Builder AdvertisingSetParameters_Builder::setPrimaryPhy(jint arg0)
 	{
 		return callObjectMethod(
 			"setPrimaryPhy",
@@ -71,7 +71,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject AdvertisingSetParameters_Builder::setScannable(jboolean arg0)
+	android::bluetooth::le::AdvertisingSetParameters_Builder AdvertisingSetParameters_Builder::setScannable(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setScannable",
@@ -79,7 +79,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject AdvertisingSetParameters_Builder::setSecondaryPhy(jint arg0)
+	android::bluetooth::le::AdvertisingSetParameters_Builder AdvertisingSetParameters_Builder::setSecondaryPhy(jint arg0)
 	{
 		return callObjectMethod(
 			"setSecondaryPhy",
@@ -87,7 +87,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject AdvertisingSetParameters_Builder::setTxPowerLevel(jint arg0)
+	android::bluetooth::le::AdvertisingSetParameters_Builder AdvertisingSetParameters_Builder::setTxPowerLevel(jint arg0)
 	{
 		return callObjectMethod(
 			"setTxPowerLevel",

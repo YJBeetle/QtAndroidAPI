@@ -34,7 +34,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject LinkedHashSet::spliterator()
+	__JniBaseClass LinkedHashSet::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

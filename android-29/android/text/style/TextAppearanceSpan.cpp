@@ -75,7 +75,7 @@ namespace android::text::style
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TextAppearanceSpan::getLinkTextColor()
+	android::content::res::ColorStateList TextAppearanceSpan::getLinkTextColor()
 	{
 		return callObjectMethod(
 			"getLinkTextColor",
@@ -117,7 +117,7 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	QAndroidJniObject TextAppearanceSpan::getTextColor()
+	android::content::res::ColorStateList TextAppearanceSpan::getTextColor()
 	{
 		return callObjectMethod(
 			"getTextColor",
@@ -131,7 +131,7 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	QAndroidJniObject TextAppearanceSpan::getTextLocales()
+	android::os::LocaleList TextAppearanceSpan::getTextLocales()
 	{
 		return callObjectMethod(
 			"getTextLocales",
@@ -152,7 +152,7 @@ namespace android::text::style
 			"()I"
 		);
 	}
-	QAndroidJniObject TextAppearanceSpan::getTypeface()
+	android::graphics::Typeface TextAppearanceSpan::getTypeface()
 	{
 		return callObjectMethod(
 			"getTypeface",

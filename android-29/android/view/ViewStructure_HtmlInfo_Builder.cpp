@@ -16,7 +16,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	QAndroidJniObject ViewStructure_HtmlInfo_Builder::addAttribute(jstring arg0, jstring arg1)
+	android::view::ViewStructure_HtmlInfo_Builder ViewStructure_HtmlInfo_Builder::addAttribute(jstring arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"addAttribute",
@@ -25,7 +25,7 @@ namespace android::view
 			arg1
 		);
 	}
-	QAndroidJniObject ViewStructure_HtmlInfo_Builder::build()
+	android::view::ViewStructure_HtmlInfo ViewStructure_HtmlInfo_Builder::build()
 	{
 		return callObjectMethod(
 			"build",

@@ -34,14 +34,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject SearchIterator::getBreakIterator()
+	android::icu::text::BreakIterator SearchIterator::getBreakIterator()
 	{
 		return callObjectMethod(
 			"getBreakIterator",
 			"()Landroid/icu/text/BreakIterator;"
 		);
 	}
-	QAndroidJniObject SearchIterator::getElementComparisonType()
+	android::icu::text::SearchIterator_ElementComparisonType SearchIterator::getElementComparisonType()
 	{
 		return callObjectMethod(
 			"getElementComparisonType",
@@ -76,7 +76,7 @@ namespace android::icu::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SearchIterator::getTarget()
+	__JniBaseClass SearchIterator::getTarget()
 	{
 		return callObjectMethod(
 			"getTarget",

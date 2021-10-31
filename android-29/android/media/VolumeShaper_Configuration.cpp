@@ -4,7 +4,7 @@
 namespace android::media
 {
 	// Fields
-	QAndroidJniObject VolumeShaper_Configuration::CREATOR()
+	__JniBaseClass VolumeShaper_Configuration::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",
@@ -12,7 +12,7 @@ namespace android::media
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration::CUBIC_RAMP()
+	android::media::VolumeShaper_Configuration VolumeShaper_Configuration::CUBIC_RAMP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",
@@ -48,7 +48,7 @@ namespace android::media
 			"INTERPOLATOR_TYPE_STEP"
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration::LINEAR_RAMP()
+	android::media::VolumeShaper_Configuration VolumeShaper_Configuration::LINEAR_RAMP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",
@@ -56,7 +56,7 @@ namespace android::media
 			"Landroid/media/VolumeShaper$Configuration;"
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration::SCURVE_RAMP()
+	android::media::VolumeShaper_Configuration VolumeShaper_Configuration::SCURVE_RAMP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",
@@ -64,7 +64,7 @@ namespace android::media
 			"Landroid/media/VolumeShaper$Configuration;"
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration::SINE_RAMP()
+	android::media::VolumeShaper_Configuration VolumeShaper_Configuration::SINE_RAMP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",

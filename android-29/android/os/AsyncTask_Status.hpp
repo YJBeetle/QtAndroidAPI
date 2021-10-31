@@ -10,9 +10,9 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FINISHED();
-		static QAndroidJniObject PENDING();
-		static QAndroidJniObject RUNNING();
+		static android::os::AsyncTask_Status FINISHED();
+		static android::os::AsyncTask_Status PENDING();
+		static android::os::AsyncTask_Status RUNNING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AsyncTask_Status(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::os::AsyncTask_Status valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::os

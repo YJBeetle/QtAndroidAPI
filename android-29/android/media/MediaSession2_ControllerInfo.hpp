@@ -26,9 +26,9 @@ namespace android::media
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getConnectionHints();
+		android::os::Bundle getConnectionHints();
 		jstring getPackageName();
-		QAndroidJniObject getRemoteUserInfo();
+		android::media::session::MediaSessionManager_RemoteUserInfo getRemoteUserInfo();
 		jint getUid();
 		jint hashCode();
 		jstring toString();

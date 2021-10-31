@@ -76,7 +76,7 @@ namespace android::media
 			"()Z"
 		);
 	}
-	QAndroidJniObject MediaExtractor::getAudioPresentations(jint arg0)
+	__JniBaseClass MediaExtractor::getAudioPresentations(jint arg0)
 	{
 		return callObjectMethod(
 			"getAudioPresentations",
@@ -91,7 +91,7 @@ namespace android::media
 			"()J"
 		);
 	}
-	QAndroidJniObject MediaExtractor::getCasInfo(jint arg0)
+	android::media::MediaExtractor_CasInfo MediaExtractor::getCasInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getCasInfo",
@@ -99,21 +99,21 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaExtractor::getDrmInitData()
+	android::media::DrmInitData MediaExtractor::getDrmInitData()
 	{
 		return callObjectMethod(
 			"getDrmInitData",
 			"()Landroid/media/DrmInitData;"
 		);
 	}
-	QAndroidJniObject MediaExtractor::getMetrics()
+	android::os::PersistableBundle MediaExtractor::getMetrics()
 	{
 		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	QAndroidJniObject MediaExtractor::getPsshInfo()
+	__JniBaseClass MediaExtractor::getPsshInfo()
 	{
 		return callObjectMethod(
 			"getPsshInfo",
@@ -163,7 +163,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaExtractor::getTrackFormat(jint arg0)
+	android::media::MediaFormat MediaExtractor::getTrackFormat(jint arg0)
 	{
 		return callObjectMethod(
 			"getTrackFormat",

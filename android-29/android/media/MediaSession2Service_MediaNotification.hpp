@@ -22,7 +22,7 @@ namespace android::media
 		MediaSession2Service_MediaNotification(jint arg0, android::app::Notification arg1);
 		
 		// Methods
-		QAndroidJniObject getNotification();
+		android::app::Notification getNotification();
 		jint getNotificationId();
 	};
 } // namespace android::media

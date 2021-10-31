@@ -19,7 +19,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject Image::getCropRect()
+	android::graphics::Rect Image::getCropRect()
 	{
 		return callObjectMethod(
 			"getCropRect",
@@ -33,7 +33,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject Image::getHardwareBuffer()
+	android::hardware::HardwareBuffer Image::getHardwareBuffer()
 	{
 		return callObjectMethod(
 			"getHardwareBuffer",

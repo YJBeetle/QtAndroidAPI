@@ -22,8 +22,8 @@ namespace android::view::textclassifier
 		TextClassificationContext_Builder(jstring arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setWidgetVersion(jstring arg0);
+		android::view::textclassifier::TextClassificationContext build();
+		android::view::textclassifier::TextClassificationContext_Builder setWidgetVersion(jstring arg0);
 	};
 } // namespace android::view::textclassifier
 

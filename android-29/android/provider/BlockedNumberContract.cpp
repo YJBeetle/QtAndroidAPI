@@ -13,7 +13,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject BlockedNumberContract::AUTHORITY_URI()
+	android::net::Uri BlockedNumberContract::AUTHORITY_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.BlockedNumberContract",

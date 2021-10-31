@@ -22,7 +22,7 @@ namespace android::system
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject StructTimeval::fromMillis(jlong arg0)
+	android::system::StructTimeval StructTimeval::fromMillis(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.StructTimeval",

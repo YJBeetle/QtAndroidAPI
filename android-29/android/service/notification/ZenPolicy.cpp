@@ -4,7 +4,7 @@
 namespace android::service::notification
 {
 	// Fields
-	QAndroidJniObject ZenPolicy::CREATOR()
+	__JniBaseClass ZenPolicy::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.notification.ZenPolicy",

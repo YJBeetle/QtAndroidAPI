@@ -32,7 +32,7 @@ namespace android::util
 		jint hashCode();
 		jint indexOf(jobject arg0);
 		jboolean isEmpty();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jboolean remove(jobject arg0);
 		jboolean removeAll(android::util::ArraySet arg0);
 		jboolean removeAll(__JniBaseClass arg0);

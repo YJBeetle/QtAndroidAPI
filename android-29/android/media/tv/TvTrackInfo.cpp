@@ -5,7 +5,7 @@
 namespace android::media::tv
 {
 	// Fields
-	QAndroidJniObject TvTrackInfo::CREATOR()
+	__JniBaseClass TvTrackInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvTrackInfo",
@@ -77,7 +77,7 @@ namespace android::media::tv
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TvTrackInfo::getExtra()
+	android::os::Bundle TvTrackInfo::getExtra()
 	{
 		return callObjectMethod(
 			"getExtra",

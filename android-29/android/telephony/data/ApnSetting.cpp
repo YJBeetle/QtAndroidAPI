@@ -35,7 +35,7 @@ namespace android::telephony::data
 			"AUTH_TYPE_PAP_OR_CHAP"
 		);
 	}
-	QAndroidJniObject ApnSetting::CREATOR()
+	__JniBaseClass ApnSetting::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.data.ApnSetting",
@@ -254,7 +254,7 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	QAndroidJniObject ApnSetting::getMmsProxyAddress()
+	java::net::InetAddress ApnSetting::getMmsProxyAddress()
 	{
 		return callObjectMethod(
 			"getMmsProxyAddress",
@@ -275,7 +275,7 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	QAndroidJniObject ApnSetting::getMmsc()
+	android::net::Uri ApnSetting::getMmsc()
 	{
 		return callObjectMethod(
 			"getMmsc",
@@ -317,7 +317,7 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	QAndroidJniObject ApnSetting::getProxyAddress()
+	java::net::InetAddress ApnSetting::getProxyAddress()
 	{
 		return callObjectMethod(
 			"getProxyAddress",

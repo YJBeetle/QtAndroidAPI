@@ -22,7 +22,7 @@ namespace android::hardware
 		static jint TYPE_VEC3_CALIBRATION();
 		jfloatArray floatValues();
 		jintArray intValues();
-		QAndroidJniObject sensor();
+		android::hardware::Sensor sensor();
 		jint serial();
 		jint type();
 		

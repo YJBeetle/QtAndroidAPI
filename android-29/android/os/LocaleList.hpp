@@ -21,7 +21,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocaleList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,16 +31,16 @@ namespace android::os
 		LocaleList(jarray arg0);
 		
 		// Methods
-		static QAndroidJniObject forLanguageTags(jstring arg0);
-		static QAndroidJniObject getAdjustedDefault();
-		static QAndroidJniObject getDefault();
-		static QAndroidJniObject getEmptyLocaleList();
+		static android::os::LocaleList forLanguageTags(jstring arg0);
+		static android::os::LocaleList getAdjustedDefault();
+		static android::os::LocaleList getDefault();
+		static android::os::LocaleList getEmptyLocaleList();
 		static jboolean isPseudoLocale(android::icu::util::ULocale arg0);
 		static void setDefault(android::os::LocaleList arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject get(jint arg0);
-		QAndroidJniObject getFirstMatch(jarray arg0);
+		java::util::Locale get(jint arg0);
+		java::util::Locale getFirstMatch(jarray arg0);
 		jint hashCode();
 		jint indexOf(java::util::Locale arg0);
 		jboolean isEmpty();

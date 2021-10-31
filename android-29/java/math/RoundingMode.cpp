@@ -3,7 +3,7 @@
 namespace java::math
 {
 	// Fields
-	QAndroidJniObject RoundingMode::CEILING()
+	java::math::RoundingMode RoundingMode::CEILING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
@@ -11,7 +11,7 @@ namespace java::math
 			"Ljava/math/RoundingMode;"
 		);
 	}
-	QAndroidJniObject RoundingMode::DOWN()
+	java::math::RoundingMode RoundingMode::DOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
@@ -19,7 +19,7 @@ namespace java::math
 			"Ljava/math/RoundingMode;"
 		);
 	}
-	QAndroidJniObject RoundingMode::FLOOR()
+	java::math::RoundingMode RoundingMode::FLOOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
@@ -27,7 +27,7 @@ namespace java::math
 			"Ljava/math/RoundingMode;"
 		);
 	}
-	QAndroidJniObject RoundingMode::HALF_DOWN()
+	java::math::RoundingMode RoundingMode::HALF_DOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
@@ -35,7 +35,7 @@ namespace java::math
 			"Ljava/math/RoundingMode;"
 		);
 	}
-	QAndroidJniObject RoundingMode::HALF_EVEN()
+	java::math::RoundingMode RoundingMode::HALF_EVEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
@@ -43,7 +43,7 @@ namespace java::math
 			"Ljava/math/RoundingMode;"
 		);
 	}
-	QAndroidJniObject RoundingMode::HALF_UP()
+	java::math::RoundingMode RoundingMode::HALF_UP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
@@ -51,7 +51,7 @@ namespace java::math
 			"Ljava/math/RoundingMode;"
 		);
 	}
-	QAndroidJniObject RoundingMode::UNNECESSARY()
+	java::math::RoundingMode RoundingMode::UNNECESSARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
@@ -59,7 +59,7 @@ namespace java::math
 			"Ljava/math/RoundingMode;"
 		);
 	}
-	QAndroidJniObject RoundingMode::UP()
+	java::math::RoundingMode RoundingMode::UP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
@@ -74,7 +74,7 @@ namespace java::math
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RoundingMode::valueOf(jint arg0)
+	java::math::RoundingMode RoundingMode::valueOf(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.math.RoundingMode",
@@ -83,7 +83,7 @@ namespace java::math
 			arg0
 		);
 	}
-	QAndroidJniObject RoundingMode::valueOf(jstring arg0)
+	java::math::RoundingMode RoundingMode::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.math.RoundingMode",

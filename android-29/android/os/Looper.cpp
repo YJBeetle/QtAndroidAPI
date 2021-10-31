@@ -12,7 +12,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Looper::getMainLooper()
+	android::os::Looper Looper::getMainLooper()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Looper",
@@ -28,7 +28,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	QAndroidJniObject Looper::myLooper()
+	android::os::Looper Looper::myLooper()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Looper",
@@ -36,7 +36,7 @@ namespace android::os
 			"()Landroid/os/Looper;"
 		);
 	}
-	QAndroidJniObject Looper::myQueue()
+	android::os::MessageQueue Looper::myQueue()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Looper",
@@ -69,14 +69,14 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject Looper::getQueue()
+	android::os::MessageQueue Looper::getQueue()
 	{
 		return callObjectMethod(
 			"getQueue",
 			"()Landroid/os/MessageQueue;"
 		);
 	}
-	QAndroidJniObject Looper::getThread()
+	java::lang::Thread Looper::getThread()
 	{
 		return callObjectMethod(
 			"getThread",

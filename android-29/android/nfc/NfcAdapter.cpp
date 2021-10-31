@@ -198,7 +198,7 @@ namespace android::nfc
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject NfcAdapter::getDefaultAdapter(android::content::Context arg0)
+	android::nfc::NfcAdapter NfcAdapter::getDefaultAdapter(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.nfc.NfcAdapter",

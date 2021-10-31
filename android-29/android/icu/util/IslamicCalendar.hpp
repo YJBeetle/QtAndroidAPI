@@ -59,7 +59,7 @@ namespace android::icu::util
 		IslamicCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		QAndroidJniObject getCalculationType();
+		android::icu::util::IslamicCalendar_CalculationType getCalculationType();
 		jstring getType();
 		void setCalculationType(android::icu::util::IslamicCalendar_CalculationType arg0);
 	};

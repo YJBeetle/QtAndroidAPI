@@ -17,12 +17,12 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DESTINATION_PORT_ANY();
 		static jint DESTINATION_PORT_DATA_SMS();
 		jstring clientPrefix();
 		jint destinationPort();
-		QAndroidJniObject originatingNumbers();
+		__JniBaseClass originatingNumbers();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VisualVoicemailSmsFilterSettings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

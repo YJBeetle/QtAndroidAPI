@@ -10,9 +10,9 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FREEZE_END();
-		static QAndroidJniObject FREEZE_START();
-		static QAndroidJniObject NORMAL();
+		static android::graphics::Interpolator_Result FREEZE_END();
+		static android::graphics::Interpolator_Result FREEZE_START();
+		static android::graphics::Interpolator_Result NORMAL();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Interpolator_Result(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -21,7 +21,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Interpolator_Result valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

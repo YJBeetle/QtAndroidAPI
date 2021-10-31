@@ -35,10 +35,10 @@ namespace java::util
 		BitSet(jint arg0);
 		
 		// Methods
-		static QAndroidJniObject valueOf(jbyteArray arg0);
-		static QAndroidJniObject valueOf(jlongArray arg0);
-		static QAndroidJniObject valueOf(java::nio::ByteBuffer arg0);
-		static QAndroidJniObject valueOf(java::nio::LongBuffer arg0);
+		static java::util::BitSet valueOf(jbyteArray arg0);
+		static java::util::BitSet valueOf(jlongArray arg0);
+		static java::util::BitSet valueOf(java::nio::ByteBuffer arg0);
+		static java::util::BitSet valueOf(java::nio::LongBuffer arg0);
 		void _and(java::util::BitSet arg0);
 		void andNot(java::util::BitSet arg0);
 		jint cardinality();
@@ -50,7 +50,7 @@ namespace java::util
 		void flip(jint arg0);
 		void flip(jint arg0, jint arg1);
 		jboolean get(jint arg0);
-		QAndroidJniObject get(jint arg0, jint arg1);
+		java::util::BitSet get(jint arg0, jint arg1);
 		jint hashCode();
 		jboolean intersects(java::util::BitSet arg0);
 		jboolean isEmpty();
@@ -65,7 +65,7 @@ namespace java::util
 		void set(jint arg0, jint arg1);
 		void set(jint arg0, jint arg1, jboolean arg2);
 		jint size();
-		QAndroidJniObject stream();
+		__JniBaseClass stream();
 		jbyteArray toByteArray();
 		jlongArray toLongArray();
 		jstring toString();

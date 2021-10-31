@@ -24,7 +24,7 @@ namespace java::util
 			"()J"
 		);
 	}
-	QAndroidJniObject Spliterators_AbstractIntSpliterator::trySplit()
+	__JniBaseClass Spliterators_AbstractIntSpliterator::trySplit()
 	{
 		return callObjectMethod(
 			"trySplit",

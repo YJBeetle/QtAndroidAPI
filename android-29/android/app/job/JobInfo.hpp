@@ -35,7 +35,7 @@ namespace android::app::job
 		// Fields
 		static jint BACKOFF_POLICY_EXPONENTIAL();
 		static jint BACKOFF_POLICY_LINEAR();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jlong DEFAULT_INITIAL_BACKOFF_MILLIS();
 		static jlong MAX_BACKOFF_DELAY_MILLIS();
 		static jint NETWORK_BYTES_UNKNOWN();
@@ -58,11 +58,11 @@ namespace android::app::job
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getBackoffPolicy();
-		QAndroidJniObject getClipData();
+		android::content::ClipData getClipData();
 		jint getClipGrantFlags();
 		jlong getEstimatedNetworkDownloadBytes();
 		jlong getEstimatedNetworkUploadBytes();
-		QAndroidJniObject getExtras();
+		android::os::PersistableBundle getExtras();
 		jlong getFlexMillis();
 		jint getId();
 		jlong getInitialBackoffMillis();
@@ -70,9 +70,9 @@ namespace android::app::job
 		jlong getMaxExecutionDelayMillis();
 		jlong getMinLatencyMillis();
 		jint getNetworkType();
-		QAndroidJniObject getRequiredNetwork();
-		QAndroidJniObject getService();
-		QAndroidJniObject getTransientExtras();
+		android::net::NetworkRequest getRequiredNetwork();
+		android::content::ComponentName getService();
+		android::os::Bundle getTransientExtras();
 		jlong getTriggerContentMaxDelay();
 		jlong getTriggerContentUpdateDelay();
 		jarray getTriggerContentUris();

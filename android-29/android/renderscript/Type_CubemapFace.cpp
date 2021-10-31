@@ -3,7 +3,7 @@
 namespace android::renderscript
 {
 	// Fields
-	QAndroidJniObject Type_CubemapFace::NEGATIVE_X()
+	android::renderscript::Type_CubemapFace Type_CubemapFace::NEGATIVE_X()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
@@ -11,7 +11,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Type$CubemapFace;"
 		);
 	}
-	QAndroidJniObject Type_CubemapFace::NEGATIVE_Y()
+	android::renderscript::Type_CubemapFace Type_CubemapFace::NEGATIVE_Y()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
@@ -19,7 +19,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Type$CubemapFace;"
 		);
 	}
-	QAndroidJniObject Type_CubemapFace::NEGATIVE_Z()
+	android::renderscript::Type_CubemapFace Type_CubemapFace::NEGATIVE_Z()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
@@ -27,7 +27,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Type$CubemapFace;"
 		);
 	}
-	QAndroidJniObject Type_CubemapFace::POSITIVE_X()
+	android::renderscript::Type_CubemapFace Type_CubemapFace::POSITIVE_X()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
@@ -35,7 +35,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Type$CubemapFace;"
 		);
 	}
-	QAndroidJniObject Type_CubemapFace::POSITIVE_Y()
+	android::renderscript::Type_CubemapFace Type_CubemapFace::POSITIVE_Y()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
@@ -43,7 +43,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Type$CubemapFace;"
 		);
 	}
-	QAndroidJniObject Type_CubemapFace::POSITIVE_Z()
+	android::renderscript::Type_CubemapFace Type_CubemapFace::POSITIVE_Z()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
@@ -51,7 +51,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Type$CubemapFace;"
 		);
 	}
-	QAndroidJniObject Type_CubemapFace::POSITVE_X()
+	android::renderscript::Type_CubemapFace Type_CubemapFace::POSITVE_X()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
@@ -59,7 +59,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Type$CubemapFace;"
 		);
 	}
-	QAndroidJniObject Type_CubemapFace::POSITVE_Y()
+	android::renderscript::Type_CubemapFace Type_CubemapFace::POSITVE_Y()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
@@ -67,7 +67,7 @@ namespace android::renderscript
 			"Landroid/renderscript/Type$CubemapFace;"
 		);
 	}
-	QAndroidJniObject Type_CubemapFace::POSITVE_Z()
+	android::renderscript::Type_CubemapFace Type_CubemapFace::POSITVE_Z()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
@@ -82,7 +82,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Type_CubemapFace::valueOf(jstring arg0)
+	android::renderscript::Type_CubemapFace Type_CubemapFace::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Type$CubemapFace",

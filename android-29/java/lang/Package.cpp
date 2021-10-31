@@ -12,7 +12,7 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Package::getPackage(jstring arg0)
+	java::lang::Package Package::getPackage(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Package",
@@ -29,7 +29,7 @@ namespace java::lang
 			"()[Ljava/lang/Package;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Package::getAnnotation(jclass arg0)
+	__JniBaseClass Package::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -52,7 +52,7 @@ namespace java::lang
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject Package::getDeclaredAnnotation(jclass arg0)
+	__JniBaseClass Package::getDeclaredAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotation",

@@ -237,7 +237,7 @@ namespace android::media::effect
 			arg0
 		);
 	}
-	QAndroidJniObject EffectFactory::createEffect(jstring arg0)
+	android::media::effect::Effect EffectFactory::createEffect(jstring arg0)
 	{
 		return callObjectMethod(
 			"createEffect",

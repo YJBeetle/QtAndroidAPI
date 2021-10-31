@@ -21,7 +21,7 @@ namespace android::os
 		void cancel();
 		void onFinish();
 		void onTick(jlong arg0);
-		QAndroidJniObject start();
+		android::os::CountDownTimer start();
 	};
 } // namespace android::os
 

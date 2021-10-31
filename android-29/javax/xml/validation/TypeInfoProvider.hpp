@@ -17,8 +17,8 @@ namespace javax::xml::validation
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getAttributeTypeInfo(jint arg0);
-		QAndroidJniObject getElementTypeInfo();
+		__JniBaseClass getAttributeTypeInfo(jint arg0);
+		__JniBaseClass getElementTypeInfo();
 		jboolean isIdAttribute(jint arg0);
 		jboolean isSpecified(jint arg0);
 	};

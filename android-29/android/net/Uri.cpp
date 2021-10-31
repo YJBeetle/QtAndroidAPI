@@ -6,7 +6,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject Uri::CREATOR()
+	__JniBaseClass Uri::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.Uri",
@@ -14,7 +14,7 @@ namespace android::net
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject Uri::EMPTY()
+	android::net::Uri Uri::EMPTY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.Uri",
@@ -57,7 +57,7 @@ namespace android::net
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject Uri::fromFile(java::io::File arg0)
+	android::net::Uri Uri::fromFile(java::io::File arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.Uri",
@@ -66,7 +66,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Uri::fromParts(jstring arg0, jstring arg1, jstring arg2)
+	android::net::Uri Uri::fromParts(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.Uri",
@@ -77,7 +77,7 @@ namespace android::net
 			arg2
 		);
 	}
-	QAndroidJniObject Uri::parse(jstring arg0)
+	android::net::Uri Uri::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.Uri",
@@ -86,7 +86,7 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject Uri::withAppendedPath(android::net::Uri arg0, jstring arg1)
+	android::net::Uri Uri::withAppendedPath(android::net::Uri arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.Uri",
@@ -106,7 +106,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Uri::buildUpon()
+	android::net::Uri_Builder Uri::buildUpon()
 	{
 		return callObjectMethod(
 			"buildUpon",
@@ -223,7 +223,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Uri::getPathSegments()
+	__JniBaseClass Uri::getPathSegments()
 	{
 		return callObjectMethod(
 			"getPathSegments",
@@ -252,14 +252,14 @@ namespace android::net
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Uri::getQueryParameterNames()
+	__JniBaseClass Uri::getQueryParameterNames()
 	{
 		return callObjectMethod(
 			"getQueryParameterNames",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject Uri::getQueryParameters(jstring arg0)
+	__JniBaseClass Uri::getQueryParameters(jstring arg0)
 	{
 		return callObjectMethod(
 			"getQueryParameters",
@@ -323,7 +323,7 @@ namespace android::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject Uri::normalizeScheme()
+	android::net::Uri Uri::normalizeScheme()
 	{
 		return callObjectMethod(
 			"normalizeScheme",

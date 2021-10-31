@@ -20,7 +20,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MeasureFormat::getCurrencyFormat()
+	android::icu::text::MeasureFormat MeasureFormat::getCurrencyFormat()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
@@ -28,7 +28,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/MeasureFormat;"
 		);
 	}
-	QAndroidJniObject MeasureFormat::getCurrencyFormat(android::icu::util::ULocale arg0)
+	android::icu::text::MeasureFormat MeasureFormat::getCurrencyFormat(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
@@ -37,7 +37,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MeasureFormat::getCurrencyFormat(java::util::Locale arg0)
+	android::icu::text::MeasureFormat MeasureFormat::getCurrencyFormat(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
@@ -46,7 +46,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MeasureFormat::getInstance(android::icu::util::ULocale arg0, android::icu::text::MeasureFormat_FormatWidth arg1)
+	android::icu::text::MeasureFormat MeasureFormat::getInstance(android::icu::util::ULocale arg0, android::icu::text::MeasureFormat_FormatWidth arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
@@ -56,7 +56,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MeasureFormat::getInstance(java::util::Locale arg0, android::icu::text::MeasureFormat_FormatWidth arg1)
+	android::icu::text::MeasureFormat MeasureFormat::getInstance(java::util::Locale arg0, android::icu::text::MeasureFormat_FormatWidth arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
@@ -66,7 +66,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject MeasureFormat::getInstance(android::icu::util::ULocale arg0, android::icu::text::MeasureFormat_FormatWidth arg1, android::icu::text::NumberFormat arg2)
+	android::icu::text::MeasureFormat MeasureFormat::getInstance(android::icu::util::ULocale arg0, android::icu::text::MeasureFormat_FormatWidth arg1, android::icu::text::NumberFormat arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
@@ -77,7 +77,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MeasureFormat::getInstance(java::util::Locale arg0, android::icu::text::MeasureFormat_FormatWidth arg1, android::icu::text::NumberFormat arg2)
+	android::icu::text::MeasureFormat MeasureFormat::getInstance(java::util::Locale arg0, android::icu::text::MeasureFormat_FormatWidth arg1, android::icu::text::NumberFormat arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
@@ -96,7 +96,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MeasureFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MeasureFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -106,7 +106,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MeasureFormat::formatMeasurePerUnit(android::icu::util::Measure arg0, android::icu::util::MeasureUnit arg1, java::lang::StringBuilder arg2, java::text::FieldPosition arg3)
+	java::lang::StringBuilder MeasureFormat::formatMeasurePerUnit(android::icu::util::Measure arg0, android::icu::util::MeasureUnit arg1, java::lang::StringBuilder arg2, java::text::FieldPosition arg3)
 	{
 		return callObjectMethod(
 			"formatMeasurePerUnit",
@@ -125,7 +125,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject MeasureFormat::formatMeasures(java::lang::StringBuilder arg0, java::text::FieldPosition arg1, jarray arg2)
+	java::lang::StringBuilder MeasureFormat::formatMeasures(java::lang::StringBuilder arg0, java::text::FieldPosition arg1, jarray arg2)
 	{
 		return callObjectMethod(
 			"formatMeasures",
@@ -135,14 +135,14 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	QAndroidJniObject MeasureFormat::getLocale()
+	android::icu::util::ULocale MeasureFormat::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	QAndroidJniObject MeasureFormat::getNumberFormat()
+	android::icu::text::NumberFormat MeasureFormat::getNumberFormat()
 	{
 		return callObjectMethod(
 			"getNumberFormat",
@@ -157,7 +157,7 @@ namespace android::icu::text
 			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject MeasureFormat::getWidth()
+	android::icu::text::MeasureFormat_FormatWidth MeasureFormat::getWidth()
 	{
 		return callObjectMethod(
 			"getWidth",
@@ -171,7 +171,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject MeasureFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
+	android::icu::util::Measure MeasureFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseObject",

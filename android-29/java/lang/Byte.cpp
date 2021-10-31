@@ -79,7 +79,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Byte::decode(jstring arg0)
+	java::lang::Byte Byte::decode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Byte",
@@ -143,7 +143,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Byte::valueOf(jbyte arg0)
+	java::lang::Byte Byte::valueOf(jbyte arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Byte",
@@ -152,7 +152,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Byte::valueOf(jstring arg0)
+	java::lang::Byte Byte::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Byte",
@@ -161,7 +161,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Byte::valueOf(jstring arg0, jint arg1)
+	java::lang::Byte Byte::valueOf(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Byte",
@@ -194,7 +194,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Byte::describeConstable()
+	java::util::Optional Byte::describeConstable()
 	{
 		return callObjectMethod(
 			"describeConstable",

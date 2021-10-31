@@ -42,10 +42,10 @@ namespace android::widget
 		jstring getAccessibilityClassName();
 		jboolean getAnimateFirstView();
 		jint getBaseline();
-		QAndroidJniObject getCurrentView();
+		android::view::View getCurrentView();
 		jint getDisplayedChild();
-		QAndroidJniObject getInAnimation();
-		QAndroidJniObject getOutAnimation();
+		android::view::animation::Animation getInAnimation();
+		android::view::animation::Animation getOutAnimation();
 		void removeAllViews();
 		void removeView(android::view::View arg0);
 		void removeViewAt(jint arg0);

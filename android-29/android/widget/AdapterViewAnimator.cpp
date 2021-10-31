@@ -73,7 +73,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AdapterViewAnimator::getAdapter()
+	__JniBaseClass AdapterViewAnimator::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
@@ -87,7 +87,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AdapterViewAnimator::getCurrentView()
+	android::view::View AdapterViewAnimator::getCurrentView()
 	{
 		return callObjectMethod(
 			"getCurrentView",
@@ -101,21 +101,21 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject AdapterViewAnimator::getInAnimation()
+	android::animation::ObjectAnimator AdapterViewAnimator::getInAnimation()
 	{
 		return callObjectMethod(
 			"getInAnimation",
 			"()Landroid/animation/ObjectAnimator;"
 		);
 	}
-	QAndroidJniObject AdapterViewAnimator::getOutAnimation()
+	android::animation::ObjectAnimator AdapterViewAnimator::getOutAnimation()
 	{
 		return callObjectMethod(
 			"getOutAnimation",
 			"()Landroid/animation/ObjectAnimator;"
 		);
 	}
-	QAndroidJniObject AdapterViewAnimator::getSelectedView()
+	android::view::View AdapterViewAnimator::getSelectedView()
 	{
 		return callObjectMethod(
 			"getSelectedView",
@@ -144,7 +144,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AdapterViewAnimator::onSaveInstanceState()
+	__JniBaseClass AdapterViewAnimator::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

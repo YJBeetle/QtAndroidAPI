@@ -29,11 +29,11 @@ namespace android::speech::tts
 		TextToSpeechService();
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
 		jstring onGetDefaultVoiceNameFor(jstring arg0, jstring arg1, jstring arg2);
-		QAndroidJniObject onGetVoices();
+		__JniBaseClass onGetVoices();
 		jint onIsValidVoiceName(jstring arg0);
 		jint onLoadVoice(jstring arg0);
 	};

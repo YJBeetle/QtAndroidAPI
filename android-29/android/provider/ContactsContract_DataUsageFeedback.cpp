@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_DataUsageFeedback::DELETE_USAGE_URI()
+	android::net::Uri ContactsContract_DataUsageFeedback::DELETE_USAGE_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
@@ -12,7 +12,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject ContactsContract_DataUsageFeedback::FEEDBACK_URI()
+	android::net::Uri ContactsContract_DataUsageFeedback::FEEDBACK_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",

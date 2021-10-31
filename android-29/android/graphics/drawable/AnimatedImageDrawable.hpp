@@ -43,7 +43,7 @@ namespace android::graphics::drawable
 		void clearAnimationCallbacks();
 		void draw(android::graphics::Canvas arg0);
 		jint getAlpha();
-		QAndroidJniObject getColorFilter();
+		android::graphics::ColorFilter getColorFilter();
 		jint getIntrinsicHeight();
 		jint getIntrinsicWidth();
 		jint getOpacity();

@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject WindowId::CREATOR()
+	__JniBaseClass WindowId::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.WindowId",

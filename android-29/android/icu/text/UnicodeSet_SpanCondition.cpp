@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject UnicodeSet_SpanCondition::CONDITION_COUNT()
+	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::CONDITION_COUNT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/UnicodeSet$SpanCondition;"
 		);
 	}
-	QAndroidJniObject UnicodeSet_SpanCondition::CONTAINED()
+	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::CONTAINED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/UnicodeSet$SpanCondition;"
 		);
 	}
-	QAndroidJniObject UnicodeSet_SpanCondition::NOT_CONTAINED()
+	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::NOT_CONTAINED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			"Landroid/icu/text/UnicodeSet$SpanCondition;"
 		);
 	}
-	QAndroidJniObject UnicodeSet_SpanCondition::SIMPLE()
+	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::SIMPLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
@@ -42,7 +42,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject UnicodeSet_SpanCondition::valueOf(jstring arg0)
+	android::icu::text::UnicodeSet_SpanCondition UnicodeSet_SpanCondition::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UnicodeSet$SpanCondition",

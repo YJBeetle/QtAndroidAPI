@@ -10,10 +10,10 @@ namespace android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CENTER();
-		static QAndroidJniObject END();
-		static QAndroidJniObject FILL();
-		static QAndroidJniObject START();
+		static android::graphics::Matrix_ScaleToFit CENTER();
+		static android::graphics::Matrix_ScaleToFit END();
+		static android::graphics::Matrix_ScaleToFit FILL();
+		static android::graphics::Matrix_ScaleToFit START();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Matrix_ScaleToFit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::graphics::Matrix_ScaleToFit valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::graphics

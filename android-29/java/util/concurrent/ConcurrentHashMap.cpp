@@ -45,7 +45,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	QAndroidJniObject ConcurrentHashMap::newKeySet()
+	java::util::concurrent::ConcurrentHashMap_KeySetView ConcurrentHashMap::newKeySet()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.ConcurrentHashMap",
@@ -53,7 +53,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;"
 		);
 	}
-	QAndroidJniObject ConcurrentHashMap::newKeySet(jint arg0)
+	java::util::concurrent::ConcurrentHashMap_KeySetView ConcurrentHashMap::newKeySet(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.ConcurrentHashMap",
@@ -120,14 +120,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ConcurrentHashMap::elements()
+	__JniBaseClass ConcurrentHashMap::elements()
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject ConcurrentHashMap::entrySet()
+	__JniBaseClass ConcurrentHashMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -257,14 +257,14 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	QAndroidJniObject ConcurrentHashMap::keySet()
+	java::util::concurrent::ConcurrentHashMap_KeySetView ConcurrentHashMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;"
 		);
 	}
-	QAndroidJniObject ConcurrentHashMap::keySet(jobject arg0)
+	java::util::concurrent::ConcurrentHashMap_KeySetView ConcurrentHashMap::keySet(jobject arg0)
 	{
 		return callObjectMethod(
 			"keySet",
@@ -272,7 +272,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject ConcurrentHashMap::keys()
+	__JniBaseClass ConcurrentHashMap::keys()
 	{
 		return callObjectMethod(
 			"keys",
@@ -342,7 +342,7 @@ namespace java::util::concurrent
 			arg2.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::reduceEntries(jlong arg0, __JniBaseClass arg1)
+	__JniBaseClass ConcurrentHashMap::reduceEntries(jlong arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"reduceEntries",
@@ -615,7 +615,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ConcurrentHashMap::values()
+	__JniBaseClass ConcurrentHashMap::values()
 	{
 		return callObjectMethod(
 			"values",

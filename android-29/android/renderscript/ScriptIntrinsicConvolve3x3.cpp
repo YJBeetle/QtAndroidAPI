@@ -16,7 +16,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ScriptIntrinsicConvolve3x3::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
+	android::renderscript::ScriptIntrinsicConvolve3x3 ScriptIntrinsicConvolve3x3::create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicConvolve3x3",
@@ -43,14 +43,14 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicConvolve3x3::getFieldID_Input()
+	android::renderscript::Script_FieldID ScriptIntrinsicConvolve3x3::getFieldID_Input()
 	{
 		return callObjectMethod(
 			"getFieldID_Input",
 			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicConvolve3x3::getKernelID()
+	android::renderscript::Script_KernelID ScriptIntrinsicConvolve3x3::getKernelID()
 	{
 		return callObjectMethod(
 			"getKernelID",

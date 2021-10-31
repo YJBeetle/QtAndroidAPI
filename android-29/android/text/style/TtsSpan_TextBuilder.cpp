@@ -21,7 +21,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_TextBuilder::setText(jstring arg0)
+	android::text::style::TtsSpan_TextBuilder TtsSpan_TextBuilder::setText(jstring arg0)
 	{
 		return callObjectMethod(
 			"setText",

@@ -4,7 +4,7 @@
 namespace java::nio::charset
 {
 	// Fields
-	QAndroidJniObject CoderResult::OVERFLOW()
+	java::nio::charset::CoderResult CoderResult::OVERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CoderResult",
@@ -12,7 +12,7 @@ namespace java::nio::charset
 			"Ljava/nio/charset/CoderResult;"
 		);
 	}
-	QAndroidJniObject CoderResult::UNDERFLOW()
+	java::nio::charset::CoderResult CoderResult::UNDERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CoderResult",
@@ -27,7 +27,7 @@ namespace java::nio::charset
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CoderResult::malformedForLength(jint arg0)
+	java::nio::charset::CoderResult CoderResult::malformedForLength(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.charset.CoderResult",
@@ -36,7 +36,7 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	QAndroidJniObject CoderResult::unmappableForLength(jint arg0)
+	java::nio::charset::CoderResult CoderResult::unmappableForLength(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.charset.CoderResult",

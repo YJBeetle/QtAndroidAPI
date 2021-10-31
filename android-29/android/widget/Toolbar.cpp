@@ -59,7 +59,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	QAndroidJniObject Toolbar::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::Toolbar_LayoutParams Toolbar::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -74,7 +74,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Toolbar::getCollapseIcon()
+	android::graphics::drawable::Drawable Toolbar::getCollapseIcon()
 	{
 		return callObjectMethod(
 			"getCollapseIcon",
@@ -151,7 +151,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject Toolbar::getLogo()
+	android::graphics::drawable::Drawable Toolbar::getLogo()
 	{
 		return callObjectMethod(
 			"getLogo",
@@ -165,7 +165,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Toolbar::getMenu()
+	__JniBaseClass Toolbar::getMenu()
 	{
 		return callObjectMethod(
 			"getMenu",
@@ -179,14 +179,14 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Toolbar::getNavigationIcon()
+	android::graphics::drawable::Drawable Toolbar::getNavigationIcon()
 	{
 		return callObjectMethod(
 			"getNavigationIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject Toolbar::getOverflowIcon()
+	android::graphics::drawable::Drawable Toolbar::getOverflowIcon()
 	{
 		return callObjectMethod(
 			"getOverflowIcon",

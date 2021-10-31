@@ -21,7 +21,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VisualVoicemailSms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -31,9 +31,9 @@ namespace android::telephony
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getFields();
+		android::os::Bundle getFields();
 		jstring getMessageBody();
-		QAndroidJniObject getPhoneAccountHandle();
+		android::telecom::PhoneAccountHandle getPhoneAccountHandle();
 		jstring getPrefix();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

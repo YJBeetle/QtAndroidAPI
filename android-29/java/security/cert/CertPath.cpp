@@ -18,7 +18,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	QAndroidJniObject CertPath::getCertificates()
+	__JniBaseClass CertPath::getCertificates()
 	{
 		return callObjectMethod(
 			"getCertificates",
@@ -40,7 +40,7 @@ namespace java::security::cert
 			arg0
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject CertPath::getEncodings()
+	__JniBaseClass CertPath::getEncodings()
 	{
 		return callObjectMethod(
 			"getEncodings",

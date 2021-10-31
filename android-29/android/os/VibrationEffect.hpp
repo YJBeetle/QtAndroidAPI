@@ -9,7 +9,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DEFAULT_AMPLITUDE();
 		static jint EFFECT_CLICK();
 		static jint EFFECT_DOUBLE_CLICK();
@@ -23,10 +23,10 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createOneShot(jlong arg0, jint arg1);
-		static QAndroidJniObject createPredefined(jint arg0);
-		static QAndroidJniObject createWaveform(jlongArray arg0, jint arg1);
-		static QAndroidJniObject createWaveform(jlongArray arg0, jintArray arg1, jint arg2);
+		static android::os::VibrationEffect createOneShot(jlong arg0, jint arg1);
+		static android::os::VibrationEffect createPredefined(jint arg0);
+		static android::os::VibrationEffect createWaveform(jlongArray arg0, jint arg1);
+		static android::os::VibrationEffect createWaveform(jlongArray arg0, jintArray arg1, jint arg2);
 		jint describeContents();
 	};
 } // namespace android::os

@@ -45,16 +45,16 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject getCategory();
+		android::media::MediaRouter_RouteCategory getCategory();
 		jstring getDescription();
 		jint getDeviceType();
-		QAndroidJniObject getGroup();
-		QAndroidJniObject getIconDrawable();
+		android::media::MediaRouter_RouteGroup getGroup();
+		android::graphics::drawable::Drawable getIconDrawable();
 		jstring getName();
 		jstring getName(android::content::Context arg0);
 		jint getPlaybackStream();
 		jint getPlaybackType();
-		QAndroidJniObject getPresentationDisplay();
+		android::view::Display getPresentationDisplay();
 		jstring getStatus();
 		jint getSupportedTypes();
 		jobject getTag();

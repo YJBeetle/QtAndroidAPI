@@ -3,7 +3,7 @@
 namespace android::icu::util
 {
 	// Fields
-	QAndroidJniObject IslamicCalendar_CalculationType::ISLAMIC()
+	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
@@ -11,7 +11,7 @@ namespace android::icu::util
 			"Landroid/icu/util/IslamicCalendar$CalculationType;"
 		);
 	}
-	QAndroidJniObject IslamicCalendar_CalculationType::ISLAMIC_CIVIL()
+	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC_CIVIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
@@ -19,7 +19,7 @@ namespace android::icu::util
 			"Landroid/icu/util/IslamicCalendar$CalculationType;"
 		);
 	}
-	QAndroidJniObject IslamicCalendar_CalculationType::ISLAMIC_TBLA()
+	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC_TBLA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
@@ -27,7 +27,7 @@ namespace android::icu::util
 			"Landroid/icu/util/IslamicCalendar$CalculationType;"
 		);
 	}
-	QAndroidJniObject IslamicCalendar_CalculationType::ISLAMIC_UMALQURA()
+	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::ISLAMIC_UMALQURA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
@@ -42,7 +42,7 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject IslamicCalendar_CalculationType::valueOf(jstring arg0)
+	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar_CalculationType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.IslamicCalendar$CalculationType",

@@ -40,14 +40,14 @@ namespace android::app
 		Notification_Action_Builder(jint arg0, jstring arg1, android::app::PendingIntent arg2);
 		
 		// Methods
-		QAndroidJniObject addExtras(android::os::Bundle arg0);
-		QAndroidJniObject addRemoteInput(android::app::RemoteInput arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject extend(__JniBaseClass arg0);
-		QAndroidJniObject getExtras();
-		QAndroidJniObject setAllowGeneratedReplies(jboolean arg0);
-		QAndroidJniObject setContextual(jboolean arg0);
-		QAndroidJniObject setSemanticAction(jint arg0);
+		android::app::Notification_Action_Builder addExtras(android::os::Bundle arg0);
+		android::app::Notification_Action_Builder addRemoteInput(android::app::RemoteInput arg0);
+		android::app::Notification_Action build();
+		android::app::Notification_Action_Builder extend(__JniBaseClass arg0);
+		android::os::Bundle getExtras();
+		android::app::Notification_Action_Builder setAllowGeneratedReplies(jboolean arg0);
+		android::app::Notification_Action_Builder setContextual(jboolean arg0);
+		android::app::Notification_Action_Builder setSemanticAction(jint arg0);
 	};
 } // namespace android::app
 

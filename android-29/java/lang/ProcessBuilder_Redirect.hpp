@@ -17,9 +17,9 @@ namespace java::lang
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DISCARD();
-		static QAndroidJniObject INHERIT();
-		static QAndroidJniObject PIPE();
+		static java::lang::ProcessBuilder_Redirect DISCARD();
+		static java::lang::ProcessBuilder_Redirect INHERIT();
+		static java::lang::ProcessBuilder_Redirect PIPE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProcessBuilder_Redirect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,13 +28,13 @@ namespace java::lang
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject appendTo(java::io::File arg0);
-		static QAndroidJniObject from(java::io::File arg0);
-		static QAndroidJniObject to(java::io::File arg0);
+		static java::lang::ProcessBuilder_Redirect appendTo(java::io::File arg0);
+		static java::lang::ProcessBuilder_Redirect from(java::io::File arg0);
+		static java::lang::ProcessBuilder_Redirect to(java::io::File arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject file();
+		java::io::File file();
 		jint hashCode();
-		QAndroidJniObject type();
+		java::lang::ProcessBuilder_Redirect_Type type();
 	};
 } // namespace java::lang
 

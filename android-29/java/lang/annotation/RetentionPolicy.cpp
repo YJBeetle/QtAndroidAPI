@@ -3,7 +3,7 @@
 namespace java::lang::annotation
 {
 	// Fields
-	QAndroidJniObject RetentionPolicy::CLASS()
+	java::lang::annotation::RetentionPolicy RetentionPolicy::CLASS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.RetentionPolicy",
@@ -11,7 +11,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/RetentionPolicy;"
 		);
 	}
-	QAndroidJniObject RetentionPolicy::RUNTIME()
+	java::lang::annotation::RetentionPolicy RetentionPolicy::RUNTIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.RetentionPolicy",
@@ -19,7 +19,7 @@ namespace java::lang::annotation
 			"Ljava/lang/annotation/RetentionPolicy;"
 		);
 	}
-	QAndroidJniObject RetentionPolicy::SOURCE()
+	java::lang::annotation::RetentionPolicy RetentionPolicy::SOURCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.RetentionPolicy",
@@ -34,7 +34,7 @@ namespace java::lang::annotation
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RetentionPolicy::valueOf(jstring arg0)
+	java::lang::annotation::RetentionPolicy RetentionPolicy::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.annotation.RetentionPolicy",

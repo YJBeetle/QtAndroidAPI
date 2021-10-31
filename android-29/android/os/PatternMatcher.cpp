@@ -4,7 +4,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject PatternMatcher::CREATOR()
+	__JniBaseClass PatternMatcher::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.PatternMatcher",

@@ -27,7 +27,7 @@ namespace android::text::method
 		ScrollingMovementMethod();
 		
 		// Methods
-		static QAndroidJniObject getInstance();
+		static __JniBaseClass getInstance();
 		void onTakeFocus(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2);
 		jboolean onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2);
 	};

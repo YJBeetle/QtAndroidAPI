@@ -29,7 +29,7 @@ namespace java::nio::file
 		DirectoryIteratorException(java::io::IOException arg0);
 		
 		// Methods
-		QAndroidJniObject getCause();
+		java::io::IOException getCause();
 	};
 } // namespace java::nio::file
 

@@ -25,9 +25,9 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject open();
-		QAndroidJniObject sink();
-		QAndroidJniObject source();
+		static java::nio::channels::Pipe open();
+		java::nio::channels::Pipe_SinkChannel sink();
+		java::nio::channels::Pipe_SourceChannel source();
 	};
 } // namespace java::nio::channels
 

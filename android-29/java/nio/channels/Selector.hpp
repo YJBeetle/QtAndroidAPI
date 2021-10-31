@@ -25,19 +25,19 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject open();
+		static java::nio::channels::Selector open();
 		void close();
 		jboolean isOpen();
-		QAndroidJniObject keys();
-		QAndroidJniObject provider();
+		__JniBaseClass keys();
+		java::nio::channels::spi::SelectorProvider provider();
 		jint select();
 		jint select(__JniBaseClass arg0);
 		jint select(jlong arg0);
 		jint select(__JniBaseClass arg0, jlong arg1);
 		jint selectNow();
 		jint selectNow(__JniBaseClass arg0);
-		QAndroidJniObject selectedKeys();
-		QAndroidJniObject wakeup();
+		__JniBaseClass selectedKeys();
+		java::nio::channels::Selector wakeup();
 	};
 } // namespace java::nio::channels
 

@@ -8,7 +8,7 @@
 namespace java::util
 {
 	// Fields
-	QAndroidJniObject ResourceBundle_Control::FORMAT_CLASS()
+	__JniBaseClass ResourceBundle_Control::FORMAT_CLASS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.ResourceBundle$Control",
@@ -16,7 +16,7 @@ namespace java::util
 			"Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ResourceBundle_Control::FORMAT_DEFAULT()
+	__JniBaseClass ResourceBundle_Control::FORMAT_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.ResourceBundle$Control",
@@ -24,7 +24,7 @@ namespace java::util
 			"Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ResourceBundle_Control::FORMAT_PROPERTIES()
+	__JniBaseClass ResourceBundle_Control::FORMAT_PROPERTIES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.ResourceBundle$Control",
@@ -53,7 +53,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ResourceBundle_Control::getControl(__JniBaseClass arg0)
+	java::util::ResourceBundle_Control ResourceBundle_Control::getControl(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.ResourceBundle$Control",
@@ -62,7 +62,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ResourceBundle_Control::getNoFallbackControl(__JniBaseClass arg0)
+	java::util::ResourceBundle_Control ResourceBundle_Control::getNoFallbackControl(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.ResourceBundle$Control",
@@ -71,7 +71,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ResourceBundle_Control::getCandidateLocales(jstring arg0, java::util::Locale arg1)
+	__JniBaseClass ResourceBundle_Control::getCandidateLocales(jstring arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getCandidateLocales",
@@ -80,7 +80,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ResourceBundle_Control::getFallbackLocale(jstring arg0, java::util::Locale arg1)
+	java::util::Locale ResourceBundle_Control::getFallbackLocale(jstring arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getFallbackLocale",
@@ -89,7 +89,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject ResourceBundle_Control::getFormats(jstring arg0)
+	__JniBaseClass ResourceBundle_Control::getFormats(jstring arg0)
 	{
 		return callObjectMethod(
 			"getFormats",
@@ -119,7 +119,7 @@ namespace java::util
 			arg5
 		);
 	}
-	QAndroidJniObject ResourceBundle_Control::newBundle(jstring arg0, java::util::Locale arg1, jstring arg2, java::lang::ClassLoader arg3, jboolean arg4)
+	java::util::ResourceBundle ResourceBundle_Control::newBundle(jstring arg0, java::util::Locale arg1, jstring arg2, java::lang::ClassLoader arg3, jboolean arg4)
 	{
 		return callObjectMethod(
 			"newBundle",

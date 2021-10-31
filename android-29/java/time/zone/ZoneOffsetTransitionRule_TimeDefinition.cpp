@@ -5,7 +5,7 @@
 namespace java::time::zone
 {
 	// Fields
-	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::STANDARD()
+	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule_TimeDefinition::STANDARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
@@ -13,7 +13,7 @@ namespace java::time::zone
 			"Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::UTC()
+	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule_TimeDefinition::UTC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
@@ -21,7 +21,7 @@ namespace java::time::zone
 			"Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::WALL()
+	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule_TimeDefinition::WALL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
@@ -36,7 +36,7 @@ namespace java::time::zone
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::valueOf(jstring arg0)
+	java::time::zone::ZoneOffsetTransitionRule_TimeDefinition ZoneOffsetTransitionRule_TimeDefinition::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
@@ -53,7 +53,7 @@ namespace java::time::zone
 			"()[Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
 		).object<jarray>();
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::createDateTime(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2)
+	java::time::LocalDateTime ZoneOffsetTransitionRule_TimeDefinition::createDateTime(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2)
 	{
 		return callObjectMethod(
 			"createDateTime",

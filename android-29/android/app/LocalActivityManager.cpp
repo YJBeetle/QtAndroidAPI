@@ -21,7 +21,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject LocalActivityManager::destroyActivity(jstring arg0, jboolean arg1)
+	android::view::Window LocalActivityManager::destroyActivity(jstring arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"destroyActivity",
@@ -68,7 +68,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject LocalActivityManager::getActivity(jstring arg0)
+	android::app::Activity LocalActivityManager::getActivity(jstring arg0)
 	{
 		return callObjectMethod(
 			"getActivity",
@@ -76,7 +76,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject LocalActivityManager::getCurrentActivity()
+	android::app::Activity LocalActivityManager::getCurrentActivity()
 	{
 		return callObjectMethod(
 			"getCurrentActivity",
@@ -97,14 +97,14 @@ namespace android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject LocalActivityManager::saveInstanceState()
+	android::os::Bundle LocalActivityManager::saveInstanceState()
 	{
 		return callObjectMethod(
 			"saveInstanceState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject LocalActivityManager::startActivity(jstring arg0, android::content::Intent arg1)
+	android::view::Window LocalActivityManager::startActivity(jstring arg0, android::content::Intent arg1)
 	{
 		return callObjectMethod(
 			"startActivity",

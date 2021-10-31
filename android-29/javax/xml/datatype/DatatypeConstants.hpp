@@ -19,23 +19,23 @@ namespace javax::xml::datatype
 		// Fields
 		static jint APRIL();
 		static jint AUGUST();
-		static QAndroidJniObject DATE();
-		static QAndroidJniObject DATETIME();
-		static QAndroidJniObject DAYS();
+		static javax::xml::_namespace::QName DATE();
+		static javax::xml::_namespace::QName DATETIME();
+		static javax::xml::datatype::DatatypeConstants_Field DAYS();
 		static jint DECEMBER();
-		static QAndroidJniObject DURATION();
-		static QAndroidJniObject DURATION_DAYTIME();
-		static QAndroidJniObject DURATION_YEARMONTH();
+		static javax::xml::_namespace::QName DURATION();
+		static javax::xml::_namespace::QName DURATION_DAYTIME();
+		static javax::xml::_namespace::QName DURATION_YEARMONTH();
 		static jint EQUAL();
 		static jint FEBRUARY();
 		static jint FIELD_UNDEFINED();
-		static QAndroidJniObject GDAY();
-		static QAndroidJniObject GMONTH();
-		static QAndroidJniObject GMONTHDAY();
+		static javax::xml::_namespace::QName GDAY();
+		static javax::xml::_namespace::QName GMONTH();
+		static javax::xml::_namespace::QName GMONTHDAY();
 		static jint GREATER();
-		static QAndroidJniObject GYEAR();
-		static QAndroidJniObject GYEARMONTH();
-		static QAndroidJniObject HOURS();
+		static javax::xml::_namespace::QName GYEAR();
+		static javax::xml::_namespace::QName GYEARMONTH();
+		static javax::xml::datatype::DatatypeConstants_Field HOURS();
 		static jint INDETERMINATE();
 		static jint JANUARY();
 		static jint JULY();
@@ -44,15 +44,15 @@ namespace javax::xml::datatype
 		static jint MARCH();
 		static jint MAX_TIMEZONE_OFFSET();
 		static jint MAY();
-		static QAndroidJniObject MINUTES();
+		static javax::xml::datatype::DatatypeConstants_Field MINUTES();
 		static jint MIN_TIMEZONE_OFFSET();
-		static QAndroidJniObject MONTHS();
+		static javax::xml::datatype::DatatypeConstants_Field MONTHS();
 		static jint NOVEMBER();
 		static jint OCTOBER();
-		static QAndroidJniObject SECONDS();
+		static javax::xml::datatype::DatatypeConstants_Field SECONDS();
 		static jint SEPTEMBER();
-		static QAndroidJniObject TIME();
-		static QAndroidJniObject YEARS();
+		static javax::xml::_namespace::QName TIME();
+		static javax::xml::datatype::DatatypeConstants_Field YEARS();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DatatypeConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

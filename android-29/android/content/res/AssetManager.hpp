@@ -32,13 +32,13 @@ namespace android::content::res
 		void close();
 		jarray getLocales();
 		jarray list(jstring arg0);
-		QAndroidJniObject open(jstring arg0);
-		QAndroidJniObject open(jstring arg0, jint arg1);
-		QAndroidJniObject openFd(jstring arg0);
-		QAndroidJniObject openNonAssetFd(jstring arg0);
-		QAndroidJniObject openNonAssetFd(jint arg0, jstring arg1);
-		QAndroidJniObject openXmlResourceParser(jstring arg0);
-		QAndroidJniObject openXmlResourceParser(jint arg0, jstring arg1);
+		java::io::InputStream open(jstring arg0);
+		java::io::InputStream open(jstring arg0, jint arg1);
+		android::content::res::AssetFileDescriptor openFd(jstring arg0);
+		android::content::res::AssetFileDescriptor openNonAssetFd(jstring arg0);
+		android::content::res::AssetFileDescriptor openNonAssetFd(jint arg0, jstring arg1);
+		__JniBaseClass openXmlResourceParser(jstring arg0);
+		__JniBaseClass openXmlResourceParser(jint arg0, jstring arg1);
 	};
 } // namespace android::content::res
 

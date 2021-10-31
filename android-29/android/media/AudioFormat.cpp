@@ -291,7 +291,7 @@ namespace android::media
 			"CHANNEL_OUT_SURROUND"
 		);
 	}
-	QAndroidJniObject AudioFormat::CREATOR()
+	__JniBaseClass AudioFormat::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioFormat",

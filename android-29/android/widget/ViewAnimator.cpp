@@ -58,7 +58,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewAnimator::getCurrentView()
+	android::view::View ViewAnimator::getCurrentView()
 	{
 		return callObjectMethod(
 			"getCurrentView",
@@ -72,14 +72,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewAnimator::getInAnimation()
+	android::view::animation::Animation ViewAnimator::getInAnimation()
 	{
 		return callObjectMethod(
 			"getInAnimation",
 			"()Landroid/view/animation/Animation;"
 		);
 	}
-	QAndroidJniObject ViewAnimator::getOutAnimation()
+	android::view::animation::Animation ViewAnimator::getOutAnimation()
 	{
 		return callObjectMethod(
 			"getOutAnimation",

@@ -18,11 +18,11 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jstring description();
 		jint id();
 		jint numRunning();
-		QAndroidJniObject thumbnail();
+		android::graphics::Bitmap thumbnail();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityManager_RunningTaskInfo(const char *className, const char *sig, Ts...agv) : android::app::TaskInfo(className, sig, std::forward<Ts>(agv)...) {}

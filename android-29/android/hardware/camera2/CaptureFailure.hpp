@@ -26,7 +26,7 @@ namespace android::hardware::camera2
 		jlong getFrameNumber();
 		jstring getPhysicalCameraId();
 		jint getReason();
-		QAndroidJniObject getRequest();
+		android::hardware::camera2::CaptureRequest getRequest();
 		jint getSequenceId();
 		jboolean wasImageCaptured();
 	};

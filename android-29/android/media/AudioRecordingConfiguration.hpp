@@ -21,7 +21,7 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioRecordingConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,14 +32,14 @@ namespace android::media
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAudioDevice();
+		android::media::AudioDeviceInfo getAudioDevice();
 		jint getAudioSource();
 		jint getClientAudioSessionId();
 		jint getClientAudioSource();
-		QAndroidJniObject getClientEffects();
-		QAndroidJniObject getClientFormat();
-		QAndroidJniObject getEffects();
-		QAndroidJniObject getFormat();
+		__JniBaseClass getClientEffects();
+		android::media::AudioFormat getClientFormat();
+		__JniBaseClass getEffects();
+		android::media::AudioFormat getFormat();
 		jint hashCode();
 		jboolean isClientSilenced();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

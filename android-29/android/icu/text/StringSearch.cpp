@@ -54,7 +54,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject StringSearch::getCollator()
+	android::icu::text::RuleBasedCollator StringSearch::getCollator()
 	{
 		return callObjectMethod(
 			"getCollator",

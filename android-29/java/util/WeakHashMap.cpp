@@ -58,7 +58,7 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject WeakHashMap::entrySet()
+	__JniBaseClass WeakHashMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -88,7 +88,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	QAndroidJniObject WeakHashMap::keySet()
+	__JniBaseClass WeakHashMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -135,7 +135,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject WeakHashMap::values()
+	__JniBaseClass WeakHashMap::values()
 	{
 		return callObjectMethod(
 			"values",

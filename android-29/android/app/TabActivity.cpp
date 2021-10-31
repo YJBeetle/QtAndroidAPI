@@ -19,14 +19,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject TabActivity::getTabHost()
+	android::widget::TabHost TabActivity::getTabHost()
 	{
 		return callObjectMethod(
 			"getTabHost",
 			"()Landroid/widget/TabHost;"
 		);
 	}
-	QAndroidJniObject TabActivity::getTabWidget()
+	android::widget::TabWidget TabActivity::getTabWidget()
 	{
 		return callObjectMethod(
 			"getTabWidget",

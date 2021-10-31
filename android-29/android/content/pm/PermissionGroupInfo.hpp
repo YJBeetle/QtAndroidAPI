@@ -18,7 +18,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_PERSONAL_INFO();
 		jint descriptionRes();
 		jint flags();

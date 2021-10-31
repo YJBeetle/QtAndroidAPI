@@ -55,20 +55,20 @@ namespace android::media
 		RingtoneManager(android::content::Context arg0);
 		
 		// Methods
-		static QAndroidJniObject getActualDefaultRingtoneUri(android::content::Context arg0, jint arg1);
+		static android::net::Uri getActualDefaultRingtoneUri(android::content::Context arg0, jint arg1);
 		static jint getDefaultType(android::net::Uri arg0);
-		static QAndroidJniObject getDefaultUri(jint arg0);
-		static QAndroidJniObject getRingtone(android::content::Context arg0, android::net::Uri arg1);
-		static QAndroidJniObject getValidRingtoneUri(android::content::Context arg0);
+		static android::net::Uri getDefaultUri(jint arg0);
+		static android::media::Ringtone getRingtone(android::content::Context arg0, android::net::Uri arg1);
+		static android::net::Uri getValidRingtoneUri(android::content::Context arg0);
 		static jboolean hasHapticChannels(android::net::Uri arg0);
 		static jboolean isDefault(android::net::Uri arg0);
-		static QAndroidJniObject openDefaultRingtoneUri(android::content::Context arg0, android::net::Uri arg1);
+		static android::content::res::AssetFileDescriptor openDefaultRingtoneUri(android::content::Context arg0, android::net::Uri arg1);
 		static void setActualDefaultRingtoneUri(android::content::Context arg0, jint arg1, android::net::Uri arg2);
-		QAndroidJniObject getCursor();
+		__JniBaseClass getCursor();
 		jboolean getIncludeDrm();
-		QAndroidJniObject getRingtone(jint arg0);
+		android::media::Ringtone getRingtone(jint arg0);
 		jint getRingtonePosition(android::net::Uri arg0);
-		QAndroidJniObject getRingtoneUri(jint arg0);
+		android::net::Uri getRingtoneUri(jint arg0);
 		jboolean getStopPreviousRingtone();
 		jboolean hasHapticChannels(jint arg0);
 		jint inferStreamType();

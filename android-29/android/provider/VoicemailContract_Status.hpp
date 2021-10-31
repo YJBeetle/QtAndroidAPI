@@ -20,7 +20,7 @@ namespace android::provider
 		static jint CONFIGURATION_STATE_FAILED();
 		static jint CONFIGURATION_STATE_NOT_CONFIGURED();
 		static jint CONFIGURATION_STATE_OK();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DATA_CHANNEL_STATE();
 		static jint DATA_CHANNEL_STATE_BAD_CONFIGURATION();
 		static jint DATA_CHANNEL_STATE_COMMUNICATION_ERROR();
@@ -52,7 +52,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject buildSourceUri(jstring arg0);
+		static android::net::Uri buildSourceUri(jstring arg0);
 	};
 } // namespace android::provider
 

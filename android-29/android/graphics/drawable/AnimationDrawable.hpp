@@ -38,12 +38,12 @@ namespace android::graphics::drawable
 		// Methods
 		void addFrame(android::graphics::drawable::Drawable arg0, jint arg1);
 		jint getDuration(jint arg0);
-		QAndroidJniObject getFrame(jint arg0);
+		android::graphics::drawable::Drawable getFrame(jint arg0);
 		jint getNumberOfFrames();
 		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
 		jboolean isOneShot();
 		jboolean isRunning();
-		QAndroidJniObject mutate();
+		android::graphics::drawable::Drawable mutate();
 		void run();
 		void setOneShot(jboolean arg0);
 		jboolean setVisible(jboolean arg0, jboolean arg1);

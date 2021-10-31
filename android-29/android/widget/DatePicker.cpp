@@ -77,14 +77,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject DatePicker::getAutofillValue()
+	android::view::autofill::AutofillValue DatePicker::getAutofillValue()
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	QAndroidJniObject DatePicker::getCalendarView()
+	android::widget::CalendarView DatePicker::getCalendarView()
 	{
 		return callObjectMethod(
 			"getCalendarView",

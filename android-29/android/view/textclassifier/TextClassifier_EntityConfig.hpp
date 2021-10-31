@@ -13,7 +13,7 @@ namespace android::view::textclassifier
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextClassifier_EntityConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,12 +22,12 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static QAndroidJniObject createWithExplicitEntityList(__JniBaseClass arg0);
-		static QAndroidJniObject createWithHints(__JniBaseClass arg0);
+		static android::view::textclassifier::TextClassifier_EntityConfig create(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		static android::view::textclassifier::TextClassifier_EntityConfig createWithExplicitEntityList(__JniBaseClass arg0);
+		static android::view::textclassifier::TextClassifier_EntityConfig createWithHints(__JniBaseClass arg0);
 		jint describeContents();
-		QAndroidJniObject getHints();
-		QAndroidJniObject resolveEntityListModifications(__JniBaseClass arg0);
+		__JniBaseClass getHints();
+		__JniBaseClass resolveEntityListModifications(__JniBaseClass arg0);
 		jboolean shouldIncludeTypesFromTextClassifier();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

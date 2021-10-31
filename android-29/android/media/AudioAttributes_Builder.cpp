@@ -22,14 +22,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject AudioAttributes_Builder::build()
+	android::media::AudioAttributes AudioAttributes_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
-	QAndroidJniObject AudioAttributes_Builder::setAllowedCapturePolicy(jint arg0)
+	android::media::AudioAttributes_Builder AudioAttributes_Builder::setAllowedCapturePolicy(jint arg0)
 	{
 		return callObjectMethod(
 			"setAllowedCapturePolicy",
@@ -37,7 +37,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioAttributes_Builder::setContentType(jint arg0)
+	android::media::AudioAttributes_Builder AudioAttributes_Builder::setContentType(jint arg0)
 	{
 		return callObjectMethod(
 			"setContentType",
@@ -45,7 +45,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioAttributes_Builder::setFlags(jint arg0)
+	android::media::AudioAttributes_Builder AudioAttributes_Builder::setFlags(jint arg0)
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -53,7 +53,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioAttributes_Builder::setHapticChannelsMuted(jboolean arg0)
+	android::media::AudioAttributes_Builder AudioAttributes_Builder::setHapticChannelsMuted(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setHapticChannelsMuted",
@@ -61,7 +61,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioAttributes_Builder::setLegacyStreamType(jint arg0)
+	android::media::AudioAttributes_Builder AudioAttributes_Builder::setLegacyStreamType(jint arg0)
 	{
 		return callObjectMethod(
 			"setLegacyStreamType",
@@ -69,7 +69,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioAttributes_Builder::setUsage(jint arg0)
+	android::media::AudioAttributes_Builder AudioAttributes_Builder::setUsage(jint arg0)
 	{
 		return callObjectMethod(
 			"setUsage",

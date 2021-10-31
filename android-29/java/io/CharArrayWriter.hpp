@@ -24,9 +24,9 @@ namespace java::io
 		CharArrayWriter(jint arg0);
 		
 		// Methods
-		QAndroidJniObject append(jchar arg0);
-		QAndroidJniObject append(jstring arg0);
-		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
+		java::io::CharArrayWriter append(jchar arg0);
+		java::io::CharArrayWriter append(jstring arg0);
+		java::io::CharArrayWriter append(jstring arg0, jint arg1, jint arg2);
 		void close();
 		void flush();
 		void reset();

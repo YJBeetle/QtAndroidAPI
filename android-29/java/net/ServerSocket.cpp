@@ -51,7 +51,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ServerSocket::accept()
+	java::net::Socket ServerSocket::accept()
 	{
 		return callObjectMethod(
 			"accept",
@@ -82,14 +82,14 @@ namespace java::net
 			"()V"
 		);
 	}
-	QAndroidJniObject ServerSocket::getChannel()
+	java::nio::channels::ServerSocketChannel ServerSocket::getChannel()
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/ServerSocketChannel;"
 		);
 	}
-	QAndroidJniObject ServerSocket::getInetAddress()
+	java::net::InetAddress ServerSocket::getInetAddress()
 	{
 		return callObjectMethod(
 			"getInetAddress",
@@ -103,7 +103,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject ServerSocket::getLocalSocketAddress()
+	java::net::SocketAddress ServerSocket::getLocalSocketAddress()
 	{
 		return callObjectMethod(
 			"getLocalSocketAddress",
@@ -153,7 +153,7 @@ namespace java::net
 			"()Z"
 		);
 	}
-	QAndroidJniObject ServerSocket::setOption(__JniBaseClass arg0, jobject arg1)
+	java::net::ServerSocket ServerSocket::setOption(__JniBaseClass arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -196,7 +196,7 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject ServerSocket::supportedOptions()
+	__JniBaseClass ServerSocket::supportedOptions()
 	{
 		return callObjectMethod(
 			"supportedOptions",

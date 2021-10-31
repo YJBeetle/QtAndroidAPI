@@ -28,7 +28,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Playlists::EXTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Audio_Playlists::EXTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists",
@@ -36,7 +36,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject MediaStore_Audio_Playlists::INTERNAL_CONTENT_URI()
+	android::net::Uri MediaStore_Audio_Playlists::INTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists",
@@ -56,7 +56,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaStore_Audio_Playlists::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Audio_Playlists::getContentUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Audio$Playlists",

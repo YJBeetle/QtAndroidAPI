@@ -5,7 +5,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject CalendarContract_EventDays::CONTENT_URI()
+	android::net::Uri CalendarContract_EventDays::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$EventDays",
@@ -20,7 +20,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CalendarContract_EventDays::query(android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3)
+	__JniBaseClass CalendarContract_EventDays::query(android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.CalendarContract$EventDays",

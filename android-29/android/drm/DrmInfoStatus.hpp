@@ -15,7 +15,7 @@ namespace android::drm
 		// Fields
 		static jint STATUS_ERROR();
 		static jint STATUS_OK();
-		QAndroidJniObject data();
+		android::drm::ProcessedData data();
 		jint infoType();
 		jstring mimeType();
 		jint statusCode();

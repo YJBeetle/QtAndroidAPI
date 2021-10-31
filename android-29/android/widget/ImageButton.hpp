@@ -36,7 +36,7 @@ namespace android::widget
 		
 		// Methods
 		jstring getAccessibilityClassName();
-		QAndroidJniObject onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
+		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
 	};
 } // namespace android::widget
 

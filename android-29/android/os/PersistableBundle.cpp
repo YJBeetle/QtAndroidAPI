@@ -4,7 +4,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject PersistableBundle::CREATOR()
+	__JniBaseClass PersistableBundle::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.PersistableBundle",
@@ -12,7 +12,7 @@ namespace android::os
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	QAndroidJniObject PersistableBundle::EMPTY()
+	android::os::PersistableBundle PersistableBundle::EMPTY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.PersistableBundle",
@@ -51,7 +51,7 @@ namespace android::os
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject PersistableBundle::deepCopy()
+	android::os::PersistableBundle PersistableBundle::deepCopy()
 	{
 		return callObjectMethod(
 			"deepCopy",
@@ -65,7 +65,7 @@ namespace android::os
 			"()I"
 		);
 	}
-	QAndroidJniObject PersistableBundle::getPersistableBundle(jstring arg0)
+	android::os::PersistableBundle PersistableBundle::getPersistableBundle(jstring arg0)
 	{
 		return callObjectMethod(
 			"getPersistableBundle",

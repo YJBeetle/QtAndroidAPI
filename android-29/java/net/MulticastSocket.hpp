@@ -41,9 +41,9 @@ namespace java::net
 		MulticastSocket(java::net::SocketAddress arg0);
 		
 		// Methods
-		QAndroidJniObject getInterface();
+		java::net::InetAddress getInterface();
 		jboolean getLoopbackMode();
-		QAndroidJniObject getNetworkInterface();
+		java::net::NetworkInterface getNetworkInterface();
 		jbyte getTTL();
 		jint getTimeToLive();
 		void joinGroup(java::net::InetAddress arg0);

@@ -10,7 +10,7 @@ namespace android::system
 			"events"
 		);
 	}
-	QAndroidJniObject StructPollfd::fd()
+	java::io::FileDescriptor StructPollfd::fd()
 	{
 		return getObjectField(
 			"fd",

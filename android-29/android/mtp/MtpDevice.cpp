@@ -46,7 +46,7 @@ namespace android::mtp
 			"()I"
 		);
 	}
-	QAndroidJniObject MtpDevice::getDeviceInfo()
+	android::mtp::MtpDeviceInfo MtpDevice::getDeviceInfo()
 	{
 		return callObjectMethod(
 			"getDeviceInfo",
@@ -79,7 +79,7 @@ namespace android::mtp
 			arg2
 		).object<jintArray>();
 	}
-	QAndroidJniObject MtpDevice::getObjectInfo(jint arg0)
+	android::mtp::MtpObjectInfo MtpDevice::getObjectInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getObjectInfo",
@@ -132,7 +132,7 @@ namespace android::mtp
 			"()[I"
 		).object<jintArray>();
 	}
-	QAndroidJniObject MtpDevice::getStorageInfo(jint arg0)
+	android::mtp::MtpStorageInfo MtpDevice::getStorageInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getStorageInfo",
@@ -174,7 +174,7 @@ namespace android::mtp
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MtpDevice::readEvent(android::os::CancellationSignal arg0)
+	android::mtp::MtpEvent MtpDevice::readEvent(android::os::CancellationSignal arg0)
 	{
 		return callObjectMethod(
 			"readEvent",
@@ -192,7 +192,7 @@ namespace android::mtp
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MtpDevice::sendObjectInfo(android::mtp::MtpObjectInfo arg0)
+	android::mtp::MtpObjectInfo MtpDevice::sendObjectInfo(android::mtp::MtpObjectInfo arg0)
 	{
 		return callObjectMethod(
 			"sendObjectInfo",

@@ -13,8 +13,8 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_MAX_DIMENSIONS_URI();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_MAX_DIMENSIONS_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DISPLAY_MAX_DIM();
 		static jstring THUMBNAIL_MAX_DIM();
 		

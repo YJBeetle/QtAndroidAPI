@@ -21,14 +21,14 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	QAndroidJniObject TvInputInfo_Builder::build()
+	android::media::tv::TvInputInfo TvInputInfo_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/tv/TvInputInfo;"
 		);
 	}
-	QAndroidJniObject TvInputInfo_Builder::setCanRecord(jboolean arg0)
+	android::media::tv::TvInputInfo_Builder TvInputInfo_Builder::setCanRecord(jboolean arg0)
 	{
 		return callObjectMethod(
 			"setCanRecord",
@@ -36,7 +36,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvInputInfo_Builder::setExtras(android::os::Bundle arg0)
+	android::media::tv::TvInputInfo_Builder TvInputInfo_Builder::setExtras(android::os::Bundle arg0)
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -44,7 +44,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TvInputInfo_Builder::setTunerCount(jint arg0)
+	android::media::tv::TvInputInfo_Builder TvInputInfo_Builder::setTunerCount(jint arg0)
 	{
 		return callObjectMethod(
 			"setTunerCount",

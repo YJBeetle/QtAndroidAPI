@@ -29,10 +29,10 @@ namespace java::lang::invoke
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject dynamicInvoker();
-		QAndroidJniObject getTarget();
+		java::lang::invoke::MethodHandle dynamicInvoker();
+		java::lang::invoke::MethodHandle getTarget();
 		void setTarget(java::lang::invoke::MethodHandle arg0);
-		QAndroidJniObject type();
+		java::lang::invoke::MethodType type();
 	};
 } // namespace java::lang::invoke
 

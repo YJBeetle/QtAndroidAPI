@@ -15,7 +15,7 @@ namespace android::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject Spannable_Factory::getInstance()
+	android::text::Spannable_Factory Spannable_Factory::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.Spannable$Factory",
@@ -23,7 +23,7 @@ namespace android::text
 			"()Landroid/text/Spannable$Factory;"
 		);
 	}
-	QAndroidJniObject Spannable_Factory::newSpannable(jstring arg0)
+	__JniBaseClass Spannable_Factory::newSpannable(jstring arg0)
 	{
 		return callObjectMethod(
 			"newSpannable",

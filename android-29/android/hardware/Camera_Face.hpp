@@ -18,10 +18,10 @@ namespace android::hardware
 	public:
 		// Fields
 		jint id();
-		QAndroidJniObject leftEye();
-		QAndroidJniObject mouth();
-		QAndroidJniObject rect();
-		QAndroidJniObject rightEye();
+		android::graphics::Point leftEye();
+		android::graphics::Point mouth();
+		android::graphics::Rect rect();
+		android::graphics::Point rightEye();
 		jint score();
 		
 		// QAndroidJniObject forward

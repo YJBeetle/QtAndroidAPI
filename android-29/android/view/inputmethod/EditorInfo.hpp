@@ -21,7 +21,7 @@ namespace android::view::inputmethod
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint IME_ACTION_DONE();
 		static jint IME_ACTION_GO();
 		static jint IME_ACTION_NEXT();
@@ -43,10 +43,10 @@ namespace android::view::inputmethod
 		jint actionId();
 		jstring actionLabel();
 		jarray contentMimeTypes();
-		QAndroidJniObject extras();
+		android::os::Bundle extras();
 		jint fieldId();
 		jstring fieldName();
-		QAndroidJniObject hintLocales();
+		android::os::LocaleList hintLocales();
 		jstring hintText();
 		jint imeOptions();
 		jint initialCapsMode();

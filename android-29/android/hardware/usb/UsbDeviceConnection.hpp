@@ -47,8 +47,8 @@ namespace android::hardware::usb
 		jbyteArray getRawDescriptors();
 		jstring getSerial();
 		jboolean releaseInterface(android::hardware::usb::UsbInterface arg0);
-		QAndroidJniObject requestWait();
-		QAndroidJniObject requestWait(jlong arg0);
+		android::hardware::usb::UsbRequest requestWait();
+		android::hardware::usb::UsbRequest requestWait(jlong arg0);
 		jboolean setConfiguration(android::hardware::usb::UsbConfiguration arg0);
 		jboolean setInterface(android::hardware::usb::UsbInterface arg0);
 	};

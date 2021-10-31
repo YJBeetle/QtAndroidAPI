@@ -31,8 +31,8 @@ namespace java::util::prefs
 		NodeChangeEvent(java::util::prefs::Preferences arg0, java::util::prefs::Preferences arg1);
 		
 		// Methods
-		QAndroidJniObject getChild();
-		QAndroidJniObject getParent();
+		java::util::prefs::Preferences getChild();
+		java::util::prefs::Preferences getParent();
 	};
 } // namespace java::util::prefs
 

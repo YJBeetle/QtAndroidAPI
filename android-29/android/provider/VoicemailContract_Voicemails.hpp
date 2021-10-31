@@ -15,7 +15,7 @@ namespace android::provider
 		// Fields
 		static jstring ARCHIVED();
 		static jstring BACKED_UP();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DATE();
 		static jstring DELETED();
 		static jstring DIRTY();
@@ -44,7 +44,7 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject buildSourceUri(jstring arg0);
+		static android::net::Uri buildSourceUri(jstring arg0);
 	};
 } // namespace android::provider
 

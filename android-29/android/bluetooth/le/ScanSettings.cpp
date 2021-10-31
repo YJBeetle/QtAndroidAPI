@@ -25,7 +25,7 @@ namespace android::bluetooth::le
 			"CALLBACK_TYPE_MATCH_LOST"
 		);
 	}
-	QAndroidJniObject ScanSettings::CREATOR()
+	__JniBaseClass ScanSettings::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.le.ScanSettings",

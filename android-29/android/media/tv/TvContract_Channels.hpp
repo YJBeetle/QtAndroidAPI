@@ -42,7 +42,7 @@ namespace android::media::tv
 		static jstring COLUMN_VIDEO_FORMAT();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring SERVICE_TYPE_AUDIO();
 		static jstring SERVICE_TYPE_AUDIO_VIDEO();
 		static jstring SERVICE_TYPE_OTHER();

@@ -46,26 +46,26 @@ namespace java::net
 		
 		// Methods
 		static void setSocketFactory(__JniBaseClass arg0);
-		QAndroidJniObject accept();
+		java::net::Socket accept();
 		void bind(java::net::SocketAddress arg0);
 		void bind(java::net::SocketAddress arg0, jint arg1);
 		void close();
-		QAndroidJniObject getChannel();
-		QAndroidJniObject getInetAddress();
+		java::nio::channels::ServerSocketChannel getChannel();
+		java::net::InetAddress getInetAddress();
 		jint getLocalPort();
-		QAndroidJniObject getLocalSocketAddress();
+		java::net::SocketAddress getLocalSocketAddress();
 		jobject getOption(__JniBaseClass arg0);
 		jint getReceiveBufferSize();
 		jboolean getReuseAddress();
 		jint getSoTimeout();
 		jboolean isBound();
 		jboolean isClosed();
-		QAndroidJniObject setOption(__JniBaseClass arg0, jobject arg1);
+		java::net::ServerSocket setOption(__JniBaseClass arg0, jobject arg1);
 		void setPerformancePreferences(jint arg0, jint arg1, jint arg2);
 		void setReceiveBufferSize(jint arg0);
 		void setReuseAddress(jboolean arg0);
 		void setSoTimeout(jint arg0);
-		QAndroidJniObject supportedOptions();
+		__JniBaseClass supportedOptions();
 		jstring toString();
 	};
 } // namespace java::net

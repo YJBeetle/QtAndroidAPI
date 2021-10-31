@@ -36,7 +36,7 @@ namespace android::text
 		static jint CAP_MODE_CHARACTERS();
 		static jint CAP_MODE_SENTENCES();
 		static jint CAP_MODE_WORDS();
-		static QAndroidJniObject CHAR_SEQUENCE_CREATOR();
+		static __JniBaseClass CHAR_SEQUENCE_CREATOR();
 		static jint SAFE_STRING_FLAG_FIRST_LINE();
 		static jint SAFE_STRING_FLAG_SINGLE_LINE();
 		static jint SAFE_STRING_FLAG_TRIM();

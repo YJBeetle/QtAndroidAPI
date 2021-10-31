@@ -3,7 +3,7 @@
 namespace android::renderscript
 {
 	// Fields
-	QAndroidJniObject RenderScript_ContextType::DEBUG()
+	android::renderscript::RenderScript_ContextType RenderScript_ContextType::DEBUG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.RenderScript$ContextType",
@@ -11,7 +11,7 @@ namespace android::renderscript
 			"Landroid/renderscript/RenderScript$ContextType;"
 		);
 	}
-	QAndroidJniObject RenderScript_ContextType::NORMAL()
+	android::renderscript::RenderScript_ContextType RenderScript_ContextType::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.RenderScript$ContextType",
@@ -19,7 +19,7 @@ namespace android::renderscript
 			"Landroid/renderscript/RenderScript$ContextType;"
 		);
 	}
-	QAndroidJniObject RenderScript_ContextType::PROFILE()
+	android::renderscript::RenderScript_ContextType RenderScript_ContextType::PROFILE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.RenderScript$ContextType",
@@ -34,7 +34,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RenderScript_ContextType::valueOf(jstring arg0)
+	android::renderscript::RenderScript_ContextType RenderScript_ContextType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.RenderScript$ContextType",

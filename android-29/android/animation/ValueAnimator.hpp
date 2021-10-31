@@ -28,22 +28,22 @@ namespace android::animation
 		// Methods
 		static jboolean areAnimatorsEnabled();
 		static jlong getFrameDelay();
-		static QAndroidJniObject ofArgb(jintArray arg0);
-		static QAndroidJniObject ofFloat(jfloatArray arg0);
-		static QAndroidJniObject ofInt(jintArray arg0);
-		static QAndroidJniObject ofObject(__JniBaseClass arg0, jobjectArray arg1);
-		static QAndroidJniObject ofPropertyValuesHolder(jarray arg0);
+		static android::animation::ValueAnimator ofArgb(jintArray arg0);
+		static android::animation::ValueAnimator ofFloat(jfloatArray arg0);
+		static android::animation::ValueAnimator ofInt(jintArray arg0);
+		static android::animation::ValueAnimator ofObject(__JniBaseClass arg0, jobjectArray arg1);
+		static android::animation::ValueAnimator ofPropertyValuesHolder(jarray arg0);
 		static void setFrameDelay(jlong arg0);
 		void addUpdateListener(__JniBaseClass arg0);
 		void cancel();
-		QAndroidJniObject clone();
+		android::animation::ValueAnimator clone();
 		void end();
 		jfloat getAnimatedFraction();
 		jobject getAnimatedValue();
 		jobject getAnimatedValue(jstring arg0);
 		jlong getCurrentPlayTime();
 		jlong getDuration();
-		QAndroidJniObject getInterpolator();
+		__JniBaseClass getInterpolator();
 		jint getRepeatCount();
 		jint getRepeatMode();
 		jlong getStartDelay();
@@ -58,7 +58,7 @@ namespace android::animation
 		void reverse();
 		void setCurrentFraction(jfloat arg0);
 		void setCurrentPlayTime(jlong arg0);
-		QAndroidJniObject setDuration(jlong arg0);
+		android::animation::ValueAnimator setDuration(jlong arg0);
 		void setEvaluator(__JniBaseClass arg0);
 		void setFloatValues(jfloatArray arg0);
 		void setIntValues(jintArray arg0);

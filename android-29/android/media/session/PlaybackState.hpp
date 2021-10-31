@@ -35,7 +35,7 @@ namespace android::media::session
 		static jlong ACTION_SKIP_TO_PREVIOUS();
 		static jlong ACTION_SKIP_TO_QUEUE_ITEM();
 		static jlong ACTION_STOP();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jlong PLAYBACK_POSITION_UNKNOWN();
 		static jint STATE_BUFFERING();
 		static jint STATE_CONNECTING();
@@ -61,9 +61,9 @@ namespace android::media::session
 		jlong getActions();
 		jlong getActiveQueueItemId();
 		jlong getBufferedPosition();
-		QAndroidJniObject getCustomActions();
+		__JniBaseClass getCustomActions();
 		jstring getErrorMessage();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jlong getLastPositionUpdateTime();
 		jfloat getPlaybackSpeed();
 		jlong getPosition();

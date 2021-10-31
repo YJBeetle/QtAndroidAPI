@@ -43,10 +43,10 @@ namespace android::media
 		
 		// Methods
 		void onCommandResult(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, jobject arg2, android::media::Session2Command arg3, android::media::Session2Command_Result arg4);
-		QAndroidJniObject onConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1);
+		android::media::Session2CommandGroup onConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1);
 		void onDisconnected(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1);
 		void onPostConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1);
-		QAndroidJniObject onSessionCommand(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, android::media::Session2Command arg2, android::os::Bundle arg3);
+		android::media::Session2Command_Result onSessionCommand(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, android::media::Session2Command arg2, android::os::Bundle arg3);
 	};
 } // namespace android::media
 

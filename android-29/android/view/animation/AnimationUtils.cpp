@@ -26,7 +26,7 @@ namespace android::view::animation
 			"()J"
 		);
 	}
-	QAndroidJniObject AnimationUtils::loadAnimation(android::content::Context arg0, jint arg1)
+	android::view::animation::Animation AnimationUtils::loadAnimation(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.animation.AnimationUtils",
@@ -36,7 +36,7 @@ namespace android::view::animation
 			arg1
 		);
 	}
-	QAndroidJniObject AnimationUtils::loadInterpolator(android::content::Context arg0, jint arg1)
+	__JniBaseClass AnimationUtils::loadInterpolator(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.animation.AnimationUtils",
@@ -46,7 +46,7 @@ namespace android::view::animation
 			arg1
 		);
 	}
-	QAndroidJniObject AnimationUtils::loadLayoutAnimation(android::content::Context arg0, jint arg1)
+	android::view::animation::LayoutAnimationController AnimationUtils::loadLayoutAnimation(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.animation.AnimationUtils",
@@ -56,7 +56,7 @@ namespace android::view::animation
 			arg1
 		);
 	}
-	QAndroidJniObject AnimationUtils::makeInAnimation(android::content::Context arg0, jboolean arg1)
+	android::view::animation::Animation AnimationUtils::makeInAnimation(android::content::Context arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.animation.AnimationUtils",
@@ -66,7 +66,7 @@ namespace android::view::animation
 			arg1
 		);
 	}
-	QAndroidJniObject AnimationUtils::makeInChildBottomAnimation(android::content::Context arg0)
+	android::view::animation::Animation AnimationUtils::makeInChildBottomAnimation(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.animation.AnimationUtils",
@@ -75,7 +75,7 @@ namespace android::view::animation
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AnimationUtils::makeOutAnimation(android::content::Context arg0, jboolean arg1)
+	android::view::animation::Animation AnimationUtils::makeOutAnimation(android::content::Context arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.animation.AnimationUtils",

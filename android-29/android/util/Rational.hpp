@@ -10,10 +10,10 @@ namespace android::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NEGATIVE_INFINITY();
-		static QAndroidJniObject NaN();
-		static QAndroidJniObject POSITIVE_INFINITY();
-		static QAndroidJniObject ZERO();
+		static android::util::Rational NEGATIVE_INFINITY();
+		static android::util::Rational NaN();
+		static android::util::Rational POSITIVE_INFINITY();
+		static android::util::Rational ZERO();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Rational(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
@@ -23,7 +23,7 @@ namespace android::util
 		Rational(jint arg0, jint arg1);
 		
 		// Methods
-		static QAndroidJniObject parseRational(jstring arg0);
+		static android::util::Rational parseRational(jstring arg0);
 		jint compareTo(android::util::Rational arg0);
 		jint compareTo(jobject arg0);
 		jdouble doubleValue();

@@ -30,7 +30,7 @@ namespace android::text
 			"CAP_MODE_WORDS"
 		);
 	}
-	QAndroidJniObject TextUtils::CHAR_SEQUENCE_CREATOR()
+	__JniBaseClass TextUtils::CHAR_SEQUENCE_CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextUtils",

@@ -12,7 +12,7 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PrecomputedText::create(jstring arg0, android::text::PrecomputedText_Params arg1)
+	android::text::PrecomputedText PrecomputedText::create(jstring arg0, android::text::PrecomputedText_Params arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.PrecomputedText",
@@ -63,7 +63,7 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject PrecomputedText::getParams()
+	android::text::PrecomputedText_Params PrecomputedText::getParams()
 	{
 		return callObjectMethod(
 			"getParams",

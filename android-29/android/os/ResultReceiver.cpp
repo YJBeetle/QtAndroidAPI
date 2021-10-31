@@ -6,7 +6,7 @@
 namespace android::os
 {
 	// Fields
-	QAndroidJniObject ResultReceiver::CREATOR()
+	__JniBaseClass ResultReceiver::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.ResultReceiver",

@@ -35,7 +35,7 @@ namespace org::xml::sax
 		
 		// Methods
 		jthrowable getCause();
-		QAndroidJniObject getException();
+		java::lang::Exception getException();
 		jstring getMessage();
 		jstring toString();
 	};

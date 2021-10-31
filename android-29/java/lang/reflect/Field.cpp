@@ -27,14 +27,14 @@ namespace java::lang::reflect
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject Field::getAnnotatedType()
+	__JniBaseClass Field::getAnnotatedType()
 	{
 		return callObjectMethod(
 			"getAnnotatedType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	QAndroidJniObject Field::getAnnotation(jclass arg0)
+	__JniBaseClass Field::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -104,7 +104,7 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	QAndroidJniObject Field::getGenericType()
+	__JniBaseClass Field::getGenericType()
 	{
 		return callObjectMethod(
 			"getGenericType",

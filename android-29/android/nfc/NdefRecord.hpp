@@ -17,7 +17,7 @@ namespace android::nfc
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jbyteArray RTD_ALTERNATIVE_CARRIER();
 		static jbyteArray RTD_HANDOVER_CARRIER();
 		static jbyteArray RTD_HANDOVER_REQUEST();
@@ -42,12 +42,12 @@ namespace android::nfc
 		NdefRecord(jshort arg0, jbyteArray arg1, jbyteArray arg2, jbyteArray arg3);
 		
 		// Methods
-		static QAndroidJniObject createApplicationRecord(jstring arg0);
-		static QAndroidJniObject createExternal(jstring arg0, jstring arg1, jbyteArray arg2);
-		static QAndroidJniObject createMime(jstring arg0, jbyteArray arg1);
-		static QAndroidJniObject createTextRecord(jstring arg0, jstring arg1);
-		static QAndroidJniObject createUri(android::net::Uri arg0);
-		static QAndroidJniObject createUri(jstring arg0);
+		static android::nfc::NdefRecord createApplicationRecord(jstring arg0);
+		static android::nfc::NdefRecord createExternal(jstring arg0, jstring arg1, jbyteArray arg2);
+		static android::nfc::NdefRecord createMime(jstring arg0, jbyteArray arg1);
+		static android::nfc::NdefRecord createTextRecord(jstring arg0, jstring arg1);
+		static android::nfc::NdefRecord createUri(android::net::Uri arg0);
+		static android::nfc::NdefRecord createUri(jstring arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jbyteArray getId();
@@ -58,7 +58,7 @@ namespace android::nfc
 		jbyteArray toByteArray();
 		jstring toMimeType();
 		jstring toString();
-		QAndroidJniObject toUri();
+		android::net::Uri toUri();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::nfc

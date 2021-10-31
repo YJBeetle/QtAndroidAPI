@@ -15,7 +15,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MbmsStreamingSession::create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsStreamingSessionCallback arg2)
+	android::telephony::MbmsStreamingSession MbmsStreamingSession::create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsStreamingSessionCallback arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.MbmsStreamingSession",
@@ -26,7 +26,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MbmsStreamingSession::create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsStreamingSessionCallback arg3)
+	android::telephony::MbmsStreamingSession MbmsStreamingSession::create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsStreamingSessionCallback arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.MbmsStreamingSession",
@@ -53,7 +53,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MbmsStreamingSession::startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, __JniBaseClass arg1, android::telephony::mbms::StreamingServiceCallback arg2)
+	android::telephony::mbms::StreamingService MbmsStreamingSession::startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, __JniBaseClass arg1, android::telephony::mbms::StreamingServiceCallback arg2)
 	{
 		return callObjectMethod(
 			"startStreaming",

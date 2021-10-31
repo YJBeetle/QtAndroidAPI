@@ -46,7 +46,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaController::getExtras()
+	android::os::Bundle MediaController::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",
@@ -60,7 +60,7 @@ namespace android::media::session
 			"()J"
 		);
 	}
-	QAndroidJniObject MediaController::getMetadata()
+	android::media::MediaMetadata MediaController::getMetadata()
 	{
 		return callObjectMethod(
 			"getMetadata",
@@ -74,21 +74,21 @@ namespace android::media::session
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaController::getPlaybackInfo()
+	android::media::session::MediaController_PlaybackInfo MediaController::getPlaybackInfo()
 	{
 		return callObjectMethod(
 			"getPlaybackInfo",
 			"()Landroid/media/session/MediaController$PlaybackInfo;"
 		);
 	}
-	QAndroidJniObject MediaController::getPlaybackState()
+	android::media::session::PlaybackState MediaController::getPlaybackState()
 	{
 		return callObjectMethod(
 			"getPlaybackState",
 			"()Landroid/media/session/PlaybackState;"
 		);
 	}
-	QAndroidJniObject MediaController::getQueue()
+	__JniBaseClass MediaController::getQueue()
 	{
 		return callObjectMethod(
 			"getQueue",
@@ -109,28 +109,28 @@ namespace android::media::session
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaController::getSessionActivity()
+	android::app::PendingIntent MediaController::getSessionActivity()
 	{
 		return callObjectMethod(
 			"getSessionActivity",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	QAndroidJniObject MediaController::getSessionInfo()
+	android::os::Bundle MediaController::getSessionInfo()
 	{
 		return callObjectMethod(
 			"getSessionInfo",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject MediaController::getSessionToken()
+	android::media::session::MediaSession_Token MediaController::getSessionToken()
 	{
 		return callObjectMethod(
 			"getSessionToken",
 			"()Landroid/media/session/MediaSession$Token;"
 		);
 	}
-	QAndroidJniObject MediaController::getTransportControls()
+	android::media::session::MediaController_TransportControls MediaController::getTransportControls()
 	{
 		return callObjectMethod(
 			"getTransportControls",

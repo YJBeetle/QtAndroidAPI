@@ -25,7 +25,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject KeyStore::getInstance(jstring arg0)
+	java::security::KeyStore KeyStore::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyStore",
@@ -34,7 +34,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject KeyStore::getInstance(java::io::File arg0, jcharArray arg1)
+	java::security::KeyStore KeyStore::getInstance(java::io::File arg0, jcharArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyStore",
@@ -44,7 +44,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject KeyStore::getInstance(java::io::File arg0, __JniBaseClass arg1)
+	java::security::KeyStore KeyStore::getInstance(java::io::File arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyStore",
@@ -54,7 +54,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	QAndroidJniObject KeyStore::getInstance(jstring arg0, jstring arg1)
+	java::security::KeyStore KeyStore::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyStore",
@@ -64,7 +64,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject KeyStore::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::KeyStore KeyStore::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyStore",
@@ -74,7 +74,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	QAndroidJniObject KeyStore::aliases()
+	__JniBaseClass KeyStore::aliases()
 	{
 		return callObjectMethod(
 			"aliases",
@@ -106,7 +106,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject KeyStore::getCertificate(jstring arg0)
+	java::security::cert::Certificate KeyStore::getCertificate(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCertificate",
@@ -130,7 +130,7 @@ namespace java::security
 			arg0
 		).object<jarray>();
 	}
-	QAndroidJniObject KeyStore::getCreationDate(jstring arg0)
+	java::util::Date KeyStore::getCreationDate(jstring arg0)
 	{
 		return callObjectMethod(
 			"getCreationDate",
@@ -138,7 +138,7 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject KeyStore::getEntry(jstring arg0, __JniBaseClass arg1)
+	__JniBaseClass KeyStore::getEntry(jstring arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"getEntry",
@@ -147,7 +147,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	QAndroidJniObject KeyStore::getKey(jstring arg0, jcharArray arg1)
+	__JniBaseClass KeyStore::getKey(jstring arg0, jcharArray arg1)
 	{
 		return callObjectMethod(
 			"getKey",
@@ -156,7 +156,7 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject KeyStore::getProvider()
+	java::security::Provider KeyStore::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",

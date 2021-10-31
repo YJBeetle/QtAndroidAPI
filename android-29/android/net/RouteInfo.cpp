@@ -6,7 +6,7 @@
 namespace android::net
 {
 	// Fields
-	QAndroidJniObject RouteInfo::CREATOR()
+	__JniBaseClass RouteInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.RouteInfo",
@@ -36,14 +36,14 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject RouteInfo::getDestination()
+	android::net::IpPrefix RouteInfo::getDestination()
 	{
 		return callObjectMethod(
 			"getDestination",
 			"()Landroid/net/IpPrefix;"
 		);
 	}
-	QAndroidJniObject RouteInfo::getGateway()
+	java::net::InetAddress RouteInfo::getGateway()
 	{
 		return callObjectMethod(
 			"getGateway",

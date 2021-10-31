@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject VersionedPackage::CREATOR()
+	__JniBaseClass VersionedPackage::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.VersionedPackage",

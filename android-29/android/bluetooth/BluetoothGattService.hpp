@@ -21,7 +21,7 @@ namespace android::bluetooth
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint SERVICE_TYPE_PRIMARY();
 		static jint SERVICE_TYPE_SECONDARY();
 		
@@ -36,12 +36,12 @@ namespace android::bluetooth
 		jboolean addCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0);
 		jboolean addService(android::bluetooth::BluetoothGattService arg0);
 		jint describeContents();
-		QAndroidJniObject getCharacteristic(java::util::UUID arg0);
-		QAndroidJniObject getCharacteristics();
-		QAndroidJniObject getIncludedServices();
+		android::bluetooth::BluetoothGattCharacteristic getCharacteristic(java::util::UUID arg0);
+		__JniBaseClass getCharacteristics();
+		__JniBaseClass getIncludedServices();
 		jint getInstanceId();
 		jint getType();
-		QAndroidJniObject getUuid();
+		java::util::UUID getUuid();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::bluetooth

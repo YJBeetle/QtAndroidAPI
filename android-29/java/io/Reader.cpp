@@ -12,7 +12,7 @@ namespace java::io
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Reader::nullReader()
+	java::io::Reader Reader::nullReader()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.io.Reader",

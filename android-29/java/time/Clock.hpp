@@ -29,21 +29,21 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject fixed(java::time::Instant arg0, java::time::ZoneId arg1);
-		static QAndroidJniObject offset(java::time::Clock arg0, java::time::Duration arg1);
-		static QAndroidJniObject system(java::time::ZoneId arg0);
-		static QAndroidJniObject systemDefaultZone();
-		static QAndroidJniObject systemUTC();
-		static QAndroidJniObject tick(java::time::Clock arg0, java::time::Duration arg1);
-		static QAndroidJniObject tickMillis(java::time::ZoneId arg0);
-		static QAndroidJniObject tickMinutes(java::time::ZoneId arg0);
-		static QAndroidJniObject tickSeconds(java::time::ZoneId arg0);
+		static java::time::Clock fixed(java::time::Instant arg0, java::time::ZoneId arg1);
+		static java::time::Clock offset(java::time::Clock arg0, java::time::Duration arg1);
+		static java::time::Clock system(java::time::ZoneId arg0);
+		static java::time::Clock systemDefaultZone();
+		static java::time::Clock systemUTC();
+		static java::time::Clock tick(java::time::Clock arg0, java::time::Duration arg1);
+		static java::time::Clock tickMillis(java::time::ZoneId arg0);
+		static java::time::Clock tickMinutes(java::time::ZoneId arg0);
+		static java::time::Clock tickSeconds(java::time::ZoneId arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getZone();
+		java::time::ZoneId getZone();
 		jint hashCode();
-		QAndroidJniObject instant();
+		java::time::Instant instant();
 		jlong millis();
-		QAndroidJniObject withZone(java::time::ZoneId arg0);
+		java::time::Clock withZone(java::time::ZoneId arg0);
 	};
 } // namespace java::time
 

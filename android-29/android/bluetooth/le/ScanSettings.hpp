@@ -16,7 +16,7 @@ namespace android::bluetooth::le
 		static jint CALLBACK_TYPE_ALL_MATCHES();
 		static jint CALLBACK_TYPE_FIRST_MATCH();
 		static jint CALLBACK_TYPE_MATCH_LOST();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint MATCH_MODE_AGGRESSIVE();
 		static jint MATCH_MODE_STICKY();
 		static jint MATCH_NUM_FEW_ADVERTISEMENT();

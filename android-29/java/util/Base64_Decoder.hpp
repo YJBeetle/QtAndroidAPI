@@ -28,8 +28,8 @@ namespace java::util
 		jbyteArray decode(jbyteArray arg0);
 		jbyteArray decode(jstring arg0);
 		jint decode(jbyteArray arg0, jbyteArray arg1);
-		QAndroidJniObject decode(java::nio::ByteBuffer arg0);
-		QAndroidJniObject wrap(java::io::InputStream arg0);
+		java::nio::ByteBuffer decode(java::nio::ByteBuffer arg0);
+		java::io::InputStream wrap(java::io::InputStream arg0);
 	};
 } // namespace java::util
 

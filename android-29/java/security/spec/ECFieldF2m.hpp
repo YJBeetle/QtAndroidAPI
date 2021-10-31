@@ -28,7 +28,7 @@ namespace java::security::spec
 		jint getFieldSize();
 		jint getM();
 		jintArray getMidTermsOfReductionPolynomial();
-		QAndroidJniObject getReductionPolynomial();
+		java::math::BigInteger getReductionPolynomial();
 		jint hashCode();
 	};
 } // namespace java::security::spec

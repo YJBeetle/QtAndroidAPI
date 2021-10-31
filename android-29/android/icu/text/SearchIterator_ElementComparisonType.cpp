@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject SearchIterator_ElementComparisonType::ANY_BASE_WEIGHT_IS_WILDCARD()
+	android::icu::text::SearchIterator_ElementComparisonType SearchIterator_ElementComparisonType::ANY_BASE_WEIGHT_IS_WILDCARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.SearchIterator$ElementComparisonType",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/SearchIterator$ElementComparisonType;"
 		);
 	}
-	QAndroidJniObject SearchIterator_ElementComparisonType::PATTERN_BASE_WEIGHT_IS_WILDCARD()
+	android::icu::text::SearchIterator_ElementComparisonType SearchIterator_ElementComparisonType::PATTERN_BASE_WEIGHT_IS_WILDCARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.SearchIterator$ElementComparisonType",
@@ -19,7 +19,7 @@ namespace android::icu::text
 			"Landroid/icu/text/SearchIterator$ElementComparisonType;"
 		);
 	}
-	QAndroidJniObject SearchIterator_ElementComparisonType::STANDARD_ELEMENT_COMPARISON()
+	android::icu::text::SearchIterator_ElementComparisonType SearchIterator_ElementComparisonType::STANDARD_ELEMENT_COMPARISON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.SearchIterator$ElementComparisonType",
@@ -34,7 +34,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SearchIterator_ElementComparisonType::valueOf(jstring arg0)
+	android::icu::text::SearchIterator_ElementComparisonType SearchIterator_ElementComparisonType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.SearchIterator$ElementComparisonType",

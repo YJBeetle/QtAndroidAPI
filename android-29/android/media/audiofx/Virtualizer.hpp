@@ -31,7 +31,7 @@ namespace android::media::audiofx
 		// Methods
 		jboolean canVirtualize(jint arg0, jint arg1);
 		jboolean forceVirtualizationMode(jint arg0);
-		QAndroidJniObject getProperties();
+		android::media::audiofx::Virtualizer_Settings getProperties();
 		jshort getRoundedStrength();
 		jboolean getSpeakerAngles(jint arg0, jint arg1, jintArray arg2);
 		jboolean getStrengthSupported();

@@ -22,7 +22,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CellInfoNr(const char *className, const char *sig, Ts...agv) : android::telephony::CellInfo(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,8 +32,8 @@ namespace android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCellIdentity();
-		QAndroidJniObject getCellSignalStrength();
+		android::telephony::CellIdentity getCellIdentity();
+		android::telephony::CellSignalStrength getCellSignalStrength();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

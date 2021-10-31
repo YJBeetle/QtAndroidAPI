@@ -24,7 +24,7 @@ namespace javax::net::ssl
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SSLSessionBindingEvent::getSession()
+	__JniBaseClass SSLSessionBindingEvent::getSession()
 	{
 		return callObjectMethod(
 			"getSession",

@@ -77,7 +77,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ScriptIntrinsicBLAS::create(android::renderscript::RenderScript arg0)
+	android::renderscript::ScriptIntrinsicBLAS ScriptIntrinsicBLAS::create(android::renderscript::RenderScript arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.ScriptIntrinsicBLAS",

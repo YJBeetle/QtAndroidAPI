@@ -29,28 +29,28 @@ namespace android::graphics::fonts
 			"()[Landroid/graphics/fonts/FontVariationAxis;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Font::getBuffer()
+	java::nio::ByteBuffer Font::getBuffer()
 	{
 		return callObjectMethod(
 			"getBuffer",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	QAndroidJniObject Font::getFile()
+	java::io::File Font::getFile()
 	{
 		return callObjectMethod(
 			"getFile",
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject Font::getLocaleList()
+	android::os::LocaleList Font::getLocaleList()
 	{
 		return callObjectMethod(
 			"getLocaleList",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	QAndroidJniObject Font::getStyle()
+	android::graphics::fonts::FontStyle Font::getStyle()
 	{
 		return callObjectMethod(
 			"getStyle",

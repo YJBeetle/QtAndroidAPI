@@ -39,14 +39,14 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	QAndroidJniObject CharsetEncoder::charset()
+	java::nio::charset::Charset CharsetEncoder::charset()
 	{
 		return callObjectMethod(
 			"charset",
 			"()Ljava/nio/charset/Charset;"
 		);
 	}
-	QAndroidJniObject CharsetEncoder::encode(java::nio::CharBuffer arg0)
+	java::nio::ByteBuffer CharsetEncoder::encode(java::nio::CharBuffer arg0)
 	{
 		return callObjectMethod(
 			"encode",
@@ -54,7 +54,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CharsetEncoder::encode(java::nio::CharBuffer arg0, java::nio::ByteBuffer arg1, jboolean arg2)
+	java::nio::charset::CoderResult CharsetEncoder::encode(java::nio::CharBuffer arg0, java::nio::ByteBuffer arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"encode",
@@ -64,7 +64,7 @@ namespace java::nio::charset
 			arg2
 		);
 	}
-	QAndroidJniObject CharsetEncoder::flush(java::nio::ByteBuffer arg0)
+	java::nio::charset::CoderResult CharsetEncoder::flush(java::nio::ByteBuffer arg0)
 	{
 		return callObjectMethod(
 			"flush",
@@ -80,7 +80,7 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	QAndroidJniObject CharsetEncoder::malformedInputAction()
+	java::nio::charset::CodingErrorAction CharsetEncoder::malformedInputAction()
 	{
 		return callObjectMethod(
 			"malformedInputAction",
@@ -94,7 +94,7 @@ namespace java::nio::charset
 			"()F"
 		);
 	}
-	QAndroidJniObject CharsetEncoder::onMalformedInput(java::nio::charset::CodingErrorAction arg0)
+	java::nio::charset::CharsetEncoder CharsetEncoder::onMalformedInput(java::nio::charset::CodingErrorAction arg0)
 	{
 		return callObjectMethod(
 			"onMalformedInput",
@@ -102,7 +102,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CharsetEncoder::onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0)
+	java::nio::charset::CharsetEncoder CharsetEncoder::onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0)
 	{
 		return callObjectMethod(
 			"onUnmappableCharacter",
@@ -110,7 +110,7 @@ namespace java::nio::charset
 			arg0.object()
 		);
 	}
-	QAndroidJniObject CharsetEncoder::replaceWith(jbyteArray arg0)
+	java::nio::charset::CharsetEncoder CharsetEncoder::replaceWith(jbyteArray arg0)
 	{
 		return callObjectMethod(
 			"replaceWith",
@@ -125,14 +125,14 @@ namespace java::nio::charset
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject CharsetEncoder::reset()
+	java::nio::charset::CharsetEncoder CharsetEncoder::reset()
 	{
 		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/charset/CharsetEncoder;"
 		);
 	}
-	QAndroidJniObject CharsetEncoder::unmappableCharacterAction()
+	java::nio::charset::CodingErrorAction CharsetEncoder::unmappableCharacterAction()
 	{
 		return callObjectMethod(
 			"unmappableCharacterAction",

@@ -30,13 +30,13 @@ namespace android::service::textservice
 		SpellCheckerService_Session();
 		
 		// Methods
-		QAndroidJniObject getBundle();
+		android::os::Bundle getBundle();
 		jstring getLocale();
 		void onCancel();
 		void onClose();
 		void onCreate();
 		jarray onGetSentenceSuggestionsMultiple(jarray arg0, jint arg1);
-		QAndroidJniObject onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1);
+		android::view::textservice::SuggestionsInfo onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1);
 		jarray onGetSuggestionsMultiple(jarray arg0, jint arg1, jboolean arg2);
 	};
 } // namespace android::service::textservice

@@ -13,7 +13,7 @@ namespace android::view::textservice
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS();
 		static jint RESULT_ATTR_IN_THE_DICTIONARY();
 		static jint RESULT_ATTR_LOOKS_LIKE_TYPO();

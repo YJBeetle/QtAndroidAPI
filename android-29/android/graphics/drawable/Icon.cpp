@@ -13,7 +13,7 @@
 namespace android::graphics::drawable
 {
 	// Fields
-	QAndroidJniObject Icon::CREATOR()
+	__JniBaseClass Icon::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.drawable.Icon",
@@ -63,7 +63,7 @@ namespace android::graphics::drawable
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Icon::createWithAdaptiveBitmap(android::graphics::Bitmap arg0)
+	android::graphics::drawable::Icon Icon::createWithAdaptiveBitmap(android::graphics::Bitmap arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
@@ -72,7 +72,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Icon::createWithBitmap(android::graphics::Bitmap arg0)
+	android::graphics::drawable::Icon Icon::createWithBitmap(android::graphics::Bitmap arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
@@ -81,7 +81,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Icon::createWithContentUri(android::net::Uri arg0)
+	android::graphics::drawable::Icon Icon::createWithContentUri(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
@@ -90,7 +90,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Icon::createWithContentUri(jstring arg0)
+	android::graphics::drawable::Icon Icon::createWithContentUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
@@ -99,7 +99,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	QAndroidJniObject Icon::createWithData(jbyteArray arg0, jint arg1, jint arg2)
+	android::graphics::drawable::Icon Icon::createWithData(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
@@ -110,7 +110,7 @@ namespace android::graphics::drawable
 			arg2
 		);
 	}
-	QAndroidJniObject Icon::createWithFilePath(jstring arg0)
+	android::graphics::drawable::Icon Icon::createWithFilePath(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
@@ -119,7 +119,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	QAndroidJniObject Icon::createWithResource(android::content::Context arg0, jint arg1)
+	android::graphics::drawable::Icon Icon::createWithResource(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
@@ -129,7 +129,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	QAndroidJniObject Icon::createWithResource(jstring arg0, jint arg1)
+	android::graphics::drawable::Icon Icon::createWithResource(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.drawable.Icon",
@@ -167,14 +167,14 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	QAndroidJniObject Icon::getUri()
+	android::net::Uri Icon::getUri()
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Icon::loadDrawable(android::content::Context arg0)
+	android::graphics::drawable::Drawable Icon::loadDrawable(android::content::Context arg0)
 	{
 		return callObjectMethod(
 			"loadDrawable",
@@ -201,7 +201,7 @@ namespace android::graphics::drawable
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Icon::setTint(jint arg0)
+	android::graphics::drawable::Icon Icon::setTint(jint arg0)
 	{
 		return callObjectMethod(
 			"setTint",
@@ -209,7 +209,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	QAndroidJniObject Icon::setTintBlendMode(android::graphics::BlendMode arg0)
+	android::graphics::drawable::Icon Icon::setTintBlendMode(android::graphics::BlendMode arg0)
 	{
 		return callObjectMethod(
 			"setTintBlendMode",
@@ -217,7 +217,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Icon::setTintList(android::content::res::ColorStateList arg0)
+	android::graphics::drawable::Icon Icon::setTintList(android::content::res::ColorStateList arg0)
 	{
 		return callObjectMethod(
 			"setTintList",
@@ -225,7 +225,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Icon::setTintMode(android::graphics::PorterDuff_Mode arg0)
+	android::graphics::drawable::Icon Icon::setTintMode(android::graphics::PorterDuff_Mode arg0)
 	{
 		return callObjectMethod(
 			"setTintMode",

@@ -4,7 +4,7 @@
 namespace android::accounts
 {
 	// Fields
-	QAndroidJniObject Account::CREATOR()
+	__JniBaseClass Account::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.Account",

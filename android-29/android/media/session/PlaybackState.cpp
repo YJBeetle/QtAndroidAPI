@@ -131,7 +131,7 @@ namespace android::media::session
 			"ACTION_STOP"
 		);
 	}
-	QAndroidJniObject PlaybackState::CREATOR()
+	__JniBaseClass PlaybackState::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.session.PlaybackState",
@@ -265,7 +265,7 @@ namespace android::media::session
 			"()J"
 		);
 	}
-	QAndroidJniObject PlaybackState::getCustomActions()
+	__JniBaseClass PlaybackState::getCustomActions()
 	{
 		return callObjectMethod(
 			"getCustomActions",
@@ -279,7 +279,7 @@ namespace android::media::session
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PlaybackState::getExtras()
+	android::os::Bundle PlaybackState::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

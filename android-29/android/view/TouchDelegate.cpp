@@ -49,7 +49,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	QAndroidJniObject TouchDelegate::getTouchDelegateInfo()
+	android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo TouchDelegate::getTouchDelegateInfo()
 	{
 		return callObjectMethod(
 			"getTouchDelegateInfo",

@@ -32,8 +32,8 @@ namespace java::security
 		jboolean equals(jobject arg0);
 		jstring getInfo();
 		jstring getName();
-		QAndroidJniObject getPublicKey();
-		QAndroidJniObject getScope();
+		__JniBaseClass getPublicKey();
+		java::security::IdentityScope getScope();
 		jint hashCode();
 		void removeCertificate(__JniBaseClass arg0);
 		void setInfo(jstring arg0);

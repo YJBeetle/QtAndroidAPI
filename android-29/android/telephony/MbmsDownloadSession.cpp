@@ -148,7 +148,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject MbmsDownloadSession::create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2)
+	android::telephony::MbmsDownloadSession MbmsDownloadSession::create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.MbmsDownloadSession",
@@ -159,7 +159,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	QAndroidJniObject MbmsDownloadSession::create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3)
+	android::telephony::MbmsDownloadSession MbmsDownloadSession::create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.MbmsDownloadSession",
@@ -214,14 +214,14 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	QAndroidJniObject MbmsDownloadSession::getTempFileRootDirectory()
+	java::io::File MbmsDownloadSession::getTempFileRootDirectory()
 	{
 		return callObjectMethod(
 			"getTempFileRootDirectory",
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject MbmsDownloadSession::listPendingDownloads()
+	__JniBaseClass MbmsDownloadSession::listPendingDownloads()
 	{
 		return callObjectMethod(
 			"listPendingDownloads",

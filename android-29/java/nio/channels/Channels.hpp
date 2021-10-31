@@ -49,16 +49,16 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject newChannel(java::io::InputStream arg0);
-		static QAndroidJniObject newChannel(java::io::OutputStream arg0);
-		static QAndroidJniObject newInputStream(__JniBaseClass arg0);
-		static QAndroidJniObject newOutputStream(__JniBaseClass arg0);
-		static QAndroidJniObject newReader(__JniBaseClass arg0, jstring arg1);
-		static QAndroidJniObject newReader(__JniBaseClass arg0, java::nio::charset::Charset arg1);
-		static QAndroidJniObject newReader(__JniBaseClass arg0, java::nio::charset::CharsetDecoder arg1, jint arg2);
-		static QAndroidJniObject newWriter(__JniBaseClass arg0, jstring arg1);
-		static QAndroidJniObject newWriter(__JniBaseClass arg0, java::nio::charset::Charset arg1);
-		static QAndroidJniObject newWriter(__JniBaseClass arg0, java::nio::charset::CharsetEncoder arg1, jint arg2);
+		static __JniBaseClass newChannel(java::io::InputStream arg0);
+		static __JniBaseClass newChannel(java::io::OutputStream arg0);
+		static java::io::InputStream newInputStream(__JniBaseClass arg0);
+		static java::io::OutputStream newOutputStream(__JniBaseClass arg0);
+		static java::io::Reader newReader(__JniBaseClass arg0, jstring arg1);
+		static java::io::Reader newReader(__JniBaseClass arg0, java::nio::charset::Charset arg1);
+		static java::io::Reader newReader(__JniBaseClass arg0, java::nio::charset::CharsetDecoder arg1, jint arg2);
+		static java::io::Writer newWriter(__JniBaseClass arg0, jstring arg1);
+		static java::io::Writer newWriter(__JniBaseClass arg0, java::nio::charset::Charset arg1);
+		static java::io::Writer newWriter(__JniBaseClass arg0, java::nio::charset::CharsetEncoder arg1, jint arg2);
 	};
 } // namespace java::nio::channels
 

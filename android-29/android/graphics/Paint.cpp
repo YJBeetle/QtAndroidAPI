@@ -305,7 +305,7 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	QAndroidJniObject Paint::getBlendMode()
+	android::graphics::BlendMode Paint::getBlendMode()
 	{
 		return callObjectMethod(
 			"getBlendMode",
@@ -319,7 +319,7 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	QAndroidJniObject Paint::getColorFilter()
+	android::graphics::ColorFilter Paint::getColorFilter()
 	{
 		return callObjectMethod(
 			"getColorFilter",
@@ -363,7 +363,7 @@ namespace android::graphics
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Paint::getFontMetrics()
+	android::graphics::Paint_FontMetrics Paint::getFontMetrics()
 	{
 		return callObjectMethod(
 			"getFontMetrics",
@@ -378,7 +378,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Paint::getFontMetricsInt()
+	android::graphics::Paint_FontMetricsInt Paint::getFontMetricsInt()
 	{
 		return callObjectMethod(
 			"getFontMetricsInt",
@@ -421,7 +421,7 @@ namespace android::graphics
 			"()F"
 		);
 	}
-	QAndroidJniObject Paint::getMaskFilter()
+	android::graphics::MaskFilter Paint::getMaskFilter()
 	{
 		return callObjectMethod(
 			"getMaskFilter",
@@ -456,7 +456,7 @@ namespace android::graphics
 			arg6
 		);
 	}
-	QAndroidJniObject Paint::getPathEffect()
+	android::graphics::PathEffect Paint::getPathEffect()
 	{
 		return callObjectMethod(
 			"getPathEffect",
@@ -491,7 +491,7 @@ namespace android::graphics
 			arg6
 		);
 	}
-	QAndroidJniObject Paint::getShader()
+	android::graphics::Shader Paint::getShader()
 	{
 		return callObjectMethod(
 			"getShader",
@@ -554,14 +554,14 @@ namespace android::graphics
 			"()F"
 		);
 	}
-	QAndroidJniObject Paint::getStrokeCap()
+	android::graphics::Paint_Cap Paint::getStrokeCap()
 	{
 		return callObjectMethod(
 			"getStrokeCap",
 			"()Landroid/graphics/Paint$Cap;"
 		);
 	}
-	QAndroidJniObject Paint::getStrokeJoin()
+	android::graphics::Paint_Join Paint::getStrokeJoin()
 	{
 		return callObjectMethod(
 			"getStrokeJoin",
@@ -582,14 +582,14 @@ namespace android::graphics
 			"()F"
 		);
 	}
-	QAndroidJniObject Paint::getStyle()
+	android::graphics::Paint_Style Paint::getStyle()
 	{
 		return callObjectMethod(
 			"getStyle",
 			"()Landroid/graphics/Paint$Style;"
 		);
 	}
-	QAndroidJniObject Paint::getTextAlign()
+	android::graphics::Paint_Align Paint::getTextAlign()
 	{
 		return callObjectMethod(
 			"getTextAlign",
@@ -618,14 +618,14 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	QAndroidJniObject Paint::getTextLocale()
+	java::util::Locale Paint::getTextLocale()
 	{
 		return callObjectMethod(
 			"getTextLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Paint::getTextLocales()
+	android::os::LocaleList Paint::getTextLocales()
 	{
 		return callObjectMethod(
 			"getTextLocales",
@@ -751,7 +751,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	QAndroidJniObject Paint::getTypeface()
+	android::graphics::Typeface Paint::getTypeface()
 	{
 		return callObjectMethod(
 			"getTypeface",
@@ -779,7 +779,7 @@ namespace android::graphics
 			"()F"
 		);
 	}
-	QAndroidJniObject Paint::getXfermode()
+	android::graphics::Xfermode Paint::getXfermode()
 	{
 		return callObjectMethod(
 			"getXfermode",
@@ -951,7 +951,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Paint::setColorFilter(android::graphics::ColorFilter arg0)
+	android::graphics::ColorFilter Paint::setColorFilter(android::graphics::ColorFilter arg0)
 	{
 		return callObjectMethod(
 			"setColorFilter",
@@ -1047,7 +1047,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Paint::setMaskFilter(android::graphics::MaskFilter arg0)
+	android::graphics::MaskFilter Paint::setMaskFilter(android::graphics::MaskFilter arg0)
 	{
 		return callObjectMethod(
 			"setMaskFilter",
@@ -1055,7 +1055,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Paint::setPathEffect(android::graphics::PathEffect arg0)
+	android::graphics::PathEffect Paint::setPathEffect(android::graphics::PathEffect arg0)
 	{
 		return callObjectMethod(
 			"setPathEffect",
@@ -1063,7 +1063,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Paint::setShader(android::graphics::Shader arg0)
+	android::graphics::Shader Paint::setShader(android::graphics::Shader arg0)
 	{
 		return callObjectMethod(
 			"setShader",
@@ -1205,7 +1205,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Paint::setTypeface(android::graphics::Typeface arg0)
+	android::graphics::Typeface Paint::setTypeface(android::graphics::Typeface arg0)
 	{
 		return callObjectMethod(
 			"setTypeface",
@@ -1229,7 +1229,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Paint::setXfermode(android::graphics::Xfermode arg0)
+	android::graphics::Xfermode Paint::setXfermode(android::graphics::Xfermode arg0)
 	{
 		return callObjectMethod(
 			"setXfermode",

@@ -11,7 +11,7 @@ namespace android::net::wifi::p2p::nsd
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WifiP2pServiceRequest::newInstance(jint arg0)
+	android::net::wifi::p2p::nsd::WifiP2pServiceRequest WifiP2pServiceRequest::newInstance(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.wifi.p2p.nsd.WifiP2pServiceRequest",
@@ -20,7 +20,7 @@ namespace android::net::wifi::p2p::nsd
 			arg0
 		);
 	}
-	QAndroidJniObject WifiP2pServiceRequest::newInstance(jint arg0, jstring arg1)
+	android::net::wifi::p2p::nsd::WifiP2pServiceRequest WifiP2pServiceRequest::newInstance(jint arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.wifi.p2p.nsd.WifiP2pServiceRequest",

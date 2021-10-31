@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject ActivityManager_RecentTaskInfo::CREATOR()
+	__JniBaseClass ActivityManager_RecentTaskInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$RecentTaskInfo",

@@ -37,7 +37,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_CANCEL_CURRENT();
 		static jint FLAG_IMMUTABLE();
 		static jint FLAG_NO_CREATE();
@@ -51,22 +51,22 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3);
-		static QAndroidJniObject getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3, android::os::Bundle arg4);
-		static QAndroidJniObject getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3);
-		static QAndroidJniObject getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3, android::os::Bundle arg4);
-		static QAndroidJniObject getBroadcast(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3);
-		static QAndroidJniObject getForegroundService(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3);
-		static QAndroidJniObject getService(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3);
-		static QAndroidJniObject readPendingIntentOrNullFromParcel(android::os::Parcel arg0);
+		static android::app::PendingIntent getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3);
+		static android::app::PendingIntent getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3, android::os::Bundle arg4);
+		static android::app::PendingIntent getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3);
+		static android::app::PendingIntent getActivity(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3, android::os::Bundle arg4);
+		static android::app::PendingIntent getBroadcast(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3);
+		static android::app::PendingIntent getForegroundService(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3);
+		static android::app::PendingIntent getService(android::content::Context arg0, jint arg1, android::content::Intent arg2, jint arg3);
+		static android::app::PendingIntent readPendingIntentOrNullFromParcel(android::os::Parcel arg0);
 		static void writePendingIntentOrNullToParcel(android::app::PendingIntent arg0, android::os::Parcel arg1);
 		void cancel();
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jstring getCreatorPackage();
 		jint getCreatorUid();
-		QAndroidJniObject getCreatorUserHandle();
-		QAndroidJniObject getIntentSender();
+		android::os::UserHandle getCreatorUserHandle();
+		android::content::IntentSender getIntentSender();
 		jstring getTargetPackage();
 		jint hashCode();
 		void send();

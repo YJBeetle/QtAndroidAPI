@@ -79,7 +79,7 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	QAndroidJniObject TonemapCurve::getPoint(jint arg0, jint arg1)
+	android::graphics::PointF TonemapCurve::getPoint(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPoint",

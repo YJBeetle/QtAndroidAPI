@@ -14,7 +14,7 @@ namespace android::transition
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TransitionInflater::from(android::content::Context arg0)
+	android::transition::TransitionInflater TransitionInflater::from(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.transition.TransitionInflater",
@@ -23,7 +23,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	QAndroidJniObject TransitionInflater::inflateTransition(jint arg0)
+	android::transition::Transition TransitionInflater::inflateTransition(jint arg0)
 	{
 		return callObjectMethod(
 			"inflateTransition",
@@ -31,7 +31,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	QAndroidJniObject TransitionInflater::inflateTransitionManager(jint arg0, android::view::ViewGroup arg1)
+	android::transition::TransitionManager TransitionInflater::inflateTransitionManager(jint arg0, android::view::ViewGroup arg1)
 	{
 		return callObjectMethod(
 			"inflateTransitionManager",

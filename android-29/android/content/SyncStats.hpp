@@ -13,7 +13,7 @@ namespace android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		jlong numAuthExceptions();
 		jlong numConflictDetectedExceptions();
 		jlong numDeletes();

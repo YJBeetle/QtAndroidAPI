@@ -5,14 +5,14 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject Entity_NamedContentValues::uri()
+	android::net::Uri Entity_NamedContentValues::uri()
 	{
 		return getObjectField(
 			"uri",
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Entity_NamedContentValues::values()
+	android::content::ContentValues Entity_NamedContentValues::values()
 	{
 		return getObjectField(
 			"values",

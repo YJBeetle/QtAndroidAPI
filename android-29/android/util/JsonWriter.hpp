@@ -26,22 +26,22 @@ namespace android::util
 		JsonWriter(java::io::Writer arg0);
 		
 		// Methods
-		QAndroidJniObject beginArray();
-		QAndroidJniObject beginObject();
+		android::util::JsonWriter beginArray();
+		android::util::JsonWriter beginObject();
 		void close();
-		QAndroidJniObject endArray();
-		QAndroidJniObject endObject();
+		android::util::JsonWriter endArray();
+		android::util::JsonWriter endObject();
 		void flush();
 		jboolean isLenient();
-		QAndroidJniObject name(jstring arg0);
-		QAndroidJniObject nullValue();
+		android::util::JsonWriter name(jstring arg0);
+		android::util::JsonWriter nullValue();
 		void setIndent(jstring arg0);
 		void setLenient(jboolean arg0);
-		QAndroidJniObject value(jboolean arg0);
-		QAndroidJniObject value(jdouble arg0);
-		QAndroidJniObject value(java::lang::Number arg0);
-		QAndroidJniObject value(jstring arg0);
-		QAndroidJniObject value(jlong arg0);
+		android::util::JsonWriter value(jboolean arg0);
+		android::util::JsonWriter value(jdouble arg0);
+		android::util::JsonWriter value(java::lang::Number arg0);
+		android::util::JsonWriter value(jstring arg0);
+		android::util::JsonWriter value(jlong arg0);
 	};
 } // namespace android::util
 

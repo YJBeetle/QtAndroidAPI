@@ -23,7 +23,7 @@ namespace android::hardware::camera2
 		CameraConstrainedHighSpeedCaptureSession();
 		
 		// Methods
-		QAndroidJniObject createHighSpeedRequestList(android::hardware::camera2::CaptureRequest arg0);
+		__JniBaseClass createHighSpeedRequestList(android::hardware::camera2::CaptureRequest arg0);
 	};
 } // namespace android::hardware::camera2
 

@@ -51,7 +51,7 @@ namespace android::icu::util
 		// Methods
 		jint getActualMaximum(jint arg0);
 		jint getActualMinimum(jint arg0);
-		QAndroidJniObject getGregorianChange();
+		java::util::Date getGregorianChange();
 		jstring getType();
 		jint hashCode();
 		jboolean isEquivalentTo(android::icu::util::Calendar arg0);

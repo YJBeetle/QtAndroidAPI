@@ -116,7 +116,7 @@ namespace android::media::audiofx
 			"()S"
 		);
 	}
-	QAndroidJniObject EnvironmentalReverb::getProperties()
+	android::media::audiofx::EnvironmentalReverb_Settings EnvironmentalReverb::getProperties()
 	{
 		return callObjectMethod(
 			"getProperties",

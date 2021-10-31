@@ -45,12 +45,12 @@ namespace java::util::concurrent
 		// Methods
 		jboolean add(jobject arg0);
 		void clear();
-		QAndroidJniObject comparator();
+		__JniBaseClass comparator();
 		jboolean contains(jobject arg0);
 		jint drainTo(__JniBaseClass arg0);
 		jint drainTo(__JniBaseClass arg0, jint arg1);
 		void forEach(__JniBaseClass arg0);
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jboolean offer(jobject arg0);
 		jboolean offer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
 		jobject peek();
@@ -63,7 +63,7 @@ namespace java::util::concurrent
 		jboolean removeIf(__JniBaseClass arg0);
 		jboolean retainAll(__JniBaseClass arg0);
 		jint size();
-		QAndroidJniObject spliterator();
+		__JniBaseClass spliterator();
 		jobject take();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);

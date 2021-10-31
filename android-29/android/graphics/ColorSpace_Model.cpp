@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject ColorSpace_Model::CMYK()
+	android::graphics::ColorSpace_Model ColorSpace_Model::CMYK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Model",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Model;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Model::LAB()
+	android::graphics::ColorSpace_Model ColorSpace_Model::LAB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Model",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Model;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Model::RGB()
+	android::graphics::ColorSpace_Model ColorSpace_Model::RGB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Model",
@@ -27,7 +27,7 @@ namespace android::graphics
 			"Landroid/graphics/ColorSpace$Model;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Model::XYZ()
+	android::graphics::ColorSpace_Model ColorSpace_Model::XYZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Model",
@@ -42,7 +42,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ColorSpace_Model::valueOf(jstring arg0)
+	android::graphics::ColorSpace_Model ColorSpace_Model::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace$Model",

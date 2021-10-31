@@ -128,7 +128,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Switch::getThumbDrawable()
+	android::graphics::drawable::Drawable Switch::getThumbDrawable()
 	{
 		return callObjectMethod(
 			"getThumbDrawable",
@@ -142,49 +142,49 @@ namespace android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject Switch::getThumbTintBlendMode()
+	android::graphics::BlendMode Switch::getThumbTintBlendMode()
 	{
 		return callObjectMethod(
 			"getThumbTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject Switch::getThumbTintList()
+	android::content::res::ColorStateList Switch::getThumbTintList()
 	{
 		return callObjectMethod(
 			"getThumbTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject Switch::getThumbTintMode()
+	android::graphics::PorterDuff_Mode Switch::getThumbTintMode()
 	{
 		return callObjectMethod(
 			"getThumbTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	QAndroidJniObject Switch::getTrackDrawable()
+	android::graphics::drawable::Drawable Switch::getTrackDrawable()
 	{
 		return callObjectMethod(
 			"getTrackDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	QAndroidJniObject Switch::getTrackTintBlendMode()
+	android::graphics::BlendMode Switch::getTrackTintBlendMode()
 	{
 		return callObjectMethod(
 			"getTrackTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	QAndroidJniObject Switch::getTrackTintList()
+	android::content::res::ColorStateList Switch::getTrackTintList()
 	{
 		return callObjectMethod(
 			"getTrackTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	QAndroidJniObject Switch::getTrackTintMode()
+	android::graphics::PorterDuff_Mode Switch::getTrackTintMode()
 	{
 		return callObjectMethod(
 			"getTrackTintMode",

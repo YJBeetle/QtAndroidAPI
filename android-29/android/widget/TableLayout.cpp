@@ -64,7 +64,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	QAndroidJniObject TableLayout::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::TableLayout_LayoutParams TableLayout::generateLayoutParams(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",

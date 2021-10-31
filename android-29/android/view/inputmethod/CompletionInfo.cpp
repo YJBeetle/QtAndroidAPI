@@ -4,7 +4,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	QAndroidJniObject CompletionInfo::CREATOR()
+	__JniBaseClass CompletionInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.CompletionInfo",

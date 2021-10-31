@@ -6,7 +6,7 @@
 namespace android::view::accessibility
 {
 	// Fields
-	QAndroidJniObject AccessibilityNodeInfo_TouchDelegateInfo::CREATOR()
+	__JniBaseClass AccessibilityNodeInfo_TouchDelegateInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$TouchDelegateInfo",
@@ -34,7 +34,7 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_TouchDelegateInfo::getRegionAt(jint arg0)
+	android::graphics::Region AccessibilityNodeInfo_TouchDelegateInfo::getRegionAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getRegionAt",
@@ -49,7 +49,7 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_TouchDelegateInfo::getTargetForRegion(android::graphics::Region arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo_TouchDelegateInfo::getTargetForRegion(android::graphics::Region arg0)
 	{
 		return callObjectMethod(
 			"getTargetForRegion",

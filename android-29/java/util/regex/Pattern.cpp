@@ -77,7 +77,7 @@ namespace java::util::regex
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Pattern::compile(jstring arg0)
+	java::util::regex::Pattern Pattern::compile(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.regex.Pattern",
@@ -86,7 +86,7 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	QAndroidJniObject Pattern::compile(jstring arg0, jint arg1)
+	java::util::regex::Pattern Pattern::compile(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.regex.Pattern",
@@ -115,14 +115,14 @@ namespace java::util::regex
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Pattern::asMatchPredicate()
+	__JniBaseClass Pattern::asMatchPredicate()
 	{
 		return callObjectMethod(
 			"asMatchPredicate",
 			"()Ljava/util/function/Predicate;"
 		);
 	}
-	QAndroidJniObject Pattern::asPredicate()
+	__JniBaseClass Pattern::asPredicate()
 	{
 		return callObjectMethod(
 			"asPredicate",
@@ -136,7 +136,7 @@ namespace java::util::regex
 			"()I"
 		);
 	}
-	QAndroidJniObject Pattern::matcher(jstring arg0)
+	java::util::regex::Matcher Pattern::matcher(jstring arg0)
 	{
 		return callObjectMethod(
 			"matcher",
@@ -168,7 +168,7 @@ namespace java::util::regex
 			arg1
 		).object<jarray>();
 	}
-	QAndroidJniObject Pattern::splitAsStream(jstring arg0)
+	__JniBaseClass Pattern::splitAsStream(jstring arg0)
 	{
 		return callObjectMethod(
 			"splitAsStream",

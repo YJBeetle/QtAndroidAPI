@@ -31,7 +31,7 @@ namespace javax::xml::_namespace
 		) {}
 	
 	// Methods
-	QAndroidJniObject QName::valueOf(jstring arg0)
+	javax::xml::_namespace::QName QName::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.namespace.QName",

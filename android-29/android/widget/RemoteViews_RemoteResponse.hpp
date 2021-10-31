@@ -26,9 +26,9 @@ namespace android::widget
 		RemoteViews_RemoteResponse();
 		
 		// Methods
-		static QAndroidJniObject fromFillInIntent(android::content::Intent arg0);
-		static QAndroidJniObject fromPendingIntent(android::app::PendingIntent arg0);
-		QAndroidJniObject addSharedElement(jint arg0, jstring arg1);
+		static android::widget::RemoteViews_RemoteResponse fromFillInIntent(android::content::Intent arg0);
+		static android::widget::RemoteViews_RemoteResponse fromPendingIntent(android::app::PendingIntent arg0);
+		android::widget::RemoteViews_RemoteResponse addSharedElement(jint arg0, jstring arg1);
 	};
 } // namespace android::widget
 

@@ -18,10 +18,10 @@ namespace java::security::cert
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCertificates();
+		__JniBaseClass getCertificates();
 		jbyteArray getEncoded();
 		jbyteArray getEncoded(jstring arg0);
-		QAndroidJniObject getEncodings();
+		__JniBaseClass getEncodings();
 		jstring getType();
 		jint hashCode();
 		jstring toString();

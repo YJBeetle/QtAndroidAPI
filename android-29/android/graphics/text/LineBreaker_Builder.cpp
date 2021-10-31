@@ -16,14 +16,14 @@ namespace android::graphics::text
 		) {}
 	
 	// Methods
-	QAndroidJniObject LineBreaker_Builder::build()
+	android::graphics::text::LineBreaker LineBreaker_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/graphics/text/LineBreaker;"
 		);
 	}
-	QAndroidJniObject LineBreaker_Builder::setBreakStrategy(jint arg0)
+	android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setBreakStrategy(jint arg0)
 	{
 		return callObjectMethod(
 			"setBreakStrategy",
@@ -31,7 +31,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	QAndroidJniObject LineBreaker_Builder::setHyphenationFrequency(jint arg0)
+	android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setHyphenationFrequency(jint arg0)
 	{
 		return callObjectMethod(
 			"setHyphenationFrequency",
@@ -39,7 +39,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	QAndroidJniObject LineBreaker_Builder::setIndents(jintArray arg0)
+	android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setIndents(jintArray arg0)
 	{
 		return callObjectMethod(
 			"setIndents",
@@ -47,7 +47,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	QAndroidJniObject LineBreaker_Builder::setJustificationMode(jint arg0)
+	android::graphics::text::LineBreaker_Builder LineBreaker_Builder::setJustificationMode(jint arg0)
 	{
 		return callObjectMethod(
 			"setJustificationMode",

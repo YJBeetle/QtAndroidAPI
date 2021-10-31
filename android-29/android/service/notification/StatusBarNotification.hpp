@@ -21,7 +21,7 @@ namespace android::service::notification
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StatusBarNotification(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,19 +32,19 @@ namespace android::service::notification
 		StatusBarNotification(jstring arg0, jstring arg1, jint arg2, jstring arg3, jint arg4, jint arg5, jint arg6, android::app::Notification arg7, android::os::UserHandle arg8, jlong arg9);
 		
 		// Methods
-		QAndroidJniObject clone();
+		android::service::notification::StatusBarNotification clone();
 		jint describeContents();
 		jstring getGroupKey();
 		jint getId();
 		jstring getKey();
-		QAndroidJniObject getNotification();
+		android::app::Notification getNotification();
 		jstring getOpPkg();
 		jstring getOverrideGroupKey();
 		jstring getPackageName();
 		jlong getPostTime();
 		jstring getTag();
 		jint getUid();
-		QAndroidJniObject getUser();
+		android::os::UserHandle getUser();
 		jint getUserId();
 		jboolean isClearable();
 		jboolean isGroup();

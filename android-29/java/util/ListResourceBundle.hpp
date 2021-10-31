@@ -19,7 +19,7 @@ namespace java::util
 		ListResourceBundle();
 		
 		// Methods
-		QAndroidJniObject getKeys();
+		__JniBaseClass getKeys();
 		jobject handleGetObject(jstring arg0);
 	};
 } // namespace java::util

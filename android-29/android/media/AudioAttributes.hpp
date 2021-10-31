@@ -21,7 +21,7 @@ namespace android::media
 		static jint CONTENT_TYPE_SONIFICATION();
 		static jint CONTENT_TYPE_SPEECH();
 		static jint CONTENT_TYPE_UNKNOWN();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_AUDIBILITY_ENFORCED();
 		static jint FLAG_HW_AV_SYNC();
 		static jint FLAG_LOW_LATENCY();

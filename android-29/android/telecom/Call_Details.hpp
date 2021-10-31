@@ -81,7 +81,7 @@ namespace android::telecom
 		static jstring propertiesToString(jint arg0);
 		jboolean can(jint arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAccountHandle();
+		android::telecom::PhoneAccountHandle getAccountHandle();
 		jint getCallCapabilities();
 		jint getCallDirection();
 		jint getCallProperties();
@@ -89,13 +89,13 @@ namespace android::telecom
 		jint getCallerDisplayNamePresentation();
 		jlong getConnectTimeMillis();
 		jlong getCreationTimeMillis();
-		QAndroidJniObject getDisconnectCause();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getGatewayInfo();
-		QAndroidJniObject getHandle();
+		android::telecom::DisconnectCause getDisconnectCause();
+		android::os::Bundle getExtras();
+		android::telecom::GatewayInfo getGatewayInfo();
+		android::net::Uri getHandle();
 		jint getHandlePresentation();
-		QAndroidJniObject getIntentExtras();
-		QAndroidJniObject getStatusHints();
+		android::os::Bundle getIntentExtras();
+		android::telecom::StatusHints getStatusHints();
 		jint getVideoState();
 		jboolean hasProperty(jint arg0);
 		jint hashCode();

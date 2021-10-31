@@ -25,7 +25,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AutomaticZenRule(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -39,13 +39,13 @@ namespace android::app
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getConditionId();
-		QAndroidJniObject getConfigurationActivity();
+		android::net::Uri getConditionId();
+		android::content::ComponentName getConfigurationActivity();
 		jlong getCreationTime();
 		jint getInterruptionFilter();
 		jstring getName();
-		QAndroidJniObject getOwner();
-		QAndroidJniObject getZenPolicy();
+		android::content::ComponentName getOwner();
+		android::service::notification::ZenPolicy getZenPolicy();
 		jint hashCode();
 		jboolean isEnabled();
 		void setConditionId(android::net::Uri arg0);

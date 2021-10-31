@@ -39,9 +39,9 @@ namespace java::util::jar
 		void clear();
 		jobject clone();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAttributes(jstring arg0);
-		QAndroidJniObject getEntries();
-		QAndroidJniObject getMainAttributes();
+		java::util::jar::Attributes getAttributes(jstring arg0);
+		__JniBaseClass getEntries();
+		java::util::jar::Attributes getMainAttributes();
 		jint hashCode();
 		void read(java::io::InputStream arg0);
 		void write(java::io::OutputStream arg0);

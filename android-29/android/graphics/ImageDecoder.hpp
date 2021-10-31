@@ -67,23 +67,23 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createSource(java::io::File arg0);
-		static QAndroidJniObject createSource(java::nio::ByteBuffer arg0);
-		static QAndroidJniObject createSource(__JniBaseClass arg0);
-		static QAndroidJniObject createSource(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static QAndroidJniObject createSource(android::content::res::AssetManager arg0, jstring arg1);
-		static QAndroidJniObject createSource(android::content::res::Resources arg0, jint arg1);
-		static QAndroidJniObject decodeBitmap(android::graphics::ImageDecoder_Source arg0);
-		static QAndroidJniObject decodeBitmap(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1);
-		static QAndroidJniObject decodeDrawable(android::graphics::ImageDecoder_Source arg0);
-		static QAndroidJniObject decodeDrawable(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1);
+		static android::graphics::ImageDecoder_Source createSource(java::io::File arg0);
+		static android::graphics::ImageDecoder_Source createSource(java::nio::ByteBuffer arg0);
+		static android::graphics::ImageDecoder_Source createSource(__JniBaseClass arg0);
+		static android::graphics::ImageDecoder_Source createSource(android::content::ContentResolver arg0, android::net::Uri arg1);
+		static android::graphics::ImageDecoder_Source createSource(android::content::res::AssetManager arg0, jstring arg1);
+		static android::graphics::ImageDecoder_Source createSource(android::content::res::Resources arg0, jint arg1);
+		static android::graphics::Bitmap decodeBitmap(android::graphics::ImageDecoder_Source arg0);
+		static android::graphics::Bitmap decodeBitmap(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1);
+		static android::graphics::drawable::Drawable decodeDrawable(android::graphics::ImageDecoder_Source arg0);
+		static android::graphics::drawable::Drawable decodeDrawable(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1);
 		static jboolean isMimeTypeSupported(jstring arg0);
 		void close();
 		jint getAllocator();
-		QAndroidJniObject getCrop();
+		android::graphics::Rect getCrop();
 		jint getMemorySizePolicy();
-		QAndroidJniObject getOnPartialImageListener();
-		QAndroidJniObject getPostProcessor();
+		__JniBaseClass getOnPartialImageListener();
+		__JniBaseClass getPostProcessor();
 		jboolean isDecodeAsAlphaMaskEnabled();
 		jboolean isMutableRequired();
 		jboolean isUnpremultipliedRequired();

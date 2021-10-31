@@ -24,7 +24,7 @@ namespace android::app::assist
 		jint getDisplayId();
 		jint getHeight();
 		jint getLeft();
-		QAndroidJniObject getRootViewNode();
+		android::app::assist::AssistStructure_ViewNode getRootViewNode();
 		jstring getTitle();
 		jint getTop();
 		jint getWidth();

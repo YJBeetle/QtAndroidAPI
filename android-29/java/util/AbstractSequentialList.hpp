@@ -22,8 +22,8 @@ namespace java::util
 		void add(jint arg0, jobject arg1);
 		jboolean addAll(jint arg0, __JniBaseClass arg1);
 		jobject get(jint arg0);
-		QAndroidJniObject iterator();
-		QAndroidJniObject listIterator(jint arg0);
+		__JniBaseClass iterator();
+		__JniBaseClass listIterator(jint arg0);
 		jobject remove(jint arg0);
 		jobject set(jint arg0, jobject arg1);
 	};

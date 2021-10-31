@@ -111,7 +111,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Settings_System::CONTENT_URI()
+	android::net::Uri Settings_System::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$System",
@@ -143,7 +143,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Settings_System::DEFAULT_ALARM_ALERT_URI()
+	android::net::Uri Settings_System::DEFAULT_ALARM_ALERT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$System",
@@ -151,7 +151,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Settings_System::DEFAULT_NOTIFICATION_URI()
+	android::net::Uri Settings_System::DEFAULT_NOTIFICATION_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$System",
@@ -159,7 +159,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject Settings_System::DEFAULT_RINGTONE_URI()
+	android::net::Uri Settings_System::DEFAULT_RINGTONE_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$System",
@@ -923,7 +923,7 @@ namespace android::provider
 			arg1
 		).object<jstring>();
 	}
-	QAndroidJniObject Settings_System::getUriFor(jstring arg0)
+	android::net::Uri Settings_System::getUriFor(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Settings$System",

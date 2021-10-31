@@ -5,7 +5,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject TextSelection::CREATOR()
+	__JniBaseClass TextSelection::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextSelection",
@@ -50,7 +50,7 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	QAndroidJniObject TextSelection::getExtras()
+	android::os::Bundle TextSelection::getExtras()
 	{
 		return callObjectMethod(
 			"getExtras",

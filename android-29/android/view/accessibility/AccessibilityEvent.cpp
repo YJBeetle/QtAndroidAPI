@@ -54,7 +54,7 @@ namespace android::view::accessibility
 			"CONTENT_CHANGE_TYPE_UNDEFINED"
 		);
 	}
-	QAndroidJniObject AccessibilityEvent::CREATOR()
+	__JniBaseClass AccessibilityEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.accessibility.AccessibilityEvent",
@@ -351,7 +351,7 @@ namespace android::view::accessibility
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject AccessibilityEvent::obtain()
+	android::view::accessibility::AccessibilityEvent AccessibilityEvent::obtain()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityEvent",
@@ -359,7 +359,7 @@ namespace android::view::accessibility
 			"()Landroid/view/accessibility/AccessibilityEvent;"
 		);
 	}
-	QAndroidJniObject AccessibilityEvent::obtain(android::view::accessibility::AccessibilityEvent arg0)
+	android::view::accessibility::AccessibilityEvent AccessibilityEvent::obtain(android::view::accessibility::AccessibilityEvent arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityEvent",
@@ -368,7 +368,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AccessibilityEvent::obtain(jint arg0)
+	android::view::accessibility::AccessibilityEvent AccessibilityEvent::obtain(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityEvent",
@@ -434,7 +434,7 @@ namespace android::view::accessibility
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AccessibilityEvent::getRecord(jint arg0)
+	android::view::accessibility::AccessibilityRecord AccessibilityEvent::getRecord(jint arg0)
 	{
 		return callObjectMethod(
 			"getRecord",

@@ -30,13 +30,13 @@ namespace android::telephony::mbms
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getLocales();
+		__JniBaseClass getLocales();
 		jstring getNameForLocale(java::util::Locale arg0);
-		QAndroidJniObject getNamedContentLocales();
+		__JniBaseClass getNamedContentLocales();
 		jstring getServiceClassName();
 		jstring getServiceId();
-		QAndroidJniObject getSessionEndTime();
-		QAndroidJniObject getSessionStartTime();
+		java::util::Date getSessionEndTime();
+		java::util::Date getSessionStartTime();
 		jint hashCode();
 	};
 } // namespace android::telephony::mbms

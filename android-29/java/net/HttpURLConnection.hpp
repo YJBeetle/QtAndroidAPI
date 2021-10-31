@@ -73,12 +73,12 @@ namespace java::net
 		static jboolean getFollowRedirects();
 		static void setFollowRedirects(jboolean arg0);
 		void disconnect();
-		QAndroidJniObject getErrorStream();
+		java::io::InputStream getErrorStream();
 		jstring getHeaderField(jint arg0);
 		jlong getHeaderFieldDate(jstring arg0, jlong arg1);
 		jstring getHeaderFieldKey(jint arg0);
 		jboolean getInstanceFollowRedirects();
-		QAndroidJniObject getPermission();
+		java::security::Permission getPermission();
 		jstring getRequestMethod();
 		jint getResponseCode();
 		jstring getResponseMessage();

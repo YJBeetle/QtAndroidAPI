@@ -40,7 +40,7 @@ namespace android::os
 		jstring getString(jstring arg0, jstring arg1);
 		jarray getStringArray(jstring arg0);
 		jboolean isEmpty();
-		QAndroidJniObject keySet();
+		__JniBaseClass keySet();
 		void putAll(android::os::PersistableBundle arg0);
 		void putBoolean(jstring arg0, jboolean arg1);
 		void putBooleanArray(jstring arg0, jbooleanArray arg1);

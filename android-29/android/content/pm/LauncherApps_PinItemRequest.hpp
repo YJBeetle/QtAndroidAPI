@@ -29,7 +29,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint REQUEST_TYPE_APPWIDGET();
 		static jint REQUEST_TYPE_SHORTCUT();
 		
@@ -43,10 +43,10 @@ namespace android::content::pm
 		jboolean accept();
 		jboolean accept(android::os::Bundle arg0);
 		jint describeContents();
-		QAndroidJniObject getAppWidgetProviderInfo(android::content::Context arg0);
-		QAndroidJniObject getExtras();
+		android::appwidget::AppWidgetProviderInfo getAppWidgetProviderInfo(android::content::Context arg0);
+		android::os::Bundle getExtras();
 		jint getRequestType();
-		QAndroidJniObject getShortcutInfo();
+		android::content::pm::ShortcutInfo getShortcutInfo();
 		jboolean isValid();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

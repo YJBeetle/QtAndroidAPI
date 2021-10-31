@@ -28,7 +28,7 @@ namespace android::graphics::pdf
 		// Methods
 		void close();
 		jint getPageCount();
-		QAndroidJniObject openPage(jint arg0);
+		android::graphics::pdf::PdfRenderer_Page openPage(jint arg0);
 		jboolean shouldScaleForPrinting();
 	};
 } // namespace android::graphics::pdf

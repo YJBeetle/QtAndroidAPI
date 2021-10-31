@@ -46,7 +46,7 @@ namespace java::io
 		void close();
 		void defaultWriteObject();
 		void flush();
-		QAndroidJniObject putFields();
+		java::io::ObjectOutputStream_PutField putFields();
 		void reset();
 		void useProtocolVersion(jint arg0);
 		void write(jbyteArray arg0);

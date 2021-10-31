@@ -26,9 +26,9 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
+		static java::security::MessageDigest getInstance(jstring arg0);
+		static java::security::MessageDigest getInstance(jstring arg0, jstring arg1);
+		static java::security::MessageDigest getInstance(jstring arg0, java::security::Provider arg1);
 		static jboolean isEqual(jbyteArray arg0, jbyteArray arg1);
 		jobject clone();
 		jbyteArray digest();
@@ -36,7 +36,7 @@ namespace java::security
 		jint digest(jbyteArray arg0, jint arg1, jint arg2);
 		jstring getAlgorithm();
 		jint getDigestLength();
-		QAndroidJniObject getProvider();
+		java::security::Provider getProvider();
 		void reset();
 		jstring toString();
 		void update(jbyteArray arg0);

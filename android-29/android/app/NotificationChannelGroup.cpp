@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject NotificationChannelGroup::CREATOR()
+	__JniBaseClass NotificationChannelGroup::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.NotificationChannelGroup",
@@ -26,7 +26,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject NotificationChannelGroup::clone()
+	android::app::NotificationChannelGroup NotificationChannelGroup::clone()
 	{
 		return callObjectMethod(
 			"clone",
@@ -48,7 +48,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject NotificationChannelGroup::getChannels()
+	__JniBaseClass NotificationChannelGroup::getChannels()
 	{
 		return callObjectMethod(
 			"getChannels",

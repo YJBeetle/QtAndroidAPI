@@ -21,10 +21,10 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint MODE_FULL_INSTALL();
 		static jint MODE_INHERIT_EXISTING();
-		static QAndroidJniObject RESTRICTED_PERMISSIONS_ALL();
+		static __JniBaseClass RESTRICTED_PERMISSIONS_ALL();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PackageInstaller_SessionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

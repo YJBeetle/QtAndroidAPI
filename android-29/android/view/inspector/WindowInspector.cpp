@@ -10,7 +10,7 @@ namespace android::view::inspector
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WindowInspector::getGlobalWindowViews()
+	__JniBaseClass WindowInspector::getGlobalWindowViews()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.inspector.WindowInspector",

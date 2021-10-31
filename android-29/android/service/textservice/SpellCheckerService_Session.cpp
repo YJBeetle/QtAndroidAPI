@@ -18,7 +18,7 @@ namespace android::service::textservice
 		) {}
 	
 	// Methods
-	QAndroidJniObject SpellCheckerService_Session::getBundle()
+	android::os::Bundle SpellCheckerService_Session::getBundle()
 	{
 		return callObjectMethod(
 			"getBundle",
@@ -62,7 +62,7 @@ namespace android::service::textservice
 			arg1
 		).object<jarray>();
 	}
-	QAndroidJniObject SpellCheckerService_Session::onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1)
+	android::view::textservice::SuggestionsInfo SpellCheckerService_Session::onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onGetSuggestions",

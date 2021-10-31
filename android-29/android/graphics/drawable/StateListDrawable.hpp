@@ -40,11 +40,11 @@ namespace android::graphics::drawable
 		void applyTheme(android::content::res::Resources_Theme arg0);
 		jint findStateDrawableIndex(jintArray arg0);
 		jint getStateCount();
-		QAndroidJniObject getStateDrawable(jint arg0);
+		android::graphics::drawable::Drawable getStateDrawable(jint arg0);
 		jintArray getStateSet(jint arg0);
 		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
 		jboolean isStateful();
-		QAndroidJniObject mutate();
+		android::graphics::drawable::Drawable mutate();
 	};
 } // namespace android::graphics::drawable
 

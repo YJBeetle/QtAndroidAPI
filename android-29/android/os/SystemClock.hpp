@@ -21,7 +21,7 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject currentGnssTimeClock();
+		static java::time::Clock currentGnssTimeClock();
 		static jlong currentThreadTimeMillis();
 		static jlong elapsedRealtime();
 		static jlong elapsedRealtimeNanos();

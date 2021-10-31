@@ -49,11 +49,11 @@ namespace android::hardware::usb
 		
 		// Methods
 		jarray getAccessoryList();
-		QAndroidJniObject getDeviceList();
+		java::util::HashMap getDeviceList();
 		jboolean hasPermission(android::hardware::usb::UsbAccessory arg0);
 		jboolean hasPermission(android::hardware::usb::UsbDevice arg0);
-		QAndroidJniObject openAccessory(android::hardware::usb::UsbAccessory arg0);
-		QAndroidJniObject openDevice(android::hardware::usb::UsbDevice arg0);
+		android::os::ParcelFileDescriptor openAccessory(android::hardware::usb::UsbAccessory arg0);
+		android::hardware::usb::UsbDeviceConnection openDevice(android::hardware::usb::UsbDevice arg0);
 		void requestPermission(android::hardware::usb::UsbAccessory arg0, android::app::PendingIntent arg1);
 		void requestPermission(android::hardware::usb::UsbDevice arg0, android::app::PendingIntent arg1);
 	};

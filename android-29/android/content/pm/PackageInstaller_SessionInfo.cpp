@@ -8,7 +8,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject PackageInstaller_SessionInfo::CREATOR()
+	__JniBaseClass PackageInstaller_SessionInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.PackageInstaller$SessionInfo",
@@ -58,7 +58,7 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PackageInstaller_SessionInfo::createDetailsIntent()
+	android::content::Intent PackageInstaller_SessionInfo::createDetailsIntent()
 	{
 		return callObjectMethod(
 			"createDetailsIntent",
@@ -72,7 +72,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject PackageInstaller_SessionInfo::getAppIcon()
+	android::graphics::Bitmap PackageInstaller_SessionInfo::getAppIcon()
 	{
 		return callObjectMethod(
 			"getAppIcon",
@@ -135,7 +135,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject PackageInstaller_SessionInfo::getOriginatingUri()
+	android::net::Uri PackageInstaller_SessionInfo::getOriginatingUri()
 	{
 		return callObjectMethod(
 			"getOriginatingUri",
@@ -156,7 +156,7 @@ namespace android::content::pm
 			"()F"
 		);
 	}
-	QAndroidJniObject PackageInstaller_SessionInfo::getReferrerUri()
+	android::net::Uri PackageInstaller_SessionInfo::getReferrerUri()
 	{
 		return callObjectMethod(
 			"getReferrerUri",
@@ -198,7 +198,7 @@ namespace android::content::pm
 			"()J"
 		);
 	}
-	QAndroidJniObject PackageInstaller_SessionInfo::getUser()
+	android::os::UserHandle PackageInstaller_SessionInfo::getUser()
 	{
 		return callObjectMethod(
 			"getUser",

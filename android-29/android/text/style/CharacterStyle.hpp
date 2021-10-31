@@ -22,8 +22,8 @@ namespace android::text::style
 		CharacterStyle();
 		
 		// Methods
-		static QAndroidJniObject wrap(android::text::style::CharacterStyle arg0);
-		QAndroidJniObject getUnderlying();
+		static android::text::style::CharacterStyle wrap(android::text::style::CharacterStyle arg0);
+		android::text::style::CharacterStyle getUnderlying();
 		void updateDrawState(android::text::TextPaint arg0);
 	};
 } // namespace android::text::style

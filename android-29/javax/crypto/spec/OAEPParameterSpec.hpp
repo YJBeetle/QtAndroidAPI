@@ -13,7 +13,7 @@ namespace javax::crypto::spec
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEFAULT();
+		static javax::crypto::spec::OAEPParameterSpec DEFAULT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OAEPParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -25,8 +25,8 @@ namespace javax::crypto::spec
 		// Methods
 		jstring getDigestAlgorithm();
 		jstring getMGFAlgorithm();
-		QAndroidJniObject getMGFParameters();
-		QAndroidJniObject getPSource();
+		__JniBaseClass getMGFParameters();
+		javax::crypto::spec::PSource getPSource();
 	};
 } // namespace javax::crypto::spec
 

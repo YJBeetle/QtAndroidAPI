@@ -22,7 +22,7 @@ namespace android::location
 		
 		// Methods
 		jint getMaxSatellites();
-		QAndroidJniObject getSatellites();
+		__JniBaseClass getSatellites();
 		jint getTimeToFirstFix();
 	};
 } // namespace android::location

@@ -3,7 +3,7 @@
 namespace android::text
 {
 	// Fields
-	QAndroidJniObject Layout_Alignment::ALIGN_CENTER()
+	android::text::Layout_Alignment Layout_Alignment::ALIGN_CENTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.Layout$Alignment",
@@ -11,7 +11,7 @@ namespace android::text
 			"Landroid/text/Layout$Alignment;"
 		);
 	}
-	QAndroidJniObject Layout_Alignment::ALIGN_NORMAL()
+	android::text::Layout_Alignment Layout_Alignment::ALIGN_NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.Layout$Alignment",
@@ -19,7 +19,7 @@ namespace android::text
 			"Landroid/text/Layout$Alignment;"
 		);
 	}
-	QAndroidJniObject Layout_Alignment::ALIGN_OPPOSITE()
+	android::text::Layout_Alignment Layout_Alignment::ALIGN_OPPOSITE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.Layout$Alignment",
@@ -34,7 +34,7 @@ namespace android::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Layout_Alignment::valueOf(jstring arg0)
+	android::text::Layout_Alignment Layout_Alignment::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.Layout$Alignment",

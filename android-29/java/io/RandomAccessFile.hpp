@@ -32,8 +32,8 @@ namespace java::io
 		
 		// Methods
 		void close();
-		QAndroidJniObject getChannel();
-		QAndroidJniObject getFD();
+		java::nio::channels::FileChannel getChannel();
+		java::io::FileDescriptor getFD();
 		jlong getFilePointer();
 		jlong length();
 		jint read();

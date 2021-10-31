@@ -10,7 +10,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject ApplicationErrorReport::CREATOR()
+	__JniBaseClass ApplicationErrorReport::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ApplicationErrorReport",
@@ -53,21 +53,21 @@ namespace android::app
 			"TYPE_RUNNING_SERVICE"
 		);
 	}
-	QAndroidJniObject ApplicationErrorReport::anrInfo()
+	android::app::ApplicationErrorReport_AnrInfo ApplicationErrorReport::anrInfo()
 	{
 		return getObjectField(
 			"anrInfo",
 			"Landroid/app/ApplicationErrorReport$AnrInfo;"
 		);
 	}
-	QAndroidJniObject ApplicationErrorReport::batteryInfo()
+	android::app::ApplicationErrorReport_BatteryInfo ApplicationErrorReport::batteryInfo()
 	{
 		return getObjectField(
 			"batteryInfo",
 			"Landroid/app/ApplicationErrorReport$BatteryInfo;"
 		);
 	}
-	QAndroidJniObject ApplicationErrorReport::crashInfo()
+	android::app::ApplicationErrorReport_CrashInfo ApplicationErrorReport::crashInfo()
 	{
 		return getObjectField(
 			"crashInfo",
@@ -95,7 +95,7 @@ namespace android::app
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ApplicationErrorReport::runningServiceInfo()
+	android::app::ApplicationErrorReport_RunningServiceInfo ApplicationErrorReport::runningServiceInfo()
 	{
 		return getObjectField(
 			"runningServiceInfo",
@@ -132,7 +132,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject ApplicationErrorReport::getErrorReportReceiver(android::content::Context arg0, jstring arg1, jint arg2)
+	android::content::ComponentName ApplicationErrorReport::getErrorReportReceiver(android::content::Context arg0, jstring arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ApplicationErrorReport",

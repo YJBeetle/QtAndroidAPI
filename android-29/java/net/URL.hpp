@@ -82,13 +82,13 @@ namespace java::net
 		jstring getRef();
 		jstring getUserInfo();
 		jint hashCode();
-		QAndroidJniObject openConnection();
-		QAndroidJniObject openConnection(java::net::Proxy arg0);
-		QAndroidJniObject openStream();
+		java::net::URLConnection openConnection();
+		java::net::URLConnection openConnection(java::net::Proxy arg0);
+		java::io::InputStream openStream();
 		jboolean sameFile(java::net::URL arg0);
 		jstring toExternalForm();
 		jstring toString();
-		QAndroidJniObject toURI();
+		java::net::URI toURI();
 	};
 } // namespace java::net
 

@@ -8,7 +8,7 @@
 namespace java::util
 {
 	// Fields
-	QAndroidJniObject Locale::CANADA()
+	java::util::Locale Locale::CANADA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -16,7 +16,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::CANADA_FRENCH()
+	java::util::Locale Locale::CANADA_FRENCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -24,7 +24,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::CHINA()
+	java::util::Locale Locale::CHINA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -32,7 +32,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::CHINESE()
+	java::util::Locale Locale::CHINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -40,7 +40,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::ENGLISH()
+	java::util::Locale Locale::ENGLISH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -48,7 +48,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::FRANCE()
+	java::util::Locale Locale::FRANCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -56,7 +56,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::FRENCH()
+	java::util::Locale Locale::FRENCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -64,7 +64,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::GERMAN()
+	java::util::Locale Locale::GERMAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -72,7 +72,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::GERMANY()
+	java::util::Locale Locale::GERMANY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -80,7 +80,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::ITALIAN()
+	java::util::Locale Locale::ITALIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -88,7 +88,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::ITALY()
+	java::util::Locale Locale::ITALY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -96,7 +96,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::JAPAN()
+	java::util::Locale Locale::JAPAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -104,7 +104,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::JAPANESE()
+	java::util::Locale Locale::JAPANESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -112,7 +112,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::KOREA()
+	java::util::Locale Locale::KOREA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -120,7 +120,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::KOREAN()
+	java::util::Locale Locale::KOREAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -128,7 +128,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::PRC()
+	java::util::Locale Locale::PRC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -143,7 +143,7 @@ namespace java::util
 			"PRIVATE_USE_EXTENSION"
 		);
 	}
-	QAndroidJniObject Locale::ROOT()
+	java::util::Locale Locale::ROOT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -151,7 +151,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::SIMPLIFIED_CHINESE()
+	java::util::Locale Locale::SIMPLIFIED_CHINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -159,7 +159,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::TAIWAN()
+	java::util::Locale Locale::TAIWAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -167,7 +167,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::TRADITIONAL_CHINESE()
+	java::util::Locale Locale::TRADITIONAL_CHINESE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -175,7 +175,7 @@ namespace java::util
 			"Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::UK()
+	java::util::Locale Locale::UK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -190,7 +190,7 @@ namespace java::util
 			"UNICODE_LOCALE_EXTENSION"
 		);
 	}
-	QAndroidJniObject Locale::US()
+	java::util::Locale Locale::US()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale",
@@ -226,7 +226,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	QAndroidJniObject Locale::filter(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Locale::filter(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale",
@@ -236,7 +236,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Locale::filter(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2)
+	__JniBaseClass Locale::filter(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale",
@@ -247,7 +247,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Locale::filterTags(__JniBaseClass arg0, __JniBaseClass arg1)
+	__JniBaseClass Locale::filterTags(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale",
@@ -257,7 +257,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Locale::filterTags(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2)
+	__JniBaseClass Locale::filterTags(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale",
@@ -268,7 +268,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Locale::forLanguageTag(jstring arg0)
+	java::util::Locale Locale::forLanguageTag(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale",
@@ -285,7 +285,7 @@ namespace java::util
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Locale::getDefault()
+	java::util::Locale Locale::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale",
@@ -293,7 +293,7 @@ namespace java::util
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject Locale::getDefault(java::util::Locale_Category arg0)
+	java::util::Locale Locale::getDefault(java::util::Locale_Category arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale",
@@ -310,7 +310,7 @@ namespace java::util
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Locale::getISOCountries(__JniBaseClass arg0)
+	__JniBaseClass Locale::getISOCountries(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale",
@@ -327,7 +327,7 @@ namespace java::util
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Locale::lookup(__JniBaseClass arg0, __JniBaseClass arg1)
+	java::util::Locale Locale::lookup(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale",
@@ -471,7 +471,7 @@ namespace java::util
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Locale::getExtensionKeys()
+	__JniBaseClass Locale::getExtensionKeys()
 	{
 		return callObjectMethod(
 			"getExtensionKeys",
@@ -506,14 +506,14 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Locale::getUnicodeLocaleAttributes()
+	__JniBaseClass Locale::getUnicodeLocaleAttributes()
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject Locale::getUnicodeLocaleKeys()
+	__JniBaseClass Locale::getUnicodeLocaleKeys()
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleKeys",
@@ -549,7 +549,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject Locale::stripExtensions()
+	java::util::Locale Locale::stripExtensions()
 	{
 		return callObjectMethod(
 			"stripExtensions",

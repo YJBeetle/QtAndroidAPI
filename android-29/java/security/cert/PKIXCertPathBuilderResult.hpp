@@ -27,7 +27,7 @@ namespace java::security::cert
 		PKIXCertPathBuilderResult(java::security::cert::CertPath arg0, java::security::cert::TrustAnchor arg1, __JniBaseClass arg2, __JniBaseClass arg3);
 		
 		// Methods
-		QAndroidJniObject getCertPath();
+		java::security::cert::CertPath getCertPath();
 		jstring toString();
 	};
 } // namespace java::security::cert

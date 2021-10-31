@@ -85,7 +85,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject Interpolator::timeToValues(jfloatArray arg0)
+	android::graphics::Interpolator_Result Interpolator::timeToValues(jfloatArray arg0)
 	{
 		return callObjectMethod(
 			"timeToValues",
@@ -93,7 +93,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Interpolator::timeToValues(jint arg0, jfloatArray arg1)
+	android::graphics::Interpolator_Result Interpolator::timeToValues(jint arg0, jfloatArray arg1)
 	{
 		return callObjectMethod(
 			"timeToValues",

@@ -174,7 +174,7 @@ namespace android::media::tv
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TvInputManager::getBlockedRatings()
+	__JniBaseClass TvInputManager::getBlockedRatings()
 	{
 		return callObjectMethod(
 			"getBlockedRatings",
@@ -189,7 +189,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvInputManager::getTvInputInfo(jstring arg0)
+	android::media::tv::TvInputInfo TvInputManager::getTvInputInfo(jstring arg0)
 	{
 		return callObjectMethod(
 			"getTvInputInfo",
@@ -197,7 +197,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvInputManager::getTvInputList()
+	__JniBaseClass TvInputManager::getTvInputList()
 	{
 		return callObjectMethod(
 			"getTvInputList",

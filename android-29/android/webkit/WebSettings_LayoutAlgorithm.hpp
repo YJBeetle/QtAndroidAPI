@@ -10,10 +10,10 @@ namespace android::webkit
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NARROW_COLUMNS();
-		static QAndroidJniObject NORMAL();
-		static QAndroidJniObject SINGLE_COLUMN();
-		static QAndroidJniObject TEXT_AUTOSIZING();
+		static android::webkit::WebSettings_LayoutAlgorithm NARROW_COLUMNS();
+		static android::webkit::WebSettings_LayoutAlgorithm NORMAL();
+		static android::webkit::WebSettings_LayoutAlgorithm SINGLE_COLUMN();
+		static android::webkit::WebSettings_LayoutAlgorithm TEXT_AUTOSIZING();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebSettings_LayoutAlgorithm(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::webkit::WebSettings_LayoutAlgorithm valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::webkit

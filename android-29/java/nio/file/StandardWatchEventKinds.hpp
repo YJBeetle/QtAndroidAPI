@@ -9,10 +9,10 @@ namespace java::nio::file
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ENTRY_CREATE();
-		static QAndroidJniObject ENTRY_DELETE();
-		static QAndroidJniObject ENTRY_MODIFY();
-		static QAndroidJniObject OVERFLOW();
+		static __JniBaseClass ENTRY_CREATE();
+		static __JniBaseClass ENTRY_DELETE();
+		static __JniBaseClass ENTRY_MODIFY();
+		static __JniBaseClass OVERFLOW();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StandardWatchEventKinds(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

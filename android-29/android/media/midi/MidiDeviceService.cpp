@@ -26,7 +26,7 @@ namespace android::media::midi
 		) {}
 	
 	// Methods
-	QAndroidJniObject MidiDeviceService::getDeviceInfo()
+	android::media::midi::MidiDeviceInfo MidiDeviceService::getDeviceInfo()
 	{
 		return callObjectMethod(
 			"getDeviceInfo",
@@ -40,7 +40,7 @@ namespace android::media::midi
 			"()[Landroid/media/midi/MidiReceiver;"
 		).object<jarray>();
 	}
-	QAndroidJniObject MidiDeviceService::onBind(android::content::Intent arg0)
+	__JniBaseClass MidiDeviceService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

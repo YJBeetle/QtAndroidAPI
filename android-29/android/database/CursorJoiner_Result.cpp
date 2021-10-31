@@ -3,7 +3,7 @@
 namespace android::database
 {
 	// Fields
-	QAndroidJniObject CursorJoiner_Result::BOTH()
+	android::database::CursorJoiner_Result CursorJoiner_Result::BOTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.database.CursorJoiner$Result",
@@ -11,7 +11,7 @@ namespace android::database
 			"Landroid/database/CursorJoiner$Result;"
 		);
 	}
-	QAndroidJniObject CursorJoiner_Result::LEFT()
+	android::database::CursorJoiner_Result CursorJoiner_Result::LEFT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.database.CursorJoiner$Result",
@@ -19,7 +19,7 @@ namespace android::database
 			"Landroid/database/CursorJoiner$Result;"
 		);
 	}
-	QAndroidJniObject CursorJoiner_Result::RIGHT()
+	android::database::CursorJoiner_Result CursorJoiner_Result::RIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.database.CursorJoiner$Result",
@@ -34,7 +34,7 @@ namespace android::database
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CursorJoiner_Result::valueOf(jstring arg0)
+	android::database::CursorJoiner_Result CursorJoiner_Result::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.CursorJoiner$Result",

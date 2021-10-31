@@ -21,14 +21,14 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	QAndroidJniObject RenderNode::beginRecording()
+	android::graphics::RecordingCanvas RenderNode::beginRecording()
 	{
 		return callObjectMethod(
 			"beginRecording",
 			"()Landroid/graphics/RecordingCanvas;"
 		);
 	}
-	QAndroidJniObject RenderNode::beginRecording(jint arg0, jint arg1)
+	android::graphics::RecordingCanvas RenderNode::beginRecording(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"beginRecording",

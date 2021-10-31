@@ -28,13 +28,13 @@ namespace android::icu::text
 		// Methods
 		jint first();
 		jint following(jint arg0);
-		QAndroidJniObject getBreakIterator();
-		QAndroidJniObject getElementComparisonType();
+		android::icu::text::BreakIterator getBreakIterator();
+		android::icu::text::SearchIterator_ElementComparisonType getElementComparisonType();
 		jint getIndex();
 		jint getMatchLength();
 		jint getMatchStart();
 		jstring getMatchedText();
-		QAndroidJniObject getTarget();
+		__JniBaseClass getTarget();
 		jboolean isOverlapping();
 		jint last();
 		jint next();

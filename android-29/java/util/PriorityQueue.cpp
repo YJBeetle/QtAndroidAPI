@@ -57,7 +57,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	QAndroidJniObject PriorityQueue::comparator()
+	__JniBaseClass PriorityQueue::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
@@ -80,7 +80,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PriorityQueue::iterator()
+	__JniBaseClass PriorityQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -148,7 +148,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject PriorityQueue::spliterator()
+	__JniBaseClass PriorityQueue::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

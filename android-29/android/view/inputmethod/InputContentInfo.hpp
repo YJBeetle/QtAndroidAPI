@@ -21,7 +21,7 @@ namespace android::view::inputmethod
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputContentInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,9 +33,9 @@ namespace android::view::inputmethod
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getContentUri();
-		QAndroidJniObject getDescription();
-		QAndroidJniObject getLinkUri();
+		android::net::Uri getContentUri();
+		android::content::ClipDescription getDescription();
+		android::net::Uri getLinkUri();
 		void releasePermission();
 		void requestPermission();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

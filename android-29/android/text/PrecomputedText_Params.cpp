@@ -33,14 +33,14 @@ namespace android::text
 			"()I"
 		);
 	}
-	QAndroidJniObject PrecomputedText_Params::getTextDirection()
+	__JniBaseClass PrecomputedText_Params::getTextDirection()
 	{
 		return callObjectMethod(
 			"getTextDirection",
 			"()Landroid/text/TextDirectionHeuristic;"
 		);
 	}
-	QAndroidJniObject PrecomputedText_Params::getTextPaint()
+	android::text::TextPaint PrecomputedText_Params::getTextPaint()
 	{
 		return callObjectMethod(
 			"getTextPaint",

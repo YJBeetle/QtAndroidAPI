@@ -34,7 +34,7 @@ namespace android::app::job
 			arg1
 		);
 	}
-	QAndroidJniObject JobService::onBind(android::content::Intent arg0)
+	__JniBaseClass JobService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

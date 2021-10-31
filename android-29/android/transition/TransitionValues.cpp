@@ -4,14 +4,14 @@
 namespace android::transition
 {
 	// Fields
-	QAndroidJniObject TransitionValues::values()
+	__JniBaseClass TransitionValues::values()
 	{
 		return getObjectField(
 			"values",
 			"Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject TransitionValues::view()
+	android::view::View TransitionValues::view()
 	{
 		return getObjectField(
 			"view",

@@ -27,7 +27,7 @@ namespace android::provider
 		MediaStore_Video();
 		
 		// Methods
-		static QAndroidJniObject query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2);
+		static __JniBaseClass query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2);
 	};
 } // namespace android::provider
 

@@ -29,7 +29,7 @@ namespace android::provider
 		static jstring BLUETOOTH_ON();
 		static jstring BOOT_COUNT();
 		static jstring CONTACT_METADATA_SYNC_ENABLED();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring DATA_ROAMING();
 		static jstring DEBUG_APP();
 		static jstring DEVELOPMENT_SETTINGS_ENABLED();
@@ -78,7 +78,7 @@ namespace android::provider
 		static jlong getLong(android::content::ContentResolver arg0, jstring arg1);
 		static jlong getLong(android::content::ContentResolver arg0, jstring arg1, jlong arg2);
 		static jstring getString(android::content::ContentResolver arg0, jstring arg1);
-		static QAndroidJniObject getUriFor(jstring arg0);
+		static android::net::Uri getUriFor(jstring arg0);
 		static jboolean putFloat(android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
 		static jboolean putInt(android::content::ContentResolver arg0, jstring arg1, jint arg2);
 		static jboolean putLong(android::content::ContentResolver arg0, jstring arg1, jlong arg2);

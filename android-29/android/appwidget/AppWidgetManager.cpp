@@ -232,7 +232,7 @@ namespace android::appwidget
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AppWidgetManager::getInstance(android::content::Context arg0)
+	android::appwidget::AppWidgetManager AppWidgetManager::getInstance(android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.appwidget.AppWidgetManager",
@@ -279,7 +279,7 @@ namespace android::appwidget
 			arg0.object()
 		).object<jintArray>();
 	}
-	QAndroidJniObject AppWidgetManager::getAppWidgetInfo(jint arg0)
+	android::appwidget::AppWidgetProviderInfo AppWidgetManager::getAppWidgetInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getAppWidgetInfo",
@@ -287,7 +287,7 @@ namespace android::appwidget
 			arg0
 		);
 	}
-	QAndroidJniObject AppWidgetManager::getAppWidgetOptions(jint arg0)
+	android::os::Bundle AppWidgetManager::getAppWidgetOptions(jint arg0)
 	{
 		return callObjectMethod(
 			"getAppWidgetOptions",
@@ -295,14 +295,14 @@ namespace android::appwidget
 			arg0
 		);
 	}
-	QAndroidJniObject AppWidgetManager::getInstalledProviders()
+	__JniBaseClass AppWidgetManager::getInstalledProviders()
 	{
 		return callObjectMethod(
 			"getInstalledProviders",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject AppWidgetManager::getInstalledProvidersForPackage(jstring arg0, android::os::UserHandle arg1)
+	__JniBaseClass AppWidgetManager::getInstalledProvidersForPackage(jstring arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getInstalledProvidersForPackage",
@@ -311,7 +311,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	QAndroidJniObject AppWidgetManager::getInstalledProvidersForProfile(android::os::UserHandle arg0)
+	__JniBaseClass AppWidgetManager::getInstalledProvidersForProfile(android::os::UserHandle arg0)
 	{
 		return callObjectMethod(
 			"getInstalledProvidersForProfile",

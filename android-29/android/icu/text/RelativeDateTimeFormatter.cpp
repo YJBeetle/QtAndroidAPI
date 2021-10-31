@@ -22,7 +22,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject RelativeDateTimeFormatter::getInstance()
+	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
@@ -30,7 +30,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/RelativeDateTimeFormatter;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter::getInstance(android::icu::util::ULocale arg0)
+	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
@@ -39,7 +39,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter::getInstance(java::util::Locale arg0)
+	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
@@ -48,7 +48,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter::getInstance(android::icu::util::ULocale arg0, android::icu::text::NumberFormat arg1)
+	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance(android::icu::util::ULocale arg0, android::icu::text::NumberFormat arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
@@ -58,7 +58,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter::getInstance(java::util::Locale arg0, android::icu::text::NumberFormat arg1)
+	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance(java::util::Locale arg0, android::icu::text::NumberFormat arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
@@ -68,7 +68,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter::getInstance(android::icu::util::ULocale arg0, android::icu::text::NumberFormat arg1, android::icu::text::RelativeDateTimeFormatter_Style arg2, android::icu::text::DisplayContext arg3)
+	android::icu::text::RelativeDateTimeFormatter RelativeDateTimeFormatter::getInstance(android::icu::util::ULocale arg0, android::icu::text::NumberFormat arg1, android::icu::text::RelativeDateTimeFormatter_Style arg2, android::icu::text::DisplayContext arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.RelativeDateTimeFormatter",
@@ -126,21 +126,21 @@ namespace android::icu::text
 			arg1.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject RelativeDateTimeFormatter::getCapitalizationContext()
+	android::icu::text::DisplayContext RelativeDateTimeFormatter::getCapitalizationContext()
 	{
 		return callObjectMethod(
 			"getCapitalizationContext",
 			"()Landroid/icu/text/DisplayContext;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter::getFormatStyle()
+	android::icu::text::RelativeDateTimeFormatter_Style RelativeDateTimeFormatter::getFormatStyle()
 	{
 		return callObjectMethod(
 			"getFormatStyle",
 			"()Landroid/icu/text/RelativeDateTimeFormatter$Style;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter::getNumberFormat()
+	android::icu::text::NumberFormat RelativeDateTimeFormatter::getNumberFormat()
 	{
 		return callObjectMethod(
 			"getNumberFormat",

@@ -26,23 +26,23 @@ namespace android::security::keystore
 		KeyProtection_Builder(jint arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setBlockModes(jarray arg0);
-		QAndroidJniObject setDigests(jarray arg0);
-		QAndroidJniObject setEncryptionPaddings(jarray arg0);
-		QAndroidJniObject setInvalidatedByBiometricEnrollment(jboolean arg0);
-		QAndroidJniObject setKeyValidityEnd(java::util::Date arg0);
-		QAndroidJniObject setKeyValidityForConsumptionEnd(java::util::Date arg0);
-		QAndroidJniObject setKeyValidityForOriginationEnd(java::util::Date arg0);
-		QAndroidJniObject setKeyValidityStart(java::util::Date arg0);
-		QAndroidJniObject setRandomizedEncryptionRequired(jboolean arg0);
-		QAndroidJniObject setSignaturePaddings(jarray arg0);
-		QAndroidJniObject setUnlockedDeviceRequired(jboolean arg0);
-		QAndroidJniObject setUserAuthenticationRequired(jboolean arg0);
-		QAndroidJniObject setUserAuthenticationValidWhileOnBody(jboolean arg0);
-		QAndroidJniObject setUserAuthenticationValidityDurationSeconds(jint arg0);
-		QAndroidJniObject setUserConfirmationRequired(jboolean arg0);
-		QAndroidJniObject setUserPresenceRequired(jboolean arg0);
+		android::security::keystore::KeyProtection build();
+		android::security::keystore::KeyProtection_Builder setBlockModes(jarray arg0);
+		android::security::keystore::KeyProtection_Builder setDigests(jarray arg0);
+		android::security::keystore::KeyProtection_Builder setEncryptionPaddings(jarray arg0);
+		android::security::keystore::KeyProtection_Builder setInvalidatedByBiometricEnrollment(jboolean arg0);
+		android::security::keystore::KeyProtection_Builder setKeyValidityEnd(java::util::Date arg0);
+		android::security::keystore::KeyProtection_Builder setKeyValidityForConsumptionEnd(java::util::Date arg0);
+		android::security::keystore::KeyProtection_Builder setKeyValidityForOriginationEnd(java::util::Date arg0);
+		android::security::keystore::KeyProtection_Builder setKeyValidityStart(java::util::Date arg0);
+		android::security::keystore::KeyProtection_Builder setRandomizedEncryptionRequired(jboolean arg0);
+		android::security::keystore::KeyProtection_Builder setSignaturePaddings(jarray arg0);
+		android::security::keystore::KeyProtection_Builder setUnlockedDeviceRequired(jboolean arg0);
+		android::security::keystore::KeyProtection_Builder setUserAuthenticationRequired(jboolean arg0);
+		android::security::keystore::KeyProtection_Builder setUserAuthenticationValidWhileOnBody(jboolean arg0);
+		android::security::keystore::KeyProtection_Builder setUserAuthenticationValidityDurationSeconds(jint arg0);
+		android::security::keystore::KeyProtection_Builder setUserConfirmationRequired(jboolean arg0);
+		android::security::keystore::KeyProtection_Builder setUserPresenceRequired(jboolean arg0);
 	};
 } // namespace android::security::keystore
 

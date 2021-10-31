@@ -30,7 +30,7 @@ namespace android::hardware::camera2::params
 		// Methods
 		void copyColorCurve(jint arg0, jfloatArray arg1, jint arg2);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getPoint(jint arg0, jint arg1);
+		android::graphics::PointF getPoint(jint arg0, jint arg1);
 		jint getPointCount(jint arg0);
 		jint hashCode();
 		jstring toString();

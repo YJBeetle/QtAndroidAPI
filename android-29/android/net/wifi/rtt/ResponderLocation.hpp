@@ -32,7 +32,7 @@ namespace android::net::wifi::rtt
 		static jint ALTITUDE_FLOORS();
 		static jint ALTITUDE_METERS();
 		static jint ALTITUDE_UNDEFINED();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DATUM_NAD83_MLLW();
 		static jint DATUM_NAD83_NAV88();
 		static jint DATUM_UNDEFINED();
@@ -55,7 +55,7 @@ namespace android::net::wifi::rtt
 		jdouble getAltitude();
 		jint getAltitudeType();
 		jdouble getAltitudeUncertainty();
-		QAndroidJniObject getColocatedBssids();
+		__JniBaseClass getColocatedBssids();
 		jint getDatum();
 		jint getExpectedToMove();
 		jdouble getFloorNumber();
@@ -67,14 +67,14 @@ namespace android::net::wifi::rtt
 		jdouble getLongitude();
 		jdouble getLongitudeUncertainty();
 		jstring getMapImageMimeType();
-		QAndroidJniObject getMapImageUri();
+		android::net::Uri getMapImageUri();
 		jboolean getRegisteredLocationAgreementIndication();
 		jint hashCode();
 		jboolean isLciSubelementValid();
 		jboolean isZaxisSubelementValid();
-		QAndroidJniObject toCivicLocationAddress();
-		QAndroidJniObject toCivicLocationSparseArray();
-		QAndroidJniObject toLocation();
+		android::location::Address toCivicLocationAddress();
+		android::util::SparseArray toCivicLocationSparseArray();
+		android::location::Location toLocation();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi::rtt

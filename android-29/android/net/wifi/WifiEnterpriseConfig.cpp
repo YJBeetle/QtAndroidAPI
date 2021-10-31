@@ -5,7 +5,7 @@
 namespace android::net::wifi
 {
 	// Fields
-	QAndroidJniObject WifiEnterpriseConfig::CREATOR()
+	__JniBaseClass WifiEnterpriseConfig::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiEnterpriseConfig",
@@ -52,7 +52,7 @@ namespace android::net::wifi
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getCaCertificate()
+	java::security::cert::X509Certificate WifiEnterpriseConfig::getCaCertificate()
 	{
 		return callObjectMethod(
 			"getCaCertificate",
@@ -66,7 +66,7 @@ namespace android::net::wifi
 			"()[Ljava/security/cert/X509Certificate;"
 		).object<jarray>();
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getClientCertificate()
+	java::security::cert::X509Certificate WifiEnterpriseConfig::getClientCertificate()
 	{
 		return callObjectMethod(
 			"getClientCertificate",

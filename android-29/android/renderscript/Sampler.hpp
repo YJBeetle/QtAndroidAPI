@@ -26,20 +26,20 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject CLAMP_LINEAR(android::renderscript::RenderScript arg0);
-		static QAndroidJniObject CLAMP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0);
-		static QAndroidJniObject CLAMP_NEAREST(android::renderscript::RenderScript arg0);
-		static QAndroidJniObject MIRRORED_REPEAT_LINEAR(android::renderscript::RenderScript arg0);
-		static QAndroidJniObject MIRRORED_REPEAT_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0);
-		static QAndroidJniObject MIRRORED_REPEAT_NEAREST(android::renderscript::RenderScript arg0);
-		static QAndroidJniObject WRAP_LINEAR(android::renderscript::RenderScript arg0);
-		static QAndroidJniObject WRAP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0);
-		static QAndroidJniObject WRAP_NEAREST(android::renderscript::RenderScript arg0);
+		static android::renderscript::Sampler CLAMP_LINEAR(android::renderscript::RenderScript arg0);
+		static android::renderscript::Sampler CLAMP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0);
+		static android::renderscript::Sampler CLAMP_NEAREST(android::renderscript::RenderScript arg0);
+		static android::renderscript::Sampler MIRRORED_REPEAT_LINEAR(android::renderscript::RenderScript arg0);
+		static android::renderscript::Sampler MIRRORED_REPEAT_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0);
+		static android::renderscript::Sampler MIRRORED_REPEAT_NEAREST(android::renderscript::RenderScript arg0);
+		static android::renderscript::Sampler WRAP_LINEAR(android::renderscript::RenderScript arg0);
+		static android::renderscript::Sampler WRAP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0);
+		static android::renderscript::Sampler WRAP_NEAREST(android::renderscript::RenderScript arg0);
 		jfloat getAnisotropy();
-		QAndroidJniObject getMagnification();
-		QAndroidJniObject getMinification();
-		QAndroidJniObject getWrapS();
-		QAndroidJniObject getWrapT();
+		android::renderscript::Sampler_Value getMagnification();
+		android::renderscript::Sampler_Value getMinification();
+		android::renderscript::Sampler_Value getWrapS();
+		android::renderscript::Sampler_Value getWrapT();
 	};
 } // namespace android::renderscript
 

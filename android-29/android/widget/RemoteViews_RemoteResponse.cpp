@@ -17,7 +17,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	QAndroidJniObject RemoteViews_RemoteResponse::fromFillInIntent(android::content::Intent arg0)
+	android::widget::RemoteViews_RemoteResponse RemoteViews_RemoteResponse::fromFillInIntent(android::content::Intent arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.RemoteViews$RemoteResponse",
@@ -26,7 +26,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RemoteViews_RemoteResponse::fromPendingIntent(android::app::PendingIntent arg0)
+	android::widget::RemoteViews_RemoteResponse RemoteViews_RemoteResponse::fromPendingIntent(android::app::PendingIntent arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.RemoteViews$RemoteResponse",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	QAndroidJniObject RemoteViews_RemoteResponse::addSharedElement(jint arg0, jstring arg1)
+	android::widget::RemoteViews_RemoteResponse RemoteViews_RemoteResponse::addSharedElement(jint arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"addSharedElement",

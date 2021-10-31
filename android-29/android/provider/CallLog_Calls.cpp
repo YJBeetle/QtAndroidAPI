@@ -171,7 +171,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CallLog_Calls::CONTENT_FILTER_URI()
+	android::net::Uri CallLog_Calls::CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CallLog$Calls",
@@ -195,7 +195,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CallLog_Calls::CONTENT_URI()
+	android::net::Uri CallLog_Calls::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CallLog$Calls",
@@ -203,7 +203,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject CallLog_Calls::CONTENT_URI_WITH_VOICEMAIL()
+	android::net::Uri CallLog_Calls::CONTENT_URI_WITH_VOICEMAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CallLog$Calls",

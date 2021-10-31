@@ -57,7 +57,7 @@ namespace android::speech
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getVoiceDetailsIntent(android::content::Context arg0);
+		static android::content::Intent getVoiceDetailsIntent(android::content::Context arg0);
 	};
 } // namespace android::speech
 

@@ -21,7 +21,7 @@ namespace android::view::textclassifier
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring HINT_FOR_IN_APP();
 		static jstring HINT_FOR_NOTIFICATION();
 		
@@ -34,11 +34,11 @@ namespace android::view::textclassifier
 		// Methods
 		jint describeContents();
 		jstring getCallingPackageName();
-		QAndroidJniObject getConversation();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getHints();
+		__JniBaseClass getConversation();
+		android::os::Bundle getExtras();
+		__JniBaseClass getHints();
 		jint getMaxSuggestions();
-		QAndroidJniObject getTypeConfig();
+		android::view::textclassifier::TextClassifier_EntityConfig getTypeConfig();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

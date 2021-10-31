@@ -25,7 +25,7 @@ namespace android::graphics
 		// Methods
 		jboolean equals(jobject arg0);
 		jint getColor();
-		QAndroidJniObject getMode();
+		android::graphics::BlendMode getMode();
 		jint hashCode();
 	};
 } // namespace android::graphics

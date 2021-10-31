@@ -31,7 +31,7 @@ namespace android::app::job
 		
 		// Methods
 		void jobFinished(android::app::job::JobParameters arg0, jboolean arg1);
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		jboolean onStartJob(android::app::job::JobParameters arg0);
 		jboolean onStopJob(android::app::job::JobParameters arg0);
 	};

@@ -35,7 +35,7 @@ namespace android::telecom
 		
 		// Methods
 		void cancelCall();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onPlaceCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2);
 		jboolean onUnbind(android::content::Intent arg0);
 		void placeCallUnmodified();

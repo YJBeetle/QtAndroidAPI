@@ -41,15 +41,15 @@ namespace android::widget
 		void bindView(android::view::View arg0, android::content::Context arg1, __JniBaseClass arg2);
 		void changeCursorAndColumns(__JniBaseClass arg0, jarray arg1, jintArray arg2);
 		jstring convertToString(__JniBaseClass arg0);
-		QAndroidJniObject getCursorToStringConverter();
+		__JniBaseClass getCursorToStringConverter();
 		jint getStringConversionColumn();
-		QAndroidJniObject getViewBinder();
+		__JniBaseClass getViewBinder();
 		void setCursorToStringConverter(__JniBaseClass arg0);
 		void setStringConversionColumn(jint arg0);
 		void setViewBinder(__JniBaseClass arg0);
 		void setViewImage(android::widget::ImageView arg0, jstring arg1);
 		void setViewText(android::widget::TextView arg0, jstring arg1);
-		QAndroidJniObject swapCursor(__JniBaseClass arg0);
+		__JniBaseClass swapCursor(__JniBaseClass arg0);
 	};
 } // namespace android::widget
 

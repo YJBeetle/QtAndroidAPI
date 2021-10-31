@@ -15,7 +15,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_MoneyBuilder::setCurrency(jstring arg0)
+	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setCurrency(jstring arg0)
 	{
 		return callObjectMethod(
 			"setCurrency",
@@ -23,7 +23,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MoneyBuilder::setFractionalPart(jstring arg0)
+	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setFractionalPart(jstring arg0)
 	{
 		return callObjectMethod(
 			"setFractionalPart",
@@ -31,7 +31,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MoneyBuilder::setIntegerPart(jstring arg0)
+	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setIntegerPart(jstring arg0)
 	{
 		return callObjectMethod(
 			"setIntegerPart",
@@ -39,7 +39,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MoneyBuilder::setIntegerPart(jlong arg0)
+	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setIntegerPart(jlong arg0)
 	{
 		return callObjectMethod(
 			"setIntegerPart",
@@ -47,7 +47,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MoneyBuilder::setQuantity(jstring arg0)
+	android::text::style::TtsSpan_MoneyBuilder TtsSpan_MoneyBuilder::setQuantity(jstring arg0)
 	{
 		return callObjectMethod(
 			"setQuantity",

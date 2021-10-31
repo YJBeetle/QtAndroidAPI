@@ -48,13 +48,13 @@ namespace android::widget
 		
 		// Methods
 		jint getCount();
-		QAndroidJniObject getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
-		QAndroidJniObject getDropDownViewTheme();
-		QAndroidJniObject getFilter();
+		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
+		android::content::res::Resources_Theme getDropDownViewTheme();
+		android::widget::Filter getFilter();
 		jobject getItem(jint arg0);
 		jlong getItemId(jint arg0);
-		QAndroidJniObject getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
-		QAndroidJniObject getViewBinder();
+		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
+		__JniBaseClass getViewBinder();
 		void setDropDownViewResource(jint arg0);
 		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
 		void setViewBinder(__JniBaseClass arg0);

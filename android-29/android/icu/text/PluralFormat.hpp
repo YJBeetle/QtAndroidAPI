@@ -72,9 +72,9 @@ namespace android::icu::text
 		jboolean equals(android::icu::text::PluralFormat arg0);
 		jboolean equals(jobject arg0);
 		jstring format(jdouble arg0);
-		QAndroidJniObject format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		jint hashCode();
-		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
+		java::lang::Number parse(jstring arg0, java::text::ParsePosition arg1);
 		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
 		void setNumberFormat(android::icu::text::NumberFormat arg0);
 		jstring toPattern();

@@ -3,7 +3,7 @@
 namespace android::webkit
 {
 	// Fields
-	QAndroidJniObject WebSettings_RenderPriority::HIGH()
+	android::webkit::WebSettings_RenderPriority WebSettings_RenderPriority::HIGH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$RenderPriority",
@@ -11,7 +11,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$RenderPriority;"
 		);
 	}
-	QAndroidJniObject WebSettings_RenderPriority::LOW()
+	android::webkit::WebSettings_RenderPriority WebSettings_RenderPriority::LOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$RenderPriority",
@@ -19,7 +19,7 @@ namespace android::webkit
 			"Landroid/webkit/WebSettings$RenderPriority;"
 		);
 	}
-	QAndroidJniObject WebSettings_RenderPriority::NORMAL()
+	android::webkit::WebSettings_RenderPriority WebSettings_RenderPriority::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$RenderPriority",
@@ -34,7 +34,7 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject WebSettings_RenderPriority::valueOf(jstring arg0)
+	android::webkit::WebSettings_RenderPriority WebSettings_RenderPriority::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebSettings$RenderPriority",

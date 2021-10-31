@@ -35,13 +35,13 @@ namespace android::app
 		Notification_CarExtender(android::app::Notification arg0);
 		
 		// Methods
-		QAndroidJniObject extend(android::app::Notification_Builder arg0);
+		android::app::Notification_Builder extend(android::app::Notification_Builder arg0);
 		jint getColor();
-		QAndroidJniObject getLargeIcon();
-		QAndroidJniObject getUnreadConversation();
-		QAndroidJniObject setColor(jint arg0);
-		QAndroidJniObject setLargeIcon(android::graphics::Bitmap arg0);
-		QAndroidJniObject setUnreadConversation(android::app::Notification_CarExtender_UnreadConversation arg0);
+		android::graphics::Bitmap getLargeIcon();
+		android::app::Notification_CarExtender_UnreadConversation getUnreadConversation();
+		android::app::Notification_CarExtender setColor(jint arg0);
+		android::app::Notification_CarExtender setLargeIcon(android::graphics::Bitmap arg0);
+		android::app::Notification_CarExtender setUnreadConversation(android::app::Notification_CarExtender_UnreadConversation arg0);
 	};
 } // namespace android::app
 

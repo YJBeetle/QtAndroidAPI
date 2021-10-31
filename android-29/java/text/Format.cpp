@@ -29,7 +29,7 @@ namespace java::text
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Format::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer Format::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
@@ -39,7 +39,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Format::formatToCharacterIterator(jobject arg0)
+	__JniBaseClass Format::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",

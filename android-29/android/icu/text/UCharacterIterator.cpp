@@ -18,7 +18,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject UCharacterIterator::getInstance(jcharArray arg0)
+	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(jcharArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
@@ -27,7 +27,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject UCharacterIterator::getInstance(__JniBaseClass arg0)
+	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
@@ -36,7 +36,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject UCharacterIterator::getInstance(jstring arg0)
+	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
@@ -45,7 +45,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject UCharacterIterator::getInstance(java::lang::StringBuffer arg0)
+	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(java::lang::StringBuffer arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
@@ -54,7 +54,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	QAndroidJniObject UCharacterIterator::getInstance(jcharArray arg0, jint arg1, jint arg2)
+	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(jcharArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
@@ -86,7 +86,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject UCharacterIterator::getCharacterIterator()
+	__JniBaseClass UCharacterIterator::getCharacterIterator()
 	{
 		return callObjectMethod(
 			"getCharacterIterator",

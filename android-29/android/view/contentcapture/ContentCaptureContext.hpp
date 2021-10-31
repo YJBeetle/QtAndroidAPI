@@ -25,7 +25,7 @@ namespace android::view::contentcapture
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentCaptureContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -34,10 +34,10 @@ namespace android::view::contentcapture
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject forLocusId(jstring arg0);
+		static android::view::contentcapture::ContentCaptureContext forLocusId(jstring arg0);
 		jint describeContents();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getLocusId();
+		android::os::Bundle getExtras();
+		android::content::LocusId getLocusId();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

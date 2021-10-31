@@ -23,7 +23,7 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	QAndroidJniObject KeyStoreBuilderParameters::getParameters()
+	__JniBaseClass KeyStoreBuilderParameters::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",

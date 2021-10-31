@@ -26,13 +26,13 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject clone();
-		QAndroidJniObject getOcspExtensions();
-		QAndroidJniObject getOcspResponder();
-		QAndroidJniObject getOcspResponderCert();
-		QAndroidJniObject getOcspResponses();
-		QAndroidJniObject getOptions();
-		QAndroidJniObject getSoftFailExceptions();
+		java::security::cert::PKIXRevocationChecker clone();
+		__JniBaseClass getOcspExtensions();
+		java::net::URI getOcspResponder();
+		java::security::cert::X509Certificate getOcspResponderCert();
+		__JniBaseClass getOcspResponses();
+		__JniBaseClass getOptions();
+		__JniBaseClass getSoftFailExceptions();
 		void setOcspExtensions(__JniBaseClass arg0);
 		void setOcspResponder(java::net::URI arg0);
 		void setOcspResponderCert(java::security::cert::X509Certificate arg0);

@@ -367,7 +367,7 @@ namespace android::icu::util
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Calendar::getInstance()
+	android::icu::util::Calendar Calendar::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Calendar",
@@ -375,7 +375,7 @@ namespace android::icu::util
 			"()Landroid/icu/util/Calendar;"
 		);
 	}
-	QAndroidJniObject Calendar::getInstance(android::icu::util::TimeZone arg0)
+	android::icu::util::Calendar Calendar::getInstance(android::icu::util::TimeZone arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Calendar",
@@ -384,7 +384,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Calendar::getInstance(android::icu::util::ULocale arg0)
+	android::icu::util::Calendar Calendar::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Calendar",
@@ -393,7 +393,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Calendar::getInstance(java::util::Locale arg0)
+	android::icu::util::Calendar Calendar::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Calendar",
@@ -402,7 +402,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Calendar::getInstance(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
+	android::icu::util::Calendar Calendar::getInstance(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Calendar",
@@ -412,7 +412,7 @@ namespace android::icu::util
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Calendar::getInstance(android::icu::util::TimeZone arg0, java::util::Locale arg1)
+	android::icu::util::Calendar Calendar::getInstance(android::icu::util::TimeZone arg0, java::util::Locale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Calendar",
@@ -433,7 +433,7 @@ namespace android::icu::util
 			arg2
 		).object<jarray>();
 	}
-	QAndroidJniObject Calendar::getWeekDataForRegion(jstring arg0)
+	android::icu::util::Calendar_WeekData Calendar::getWeekDataForRegion(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Calendar",
@@ -546,7 +546,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject Calendar::getDateTimeFormat(jint arg0, jint arg1, android::icu::util::ULocale arg2)
+	android::icu::text::DateFormat Calendar::getDateTimeFormat(jint arg0, jint arg1, android::icu::util::ULocale arg2)
 	{
 		return callObjectMethod(
 			"getDateTimeFormat",
@@ -556,7 +556,7 @@ namespace android::icu::util
 			arg2.object()
 		);
 	}
-	QAndroidJniObject Calendar::getDateTimeFormat(jint arg0, jint arg1, java::util::Locale arg2)
+	android::icu::text::DateFormat Calendar::getDateTimeFormat(jint arg0, jint arg1, java::util::Locale arg2)
 	{
 		return callObjectMethod(
 			"getDateTimeFormat",
@@ -649,7 +649,7 @@ namespace android::icu::util
 			"()I"
 		);
 	}
-	QAndroidJniObject Calendar::getTime()
+	java::util::Date Calendar::getTime()
 	{
 		return callObjectMethod(
 			"getTime",
@@ -663,7 +663,7 @@ namespace android::icu::util
 			"()J"
 		);
 	}
-	QAndroidJniObject Calendar::getTimeZone()
+	android::icu::util::TimeZone Calendar::getTimeZone()
 	{
 		return callObjectMethod(
 			"getTimeZone",
@@ -677,7 +677,7 @@ namespace android::icu::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Calendar::getWeekData()
+	android::icu::util::Calendar_WeekData Calendar::getWeekData()
 	{
 		return callObjectMethod(
 			"getWeekData",
@@ -855,7 +855,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Calendar::setWeekData(android::icu::util::Calendar_WeekData arg0)
+	android::icu::util::Calendar Calendar::setWeekData(android::icu::util::Calendar_WeekData arg0)
 	{
 		return callObjectMethod(
 			"setWeekData",

@@ -91,14 +91,14 @@ namespace android::icu::util
 		
 		// Methods
 		static jarray getAvailableLocales();
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(android::icu::util::TimeZone arg0);
-		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);
-		static QAndroidJniObject getInstance(java::util::Locale arg0);
-		static QAndroidJniObject getInstance(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1);
-		static QAndroidJniObject getInstance(android::icu::util::TimeZone arg0, java::util::Locale arg1);
+		static android::icu::util::Calendar getInstance();
+		static android::icu::util::Calendar getInstance(android::icu::util::TimeZone arg0);
+		static android::icu::util::Calendar getInstance(android::icu::util::ULocale arg0);
+		static android::icu::util::Calendar getInstance(java::util::Locale arg0);
+		static android::icu::util::Calendar getInstance(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1);
+		static android::icu::util::Calendar getInstance(android::icu::util::TimeZone arg0, java::util::Locale arg1);
 		static jarray getKeywordValuesForLocale(jstring arg0, android::icu::util::ULocale arg1, jboolean arg2);
-		static QAndroidJniObject getWeekDataForRegion(jstring arg0);
+		static android::icu::util::Calendar_WeekData getWeekDataForRegion(jstring arg0);
 		void add(jint arg0, jint arg1);
 		jboolean after(jobject arg0);
 		jboolean before(jobject arg0);
@@ -112,8 +112,8 @@ namespace android::icu::util
 		jint get(jint arg0);
 		jint getActualMaximum(jint arg0);
 		jint getActualMinimum(jint arg0);
-		QAndroidJniObject getDateTimeFormat(jint arg0, jint arg1, android::icu::util::ULocale arg2);
-		QAndroidJniObject getDateTimeFormat(jint arg0, jint arg1, java::util::Locale arg2);
+		android::icu::text::DateFormat getDateTimeFormat(jint arg0, jint arg1, android::icu::util::ULocale arg2);
+		android::icu::text::DateFormat getDateTimeFormat(jint arg0, jint arg1, java::util::Locale arg2);
 		jstring getDisplayName(android::icu::util::ULocale arg0);
 		jstring getDisplayName(java::util::Locale arg0);
 		jint getFieldCount();
@@ -125,11 +125,11 @@ namespace android::icu::util
 		jint getMinimum(jint arg0);
 		jint getRepeatedWallTimeOption();
 		jint getSkippedWallTimeOption();
-		QAndroidJniObject getTime();
+		java::util::Date getTime();
 		jlong getTimeInMillis();
-		QAndroidJniObject getTimeZone();
+		android::icu::util::TimeZone getTimeZone();
 		jstring getType();
-		QAndroidJniObject getWeekData();
+		android::icu::util::Calendar_WeekData getWeekData();
 		jint hashCode();
 		jboolean isEquivalentTo(android::icu::util::Calendar arg0);
 		jboolean isLenient();
@@ -150,7 +150,7 @@ namespace android::icu::util
 		void setTime(java::util::Date arg0);
 		void setTimeInMillis(jlong arg0);
 		void setTimeZone(android::icu::util::TimeZone arg0);
-		QAndroidJniObject setWeekData(android::icu::util::Calendar_WeekData arg0);
+		android::icu::util::Calendar setWeekData(android::icu::util::Calendar_WeekData arg0);
 		jstring toString();
 	};
 } // namespace android::icu::util

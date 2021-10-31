@@ -6,7 +6,7 @@
 namespace java::time
 {
 	// Fields
-	QAndroidJniObject DayOfWeek::FRIDAY()
+	java::time::DayOfWeek DayOfWeek::FRIDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.DayOfWeek",
@@ -14,7 +14,7 @@ namespace java::time
 			"Ljava/time/DayOfWeek;"
 		);
 	}
-	QAndroidJniObject DayOfWeek::MONDAY()
+	java::time::DayOfWeek DayOfWeek::MONDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.DayOfWeek",
@@ -22,7 +22,7 @@ namespace java::time
 			"Ljava/time/DayOfWeek;"
 		);
 	}
-	QAndroidJniObject DayOfWeek::SATURDAY()
+	java::time::DayOfWeek DayOfWeek::SATURDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.DayOfWeek",
@@ -30,7 +30,7 @@ namespace java::time
 			"Ljava/time/DayOfWeek;"
 		);
 	}
-	QAndroidJniObject DayOfWeek::SUNDAY()
+	java::time::DayOfWeek DayOfWeek::SUNDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.DayOfWeek",
@@ -38,7 +38,7 @@ namespace java::time
 			"Ljava/time/DayOfWeek;"
 		);
 	}
-	QAndroidJniObject DayOfWeek::THURSDAY()
+	java::time::DayOfWeek DayOfWeek::THURSDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.DayOfWeek",
@@ -46,7 +46,7 @@ namespace java::time
 			"Ljava/time/DayOfWeek;"
 		);
 	}
-	QAndroidJniObject DayOfWeek::TUESDAY()
+	java::time::DayOfWeek DayOfWeek::TUESDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.DayOfWeek",
@@ -54,7 +54,7 @@ namespace java::time
 			"Ljava/time/DayOfWeek;"
 		);
 	}
-	QAndroidJniObject DayOfWeek::WEDNESDAY()
+	java::time::DayOfWeek DayOfWeek::WEDNESDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.DayOfWeek",
@@ -69,7 +69,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject DayOfWeek::from(__JniBaseClass arg0)
+	java::time::DayOfWeek DayOfWeek::from(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.DayOfWeek",
@@ -78,7 +78,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DayOfWeek::of(jint arg0)
+	java::time::DayOfWeek DayOfWeek::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.DayOfWeek",
@@ -87,7 +87,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject DayOfWeek::valueOf(jstring arg0)
+	java::time::DayOfWeek DayOfWeek::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.DayOfWeek",
@@ -104,7 +104,7 @@ namespace java::time
 			"()[Ljava/time/DayOfWeek;"
 		).object<jarray>();
 	}
-	QAndroidJniObject DayOfWeek::adjustInto(__JniBaseClass arg0)
+	__JniBaseClass DayOfWeek::adjustInto(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -152,7 +152,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DayOfWeek::minus(jlong arg0)
+	java::time::DayOfWeek DayOfWeek::minus(jlong arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -160,7 +160,7 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject DayOfWeek::plus(jlong arg0)
+	java::time::DayOfWeek DayOfWeek::plus(jlong arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -176,7 +176,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject DayOfWeek::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange DayOfWeek::range(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"range",

@@ -3,7 +3,7 @@
 namespace android::icu::text
 {
 	// Fields
-	QAndroidJniObject PluralRules_PluralType::CARDINAL()
+	android::icu::text::PluralRules_PluralType PluralRules_PluralType::CARDINAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.PluralRules$PluralType",
@@ -11,7 +11,7 @@ namespace android::icu::text
 			"Landroid/icu/text/PluralRules$PluralType;"
 		);
 	}
-	QAndroidJniObject PluralRules_PluralType::ORDINAL()
+	android::icu::text::PluralRules_PluralType PluralRules_PluralType::ORDINAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.PluralRules$PluralType",
@@ -26,7 +26,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PluralRules_PluralType::valueOf(jstring arg0)
+	android::icu::text::PluralRules_PluralType PluralRules_PluralType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.PluralRules$PluralType",

@@ -48,19 +48,19 @@ namespace android::app::assist
 		// Methods
 		jfloat getAlpha();
 		jarray getAutofillHints();
-		QAndroidJniObject getAutofillId();
+		android::view::autofill::AutofillId getAutofillId();
 		jarray getAutofillOptions();
 		jint getAutofillType();
-		QAndroidJniObject getAutofillValue();
-		QAndroidJniObject getChildAt(jint arg0);
+		android::view::autofill::AutofillValue getAutofillValue();
+		android::app::assist::AssistStructure_ViewNode getChildAt(jint arg0);
 		jint getChildCount();
 		jstring getClassName();
 		jstring getContentDescription();
 		jfloat getElevation();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jint getHeight();
 		jstring getHint();
-		QAndroidJniObject getHtmlInfo();
+		android::view::ViewStructure_HtmlInfo getHtmlInfo();
 		jint getId();
 		jstring getIdEntry();
 		jstring getIdPackage();
@@ -68,7 +68,7 @@ namespace android::app::assist
 		jint getImportantForAutofill();
 		jint getInputType();
 		jint getLeft();
-		QAndroidJniObject getLocaleList();
+		android::os::LocaleList getLocaleList();
 		jint getMaxTextEms();
 		jint getMaxTextLength();
 		jint getMinTextEms();
@@ -85,7 +85,7 @@ namespace android::app::assist
 		jfloat getTextSize();
 		jint getTextStyle();
 		jint getTop();
-		QAndroidJniObject getTransformation();
+		android::graphics::Matrix getTransformation();
 		jint getVisibility();
 		jstring getWebDomain();
 		jstring getWebScheme();

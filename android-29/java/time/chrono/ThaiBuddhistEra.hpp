@@ -18,8 +18,8 @@ namespace java::time::chrono
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BE();
-		static QAndroidJniObject BEFORE_BE();
+		static java::time::chrono::ThaiBuddhistEra BE();
+		static java::time::chrono::ThaiBuddhistEra BEFORE_BE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ThaiBuddhistEra(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,8 +28,8 @@ namespace java::time::chrono
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject of(jint arg0);
-		static QAndroidJniObject valueOf(jstring arg0);
+		static java::time::chrono::ThaiBuddhistEra of(jint arg0);
+		static java::time::chrono::ThaiBuddhistEra valueOf(jstring arg0);
 		static jarray values();
 		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
 		jint getValue();

@@ -21,7 +21,7 @@ namespace java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CertPathValidator::getInstance(jstring arg0)
+	java::security::cert::CertPathValidator CertPathValidator::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.cert.CertPathValidator",
@@ -30,7 +30,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	QAndroidJniObject CertPathValidator::getInstance(jstring arg0, jstring arg1)
+	java::security::cert::CertPathValidator CertPathValidator::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.cert.CertPathValidator",
@@ -40,7 +40,7 @@ namespace java::security::cert
 			arg1
 		);
 	}
-	QAndroidJniObject CertPathValidator::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::cert::CertPathValidator CertPathValidator::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.cert.CertPathValidator",
@@ -57,21 +57,21 @@ namespace java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject CertPathValidator::getProvider()
+	java::security::Provider CertPathValidator::getProvider()
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	QAndroidJniObject CertPathValidator::getRevocationChecker()
+	__JniBaseClass CertPathValidator::getRevocationChecker()
 	{
 		return callObjectMethod(
 			"getRevocationChecker",
 			"()Ljava/security/cert/CertPathChecker;"
 		);
 	}
-	QAndroidJniObject CertPathValidator::validate(java::security::cert::CertPath arg0, __JniBaseClass arg1)
+	__JniBaseClass CertPathValidator::validate(java::security::cert::CertPath arg0, __JniBaseClass arg1)
 	{
 		return callObjectMethod(
 			"validate",

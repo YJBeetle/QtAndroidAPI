@@ -66,7 +66,7 @@ namespace java::lang
 		void checkWrite(java::io::FileDescriptor arg0);
 		void checkWrite(jstring arg0);
 		jobject getSecurityContext();
-		QAndroidJniObject getThreadGroup();
+		java::lang::ThreadGroup getThreadGroup();
 	};
 } // namespace java::lang
 

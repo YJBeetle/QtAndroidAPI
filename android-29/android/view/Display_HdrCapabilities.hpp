@@ -13,7 +13,7 @@ namespace android::view
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint HDR_TYPE_DOLBY_VISION();
 		static jint HDR_TYPE_HDR10();
 		static jint HDR_TYPE_HDR10_PLUS();

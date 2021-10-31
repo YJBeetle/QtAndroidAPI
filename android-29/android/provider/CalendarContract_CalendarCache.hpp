@@ -18,7 +18,7 @@ namespace android::provider
 		static jstring KEY_TIMEZONE_TYPE();
 		static jstring TIMEZONE_TYPE_AUTO();
 		static jstring TIMEZONE_TYPE_HOME();
-		static QAndroidJniObject URI();
+		static android::net::Uri URI();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CalendarContract_CalendarCache(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

@@ -70,7 +70,7 @@ namespace java::util::jar
 		) {}
 	
 	// Methods
-	QAndroidJniObject JarFile::baseVersion()
+	__JniBaseClass JarFile::baseVersion()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.jar.JarFile",
@@ -78,7 +78,7 @@ namespace java::util::jar
 			"()Ljava/lang/Runtime$Version;"
 		);
 	}
-	QAndroidJniObject JarFile::runtimeVersion()
+	__JniBaseClass JarFile::runtimeVersion()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.jar.JarFile",
@@ -86,14 +86,14 @@ namespace java::util::jar
 			"()Ljava/lang/Runtime$Version;"
 		);
 	}
-	QAndroidJniObject JarFile::entries()
+	__JniBaseClass JarFile::entries()
 	{
 		return callObjectMethod(
 			"entries",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	QAndroidJniObject JarFile::getEntry(jstring arg0)
+	java::util::zip::ZipEntry JarFile::getEntry(jstring arg0)
 	{
 		return callObjectMethod(
 			"getEntry",
@@ -101,7 +101,7 @@ namespace java::util::jar
 			arg0
 		);
 	}
-	QAndroidJniObject JarFile::getInputStream(java::util::zip::ZipEntry arg0)
+	java::io::InputStream JarFile::getInputStream(java::util::zip::ZipEntry arg0)
 	{
 		return callObjectMethod(
 			"getInputStream",
@@ -109,7 +109,7 @@ namespace java::util::jar
 			arg0.object()
 		);
 	}
-	QAndroidJniObject JarFile::getJarEntry(jstring arg0)
+	java::util::jar::JarEntry JarFile::getJarEntry(jstring arg0)
 	{
 		return callObjectMethod(
 			"getJarEntry",
@@ -117,14 +117,14 @@ namespace java::util::jar
 			arg0
 		);
 	}
-	QAndroidJniObject JarFile::getManifest()
+	java::util::jar::Manifest JarFile::getManifest()
 	{
 		return callObjectMethod(
 			"getManifest",
 			"()Ljava/util/jar/Manifest;"
 		);
 	}
-	QAndroidJniObject JarFile::getVersion()
+	__JniBaseClass JarFile::getVersion()
 	{
 		return callObjectMethod(
 			"getVersion",
@@ -138,14 +138,14 @@ namespace java::util::jar
 			"()Z"
 		);
 	}
-	QAndroidJniObject JarFile::stream()
+	__JniBaseClass JarFile::stream()
 	{
 		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	QAndroidJniObject JarFile::versionedStream()
+	__JniBaseClass JarFile::versionedStream()
 	{
 		return callObjectMethod(
 			"versionedStream",

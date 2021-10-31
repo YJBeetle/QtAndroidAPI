@@ -28,8 +28,8 @@ namespace java::lang::invoke
 		VolatileCallSite(java::lang::invoke::MethodType arg0);
 		
 		// Methods
-		QAndroidJniObject dynamicInvoker();
-		QAndroidJniObject getTarget();
+		java::lang::invoke::MethodHandle dynamicInvoker();
+		java::lang::invoke::MethodHandle getTarget();
 		void setTarget(java::lang::invoke::MethodHandle arg0);
 	};
 } // namespace java::lang::invoke

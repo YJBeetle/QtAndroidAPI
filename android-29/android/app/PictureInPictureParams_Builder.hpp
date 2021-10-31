@@ -30,10 +30,10 @@ namespace android::app
 		PictureInPictureParams_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setActions(__JniBaseClass arg0);
-		QAndroidJniObject setAspectRatio(android::util::Rational arg0);
-		QAndroidJniObject setSourceRectHint(android::graphics::Rect arg0);
+		android::app::PictureInPictureParams build();
+		android::app::PictureInPictureParams_Builder setActions(__JniBaseClass arg0);
+		android::app::PictureInPictureParams_Builder setAspectRatio(android::util::Rational arg0);
+		android::app::PictureInPictureParams_Builder setSourceRectHint(android::graphics::Rect arg0);
 	};
 } // namespace android::app
 

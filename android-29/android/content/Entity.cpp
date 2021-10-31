@@ -28,14 +28,14 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Entity::getEntityValues()
+	android::content::ContentValues Entity::getEntityValues()
 	{
 		return callObjectMethod(
 			"getEntityValues",
 			"()Landroid/content/ContentValues;"
 		);
 	}
-	QAndroidJniObject Entity::getSubValues()
+	java::util::ArrayList Entity::getSubValues()
 	{
 		return callObjectMethod(
 			"getSubValues",

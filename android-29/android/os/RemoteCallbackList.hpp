@@ -21,10 +21,10 @@ namespace android::os
 		jint beginBroadcast();
 		void finishBroadcast();
 		jobject getBroadcastCookie(jint arg0);
-		QAndroidJniObject getBroadcastItem(jint arg0);
+		__JniBaseClass getBroadcastItem(jint arg0);
 		jobject getRegisteredCallbackCookie(jint arg0);
 		jint getRegisteredCallbackCount();
-		QAndroidJniObject getRegisteredCallbackItem(jint arg0);
+		__JniBaseClass getRegisteredCallbackItem(jint arg0);
 		void kill();
 		void onCallbackDied(__JniBaseClass arg0);
 		void onCallbackDied(__JniBaseClass arg0, jobject arg1);

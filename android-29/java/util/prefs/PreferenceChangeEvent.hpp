@@ -33,7 +33,7 @@ namespace java::util::prefs
 		// Methods
 		jstring getKey();
 		jstring getNewValue();
-		QAndroidJniObject getNode();
+		java::util::prefs::Preferences getNode();
 	};
 } // namespace java::util::prefs
 

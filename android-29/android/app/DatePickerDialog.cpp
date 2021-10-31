@@ -47,7 +47,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject DatePickerDialog::getDatePicker()
+	android::widget::DatePicker DatePickerDialog::getDatePicker()
 	{
 		return callObjectMethod(
 			"getDatePicker",
@@ -82,7 +82,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject DatePickerDialog::onSaveInstanceState()
+	android::os::Bundle DatePickerDialog::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",

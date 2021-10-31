@@ -25,23 +25,23 @@ namespace java::lang::invoke
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject asCollector(jclass arg0, jint arg1);
-		QAndroidJniObject asCollector(jint arg0, jclass arg1, jint arg2);
-		QAndroidJniObject asFixedArity();
-		QAndroidJniObject asSpreader(jclass arg0, jint arg1);
-		QAndroidJniObject asSpreader(jint arg0, jclass arg1, jint arg2);
-		QAndroidJniObject asType(java::lang::invoke::MethodType arg0);
-		QAndroidJniObject asVarargsCollector(jclass arg0);
-		QAndroidJniObject bindTo(jobject arg0);
-		QAndroidJniObject describeConstable();
+		java::lang::invoke::MethodHandle asCollector(jclass arg0, jint arg1);
+		java::lang::invoke::MethodHandle asCollector(jint arg0, jclass arg1, jint arg2);
+		java::lang::invoke::MethodHandle asFixedArity();
+		java::lang::invoke::MethodHandle asSpreader(jclass arg0, jint arg1);
+		java::lang::invoke::MethodHandle asSpreader(jint arg0, jclass arg1, jint arg2);
+		java::lang::invoke::MethodHandle asType(java::lang::invoke::MethodType arg0);
+		java::lang::invoke::MethodHandle asVarargsCollector(jclass arg0);
+		java::lang::invoke::MethodHandle bindTo(jobject arg0);
+		java::util::Optional describeConstable();
 		jobject invoke(jobjectArray arg0);
 		jobject invokeExact(jobjectArray arg0);
 		jobject invokeWithArguments(jobjectArray arg0);
 		jobject invokeWithArguments(__JniBaseClass arg0);
 		jboolean isVarargsCollector();
 		jstring toString();
-		QAndroidJniObject type();
-		QAndroidJniObject withVarargs(jboolean arg0);
+		java::lang::invoke::MethodType type();
+		java::lang::invoke::MethodHandle withVarargs(jboolean arg0);
 	};
 } // namespace java::lang::invoke
 

@@ -44,18 +44,18 @@ namespace java::security::cert
 		// Methods
 		jboolean equals(jobject arg0);
 		jbyteArray getEncoded();
-		QAndroidJniObject getIssuerDN();
-		QAndroidJniObject getIssuerX500Principal();
-		QAndroidJniObject getNextUpdate();
-		QAndroidJniObject getRevokedCertificate(java::math::BigInteger arg0);
-		QAndroidJniObject getRevokedCertificate(java::security::cert::X509Certificate arg0);
-		QAndroidJniObject getRevokedCertificates();
+		__JniBaseClass getIssuerDN();
+		javax::security::auth::x500::X500Principal getIssuerX500Principal();
+		java::util::Date getNextUpdate();
+		java::security::cert::X509CRLEntry getRevokedCertificate(java::math::BigInteger arg0);
+		java::security::cert::X509CRLEntry getRevokedCertificate(java::security::cert::X509Certificate arg0);
+		__JniBaseClass getRevokedCertificates();
 		jstring getSigAlgName();
 		jstring getSigAlgOID();
 		jbyteArray getSigAlgParams();
 		jbyteArray getSignature();
 		jbyteArray getTBSCertList();
-		QAndroidJniObject getThisUpdate();
+		java::util::Date getThisUpdate();
 		jint getVersion();
 		jint hashCode();
 		void verify(__JniBaseClass arg0);

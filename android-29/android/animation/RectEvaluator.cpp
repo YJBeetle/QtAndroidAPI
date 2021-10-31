@@ -22,7 +22,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	QAndroidJniObject RectEvaluator::evaluate(jfloat arg0, android::graphics::Rect arg1, android::graphics::Rect arg2)
+	android::graphics::Rect RectEvaluator::evaluate(jfloat arg0, android::graphics::Rect arg1, android::graphics::Rect arg2)
 	{
 		return callObjectMethod(
 			"evaluate",

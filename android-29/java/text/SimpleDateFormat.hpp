@@ -63,12 +63,12 @@ namespace java::text
 		void applyPattern(jstring arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		QAndroidJniObject formatToCharacterIterator(jobject arg0);
-		QAndroidJniObject get2DigitYearStart();
-		QAndroidJniObject getDateFormatSymbols();
+		java::lang::StringBuffer format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		__JniBaseClass formatToCharacterIterator(jobject arg0);
+		java::util::Date get2DigitYearStart();
+		java::text::DateFormatSymbols getDateFormatSymbols();
 		jint hashCode();
-		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
+		java::util::Date parse(jstring arg0, java::text::ParsePosition arg1);
 		void set2DigitYearStart(java::util::Date arg0);
 		void setDateFormatSymbols(java::text::DateFormatSymbols arg0);
 		jstring toLocalizedPattern();

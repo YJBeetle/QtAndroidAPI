@@ -36,14 +36,14 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject open();
-		static QAndroidJniObject open(__JniBaseClass arg0);
-		QAndroidJniObject accept();
-		QAndroidJniObject bind(java::net::SocketAddress arg0);
-		QAndroidJniObject bind(java::net::SocketAddress arg0, jint arg1);
-		QAndroidJniObject getLocalAddress();
-		QAndroidJniObject setOption(__JniBaseClass arg0, jobject arg1);
-		QAndroidJniObject socket();
+		static java::nio::channels::ServerSocketChannel open();
+		static java::nio::channels::ServerSocketChannel open(__JniBaseClass arg0);
+		java::nio::channels::SocketChannel accept();
+		java::nio::channels::ServerSocketChannel bind(java::net::SocketAddress arg0);
+		java::nio::channels::ServerSocketChannel bind(java::net::SocketAddress arg0, jint arg1);
+		java::net::SocketAddress getLocalAddress();
+		java::nio::channels::ServerSocketChannel setOption(__JniBaseClass arg0, jobject arg1);
+		java::net::ServerSocket socket();
 		jint validOps();
 	};
 } // namespace java::nio::channels

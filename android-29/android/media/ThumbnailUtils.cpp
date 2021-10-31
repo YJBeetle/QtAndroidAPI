@@ -26,7 +26,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	QAndroidJniObject ThumbnailUtils::createAudioThumbnail(jstring arg0, jint arg1)
+	android::graphics::Bitmap ThumbnailUtils::createAudioThumbnail(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
@@ -36,7 +36,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject ThumbnailUtils::createAudioThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2)
+	android::graphics::Bitmap ThumbnailUtils::createAudioThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
@@ -47,7 +47,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ThumbnailUtils::createImageThumbnail(jstring arg0, jint arg1)
+	android::graphics::Bitmap ThumbnailUtils::createImageThumbnail(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
@@ -57,7 +57,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject ThumbnailUtils::createImageThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2)
+	android::graphics::Bitmap ThumbnailUtils::createImageThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
@@ -68,7 +68,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ThumbnailUtils::createVideoThumbnail(jstring arg0, jint arg1)
+	android::graphics::Bitmap ThumbnailUtils::createVideoThumbnail(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
@@ -78,7 +78,7 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject ThumbnailUtils::createVideoThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2)
+	android::graphics::Bitmap ThumbnailUtils::createVideoThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
@@ -89,7 +89,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	QAndroidJniObject ThumbnailUtils::extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2)
+	android::graphics::Bitmap ThumbnailUtils::extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ThumbnailUtils",
@@ -100,7 +100,7 @@ namespace android::media
 			arg2
 		);
 	}
-	QAndroidJniObject ThumbnailUtils::extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3)
+	android::graphics::Bitmap ThumbnailUtils::extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.ThumbnailUtils",

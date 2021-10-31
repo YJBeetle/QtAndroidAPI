@@ -12,7 +12,7 @@ namespace android::graphics::fonts
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FontFamily::getFont(jint arg0)
+	android::graphics::fonts::Font FontFamily::getFont(jint arg0)
 	{
 		return callObjectMethod(
 			"getFont",

@@ -32,7 +32,7 @@ namespace android::icu::text
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject DateIntervalInfo::cloneAsThawed()
+	android::icu::text::DateIntervalInfo DateIntervalInfo::cloneAsThawed()
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
@@ -47,7 +47,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject DateIntervalInfo::freeze()
+	android::icu::text::DateIntervalInfo DateIntervalInfo::freeze()
 	{
 		return callObjectMethod(
 			"freeze",
@@ -68,7 +68,7 @@ namespace android::icu::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject DateIntervalInfo::getIntervalPattern(jstring arg0, jint arg1)
+	android::icu::text::DateIntervalInfo_PatternInfo DateIntervalInfo::getIntervalPattern(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getIntervalPattern",

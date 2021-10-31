@@ -21,7 +21,7 @@ namespace android::view::accessibility
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint TYPE_ACCESSIBILITY_OVERLAY();
 		static jint TYPE_APPLICATION();
 		static jint TYPE_INPUT_METHOD();
@@ -35,18 +35,18 @@ namespace android::view::accessibility
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject obtain();
-		static QAndroidJniObject obtain(android::view::accessibility::AccessibilityWindowInfo arg0);
+		static android::view::accessibility::AccessibilityWindowInfo obtain();
+		static android::view::accessibility::AccessibilityWindowInfo obtain(android::view::accessibility::AccessibilityWindowInfo arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAnchor();
+		android::view::accessibility::AccessibilityNodeInfo getAnchor();
 		void getBoundsInScreen(android::graphics::Rect arg0);
-		QAndroidJniObject getChild(jint arg0);
+		android::view::accessibility::AccessibilityWindowInfo getChild(jint arg0);
 		jint getChildCount();
 		jint getId();
 		jint getLayer();
-		QAndroidJniObject getParent();
-		QAndroidJniObject getRoot();
+		android::view::accessibility::AccessibilityWindowInfo getParent();
+		android::view::accessibility::AccessibilityNodeInfo getRoot();
 		jstring getTitle();
 		jint getType();
 		jint hashCode();

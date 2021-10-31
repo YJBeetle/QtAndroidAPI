@@ -38,16 +38,16 @@ namespace android::security
 		KeyPairGeneratorSpec_Builder(android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setAlgorithmParameterSpec(__JniBaseClass arg0);
-		QAndroidJniObject setAlias(jstring arg0);
-		QAndroidJniObject setEncryptionRequired();
-		QAndroidJniObject setEndDate(java::util::Date arg0);
-		QAndroidJniObject setKeySize(jint arg0);
-		QAndroidJniObject setKeyType(jstring arg0);
-		QAndroidJniObject setSerialNumber(java::math::BigInteger arg0);
-		QAndroidJniObject setStartDate(java::util::Date arg0);
-		QAndroidJniObject setSubject(javax::security::auth::x500::X500Principal arg0);
+		android::security::KeyPairGeneratorSpec build();
+		android::security::KeyPairGeneratorSpec_Builder setAlgorithmParameterSpec(__JniBaseClass arg0);
+		android::security::KeyPairGeneratorSpec_Builder setAlias(jstring arg0);
+		android::security::KeyPairGeneratorSpec_Builder setEncryptionRequired();
+		android::security::KeyPairGeneratorSpec_Builder setEndDate(java::util::Date arg0);
+		android::security::KeyPairGeneratorSpec_Builder setKeySize(jint arg0);
+		android::security::KeyPairGeneratorSpec_Builder setKeyType(jstring arg0);
+		android::security::KeyPairGeneratorSpec_Builder setSerialNumber(java::math::BigInteger arg0);
+		android::security::KeyPairGeneratorSpec_Builder setStartDate(java::util::Date arg0);
+		android::security::KeyPairGeneratorSpec_Builder setSubject(javax::security::auth::x500::X500Principal arg0);
 	};
 } // namespace android::security
 

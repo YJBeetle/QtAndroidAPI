@@ -13,12 +13,12 @@ namespace java::nio::charset
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ISO_8859_1();
-		static QAndroidJniObject US_ASCII();
-		static QAndroidJniObject UTF_16();
-		static QAndroidJniObject UTF_16BE();
-		static QAndroidJniObject UTF_16LE();
-		static QAndroidJniObject UTF_8();
+		static java::nio::charset::Charset ISO_8859_1();
+		static java::nio::charset::Charset US_ASCII();
+		static java::nio::charset::Charset UTF_16();
+		static java::nio::charset::Charset UTF_16BE();
+		static java::nio::charset::Charset UTF_16LE();
+		static java::nio::charset::Charset UTF_8();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StandardCharsets(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

@@ -25,7 +25,7 @@ namespace android::app
 		IntentService(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
 		void onStart(android::content::Intent arg0, jint arg1);

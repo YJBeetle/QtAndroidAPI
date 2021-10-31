@@ -18,14 +18,14 @@ namespace java::lang::invoke
 		) {}
 	
 	// Methods
-	QAndroidJniObject ConstantCallSite::dynamicInvoker()
+	java::lang::invoke::MethodHandle ConstantCallSite::dynamicInvoker()
 	{
 		return callObjectMethod(
 			"dynamicInvoker",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	QAndroidJniObject ConstantCallSite::getTarget()
+	java::lang::invoke::MethodHandle ConstantCallSite::getTarget()
 	{
 		return callObjectMethod(
 			"getTarget",

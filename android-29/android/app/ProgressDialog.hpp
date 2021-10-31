@@ -39,10 +39,10 @@ namespace android::app
 		ProgressDialog(android::content::Context arg0, jint arg1);
 		
 		// Methods
-		static QAndroidJniObject show(android::content::Context arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3);
-		static QAndroidJniObject show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4);
-		static QAndroidJniObject show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __JniBaseClass arg5);
+		static android::app::ProgressDialog show(android::content::Context arg0, jstring arg1, jstring arg2);
+		static android::app::ProgressDialog show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3);
+		static android::app::ProgressDialog show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4);
+		static android::app::ProgressDialog show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __JniBaseClass arg5);
 		jint getMax();
 		jint getProgress();
 		jint getSecondaryProgress();

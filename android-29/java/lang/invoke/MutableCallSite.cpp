@@ -34,14 +34,14 @@ namespace java::lang::invoke
 			arg0
 		);
 	}
-	QAndroidJniObject MutableCallSite::dynamicInvoker()
+	java::lang::invoke::MethodHandle MutableCallSite::dynamicInvoker()
 	{
 		return callObjectMethod(
 			"dynamicInvoker",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	QAndroidJniObject MutableCallSite::getTarget()
+	java::lang::invoke::MethodHandle MutableCallSite::getTarget()
 	{
 		return callObjectMethod(
 			"getTarget",

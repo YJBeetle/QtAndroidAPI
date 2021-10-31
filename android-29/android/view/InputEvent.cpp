@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject InputEvent::CREATOR()
+	__JniBaseClass InputEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.InputEvent",
@@ -26,7 +26,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject InputEvent::getDevice()
+	android::view::InputDevice InputEvent::getDevice()
 	{
 		return callObjectMethod(
 			"getDevice",

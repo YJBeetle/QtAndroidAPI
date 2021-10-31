@@ -14,7 +14,7 @@ namespace android::system
 	public:
 		// Fields
 		jshort events();
-		QAndroidJniObject fd();
+		java::io::FileDescriptor fd();
 		jshort revents();
 		jobject userData();
 		

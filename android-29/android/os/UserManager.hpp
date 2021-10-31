@@ -98,17 +98,17 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, android::os::PersistableBundle arg3);
+		static android::content::Intent createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, android::os::PersistableBundle arg3);
 		static jboolean supportsMultipleUsers();
-		QAndroidJniObject getApplicationRestrictions(jstring arg0);
+		android::os::Bundle getApplicationRestrictions(jstring arg0);
 		jlong getSerialNumberForUser(android::os::UserHandle arg0);
 		jint getUserCount();
 		jlong getUserCreationTime(android::os::UserHandle arg0);
-		QAndroidJniObject getUserForSerialNumber(jlong arg0);
+		android::os::UserHandle getUserForSerialNumber(jlong arg0);
 		jstring getUserName();
-		QAndroidJniObject getUserProfiles();
-		QAndroidJniObject getUserRestrictions();
-		QAndroidJniObject getUserRestrictions(android::os::UserHandle arg0);
+		__JniBaseClass getUserProfiles();
+		android::os::Bundle getUserRestrictions();
+		android::os::Bundle getUserRestrictions(android::os::UserHandle arg0);
 		jboolean hasUserRestriction(jstring arg0);
 		jboolean isDemoUser();
 		jboolean isQuietModeEnabled(android::os::UserHandle arg0);

@@ -69,7 +69,7 @@ namespace android::nfc
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getDefaultAdapter(android::content::Context arg0);
+		static android::nfc::NfcAdapter getDefaultAdapter(android::content::Context arg0);
 		void disableForegroundDispatch(android::app::Activity arg0);
 		void disableForegroundNdefPush(android::app::Activity arg0);
 		void disableReaderMode(android::app::Activity arg0);

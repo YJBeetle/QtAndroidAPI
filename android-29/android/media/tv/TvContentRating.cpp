@@ -3,7 +3,7 @@
 namespace android::media::tv
 {
 	// Fields
-	QAndroidJniObject TvContentRating::UNRATED()
+	android::media::tv::TvContentRating TvContentRating::UNRATED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContentRating",
@@ -18,7 +18,7 @@ namespace android::media::tv
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TvContentRating::createRating(jstring arg0, jstring arg1, jstring arg2, jarray arg3)
+	android::media::tv::TvContentRating TvContentRating::createRating(jstring arg0, jstring arg1, jstring arg2, jarray arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContentRating",
@@ -30,7 +30,7 @@ namespace android::media::tv
 			arg3
 		);
 	}
-	QAndroidJniObject TvContentRating::unflattenFromString(jstring arg0)
+	android::media::tv::TvContentRating TvContentRating::unflattenFromString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContentRating",
@@ -83,7 +83,7 @@ namespace android::media::tv
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TvContentRating::getSubRatings()
+	__JniBaseClass TvContentRating::getSubRatings()
 	{
 		return callObjectMethod(
 			"getSubRatings",

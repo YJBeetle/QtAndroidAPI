@@ -51,12 +51,12 @@ namespace android::widget
 		// Methods
 		void dismiss();
 		jint getAnimationStyle();
-		QAndroidJniObject getBackground();
-		QAndroidJniObject getContentView();
+		android::graphics::drawable::Drawable getBackground();
+		android::view::View getContentView();
 		jfloat getElevation();
-		QAndroidJniObject getEnterTransition();
-		QAndroidJniObject getEpicenterBounds();
-		QAndroidJniObject getExitTransition();
+		android::transition::Transition getEnterTransition();
+		android::graphics::Rect getEpicenterBounds();
+		android::transition::Transition getExitTransition();
 		jint getHeight();
 		jint getInputMethodMode();
 		jint getMaxAvailableHeight(android::view::View arg0);

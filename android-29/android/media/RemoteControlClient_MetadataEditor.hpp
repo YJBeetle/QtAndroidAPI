@@ -34,10 +34,10 @@ namespace android::media
 		void apply();
 		void clear();
 		jobject clone();
-		QAndroidJniObject putBitmap(jint arg0, android::graphics::Bitmap arg1);
-		QAndroidJniObject putLong(jint arg0, jlong arg1);
-		QAndroidJniObject putObject(jint arg0, jobject arg1);
-		QAndroidJniObject putString(jint arg0, jstring arg1);
+		android::media::RemoteControlClient_MetadataEditor putBitmap(jint arg0, android::graphics::Bitmap arg1);
+		android::media::RemoteControlClient_MetadataEditor putLong(jint arg0, jlong arg1);
+		android::media::RemoteControlClient_MetadataEditor putObject(jint arg0, jobject arg1);
+		android::media::RemoteControlClient_MetadataEditor putString(jint arg0, jstring arg1);
 	};
 } // namespace android::media
 

@@ -30,10 +30,10 @@ namespace android::net::wifi::aware
 		WifiAwareNetworkSpecifier_Builder(android::net::wifi::aware::DiscoverySession arg0, android::net::wifi::aware::PeerHandle arg1);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setPort(jint arg0);
-		QAndroidJniObject setPskPassphrase(jstring arg0);
-		QAndroidJniObject setTransportProtocol(jint arg0);
+		android::net::wifi::aware::WifiAwareNetworkSpecifier build();
+		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPort(jint arg0);
+		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setPskPassphrase(jstring arg0);
+		android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder setTransportProtocol(jint arg0);
 	};
 } // namespace android::net::wifi::aware
 

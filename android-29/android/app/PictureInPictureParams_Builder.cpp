@@ -18,14 +18,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	QAndroidJniObject PictureInPictureParams_Builder::build()
+	android::app::PictureInPictureParams PictureInPictureParams_Builder::build()
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/PictureInPictureParams;"
 		);
 	}
-	QAndroidJniObject PictureInPictureParams_Builder::setActions(__JniBaseClass arg0)
+	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setActions(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setActions",
@@ -33,7 +33,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PictureInPictureParams_Builder::setAspectRatio(android::util::Rational arg0)
+	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setAspectRatio(android::util::Rational arg0)
 	{
 		return callObjectMethod(
 			"setAspectRatio",
@@ -41,7 +41,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject PictureInPictureParams_Builder::setSourceRectHint(android::graphics::Rect arg0)
+	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setSourceRectHint(android::graphics::Rect arg0)
 	{
 		return callObjectMethod(
 			"setSourceRectHint",

@@ -16,7 +16,7 @@ namespace javax::xml::parsers
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SAXParser::getParser()
+	__JniBaseClass SAXParser::getParser()
 	{
 		return callObjectMethod(
 			"getParser",
@@ -31,14 +31,14 @@ namespace javax::xml::parsers
 			arg0
 		).object<jobject>();
 	}
-	QAndroidJniObject SAXParser::getSchema()
+	javax::xml::validation::Schema SAXParser::getSchema()
 	{
 		return callObjectMethod(
 			"getSchema",
 			"()Ljavax/xml/validation/Schema;"
 		);
 	}
-	QAndroidJniObject SAXParser::getXMLReader()
+	__JniBaseClass SAXParser::getXMLReader()
 	{
 		return callObjectMethod(
 			"getXMLReader",

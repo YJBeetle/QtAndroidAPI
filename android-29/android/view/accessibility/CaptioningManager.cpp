@@ -29,14 +29,14 @@ namespace android::view::accessibility
 			"()F"
 		);
 	}
-	QAndroidJniObject CaptioningManager::getLocale()
+	java::util::Locale CaptioningManager::getLocale()
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	QAndroidJniObject CaptioningManager::getUserStyle()
+	android::view::accessibility::CaptioningManager_CaptionStyle CaptioningManager::getUserStyle()
 	{
 		return callObjectMethod(
 			"getUserStyle",

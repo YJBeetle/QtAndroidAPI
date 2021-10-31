@@ -29,9 +29,9 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		QAndroidJniObject createEnrollIntent();
-		QAndroidJniObject createReEnrollIntent();
-		QAndroidJniObject createUnEnrollIntent();
+		android::content::Intent createEnrollIntent();
+		android::content::Intent createReEnrollIntent();
+		android::content::Intent createUnEnrollIntent();
 		jint getSupportedRecognitionModes();
 		jboolean startRecognition(jint arg0);
 		jboolean stopRecognition();

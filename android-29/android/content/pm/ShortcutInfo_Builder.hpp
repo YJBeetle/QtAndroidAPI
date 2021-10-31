@@ -50,21 +50,21 @@ namespace android::content::pm
 		ShortcutInfo_Builder(android::content::Context arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setActivity(android::content::ComponentName arg0);
-		QAndroidJniObject setCategories(__JniBaseClass arg0);
-		QAndroidJniObject setDisabledMessage(jstring arg0);
-		QAndroidJniObject setExtras(android::os::PersistableBundle arg0);
-		QAndroidJniObject setIcon(android::graphics::drawable::Icon arg0);
-		QAndroidJniObject setIntent(android::content::Intent arg0);
-		QAndroidJniObject setIntents(jarray arg0);
-		QAndroidJniObject setLocusId(android::content::LocusId arg0);
-		QAndroidJniObject setLongLabel(jstring arg0);
-		QAndroidJniObject setLongLived(jboolean arg0);
-		QAndroidJniObject setPerson(android::app::Person arg0);
-		QAndroidJniObject setPersons(jarray arg0);
-		QAndroidJniObject setRank(jint arg0);
-		QAndroidJniObject setShortLabel(jstring arg0);
+		android::content::pm::ShortcutInfo build();
+		android::content::pm::ShortcutInfo_Builder setActivity(android::content::ComponentName arg0);
+		android::content::pm::ShortcutInfo_Builder setCategories(__JniBaseClass arg0);
+		android::content::pm::ShortcutInfo_Builder setDisabledMessage(jstring arg0);
+		android::content::pm::ShortcutInfo_Builder setExtras(android::os::PersistableBundle arg0);
+		android::content::pm::ShortcutInfo_Builder setIcon(android::graphics::drawable::Icon arg0);
+		android::content::pm::ShortcutInfo_Builder setIntent(android::content::Intent arg0);
+		android::content::pm::ShortcutInfo_Builder setIntents(jarray arg0);
+		android::content::pm::ShortcutInfo_Builder setLocusId(android::content::LocusId arg0);
+		android::content::pm::ShortcutInfo_Builder setLongLabel(jstring arg0);
+		android::content::pm::ShortcutInfo_Builder setLongLived(jboolean arg0);
+		android::content::pm::ShortcutInfo_Builder setPerson(android::app::Person arg0);
+		android::content::pm::ShortcutInfo_Builder setPersons(jarray arg0);
+		android::content::pm::ShortcutInfo_Builder setRank(jint arg0);
+		android::content::pm::ShortcutInfo_Builder setShortLabel(jstring arg0);
 	};
 } // namespace android::content::pm
 

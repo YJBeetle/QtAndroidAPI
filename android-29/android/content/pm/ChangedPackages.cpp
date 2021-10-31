@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject ChangedPackages::CREATOR()
+	__JniBaseClass ChangedPackages::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ChangedPackages",
@@ -33,7 +33,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	QAndroidJniObject ChangedPackages::getPackageNames()
+	__JniBaseClass ChangedPackages::getPackageNames()
 	{
 		return callObjectMethod(
 			"getPackageNames",

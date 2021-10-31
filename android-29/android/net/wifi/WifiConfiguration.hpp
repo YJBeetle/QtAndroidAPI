@@ -32,14 +32,14 @@ namespace android::net::wifi
 		jstring BSSID();
 		jstring FQDN();
 		jstring SSID();
-		QAndroidJniObject allowedAuthAlgorithms();
-		QAndroidJniObject allowedGroupCiphers();
-		QAndroidJniObject allowedGroupManagementCiphers();
-		QAndroidJniObject allowedKeyManagement();
-		QAndroidJniObject allowedPairwiseCiphers();
-		QAndroidJniObject allowedProtocols();
-		QAndroidJniObject allowedSuiteBCiphers();
-		QAndroidJniObject enterpriseConfig();
+		java::util::BitSet allowedAuthAlgorithms();
+		java::util::BitSet allowedGroupCiphers();
+		java::util::BitSet allowedGroupManagementCiphers();
+		java::util::BitSet allowedKeyManagement();
+		java::util::BitSet allowedPairwiseCiphers();
+		java::util::BitSet allowedProtocols();
+		java::util::BitSet allowedSuiteBCiphers();
+		android::net::wifi::WifiEnterpriseConfig enterpriseConfig();
 		jboolean hiddenSSID();
 		jboolean isHomeProviderNetwork();
 		jint networkId();
@@ -60,8 +60,8 @@ namespace android::net::wifi
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getHttpProxy();
-		QAndroidJniObject getRandomizedMacAddress();
+		android::net::ProxyInfo getHttpProxy();
+		android::net::MacAddress getRandomizedMacAddress();
 		jboolean isPasspoint();
 		void setHttpProxy(android::net::ProxyInfo arg0);
 		jstring toString();

@@ -23,7 +23,7 @@ namespace java::util
 		jboolean contains(jobject arg0);
 		jboolean containsAll(__JniBaseClass arg0);
 		jboolean isEmpty();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jboolean remove(jobject arg0);
 		jboolean removeAll(__JniBaseClass arg0);
 		jboolean retainAll(__JniBaseClass arg0);

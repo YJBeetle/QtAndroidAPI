@@ -12,7 +12,7 @@ namespace java::nio::charset::spi
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CharsetProvider::charsetForName(jstring arg0)
+	java::nio::charset::Charset CharsetProvider::charsetForName(jstring arg0)
 	{
 		return callObjectMethod(
 			"charsetForName",
@@ -20,7 +20,7 @@ namespace java::nio::charset::spi
 			arg0
 		);
 	}
-	QAndroidJniObject CharsetProvider::charsets()
+	__JniBaseClass CharsetProvider::charsets()
 	{
 		return callObjectMethod(
 			"charsets",

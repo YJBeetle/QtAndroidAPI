@@ -16,7 +16,7 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	QAndroidJniObject MediaStore_Files::getContentUri(jstring arg0)
+	android::net::Uri MediaStore_Files::getContentUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Files",
@@ -25,7 +25,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject MediaStore_Files::getContentUri(jstring arg0, jlong arg1)
+	android::net::Uri MediaStore_Files::getContentUri(jstring arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Files",

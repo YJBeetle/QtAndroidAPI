@@ -18,9 +18,9 @@ namespace java::util
 		UUID(jlong arg0, jlong arg1);
 		
 		// Methods
-		static QAndroidJniObject fromString(jstring arg0);
-		static QAndroidJniObject nameUUIDFromBytes(jbyteArray arg0);
-		static QAndroidJniObject randomUUID();
+		static java::util::UUID fromString(jstring arg0);
+		static java::util::UUID nameUUIDFromBytes(jbyteArray arg0);
+		static java::util::UUID randomUUID();
 		jint clockSequence();
 		jint compareTo(jobject arg0);
 		jint compareTo(java::util::UUID arg0);

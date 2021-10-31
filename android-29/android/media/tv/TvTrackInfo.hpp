@@ -17,7 +17,7 @@ namespace android::media::tv
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint TYPE_AUDIO();
 		static jint TYPE_SUBTITLE();
 		static jint TYPE_VIDEO();
@@ -34,7 +34,7 @@ namespace android::media::tv
 		jint getAudioChannelCount();
 		jint getAudioSampleRate();
 		jstring getDescription();
-		QAndroidJniObject getExtra();
+		android::os::Bundle getExtra();
 		jstring getId();
 		jstring getLanguage();
 		jint getType();

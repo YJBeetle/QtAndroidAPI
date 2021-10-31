@@ -31,26 +31,26 @@ namespace java::lang
 		ProcessBuilder(__JniBaseClass arg0);
 		
 		// Methods
-		static QAndroidJniObject startPipeline(__JniBaseClass arg0);
-		QAndroidJniObject command(jarray arg0);
-		QAndroidJniObject command(__JniBaseClass arg0);
-		QAndroidJniObject command();
-		QAndroidJniObject directory();
-		QAndroidJniObject directory(java::io::File arg0);
-		QAndroidJniObject environment();
-		QAndroidJniObject inheritIO();
-		QAndroidJniObject redirectError(java::io::File arg0);
-		QAndroidJniObject redirectError(java::lang::ProcessBuilder_Redirect arg0);
-		QAndroidJniObject redirectError();
+		static __JniBaseClass startPipeline(__JniBaseClass arg0);
+		java::lang::ProcessBuilder command(jarray arg0);
+		java::lang::ProcessBuilder command(__JniBaseClass arg0);
+		__JniBaseClass command();
+		java::io::File directory();
+		java::lang::ProcessBuilder directory(java::io::File arg0);
+		__JniBaseClass environment();
+		java::lang::ProcessBuilder inheritIO();
+		java::lang::ProcessBuilder redirectError(java::io::File arg0);
+		java::lang::ProcessBuilder redirectError(java::lang::ProcessBuilder_Redirect arg0);
+		java::lang::ProcessBuilder_Redirect redirectError();
 		jboolean redirectErrorStream();
-		QAndroidJniObject redirectErrorStream(jboolean arg0);
-		QAndroidJniObject redirectInput(java::io::File arg0);
-		QAndroidJniObject redirectInput(java::lang::ProcessBuilder_Redirect arg0);
-		QAndroidJniObject redirectInput();
-		QAndroidJniObject redirectOutput(java::io::File arg0);
-		QAndroidJniObject redirectOutput(java::lang::ProcessBuilder_Redirect arg0);
-		QAndroidJniObject redirectOutput();
-		QAndroidJniObject start();
+		java::lang::ProcessBuilder redirectErrorStream(jboolean arg0);
+		java::lang::ProcessBuilder redirectInput(java::io::File arg0);
+		java::lang::ProcessBuilder redirectInput(java::lang::ProcessBuilder_Redirect arg0);
+		java::lang::ProcessBuilder_Redirect redirectInput();
+		java::lang::ProcessBuilder redirectOutput(java::io::File arg0);
+		java::lang::ProcessBuilder redirectOutput(java::lang::ProcessBuilder_Redirect arg0);
+		java::lang::ProcessBuilder_Redirect redirectOutput();
+		java::lang::Process start();
 	};
 } // namespace java::lang
 

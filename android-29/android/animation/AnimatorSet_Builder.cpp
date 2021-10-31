@@ -12,7 +12,7 @@ namespace android::animation
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject AnimatorSet_Builder::after(android::animation::Animator arg0)
+	android::animation::AnimatorSet_Builder AnimatorSet_Builder::after(android::animation::Animator arg0)
 	{
 		return callObjectMethod(
 			"after",
@@ -20,7 +20,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AnimatorSet_Builder::after(jlong arg0)
+	android::animation::AnimatorSet_Builder AnimatorSet_Builder::after(jlong arg0)
 	{
 		return callObjectMethod(
 			"after",
@@ -28,7 +28,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject AnimatorSet_Builder::before(android::animation::Animator arg0)
+	android::animation::AnimatorSet_Builder AnimatorSet_Builder::before(android::animation::Animator arg0)
 	{
 		return callObjectMethod(
 			"before",
@@ -36,7 +36,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	QAndroidJniObject AnimatorSet_Builder::with(android::animation::Animator arg0)
+	android::animation::AnimatorSet_Builder AnimatorSet_Builder::with(android::animation::Animator arg0)
 	{
 		return callObjectMethod(
 			"with",

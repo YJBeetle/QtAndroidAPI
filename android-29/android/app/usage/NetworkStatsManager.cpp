@@ -14,7 +14,7 @@ namespace android::app::usage
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject NetworkStatsManager::queryDetails(jint arg0, jstring arg1, jlong arg2, jlong arg3)
+	android::app::usage::NetworkStats NetworkStatsManager::queryDetails(jint arg0, jstring arg1, jlong arg2, jlong arg3)
 	{
 		return callObjectMethod(
 			"queryDetails",
@@ -25,7 +25,7 @@ namespace android::app::usage
 			arg3
 		);
 	}
-	QAndroidJniObject NetworkStatsManager::queryDetailsForUid(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4)
+	android::app::usage::NetworkStats NetworkStatsManager::queryDetailsForUid(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4)
 	{
 		return callObjectMethod(
 			"queryDetailsForUid",
@@ -37,7 +37,7 @@ namespace android::app::usage
 			arg4
 		);
 	}
-	QAndroidJniObject NetworkStatsManager::queryDetailsForUidTag(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4, jint arg5)
+	android::app::usage::NetworkStats NetworkStatsManager::queryDetailsForUidTag(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"queryDetailsForUidTag",
@@ -50,7 +50,7 @@ namespace android::app::usage
 			arg5
 		);
 	}
-	QAndroidJniObject NetworkStatsManager::queryDetailsForUidTagState(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4, jint arg5, jint arg6)
+	android::app::usage::NetworkStats NetworkStatsManager::queryDetailsForUidTagState(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4, jint arg5, jint arg6)
 	{
 		return callObjectMethod(
 			"queryDetailsForUidTagState",
@@ -64,7 +64,7 @@ namespace android::app::usage
 			arg6
 		);
 	}
-	QAndroidJniObject NetworkStatsManager::querySummary(jint arg0, jstring arg1, jlong arg2, jlong arg3)
+	android::app::usage::NetworkStats NetworkStatsManager::querySummary(jint arg0, jstring arg1, jlong arg2, jlong arg3)
 	{
 		return callObjectMethod(
 			"querySummary",
@@ -75,7 +75,7 @@ namespace android::app::usage
 			arg3
 		);
 	}
-	QAndroidJniObject NetworkStatsManager::querySummaryForDevice(jint arg0, jstring arg1, jlong arg2, jlong arg3)
+	android::app::usage::NetworkStats_Bucket NetworkStatsManager::querySummaryForDevice(jint arg0, jstring arg1, jlong arg2, jlong arg3)
 	{
 		return callObjectMethod(
 			"querySummaryForDevice",
@@ -86,7 +86,7 @@ namespace android::app::usage
 			arg3
 		);
 	}
-	QAndroidJniObject NetworkStatsManager::querySummaryForUser(jint arg0, jstring arg1, jlong arg2, jlong arg3)
+	android::app::usage::NetworkStats_Bucket NetworkStatsManager::querySummaryForUser(jint arg0, jstring arg1, jlong arg2, jlong arg3)
 	{
 		return callObjectMethod(
 			"querySummaryForUser",

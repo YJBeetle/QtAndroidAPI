@@ -37,7 +37,7 @@ namespace android::widget
 		// Methods
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getNextView();
+		android::view::View getNextView();
 		void reset();
 		void setFactory(__JniBaseClass arg0);
 	};

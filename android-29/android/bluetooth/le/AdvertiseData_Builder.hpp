@@ -26,12 +26,12 @@ namespace android::bluetooth::le
 		AdvertiseData_Builder();
 		
 		// Methods
-		QAndroidJniObject addManufacturerData(jint arg0, jbyteArray arg1);
-		QAndroidJniObject addServiceData(android::os::ParcelUuid arg0, jbyteArray arg1);
-		QAndroidJniObject addServiceUuid(android::os::ParcelUuid arg0);
-		QAndroidJniObject build();
-		QAndroidJniObject setIncludeDeviceName(jboolean arg0);
-		QAndroidJniObject setIncludeTxPowerLevel(jboolean arg0);
+		android::bluetooth::le::AdvertiseData_Builder addManufacturerData(jint arg0, jbyteArray arg1);
+		android::bluetooth::le::AdvertiseData_Builder addServiceData(android::os::ParcelUuid arg0, jbyteArray arg1);
+		android::bluetooth::le::AdvertiseData_Builder addServiceUuid(android::os::ParcelUuid arg0);
+		android::bluetooth::le::AdvertiseData build();
+		android::bluetooth::le::AdvertiseData_Builder setIncludeDeviceName(jboolean arg0);
+		android::bluetooth::le::AdvertiseData_Builder setIncludeTxPowerLevel(jboolean arg0);
 	};
 } // namespace android::bluetooth::le
 

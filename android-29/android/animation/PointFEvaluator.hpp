@@ -23,7 +23,7 @@ namespace android::animation
 		PointFEvaluator(android::graphics::PointF arg0);
 		
 		// Methods
-		QAndroidJniObject evaluate(jfloat arg0, android::graphics::PointF arg1, android::graphics::PointF arg2);
+		android::graphics::PointF evaluate(jfloat arg0, android::graphics::PointF arg1, android::graphics::PointF arg2);
 		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
 	};
 } // namespace android::animation

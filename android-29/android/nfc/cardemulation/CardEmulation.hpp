@@ -37,9 +37,9 @@ namespace android::nfc::cardemulation
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getInstance(android::nfc::NfcAdapter arg0);
+		static android::nfc::cardemulation::CardEmulation getInstance(android::nfc::NfcAdapter arg0);
 		jboolean categoryAllowsForegroundPreference(jstring arg0);
-		QAndroidJniObject getAidsForService(android::content::ComponentName arg0, jstring arg1);
+		__JniBaseClass getAidsForService(android::content::ComponentName arg0, jstring arg1);
 		jint getSelectionModeForCategory(jstring arg0);
 		jboolean isDefaultServiceForAid(android::content::ComponentName arg0, jstring arg1);
 		jboolean isDefaultServiceForCategory(android::content::ComponentName arg0, jstring arg1);

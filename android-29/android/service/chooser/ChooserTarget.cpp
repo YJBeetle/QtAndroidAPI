@@ -7,7 +7,7 @@
 namespace android::service::chooser
 {
 	// Fields
-	QAndroidJniObject ChooserTarget::CREATOR()
+	__JniBaseClass ChooserTarget::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.chooser.ChooserTarget",
@@ -39,21 +39,21 @@ namespace android::service::chooser
 			"()I"
 		);
 	}
-	QAndroidJniObject ChooserTarget::getComponentName()
+	android::content::ComponentName ChooserTarget::getComponentName()
 	{
 		return callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject ChooserTarget::getIcon()
+	android::graphics::drawable::Icon ChooserTarget::getIcon()
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	QAndroidJniObject ChooserTarget::getIntentExtras()
+	android::os::Bundle ChooserTarget::getIntentExtras()
 	{
 		return callObjectMethod(
 			"getIntentExtras",

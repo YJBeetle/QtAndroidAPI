@@ -31,13 +31,13 @@ namespace android::view
 		WindowInsets_Builder(android::view::WindowInsets arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setDisplayCutout(android::view::DisplayCutout arg0);
-		QAndroidJniObject setMandatorySystemGestureInsets(android::graphics::Insets arg0);
-		QAndroidJniObject setStableInsets(android::graphics::Insets arg0);
-		QAndroidJniObject setSystemGestureInsets(android::graphics::Insets arg0);
-		QAndroidJniObject setSystemWindowInsets(android::graphics::Insets arg0);
-		QAndroidJniObject setTappableElementInsets(android::graphics::Insets arg0);
+		android::view::WindowInsets build();
+		android::view::WindowInsets_Builder setDisplayCutout(android::view::DisplayCutout arg0);
+		android::view::WindowInsets_Builder setMandatorySystemGestureInsets(android::graphics::Insets arg0);
+		android::view::WindowInsets_Builder setStableInsets(android::graphics::Insets arg0);
+		android::view::WindowInsets_Builder setSystemGestureInsets(android::graphics::Insets arg0);
+		android::view::WindowInsets_Builder setSystemWindowInsets(android::graphics::Insets arg0);
+		android::view::WindowInsets_Builder setTappableElementInsets(android::graphics::Insets arg0);
 	};
 } // namespace android::view
 

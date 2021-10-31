@@ -32,7 +32,7 @@ namespace android::text::method
 		MultiTapKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1);
 		
 		// Methods
-		static QAndroidJniObject getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);
+		static android::text::method::MultiTapKeyListener getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);
 		jint getInputType();
 		jboolean onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3);
 		void onSpanAdded(__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3);

@@ -12,7 +12,7 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Enum::valueOf(jclass arg0, jstring arg1)
+	java::lang::Enum Enum::valueOf(jclass arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Enum",
@@ -38,7 +38,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Enum::describeConstable()
+	java::util::Optional Enum::describeConstable()
 	{
 		return callObjectMethod(
 			"describeConstable",

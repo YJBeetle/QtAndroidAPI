@@ -35,7 +35,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	QAndroidJniObject TrustAnchor::getCA()
+	javax::security::auth::x500::X500Principal TrustAnchor::getCA()
 	{
 		return callObjectMethod(
 			"getCA",
@@ -49,7 +49,7 @@ namespace java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject TrustAnchor::getCAPublicKey()
+	__JniBaseClass TrustAnchor::getCAPublicKey()
 	{
 		return callObjectMethod(
 			"getCAPublicKey",
@@ -63,7 +63,7 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject TrustAnchor::getTrustedCert()
+	java::security::cert::X509Certificate TrustAnchor::getTrustedCert()
 	{
 		return callObjectMethod(
 			"getTrustedCert",

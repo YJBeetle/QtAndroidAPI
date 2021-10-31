@@ -19,7 +19,7 @@ namespace java::util
 		// Methods
 		jint characteristics();
 		jlong estimateSize();
-		QAndroidJniObject trySplit();
+		__JniBaseClass trySplit();
 	};
 } // namespace java::util
 

@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject KeyboardShortcutInfo::CREATOR()
+	__JniBaseClass KeyboardShortcutInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.KeyboardShortcutInfo",

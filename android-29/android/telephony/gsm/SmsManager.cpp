@@ -75,7 +75,7 @@ namespace android::telephony::gsm
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SmsManager::getDefault()
+	android::telephony::gsm::SmsManager SmsManager::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.gsm.SmsManager",
@@ -83,7 +83,7 @@ namespace android::telephony::gsm
 			"()Landroid/telephony/gsm/SmsManager;"
 		);
 	}
-	QAndroidJniObject SmsManager::divideMessage(jstring arg0)
+	java::util::ArrayList SmsManager::divideMessage(jstring arg0)
 	{
 		return callObjectMethod(
 			"divideMessage",

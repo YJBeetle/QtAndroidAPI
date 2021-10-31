@@ -29,7 +29,7 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Base64_Encoder::encode(java::nio::ByteBuffer arg0)
+	java::nio::ByteBuffer Base64_Encoder::encode(java::nio::ByteBuffer arg0)
 	{
 		return callObjectMethod(
 			"encode",
@@ -45,14 +45,14 @@ namespace java::util
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject Base64_Encoder::withoutPadding()
+	java::util::Base64_Encoder Base64_Encoder::withoutPadding()
 	{
 		return callObjectMethod(
 			"withoutPadding",
 			"()Ljava/util/Base64$Encoder;"
 		);
 	}
-	QAndroidJniObject Base64_Encoder::wrap(java::io::OutputStream arg0)
+	java::io::OutputStream Base64_Encoder::wrap(java::io::OutputStream arg0)
 	{
 		return callObjectMethod(
 			"wrap",

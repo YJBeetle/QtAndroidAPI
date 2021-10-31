@@ -3,7 +3,7 @@
 namespace java::time::format
 {
 	// Fields
-	QAndroidJniObject TextStyle::FULL()
+	java::time::format::TextStyle TextStyle::FULL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
@@ -11,7 +11,7 @@ namespace java::time::format
 			"Ljava/time/format/TextStyle;"
 		);
 	}
-	QAndroidJniObject TextStyle::FULL_STANDALONE()
+	java::time::format::TextStyle TextStyle::FULL_STANDALONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
@@ -19,7 +19,7 @@ namespace java::time::format
 			"Ljava/time/format/TextStyle;"
 		);
 	}
-	QAndroidJniObject TextStyle::NARROW()
+	java::time::format::TextStyle TextStyle::NARROW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
@@ -27,7 +27,7 @@ namespace java::time::format
 			"Ljava/time/format/TextStyle;"
 		);
 	}
-	QAndroidJniObject TextStyle::NARROW_STANDALONE()
+	java::time::format::TextStyle TextStyle::NARROW_STANDALONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
@@ -35,7 +35,7 @@ namespace java::time::format
 			"Ljava/time/format/TextStyle;"
 		);
 	}
-	QAndroidJniObject TextStyle::SHORT()
+	java::time::format::TextStyle TextStyle::SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
@@ -43,7 +43,7 @@ namespace java::time::format
 			"Ljava/time/format/TextStyle;"
 		);
 	}
-	QAndroidJniObject TextStyle::SHORT_STANDALONE()
+	java::time::format::TextStyle TextStyle::SHORT_STANDALONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
@@ -58,7 +58,7 @@ namespace java::time::format
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject TextStyle::valueOf(jstring arg0)
+	java::time::format::TextStyle TextStyle::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.TextStyle",
@@ -75,14 +75,14 @@ namespace java::time::format
 			"()[Ljava/time/format/TextStyle;"
 		).object<jarray>();
 	}
-	QAndroidJniObject TextStyle::asNormal()
+	java::time::format::TextStyle TextStyle::asNormal()
 	{
 		return callObjectMethod(
 			"asNormal",
 			"()Ljava/time/format/TextStyle;"
 		);
 	}
-	QAndroidJniObject TextStyle::asStandalone()
+	java::time::format::TextStyle TextStyle::asStandalone()
 	{
 		return callObjectMethod(
 			"asStandalone",

@@ -34,14 +34,14 @@ namespace java::io
 			"()V"
 		);
 	}
-	QAndroidJniObject RandomAccessFile::getChannel()
+	java::nio::channels::FileChannel RandomAccessFile::getChannel()
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/FileChannel;"
 		);
 	}
-	QAndroidJniObject RandomAccessFile::getFD()
+	java::io::FileDescriptor RandomAccessFile::getFD()
 	{
 		return callObjectMethod(
 			"getFD",

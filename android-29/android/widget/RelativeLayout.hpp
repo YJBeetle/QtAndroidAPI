@@ -58,7 +58,7 @@ namespace android::widget
 		RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::widget::RelativeLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getAccessibilityClassName();
 		jint getBaseline();
 		jint getGravity();

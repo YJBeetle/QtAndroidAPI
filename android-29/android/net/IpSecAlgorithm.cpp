@@ -52,7 +52,7 @@ namespace android::net
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject IpSecAlgorithm::CREATOR()
+	__JniBaseClass IpSecAlgorithm::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.IpSecAlgorithm",

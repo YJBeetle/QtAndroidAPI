@@ -21,7 +21,7 @@ namespace javax::xml::datatype
 		) {}
 	
 	// Methods
-	QAndroidJniObject Duration::add(javax::xml::datatype::Duration arg0)
+	javax::xml::datatype::Duration Duration::add(javax::xml::datatype::Duration arg0)
 	{
 		return callObjectMethod(
 			"add",
@@ -68,7 +68,7 @@ namespace javax::xml::datatype
 			"()I"
 		);
 	}
-	QAndroidJniObject Duration::getField(javax::xml::datatype::DatatypeConstants_Field arg0)
+	java::lang::Number Duration::getField(javax::xml::datatype::DatatypeConstants_Field arg0)
 	{
 		return callObjectMethod(
 			"getField",
@@ -127,7 +127,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Duration::getXMLSchemaType()
+	javax::xml::_namespace::QName Duration::getXMLSchemaType()
 	{
 		return callObjectMethod(
 			"getXMLSchemaType",
@@ -172,7 +172,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Duration::multiply(jint arg0)
+	javax::xml::datatype::Duration Duration::multiply(jint arg0)
 	{
 		return callObjectMethod(
 			"multiply",
@@ -180,7 +180,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::multiply(java::math::BigDecimal arg0)
+	javax::xml::datatype::Duration Duration::multiply(java::math::BigDecimal arg0)
 	{
 		return callObjectMethod(
 			"multiply",
@@ -188,14 +188,14 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Duration::negate()
+	javax::xml::datatype::Duration Duration::negate()
 	{
 		return callObjectMethod(
 			"negate",
 			"()Ljavax/xml/datatype/Duration;"
 		);
 	}
-	QAndroidJniObject Duration::normalizeWith(java::util::Calendar arg0)
+	javax::xml::datatype::Duration Duration::normalizeWith(java::util::Calendar arg0)
 	{
 		return callObjectMethod(
 			"normalizeWith",
@@ -203,7 +203,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Duration::subtract(javax::xml::datatype::Duration arg0)
+	javax::xml::datatype::Duration Duration::subtract(javax::xml::datatype::Duration arg0)
 	{
 		return callObjectMethod(
 			"subtract",

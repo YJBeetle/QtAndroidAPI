@@ -46,7 +46,7 @@ namespace java::util::logging
 	public:
 		// Fields
 		static jstring GLOBAL_LOGGER_NAME();
-		static QAndroidJniObject global();
+		static java::util::logging::Logger global();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Logger(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
@@ -55,11 +55,11 @@ namespace java::util::logging
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject getAnonymousLogger();
-		static QAndroidJniObject getAnonymousLogger(jstring arg0);
-		static QAndroidJniObject getGlobal();
-		static QAndroidJniObject getLogger(jstring arg0);
-		static QAndroidJniObject getLogger(jstring arg0, jstring arg1);
+		static java::util::logging::Logger getAnonymousLogger();
+		static java::util::logging::Logger getAnonymousLogger(jstring arg0);
+		static java::util::logging::Logger getGlobal();
+		static java::util::logging::Logger getLogger(jstring arg0);
+		static java::util::logging::Logger getLogger(jstring arg0, jstring arg1);
 		void addHandler(java::util::logging::Handler arg0);
 		void config(jstring arg0);
 		void config(__JniBaseClass arg0);
@@ -74,12 +74,12 @@ namespace java::util::logging
 		void finer(__JniBaseClass arg0);
 		void finest(jstring arg0);
 		void finest(__JniBaseClass arg0);
-		QAndroidJniObject getFilter();
+		__JniBaseClass getFilter();
 		jarray getHandlers();
-		QAndroidJniObject getLevel();
+		java::util::logging::Level getLevel();
 		jstring getName();
-		QAndroidJniObject getParent();
-		QAndroidJniObject getResourceBundle();
+		java::util::logging::Logger getParent();
+		java::util::ResourceBundle getResourceBundle();
 		jstring getResourceBundleName();
 		jboolean getUseParentHandlers();
 		void info(jstring arg0);

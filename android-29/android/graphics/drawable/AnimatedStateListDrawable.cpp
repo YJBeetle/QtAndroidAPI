@@ -73,7 +73,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	QAndroidJniObject AnimatedStateListDrawable::mutate()
+	android::graphics::drawable::Drawable AnimatedStateListDrawable::mutate()
 	{
 		return callObjectMethod(
 			"mutate",

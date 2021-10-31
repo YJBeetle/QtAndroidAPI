@@ -25,7 +25,7 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	QAndroidJniObject ProcessBuilder::startPipeline(__JniBaseClass arg0)
+	__JniBaseClass ProcessBuilder::startPipeline(__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ProcessBuilder",
@@ -34,7 +34,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder::command(jarray arg0)
+	java::lang::ProcessBuilder ProcessBuilder::command(jarray arg0)
 	{
 		return callObjectMethod(
 			"command",
@@ -42,7 +42,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject ProcessBuilder::command(__JniBaseClass arg0)
+	java::lang::ProcessBuilder ProcessBuilder::command(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"command",
@@ -50,21 +50,21 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder::command()
+	__JniBaseClass ProcessBuilder::command()
 	{
 		return callObjectMethod(
 			"command",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder::directory()
+	java::io::File ProcessBuilder::directory()
 	{
 		return callObjectMethod(
 			"directory",
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder::directory(java::io::File arg0)
+	java::lang::ProcessBuilder ProcessBuilder::directory(java::io::File arg0)
 	{
 		return callObjectMethod(
 			"directory",
@@ -72,21 +72,21 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder::environment()
+	__JniBaseClass ProcessBuilder::environment()
 	{
 		return callObjectMethod(
 			"environment",
 			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder::inheritIO()
+	java::lang::ProcessBuilder ProcessBuilder::inheritIO()
 	{
 		return callObjectMethod(
 			"inheritIO",
 			"()Ljava/lang/ProcessBuilder;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder::redirectError(java::io::File arg0)
+	java::lang::ProcessBuilder ProcessBuilder::redirectError(java::io::File arg0)
 	{
 		return callObjectMethod(
 			"redirectError",
@@ -94,7 +94,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder::redirectError(java::lang::ProcessBuilder_Redirect arg0)
+	java::lang::ProcessBuilder ProcessBuilder::redirectError(java::lang::ProcessBuilder_Redirect arg0)
 	{
 		return callObjectMethod(
 			"redirectError",
@@ -102,7 +102,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder::redirectError()
+	java::lang::ProcessBuilder_Redirect ProcessBuilder::redirectError()
 	{
 		return callObjectMethod(
 			"redirectError",
@@ -116,7 +116,7 @@ namespace java::lang
 			"()Z"
 		);
 	}
-	QAndroidJniObject ProcessBuilder::redirectErrorStream(jboolean arg0)
+	java::lang::ProcessBuilder ProcessBuilder::redirectErrorStream(jboolean arg0)
 	{
 		return callObjectMethod(
 			"redirectErrorStream",
@@ -124,7 +124,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject ProcessBuilder::redirectInput(java::io::File arg0)
+	java::lang::ProcessBuilder ProcessBuilder::redirectInput(java::io::File arg0)
 	{
 		return callObjectMethod(
 			"redirectInput",
@@ -132,7 +132,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder::redirectInput(java::lang::ProcessBuilder_Redirect arg0)
+	java::lang::ProcessBuilder ProcessBuilder::redirectInput(java::lang::ProcessBuilder_Redirect arg0)
 	{
 		return callObjectMethod(
 			"redirectInput",
@@ -140,14 +140,14 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder::redirectInput()
+	java::lang::ProcessBuilder_Redirect ProcessBuilder::redirectInput()
 	{
 		return callObjectMethod(
 			"redirectInput",
 			"()Ljava/lang/ProcessBuilder$Redirect;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder::redirectOutput(java::io::File arg0)
+	java::lang::ProcessBuilder ProcessBuilder::redirectOutput(java::io::File arg0)
 	{
 		return callObjectMethod(
 			"redirectOutput",
@@ -155,7 +155,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder::redirectOutput(java::lang::ProcessBuilder_Redirect arg0)
+	java::lang::ProcessBuilder ProcessBuilder::redirectOutput(java::lang::ProcessBuilder_Redirect arg0)
 	{
 		return callObjectMethod(
 			"redirectOutput",
@@ -163,14 +163,14 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	QAndroidJniObject ProcessBuilder::redirectOutput()
+	java::lang::ProcessBuilder_Redirect ProcessBuilder::redirectOutput()
 	{
 		return callObjectMethod(
 			"redirectOutput",
 			"()Ljava/lang/ProcessBuilder$Redirect;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder::start()
+	java::lang::Process ProcessBuilder::start()
 	{
 		return callObjectMethod(
 			"start",

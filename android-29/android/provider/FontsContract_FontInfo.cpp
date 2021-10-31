@@ -32,7 +32,7 @@ namespace android::provider
 			"()I"
 		);
 	}
-	QAndroidJniObject FontsContract_FontInfo::getUri()
+	android::net::Uri FontsContract_FontInfo::getUri()
 	{
 		return callObjectMethod(
 			"getUri",

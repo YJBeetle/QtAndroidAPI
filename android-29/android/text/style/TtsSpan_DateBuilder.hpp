@@ -25,10 +25,10 @@ namespace android::text::style
 		TtsSpan_DateBuilder(java::lang::Integer arg0, java::lang::Integer arg1, java::lang::Integer arg2, java::lang::Integer arg3);
 		
 		// Methods
-		QAndroidJniObject setDay(jint arg0);
-		QAndroidJniObject setMonth(jint arg0);
-		QAndroidJniObject setWeekday(jint arg0);
-		QAndroidJniObject setYear(jint arg0);
+		android::text::style::TtsSpan_DateBuilder setDay(jint arg0);
+		android::text::style::TtsSpan_DateBuilder setMonth(jint arg0);
+		android::text::style::TtsSpan_DateBuilder setWeekday(jint arg0);
+		android::text::style::TtsSpan_DateBuilder setYear(jint arg0);
 	};
 } // namespace android::text::style
 

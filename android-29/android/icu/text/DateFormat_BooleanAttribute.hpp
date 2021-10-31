@@ -10,10 +10,10 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject PARSE_ALLOW_NUMERIC();
-		static QAndroidJniObject PARSE_ALLOW_WHITESPACE();
-		static QAndroidJniObject PARSE_MULTIPLE_PATTERNS_FOR_MATCH();
-		static QAndroidJniObject PARSE_PARTIAL_LITERAL_MATCH();
+		static android::icu::text::DateFormat_BooleanAttribute PARSE_ALLOW_NUMERIC();
+		static android::icu::text::DateFormat_BooleanAttribute PARSE_ALLOW_WHITESPACE();
+		static android::icu::text::DateFormat_BooleanAttribute PARSE_MULTIPLE_PATTERNS_FOR_MATCH();
+		static android::icu::text::DateFormat_BooleanAttribute PARSE_PARTIAL_LITERAL_MATCH();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateFormat_BooleanAttribute(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::icu::text::DateFormat_BooleanAttribute valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

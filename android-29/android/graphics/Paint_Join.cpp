@@ -3,7 +3,7 @@
 namespace android::graphics
 {
 	// Fields
-	QAndroidJniObject Paint_Join::BEVEL()
+	android::graphics::Paint_Join Paint_Join::BEVEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Join",
@@ -11,7 +11,7 @@ namespace android::graphics
 			"Landroid/graphics/Paint$Join;"
 		);
 	}
-	QAndroidJniObject Paint_Join::MITER()
+	android::graphics::Paint_Join Paint_Join::MITER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Join",
@@ -19,7 +19,7 @@ namespace android::graphics
 			"Landroid/graphics/Paint$Join;"
 		);
 	}
-	QAndroidJniObject Paint_Join::ROUND()
+	android::graphics::Paint_Join Paint_Join::ROUND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Join",
@@ -34,7 +34,7 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Paint_Join::valueOf(jstring arg0)
+	android::graphics::Paint_Join Paint_Join::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Paint$Join",

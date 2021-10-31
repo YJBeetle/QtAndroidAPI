@@ -3,7 +3,7 @@
 namespace java::nio::file::attribute
 {
 	// Fields
-	QAndroidJniObject PosixFilePermission::GROUP_EXECUTE()
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::GROUP_EXECUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
@@ -11,7 +11,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
-	QAndroidJniObject PosixFilePermission::GROUP_READ()
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::GROUP_READ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
@@ -19,7 +19,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
-	QAndroidJniObject PosixFilePermission::GROUP_WRITE()
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::GROUP_WRITE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
@@ -27,7 +27,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
-	QAndroidJniObject PosixFilePermission::OTHERS_EXECUTE()
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::OTHERS_EXECUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
@@ -35,7 +35,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
-	QAndroidJniObject PosixFilePermission::OTHERS_READ()
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::OTHERS_READ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
@@ -43,7 +43,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
-	QAndroidJniObject PosixFilePermission::OTHERS_WRITE()
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::OTHERS_WRITE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
@@ -51,7 +51,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
-	QAndroidJniObject PosixFilePermission::OWNER_EXECUTE()
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::OWNER_EXECUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
@@ -59,7 +59,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
-	QAndroidJniObject PosixFilePermission::OWNER_READ()
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::OWNER_READ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
@@ -67,7 +67,7 @@ namespace java::nio::file::attribute
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
-	QAndroidJniObject PosixFilePermission::OWNER_WRITE()
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::OWNER_WRITE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
@@ -82,7 +82,7 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject PosixFilePermission::valueOf(jstring arg0)
+	java::nio::file::attribute::PosixFilePermission PosixFilePermission::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.attribute.PosixFilePermission",

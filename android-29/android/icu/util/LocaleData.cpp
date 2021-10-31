@@ -42,7 +42,7 @@ namespace android::icu::util
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject LocaleData::getCLDRVersion()
+	android::icu::util::VersionInfo LocaleData::getCLDRVersion()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.LocaleData",
@@ -50,7 +50,7 @@ namespace android::icu::util
 			"()Landroid/icu/util/VersionInfo;"
 		);
 	}
-	QAndroidJniObject LocaleData::getInstance()
+	android::icu::util::LocaleData LocaleData::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.LocaleData",
@@ -58,7 +58,7 @@ namespace android::icu::util
 			"()Landroid/icu/util/LocaleData;"
 		);
 	}
-	QAndroidJniObject LocaleData::getInstance(android::icu::util::ULocale arg0)
+	android::icu::util::LocaleData LocaleData::getInstance(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.LocaleData",
@@ -67,7 +67,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LocaleData::getMeasurementSystem(android::icu::util::ULocale arg0)
+	android::icu::util::LocaleData_MeasurementSystem LocaleData::getMeasurementSystem(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.LocaleData",
@@ -76,7 +76,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	QAndroidJniObject LocaleData::getPaperSize(android::icu::util::ULocale arg0)
+	android::icu::util::LocaleData_PaperSize LocaleData::getPaperSize(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.LocaleData",

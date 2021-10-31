@@ -342,7 +342,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject Bidi::createLineBidi(jint arg0, jint arg1)
+	android::icu::text::Bidi Bidi::createLineBidi(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"createLineBidi",
@@ -358,7 +358,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	QAndroidJniObject Bidi::getCustomClassifier()
+	android::icu::text::BidiClassifier Bidi::getCustomClassifier()
 	{
 		return callObjectMethod(
 			"getCustomClassifier",
@@ -417,7 +417,7 @@ namespace android::icu::text
 			"()[I"
 		).object<jintArray>();
 	}
-	QAndroidJniObject Bidi::getLogicalRun(jint arg0)
+	android::icu::text::BidiRun Bidi::getLogicalRun(jint arg0)
 	{
 		return callObjectMethod(
 			"getLogicalRun",
@@ -432,7 +432,7 @@ namespace android::icu::text
 			"()B"
 		);
 	}
-	QAndroidJniObject Bidi::getParagraph(jint arg0)
+	android::icu::text::BidiRun Bidi::getParagraph(jint arg0)
 	{
 		return callObjectMethod(
 			"getParagraph",
@@ -440,7 +440,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject Bidi::getParagraphByIndex(jint arg0)
+	android::icu::text::BidiRun Bidi::getParagraphByIndex(jint arg0)
 	{
 		return callObjectMethod(
 			"getParagraphByIndex",
@@ -544,7 +544,7 @@ namespace android::icu::text
 			"()[I"
 		).object<jintArray>();
 	}
-	QAndroidJniObject Bidi::getVisualRun(jint arg0)
+	android::icu::text::BidiRun Bidi::getVisualRun(jint arg0)
 	{
 		return callObjectMethod(
 			"getVisualRun",
@@ -620,7 +620,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject Bidi::setLine(jint arg0, jint arg1)
+	android::icu::text::Bidi Bidi::setLine(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"setLine",

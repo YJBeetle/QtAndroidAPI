@@ -45,8 +45,8 @@ namespace android::content
 		jstring getSelection();
 		jarray getSelectionArgs();
 		jstring getSortOrder();
-		QAndroidJniObject getUri();
-		QAndroidJniObject loadInBackground();
+		android::net::Uri getUri();
+		__JniBaseClass loadInBackground();
 		void onCanceled(__JniBaseClass arg0);
 		void onCanceled(jobject arg0);
 		void setProjection(jarray arg0);

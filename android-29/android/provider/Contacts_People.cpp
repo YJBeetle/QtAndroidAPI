@@ -10,7 +10,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject Contacts_People::CONTENT_FILTER_URI()
+	android::net::Uri Contacts_People::CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
@@ -34,7 +34,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_People::CONTENT_URI()
+	android::net::Uri Contacts_People::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
@@ -50,7 +50,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_People::DELETED_CONTENT_URI()
+	android::net::Uri Contacts_People::DELETED_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
@@ -89,7 +89,7 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject Contacts_People::addToGroup(android::content::ContentResolver arg0, jlong arg1, jstring arg2)
+	android::net::Uri Contacts_People::addToGroup(android::content::ContentResolver arg0, jlong arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$People",
@@ -100,7 +100,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	QAndroidJniObject Contacts_People::addToGroup(android::content::ContentResolver arg0, jlong arg1, jlong arg2)
+	android::net::Uri Contacts_People::addToGroup(android::content::ContentResolver arg0, jlong arg1, jlong arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$People",
@@ -111,7 +111,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	QAndroidJniObject Contacts_People::addToMyContactsGroup(android::content::ContentResolver arg0, jlong arg1)
+	android::net::Uri Contacts_People::addToMyContactsGroup(android::content::ContentResolver arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$People",
@@ -121,7 +121,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject Contacts_People::createPersonInMyContactsGroup(android::content::ContentResolver arg0, android::content::ContentValues arg1)
+	android::net::Uri Contacts_People::createPersonInMyContactsGroup(android::content::ContentResolver arg0, android::content::ContentValues arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$People",
@@ -131,7 +131,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Contacts_People::loadContactPhoto(android::content::Context arg0, android::net::Uri arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
+	android::graphics::Bitmap Contacts_People::loadContactPhoto(android::content::Context arg0, android::net::Uri arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$People",
@@ -153,7 +153,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject Contacts_People::openContactPhotoInputStream(android::content::ContentResolver arg0, android::net::Uri arg1)
+	java::io::InputStream Contacts_People::openContactPhotoInputStream(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$People",
@@ -163,7 +163,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Contacts_People::queryGroups(android::content::ContentResolver arg0, jlong arg1)
+	__JniBaseClass Contacts_People::queryGroups(android::content::ContentResolver arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$People",

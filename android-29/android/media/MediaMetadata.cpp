@@ -8,7 +8,7 @@
 namespace android::media
 {
 	// Fields
-	QAndroidJniObject MediaMetadata::CREATOR()
+	__JniBaseClass MediaMetadata::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaMetadata",
@@ -278,7 +278,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaMetadata::getBitmap(jstring arg0)
+	android::graphics::Bitmap MediaMetadata::getBitmap(jstring arg0)
 	{
 		return callObjectMethod(
 			"getBitmap",
@@ -286,7 +286,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaMetadata::getDescription()
+	android::media::MediaDescription MediaMetadata::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
@@ -301,7 +301,7 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaMetadata::getRating(jstring arg0)
+	android::media::Rating MediaMetadata::getRating(jstring arg0)
 	{
 		return callObjectMethod(
 			"getRating",
@@ -332,7 +332,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaMetadata::keySet()
+	__JniBaseClass MediaMetadata::keySet()
 	{
 		return callObjectMethod(
 			"keySet",

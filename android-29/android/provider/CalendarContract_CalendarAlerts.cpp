@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	QAndroidJniObject CalendarContract_CalendarAlerts::CONTENT_URI()
+	android::net::Uri CalendarContract_CalendarAlerts::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$CalendarAlerts",
@@ -12,7 +12,7 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject CalendarContract_CalendarAlerts::CONTENT_URI_BY_INSTANCE()
+	android::net::Uri CalendarContract_CalendarAlerts::CONTENT_URI_BY_INSTANCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$CalendarAlerts",

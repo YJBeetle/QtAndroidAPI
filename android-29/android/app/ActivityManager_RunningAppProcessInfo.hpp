@@ -17,7 +17,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint IMPORTANCE_BACKGROUND();
 		static jint IMPORTANCE_CACHED();
 		static jint IMPORTANCE_CANT_SAVE_STATE();
@@ -36,7 +36,7 @@ namespace android::app
 		static jint REASON_UNKNOWN();
 		jint importance();
 		jint importanceReasonCode();
-		QAndroidJniObject importanceReasonComponent();
+		android::content::ComponentName importanceReasonComponent();
 		jint importanceReasonPid();
 		jint lastTrimLevel();
 		jint lru();

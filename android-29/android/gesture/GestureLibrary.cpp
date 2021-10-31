@@ -22,14 +22,14 @@ namespace android::gesture
 			arg1.object()
 		);
 	}
-	QAndroidJniObject GestureLibrary::getGestureEntries()
+	__JniBaseClass GestureLibrary::getGestureEntries()
 	{
 		return callObjectMethod(
 			"getGestureEntries",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject GestureLibrary::getGestures(jstring arg0)
+	java::util::ArrayList GestureLibrary::getGestures(jstring arg0)
 	{
 		return callObjectMethod(
 			"getGestures",
@@ -65,7 +65,7 @@ namespace android::gesture
 			"()Z"
 		);
 	}
-	QAndroidJniObject GestureLibrary::recognize(android::gesture::Gesture arg0)
+	java::util::ArrayList GestureLibrary::recognize(android::gesture::Gesture arg0)
 	{
 		return callObjectMethod(
 			"recognize",

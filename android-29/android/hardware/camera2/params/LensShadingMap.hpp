@@ -27,7 +27,7 @@ namespace android::hardware::camera2::params
 		jint getColumnCount();
 		jfloat getGainFactor(jint arg0, jint arg1, jint arg2);
 		jint getGainFactorCount();
-		QAndroidJniObject getGainFactorVector(jint arg0, jint arg1);
+		android::hardware::camera2::params::RggbChannelVector getGainFactorVector(jint arg0, jint arg1);
 		jint getRowCount();
 		jint hashCode();
 		jstring toString();

@@ -21,14 +21,14 @@ namespace android::app
 	{
 	public:
 		// Fields
-		QAndroidJniObject baseActivity();
-		QAndroidJniObject baseIntent();
+		android::content::ComponentName baseActivity();
+		android::content::Intent baseIntent();
 		jboolean isRunning();
 		jint numActivities();
-		QAndroidJniObject origActivity();
-		QAndroidJniObject taskDescription();
+		android::content::ComponentName origActivity();
+		android::app::ActivityManager_TaskDescription taskDescription();
 		jint taskId();
-		QAndroidJniObject topActivity();
+		android::content::ComponentName topActivity();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TaskInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}

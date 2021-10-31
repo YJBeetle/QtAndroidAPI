@@ -4,7 +4,7 @@
 namespace android::app::usage
 {
 	// Fields
-	QAndroidJniObject EventStats::CREATOR()
+	__JniBaseClass EventStats::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.usage.EventStats",

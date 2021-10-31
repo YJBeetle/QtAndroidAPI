@@ -125,7 +125,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Dialog::findViewById(jint arg0)
+	android::view::View Dialog::findViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"findViewById",
@@ -133,42 +133,42 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Dialog::getActionBar()
+	android::app::ActionBar Dialog::getActionBar()
 	{
 		return callObjectMethod(
 			"getActionBar",
 			"()Landroid/app/ActionBar;"
 		);
 	}
-	QAndroidJniObject Dialog::getContext()
+	android::content::Context Dialog::getContext()
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject Dialog::getCurrentFocus()
+	android::view::View Dialog::getCurrentFocus()
 	{
 		return callObjectMethod(
 			"getCurrentFocus",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject Dialog::getLayoutInflater()
+	android::view::LayoutInflater Dialog::getLayoutInflater()
 	{
 		return callObjectMethod(
 			"getLayoutInflater",
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	QAndroidJniObject Dialog::getOwnerActivity()
+	android::app::Activity Dialog::getOwnerActivity()
 	{
 		return callObjectMethod(
 			"getOwnerActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
-	QAndroidJniObject Dialog::getSearchEvent()
+	android::view::SearchEvent Dialog::getSearchEvent()
 	{
 		return callObjectMethod(
 			"getSearchEvent",
@@ -182,7 +182,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Dialog::getWindow()
+	android::view::Window Dialog::getWindow()
 	{
 		return callObjectMethod(
 			"getWindow",
@@ -290,7 +290,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	QAndroidJniObject Dialog::onCreatePanelView(jint arg0)
+	android::view::View Dialog::onCreatePanelView(jint arg0)
 	{
 		return callObjectMethod(
 			"onCreatePanelView",
@@ -428,7 +428,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Dialog::onSaveInstanceState()
+	android::os::Bundle Dialog::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
@@ -482,7 +482,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Dialog::onWindowStartingActionMode(__JniBaseClass arg0)
+	android::view::ActionMode Dialog::onWindowStartingActionMode(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -490,7 +490,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	QAndroidJniObject Dialog::onWindowStartingActionMode(__JniBaseClass arg0, jint arg1)
+	android::view::ActionMode Dialog::onWindowStartingActionMode(__JniBaseClass arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -530,7 +530,7 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Dialog::requireViewById(jint arg0)
+	android::view::View Dialog::requireViewById(jint arg0)
 	{
 		return callObjectMethod(
 			"requireViewById",

@@ -86,7 +86,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject LayoutTransition::getAnimator(jint arg0)
+	android::animation::Animator LayoutTransition::getAnimator(jint arg0)
 	{
 		return callObjectMethod(
 			"getAnimator",
@@ -102,7 +102,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject LayoutTransition::getInterpolator(jint arg0)
+	__JniBaseClass LayoutTransition::getInterpolator(jint arg0)
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -126,7 +126,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	QAndroidJniObject LayoutTransition::getTransitionListeners()
+	__JniBaseClass LayoutTransition::getTransitionListeners()
 	{
 		return callObjectMethod(
 			"getTransitionListeners",

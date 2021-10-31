@@ -32,7 +32,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	QAndroidJniObject BassBoost::getProperties()
+	android::media::audiofx::BassBoost_Settings BassBoost::getProperties()
 	{
 		return callObjectMethod(
 			"getProperties",

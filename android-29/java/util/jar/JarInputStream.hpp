@@ -39,9 +39,9 @@ namespace java::util::jar
 		JarInputStream(java::io::InputStream arg0, jboolean arg1);
 		
 		// Methods
-		QAndroidJniObject getManifest();
-		QAndroidJniObject getNextEntry();
-		QAndroidJniObject getNextJarEntry();
+		java::util::jar::Manifest getManifest();
+		java::util::zip::ZipEntry getNextEntry();
+		java::util::jar::JarEntry getNextJarEntry();
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::util::jar

@@ -6,7 +6,7 @@
 namespace android::os::storage
 {
 	// Fields
-	QAndroidJniObject StorageVolume::CREATOR()
+	__JniBaseClass StorageVolume::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.storage.StorageVolume",
@@ -29,7 +29,7 @@ namespace android::os::storage
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject StorageVolume::createAccessIntent(jstring arg0)
+	android::content::Intent StorageVolume::createAccessIntent(jstring arg0)
 	{
 		return callObjectMethod(
 			"createAccessIntent",
@@ -37,7 +37,7 @@ namespace android::os::storage
 			arg0
 		);
 	}
-	QAndroidJniObject StorageVolume::createOpenDocumentTreeIntent()
+	android::content::Intent StorageVolume::createOpenDocumentTreeIntent()
 	{
 		return callObjectMethod(
 			"createOpenDocumentTreeIntent",

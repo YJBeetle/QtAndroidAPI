@@ -10,10 +10,10 @@ namespace android::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject END();
-		static QAndroidJniObject MARQUEE();
-		static QAndroidJniObject MIDDLE();
-		static QAndroidJniObject START();
+		static android::text::TextUtils_TruncateAt END();
+		static android::text::TextUtils_TruncateAt MARQUEE();
+		static android::text::TextUtils_TruncateAt MIDDLE();
+		static android::text::TextUtils_TruncateAt START();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextUtils_TruncateAt(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject valueOf(jstring arg0);
+		static android::text::TextUtils_TruncateAt valueOf(jstring arg0);
 		static jarray values();
 	};
 } // namespace android::text

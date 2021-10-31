@@ -26,14 +26,14 @@ namespace javax::sql
 		) {}
 	
 	// Methods
-	QAndroidJniObject StatementEvent::getSQLException()
+	java::sql::SQLException StatementEvent::getSQLException()
 	{
 		return callObjectMethod(
 			"getSQLException",
 			"()Ljava/sql/SQLException;"
 		);
 	}
-	QAndroidJniObject StatementEvent::getStatement()
+	__JniBaseClass StatementEvent::getStatement()
 	{
 		return callObjectMethod(
 			"getStatement",

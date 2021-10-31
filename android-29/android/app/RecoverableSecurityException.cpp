@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	QAndroidJniObject RecoverableSecurityException::CREATOR()
+	__JniBaseClass RecoverableSecurityException::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.RecoverableSecurityException",
@@ -35,7 +35,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject RecoverableSecurityException::getUserAction()
+	android::app::RemoteAction RecoverableSecurityException::getUserAction()
 	{
 		return callObjectMethod(
 			"getUserAction",

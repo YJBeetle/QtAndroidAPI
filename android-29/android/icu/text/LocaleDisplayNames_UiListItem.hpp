@@ -13,8 +13,8 @@ namespace android::icu::text
 	{
 	public:
 		// Fields
-		QAndroidJniObject minimized();
-		QAndroidJniObject modified();
+		android::icu::util::ULocale minimized();
+		android::icu::util::ULocale modified();
 		jstring nameInDisplayLocale();
 		jstring nameInSelf();
 		
@@ -26,7 +26,7 @@ namespace android::icu::text
 		LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, jstring arg2, jstring arg3);
 		
 		// Methods
-		static QAndroidJniObject getComparator(__JniBaseClass arg0, jboolean arg1);
+		static __JniBaseClass getComparator(__JniBaseClass arg0, jboolean arg1);
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jstring toString();

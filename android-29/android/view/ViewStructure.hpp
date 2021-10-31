@@ -48,17 +48,17 @@ namespace android::view
 		// Methods
 		jint addChildCount(jint arg0);
 		void asyncCommit();
-		QAndroidJniObject asyncNewChild(jint arg0);
-		QAndroidJniObject getAutofillId();
+		android::view::ViewStructure asyncNewChild(jint arg0);
+		android::view::autofill::AutofillId getAutofillId();
 		jint getChildCount();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jstring getHint();
 		jstring getText();
 		jint getTextSelectionEnd();
 		jint getTextSelectionStart();
 		jboolean hasExtras();
-		QAndroidJniObject newChild(jint arg0);
-		QAndroidJniObject newHtmlInfoBuilder(jstring arg0);
+		android::view::ViewStructure newChild(jint arg0);
+		android::view::ViewStructure_HtmlInfo_Builder newHtmlInfoBuilder(jstring arg0);
 		void setAccessibilityFocused(jboolean arg0);
 		void setActivated(jboolean arg0);
 		void setAlpha(jfloat arg0);

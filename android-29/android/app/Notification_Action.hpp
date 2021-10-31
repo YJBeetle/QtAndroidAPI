@@ -25,7 +25,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint SEMANTIC_ACTION_ARCHIVE();
 		static jint SEMANTIC_ACTION_CALL();
 		static jint SEMANTIC_ACTION_DELETE();
@@ -37,7 +37,7 @@ namespace android::app
 		static jint SEMANTIC_ACTION_THUMBS_DOWN();
 		static jint SEMANTIC_ACTION_THUMBS_UP();
 		static jint SEMANTIC_ACTION_UNMUTE();
-		QAndroidJniObject actionIntent();
+		android::app::PendingIntent actionIntent();
 		jint icon();
 		jstring title();
 		
@@ -49,12 +49,12 @@ namespace android::app
 		Notification_Action(jint arg0, jstring arg1, android::app::PendingIntent arg2);
 		
 		// Methods
-		QAndroidJniObject clone();
+		android::app::Notification_Action clone();
 		jint describeContents();
 		jboolean getAllowGeneratedReplies();
 		jarray getDataOnlyRemoteInputs();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getIcon();
+		android::os::Bundle getExtras();
+		android::graphics::drawable::Icon getIcon();
 		jarray getRemoteInputs();
 		jint getSemanticAction();
 		jboolean isContextual();

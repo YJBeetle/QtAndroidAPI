@@ -29,7 +29,7 @@ namespace android::provider
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_StructuredPostal::CONTENT_URI()
+	android::net::Uri ContactsContract_CommonDataKinds_StructuredPostal::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",

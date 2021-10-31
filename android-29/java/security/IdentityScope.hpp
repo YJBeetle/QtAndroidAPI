@@ -24,11 +24,11 @@ namespace java::security
 		IdentityScope(jstring arg0, java::security::IdentityScope &arg1);
 		
 		// Methods
-		static QAndroidJniObject getSystemScope();
+		static java::security::IdentityScope getSystemScope();
 		void addIdentity(java::security::Identity arg0);
-		QAndroidJniObject getIdentity(jstring arg0);
-		QAndroidJniObject getIdentity(__JniBaseClass arg0);
-		QAndroidJniObject identities();
+		java::security::Identity getIdentity(jstring arg0);
+		java::security::Identity getIdentity(__JniBaseClass arg0);
+		__JniBaseClass identities();
 		void removeIdentity(java::security::Identity arg0);
 		jint size();
 		jstring toString();

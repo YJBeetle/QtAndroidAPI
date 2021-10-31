@@ -21,7 +21,7 @@ namespace android::text::style
 		TtsSpan_TextBuilder(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject setText(jstring arg0);
+		android::text::style::TtsSpan_TextBuilder setText(jstring arg0);
 	};
 } // namespace android::text::style
 

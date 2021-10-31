@@ -27,15 +27,15 @@ namespace android::media
 		void addEditableKey(jint arg0);
 		void apply();
 		void clear();
-		QAndroidJniObject getBitmap(jint arg0, android::graphics::Bitmap arg1);
+		android::graphics::Bitmap getBitmap(jint arg0, android::graphics::Bitmap arg1);
 		jintArray getEditableKeys();
 		jlong getLong(jint arg0, jlong arg1);
 		jobject getObject(jint arg0, jobject arg1);
 		jstring getString(jint arg0, jstring arg1);
-		QAndroidJniObject putBitmap(jint arg0, android::graphics::Bitmap arg1);
-		QAndroidJniObject putLong(jint arg0, jlong arg1);
-		QAndroidJniObject putObject(jint arg0, jobject arg1);
-		QAndroidJniObject putString(jint arg0, jstring arg1);
+		android::media::MediaMetadataEditor putBitmap(jint arg0, android::graphics::Bitmap arg1);
+		android::media::MediaMetadataEditor putLong(jint arg0, jlong arg1);
+		android::media::MediaMetadataEditor putObject(jint arg0, jobject arg1);
+		android::media::MediaMetadataEditor putString(jint arg0, jstring arg1);
 		void removeEditableKeys();
 	};
 } // namespace android::media

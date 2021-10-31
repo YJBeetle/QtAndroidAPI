@@ -4,7 +4,7 @@
 namespace android::companion
 {
 	// Fields
-	QAndroidJniObject AssociationRequest::CREATOR()
+	__JniBaseClass AssociationRequest::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.companion.AssociationRequest",

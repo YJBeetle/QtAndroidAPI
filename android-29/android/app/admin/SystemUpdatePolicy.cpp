@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	QAndroidJniObject SystemUpdatePolicy::CREATOR()
+	__JniBaseClass SystemUpdatePolicy::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.SystemUpdatePolicy",
@@ -40,7 +40,7 @@ namespace android::app::admin
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SystemUpdatePolicy::createAutomaticInstallPolicy()
+	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::createAutomaticInstallPolicy()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.admin.SystemUpdatePolicy",
@@ -48,7 +48,7 @@ namespace android::app::admin
 			"()Landroid/app/admin/SystemUpdatePolicy;"
 		);
 	}
-	QAndroidJniObject SystemUpdatePolicy::createPostponeInstallPolicy()
+	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::createPostponeInstallPolicy()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.admin.SystemUpdatePolicy",
@@ -56,7 +56,7 @@ namespace android::app::admin
 			"()Landroid/app/admin/SystemUpdatePolicy;"
 		);
 	}
-	QAndroidJniObject SystemUpdatePolicy::createWindowedInstallPolicy(jint arg0, jint arg1)
+	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::createWindowedInstallPolicy(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.admin.SystemUpdatePolicy",
@@ -73,7 +73,7 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	QAndroidJniObject SystemUpdatePolicy::getFreezePeriods()
+	__JniBaseClass SystemUpdatePolicy::getFreezePeriods()
 	{
 		return callObjectMethod(
 			"getFreezePeriods",
@@ -101,7 +101,7 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	QAndroidJniObject SystemUpdatePolicy::setFreezePeriods(__JniBaseClass arg0)
+	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::setFreezePeriods(__JniBaseClass arg0)
 	{
 		return callObjectMethod(
 			"setFreezePeriods",

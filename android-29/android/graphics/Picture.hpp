@@ -23,7 +23,7 @@ namespace android::graphics
 		Picture(android::graphics::Picture &arg0);
 		
 		// Methods
-		QAndroidJniObject beginRecording(jint arg0, jint arg1);
+		android::graphics::Canvas beginRecording(jint arg0, jint arg1);
 		void draw(android::graphics::Canvas arg0);
 		void endRecording();
 		jint getHeight();

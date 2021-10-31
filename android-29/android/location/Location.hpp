@@ -17,7 +17,7 @@ namespace android::location
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FORMAT_DEGREES();
 		static jint FORMAT_MINUTES();
 		static jint FORMAT_SECONDS();
@@ -44,7 +44,7 @@ namespace android::location
 		jfloat getBearingAccuracyDegrees();
 		jlong getElapsedRealtimeNanos();
 		jdouble getElapsedRealtimeUncertaintyNanos();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jdouble getLatitude();
 		jdouble getLongitude();
 		jstring getProvider();

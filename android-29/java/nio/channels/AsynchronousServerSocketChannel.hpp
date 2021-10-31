@@ -29,15 +29,15 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject open();
-		static QAndroidJniObject open(java::nio::channels::AsynchronousChannelGroup arg0);
-		QAndroidJniObject accept();
+		static java::nio::channels::AsynchronousServerSocketChannel open();
+		static java::nio::channels::AsynchronousServerSocketChannel open(java::nio::channels::AsynchronousChannelGroup arg0);
+		__JniBaseClass accept();
 		void accept(jobject arg0, __JniBaseClass arg1);
-		QAndroidJniObject bind(java::net::SocketAddress arg0);
-		QAndroidJniObject bind(java::net::SocketAddress arg0, jint arg1);
-		QAndroidJniObject getLocalAddress();
-		QAndroidJniObject provider();
-		QAndroidJniObject setOption(__JniBaseClass arg0, jobject arg1);
+		java::nio::channels::AsynchronousServerSocketChannel bind(java::net::SocketAddress arg0);
+		java::nio::channels::AsynchronousServerSocketChannel bind(java::net::SocketAddress arg0, jint arg1);
+		java::net::SocketAddress getLocalAddress();
+		java::nio::channels::spi::AsynchronousChannelProvider provider();
+		java::nio::channels::AsynchronousServerSocketChannel setOption(__JniBaseClass arg0, jobject arg1);
 	};
 } // namespace java::nio::channels
 

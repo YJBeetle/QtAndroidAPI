@@ -31,8 +31,8 @@ namespace java::security
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getSignerCertPath();
-		QAndroidJniObject getTimestamp();
+		java::security::cert::CertPath getSignerCertPath();
+		java::util::Date getTimestamp();
 		jint hashCode();
 		jstring toString();
 	};

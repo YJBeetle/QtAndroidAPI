@@ -22,11 +22,11 @@ namespace android::provider
 		static jstring CALLER_PACKAGE_PARAM_KEY();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jlong DEFAULT();
 		static jstring DIRECTORY_AUTHORITY();
 		static jstring DISPLAY_NAME();
-		static QAndroidJniObject ENTERPRISE_CONTENT_URI();
+		static android::net::Uri ENTERPRISE_CONTENT_URI();
 		static jlong ENTERPRISE_DEFAULT();
 		static jlong ENTERPRISE_LOCAL_INVISIBLE();
 		static jstring EXPORT_SUPPORT();

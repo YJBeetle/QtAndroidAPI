@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	QAndroidJniObject UriPermission::CREATOR()
+	__JniBaseClass UriPermission::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.UriPermission",
@@ -41,7 +41,7 @@ namespace android::content
 			"()J"
 		);
 	}
-	QAndroidJniObject UriPermission::getUri()
+	android::net::Uri UriPermission::getUri()
 	{
 		return callObjectMethod(
 			"getUri",

@@ -206,7 +206,7 @@ namespace android::opengl
 			"EGL_LOSE_CONTEXT_ON_RESET"
 		);
 	}
-	QAndroidJniObject EGL15::EGL_NO_CONTEXT()
+	android::opengl::EGLContext EGL15::EGL_NO_CONTEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL15",
@@ -214,7 +214,7 @@ namespace android::opengl
 			"Landroid/opengl/EGLContext;"
 		);
 	}
-	QAndroidJniObject EGL15::EGL_NO_DISPLAY()
+	android::opengl::EGLDisplay EGL15::EGL_NO_DISPLAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL15",
@@ -222,7 +222,7 @@ namespace android::opengl
 			"Landroid/opengl/EGLDisplay;"
 		);
 	}
-	QAndroidJniObject EGL15::EGL_NO_IMAGE()
+	android::opengl::EGLImage EGL15::EGL_NO_IMAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL15",
@@ -237,7 +237,7 @@ namespace android::opengl
 			"EGL_NO_RESET_NOTIFICATION"
 		);
 	}
-	QAndroidJniObject EGL15::EGL_NO_SURFACE()
+	android::opengl::EGLSurface EGL15::EGL_NO_SURFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL15",
@@ -245,7 +245,7 @@ namespace android::opengl
 			"Landroid/opengl/EGLSurface;"
 		);
 	}
-	QAndroidJniObject EGL15::EGL_NO_SYNC()
+	android::opengl::EGLSync EGL15::EGL_NO_SYNC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL15",
@@ -363,7 +363,7 @@ namespace android::opengl
 			arg3
 		);
 	}
-	QAndroidJniObject EGL15::eglCreateImage(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, jlong arg3, jlongArray arg4, jint arg5)
+	android::opengl::EGLImage EGL15::eglCreateImage(android::opengl::EGLDisplay arg0, android::opengl::EGLContext arg1, jint arg2, jlong arg3, jlongArray arg4, jint arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL15",
@@ -377,7 +377,7 @@ namespace android::opengl
 			arg5
 		);
 	}
-	QAndroidJniObject EGL15::eglCreatePlatformPixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4)
+	android::opengl::EGLSurface EGL15::eglCreatePlatformPixmapSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL15",
@@ -390,7 +390,7 @@ namespace android::opengl
 			arg4
 		);
 	}
-	QAndroidJniObject EGL15::eglCreatePlatformWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4)
+	android::opengl::EGLSurface EGL15::eglCreatePlatformWindowSurface(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, java::nio::Buffer arg2, jlongArray arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL15",
@@ -403,7 +403,7 @@ namespace android::opengl
 			arg4
 		);
 	}
-	QAndroidJniObject EGL15::eglCreateSync(android::opengl::EGLDisplay arg0, jint arg1, jlongArray arg2, jint arg3)
+	android::opengl::EGLSync EGL15::eglCreateSync(android::opengl::EGLDisplay arg0, jint arg1, jlongArray arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL15",
@@ -435,7 +435,7 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	QAndroidJniObject EGL15::eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3)
+	android::opengl::EGLDisplay EGL15::eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL15",

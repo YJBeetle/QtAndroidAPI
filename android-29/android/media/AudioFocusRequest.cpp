@@ -19,7 +19,7 @@ namespace android::media
 			"()Z"
 		);
 	}
-	QAndroidJniObject AudioFocusRequest::getAudioAttributes()
+	android::media::AudioAttributes AudioFocusRequest::getAudioAttributes()
 	{
 		return callObjectMethod(
 			"getAudioAttributes",

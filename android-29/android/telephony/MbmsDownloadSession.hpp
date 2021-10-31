@@ -63,15 +63,15 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		static QAndroidJniObject create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2);
-		static QAndroidJniObject create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3);
+		static android::telephony::MbmsDownloadSession create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2);
+		static android::telephony::MbmsDownloadSession create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3);
 		void addProgressListener(android::telephony::mbms::DownloadRequest arg0, __JniBaseClass arg1, android::telephony::mbms::DownloadProgressListener arg2);
 		void addStatusListener(android::telephony::mbms::DownloadRequest arg0, __JniBaseClass arg1, android::telephony::mbms::DownloadStatusListener arg2);
 		void cancelDownload(android::telephony::mbms::DownloadRequest arg0);
 		void close();
 		void download(android::telephony::mbms::DownloadRequest arg0);
-		QAndroidJniObject getTempFileRootDirectory();
-		QAndroidJniObject listPendingDownloads();
+		java::io::File getTempFileRootDirectory();
+		__JniBaseClass listPendingDownloads();
 		void removeProgressListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadProgressListener arg1);
 		void removeStatusListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadStatusListener arg1);
 		void requestDownloadState(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1);
