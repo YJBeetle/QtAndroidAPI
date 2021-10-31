@@ -18,8 +18,8 @@ toast.callMethod<void>("show");
 #include "android/widget/Toast.hpp"
 using android::widget::Toast;
 using android::content::Context;
-Toast toast = Toast::makeText(Context(QtAndroid::androidContext()),
-                              "Message",
-                              0);
+auto toast = Toast::makeText(Context(QtAndroid::androidContext()),
+                             "Message",
+                             0);
 toast.show();
 ```
