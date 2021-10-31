@@ -19,9 +19,9 @@ namespace android::bluetooth::le
 		static jint ADVERTISE_FAILED_INTERNAL_ERROR();
 		static jint ADVERTISE_FAILED_TOO_MANY_ADVERTISERS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AdvertiseCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AdvertiseCallback(QAndroidJniObject obj);
+		AdvertiseCallback(QJniObject obj);
 		
 		// Constructors
 		AdvertiseCallback();

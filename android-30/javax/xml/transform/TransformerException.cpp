@@ -7,8 +7,8 @@ namespace javax::xml::transform
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TransformerException::TransformerException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	TransformerException::TransformerException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	TransformerException::TransformerException(jstring arg0)

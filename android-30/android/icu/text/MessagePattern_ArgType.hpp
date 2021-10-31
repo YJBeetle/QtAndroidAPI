@@ -17,9 +17,9 @@ namespace android::icu::text
 		static android::icu::text::MessagePattern_ArgType SELECTORDINAL();
 		static android::icu::text::MessagePattern_ArgType SIMPLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MessagePattern_ArgType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		MessagePattern_ArgType(QAndroidJniObject obj);
+		MessagePattern_ArgType(QJniObject obj);
 		
 		// Constructors
 		

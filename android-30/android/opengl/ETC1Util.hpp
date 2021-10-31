@@ -26,9 +26,9 @@ namespace android::opengl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ETC1Util(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ETC1Util(QAndroidJniObject obj);
+		ETC1Util(QJniObject obj);
 		
 		// Constructors
 		ETC1Util();

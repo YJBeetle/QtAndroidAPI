@@ -60,9 +60,9 @@ namespace android::telecom
 		static jint STATE_SELECT_PHONE_ACCOUNT();
 		static jint STATE_SIMULATED_RINGING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Call(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Call(QAndroidJniObject obj);
+		Call(QJniObject obj);
 		
 		// Constructors
 		

@@ -24,9 +24,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ArrayBlockingQueue(const char *className, const char *sig, Ts...agv) : java::util::AbstractQueue(className, sig, std::forward<Ts>(agv)...) {}
-		ArrayBlockingQueue(QAndroidJniObject obj);
+		ArrayBlockingQueue(QJniObject obj);
 		
 		// Constructors
 		ArrayBlockingQueue(jint arg0);

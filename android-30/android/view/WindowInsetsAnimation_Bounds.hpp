@@ -14,9 +14,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WindowInsetsAnimation_Bounds(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsetsAnimation_Bounds(QAndroidJniObject obj);
+		WindowInsetsAnimation_Bounds(QJniObject obj);
 		
 		// Constructors
 		WindowInsetsAnimation_Bounds(android::graphics::Insets arg0, android::graphics::Insets arg1);

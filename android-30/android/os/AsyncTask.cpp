@@ -22,8 +22,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AsyncTask::AsyncTask(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AsyncTask::AsyncTask(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AsyncTask::AsyncTask()

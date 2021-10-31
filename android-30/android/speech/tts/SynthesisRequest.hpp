@@ -14,9 +14,9 @@ namespace android::speech::tts
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SynthesisRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SynthesisRequest(QAndroidJniObject obj);
+		SynthesisRequest(QJniObject obj);
 		
 		// Constructors
 		SynthesisRequest(jstring arg0, android::os::Bundle arg1);

@@ -28,9 +28,9 @@ namespace android::preference
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EditTextPreference(const char *className, const char *sig, Ts...agv) : android::preference::DialogPreference(className, sig, std::forward<Ts>(agv)...) {}
-		EditTextPreference(QAndroidJniObject obj);
+		EditTextPreference(QJniObject obj);
 		
 		// Constructors
 		EditTextPreference(android::content::Context arg0);

@@ -13,9 +13,9 @@ namespace org::apache::http::conn
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConnectTimeoutException(const char *className, const char *sig, Ts...agv) : java::io::InterruptedIOException(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectTimeoutException(QAndroidJniObject obj);
+		ConnectTimeoutException(QJniObject obj);
 		
 		// Constructors
 		ConnectTimeoutException();

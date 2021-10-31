@@ -18,9 +18,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RegionIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RegionIterator(QAndroidJniObject obj);
+		RegionIterator(QJniObject obj);
 		
 		// Constructors
 		RegionIterator(android::graphics::Region arg0);

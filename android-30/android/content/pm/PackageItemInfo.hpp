@@ -34,9 +34,9 @@ namespace android::content::pm
 		jstring nonLocalizedLabel();
 		jstring packageName();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PackageItemInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PackageItemInfo(QAndroidJniObject obj);
+		PackageItemInfo(QJniObject obj);
 		
 		// Constructors
 		PackageItemInfo();

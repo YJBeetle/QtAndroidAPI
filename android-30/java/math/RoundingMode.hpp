@@ -19,9 +19,9 @@ namespace java::math
 		static java::math::RoundingMode UNNECESSARY();
 		static java::math::RoundingMode UP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RoundingMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RoundingMode(QAndroidJniObject obj);
+		RoundingMode(QJniObject obj);
 		
 		// Constructors
 		

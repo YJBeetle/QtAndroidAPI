@@ -29,9 +29,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ZoomButton(const char *className, const char *sig, Ts...agv) : android::widget::ImageButton(className, sig, std::forward<Ts>(agv)...) {}
-		ZoomButton(QAndroidJniObject obj);
+		ZoomButton(QJniObject obj);
 		
 		// Constructors
 		ZoomButton(android::content::Context arg0);

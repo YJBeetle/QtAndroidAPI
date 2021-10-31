@@ -10,9 +10,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProxyFileDescriptorCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ProxyFileDescriptorCallback(QAndroidJniObject obj);
+		ProxyFileDescriptorCallback(QJniObject obj);
 		
 		// Constructors
 		ProxyFileDescriptorCallback();

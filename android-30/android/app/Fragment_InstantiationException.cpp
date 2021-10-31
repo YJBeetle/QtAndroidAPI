@@ -5,8 +5,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Fragment_InstantiationException::Fragment_InstantiationException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
+	// QJniObject forward
+	Fragment_InstantiationException::Fragment_InstantiationException(QJniObject obj) : android::util::AndroidRuntimeException(obj) {}
 	
 	// Constructors
 	Fragment_InstantiationException::Fragment_InstantiationException(jstring arg0, java::lang::Exception arg1)

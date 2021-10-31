@@ -6,8 +6,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZoomControls::ZoomControls(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
+	// QJniObject forward
+	ZoomControls::ZoomControls(QJniObject obj) : android::widget::LinearLayout(obj) {}
 	
 	// Constructors
 	ZoomControls::ZoomControls(android::content::Context arg0)

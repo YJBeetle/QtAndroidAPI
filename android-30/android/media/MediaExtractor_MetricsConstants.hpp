@@ -13,9 +13,9 @@ namespace android::media
 		static jstring MIME_TYPE();
 		static jstring TRACKS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaExtractor_MetricsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaExtractor_MetricsConstants(QAndroidJniObject obj);
+		MediaExtractor_MetricsConstants(QJniObject obj);
 		
 		// Constructors
 		

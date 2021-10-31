@@ -4,8 +4,8 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteFullException::SQLiteFullException(QAndroidJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
+	// QJniObject forward
+	SQLiteFullException::SQLiteFullException(QJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
 	
 	// Constructors
 	SQLiteFullException::SQLiteFullException()

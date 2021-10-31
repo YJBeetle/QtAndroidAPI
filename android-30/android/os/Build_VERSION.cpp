@@ -74,8 +74,8 @@ namespace android::os
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Build_VERSION::Build_VERSION(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Build_VERSION::Build_VERSION(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Build_VERSION::Build_VERSION()

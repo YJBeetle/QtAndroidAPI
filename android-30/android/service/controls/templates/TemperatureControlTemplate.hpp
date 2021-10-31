@@ -26,9 +26,9 @@ namespace android::service::controls::templates
 		static jint MODE_OFF();
 		static jint MODE_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TemperatureControlTemplate(const char *className, const char *sig, Ts...agv) : android::service::controls::templates::ControlTemplate(className, sig, std::forward<Ts>(agv)...) {}
-		TemperatureControlTemplate(QAndroidJniObject obj);
+		TemperatureControlTemplate(QJniObject obj);
 		
 		// Constructors
 		TemperatureControlTemplate(jstring arg0, android::service::controls::templates::ControlTemplate arg1, jint arg2, jint arg3, jint arg4);

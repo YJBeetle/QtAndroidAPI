@@ -9,8 +9,8 @@ namespace android::print
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrinterCapabilitiesInfo_Builder::PrinterCapabilitiesInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PrinterCapabilitiesInfo_Builder::PrinterCapabilitiesInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PrinterCapabilitiesInfo_Builder::PrinterCapabilitiesInfo_Builder(android::print::PrinterId arg0)

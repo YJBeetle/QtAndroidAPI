@@ -4,8 +4,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CancelledKeyException::CancelledKeyException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	CancelledKeyException::CancelledKeyException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	CancelledKeyException::CancelledKeyException()

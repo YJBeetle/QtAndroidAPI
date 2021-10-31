@@ -4,8 +4,8 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ResourceMismatchViolation::ResourceMismatchViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	// QJniObject forward
+	ResourceMismatchViolation::ResourceMismatchViolation(QJniObject obj) : android::os::strictmode::Violation(obj) {}
 	
 	// Constructors
 	

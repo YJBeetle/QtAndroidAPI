@@ -16,9 +16,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CopyOnWriteArraySet(const char *className, const char *sig, Ts...agv) : java::util::AbstractSet(className, sig, std::forward<Ts>(agv)...) {}
-		CopyOnWriteArraySet(QAndroidJniObject obj);
+		CopyOnWriteArraySet(QJniObject obj);
 		
 		// Constructors
 		CopyOnWriteArraySet();

@@ -10,8 +10,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CursorWrapper::CursorWrapper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CursorWrapper::CursorWrapper(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CursorWrapper::CursorWrapper(__JniBaseClass arg0)

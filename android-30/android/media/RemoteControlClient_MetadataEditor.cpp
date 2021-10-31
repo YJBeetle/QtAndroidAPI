@@ -14,8 +14,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RemoteControlClient_MetadataEditor::RemoteControlClient_MetadataEditor(QAndroidJniObject obj) : android::media::MediaMetadataEditor(obj) {}
+	// QJniObject forward
+	RemoteControlClient_MetadataEditor::RemoteControlClient_MetadataEditor(QJniObject obj) : android::media::MediaMetadataEditor(obj) {}
 	
 	// Constructors
 	

@@ -15,9 +15,9 @@ namespace android::content::pm
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Signature(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Signature(QAndroidJniObject obj);
+		Signature(QJniObject obj);
 		
 		// Constructors
 		Signature(jbyteArray arg0);

@@ -8,8 +8,8 @@ namespace android::view::inputmethod
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InlineSuggestionsRequest_Builder::InlineSuggestionsRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InlineSuggestionsRequest_Builder::InlineSuggestionsRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	InlineSuggestionsRequest_Builder::InlineSuggestionsRequest_Builder(__JniBaseClass arg0)

@@ -6,8 +6,8 @@ namespace java::util::jar
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Attributes::Attributes(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Attributes::Attributes(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Attributes::Attributes()

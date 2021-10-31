@@ -27,9 +27,9 @@ namespace android::os
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DropBoxManager_Entry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DropBoxManager_Entry(QAndroidJniObject obj);
+		DropBoxManager_Entry(QJniObject obj);
 		
 		// Constructors
 		DropBoxManager_Entry(jstring arg0, jlong arg1);

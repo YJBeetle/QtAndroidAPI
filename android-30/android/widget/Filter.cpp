@@ -5,8 +5,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Filter::Filter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Filter::Filter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Filter::Filter()

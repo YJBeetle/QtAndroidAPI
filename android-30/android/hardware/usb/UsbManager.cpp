@@ -66,8 +66,8 @@ namespace android::hardware::usb
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	UsbManager::UsbManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UsbManager::UsbManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

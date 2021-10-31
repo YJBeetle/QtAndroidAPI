@@ -53,8 +53,8 @@ namespace java::io
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StreamTokenizer::StreamTokenizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StreamTokenizer::StreamTokenizer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StreamTokenizer::StreamTokenizer(java::io::InputStream arg0)

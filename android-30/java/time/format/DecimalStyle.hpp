@@ -15,9 +15,9 @@ namespace java::time::format
 		// Fields
 		static java::time::format::DecimalStyle STANDARD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DecimalStyle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DecimalStyle(QAndroidJniObject obj);
+		DecimalStyle(QJniObject obj);
 		
 		// Constructors
 		

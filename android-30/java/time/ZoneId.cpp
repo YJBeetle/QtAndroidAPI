@@ -17,8 +17,8 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ZoneId::ZoneId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ZoneId::ZoneId(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

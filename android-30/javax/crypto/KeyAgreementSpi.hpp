@@ -14,9 +14,9 @@ namespace javax::crypto
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyAgreementSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyAgreementSpi(QAndroidJniObject obj);
+		KeyAgreementSpi(QJniObject obj);
 		
 		// Constructors
 		KeyAgreementSpi();

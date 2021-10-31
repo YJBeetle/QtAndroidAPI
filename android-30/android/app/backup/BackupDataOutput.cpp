@@ -4,8 +4,8 @@ namespace android::app::backup
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BackupDataOutput::BackupDataOutput(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BackupDataOutput::BackupDataOutput(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

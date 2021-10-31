@@ -4,8 +4,8 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TypeConverter::TypeConverter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TypeConverter::TypeConverter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TypeConverter::TypeConverter(jclass arg0, jclass arg1)

@@ -16,8 +16,8 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InlineSuggestion::InlineSuggestion(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InlineSuggestion::InlineSuggestion(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

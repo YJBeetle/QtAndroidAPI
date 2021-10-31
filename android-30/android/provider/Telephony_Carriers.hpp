@@ -42,9 +42,9 @@ namespace android::provider
 		static jstring TYPE();
 		static jstring USER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Telephony_Carriers(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Carriers(QAndroidJniObject obj);
+		Telephony_Carriers(QJniObject obj);
 		
 		// Constructors
 		

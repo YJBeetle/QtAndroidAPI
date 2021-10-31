@@ -54,9 +54,9 @@ namespace android::media::tv
 		static jint REVIEW_RATING_STYLE_STARS();
 		static jint REVIEW_RATING_STYLE_THUMBS_UP_DOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TvContract_RecordedPrograms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TvContract_RecordedPrograms(QAndroidJniObject obj);
+		TvContract_RecordedPrograms(QJniObject obj);
 		
 		// Constructors
 		

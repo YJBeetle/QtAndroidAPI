@@ -149,8 +149,8 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SelectionEvent::SelectionEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SelectionEvent::SelectionEvent(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

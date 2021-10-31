@@ -4,8 +4,8 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicLong::AtomicLong(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	// QJniObject forward
+	AtomicLong::AtomicLong(QJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
 	AtomicLong::AtomicLong()

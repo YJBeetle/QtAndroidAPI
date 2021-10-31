@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FormatterClosedException::FormatterClosedException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	FormatterClosedException::FormatterClosedException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	FormatterClosedException::FormatterClosedException()

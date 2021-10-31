@@ -20,8 +20,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaParser_TrackData::MediaParser_TrackData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaParser_TrackData::MediaParser_TrackData(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

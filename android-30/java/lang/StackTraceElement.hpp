@@ -10,9 +10,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StackTraceElement(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StackTraceElement(QAndroidJniObject obj);
+		StackTraceElement(QJniObject obj);
 		
 		// Constructors
 		StackTraceElement(jstring arg0, jstring arg1, jstring arg2, jint arg3);

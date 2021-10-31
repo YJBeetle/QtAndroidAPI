@@ -15,9 +15,9 @@ namespace android::net::wifi::aware
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PublishDiscoverySession(const char *className, const char *sig, Ts...agv) : android::net::wifi::aware::DiscoverySession(className, sig, std::forward<Ts>(agv)...) {}
-		PublishDiscoverySession(QAndroidJniObject obj);
+		PublishDiscoverySession(QJniObject obj);
 		
 		// Constructors
 		

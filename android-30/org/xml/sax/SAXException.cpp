@@ -7,8 +7,8 @@ namespace org::xml::sax
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SAXException::SAXException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	SAXException::SAXException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	SAXException::SAXException()

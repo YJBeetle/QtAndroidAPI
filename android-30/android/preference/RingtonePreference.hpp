@@ -31,9 +31,9 @@ namespace android::preference
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RingtonePreference(const char *className, const char *sig, Ts...agv) : android::preference::Preference(className, sig, std::forward<Ts>(agv)...) {}
-		RingtonePreference(QAndroidJniObject obj);
+		RingtonePreference(QJniObject obj);
 		
 		// Constructors
 		RingtonePreference(android::content::Context arg0);

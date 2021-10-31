@@ -14,9 +14,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit URLDecoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		URLDecoder(QAndroidJniObject obj);
+		URLDecoder(QJniObject obj);
 		
 		// Constructors
 		URLDecoder();

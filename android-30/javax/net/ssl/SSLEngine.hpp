@@ -26,9 +26,9 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SSLEngine(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SSLEngine(QAndroidJniObject obj);
+		SSLEngine(QJniObject obj);
 		
 		// Constructors
 		

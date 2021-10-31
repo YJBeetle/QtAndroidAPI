@@ -14,9 +14,9 @@ namespace java::util::zip
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CRC32(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CRC32(QAndroidJniObject obj);
+		CRC32(QJniObject obj);
 		
 		// Constructors
 		CRC32();

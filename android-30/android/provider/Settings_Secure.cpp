@@ -538,8 +538,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Settings_Secure::Settings_Secure(QAndroidJniObject obj) : android::provider::Settings_NameValueTable(obj) {}
+	// QJniObject forward
+	Settings_Secure::Settings_Secure(QJniObject obj) : android::provider::Settings_NameValueTable(obj) {}
 	
 	// Constructors
 	Settings_Secure::Settings_Secure()

@@ -5,8 +5,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintWriterPrinter::PrintWriterPrinter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PrintWriterPrinter::PrintWriterPrinter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PrintWriterPrinter::PrintWriterPrinter(java::io::PrintWriter arg0)

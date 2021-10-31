@@ -38,9 +38,9 @@ namespace android::bluetooth::le
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothLeAdvertiser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothLeAdvertiser(QAndroidJniObject obj);
+		BluetoothLeAdvertiser(QJniObject obj);
 		
 		// Constructors
 		

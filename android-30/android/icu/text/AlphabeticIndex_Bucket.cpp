@@ -5,8 +5,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlphabeticIndex_Bucket::AlphabeticIndex_Bucket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AlphabeticIndex_Bucket::AlphabeticIndex_Bucket(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

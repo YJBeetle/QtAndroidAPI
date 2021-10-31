@@ -13,9 +13,9 @@ namespace android::net::wifi
 		static jint BIP_GMAC_128();
 		static jint BIP_GMAC_256();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiConfiguration_GroupMgmtCipher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiConfiguration_GroupMgmtCipher(QAndroidJniObject obj);
+		WifiConfiguration_GroupMgmtCipher(QJniObject obj);
 		
 		// Constructors
 		

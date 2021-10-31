@@ -5,8 +5,8 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BroadcastReceiver_PendingResult::BroadcastReceiver_PendingResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BroadcastReceiver_PendingResult::BroadcastReceiver_PendingResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -26,9 +26,9 @@ namespace android::content::pm
 		static jint FLAG_MATCH_MANIFEST();
 		static jint FLAG_MATCH_PINNED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ShortcutManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ShortcutManager(QAndroidJniObject obj);
+		ShortcutManager(QJniObject obj);
 		
 		// Constructors
 		

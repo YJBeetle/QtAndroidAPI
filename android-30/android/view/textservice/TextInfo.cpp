@@ -13,8 +13,8 @@ namespace android::view::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextInfo::TextInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextInfo::TextInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TextInfo::TextInfo(android::os::Parcel arg0)

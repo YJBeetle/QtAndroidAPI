@@ -7,8 +7,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HashSet::HashSet(QAndroidJniObject obj) : java::util::AbstractSet(obj) {}
+	// QJniObject forward
+	HashSet::HashSet(QJniObject obj) : java::util::AbstractSet(obj) {}
 	
 	// Constructors
 	HashSet::HashSet()

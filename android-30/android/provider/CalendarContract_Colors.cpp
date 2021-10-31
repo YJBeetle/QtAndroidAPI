@@ -13,8 +13,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CalendarContract_Colors::CalendarContract_Colors(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CalendarContract_Colors::CalendarContract_Colors(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

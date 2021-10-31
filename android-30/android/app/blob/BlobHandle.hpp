@@ -15,9 +15,9 @@ namespace android::app::blob
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BlobHandle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BlobHandle(QAndroidJniObject obj);
+		BlobHandle(QJniObject obj);
 		
 		// Constructors
 		

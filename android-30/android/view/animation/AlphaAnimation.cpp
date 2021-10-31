@@ -6,8 +6,8 @@ namespace android::view::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlphaAnimation::AlphaAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
+	// QJniObject forward
+	AlphaAnimation::AlphaAnimation(QJniObject obj) : android::view::animation::Animation(obj) {}
 	
 	// Constructors
 	AlphaAnimation::AlphaAnimation(android::content::Context arg0, __JniBaseClass arg1)

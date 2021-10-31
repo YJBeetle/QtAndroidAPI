@@ -28,8 +28,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Paint_Style::Paint_Style(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Paint_Style::Paint_Style(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

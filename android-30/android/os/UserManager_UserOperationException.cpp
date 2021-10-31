@@ -4,8 +4,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UserManager_UserOperationException::UserManager_UserOperationException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	UserManager_UserOperationException::UserManager_UserOperationException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	

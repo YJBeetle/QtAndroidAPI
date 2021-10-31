@@ -18,9 +18,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StringBuffer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StringBuffer(QAndroidJniObject obj);
+		StringBuffer(QJniObject obj);
 		
 		// Constructors
 		StringBuffer();

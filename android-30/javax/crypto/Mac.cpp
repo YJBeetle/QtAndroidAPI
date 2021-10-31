@@ -8,8 +8,8 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Mac::Mac(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Mac::Mac(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

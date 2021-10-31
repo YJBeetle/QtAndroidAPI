@@ -5,8 +5,8 @@ namespace android::net::wifi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WifiInfo_Builder::WifiInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiInfo_Builder::WifiInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WifiInfo_Builder::WifiInfo_Builder()

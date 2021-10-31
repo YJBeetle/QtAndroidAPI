@@ -31,8 +31,8 @@ namespace android::icu::text
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	UnicodeSetIterator::UnicodeSetIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UnicodeSetIterator::UnicodeSetIterator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	UnicodeSetIterator::UnicodeSetIterator()

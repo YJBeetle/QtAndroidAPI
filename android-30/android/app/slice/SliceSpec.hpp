@@ -15,9 +15,9 @@ namespace android::app::slice
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SliceSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SliceSpec(QAndroidJniObject obj);
+		SliceSpec(QJniObject obj);
 		
 		// Constructors
 		SliceSpec(jstring arg0, jint arg1);

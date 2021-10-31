@@ -4,8 +4,8 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RSDriverException::RSDriverException(QAndroidJniObject obj) : android::renderscript::RSRuntimeException(obj) {}
+	// QJniObject forward
+	RSDriverException::RSDriverException(QJniObject obj) : android::renderscript::RSRuntimeException(obj) {}
 	
 	// Constructors
 	RSDriverException::RSDriverException(jstring arg0)

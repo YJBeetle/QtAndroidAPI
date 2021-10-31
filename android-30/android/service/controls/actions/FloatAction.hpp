@@ -11,9 +11,9 @@ namespace android::service::controls::actions
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FloatAction(const char *className, const char *sig, Ts...agv) : android::service::controls::actions::ControlAction(className, sig, std::forward<Ts>(agv)...) {}
-		FloatAction(QAndroidJniObject obj);
+		FloatAction(QJniObject obj);
 		
 		// Constructors
 		FloatAction(jstring arg0, jfloat arg1);

@@ -12,9 +12,9 @@ namespace android::view
 		jint id();
 		jint toolType();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MotionEvent_PointerProperties(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MotionEvent_PointerProperties(QAndroidJniObject obj);
+		MotionEvent_PointerProperties(QJniObject obj);
 		
 		// Constructors
 		MotionEvent_PointerProperties();

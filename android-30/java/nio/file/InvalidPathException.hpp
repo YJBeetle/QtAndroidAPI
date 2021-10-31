@@ -13,9 +13,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InvalidPathException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidPathException(QAndroidJniObject obj);
+		InvalidPathException(QJniObject obj);
 		
 		// Constructors
 		InvalidPathException(jstring arg0, jstring arg1);

@@ -10,9 +10,9 @@ namespace android::net::wifi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiManager_WpsCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_WpsCallback(QAndroidJniObject obj);
+		WifiManager_WpsCallback(QJniObject obj);
 		
 		// Constructors
 		WifiManager_WpsCallback();

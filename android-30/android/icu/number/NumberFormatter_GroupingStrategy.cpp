@@ -44,8 +44,8 @@ namespace android::icu::number
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumberFormatter_GroupingStrategy::NumberFormatter_GroupingStrategy(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	NumberFormatter_GroupingStrategy::NumberFormatter_GroupingStrategy(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

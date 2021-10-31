@@ -30,9 +30,9 @@ namespace android::widget
 		static jint DIGITS_ONLY();
 		static jint LETTERS_ONLY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DialerFilter(const char *className, const char *sig, Ts...agv) : android::widget::RelativeLayout(className, sig, std::forward<Ts>(agv)...) {}
-		DialerFilter(QAndroidJniObject obj);
+		DialerFilter(QJniObject obj);
 		
 		// Constructors
 		DialerFilter(android::content::Context arg0);

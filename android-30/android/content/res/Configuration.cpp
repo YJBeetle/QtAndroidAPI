@@ -642,8 +642,8 @@ namespace android::content::res
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Configuration::Configuration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Configuration::Configuration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Configuration::Configuration()

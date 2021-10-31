@@ -6,8 +6,8 @@ namespace android::view::contentcapture
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DataRemovalRequest_LocusIdRequest::DataRemovalRequest_LocusIdRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DataRemovalRequest_LocusIdRequest::DataRemovalRequest_LocusIdRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

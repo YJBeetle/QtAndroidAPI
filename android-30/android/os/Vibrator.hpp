@@ -21,9 +21,9 @@ namespace android::os
 		static jint VIBRATION_EFFECT_SUPPORT_UNKNOWN();
 		static jint VIBRATION_EFFECT_SUPPORT_YES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Vibrator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Vibrator(QAndroidJniObject obj);
+		Vibrator(QJniObject obj);
 		
 		// Constructors
 		

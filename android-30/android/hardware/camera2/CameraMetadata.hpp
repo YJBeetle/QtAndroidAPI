@@ -229,9 +229,9 @@ namespace android::hardware::camera2
 		static jint TONEMAP_PRESET_CURVE_REC709();
 		static jint TONEMAP_PRESET_CURVE_SRGB();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraMetadata(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CameraMetadata(QAndroidJniObject obj);
+		CameraMetadata(QJniObject obj);
 		
 		// Constructors
 		

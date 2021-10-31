@@ -19,9 +19,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Ikev2VpnProfile(const char *className, const char *sig, Ts...agv) : android::net::PlatformVpnProfile(className, sig, std::forward<Ts>(agv)...) {}
-		Ikev2VpnProfile(QAndroidJniObject obj);
+		Ikev2VpnProfile(QJniObject obj);
 		
 		// Constructors
 		

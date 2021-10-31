@@ -115,9 +115,9 @@ namespace android::content::res
 		jint touchscreen();
 		jint uiMode();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Configuration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Configuration(QAndroidJniObject obj);
+		Configuration(QJniObject obj);
 		
 		// Constructors
 		Configuration();

@@ -11,9 +11,9 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SSLSessionBindingEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLSessionBindingEvent(QAndroidJniObject obj);
+		SSLSessionBindingEvent(QJniObject obj);
 		
 		// Constructors
 		SSLSessionBindingEvent(__JniBaseClass arg0, jstring arg1);

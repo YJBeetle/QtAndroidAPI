@@ -4,8 +4,8 @@ namespace android::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConfirmationCallback::ConfirmationCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConfirmationCallback::ConfirmationCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ConfirmationCallback::ConfirmationCallback()

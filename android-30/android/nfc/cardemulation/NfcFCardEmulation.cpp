@@ -7,8 +7,8 @@ namespace android::nfc::cardemulation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NfcFCardEmulation::NfcFCardEmulation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NfcFCardEmulation::NfcFCardEmulation(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

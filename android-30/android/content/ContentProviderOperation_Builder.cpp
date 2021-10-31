@@ -7,8 +7,8 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContentProviderOperation_Builder::ContentProviderOperation_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContentProviderOperation_Builder::ContentProviderOperation_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

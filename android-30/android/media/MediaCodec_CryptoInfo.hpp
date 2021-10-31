@@ -20,9 +20,9 @@ namespace android::media
 		jintArray numBytesOfEncryptedData();
 		jint numSubSamples();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodec_CryptoInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_CryptoInfo(QAndroidJniObject obj);
+		MediaCodec_CryptoInfo(QJniObject obj);
 		
 		// Constructors
 		MediaCodec_CryptoInfo();

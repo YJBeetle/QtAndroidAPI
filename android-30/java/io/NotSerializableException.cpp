@@ -4,8 +4,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NotSerializableException::NotSerializableException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
+	// QJniObject forward
+	NotSerializableException::NotSerializableException(QJniObject obj) : java::io::ObjectStreamException(obj) {}
 	
 	// Constructors
 	NotSerializableException::NotSerializableException()

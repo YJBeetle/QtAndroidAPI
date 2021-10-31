@@ -878,8 +878,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Notification::Notification(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Notification::Notification(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Notification::Notification()

@@ -21,9 +21,9 @@ namespace android::provider
 		static jint KIND_PHONE();
 		static jint KIND_POSTAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Contacts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts(QAndroidJniObject obj);
+		Contacts(QJniObject obj);
 		
 		// Constructors
 		

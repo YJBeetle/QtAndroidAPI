@@ -36,9 +36,9 @@ namespace android::media
 		static jlong REQUEST_ID_NONE();
 		static jstring SERVICE_INTERFACE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaRoute2ProviderService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRoute2ProviderService(QAndroidJniObject obj);
+		MediaRoute2ProviderService(QJniObject obj);
 		
 		// Constructors
 		MediaRoute2ProviderService();

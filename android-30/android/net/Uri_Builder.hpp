@@ -14,9 +14,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Uri_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Uri_Builder(QAndroidJniObject obj);
+		Uri_Builder(QJniObject obj);
 		
 		// Constructors
 		Uri_Builder();

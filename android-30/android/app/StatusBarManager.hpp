@@ -10,9 +10,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StatusBarManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StatusBarManager(QAndroidJniObject obj);
+		StatusBarManager(QJniObject obj);
 		
 		// Constructors
 		

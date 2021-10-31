@@ -28,8 +28,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Shader_TileMode::Shader_TileMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Shader_TileMode::Shader_TileMode(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

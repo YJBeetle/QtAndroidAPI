@@ -34,9 +34,9 @@ namespace android::icu::text
 		static jint WORD_NUMBER();
 		static jint WORD_NUMBER_LIMIT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BreakIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BreakIterator(QAndroidJniObject obj);
+		BreakIterator(QJniObject obj);
 		
 		// Constructors
 		

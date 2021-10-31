@@ -16,9 +16,9 @@ namespace android::nfc::tech
 		static jint TYPE_KOVIO();
 		static jint TYPE_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NfcBarcode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NfcBarcode(QAndroidJniObject obj);
+		NfcBarcode(QJniObject obj);
 		
 		// Constructors
 		

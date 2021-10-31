@@ -21,9 +21,9 @@ namespace android::telephony::ims
 		static jstring EXTRA_WFC_REGISTRATION_FAILURE_MESSAGE();
 		static jstring EXTRA_WFC_REGISTRATION_FAILURE_TITLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ImsManager(QAndroidJniObject obj);
+		ImsManager(QJniObject obj);
 		
 		// Constructors
 		

@@ -21,9 +21,9 @@ namespace android::app
 		// Fields
 		jint gravity();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActionBar_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_MarginLayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		ActionBar_LayoutParams(QAndroidJniObject obj);
+		ActionBar_LayoutParams(QJniObject obj);
 		
 		// Constructors
 		ActionBar_LayoutParams(android::app::ActionBar_LayoutParams &arg0);

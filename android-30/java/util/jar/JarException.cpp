@@ -4,8 +4,8 @@ namespace java::util::jar
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JarException::JarException(QAndroidJniObject obj) : java::util::zip::ZipException(obj) {}
+	// QJniObject forward
+	JarException::JarException(QJniObject obj) : java::util::zip::ZipException(obj) {}
 	
 	// Constructors
 	JarException::JarException()

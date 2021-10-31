@@ -8,8 +8,8 @@ namespace java::nio::channels::spi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AsynchronousChannelProvider::AsynchronousChannelProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AsynchronousChannelProvider::AsynchronousChannelProvider(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

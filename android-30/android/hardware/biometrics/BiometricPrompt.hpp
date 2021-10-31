@@ -43,9 +43,9 @@ namespace android::hardware::biometrics
 		static jint BIOMETRIC_ERROR_USER_CANCELED();
 		static jint BIOMETRIC_ERROR_VENDOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BiometricPrompt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricPrompt(QAndroidJniObject obj);
+		BiometricPrompt(QJniObject obj);
 		
 		// Constructors
 		

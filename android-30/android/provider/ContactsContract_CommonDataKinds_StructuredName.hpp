@@ -25,9 +25,9 @@ namespace android::provider
 		static jstring PREFIX();
 		static jstring SUFFIX();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_StructuredName(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_StructuredName(QAndroidJniObject obj);
+		ContactsContract_CommonDataKinds_StructuredName(QJniObject obj);
 		
 		// Constructors
 		

@@ -25,8 +25,8 @@ namespace android::service::controls
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ControlsProviderService::ControlsProviderService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	ControlsProviderService::ControlsProviderService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	ControlsProviderService::ControlsProviderService()

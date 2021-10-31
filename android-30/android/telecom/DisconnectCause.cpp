@@ -112,8 +112,8 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DisconnectCause::DisconnectCause(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DisconnectCause::DisconnectCause(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DisconnectCause::DisconnectCause(jint arg0)

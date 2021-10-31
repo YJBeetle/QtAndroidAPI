@@ -31,9 +31,9 @@ namespace android::telephony::emergency
 		static jint EMERGENCY_SERVICE_CATEGORY_POLICE();
 		static jint EMERGENCY_SERVICE_CATEGORY_UNSPECIFIED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EmergencyNumber(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EmergencyNumber(QAndroidJniObject obj);
+		EmergencyNumber(QJniObject obj);
 		
 		// Constructors
 		

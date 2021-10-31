@@ -28,8 +28,8 @@ namespace android::content
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ContentValues::ContentValues(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContentValues::ContentValues(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ContentValues::ContentValues()

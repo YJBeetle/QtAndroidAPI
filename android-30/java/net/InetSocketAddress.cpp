@@ -7,8 +7,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InetSocketAddress::InetSocketAddress(QAndroidJniObject obj) : java::net::SocketAddress(obj) {}
+	// QJniObject forward
+	InetSocketAddress::InetSocketAddress(QJniObject obj) : java::net::SocketAddress(obj) {}
 	
 	// Constructors
 	InetSocketAddress::InetSocketAddress(jint arg0)

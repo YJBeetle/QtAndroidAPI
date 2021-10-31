@@ -14,9 +14,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Exchanger(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Exchanger(QAndroidJniObject obj);
+		Exchanger(QJniObject obj);
 		
 		// Constructors
 		Exchanger();

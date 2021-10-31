@@ -75,8 +75,8 @@ namespace android::app::usage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UsageStatsManager::UsageStatsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UsageStatsManager::UsageStatsManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

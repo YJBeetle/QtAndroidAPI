@@ -37,9 +37,9 @@ namespace android::view
 		static jint ROTATION_270();
 		static jint ROTATION_90();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Surface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Surface(QAndroidJniObject obj);
+		Surface(QJniObject obj);
 		
 		// Constructors
 		Surface(android::graphics::SurfaceTexture arg0);

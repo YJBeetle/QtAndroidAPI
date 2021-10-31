@@ -55,8 +55,8 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SystemUpdatePolicy_ValidationFailedException::SystemUpdatePolicy_ValidationFailedException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	// QJniObject forward
+	SystemUpdatePolicy_ValidationFailedException::SystemUpdatePolicy_ValidationFailedException(QJniObject obj) : java::lang::IllegalArgumentException(obj) {}
 	
 	// Constructors
 	

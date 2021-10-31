@@ -20,9 +20,9 @@ namespace android::provider
 		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
 		static jstring VISIBLE_CONTACTS_ONLY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Contactables(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_Contactables(QAndroidJniObject obj);
+		ContactsContract_CommonDataKinds_Contactables(QJniObject obj);
 		
 		// Constructors
 		ContactsContract_CommonDataKinds_Contactables();

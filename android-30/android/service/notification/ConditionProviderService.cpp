@@ -48,8 +48,8 @@ namespace android::service::notification
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ConditionProviderService::ConditionProviderService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	ConditionProviderService::ConditionProviderService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	ConditionProviderService::ConditionProviderService()

@@ -15,9 +15,9 @@ namespace org::w3c::dom::ls
 		static jshort SERIALIZE_ERR();
 		jshort code();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LSException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		LSException(QAndroidJniObject obj);
+		LSException(QJniObject obj);
 		
 		// Constructors
 		LSException(jshort arg0, jstring arg1);

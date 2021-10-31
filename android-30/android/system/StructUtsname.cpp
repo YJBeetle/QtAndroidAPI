@@ -39,8 +39,8 @@ namespace android::system
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	StructUtsname::StructUtsname(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StructUtsname::StructUtsname(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StructUtsname::StructUtsname(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)

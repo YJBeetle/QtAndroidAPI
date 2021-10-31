@@ -76,8 +76,8 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Type_CubemapFace::Type_CubemapFace(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Type_CubemapFace::Type_CubemapFace(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

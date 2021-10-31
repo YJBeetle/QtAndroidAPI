@@ -6,8 +6,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Identity::Identity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Identity::Identity(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Identity::Identity(jstring arg0)

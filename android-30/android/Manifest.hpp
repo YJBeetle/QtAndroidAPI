@@ -10,9 +10,9 @@ namespace android
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Manifest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Manifest(QAndroidJniObject obj);
+		Manifest(QJniObject obj);
 		
 		// Constructors
 		Manifest();

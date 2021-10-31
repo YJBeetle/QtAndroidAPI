@@ -35,9 +35,9 @@ namespace java::time
 		static java::time::Month OCTOBER();
 		static java::time::Month SEPTEMBER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Month(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Month(QAndroidJniObject obj);
+		Month(QJniObject obj);
 		
 		// Constructors
 		

@@ -5,8 +5,8 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IntentSender_SendIntentException::IntentSender_SendIntentException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
+	// QJniObject forward
+	IntentSender_SendIntentException::IntentSender_SendIntentException(QJniObject obj) : android::util::AndroidException(obj) {}
 	
 	// Constructors
 	IntentSender_SendIntentException::IntentSender_SendIntentException()

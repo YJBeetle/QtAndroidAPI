@@ -13,8 +13,8 @@ namespace android::service::controls::templates
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ControlButton::ControlButton(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ControlButton::ControlButton(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ControlButton::ControlButton(jboolean arg0, jstring arg1)

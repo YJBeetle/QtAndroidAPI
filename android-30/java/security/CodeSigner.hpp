@@ -22,9 +22,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CodeSigner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CodeSigner(QAndroidJniObject obj);
+		CodeSigner(QJniObject obj);
 		
 		// Constructors
 		CodeSigner(java::security::cert::CertPath arg0, java::security::Timestamp arg1);

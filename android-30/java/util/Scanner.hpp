@@ -54,9 +54,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Scanner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Scanner(QAndroidJniObject obj);
+		Scanner(QJniObject obj);
 		
 		// Constructors
 		Scanner(java::io::File arg0);

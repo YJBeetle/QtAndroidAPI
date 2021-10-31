@@ -39,9 +39,9 @@ namespace android::app
 		// Fields
 		static jint POP_BACK_STACK_INCLUSIVE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FragmentManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FragmentManager(QAndroidJniObject obj);
+		FragmentManager(QJniObject obj);
 		
 		// Constructors
 		FragmentManager();

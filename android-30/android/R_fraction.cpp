@@ -4,8 +4,8 @@ namespace android
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	R_fraction::R_fraction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	R_fraction::R_fraction(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	R_fraction::R_fraction()

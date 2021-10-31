@@ -42,8 +42,8 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SoftApConfiguration::SoftApConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SoftApConfiguration::SoftApConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

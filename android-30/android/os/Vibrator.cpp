@@ -27,8 +27,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Vibrator::Vibrator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Vibrator::Vibrator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

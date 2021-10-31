@@ -5,8 +5,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LocalSocketAddress::LocalSocketAddress(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocalSocketAddress::LocalSocketAddress(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LocalSocketAddress::LocalSocketAddress(jstring arg0)

@@ -15,9 +15,9 @@ namespace android::telephony::ims
 		// Fields
 		static jstring ACTION_SHOW_CAPABILITY_DISCOVERY_OPT_IN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImsRcsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ImsRcsManager(QAndroidJniObject obj);
+		ImsRcsManager(QJniObject obj);
 		
 		// Constructors
 		

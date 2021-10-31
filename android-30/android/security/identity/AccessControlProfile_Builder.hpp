@@ -22,9 +22,9 @@ namespace android::security::identity
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessControlProfile_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessControlProfile_Builder(QAndroidJniObject obj);
+		AccessControlProfile_Builder(QJniObject obj);
 		
 		// Constructors
 		AccessControlProfile_Builder(android::security::identity::AccessControlProfileId arg0);

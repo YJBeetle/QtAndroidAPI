@@ -22,9 +22,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AudioFocusRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AudioFocusRequest_Builder(QAndroidJniObject obj);
+		AudioFocusRequest_Builder(QJniObject obj);
 		
 		// Constructors
 		AudioFocusRequest_Builder(android::media::AudioFocusRequest arg0);

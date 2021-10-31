@@ -10,9 +10,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PasswordAuthentication(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PasswordAuthentication(QAndroidJniObject obj);
+		PasswordAuthentication(QJniObject obj);
 		
 		// Constructors
 		PasswordAuthentication(jstring arg0, jcharArray arg1);

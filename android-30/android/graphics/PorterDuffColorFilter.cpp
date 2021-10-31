@@ -5,8 +5,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PorterDuffColorFilter::PorterDuffColorFilter(QAndroidJniObject obj) : android::graphics::ColorFilter(obj) {}
+	// QJniObject forward
+	PorterDuffColorFilter::PorterDuffColorFilter(QJniObject obj) : android::graphics::ColorFilter(obj) {}
 	
 	// Constructors
 	PorterDuffColorFilter::PorterDuffColorFilter(jint arg0, android::graphics::PorterDuff_Mode arg1)

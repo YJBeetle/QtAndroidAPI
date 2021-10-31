@@ -23,9 +23,9 @@ namespace android::service::restrictions
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RestrictionsReceiver(const char *className, const char *sig, Ts...agv) : android::content::BroadcastReceiver(className, sig, std::forward<Ts>(agv)...) {}
-		RestrictionsReceiver(QAndroidJniObject obj);
+		RestrictionsReceiver(QJniObject obj);
 		
 		// Constructors
 		RestrictionsReceiver();

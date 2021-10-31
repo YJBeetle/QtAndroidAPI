@@ -18,9 +18,9 @@ namespace dalvik::system
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DexFile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DexFile(QAndroidJniObject obj);
+		DexFile(QJniObject obj);
 		
 		// Constructors
 		DexFile(java::io::File arg0);

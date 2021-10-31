@@ -27,8 +27,8 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Face::Face(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Face::Face(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

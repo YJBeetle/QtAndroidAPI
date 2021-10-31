@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Size::Size(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Size::Size(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Size::Size(jint arg0, jint arg1)

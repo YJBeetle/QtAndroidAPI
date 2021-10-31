@@ -37,9 +37,9 @@ namespace android::app
 		jboolean started();
 		jint uid();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActivityManager_RunningServiceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_RunningServiceInfo(QAndroidJniObject obj);
+		ActivityManager_RunningServiceInfo(QJniObject obj);
 		
 		// Constructors
 		ActivityManager_RunningServiceInfo();

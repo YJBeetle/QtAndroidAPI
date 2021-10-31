@@ -9,8 +9,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimePicker::TimePicker(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
+	// QJniObject forward
+	TimePicker::TimePicker(QJniObject obj) : android::widget::FrameLayout(obj) {}
 	
 	// Constructors
 	TimePicker::TimePicker(android::content::Context arg0)

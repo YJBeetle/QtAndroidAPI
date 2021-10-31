@@ -4,8 +4,8 @@ namespace java::nio::channels::spi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractSelectionKey::AbstractSelectionKey(QAndroidJniObject obj) : java::nio::channels::SelectionKey(obj) {}
+	// QJniObject forward
+	AbstractSelectionKey::AbstractSelectionKey(QJniObject obj) : java::nio::channels::SelectionKey(obj) {}
 	
 	// Constructors
 	

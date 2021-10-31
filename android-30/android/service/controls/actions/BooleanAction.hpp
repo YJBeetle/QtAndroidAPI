@@ -11,9 +11,9 @@ namespace android::service::controls::actions
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BooleanAction(const char *className, const char *sig, Ts...agv) : android::service::controls::actions::ControlAction(className, sig, std::forward<Ts>(agv)...) {}
-		BooleanAction(QAndroidJniObject obj);
+		BooleanAction(QJniObject obj);
 		
 		// Constructors
 		BooleanAction(jstring arg0, jboolean arg1);

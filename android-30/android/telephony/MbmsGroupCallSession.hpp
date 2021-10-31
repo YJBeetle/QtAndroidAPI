@@ -18,9 +18,9 @@ namespace android::telephony
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MbmsGroupCallSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsGroupCallSession(QAndroidJniObject obj);
+		MbmsGroupCallSession(QJniObject obj);
 		
 		// Constructors
 		

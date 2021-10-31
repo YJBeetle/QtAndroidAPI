@@ -29,8 +29,8 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SimpleTimeZone::SimpleTimeZone(QAndroidJniObject obj) : java::util::TimeZone(obj) {}
+	// QJniObject forward
+	SimpleTimeZone::SimpleTimeZone(QJniObject obj) : java::util::TimeZone(obj) {}
 	
 	// Constructors
 	SimpleTimeZone::SimpleTimeZone(jint arg0, jstring arg1)

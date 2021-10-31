@@ -20,9 +20,9 @@ namespace javax::xml::transform
 		static jstring STANDALONE();
 		static jstring VERSION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OutputKeys(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		OutputKeys(QAndroidJniObject obj);
+		OutputKeys(QJniObject obj);
 		
 		// Constructors
 		

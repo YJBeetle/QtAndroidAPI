@@ -19,9 +19,9 @@ namespace android::net::wifi::p2p
 		static jint DEVICE_TYPE_SOURCE_OR_PRIMARY_SINK();
 		static jint DEVICE_TYPE_WFD_SOURCE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiP2pWfdInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pWfdInfo(QAndroidJniObject obj);
+		WifiP2pWfdInfo(QJniObject obj);
 		
 		// Constructors
 		WifiP2pWfdInfo();

@@ -10,9 +10,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SocketAddress(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SocketAddress(QAndroidJniObject obj);
+		SocketAddress(QJniObject obj);
 		
 		// Constructors
 		SocketAddress();

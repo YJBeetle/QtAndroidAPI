@@ -10,9 +10,9 @@ namespace org::xml::sax::helpers
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ParserFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ParserFactory(QAndroidJniObject obj);
+		ParserFactory(QJniObject obj);
 		
 		// Constructors
 		

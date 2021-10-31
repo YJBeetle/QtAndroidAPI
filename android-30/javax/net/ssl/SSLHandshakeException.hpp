@@ -13,9 +13,9 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SSLHandshakeException(const char *className, const char *sig, Ts...agv) : javax::net::ssl::SSLException(className, sig, std::forward<Ts>(agv)...) {}
-		SSLHandshakeException(QAndroidJniObject obj);
+		SSLHandshakeException(QJniObject obj);
 		
 		// Constructors
 		SSLHandshakeException(jstring arg0);

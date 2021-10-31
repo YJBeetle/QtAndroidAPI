@@ -29,9 +29,9 @@ namespace android::telecom
 		static jint RESTRICTED();
 		static jint UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DisconnectCause(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DisconnectCause(QAndroidJniObject obj);
+		DisconnectCause(QJniObject obj);
 		
 		// Constructors
 		DisconnectCause(jint arg0);

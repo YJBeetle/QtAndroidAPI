@@ -9,8 +9,8 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Slide::Slide(QAndroidJniObject obj) : android::transition::Visibility(obj) {}
+	// QJniObject forward
+	Slide::Slide(QJniObject obj) : android::transition::Visibility(obj) {}
 	
 	// Constructors
 	Slide::Slide()

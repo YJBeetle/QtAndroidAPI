@@ -54,9 +54,9 @@ namespace javax::xml::datatype
 		static javax::xml::_namespace::QName TIME();
 		static javax::xml::datatype::DatatypeConstants_Field YEARS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DatatypeConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DatatypeConstants(QAndroidJniObject obj);
+		DatatypeConstants(QJniObject obj);
 		
 		// Constructors
 		

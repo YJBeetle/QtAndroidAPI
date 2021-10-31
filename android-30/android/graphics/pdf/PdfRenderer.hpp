@@ -18,9 +18,9 @@ namespace android::graphics::pdf
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PdfRenderer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PdfRenderer(QAndroidJniObject obj);
+		PdfRenderer(QJniObject obj);
 		
 		// Constructors
 		PdfRenderer(android::os::ParcelFileDescriptor arg0);

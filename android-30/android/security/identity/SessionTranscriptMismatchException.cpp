@@ -4,8 +4,8 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SessionTranscriptMismatchException::SessionTranscriptMismatchException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
+	// QJniObject forward
+	SessionTranscriptMismatchException::SessionTranscriptMismatchException(QJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 	
 	// Constructors
 	SessionTranscriptMismatchException::SessionTranscriptMismatchException(jstring arg0)

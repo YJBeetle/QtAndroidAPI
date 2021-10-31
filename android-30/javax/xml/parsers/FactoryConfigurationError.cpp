@@ -5,8 +5,8 @@ namespace javax::xml::parsers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FactoryConfigurationError::FactoryConfigurationError(QAndroidJniObject obj) : java::lang::Error(obj) {}
+	// QJniObject forward
+	FactoryConfigurationError::FactoryConfigurationError(QJniObject obj) : java::lang::Error(obj) {}
 	
 	// Constructors
 	FactoryConfigurationError::FactoryConfigurationError()

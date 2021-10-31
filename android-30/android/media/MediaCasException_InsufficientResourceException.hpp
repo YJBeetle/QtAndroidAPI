@@ -12,9 +12,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCasException_InsufficientResourceException(const char *className, const char *sig, Ts...agv) : android::media::MediaCasException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCasException_InsufficientResourceException(QAndroidJniObject obj);
+		MediaCasException_InsufficientResourceException(QJniObject obj);
 		
 		// Constructors
 		

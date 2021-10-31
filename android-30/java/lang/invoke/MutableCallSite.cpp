@@ -7,8 +7,8 @@ namespace java::lang::invoke
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MutableCallSite::MutableCallSite(QAndroidJniObject obj) : java::lang::invoke::CallSite(obj) {}
+	// QJniObject forward
+	MutableCallSite::MutableCallSite(QJniObject obj) : java::lang::invoke::CallSite(obj) {}
 	
 	// Constructors
 	MutableCallSite::MutableCallSite(java::lang::invoke::MethodHandle arg0)

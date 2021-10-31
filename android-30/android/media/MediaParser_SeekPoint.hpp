@@ -13,9 +13,9 @@ namespace android::media
 		jlong position();
 		jlong timeMicros();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaParser_SeekPoint(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaParser_SeekPoint(QAndroidJniObject obj);
+		MediaParser_SeekPoint(QJniObject obj);
 		
 		// Constructors
 		

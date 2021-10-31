@@ -13,8 +13,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Notification_MessagingStyle::Notification_MessagingStyle(QAndroidJniObject obj) : android::app::Notification_Style(obj) {}
+	// QJniObject forward
+	Notification_MessagingStyle::Notification_MessagingStyle(QJniObject obj) : android::app::Notification_Style(obj) {}
 	
 	// Constructors
 	Notification_MessagingStyle::Notification_MessagingStyle(android::app::Person arg0)

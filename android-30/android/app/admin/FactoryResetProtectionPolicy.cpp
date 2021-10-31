@@ -13,8 +13,8 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FactoryResetProtectionPolicy::FactoryResetProtectionPolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FactoryResetProtectionPolicy::FactoryResetProtectionPolicy(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -13,9 +13,9 @@ namespace android::icu::text
 		static android::icu::text::UnicodeSetSpanner_CountMethod MIN_ELEMENTS();
 		static android::icu::text::UnicodeSetSpanner_CountMethod WHOLE_SPAN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnicodeSetSpanner_CountMethod(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSetSpanner_CountMethod(QAndroidJniObject obj);
+		UnicodeSetSpanner_CountMethod(QJniObject obj);
 		
 		// Constructors
 		

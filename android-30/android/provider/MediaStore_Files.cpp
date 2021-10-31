@@ -5,8 +5,8 @@ namespace android::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaStore_Files::MediaStore_Files(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaStore_Files::MediaStore_Files(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaStore_Files::MediaStore_Files()

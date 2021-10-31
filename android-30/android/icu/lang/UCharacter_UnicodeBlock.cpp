@@ -4677,8 +4677,8 @@ namespace android::icu::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UCharacter_UnicodeBlock::UCharacter_UnicodeBlock(QAndroidJniObject obj) : java::lang::Character_Subset(obj) {}
+	// QJniObject forward
+	UCharacter_UnicodeBlock::UCharacter_UnicodeBlock(QJniObject obj) : java::lang::Character_Subset(obj) {}
 	
 	// Constructors
 	

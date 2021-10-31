@@ -6,8 +6,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Chronometer::Chronometer(QAndroidJniObject obj) : android::widget::TextView(obj) {}
+	// QJniObject forward
+	Chronometer::Chronometer(QJniObject obj) : android::widget::TextView(obj) {}
 	
 	// Constructors
 	Chronometer::Chronometer(android::content::Context arg0)

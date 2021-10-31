@@ -4,8 +4,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Toast_Callback::Toast_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Toast_Callback::Toast_Callback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Toast_Callback::Toast_Callback()

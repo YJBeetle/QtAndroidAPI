@@ -8,8 +8,8 @@ namespace javax::xml::xpath
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	XPathException::XPathException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	XPathException::XPathException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	XPathException::XPathException(jstring arg0)

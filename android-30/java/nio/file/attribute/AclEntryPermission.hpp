@@ -28,9 +28,9 @@ namespace java::nio::file::attribute
 		static java::nio::file::attribute::AclEntryPermission WRITE_NAMED_ATTRS();
 		static java::nio::file::attribute::AclEntryPermission WRITE_OWNER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AclEntryPermission(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		AclEntryPermission(QAndroidJniObject obj);
+		AclEntryPermission(QJniObject obj);
 		
 		// Constructors
 		

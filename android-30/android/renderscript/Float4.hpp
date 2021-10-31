@@ -14,9 +14,9 @@ namespace android::renderscript
 		jfloat y();
 		jfloat z();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Float4(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Float4(QAndroidJniObject obj);
+		Float4(QJniObject obj);
 		
 		// Constructors
 		Float4();

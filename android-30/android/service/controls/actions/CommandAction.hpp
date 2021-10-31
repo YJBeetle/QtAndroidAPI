@@ -11,9 +11,9 @@ namespace android::service::controls::actions
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CommandAction(const char *className, const char *sig, Ts...agv) : android::service::controls::actions::ControlAction(className, sig, std::forward<Ts>(agv)...) {}
-		CommandAction(QAndroidJniObject obj);
+		CommandAction(QJniObject obj);
 		
 		// Constructors
 		CommandAction(jstring arg0);

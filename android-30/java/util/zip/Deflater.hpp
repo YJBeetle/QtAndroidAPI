@@ -25,9 +25,9 @@ namespace java::util::zip
 		static jint NO_FLUSH();
 		static jint SYNC_FLUSH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Deflater(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Deflater(QAndroidJniObject obj);
+		Deflater(QJniObject obj);
 		
 		// Constructors
 		Deflater();

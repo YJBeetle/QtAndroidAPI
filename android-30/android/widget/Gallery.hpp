@@ -42,9 +42,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Gallery(const char *className, const char *sig, Ts...agv) : android::widget::AbsSpinner(className, sig, std::forward<Ts>(agv)...) {}
-		Gallery(QAndroidJniObject obj);
+		Gallery(QJniObject obj);
 		
 		// Constructors
 		Gallery(android::content::Context arg0);

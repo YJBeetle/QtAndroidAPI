@@ -18,9 +18,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VpnManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VpnManager(QAndroidJniObject obj);
+		VpnManager(QJniObject obj);
 		
 		// Constructors
 		

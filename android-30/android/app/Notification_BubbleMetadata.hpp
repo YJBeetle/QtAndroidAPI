@@ -23,9 +23,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Notification_BubbleMetadata(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_BubbleMetadata(QAndroidJniObject obj);
+		Notification_BubbleMetadata(QJniObject obj);
 		
 		// Constructors
 		

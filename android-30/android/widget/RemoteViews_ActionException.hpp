@@ -16,9 +16,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RemoteViews_ActionException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteViews_ActionException(QAndroidJniObject obj);
+		RemoteViews_ActionException(QJniObject obj);
 		
 		// Constructors
 		RemoteViews_ActionException(java::lang::Exception arg0);

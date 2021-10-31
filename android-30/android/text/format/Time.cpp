@@ -211,8 +211,8 @@ namespace android::text::format
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Time::Time(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Time::Time(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Time::Time()

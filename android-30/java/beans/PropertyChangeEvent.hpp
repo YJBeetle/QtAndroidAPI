@@ -15,9 +15,9 @@ namespace java::beans
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PropertyChangeEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyChangeEvent(QAndroidJniObject obj);
+		PropertyChangeEvent(QJniObject obj);
 		
 		// Constructors
 		PropertyChangeEvent(jobject arg0, jstring arg1, jobject arg2, jobject arg3);

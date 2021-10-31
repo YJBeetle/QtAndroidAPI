@@ -10,9 +10,9 @@ namespace android::view::accessibility
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessibilityNodeInfo_CollectionItemInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityNodeInfo_CollectionItemInfo(QAndroidJniObject obj);
+		AccessibilityNodeInfo_CollectionItemInfo(QJniObject obj);
 		
 		// Constructors
 		AccessibilityNodeInfo_CollectionItemInfo(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);

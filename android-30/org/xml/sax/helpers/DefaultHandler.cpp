@@ -6,8 +6,8 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DefaultHandler::DefaultHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DefaultHandler::DefaultHandler(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DefaultHandler::DefaultHandler()

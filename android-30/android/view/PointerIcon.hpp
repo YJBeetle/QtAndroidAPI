@@ -50,9 +50,9 @@ namespace android::view
 		static jint TYPE_ZOOM_IN();
 		static jint TYPE_ZOOM_OUT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PointerIcon(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PointerIcon(QAndroidJniObject obj);
+		PointerIcon(QJniObject obj);
 		
 		// Constructors
 		

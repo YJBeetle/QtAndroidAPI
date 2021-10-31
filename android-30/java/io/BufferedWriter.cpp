@@ -5,8 +5,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BufferedWriter::BufferedWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
+	// QJniObject forward
+	BufferedWriter::BufferedWriter(QJniObject obj) : java::io::Writer(obj) {}
 	
 	// Constructors
 	BufferedWriter::BufferedWriter(java::io::Writer arg0)

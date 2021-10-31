@@ -16,9 +16,9 @@ namespace android::hardware
 		android::graphics::Rect rect();
 		jint weight();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Camera_Area(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Camera_Area(QAndroidJniObject obj);
+		Camera_Area(QJniObject obj);
 		
 		// Constructors
 		Camera_Area(android::graphics::Rect arg0, jint arg1);

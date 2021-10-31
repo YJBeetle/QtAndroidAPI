@@ -11,9 +11,9 @@ namespace javax::security::auth::callback
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnsupportedCallbackException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		UnsupportedCallbackException(QAndroidJniObject obj);
+		UnsupportedCallbackException(QJniObject obj);
 		
 		// Constructors
 		UnsupportedCallbackException(__JniBaseClass arg0);

@@ -10,8 +10,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ThreadLocalRandom::ThreadLocalRandom(QAndroidJniObject obj) : java::util::Random(obj) {}
+	// QJniObject forward
+	ThreadLocalRandom::ThreadLocalRandom(QJniObject obj) : java::util::Random(obj) {}
 	
 	// Constructors
 	

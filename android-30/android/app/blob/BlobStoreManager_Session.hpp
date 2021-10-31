@@ -14,9 +14,9 @@ namespace android::app::blob
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BlobStoreManager_Session(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BlobStoreManager_Session(QAndroidJniObject obj);
+		BlobStoreManager_Session(QJniObject obj);
 		
 		// Constructors
 		

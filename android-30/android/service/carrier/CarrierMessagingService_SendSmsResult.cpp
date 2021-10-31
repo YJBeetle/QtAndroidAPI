@@ -4,8 +4,8 @@ namespace android::service::carrier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CarrierMessagingService_SendSmsResult::CarrierMessagingService_SendSmsResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CarrierMessagingService_SendSmsResult::CarrierMessagingService_SendSmsResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CarrierMessagingService_SendSmsResult::CarrierMessagingService_SendSmsResult(jint arg0, jint arg1)

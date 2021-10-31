@@ -38,9 +38,9 @@ namespace android::widget
 		static jint SHOW_DIVIDER_NONE();
 		static jint VERTICAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LinearLayout(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		LinearLayout(QAndroidJniObject obj);
+		LinearLayout(QJniObject obj);
 		
 		// Constructors
 		LinearLayout(android::content::Context arg0);

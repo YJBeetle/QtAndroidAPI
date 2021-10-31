@@ -4,8 +4,8 @@ namespace android::icu::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ICUUncheckedIOException::ICUUncheckedIOException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	ICUUncheckedIOException::ICUUncheckedIOException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	ICUUncheckedIOException::ICUUncheckedIOException()

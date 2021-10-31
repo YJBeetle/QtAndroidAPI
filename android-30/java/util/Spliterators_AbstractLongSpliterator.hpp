@@ -10,9 +10,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Spliterators_AbstractLongSpliterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Spliterators_AbstractLongSpliterator(QAndroidJniObject obj);
+		Spliterators_AbstractLongSpliterator(QJniObject obj);
 		
 		// Constructors
 		

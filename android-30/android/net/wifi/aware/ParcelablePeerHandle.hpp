@@ -20,9 +20,9 @@ namespace android::net::wifi::aware
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ParcelablePeerHandle(const char *className, const char *sig, Ts...agv) : android::net::wifi::aware::PeerHandle(className, sig, std::forward<Ts>(agv)...) {}
-		ParcelablePeerHandle(QAndroidJniObject obj);
+		ParcelablePeerHandle(QJniObject obj);
 		
 		// Constructors
 		ParcelablePeerHandle(android::net::wifi::aware::PeerHandle arg0);

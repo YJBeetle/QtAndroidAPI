@@ -5,8 +5,8 @@ namespace android::telephony::cdma
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CdmaCellLocation::CdmaCellLocation(QAndroidJniObject obj) : android::telephony::CellLocation(obj) {}
+	// QJniObject forward
+	CdmaCellLocation::CdmaCellLocation(QJniObject obj) : android::telephony::CellLocation(obj) {}
 	
 	// Constructors
 	CdmaCellLocation::CdmaCellLocation()

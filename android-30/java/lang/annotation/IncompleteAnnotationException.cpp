@@ -4,8 +4,8 @@ namespace java::lang::annotation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IncompleteAnnotationException::IncompleteAnnotationException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	IncompleteAnnotationException::IncompleteAnnotationException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	IncompleteAnnotationException::IncompleteAnnotationException(jclass arg0, jstring arg1)

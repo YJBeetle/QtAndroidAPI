@@ -10,9 +10,9 @@ namespace android::service::voice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AlwaysOnHotwordDetector_ModelParamRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AlwaysOnHotwordDetector_ModelParamRange(QAndroidJniObject obj);
+		AlwaysOnHotwordDetector_ModelParamRange(QJniObject obj);
 		
 		// Constructors
 		

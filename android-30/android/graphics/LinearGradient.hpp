@@ -15,9 +15,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LinearGradient(const char *className, const char *sig, Ts...agv) : android::graphics::Shader(className, sig, std::forward<Ts>(agv)...) {}
-		LinearGradient(QAndroidJniObject obj);
+		LinearGradient(QJniObject obj);
 		
 		// Constructors
 		LinearGradient(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jintArray arg4, jfloatArray arg5, android::graphics::Shader_TileMode arg6);

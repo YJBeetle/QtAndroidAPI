@@ -6,8 +6,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Camera::Camera(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Camera::Camera(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Camera::Camera()

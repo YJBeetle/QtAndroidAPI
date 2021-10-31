@@ -188,9 +188,9 @@ namespace android::telephony::ims
 		static jint EXTRA_CODE_CALL_RETRY_NORMAL();
 		static jint EXTRA_CODE_CALL_RETRY_SILENT_REDIAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImsReasonInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ImsReasonInfo(QAndroidJniObject obj);
+		ImsReasonInfo(QJniObject obj);
 		
 		// Constructors
 		ImsReasonInfo(jint arg0, jint arg1, jstring arg2);

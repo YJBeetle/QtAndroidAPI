@@ -18,9 +18,9 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SSLEngineResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SSLEngineResult(QAndroidJniObject obj);
+		SSLEngineResult(QJniObject obj);
 		
 		// Constructors
 		SSLEngineResult(javax::net::ssl::SSLEngineResult_Status arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus arg1, jint arg2, jint arg3);

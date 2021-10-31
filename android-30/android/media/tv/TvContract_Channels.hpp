@@ -91,9 +91,9 @@ namespace android::media::tv
 		static jstring VIDEO_RESOLUTION_SD();
 		static jstring VIDEO_RESOLUTION_UHD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TvContract_Channels(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TvContract_Channels(QAndroidJniObject obj);
+		TvContract_Channels(QJniObject obj);
 		
 		// Constructors
 		

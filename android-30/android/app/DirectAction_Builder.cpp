@@ -7,8 +7,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DirectAction_Builder::DirectAction_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DirectAction_Builder::DirectAction_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DirectAction_Builder::DirectAction_Builder(jstring arg0)

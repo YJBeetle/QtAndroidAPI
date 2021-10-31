@@ -141,9 +141,9 @@ namespace android::media
 		static jint TYPE_NULL();
 		static jint TYPE_STRING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaFormat(QAndroidJniObject obj);
+		MediaFormat(QJniObject obj);
 		
 		// Constructors
 		MediaFormat();

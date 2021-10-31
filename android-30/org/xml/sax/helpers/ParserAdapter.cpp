@@ -8,8 +8,8 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ParserAdapter::ParserAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ParserAdapter::ParserAdapter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ParserAdapter::ParserAdapter()

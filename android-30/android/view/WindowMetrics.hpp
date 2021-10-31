@@ -18,9 +18,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WindowMetrics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WindowMetrics(QAndroidJniObject obj);
+		WindowMetrics(QJniObject obj);
 		
 		// Constructors
 		WindowMetrics(android::graphics::Rect arg0, android::view::WindowInsets arg1);

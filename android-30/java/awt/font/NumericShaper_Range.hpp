@@ -48,9 +48,9 @@ namespace java::awt::font
 		static java::awt::font::NumericShaper_Range TIBETAN();
 		static java::awt::font::NumericShaper_Range VAI();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NumericShaper_Range(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumericShaper_Range(QAndroidJniObject obj);
+		NumericShaper_Range(QJniObject obj);
 		
 		// Constructors
 		

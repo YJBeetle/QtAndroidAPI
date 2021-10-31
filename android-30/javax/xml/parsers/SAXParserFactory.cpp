@@ -7,8 +7,8 @@ namespace javax::xml::parsers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SAXParserFactory::SAXParserFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SAXParserFactory::SAXParserFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -5,8 +5,8 @@ namespace android::net::wifi::p2p::nsd
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WifiP2pServiceRequest::WifiP2pServiceRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiP2pServiceRequest::WifiP2pServiceRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

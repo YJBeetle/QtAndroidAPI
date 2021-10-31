@@ -12,9 +12,9 @@ namespace java::util::logging
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LoggingPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		LoggingPermission(QAndroidJniObject obj);
+		LoggingPermission(QJniObject obj);
 		
 		// Constructors
 		LoggingPermission(jstring arg0, jstring arg1);

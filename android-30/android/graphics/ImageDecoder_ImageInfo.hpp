@@ -18,9 +18,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImageDecoder_ImageInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ImageDecoder_ImageInfo(QAndroidJniObject obj);
+		ImageDecoder_ImageInfo(QJniObject obj);
 		
 		// Constructors
 		

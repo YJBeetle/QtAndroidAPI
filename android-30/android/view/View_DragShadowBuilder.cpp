@@ -7,8 +7,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	View_DragShadowBuilder::View_DragShadowBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	View_DragShadowBuilder::View_DragShadowBuilder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	View_DragShadowBuilder::View_DragShadowBuilder()

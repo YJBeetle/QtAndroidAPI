@@ -29,8 +29,8 @@ namespace android::nfc::cardemulation
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	HostNfcFService::HostNfcFService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	HostNfcFService::HostNfcFService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	HostNfcFService::HostNfcFService()

@@ -6,8 +6,8 @@ namespace android::icu::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Measure::Measure(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Measure::Measure(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Measure::Measure(java::lang::Number arg0, android::icu::util::MeasureUnit arg1)

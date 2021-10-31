@@ -130,8 +130,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IntentFilter::IntentFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IntentFilter::IntentFilter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	IntentFilter::IntentFilter()

@@ -13,8 +13,8 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GnssAntennaInfo_SphericalCorrections::GnssAntennaInfo_SphericalCorrections(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GnssAntennaInfo_SphericalCorrections::GnssAntennaInfo_SphericalCorrections(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GnssAntennaInfo_SphericalCorrections::GnssAntennaInfo_SphericalCorrections(jarray arg0, jarray arg1)

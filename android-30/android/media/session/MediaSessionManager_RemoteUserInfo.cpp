@@ -4,8 +4,8 @@ namespace android::media::session
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(jstring arg0, jint arg1, jint arg2)

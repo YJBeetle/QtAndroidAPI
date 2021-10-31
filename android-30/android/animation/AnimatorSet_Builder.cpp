@@ -6,8 +6,8 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AnimatorSet_Builder::AnimatorSet_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AnimatorSet_Builder::AnimatorSet_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

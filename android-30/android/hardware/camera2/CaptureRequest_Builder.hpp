@@ -22,9 +22,9 @@ namespace android::hardware::camera2
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CaptureRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CaptureRequest_Builder(QAndroidJniObject obj);
+		CaptureRequest_Builder(QJniObject obj);
 		
 		// Constructors
 		

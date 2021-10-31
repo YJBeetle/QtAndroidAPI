@@ -74,8 +74,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Service::Service(QAndroidJniObject obj) : android::content::ContextWrapper(obj) {}
+	// QJniObject forward
+	Service::Service(QJniObject obj) : android::content::ContextWrapper(obj) {}
 	
 	// Constructors
 	Service::Service()

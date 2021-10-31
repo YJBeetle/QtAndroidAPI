@@ -441,8 +441,8 @@ namespace android::hardware
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Camera_Parameters::Camera_Parameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Camera_Parameters::Camera_Parameters(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -26,9 +26,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LoaderManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LoaderManager(QAndroidJniObject obj);
+		LoaderManager(QJniObject obj);
 		
 		// Constructors
 		LoaderManager();

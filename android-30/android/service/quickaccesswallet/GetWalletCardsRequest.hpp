@@ -15,9 +15,9 @@ namespace android::service::quickaccesswallet
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GetWalletCardsRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GetWalletCardsRequest(QAndroidJniObject obj);
+		GetWalletCardsRequest(QJniObject obj);
 		
 		// Constructors
 		GetWalletCardsRequest(jint arg0, jint arg1, jint arg2, jint arg3);

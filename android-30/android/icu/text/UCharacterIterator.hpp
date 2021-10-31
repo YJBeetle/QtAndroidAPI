@@ -15,9 +15,9 @@ namespace android::icu::text
 		// Fields
 		static jint DONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UCharacterIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UCharacterIterator(QAndroidJniObject obj);
+		UCharacterIterator(QJniObject obj);
 		
 		// Constructors
 		

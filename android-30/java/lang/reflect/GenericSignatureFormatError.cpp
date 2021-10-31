@@ -4,8 +4,8 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GenericSignatureFormatError::GenericSignatureFormatError(QAndroidJniObject obj) : java::lang::ClassFormatError(obj) {}
+	// QJniObject forward
+	GenericSignatureFormatError::GenericSignatureFormatError(QJniObject obj) : java::lang::ClassFormatError(obj) {}
 	
 	// Constructors
 	GenericSignatureFormatError::GenericSignatureFormatError()

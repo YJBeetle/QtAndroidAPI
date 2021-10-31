@@ -60,8 +60,8 @@ namespace android::icu::number
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumberFormatter_SignDisplay::NumberFormatter_SignDisplay(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	NumberFormatter_SignDisplay::NumberFormatter_SignDisplay(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

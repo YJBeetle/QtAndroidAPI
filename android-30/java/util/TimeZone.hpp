@@ -24,9 +24,9 @@ namespace java::util
 		static jint LONG();
 		static jint SHORT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TimeZone(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZone(QAndroidJniObject obj);
+		TimeZone(QJniObject obj);
 		
 		// Constructors
 		TimeZone();

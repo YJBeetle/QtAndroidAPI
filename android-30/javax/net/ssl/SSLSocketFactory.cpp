@@ -7,8 +7,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLSocketFactory::SSLSocketFactory(QAndroidJniObject obj) : javax::net::SocketFactory(obj) {}
+	// QJniObject forward
+	SSLSocketFactory::SSLSocketFactory(QJniObject obj) : javax::net::SocketFactory(obj) {}
 	
 	// Constructors
 	SSLSocketFactory::SSLSocketFactory()

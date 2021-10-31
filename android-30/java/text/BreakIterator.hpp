@@ -15,9 +15,9 @@ namespace java::text
 		// Fields
 		static jint DONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BreakIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BreakIterator(QAndroidJniObject obj);
+		BreakIterator(QJniObject obj);
 		
 		// Constructors
 		

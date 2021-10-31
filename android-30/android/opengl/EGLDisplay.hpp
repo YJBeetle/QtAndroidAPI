@@ -11,9 +11,9 @@ namespace android::opengl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EGLDisplay(const char *className, const char *sig, Ts...agv) : android::opengl::EGLObjectHandle(className, sig, std::forward<Ts>(agv)...) {}
-		EGLDisplay(QAndroidJniObject obj);
+		EGLDisplay(QJniObject obj);
 		
 		// Constructors
 		

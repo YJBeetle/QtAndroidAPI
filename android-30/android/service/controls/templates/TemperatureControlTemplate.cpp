@@ -82,8 +82,8 @@ namespace android::service::controls::templates
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TemperatureControlTemplate::TemperatureControlTemplate(QAndroidJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
+	// QJniObject forward
+	TemperatureControlTemplate::TemperatureControlTemplate(QJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
 	
 	// Constructors
 	TemperatureControlTemplate::TemperatureControlTemplate(jstring arg0, android::service::controls::templates::ControlTemplate arg1, jint arg2, jint arg3, jint arg4)

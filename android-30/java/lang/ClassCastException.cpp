@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClassCastException::ClassCastException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	ClassCastException::ClassCastException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	ClassCastException::ClassCastException()

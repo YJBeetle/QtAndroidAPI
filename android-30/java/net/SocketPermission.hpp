@@ -27,9 +27,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SocketPermission(const char *className, const char *sig, Ts...agv) : java::security::Permission(className, sig, std::forward<Ts>(agv)...) {}
-		SocketPermission(QAndroidJniObject obj);
+		SocketPermission(QJniObject obj);
 		
 		// Constructors
 		SocketPermission(jstring arg0, jstring arg1);

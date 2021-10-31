@@ -4,8 +4,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NotDirectoryException::NotDirectoryException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
+	// QJniObject forward
+	NotDirectoryException::NotDirectoryException(QJniObject obj) : java::nio::file::FileSystemException(obj) {}
 	
 	// Constructors
 	NotDirectoryException::NotDirectoryException(jstring arg0)

@@ -38,8 +38,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RectF::RectF(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RectF::RectF(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RectF::RectF()

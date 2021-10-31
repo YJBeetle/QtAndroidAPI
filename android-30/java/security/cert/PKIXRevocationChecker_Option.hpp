@@ -15,9 +15,9 @@ namespace java::security::cert
 		static java::security::cert::PKIXRevocationChecker_Option PREFER_CRLS();
 		static java::security::cert::PKIXRevocationChecker_Option SOFT_FAIL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PKIXRevocationChecker_Option(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		PKIXRevocationChecker_Option(QAndroidJniObject obj);
+		PKIXRevocationChecker_Option(QJniObject obj);
 		
 		// Constructors
 		

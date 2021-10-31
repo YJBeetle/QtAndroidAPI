@@ -36,8 +36,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Telephony_Threads::Telephony_Threads(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Telephony_Threads::Telephony_Threads(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

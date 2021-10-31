@@ -13,9 +13,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InvalidParameterException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidParameterException(QAndroidJniObject obj);
+		InvalidParameterException(QJniObject obj);
 		
 		// Constructors
 		InvalidParameterException();

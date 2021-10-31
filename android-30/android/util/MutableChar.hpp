@@ -11,9 +11,9 @@ namespace android::util
 		// Fields
 		jchar value();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MutableChar(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MutableChar(QAndroidJniObject obj);
+		MutableChar(QJniObject obj);
 		
 		// Constructors
 		MutableChar(jchar arg0);

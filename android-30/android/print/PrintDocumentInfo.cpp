@@ -41,8 +41,8 @@ namespace android::print
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PrintDocumentInfo::PrintDocumentInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PrintDocumentInfo::PrintDocumentInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

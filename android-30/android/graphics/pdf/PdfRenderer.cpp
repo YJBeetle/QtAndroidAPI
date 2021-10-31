@@ -6,8 +6,8 @@ namespace android::graphics::pdf
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PdfRenderer::PdfRenderer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PdfRenderer::PdfRenderer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PdfRenderer::PdfRenderer(android::os::ParcelFileDescriptor arg0)

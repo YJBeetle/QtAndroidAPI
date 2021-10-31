@@ -22,9 +22,9 @@ namespace android::bluetooth
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothHealthCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothHealthCallback(QAndroidJniObject obj);
+		BluetoothHealthCallback(QJniObject obj);
 		
 		// Constructors
 		BluetoothHealthCallback();

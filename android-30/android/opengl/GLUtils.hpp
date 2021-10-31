@@ -14,9 +14,9 @@ namespace android::opengl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GLUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GLUtils(QAndroidJniObject obj);
+		GLUtils(QJniObject obj);
 		
 		// Constructors
 		

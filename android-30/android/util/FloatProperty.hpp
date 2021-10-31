@@ -15,9 +15,9 @@ namespace android::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FloatProperty(const char *className, const char *sig, Ts...agv) : android::util::Property(className, sig, std::forward<Ts>(agv)...) {}
-		FloatProperty(QAndroidJniObject obj);
+		FloatProperty(QJniObject obj);
 		
 		// Constructors
 		FloatProperty(jstring arg0);

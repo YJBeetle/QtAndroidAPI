@@ -111,9 +111,9 @@ namespace android::media
 		static jint TONE_SUP_RADIO_NOTAVAIL();
 		static jint TONE_SUP_RINGTONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ToneGenerator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ToneGenerator(QAndroidJniObject obj);
+		ToneGenerator(QJniObject obj);
 		
 		// Constructors
 		ToneGenerator(jint arg0, jint arg1);

@@ -263,8 +263,8 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SecurityLog::SecurityLog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SecurityLog::SecurityLog(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SecurityLog::SecurityLog()

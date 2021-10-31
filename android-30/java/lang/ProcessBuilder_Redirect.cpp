@@ -30,8 +30,8 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ProcessBuilder_Redirect::ProcessBuilder_Redirect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ProcessBuilder_Redirect::ProcessBuilder_Redirect(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

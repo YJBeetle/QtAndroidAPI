@@ -10,9 +10,9 @@ namespace android::provider
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaStore_Images(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Images(QAndroidJniObject obj);
+		MediaStore_Images(QJniObject obj);
 		
 		// Constructors
 		MediaStore_Images();

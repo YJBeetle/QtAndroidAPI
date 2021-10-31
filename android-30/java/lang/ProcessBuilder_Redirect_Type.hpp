@@ -16,9 +16,9 @@ namespace java::lang
 		static java::lang::ProcessBuilder_Redirect_Type READ();
 		static java::lang::ProcessBuilder_Redirect_Type WRITE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProcessBuilder_Redirect_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessBuilder_Redirect_Type(QAndroidJniObject obj);
+		ProcessBuilder_Redirect_Type(QJniObject obj);
 		
 		// Constructors
 		

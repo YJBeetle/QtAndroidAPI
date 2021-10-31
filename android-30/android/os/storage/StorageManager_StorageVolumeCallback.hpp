@@ -14,9 +14,9 @@ namespace android::os::storage
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StorageManager_StorageVolumeCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StorageManager_StorageVolumeCallback(QAndroidJniObject obj);
+		StorageManager_StorageVolumeCallback(QJniObject obj);
 		
 		// Constructors
 		StorageManager_StorageVolumeCallback();

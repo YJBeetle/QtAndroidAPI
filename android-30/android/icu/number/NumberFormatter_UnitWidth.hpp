@@ -16,9 +16,9 @@ namespace android::icu::number
 		static android::icu::number::NumberFormatter_UnitWidth NARROW();
 		static android::icu::number::NumberFormatter_UnitWidth SHORT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NumberFormatter_UnitWidth(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormatter_UnitWidth(QAndroidJniObject obj);
+		NumberFormatter_UnitWidth(QJniObject obj);
 		
 		// Constructors
 		

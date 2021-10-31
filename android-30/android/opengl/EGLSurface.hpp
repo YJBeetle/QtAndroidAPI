@@ -11,9 +11,9 @@ namespace android::opengl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EGLSurface(const char *className, const char *sig, Ts...agv) : android::opengl::EGLObjectHandle(className, sig, std::forward<Ts>(agv)...) {}
-		EGLSurface(QAndroidJniObject obj);
+		EGLSurface(QJniObject obj);
 		
 		// Constructors
 		

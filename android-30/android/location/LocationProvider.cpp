@@ -26,8 +26,8 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocationProvider::LocationProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocationProvider::LocationProvider(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

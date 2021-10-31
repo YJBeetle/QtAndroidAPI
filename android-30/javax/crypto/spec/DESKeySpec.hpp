@@ -11,9 +11,9 @@ namespace javax::crypto::spec
 		// Fields
 		static jint DES_KEY_LEN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DESKeySpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DESKeySpec(QAndroidJniObject obj);
+		DESKeySpec(QJniObject obj);
 		
 		// Constructors
 		DESKeySpec(jbyteArray arg0);

@@ -21,9 +21,9 @@ namespace java::lang
 		static java::lang::ProcessBuilder_Redirect INHERIT();
 		static java::lang::ProcessBuilder_Redirect PIPE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProcessBuilder_Redirect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessBuilder_Redirect(QAndroidJniObject obj);
+		ProcessBuilder_Redirect(QJniObject obj);
 		
 		// Constructors
 		

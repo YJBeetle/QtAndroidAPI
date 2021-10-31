@@ -7,8 +7,8 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Touch::Touch(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Touch::Touch(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

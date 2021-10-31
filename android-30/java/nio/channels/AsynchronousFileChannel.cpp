@@ -6,8 +6,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AsynchronousFileChannel::AsynchronousFileChannel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AsynchronousFileChannel::AsynchronousFileChannel(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

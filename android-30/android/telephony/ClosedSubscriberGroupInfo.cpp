@@ -13,8 +13,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ClosedSubscriberGroupInfo::ClosedSubscriberGroupInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ClosedSubscriberGroupInfo::ClosedSubscriberGroupInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

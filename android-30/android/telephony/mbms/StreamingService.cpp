@@ -90,8 +90,8 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StreamingService::StreamingService(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StreamingService::StreamingService(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

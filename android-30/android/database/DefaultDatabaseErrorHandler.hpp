@@ -14,9 +14,9 @@ namespace android::database
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DefaultDatabaseErrorHandler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DefaultDatabaseErrorHandler(QAndroidJniObject obj);
+		DefaultDatabaseErrorHandler(QJniObject obj);
 		
 		// Constructors
 		DefaultDatabaseErrorHandler();

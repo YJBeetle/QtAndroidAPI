@@ -10,9 +10,9 @@ namespace android::media::effect
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Effect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Effect(QAndroidJniObject obj);
+		Effect(QJniObject obj);
 		
 		// Constructors
 		Effect();

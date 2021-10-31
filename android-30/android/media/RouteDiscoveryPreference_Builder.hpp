@@ -14,9 +14,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RouteDiscoveryPreference_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RouteDiscoveryPreference_Builder(QAndroidJniObject obj);
+		RouteDiscoveryPreference_Builder(QJniObject obj);
 		
 		// Constructors
 		RouteDiscoveryPreference_Builder(android::media::RouteDiscoveryPreference arg0);

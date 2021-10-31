@@ -15,9 +15,9 @@ namespace android::service::controls::templates
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ToggleTemplate(const char *className, const char *sig, Ts...agv) : android::service::controls::templates::ControlTemplate(className, sig, std::forward<Ts>(agv)...) {}
-		ToggleTemplate(QAndroidJniObject obj);
+		ToggleTemplate(QJniObject obj);
 		
 		// Constructors
 		ToggleTemplate(jstring arg0, android::service::controls::templates::ControlButton arg1);

@@ -10,9 +10,9 @@ namespace android::service::voice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VoiceInteractionSession_ActivityId(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_ActivityId(QAndroidJniObject obj);
+		VoiceInteractionSession_ActivityId(QJniObject obj);
 		
 		// Constructors
 		

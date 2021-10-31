@@ -6,8 +6,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvalidPropertiesFormatException::InvalidPropertiesFormatException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	InvalidPropertiesFormatException::InvalidPropertiesFormatException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	InvalidPropertiesFormatException::InvalidPropertiesFormatException(jstring arg0)

@@ -22,9 +22,9 @@ namespace android::location
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GnssAntennaInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GnssAntennaInfo_Builder(QAndroidJniObject obj);
+		GnssAntennaInfo_Builder(QJniObject obj);
 		
 		// Constructors
 		GnssAntennaInfo_Builder();

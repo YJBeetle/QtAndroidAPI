@@ -17,9 +17,9 @@ namespace android::nfc
 		jint peerLlcpMajorVersion();
 		jint peerLlcpMinorVersion();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NfcEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NfcEvent(QAndroidJniObject obj);
+		NfcEvent(QJniObject obj);
 		
 		// Constructors
 		

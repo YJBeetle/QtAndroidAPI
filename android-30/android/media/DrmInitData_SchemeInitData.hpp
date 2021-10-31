@@ -18,9 +18,9 @@ namespace android::media
 		jstring mimeType();
 		java::util::UUID uuid();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DrmInitData_SchemeInitData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DrmInitData_SchemeInitData(QAndroidJniObject obj);
+		DrmInitData_SchemeInitData(QJniObject obj);
 		
 		// Constructors
 		

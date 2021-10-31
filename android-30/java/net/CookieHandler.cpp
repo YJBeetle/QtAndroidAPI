@@ -5,8 +5,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CookieHandler::CookieHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CookieHandler::CookieHandler(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CookieHandler::CookieHandler()

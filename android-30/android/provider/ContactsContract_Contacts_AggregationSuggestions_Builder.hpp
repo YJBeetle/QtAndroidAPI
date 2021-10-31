@@ -14,9 +14,9 @@ namespace android::provider
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_Contacts_AggregationSuggestions_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Contacts_AggregationSuggestions_Builder(QAndroidJniObject obj);
+		ContactsContract_Contacts_AggregationSuggestions_Builder(QJniObject obj);
 		
 		// Constructors
 		ContactsContract_Contacts_AggregationSuggestions_Builder();

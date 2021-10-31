@@ -100,8 +100,8 @@ namespace java::lang::annotation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ElementType::ElementType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ElementType::ElementType(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

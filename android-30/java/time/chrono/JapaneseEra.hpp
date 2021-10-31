@@ -35,9 +35,9 @@ namespace java::time::chrono
 		static java::time::chrono::JapaneseEra SHOWA();
 		static java::time::chrono::JapaneseEra TAISHO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JapaneseEra(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		JapaneseEra(QAndroidJniObject obj);
+		JapaneseEra(QJniObject obj);
 		
 		// Constructors
 		

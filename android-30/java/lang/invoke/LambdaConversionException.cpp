@@ -4,8 +4,8 @@ namespace java::lang::invoke
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LambdaConversionException::LambdaConversionException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	LambdaConversionException::LambdaConversionException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	LambdaConversionException::LambdaConversionException()

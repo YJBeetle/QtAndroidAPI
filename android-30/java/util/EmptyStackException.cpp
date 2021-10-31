@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EmptyStackException::EmptyStackException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	EmptyStackException::EmptyStackException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	EmptyStackException::EmptyStackException()

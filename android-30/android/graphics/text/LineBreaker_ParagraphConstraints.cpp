@@ -4,8 +4,8 @@ namespace android::graphics::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LineBreaker_ParagraphConstraints::LineBreaker_ParagraphConstraints(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LineBreaker_ParagraphConstraints::LineBreaker_ParagraphConstraints(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LineBreaker_ParagraphConstraints::LineBreaker_ParagraphConstraints()

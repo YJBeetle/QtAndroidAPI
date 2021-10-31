@@ -12,9 +12,9 @@ namespace android::icu::text
 		jint codepoint();
 		jint codepointEnd();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnicodeSet_EntryRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSet_EntryRange(QAndroidJniObject obj);
+		UnicodeSet_EntryRange(QJniObject obj);
 		
 		// Constructors
 		

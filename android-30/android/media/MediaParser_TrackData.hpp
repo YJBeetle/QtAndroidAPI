@@ -20,9 +20,9 @@ namespace android::media
 		android::media::DrmInitData drmInitData();
 		android::media::MediaFormat mediaFormat();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaParser_TrackData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaParser_TrackData(QAndroidJniObject obj);
+		MediaParser_TrackData(QJniObject obj);
 		
 		// Constructors
 		

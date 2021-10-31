@@ -22,9 +22,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImageReader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ImageReader(QAndroidJniObject obj);
+		ImageReader(QJniObject obj);
 		
 		// Constructors
 		

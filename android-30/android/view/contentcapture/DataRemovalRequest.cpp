@@ -20,8 +20,8 @@ namespace android::view::contentcapture
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DataRemovalRequest::DataRemovalRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DataRemovalRequest::DataRemovalRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

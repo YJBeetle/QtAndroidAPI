@@ -68,9 +68,9 @@ namespace android::app
 		static jint FLAG_SYSTEM();
 		static jstring WALLPAPER_PREVIEW_META_DATA();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WallpaperManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WallpaperManager(QAndroidJniObject obj);
+		WallpaperManager(QJniObject obj);
 		
 		// Constructors
 		

@@ -7,8 +7,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ThreadGroup::ThreadGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ThreadGroup::ThreadGroup(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ThreadGroup::ThreadGroup(jstring arg0)

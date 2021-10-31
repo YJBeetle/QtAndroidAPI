@@ -30,9 +30,9 @@ namespace android::view
 		static jint TO_LEFT();
 		static jint TO_RIGHT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TouchDelegate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TouchDelegate(QAndroidJniObject obj);
+		TouchDelegate(QJniObject obj);
 		
 		// Constructors
 		TouchDelegate(android::graphics::Rect arg0, android::view::View arg1);

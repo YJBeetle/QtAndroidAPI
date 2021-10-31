@@ -6,8 +6,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebMessagePort_WebMessageCallback::WebMessagePort_WebMessageCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebMessagePort_WebMessageCallback::WebMessagePort_WebMessageCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebMessagePort_WebMessageCallback::WebMessagePort_WebMessageCallback()

@@ -15,9 +15,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ComposePathEffect(const char *className, const char *sig, Ts...agv) : android::graphics::PathEffect(className, sig, std::forward<Ts>(agv)...) {}
-		ComposePathEffect(QAndroidJniObject obj);
+		ComposePathEffect(QJniObject obj);
 		
 		// Constructors
 		ComposePathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1);

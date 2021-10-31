@@ -7,8 +7,8 @@ namespace java::util::concurrent::locks
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractQueuedLongSynchronizer_ConditionObject::AbstractQueuedLongSynchronizer_ConditionObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AbstractQueuedLongSynchronizer_ConditionObject::AbstractQueuedLongSynchronizer_ConditionObject(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AbstractQueuedLongSynchronizer_ConditionObject::AbstractQueuedLongSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedLongSynchronizer arg0)

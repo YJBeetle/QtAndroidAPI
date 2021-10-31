@@ -43,8 +43,8 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MacAddress::MacAddress(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MacAddress::MacAddress(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

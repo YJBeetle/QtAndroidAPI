@@ -320,9 +320,9 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock YI_SYLLABLES();
 		static java::lang::Character_UnicodeBlock ZANABAZAR_SQUARE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Character_UnicodeBlock(const char *className, const char *sig, Ts...agv) : java::lang::Character_Subset(className, sig, std::forward<Ts>(agv)...) {}
-		Character_UnicodeBlock(QAndroidJniObject obj);
+		Character_UnicodeBlock(QJniObject obj);
 		
 		// Constructors
 		

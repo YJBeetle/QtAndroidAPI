@@ -37,8 +37,8 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ExtractedTextRequest::ExtractedTextRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ExtractedTextRequest::ExtractedTextRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ExtractedTextRequest::ExtractedTextRequest()

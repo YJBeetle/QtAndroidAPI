@@ -10,9 +10,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit URLUtil(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		URLUtil(QAndroidJniObject obj);
+		URLUtil(QJniObject obj);
 		
 		// Constructors
 		URLUtil();

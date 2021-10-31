@@ -14,9 +14,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WebResourceResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WebResourceResponse(QAndroidJniObject obj);
+		WebResourceResponse(QJniObject obj);
 		
 		// Constructors
 		WebResourceResponse(jstring arg0, jstring arg1, java::io::InputStream arg2);

@@ -19,9 +19,9 @@ namespace android::os
 		static jint SDK_INT();
 		static jstring SECURITY_PATCH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Build_VERSION(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Build_VERSION(QAndroidJniObject obj);
+		Build_VERSION(QJniObject obj);
 		
 		// Constructors
 		Build_VERSION();

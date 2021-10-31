@@ -22,9 +22,9 @@ namespace android::security::identity
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IdentityCredential(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IdentityCredential(QAndroidJniObject obj);
+		IdentityCredential(QJniObject obj);
 		
 		// Constructors
 		

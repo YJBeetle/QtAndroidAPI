@@ -5,8 +5,8 @@ namespace java::nio::file::attribute
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PosixFilePermissions::PosixFilePermissions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PosixFilePermissions::PosixFilePermissions(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

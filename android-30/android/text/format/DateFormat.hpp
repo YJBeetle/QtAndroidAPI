@@ -30,9 +30,9 @@ namespace android::text::format
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormat(QAndroidJniObject obj);
+		DateFormat(QJniObject obj);
 		
 		// Constructors
 		DateFormat();

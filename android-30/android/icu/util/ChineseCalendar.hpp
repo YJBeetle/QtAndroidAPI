@@ -31,9 +31,9 @@ namespace android::icu::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ChineseCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::Calendar(className, sig, std::forward<Ts>(agv)...) {}
-		ChineseCalendar(QAndroidJniObject obj);
+		ChineseCalendar(QJniObject obj);
 		
 		// Constructors
 		ChineseCalendar();

@@ -11,9 +11,9 @@ namespace android::provider
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_Presence(const char *className, const char *sig, Ts...agv) : android::provider::ContactsContract_StatusUpdates(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Presence(QAndroidJniObject obj);
+		ContactsContract_Presence(QJniObject obj);
 		
 		// Constructors
 		ContactsContract_Presence();

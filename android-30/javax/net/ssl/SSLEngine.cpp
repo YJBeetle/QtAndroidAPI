@@ -8,8 +8,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLEngine::SSLEngine(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SSLEngine::SSLEngine(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

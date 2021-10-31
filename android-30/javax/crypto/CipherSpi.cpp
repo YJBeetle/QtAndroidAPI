@@ -7,8 +7,8 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CipherSpi::CipherSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CipherSpi::CipherSpi(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CipherSpi::CipherSpi()

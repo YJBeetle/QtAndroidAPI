@@ -5,8 +5,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PushbackReader::PushbackReader(QAndroidJniObject obj) : java::io::FilterReader(obj) {}
+	// QJniObject forward
+	PushbackReader::PushbackReader(QJniObject obj) : java::io::FilterReader(obj) {}
 	
 	// Constructors
 	PushbackReader::PushbackReader(java::io::Reader arg0)

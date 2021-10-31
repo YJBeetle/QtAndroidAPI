@@ -34,9 +34,9 @@ namespace java::time::zone
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ZoneRules(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ZoneRules(QAndroidJniObject obj);
+		ZoneRules(QJniObject obj);
 		
 		// Constructors
 		

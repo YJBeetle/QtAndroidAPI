@@ -10,9 +10,9 @@ namespace android::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CloseGuard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CloseGuard(QAndroidJniObject obj);
+		CloseGuard(QJniObject obj);
 		
 		// Constructors
 		CloseGuard();

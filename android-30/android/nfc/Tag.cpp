@@ -13,8 +13,8 @@ namespace android::nfc
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Tag::Tag(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Tag::Tag(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

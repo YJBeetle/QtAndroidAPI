@@ -19,8 +19,8 @@ namespace android::net
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	UrlQuerySanitizer_ParameterValuePair::UrlQuerySanitizer_ParameterValuePair(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UrlQuerySanitizer_ParameterValuePair::UrlQuerySanitizer_ParameterValuePair(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	UrlQuerySanitizer_ParameterValuePair::UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer arg0, jstring arg1, jstring arg2)

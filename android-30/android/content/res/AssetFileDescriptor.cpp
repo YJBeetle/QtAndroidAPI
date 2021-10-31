@@ -25,8 +25,8 @@ namespace android::content::res
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AssetFileDescriptor::AssetFileDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AssetFileDescriptor::AssetFileDescriptor(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AssetFileDescriptor::AssetFileDescriptor(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2)

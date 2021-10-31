@@ -12,9 +12,9 @@ namespace android::util
 		static jintArray NOTHING();
 		static jintArray WILD_CARD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StateSet(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StateSet(QAndroidJniObject obj);
+		StateSet(QJniObject obj);
 		
 		// Constructors
 		

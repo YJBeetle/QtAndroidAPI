@@ -68,8 +68,8 @@ namespace android::nfc::cardemulation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CardEmulation::CardEmulation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CardEmulation::CardEmulation(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

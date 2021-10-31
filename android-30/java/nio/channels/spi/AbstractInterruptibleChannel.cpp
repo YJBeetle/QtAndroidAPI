@@ -5,8 +5,8 @@ namespace java::nio::channels::spi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractInterruptibleChannel::AbstractInterruptibleChannel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AbstractInterruptibleChannel::AbstractInterruptibleChannel(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

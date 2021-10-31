@@ -8,8 +8,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ViewAnimator::ViewAnimator(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
+	// QJniObject forward
+	ViewAnimator::ViewAnimator(QJniObject obj) : android::widget::FrameLayout(obj) {}
 	
 	// Constructors
 	ViewAnimator::ViewAnimator(android::content::Context arg0)

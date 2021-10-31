@@ -4,8 +4,8 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ReflectPermission::ReflectPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	// QJniObject forward
+	ReflectPermission::ReflectPermission(QJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
 	ReflectPermission::ReflectPermission(jstring arg0)

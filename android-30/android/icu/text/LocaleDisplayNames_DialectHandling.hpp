@@ -13,9 +13,9 @@ namespace android::icu::text
 		static android::icu::text::LocaleDisplayNames_DialectHandling DIALECT_NAMES();
 		static android::icu::text::LocaleDisplayNames_DialectHandling STANDARD_NAMES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocaleDisplayNames_DialectHandling(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleDisplayNames_DialectHandling(QAndroidJniObject obj);
+		LocaleDisplayNames_DialectHandling(QJniObject obj);
 		
 		// Constructors
 		

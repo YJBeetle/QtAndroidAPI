@@ -15,9 +15,9 @@ namespace android::location
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GnssAntennaInfo_SphericalCorrections(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GnssAntennaInfo_SphericalCorrections(QAndroidJniObject obj);
+		GnssAntennaInfo_SphericalCorrections(QJniObject obj);
 		
 		// Constructors
 		GnssAntennaInfo_SphericalCorrections(jarray arg0, jarray arg1);

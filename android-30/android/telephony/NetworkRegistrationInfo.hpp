@@ -33,9 +33,9 @@ namespace android::telephony
 		static jint SERVICE_TYPE_VIDEO();
 		static jint SERVICE_TYPE_VOICE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NetworkRegistrationInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkRegistrationInfo(QAndroidJniObject obj);
+		NetworkRegistrationInfo(QJniObject obj);
 		
 		// Constructors
 		

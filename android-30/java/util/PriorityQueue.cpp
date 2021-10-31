@@ -6,8 +6,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PriorityQueue::PriorityQueue(QAndroidJniObject obj) : java::util::AbstractQueue(obj) {}
+	// QJniObject forward
+	PriorityQueue::PriorityQueue(QJniObject obj) : java::util::AbstractQueue(obj) {}
 	
 	// Constructors
 	PriorityQueue::PriorityQueue()

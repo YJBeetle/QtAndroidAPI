@@ -22,9 +22,9 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Drawable_ConstantState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Drawable_ConstantState(QAndroidJniObject obj);
+		Drawable_ConstantState(QJniObject obj);
 		
 		// Constructors
 		Drawable_ConstantState();

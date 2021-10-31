@@ -12,8 +12,8 @@ namespace android::net
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MailTo::MailTo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MailTo::MailTo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

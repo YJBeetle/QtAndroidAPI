@@ -22,8 +22,8 @@ namespace java::time::chrono
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JapaneseChronology::JapaneseChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
+	// QJniObject forward
+	JapaneseChronology::JapaneseChronology(QJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
 	
 	// Constructors
 	

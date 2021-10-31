@@ -12,9 +12,9 @@ namespace java::security::spec
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InvalidParameterSpecException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidParameterSpecException(QAndroidJniObject obj);
+		InvalidParameterSpecException(QJniObject obj);
 		
 		// Constructors
 		InvalidParameterSpecException();

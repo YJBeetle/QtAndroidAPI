@@ -38,9 +38,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CompactDecimalFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::DecimalFormat(className, sig, std::forward<Ts>(agv)...) {}
-		CompactDecimalFormat(QAndroidJniObject obj);
+		CompactDecimalFormat(QJniObject obj);
 		
 		// Constructors
 		

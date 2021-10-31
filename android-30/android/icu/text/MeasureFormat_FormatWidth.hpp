@@ -15,9 +15,9 @@ namespace android::icu::text
 		static android::icu::text::MeasureFormat_FormatWidth SHORT();
 		static android::icu::text::MeasureFormat_FormatWidth WIDE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MeasureFormat_FormatWidth(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		MeasureFormat_FormatWidth(QAndroidJniObject obj);
+		MeasureFormat_FormatWidth(QJniObject obj);
 		
 		// Constructors
 		

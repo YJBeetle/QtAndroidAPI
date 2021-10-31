@@ -4,8 +4,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Executors::Executors(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Executors::Executors(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -4,8 +4,8 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicStampedReference::AtomicStampedReference(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AtomicStampedReference::AtomicStampedReference(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AtomicStampedReference::AtomicStampedReference(jobject arg0, jint arg1)

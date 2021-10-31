@@ -10,9 +10,9 @@ namespace javax::crypto::spec
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GCMParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GCMParameterSpec(QAndroidJniObject obj);
+		GCMParameterSpec(QJniObject obj);
 		
 		// Constructors
 		GCMParameterSpec(jint arg0, jbyteArray arg1);

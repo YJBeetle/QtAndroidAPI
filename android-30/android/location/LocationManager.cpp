@@ -113,8 +113,8 @@ namespace android::location
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	LocationManager::LocationManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocationManager::LocationManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

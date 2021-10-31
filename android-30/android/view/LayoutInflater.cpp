@@ -7,8 +7,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LayoutInflater::LayoutInflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LayoutInflater::LayoutInflater(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -417,8 +417,8 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SensorManager::SensorManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SensorManager::SensorManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

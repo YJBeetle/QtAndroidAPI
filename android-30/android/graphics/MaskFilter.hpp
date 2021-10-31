@@ -10,9 +10,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MaskFilter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MaskFilter(QAndroidJniObject obj);
+		MaskFilter(QJniObject obj);
 		
 		// Constructors
 		MaskFilter();

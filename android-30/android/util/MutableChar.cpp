@@ -10,8 +10,8 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MutableChar::MutableChar(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MutableChar::MutableChar(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MutableChar::MutableChar(jchar arg0)

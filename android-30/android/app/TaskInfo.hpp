@@ -30,9 +30,9 @@ namespace android::app
 		jint taskId();
 		android::content::ComponentName topActivity();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TaskInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TaskInfo(QAndroidJniObject obj);
+		TaskInfo(QJniObject obj);
 		
 		// Constructors
 		

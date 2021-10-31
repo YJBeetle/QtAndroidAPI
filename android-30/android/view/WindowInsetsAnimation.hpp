@@ -10,9 +10,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WindowInsetsAnimation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsetsAnimation(QAndroidJniObject obj);
+		WindowInsetsAnimation(QJniObject obj);
 		
 		// Constructors
 		WindowInsetsAnimation(jint arg0, __JniBaseClass arg1, jlong arg2);

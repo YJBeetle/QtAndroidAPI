@@ -14,9 +14,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ViewOverlay(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ViewOverlay(QAndroidJniObject obj);
+		ViewOverlay(QJniObject obj);
 		
 		// Constructors
 		

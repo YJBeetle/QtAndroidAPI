@@ -12,9 +12,9 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SSLException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		SSLException(QAndroidJniObject obj);
+		SSLException(QJniObject obj);
 		
 		// Constructors
 		SSLException(jstring arg0);

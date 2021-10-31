@@ -16,8 +16,8 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextClassification_Request::TextClassification_Request(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextClassification_Request::TextClassification_Request(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

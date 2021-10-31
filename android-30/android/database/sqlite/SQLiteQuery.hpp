@@ -12,9 +12,9 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SQLiteQuery(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteProgram(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteQuery(QAndroidJniObject obj);
+		SQLiteQuery(QJniObject obj);
 		
 		// Constructors
 		

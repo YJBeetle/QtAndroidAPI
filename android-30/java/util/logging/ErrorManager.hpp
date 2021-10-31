@@ -20,9 +20,9 @@ namespace java::util::logging
 		static jint OPEN_FAILURE();
 		static jint WRITE_FAILURE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ErrorManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ErrorManager(QAndroidJniObject obj);
+		ErrorManager(QJniObject obj);
 		
 		// Constructors
 		ErrorManager();

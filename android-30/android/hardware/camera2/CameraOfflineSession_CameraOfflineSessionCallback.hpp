@@ -15,9 +15,9 @@ namespace android::hardware::camera2
 		// Fields
 		static jint STATUS_INTERNAL_ERROR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraOfflineSession_CameraOfflineSessionCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CameraOfflineSession_CameraOfflineSessionCallback(QAndroidJniObject obj);
+		CameraOfflineSession_CameraOfflineSessionCallback(QJniObject obj);
 		
 		// Constructors
 		CameraOfflineSession_CameraOfflineSessionCallback();

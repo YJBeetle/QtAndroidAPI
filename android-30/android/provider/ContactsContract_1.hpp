@@ -10,9 +10,9 @@ namespace android::provider
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_1(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_1(QAndroidJniObject obj);
+		ContactsContract_1(QJniObject obj);
 		
 		// Constructors
 		

@@ -26,8 +26,8 @@ namespace android::animation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ValueAnimator::ValueAnimator(QAndroidJniObject obj) : android::animation::Animator(obj) {}
+	// QJniObject forward
+	ValueAnimator::ValueAnimator(QJniObject obj) : android::animation::Animator(obj) {}
 	
 	// Constructors
 	ValueAnimator::ValueAnimator()

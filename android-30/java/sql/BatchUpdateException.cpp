@@ -6,8 +6,8 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BatchUpdateException::BatchUpdateException(QAndroidJniObject obj) : java::sql::SQLException(obj) {}
+	// QJniObject forward
+	BatchUpdateException::BatchUpdateException(QJniObject obj) : java::sql::SQLException(obj) {}
 	
 	// Constructors
 	BatchUpdateException::BatchUpdateException()

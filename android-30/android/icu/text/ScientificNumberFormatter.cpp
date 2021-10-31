@@ -6,8 +6,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScientificNumberFormatter::ScientificNumberFormatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ScientificNumberFormatter::ScientificNumberFormatter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

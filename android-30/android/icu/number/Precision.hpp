@@ -26,9 +26,9 @@ namespace android::icu::number
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Precision(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Precision(QAndroidJniObject obj);
+		Precision(QJniObject obj);
 		
 		// Constructors
 		

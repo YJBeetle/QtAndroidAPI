@@ -26,9 +26,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Normalizer2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Normalizer2(QAndroidJniObject obj);
+		Normalizer2(QJniObject obj);
 		
 		// Constructors
 		

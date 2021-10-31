@@ -4,8 +4,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LimitExceededException::LimitExceededException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	LimitExceededException::LimitExceededException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	LimitExceededException::LimitExceededException()

@@ -10,9 +10,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IDNA_Info(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IDNA_Info(QAndroidJniObject obj);
+		IDNA_Info(QJniObject obj);
 		
 		// Constructors
 		IDNA_Info();

@@ -4,8 +4,8 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvalidReaderSignatureException::InvalidReaderSignatureException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
+	// QJniObject forward
+	InvalidReaderSignatureException::InvalidReaderSignatureException(QJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 	
 	// Constructors
 	InvalidReaderSignatureException::InvalidReaderSignatureException(jstring arg0)

@@ -17,8 +17,8 @@ namespace android::icu::util
 		).object<jobject>();
 	}
 	
-	// QAndroidJniObject forward
-	ValueIterator_Element::ValueIterator_Element(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ValueIterator_Element::ValueIterator_Element(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ValueIterator_Element::ValueIterator_Element()

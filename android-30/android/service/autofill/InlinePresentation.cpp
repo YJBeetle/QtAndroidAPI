@@ -15,8 +15,8 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InlinePresentation::InlinePresentation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InlinePresentation::InlinePresentation(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	InlinePresentation::InlinePresentation(android::app::slice::Slice arg0, android::widget::inline::InlinePresentationSpec arg1, jboolean arg2)

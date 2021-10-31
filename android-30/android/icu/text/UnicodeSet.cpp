@@ -66,8 +66,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UnicodeSet::UnicodeSet(QAndroidJniObject obj) : android::icu::text::UnicodeFilter(obj) {}
+	// QJniObject forward
+	UnicodeSet::UnicodeSet(QJniObject obj) : android::icu::text::UnicodeFilter(obj) {}
 	
 	// Constructors
 	UnicodeSet::UnicodeSet()

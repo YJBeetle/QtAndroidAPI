@@ -22,9 +22,9 @@ namespace android::service::quicksettings
 		static jint STATE_INACTIVE();
 		static jint STATE_UNAVAILABLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Tile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Tile(QAndroidJniObject obj);
+		Tile(QJniObject obj);
 		
 		// Constructors
 		

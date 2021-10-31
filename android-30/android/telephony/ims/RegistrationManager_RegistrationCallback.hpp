@@ -14,9 +14,9 @@ namespace android::telephony::ims
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RegistrationManager_RegistrationCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RegistrationManager_RegistrationCallback(QAndroidJniObject obj);
+		RegistrationManager_RegistrationCallback(QJniObject obj);
 		
 		// Constructors
 		RegistrationManager_RegistrationCallback();

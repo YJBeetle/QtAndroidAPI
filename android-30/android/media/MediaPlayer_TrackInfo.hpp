@@ -24,9 +24,9 @@ namespace android::media
 		static jint MEDIA_TRACK_TYPE_UNKNOWN();
 		static jint MEDIA_TRACK_TYPE_VIDEO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaPlayer_TrackInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaPlayer_TrackInfo(QAndroidJniObject obj);
+		MediaPlayer_TrackInfo(QJniObject obj);
 		
 		// Constructors
 		

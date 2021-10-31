@@ -8,8 +8,8 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SaveInfo_Builder::SaveInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SaveInfo_Builder::SaveInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SaveInfo_Builder::SaveInfo_Builder(jint arg0)

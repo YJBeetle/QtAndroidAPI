@@ -6,8 +6,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SignedObject::SignedObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SignedObject::SignedObject(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SignedObject::SignedObject(__JniBaseClass arg0, __JniBaseClass arg1, java::security::Signature arg2)

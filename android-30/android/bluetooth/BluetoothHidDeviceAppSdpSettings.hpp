@@ -15,9 +15,9 @@ namespace android::bluetooth
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothHidDeviceAppSdpSettings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothHidDeviceAppSdpSettings(QAndroidJniObject obj);
+		BluetoothHidDeviceAppSdpSettings(QJniObject obj);
 		
 		// Constructors
 		BluetoothHidDeviceAppSdpSettings(jstring arg0, jstring arg1, jstring arg2, jbyte arg3, jbyteArray arg4);

@@ -27,8 +27,8 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ActivityOptions::ActivityOptions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ActivityOptions::ActivityOptions(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

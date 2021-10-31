@@ -19,9 +19,9 @@ namespace android::provider
 		static jstring VOICE_OPERATOR_NUMERIC();
 		static jstring VOICE_REG_STATE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Telephony_ServiceStateTable(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_ServiceStateTable(QAndroidJniObject obj);
+		Telephony_ServiceStateTable(QJniObject obj);
 		
 		// Constructors
 		

@@ -31,8 +31,8 @@ namespace android::hardware
 		).object<jfloatArray>();
 	}
 	
-	// QAndroidJniObject forward
-	SensorEvent::SensorEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SensorEvent::SensorEvent(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

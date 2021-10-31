@@ -14,9 +14,9 @@ namespace android::net::wifi::hotspot2
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConfigParser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConfigParser(QAndroidJniObject obj);
+		ConfigParser(QJniObject obj);
 		
 		// Constructors
 		

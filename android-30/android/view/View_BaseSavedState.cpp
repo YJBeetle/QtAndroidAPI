@@ -14,8 +14,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	View_BaseSavedState::View_BaseSavedState(QAndroidJniObject obj) : android::view::AbsSavedState(obj) {}
+	// QJniObject forward
+	View_BaseSavedState::View_BaseSavedState(QJniObject obj) : android::view::AbsSavedState(obj) {}
 	
 	// Constructors
 	View_BaseSavedState::View_BaseSavedState(android::os::Parcel arg0)

@@ -26,9 +26,9 @@ namespace javax::crypto
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EncryptedPrivateKeyInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EncryptedPrivateKeyInfo(QAndroidJniObject obj);
+		EncryptedPrivateKeyInfo(QJniObject obj);
 		
 		// Constructors
 		EncryptedPrivateKeyInfo(jbyteArray arg0);

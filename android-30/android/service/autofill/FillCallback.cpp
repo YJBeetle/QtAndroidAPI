@@ -5,8 +5,8 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FillCallback::FillCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FillCallback::FillCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

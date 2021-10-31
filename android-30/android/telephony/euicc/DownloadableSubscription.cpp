@@ -13,8 +13,8 @@ namespace android::telephony::euicc
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DownloadableSubscription::DownloadableSubscription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DownloadableSubscription::DownloadableSubscription(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

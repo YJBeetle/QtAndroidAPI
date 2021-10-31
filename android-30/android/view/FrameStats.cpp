@@ -11,8 +11,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FrameStats::FrameStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FrameStats::FrameStats(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	FrameStats::FrameStats()

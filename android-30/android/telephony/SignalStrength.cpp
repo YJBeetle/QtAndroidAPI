@@ -20,8 +20,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SignalStrength::SignalStrength(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SignalStrength::SignalStrength(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

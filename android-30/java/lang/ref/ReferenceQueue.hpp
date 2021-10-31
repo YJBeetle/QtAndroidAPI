@@ -14,9 +14,9 @@ namespace java::lang::ref
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ReferenceQueue(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ReferenceQueue(QAndroidJniObject obj);
+		ReferenceQueue(QJniObject obj);
 		
 		// Constructors
 		ReferenceQueue();

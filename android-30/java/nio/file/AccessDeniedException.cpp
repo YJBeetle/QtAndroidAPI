@@ -4,8 +4,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AccessDeniedException::AccessDeniedException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
+	// QJniObject forward
+	AccessDeniedException::AccessDeniedException(QJniObject obj) : java::nio::file::FileSystemException(obj) {}
 	
 	// Constructors
 	AccessDeniedException::AccessDeniedException(jstring arg0)

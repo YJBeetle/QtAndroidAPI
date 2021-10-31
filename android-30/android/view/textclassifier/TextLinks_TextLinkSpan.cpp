@@ -6,8 +6,8 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextLinks_TextLinkSpan::TextLinks_TextLinkSpan(QAndroidJniObject obj) : android::text::style::ClickableSpan(obj) {}
+	// QJniObject forward
+	TextLinks_TextLinkSpan::TextLinks_TextLinkSpan(QJniObject obj) : android::text::style::ClickableSpan(obj) {}
 	
 	// Constructors
 	TextLinks_TextLinkSpan::TextLinks_TextLinkSpan(android::view::textclassifier::TextLinks_TextLink arg0)

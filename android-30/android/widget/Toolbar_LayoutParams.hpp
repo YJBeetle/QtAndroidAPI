@@ -29,9 +29,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Toolbar_LayoutParams(const char *className, const char *sig, Ts...agv) : android::app::ActionBar_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		Toolbar_LayoutParams(QAndroidJniObject obj);
+		Toolbar_LayoutParams(QJniObject obj);
 		
 		// Constructors
 		Toolbar_LayoutParams(android::app::ActionBar_LayoutParams arg0);

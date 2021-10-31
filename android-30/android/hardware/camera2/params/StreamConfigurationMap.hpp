@@ -22,9 +22,9 @@ namespace android::hardware::camera2::params
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StreamConfigurationMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StreamConfigurationMap(QAndroidJniObject obj);
+		StreamConfigurationMap(QJniObject obj);
 		
 		// Constructors
 		

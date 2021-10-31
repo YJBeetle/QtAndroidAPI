@@ -4,8 +4,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SerializablePermission::SerializablePermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	// QJniObject forward
+	SerializablePermission::SerializablePermission(QJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
 	SerializablePermission::SerializablePermission(jstring arg0)

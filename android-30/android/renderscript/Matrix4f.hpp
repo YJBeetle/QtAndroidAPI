@@ -10,9 +10,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Matrix4f(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Matrix4f(QAndroidJniObject obj);
+		Matrix4f(QJniObject obj);
 		
 		// Constructors
 		Matrix4f();

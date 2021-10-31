@@ -10,9 +10,9 @@ namespace javax::xml::validation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Validator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Validator(QAndroidJniObject obj);
+		Validator(QJniObject obj);
 		
 		// Constructors
 		

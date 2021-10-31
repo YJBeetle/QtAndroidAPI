@@ -15,9 +15,9 @@ namespace android::hardware::biometrics
 		static jint BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED();
 		static jint BIOMETRIC_SUCCESS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BiometricManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricManager(QAndroidJniObject obj);
+		BiometricManager(QJniObject obj);
 		
 		// Constructors
 		

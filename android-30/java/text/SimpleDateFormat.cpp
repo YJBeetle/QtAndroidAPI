@@ -13,8 +13,8 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SimpleDateFormat::SimpleDateFormat(QAndroidJniObject obj) : java::text::DateFormat(obj) {}
+	// QJniObject forward
+	SimpleDateFormat::SimpleDateFormat(QJniObject obj) : java::text::DateFormat(obj) {}
 	
 	// Constructors
 	SimpleDateFormat::SimpleDateFormat()

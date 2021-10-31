@@ -70,9 +70,9 @@ namespace android::telephony
 		static jint BAND_88();
 		static jint BAND_9();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessNetworkConstants_EutranBand(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessNetworkConstants_EutranBand(QAndroidJniObject obj);
+		AccessNetworkConstants_EutranBand(QJniObject obj);
 		
 		// Constructors
 		

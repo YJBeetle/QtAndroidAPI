@@ -12,9 +12,9 @@ namespace android::security::identity
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AlreadyPersonalizedException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		AlreadyPersonalizedException(QAndroidJniObject obj);
+		AlreadyPersonalizedException(QJniObject obj);
 		
 		// Constructors
 		AlreadyPersonalizedException(jstring arg0);

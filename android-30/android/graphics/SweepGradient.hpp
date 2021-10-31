@@ -11,9 +11,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SweepGradient(const char *className, const char *sig, Ts...agv) : android::graphics::Shader(className, sig, std::forward<Ts>(agv)...) {}
-		SweepGradient(QAndroidJniObject obj);
+		SweepGradient(QJniObject obj);
 		
 		// Constructors
 		SweepGradient(jfloat arg0, jfloat arg1, jintArray arg2, jfloatArray arg3);

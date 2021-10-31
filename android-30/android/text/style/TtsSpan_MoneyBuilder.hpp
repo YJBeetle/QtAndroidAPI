@@ -12,9 +12,9 @@ namespace android::text::style
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TtsSpan_MoneyBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_MoneyBuilder(QAndroidJniObject obj);
+		TtsSpan_MoneyBuilder(QJniObject obj);
 		
 		// Constructors
 		TtsSpan_MoneyBuilder();

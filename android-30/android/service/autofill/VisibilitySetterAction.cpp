@@ -13,8 +13,8 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VisibilitySetterAction::VisibilitySetterAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VisibilitySetterAction::VisibilitySetterAction(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

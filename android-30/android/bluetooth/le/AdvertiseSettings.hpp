@@ -22,9 +22,9 @@ namespace android::bluetooth::le
 		static jint ADVERTISE_TX_POWER_ULTRA_LOW();
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AdvertiseSettings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AdvertiseSettings(QAndroidJniObject obj);
+		AdvertiseSettings(QJniObject obj);
 		
 		// Constructors
 		

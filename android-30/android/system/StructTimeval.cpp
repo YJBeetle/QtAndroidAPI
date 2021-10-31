@@ -16,8 +16,8 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StructTimeval::StructTimeval(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StructTimeval::StructTimeval(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

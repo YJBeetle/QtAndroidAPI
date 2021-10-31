@@ -27,9 +27,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ForkJoinWorkerThread(const char *className, const char *sig, Ts...agv) : java::lang::Thread(className, sig, std::forward<Ts>(agv)...) {}
-		ForkJoinWorkerThread(QAndroidJniObject obj);
+		ForkJoinWorkerThread(QJniObject obj);
 		
 		// Constructors
 		

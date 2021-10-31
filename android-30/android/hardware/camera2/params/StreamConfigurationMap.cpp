@@ -7,8 +7,8 @@ namespace android::hardware::camera2::params
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StreamConfigurationMap::StreamConfigurationMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StreamConfigurationMap::StreamConfigurationMap(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

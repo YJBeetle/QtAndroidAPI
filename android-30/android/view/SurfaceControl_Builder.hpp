@@ -14,9 +14,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SurfaceControl_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceControl_Builder(QAndroidJniObject obj);
+		SurfaceControl_Builder(QJniObject obj);
 		
 		// Constructors
 		SurfaceControl_Builder();

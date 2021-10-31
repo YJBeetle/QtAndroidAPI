@@ -15,9 +15,9 @@ namespace android::graphics
 		static android::graphics::Matrix_ScaleToFit FILL();
 		static android::graphics::Matrix_ScaleToFit START();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Matrix_ScaleToFit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Matrix_ScaleToFit(QAndroidJniObject obj);
+		Matrix_ScaleToFit(QJniObject obj);
 		
 		// Constructors
 		

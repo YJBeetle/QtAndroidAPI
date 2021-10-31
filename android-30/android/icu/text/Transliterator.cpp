@@ -23,8 +23,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Transliterator::Transliterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Transliterator::Transliterator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

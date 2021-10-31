@@ -4,8 +4,8 @@ namespace android::speech::tts
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UtteranceProgressListener::UtteranceProgressListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UtteranceProgressListener::UtteranceProgressListener(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	UtteranceProgressListener::UtteranceProgressListener()

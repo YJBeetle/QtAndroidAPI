@@ -4,8 +4,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClosedDirectoryStreamException::ClosedDirectoryStreamException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	ClosedDirectoryStreamException::ClosedDirectoryStreamException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	ClosedDirectoryStreamException::ClosedDirectoryStreamException()

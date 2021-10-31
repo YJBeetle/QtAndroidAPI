@@ -9,8 +9,8 @@ namespace android::inputmethodservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputMethodService_InputMethodSessionImpl::InputMethodService_InputMethodSessionImpl(QAndroidJniObject obj) : android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl(obj) {}
+	// QJniObject forward
+	InputMethodService_InputMethodSessionImpl::InputMethodService_InputMethodSessionImpl(QJniObject obj) : android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl(obj) {}
 	
 	// Constructors
 	InputMethodService_InputMethodSessionImpl::InputMethodService_InputMethodSessionImpl(android::inputmethodservice::InputMethodService arg0)

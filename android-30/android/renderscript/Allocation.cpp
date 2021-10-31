@@ -69,8 +69,8 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Allocation::Allocation(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
+	// QJniObject forward
+	Allocation::Allocation(QJniObject obj) : android::renderscript::BaseObj(obj) {}
 	
 	// Constructors
 	

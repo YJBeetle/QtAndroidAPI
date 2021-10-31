@@ -66,9 +66,9 @@ namespace android::text::format
 		static jintArray sameMonthTable();
 		static jintArray sameYearTable();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DateUtils(QAndroidJniObject obj);
+		DateUtils(QJniObject obj);
 		
 		// Constructors
 		DateUtils();

@@ -19,9 +19,9 @@ namespace android::nfc
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NdefMessage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NdefMessage(QAndroidJniObject obj);
+		NdefMessage(QJniObject obj);
 		
 		// Constructors
 		NdefMessage(jbyteArray arg0);

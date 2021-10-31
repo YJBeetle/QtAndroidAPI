@@ -8,8 +8,8 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(jstring arg0, jint arg1)

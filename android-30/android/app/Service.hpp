@@ -49,9 +49,9 @@ namespace android::app
 		static jint STOP_FOREGROUND_DETACH();
 		static jint STOP_FOREGROUND_REMOVE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Service(const char *className, const char *sig, Ts...agv) : android::content::ContextWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		Service(QAndroidJniObject obj);
+		Service(QJniObject obj);
 		
 		// Constructors
 		Service();

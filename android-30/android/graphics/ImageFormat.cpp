@@ -158,8 +158,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImageFormat::ImageFormat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ImageFormat::ImageFormat(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ImageFormat::ImageFormat()

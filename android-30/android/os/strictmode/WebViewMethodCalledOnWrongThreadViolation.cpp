@@ -4,8 +4,8 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebViewMethodCalledOnWrongThreadViolation::WebViewMethodCalledOnWrongThreadViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	// QJniObject forward
+	WebViewMethodCalledOnWrongThreadViolation::WebViewMethodCalledOnWrongThreadViolation(QJniObject obj) : android::os::strictmode::Violation(obj) {}
 	
 	// Constructors
 	

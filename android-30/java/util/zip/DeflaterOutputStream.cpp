@@ -6,8 +6,8 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DeflaterOutputStream::DeflaterOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
+	// QJniObject forward
+	DeflaterOutputStream::DeflaterOutputStream(QJniObject obj) : java::io::FilterOutputStream(obj) {}
 	
 	// Constructors
 	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream arg0)

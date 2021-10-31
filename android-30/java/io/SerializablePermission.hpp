@@ -12,9 +12,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SerializablePermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		SerializablePermission(QAndroidJniObject obj);
+		SerializablePermission(QJniObject obj);
 		
 		// Constructors
 		SerializablePermission(jstring arg0);

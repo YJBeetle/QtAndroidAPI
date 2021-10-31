@@ -20,9 +20,9 @@ namespace android::view
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VerifiedKeyEvent(const char *className, const char *sig, Ts...agv) : android::view::VerifiedInputEvent(className, sig, std::forward<Ts>(agv)...) {}
-		VerifiedKeyEvent(QAndroidJniObject obj);
+		VerifiedKeyEvent(QJniObject obj);
 		
 		// Constructors
 		

@@ -15,9 +15,9 @@ namespace android::graphics
 		static android::graphics::ColorSpace_RenderIntent RELATIVE();
 		static android::graphics::ColorSpace_RenderIntent SATURATION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ColorSpace_RenderIntent(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_RenderIntent(QAndroidJniObject obj);
+		ColorSpace_RenderIntent(QJniObject obj);
 		
 		// Constructors
 		

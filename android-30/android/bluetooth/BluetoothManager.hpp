@@ -30,9 +30,9 @@ namespace android::bluetooth
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothManager(QAndroidJniObject obj);
+		BluetoothManager(QJniObject obj);
 		
 		// Constructors
 		

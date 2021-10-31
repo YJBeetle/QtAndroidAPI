@@ -25,9 +25,9 @@ namespace android::hardware::camera2::params
 		static jint METERING_WEIGHT_MAX();
 		static jint METERING_WEIGHT_MIN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MeteringRectangle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MeteringRectangle(QAndroidJniObject obj);
+		MeteringRectangle(QJniObject obj);
 		
 		// Constructors
 		MeteringRectangle(android::graphics::Rect arg0, jint arg1);

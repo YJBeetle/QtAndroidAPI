@@ -39,9 +39,9 @@ namespace android::provider
 		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
 		static jstring QUERY_PARAMETER_VCARD_NO_PHOTO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_Contacts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Contacts(QAndroidJniObject obj);
+		ContactsContract_Contacts(QJniObject obj);
 		
 		// Constructors
 		

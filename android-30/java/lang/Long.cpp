@@ -43,8 +43,8 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	// QAndroidJniObject forward
-	Long::Long(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	// QJniObject forward
+	Long::Long(QJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
 	Long::Long(jstring arg0)

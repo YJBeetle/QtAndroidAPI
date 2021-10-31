@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimeFormatException::TimeFormatException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	TimeFormatException::TimeFormatException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	

@@ -12,9 +12,9 @@ namespace java::nio
 		static java::nio::ByteOrder BIG_ENDIAN();
 		static java::nio::ByteOrder LITTLE_ENDIAN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ByteOrder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ByteOrder(QAndroidJniObject obj);
+		ByteOrder(QJniObject obj);
 		
 		// Constructors
 		

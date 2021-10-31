@@ -135,8 +135,8 @@ namespace java::time::format
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateTimeFormatter::DateTimeFormatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DateTimeFormatter::DateTimeFormatter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

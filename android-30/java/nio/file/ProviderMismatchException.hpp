@@ -13,9 +13,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProviderMismatchException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		ProviderMismatchException(QAndroidJniObject obj);
+		ProviderMismatchException(QJniObject obj);
 		
 		// Constructors
 		ProviderMismatchException();

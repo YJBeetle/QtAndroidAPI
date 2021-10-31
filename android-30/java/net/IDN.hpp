@@ -16,9 +16,9 @@ namespace java::net
 		static jint ALLOW_UNASSIGNED();
 		static jint USE_STD3_ASCII_RULES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IDN(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IDN(QAndroidJniObject obj);
+		IDN(QJniObject obj);
 		
 		// Constructors
 		

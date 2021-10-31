@@ -7,8 +7,8 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RuleBasedCollator::RuleBasedCollator(QAndroidJniObject obj) : java::text::Collator(obj) {}
+	// QJniObject forward
+	RuleBasedCollator::RuleBasedCollator(QJniObject obj) : java::text::Collator(obj) {}
 	
 	// Constructors
 	RuleBasedCollator::RuleBasedCollator(jstring arg0)

@@ -4,8 +4,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ParcelFormatException::ParcelFormatException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	ParcelFormatException::ParcelFormatException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	ParcelFormatException::ParcelFormatException()

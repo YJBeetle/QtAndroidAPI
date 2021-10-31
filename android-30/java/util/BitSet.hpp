@@ -26,9 +26,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BitSet(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BitSet(QAndroidJniObject obj);
+		BitSet(QJniObject obj);
 		
 		// Constructors
 		BitSet();

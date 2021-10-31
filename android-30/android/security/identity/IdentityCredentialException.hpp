@@ -11,9 +11,9 @@ namespace android::security::identity
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IdentityCredentialException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		IdentityCredentialException(QAndroidJniObject obj);
+		IdentityCredentialException(QJniObject obj);
 		
 		// Constructors
 		IdentityCredentialException(jstring arg0);

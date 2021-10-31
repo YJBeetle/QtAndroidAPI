@@ -6,8 +6,8 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SealedObject::SealedObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SealedObject::SealedObject(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SealedObject::SealedObject(__JniBaseClass arg0, javax::crypto::Cipher arg1)

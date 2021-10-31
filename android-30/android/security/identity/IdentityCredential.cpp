@@ -7,8 +7,8 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IdentityCredential::IdentityCredential(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IdentityCredential::IdentityCredential(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

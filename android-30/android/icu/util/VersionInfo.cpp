@@ -284,8 +284,8 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VersionInfo::VersionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VersionInfo::VersionInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

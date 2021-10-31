@@ -7,8 +7,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConcurrentHashMap::ConcurrentHashMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
+	// QJniObject forward
+	ConcurrentHashMap::ConcurrentHashMap(QJniObject obj) : java::util::AbstractMap(obj) {}
 	
 	// Constructors
 	ConcurrentHashMap::ConcurrentHashMap()

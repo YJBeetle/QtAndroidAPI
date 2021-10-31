@@ -11,9 +11,9 @@ namespace android::service::controls::templates
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RangeTemplate(const char *className, const char *sig, Ts...agv) : android::service::controls::templates::ControlTemplate(className, sig, std::forward<Ts>(agv)...) {}
-		RangeTemplate(QAndroidJniObject obj);
+		RangeTemplate(QJniObject obj);
 		
 		// Constructors
 		RangeTemplate(jstring arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jstring arg5);

@@ -5,8 +5,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HardwareRenderer_FrameRenderRequest::HardwareRenderer_FrameRenderRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	HardwareRenderer_FrameRenderRequest::HardwareRenderer_FrameRenderRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

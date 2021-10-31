@@ -74,8 +74,8 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiEnterpriseConfig_Eap::WifiEnterpriseConfig_Eap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiEnterpriseConfig_Eap::WifiEnterpriseConfig_Eap(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

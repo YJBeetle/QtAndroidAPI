@@ -13,9 +13,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NotLinkException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
-		NotLinkException(QAndroidJniObject obj);
+		NotLinkException(QJniObject obj);
 		
 		// Constructors
 		NotLinkException(jstring arg0);

@@ -32,9 +32,9 @@ namespace android::icu::text
 		static jint FORWARD();
 		static jint REVERSE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Transliterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Transliterator(QAndroidJniObject obj);
+		Transliterator(QJniObject obj);
 		
 		// Constructors
 		

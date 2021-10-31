@@ -5,8 +5,8 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	XMLReaderFactory::XMLReaderFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	XMLReaderFactory::XMLReaderFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -10,9 +10,9 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AtomicReference(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicReference(QAndroidJniObject obj);
+		AtomicReference(QJniObject obj);
 		
 		// Constructors
 		AtomicReference();

@@ -7,8 +7,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CodeSigner::CodeSigner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CodeSigner::CodeSigner(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CodeSigner::CodeSigner(java::security::cert::CertPath arg0, java::security::Timestamp arg1)

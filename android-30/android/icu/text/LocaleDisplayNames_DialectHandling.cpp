@@ -20,8 +20,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocaleDisplayNames_DialectHandling::LocaleDisplayNames_DialectHandling(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	LocaleDisplayNames_DialectHandling::LocaleDisplayNames_DialectHandling(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

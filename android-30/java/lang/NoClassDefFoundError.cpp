@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoClassDefFoundError::NoClassDefFoundError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
+	// QJniObject forward
+	NoClassDefFoundError::NoClassDefFoundError(QJniObject obj) : java::lang::LinkageError(obj) {}
 	
 	// Constructors
 	NoClassDefFoundError::NoClassDefFoundError()

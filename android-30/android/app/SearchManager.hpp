@@ -74,9 +74,9 @@ namespace android::app
 		static jstring SUGGEST_URI_PATH_SHORTCUT();
 		static jstring USER_QUERY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SearchManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SearchManager(QAndroidJniObject obj);
+		SearchManager(QJniObject obj);
 		
 		// Constructors
 		

@@ -5,8 +5,8 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ECFieldF2m::ECFieldF2m(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ECFieldF2m::ECFieldF2m(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ECFieldF2m::ECFieldF2m(jint arg0)

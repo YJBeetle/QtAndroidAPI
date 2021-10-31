@@ -24,9 +24,9 @@ namespace android::net
 		static __JniBaseClass CREATOR();
 		static android::net::Uri EMPTY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Uri(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Uri(QAndroidJniObject obj);
+		Uri(QJniObject obj);
 		
 		// Constructors
 		

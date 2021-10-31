@@ -12,9 +12,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InternalError(const char *className, const char *sig, Ts...agv) : java::lang::VirtualMachineError(className, sig, std::forward<Ts>(agv)...) {}
-		InternalError(QAndroidJniObject obj);
+		InternalError(QJniObject obj);
 		
 		// Constructors
 		InternalError();

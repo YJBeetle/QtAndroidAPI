@@ -22,8 +22,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Settings_NameValueTable::Settings_NameValueTable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Settings_NameValueTable::Settings_NameValueTable(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Settings_NameValueTable::Settings_NameValueTable()

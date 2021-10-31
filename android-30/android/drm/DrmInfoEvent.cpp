@@ -47,8 +47,8 @@ namespace android::drm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DrmInfoEvent::DrmInfoEvent(QAndroidJniObject obj) : android::drm::DrmEvent(obj) {}
+	// QJniObject forward
+	DrmInfoEvent::DrmInfoEvent(QJniObject obj) : android::drm::DrmEvent(obj) {}
 	
 	// Constructors
 	DrmInfoEvent::DrmInfoEvent(jint arg0, jint arg1, jstring arg2)

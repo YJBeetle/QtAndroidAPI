@@ -24,9 +24,9 @@ namespace android::media
 		// Fields
 		static jint BITMAP_KEY_ARTWORK();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RemoteControlClient_MetadataEditor(const char *className, const char *sig, Ts...agv) : android::media::MediaMetadataEditor(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteControlClient_MetadataEditor(QAndroidJniObject obj);
+		RemoteControlClient_MetadataEditor(QJniObject obj);
 		
 		// Constructors
 		

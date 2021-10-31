@@ -145,9 +145,9 @@ namespace android::view
 		jint x();
 		jint y();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WindowManager_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		WindowManager_LayoutParams(QAndroidJniObject obj);
+		WindowManager_LayoutParams(QJniObject obj);
 		
 		// Constructors
 		WindowManager_LayoutParams();

@@ -18,9 +18,9 @@ namespace android::text::method
 		// Fields
 		static jcharArray CHARACTERS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::NumberKeyListener(className, sig, std::forward<Ts>(agv)...) {}
-		DateKeyListener(QAndroidJniObject obj);
+		DateKeyListener(QJniObject obj);
 		
 		// Constructors
 		DateKeyListener();

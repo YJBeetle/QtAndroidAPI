@@ -40,8 +40,8 @@ namespace java::math
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BigInteger::BigInteger(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	// QJniObject forward
+	BigInteger::BigInteger(QJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
 	BigInteger::BigInteger(jbyteArray arg0)

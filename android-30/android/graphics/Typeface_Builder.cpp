@@ -8,8 +8,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Typeface_Builder::Typeface_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Typeface_Builder::Typeface_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Typeface_Builder::Typeface_Builder(java::io::File arg0)

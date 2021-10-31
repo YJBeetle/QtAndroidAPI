@@ -21,8 +21,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Toast::Toast(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Toast::Toast(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Toast::Toast(android::content::Context arg0)

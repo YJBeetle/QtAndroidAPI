@@ -60,9 +60,9 @@ namespace android::graphics
 		static jint MEMORY_POLICY_DEFAULT();
 		static jint MEMORY_POLICY_LOW_RAM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImageDecoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ImageDecoder(QAndroidJniObject obj);
+		ImageDecoder(QJniObject obj);
 		
 		// Constructors
 		

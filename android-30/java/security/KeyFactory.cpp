@@ -6,8 +6,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyFactory::KeyFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyFactory::KeyFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

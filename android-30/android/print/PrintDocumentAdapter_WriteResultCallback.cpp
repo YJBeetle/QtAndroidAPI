@@ -4,8 +4,8 @@ namespace android::print
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintDocumentAdapter_WriteResultCallback::PrintDocumentAdapter_WriteResultCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PrintDocumentAdapter_WriteResultCallback::PrintDocumentAdapter_WriteResultCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

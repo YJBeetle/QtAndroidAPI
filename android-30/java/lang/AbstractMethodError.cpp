@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractMethodError::AbstractMethodError(QAndroidJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
+	// QJniObject forward
+	AbstractMethodError::AbstractMethodError(QJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
 	
 	// Constructors
 	AbstractMethodError::AbstractMethodError()

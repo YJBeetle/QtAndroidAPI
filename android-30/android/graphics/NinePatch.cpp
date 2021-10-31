@@ -10,8 +10,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NinePatch::NinePatch(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NinePatch::NinePatch(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	NinePatch::NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1)

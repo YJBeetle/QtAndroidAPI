@@ -4,8 +4,8 @@ namespace org::xml::sax::ext
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Locator2Impl::Locator2Impl(QAndroidJniObject obj) : org::xml::sax::helpers::LocatorImpl(obj) {}
+	// QJniObject forward
+	Locator2Impl::Locator2Impl(QJniObject obj) : org::xml::sax::helpers::LocatorImpl(obj) {}
 	
 	// Constructors
 	Locator2Impl::Locator2Impl()

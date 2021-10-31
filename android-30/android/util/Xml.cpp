@@ -15,8 +15,8 @@ namespace android::util
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Xml::Xml(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Xml::Xml(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

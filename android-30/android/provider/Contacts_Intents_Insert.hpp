@@ -37,9 +37,9 @@ namespace android::provider
 		static jstring TERTIARY_PHONE();
 		static jstring TERTIARY_PHONE_TYPE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Contacts_Intents_Insert(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Intents_Insert(QAndroidJniObject obj);
+		Contacts_Intents_Insert(QJniObject obj);
 		
 		// Constructors
 		Contacts_Intents_Insert();

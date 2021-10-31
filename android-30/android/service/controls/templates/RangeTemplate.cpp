@@ -4,8 +4,8 @@ namespace android::service::controls::templates
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RangeTemplate::RangeTemplate(QAndroidJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
+	// QJniObject forward
+	RangeTemplate::RangeTemplate(QJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
 	
 	// Constructors
 	RangeTemplate::RangeTemplate(jstring arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jstring arg5)

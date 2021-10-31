@@ -4,8 +4,8 @@ namespace android::media::midi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MidiReceiver::MidiReceiver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MidiReceiver::MidiReceiver(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MidiReceiver::MidiReceiver()

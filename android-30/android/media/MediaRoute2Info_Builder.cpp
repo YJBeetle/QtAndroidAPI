@@ -7,8 +7,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaRoute2Info_Builder::MediaRoute2Info_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaRoute2Info_Builder::MediaRoute2Info_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaRoute2Info_Builder::MediaRoute2Info_Builder(android::media::MediaRoute2Info arg0)

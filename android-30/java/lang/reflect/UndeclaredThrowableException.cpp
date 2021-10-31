@@ -6,8 +6,8 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UndeclaredThrowableException::UndeclaredThrowableException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	UndeclaredThrowableException::UndeclaredThrowableException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	UndeclaredThrowableException::UndeclaredThrowableException(jthrowable arg0)

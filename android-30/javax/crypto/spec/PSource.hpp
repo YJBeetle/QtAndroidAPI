@@ -10,9 +10,9 @@ namespace javax::crypto::spec
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PSource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PSource(QAndroidJniObject obj);
+		PSource(QJniObject obj);
 		
 		// Constructors
 		

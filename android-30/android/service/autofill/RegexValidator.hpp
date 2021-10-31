@@ -23,9 +23,9 @@ namespace android::service::autofill
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RegexValidator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RegexValidator(QAndroidJniObject obj);
+		RegexValidator(QJniObject obj);
 		
 		// Constructors
 		RegexValidator(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1);

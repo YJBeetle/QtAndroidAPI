@@ -14,9 +14,9 @@ namespace android::icu::util
 		static android::icu::util::TimeZone_SystemTimeZoneType CANONICAL();
 		static android::icu::util::TimeZone_SystemTimeZoneType CANONICAL_LOCATION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TimeZone_SystemTimeZoneType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZone_SystemTimeZoneType(QAndroidJniObject obj);
+		TimeZone_SystemTimeZoneType(QJniObject obj);
 		
 		// Constructors
 		

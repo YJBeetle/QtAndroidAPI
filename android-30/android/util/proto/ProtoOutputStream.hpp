@@ -47,9 +47,9 @@ namespace android::util::proto
 		static jint WIRE_TYPE_START_GROUP();
 		static jint WIRE_TYPE_VARINT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProtoOutputStream(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ProtoOutputStream(QAndroidJniObject obj);
+		ProtoOutputStream(QJniObject obj);
 		
 		// Constructors
 		ProtoOutputStream();

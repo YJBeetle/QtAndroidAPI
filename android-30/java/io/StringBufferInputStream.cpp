@@ -4,8 +4,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringBufferInputStream::StringBufferInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
+	// QJniObject forward
+	StringBufferInputStream::StringBufferInputStream(QJniObject obj) : java::io::InputStream(obj) {}
 	
 	// Constructors
 	StringBufferInputStream::StringBufferInputStream(jstring arg0)

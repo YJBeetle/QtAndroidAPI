@@ -14,9 +14,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContentProvider_CallingIdentity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContentProvider_CallingIdentity(QAndroidJniObject obj);
+		ContentProvider_CallingIdentity(QJniObject obj);
 		
 		// Constructors
 		

@@ -16,9 +16,9 @@ namespace android::telephony::mbms
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StreamingServiceInfo(const char *className, const char *sig, Ts...agv) : android::telephony::mbms::ServiceInfo(className, sig, std::forward<Ts>(agv)...) {}
-		StreamingServiceInfo(QAndroidJniObject obj);
+		StreamingServiceInfo(QJniObject obj);
 		
 		// Constructors
 		

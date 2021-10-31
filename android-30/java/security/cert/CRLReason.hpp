@@ -22,9 +22,9 @@ namespace java::security::cert
 		static java::security::cert::CRLReason UNSPECIFIED();
 		static java::security::cert::CRLReason UNUSED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CRLReason(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		CRLReason(QAndroidJniObject obj);
+		CRLReason(QJniObject obj);
 		
 		// Constructors
 		

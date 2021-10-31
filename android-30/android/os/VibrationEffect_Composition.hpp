@@ -19,9 +19,9 @@ namespace android::os
 		static jint PRIMITIVE_SLOW_RISE();
 		static jint PRIMITIVE_TICK();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VibrationEffect_Composition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VibrationEffect_Composition(QAndroidJniObject obj);
+		VibrationEffect_Composition(QJniObject obj);
 		
 		// Constructors
 		

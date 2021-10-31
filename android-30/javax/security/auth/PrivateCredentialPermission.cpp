@@ -7,8 +7,8 @@ namespace javax::security::auth
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrivateCredentialPermission::PrivateCredentialPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
+	// QJniObject forward
+	PrivateCredentialPermission::PrivateCredentialPermission(QJniObject obj) : java::security::Permission(obj) {}
 	
 	// Constructors
 	PrivateCredentialPermission::PrivateCredentialPermission(jstring arg0, jstring arg1)

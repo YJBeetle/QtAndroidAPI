@@ -8,8 +8,8 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ChangeBounds::ChangeBounds(QAndroidJniObject obj) : android::transition::Transition(obj) {}
+	// QJniObject forward
+	ChangeBounds::ChangeBounds(QJniObject obj) : android::transition::Transition(obj) {}
 	
 	// Constructors
 	ChangeBounds::ChangeBounds()

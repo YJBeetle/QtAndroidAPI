@@ -22,9 +22,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RadioButton(const char *className, const char *sig, Ts...agv) : android::widget::CompoundButton(className, sig, std::forward<Ts>(agv)...) {}
-		RadioButton(QAndroidJniObject obj);
+		RadioButton(QJniObject obj);
 		
 		// Constructors
 		RadioButton(android::content::Context arg0);

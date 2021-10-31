@@ -100,8 +100,8 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaPlayer_MetricsConstants::MediaPlayer_MetricsConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaPlayer_MetricsConstants::MediaPlayer_MetricsConstants(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

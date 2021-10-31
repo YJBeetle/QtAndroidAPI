@@ -22,9 +22,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Loader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Loader(QAndroidJniObject obj);
+		Loader(QJniObject obj);
 		
 		// Constructors
 		Loader(android::content::Context arg0);

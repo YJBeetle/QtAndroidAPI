@@ -55,8 +55,8 @@ namespace android::net
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ConnectivityDiagnosticsManager_DataStallReport::ConnectivityDiagnosticsManager_DataStallReport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConnectivityDiagnosticsManager_DataStallReport::ConnectivityDiagnosticsManager_DataStallReport(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ConnectivityDiagnosticsManager_DataStallReport::ConnectivityDiagnosticsManager_DataStallReport(android::net::Network arg0, jlong arg1, jint arg2, android::net::LinkProperties arg3, android::net::NetworkCapabilities arg4, android::os::PersistableBundle arg5)

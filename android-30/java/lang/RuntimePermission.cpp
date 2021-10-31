@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RuntimePermission::RuntimePermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	// QJniObject forward
+	RuntimePermission::RuntimePermission(QJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
 	RuntimePermission::RuntimePermission(jstring arg0)

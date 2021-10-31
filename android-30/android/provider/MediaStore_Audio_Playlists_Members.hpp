@@ -24,9 +24,9 @@ namespace android::provider
 		static jstring PLAY_ORDER();
 		static jstring _ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaStore_Audio_Playlists_Members(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio_Playlists_Members(QAndroidJniObject obj);
+		MediaStore_Audio_Playlists_Members(QJniObject obj);
 		
 		// Constructors
 		MediaStore_Audio_Playlists_Members();

@@ -34,9 +34,9 @@ namespace java::security::cert
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CertificateFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateFactory(QAndroidJniObject obj);
+		CertificateFactory(QJniObject obj);
 		
 		// Constructors
 		

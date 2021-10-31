@@ -18,9 +18,9 @@ namespace android::view
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActionProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActionProvider(QAndroidJniObject obj);
+		ActionProvider(QJniObject obj);
 		
 		// Constructors
 		ActionProvider(android::content::Context arg0);

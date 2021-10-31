@@ -24,9 +24,9 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HttpsURLConnection(const char *className, const char *sig, Ts...agv) : java::net::HttpURLConnection(className, sig, std::forward<Ts>(agv)...) {}
-		HttpsURLConnection(QAndroidJniObject obj);
+		HttpsURLConnection(QJniObject obj);
 		
 		// Constructors
 		

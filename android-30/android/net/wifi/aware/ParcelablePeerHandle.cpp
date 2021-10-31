@@ -14,8 +14,8 @@ namespace android::net::wifi::aware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ParcelablePeerHandle::ParcelablePeerHandle(QAndroidJniObject obj) : android::net::wifi::aware::PeerHandle(obj) {}
+	// QJniObject forward
+	ParcelablePeerHandle::ParcelablePeerHandle(QJniObject obj) : android::net::wifi::aware::PeerHandle(obj) {}
 	
 	// Constructors
 	ParcelablePeerHandle::ParcelablePeerHandle(android::net::wifi::aware::PeerHandle arg0)

@@ -14,8 +14,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MeasureFormat::MeasureFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
+	// QJniObject forward
+	MeasureFormat::MeasureFormat(QJniObject obj) : android::icu::text::UFormat(obj) {}
 	
 	// Constructors
 	

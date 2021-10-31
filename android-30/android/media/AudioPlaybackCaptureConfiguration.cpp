@@ -5,8 +5,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AudioPlaybackCaptureConfiguration::AudioPlaybackCaptureConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AudioPlaybackCaptureConfiguration::AudioPlaybackCaptureConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

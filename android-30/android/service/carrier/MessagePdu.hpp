@@ -15,9 +15,9 @@ namespace android::service::carrier
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MessagePdu(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MessagePdu(QAndroidJniObject obj);
+		MessagePdu(QJniObject obj);
 		
 		// Constructors
 		MessagePdu(__JniBaseClass arg0);

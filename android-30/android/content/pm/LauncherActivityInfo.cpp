@@ -8,8 +8,8 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LauncherActivityInfo::LauncherActivityInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LauncherActivityInfo::LauncherActivityInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

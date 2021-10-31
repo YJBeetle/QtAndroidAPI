@@ -19,9 +19,9 @@ namespace android::app
 		jlong threshold();
 		jlong totalMem();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActivityManager_MemoryInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_MemoryInfo(QAndroidJniObject obj);
+		ActivityManager_MemoryInfo(QJniObject obj);
 		
 		// Constructors
 		ActivityManager_MemoryInfo();

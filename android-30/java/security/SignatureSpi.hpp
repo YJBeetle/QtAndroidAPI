@@ -22,9 +22,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SignatureSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SignatureSpi(QAndroidJniObject obj);
+		SignatureSpi(QJniObject obj);
 		
 		// Constructors
 		SignatureSpi();

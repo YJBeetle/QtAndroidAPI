@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClassCircularityError::ClassCircularityError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
+	// QJniObject forward
+	ClassCircularityError::ClassCircularityError(QJniObject obj) : java::lang::LinkageError(obj) {}
 	
 	// Constructors
 	ClassCircularityError::ClassCircularityError()

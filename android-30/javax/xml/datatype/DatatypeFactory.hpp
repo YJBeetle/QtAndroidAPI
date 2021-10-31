@@ -40,9 +40,9 @@ namespace javax::xml::datatype
 		static jstring DATATYPEFACTORY_IMPLEMENTATION_CLASS();
 		static jstring DATATYPEFACTORY_PROPERTY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DatatypeFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DatatypeFactory(QAndroidJniObject obj);
+		DatatypeFactory(QJniObject obj);
 		
 		// Constructors
 		

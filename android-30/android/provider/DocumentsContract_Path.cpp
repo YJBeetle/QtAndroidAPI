@@ -13,8 +13,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DocumentsContract_Path::DocumentsContract_Path(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DocumentsContract_Path::DocumentsContract_Path(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DocumentsContract_Path::DocumentsContract_Path(jstring arg0, __JniBaseClass arg1)

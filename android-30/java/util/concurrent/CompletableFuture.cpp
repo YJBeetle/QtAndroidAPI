@@ -5,8 +5,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CompletableFuture::CompletableFuture(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CompletableFuture::CompletableFuture(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CompletableFuture::CompletableFuture()

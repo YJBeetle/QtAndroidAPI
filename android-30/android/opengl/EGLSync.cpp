@@ -4,8 +4,8 @@ namespace android::opengl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EGLSync::EGLSync(QAndroidJniObject obj) : android::opengl::EGLObjectHandle(obj) {}
+	// QJniObject forward
+	EGLSync::EGLSync(QJniObject obj) : android::opengl::EGLObjectHandle(obj) {}
 	
 	// Constructors
 	

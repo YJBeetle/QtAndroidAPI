@@ -16,9 +16,9 @@ namespace android::icu::number
 		static android::icu::number::NumberFormatter_GroupingStrategy ON_ALIGNED();
 		static android::icu::number::NumberFormatter_GroupingStrategy THOUSANDS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NumberFormatter_GroupingStrategy(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormatter_GroupingStrategy(QAndroidJniObject obj);
+		NumberFormatter_GroupingStrategy(QJniObject obj);
 		
 		// Constructors
 		

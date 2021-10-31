@@ -12,8 +12,8 @@ namespace java::time::chrono
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ThaiBuddhistDate::ThaiBuddhistDate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ThaiBuddhistDate::ThaiBuddhistDate(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -11,9 +11,9 @@ namespace android::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LoginFilter_PasswordFilterGMail(const char *className, const char *sig, Ts...agv) : android::text::LoginFilter(className, sig, std::forward<Ts>(agv)...) {}
-		LoginFilter_PasswordFilterGMail(QAndroidJniObject obj);
+		LoginFilter_PasswordFilterGMail(QJniObject obj);
 		
 		// Constructors
 		LoginFilter_PasswordFilterGMail();

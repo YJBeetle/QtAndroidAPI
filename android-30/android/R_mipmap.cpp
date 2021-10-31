@@ -11,8 +11,8 @@ namespace android
 		);
 	}
 	
-	// QAndroidJniObject forward
-	R_mipmap::R_mipmap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	R_mipmap::R_mipmap(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	R_mipmap::R_mipmap()

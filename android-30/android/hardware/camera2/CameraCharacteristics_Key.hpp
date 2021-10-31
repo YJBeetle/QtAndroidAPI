@@ -10,9 +10,9 @@ namespace android::hardware::camera2
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraCharacteristics_Key(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CameraCharacteristics_Key(QAndroidJniObject obj);
+		CameraCharacteristics_Key(QJniObject obj);
 		
 		// Constructors
 		CameraCharacteristics_Key(jstring arg0, jclass arg1);

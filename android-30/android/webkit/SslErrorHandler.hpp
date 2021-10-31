@@ -11,9 +11,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SslErrorHandler(const char *className, const char *sig, Ts...agv) : android::os::Handler(className, sig, std::forward<Ts>(agv)...) {}
-		SslErrorHandler(QAndroidJniObject obj);
+		SslErrorHandler(QJniObject obj);
 		
 		// Constructors
 		

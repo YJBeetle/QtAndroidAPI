@@ -4,8 +4,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SNIServerName::SNIServerName(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SNIServerName::SNIServerName(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

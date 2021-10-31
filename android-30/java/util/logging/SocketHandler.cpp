@@ -6,8 +6,8 @@ namespace java::util::logging
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SocketHandler::SocketHandler(QAndroidJniObject obj) : java::util::logging::StreamHandler(obj) {}
+	// QJniObject forward
+	SocketHandler::SocketHandler(QJniObject obj) : java::util::logging::StreamHandler(obj) {}
 	
 	// Constructors
 	SocketHandler::SocketHandler()

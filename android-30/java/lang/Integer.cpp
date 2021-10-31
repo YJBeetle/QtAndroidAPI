@@ -42,8 +42,8 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	// QAndroidJniObject forward
-	Integer::Integer(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	// QJniObject forward
+	Integer::Integer(QJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
 	Integer::Integer(jint arg0)

@@ -13,8 +13,8 @@ namespace javax::crypto::spec
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OAEPParameterSpec::OAEPParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	OAEPParameterSpec::OAEPParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	OAEPParameterSpec::OAEPParameterSpec(jstring arg0, jstring arg1, __JniBaseClass arg2, javax::crypto::spec::PSource arg3)

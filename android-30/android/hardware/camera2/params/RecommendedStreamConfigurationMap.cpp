@@ -56,8 +56,8 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RecommendedStreamConfigurationMap::RecommendedStreamConfigurationMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RecommendedStreamConfigurationMap::RecommendedStreamConfigurationMap(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllformedLocaleException::IllformedLocaleException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	IllformedLocaleException::IllformedLocaleException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	IllformedLocaleException::IllformedLocaleException()

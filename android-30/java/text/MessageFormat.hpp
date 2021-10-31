@@ -39,9 +39,9 @@ namespace java::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MessageFormat(const char *className, const char *sig, Ts...agv) : java::text::Format(className, sig, std::forward<Ts>(agv)...) {}
-		MessageFormat(QAndroidJniObject obj);
+		MessageFormat(QJniObject obj);
 		
 		// Constructors
 		MessageFormat(jstring arg0);

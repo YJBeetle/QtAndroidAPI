@@ -19,8 +19,8 @@ namespace android::transition
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TransitionValues::TransitionValues(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TransitionValues::TransitionValues(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TransitionValues::TransitionValues()

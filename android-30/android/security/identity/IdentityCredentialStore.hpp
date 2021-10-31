@@ -23,9 +23,9 @@ namespace android::security::identity
 		// Fields
 		static jint CIPHERSUITE_ECDHE_HKDF_ECDSA_WITH_AES_256_GCM_SHA256();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IdentityCredentialStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IdentityCredentialStore(QAndroidJniObject obj);
+		IdentityCredentialStore(QJniObject obj);
 		
 		// Constructors
 		

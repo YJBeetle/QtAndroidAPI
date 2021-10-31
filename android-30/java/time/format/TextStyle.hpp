@@ -17,9 +17,9 @@ namespace java::time::format
 		static java::time::format::TextStyle SHORT();
 		static java::time::format::TextStyle SHORT_STANDALONE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TextStyle(QAndroidJniObject obj);
+		TextStyle(QJniObject obj);
 		
 		// Constructors
 		

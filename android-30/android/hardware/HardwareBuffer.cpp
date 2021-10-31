@@ -195,8 +195,8 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HardwareBuffer::HardwareBuffer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	HardwareBuffer::HardwareBuffer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

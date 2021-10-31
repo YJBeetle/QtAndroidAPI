@@ -417,8 +417,8 @@ namespace android::service::controls
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DeviceTypes::DeviceTypes(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DeviceTypes::DeviceTypes(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

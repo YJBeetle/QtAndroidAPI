@@ -17,9 +17,9 @@ namespace android::service::controls::templates
 		static jint TYPE_TOGGLE();
 		static jint TYPE_TOGGLE_RANGE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ControlTemplate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ControlTemplate(QAndroidJniObject obj);
+		ControlTemplate(QJniObject obj);
 		
 		// Constructors
 		

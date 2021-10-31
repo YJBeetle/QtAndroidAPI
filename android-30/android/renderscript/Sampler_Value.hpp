@@ -18,9 +18,9 @@ namespace android::renderscript
 		static android::renderscript::Sampler_Value NEAREST();
 		static android::renderscript::Sampler_Value WRAP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Sampler_Value(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Sampler_Value(QAndroidJniObject obj);
+		Sampler_Value(QJniObject obj);
 		
 		// Constructors
 		

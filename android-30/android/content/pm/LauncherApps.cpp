@@ -44,8 +44,8 @@ namespace android::content::pm
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	LauncherApps::LauncherApps(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LauncherApps::LauncherApps(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

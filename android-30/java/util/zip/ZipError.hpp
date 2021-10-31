@@ -13,9 +13,9 @@ namespace java::util::zip
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ZipError(const char *className, const char *sig, Ts...agv) : java::lang::InternalError(className, sig, std::forward<Ts>(agv)...) {}
-		ZipError(QAndroidJniObject obj);
+		ZipError(QJniObject obj);
 		
 		// Constructors
 		ZipError(jstring arg0);

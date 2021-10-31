@@ -103,8 +103,8 @@ namespace android::icu::util
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	TimeZone::TimeZone(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TimeZone::TimeZone(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TimeZone::TimeZone()

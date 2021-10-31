@@ -13,9 +13,9 @@ namespace android::media
 		static jint QUALITY_LOW();
 		static jint QUALITY_MEDIUM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraProfile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CameraProfile(QAndroidJniObject obj);
+		CameraProfile(QJniObject obj);
 		
 		// Constructors
 		CameraProfile();

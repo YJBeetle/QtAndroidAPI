@@ -14,9 +14,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VolumeShaper_Configuration_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VolumeShaper_Configuration_Builder(QAndroidJniObject obj);
+		VolumeShaper_Configuration_Builder(QJniObject obj);
 		
 		// Constructors
 		VolumeShaper_Configuration_Builder();

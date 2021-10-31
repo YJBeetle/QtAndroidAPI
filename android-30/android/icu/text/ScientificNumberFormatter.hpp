@@ -18,9 +18,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScientificNumberFormatter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ScientificNumberFormatter(QAndroidJniObject obj);
+		ScientificNumberFormatter(QJniObject obj);
 		
 		// Constructors
 		

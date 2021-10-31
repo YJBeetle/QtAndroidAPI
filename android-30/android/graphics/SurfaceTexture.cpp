@@ -5,8 +5,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SurfaceTexture::SurfaceTexture(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SurfaceTexture::SurfaceTexture(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SurfaceTexture::SurfaceTexture(jboolean arg0)

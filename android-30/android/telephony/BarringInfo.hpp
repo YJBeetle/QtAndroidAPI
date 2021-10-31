@@ -29,9 +29,9 @@ namespace android::telephony
 		static jint BARRING_SERVICE_TYPE_SMS();
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BarringInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BarringInfo(QAndroidJniObject obj);
+		BarringInfo(QJniObject obj);
 		
 		// Constructors
 		

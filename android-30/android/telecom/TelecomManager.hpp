@@ -82,9 +82,9 @@ namespace android::telecom
 		static jint PRESENTATION_RESTRICTED();
 		static jint PRESENTATION_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TelecomManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TelecomManager(QAndroidJniObject obj);
+		TelecomManager(QJniObject obj);
 		
 		// Constructors
 		

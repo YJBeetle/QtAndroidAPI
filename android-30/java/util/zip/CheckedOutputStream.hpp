@@ -16,9 +16,9 @@ namespace java::util::zip
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CheckedOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		CheckedOutputStream(QAndroidJniObject obj);
+		CheckedOutputStream(QJniObject obj);
 		
 		// Constructors
 		CheckedOutputStream(java::io::OutputStream arg0, __JniBaseClass arg1);

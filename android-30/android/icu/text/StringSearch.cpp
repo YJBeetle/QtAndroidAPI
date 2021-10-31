@@ -8,8 +8,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringSearch::StringSearch(QAndroidJniObject obj) : android::icu::text::SearchIterator(obj) {}
+	// QJniObject forward
+	StringSearch::StringSearch(QJniObject obj) : android::icu::text::SearchIterator(obj) {}
 	
 	// Constructors
 	StringSearch::StringSearch(jstring arg0, jstring arg1)

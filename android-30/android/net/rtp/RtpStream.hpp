@@ -17,9 +17,9 @@ namespace android::net::rtp
 		static jint MODE_RECEIVE_ONLY();
 		static jint MODE_SEND_ONLY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RtpStream(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RtpStream(QAndroidJniObject obj);
+		RtpStream(QJniObject obj);
 		
 		// Constructors
 		

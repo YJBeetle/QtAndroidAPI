@@ -4,8 +4,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IDNA_Info::IDNA_Info(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IDNA_Info::IDNA_Info(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	IDNA_Info::IDNA_Info()

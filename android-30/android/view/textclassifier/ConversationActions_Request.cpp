@@ -31,8 +31,8 @@ namespace android::view::textclassifier
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ConversationActions_Request::ConversationActions_Request(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConversationActions_Request::ConversationActions_Request(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

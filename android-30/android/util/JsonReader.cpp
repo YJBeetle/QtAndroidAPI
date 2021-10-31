@@ -6,8 +6,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JsonReader::JsonReader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JsonReader::JsonReader(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	JsonReader::JsonReader(java::io::Reader arg0)

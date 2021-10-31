@@ -4,8 +4,8 @@ namespace org::xmlpull::v1
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	XmlPullParserException::XmlPullParserException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	XmlPullParserException::XmlPullParserException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	XmlPullParserException::XmlPullParserException(jstring arg0)

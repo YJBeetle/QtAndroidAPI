@@ -13,8 +13,8 @@ namespace android::text::method
 		).object<jcharArray>();
 	}
 	
-	// QAndroidJniObject forward
-	DialerKeyListener::DialerKeyListener(QAndroidJniObject obj) : android::text::method::NumberKeyListener(obj) {}
+	// QJniObject forward
+	DialerKeyListener::DialerKeyListener(QJniObject obj) : android::text::method::NumberKeyListener(obj) {}
 	
 	// Constructors
 	DialerKeyListener::DialerKeyListener()

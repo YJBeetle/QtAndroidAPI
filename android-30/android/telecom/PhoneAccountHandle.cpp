@@ -15,8 +15,8 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PhoneAccountHandle::PhoneAccountHandle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PhoneAccountHandle::PhoneAccountHandle(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1)

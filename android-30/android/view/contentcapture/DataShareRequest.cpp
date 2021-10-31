@@ -14,8 +14,8 @@ namespace android::view::contentcapture
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DataShareRequest::DataShareRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DataShareRequest::DataShareRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DataShareRequest::DataShareRequest(android::content::LocusId arg0, jstring arg1)

@@ -4,8 +4,8 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DHGenParameterSpec::DHGenParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DHGenParameterSpec::DHGenParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DHGenParameterSpec::DHGenParameterSpec(jint arg0, jint arg1)

@@ -41,9 +41,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AutoCompleteTextView(const char *className, const char *sig, Ts...agv) : android::widget::EditText(className, sig, std::forward<Ts>(agv)...) {}
-		AutoCompleteTextView(QAndroidJniObject obj);
+		AutoCompleteTextView(QJniObject obj);
 		
 		// Constructors
 		AutoCompleteTextView(android::content::Context arg0);

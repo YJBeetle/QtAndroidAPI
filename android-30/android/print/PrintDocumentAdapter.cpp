@@ -18,8 +18,8 @@ namespace android::print
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	PrintDocumentAdapter::PrintDocumentAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PrintDocumentAdapter::PrintDocumentAdapter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PrintDocumentAdapter::PrintDocumentAdapter()

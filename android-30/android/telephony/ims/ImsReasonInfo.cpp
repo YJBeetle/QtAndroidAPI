@@ -1224,8 +1224,8 @@ namespace android::telephony::ims
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImsReasonInfo::ImsReasonInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ImsReasonInfo::ImsReasonInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ImsReasonInfo::ImsReasonInfo(jint arg0, jint arg1, jstring arg2)

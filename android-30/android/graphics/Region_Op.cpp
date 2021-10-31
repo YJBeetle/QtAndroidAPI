@@ -52,8 +52,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Region_Op::Region_Op(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Region_Op::Region_Op(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

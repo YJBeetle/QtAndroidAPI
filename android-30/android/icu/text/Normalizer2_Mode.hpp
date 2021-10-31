@@ -15,9 +15,9 @@ namespace android::icu::text
 		static android::icu::text::Normalizer2_Mode DECOMPOSE();
 		static android::icu::text::Normalizer2_Mode FCD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Normalizer2_Mode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Normalizer2_Mode(QAndroidJniObject obj);
+		Normalizer2_Mode(QJniObject obj);
 		
 		// Constructors
 		

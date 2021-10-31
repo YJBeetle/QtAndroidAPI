@@ -147,8 +147,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaCas::MediaCas(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaCas::MediaCas(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaCas::MediaCas(jint arg0)

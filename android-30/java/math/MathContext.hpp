@@ -22,9 +22,9 @@ namespace java::math
 		static java::math::MathContext DECIMAL64();
 		static java::math::MathContext UNLIMITED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MathContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MathContext(QAndroidJniObject obj);
+		MathContext(QJniObject obj);
 		
 		// Constructors
 		MathContext(jint arg0);

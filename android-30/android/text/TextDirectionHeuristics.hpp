@@ -16,9 +16,9 @@ namespace android::text
 		static __JniBaseClass LTR();
 		static __JniBaseClass RTL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextDirectionHeuristics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TextDirectionHeuristics(QAndroidJniObject obj);
+		TextDirectionHeuristics(QJniObject obj);
 		
 		// Constructors
 		TextDirectionHeuristics();

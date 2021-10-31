@@ -4,8 +4,8 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PackageInstaller_SessionCallback::PackageInstaller_SessionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PackageInstaller_SessionCallback::PackageInstaller_SessionCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PackageInstaller_SessionCallback::PackageInstaller_SessionCallback()

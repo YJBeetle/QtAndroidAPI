@@ -26,9 +26,9 @@ namespace javax::xml::validation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SchemaFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SchemaFactory(QAndroidJniObject obj);
+		SchemaFactory(QJniObject obj);
 		
 		// Constructors
 		

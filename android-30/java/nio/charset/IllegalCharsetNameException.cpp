@@ -4,8 +4,8 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalCharsetNameException::IllegalCharsetNameException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	// QJniObject forward
+	IllegalCharsetNameException::IllegalCharsetNameException(QJniObject obj) : java::lang::IllegalArgumentException(obj) {}
 	
 	// Constructors
 	IllegalCharsetNameException::IllegalCharsetNameException(jstring arg0)

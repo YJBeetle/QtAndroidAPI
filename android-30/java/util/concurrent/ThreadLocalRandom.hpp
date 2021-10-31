@@ -35,9 +35,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ThreadLocalRandom(const char *className, const char *sig, Ts...agv) : java::util::Random(className, sig, std::forward<Ts>(agv)...) {}
-		ThreadLocalRandom(QAndroidJniObject obj);
+		ThreadLocalRandom(QJniObject obj);
 		
 		// Constructors
 		

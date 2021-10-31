@@ -13,8 +13,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WorkSource::WorkSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WorkSource::WorkSource(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WorkSource::WorkSource()

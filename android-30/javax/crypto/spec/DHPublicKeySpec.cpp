@@ -5,8 +5,8 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DHPublicKeySpec::DHPublicKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DHPublicKeySpec::DHPublicKeySpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DHPublicKeySpec::DHPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)

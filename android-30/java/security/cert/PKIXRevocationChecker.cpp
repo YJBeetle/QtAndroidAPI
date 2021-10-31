@@ -6,8 +6,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PKIXRevocationChecker::PKIXRevocationChecker(QAndroidJniObject obj) : java::security::cert::PKIXCertPathChecker(obj) {}
+	// QJniObject forward
+	PKIXRevocationChecker::PKIXRevocationChecker(QJniObject obj) : java::security::cert::PKIXCertPathChecker(obj) {}
 	
 	// Constructors
 	

@@ -22,9 +22,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ClipData_Item(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ClipData_Item(QAndroidJniObject obj);
+		ClipData_Item(QJniObject obj);
 		
 		// Constructors
 		ClipData_Item(android::content::Intent arg0);

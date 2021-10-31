@@ -22,9 +22,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Notification_Style(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_Style(QAndroidJniObject obj);
+		Notification_Style(QJniObject obj);
 		
 		// Constructors
 		Notification_Style();

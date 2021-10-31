@@ -51,8 +51,8 @@ namespace android::content::pm
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ComponentInfo::ComponentInfo(QAndroidJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
+	// QJniObject forward
+	ComponentInfo::ComponentInfo(QJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
 	
 	// Constructors
 	ComponentInfo::ComponentInfo()

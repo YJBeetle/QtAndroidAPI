@@ -14,9 +14,9 @@ namespace java::lang::annotation
 		static java::lang::annotation::RetentionPolicy RUNTIME();
 		static java::lang::annotation::RetentionPolicy SOURCE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RetentionPolicy(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RetentionPolicy(QAndroidJniObject obj);
+		RetentionPolicy(QJniObject obj);
 		
 		// Constructors
 		

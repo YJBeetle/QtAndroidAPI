@@ -13,8 +13,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RouteDiscoveryPreference::RouteDiscoveryPreference(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RouteDiscoveryPreference::RouteDiscoveryPreference(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

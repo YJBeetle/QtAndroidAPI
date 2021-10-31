@@ -10,9 +10,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaPlayer_DrmInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaPlayer_DrmInfo(QAndroidJniObject obj);
+		MediaPlayer_DrmInfo(QJniObject obj);
 		
 		// Constructors
 		

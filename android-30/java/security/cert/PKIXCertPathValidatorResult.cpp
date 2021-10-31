@@ -5,8 +5,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PKIXCertPathValidatorResult::PKIXCertPathValidatorResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PKIXCertPathValidatorResult::PKIXCertPathValidatorResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PKIXCertPathValidatorResult::PKIXCertPathValidatorResult(java::security::cert::TrustAnchor arg0, __JniBaseClass arg1, __JniBaseClass arg2)

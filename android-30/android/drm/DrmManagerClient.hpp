@@ -40,9 +40,9 @@ namespace android::drm
 		static jint ERROR_NONE();
 		static jint ERROR_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DrmManagerClient(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DrmManagerClient(QAndroidJniObject obj);
+		DrmManagerClient(QJniObject obj);
 		
 		// Constructors
 		DrmManagerClient(android::content::Context arg0);

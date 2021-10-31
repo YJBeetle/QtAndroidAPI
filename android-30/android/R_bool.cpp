@@ -4,8 +4,8 @@ namespace android
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	R_bool::R_bool(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	R_bool::R_bool(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	R_bool::R_bool()

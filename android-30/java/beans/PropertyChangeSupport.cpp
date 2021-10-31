@@ -7,8 +7,8 @@ namespace java::beans
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PropertyChangeSupport::PropertyChangeSupport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PropertyChangeSupport::PropertyChangeSupport(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PropertyChangeSupport::PropertyChangeSupport(jobject arg0)

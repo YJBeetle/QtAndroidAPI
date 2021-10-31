@@ -33,9 +33,9 @@ namespace android::net
 		static jint SOCKET_SEQPACKET();
 		static jint SOCKET_STREAM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocalSocket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LocalSocket(QAndroidJniObject obj);
+		LocalSocket(QJniObject obj);
 		
 		// Constructors
 		LocalSocket();

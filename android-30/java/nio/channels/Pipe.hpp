@@ -18,9 +18,9 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Pipe(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Pipe(QAndroidJniObject obj);
+		Pipe(QJniObject obj);
 		
 		// Constructors
 		

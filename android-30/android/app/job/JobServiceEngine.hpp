@@ -18,9 +18,9 @@ namespace android::app::job
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JobServiceEngine(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		JobServiceEngine(QAndroidJniObject obj);
+		JobServiceEngine(QJniObject obj);
 		
 		// Constructors
 		JobServiceEngine(android::app::Service arg0);

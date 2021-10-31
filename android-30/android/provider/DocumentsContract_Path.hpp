@@ -15,9 +15,9 @@ namespace android::provider
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DocumentsContract_Path(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DocumentsContract_Path(QAndroidJniObject obj);
+		DocumentsContract_Path(QJniObject obj);
 		
 		// Constructors
 		DocumentsContract_Path(jstring arg0, __JniBaseClass arg1);

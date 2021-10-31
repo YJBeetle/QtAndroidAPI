@@ -55,9 +55,9 @@ namespace android::renderscript
 		static jint USAGE_SCRIPT();
 		static jint USAGE_SHARED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Allocation(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
-		Allocation(QAndroidJniObject obj);
+		Allocation(QJniObject obj);
 		
 		// Constructors
 		

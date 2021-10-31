@@ -7,8 +7,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Random::Random(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Random::Random(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Random::Random()

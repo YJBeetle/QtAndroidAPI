@@ -11,9 +11,9 @@ namespace javax::net::ssl
 		// Fields
 		static jint SNI_HOST_NAME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StandardConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StandardConstants(QAndroidJniObject obj);
+		StandardConstants(QJniObject obj);
 		
 		// Constructors
 		

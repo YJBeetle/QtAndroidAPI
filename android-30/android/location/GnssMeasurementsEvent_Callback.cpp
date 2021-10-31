@@ -33,8 +33,8 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GnssMeasurementsEvent_Callback::GnssMeasurementsEvent_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GnssMeasurementsEvent_Callback::GnssMeasurementsEvent_Callback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GnssMeasurementsEvent_Callback::GnssMeasurementsEvent_Callback()

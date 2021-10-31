@@ -4,8 +4,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Writer::Writer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Writer::Writer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -31,8 +31,8 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LauncherApps_PinItemRequest::LauncherApps_PinItemRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LauncherApps_PinItemRequest::LauncherApps_PinItemRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

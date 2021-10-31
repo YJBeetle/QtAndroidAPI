@@ -40,8 +40,8 @@ namespace android::service::quickaccesswallet
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	QuickAccessWalletService::QuickAccessWalletService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	QuickAccessWalletService::QuickAccessWalletService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	QuickAccessWalletService::QuickAccessWalletService()

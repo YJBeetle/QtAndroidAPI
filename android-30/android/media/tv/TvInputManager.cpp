@@ -259,8 +259,8 @@ namespace android::media::tv
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TvInputManager::TvInputManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TvInputManager::TvInputManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -7,8 +7,8 @@ namespace android::service::quickaccesswallet
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WalletCard_Builder::WalletCard_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WalletCard_Builder::WalletCard_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WalletCard_Builder::WalletCard_Builder(jstring arg0, android::graphics::drawable::Icon arg1, jstring arg2, android::app::PendingIntent arg3)

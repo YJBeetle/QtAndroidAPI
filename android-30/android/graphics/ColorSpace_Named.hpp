@@ -27,9 +27,9 @@ namespace android::graphics
 		static android::graphics::ColorSpace_Named SMPTE_C();
 		static android::graphics::ColorSpace_Named SRGB();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ColorSpace_Named(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_Named(QAndroidJniObject obj);
+		ColorSpace_Named(QJniObject obj);
 		
 		// Constructors
 		

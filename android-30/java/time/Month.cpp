@@ -103,8 +103,8 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Month::Month(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Month::Month(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

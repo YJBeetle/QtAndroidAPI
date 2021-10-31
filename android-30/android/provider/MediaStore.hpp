@@ -73,9 +73,9 @@ namespace android::provider
 		static jstring VOLUME_EXTERNAL_PRIMARY();
 		static jstring VOLUME_INTERNAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore(QAndroidJniObject obj);
+		MediaStore(QJniObject obj);
 		
 		// Constructors
 		MediaStore();

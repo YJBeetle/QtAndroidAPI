@@ -4,8 +4,8 @@ namespace android::opengl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GLU::GLU(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GLU::GLU(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GLU::GLU()

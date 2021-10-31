@@ -6,8 +6,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MaskFilterSpan::MaskFilterSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
+	// QJniObject forward
+	MaskFilterSpan::MaskFilterSpan(QJniObject obj) : android::text::style::CharacterStyle(obj) {}
 	
 	// Constructors
 	MaskFilterSpan::MaskFilterSpan(android::graphics::MaskFilter arg0)

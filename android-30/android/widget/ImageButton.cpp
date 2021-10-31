@@ -7,8 +7,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ImageButton::ImageButton(QAndroidJniObject obj) : android::widget::ImageView(obj) {}
+	// QJniObject forward
+	ImageButton::ImageButton(QJniObject obj) : android::widget::ImageView(obj) {}
 	
 	// Constructors
 	ImageButton::ImageButton(android::content::Context arg0)

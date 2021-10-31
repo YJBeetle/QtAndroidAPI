@@ -24,8 +24,8 @@ namespace java::util::zip
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ZipOutputStream::ZipOutputStream(QAndroidJniObject obj) : java::util::zip::DeflaterOutputStream(obj) {}
+	// QJniObject forward
+	ZipOutputStream::ZipOutputStream(QJniObject obj) : java::util::zip::DeflaterOutputStream(obj) {}
 	
 	// Constructors
 	ZipOutputStream::ZipOutputStream(java::io::OutputStream arg0)

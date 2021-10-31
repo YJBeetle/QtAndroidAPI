@@ -57,9 +57,9 @@ namespace android::view::inputmethod
 		jstring packageName();
 		jstring privateImeOptions();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EditorInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EditorInfo(QAndroidJniObject obj);
+		EditorInfo(QJniObject obj);
 		
 		// Constructors
 		EditorInfo();

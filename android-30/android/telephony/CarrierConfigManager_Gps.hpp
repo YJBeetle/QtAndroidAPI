@@ -12,9 +12,9 @@ namespace android::telephony
 		static jstring KEY_PERSIST_LPP_MODE_BOOL();
 		static jstring KEY_PREFIX();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager_Gps(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager_Gps(QAndroidJniObject obj);
+		CarrierConfigManager_Gps(QJniObject obj);
 		
 		// Constructors
 		

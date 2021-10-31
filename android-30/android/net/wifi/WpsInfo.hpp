@@ -23,9 +23,9 @@ namespace android::net::wifi
 		jstring pin();
 		jint setup();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WpsInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WpsInfo(QAndroidJniObject obj);
+		WpsInfo(QJniObject obj);
 		
 		// Constructors
 		WpsInfo();

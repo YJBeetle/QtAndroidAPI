@@ -34,9 +34,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IpSecTransform_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecTransform_Builder(QAndroidJniObject obj);
+		IpSecTransform_Builder(QJniObject obj);
 		
 		// Constructors
 		IpSecTransform_Builder(android::content::Context arg0);

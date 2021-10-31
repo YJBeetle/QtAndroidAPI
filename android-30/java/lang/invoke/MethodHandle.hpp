@@ -18,9 +18,9 @@ namespace java::lang::invoke
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MethodHandle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MethodHandle(QAndroidJniObject obj);
+		MethodHandle(QJniObject obj);
 		
 		// Constructors
 		

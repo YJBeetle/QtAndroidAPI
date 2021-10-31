@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AssertionError::AssertionError(QAndroidJniObject obj) : java::lang::Error(obj) {}
+	// QJniObject forward
+	AssertionError::AssertionError(QJniObject obj) : java::lang::Error(obj) {}
 	
 	// Constructors
 	AssertionError::AssertionError()

@@ -4,8 +4,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProtocolException::ProtocolException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	ProtocolException::ProtocolException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	ProtocolException::ProtocolException()

@@ -5,8 +5,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AudioFocusRequest::AudioFocusRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AudioFocusRequest::AudioFocusRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

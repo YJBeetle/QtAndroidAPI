@@ -35,9 +35,9 @@ namespace android::content::pm
 		// Fields
 		static jstring ACTION_CAN_INTERACT_ACROSS_PROFILES_CHANGED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CrossProfileApps(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CrossProfileApps(QAndroidJniObject obj);
+		CrossProfileApps(QJniObject obj);
 		
 		// Constructors
 		

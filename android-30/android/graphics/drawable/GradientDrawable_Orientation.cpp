@@ -68,8 +68,8 @@ namespace android::graphics::drawable
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GradientDrawable_Orientation::GradientDrawable_Orientation(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	GradientDrawable_Orientation::GradientDrawable_Orientation(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

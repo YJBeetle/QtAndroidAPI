@@ -14,9 +14,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCrypto(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCrypto(QAndroidJniObject obj);
+		MediaCrypto(QJniObject obj);
 		
 		// Constructors
 		MediaCrypto(java::util::UUID arg0, jbyteArray arg1);

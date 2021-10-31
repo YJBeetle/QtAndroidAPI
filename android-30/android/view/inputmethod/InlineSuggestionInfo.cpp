@@ -46,8 +46,8 @@ namespace android::view::inputmethod
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	InlineSuggestionInfo::InlineSuggestionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InlineSuggestionInfo::InlineSuggestionInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

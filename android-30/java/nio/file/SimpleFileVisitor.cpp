@@ -6,8 +6,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SimpleFileVisitor::SimpleFileVisitor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SimpleFileVisitor::SimpleFileVisitor(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

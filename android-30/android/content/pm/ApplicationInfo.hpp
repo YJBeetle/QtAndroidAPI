@@ -101,9 +101,9 @@ namespace android::content::pm
 		jint uiOptions();
 		jint uid();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ApplicationInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationInfo(QAndroidJniObject obj);
+		ApplicationInfo(QJniObject obj);
 		
 		// Constructors
 		ApplicationInfo();

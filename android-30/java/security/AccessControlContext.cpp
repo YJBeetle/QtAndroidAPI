@@ -6,8 +6,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AccessControlContext::AccessControlContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessControlContext::AccessControlContext(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AccessControlContext::AccessControlContext(jarray arg0)

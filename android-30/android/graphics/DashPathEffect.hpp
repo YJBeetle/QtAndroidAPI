@@ -11,9 +11,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DashPathEffect(const char *className, const char *sig, Ts...agv) : android::graphics::PathEffect(className, sig, std::forward<Ts>(agv)...) {}
-		DashPathEffect(QAndroidJniObject obj);
+		DashPathEffect(QJniObject obj);
 		
 		// Constructors
 		DashPathEffect(jfloatArray arg0, jfloat arg1);

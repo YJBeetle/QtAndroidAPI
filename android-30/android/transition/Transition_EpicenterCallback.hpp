@@ -18,9 +18,9 @@ namespace android::transition
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Transition_EpicenterCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Transition_EpicenterCallback(QAndroidJniObject obj);
+		Transition_EpicenterCallback(QJniObject obj);
 		
 		// Constructors
 		Transition_EpicenterCallback();

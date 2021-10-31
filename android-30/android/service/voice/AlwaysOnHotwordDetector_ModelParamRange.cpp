@@ -4,8 +4,8 @@ namespace android::service::voice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlwaysOnHotwordDetector_ModelParamRange::AlwaysOnHotwordDetector_ModelParamRange(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AlwaysOnHotwordDetector_ModelParamRange::AlwaysOnHotwordDetector_ModelParamRange(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -62,9 +62,9 @@ namespace java::util::stream
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Collectors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Collectors(QAndroidJniObject obj);
+		Collectors(QJniObject obj);
 		
 		// Constructors
 		

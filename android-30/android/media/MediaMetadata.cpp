@@ -248,8 +248,8 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaMetadata::MediaMetadata(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaMetadata::MediaMetadata(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

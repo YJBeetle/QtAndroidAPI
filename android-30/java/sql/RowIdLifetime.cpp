@@ -44,8 +44,8 @@ namespace java::sql
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RowIdLifetime::RowIdLifetime(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	RowIdLifetime::RowIdLifetime(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

@@ -24,8 +24,8 @@ namespace android::os::storage
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	StorageVolume::StorageVolume(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StorageVolume::StorageVolume(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

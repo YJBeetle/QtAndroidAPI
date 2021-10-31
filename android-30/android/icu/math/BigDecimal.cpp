@@ -87,8 +87,8 @@ namespace android::icu::math
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BigDecimal::BigDecimal(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	// QJniObject forward
+	BigDecimal::BigDecimal(QJniObject obj) : java::lang::Number(obj) {}
 	
 	// Constructors
 	BigDecimal::BigDecimal(jcharArray arg0)

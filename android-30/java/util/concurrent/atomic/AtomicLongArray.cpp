@@ -4,8 +4,8 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicLongArray::AtomicLongArray(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AtomicLongArray::AtomicLongArray(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AtomicLongArray::AtomicLongArray(jlongArray arg0)

@@ -14,9 +14,9 @@ namespace android::security::keystore
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UserNotAuthenticatedException(const char *className, const char *sig, Ts...agv) : java::security::InvalidKeyException(className, sig, std::forward<Ts>(agv)...) {}
-		UserNotAuthenticatedException(QAndroidJniObject obj);
+		UserNotAuthenticatedException(QJniObject obj);
 		
 		// Constructors
 		UserNotAuthenticatedException();

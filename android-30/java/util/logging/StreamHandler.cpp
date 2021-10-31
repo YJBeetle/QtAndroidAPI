@@ -9,8 +9,8 @@ namespace java::util::logging
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StreamHandler::StreamHandler(QAndroidJniObject obj) : java::util::logging::Handler(obj) {}
+	// QJniObject forward
+	StreamHandler::StreamHandler(QJniObject obj) : java::util::logging::Handler(obj) {}
 	
 	// Constructors
 	StreamHandler::StreamHandler()

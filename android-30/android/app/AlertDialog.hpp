@@ -48,9 +48,9 @@ namespace android::app
 		static jint THEME_HOLO_LIGHT();
 		static jint THEME_TRADITIONAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AlertDialog(const char *className, const char *sig, Ts...agv) : android::app::Dialog(className, sig, std::forward<Ts>(agv)...) {}
-		AlertDialog(QAndroidJniObject obj);
+		AlertDialog(QJniObject obj);
 		
 		// Constructors
 		

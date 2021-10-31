@@ -5,8 +5,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCodec_LinearBlock::MediaCodec_LinearBlock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaCodec_LinearBlock::MediaCodec_LinearBlock(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

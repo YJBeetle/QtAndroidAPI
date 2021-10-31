@@ -4,8 +4,8 @@ namespace android::graphics::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LineBreaker_Result::LineBreaker_Result(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LineBreaker_Result::LineBreaker_Result(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

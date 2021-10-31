@@ -12,9 +12,9 @@ namespace javax::xml::transform
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TransformerConfigurationException(const char *className, const char *sig, Ts...agv) : javax::xml::transform::TransformerException(className, sig, std::forward<Ts>(agv)...) {}
-		TransformerConfigurationException(QAndroidJniObject obj);
+		TransformerConfigurationException(QJniObject obj);
 		
 		// Constructors
 		TransformerConfigurationException();

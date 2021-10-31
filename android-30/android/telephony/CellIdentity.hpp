@@ -15,9 +15,9 @@ namespace android::telephony
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CellIdentity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CellIdentity(QAndroidJniObject obj);
+		CellIdentity(QJniObject obj);
 		
 		// Constructors
 		

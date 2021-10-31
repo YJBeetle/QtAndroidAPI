@@ -6,8 +6,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WindowMetrics::WindowMetrics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WindowMetrics::WindowMetrics(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WindowMetrics::WindowMetrics(android::graphics::Rect arg0, android::view::WindowInsets arg1)

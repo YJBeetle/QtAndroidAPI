@@ -43,9 +43,9 @@ namespace android::net::wifi::rtt
 		static jint LOCATION_RESERVED();
 		static jint LOCATION_VARIABLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ResponderLocation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ResponderLocation(QAndroidJniObject obj);
+		ResponderLocation(QJniObject obj);
 		
 		// Constructors
 		

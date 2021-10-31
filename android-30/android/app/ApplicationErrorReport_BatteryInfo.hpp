@@ -18,9 +18,9 @@ namespace android::app
 		jstring usageDetails();
 		jint usagePercent();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ApplicationErrorReport_BatteryInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationErrorReport_BatteryInfo(QAndroidJniObject obj);
+		ApplicationErrorReport_BatteryInfo(QJniObject obj);
 		
 		// Constructors
 		ApplicationErrorReport_BatteryInfo();

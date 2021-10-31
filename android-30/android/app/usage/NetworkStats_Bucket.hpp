@@ -26,9 +26,9 @@ namespace android::app::usage
 		static jint UID_REMOVED();
 		static jint UID_TETHERING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NetworkStats_Bucket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkStats_Bucket(QAndroidJniObject obj);
+		NetworkStats_Bucket(QJniObject obj);
 		
 		// Constructors
 		NetworkStats_Bucket();

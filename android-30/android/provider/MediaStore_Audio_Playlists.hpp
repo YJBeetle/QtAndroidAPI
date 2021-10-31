@@ -19,9 +19,9 @@ namespace android::provider
 		static android::net::Uri EXTERNAL_CONTENT_URI();
 		static android::net::Uri INTERNAL_CONTENT_URI();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaStore_Audio_Playlists(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio_Playlists(QAndroidJniObject obj);
+		MediaStore_Audio_Playlists(QJniObject obj);
 		
 		// Constructors
 		MediaStore_Audio_Playlists();

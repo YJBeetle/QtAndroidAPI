@@ -31,9 +31,9 @@ namespace android::content
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IntentSender(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IntentSender(QAndroidJniObject obj);
+		IntentSender(QJniObject obj);
 		
 		// Constructors
 		

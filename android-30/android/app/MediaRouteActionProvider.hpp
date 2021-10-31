@@ -19,9 +19,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaRouteActionProvider(const char *className, const char *sig, Ts...agv) : android::view::ActionProvider(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouteActionProvider(QAndroidJniObject obj);
+		MediaRouteActionProvider(QJniObject obj);
 		
 		// Constructors
 		MediaRouteActionProvider(android::content::Context arg0);

@@ -14,9 +14,9 @@ namespace android::os::health
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HealthStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		HealthStats(QAndroidJniObject obj);
+		HealthStats(QJniObject obj);
 		
 		// Constructors
 		

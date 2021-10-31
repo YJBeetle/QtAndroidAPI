@@ -4,8 +4,8 @@ namespace android::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FontRequest::FontRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FontRequest::FontRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	FontRequest::FontRequest(jstring arg0, jstring arg1, jstring arg2)

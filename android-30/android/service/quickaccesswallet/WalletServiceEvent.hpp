@@ -16,9 +16,9 @@ namespace android::service::quickaccesswallet
 		static __JniBaseClass CREATOR();
 		static jint TYPE_NFC_PAYMENT_STARTED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WalletServiceEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WalletServiceEvent(QAndroidJniObject obj);
+		WalletServiceEvent(QJniObject obj);
 		
 		// Constructors
 		WalletServiceEvent(jint arg0);

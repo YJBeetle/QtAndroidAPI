@@ -15,9 +15,9 @@ namespace android::view::inputmethod
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InputBinding(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		InputBinding(QAndroidJniObject obj);
+		InputBinding(QJniObject obj);
 		
 		// Constructors
 		InputBinding(__JniBaseClass arg0, android::view::inputmethod::InputBinding &arg1);

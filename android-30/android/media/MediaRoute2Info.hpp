@@ -33,9 +33,9 @@ namespace android::media
 		static jint PLAYBACK_VOLUME_FIXED();
 		static jint PLAYBACK_VOLUME_VARIABLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaRoute2Info(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRoute2Info(QAndroidJniObject obj);
+		MediaRoute2Info(QJniObject obj);
 		
 		// Constructors
 		

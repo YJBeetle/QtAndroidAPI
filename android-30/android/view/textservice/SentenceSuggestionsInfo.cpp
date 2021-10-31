@@ -14,8 +14,8 @@ namespace android::view::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SentenceSuggestionsInfo::SentenceSuggestionsInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SentenceSuggestionsInfo::SentenceSuggestionsInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SentenceSuggestionsInfo::SentenceSuggestionsInfo(android::os::Parcel arg0)

@@ -41,9 +41,9 @@ namespace android::preference
 		jstring title();
 		jint titleRes();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PreferenceActivity_Header(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PreferenceActivity_Header(QAndroidJniObject obj);
+		PreferenceActivity_Header(QJniObject obj);
 		
 		// Constructors
 		PreferenceActivity_Header();

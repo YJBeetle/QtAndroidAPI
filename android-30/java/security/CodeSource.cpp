@@ -9,8 +9,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CodeSource::CodeSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CodeSource::CodeSource(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CodeSource::CodeSource(java::net::URL arg0, jarray arg1)

@@ -4,8 +4,8 @@ namespace android::drm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DrmStore::DrmStore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DrmStore::DrmStore(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DrmStore::DrmStore()

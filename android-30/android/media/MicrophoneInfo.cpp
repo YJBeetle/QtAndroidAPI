@@ -133,8 +133,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MicrophoneInfo::MicrophoneInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MicrophoneInfo::MicrophoneInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

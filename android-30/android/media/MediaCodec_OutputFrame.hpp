@@ -22,9 +22,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodec_OutputFrame(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_OutputFrame(QAndroidJniObject obj);
+		MediaCodec_OutputFrame(QJniObject obj);
 		
 		// Constructors
 		

@@ -4,8 +4,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Editable_Factory::Editable_Factory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Editable_Factory::Editable_Factory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Editable_Factory::Editable_Factory()

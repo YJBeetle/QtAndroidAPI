@@ -26,8 +26,8 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FieldPacker::FieldPacker(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FieldPacker::FieldPacker(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	FieldPacker::FieldPacker(jbyteArray arg0)

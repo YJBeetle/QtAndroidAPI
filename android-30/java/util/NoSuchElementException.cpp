@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoSuchElementException::NoSuchElementException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	NoSuchElementException::NoSuchElementException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	NoSuchElementException::NoSuchElementException()

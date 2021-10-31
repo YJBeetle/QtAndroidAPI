@@ -10,9 +10,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WebMessage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WebMessage(QAndroidJniObject obj);
+		WebMessage(QJniObject obj);
 		
 		// Constructors
 		WebMessage(jstring arg0);

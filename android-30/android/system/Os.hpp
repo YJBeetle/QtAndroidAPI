@@ -50,9 +50,9 @@ namespace android::system
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Os(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Os(QAndroidJniObject obj);
+		Os(QJniObject obj);
 		
 		// Constructors
 		

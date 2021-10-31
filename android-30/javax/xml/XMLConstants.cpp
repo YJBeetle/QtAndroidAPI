@@ -132,8 +132,8 @@ namespace javax::xml
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	XMLConstants::XMLConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	XMLConstants::XMLConstants(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

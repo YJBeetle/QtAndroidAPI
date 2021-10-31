@@ -22,9 +22,9 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CustomDescription_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CustomDescription_Builder(QAndroidJniObject obj);
+		CustomDescription_Builder(QJniObject obj);
 		
 		// Constructors
 		CustomDescription_Builder(android::widget::RemoteViews arg0);

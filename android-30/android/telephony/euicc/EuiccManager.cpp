@@ -314,8 +314,8 @@ namespace android::telephony::euicc
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EuiccManager::EuiccManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EuiccManager::EuiccManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

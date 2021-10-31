@@ -13,9 +13,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AtomicMoveNotSupportedException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicMoveNotSupportedException(QAndroidJniObject obj);
+		AtomicMoveNotSupportedException(QJniObject obj);
 		
 		// Constructors
 		AtomicMoveNotSupportedException(jstring arg0, jstring arg1, jstring arg2);

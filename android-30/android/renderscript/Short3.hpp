@@ -13,9 +13,9 @@ namespace android::renderscript
 		jshort y();
 		jshort z();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Short3(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Short3(QAndroidJniObject obj);
+		Short3(QJniObject obj);
 		
 		// Constructors
 		Short3();

@@ -4,8 +4,8 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PersonalizationData::PersonalizationData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PersonalizationData::PersonalizationData(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

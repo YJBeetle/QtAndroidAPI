@@ -19,9 +19,9 @@ namespace android::telephony::mbms
 		static jint STATE_STARTED();
 		static jint STATE_STOPPED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GroupCall(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GroupCall(QAndroidJniObject obj);
+		GroupCall(QJniObject obj);
 		
 		// Constructors
 		

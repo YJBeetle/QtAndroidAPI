@@ -27,8 +27,8 @@ namespace javax::xml::datatype
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	DatatypeFactory::DatatypeFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DatatypeFactory::DatatypeFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

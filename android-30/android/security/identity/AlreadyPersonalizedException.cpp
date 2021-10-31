@@ -4,8 +4,8 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlreadyPersonalizedException::AlreadyPersonalizedException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
+	// QJniObject forward
+	AlreadyPersonalizedException::AlreadyPersonalizedException(QJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 	
 	// Constructors
 	AlreadyPersonalizedException::AlreadyPersonalizedException(jstring arg0)

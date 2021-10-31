@@ -92,9 +92,9 @@ namespace java::util
 		static jint YEAR();
 		static jint ZONE_OFFSET();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Calendar(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Calendar(QAndroidJniObject obj);
+		Calendar(QJniObject obj);
 		
 		// Constructors
 		

@@ -12,9 +12,9 @@ namespace android::icu::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ICUUncheckedIOException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ICUUncheckedIOException(QAndroidJniObject obj);
+		ICUUncheckedIOException(QJniObject obj);
 		
 		// Constructors
 		ICUUncheckedIOException();

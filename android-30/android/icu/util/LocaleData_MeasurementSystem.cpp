@@ -28,8 +28,8 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocaleData_MeasurementSystem::LocaleData_MeasurementSystem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocaleData_MeasurementSystem::LocaleData_MeasurementSystem(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

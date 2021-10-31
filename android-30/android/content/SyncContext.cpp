@@ -5,8 +5,8 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SyncContext::SyncContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SyncContext::SyncContext(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

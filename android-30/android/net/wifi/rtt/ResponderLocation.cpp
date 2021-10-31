@@ -101,8 +101,8 @@ namespace android::net::wifi::rtt
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ResponderLocation::ResponderLocation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ResponderLocation::ResponderLocation(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

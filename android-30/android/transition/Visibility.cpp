@@ -23,8 +23,8 @@ namespace android::transition
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Visibility::Visibility(QAndroidJniObject obj) : android::transition::Transition(obj) {}
+	// QJniObject forward
+	Visibility::Visibility(QJniObject obj) : android::transition::Transition(obj) {}
 	
 	// Constructors
 	Visibility::Visibility()

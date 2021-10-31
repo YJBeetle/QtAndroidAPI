@@ -13,8 +13,8 @@ namespace android::bluetooth
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	BluetoothHearingAid::BluetoothHearingAid(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BluetoothHearingAid::BluetoothHearingAid(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

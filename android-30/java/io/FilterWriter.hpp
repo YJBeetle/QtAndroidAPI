@@ -15,9 +15,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FilterWriter(const char *className, const char *sig, Ts...agv) : java::io::Writer(className, sig, std::forward<Ts>(agv)...) {}
-		FilterWriter(QAndroidJniObject obj);
+		FilterWriter(QJniObject obj);
 		
 		// Constructors
 		

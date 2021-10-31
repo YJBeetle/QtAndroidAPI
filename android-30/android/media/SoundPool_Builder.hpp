@@ -18,9 +18,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SoundPool_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SoundPool_Builder(QAndroidJniObject obj);
+		SoundPool_Builder(QJniObject obj);
 		
 		// Constructors
 		SoundPool_Builder();

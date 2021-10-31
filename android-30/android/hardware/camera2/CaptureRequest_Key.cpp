@@ -4,8 +4,8 @@ namespace android::hardware::camera2
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CaptureRequest_Key::CaptureRequest_Key(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CaptureRequest_Key::CaptureRequest_Key(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CaptureRequest_Key::CaptureRequest_Key(jstring arg0, jclass arg1)

@@ -22,8 +22,8 @@ namespace java::io
 		).object<jarray>();
 	}
 	
-	// QAndroidJniObject forward
-	ObjectStreamClass::ObjectStreamClass(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ObjectStreamClass::ObjectStreamClass(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -12,8 +12,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Channels::Channels(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Channels::Channels(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

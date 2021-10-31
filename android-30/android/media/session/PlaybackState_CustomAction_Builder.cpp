@@ -6,8 +6,8 @@ namespace android::media::session
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(jstring arg0, jstring arg1, jint arg2)

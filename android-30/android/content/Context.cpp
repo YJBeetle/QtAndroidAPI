@@ -770,8 +770,8 @@ namespace android::content
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Context::Context(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Context::Context(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Context::Context()

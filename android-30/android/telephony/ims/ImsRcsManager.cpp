@@ -13,8 +13,8 @@ namespace android::telephony::ims
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ImsRcsManager::ImsRcsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ImsRcsManager::ImsRcsManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

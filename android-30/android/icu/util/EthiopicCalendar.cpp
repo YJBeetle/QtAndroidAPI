@@ -99,8 +99,8 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EthiopicCalendar::EthiopicCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
+	// QJniObject forward
+	EthiopicCalendar::EthiopicCalendar(QJniObject obj) : android::icu::util::Calendar(obj) {}
 	
 	// Constructors
 	EthiopicCalendar::EthiopicCalendar()

@@ -5,8 +5,8 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DoubleAccumulator::DoubleAccumulator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DoubleAccumulator::DoubleAccumulator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DoubleAccumulator::DoubleAccumulator(__JniBaseClass arg0, jdouble arg1)

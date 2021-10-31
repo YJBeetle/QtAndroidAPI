@@ -19,9 +19,9 @@ namespace android::telephony::mbms
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FileInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FileInfo(QAndroidJniObject obj);
+		FileInfo(QJniObject obj);
 		
 		// Constructors
 		

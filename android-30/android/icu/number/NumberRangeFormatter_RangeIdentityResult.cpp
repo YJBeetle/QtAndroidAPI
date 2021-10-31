@@ -28,8 +28,8 @@ namespace android::icu::number
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumberRangeFormatter_RangeIdentityResult::NumberRangeFormatter_RangeIdentityResult(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	NumberRangeFormatter_RangeIdentityResult::NumberRangeFormatter_RangeIdentityResult(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

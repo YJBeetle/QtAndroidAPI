@@ -22,9 +22,9 @@ namespace android::service::quickaccesswallet
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WalletCard_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WalletCard_Builder(QAndroidJniObject obj);
+		WalletCard_Builder(QJniObject obj);
 		
 		// Constructors
 		WalletCard_Builder(jstring arg0, android::graphics::drawable::Icon arg1, jstring arg2, android::app::PendingIntent arg3);

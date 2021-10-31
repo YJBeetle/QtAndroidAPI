@@ -26,8 +26,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PointF::PointF(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PointF::PointF(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PointF::PointF()

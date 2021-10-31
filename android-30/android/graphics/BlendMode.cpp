@@ -236,8 +236,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BlendMode::BlendMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	BlendMode::BlendMode(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

@@ -92,8 +92,8 @@ namespace java::security::cert
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CRLReason::CRLReason(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	CRLReason::CRLReason(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

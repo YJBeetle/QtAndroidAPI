@@ -28,8 +28,8 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WebSettings_ZoomDensity::WebSettings_ZoomDensity(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	WebSettings_ZoomDensity::WebSettings_ZoomDensity(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

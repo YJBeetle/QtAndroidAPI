@@ -334,8 +334,8 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TypedValue::TypedValue(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TypedValue::TypedValue(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TypedValue::TypedValue()

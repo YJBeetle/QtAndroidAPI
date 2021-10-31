@@ -23,9 +23,9 @@ namespace android::text::method
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ArrowKeyMovementMethod(const char *className, const char *sig, Ts...agv) : android::text::method::BaseMovementMethod(className, sig, std::forward<Ts>(agv)...) {}
-		ArrowKeyMovementMethod(QAndroidJniObject obj);
+		ArrowKeyMovementMethod(QJniObject obj);
 		
 		// Constructors
 		ArrowKeyMovementMethod();

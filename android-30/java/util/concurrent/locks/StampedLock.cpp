@@ -6,8 +6,8 @@ namespace java::util::concurrent::locks
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StampedLock::StampedLock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StampedLock::StampedLock(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StampedLock::StampedLock()

@@ -6,8 +6,8 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DateFormatSymbols::DateFormatSymbols(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DateFormatSymbols::DateFormatSymbols(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DateFormatSymbols::DateFormatSymbols()

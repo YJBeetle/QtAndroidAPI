@@ -13,9 +13,9 @@ namespace java::util::regex
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PatternSyntaxException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		PatternSyntaxException(QAndroidJniObject obj);
+		PatternSyntaxException(QJniObject obj);
 		
 		// Constructors
 		PatternSyntaxException(jstring arg0, jstring arg1, jint arg2);

@@ -37,8 +37,8 @@ namespace android::webkit
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	PermissionRequest::PermissionRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PermissionRequest::PermissionRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PermissionRequest::PermissionRequest()

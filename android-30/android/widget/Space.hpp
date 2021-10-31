@@ -19,9 +19,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Space(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		Space(QAndroidJniObject obj);
+		Space(QJniObject obj);
 		
 		// Constructors
 		Space(android::content::Context arg0);

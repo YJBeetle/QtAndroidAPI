@@ -30,9 +30,9 @@ namespace android::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyPairGeneratorSpec_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyPairGeneratorSpec_Builder(QAndroidJniObject obj);
+		KeyPairGeneratorSpec_Builder(QJniObject obj);
 		
 		// Constructors
 		KeyPairGeneratorSpec_Builder(android::content::Context arg0);

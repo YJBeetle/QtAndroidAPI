@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(QtAndroidAPI LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-find_package(Qt5 COMPONENTS Core AndroidExtras REQUIRED)
+find_package(Qt6 COMPONENTS Core REQUIRED)
 set(SRC_LIST 
 	"__JniBaseClass.cpp" "__JniBaseClass.hpp"
 	"android/Manifest.cpp" "android/Manifest.hpp"
@@ -3802,5 +3802,5 @@ set(SRC_LIST
 	"org/w3c/dom/DOMException.cpp" "org/w3c/dom/DOMException.hpp"
 )
 add_library(${PROJECT_NAME} STATIC ${SRC_LIST})
-target_link_libraries(${PROJECT_NAME} PUBLIC Qt5::Core Qt5::AndroidExtras)
+target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Core)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

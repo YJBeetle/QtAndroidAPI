@@ -6,8 +6,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbsoluteLayout::AbsoluteLayout(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
+	// QJniObject forward
+	AbsoluteLayout::AbsoluteLayout(QJniObject obj) : android::view::ViewGroup(obj) {}
 	
 	// Constructors
 	AbsoluteLayout::AbsoluteLayout(android::content::Context arg0)

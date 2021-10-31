@@ -17,8 +17,8 @@ namespace android::app::assist
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AssistContent::AssistContent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AssistContent::AssistContent(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AssistContent::AssistContent()

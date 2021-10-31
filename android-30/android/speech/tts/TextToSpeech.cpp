@@ -140,8 +140,8 @@ namespace android::speech::tts
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextToSpeech::TextToSpeech(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextToSpeech::TextToSpeech(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TextToSpeech::TextToSpeech(android::content::Context arg0, __JniBaseClass arg1)

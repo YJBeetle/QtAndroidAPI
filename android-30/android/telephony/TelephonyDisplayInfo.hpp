@@ -20,9 +20,9 @@ namespace android::telephony
 		static jint OVERRIDE_NETWORK_TYPE_NR_NSA();
 		static jint OVERRIDE_NETWORK_TYPE_NR_NSA_MMWAVE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TelephonyDisplayInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyDisplayInfo(QAndroidJniObject obj);
+		TelephonyDisplayInfo(QJniObject obj);
 		
 		// Constructors
 		

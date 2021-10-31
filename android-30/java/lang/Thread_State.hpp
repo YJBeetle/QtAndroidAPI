@@ -17,9 +17,9 @@ namespace java::lang
 		static java::lang::Thread_State TIMED_WAITING();
 		static java::lang::Thread_State WAITING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Thread_State(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Thread_State(QAndroidJniObject obj);
+		Thread_State(QJniObject obj);
 		
 		// Constructors
 		

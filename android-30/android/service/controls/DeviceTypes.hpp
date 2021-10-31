@@ -69,9 +69,9 @@ namespace android::service::controls
 		static jint TYPE_WATER_HEATER();
 		static jint TYPE_WINDOW();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DeviceTypes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceTypes(QAndroidJniObject obj);
+		DeviceTypes(QJniObject obj);
 		
 		// Constructors
 		

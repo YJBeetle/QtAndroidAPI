@@ -30,9 +30,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodec_QueueRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_QueueRequest(QAndroidJniObject obj);
+		MediaCodec_QueueRequest(QJniObject obj);
 		
 		// Constructors
 		

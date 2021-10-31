@@ -18,9 +18,9 @@ namespace android::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConfirmationPrompt_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConfirmationPrompt_Builder(QAndroidJniObject obj);
+		ConfirmationPrompt_Builder(QJniObject obj);
 		
 		// Constructors
 		ConfirmationPrompt_Builder(android::content::Context arg0);

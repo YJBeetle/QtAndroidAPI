@@ -13,8 +13,8 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BatchUpdates::BatchUpdates(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BatchUpdates::BatchUpdates(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

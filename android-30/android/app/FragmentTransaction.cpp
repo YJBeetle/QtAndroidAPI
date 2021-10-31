@@ -55,8 +55,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FragmentTransaction::FragmentTransaction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FragmentTransaction::FragmentTransaction(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	FragmentTransaction::FragmentTransaction()

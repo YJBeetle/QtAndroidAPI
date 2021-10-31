@@ -40,9 +40,9 @@ namespace android::inputmethodservice
 		jint x();
 		jint y();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Keyboard_Key(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Keyboard_Key(QAndroidJniObject obj);
+		Keyboard_Key(QJniObject obj);
 		
 		// Constructors
 		Keyboard_Key(android::inputmethodservice::Keyboard_Row arg0);

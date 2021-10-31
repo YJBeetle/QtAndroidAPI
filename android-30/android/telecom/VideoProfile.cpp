@@ -76,8 +76,8 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VideoProfile::VideoProfile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VideoProfile::VideoProfile(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	VideoProfile::VideoProfile(jint arg0)

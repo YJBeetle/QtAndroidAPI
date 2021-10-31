@@ -41,9 +41,9 @@ namespace android::provider
 		static jstring VIDEO_ID();
 		static jstring WIDTH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaStore_Video_Thumbnails(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Video_Thumbnails(QAndroidJniObject obj);
+		MediaStore_Video_Thumbnails(QJniObject obj);
 		
 		// Constructors
 		MediaStore_Video_Thumbnails();

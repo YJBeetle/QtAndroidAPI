@@ -10,9 +10,9 @@ namespace android::net::wifi::p2p
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiP2pManager_Channel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pManager_Channel(QAndroidJniObject obj);
+		WifiP2pManager_Channel(QJniObject obj);
 		
 		// Constructors
 		

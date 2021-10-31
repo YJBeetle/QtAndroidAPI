@@ -18,9 +18,9 @@ namespace android::drm
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DrmRights(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DrmRights(QAndroidJniObject obj);
+		DrmRights(QJniObject obj);
 		
 		// Constructors
 		DrmRights(android::drm::ProcessedData arg0, jstring arg1);

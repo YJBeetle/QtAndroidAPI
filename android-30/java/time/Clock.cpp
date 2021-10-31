@@ -7,8 +7,8 @@ namespace java::time
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Clock::Clock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Clock::Clock(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -24,8 +24,8 @@ namespace java::util::logging
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	LogManager::LogManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LogManager::LogManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

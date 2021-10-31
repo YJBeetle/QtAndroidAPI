@@ -21,8 +21,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Magnifier::Magnifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Magnifier::Magnifier(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Magnifier::Magnifier(android::view::View arg0)

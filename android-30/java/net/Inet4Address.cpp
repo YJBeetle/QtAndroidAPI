@@ -4,8 +4,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Inet4Address::Inet4Address(QAndroidJniObject obj) : java::net::InetAddress(obj) {}
+	// QJniObject forward
+	Inet4Address::Inet4Address(QJniObject obj) : java::net::InetAddress(obj) {}
 	
 	// Constructors
 	

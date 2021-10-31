@@ -5,8 +5,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConcurrentHashMap_KeySetView::ConcurrentHashMap_KeySetView(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConcurrentHashMap_KeySetView::ConcurrentHashMap_KeySetView(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

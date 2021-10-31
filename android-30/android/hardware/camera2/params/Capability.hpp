@@ -18,9 +18,9 @@ namespace android::hardware::camera2::params
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Capability(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Capability(QAndroidJniObject obj);
+		Capability(QJniObject obj);
 		
 		// Constructors
 		

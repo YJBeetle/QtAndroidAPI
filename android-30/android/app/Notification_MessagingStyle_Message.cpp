@@ -7,8 +7,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(jstring arg0, jlong arg1, android::app::Person arg2)

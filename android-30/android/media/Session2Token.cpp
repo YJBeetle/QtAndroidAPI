@@ -30,8 +30,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Session2Token::Session2Token(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Session2Token::Session2Token(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Session2Token::Session2Token(android::content::Context arg0, android::content::ComponentName arg1)

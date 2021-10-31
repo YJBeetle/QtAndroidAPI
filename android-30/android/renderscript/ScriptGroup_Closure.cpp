@@ -6,8 +6,8 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScriptGroup_Closure::ScriptGroup_Closure(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
+	// QJniObject forward
+	ScriptGroup_Closure::ScriptGroup_Closure(QJniObject obj) : android::renderscript::BaseObj(obj) {}
 	
 	// Constructors
 	

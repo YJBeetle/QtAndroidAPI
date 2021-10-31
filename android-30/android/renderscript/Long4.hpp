@@ -14,9 +14,9 @@ namespace android::renderscript
 		jlong y();
 		jlong z();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Long4(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Long4(QAndroidJniObject obj);
+		Long4(QJniObject obj);
 		
 		// Constructors
 		Long4();

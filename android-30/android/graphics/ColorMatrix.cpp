@@ -4,8 +4,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ColorMatrix::ColorMatrix(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ColorMatrix::ColorMatrix(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ColorMatrix::ColorMatrix()

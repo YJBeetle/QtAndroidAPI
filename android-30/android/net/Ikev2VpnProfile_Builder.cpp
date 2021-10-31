@@ -7,8 +7,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Ikev2VpnProfile_Builder::Ikev2VpnProfile_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Ikev2VpnProfile_Builder::Ikev2VpnProfile_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Ikev2VpnProfile_Builder::Ikev2VpnProfile_Builder(jstring arg0, jstring arg1)

@@ -5,8 +5,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CheckBox::CheckBox(QAndroidJniObject obj) : android::widget::CompoundButton(obj) {}
+	// QJniObject forward
+	CheckBox::CheckBox(QJniObject obj) : android::widget::CompoundButton(obj) {}
 	
 	// Constructors
 	CheckBox::CheckBox(android::content::Context arg0)

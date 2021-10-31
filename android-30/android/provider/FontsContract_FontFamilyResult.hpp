@@ -14,9 +14,9 @@ namespace android::provider
 		static jint STATUS_UNEXPECTED_DATA_PROVIDED();
 		static jint STATUS_WRONG_CERTIFICATES();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FontsContract_FontFamilyResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FontsContract_FontFamilyResult(QAndroidJniObject obj);
+		FontsContract_FontFamilyResult(QJniObject obj);
 		
 		// Constructors
 		

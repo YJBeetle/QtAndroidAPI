@@ -4,8 +4,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SpannableString::SpannableString(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SpannableString::SpannableString(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SpannableString::SpannableString(jstring arg0)

@@ -24,9 +24,9 @@ namespace android::telecom
 		static jint REASON_OTHER();
 		static jint REASON_USER_SET();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PhoneAccountSuggestion(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PhoneAccountSuggestion(QAndroidJniObject obj);
+		PhoneAccountSuggestion(QJniObject obj);
 		
 		// Constructors
 		PhoneAccountSuggestion(android::telecom::PhoneAccountHandle arg0, jint arg1, jboolean arg2);

@@ -6,8 +6,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Handler::Handler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Handler::Handler(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Handler::Handler()

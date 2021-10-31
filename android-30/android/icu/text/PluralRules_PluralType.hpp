@@ -13,9 +13,9 @@ namespace android::icu::text
 		static android::icu::text::PluralRules_PluralType CARDINAL();
 		static android::icu::text::PluralRules_PluralType ORDINAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PluralRules_PluralType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		PluralRules_PluralType(QAndroidJniObject obj);
+		PluralRules_PluralType(QJniObject obj);
 		
 		// Constructors
 		

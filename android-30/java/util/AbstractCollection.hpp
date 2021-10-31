@@ -10,9 +10,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbstractCollection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractCollection(QAndroidJniObject obj);
+		AbstractCollection(QJniObject obj);
 		
 		// Constructors
 		

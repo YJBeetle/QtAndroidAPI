@@ -22,9 +22,9 @@ namespace android::app::job
 		// Fields
 		static jstring PERMISSION_BIND();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JobService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		JobService(QAndroidJniObject obj);
+		JobService(QJniObject obj);
 		
 		// Constructors
 		JobService();

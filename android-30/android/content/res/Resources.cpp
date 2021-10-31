@@ -24,8 +24,8 @@ namespace android::content::res
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Resources::Resources(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Resources::Resources(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Resources::Resources(android::content::res::AssetManager arg0, android::util::DisplayMetrics arg1, android::content::res::Configuration arg2)

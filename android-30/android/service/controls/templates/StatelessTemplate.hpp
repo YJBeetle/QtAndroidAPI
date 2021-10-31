@@ -11,9 +11,9 @@ namespace android::service::controls::templates
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StatelessTemplate(const char *className, const char *sig, Ts...agv) : android::service::controls::templates::ControlTemplate(className, sig, std::forward<Ts>(agv)...) {}
-		StatelessTemplate(QAndroidJniObject obj);
+		StatelessTemplate(QJniObject obj);
 		
 		// Constructors
 		StatelessTemplate(jstring arg0);

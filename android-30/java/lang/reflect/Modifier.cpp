@@ -88,8 +88,8 @@ namespace java::lang::reflect
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Modifier::Modifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Modifier::Modifier(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

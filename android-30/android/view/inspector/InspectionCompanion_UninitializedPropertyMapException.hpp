@@ -12,9 +12,9 @@ namespace android::view::inspector
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InspectionCompanion_UninitializedPropertyMapException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		InspectionCompanion_UninitializedPropertyMapException(QAndroidJniObject obj);
+		InspectionCompanion_UninitializedPropertyMapException(QJniObject obj);
 		
 		// Constructors
 		InspectionCompanion_UninitializedPropertyMapException();

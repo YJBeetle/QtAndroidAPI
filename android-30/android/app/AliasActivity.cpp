@@ -5,8 +5,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AliasActivity::AliasActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
+	// QJniObject forward
+	AliasActivity::AliasActivity(QJniObject obj) : android::app::Activity(obj) {}
 	
 	// Constructors
 	AliasActivity::AliasActivity()

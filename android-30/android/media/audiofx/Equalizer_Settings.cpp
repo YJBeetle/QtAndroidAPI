@@ -23,8 +23,8 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Equalizer_Settings::Equalizer_Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Equalizer_Settings::Equalizer_Settings(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Equalizer_Settings::Equalizer_Settings()

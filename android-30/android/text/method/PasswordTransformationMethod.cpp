@@ -6,8 +6,8 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PasswordTransformationMethod::PasswordTransformationMethod(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PasswordTransformationMethod::PasswordTransformationMethod(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PasswordTransformationMethod::PasswordTransformationMethod()

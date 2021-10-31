@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MissingFormatArgumentException::MissingFormatArgumentException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
+	// QJniObject forward
+	MissingFormatArgumentException::MissingFormatArgumentException(QJniObject obj) : java::util::IllegalFormatException(obj) {}
 	
 	// Constructors
 	MissingFormatArgumentException::MissingFormatArgumentException(jstring arg0)

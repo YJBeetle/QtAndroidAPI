@@ -67,9 +67,9 @@ namespace android::nfc
 		static jint STATE_TURNING_OFF();
 		static jint STATE_TURNING_ON();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NfcAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NfcAdapter(QAndroidJniObject obj);
+		NfcAdapter(QJniObject obj);
 		
 		// Constructors
 		

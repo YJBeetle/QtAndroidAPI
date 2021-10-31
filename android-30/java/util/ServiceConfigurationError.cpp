@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ServiceConfigurationError::ServiceConfigurationError(QAndroidJniObject obj) : java::lang::Error(obj) {}
+	// QJniObject forward
+	ServiceConfigurationError::ServiceConfigurationError(QJniObject obj) : java::lang::Error(obj) {}
 	
 	// Constructors
 	ServiceConfigurationError::ServiceConfigurationError(jstring arg0)

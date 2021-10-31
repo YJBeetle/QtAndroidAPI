@@ -6,8 +6,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConnectivityDiagnosticsManager::ConnectivityDiagnosticsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConnectivityDiagnosticsManager::ConnectivityDiagnosticsManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

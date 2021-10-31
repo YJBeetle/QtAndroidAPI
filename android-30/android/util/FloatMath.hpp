@@ -10,9 +10,9 @@ namespace android::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FloatMath(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FloatMath(QAndroidJniObject obj);
+		FloatMath(QJniObject obj);
 		
 		// Constructors
 		

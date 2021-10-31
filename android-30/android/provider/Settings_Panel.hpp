@@ -14,9 +14,9 @@ namespace android::provider
 		static jstring ACTION_VOLUME();
 		static jstring ACTION_WIFI();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Settings_Panel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Settings_Panel(QAndroidJniObject obj);
+		Settings_Panel(QJniObject obj);
 		
 		// Constructors
 		

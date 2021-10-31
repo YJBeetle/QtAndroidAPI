@@ -140,8 +140,8 @@ namespace java::nio::file::attribute
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AclEntryPermission::AclEntryPermission(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	AclEntryPermission::AclEntryPermission(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

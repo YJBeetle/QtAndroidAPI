@@ -19,9 +19,9 @@ namespace android::view::animation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RotateAnimation(const char *className, const char *sig, Ts...agv) : android::view::animation::Animation(className, sig, std::forward<Ts>(agv)...) {}
-		RotateAnimation(QAndroidJniObject obj);
+		RotateAnimation(QJniObject obj);
 		
 		// Constructors
 		RotateAnimation(android::content::Context arg0, __JniBaseClass arg1);

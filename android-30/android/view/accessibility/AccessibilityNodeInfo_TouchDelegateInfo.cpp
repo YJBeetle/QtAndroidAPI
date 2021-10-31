@@ -15,8 +15,8 @@ namespace android::view::accessibility
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(__JniBaseClass arg0)

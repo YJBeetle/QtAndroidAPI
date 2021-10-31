@@ -52,9 +52,9 @@ namespace android::view
 		static jint STATE_UNKNOWN();
 		static jint STATE_VR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Display(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Display(QAndroidJniObject obj);
+		Display(QJniObject obj);
 		
 		// Constructors
 		

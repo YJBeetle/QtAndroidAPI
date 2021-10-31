@@ -21,9 +21,9 @@ namespace android::graphics
 		jfloat x();
 		jfloat y();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PointF(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PointF(QAndroidJniObject obj);
+		PointF(QJniObject obj);
 		
 		// Constructors
 		PointF();

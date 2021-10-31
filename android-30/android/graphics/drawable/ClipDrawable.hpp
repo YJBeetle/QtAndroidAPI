@@ -30,9 +30,9 @@ namespace android::graphics::drawable
 		static jint HORIZONTAL();
 		static jint VERTICAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ClipDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::DrawableWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		ClipDrawable(QAndroidJniObject obj);
+		ClipDrawable(QJniObject obj);
 		
 		// Constructors
 		ClipDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jint arg2);

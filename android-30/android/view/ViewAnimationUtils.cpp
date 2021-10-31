@@ -6,8 +6,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ViewAnimationUtils::ViewAnimationUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ViewAnimationUtils::ViewAnimationUtils(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

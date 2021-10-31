@@ -18,9 +18,9 @@ namespace java::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AttributedString(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AttributedString(QAndroidJniObject obj);
+		AttributedString(QJniObject obj);
 		
 		// Constructors
 		AttributedString(jstring arg0);

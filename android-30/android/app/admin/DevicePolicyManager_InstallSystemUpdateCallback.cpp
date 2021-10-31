@@ -39,8 +39,8 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DevicePolicyManager_InstallSystemUpdateCallback::DevicePolicyManager_InstallSystemUpdateCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DevicePolicyManager_InstallSystemUpdateCallback::DevicePolicyManager_InstallSystemUpdateCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DevicePolicyManager_InstallSystemUpdateCallback::DevicePolicyManager_InstallSystemUpdateCallback()

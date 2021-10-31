@@ -18,9 +18,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppOpsManager_OnOpNotedCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AppOpsManager_OnOpNotedCallback(QAndroidJniObject obj);
+		AppOpsManager_OnOpNotedCallback(QJniObject obj);
 		
 		// Constructors
 		AppOpsManager_OnOpNotedCallback();

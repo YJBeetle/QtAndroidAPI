@@ -13,8 +13,8 @@ namespace android::companion
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AssociationRequest::AssociationRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AssociationRequest::AssociationRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

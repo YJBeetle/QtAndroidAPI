@@ -13,9 +13,9 @@ namespace android::icu::text
 		static jint UPPER();
 		static jint UPPER_LONG();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CollationKey_BoundMode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CollationKey_BoundMode(QAndroidJniObject obj);
+		CollationKey_BoundMode(QJniObject obj);
 		
 		// Constructors
 		

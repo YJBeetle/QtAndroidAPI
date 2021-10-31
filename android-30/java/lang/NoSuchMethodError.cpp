@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoSuchMethodError::NoSuchMethodError(QAndroidJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
+	// QJniObject forward
+	NoSuchMethodError::NoSuchMethodError(QJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
 	
 	// Constructors
 	NoSuchMethodError::NoSuchMethodError()

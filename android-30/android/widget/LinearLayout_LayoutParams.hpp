@@ -26,9 +26,9 @@ namespace android::widget
 		jint gravity();
 		jfloat weight();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LinearLayout_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_MarginLayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		LinearLayout_LayoutParams(QAndroidJniObject obj);
+		LinearLayout_LayoutParams(QJniObject obj);
 		
 		// Constructors
 		LinearLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0);

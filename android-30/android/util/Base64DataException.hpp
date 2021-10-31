@@ -12,9 +12,9 @@ namespace android::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Base64DataException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		Base64DataException(QAndroidJniObject obj);
+		Base64DataException(QJniObject obj);
 		
 		// Constructors
 		Base64DataException(jstring arg0);

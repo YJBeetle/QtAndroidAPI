@@ -21,9 +21,9 @@ namespace android::provider
 		static jstring LIST_STREQUENT_ACTION();
 		static jstring TITLE_EXTRA_KEY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Contacts_Intents_UI(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Intents_UI(QAndroidJniObject obj);
+		Contacts_Intents_UI(QJniObject obj);
 		
 		// Constructors
 		Contacts_Intents_UI();

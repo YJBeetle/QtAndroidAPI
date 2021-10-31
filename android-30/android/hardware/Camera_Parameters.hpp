@@ -73,9 +73,9 @@ namespace android::hardware
 		static jstring WHITE_BALANCE_TWILIGHT();
 		static jstring WHITE_BALANCE_WARM_FLUORESCENT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Camera_Parameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Camera_Parameters(QAndroidJniObject obj);
+		Camera_Parameters(QJniObject obj);
 		
 		// Constructors
 		

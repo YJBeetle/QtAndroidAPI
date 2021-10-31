@@ -10,9 +10,9 @@ namespace android::speech::tts
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UtteranceProgressListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UtteranceProgressListener(QAndroidJniObject obj);
+		UtteranceProgressListener(QJniObject obj);
 		
 		// Constructors
 		UtteranceProgressListener();

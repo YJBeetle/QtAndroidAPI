@@ -35,9 +35,9 @@ namespace android::service::controls
 		static jstring SERVICE_CONTROLS();
 		static jstring TAG();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ControlsProviderService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		ControlsProviderService(QAndroidJniObject obj);
+		ControlsProviderService(QJniObject obj);
 		
 		// Constructors
 		ControlsProviderService();

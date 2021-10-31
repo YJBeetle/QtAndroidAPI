@@ -46,8 +46,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GridView::GridView(QAndroidJniObject obj) : android::widget::AbsListView(obj) {}
+	// QJniObject forward
+	GridView::GridView(QJniObject obj) : android::widget::AbsListView(obj) {}
 	
 	// Constructors
 	GridView::GridView(android::content::Context arg0)

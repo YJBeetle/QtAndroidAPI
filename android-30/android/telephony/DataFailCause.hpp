@@ -351,9 +351,9 @@ namespace android::telephony
 		static jint VSNCP_SUBSCRIBER_LIMITATION();
 		static jint VSNCP_TIMEOUT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DataFailCause(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DataFailCause(QAndroidJniObject obj);
+		DataFailCause(QJniObject obj);
 		
 		// Constructors
 		

@@ -6,8 +6,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteInput_Builder::RemoteInput_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RemoteInput_Builder::RemoteInput_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RemoteInput_Builder::RemoteInput_Builder(jstring arg0)

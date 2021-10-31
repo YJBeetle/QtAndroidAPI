@@ -10,9 +10,9 @@ namespace android::media::audiofx
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DynamicsProcessing_BandBase(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DynamicsProcessing_BandBase(QAndroidJniObject obj);
+		DynamicsProcessing_BandBase(QJniObject obj);
 		
 		// Constructors
 		DynamicsProcessing_BandBase(jboolean arg0, jfloat arg1);

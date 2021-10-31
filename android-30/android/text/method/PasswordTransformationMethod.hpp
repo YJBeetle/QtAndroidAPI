@@ -18,9 +18,9 @@ namespace android::text::method
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PasswordTransformationMethod(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PasswordTransformationMethod(QAndroidJniObject obj);
+		PasswordTransformationMethod(QJniObject obj);
 		
 		// Constructors
 		PasswordTransformationMethod();

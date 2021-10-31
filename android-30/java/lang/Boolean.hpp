@@ -17,9 +17,9 @@ namespace java::lang
 		static java::lang::Boolean TRUE();
 		static jclass TYPE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Boolean(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Boolean(QAndroidJniObject obj);
+		Boolean(QJniObject obj);
 		
 		// Constructors
 		Boolean(jboolean arg0);

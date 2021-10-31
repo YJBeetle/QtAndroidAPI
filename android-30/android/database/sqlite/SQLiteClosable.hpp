@@ -10,9 +10,9 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SQLiteClosable(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteClosable(QAndroidJniObject obj);
+		SQLiteClosable(QJniObject obj);
 		
 		// Constructors
 		SQLiteClosable();

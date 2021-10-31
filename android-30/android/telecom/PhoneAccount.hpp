@@ -56,9 +56,9 @@ namespace android::telecom
 		static jstring SCHEME_TEL();
 		static jstring SCHEME_VOICEMAIL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PhoneAccount(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PhoneAccount(QAndroidJniObject obj);
+		PhoneAccount(QJniObject obj);
 		
 		// Constructors
 		

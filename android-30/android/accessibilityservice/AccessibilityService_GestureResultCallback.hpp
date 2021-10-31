@@ -14,9 +14,9 @@ namespace android::accessibilityservice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessibilityService_GestureResultCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityService_GestureResultCallback(QAndroidJniObject obj);
+		AccessibilityService_GestureResultCallback(QJniObject obj);
 		
 		// Constructors
 		AccessibilityService_GestureResultCallback();

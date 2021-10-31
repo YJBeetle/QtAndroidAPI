@@ -36,8 +36,8 @@ namespace android::icu::number
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumberRangeFormatter_RangeIdentityFallback::NumberRangeFormatter_RangeIdentityFallback(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	NumberRangeFormatter_RangeIdentityFallback::NumberRangeFormatter_RangeIdentityFallback(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

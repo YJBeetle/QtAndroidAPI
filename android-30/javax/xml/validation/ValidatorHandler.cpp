@@ -5,8 +5,8 @@ namespace javax::xml::validation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ValidatorHandler::ValidatorHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ValidatorHandler::ValidatorHandler(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

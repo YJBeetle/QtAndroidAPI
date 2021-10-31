@@ -23,9 +23,9 @@ namespace android::net::wifi::hotspot2
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PasspointConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PasspointConfiguration(QAndroidJniObject obj);
+		PasspointConfiguration(QJniObject obj);
 		
 		// Constructors
 		PasspointConfiguration();

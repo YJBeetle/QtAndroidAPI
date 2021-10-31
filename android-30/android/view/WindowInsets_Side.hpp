@@ -14,9 +14,9 @@ namespace android::view
 		static jint RIGHT();
 		static jint TOP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WindowInsets_Side(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsets_Side(QAndroidJniObject obj);
+		WindowInsets_Side(QJniObject obj);
 		
 		// Constructors
 		

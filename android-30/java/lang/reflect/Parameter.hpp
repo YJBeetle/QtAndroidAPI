@@ -14,9 +14,9 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Parameter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Parameter(QAndroidJniObject obj);
+		Parameter(QJniObject obj);
 		
 		// Constructors
 		

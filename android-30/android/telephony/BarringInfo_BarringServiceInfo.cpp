@@ -41,8 +41,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BarringInfo_BarringServiceInfo::BarringInfo_BarringServiceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BarringInfo_BarringServiceInfo::BarringInfo_BarringServiceInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

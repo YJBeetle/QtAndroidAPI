@@ -7,8 +7,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CalendarView::CalendarView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
+	// QJniObject forward
+	CalendarView::CalendarView(QJniObject obj) : android::widget::FrameLayout(obj) {}
 	
 	// Constructors
 	CalendarView::CalendarView(android::content::Context arg0)

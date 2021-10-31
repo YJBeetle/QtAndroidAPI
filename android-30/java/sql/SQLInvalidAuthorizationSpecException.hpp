@@ -13,9 +13,9 @@ namespace java::sql
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SQLInvalidAuthorizationSpecException(const char *className, const char *sig, Ts...agv) : java::sql::SQLNonTransientException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLInvalidAuthorizationSpecException(QAndroidJniObject obj);
+		SQLInvalidAuthorizationSpecException(QJniObject obj);
 		
 		// Constructors
 		SQLInvalidAuthorizationSpecException();

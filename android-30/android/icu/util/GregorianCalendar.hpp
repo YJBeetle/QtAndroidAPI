@@ -33,9 +33,9 @@ namespace android::icu::util
 		static jint AD();
 		static jint BC();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GregorianCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::Calendar(className, sig, std::forward<Ts>(agv)...) {}
-		GregorianCalendar(QAndroidJniObject obj);
+		GregorianCalendar(QJniObject obj);
 		
 		// Constructors
 		GregorianCalendar();

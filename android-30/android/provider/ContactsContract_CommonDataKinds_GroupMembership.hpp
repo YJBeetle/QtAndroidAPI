@@ -16,9 +16,9 @@ namespace android::provider
 		static jstring GROUP_ROW_ID();
 		static jstring GROUP_SOURCE_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_GroupMembership(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_GroupMembership(QAndroidJniObject obj);
+		ContactsContract_CommonDataKinds_GroupMembership(QJniObject obj);
 		
 		// Constructors
 		

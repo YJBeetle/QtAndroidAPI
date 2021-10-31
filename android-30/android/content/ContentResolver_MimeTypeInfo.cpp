@@ -5,8 +5,8 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContentResolver_MimeTypeInfo::ContentResolver_MimeTypeInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContentResolver_MimeTypeInfo::ContentResolver_MimeTypeInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

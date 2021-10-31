@@ -22,9 +22,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AuthenticationRequiredException(const char *className, const char *sig, Ts...agv) : java::lang::SecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		AuthenticationRequiredException(QAndroidJniObject obj);
+		AuthenticationRequiredException(QJniObject obj);
 		
 		// Constructors
 		AuthenticationRequiredException(jthrowable arg0, android::app::PendingIntent arg1);

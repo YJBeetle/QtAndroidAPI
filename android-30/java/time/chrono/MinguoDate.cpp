@@ -12,8 +12,8 @@ namespace java::time::chrono
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MinguoDate::MinguoDate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MinguoDate::MinguoDate(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

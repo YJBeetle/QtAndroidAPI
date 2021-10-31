@@ -6,8 +6,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TracingController::TracingController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TracingController::TracingController(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TracingController::TracingController()

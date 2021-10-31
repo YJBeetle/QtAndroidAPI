@@ -15,9 +15,9 @@ namespace java::text
 		static java::text::Normalizer_Form NFKC();
 		static java::text::Normalizer_Form NFKD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Normalizer_Form(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Normalizer_Form(QAndroidJniObject obj);
+		Normalizer_Form(QJniObject obj);
 		
 		// Constructors
 		

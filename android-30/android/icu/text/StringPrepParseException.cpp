@@ -88,8 +88,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StringPrepParseException::StringPrepParseException(QAndroidJniObject obj) : java::text::ParseException(obj) {}
+	// QJniObject forward
+	StringPrepParseException::StringPrepParseException(QJniObject obj) : java::text::ParseException(obj) {}
 	
 	// Constructors
 	StringPrepParseException::StringPrepParseException(jstring arg0, jint arg1)

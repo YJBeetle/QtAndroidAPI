@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalThreadStateException::IllegalThreadStateException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	// QJniObject forward
+	IllegalThreadStateException::IllegalThreadStateException(QJniObject obj) : java::lang::IllegalArgumentException(obj) {}
 	
 	// Constructors
 	IllegalThreadStateException::IllegalThreadStateException()

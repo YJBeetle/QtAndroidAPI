@@ -221,8 +221,8 @@ namespace android::media::effect
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	EffectFactory::EffectFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EffectFactory::EffectFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

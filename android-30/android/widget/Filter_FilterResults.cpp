@@ -17,8 +17,8 @@ namespace android::widget
 		).object<jobject>();
 	}
 	
-	// QAndroidJniObject forward
-	Filter_FilterResults::Filter_FilterResults(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Filter_FilterResults::Filter_FilterResults(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Filter_FilterResults::Filter_FilterResults()

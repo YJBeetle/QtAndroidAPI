@@ -31,8 +31,8 @@ namespace java::time::temporal
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WeekFields::WeekFields(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WeekFields::WeekFields(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -13,9 +13,9 @@ namespace java::time::chrono
 		static java::time::chrono::IsoEra BCE();
 		static java::time::chrono::IsoEra CE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IsoEra(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		IsoEra(QAndroidJniObject obj);
+		IsoEra(QJniObject obj);
 		
 		// Constructors
 		

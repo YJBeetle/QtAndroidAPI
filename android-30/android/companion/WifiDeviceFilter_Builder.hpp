@@ -22,9 +22,9 @@ namespace android::companion
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiDeviceFilter_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiDeviceFilter_Builder(QAndroidJniObject obj);
+		WifiDeviceFilter_Builder(QJniObject obj);
 		
 		// Constructors
 		WifiDeviceFilter_Builder();

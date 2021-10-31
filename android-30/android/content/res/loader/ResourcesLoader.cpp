@@ -5,8 +5,8 @@ namespace android::content::res::loader
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ResourcesLoader::ResourcesLoader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ResourcesLoader::ResourcesLoader(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ResourcesLoader::ResourcesLoader()

@@ -14,9 +14,9 @@ namespace android::security::keystore
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyInfo(QAndroidJniObject obj);
+		KeyInfo(QJniObject obj);
 		
 		// Constructors
 		

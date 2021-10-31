@@ -10,9 +10,9 @@ namespace org::json
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JSONStringer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		JSONStringer(QAndroidJniObject obj);
+		JSONStringer(QJniObject obj);
 		
 		// Constructors
 		JSONStringer();

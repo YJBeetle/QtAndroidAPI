@@ -10,9 +10,9 @@ namespace android::telephony::mbms
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MbmsStreamingSessionCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsStreamingSessionCallback(QAndroidJniObject obj);
+		MbmsStreamingSessionCallback(QJniObject obj);
 		
 		// Constructors
 		MbmsStreamingSessionCallback();

@@ -16,8 +16,8 @@ namespace android::service::chooser
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ChooserTarget::ChooserTarget(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ChooserTarget::ChooserTarget(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ChooserTarget::ChooserTarget(jstring arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4)

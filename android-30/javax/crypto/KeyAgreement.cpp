@@ -8,8 +8,8 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyAgreement::KeyAgreement(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyAgreement::KeyAgreement(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

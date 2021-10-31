@@ -67,8 +67,8 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GroupCall::GroupCall(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GroupCall::GroupCall(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

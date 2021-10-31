@@ -14,8 +14,8 @@ namespace android::app::usage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ConfigurationStats::ConfigurationStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConfigurationStats::ConfigurationStats(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ConfigurationStats::ConfigurationStats(android::app::usage::ConfigurationStats &arg0)

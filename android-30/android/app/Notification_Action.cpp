@@ -113,8 +113,8 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Notification_Action::Notification_Action(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Notification_Action::Notification_Action(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Notification_Action::Notification_Action(jint arg0, jstring arg1, android::app::PendingIntent arg2)

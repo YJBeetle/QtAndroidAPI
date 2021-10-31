@@ -10,8 +10,8 @@ namespace java::lang::invoke
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MethodHandles::MethodHandles(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MethodHandles::MethodHandles(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

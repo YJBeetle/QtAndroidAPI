@@ -13,9 +13,9 @@ namespace android::telephony::mbms
 		static jint ERROR_DUPLICATE_INITIALIZE();
 		static jint ERROR_UNABLE_TO_INITIALIZE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MbmsErrors_InitializationErrors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsErrors_InitializationErrors(QAndroidJniObject obj);
+		MbmsErrors_InitializationErrors(QJniObject obj);
 		
 		// Constructors
 		

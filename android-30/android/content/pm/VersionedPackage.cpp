@@ -13,8 +13,8 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VersionedPackage::VersionedPackage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VersionedPackage::VersionedPackage(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	VersionedPackage::VersionedPackage(jstring arg0, jint arg1)

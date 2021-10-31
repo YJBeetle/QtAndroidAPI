@@ -10,9 +10,9 @@ namespace android::database
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DataSetObserver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DataSetObserver(QAndroidJniObject obj);
+		DataSetObserver(QJniObject obj);
 		
 		// Constructors
 		DataSetObserver();

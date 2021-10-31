@@ -33,9 +33,9 @@ namespace android::icu::util
 		static jint SHOWA();
 		static jint TAISHO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit JapaneseCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::GregorianCalendar(className, sig, std::forward<Ts>(agv)...) {}
-		JapaneseCalendar(QAndroidJniObject obj);
+		JapaneseCalendar(QJniObject obj);
 		
 		// Constructors
 		JapaneseCalendar();

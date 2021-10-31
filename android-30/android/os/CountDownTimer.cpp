@@ -4,8 +4,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CountDownTimer::CountDownTimer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CountDownTimer::CountDownTimer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CountDownTimer::CountDownTimer(jlong arg0, jlong arg1)

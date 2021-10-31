@@ -26,9 +26,9 @@ namespace android::icu::number
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NumberRangeFormatter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NumberRangeFormatter(QAndroidJniObject obj);
+		NumberRangeFormatter(QJniObject obj);
 		
 		// Constructors
 		

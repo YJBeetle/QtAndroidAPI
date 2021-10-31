@@ -22,9 +22,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Entity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Entity(QAndroidJniObject obj);
+		Entity(QJniObject obj);
 		
 		// Constructors
 		Entity(android::content::ContentValues arg0);

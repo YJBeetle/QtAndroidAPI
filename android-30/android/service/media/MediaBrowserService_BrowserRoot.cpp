@@ -29,8 +29,8 @@ namespace android::service::media
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(jstring arg0, android::os::Bundle arg1)

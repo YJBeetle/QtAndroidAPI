@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StackOverflowError::StackOverflowError(QAndroidJniObject obj) : java::lang::VirtualMachineError(obj) {}
+	// QJniObject forward
+	StackOverflowError::StackOverflowError(QJniObject obj) : java::lang::VirtualMachineError(obj) {}
 	
 	// Constructors
 	StackOverflowError::StackOverflowError()

@@ -23,9 +23,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CaseMap_Lower(const char *className, const char *sig, Ts...agv) : android::icu::text::CaseMap(className, sig, std::forward<Ts>(agv)...) {}
-		CaseMap_Lower(QAndroidJniObject obj);
+		CaseMap_Lower(QJniObject obj);
 		
 		// Constructors
 		

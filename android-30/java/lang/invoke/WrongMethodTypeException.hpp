@@ -12,9 +12,9 @@ namespace java::lang::invoke
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WrongMethodTypeException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		WrongMethodTypeException(QAndroidJniObject obj);
+		WrongMethodTypeException(QJniObject obj);
 		
 		// Constructors
 		WrongMethodTypeException();

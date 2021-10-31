@@ -21,8 +21,8 @@ namespace java::nio::charset
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CoderResult::CoderResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CoderResult::CoderResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

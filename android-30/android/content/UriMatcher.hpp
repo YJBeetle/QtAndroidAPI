@@ -15,9 +15,9 @@ namespace android::content
 		// Fields
 		static jint NO_MATCH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UriMatcher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UriMatcher(QAndroidJniObject obj);
+		UriMatcher(QJniObject obj);
 		
 		// Constructors
 		UriMatcher(jint arg0);

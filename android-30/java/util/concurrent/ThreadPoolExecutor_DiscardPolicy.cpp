@@ -5,8 +5,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ThreadPoolExecutor_DiscardPolicy::ThreadPoolExecutor_DiscardPolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ThreadPoolExecutor_DiscardPolicy::ThreadPoolExecutor_DiscardPolicy(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ThreadPoolExecutor_DiscardPolicy::ThreadPoolExecutor_DiscardPolicy()

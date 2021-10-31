@@ -4,8 +4,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClosedChannelException::ClosedChannelException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	ClosedChannelException::ClosedChannelException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	ClosedChannelException::ClosedChannelException()

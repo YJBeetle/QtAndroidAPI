@@ -23,8 +23,8 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	NotificationChannel::NotificationChannel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NotificationChannel::NotificationChannel(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	NotificationChannel::NotificationChannel(jstring arg0, jstring arg1, jint arg2)

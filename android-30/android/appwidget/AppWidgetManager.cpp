@@ -234,8 +234,8 @@ namespace android::appwidget
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	AppWidgetManager::AppWidgetManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AppWidgetManager::AppWidgetManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

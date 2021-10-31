@@ -22,9 +22,9 @@ namespace android::accounts
 		jint smallIconId();
 		jstring type();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AuthenticatorDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AuthenticatorDescription(QAndroidJniObject obj);
+		AuthenticatorDescription(QJniObject obj);
 		
 		// Constructors
 		AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5);

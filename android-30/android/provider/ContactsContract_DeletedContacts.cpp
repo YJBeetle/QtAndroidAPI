@@ -20,8 +20,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_DeletedContacts::ContactsContract_DeletedContacts(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_DeletedContacts::ContactsContract_DeletedContacts(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

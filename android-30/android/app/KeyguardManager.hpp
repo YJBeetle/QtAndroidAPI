@@ -26,9 +26,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyguardManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyguardManager(QAndroidJniObject obj);
+		KeyguardManager(QJniObject obj);
 		
 		// Constructors
 		

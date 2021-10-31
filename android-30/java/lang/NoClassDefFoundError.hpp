@@ -12,9 +12,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NoClassDefFoundError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
-		NoClassDefFoundError(QAndroidJniObject obj);
+		NoClassDefFoundError(QJniObject obj);
 		
 		// Constructors
 		NoClassDefFoundError();

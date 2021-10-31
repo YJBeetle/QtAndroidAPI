@@ -5,8 +5,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CRL::CRL(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CRL::CRL(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -32,9 +32,9 @@ namespace android::icu::util
 		static jint UNIX_TIME();
 		static jint WINDOWS_FILE_TIME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UniversalTimeScale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UniversalTimeScale(QAndroidJniObject obj);
+		UniversalTimeScale(QJniObject obj);
 		
 		// Constructors
 		

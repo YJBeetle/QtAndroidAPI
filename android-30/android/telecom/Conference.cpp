@@ -18,8 +18,8 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Conference::Conference(QAndroidJniObject obj) : android::telecom::Conferenceable(obj) {}
+	// QJniObject forward
+	Conference::Conference(QJniObject obj) : android::telecom::Conferenceable(obj) {}
 	
 	// Constructors
 	Conference::Conference(android::telecom::PhoneAccountHandle arg0)

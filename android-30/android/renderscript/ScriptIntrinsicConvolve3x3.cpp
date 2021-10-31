@@ -10,8 +10,8 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScriptIntrinsicConvolve3x3::ScriptIntrinsicConvolve3x3(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
+	// QJniObject forward
+	ScriptIntrinsicConvolve3x3::ScriptIntrinsicConvolve3x3(QJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
 	
 	// Constructors
 	

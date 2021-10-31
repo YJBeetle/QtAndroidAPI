@@ -20,9 +20,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Chronometer(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
-		Chronometer(QAndroidJniObject obj);
+		Chronometer(QJniObject obj);
 		
 		// Constructors
 		Chronometer(android::content::Context arg0);

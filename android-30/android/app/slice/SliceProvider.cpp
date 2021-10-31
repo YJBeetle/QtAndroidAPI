@@ -21,8 +21,8 @@ namespace android::app::slice
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SliceProvider::SliceProvider(QAndroidJniObject obj) : android::content::ContentProvider(obj) {}
+	// QJniObject forward
+	SliceProvider::SliceProvider(QJniObject obj) : android::content::ContentProvider(obj) {}
 	
 	// Constructors
 	SliceProvider::SliceProvider()

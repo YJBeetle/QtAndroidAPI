@@ -12,8 +12,8 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateSorter::DateSorter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DateSorter::DateSorter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DateSorter::DateSorter(android::content::Context arg0)

@@ -14,9 +14,9 @@ namespace java::net
 		static java::net::Proxy_Type HTTP();
 		static java::net::Proxy_Type SOCKS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Proxy_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Proxy_Type(QAndroidJniObject obj);
+		Proxy_Type(QJniObject obj);
 		
 		// Constructors
 		

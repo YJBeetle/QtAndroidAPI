@@ -18,8 +18,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaCodec_CodecException::MediaCodec_CodecException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	MediaCodec_CodecException::MediaCodec_CodecException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	

@@ -4,8 +4,8 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MbmsDownloadSessionCallback::MbmsDownloadSessionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MbmsDownloadSessionCallback::MbmsDownloadSessionCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MbmsDownloadSessionCallback::MbmsDownloadSessionCallback()

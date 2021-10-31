@@ -15,9 +15,9 @@ namespace android::util
 		static jboolean PROFILE();
 		static jboolean RELEASE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Config(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Config(QAndroidJniObject obj);
+		Config(QJniObject obj);
 		
 		// Constructors
 		

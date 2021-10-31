@@ -13,8 +13,8 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CaptivePortal::CaptivePortal(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CaptivePortal::CaptivePortal(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

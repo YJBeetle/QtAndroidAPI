@@ -13,8 +13,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	URLClassLoader::URLClassLoader(QAndroidJniObject obj) : java::security::SecureClassLoader(obj) {}
+	// QJniObject forward
+	URLClassLoader::URLClassLoader(QJniObject obj) : java::security::SecureClassLoader(obj) {}
 	
 	// Constructors
 	URLClassLoader::URLClassLoader(jarray arg0)

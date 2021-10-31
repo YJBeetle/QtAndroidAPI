@@ -71,8 +71,8 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ScriptIntrinsicBLAS::ScriptIntrinsicBLAS(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
+	// QJniObject forward
+	ScriptIntrinsicBLAS::ScriptIntrinsicBLAS(QJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
 	
 	// Constructors
 	

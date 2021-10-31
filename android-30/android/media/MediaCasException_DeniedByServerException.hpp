@@ -12,9 +12,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCasException_DeniedByServerException(const char *className, const char *sig, Ts...agv) : android::media::MediaCasException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCasException_DeniedByServerException(QAndroidJniObject obj);
+		MediaCasException_DeniedByServerException(QJniObject obj);
 		
 		// Constructors
 		

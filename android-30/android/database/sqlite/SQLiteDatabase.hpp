@@ -48,9 +48,9 @@ namespace android::database::sqlite
 		static jint OPEN_READWRITE();
 		static jint SQLITE_MAX_LIKE_PATTERN_LENGTH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SQLiteDatabase(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteClosable(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteDatabase(QAndroidJniObject obj);
+		SQLiteDatabase(QJniObject obj);
 		
 		// Constructors
 		

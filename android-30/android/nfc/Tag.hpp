@@ -15,9 +15,9 @@ namespace android::nfc
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Tag(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Tag(QAndroidJniObject obj);
+		Tag(QJniObject obj);
 		
 		// Constructors
 		

@@ -15,8 +15,8 @@ namespace android::media::midi
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MidiDeviceService::MidiDeviceService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	MidiDeviceService::MidiDeviceService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	MidiDeviceService::MidiDeviceService()

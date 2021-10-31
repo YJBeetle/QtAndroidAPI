@@ -4,8 +4,8 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteBindOrColumnIndexOutOfRangeException::SQLiteBindOrColumnIndexOutOfRangeException(QAndroidJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
+	// QJniObject forward
+	SQLiteBindOrColumnIndexOutOfRangeException::SQLiteBindOrColumnIndexOutOfRangeException(QJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
 	
 	// Constructors
 	SQLiteBindOrColumnIndexOutOfRangeException::SQLiteBindOrColumnIndexOutOfRangeException()

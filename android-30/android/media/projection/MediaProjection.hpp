@@ -30,9 +30,9 @@ namespace android::media::projection
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaProjection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaProjection(QAndroidJniObject obj);
+		MediaProjection(QJniObject obj);
 		
 		// Constructors
 		

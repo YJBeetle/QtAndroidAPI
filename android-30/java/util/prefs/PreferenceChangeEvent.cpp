@@ -7,8 +7,8 @@ namespace java::util::prefs
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PreferenceChangeEvent::PreferenceChangeEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
+	// QJniObject forward
+	PreferenceChangeEvent::PreferenceChangeEvent(QJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
 	PreferenceChangeEvent::PreferenceChangeEvent(java::util::prefs::Preferences arg0, jstring arg1, jstring arg2)

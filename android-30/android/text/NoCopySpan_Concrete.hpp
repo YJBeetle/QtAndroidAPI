@@ -10,9 +10,9 @@ namespace android::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NoCopySpan_Concrete(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NoCopySpan_Concrete(QAndroidJniObject obj);
+		NoCopySpan_Concrete(QJniObject obj);
 		
 		// Constructors
 		NoCopySpan_Concrete();

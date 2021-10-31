@@ -29,9 +29,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaController(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		MediaController(QAndroidJniObject obj);
+		MediaController(QJniObject obj);
 		
 		// Constructors
 		MediaController(android::content::Context arg0);

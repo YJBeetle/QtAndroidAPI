@@ -4,8 +4,8 @@ namespace javax::xml::parsers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ParserConfigurationException::ParserConfigurationException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	ParserConfigurationException::ParserConfigurationException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	ParserConfigurationException::ParserConfigurationException()
