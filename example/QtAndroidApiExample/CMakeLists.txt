@@ -25,6 +25,7 @@ file(GLOB_RECURSE SRC_LIST
 
 add_subdirectory(../../android-29 QtAndroidAPI)
 
+set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android" CACHE INTERNAL "")
 add_library(${PROJECT_NAME} SHARED ${SRC_LIST})
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets)
 target_link_libraries(${PROJECT_NAME} PRIVATE QtAndroidAPI)

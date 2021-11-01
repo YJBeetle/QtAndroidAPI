@@ -5,6 +5,8 @@
 #include <QDebug>
 #include <QTimer>
 
+#include <QAndroidJniEnvironment>
+
 #include <__JniUtils.hpp>
 #include <android/widget/Toast.hpp>
 #include <android/app/ProgressDialog.hpp>
@@ -99,14 +101,37 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
     timer->start(10);
 }
 
+static void fromJavaAlertDialogPositive(JNIEnv *env, jobject thiz)
+{
+    Q_UNUSED(env)
+    Q_UNUSED(thiz)
+    qDebug() << "Positive button clicked!";
+}
+
 void MainWindow::on_showAlert_clicked()
 {
     QtAndroid::runOnAndroidThreadSync([] {
         auto dialog = AlertDialog_Builder(CONTEXT);
         dialog.setMessage(JSTRING("提示信息"));
         dialog.setTitle(JSTRING("标题"));
+
+        JNINativeMethod methods[] {{"callCppAlertDialogPositive", "()V", reinterpret_cast<void *>(fromJavaAlertDialogPositive)}};
+        QAndroidJniObject javaClass("QtAndroidApiExample/mainwindow");
+        QAndroidJniEnvironment env;
+        jclass objectClass = env->GetObjectClass(javaClass.object<jobject>());
+        env->RegisterNatives(objectClass,
+                             methods,
+                             sizeof(methods) / sizeof(methods[0]));
+        env->DeleteLocalRef(objectClass);
+
+        auto clickListener = QAndroidJniObject::getStaticObjectField(
+            "QtAndroidApiExample/mainwindow",
+            "clickListener",
+            "Landroid/content/DialogInterface$OnClickListener;"
+            );
+
         dialog.setNegativeButton(JSTRING("取消"), QAndroidJniObject());
-        dialog.setPositiveButton(JSTRING("确定"), QAndroidJniObject());
+        dialog.setPositiveButton(JSTRING("确定"), clickListener);
         dialog.show();
     });
 }
