@@ -98,7 +98,44 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
     timer->start(10);
 }
 
-void MainWindow::on_OpenFile_clicked() // WIP
+void MainWindow::on_showAlert_clicked()
+{
+    QtAndroid::runOnAndroidThreadSync([] {
+        QAndroidJniObject dialog = QAndroidJniObject(
+            "android.app.AlertDialog$Builder",
+            "(Landroid/content/Context;)V",
+            CONTEXT.object());
+        dialog.callObjectMethod(
+            "setMessage",
+            "(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;",
+            JSTRING("提示信息")
+            );
+        dialog.callObjectMethod(
+            "setTitle",
+            "(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;",
+            JSTRING("标题")
+            );
+        dialog.callObjectMethod(
+            "setNegativeButton",
+            "(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
+            JSTRING("取消"),
+            NULL
+            );
+        dialog.callObjectMethod(
+            "setPositiveButton",
+            "(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
+            JSTRING("确定"),
+            NULL
+            );
+        dialog.callObjectMethod(
+            "show",
+            "()Landroid/app/AlertDialog;"
+            );
+
+    });
+}
+
+void MainWindow::on_openFile_clicked() // WIP
 {
     QtAndroid::runOnAndroidThreadSync([] {
         auto intent = Intent(Intent::ACTION_GET_CONTENT());
