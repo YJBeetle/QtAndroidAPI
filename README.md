@@ -19,7 +19,7 @@ toast.callMethod<void>("show");
 using android::widget::Toast;
 using android::content::Context;
 auto toast = Toast::makeText(Context(QtAndroid::androidContext()),
-                             "Message",
+                             QAndroidJniObject::fromString("Message").object(),
                              0);
 toast.show();
 ```
