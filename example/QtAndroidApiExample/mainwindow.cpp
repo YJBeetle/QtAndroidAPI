@@ -8,6 +8,7 @@
 #include <__JniUtils.hpp>
 #include <android/widget/Toast.hpp>
 #include <android/app/ProgressDialog.hpp>
+#include <android/app/AlertDialog_Builder.hpp>
 #include <android/content/Intent.hpp>
 
 using namespace android::widget;
@@ -101,37 +102,12 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
 void MainWindow::on_showAlert_clicked()
 {
     QtAndroid::runOnAndroidThreadSync([] {
-        QAndroidJniObject dialog = QAndroidJniObject(
-            "android.app.AlertDialog$Builder",
-            "(Landroid/content/Context;)V",
-            CONTEXT.object());
-        dialog.callObjectMethod(
-            "setMessage",
-            "(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;",
-            JSTRING("提示信息")
-            );
-        dialog.callObjectMethod(
-            "setTitle",
-            "(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;",
-            JSTRING("标题")
-            );
-        dialog.callObjectMethod(
-            "setNegativeButton",
-            "(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-            JSTRING("取消"),
-            NULL
-            );
-        dialog.callObjectMethod(
-            "setPositiveButton",
-            "(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-            JSTRING("确定"),
-            NULL
-            );
-        dialog.callObjectMethod(
-            "show",
-            "()Landroid/app/AlertDialog;"
-            );
-
+        auto dialog = AlertDialog_Builder(CONTEXT);
+        dialog.setMessage(JSTRING("提示信息"));
+        dialog.setTitle(JSTRING("标题"));
+        dialog.setNegativeButton(JSTRING("取消"), QAndroidJniObject());
+        dialog.setPositiveButton(JSTRING("确定"), QAndroidJniObject());
+        dialog.show();
     });
 }
 
