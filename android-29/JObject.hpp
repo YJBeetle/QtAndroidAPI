@@ -1,8 +1,6 @@
 #pragma once
-
 #include <QtCore/QCoreApplication>
 #include <QtCore/QJniObject>
-
 class JObject : public QJniObject
 {
 public:
