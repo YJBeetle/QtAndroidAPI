@@ -1,7 +1,5 @@
 #pragma once
-
 #include <QtAndroidExtras/QAndroidJniObject>
-
 class JObject : public QAndroidJniObject
 {
 public:
