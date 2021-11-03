@@ -13,6 +13,7 @@
 #include <android/app/ProgressDialog.hpp>
 #include <android/app/AlertDialog_Builder.hpp>
 #include <android/content/Intent.hpp>
+#include <android/net/Uri.hpp>
 
 using namespace android::widget;
 using namespace android::app;
@@ -137,16 +138,29 @@ void MainWindow::on_showAlert_clicked()
     }).waitForFinished();
 }
 
-void MainWindow::on_openFile_clicked() // WIP
+// https://doc.qt.io/qt-6/qtandroidprivate.html#startActivity-2
+namespace QtAndroidPrivate
+{
+    Q_CORE_EXPORT void startActivity(const QJniObject &intent,
+                                     int receiverRequestCode,
+                                     std::function<void(int, int, const QJniObject &data)>
+                                                        callbackFunc);
+}
+
+void MainWindow::on_openFile_clicked()
 {
     QNativeInterface::QAndroidApplication::runOnAndroidMainThread([] {
         auto intent = Intent(Intent::ACTION_GET_CONTENT());
-        intent.setType(QStringLiteral("image/*"));
+        // auto intent = Intent(Intent::ACTION_CREATE_DOCUMENT);
 
+        intent.addCategory(Intent::CATEGORY_OPENABLE());
+        intent.setType(QStringLiteral("*/*"));
+        // intent.putExtra(Intent::EXTRA_TITLE(), QStringLiteral("file.txt"));
 
-//            if (intent.resolveActivity(getPackageManager()) != null) {
-//                startActivityForResult(intent, REQUEST_IMAGE_GET);
-//            }
-
+        QtAndroidPrivate::startActivity(intent, 1, [](int receiverRequestCode, int resultCode, const Intent &data){
+            qDebug()<< "handleActivityResult";
+            auto uri = data.getData();
+            qDebug() << uri.toString().toString();
+        });
     });
 }
