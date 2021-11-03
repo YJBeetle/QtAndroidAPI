@@ -16,10 +16,11 @@ public:
     ~MainWindow();
 
 private slots:
-	void on_showToast_clicked();
-	void on_showProgressDialogSpinner_clicked();
-	void on_showProgressDialogHorizontal_clicked();
-	void on_OpenFile_clicked();
+    void on_showToast_clicked();
+    void on_showProgressDialogSpinner_clicked();
+    void on_showProgressDialogHorizontal_clicked();
+    void on_showAlert_clicked();
+    void on_openFile_clicked();
 
 private:
     Ui::MainWindow *ui;

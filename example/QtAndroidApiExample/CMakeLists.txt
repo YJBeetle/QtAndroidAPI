@@ -26,6 +26,7 @@ file(GLOB_RECURSE SRC_LIST
 add_subdirectory(../../android-29 QtAndroidAPI)
 
 qt_add_executable(${PROJECT_NAME} MANUAL_FINALIZATION ${SRC_LIST})
+set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
 target_link_libraries(${PROJECT_NAME} PRIVATE QtAndroidAPI)
 

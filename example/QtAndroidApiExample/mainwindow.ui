@@ -53,17 +53,24 @@ QPushButton:disabled{
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="0" colspan="2">
-     <widget class="QLabel" name="label_2">
+    <item row="6" column="0">
+     <widget class="QPushButton" name="showProgressDialogSpinner">
       <property name="text">
-       <string>Progress Dialog</string>
+       <string>Spinner</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="0" colspan="2">
-     <widget class="QLineEdit" name="progressDialogText">
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_3">
       <property name="text">
-       <string>Meow~</string>
+       <string>Alert dialog</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0" colspan="2">
+     <widget class="QPushButton" name="showAlert">
+      <property name="text">
+       <string>Show alert</string>
       </property>
      </widget>
     </item>
@@ -74,10 +81,17 @@ QPushButton:disabled{
       </property>
      </widget>
     </item>
-    <item row="6" column="1">
-     <widget class="QPushButton" name="showProgressDialogHorizontal">
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>Horizontal</string>
+       <string>Toast</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QPushButton" name="showToast">
+      <property name="text">
+       <string>Show toast</string>
       </property>
      </widget>
     </item>
@@ -88,21 +102,21 @@ QPushButton:disabled{
       </property>
      </widget>
     </item>
-    <item row="6" column="0">
-     <widget class="QPushButton" name="showProgressDialogSpinner">
+    <item row="10" column="0" colspan="2">
+     <widget class="QPushButton" name="openFile">
       <property name="text">
-       <string>Spinner</string>
+       <string>Open file</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLabel" name="label">
+    <item row="6" column="1">
+     <widget class="QPushButton" name="showProgressDialogHorizontal">
       <property name="text">
-       <string>Toast</string>
+       <string>Horizontal</string>
       </property>
      </widget>
     </item>
-    <item row="8" column="0" colspan="2">
+    <item row="11" column="0" colspan="2">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -115,17 +129,24 @@ QPushButton:disabled{
       </property>
      </spacer>
     </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QPushButton" name="showToast">
+    <item row="3" column="0" colspan="2">
+     <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>Show toast</string>
+       <string>Progress dialog</string>
       </property>
      </widget>
     </item>
-    <item row="7" column="0" colspan="2">
-     <widget class="QPushButton" name="OpenFile">
+    <item row="5" column="0" colspan="2">
+     <widget class="QLineEdit" name="progressDialogText">
       <property name="text">
-       <string>Open file</string>
+       <string>Meow~</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Intent(WIP)</string>
       </property>
      </widget>
     </item>
