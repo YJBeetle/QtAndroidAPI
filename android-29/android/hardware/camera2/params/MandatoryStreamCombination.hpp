@@ -2,6 +2,9 @@
 
 #include "../../../../JObject.hpp"
 
+class JString;
+class JObject;
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -17,8 +20,8 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getDescription();
+		jboolean equals(JObject arg0);
+		JString getDescription();
 		JObject getStreamsInformation();
 		jint hashCode();
 		jboolean isReprocessable();

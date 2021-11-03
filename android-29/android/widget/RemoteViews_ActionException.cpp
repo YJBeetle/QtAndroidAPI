@@ -1,4 +1,5 @@
 #include "../../java/lang/Exception.hpp"
+#include "../../JString.hpp"
 #include "./RemoteViews_ActionException.hpp"
 
 namespace android::widget
@@ -15,11 +16,11 @@ namespace android::widget
 			"(Ljava/lang/Exception;)V",
 			arg0.object()
 		) {}
-	RemoteViews_ActionException::RemoteViews_ActionException(jstring arg0)
+	RemoteViews_ActionException::RemoteViews_ActionException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.widget.RemoteViews$ActionException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::icu::text
 {
@@ -24,7 +25,7 @@ namespace android::icu::text
 		jint getStart();
 		jboolean isEvenRun();
 		jboolean isOddRun();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::icu::text
 

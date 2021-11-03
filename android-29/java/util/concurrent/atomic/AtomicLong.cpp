@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./AtomicLong.hpp"
 
 namespace java::util::concurrent::atomic
@@ -231,12 +232,12 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jstring AtomicLong::toString()
+	JString AtomicLong::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong AtomicLong::updateAndGet(JObject arg0)
 	{

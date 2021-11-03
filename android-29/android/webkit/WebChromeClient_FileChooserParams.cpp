@@ -1,4 +1,8 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../content/Intent.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./WebChromeClient_FileChooserParams.hpp"
 
 namespace android::webkit
@@ -37,7 +41,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	jarray WebChromeClient_FileChooserParams::parseResult(jint arg0, android::content::Intent arg1)
+	JArray WebChromeClient_FileChooserParams::parseResult(jint arg0, android::content::Intent arg1)
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebChromeClient$FileChooserParams",
@@ -45,7 +49,7 @@ namespace android::webkit
 			"(ILandroid/content/Intent;)[Landroid/net/Uri;",
 			arg0,
 			arg1.object()
-		).object<jarray>();
+		);
 	}
 	android::content::Intent WebChromeClient_FileChooserParams::createIntent()
 	{
@@ -54,19 +58,19 @@ namespace android::webkit
 			"()Landroid/content/Intent;"
 		);
 	}
-	jarray WebChromeClient_FileChooserParams::getAcceptTypes()
+	JArray WebChromeClient_FileChooserParams::getAcceptTypes()
 	{
 		return callObjectMethod(
 			"getAcceptTypes",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring WebChromeClient_FileChooserParams::getFilenameHint()
+	JString WebChromeClient_FileChooserParams::getFilenameHint()
 	{
 		return callObjectMethod(
 			"getFilenameHint",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint WebChromeClient_FileChooserParams::getMode()
 	{
@@ -75,12 +79,12 @@ namespace android::webkit
 			"()I"
 		);
 	}
-	jstring WebChromeClient_FileChooserParams::getTitle()
+	JString WebChromeClient_FileChooserParams::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jboolean WebChromeClient_FileChooserParams::isCaptureEnabled()
 	{

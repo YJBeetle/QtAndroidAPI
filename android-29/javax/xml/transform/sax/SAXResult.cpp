@@ -1,15 +1,16 @@
+#include "../../../../JString.hpp"
 #include "./SAXResult.hpp"
 
 namespace javax::xml::transform::sax
 {
 	// Fields
-	jstring SAXResult::FEATURE()
+	JString SAXResult::FEATURE()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.sax.SAXResult",
 			"FEATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -43,12 +44,12 @@ namespace javax::xml::transform::sax
 			"()Lorg/xml/sax/ext/LexicalHandler;"
 		);
 	}
-	jstring SAXResult::getSystemId()
+	JString SAXResult::getSystemId()
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void SAXResult::setHandler(JObject arg0)
 	{
@@ -66,12 +67,12 @@ namespace javax::xml::transform::sax
 			arg0.object()
 		);
 	}
-	void SAXResult::setSystemId(jstring arg0)
+	void SAXResult::setSystemId(JString arg0)
 	{
 		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace javax::xml::transform::sax

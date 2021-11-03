@@ -1,3 +1,6 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
 #include "./Permission.hpp"
 #include "./ProtectionDomain.hpp"
 #include "./AccessControlContext.hpp"
@@ -10,11 +13,11 @@ namespace java::security
 	AccessControlContext::AccessControlContext(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AccessControlContext::AccessControlContext(jarray arg0)
+	AccessControlContext::AccessControlContext(JArray arg0)
 		: JObject(
 			"java.security.AccessControlContext",
 			"([Ljava/security/ProtectionDomain;)V",
-			arg0
+			arg0.object<jarray>()
 		) {}
 	AccessControlContext::AccessControlContext(java::security::AccessControlContext &arg0, JObject arg1)
 		: JObject(
@@ -33,12 +36,12 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jboolean AccessControlContext::equals(jobject arg0)
+	jboolean AccessControlContext::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject AccessControlContext::getDomainCombiner()

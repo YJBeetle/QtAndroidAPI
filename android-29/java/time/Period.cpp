@@ -1,4 +1,7 @@
 #include "../io/ObjectInputStream.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./LocalDate.hpp"
 #include "./chrono/IsoChronology.hpp"
 #include "../util/regex/Pattern.hpp"
@@ -88,13 +91,13 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Period Period::parse(jstring arg0)
+	java::time::Period Period::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.Period",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Period;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject Period::addTo(JObject arg0)
@@ -105,12 +108,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Period::equals(jobject arg0)
+	jboolean Period::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong Period::get(JObject arg0)
@@ -271,12 +274,12 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jstring Period::toString()
+	JString Period::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong Period::toTotalMonths()
 	{

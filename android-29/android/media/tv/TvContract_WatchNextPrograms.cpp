@@ -1,4 +1,5 @@
 #include "../../net/Uri.hpp"
+#include "../../../JString.hpp"
 #include "./TvContract_WatchNextPrograms.hpp"
 
 namespace android::media::tv
@@ -60,397 +61,397 @@ namespace android::media::tv
 			"AVAILABILITY_PAID_CONTENT"
 		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_AUDIO_LANGUAGE()
+	JString TvContract_WatchNextPrograms::COLUMN_AUDIO_LANGUAGE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_AUDIO_LANGUAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_AUTHOR()
+	JString TvContract_WatchNextPrograms::COLUMN_AUTHOR()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_AUTHOR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_AVAILABILITY()
+	JString TvContract_WatchNextPrograms::COLUMN_AVAILABILITY()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_AVAILABILITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_BROWSABLE()
+	JString TvContract_WatchNextPrograms::COLUMN_BROWSABLE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_BROWSABLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_CANONICAL_GENRE()
+	JString TvContract_WatchNextPrograms::COLUMN_CANONICAL_GENRE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_CANONICAL_GENRE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_CONTENT_ID()
+	JString TvContract_WatchNextPrograms::COLUMN_CONTENT_ID()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_CONTENT_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_CONTENT_RATING()
+	JString TvContract_WatchNextPrograms::COLUMN_CONTENT_RATING()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_CONTENT_RATING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_DURATION_MILLIS()
+	JString TvContract_WatchNextPrograms::COLUMN_DURATION_MILLIS()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_DURATION_MILLIS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_EPISODE_DISPLAY_NUMBER()
+	JString TvContract_WatchNextPrograms::COLUMN_EPISODE_DISPLAY_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_EPISODE_DISPLAY_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_EPISODE_TITLE()
+	JString TvContract_WatchNextPrograms::COLUMN_EPISODE_TITLE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_EPISODE_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_INTENT_URI()
+	JString TvContract_WatchNextPrograms::COLUMN_INTENT_URI()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_INTENT_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_INTERACTION_COUNT()
+	JString TvContract_WatchNextPrograms::COLUMN_INTERACTION_COUNT()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_INTERACTION_COUNT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_INTERACTION_TYPE()
+	JString TvContract_WatchNextPrograms::COLUMN_INTERACTION_TYPE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_INTERACTION_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_DATA()
+	JString TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_DATA()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_INTERNAL_PROVIDER_DATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_FLAG1()
+	JString TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_FLAG1()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_INTERNAL_PROVIDER_FLAG1",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_FLAG2()
+	JString TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_FLAG2()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_INTERNAL_PROVIDER_FLAG2",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_FLAG3()
+	JString TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_FLAG3()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_INTERNAL_PROVIDER_FLAG3",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_FLAG4()
+	JString TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_FLAG4()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_INTERNAL_PROVIDER_FLAG4",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_ID()
+	JString TvContract_WatchNextPrograms::COLUMN_INTERNAL_PROVIDER_ID()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_INTERNAL_PROVIDER_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_ITEM_COUNT()
+	JString TvContract_WatchNextPrograms::COLUMN_ITEM_COUNT()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_ITEM_COUNT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_LAST_ENGAGEMENT_TIME_UTC_MILLIS()
+	JString TvContract_WatchNextPrograms::COLUMN_LAST_ENGAGEMENT_TIME_UTC_MILLIS()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_LAST_ENGAGEMENT_TIME_UTC_MILLIS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_LAST_PLAYBACK_POSITION_MILLIS()
+	JString TvContract_WatchNextPrograms::COLUMN_LAST_PLAYBACK_POSITION_MILLIS()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_LAST_PLAYBACK_POSITION_MILLIS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_LIVE()
+	JString TvContract_WatchNextPrograms::COLUMN_LIVE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_LIVE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_LOGO_URI()
+	JString TvContract_WatchNextPrograms::COLUMN_LOGO_URI()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_LOGO_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_LONG_DESCRIPTION()
+	JString TvContract_WatchNextPrograms::COLUMN_LONG_DESCRIPTION()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_LONG_DESCRIPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_OFFER_PRICE()
+	JString TvContract_WatchNextPrograms::COLUMN_OFFER_PRICE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_OFFER_PRICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_POSTER_ART_ASPECT_RATIO()
+	JString TvContract_WatchNextPrograms::COLUMN_POSTER_ART_ASPECT_RATIO()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_POSTER_ART_ASPECT_RATIO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_POSTER_ART_URI()
+	JString TvContract_WatchNextPrograms::COLUMN_POSTER_ART_URI()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_POSTER_ART_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_PREVIEW_VIDEO_URI()
+	JString TvContract_WatchNextPrograms::COLUMN_PREVIEW_VIDEO_URI()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_PREVIEW_VIDEO_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_RELEASE_DATE()
+	JString TvContract_WatchNextPrograms::COLUMN_RELEASE_DATE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_RELEASE_DATE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_REVIEW_RATING()
+	JString TvContract_WatchNextPrograms::COLUMN_REVIEW_RATING()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_REVIEW_RATING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_REVIEW_RATING_STYLE()
+	JString TvContract_WatchNextPrograms::COLUMN_REVIEW_RATING_STYLE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_REVIEW_RATING_STYLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_SEARCHABLE()
+	JString TvContract_WatchNextPrograms::COLUMN_SEARCHABLE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_SEARCHABLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_SEASON_DISPLAY_NUMBER()
+	JString TvContract_WatchNextPrograms::COLUMN_SEASON_DISPLAY_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_SEASON_DISPLAY_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_SEASON_TITLE()
+	JString TvContract_WatchNextPrograms::COLUMN_SEASON_TITLE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_SEASON_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_SERIES_ID()
+	JString TvContract_WatchNextPrograms::COLUMN_SERIES_ID()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_SERIES_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_SHORT_DESCRIPTION()
+	JString TvContract_WatchNextPrograms::COLUMN_SHORT_DESCRIPTION()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_SHORT_DESCRIPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_STARTING_PRICE()
+	JString TvContract_WatchNextPrograms::COLUMN_STARTING_PRICE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_STARTING_PRICE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_THUMBNAIL_ASPECT_RATIO()
+	JString TvContract_WatchNextPrograms::COLUMN_THUMBNAIL_ASPECT_RATIO()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_THUMBNAIL_ASPECT_RATIO",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_THUMBNAIL_URI()
+	JString TvContract_WatchNextPrograms::COLUMN_THUMBNAIL_URI()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_THUMBNAIL_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_TITLE()
+	JString TvContract_WatchNextPrograms::COLUMN_TITLE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_TRANSIENT()
+	JString TvContract_WatchNextPrograms::COLUMN_TRANSIENT()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_TRANSIENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_TYPE()
+	JString TvContract_WatchNextPrograms::COLUMN_TYPE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_VERSION_NUMBER()
+	JString TvContract_WatchNextPrograms::COLUMN_VERSION_NUMBER()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_VERSION_NUMBER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_VIDEO_HEIGHT()
+	JString TvContract_WatchNextPrograms::COLUMN_VIDEO_HEIGHT()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_VIDEO_HEIGHT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_VIDEO_WIDTH()
+	JString TvContract_WatchNextPrograms::COLUMN_VIDEO_WIDTH()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_VIDEO_WIDTH",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::COLUMN_WATCH_NEXT_TYPE()
+	JString TvContract_WatchNextPrograms::COLUMN_WATCH_NEXT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"COLUMN_WATCH_NEXT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::CONTENT_ITEM_TYPE()
+	JString TvContract_WatchNextPrograms::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring TvContract_WatchNextPrograms::CONTENT_TYPE()
+	JString TvContract_WatchNextPrograms::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvContract$WatchNextPrograms",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri TvContract_WatchNextPrograms::CONTENT_URI()
 	{

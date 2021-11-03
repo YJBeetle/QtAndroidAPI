@@ -1,4 +1,7 @@
+#include "../../../../JFloatArray.hpp"
 #include "./RggbChannelVector.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./LensShadingMap.hpp"
 
 namespace android::hardware::camera2::params
@@ -18,21 +21,21 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	void LensShadingMap::copyGainFactors(jfloatArray arg0, jint arg1)
+	void LensShadingMap::copyGainFactors(JFloatArray arg0, jint arg1)
 	{
 		callMethod<void>(
 			"copyGainFactors",
 			"([FI)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1
 		);
 	}
-	jboolean LensShadingMap::equals(jobject arg0)
+	jboolean LensShadingMap::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint LensShadingMap::getColumnCount()
@@ -82,12 +85,12 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jstring LensShadingMap::toString()
+	JString LensShadingMap::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2::params
 

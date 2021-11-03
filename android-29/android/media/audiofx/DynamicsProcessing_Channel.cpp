@@ -3,6 +3,7 @@
 #include "./DynamicsProcessing_Limiter.hpp"
 #include "./DynamicsProcessing_Mbc.hpp"
 #include "./DynamicsProcessing_MbcBand.hpp"
+#include "../../../JString.hpp"
 #include "./DynamicsProcessing_Channel.hpp"
 
 namespace android::media::audiofx
@@ -160,12 +161,12 @@ namespace android::media::audiofx
 			arg1.object()
 		);
 	}
-	jstring DynamicsProcessing_Channel::toString()
+	JString DynamicsProcessing_Channel::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::audiofx
 

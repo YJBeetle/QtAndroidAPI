@@ -1,4 +1,5 @@
 #include "./PowerManager_WakeLock.hpp"
+#include "../../JString.hpp"
 #include "./PowerManager.hpp"
 
 namespace android::os
@@ -11,21 +12,21 @@ namespace android::os
 			"ACQUIRE_CAUSES_WAKEUP"
 		);
 	}
-	jstring PowerManager::ACTION_DEVICE_IDLE_MODE_CHANGED()
+	JString PowerManager::ACTION_DEVICE_IDLE_MODE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.os.PowerManager",
 			"ACTION_DEVICE_IDLE_MODE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PowerManager::ACTION_POWER_SAVE_MODE_CHANGED()
+	JString PowerManager::ACTION_POWER_SAVE_MODE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.os.PowerManager",
 			"ACTION_POWER_SAVE_MODE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PowerManager::FULL_WAKE_LOCK()
 	{
@@ -205,12 +206,12 @@ namespace android::os
 			"()Z"
 		);
 	}
-	jboolean PowerManager::isIgnoringBatteryOptimizations(jstring arg0)
+	jboolean PowerManager::isIgnoringBatteryOptimizations(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isIgnoringBatteryOptimizations",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean PowerManager::isInteractive()
@@ -249,21 +250,21 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::PowerManager_WakeLock PowerManager::newWakeLock(jint arg0, jstring arg1)
+	android::os::PowerManager_WakeLock PowerManager::newWakeLock(jint arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"newWakeLock",
 			"(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void PowerManager::reboot(jstring arg0)
+	void PowerManager::reboot(JString arg0)
 	{
 		callMethod<void>(
 			"reboot",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PowerManager::removeThermalStatusListener(JObject arg0)

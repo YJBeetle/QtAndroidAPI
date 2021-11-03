@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::webkit
 {
@@ -26,11 +28,11 @@ namespace android::webkit
 		void clearFormData();
 		void clearHttpAuthUsernamePassword();
 		void clearUsernamePassword();
-		jarray getHttpAuthUsernamePassword(jstring arg0, jstring arg1);
+		JArray getHttpAuthUsernamePassword(JString arg0, JString arg1);
 		jboolean hasFormData();
 		jboolean hasHttpAuthUsernamePassword();
 		jboolean hasUsernamePassword();
-		void setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		void setHttpAuthUsernamePassword(JString arg0, JString arg1, JString arg2, JString arg3);
 	};
 } // namespace android::webkit
 

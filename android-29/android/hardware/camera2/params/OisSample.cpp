@@ -1,3 +1,5 @@
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
 #include "./OisSample.hpp"
 
 namespace android::hardware::camera2::params
@@ -18,12 +20,12 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	jboolean OisSample::equals(jobject arg0)
+	jboolean OisSample::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong OisSample::getTimestamp()
@@ -54,12 +56,12 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jstring OisSample::toString()
+	JString OisSample::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::hardware::camera2::params
 

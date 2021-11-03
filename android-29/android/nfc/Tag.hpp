@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::nfc
 {
@@ -23,9 +26,9 @@ namespace android::nfc
 		
 		// Methods
 		jint describeContents();
-		jbyteArray getId();
-		jarray getTechList();
-		jstring toString();
+		JByteArray getId();
+		JArray getTechList();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::nfc

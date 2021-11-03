@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::os
 {
@@ -33,7 +34,7 @@ namespace android::os
 		
 		// Methods
 		jint describeContents();
-		jstring getMemoryStat(jstring arg0);
+		JString getMemoryStat(JString arg0);
 		JObject getMemoryStats();
 		jint getTotalPrivateClean();
 		jint getTotalPrivateDirty();

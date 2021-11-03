@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./AlgorithmParameterGeneratorSpi.hpp"
 #include "./AlgorithmParameters.hpp"
 #include "./Provider.hpp"
@@ -14,32 +15,32 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(jstring arg0)
+	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/AlgorithmParameterGenerator;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(jstring arg0, jstring arg1)
+	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/AlgorithmParameterGenerator;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::AlgorithmParameterGenerator AlgorithmParameterGenerator::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameterGenerator;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -50,12 +51,12 @@ namespace java::security
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
-	jstring AlgorithmParameterGenerator::getAlgorithm()
+	JString AlgorithmParameterGenerator::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::security::Provider AlgorithmParameterGenerator::getProvider()
 	{

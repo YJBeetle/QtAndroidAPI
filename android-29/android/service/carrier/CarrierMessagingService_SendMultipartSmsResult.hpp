@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
 
 namespace android::service::carrier
 {
@@ -15,10 +16,10 @@ namespace android::service::carrier
 		CarrierMessagingService_SendMultipartSmsResult(QAndroidJniObject obj);
 		
 		// Constructors
-		CarrierMessagingService_SendMultipartSmsResult(jint arg0, jintArray arg1);
+		CarrierMessagingService_SendMultipartSmsResult(jint arg0, JIntArray arg1);
 		
 		// Methods
-		jintArray getMessageRefs();
+		JIntArray getMessageRefs();
 		jint getSendStatus();
 	};
 } // namespace android::service::carrier

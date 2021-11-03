@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::lang
 {
 	class Void;
@@ -54,19 +56,19 @@ namespace java::net
 		java::net::InetAddress getInetAddress();
 		jint getLocalPort();
 		java::net::SocketAddress getLocalSocketAddress();
-		jobject getOption(JObject arg0);
+		JObject getOption(JObject arg0);
 		jint getReceiveBufferSize();
 		jboolean getReuseAddress();
 		jint getSoTimeout();
 		jboolean isBound();
 		jboolean isClosed();
-		java::net::ServerSocket setOption(JObject arg0, jobject arg1);
+		java::net::ServerSocket setOption(JObject arg0, JObject arg1);
 		void setPerformancePreferences(jint arg0, jint arg1, jint arg2);
 		void setReceiveBufferSize(jint arg0);
 		void setReuseAddress(jboolean arg0);
 		void setSoTimeout(jint arg0);
 		JObject supportedOptions();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::net
 

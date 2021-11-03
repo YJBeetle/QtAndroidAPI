@@ -10,6 +10,7 @@ namespace android::nfc
 {
 	class Tag;
 }
+class JString;
 
 namespace android::nfc::tech
 {
@@ -17,11 +18,11 @@ namespace android::nfc::tech
 	{
 	public:
 		// Fields
-		static jstring MIFARE_CLASSIC();
-		static jstring NFC_FORUM_TYPE_1();
-		static jstring NFC_FORUM_TYPE_2();
-		static jstring NFC_FORUM_TYPE_3();
-		static jstring NFC_FORUM_TYPE_4();
+		static JString MIFARE_CLASSIC();
+		static JString NFC_FORUM_TYPE_1();
+		static JString NFC_FORUM_TYPE_2();
+		static JString NFC_FORUM_TYPE_3();
+		static JString NFC_FORUM_TYPE_4();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Ndef(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -38,7 +39,7 @@ namespace android::nfc::tech
 		jint getMaxSize();
 		android::nfc::NdefMessage getNdefMessage();
 		android::nfc::Tag getTag();
-		jstring getType();
+		JString getType();
 		jboolean isConnected();
 		jboolean isWritable();
 		jboolean makeReadOnly();

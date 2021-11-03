@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./Dialog.hpp"
 #include "./FragmentManager.hpp"
 #include "./FragmentTransaction.hpp"
@@ -6,6 +7,7 @@
 #include "../view/LayoutInflater.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
 #include "./DialogFragment.hpp"
 
 namespace android::app
@@ -65,15 +67,15 @@ namespace android::app
 			"()V"
 		);
 	}
-	void DialogFragment::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void DialogFragment::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 	android::app::Dialog DialogFragment::getDialog()
@@ -221,22 +223,22 @@ namespace android::app
 			arg1
 		);
 	}
-	jint DialogFragment::show(android::app::FragmentTransaction arg0, jstring arg1)
+	jint DialogFragment::show(android::app::FragmentTransaction arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"show",
 			"(Landroid/app/FragmentTransaction;Ljava/lang/String;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void DialogFragment::show(android::app::FragmentManager arg0, jstring arg1)
+	void DialogFragment::show(android::app::FragmentManager arg0, JString arg1)
 	{
 		callMethod<void>(
 			"show",
 			"(Landroid/app/FragmentManager;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::app

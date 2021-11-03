@@ -2,6 +2,8 @@
 #include "../content/Context.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Session2Token.hpp"
 
 namespace android::media
@@ -50,12 +52,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean Session2Token::equals(jobject arg0)
+	jboolean Session2Token::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::os::Bundle Session2Token::getExtras()
@@ -65,19 +67,19 @@ namespace android::media
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring Session2Token::getPackageName()
+	JString Session2Token::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Session2Token::getServiceName()
+	JString Session2Token::getServiceName()
 	{
 		return callObjectMethod(
 			"getServiceName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Session2Token::getType()
 	{
@@ -100,12 +102,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring Session2Token::toString()
+	JString Session2Token::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Session2Token::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

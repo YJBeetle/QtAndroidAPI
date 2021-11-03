@@ -1,5 +1,6 @@
 #include "./NetworkRequest.hpp"
 #include "./NetworkSpecifier.hpp"
+#include "../../JString.hpp"
 #include "./NetworkRequest_Builder.hpp"
 
 namespace android::net
@@ -64,12 +65,12 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::NetworkRequest_Builder NetworkRequest_Builder::setNetworkSpecifier(jstring arg0)
+	android::net::NetworkRequest_Builder NetworkRequest_Builder::setNetworkSpecifier(JString arg0)
 	{
 		return callObjectMethod(
 			"setNetworkSpecifier",
 			"(Ljava/lang/String;)Landroid/net/NetworkRequest$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::net

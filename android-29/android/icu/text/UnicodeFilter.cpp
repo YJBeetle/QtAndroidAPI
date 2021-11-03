@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "./UnicodeFilter.hpp"
 
 namespace android::icu::text
@@ -18,13 +19,13 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint UnicodeFilter::matches(JObject arg0, jintArray arg1, jint arg2, jboolean arg3)
+	jint UnicodeFilter::matches(JObject arg0, JIntArray arg1, jint arg2, jboolean arg3)
 	{
 		return callMethod<jint>(
 			"matches",
 			"(Landroid/icu/text/Replaceable;[IIZ)I",
 			arg0.object(),
-			arg1,
+			arg1.object<jintArray>(),
 			arg2,
 			arg3
 		);

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
 
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JThrowable;
 namespace java::security::cert
 {
 	class CertPath;
@@ -26,11 +26,11 @@ namespace java::security::cert
 		
 		// Constructors
 		CertPathValidatorException();
-		CertPathValidatorException(jstring arg0);
-		CertPathValidatorException(jthrowable arg0);
-		CertPathValidatorException(jstring arg0, jthrowable arg1);
-		CertPathValidatorException(jstring arg0, jthrowable arg1, java::security::cert::CertPath arg2, jint arg3);
-		CertPathValidatorException(jstring arg0, jthrowable arg1, java::security::cert::CertPath arg2, jint arg3, JObject arg4);
+		CertPathValidatorException(JString arg0);
+		CertPathValidatorException(JThrowable arg0);
+		CertPathValidatorException(JString arg0, JThrowable arg1);
+		CertPathValidatorException(JString arg0, JThrowable arg1, java::security::cert::CertPath arg2, jint arg3);
+		CertPathValidatorException(JString arg0, JThrowable arg1, java::security::cert::CertPath arg2, jint arg3, JObject arg4);
 		
 		// Methods
 		java::security::cert::CertPath getCertPath();

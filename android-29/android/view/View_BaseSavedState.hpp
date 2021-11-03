@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AbsSavedState.hpp"
 
 namespace android::os

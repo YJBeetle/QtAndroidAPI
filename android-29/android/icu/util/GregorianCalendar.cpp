@@ -1,6 +1,7 @@
 #include "./Calendar.hpp"
 #include "./TimeZone.hpp"
 #include "./ULocale.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./GregorianCalendar.hpp"
@@ -118,12 +119,12 @@ namespace android::icu::util
 			"()Ljava/util/Date;"
 		);
 	}
-	jstring GregorianCalendar::getType()
+	JString GregorianCalendar::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint GregorianCalendar::hashCode()
 	{

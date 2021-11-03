@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../util/Date.hpp"
 
+class JCharArray;
+class JString;
 namespace java::time
 {
 	class Instant;
@@ -28,7 +29,7 @@ namespace java::sql
 		Date(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		static java::sql::Date valueOf(jstring arg0);
+		static java::sql::Date valueOf(JString arg0);
 		static java::sql::Date valueOf(java::time::LocalDate arg0);
 		jint getHours();
 		jint getMinutes();
@@ -39,7 +40,7 @@ namespace java::sql
 		void setTime(jlong arg0);
 		java::time::Instant toInstant();
 		java::time::LocalDate toLocalDate();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::sql
 

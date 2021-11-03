@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IllegalThreadStateException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.IllegalThreadStateException",
 			"()V"
 		) {}
-	IllegalThreadStateException::IllegalThreadStateException(jstring arg0)
+	IllegalThreadStateException::IllegalThreadStateException(JString arg0)
 		: java::lang::IllegalArgumentException(
 			"java.lang.IllegalThreadStateException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

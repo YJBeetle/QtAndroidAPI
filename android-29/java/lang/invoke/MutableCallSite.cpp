@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./MethodHandle.hpp"
 #include "./MethodType.hpp"
 #include "../../util/concurrent/atomic/AtomicInteger.hpp"
@@ -25,13 +26,13 @@ namespace java::lang::invoke
 		) {}
 	
 	// Methods
-	void MutableCallSite::syncAll(jarray arg0)
+	void MutableCallSite::syncAll(JArray arg0)
 	{
 		callStaticMethod<void>(
 			"java.lang.invoke.MutableCallSite",
 			"syncAll",
 			"([Ljava/lang/invoke/MutableCallSite;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	java::lang::invoke::MethodHandle MutableCallSite::dynamicInvoker()

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./IpSecManager_ResourceUnavailableException.hpp"
 
 namespace android::net

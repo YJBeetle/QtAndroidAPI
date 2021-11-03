@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -20,16 +22,16 @@ namespace android::view::inputmethod
 		CompletionInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		CompletionInfo(jlong arg0, jint arg1, jstring arg2);
-		CompletionInfo(jlong arg0, jint arg1, jstring arg2, jstring arg3);
+		CompletionInfo(jlong arg0, jint arg1, JString arg2);
+		CompletionInfo(jlong arg0, jint arg1, JString arg2, JString arg3);
 		
 		// Methods
 		jint describeContents();
 		jlong getId();
-		jstring getLabel();
+		JString getLabel();
 		jint getPosition();
-		jstring getText();
-		jstring toString();
+		JString getText();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::inputmethod

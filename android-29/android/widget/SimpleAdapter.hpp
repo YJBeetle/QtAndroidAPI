@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./BaseAdapter.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -31,6 +32,8 @@ namespace android::widget
 {
 	class TextView;
 }
+class JObject;
+class JString;
 
 namespace android::widget
 {
@@ -44,14 +47,14 @@ namespace android::widget
 		SimpleAdapter(QAndroidJniObject obj);
 		
 		// Constructors
-		SimpleAdapter(android::content::Context arg0, JObject arg1, jint arg2, jarray arg3, jintArray arg4);
+		SimpleAdapter(android::content::Context arg0, JObject arg1, jint arg2, JArray arg3, JIntArray arg4);
 		
 		// Methods
 		jint getCount();
 		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		android::content::res::Resources_Theme getDropDownViewTheme();
 		android::widget::Filter getFilter();
-		jobject getItem(jint arg0);
+		JObject getItem(jint arg0);
 		jlong getItemId(jint arg0);
 		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		JObject getViewBinder();
@@ -59,8 +62,8 @@ namespace android::widget
 		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
 		void setViewBinder(JObject arg0);
 		void setViewImage(android::widget::ImageView arg0, jint arg1);
-		void setViewImage(android::widget::ImageView arg0, jstring arg1);
-		void setViewText(android::widget::TextView arg0, jstring arg1);
+		void setViewImage(android::widget::ImageView arg0, JString arg1);
+		void setViewText(android::widget::TextView arg0, JString arg1);
 	};
 } // namespace android::widget
 

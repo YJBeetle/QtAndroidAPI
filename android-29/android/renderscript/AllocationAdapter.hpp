@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./BaseObj.hpp"
 #include "./Allocation.hpp"
 
 namespace android::renderscript

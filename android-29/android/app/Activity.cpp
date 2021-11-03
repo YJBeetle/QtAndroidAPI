@@ -1,3 +1,6 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./ActionBar.hpp"
 #include "./ActivityManager_TaskDescription.hpp"
 #include "./Application.hpp"
@@ -43,6 +46,9 @@
 #include "../widget/Toolbar.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Activity.hpp"
 
 namespace android::app
@@ -212,15 +218,15 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void Activity::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 	jboolean Activity::enterPictureInPictureMode(android::app::PictureInPictureParams arg0)
@@ -320,12 +326,12 @@ namespace android::app
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jstring Activity::getCallingPackage()
+	JString Activity::getCallingPackage()
 	{
 		return callObjectMethod(
 			"getCallingPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Activity::getChangingConfigurations()
 	{
@@ -376,12 +382,12 @@ namespace android::app
 			"()Landroid/content/Intent;"
 		);
 	}
-	jobject Activity::getLastNonConfigurationInstance()
+	JObject Activity::getLastNonConfigurationInstance()
 	{
 		return callObjectMethod(
 			"getLastNonConfigurationInstance",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::view::LayoutInflater Activity::getLayoutInflater()
 	{
@@ -397,12 +403,12 @@ namespace android::app
 			"()Landroid/app/LoaderManager;"
 		);
 	}
-	jstring Activity::getLocalClassName()
+	JString Activity::getLocalClassName()
 	{
 		return callObjectMethod(
 			"getLocalClassName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Activity::getMaxNumPictureInPictureActions()
 	{
@@ -468,13 +474,13 @@ namespace android::app
 			"()Landroid/view/SearchEvent;"
 		);
 	}
-	jobject Activity::getSystemService(jstring arg0)
+	JObject Activity::getSystemService(JString arg0)
 	{
 		return callObjectMethod(
 			"getSystemService",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	jint Activity::getTaskId()
 	{
@@ -483,12 +489,12 @@ namespace android::app
 			"()I"
 		);
 	}
-	jstring Activity::getTitle()
+	JString Activity::getTitle()
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint Activity::getTitleColor()
 	{
@@ -623,16 +629,16 @@ namespace android::app
 			"()Z"
 		);
 	}
-	JObject Activity::managedQuery(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject Activity::managedQuery(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
 	{
 		return callObjectMethod(
 			"managedQuery",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg1.object<jarray>(),
+			arg2.object<jstring>(),
+			arg3.object<jarray>(),
+			arg4.object<jstring>()
 		);
 	}
 	jboolean Activity::moveTaskToBack(jboolean arg0)
@@ -757,12 +763,12 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	jstring Activity::onCreateDescription()
+	JString Activity::onCreateDescription()
 	{
 		return callObjectMethod(
 			"onCreateDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void Activity::onCreateNavigateUpTaskStack(android::app::TaskStackBuilder arg0)
 	{
@@ -806,23 +812,23 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::view::View Activity::onCreateView(jstring arg0, android::content::Context arg1, JObject arg2)
+	android::view::View Activity::onCreateView(JString arg0, android::content::Context arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"onCreateView",
 			"(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	android::view::View Activity::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, JObject arg3)
+	android::view::View Activity::onCreateView(android::view::View arg0, JString arg1, android::content::Context arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"onCreateView",
 			"(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
@@ -1000,12 +1006,12 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onPerformDirectAction(jstring arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3)
+	void Activity::onPerformDirectAction(JString arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"onPerformDirectAction",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;Ljava/util/function/Consumer;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
@@ -1096,14 +1102,14 @@ namespace android::app
 			"()Landroid/net/Uri;"
 		);
 	}
-	void Activity::onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2)
+	void Activity::onRequestPermissionsResult(jint arg0, JArray arg1, JIntArray arg2)
 	{
 		callMethod<void>(
 			"onRequestPermissionsResult",
 			"(I[Ljava/lang/String;[I)V",
 			arg0,
-			arg1,
-			arg2
+			arg1.object<jarray>(),
+			arg2.object<jintArray>()
 		);
 	}
 	void Activity::onRestoreInstanceState(android::os::Bundle arg0, android::os::PersistableBundle arg1)
@@ -1115,12 +1121,12 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jobject Activity::onRetainNonConfigurationInstance()
+	JObject Activity::onRetainNonConfigurationInstance()
 	{
 		return callObjectMethod(
 			"onRetainNonConfigurationInstance",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	void Activity::onSaveInstanceState(android::os::Bundle arg0, android::os::PersistableBundle arg1)
 	{
@@ -1316,12 +1322,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::requestPermissions(jarray arg0, jint arg1)
+	void Activity::requestPermissions(JArray arg0, jint arg1)
 	{
 		callMethod<void>(
 			"requestPermissions",
 			"([Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jarray>(),
 			arg1
 		);
 	}
@@ -1610,12 +1616,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setTitle(jstring arg0)
+	void Activity::setTitle(JString arg0)
 	{
 		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Activity::setTitleColor(jint arg0)
@@ -1659,12 +1665,12 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Activity::shouldShowRequestPermissionRationale(jstring arg0)
+	jboolean Activity::shouldShowRequestPermissionRationale(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"shouldShowRequestPermissionRationale",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Activity::shouldUpRecreateTask(android::content::Intent arg0)
@@ -1724,20 +1730,20 @@ namespace android::app
 			arg1
 		);
 	}
-	void Activity::startActivities(jarray arg0)
+	void Activity::startActivities(JArray arg0)
 	{
 		callMethod<void>(
 			"startActivities",
 			"([Landroid/content/Intent;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void Activity::startActivities(jarray arg0, android::os::Bundle arg1)
+	void Activity::startActivities(JArray arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"startActivities",
 			"([Landroid/content/Intent;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jarray>(),
 			arg1.object()
 		);
 	}
@@ -1966,12 +1972,12 @@ namespace android::app
 			"()V"
 		);
 	}
-	void Activity::startSearch(jstring arg0, jboolean arg1, android::os::Bundle arg2, jboolean arg3)
+	void Activity::startSearch(JString arg0, jboolean arg1, android::os::Bundle arg2, jboolean arg3)
 	{
 		callMethod<void>(
 			"startSearch",
 			"(Ljava/lang/String;ZLandroid/os/Bundle;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object(),
 			arg3
@@ -2007,12 +2013,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::triggerSearch(jstring arg0, android::os::Bundle arg1)
+	void Activity::triggerSearch(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"triggerSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

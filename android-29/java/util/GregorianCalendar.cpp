@@ -1,4 +1,8 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../time/ZonedDateTime.hpp"
 #include "./Date.hpp"
 #include "./Locale.hpp"
@@ -100,19 +104,19 @@ namespace java::util
 			arg1
 		);
 	}
-	jobject GregorianCalendar::clone()
+	JObject GregorianCalendar::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean GregorianCalendar::equals(jobject arg0)
+	jboolean GregorianCalendar::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint GregorianCalendar::getActualMaximum(jint arg0)
@@ -131,12 +135,12 @@ namespace java::util
 			arg0
 		);
 	}
-	jstring GregorianCalendar::getCalendarType()
+	JString GregorianCalendar::getCalendarType()
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint GregorianCalendar::getGreatestMinimum(jint arg0)
 	{

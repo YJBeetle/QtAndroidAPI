@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Sampler_Value.hpp"
 
 namespace android::renderscript
@@ -66,22 +68,22 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	android::renderscript::Sampler_Value Sampler_Value::valueOf(jstring arg0)
+	android::renderscript::Sampler_Value Sampler_Value::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.renderscript.Sampler$Value",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/Sampler$Value;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Sampler_Value::values()
+	JArray Sampler_Value::values()
 	{
 		return callStaticObjectMethod(
 			"android.renderscript.Sampler$Value",
 			"values",
 			"()[Landroid/renderscript/Sampler$Value;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::renderscript
 

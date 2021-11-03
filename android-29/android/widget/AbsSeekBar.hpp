@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
 #include "./ProgressBar.hpp"
 
 namespace android::content
@@ -36,6 +34,7 @@ namespace android::view
 {
 	class MotionEvent;
 }
+class JString;
 
 namespace android::widget
 {
@@ -56,7 +55,7 @@ namespace android::widget
 		
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getKeyProgressIncrement();
 		jboolean getSplitTrack();
 		android::graphics::drawable::Drawable getThumb();

@@ -10,6 +10,7 @@ namespace android::view::textclassifier
 {
 	class TextLanguage_Request;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -23,7 +24,7 @@ namespace android::view::textclassifier
 		TextLanguage_Request_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		TextLanguage_Request_Builder(jstring arg0);
+		TextLanguage_Request_Builder(JString arg0);
 		
 		// Methods
 		android::view::textclassifier::TextLanguage_Request build();

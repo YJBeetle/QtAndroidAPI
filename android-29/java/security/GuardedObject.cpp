@@ -1,4 +1,5 @@
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
 #include "./GuardedObject.hpp"
 
 namespace java::security
@@ -9,21 +10,21 @@ namespace java::security
 	GuardedObject::GuardedObject(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	GuardedObject::GuardedObject(jobject arg0, JObject arg1)
+	GuardedObject::GuardedObject(JObject arg0, JObject arg1)
 		: JObject(
 			"java.security.GuardedObject",
 			"(Ljava/lang/Object;Ljava/security/Guard;)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
 		) {}
 	
 	// Methods
-	jobject GuardedObject::getObject()
+	JObject GuardedObject::getObject()
 	{
 		return callObjectMethod(
 			"getObject",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 } // namespace java::security
 

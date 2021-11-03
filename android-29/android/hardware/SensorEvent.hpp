@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
 namespace android::hardware
 {
 	class Sensor;
@@ -16,7 +17,7 @@ namespace android::hardware
 		jint accuracy();
 		android::hardware::Sensor sensor();
 		jlong timestamp();
-		jfloatArray values();
+		JFloatArray values();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SensorEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

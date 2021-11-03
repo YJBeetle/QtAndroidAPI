@@ -1,26 +1,28 @@
 #include "../content/Context.hpp"
 #include "./Preference.hpp"
 #include "./PreferenceScreen.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./PreferenceManager.hpp"
 
 namespace android::preference
 {
 	// Fields
-	jstring PreferenceManager::KEY_HAS_SET_DEFAULT_VALUES()
+	JString PreferenceManager::KEY_HAS_SET_DEFAULT_VALUES()
 	{
 		return getStaticObjectField(
 			"android.preference.PreferenceManager",
 			"KEY_HAS_SET_DEFAULT_VALUES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring PreferenceManager::METADATA_KEY_PREFERENCES()
+	JString PreferenceManager::METADATA_KEY_PREFERENCES()
 	{
 		return getStaticObjectField(
 			"android.preference.PreferenceManager",
 			"METADATA_KEY_PREFERENCES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -38,14 +40,14 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	jstring PreferenceManager::getDefaultSharedPreferencesName(android::content::Context arg0)
+	JString PreferenceManager::getDefaultSharedPreferencesName(android::content::Context arg0)
 	{
 		return callStaticObjectMethod(
 			"android.preference.PreferenceManager",
 			"getDefaultSharedPreferencesName",
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	void PreferenceManager::setDefaultValues(android::content::Context arg0, jint arg1, jboolean arg2)
 	{
@@ -58,14 +60,14 @@ namespace android::preference
 			arg2
 		);
 	}
-	void PreferenceManager::setDefaultValues(android::content::Context arg0, jstring arg1, jint arg2, jint arg3, jboolean arg4)
+	void PreferenceManager::setDefaultValues(android::content::Context arg0, JString arg1, jint arg2, jint arg3, jboolean arg4)
 	{
 		callStaticMethod<void>(
 			"android.preference.PreferenceManager",
 			"setDefaultValues",
 			"(Landroid/content/Context;Ljava/lang/String;IIZ)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4
@@ -79,12 +81,12 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	android::preference::Preference PreferenceManager::findPreference(jstring arg0)
+	android::preference::Preference PreferenceManager::findPreference(JString arg0)
 	{
 		return callObjectMethod(
 			"findPreference",
 			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject PreferenceManager::getPreferenceDataStore()
@@ -108,12 +110,12 @@ namespace android::preference
 			"()I"
 		);
 	}
-	jstring PreferenceManager::getSharedPreferencesName()
+	JString PreferenceManager::getSharedPreferencesName()
 	{
 		return callObjectMethod(
 			"getSharedPreferencesName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean PreferenceManager::isStorageDefault()
 	{
@@ -145,12 +147,12 @@ namespace android::preference
 			arg0
 		);
 	}
-	void PreferenceManager::setSharedPreferencesName(jstring arg0)
+	void PreferenceManager::setSharedPreferencesName(JString arg0)
 	{
 		callMethod<void>(
 			"setSharedPreferencesName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void PreferenceManager::setStorageDefault()

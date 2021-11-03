@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JBooleanArray.hpp"
 #include "./DateFormat_Field.hpp"
 #include "./DateFormatSymbols.hpp"
 #include "./DisplayContext.hpp"
@@ -5,6 +7,8 @@
 #include "./TimeZoneFormat.hpp"
 #include "../util/Calendar.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/StringBuffer.hpp"
 #include "../../../java/text/FieldPosition.hpp"
 #include "../../../java/text/ParsePosition.hpp"
@@ -25,72 +29,72 @@ namespace android::icu::text
 			"android.icu.text.SimpleDateFormat",
 			"()V"
 		) {}
-	SimpleDateFormat::SimpleDateFormat(jstring arg0)
+	SimpleDateFormat::SimpleDateFormat(JString arg0)
 		: android::icu::text::DateFormat(
 			"android.icu.text.SimpleDateFormat",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SimpleDateFormat::SimpleDateFormat(jstring arg0, android::icu::text::DateFormatSymbols arg1)
+	SimpleDateFormat::SimpleDateFormat(JString arg0, android::icu::text::DateFormatSymbols arg1)
 		: android::icu::text::DateFormat(
 			"android.icu.text.SimpleDateFormat",
 			"(Ljava/lang/String;Landroid/icu/text/DateFormatSymbols;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	SimpleDateFormat::SimpleDateFormat(jstring arg0, android::icu::util::ULocale arg1)
+	SimpleDateFormat::SimpleDateFormat(JString arg0, android::icu::util::ULocale arg1)
 		: android::icu::text::DateFormat(
 			"android.icu.text.SimpleDateFormat",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	SimpleDateFormat::SimpleDateFormat(jstring arg0, java::util::Locale arg1)
+	SimpleDateFormat::SimpleDateFormat(JString arg0, java::util::Locale arg1)
 		: android::icu::text::DateFormat(
 			"android.icu.text.SimpleDateFormat",
 			"(Ljava/lang/String;Ljava/util/Locale;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	SimpleDateFormat::SimpleDateFormat(jstring arg0, jstring arg1, android::icu::util::ULocale arg2)
+	SimpleDateFormat::SimpleDateFormat(JString arg0, JString arg1, android::icu::util::ULocale arg2)
 		: android::icu::text::DateFormat(
 			"android.icu.text.SimpleDateFormat",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/icu/util/ULocale;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
 	
 	// Methods
-	void SimpleDateFormat::applyLocalizedPattern(jstring arg0)
+	void SimpleDateFormat::applyLocalizedPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyLocalizedPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void SimpleDateFormat::applyPattern(jstring arg0)
+	void SimpleDateFormat::applyPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject SimpleDateFormat::clone()
+	JObject SimpleDateFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean SimpleDateFormat::equals(jobject arg0)
+	jboolean SimpleDateFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::lang::StringBuffer SimpleDateFormat::format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
@@ -103,12 +107,12 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JObject SimpleDateFormat::formatToCharacterIterator(jobject arg0)
+	JObject SimpleDateFormat::formatToCharacterIterator(JObject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Date SimpleDateFormat::get2DigitYearStart()
@@ -147,12 +151,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	void SimpleDateFormat::parse(jstring arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2)
+	void SimpleDateFormat::parse(JString arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2)
 	{
 		callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;Landroid/icu/util/Calendar;Ljava/text/ParsePosition;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -189,12 +193,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void SimpleDateFormat::setNumberFormat(jstring arg0, android::icu::text::NumberFormat arg1)
+	void SimpleDateFormat::setNumberFormat(JString arg0, android::icu::text::NumberFormat arg1)
 	{
 		callMethod<void>(
 			"setNumberFormat",
 			"(Ljava/lang/String;Landroid/icu/text/NumberFormat;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -206,19 +210,19 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jstring SimpleDateFormat::toLocalizedPattern()
+	JString SimpleDateFormat::toLocalizedPattern()
 	{
 		return callObjectMethod(
 			"toLocalizedPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SimpleDateFormat::toPattern()
+	JString SimpleDateFormat::toPattern()
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

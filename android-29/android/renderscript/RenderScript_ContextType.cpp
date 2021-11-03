@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./RenderScript_ContextType.hpp"
 
 namespace android::renderscript
@@ -34,22 +36,22 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	android::renderscript::RenderScript_ContextType RenderScript_ContextType::valueOf(jstring arg0)
+	android::renderscript::RenderScript_ContextType RenderScript_ContextType::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.renderscript.RenderScript$ContextType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/RenderScript$ContextType;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray RenderScript_ContextType::values()
+	JArray RenderScript_ContextType::values()
 	{
 		return callStaticObjectMethod(
 			"android.renderscript.RenderScript$ContextType",
 			"values",
 			"()[Landroid/renderscript/RenderScript$ContextType;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::renderscript
 

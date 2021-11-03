@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::text
 {
@@ -18,13 +20,13 @@ namespace java::text
 		ParsePosition(jint arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getErrorIndex();
 		jint getIndex();
 		jint hashCode();
 		void setErrorIndex(jint arg0);
 		void setIndex(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::text
 

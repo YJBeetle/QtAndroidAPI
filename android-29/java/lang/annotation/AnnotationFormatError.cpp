@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./AnnotationFormatError.hpp"
 
 namespace java::lang::annotation
@@ -8,24 +10,24 @@ namespace java::lang::annotation
 	AnnotationFormatError::AnnotationFormatError(QAndroidJniObject obj) : java::lang::Error(obj) {}
 	
 	// Constructors
-	AnnotationFormatError::AnnotationFormatError(jstring arg0)
+	AnnotationFormatError::AnnotationFormatError(JString arg0)
 		: java::lang::Error(
 			"java.lang.annotation.AnnotationFormatError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	AnnotationFormatError::AnnotationFormatError(jthrowable arg0)
+	AnnotationFormatError::AnnotationFormatError(JThrowable arg0)
 		: java::lang::Error(
 			"java.lang.annotation.AnnotationFormatError",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	AnnotationFormatError::AnnotationFormatError(jstring arg0, jthrowable arg1)
+	AnnotationFormatError::AnnotationFormatError(JString arg0, JThrowable arg1)
 		: java::lang::Error(
 			"java.lang.annotation.AnnotationFormatError",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

@@ -10,6 +10,7 @@ namespace android::media
 {
 	class AudioAttributes;
 }
+class JString;
 
 namespace android::media
 {
@@ -27,7 +28,7 @@ namespace android::media
 		// Methods
 		android::media::AudioAttributes getAudioAttributes();
 		jint getStreamType();
-		jstring getTitle(android::content::Context arg0);
+		JString getTitle(android::content::Context arg0);
 		jfloat getVolume();
 		jboolean isLooping();
 		jboolean isPlaying();

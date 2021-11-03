@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./StaleDataException.hpp"
 
 namespace android::database
@@ -13,11 +14,11 @@ namespace android::database
 			"android.database.StaleDataException",
 			"()V"
 		) {}
-	StaleDataException::StaleDataException(jstring arg0)
+	StaleDataException::StaleDataException(JString arg0)
 		: java::lang::RuntimeException(
 			"android.database.StaleDataException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

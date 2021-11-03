@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::icu::lang
 {
@@ -17,7 +18,7 @@ namespace android::icu::lang
 		// Constructors
 		
 		// Methods
-		static jstring toString(jint arg0);
+		static JString toString(jint arg0);
 	};
 } // namespace android::icu::lang
 

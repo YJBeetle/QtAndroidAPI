@@ -10,6 +10,7 @@ namespace android::view::contentcapture
 {
 	class DataRemovalRequest_Builder;
 }
+class JString;
 
 namespace android::view::contentcapture
 {
@@ -29,7 +30,7 @@ namespace android::view::contentcapture
 		// Methods
 		jint describeContents();
 		JObject getLocusIdRequests();
-		jstring getPackageName();
+		JString getPackageName();
 		jboolean isForEverything();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

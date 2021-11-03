@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -15,17 +18,17 @@ namespace java::util
 		StringTokenizer(QAndroidJniObject obj);
 		
 		// Constructors
-		StringTokenizer(jstring arg0);
-		StringTokenizer(jstring arg0, jstring arg1);
-		StringTokenizer(jstring arg0, jstring arg1, jboolean arg2);
+		StringTokenizer(JString arg0);
+		StringTokenizer(JString arg0, JString arg1);
+		StringTokenizer(JString arg0, JString arg1, jboolean arg2);
 		
 		// Methods
 		jint countTokens();
 		jboolean hasMoreElements();
 		jboolean hasMoreTokens();
-		jobject nextElement();
-		jstring nextToken();
-		jstring nextToken(jstring arg0);
+		JObject nextElement();
+		JString nextToken();
+		JString nextToken(JString arg0);
 	};
 } // namespace java::util
 

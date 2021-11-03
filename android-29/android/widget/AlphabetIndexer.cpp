@@ -1,3 +1,6 @@
+#include "../../JObjectArray.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./AlphabetIndexer.hpp"
 
 namespace android::widget
@@ -8,13 +11,13 @@ namespace android::widget
 	AlphabetIndexer::AlphabetIndexer(QAndroidJniObject obj) : android::database::DataSetObserver(obj) {}
 	
 	// Constructors
-	AlphabetIndexer::AlphabetIndexer(JObject arg0, jint arg1, jstring arg2)
+	AlphabetIndexer::AlphabetIndexer(JObject arg0, jint arg1, JString arg2)
 		: android::database::DataSetObserver(
 			"android.widget.AlphabetIndexer",
 			"(Landroid/database/Cursor;ILjava/lang/CharSequence;)V",
 			arg0.object(),
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
@@ -34,12 +37,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	jobjectArray AlphabetIndexer::getSections()
+	JObjectArray AlphabetIndexer::getSections()
 	{
 		return callObjectMethod(
 			"getSections",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
 	void AlphabetIndexer::onChanged()
 	{

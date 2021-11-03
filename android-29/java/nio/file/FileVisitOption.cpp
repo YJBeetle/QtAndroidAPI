@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./FileVisitOption.hpp"
 
 namespace java::nio::file
@@ -18,22 +20,22 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	java::nio::file::FileVisitOption FileVisitOption::valueOf(jstring arg0)
+	java::nio::file::FileVisitOption FileVisitOption::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.FileVisitOption",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/FileVisitOption;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray FileVisitOption::values()
+	JArray FileVisitOption::values()
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.FileVisitOption",
 			"values",
 			"()[Ljava/nio/file/FileVisitOption;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::nio::file
 

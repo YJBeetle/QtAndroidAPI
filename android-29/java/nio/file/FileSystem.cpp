@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./attribute/UserPrincipalLookupService.hpp"
 #include "./spi/FileSystemProvider.hpp"
 #include "./FileSystem.hpp"
@@ -26,21 +28,21 @@ namespace java::nio::file
 			"()Ljava/lang/Iterable;"
 		);
 	}
-	JObject FileSystem::getPath(jstring arg0, jarray arg1)
+	JObject FileSystem::getPath(JString arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"getPath",
 			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
 		);
 	}
-	JObject FileSystem::getPathMatcher(jstring arg0)
+	JObject FileSystem::getPathMatcher(JString arg0)
 	{
 		return callObjectMethod(
 			"getPathMatcher",
 			"(Ljava/lang/String;)Ljava/nio/file/PathMatcher;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject FileSystem::getRootDirectories()
@@ -50,12 +52,12 @@ namespace java::nio::file
 			"()Ljava/lang/Iterable;"
 		);
 	}
-	jstring FileSystem::getSeparator()
+	JString FileSystem::getSeparator()
 	{
 		return callObjectMethod(
 			"getSeparator",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::nio::file::attribute::UserPrincipalLookupService FileSystem::getUserPrincipalLookupService()
 	{

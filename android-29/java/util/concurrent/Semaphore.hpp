@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::util::concurrent
 {
 	class TimeUnit;
@@ -34,7 +35,7 @@ namespace java::util::concurrent
 		jboolean isFair();
 		void release();
 		void release(jint arg0);
-		jstring toString();
+		JString toString();
 		jboolean tryAcquire();
 		jboolean tryAcquire(jint arg0);
 		jboolean tryAcquire(jlong arg0, java::util::concurrent::TimeUnit arg1);

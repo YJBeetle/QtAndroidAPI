@@ -1,5 +1,6 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./TextSelection.hpp"
 
 namespace android::view::textclassifier
@@ -27,21 +28,21 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jfloat TextSelection::getConfidenceScore(jstring arg0)
+	jfloat TextSelection::getConfidenceScore(JString arg0)
 	{
 		return callMethod<jfloat>(
 			"getConfidenceScore",
 			"(Ljava/lang/String;)F",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring TextSelection::getEntity(jint arg0)
+	JString TextSelection::getEntity(jint arg0)
 	{
 		return callObjectMethod(
 			"getEntity",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint TextSelection::getEntityCount()
 	{
@@ -57,12 +58,12 @@ namespace android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring TextSelection::getId()
+	JString TextSelection::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint TextSelection::getSelectionEndIndex()
 	{
@@ -78,12 +79,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring TextSelection::toString()
+	JString TextSelection::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void TextSelection::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

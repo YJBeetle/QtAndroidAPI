@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
-#include "../../lang/RuntimeException.hpp"
 #include "../../util/ConcurrentModificationException.hpp"
 
 namespace java::io
@@ -13,6 +10,7 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JThrowable;
 
 namespace java::nio::file
 {

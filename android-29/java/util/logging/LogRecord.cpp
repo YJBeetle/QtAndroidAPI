@@ -1,5 +1,9 @@
+#include "../../../JArray.hpp"
+#include "../../../JObjectArray.hpp"
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "../../time/Instant.hpp"
 #include "../ResourceBundle.hpp"
 #include "../concurrent/atomic/AtomicLong.hpp"
@@ -14,12 +18,12 @@ namespace java::util::logging
 	LogRecord::LogRecord(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	LogRecord::LogRecord(java::util::logging::Level arg0, jstring arg1)
+	LogRecord::LogRecord(java::util::logging::Level arg0, JString arg1)
 		: JObject(
 			"java.util.logging.LogRecord",
 			"(Ljava/util/logging/Level;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -37,12 +41,12 @@ namespace java::util::logging
 			"()Ljava/util/logging/Level;"
 		);
 	}
-	jstring LogRecord::getLoggerName()
+	JString LogRecord::getLoggerName()
 	{
 		return callObjectMethod(
 			"getLoggerName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong LogRecord::getLongThreadID()
 	{
@@ -51,12 +55,12 @@ namespace java::util::logging
 			"()J"
 		);
 	}
-	jstring LogRecord::getMessage()
+	JString LogRecord::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong LogRecord::getMillis()
 	{
@@ -65,12 +69,12 @@ namespace java::util::logging
 			"()J"
 		);
 	}
-	jobjectArray LogRecord::getParameters()
+	JObjectArray LogRecord::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
 	java::util::ResourceBundle LogRecord::getResourceBundle()
 	{
@@ -79,12 +83,12 @@ namespace java::util::logging
 			"()Ljava/util/ResourceBundle;"
 		);
 	}
-	jstring LogRecord::getResourceBundleName()
+	JString LogRecord::getResourceBundleName()
 	{
 		return callObjectMethod(
 			"getResourceBundleName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong LogRecord::getSequenceNumber()
 	{
@@ -93,19 +97,19 @@ namespace java::util::logging
 			"()J"
 		);
 	}
-	jstring LogRecord::getSourceClassName()
+	JString LogRecord::getSourceClassName()
 	{
 		return callObjectMethod(
 			"getSourceClassName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LogRecord::getSourceMethodName()
+	JString LogRecord::getSourceMethodName()
 	{
 		return callObjectMethod(
 			"getSourceMethodName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint LogRecord::getThreadID()
 	{
@@ -114,12 +118,12 @@ namespace java::util::logging
 			"()I"
 		);
 	}
-	jthrowable LogRecord::getThrown()
+	JThrowable LogRecord::getThrown()
 	{
 		return callObjectMethod(
 			"getThrown",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
 	void LogRecord::setInstant(java::time::Instant arg0)
 	{
@@ -137,12 +141,12 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogRecord::setLoggerName(jstring arg0)
+	void LogRecord::setLoggerName(JString arg0)
 	{
 		callMethod<void>(
 			"setLoggerName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::util::logging::LogRecord LogRecord::setLongThreadID(jlong arg0)
@@ -153,12 +157,12 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setMessage(jstring arg0)
+	void LogRecord::setMessage(JString arg0)
 	{
 		callMethod<void>(
 			"setMessage",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void LogRecord::setMillis(jlong arg0)
@@ -169,12 +173,12 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setParameters(jobjectArray arg0)
+	void LogRecord::setParameters(JObjectArray arg0)
 	{
 		callMethod<void>(
 			"setParameters",
 			"([Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobjectArray>()
 		);
 	}
 	void LogRecord::setResourceBundle(java::util::ResourceBundle arg0)
@@ -185,12 +189,12 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogRecord::setResourceBundleName(jstring arg0)
+	void LogRecord::setResourceBundleName(JString arg0)
 	{
 		callMethod<void>(
 			"setResourceBundleName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void LogRecord::setSequenceNumber(jlong arg0)
@@ -201,20 +205,20 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setSourceClassName(jstring arg0)
+	void LogRecord::setSourceClassName(JString arg0)
 	{
 		callMethod<void>(
 			"setSourceClassName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void LogRecord::setSourceMethodName(jstring arg0)
+	void LogRecord::setSourceMethodName(JString arg0)
 	{
 		callMethod<void>(
 			"setSourceMethodName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void LogRecord::setThreadID(jint arg0)
@@ -225,12 +229,12 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setThrown(jthrowable arg0)
+	void LogRecord::setThrown(JThrowable arg0)
 	{
 		callMethod<void>(
 			"setThrown",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		);
 	}
 } // namespace java::util::logging

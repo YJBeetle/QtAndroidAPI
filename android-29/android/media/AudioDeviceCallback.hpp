@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 
 namespace android::media
 {
@@ -18,8 +19,8 @@ namespace android::media
 		AudioDeviceCallback();
 		
 		// Methods
-		void onAudioDevicesAdded(jarray arg0);
-		void onAudioDevicesRemoved(jarray arg0);
+		void onAudioDevicesAdded(JArray arg0);
+		void onAudioDevicesRemoved(JArray arg0);
 	};
 } // namespace android::media
 

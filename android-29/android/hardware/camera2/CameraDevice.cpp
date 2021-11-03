@@ -4,6 +4,7 @@
 #include "./params/InputConfiguration.hpp"
 #include "./params/SessionConfiguration.hpp"
 #include "../../os/Handler.hpp"
+#include "../../../JString.hpp"
 #include "./CameraDevice.hpp"
 
 namespace android::hardware::camera2
@@ -150,12 +151,12 @@ namespace android::hardware::camera2
 			arg3.object()
 		);
 	}
-	jstring CameraDevice::getId()
+	JString CameraDevice::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean CameraDevice::isSessionConfigurationSupported(android::hardware::camera2::params::SessionConfiguration arg0)
 	{

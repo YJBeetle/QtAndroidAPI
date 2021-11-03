@@ -38,6 +38,7 @@ namespace android::telecom
 {
 	class StatusHints;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -58,7 +59,7 @@ namespace android::telecom
 		void disconnect();
 		android::net::Uri getAddress();
 		jint getAddressPresentation();
-		jstring getCallerDisplayName();
+		JString getCallerDisplayName();
 		jint getCallerDisplayNamePresentation();
 		android::telecom::RemoteConference getConference();
 		JObject getConferenceableConnections();

@@ -14,6 +14,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -28,20 +31,20 @@ namespace android::view::inputmethod
 		InputMethodSubtype(QAndroidJniObject obj);
 		
 		// Constructors
-		InputMethodSubtype(jint arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4, jboolean arg5, jboolean arg6);
-		InputMethodSubtype(jint arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4, jboolean arg5, jboolean arg6, jint arg7);
+		InputMethodSubtype(jint arg0, jint arg1, JString arg2, JString arg3, JString arg4, jboolean arg5, jboolean arg6);
+		InputMethodSubtype(jint arg0, jint arg1, JString arg2, JString arg3, JString arg4, jboolean arg5, jboolean arg6, jint arg7);
 		
 		// Methods
-		jboolean containsExtraValueKey(jstring arg0);
+		jboolean containsExtraValueKey(JString arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getDisplayName(android::content::Context arg0, jstring arg1, android::content::pm::ApplicationInfo arg2);
-		jstring getExtraValue();
-		jstring getExtraValueOf(jstring arg0);
+		jboolean equals(JObject arg0);
+		JString getDisplayName(android::content::Context arg0, JString arg1, android::content::pm::ApplicationInfo arg2);
+		JString getExtraValue();
+		JString getExtraValueOf(JString arg0);
 		jint getIconResId();
-		jstring getLanguageTag();
-		jstring getLocale();
-		jstring getMode();
+		JString getLanguageTag();
+		JString getLocale();
+		JString getMode();
 		jint getNameResId();
 		jint hashCode();
 		jboolean isAsciiCapable();

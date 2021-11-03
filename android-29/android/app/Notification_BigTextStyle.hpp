@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Notification_Style.hpp"
 
 namespace android::app
 {
 	class Notification_Builder;
 }
+class JString;
 
 namespace android::app
 {
@@ -24,9 +24,9 @@ namespace android::app
 		Notification_BigTextStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
-		android::app::Notification_BigTextStyle bigText(jstring arg0);
-		android::app::Notification_BigTextStyle setBigContentTitle(jstring arg0);
-		android::app::Notification_BigTextStyle setSummaryText(jstring arg0);
+		android::app::Notification_BigTextStyle bigText(JString arg0);
+		android::app::Notification_BigTextStyle setBigContentTitle(JString arg0);
+		android::app::Notification_BigTextStyle setSummaryText(JString arg0);
 	};
 } // namespace android::app
 

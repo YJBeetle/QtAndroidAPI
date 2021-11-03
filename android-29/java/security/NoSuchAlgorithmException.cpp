@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./NoSuchAlgorithmException.hpp"
 
 namespace java::security
@@ -13,24 +15,24 @@ namespace java::security
 			"java.security.NoSuchAlgorithmException",
 			"()V"
 		) {}
-	NoSuchAlgorithmException::NoSuchAlgorithmException(jstring arg0)
+	NoSuchAlgorithmException::NoSuchAlgorithmException(JString arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.NoSuchAlgorithmException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	NoSuchAlgorithmException::NoSuchAlgorithmException(jthrowable arg0)
+	NoSuchAlgorithmException::NoSuchAlgorithmException(JThrowable arg0)
 		: java::security::GeneralSecurityException(
 			"java.security.NoSuchAlgorithmException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	NoSuchAlgorithmException::NoSuchAlgorithmException(jstring arg0, jthrowable arg1)
+	NoSuchAlgorithmException::NoSuchAlgorithmException(JString arg0, JThrowable arg1)
 		: java::security::GeneralSecurityException(
 			"java.security.NoSuchAlgorithmException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

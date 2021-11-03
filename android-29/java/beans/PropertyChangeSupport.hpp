@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::beans
 {
 	class PropertyChangeEvent;
@@ -14,6 +16,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 
 namespace java::beans
 {
@@ -27,23 +31,23 @@ namespace java::beans
 		PropertyChangeSupport(QAndroidJniObject obj);
 		
 		// Constructors
-		PropertyChangeSupport(jobject arg0);
+		PropertyChangeSupport(JObject arg0);
 		
 		// Methods
 		void addPropertyChangeListener(JObject arg0);
-		void addPropertyChangeListener(jstring arg0, JObject arg1);
-		void fireIndexedPropertyChange(jstring arg0, jint arg1, jboolean arg2, jboolean arg3);
-		void fireIndexedPropertyChange(jstring arg0, jint arg1, jint arg2, jint arg3);
-		void fireIndexedPropertyChange(jstring arg0, jint arg1, jobject arg2, jobject arg3);
+		void addPropertyChangeListener(JString arg0, JObject arg1);
+		void fireIndexedPropertyChange(JString arg0, jint arg1, jboolean arg2, jboolean arg3);
+		void fireIndexedPropertyChange(JString arg0, jint arg1, jint arg2, jint arg3);
+		void fireIndexedPropertyChange(JString arg0, jint arg1, JObject arg2, JObject arg3);
 		void firePropertyChange(java::beans::PropertyChangeEvent arg0);
-		void firePropertyChange(jstring arg0, jboolean arg1, jboolean arg2);
-		void firePropertyChange(jstring arg0, jint arg1, jint arg2);
-		void firePropertyChange(jstring arg0, jobject arg1, jobject arg2);
-		jarray getPropertyChangeListeners();
-		jarray getPropertyChangeListeners(jstring arg0);
-		jboolean hasListeners(jstring arg0);
+		void firePropertyChange(JString arg0, jboolean arg1, jboolean arg2);
+		void firePropertyChange(JString arg0, jint arg1, jint arg2);
+		void firePropertyChange(JString arg0, JObject arg1, JObject arg2);
+		JArray getPropertyChangeListeners();
+		JArray getPropertyChangeListeners(JString arg0);
+		jboolean hasListeners(JString arg0);
 		void removePropertyChangeListener(JObject arg0);
-		void removePropertyChangeListener(jstring arg0, JObject arg1);
+		void removePropertyChangeListener(JString arg0, JObject arg1);
 	};
 } // namespace java::beans
 

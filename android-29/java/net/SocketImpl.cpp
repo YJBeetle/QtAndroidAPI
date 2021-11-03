@@ -1,6 +1,8 @@
 #include "../io/FileDescriptor.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./InetAddress.hpp"
 #include "./SocketAddress.hpp"
 #include "./SocketImpl.hpp"
@@ -20,12 +22,12 @@ namespace java::net
 		) {}
 	
 	// Methods
-	jstring SocketImpl::toString()
+	JString SocketImpl::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::net
 

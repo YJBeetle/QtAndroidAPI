@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace android::app::job
 {
 	class JobWorkItem;
@@ -51,8 +53,8 @@ namespace android::app::job
 		jint getJobId();
 		android::net::Network getNetwork();
 		android::os::Bundle getTransientExtras();
-		jarray getTriggeredContentAuthorities();
-		jarray getTriggeredContentUris();
+		JArray getTriggeredContentAuthorities();
+		JArray getTriggeredContentUris();
 		jboolean isOverrideDeadlineExpired();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

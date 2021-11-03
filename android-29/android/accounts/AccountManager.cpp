@@ -1,46 +1,50 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "./Account.hpp"
 #include "../app/Activity.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Handler.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./AccountManager.hpp"
 
 namespace android::accounts
 {
 	// Fields
-	jstring AccountManager::ACTION_ACCOUNT_REMOVED()
+	JString AccountManager::ACTION_ACCOUNT_REMOVED()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"ACTION_ACCOUNT_REMOVED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::ACTION_AUTHENTICATOR_INTENT()
+	JString AccountManager::ACTION_AUTHENTICATOR_INTENT()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"ACTION_AUTHENTICATOR_INTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::AUTHENTICATOR_ATTRIBUTES_NAME()
+	JString AccountManager::AUTHENTICATOR_ATTRIBUTES_NAME()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"AUTHENTICATOR_ATTRIBUTES_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::AUTHENTICATOR_META_DATA_NAME()
+	JString AccountManager::AUTHENTICATOR_META_DATA_NAME()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"AUTHENTICATOR_META_DATA_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AccountManager::ERROR_CODE_BAD_ARGUMENTS()
 	{
@@ -98,197 +102,197 @@ namespace android::accounts
 			"ERROR_CODE_UNSUPPORTED_OPERATION"
 		);
 	}
-	jstring AccountManager::KEY_ACCOUNTS()
+	JString AccountManager::KEY_ACCOUNTS()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_ACCOUNT_AUTHENTICATOR_RESPONSE()
+	JString AccountManager::KEY_ACCOUNT_AUTHENTICATOR_RESPONSE()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_AUTHENTICATOR_RESPONSE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_ACCOUNT_MANAGER_RESPONSE()
+	JString AccountManager::KEY_ACCOUNT_MANAGER_RESPONSE()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_MANAGER_RESPONSE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_ACCOUNT_NAME()
+	JString AccountManager::KEY_ACCOUNT_NAME()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_ACCOUNT_SESSION_BUNDLE()
+	JString AccountManager::KEY_ACCOUNT_SESSION_BUNDLE()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_SESSION_BUNDLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_ACCOUNT_STATUS_TOKEN()
+	JString AccountManager::KEY_ACCOUNT_STATUS_TOKEN()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_STATUS_TOKEN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_ACCOUNT_TYPE()
+	JString AccountManager::KEY_ACCOUNT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_ANDROID_PACKAGE_NAME()
+	JString AccountManager::KEY_ANDROID_PACKAGE_NAME()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ANDROID_PACKAGE_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_AUTHENTICATOR_TYPES()
+	JString AccountManager::KEY_AUTHENTICATOR_TYPES()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTHENTICATOR_TYPES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_AUTHTOKEN()
+	JString AccountManager::KEY_AUTHTOKEN()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTHTOKEN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_AUTH_FAILED_MESSAGE()
+	JString AccountManager::KEY_AUTH_FAILED_MESSAGE()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTH_FAILED_MESSAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_AUTH_TOKEN_LABEL()
+	JString AccountManager::KEY_AUTH_TOKEN_LABEL()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTH_TOKEN_LABEL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_BOOLEAN_RESULT()
+	JString AccountManager::KEY_BOOLEAN_RESULT()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_BOOLEAN_RESULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_CALLER_PID()
+	JString AccountManager::KEY_CALLER_PID()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_CALLER_PID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_CALLER_UID()
+	JString AccountManager::KEY_CALLER_UID()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_CALLER_UID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_ERROR_CODE()
+	JString AccountManager::KEY_ERROR_CODE()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ERROR_CODE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_ERROR_MESSAGE()
+	JString AccountManager::KEY_ERROR_MESSAGE()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ERROR_MESSAGE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_INTENT()
+	JString AccountManager::KEY_INTENT()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_INTENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_LAST_AUTHENTICATED_TIME()
+	JString AccountManager::KEY_LAST_AUTHENTICATED_TIME()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_LAST_AUTHENTICATED_TIME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_PASSWORD()
+	JString AccountManager::KEY_PASSWORD()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_PASSWORD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::KEY_USERDATA()
+	JString AccountManager::KEY_USERDATA()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_USERDATA",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::LOGIN_ACCOUNTS_CHANGED_ACTION()
+	JString AccountManager::LOGIN_ACCOUNTS_CHANGED_ACTION()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"LOGIN_ACCOUNTS_CHANGED_ACTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::PACKAGE_NAME_KEY_LEGACY_NOT_VISIBLE()
+	JString AccountManager::PACKAGE_NAME_KEY_LEGACY_NOT_VISIBLE()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"PACKAGE_NAME_KEY_LEGACY_NOT_VISIBLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::PACKAGE_NAME_KEY_LEGACY_VISIBLE()
+	JString AccountManager::PACKAGE_NAME_KEY_LEGACY_VISIBLE()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountManager",
 			"PACKAGE_NAME_KEY_LEGACY_VISIBLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint AccountManager::VISIBILITY_NOT_VISIBLE()
 	{
@@ -341,7 +345,7 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	android::content::Intent AccountManager::newChooseAccountIntent(android::accounts::Account arg0, JObject arg1, jarray arg2, jstring arg3, jstring arg4, jarray arg5, android::os::Bundle arg6)
+	android::content::Intent AccountManager::newChooseAccountIntent(android::accounts::Account arg0, JObject arg1, JArray arg2, JString arg3, JString arg4, JArray arg5, android::os::Bundle arg6)
 	{
 		return callStaticObjectMethod(
 			"android.accounts.AccountManager",
@@ -349,14 +353,14 @@ namespace android::accounts
 			"(Landroid/accounts/Account;Ljava/util/List;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3,
-			arg4,
-			arg5,
+			arg2.object<jarray>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
+			arg5.object<jarray>(),
 			arg6.object()
 		);
 	}
-	android::content::Intent AccountManager::newChooseAccountIntent(android::accounts::Account arg0, java::util::ArrayList arg1, jarray arg2, jboolean arg3, jstring arg4, jstring arg5, jarray arg6, android::os::Bundle arg7)
+	android::content::Intent AccountManager::newChooseAccountIntent(android::accounts::Account arg0, java::util::ArrayList arg1, JArray arg2, jboolean arg3, JString arg4, JString arg5, JArray arg6, android::os::Bundle arg7)
 	{
 		return callStaticObjectMethod(
 			"android.accounts.AccountManager",
@@ -364,45 +368,45 @@ namespace android::accounts
 			"(Landroid/accounts/Account;Ljava/util/ArrayList;[Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;",
 			arg0.object(),
 			arg1.object(),
-			arg2,
+			arg2.object<jarray>(),
 			arg3,
-			arg4,
-			arg5,
-			arg6,
+			arg4.object<jstring>(),
+			arg5.object<jstring>(),
+			arg6.object<jarray>(),
 			arg7.object()
 		);
 	}
-	JObject AccountManager::addAccount(jstring arg0, jstring arg1, jarray arg2, android::os::Bundle arg3, android::app::Activity arg4, JObject arg5, android::os::Handler arg6)
+	JObject AccountManager::addAccount(JString arg0, JString arg1, JArray arg2, android::os::Bundle arg3, android::app::Activity arg4, JObject arg5, android::os::Handler arg6)
 	{
 		return callObjectMethod(
 			"addAccount",
 			"(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jarray>(),
 			arg3.object(),
 			arg4.object(),
 			arg5.object(),
 			arg6.object()
 		);
 	}
-	jboolean AccountManager::addAccountExplicitly(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2)
+	jboolean AccountManager::addAccountExplicitly(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2)
 	{
 		return callMethod<jboolean>(
 			"addAccountExplicitly",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
-	jboolean AccountManager::addAccountExplicitly(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, JObject arg3)
+	jboolean AccountManager::addAccountExplicitly(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, JObject arg3)
 	{
 		return callMethod<jboolean>(
 			"addAccountExplicitly",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;Ljava/util/Map;)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
@@ -417,7 +421,7 @@ namespace android::accounts
 			arg2
 		);
 	}
-	void AccountManager::addOnAccountsUpdatedListener(JObject arg0, android::os::Handler arg1, jboolean arg2, jarray arg3)
+	void AccountManager::addOnAccountsUpdatedListener(JObject arg0, android::os::Handler arg1, jboolean arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"addOnAccountsUpdatedListener",
@@ -425,18 +429,18 @@ namespace android::accounts
 			arg0.object(),
 			arg1.object(),
 			arg2,
-			arg3
+			arg3.object<jarray>()
 		);
 	}
-	jstring AccountManager::blockingGetAuthToken(android::accounts::Account arg0, jstring arg1, jboolean arg2)
+	JString AccountManager::blockingGetAuthToken(android::accounts::Account arg0, JString arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"blockingGetAuthToken",
 			"(Landroid/accounts/Account;Ljava/lang/String;Z)Ljava/lang/String;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
-		).object<jstring>();
+		);
 	}
 	void AccountManager::clearPassword(android::accounts::Account arg0)
 	{
@@ -458,12 +462,12 @@ namespace android::accounts
 			arg4.object()
 		);
 	}
-	JObject AccountManager::editProperties(jstring arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::editProperties(JString arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3)
 	{
 		return callObjectMethod(
 			"editProperties",
 			"(Ljava/lang/String;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3.object()
@@ -480,105 +484,105 @@ namespace android::accounts
 			arg3.object()
 		);
 	}
-	jint AccountManager::getAccountVisibility(android::accounts::Account arg0, jstring arg1)
+	jint AccountManager::getAccountVisibility(android::accounts::Account arg0, JString arg1)
 	{
 		return callMethod<jint>(
 			"getAccountVisibility",
 			"(Landroid/accounts/Account;Ljava/lang/String;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jarray AccountManager::getAccounts()
+	JArray AccountManager::getAccounts()
 	{
 		return callObjectMethod(
 			"getAccounts",
 			"()[Landroid/accounts/Account;"
-		).object<jarray>();
+		);
 	}
-	JObject AccountManager::getAccountsAndVisibilityForPackage(jstring arg0, jstring arg1)
+	JObject AccountManager::getAccountsAndVisibilityForPackage(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getAccountsAndVisibilityForPackage",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Map;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	jarray AccountManager::getAccountsByType(jstring arg0)
+	JArray AccountManager::getAccountsByType(JString arg0)
 	{
 		return callObjectMethod(
 			"getAccountsByType",
 			"(Ljava/lang/String;)[Landroid/accounts/Account;",
-			arg0
-		).object<jarray>();
+			arg0.object<jstring>()
+		);
 	}
-	JObject AccountManager::getAccountsByTypeAndFeatures(jstring arg0, jarray arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::getAccountsByTypeAndFeatures(JString arg0, JArray arg1, JObject arg2, android::os::Handler arg3)
 	{
 		return callObjectMethod(
 			"getAccountsByTypeAndFeatures",
 			"(Ljava/lang/String;[Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	jarray AccountManager::getAccountsByTypeForPackage(jstring arg0, jstring arg1)
+	JArray AccountManager::getAccountsByTypeForPackage(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getAccountsByTypeForPackage",
 			"(Ljava/lang/String;Ljava/lang/String;)[Landroid/accounts/Account;",
-			arg0,
-			arg1
-		).object<jarray>();
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
 	}
-	JObject AccountManager::getAuthToken(android::accounts::Account arg0, jstring arg1, jboolean arg2, JObject arg3, android::os::Handler arg4)
+	JObject AccountManager::getAuthToken(android::accounts::Account arg0, JString arg1, jboolean arg2, JObject arg3, android::os::Handler arg4)
 	{
 		return callObjectMethod(
 			"getAuthToken",
 			"(Landroid/accounts/Account;Ljava/lang/String;ZLandroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3.object(),
 			arg4.object()
 		);
 	}
-	JObject AccountManager::getAuthToken(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5)
+	JObject AccountManager::getAuthToken(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5)
 	{
 		return callObjectMethod(
 			"getAuthToken",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object(),
 			arg4.object(),
 			arg5.object()
 		);
 	}
-	JObject AccountManager::getAuthToken(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jboolean arg3, JObject arg4, android::os::Handler arg5)
+	JObject AccountManager::getAuthToken(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, jboolean arg3, JObject arg4, android::os::Handler arg5)
 	{
 		return callObjectMethod(
 			"getAuthToken",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;ZLandroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3,
 			arg4.object(),
 			arg5.object()
 		);
 	}
-	JObject AccountManager::getAuthTokenByFeatures(jstring arg0, jstring arg1, jarray arg2, android::app::Activity arg3, android::os::Bundle arg4, android::os::Bundle arg5, JObject arg6, android::os::Handler arg7)
+	JObject AccountManager::getAuthTokenByFeatures(JString arg0, JString arg1, JArray arg2, android::app::Activity arg3, android::os::Bundle arg4, android::os::Bundle arg5, JObject arg6, android::os::Handler arg7)
 	{
 		return callObjectMethod(
 			"getAuthTokenByFeatures",
 			"(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jarray>(),
 			arg3.object(),
 			arg4.object(),
 			arg5.object(),
@@ -586,12 +590,12 @@ namespace android::accounts
 			arg7.object()
 		);
 	}
-	jarray AccountManager::getAuthenticatorTypes()
+	JArray AccountManager::getAuthenticatorTypes()
 	{
 		return callObjectMethod(
 			"getAuthenticatorTypes",
 			"()[Landroid/accounts/AuthenticatorDescription;"
-		).object<jarray>();
+		);
 	}
 	JObject AccountManager::getPackagesAndVisibilityForAccount(android::accounts::Account arg0)
 	{
@@ -601,58 +605,58 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	jstring AccountManager::getPassword(android::accounts::Account arg0)
+	JString AccountManager::getPassword(android::accounts::Account arg0)
 	{
 		return callObjectMethod(
 			"getPassword",
 			"(Landroid/accounts/Account;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::getPreviousName(android::accounts::Account arg0)
+	JString AccountManager::getPreviousName(android::accounts::Account arg0)
 	{
 		return callObjectMethod(
 			"getPreviousName",
 			"(Landroid/accounts/Account;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring AccountManager::getUserData(android::accounts::Account arg0, jstring arg1)
+	JString AccountManager::getUserData(android::accounts::Account arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"getUserData",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.object(),
-			arg1
-		).object<jstring>();
+			arg1.object<jstring>()
+		);
 	}
-	JObject AccountManager::hasFeatures(android::accounts::Account arg0, jarray arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::hasFeatures(android::accounts::Account arg0, JArray arg1, JObject arg2, android::os::Handler arg3)
 	{
 		return callObjectMethod(
 			"hasFeatures",
 			"(Landroid/accounts/Account;[Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	void AccountManager::invalidateAuthToken(jstring arg0, jstring arg1)
+	void AccountManager::invalidateAuthToken(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"invalidateAuthToken",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	JObject AccountManager::isCredentialsUpdateSuggested(android::accounts::Account arg0, jstring arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::isCredentialsUpdateSuggested(android::accounts::Account arg0, JString arg1, JObject arg2, android::os::Handler arg3)
 	{
 		return callObjectMethod(
 			"isCredentialsUpdateSuggested",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
@@ -665,14 +669,14 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	jstring AccountManager::peekAuthToken(android::accounts::Account arg0, jstring arg1)
+	JString AccountManager::peekAuthToken(android::accounts::Account arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"peekAuthToken",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.object(),
-			arg1
-		).object<jstring>();
+			arg1.object<jstring>()
+		);
 	}
 	JObject AccountManager::removeAccount(android::accounts::Account arg0, JObject arg1, android::os::Handler arg2)
 	{
@@ -711,90 +715,90 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	JObject AccountManager::renameAccount(android::accounts::Account arg0, jstring arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::renameAccount(android::accounts::Account arg0, JString arg1, JObject arg2, android::os::Handler arg3)
 	{
 		return callObjectMethod(
 			"renameAccount",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		);
 	}
-	jboolean AccountManager::setAccountVisibility(android::accounts::Account arg0, jstring arg1, jint arg2)
+	jboolean AccountManager::setAccountVisibility(android::accounts::Account arg0, JString arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"setAccountVisibility",
 			"(Landroid/accounts/Account;Ljava/lang/String;I)Z",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	void AccountManager::setAuthToken(android::accounts::Account arg0, jstring arg1, jstring arg2)
+	void AccountManager::setAuthToken(android::accounts::Account arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setAuthToken",
 			"(Landroid/accounts/Account;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	void AccountManager::setPassword(android::accounts::Account arg0, jstring arg1)
+	void AccountManager::setPassword(android::accounts::Account arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setPassword",
 			"(Landroid/accounts/Account;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void AccountManager::setUserData(android::accounts::Account arg0, jstring arg1, jstring arg2)
+	void AccountManager::setUserData(android::accounts::Account arg0, JString arg1, JString arg2)
 	{
 		callMethod<void>(
 			"setUserData",
 			"(Landroid/accounts/Account;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1,
-			arg2
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	JObject AccountManager::startAddAccountSession(jstring arg0, jstring arg1, jarray arg2, android::os::Bundle arg3, android::app::Activity arg4, JObject arg5, android::os::Handler arg6)
+	JObject AccountManager::startAddAccountSession(JString arg0, JString arg1, JArray arg2, android::os::Bundle arg3, android::app::Activity arg4, JObject arg5, android::os::Handler arg6)
 	{
 		return callObjectMethod(
 			"startAddAccountSession",
 			"(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
-			arg0,
-			arg1,
-			arg2,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jarray>(),
 			arg3.object(),
 			arg4.object(),
 			arg5.object(),
 			arg6.object()
 		);
 	}
-	JObject AccountManager::startUpdateCredentialsSession(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5)
+	JObject AccountManager::startUpdateCredentialsSession(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5)
 	{
 		return callObjectMethod(
 			"startUpdateCredentialsSession",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object(),
 			arg4.object(),
 			arg5.object()
 		);
 	}
-	JObject AccountManager::updateCredentials(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5)
+	JObject AccountManager::updateCredentials(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5)
 	{
 		return callObjectMethod(
 			"updateCredentials",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object(),
 			arg4.object(),

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Preference.hpp"
 #include "./TwoStatePreference.hpp"
 
 namespace android::content

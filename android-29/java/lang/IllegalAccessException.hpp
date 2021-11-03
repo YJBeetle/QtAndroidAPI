@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Exception.hpp"
 #include "./ReflectiveOperationException.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -18,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		IllegalAccessException();
-		IllegalAccessException(jstring arg0);
+		IllegalAccessException(JString arg0);
 		
 		// Methods
 	};

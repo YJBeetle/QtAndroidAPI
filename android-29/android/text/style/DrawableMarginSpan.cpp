@@ -3,6 +3,7 @@
 #include "../../graphics/Paint_FontMetricsInt.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../Layout.hpp"
+#include "../../../JString.hpp"
 #include "./DrawableMarginSpan.hpp"
 
 namespace android::text::style
@@ -28,12 +29,12 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	void DrawableMarginSpan::chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5)
+	void DrawableMarginSpan::chooseHeight(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5)
 	{
 		callMethod<void>(
 			"chooseHeight",
 			"(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -41,7 +42,7 @@ namespace android::text::style
 			arg5.object()
 		);
 	}
-	void DrawableMarginSpan::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11)
+	void DrawableMarginSpan::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11)
 	{
 		callMethod<void>(
 			"drawLeadingMargin",
@@ -53,7 +54,7 @@ namespace android::text::style
 			arg4,
 			arg5,
 			arg6,
-			arg7,
+			arg7.object<jstring>(),
 			arg8,
 			arg9,
 			arg10,

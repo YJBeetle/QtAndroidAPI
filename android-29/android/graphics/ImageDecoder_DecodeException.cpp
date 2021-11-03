@@ -1,4 +1,5 @@
 #include "./ImageDecoder_Source.hpp"
+#include "../../JThrowable.hpp"
 #include "./ImageDecoder_DecodeException.hpp"
 
 namespace android::graphics

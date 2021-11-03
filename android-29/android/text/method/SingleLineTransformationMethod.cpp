@@ -1,3 +1,4 @@
+#include "../../../JCharArray.hpp"
 #include "./SingleLineTransformationMethod.hpp"
 
 namespace android::text::method

@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
 namespace android::bluetooth
 {
 	class BluetoothDevice;
@@ -22,6 +24,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 namespace java::util
 {
 	class UUID;
@@ -33,23 +36,23 @@ namespace android::bluetooth
 	{
 	public:
 		// Fields
-		static jstring ACTION_CONNECTION_STATE_CHANGED();
-		static jstring ACTION_DISCOVERY_FINISHED();
-		static jstring ACTION_DISCOVERY_STARTED();
-		static jstring ACTION_LOCAL_NAME_CHANGED();
-		static jstring ACTION_REQUEST_DISCOVERABLE();
-		static jstring ACTION_REQUEST_ENABLE();
-		static jstring ACTION_SCAN_MODE_CHANGED();
-		static jstring ACTION_STATE_CHANGED();
+		static JString ACTION_CONNECTION_STATE_CHANGED();
+		static JString ACTION_DISCOVERY_FINISHED();
+		static JString ACTION_DISCOVERY_STARTED();
+		static JString ACTION_LOCAL_NAME_CHANGED();
+		static JString ACTION_REQUEST_DISCOVERABLE();
+		static JString ACTION_REQUEST_ENABLE();
+		static JString ACTION_SCAN_MODE_CHANGED();
+		static JString ACTION_STATE_CHANGED();
 		static jint ERROR();
-		static jstring EXTRA_CONNECTION_STATE();
-		static jstring EXTRA_DISCOVERABLE_DURATION();
-		static jstring EXTRA_LOCAL_NAME();
-		static jstring EXTRA_PREVIOUS_CONNECTION_STATE();
-		static jstring EXTRA_PREVIOUS_SCAN_MODE();
-		static jstring EXTRA_PREVIOUS_STATE();
-		static jstring EXTRA_SCAN_MODE();
-		static jstring EXTRA_STATE();
+		static JString EXTRA_CONNECTION_STATE();
+		static JString EXTRA_DISCOVERABLE_DURATION();
+		static JString EXTRA_LOCAL_NAME();
+		static JString EXTRA_PREVIOUS_CONNECTION_STATE();
+		static JString EXTRA_PREVIOUS_SCAN_MODE();
+		static JString EXTRA_PREVIOUS_STATE();
+		static JString EXTRA_SCAN_MODE();
+		static JString EXTRA_STATE();
 		static jint SCAN_MODE_CONNECTABLE();
 		static jint SCAN_MODE_CONNECTABLE_DISCOVERABLE();
 		static jint SCAN_MODE_NONE();
@@ -69,22 +72,22 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		static jboolean checkBluetoothAddress(jstring arg0);
+		static jboolean checkBluetoothAddress(JString arg0);
 		static android::bluetooth::BluetoothAdapter getDefaultAdapter();
 		jboolean cancelDiscovery();
 		void closeProfileProxy(jint arg0, JObject arg1);
 		jboolean disable();
 		jboolean enable();
-		jstring getAddress();
+		JString getAddress();
 		android::bluetooth::le::BluetoothLeAdvertiser getBluetoothLeAdvertiser();
 		android::bluetooth::le::BluetoothLeScanner getBluetoothLeScanner();
 		JObject getBondedDevices();
 		jint getLeMaximumAdvertisingDataLength();
-		jstring getName();
+		JString getName();
 		jint getProfileConnectionState(jint arg0);
 		jboolean getProfileProxy(android::content::Context arg0, JObject arg1, jint arg2);
-		android::bluetooth::BluetoothDevice getRemoteDevice(jbyteArray arg0);
-		android::bluetooth::BluetoothDevice getRemoteDevice(jstring arg0);
+		android::bluetooth::BluetoothDevice getRemoteDevice(JByteArray arg0);
+		android::bluetooth::BluetoothDevice getRemoteDevice(JString arg0);
 		jint getScanMode();
 		jint getState();
 		jboolean isDiscovering();
@@ -97,13 +100,13 @@ namespace android::bluetooth
 		jboolean isOffloadedFilteringSupported();
 		jboolean isOffloadedScanBatchingSupported();
 		android::bluetooth::BluetoothServerSocket listenUsingInsecureL2capChannel();
-		android::bluetooth::BluetoothServerSocket listenUsingInsecureRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1);
+		android::bluetooth::BluetoothServerSocket listenUsingInsecureRfcommWithServiceRecord(JString arg0, java::util::UUID arg1);
 		android::bluetooth::BluetoothServerSocket listenUsingL2capChannel();
-		android::bluetooth::BluetoothServerSocket listenUsingRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1);
-		jboolean setName(jstring arg0);
+		android::bluetooth::BluetoothServerSocket listenUsingRfcommWithServiceRecord(JString arg0, java::util::UUID arg1);
+		jboolean setName(JString arg0);
 		jboolean startDiscovery();
 		jboolean startLeScan(JObject arg0);
-		jboolean startLeScan(jarray arg0, JObject arg1);
+		jboolean startLeScan(JArray arg0, JObject arg1);
 		void stopLeScan(JObject arg0);
 	};
 } // namespace android::bluetooth

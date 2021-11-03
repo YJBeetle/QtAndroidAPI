@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "./AccountsException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::accounts
 {
@@ -18,9 +18,9 @@ namespace android::accounts
 		
 		// Constructors
 		OperationCanceledException();
-		OperationCanceledException(jstring arg0);
-		OperationCanceledException(jthrowable arg0);
-		OperationCanceledException(jstring arg0, jthrowable arg1);
+		OperationCanceledException(JString arg0);
+		OperationCanceledException(JThrowable arg0);
+		OperationCanceledException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

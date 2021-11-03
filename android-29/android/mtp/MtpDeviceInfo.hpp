@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JString;
 
 namespace android::mtp
 {
@@ -17,12 +19,12 @@ namespace android::mtp
 		// Constructors
 		
 		// Methods
-		jintArray getEventsSupported();
-		jstring getManufacturer();
-		jstring getModel();
-		jintArray getOperationsSupported();
-		jstring getSerialNumber();
-		jstring getVersion();
+		JIntArray getEventsSupported();
+		JString getManufacturer();
+		JString getModel();
+		JIntArray getOperationsSupported();
+		JString getSerialNumber();
+		JString getVersion();
 		jboolean isEventSupported(jint arg0);
 		jboolean isOperationSupported(jint arg0);
 	};

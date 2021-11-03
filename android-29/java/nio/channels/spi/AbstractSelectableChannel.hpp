@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-#include "./AbstractInterruptibleChannel.hpp"
 #include "../SelectableChannel.hpp"
 
+class JArray;
+class JObject;
 namespace java::nio::channels
 {
 	class SelectableChannel;
@@ -35,13 +35,13 @@ namespace java::nio::channels::spi
 		// Constructors
 		
 		// Methods
-		jobject blockingLock();
+		JObject blockingLock();
 		java::nio::channels::SelectableChannel configureBlocking(jboolean arg0);
 		jboolean isBlocking();
 		jboolean isRegistered();
 		java::nio::channels::SelectionKey keyFor(java::nio::channels::Selector arg0);
 		java::nio::channels::spi::SelectorProvider provider();
-		java::nio::channels::SelectionKey _register(java::nio::channels::Selector arg0, jint arg1, jobject arg2);
+		java::nio::channels::SelectionKey _register(java::nio::channels::Selector arg0, jint arg1, JObject arg2);
 	};
 } // namespace java::nio::channels::spi
 

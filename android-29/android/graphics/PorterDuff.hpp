@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::graphics
 {
 	class PorterDuff : public JObject

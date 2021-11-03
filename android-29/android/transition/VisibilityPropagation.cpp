@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./TransitionValues.hpp"
 #include "./VisibilityPropagation.hpp"
 
@@ -24,12 +25,12 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	jarray VisibilityPropagation::getPropagationProperties()
+	JArray VisibilityPropagation::getPropagationProperties()
 	{
 		return callObjectMethod(
 			"getPropagationProperties",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jint VisibilityPropagation::getViewVisibility(android::transition::TransitionValues arg0)
 	{

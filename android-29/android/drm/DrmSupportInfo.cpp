@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DrmSupportInfo.hpp"
 
 namespace android::drm
@@ -15,43 +17,43 @@ namespace android::drm
 		) {}
 	
 	// Methods
-	void DrmSupportInfo::addFileSuffix(jstring arg0)
+	void DrmSupportInfo::addFileSuffix(JString arg0)
 	{
 		callMethod<void>(
 			"addFileSuffix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DrmSupportInfo::addMimeType(jstring arg0)
+	void DrmSupportInfo::addMimeType(JString arg0)
 	{
 		callMethod<void>(
 			"addMimeType",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean DrmSupportInfo::equals(jobject arg0)
+	jboolean DrmSupportInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring DrmSupportInfo::getDescriprition()
+	JString DrmSupportInfo::getDescriprition()
 	{
 		return callObjectMethod(
 			"getDescriprition",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DrmSupportInfo::getDescription()
+	JString DrmSupportInfo::getDescription()
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject DrmSupportInfo::getFileSuffixIterator()
 	{
@@ -74,12 +76,12 @@ namespace android::drm
 			"()I"
 		);
 	}
-	void DrmSupportInfo::setDescription(jstring arg0)
+	void DrmSupportInfo::setDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setDescription",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::drm

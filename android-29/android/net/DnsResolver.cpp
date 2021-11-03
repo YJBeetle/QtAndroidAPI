@@ -1,5 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "./Network.hpp"
 #include "../os/CancellationSignal.hpp"
+#include "../../JString.hpp"
 #include "./DnsResolver.hpp"
 
 namespace android::net
@@ -83,26 +85,26 @@ namespace android::net
 			"()Landroid/net/DnsResolver;"
 		);
 	}
-	void DnsResolver::query(android::net::Network arg0, jstring arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5)
+	void DnsResolver::query(android::net::Network arg0, JString arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5)
 	{
 		callMethod<void>(
 			"query",
 			"(Landroid/net/Network;Ljava/lang/String;ILjava/util/concurrent/Executor;Landroid/os/CancellationSignal;Landroid/net/DnsResolver$Callback;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3.object(),
 			arg4.object(),
 			arg5.object()
 		);
 	}
-	void DnsResolver::query(android::net::Network arg0, jstring arg1, jint arg2, jint arg3, JObject arg4, android::os::CancellationSignal arg5, JObject arg6)
+	void DnsResolver::query(android::net::Network arg0, JString arg1, jint arg2, jint arg3, JObject arg4, android::os::CancellationSignal arg5, JObject arg6)
 	{
 		callMethod<void>(
 			"query",
 			"(Landroid/net/Network;Ljava/lang/String;IILjava/util/concurrent/Executor;Landroid/os/CancellationSignal;Landroid/net/DnsResolver$Callback;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4.object(),
@@ -110,26 +112,26 @@ namespace android::net
 			arg6.object()
 		);
 	}
-	void DnsResolver::rawQuery(android::net::Network arg0, jbyteArray arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5)
+	void DnsResolver::rawQuery(android::net::Network arg0, JByteArray arg1, jint arg2, JObject arg3, android::os::CancellationSignal arg4, JObject arg5)
 	{
 		callMethod<void>(
 			"rawQuery",
 			"(Landroid/net/Network;[BILjava/util/concurrent/Executor;Landroid/os/CancellationSignal;Landroid/net/DnsResolver$Callback;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jbyteArray>(),
 			arg2,
 			arg3.object(),
 			arg4.object(),
 			arg5.object()
 		);
 	}
-	void DnsResolver::rawQuery(android::net::Network arg0, jstring arg1, jint arg2, jint arg3, jint arg4, JObject arg5, android::os::CancellationSignal arg6, JObject arg7)
+	void DnsResolver::rawQuery(android::net::Network arg0, JString arg1, jint arg2, jint arg3, jint arg4, JObject arg5, android::os::CancellationSignal arg6, JObject arg7)
 	{
 		callMethod<void>(
 			"rawQuery",
 			"(Landroid/net/Network;Ljava/lang/String;IIILjava/util/concurrent/Executor;Landroid/os/CancellationSignal;Landroid/net/DnsResolver$Callback;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4,

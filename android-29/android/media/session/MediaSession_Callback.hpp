@@ -22,6 +22,7 @@ namespace android::os
 {
 	class ResultReceiver;
 }
+class JString;
 
 namespace android::media::session
 {
@@ -38,18 +39,18 @@ namespace android::media::session
 		MediaSession_Callback();
 		
 		// Methods
-		void onCommand(jstring arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2);
-		void onCustomAction(jstring arg0, android::os::Bundle arg1);
+		void onCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2);
+		void onCustomAction(JString arg0, android::os::Bundle arg1);
 		void onFastForward();
 		jboolean onMediaButtonEvent(android::content::Intent arg0);
 		void onPause();
 		void onPlay();
-		void onPlayFromMediaId(jstring arg0, android::os::Bundle arg1);
-		void onPlayFromSearch(jstring arg0, android::os::Bundle arg1);
+		void onPlayFromMediaId(JString arg0, android::os::Bundle arg1);
+		void onPlayFromSearch(JString arg0, android::os::Bundle arg1);
 		void onPlayFromUri(android::net::Uri arg0, android::os::Bundle arg1);
 		void onPrepare();
-		void onPrepareFromMediaId(jstring arg0, android::os::Bundle arg1);
-		void onPrepareFromSearch(jstring arg0, android::os::Bundle arg1);
+		void onPrepareFromMediaId(JString arg0, android::os::Bundle arg1);
+		void onPrepareFromSearch(JString arg0, android::os::Bundle arg1);
 		void onPrepareFromUri(android::net::Uri arg0, android::os::Bundle arg1);
 		void onRewind();
 		void onSeekTo(jlong arg0);

@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./JsPromptResult.hpp"
 
 namespace android::webkit
@@ -10,12 +11,12 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	void JsPromptResult::confirm(jstring arg0)
+	void JsPromptResult::confirm(JString arg0)
 	{
 		callMethod<void>(
 			"confirm",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::webkit

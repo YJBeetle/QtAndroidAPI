@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::text
 {
@@ -19,7 +20,7 @@ namespace android::text
 		
 		// Methods
 		static android::text::Spannable_Factory getInstance();
-		JObject newSpannable(jstring arg0);
+		JObject newSpannable(JString arg0);
 	};
 } // namespace android::text
 

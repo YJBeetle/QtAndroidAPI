@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::security::spec
 {
@@ -18,9 +18,9 @@ namespace java::security::spec
 		
 		// Constructors
 		InvalidKeySpecException();
-		InvalidKeySpecException(jstring arg0);
-		InvalidKeySpecException(jthrowable arg0);
-		InvalidKeySpecException(jstring arg0, jthrowable arg1);
+		InvalidKeySpecException(JString arg0);
+		InvalidKeySpecException(JThrowable arg0);
+		InvalidKeySpecException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

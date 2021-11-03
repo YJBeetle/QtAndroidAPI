@@ -10,6 +10,7 @@ namespace java::io
 {
 	class Reader;
 }
+class JString;
 
 namespace org::xml::sax
 {
@@ -26,20 +27,20 @@ namespace org::xml::sax
 		InputSource();
 		InputSource(java::io::InputStream arg0);
 		InputSource(java::io::Reader arg0);
-		InputSource(jstring arg0);
+		InputSource(JString arg0);
 		
 		// Methods
 		java::io::InputStream getByteStream();
 		java::io::Reader getCharacterStream();
-		jstring getEncoding();
-		jstring getPublicId();
-		jstring getSystemId();
+		JString getEncoding();
+		JString getPublicId();
+		JString getSystemId();
 		jboolean isEmpty();
 		void setByteStream(java::io::InputStream arg0);
 		void setCharacterStream(java::io::Reader arg0);
-		void setEncoding(jstring arg0);
-		void setPublicId(jstring arg0);
-		void setSystemId(jstring arg0);
+		void setEncoding(JString arg0);
+		void setPublicId(JString arg0);
+		void setSystemId(JString arg0);
 	};
 } // namespace org::xml::sax
 

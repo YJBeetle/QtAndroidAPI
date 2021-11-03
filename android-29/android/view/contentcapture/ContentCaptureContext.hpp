@@ -18,6 +18,7 @@ namespace android::view::contentcapture
 {
 	class ContentCaptureContext_Builder;
 }
+class JString;
 
 namespace android::view::contentcapture
 {
@@ -34,11 +35,11 @@ namespace android::view::contentcapture
 		// Constructors
 		
 		// Methods
-		static android::view::contentcapture::ContentCaptureContext forLocusId(jstring arg0);
+		static android::view::contentcapture::ContentCaptureContext forLocusId(JString arg0);
 		jint describeContents();
 		android::os::Bundle getExtras();
 		android::content::LocusId getLocusId();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::contentcapture

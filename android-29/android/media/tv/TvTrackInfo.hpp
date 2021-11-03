@@ -10,6 +10,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::media::tv
 {
@@ -30,13 +33,13 @@ namespace android::media::tv
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getAudioChannelCount();
 		jint getAudioSampleRate();
-		jstring getDescription();
+		JString getDescription();
 		android::os::Bundle getExtra();
-		jstring getId();
-		jstring getLanguage();
+		JString getId();
+		JString getLanguage();
 		jint getType();
 		jbyte getVideoActiveFormatDescription();
 		jfloat getVideoFrameRate();

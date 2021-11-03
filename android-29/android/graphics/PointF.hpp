@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::graphics
 {
@@ -33,7 +35,7 @@ namespace android::graphics
 		// Methods
 		static jfloat length(jfloat arg0, jfloat arg1);
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jboolean equals(jfloat arg0, jfloat arg1);
 		jint hashCode();
 		jfloat length();
@@ -42,7 +44,7 @@ namespace android::graphics
 		void readFromParcel(android::os::Parcel arg0);
 		void set(android::graphics::PointF arg0);
 		void set(jfloat arg0, jfloat arg1);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::graphics

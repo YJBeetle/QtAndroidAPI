@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./Matrix.hpp"
 #include "./Path_Direction.hpp"
 #include "./Path_FillType.hpp"
@@ -129,13 +130,13 @@ namespace android::graphics
 			arg4.object()
 		);
 	}
-	void Path::addRoundRect(android::graphics::RectF arg0, jfloatArray arg1, android::graphics::Path_Direction arg2)
+	void Path::addRoundRect(android::graphics::RectF arg0, JFloatArray arg1, android::graphics::Path_Direction arg2)
 	{
 		callMethod<void>(
 			"addRoundRect",
 			"(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jfloatArray>(),
 			arg2.object()
 		);
 	}
@@ -150,7 +151,7 @@ namespace android::graphics
 			arg3.object()
 		);
 	}
-	void Path::addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloatArray arg4, android::graphics::Path_Direction arg5)
+	void Path::addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, JFloatArray arg4, android::graphics::Path_Direction arg5)
 	{
 		callMethod<void>(
 			"addRoundRect",
@@ -159,7 +160,7 @@ namespace android::graphics
 			arg1,
 			arg2,
 			arg3,
-			arg4,
+			arg4.object<jfloatArray>(),
 			arg5.object()
 		);
 	}
@@ -177,13 +178,13 @@ namespace android::graphics
 			arg6.object()
 		);
 	}
-	jfloatArray Path::approximate(jfloat arg0)
+	JFloatArray Path::approximate(jfloat arg0)
 	{
 		return callObjectMethod(
 			"approximate",
 			"(F)[F",
 			arg0
-		).object<jfloatArray>();
+		);
 	}
 	void Path::arcTo(android::graphics::RectF arg0, jfloat arg1, jfloat arg2)
 	{

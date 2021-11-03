@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::util
 {
 	class HashMap;
@@ -13,8 +15,8 @@ namespace android::drm
 	{
 	public:
 		// Fields
-		static jstring DRM_INFO_OBJECT();
-		static jstring DRM_INFO_STATUS_OBJECT();
+		static JString DRM_INFO_OBJECT();
+		static JString DRM_INFO_STATUS_OBJECT();
 		static jint TYPE_ALL_RIGHTS_REMOVED();
 		static jint TYPE_DRM_INFO_PROCESSED();
 		
@@ -25,8 +27,8 @@ namespace android::drm
 		// Constructors
 		
 		// Methods
-		jobject getAttribute(jstring arg0);
-		jstring getMessage();
+		JObject getAttribute(JString arg0);
+		JString getMessage();
 		jint getType();
 		jint getUniqueId();
 	};

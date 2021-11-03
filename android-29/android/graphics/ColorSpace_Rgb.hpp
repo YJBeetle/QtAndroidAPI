@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ColorSpace.hpp"
 
+class JFloatArray;
 namespace android::graphics
 {
 	class ColorSpace_Rgb_TransferParameters;
 }
+class JObject;
+class JString;
 
 namespace android::graphics
 {
@@ -20,37 +22,37 @@ namespace android::graphics
 		ColorSpace_Rgb(QAndroidJniObject obj);
 		
 		// Constructors
-		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, android::graphics::ColorSpace_Rgb_TransferParameters arg2);
-		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jdouble arg2);
-		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, android::graphics::ColorSpace_Rgb_TransferParameters arg3);
-		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, jdouble arg3);
-		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, JObject arg2, JObject arg3);
-		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, JObject arg3, JObject arg4, jfloat arg5, jfloat arg6);
+		ColorSpace_Rgb(JString arg0, JFloatArray arg1, android::graphics::ColorSpace_Rgb_TransferParameters arg2);
+		ColorSpace_Rgb(JString arg0, JFloatArray arg1, jdouble arg2);
+		ColorSpace_Rgb(JString arg0, JFloatArray arg1, JFloatArray arg2, android::graphics::ColorSpace_Rgb_TransferParameters arg3);
+		ColorSpace_Rgb(JString arg0, JFloatArray arg1, JFloatArray arg2, jdouble arg3);
+		ColorSpace_Rgb(JString arg0, JFloatArray arg1, JObject arg2, JObject arg3);
+		ColorSpace_Rgb(JString arg0, JFloatArray arg1, JFloatArray arg2, JObject arg3, JObject arg4, jfloat arg5, jfloat arg6);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jfloatArray fromLinear(jfloatArray arg0);
-		jfloatArray fromLinear(jfloat arg0, jfloat arg1, jfloat arg2);
-		jfloatArray fromXyz(jfloatArray arg0);
+		jboolean equals(JObject arg0);
+		JFloatArray fromLinear(JFloatArray arg0);
+		JFloatArray fromLinear(jfloat arg0, jfloat arg1, jfloat arg2);
+		JFloatArray fromXyz(JFloatArray arg0);
 		JObject getEotf();
-		jfloatArray getInverseTransform();
-		jfloatArray getInverseTransform(jfloatArray arg0);
+		JFloatArray getInverseTransform();
+		JFloatArray getInverseTransform(JFloatArray arg0);
 		jfloat getMaxValue(jint arg0);
 		jfloat getMinValue(jint arg0);
 		JObject getOetf();
-		jfloatArray getPrimaries();
-		jfloatArray getPrimaries(jfloatArray arg0);
+		JFloatArray getPrimaries();
+		JFloatArray getPrimaries(JFloatArray arg0);
 		android::graphics::ColorSpace_Rgb_TransferParameters getTransferParameters();
-		jfloatArray getTransform();
-		jfloatArray getTransform(jfloatArray arg0);
-		jfloatArray getWhitePoint();
-		jfloatArray getWhitePoint(jfloatArray arg0);
+		JFloatArray getTransform();
+		JFloatArray getTransform(JFloatArray arg0);
+		JFloatArray getWhitePoint();
+		JFloatArray getWhitePoint(JFloatArray arg0);
 		jint hashCode();
 		jboolean isSrgb();
 		jboolean isWideGamut();
-		jfloatArray toLinear(jfloatArray arg0);
-		jfloatArray toLinear(jfloat arg0, jfloat arg1, jfloat arg2);
-		jfloatArray toXyz(jfloatArray arg0);
+		JFloatArray toLinear(JFloatArray arg0);
+		JFloatArray toLinear(jfloat arg0, jfloat arg1, jfloat arg2);
+		JFloatArray toXyz(JFloatArray arg0);
 	};
 } // namespace android::graphics
 

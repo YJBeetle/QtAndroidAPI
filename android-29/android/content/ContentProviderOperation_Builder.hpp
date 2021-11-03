@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ContentProviderOperation;
@@ -14,6 +15,8 @@ namespace android::net
 {
 	class Uri;
 }
+class JObject;
+class JString;
 
 namespace android::content
 {
@@ -31,10 +34,10 @@ namespace android::content
 		// Methods
 		android::content::ContentProviderOperation build();
 		android::content::ContentProviderOperation_Builder withExpectedCount(jint arg0);
-		android::content::ContentProviderOperation_Builder withSelection(jstring arg0, jarray arg1);
+		android::content::ContentProviderOperation_Builder withSelection(JString arg0, JArray arg1);
 		android::content::ContentProviderOperation_Builder withSelectionBackReference(jint arg0, jint arg1);
-		android::content::ContentProviderOperation_Builder withValue(jstring arg0, jobject arg1);
-		android::content::ContentProviderOperation_Builder withValueBackReference(jstring arg0, jint arg1);
+		android::content::ContentProviderOperation_Builder withValue(JString arg0, JObject arg1);
+		android::content::ContentProviderOperation_Builder withValueBackReference(JString arg0, jint arg1);
 		android::content::ContentProviderOperation_Builder withValueBackReferences(android::content::ContentValues arg0);
 		android::content::ContentProviderOperation_Builder withValues(android::content::ContentValues arg0);
 		android::content::ContentProviderOperation_Builder withYieldAllowed(jboolean arg0);

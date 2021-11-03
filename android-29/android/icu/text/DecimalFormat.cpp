@@ -5,7 +5,10 @@
 #include "../util/Currency.hpp"
 #include "../util/Currency_CurrencyUsage.hpp"
 #include "../util/CurrencyAmount.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/Number.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/lang/StringBuffer.hpp"
 #include "../../../java/math/BigDecimal.hpp"
 #include "../../../java/math/BigInteger.hpp"
@@ -55,44 +58,44 @@ namespace android::icu::text
 			"android.icu.text.DecimalFormat",
 			"()V"
 		) {}
-	DecimalFormat::DecimalFormat(jstring arg0)
+	DecimalFormat::DecimalFormat(JString arg0)
 		: android::icu::text::NumberFormat(
 			"android.icu.text.DecimalFormat",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	DecimalFormat::DecimalFormat(jstring arg0, android::icu::text::DecimalFormatSymbols arg1)
+	DecimalFormat::DecimalFormat(JString arg0, android::icu::text::DecimalFormatSymbols arg1)
 		: android::icu::text::NumberFormat(
 			"android.icu.text.DecimalFormat",
 			"(Ljava/lang/String;Landroid/icu/text/DecimalFormatSymbols;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	DecimalFormat::DecimalFormat(jstring arg0, android::icu::text::DecimalFormatSymbols arg1, android::icu::text::CurrencyPluralInfo arg2, jint arg3)
+	DecimalFormat::DecimalFormat(JString arg0, android::icu::text::DecimalFormatSymbols arg1, android::icu::text::CurrencyPluralInfo arg2, jint arg3)
 		: android::icu::text::NumberFormat(
 			"android.icu.text.DecimalFormat",
 			"(Ljava/lang/String;Landroid/icu/text/DecimalFormatSymbols;Landroid/icu/text/CurrencyPluralInfo;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
 			arg3
 		) {}
 	
 	// Methods
-	void DecimalFormat::applyLocalizedPattern(jstring arg0)
+	void DecimalFormat::applyLocalizedPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyLocalizedPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::applyPattern(jstring arg0)
+	void DecimalFormat::applyPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean DecimalFormat::areSignificantDigitsUsed()
@@ -102,19 +105,19 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	jobject DecimalFormat::clone()
+	JObject DecimalFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean DecimalFormat::equals(jobject arg0)
+	jboolean DecimalFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::lang::StringBuffer DecimalFormat::format(android::icu::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
@@ -177,12 +180,12 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JObject DecimalFormat::formatToCharacterIterator(jobject arg0)
+	JObject DecimalFormat::formatToCharacterIterator(JObject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::icu::util::Currency DecimalFormat::getCurrency()
@@ -297,19 +300,19 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jstring DecimalFormat::getNegativePrefix()
+	JString DecimalFormat::getNegativePrefix()
 	{
 		return callObjectMethod(
 			"getNegativePrefix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DecimalFormat::getNegativeSuffix()
+	JString DecimalFormat::getNegativeSuffix()
 	{
 		return callObjectMethod(
 			"getNegativeSuffix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jchar DecimalFormat::getPadCharacter()
 	{
@@ -332,19 +335,19 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jstring DecimalFormat::getPositivePrefix()
+	JString DecimalFormat::getPositivePrefix()
 	{
 		return callObjectMethod(
 			"getPositivePrefix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DecimalFormat::getPositiveSuffix()
+	JString DecimalFormat::getPositiveSuffix()
 	{
 		return callObjectMethod(
 			"getPositiveSuffix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::math::BigDecimal DecimalFormat::getRoundingIncrement()
 	{
@@ -430,21 +433,21 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	java::lang::Number DecimalFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number DecimalFormat::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::icu::util::CurrencyAmount DecimalFormat::parseCurrency(jstring arg0, java::text::ParsePosition arg1)
+	android::icu::util::CurrencyAmount DecimalFormat::parseCurrency(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parseCurrency",
 			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -608,20 +611,20 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setNegativePrefix(jstring arg0)
+	void DecimalFormat::setNegativePrefix(JString arg0)
 	{
 		callMethod<void>(
 			"setNegativePrefix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setNegativeSuffix(jstring arg0)
+	void DecimalFormat::setNegativeSuffix(JString arg0)
 	{
 		callMethod<void>(
 			"setNegativeSuffix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DecimalFormat::setPadCharacter(jchar arg0)
@@ -672,20 +675,20 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setPositivePrefix(jstring arg0)
+	void DecimalFormat::setPositivePrefix(JString arg0)
 	{
 		callMethod<void>(
 			"setPositivePrefix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setPositiveSuffix(jstring arg0)
+	void DecimalFormat::setPositiveSuffix(JString arg0)
 	{
 		callMethod<void>(
 			"setPositiveSuffix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DecimalFormat::setRoundingIncrement(android::icu::math::BigDecimal arg0)
@@ -744,26 +747,26 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jstring DecimalFormat::toLocalizedPattern()
+	JString DecimalFormat::toLocalizedPattern()
 	{
 		return callObjectMethod(
 			"toLocalizedPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DecimalFormat::toPattern()
+	JString DecimalFormat::toPattern()
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DecimalFormat::toString()
+	JString DecimalFormat::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

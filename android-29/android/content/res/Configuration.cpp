@@ -1,5 +1,7 @@
 #include "../../os/LocaleList.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./Configuration.hpp"
 
@@ -677,12 +679,12 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	jint Configuration::compareTo(jobject arg0)
+	jint Configuration::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Configuration::describeContents()
@@ -708,12 +710,12 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	jboolean Configuration::equals(jobject arg0)
+	jboolean Configuration::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Configuration::getLayoutDirection()
@@ -813,12 +815,12 @@ namespace android::content::res
 			"()V"
 		);
 	}
-	jstring Configuration::toString()
+	JString Configuration::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Configuration::updateFrom(android::content::res::Configuration arg0)
 	{

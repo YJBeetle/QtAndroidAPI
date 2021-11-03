@@ -1,5 +1,6 @@
 #include "./Element.hpp"
 #include "./RenderScript.hpp"
+#include "../../JString.hpp"
 #include "./Element_Builder.hpp"
 
 namespace android::renderscript
@@ -18,22 +19,22 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, jstring arg1)
+	android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"add",
 			"(Landroid/renderscript/Element;Ljava/lang/String;)Landroid/renderscript/Element$Builder;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, jstring arg1, jint arg2)
+	android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, JString arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"add",
 			"(Landroid/renderscript/Element;Ljava/lang/String;I)Landroid/renderscript/Element$Builder;",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		);
 	}

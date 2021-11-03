@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./DynamicsProcessing_EqBand.hpp"
 
 namespace android::media::audiofx
@@ -39,12 +40,12 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jstring DynamicsProcessing_EqBand::toString()
+	JString DynamicsProcessing_EqBand::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::audiofx
 

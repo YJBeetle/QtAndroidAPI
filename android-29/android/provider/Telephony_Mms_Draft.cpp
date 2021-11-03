@@ -1,4 +1,5 @@
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./Telephony_Mms_Draft.hpp"
 
 namespace android::provider
@@ -12,13 +13,13 @@ namespace android::provider
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Telephony_Mms_Draft::DEFAULT_SORT_ORDER()
+	JString Telephony_Mms_Draft::DEFAULT_SORT_ORDER()
 	{
 		return getStaticObjectField(
 			"android.provider.Telephony$Mms$Draft",
 			"DEFAULT_SORT_ORDER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

@@ -1,3 +1,6 @@
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JLongArray.hpp"
 #include "./SweepGradient.hpp"
 
 namespace android::graphics
@@ -8,23 +11,23 @@ namespace android::graphics
 	SweepGradient::SweepGradient(QAndroidJniObject obj) : android::graphics::Shader(obj) {}
 	
 	// Constructors
-	SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, jintArray arg2, jfloatArray arg3)
+	SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, JIntArray arg2, JFloatArray arg3)
 		: android::graphics::Shader(
 			"android.graphics.SweepGradient",
 			"(FF[I[F)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3
+			arg2.object<jintArray>(),
+			arg3.object<jfloatArray>()
 		) {}
-	SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, jlongArray arg2, jfloatArray arg3)
+	SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, JLongArray arg2, JFloatArray arg3)
 		: android::graphics::Shader(
 			"android.graphics.SweepGradient",
 			"(FF[J[F)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3
+			arg2.object<jlongArray>(),
+			arg3.object<jfloatArray>()
 		) {}
 	SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, jint arg2, jint arg3)
 		: android::graphics::Shader(

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 
 namespace android::content
@@ -11,6 +10,7 @@ namespace android::view
 {
 	class ViewGroup_LayoutParams;
 }
+class JString;
 
 namespace android::widget
 {
@@ -31,7 +31,7 @@ namespace android::widget
 		AbsoluteLayout_LayoutParams(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring debug(jstring arg0);
+		JString debug(JString arg0);
 	};
 } // namespace android::widget
 

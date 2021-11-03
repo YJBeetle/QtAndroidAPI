@@ -1,12 +1,14 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Writer.hpp"
 
+class JCharArray;
 namespace java::io
 {
 	class Writer;
 }
+class JString;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -29,16 +31,16 @@ namespace java::io
 		
 		// Methods
 		java::io::StringWriter append(jchar arg0);
-		java::io::StringWriter append(jstring arg0);
-		java::io::StringWriter append(jstring arg0, jint arg1, jint arg2);
+		java::io::StringWriter append(JString arg0);
+		java::io::StringWriter append(JString arg0, jint arg1, jint arg2);
 		void close();
 		void flush();
 		java::lang::StringBuffer getBuffer();
-		jstring toString();
+		JString toString();
 		void write(jint arg0);
-		void write(jstring arg0);
-		void write(jcharArray arg0, jint arg1, jint arg2);
-		void write(jstring arg0, jint arg1, jint arg2);
+		void write(JString arg0);
+		void write(JCharArray arg0, jint arg1, jint arg2);
+		void write(JString arg0, jint arg1, jint arg2);
 	};
 } // namespace java::io
 

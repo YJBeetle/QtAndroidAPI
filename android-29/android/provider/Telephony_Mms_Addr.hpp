@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,11 +10,11 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring ADDRESS();
-		static jstring CHARSET();
-		static jstring CONTACT_ID();
-		static jstring MSG_ID();
-		static jstring TYPE();
+		static JString ADDRESS();
+		static JString CHARSET();
+		static JString CONTACT_ID();
+		static JString MSG_ID();
+		static JString TYPE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Telephony_Mms_Addr(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

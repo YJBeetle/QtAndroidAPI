@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./MediaMetadataEditor.hpp"
 
 namespace android::media

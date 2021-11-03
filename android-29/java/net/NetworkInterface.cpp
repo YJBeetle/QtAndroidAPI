@@ -1,3 +1,10 @@
+#include "../../JByteArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./InetAddress.hpp"
 #include "./NetworkInterface.hpp"
 
@@ -29,13 +36,13 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::net::NetworkInterface NetworkInterface::getByName(jstring arg0)
+	java::net::NetworkInterface NetworkInterface::getByName(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.NetworkInterface",
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/NetworkInterface;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject NetworkInterface::getNetworkInterfaces()
@@ -54,27 +61,27 @@ namespace java::net
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	jboolean NetworkInterface::equals(jobject arg0)
+	jboolean NetworkInterface::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring NetworkInterface::getDisplayName()
+	JString NetworkInterface::getDisplayName()
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray NetworkInterface::getHardwareAddress()
+	JByteArray NetworkInterface::getHardwareAddress()
 	{
 		return callObjectMethod(
 			"getHardwareAddress",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint NetworkInterface::getIndex()
 	{
@@ -104,12 +111,12 @@ namespace java::net
 			"()I"
 		);
 	}
-	jstring NetworkInterface::getName()
+	JString NetworkInterface::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::net::NetworkInterface NetworkInterface::getParent()
 	{
@@ -181,12 +188,12 @@ namespace java::net
 			"()Z"
 		);
 	}
-	jstring NetworkInterface::toString()
+	JString NetworkInterface::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::net
 

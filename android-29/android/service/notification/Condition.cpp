@@ -2,6 +2,8 @@
 #include "../../net/Uri.hpp"
 #include "../../net/Uri_Builder.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./Condition.hpp"
 
 namespace android::service::notification
@@ -29,13 +31,13 @@ namespace android::service::notification
 			"FLAG_RELEVANT_NOW"
 		);
 	}
-	jstring Condition::SCHEME()
+	JString Condition::SCHEME()
 	{
 		return getStaticObjectField(
 			"android.service.notification.Condition",
 			"SCHEME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Condition::STATE_ERROR()
 	{
@@ -84,19 +86,19 @@ namespace android::service::notification
 			"Landroid/net/Uri;"
 		);
 	}
-	jstring Condition::line1()
+	JString Condition::line1()
 	{
 		return getObjectField(
 			"line1",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Condition::line2()
+	JString Condition::line2()
 	{
 		return getObjectField(
 			"line2",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Condition::state()
 	{
@@ -104,12 +106,12 @@ namespace android::service::notification
 			"state"
 		);
 	}
-	jstring Condition::summary()
+	JString Condition::summary()
 	{
 		return getObjectField(
 			"summary",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -122,36 +124,36 @@ namespace android::service::notification
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	Condition::Condition(android::net::Uri arg0, jstring arg1, jint arg2)
+	Condition::Condition(android::net::Uri arg0, JString arg1, jint arg2)
 		: JObject(
 			"android.service.notification.Condition",
 			"(Landroid/net/Uri;Ljava/lang/String;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		) {}
-	Condition::Condition(android::net::Uri arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4, jint arg5, jint arg6)
+	Condition::Condition(android::net::Uri arg0, JString arg1, JString arg2, JString arg3, jint arg4, jint arg5, jint arg6)
 		: JObject(
 			"android.service.notification.Condition",
 			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)V",
 			arg0.object(),
-			arg1,
-			arg2,
-			arg3,
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
 			arg4,
 			arg5,
 			arg6
 		) {}
 	
 	// Methods
-	jboolean Condition::isValidId(android::net::Uri arg0, jstring arg1)
+	jboolean Condition::isValidId(android::net::Uri arg0, JString arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.service.notification.Condition",
 			"isValidId",
 			"(Landroid/net/Uri;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::net::Uri_Builder Condition::newId(android::content::Context arg0)
@@ -163,23 +165,23 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	jstring Condition::relevanceToString(jint arg0)
+	JString Condition::relevanceToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.service.notification.Condition",
 			"relevanceToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Condition::stateToString(jint arg0)
+	JString Condition::stateToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.service.notification.Condition",
 			"stateToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::service::notification::Condition Condition::copy()
 	{
@@ -195,12 +197,12 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	jboolean Condition::equals(jobject arg0)
+	jboolean Condition::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Condition::hashCode()
@@ -210,12 +212,12 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	jstring Condition::toString()
+	JString Condition::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Condition::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

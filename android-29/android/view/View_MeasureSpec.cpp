@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./View_MeasureSpec.hpp"
 
 namespace android::view
@@ -64,14 +65,14 @@ namespace android::view
 			arg1
 		);
 	}
-	jstring View_MeasureSpec::toString(jint arg0)
+	JString View_MeasureSpec::toString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.View$MeasureSpec",
 			"toString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 } // namespace android::view
 

@@ -1,4 +1,5 @@
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
 #include "./BroadcastReceiver_PendingResult.hpp"
 
 namespace android::content
@@ -46,12 +47,12 @@ namespace android::content
 			"()I"
 		);
 	}
-	jstring BroadcastReceiver_PendingResult::getResultData()
+	JString BroadcastReceiver_PendingResult::getResultData()
 	{
 		return callObjectMethod(
 			"getResultData",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle BroadcastReceiver_PendingResult::getResultExtras(jboolean arg0)
 	{
@@ -61,13 +62,13 @@ namespace android::content
 			arg0
 		);
 	}
-	void BroadcastReceiver_PendingResult::setResult(jint arg0, jstring arg1, android::os::Bundle arg2)
+	void BroadcastReceiver_PendingResult::setResult(jint arg0, JString arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"setResult",
 			"(ILjava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		);
 	}
@@ -79,12 +80,12 @@ namespace android::content
 			arg0
 		);
 	}
-	void BroadcastReceiver_PendingResult::setResultData(jstring arg0)
+	void BroadcastReceiver_PendingResult::setResultData(JString arg0)
 	{
 		callMethod<void>(
 			"setResultData",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void BroadcastReceiver_PendingResult::setResultExtras(android::os::Bundle arg0)

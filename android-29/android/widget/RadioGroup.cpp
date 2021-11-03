@@ -4,6 +4,7 @@
 #include "../view/autofill/AutofillValue.hpp"
 #include "./LinearLayout_LayoutParams.hpp"
 #include "./RadioGroup_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./RadioGroup.hpp"
 
 namespace android::widget
@@ -70,12 +71,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring RadioGroup::getAccessibilityClassName()
+	JString RadioGroup::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint RadioGroup::getAutofillType()
 	{

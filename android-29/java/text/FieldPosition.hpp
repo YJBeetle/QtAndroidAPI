@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 namespace java::text
 {
 	class Format_Field;
@@ -24,7 +26,7 @@ namespace java::text
 		FieldPosition(java::text::Format_Field arg0, jint arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getBeginIndex();
 		jint getEndIndex();
 		jint getField();
@@ -32,7 +34,7 @@ namespace java::text
 		jint hashCode();
 		void setBeginIndex(jint arg0);
 		void setEndIndex(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::text
 

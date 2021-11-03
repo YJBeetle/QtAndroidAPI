@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+class JByteArray;
 namespace android::content
 {
 	class Intent;
@@ -13,6 +11,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::nfc::cardemulation
 {
@@ -22,8 +21,8 @@ namespace android::nfc::cardemulation
 		// Fields
 		static jint DEACTIVATION_DESELECTED();
 		static jint DEACTIVATION_LINK_LOSS();
-		static jstring SERVICE_INTERFACE();
-		static jstring SERVICE_META_DATA();
+		static JString SERVICE_INTERFACE();
+		static JString SERVICE_META_DATA();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HostApduService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -36,8 +35,8 @@ namespace android::nfc::cardemulation
 		void notifyUnhandled();
 		JObject onBind(android::content::Intent arg0);
 		void onDeactivated(jint arg0);
-		jbyteArray processCommandApdu(jbyteArray arg0, android::os::Bundle arg1);
-		void sendResponseApdu(jbyteArray arg0);
+		JByteArray processCommandApdu(JByteArray arg0, android::os::Bundle arg1);
+		void sendResponseApdu(JByteArray arg0);
 	};
 } // namespace android::nfc::cardemulation
 

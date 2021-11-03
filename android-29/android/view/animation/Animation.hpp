@@ -10,6 +10,7 @@ namespace android::view::animation
 {
 	class Transformation;
 }
+class JObject;
 
 namespace android::view::animation
 {

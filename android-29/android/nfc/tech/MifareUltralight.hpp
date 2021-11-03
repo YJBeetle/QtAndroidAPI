@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::nfc
 {
 	class Tag;
@@ -33,10 +34,10 @@ namespace android::nfc::tech
 		jint getTimeout();
 		jint getType();
 		jboolean isConnected();
-		jbyteArray readPages(jint arg0);
+		JByteArray readPages(jint arg0);
 		void setTimeout(jint arg0);
-		jbyteArray transceive(jbyteArray arg0);
-		void writePage(jint arg0, jbyteArray arg1);
+		JByteArray transceive(JByteArray arg0);
+		void writePage(jint arg0, JByteArray arg1);
 	};
 } // namespace android::nfc::tech
 

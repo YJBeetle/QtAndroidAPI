@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./WifiManager_WpsCallback.hpp"
 
 namespace android::net::wifi
@@ -23,12 +24,12 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	void WifiManager_WpsCallback::onStarted(jstring arg0)
+	void WifiManager_WpsCallback::onStarted(JString arg0)
 	{
 		callMethod<void>(
 			"onStarted",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void WifiManager_WpsCallback::onSucceeded()

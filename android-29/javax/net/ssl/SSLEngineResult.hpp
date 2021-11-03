@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace javax::net::ssl
 {
 	class SSLEngineResult_HandshakeStatus;
@@ -32,7 +33,7 @@ namespace javax::net::ssl
 		javax::net::ssl::SSLEngineResult_HandshakeStatus getHandshakeStatus();
 		javax::net::ssl::SSLEngineResult_Status getStatus();
 		jlong sequenceNumber();
-		jstring toString();
+		JString toString();
 	};
 } // namespace javax::net::ssl
 

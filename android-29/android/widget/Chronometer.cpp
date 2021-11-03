@@ -1,5 +1,7 @@
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./Chronometer.hpp"
 
 namespace android::widget
@@ -42,12 +44,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring Chronometer::getAccessibilityClassName()
+	JString Chronometer::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jlong Chronometer::getBase()
 	{
@@ -56,19 +58,19 @@ namespace android::widget
 			"()J"
 		);
 	}
-	jstring Chronometer::getContentDescription()
+	JString Chronometer::getContentDescription()
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring Chronometer::getFormat()
+	JString Chronometer::getFormat()
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject Chronometer::getOnChronometerTickListener()
 	{
@@ -107,12 +109,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Chronometer::setFormat(jstring arg0)
+	void Chronometer::setFormat(JString arg0)
 	{
 		callMethod<void>(
 			"setFormat",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void Chronometer::setOnChronometerTickListener(JObject arg0)

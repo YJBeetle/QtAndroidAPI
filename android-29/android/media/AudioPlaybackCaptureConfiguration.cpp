@@ -1,3 +1,4 @@
+#include "../../JIntArray.hpp"
 #include "./projection/MediaProjection.hpp"
 #include "./AudioPlaybackCaptureConfiguration.hpp"
 
@@ -11,33 +12,33 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jintArray AudioPlaybackCaptureConfiguration::getExcludeUids()
+	JIntArray AudioPlaybackCaptureConfiguration::getExcludeUids()
 	{
 		return callObjectMethod(
 			"getExcludeUids",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray AudioPlaybackCaptureConfiguration::getExcludeUsages()
+	JIntArray AudioPlaybackCaptureConfiguration::getExcludeUsages()
 	{
 		return callObjectMethod(
 			"getExcludeUsages",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray AudioPlaybackCaptureConfiguration::getMatchingUids()
+	JIntArray AudioPlaybackCaptureConfiguration::getMatchingUids()
 	{
 		return callObjectMethod(
 			"getMatchingUids",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
-	jintArray AudioPlaybackCaptureConfiguration::getMatchingUsages()
+	JIntArray AudioPlaybackCaptureConfiguration::getMatchingUsages()
 	{
 		return callObjectMethod(
 			"getMatchingUsages",
 			"()[I"
-		).object<jintArray>();
+		);
 	}
 	android::media::projection::MediaProjection AudioPlaybackCaptureConfiguration::getMediaProjection()
 	{

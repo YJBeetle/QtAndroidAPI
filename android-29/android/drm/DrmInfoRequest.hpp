@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::drm
 {
@@ -9,8 +11,8 @@ namespace android::drm
 	{
 	public:
 		// Fields
-		static jstring ACCOUNT_ID();
-		static jstring SUBSCRIPTION_ID();
+		static JString ACCOUNT_ID();
+		static JString SUBSCRIPTION_ID();
 		static jint TYPE_REGISTRATION_INFO();
 		static jint TYPE_RIGHTS_ACQUISITION_INFO();
 		static jint TYPE_RIGHTS_ACQUISITION_PROGRESS_INFO();
@@ -21,15 +23,15 @@ namespace android::drm
 		DrmInfoRequest(QAndroidJniObject obj);
 		
 		// Constructors
-		DrmInfoRequest(jint arg0, jstring arg1);
+		DrmInfoRequest(jint arg0, JString arg1);
 		
 		// Methods
-		jobject get(jstring arg0);
+		JObject get(JString arg0);
 		jint getInfoType();
-		jstring getMimeType();
+		JString getMimeType();
 		JObject iterator();
 		JObject keyIterator();
-		void put(jstring arg0, jobject arg1);
+		void put(JString arg0, JObject arg1);
 	};
 } // namespace android::drm
 

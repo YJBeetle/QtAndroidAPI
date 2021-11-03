@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../util/Date.hpp"
 
+class JObject;
+class JString;
 namespace java::time
 {
 	class Instant;
@@ -33,14 +34,14 @@ namespace java::sql
 		
 		// Methods
 		static java::sql::Timestamp from(java::time::Instant arg0);
-		static java::sql::Timestamp valueOf(jstring arg0);
+		static java::sql::Timestamp valueOf(JString arg0);
 		static java::sql::Timestamp valueOf(java::time::LocalDateTime arg0);
 		jboolean after(java::sql::Timestamp arg0);
 		jboolean before(java::sql::Timestamp arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(java::sql::Timestamp arg0);
 		jint compareTo(java::util::Date arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jboolean equals(java::sql::Timestamp arg0);
 		jint getNanos();
 		jlong getTime();
@@ -49,7 +50,7 @@ namespace java::sql
 		void setTime(jlong arg0);
 		java::time::Instant toInstant();
 		java::time::LocalDateTime toLocalDateTime();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::sql
 

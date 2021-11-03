@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./WebSettings_LayoutAlgorithm.hpp"
 
 namespace android::webkit
@@ -42,22 +44,22 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::valueOf(jstring arg0)
+	android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$LayoutAlgorithm;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray WebSettings_LayoutAlgorithm::values()
+	JArray WebSettings_LayoutAlgorithm::values()
 	{
 		return callStaticObjectMethod(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"values",
 			"()[Landroid/webkit/WebSettings$LayoutAlgorithm;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::webkit
 

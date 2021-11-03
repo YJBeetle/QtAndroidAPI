@@ -1,17 +1,18 @@
 #include "../content/Context.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./BlockedNumberContract.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring BlockedNumberContract::AUTHORITY()
+	JString BlockedNumberContract::AUTHORITY()
 	{
 		return getStaticObjectField(
 			"android.provider.BlockedNumberContract",
 			"AUTHORITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri BlockedNumberContract::AUTHORITY_URI()
 	{
@@ -37,24 +38,24 @@ namespace android::provider
 			arg0.object()
 		);
 	}
-	jboolean BlockedNumberContract::isBlocked(android::content::Context arg0, jstring arg1)
+	jboolean BlockedNumberContract::isBlocked(android::content::Context arg0, JString arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.provider.BlockedNumberContract",
 			"isBlocked",
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jint BlockedNumberContract::unblock(android::content::Context arg0, jstring arg1)
+	jint BlockedNumberContract::unblock(android::content::Context arg0, JString arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.provider.BlockedNumberContract",
 			"unblock",
 			"(Landroid/content/Context;Ljava/lang/String;)I",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::provider

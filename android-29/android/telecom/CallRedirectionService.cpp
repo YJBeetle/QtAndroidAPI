@@ -1,18 +1,19 @@
 #include "../content/Intent.hpp"
 #include "../net/Uri.hpp"
 #include "./PhoneAccountHandle.hpp"
+#include "../../JString.hpp"
 #include "./CallRedirectionService.hpp"
 
 namespace android::telecom
 {
 	// Fields
-	jstring CallRedirectionService::SERVICE_INTERFACE()
+	JString CallRedirectionService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.telecom.CallRedirectionService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

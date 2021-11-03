@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./AbstractExecutorService.hpp"
 #include "./ThreadPoolExecutor.hpp"
 
+class JObject;
 namespace java::util::concurrent
 {
 	class TimeUnit;
@@ -44,7 +43,7 @@ namespace java::util::concurrent
 		void shutdown();
 		JObject shutdownNow();
 		JObject submit(JObject arg0);
-		JObject submit(JObject arg0, jobject arg1);
+		JObject submit(JObject arg0, JObject arg1);
 	};
 } // namespace java::util::concurrent
 

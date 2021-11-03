@@ -1,4 +1,6 @@
+#include "../../JIntArray.hpp"
 #include "./Animator.hpp"
+#include "../../JObject.hpp"
 #include "./StateListAnimator.hpp"
 
 namespace android::animation
@@ -16,12 +18,12 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	void StateListAnimator::addState(jintArray arg0, android::animation::Animator arg1)
+	void StateListAnimator::addState(JIntArray arg0, android::animation::Animator arg1)
 	{
 		callMethod<void>(
 			"addState",
 			"([ILandroid/animation/Animator;)V",
-			arg0,
+			arg0.object<jintArray>(),
 			arg1.object()
 		);
 	}

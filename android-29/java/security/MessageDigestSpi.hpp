@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -22,7 +24,7 @@ namespace java::security
 		MessageDigestSpi();
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 	};
 } // namespace java::security
 

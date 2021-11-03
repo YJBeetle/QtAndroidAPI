@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JString;
 namespace java::security
 {
 	class AlgorithmParameters;
@@ -31,18 +33,18 @@ namespace javax::crypto
 		EncryptedPrivateKeyInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		EncryptedPrivateKeyInfo(jbyteArray arg0);
-		EncryptedPrivateKeyInfo(jstring arg0, jbyteArray arg1);
-		EncryptedPrivateKeyInfo(java::security::AlgorithmParameters arg0, jbyteArray arg1);
+		EncryptedPrivateKeyInfo(JByteArray arg0);
+		EncryptedPrivateKeyInfo(JString arg0, JByteArray arg1);
+		EncryptedPrivateKeyInfo(java::security::AlgorithmParameters arg0, JByteArray arg1);
 		
 		// Methods
-		jstring getAlgName();
+		JString getAlgName();
 		java::security::AlgorithmParameters getAlgParameters();
-		jbyteArray getEncoded();
-		jbyteArray getEncryptedData();
+		JByteArray getEncoded();
+		JByteArray getEncryptedData();
 		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0);
 		java::security::spec::PKCS8EncodedKeySpec getKeySpec(javax::crypto::Cipher arg0);
-		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0, jstring arg1);
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0, JString arg1);
 		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0, java::security::Provider arg1);
 	};
 } // namespace javax::crypto

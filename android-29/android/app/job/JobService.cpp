@@ -1,17 +1,18 @@
 #include "./JobParameters.hpp"
 #include "../../content/Intent.hpp"
+#include "../../../JString.hpp"
 #include "./JobService.hpp"
 
 namespace android::app::job
 {
 	// Fields
-	jstring JobService::PERMISSION_BIND()
+	JString JobService::PERMISSION_BIND()
 	{
 		return getStaticObjectField(
 			"android.app.job.JobService",
 			"PERMISSION_BIND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

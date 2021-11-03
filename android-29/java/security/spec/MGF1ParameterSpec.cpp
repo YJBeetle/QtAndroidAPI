@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./MGF1ParameterSpec.hpp"
 
 namespace java::security::spec
@@ -96,27 +97,27 @@ namespace java::security::spec
 	MGF1ParameterSpec::MGF1ParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	MGF1ParameterSpec::MGF1ParameterSpec(jstring arg0)
+	MGF1ParameterSpec::MGF1ParameterSpec(JString arg0)
 		: JObject(
 			"java.security.spec.MGF1ParameterSpec",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring MGF1ParameterSpec::getDigestAlgorithm()
+	JString MGF1ParameterSpec::getDigestAlgorithm()
 	{
 		return callObjectMethod(
 			"getDigestAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MGF1ParameterSpec::toString()
+	JString MGF1ParameterSpec::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::spec
 

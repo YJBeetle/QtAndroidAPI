@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./CallSite.hpp"
 
 namespace java::lang::invoke

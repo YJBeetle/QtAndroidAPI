@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./OperationCanceledException.hpp"
 
 namespace android::accounts
@@ -13,24 +15,24 @@ namespace android::accounts
 			"android.accounts.OperationCanceledException",
 			"()V"
 		) {}
-	OperationCanceledException::OperationCanceledException(jstring arg0)
+	OperationCanceledException::OperationCanceledException(JString arg0)
 		: android::accounts::AccountsException(
 			"android.accounts.OperationCanceledException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	OperationCanceledException::OperationCanceledException(jthrowable arg0)
+	OperationCanceledException::OperationCanceledException(JThrowable arg0)
 		: android::accounts::AccountsException(
 			"android.accounts.OperationCanceledException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	OperationCanceledException::OperationCanceledException(jstring arg0, jthrowable arg1)
+	OperationCanceledException::OperationCanceledException(JString arg0, JThrowable arg1)
 		: android::accounts::AccountsException(
 			"android.accounts.OperationCanceledException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

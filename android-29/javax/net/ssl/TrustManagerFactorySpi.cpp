@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../../java/security/KeyStore.hpp"
 #include "./TrustManagerFactorySpi.hpp"
 

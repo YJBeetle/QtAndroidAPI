@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./BaseAdapter.hpp"
 #include "./CursorAdapter.hpp"
 
 namespace android::content

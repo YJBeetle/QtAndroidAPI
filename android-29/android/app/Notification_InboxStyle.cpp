@@ -1,4 +1,5 @@
 #include "./Notification_Builder.hpp"
+#include "../../JString.hpp"
 #include "./Notification_InboxStyle.hpp"
 
 namespace android::app
@@ -22,28 +23,28 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_InboxStyle Notification_InboxStyle::addLine(jstring arg0)
+	android::app::Notification_InboxStyle Notification_InboxStyle::addLine(JString arg0)
 	{
 		return callObjectMethod(
 			"addLine",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_InboxStyle Notification_InboxStyle::setBigContentTitle(jstring arg0)
+	android::app::Notification_InboxStyle Notification_InboxStyle::setBigContentTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setBigContentTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_InboxStyle Notification_InboxStyle::setSummaryText(jstring arg0)
+	android::app::Notification_InboxStyle Notification_InboxStyle::setSummaryText(JString arg0)
 	{
 		return callObjectMethod(
 			"setSummaryText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::app

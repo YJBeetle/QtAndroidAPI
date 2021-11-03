@@ -1,4 +1,5 @@
 #include "./ConsoleMessage_MessageLevel.hpp"
+#include "../../JString.hpp"
 #include "./ConsoleMessage.hpp"
 
 namespace android::webkit
@@ -9,12 +10,12 @@ namespace android::webkit
 	ConsoleMessage::ConsoleMessage(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ConsoleMessage::ConsoleMessage(jstring arg0, jstring arg1, jint arg2, android::webkit::ConsoleMessage_MessageLevel arg3)
+	ConsoleMessage::ConsoleMessage(JString arg0, JString arg1, jint arg2, android::webkit::ConsoleMessage_MessageLevel arg3)
 		: JObject(
 			"android.webkit.ConsoleMessage",
 			"(Ljava/lang/String;Ljava/lang/String;ILandroid/webkit/ConsoleMessage$MessageLevel;)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3.object()
 		) {}
@@ -27,12 +28,12 @@ namespace android::webkit
 			"()I"
 		);
 	}
-	jstring ConsoleMessage::message()
+	JString ConsoleMessage::message()
 	{
 		return callObjectMethod(
 			"message",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage::messageLevel()
 	{
@@ -41,12 +42,12 @@ namespace android::webkit
 			"()Landroid/webkit/ConsoleMessage$MessageLevel;"
 		);
 	}
-	jstring ConsoleMessage::sourceId()
+	JString ConsoleMessage::sourceId()
 	{
 		return callObjectMethod(
 			"sourceId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::webkit
 

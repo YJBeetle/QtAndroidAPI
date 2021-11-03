@@ -1,6 +1,8 @@
 #include "./PlaybackState.hpp"
 #include "./PlaybackState_CustomAction.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./PlaybackState_Builder.hpp"
 
 namespace android::media::session
@@ -32,13 +34,13 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::addCustomAction(jstring arg0, jstring arg1, jint arg2)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::addCustomAction(JString arg0, JString arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"addCustomAction",
 			"(Ljava/lang/String;Ljava/lang/String;I)Landroid/media/session/PlaybackState$Builder;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
@@ -73,12 +75,12 @@ namespace android::media::session
 			arg0
 		);
 	}
-	android::media::session::PlaybackState_Builder PlaybackState_Builder::setErrorMessage(jstring arg0)
+	android::media::session::PlaybackState_Builder PlaybackState_Builder::setErrorMessage(JString arg0)
 	{
 		return callObjectMethod(
 			"setErrorMessage",
 			"(Ljava/lang/CharSequence;)Landroid/media/session/PlaybackState$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::session::PlaybackState_Builder PlaybackState_Builder::setExtras(android::os::Bundle arg0)

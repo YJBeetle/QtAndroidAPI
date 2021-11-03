@@ -1,4 +1,5 @@
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ActivityManager_RecentTaskInfo.hpp"
 
 namespace android::app
@@ -18,12 +19,12 @@ namespace android::app
 			"affiliatedTaskId"
 		);
 	}
-	jstring ActivityManager_RecentTaskInfo::description()
+	JString ActivityManager_RecentTaskInfo::description()
 	{
 		return getObjectField(
 			"description",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityManager_RecentTaskInfo::id()
 	{

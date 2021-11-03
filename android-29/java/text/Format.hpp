@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -33,12 +36,12 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		jobject clone();
-		jstring format(jobject arg0);
-		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		JObject formatToCharacterIterator(jobject arg0);
-		jobject parseObject(jstring arg0);
-		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
+		JObject clone();
+		JString format(JObject arg0);
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		JObject formatToCharacterIterator(JObject arg0);
+		JObject parseObject(JString arg0);
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
 	};
 } // namespace java::text
 

@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../ByteBuffer.hpp"
 #include "../MappedByteBuffer.hpp"
 #include "./FileChannel_MapMode.hpp"
@@ -14,17 +17,17 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	java::nio::channels::FileChannel FileChannel::open(JObject arg0, jarray arg1)
+	java::nio::channels::FileChannel FileChannel::open(JObject arg0, JArray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.FileChannel",
 			"open",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/FileChannel;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	java::nio::channels::FileChannel FileChannel::open(JObject arg0, JObject arg1, jarray arg2)
+	java::nio::channels::FileChannel FileChannel::open(JObject arg0, JObject arg1, JArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.FileChannel",
@@ -32,7 +35,7 @@ namespace java::nio::channels
 			"(Ljava/nio/file/Path;Ljava/util/Set;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/FileChannel;",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jarray>()
 		);
 	}
 	void FileChannel::force(jboolean arg0)
@@ -102,20 +105,20 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	jlong FileChannel::read(jarray arg0)
+	jlong FileChannel::read(JArray arg0)
 	{
 		return callMethod<jlong>(
 			"read",
 			"([Ljava/nio/ByteBuffer;)J",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	jlong FileChannel::read(jarray arg0, jint arg1, jint arg2)
+	jlong FileChannel::read(JArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jlong>(
 			"read",
 			"([Ljava/nio/ByteBuffer;II)J",
-			arg0,
+			arg0.object<jarray>(),
 			arg1,
 			arg2
 		);
@@ -189,20 +192,20 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	jlong FileChannel::write(jarray arg0)
+	jlong FileChannel::write(JArray arg0)
 	{
 		return callMethod<jlong>(
 			"write",
 			"([Ljava/nio/ByteBuffer;)J",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	jlong FileChannel::write(jarray arg0, jint arg1, jint arg2)
+	jlong FileChannel::write(JArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jlong>(
 			"write",
 			"([Ljava/nio/ByteBuffer;II)J",
-			arg0,
+			arg0.object<jarray>(),
 			arg1,
 			arg2
 		);

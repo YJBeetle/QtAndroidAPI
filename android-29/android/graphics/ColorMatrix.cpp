@@ -1,3 +1,5 @@
+#include "../../JFloatArray.hpp"
+#include "../../JObject.hpp"
 #include "./ColorMatrix.hpp"
 
 namespace android::graphics
@@ -13,11 +15,11 @@ namespace android::graphics
 			"android.graphics.ColorMatrix",
 			"()V"
 		) {}
-	ColorMatrix::ColorMatrix(jfloatArray arg0)
+	ColorMatrix::ColorMatrix(JFloatArray arg0)
 		: JObject(
 			"android.graphics.ColorMatrix",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		) {}
 	ColorMatrix::ColorMatrix(android::graphics::ColorMatrix &arg0)
 		: JObject(
@@ -27,20 +29,20 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean ColorMatrix::equals(jobject arg0)
+	jboolean ColorMatrix::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jfloatArray ColorMatrix::getArray()
+	JFloatArray ColorMatrix::getArray()
 	{
 		return callObjectMethod(
 			"getArray",
 			"()[F"
-		).object<jfloatArray>();
+		);
 	}
 	void ColorMatrix::postConcat(android::graphics::ColorMatrix arg0)
 	{
@@ -65,12 +67,12 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	void ColorMatrix::set(jfloatArray arg0)
+	void ColorMatrix::set(JFloatArray arg0)
 	{
 		callMethod<void>(
 			"set",
 			"([F)V",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
 	void ColorMatrix::set(android::graphics::ColorMatrix arg0)

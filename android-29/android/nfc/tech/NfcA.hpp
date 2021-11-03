@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace android::nfc
 {
 	class Tag;
@@ -24,14 +25,14 @@ namespace android::nfc::tech
 		static android::nfc::tech::NfcA get(android::nfc::Tag arg0);
 		void close();
 		void connect();
-		jbyteArray getAtqa();
+		JByteArray getAtqa();
 		jint getMaxTransceiveLength();
 		jshort getSak();
 		android::nfc::Tag getTag();
 		jint getTimeout();
 		jboolean isConnected();
 		void setTimeout(jint arg0);
-		jbyteArray transceive(jbyteArray arg0);
+		JByteArray transceive(JByteArray arg0);
 	};
 } // namespace android::nfc::tech
 

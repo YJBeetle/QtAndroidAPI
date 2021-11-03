@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
 namespace java::lang
 {
 	class Exception;
 }
+class JString;
 
 namespace android::content::res
 {
@@ -22,8 +21,8 @@ namespace android::content::res
 		
 		// Constructors
 		Resources_NotFoundException();
-		Resources_NotFoundException(jstring arg0);
-		Resources_NotFoundException(jstring arg0, java::lang::Exception arg1);
+		Resources_NotFoundException(JString arg0);
+		Resources_NotFoundException(JString arg0, java::lang::Exception arg1);
 		
 		// Methods
 	};

@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net
 {
@@ -55,7 +57,7 @@ namespace android::net
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getLinkDownstreamBandwidthKbps();
 		jint getLinkUpstreamBandwidthKbps();
 		jint getSignalStrength();
@@ -63,7 +65,7 @@ namespace android::net
 		jboolean hasCapability(jint arg0);
 		jboolean hasTransport(jint arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net

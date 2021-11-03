@@ -1,5 +1,9 @@
+#include "../../JLongArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Vector.hpp"
 
 namespace java::util
@@ -36,21 +40,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean Vector::add(jobject arg0)
+	jboolean Vector::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void Vector::add(jint arg0, jobject arg1)
+	void Vector::add(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jboolean Vector::addAll(JObject arg0)
@@ -70,12 +74,12 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Vector::addElement(jobject arg0)
+	void Vector::addElement(JObject arg0)
 	{
 		callMethod<void>(
 			"addElement",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Vector::capacity()
@@ -92,19 +96,19 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject Vector::clone()
+	JObject Vector::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean Vector::contains(jobject arg0)
+	jboolean Vector::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean Vector::containsAll(JObject arg0)
@@ -115,21 +119,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Vector::copyInto(jobjectArray arg0)
+	void Vector::copyInto(JObjectArray arg0)
 	{
 		callMethod<void>(
 			"copyInto",
 			"([Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobjectArray>()
 		);
 	}
-	jobject Vector::elementAt(jint arg0)
+	JObject Vector::elementAt(jint arg0)
 	{
 		return callObjectMethod(
 			"elementAt",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	JObject Vector::elements()
 	{
@@ -146,20 +150,20 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Vector::equals(jobject arg0)
+	jboolean Vector::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject Vector::firstElement()
+	JObject Vector::firstElement()
 	{
 		return callObjectMethod(
 			"firstElement",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	void Vector::forEach(JObject arg0)
 	{
@@ -169,13 +173,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Vector::get(jint arg0)
+	JObject Vector::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jint Vector::hashCode()
 	{
@@ -184,29 +188,29 @@ namespace java::util
 			"()I"
 		);
 	}
-	jint Vector::indexOf(jobject arg0)
+	jint Vector::indexOf(JObject arg0)
 	{
 		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jint Vector::indexOf(jobject arg0, jint arg1)
+	jint Vector::indexOf(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;I)I",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
-	void Vector::insertElementAt(jobject arg0, jint arg1)
+	void Vector::insertElementAt(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"insertElementAt",
 			"(Ljava/lang/Object;I)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
@@ -224,27 +228,27 @@ namespace java::util
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jobject Vector::lastElement()
+	JObject Vector::lastElement()
 	{
 		return callObjectMethod(
 			"lastElement",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jint Vector::lastIndexOf(jobject arg0)
+	jint Vector::lastIndexOf(JObject arg0)
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jint Vector::lastIndexOf(jobject arg0, jint arg1)
+	jint Vector::lastIndexOf(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;I)I",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
@@ -263,21 +267,21 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Vector::remove(jobject arg0)
+	jboolean Vector::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject Vector::remove(jint arg0)
+	JObject Vector::remove(jint arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jboolean Vector::removeAll(JObject arg0)
 	{
@@ -294,12 +298,12 @@ namespace java::util
 			"()V"
 		);
 	}
-	jboolean Vector::removeElement(jobject arg0)
+	jboolean Vector::removeElement(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeElement",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void Vector::removeElementAt(jint arg0)
@@ -334,21 +338,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Vector::set(jint arg0, jobject arg1)
+	JObject Vector::set(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1
-		).object<jobject>();
+			arg1.object<jobject>()
+		);
 	}
-	void Vector::setElementAt(jobject arg0, jint arg1)
+	void Vector::setElementAt(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"setElementAt",
 			"(Ljava/lang/Object;I)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
@@ -391,27 +395,27 @@ namespace java::util
 			arg1
 		);
 	}
-	jobjectArray Vector::toArray()
+	JObjectArray Vector::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray Vector::toArray(jobjectArray arg0)
+	JObjectArray Vector::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
-	jstring Vector::toString()
+	JString Vector::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void Vector::trimToSize()
 	{

@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./WrongMethodTypeException.hpp"
 
 namespace java::lang::invoke
@@ -13,11 +15,11 @@ namespace java::lang::invoke
 			"java.lang.invoke.WrongMethodTypeException",
 			"()V"
 		) {}
-	WrongMethodTypeException::WrongMethodTypeException(jstring arg0)
+	WrongMethodTypeException::WrongMethodTypeException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.invoke.WrongMethodTypeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

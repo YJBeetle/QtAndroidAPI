@@ -1,6 +1,8 @@
+#include "../../JIntArray.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "../../JString.hpp"
 #include "./MediaRouteButton.hpp"
 
 namespace android::app
@@ -78,12 +80,12 @@ namespace android::app
 			"()Z"
 		);
 	}
-	void MediaRouteButton::setContentDescription(jstring arg0)
+	void MediaRouteButton::setContentDescription(JString arg0)
 	{
 		callMethod<void>(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void MediaRouteButton::setExtendedSettingsClickListener(JObject arg0)

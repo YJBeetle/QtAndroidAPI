@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
 
 namespace android::content
@@ -25,6 +22,7 @@ namespace android::widget
 {
 	class TableLayout_LayoutParams;
 }
+class JString;
 
 namespace android::widget
 {
@@ -47,7 +45,7 @@ namespace android::widget
 		void addView(android::view::View arg0, jint arg1);
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
 		android::widget::TableLayout_LayoutParams generateLayoutParams(JObject arg0);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jboolean isColumnCollapsed(jint arg0);
 		jboolean isColumnShrinkable(jint arg0);
 		jboolean isColumnStretchable(jint arg0);

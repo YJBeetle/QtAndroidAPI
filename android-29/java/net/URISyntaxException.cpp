@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./URISyntaxException.hpp"
 
 namespace java::net
@@ -8,19 +9,19 @@ namespace java::net
 	URISyntaxException::URISyntaxException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	URISyntaxException::URISyntaxException(jstring arg0, jstring arg1)
+	URISyntaxException::URISyntaxException(JString arg0, JString arg1)
 		: java::lang::Exception(
 			"java.net.URISyntaxException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	URISyntaxException::URISyntaxException(jstring arg0, jstring arg1, jint arg2)
+	URISyntaxException::URISyntaxException(JString arg0, JString arg1, jint arg2)
 		: java::lang::Exception(
 			"java.net.URISyntaxException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
@@ -32,26 +33,26 @@ namespace java::net
 			"()I"
 		);
 	}
-	jstring URISyntaxException::getInput()
+	JString URISyntaxException::getInput()
 	{
 		return callObjectMethod(
 			"getInput",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URISyntaxException::getMessage()
+	JString URISyntaxException::getMessage()
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring URISyntaxException::getReason()
+	JString URISyntaxException::getReason()
 	{
 		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::net
 

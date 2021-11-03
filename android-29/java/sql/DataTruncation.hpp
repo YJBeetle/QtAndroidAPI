@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "./SQLException.hpp"
 #include "./SQLWarning.hpp"
 
+class JThrowable;
 
 namespace java::sql
 {
@@ -19,7 +17,7 @@ namespace java::sql
 		
 		// Constructors
 		DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4);
-		DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4, jthrowable arg5);
+		DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4, JThrowable arg5);
 		
 		// Methods
 		jint getDataSize();

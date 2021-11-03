@@ -1,66 +1,67 @@
+#include "../../JString.hpp"
 #include "./StructUtsname.hpp"
 
 namespace android::system
 {
 	// Fields
-	jstring StructUtsname::machine()
+	JString StructUtsname::machine()
 	{
 		return getObjectField(
 			"machine",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StructUtsname::nodename()
+	JString StructUtsname::nodename()
 	{
 		return getObjectField(
 			"nodename",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StructUtsname::release()
+	JString StructUtsname::release()
 	{
 		return getObjectField(
 			"release",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StructUtsname::sysname()
+	JString StructUtsname::sysname()
 	{
 		return getObjectField(
 			"sysname",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring StructUtsname::version()
+	JString StructUtsname::version()
 	{
 		return getObjectField(
 			"version",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
 	StructUtsname::StructUtsname(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	StructUtsname::StructUtsname(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
+	StructUtsname::StructUtsname(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4)
 		: JObject(
 			"android.system.StructUtsname",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring StructUtsname::toString()
+	JString StructUtsname::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::system
 

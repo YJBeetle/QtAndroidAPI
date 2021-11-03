@@ -2,6 +2,11 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JClass;
+class JObject;
+class JString;
+class JThrowable;
 
 namespace java::lang
 {
@@ -15,21 +20,21 @@ namespace java::lang
 		StackTraceElement(QAndroidJniObject obj);
 		
 		// Constructors
-		StackTraceElement(jstring arg0, jstring arg1, jstring arg2, jint arg3);
-		StackTraceElement(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5, jint arg6);
+		StackTraceElement(JString arg0, JString arg1, JString arg2, jint arg3);
+		StackTraceElement(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5, jint arg6);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getClassLoaderName();
-		jstring getClassName();
-		jstring getFileName();
+		jboolean equals(JObject arg0);
+		JString getClassLoaderName();
+		JString getClassName();
+		JString getFileName();
 		jint getLineNumber();
-		jstring getMethodName();
-		jstring getModuleName();
-		jstring getModuleVersion();
+		JString getMethodName();
+		JString getModuleName();
+		JString getModuleVersion();
 		jint hashCode();
 		jboolean isNativeMethod();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::lang
 

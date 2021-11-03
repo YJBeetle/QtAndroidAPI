@@ -1,5 +1,7 @@
 #include "./Person.hpp"
 #include "../graphics/drawable/Icon.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./Person_Builder.hpp"
 
 namespace android::app
@@ -48,28 +50,28 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Person_Builder Person_Builder::setKey(jstring arg0)
+	android::app::Person_Builder Person_Builder::setKey(JString arg0)
 	{
 		return callObjectMethod(
 			"setKey",
 			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Person_Builder Person_Builder::setName(jstring arg0)
+	android::app::Person_Builder Person_Builder::setName(JString arg0)
 	{
 		return callObjectMethod(
 			"setName",
 			"(Ljava/lang/CharSequence;)Landroid/app/Person$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::app::Person_Builder Person_Builder::setUri(jstring arg0)
+	android::app::Person_Builder Person_Builder::setUri(JString arg0)
 	{
 		return callObjectMethod(
 			"setUri",
 			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::app

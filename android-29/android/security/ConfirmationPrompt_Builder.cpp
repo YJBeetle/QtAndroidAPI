@@ -1,5 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "../content/Context.hpp"
 #include "./ConfirmationPrompt.hpp"
+#include "../../JString.hpp"
 #include "./ConfirmationPrompt_Builder.hpp"
 
 namespace android::security
@@ -25,20 +27,20 @@ namespace android::security
 			"()Landroid/security/ConfirmationPrompt;"
 		);
 	}
-	android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setExtraData(jbyteArray arg0)
+	android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setExtraData(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"setExtraData",
 			"([B)Landroid/security/ConfirmationPrompt$Builder;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setPromptText(jstring arg0)
+	android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setPromptText(JString arg0)
 	{
 		return callObjectMethod(
 			"setPromptText",
 			"(Ljava/lang/CharSequence;)Landroid/security/ConfirmationPrompt$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::security

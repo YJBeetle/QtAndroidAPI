@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace java::lang
 {
 	class StrictMath : public JObject

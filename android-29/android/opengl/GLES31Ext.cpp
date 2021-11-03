@@ -1,3 +1,7 @@
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "../../java/nio/IntBuffer.hpp"
 #include "./GLES31Ext.hpp"
@@ -1524,7 +1528,7 @@ namespace android::opengl
 			arg5
 		);
 	}
-	void GLES31Ext::glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5, jboolean arg6)
+	void GLES31Ext::glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4, jint arg5, jboolean arg6)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1534,12 +1538,12 @@ namespace android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4,
+			arg4.object<jintArray>(),
 			arg5,
 			arg6
 		);
 	}
-	void GLES31Ext::glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, jstring arg4)
+	void GLES31Ext::glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, JString arg4)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1549,7 +1553,7 @@ namespace android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4.object<jstring>()
 		);
 	}
 	void GLES31Ext::glDisableiEXT(jint arg0, jint arg1)
@@ -1592,7 +1596,7 @@ namespace android::opengl
 			"()Landroid/opengl/GLES31Ext$DebugProcKHR;"
 		);
 	}
-	jarray GLES31Ext::glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4)
+	JArray GLES31Ext::glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLES31Ext",
@@ -1603,24 +1607,24 @@ namespace android::opengl
 			arg2.object(),
 			arg3.object(),
 			arg4.object()
-		).object<jarray>();
+		);
 	}
-	jarray GLES31Ext::glGetDebugMessageLogKHR(jint arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8)
+	JArray GLES31Ext::glGetDebugMessageLogKHR(jint arg0, JIntArray arg1, jint arg2, JIntArray arg3, jint arg4, JIntArray arg5, jint arg6, JIntArray arg7, jint arg8)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLES31Ext",
 			"glGetDebugMessageLogKHR",
 			"(I[II[II[II[II)[Ljava/lang/String;",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2,
-			arg3,
+			arg3.object<jintArray>(),
 			arg4,
-			arg5,
+			arg5.object<jintArray>(),
 			arg6,
-			arg7,
+			arg7.object<jintArray>(),
 			arg8
-		).object<jarray>();
+		);
 	}
 	jint GLES31Ext::glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4, java::nio::IntBuffer arg5, java::nio::ByteBuffer arg6)
 	{
@@ -1637,7 +1641,7 @@ namespace android::opengl
 			arg6.object()
 		);
 	}
-	jint GLES31Ext::glGetDebugMessageLogKHR(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5, jintArray arg6, jint arg7, jintArray arg8, jint arg9, jintArray arg10, jint arg11, jbyteArray arg12, jint arg13)
+	jint GLES31Ext::glGetDebugMessageLogKHR(jint arg0, jint arg1, JIntArray arg2, jint arg3, JIntArray arg4, jint arg5, JIntArray arg6, jint arg7, JIntArray arg8, jint arg9, JIntArray arg10, jint arg11, JByteArray arg12, jint arg13)
 	{
 		return callStaticMethod<jint>(
 			"android.opengl.GLES31Ext",
@@ -1645,21 +1649,21 @@ namespace android::opengl
 			"(II[II[II[II[II[II[BI)I",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3,
-			arg4,
+			arg4.object<jintArray>(),
 			arg5,
-			arg6,
+			arg6.object<jintArray>(),
 			arg7,
-			arg8,
+			arg8.object<jintArray>(),
 			arg9,
-			arg10,
+			arg10.object<jintArray>(),
 			arg11,
-			arg12,
+			arg12.object<jbyteArray>(),
 			arg13
 		);
 	}
-	jstring GLES31Ext::glGetObjectLabelKHR(jint arg0, jint arg1)
+	JString GLES31Ext::glGetObjectLabelKHR(jint arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLES31Ext",
@@ -1667,16 +1671,16 @@ namespace android::opengl
 			"(II)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring GLES31Ext::glGetObjectPtrLabelKHR(jlong arg0)
+	JString GLES31Ext::glGetObjectPtrLabelKHR(jlong arg0)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLES31Ext",
 			"glGetObjectPtrLabelKHR",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	void GLES31Ext::glGetSamplerParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)
 	{
@@ -1689,7 +1693,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES31Ext::glGetSamplerParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES31Ext::glGetSamplerParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1697,7 +1701,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1712,7 +1716,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES31Ext::glGetSamplerParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES31Ext::glGetSamplerParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1720,7 +1724,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1735,7 +1739,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES31Ext::glGetTexParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES31Ext::glGetTexParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1743,7 +1747,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1758,7 +1762,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES31Ext::glGetTexParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES31Ext::glGetTexParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1766,7 +1770,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1789,7 +1793,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	void GLES31Ext::glObjectLabelKHR(jint arg0, jint arg1, jint arg2, jstring arg3)
+	void GLES31Ext::glObjectLabelKHR(jint arg0, jint arg1, jint arg2, JString arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1798,17 +1802,17 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jstring>()
 		);
 	}
-	void GLES31Ext::glObjectPtrLabelKHR(jlong arg0, jstring arg1)
+	void GLES31Ext::glObjectPtrLabelKHR(jlong arg0, JString arg1)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
 			"glObjectPtrLabelKHR",
 			"(JLjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void GLES31Ext::glPatchParameteriEXT(jint arg0, jint arg1)
@@ -1845,7 +1849,7 @@ namespace android::opengl
 			arg7
 		);
 	}
-	void GLES31Ext::glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, jstring arg3)
+	void GLES31Ext::glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, JString arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1854,7 +1858,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jstring>()
 		);
 	}
 	void GLES31Ext::glSamplerParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)
@@ -1868,7 +1872,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES31Ext::glSamplerParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES31Ext::glSamplerParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1876,7 +1880,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1891,7 +1895,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES31Ext::glSamplerParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES31Ext::glSamplerParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1899,7 +1903,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1938,7 +1942,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES31Ext::glTexParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES31Ext::glTexParameterIivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1946,7 +1950,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1961,7 +1965,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES31Ext::glTexParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES31Ext::glTexParameterIuivEXT(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
@@ -1969,7 +1973,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}

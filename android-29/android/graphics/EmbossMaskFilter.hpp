@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./MaskFilter.hpp"
 
+class JFloatArray;
 
 namespace android::graphics
 {
@@ -16,7 +16,7 @@ namespace android::graphics
 		EmbossMaskFilter(QAndroidJniObject obj);
 		
 		// Constructors
-		EmbossMaskFilter(jfloatArray arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		EmbossMaskFilter(JFloatArray arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		
 		// Methods
 	};

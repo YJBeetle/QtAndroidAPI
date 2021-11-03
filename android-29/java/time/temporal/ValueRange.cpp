@@ -1,4 +1,6 @@
 #include "../../io/ObjectInputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./ValueRange.hpp"
 
 namespace java::time::temporal
@@ -62,12 +64,12 @@ namespace java::time::temporal
 			arg1.object()
 		);
 	}
-	jboolean ValueRange::equals(jobject arg0)
+	jboolean ValueRange::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jlong ValueRange::getLargestMinimum()
@@ -135,12 +137,12 @@ namespace java::time::temporal
 			arg0
 		);
 	}
-	jstring ValueRange::toString()
+	JString ValueRange::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::time::temporal
 

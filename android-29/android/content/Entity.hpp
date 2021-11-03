@@ -10,6 +10,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -33,7 +34,7 @@ namespace android::content
 		void addSubValue(android::net::Uri arg0, android::content::ContentValues arg1);
 		android::content::ContentValues getEntityValues();
 		java::util::ArrayList getSubValues();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::content
 

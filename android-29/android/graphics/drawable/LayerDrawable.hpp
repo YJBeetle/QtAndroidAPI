@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::content::res
 {
 	class ColorStateList;
@@ -59,7 +60,7 @@ namespace android::graphics::drawable
 		LayerDrawable(QAndroidJniObject obj);
 		
 		// Constructors
-		LayerDrawable(jarray arg0);
+		LayerDrawable(JArray arg0);
 		
 		// Methods
 		jint addLayer(android::graphics::drawable::Drawable arg0);

@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./MediaCodecInfo_CodecProfileLevel.hpp"
 
 namespace android::media
@@ -1427,12 +1428,12 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jboolean MediaCodecInfo_CodecProfileLevel::equals(jobject arg0)
+	jboolean MediaCodecInfo_CodecProfileLevel::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint MediaCodecInfo_CodecProfileLevel::hashCode()

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./BaseInterpolator.hpp"
 
 namespace android::content

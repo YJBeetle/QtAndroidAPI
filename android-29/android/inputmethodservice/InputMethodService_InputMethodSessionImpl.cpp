@@ -1,8 +1,10 @@
+#include "../../JArray.hpp"
 #include "../graphics/Rect.hpp"
 #include "./InputMethodService.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/inputmethod/CursorAnchorInfo.hpp"
 #include "../view/inputmethod/ExtractedText.hpp"
+#include "../../JString.hpp"
 #include "./InputMethodService_InputMethodSessionImpl.hpp"
 
 namespace android::inputmethodservice
@@ -21,21 +23,21 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	void InputMethodService_InputMethodSessionImpl::appPrivateCommand(jstring arg0, android::os::Bundle arg1)
+	void InputMethodService_InputMethodSessionImpl::appPrivateCommand(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"appPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void InputMethodService_InputMethodSessionImpl::displayCompletions(jarray arg0)
+	void InputMethodService_InputMethodSessionImpl::displayCompletions(JArray arg0)
 	{
 		callMethod<void>(
 			"displayCompletions",
 			"([Landroid/view/inputmethod/CompletionInfo;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void InputMethodService_InputMethodSessionImpl::finishInput()

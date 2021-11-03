@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ViewGroup_LayoutParams.hpp"
 
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JString;
 
 namespace android::view
 {
@@ -127,7 +128,7 @@ namespace android::view
 		jfloat horizontalWeight();
 		jint layoutInDisplayCutoutMode();
 		jint memoryType();
-		jstring packageName();
+		JString packageName();
 		jint preferredDisplayModeId();
 		jfloat preferredRefreshRate();
 		jint rotationAnimation();
@@ -159,13 +160,13 @@ namespace android::view
 		// Methods
 		static jboolean mayUseInputMethod(jint arg0);
 		jint copyFrom(android::view::WindowManager_LayoutParams arg0);
-		jstring debug(jstring arg0);
+		JString debug(JString arg0);
 		jint describeContents();
 		jint getColorMode();
-		jstring getTitle();
+		JString getTitle();
 		void setColorMode(jint arg0);
-		void setTitle(jstring arg0);
-		jstring toString();
+		void setTitle(JString arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view

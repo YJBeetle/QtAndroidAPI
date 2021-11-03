@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JFloatArray;
+class JIntArray;
+class JString;
 namespace java::nio
 {
 	class Buffer;
@@ -289,7 +292,7 @@ namespace android::opengl
 		static void glCopyTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
 		static void glCullFace(jint arg0);
 		static void glDeleteTextures(jint arg0, java::nio::IntBuffer arg1);
-		static void glDeleteTextures(jint arg0, jintArray arg1, jint arg2);
+		static void glDeleteTextures(jint arg0, JIntArray arg1, jint arg2);
 		static void glDepthFunc(jint arg0);
 		static void glDepthMask(jboolean arg0);
 		static void glDepthRangef(jfloat arg0, jfloat arg1);
@@ -304,51 +307,51 @@ namespace android::opengl
 		static void glFlush();
 		static void glFogf(jint arg0, jfloat arg1);
 		static void glFogfv(jint arg0, java::nio::FloatBuffer arg1);
-		static void glFogfv(jint arg0, jfloatArray arg1, jint arg2);
+		static void glFogfv(jint arg0, JFloatArray arg1, jint arg2);
 		static void glFogx(jint arg0, jint arg1);
 		static void glFogxv(jint arg0, java::nio::IntBuffer arg1);
-		static void glFogxv(jint arg0, jintArray arg1, jint arg2);
+		static void glFogxv(jint arg0, JIntArray arg1, jint arg2);
 		static void glFrontFace(jint arg0);
 		static void glFrustumf(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5);
 		static void glFrustumx(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		static void glGenTextures(jint arg0, java::nio::IntBuffer arg1);
-		static void glGenTextures(jint arg0, jintArray arg1, jint arg2);
+		static void glGenTextures(jint arg0, JIntArray arg1, jint arg2);
 		static jint glGetError();
 		static void glGetIntegerv(jint arg0, java::nio::IntBuffer arg1);
-		static void glGetIntegerv(jint arg0, jintArray arg1, jint arg2);
-		static jstring glGetString(jint arg0);
+		static void glGetIntegerv(jint arg0, JIntArray arg1, jint arg2);
+		static JString glGetString(jint arg0);
 		static void glHint(jint arg0, jint arg1);
 		static void glLightModelf(jint arg0, jfloat arg1);
 		static void glLightModelfv(jint arg0, java::nio::FloatBuffer arg1);
-		static void glLightModelfv(jint arg0, jfloatArray arg1, jint arg2);
+		static void glLightModelfv(jint arg0, JFloatArray arg1, jint arg2);
 		static void glLightModelx(jint arg0, jint arg1);
 		static void glLightModelxv(jint arg0, java::nio::IntBuffer arg1);
-		static void glLightModelxv(jint arg0, jintArray arg1, jint arg2);
+		static void glLightModelxv(jint arg0, JIntArray arg1, jint arg2);
 		static void glLightf(jint arg0, jint arg1, jfloat arg2);
 		static void glLightfv(jint arg0, jint arg1, java::nio::FloatBuffer arg2);
-		static void glLightfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glLightfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3);
 		static void glLightx(jint arg0, jint arg1, jint arg2);
 		static void glLightxv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glLightxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glLightxv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glLineWidth(jfloat arg0);
 		static void glLineWidthx(jint arg0);
 		static void glLoadIdentity();
 		static void glLoadMatrixf(java::nio::FloatBuffer arg0);
-		static void glLoadMatrixf(jfloatArray arg0, jint arg1);
+		static void glLoadMatrixf(JFloatArray arg0, jint arg1);
 		static void glLoadMatrixx(java::nio::IntBuffer arg0);
-		static void glLoadMatrixx(jintArray arg0, jint arg1);
+		static void glLoadMatrixx(JIntArray arg0, jint arg1);
 		static void glLogicOp(jint arg0);
 		static void glMaterialf(jint arg0, jint arg1, jfloat arg2);
 		static void glMaterialfv(jint arg0, jint arg1, java::nio::FloatBuffer arg2);
-		static void glMaterialfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glMaterialfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3);
 		static void glMaterialx(jint arg0, jint arg1, jint arg2);
 		static void glMaterialxv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glMaterialxv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glMatrixMode(jint arg0);
 		static void glMultMatrixf(java::nio::FloatBuffer arg0);
-		static void glMultMatrixf(jfloatArray arg0, jint arg1);
+		static void glMultMatrixf(JFloatArray arg0, jint arg1);
 		static void glMultMatrixx(java::nio::IntBuffer arg0);
-		static void glMultMatrixx(jintArray arg0, jint arg1);
+		static void glMultMatrixx(JIntArray arg0, jint arg1);
 		static void glMultiTexCoord4f(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4);
 		static void glMultiTexCoord4x(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		static void glNormal3f(jfloat arg0, jfloat arg1, jfloat arg2);
@@ -378,10 +381,10 @@ namespace android::opengl
 		static void glTexCoordPointer(jint arg0, jint arg1, jint arg2, java::nio::Buffer arg3);
 		static void glTexEnvf(jint arg0, jint arg1, jfloat arg2);
 		static void glTexEnvfv(jint arg0, jint arg1, java::nio::FloatBuffer arg2);
-		static void glTexEnvfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glTexEnvfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3);
 		static void glTexEnvx(jint arg0, jint arg1, jint arg2);
 		static void glTexEnvxv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
-		static void glTexEnvxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexEnvxv(jint arg0, jint arg1, JIntArray arg2, jint arg3);
 		static void glTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, java::nio::Buffer arg8);
 		static void glTexParameterf(jint arg0, jint arg1, jfloat arg2);
 		static void glTexParameterx(jint arg0, jint arg1, jint arg2);

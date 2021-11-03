@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Permission.hpp"
 
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::security
 {
 	class Permission;
@@ -28,12 +29,12 @@ namespace java::security
 		BasicPermission(QAndroidJniObject obj);
 		
 		// Constructors
-		BasicPermission(jstring arg0);
-		BasicPermission(jstring arg0, jstring arg1);
+		BasicPermission(JString arg0);
+		BasicPermission(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getActions();
+		jboolean equals(JObject arg0);
+		JString getActions();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
 		java::security::PermissionCollection newPermissionCollection();

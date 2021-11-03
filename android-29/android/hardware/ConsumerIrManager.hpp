@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 
 namespace android::hardware
 {
@@ -17,9 +19,9 @@ namespace android::hardware
 		// Constructors
 		
 		// Methods
-		jarray getCarrierFrequencies();
+		JArray getCarrierFrequencies();
 		jboolean hasIrEmitter();
-		void transmit(jint arg0, jintArray arg1);
+		void transmit(jint arg0, JIntArray arg1);
 	};
 } // namespace android::hardware
 

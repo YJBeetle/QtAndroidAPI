@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -18,13 +20,13 @@ namespace android::app
 		static jint NOT_RESPONDING();
 		static jint NO_ERROR();
 		jint condition();
-		jbyteArray crashData();
-		jstring longMsg();
+		JByteArray crashData();
+		JString longMsg();
 		jint pid();
-		jstring processName();
-		jstring shortMsg();
-		jstring stackTrace();
-		jstring tag();
+		JString processName();
+		JString shortMsg();
+		JString stackTrace();
+		JString tag();
 		jint uid();
 		
 		// QAndroidJniObject forward

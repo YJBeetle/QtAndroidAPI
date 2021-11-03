@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::view::textservice
 {
 	class SpellCheckerInfo;
@@ -14,6 +15,7 @@ namespace android::view::textservice
 {
 	class TextServicesManager;
 }
+class JString;
 
 namespace android::view::textservice
 {
@@ -21,7 +23,7 @@ namespace android::view::textservice
 	{
 	public:
 		// Fields
-		static jstring SERVICE_META_DATA();
+		static JString SERVICE_META_DATA();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SpellCheckerSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,10 +34,10 @@ namespace android::view::textservice
 		// Methods
 		void cancel();
 		void close();
-		void getSentenceSuggestions(jarray arg0, jint arg1);
+		void getSentenceSuggestions(JArray arg0, jint arg1);
 		android::view::textservice::SpellCheckerInfo getSpellChecker();
 		void getSuggestions(android::view::textservice::TextInfo arg0, jint arg1);
-		void getSuggestions(jarray arg0, jint arg1, jboolean arg2);
+		void getSuggestions(JArray arg0, jint arg1, jboolean arg2);
 		jboolean isSessionDisconnected();
 	};
 } // namespace android::view::textservice

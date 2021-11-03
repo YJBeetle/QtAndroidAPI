@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "./PackageItemInfo.hpp"
 #include "./ComponentInfo.hpp"
 
 namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::content::pm
 {
@@ -30,7 +29,7 @@ namespace android::content::pm
 		static jint FOREGROUND_SERVICE_TYPE_NONE();
 		static jint FOREGROUND_SERVICE_TYPE_PHONE_CALL();
 		jint flags();
-		jstring permission();
+		JString permission();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ServiceInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::ComponentInfo(className, sig, std::forward<Ts>(agv)...) {}
@@ -42,9 +41,9 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		jint getForegroundServiceType();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

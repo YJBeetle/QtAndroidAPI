@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
 namespace android::graphics::text
 {
 	class LineBreaker_ParagraphConstraints;

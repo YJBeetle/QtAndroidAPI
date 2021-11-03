@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::media
 {
 	class MediaCodecInfo_AudioCapabilities;
@@ -18,6 +20,7 @@ namespace android::media
 {
 	class MediaFormat;
 }
+class JString;
 
 namespace android::media
 {
@@ -77,16 +80,16 @@ namespace android::media
 		static jint COLOR_FormatYUV444Interleaved();
 		static jint COLOR_QCOM_FormatYUV420SemiPlanar();
 		static jint COLOR_TI_FormatYUV420PackedSemiPlanar();
-		static jstring FEATURE_AdaptivePlayback();
-		static jstring FEATURE_DynamicTimestamp();
-		static jstring FEATURE_FrameParsing();
-		static jstring FEATURE_IntraRefresh();
-		static jstring FEATURE_MultipleFrames();
-		static jstring FEATURE_PartialFrame();
-		static jstring FEATURE_SecurePlayback();
-		static jstring FEATURE_TunneledPlayback();
-		jintArray colorFormats();
-		jarray profileLevels();
+		static JString FEATURE_AdaptivePlayback();
+		static JString FEATURE_DynamicTimestamp();
+		static JString FEATURE_FrameParsing();
+		static JString FEATURE_IntraRefresh();
+		static JString FEATURE_MultipleFrames();
+		static JString FEATURE_PartialFrame();
+		static JString FEATURE_SecurePlayback();
+		static JString FEATURE_TunneledPlayback();
+		JIntArray colorFormats();
+		JArray profileLevels();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCodecInfo_CodecCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -96,15 +99,15 @@ namespace android::media
 		MediaCodecInfo_CodecCapabilities();
 		
 		// Methods
-		static android::media::MediaCodecInfo_CodecCapabilities createFromProfileLevel(jstring arg0, jint arg1, jint arg2);
+		static android::media::MediaCodecInfo_CodecCapabilities createFromProfileLevel(JString arg0, jint arg1, jint arg2);
 		android::media::MediaCodecInfo_AudioCapabilities getAudioCapabilities();
 		android::media::MediaFormat getDefaultFormat();
 		android::media::MediaCodecInfo_EncoderCapabilities getEncoderCapabilities();
 		jint getMaxSupportedInstances();
-		jstring getMimeType();
+		JString getMimeType();
 		android::media::MediaCodecInfo_VideoCapabilities getVideoCapabilities();
-		jboolean isFeatureRequired(jstring arg0);
-		jboolean isFeatureSupported(jstring arg0);
+		jboolean isFeatureRequired(JString arg0);
+		jboolean isFeatureSupported(JString arg0);
 		jboolean isFormatSupported(android::media::MediaFormat arg0);
 	};
 } // namespace android::media

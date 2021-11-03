@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -35,11 +36,11 @@ namespace java::util::zip
 		Deflater(jint arg0, jboolean arg1);
 		
 		// Methods
-		jint deflate(jbyteArray arg0);
+		jint deflate(JByteArray arg0);
 		jint deflate(java::nio::ByteBuffer arg0);
 		jint deflate(java::nio::ByteBuffer arg0, jint arg1);
-		jint deflate(jbyteArray arg0, jint arg1, jint arg2);
-		jint deflate(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
+		jint deflate(JByteArray arg0, jint arg1, jint arg2);
+		jint deflate(JByteArray arg0, jint arg1, jint arg2, jint arg3);
 		void end();
 		void finish();
 		jboolean finished();
@@ -50,12 +51,12 @@ namespace java::util::zip
 		jint getTotalOut();
 		jboolean needsInput();
 		void reset();
-		void setDictionary(jbyteArray arg0);
+		void setDictionary(JByteArray arg0);
 		void setDictionary(java::nio::ByteBuffer arg0);
-		void setDictionary(jbyteArray arg0, jint arg1, jint arg2);
-		void setInput(jbyteArray arg0);
+		void setDictionary(JByteArray arg0, jint arg1, jint arg2);
+		void setInput(JByteArray arg0);
 		void setInput(java::nio::ByteBuffer arg0);
-		void setInput(jbyteArray arg0, jint arg1, jint arg2);
+		void setInput(JByteArray arg0, jint arg1, jint arg2);
 		void setLevel(jint arg0);
 		void setStrategy(jint arg0);
 	};

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./TvInputService_Session.hpp"
 
 namespace android::content
@@ -11,6 +10,7 @@ namespace android::view
 {
 	class Surface;
 }
+class JString;
 
 namespace android::media::tv
 {
@@ -27,7 +27,7 @@ namespace android::media::tv
 		TvInputService_HardwareSession(android::content::Context arg0);
 		
 		// Methods
-		jstring getHardwareInputId();
+		JString getHardwareInputId();
 		void onHardwareVideoAvailable();
 		void onHardwareVideoUnavailable(jint arg0);
 		jboolean onSetSurface(android::view::Surface arg0);

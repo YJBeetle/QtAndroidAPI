@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../Exception.hpp"
 #include "../RuntimeException.hpp"
 
+class JClass;
+class JString;
 
 namespace java::lang::annotation
 {
@@ -17,11 +17,11 @@ namespace java::lang::annotation
 		IncompleteAnnotationException(QAndroidJniObject obj);
 		
 		// Constructors
-		IncompleteAnnotationException(jclass arg0, jstring arg1);
+		IncompleteAnnotationException(JClass arg0, JString arg1);
 		
 		// Methods
-		jclass annotationType();
-		jstring elementName();
+		JClass annotationType();
+		JString elementName();
 	};
 } // namespace java::lang::annotation
 

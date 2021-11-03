@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ColorFilter.hpp"
-
 
 namespace android::graphics
 {

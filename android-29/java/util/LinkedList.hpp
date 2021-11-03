@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./AbstractCollection.hpp"
-#include "./AbstractList.hpp"
 #include "./AbstractSequentialList.hpp"
 
+class JObjectArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -13,6 +11,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -30,46 +30,46 @@ namespace java::util
 		LinkedList(JObject arg0);
 		
 		// Methods
-		jboolean add(jobject arg0);
-		void add(jint arg0, jobject arg1);
+		jboolean add(JObject arg0);
+		void add(jint arg0, JObject arg1);
 		jboolean addAll(JObject arg0);
 		jboolean addAll(jint arg0, JObject arg1);
-		void addFirst(jobject arg0);
-		void addLast(jobject arg0);
+		void addFirst(JObject arg0);
+		void addLast(JObject arg0);
 		void clear();
-		jobject clone();
-		jboolean contains(jobject arg0);
+		JObject clone();
+		jboolean contains(JObject arg0);
 		JObject descendingIterator();
-		jobject element();
-		jobject get(jint arg0);
-		jobject getFirst();
-		jobject getLast();
-		jint indexOf(jobject arg0);
-		jint lastIndexOf(jobject arg0);
+		JObject element();
+		JObject get(jint arg0);
+		JObject getFirst();
+		JObject getLast();
+		jint indexOf(JObject arg0);
+		jint lastIndexOf(JObject arg0);
 		JObject listIterator(jint arg0);
-		jboolean offer(jobject arg0);
-		jboolean offerFirst(jobject arg0);
-		jboolean offerLast(jobject arg0);
-		jobject peek();
-		jobject peekFirst();
-		jobject peekLast();
-		jobject poll();
-		jobject pollFirst();
-		jobject pollLast();
-		jobject pop();
-		void push(jobject arg0);
-		jboolean remove(jobject arg0);
-		jobject remove();
-		jobject remove(jint arg0);
-		jobject removeFirst();
-		jboolean removeFirstOccurrence(jobject arg0);
-		jobject removeLast();
-		jboolean removeLastOccurrence(jobject arg0);
-		jobject set(jint arg0, jobject arg1);
+		jboolean offer(JObject arg0);
+		jboolean offerFirst(JObject arg0);
+		jboolean offerLast(JObject arg0);
+		JObject peek();
+		JObject peekFirst();
+		JObject peekLast();
+		JObject poll();
+		JObject pollFirst();
+		JObject pollLast();
+		JObject pop();
+		void push(JObject arg0);
+		jboolean remove(JObject arg0);
+		JObject remove();
+		JObject remove(jint arg0);
+		JObject removeFirst();
+		jboolean removeFirstOccurrence(JObject arg0);
+		JObject removeLast();
+		jboolean removeLastOccurrence(JObject arg0);
+		JObject set(jint arg0, JObject arg1);
 		jint size();
 		JObject spliterator();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
 	};
 } // namespace java::util
 

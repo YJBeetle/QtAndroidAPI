@@ -14,6 +14,9 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
+class JString;
 
 namespace android::view::inputmethod
 {
@@ -35,10 +38,10 @@ namespace android::view::inputmethod
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::graphics::RectF getCharacterBounds(jint arg0);
 		jint getCharacterBoundsFlags(jint arg0);
-		jstring getComposingText();
+		JString getComposingText();
 		jint getComposingTextStart();
 		jfloat getInsertionMarkerBaseline();
 		jfloat getInsertionMarkerBottom();
@@ -49,7 +52,7 @@ namespace android::view::inputmethod
 		jint getSelectionEnd();
 		jint getSelectionStart();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::inputmethod

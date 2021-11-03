@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./DateTimePatternGenerator_PatternInfo.hpp"
 
 namespace android::icu::text
@@ -24,12 +25,12 @@ namespace android::icu::text
 			"OK"
 		);
 	}
-	jstring DateTimePatternGenerator_PatternInfo::conflictingPattern()
+	JString DateTimePatternGenerator_PatternInfo::conflictingPattern()
 	{
 		return getObjectField(
 			"conflictingPattern",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DateTimePatternGenerator_PatternInfo::status()
 	{

@@ -1,5 +1,9 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuilder.hpp"
 #include "../time/Instant.hpp"
 #include "./Date.hpp"
@@ -17,11 +21,11 @@ namespace java::util
 			"java.util.Date",
 			"()V"
 		) {}
-	Date::Date(jstring arg0)
+	Date::Date(JString arg0)
 		: JObject(
 			"java.util.Date",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	Date::Date(jlong arg0)
 		: JObject(
@@ -83,13 +87,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jlong Date::parse(jstring arg0)
+	jlong Date::parse(JString arg0)
 	{
 		return callStaticMethod<jlong>(
 			"java.util.Date",
 			"parse",
 			"(Ljava/lang/String;)J",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Date::after(java::util::Date arg0)
@@ -108,19 +112,19 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Date::clone()
+	JObject Date::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jint Date::compareTo(jobject arg0)
+	jint Date::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Date::compareTo(java::util::Date arg0)
@@ -131,12 +135,12 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Date::equals(jobject arg0)
+	jboolean Date::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Date::getDate()
@@ -265,12 +269,12 @@ namespace java::util
 			arg0
 		);
 	}
-	jstring Date::toGMTString()
+	JString Date::toGMTString()
 	{
 		return callObjectMethod(
 			"toGMTString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::time::Instant Date::toInstant()
 	{
@@ -279,19 +283,19 @@ namespace java::util
 			"()Ljava/time/Instant;"
 		);
 	}
-	jstring Date::toLocaleString()
+	JString Date::toLocaleString()
 	{
 		return callObjectMethod(
 			"toLocaleString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Date::toString()
+	JString Date::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

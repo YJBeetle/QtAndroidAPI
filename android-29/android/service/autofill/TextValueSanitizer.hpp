@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 namespace java::util::regex
 {
 	class Pattern;
@@ -24,11 +25,11 @@ namespace android::service::autofill
 		TextValueSanitizer(QAndroidJniObject obj);
 		
 		// Constructors
-		TextValueSanitizer(java::util::regex::Pattern arg0, jstring arg1);
+		TextValueSanitizer(java::util::regex::Pattern arg0, JString arg1);
 		
 		// Methods
 		jint describeContents();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::autofill

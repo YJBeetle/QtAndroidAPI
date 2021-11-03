@@ -1,3 +1,7 @@
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "../../java/security/AlgorithmParameters.hpp"
 #include "../../java/security/Provider.hpp"
@@ -67,84 +71,84 @@ namespace javax::crypto
 	// Constructors
 	
 	// Methods
-	javax::crypto::Cipher Cipher::getInstance(jstring arg0)
+	javax::crypto::Cipher Cipher::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.Cipher",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/Cipher;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	javax::crypto::Cipher Cipher::getInstance(jstring arg0, jstring arg1)
+	javax::crypto::Cipher Cipher::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.Cipher",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/Cipher;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	javax::crypto::Cipher Cipher::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::crypto::Cipher Cipher::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.Cipher",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Cipher;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jint Cipher::getMaxAllowedKeyLength(jstring arg0)
+	jint Cipher::getMaxAllowedKeyLength(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"javax.crypto.Cipher",
 			"getMaxAllowedKeyLength",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject Cipher::getMaxAllowedParameterSpec(jstring arg0)
+	JObject Cipher::getMaxAllowedParameterSpec(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.Cipher",
 			"getMaxAllowedParameterSpec",
 			"(Ljava/lang/String;)Ljava/security/spec/AlgorithmParameterSpec;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jbyteArray Cipher::doFinal()
+	JByteArray Cipher::doFinal()
 	{
 		return callObjectMethod(
 			"doFinal",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray Cipher::doFinal(jbyteArray arg0)
+	JByteArray Cipher::doFinal(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"doFinal",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	jbyteArray Cipher::doFinal(jbyteArray arg0, jint arg1, jint arg2)
+	JByteArray Cipher::doFinal(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"doFinal",
 			"([BII)[B",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
-		).object<jbyteArray>();
+		);
 	}
-	jint Cipher::doFinal(jbyteArray arg0, jint arg1)
+	jint Cipher::doFinal(JByteArray arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"doFinal",
 			"([BI)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1
 		);
 	}
@@ -157,35 +161,35 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	jint Cipher::doFinal(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3)
+	jint Cipher::doFinal(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3)
 	{
 		return callMethod<jint>(
 			"doFinal",
 			"([BII[B)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jbyteArray>()
 		);
 	}
-	jint Cipher::doFinal(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
+	jint Cipher::doFinal(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3, jint arg4)
 	{
 		return callMethod<jint>(
 			"doFinal",
 			"([BII[BI)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jbyteArray>(),
 			arg4
 		);
 	}
-	jstring Cipher::getAlgorithm()
+	JString Cipher::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint Cipher::getBlockSize()
 	{
@@ -201,12 +205,12 @@ namespace javax::crypto
 			"()Ljavax/crypto/ExemptionMechanism;"
 		);
 	}
-	jbyteArray Cipher::getIV()
+	JByteArray Cipher::getIV()
 	{
 		return callObjectMethod(
 			"getIV",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint Cipher::getOutputSize(jint arg0)
 	{
@@ -310,40 +314,40 @@ namespace javax::crypto
 			arg3.object()
 		);
 	}
-	jstring Cipher::toString()
+	JString Cipher::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	JObject Cipher::unwrap(jbyteArray arg0, jstring arg1, jint arg2)
+	JObject Cipher::unwrap(JByteArray arg0, JString arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"unwrap",
 			"([BLjava/lang/String;I)Ljava/security/Key;",
-			arg0,
-			arg1,
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>(),
 			arg2
 		);
 	}
-	jbyteArray Cipher::update(jbyteArray arg0)
+	JByteArray Cipher::update(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"update",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
-	jbyteArray Cipher::update(jbyteArray arg0, jint arg1, jint arg2)
+	JByteArray Cipher::update(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"update",
 			"([BII)[B",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
-		).object<jbyteArray>();
+		);
 	}
 	jint Cipher::update(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1)
 	{
@@ -354,35 +358,35 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	jint Cipher::update(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3)
+	jint Cipher::update(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3)
 	{
 		return callMethod<jint>(
 			"update",
 			"([BII[B)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jbyteArray>()
 		);
 	}
-	jint Cipher::update(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
+	jint Cipher::update(JByteArray arg0, jint arg1, jint arg2, JByteArray arg3, jint arg4)
 	{
 		return callMethod<jint>(
 			"update",
 			"([BII[BI)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jbyteArray>(),
 			arg4
 		);
 	}
-	void Cipher::updateAAD(jbyteArray arg0)
+	void Cipher::updateAAD(JByteArray arg0)
 	{
 		callMethod<void>(
 			"updateAAD",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void Cipher::updateAAD(java::nio::ByteBuffer arg0)
@@ -393,23 +397,23 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void Cipher::updateAAD(jbyteArray arg0, jint arg1, jint arg2)
+	void Cipher::updateAAD(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"updateAAD",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jbyteArray Cipher::wrap(JObject arg0)
+	JByteArray Cipher::wrap(JObject arg0)
 	{
 		return callObjectMethod(
 			"wrap",
 			"(Ljava/security/Key;)[B",
 			arg0.object()
-		).object<jbyteArray>();
+		);
 	}
 } // namespace javax::crypto
 

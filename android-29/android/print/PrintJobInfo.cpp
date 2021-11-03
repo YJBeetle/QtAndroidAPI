@@ -1,7 +1,9 @@
+#include "../../JArray.hpp"
 #include "../os/Parcel.hpp"
 #include "./PrintAttributes.hpp"
 #include "./PrintJobId.hpp"
 #include "./PrinterId.hpp"
+#include "../../JString.hpp"
 #include "./PrintJobInfo.hpp"
 
 namespace android::print
@@ -78,21 +80,21 @@ namespace android::print
 			"()I"
 		);
 	}
-	jint PrintJobInfo::getAdvancedIntOption(jstring arg0)
+	jint PrintJobInfo::getAdvancedIntOption(JString arg0)
 	{
 		return callMethod<jint>(
 			"getAdvancedIntOption",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring PrintJobInfo::getAdvancedStringOption(jstring arg0)
+	JString PrintJobInfo::getAdvancedStringOption(JString arg0)
 	{
 		return callObjectMethod(
 			"getAdvancedStringOption",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	android::print::PrintAttributes PrintJobInfo::getAttributes()
 	{
@@ -122,19 +124,19 @@ namespace android::print
 			"()Landroid/print/PrintJobId;"
 		);
 	}
-	jstring PrintJobInfo::getLabel()
+	JString PrintJobInfo::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray PrintJobInfo::getPages()
+	JArray PrintJobInfo::getPages()
 	{
 		return callObjectMethod(
 			"getPages",
 			"()[Landroid/print/PageRange;"
-		).object<jarray>();
+		);
 	}
 	android::print::PrinterId PrintJobInfo::getPrinterId()
 	{
@@ -150,20 +152,20 @@ namespace android::print
 			"()I"
 		);
 	}
-	jboolean PrintJobInfo::hasAdvancedOption(jstring arg0)
+	jboolean PrintJobInfo::hasAdvancedOption(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasAdvancedOption",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring PrintJobInfo::toString()
+	JString PrintJobInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PrintJobInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

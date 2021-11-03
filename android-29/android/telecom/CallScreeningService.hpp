@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace android::content
@@ -17,6 +14,7 @@ namespace android::telecom
 {
 	class CallScreeningService_CallResponse;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -24,7 +22,7 @@ namespace android::telecom
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CallScreeningService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}

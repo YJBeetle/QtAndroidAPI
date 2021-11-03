@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::security::cert
 {
@@ -25,8 +26,8 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		static java::security::cert::CertPathValidatorException_BasicReason valueOf(jstring arg0);
-		static jarray values();
+		static java::security::cert::CertPathValidatorException_BasicReason valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::security::cert
 

@@ -14,6 +14,8 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
+class JString;
 
 namespace android::content
 {
@@ -29,20 +31,20 @@ namespace android::content
 		// Constructors
 		ClipData_Item(android::content::Intent arg0);
 		ClipData_Item(android::net::Uri arg0);
-		ClipData_Item(jstring arg0);
-		ClipData_Item(jstring arg0, jstring arg1);
-		ClipData_Item(jstring arg0, android::content::Intent arg1, android::net::Uri arg2);
-		ClipData_Item(jstring arg0, jstring arg1, android::content::Intent arg2, android::net::Uri arg3);
+		ClipData_Item(JString arg0);
+		ClipData_Item(JString arg0, JString arg1);
+		ClipData_Item(JString arg0, android::content::Intent arg1, android::net::Uri arg2);
+		ClipData_Item(JString arg0, JString arg1, android::content::Intent arg2, android::net::Uri arg3);
 		
 		// Methods
-		jstring coerceToHtmlText(android::content::Context arg0);
-		jstring coerceToStyledText(android::content::Context arg0);
-		jstring coerceToText(android::content::Context arg0);
-		jstring getHtmlText();
+		JString coerceToHtmlText(android::content::Context arg0);
+		JString coerceToStyledText(android::content::Context arg0);
+		JString coerceToText(android::content::Context arg0);
+		JString getHtmlText();
 		android::content::Intent getIntent();
-		jstring getText();
+		JString getText();
 		android::net::Uri getUri();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::content
 

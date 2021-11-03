@@ -6,6 +6,8 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JObject;
+class JString;
 
 namespace android::system
 {
@@ -16,7 +18,7 @@ namespace android::system
 		jshort events();
 		java::io::FileDescriptor fd();
 		jshort revents();
-		jobject userData();
+		JObject userData();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StructPollfd(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,7 +28,7 @@ namespace android::system
 		StructPollfd();
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::system
 

@@ -2,18 +2,19 @@
 #include "../telecom/PhoneAccountHandle.hpp"
 #include "./VisualVoicemailService_VisualVoicemailTask.hpp"
 #include "./VisualVoicemailSms.hpp"
+#include "../../JString.hpp"
 #include "./VisualVoicemailService.hpp"
 
 namespace android::telephony
 {
 	// Fields
-	jstring VisualVoicemailService::SERVICE_INTERFACE()
+	JString VisualVoicemailService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.telephony.VisualVoicemailService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "./LocatorImpl.hpp"
 
 namespace org::xml::sax::helpers
@@ -35,19 +36,19 @@ namespace org::xml::sax::helpers
 			"()I"
 		);
 	}
-	jstring LocatorImpl::getPublicId()
+	JString LocatorImpl::getPublicId()
 	{
 		return callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring LocatorImpl::getSystemId()
+	JString LocatorImpl::getSystemId()
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void LocatorImpl::setColumnNumber(jint arg0)
 	{
@@ -65,20 +66,20 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	void LocatorImpl::setPublicId(jstring arg0)
+	void LocatorImpl::setPublicId(JString arg0)
 	{
 		callMethod<void>(
 			"setPublicId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void LocatorImpl::setSystemId(jstring arg0)
+	void LocatorImpl::setSystemId(JString arg0)
 	{
 		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace org::xml::sax::helpers

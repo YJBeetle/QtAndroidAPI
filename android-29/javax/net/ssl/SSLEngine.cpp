@@ -1,3 +1,6 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/nio/ByteBuffer.hpp"
 #include "./SSLEngineResult.hpp"
 #include "./SSLEngineResult_HandshakeStatus.hpp"
@@ -35,12 +38,12 @@ namespace javax::net::ssl
 			"()V"
 		);
 	}
-	jstring SSLEngine::getApplicationProtocol()
+	JString SSLEngine::getApplicationProtocol()
 	{
 		return callObjectMethod(
 			"getApplicationProtocol",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SSLEngine::getDelegatedTask()
 	{
@@ -56,26 +59,26 @@ namespace javax::net::ssl
 			"()Z"
 		);
 	}
-	jarray SSLEngine::getEnabledCipherSuites()
+	JArray SSLEngine::getEnabledCipherSuites()
 	{
 		return callObjectMethod(
 			"getEnabledCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray SSLEngine::getEnabledProtocols()
+	JArray SSLEngine::getEnabledProtocols()
 	{
 		return callObjectMethod(
 			"getEnabledProtocols",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring SSLEngine::getHandshakeApplicationProtocol()
+	JString SSLEngine::getHandshakeApplicationProtocol()
 	{
 		return callObjectMethod(
 			"getHandshakeApplicationProtocol",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SSLEngine::getHandshakeApplicationProtocolSelector()
 	{
@@ -105,12 +108,12 @@ namespace javax::net::ssl
 			"()Z"
 		);
 	}
-	jstring SSLEngine::getPeerHost()
+	JString SSLEngine::getPeerHost()
 	{
 		return callObjectMethod(
 			"getPeerHost",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SSLEngine::getPeerPort()
 	{
@@ -133,19 +136,19 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
-	jarray SSLEngine::getSupportedCipherSuites()
+	JArray SSLEngine::getSupportedCipherSuites()
 	{
 		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray SSLEngine::getSupportedProtocols()
+	JArray SSLEngine::getSupportedProtocols()
 	{
 		return callObjectMethod(
 			"getSupportedProtocols",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 	jboolean SSLEngine::getUseClientMode()
 	{
@@ -183,20 +186,20 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLEngine::setEnabledCipherSuites(jarray arg0)
+	void SSLEngine::setEnabledCipherSuites(JArray arg0)
 	{
 		callMethod<void>(
 			"setEnabledCipherSuites",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void SSLEngine::setEnabledProtocols(jarray arg0)
+	void SSLEngine::setEnabledProtocols(JArray arg0)
 	{
 		callMethod<void>(
 			"setEnabledProtocols",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void SSLEngine::setHandshakeApplicationProtocolSelector(JObject arg0)
@@ -239,13 +242,13 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	javax::net::ssl::SSLEngineResult SSLEngine::unwrap(java::nio::ByteBuffer arg0, jarray arg1)
+	javax::net::ssl::SSLEngineResult SSLEngine::unwrap(java::nio::ByteBuffer arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"unwrap",
 			"(Ljava/nio/ByteBuffer;[Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 	javax::net::ssl::SSLEngineResult SSLEngine::unwrap(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1)
@@ -257,23 +260,23 @@ namespace javax::net::ssl
 			arg1.object()
 		);
 	}
-	javax::net::ssl::SSLEngineResult SSLEngine::unwrap(java::nio::ByteBuffer arg0, jarray arg1, jint arg2, jint arg3)
+	javax::net::ssl::SSLEngineResult SSLEngine::unwrap(java::nio::ByteBuffer arg0, JArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"unwrap",
 			"(Ljava/nio/ByteBuffer;[Ljava/nio/ByteBuffer;II)Ljavax/net/ssl/SSLEngineResult;",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2,
 			arg3
 		);
 	}
-	javax::net::ssl::SSLEngineResult SSLEngine::wrap(jarray arg0, java::nio::ByteBuffer arg1)
+	javax::net::ssl::SSLEngineResult SSLEngine::wrap(JArray arg0, java::nio::ByteBuffer arg1)
 	{
 		return callObjectMethod(
 			"wrap",
 			"([Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1.object()
 		);
 	}
@@ -286,12 +289,12 @@ namespace javax::net::ssl
 			arg1.object()
 		);
 	}
-	javax::net::ssl::SSLEngineResult SSLEngine::wrap(jarray arg0, jint arg1, jint arg2, java::nio::ByteBuffer arg3)
+	javax::net::ssl::SSLEngineResult SSLEngine::wrap(JArray arg0, jint arg1, jint arg2, java::nio::ByteBuffer arg3)
 	{
 		return callObjectMethod(
 			"wrap",
 			"([Ljava/nio/ByteBuffer;IILjava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;",
-			arg0,
+			arg0.object<jarray>(),
 			arg1,
 			arg2,
 			arg3.object()

@@ -30,6 +30,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -46,9 +47,9 @@ namespace android::app
 		android::app::ApplicationErrorReport_AnrInfo anrInfo();
 		android::app::ApplicationErrorReport_BatteryInfo batteryInfo();
 		android::app::ApplicationErrorReport_CrashInfo crashInfo();
-		jstring installerPackageName();
-		jstring packageName();
-		jstring processName();
+		JString installerPackageName();
+		JString packageName();
+		JString processName();
 		android::app::ApplicationErrorReport_RunningServiceInfo runningServiceInfo();
 		jboolean systemApp();
 		jlong time();
@@ -62,9 +63,9 @@ namespace android::app
 		ApplicationErrorReport();
 		
 		// Methods
-		static android::content::ComponentName getErrorReportReceiver(android::content::Context arg0, jstring arg1, jint arg2);
+		static android::content::ComponentName getErrorReportReceiver(android::content::Context arg0, JString arg1, jint arg2);
 		jint describeContents();
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		void readFromParcel(android::os::Parcel arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

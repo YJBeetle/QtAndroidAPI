@@ -3,6 +3,7 @@
 #include "../graphics/Path.hpp"
 #include "../graphics/RectF.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./Gesture.hpp"
 
@@ -37,12 +38,12 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	jobject Gesture::clone()
+	JObject Gesture::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint Gesture::describeContents()
 	{

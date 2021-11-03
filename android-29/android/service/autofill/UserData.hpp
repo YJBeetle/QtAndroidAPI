@@ -10,6 +10,7 @@ namespace android::service::autofill
 {
 	class UserData_Builder;
 }
+class JString;
 
 namespace android::service::autofill
 {
@@ -32,10 +33,10 @@ namespace android::service::autofill
 		static jint getMaxValueLength();
 		static jint getMinValueLength();
 		jint describeContents();
-		jstring getFieldClassificationAlgorithm();
-		jstring getFieldClassificationAlgorithmForCategory(jstring arg0);
-		jstring getId();
-		jstring toString();
+		JString getFieldClassificationAlgorithm();
+		JString getFieldClassificationAlgorithmForCategory(JString arg0);
+		JString getId();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::autofill

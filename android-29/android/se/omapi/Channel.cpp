@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./Session.hpp"
 #include "./Channel.hpp"
 
@@ -18,12 +19,12 @@ namespace android::se::omapi
 			"()V"
 		);
 	}
-	jbyteArray Channel::getSelectResponse()
+	JByteArray Channel::getSelectResponse()
 	{
 		return callObjectMethod(
 			"getSelectResponse",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	android::se::omapi::Session Channel::getSession()
 	{
@@ -53,13 +54,13 @@ namespace android::se::omapi
 			"()Z"
 		);
 	}
-	jbyteArray Channel::transmit(jbyteArray arg0)
+	JByteArray Channel::transmit(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"transmit",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
 } // namespace android::se::omapi
 

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 
 namespace android::media::midi
 {
@@ -19,7 +20,7 @@ namespace android::media::midi
 		// Constructors
 		
 		// Methods
-		jstring getName();
+		JString getName();
 		jint getPortNumber();
 		jint getType();
 	};

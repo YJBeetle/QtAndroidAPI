@@ -6,6 +6,7 @@ namespace android::view
 {
 	class SurfaceControl;
 }
+class JString;
 
 namespace android::view
 {
@@ -25,7 +26,7 @@ namespace android::view
 		android::view::SurfaceControl build();
 		android::view::SurfaceControl_Builder setBufferSize(jint arg0, jint arg1);
 		android::view::SurfaceControl_Builder setFormat(jint arg0);
-		android::view::SurfaceControl_Builder setName(jstring arg0);
+		android::view::SurfaceControl_Builder setName(JString arg0);
 		android::view::SurfaceControl_Builder setOpaque(jboolean arg0);
 		android::view::SurfaceControl_Builder setParent(android::view::SurfaceControl arg0);
 	};

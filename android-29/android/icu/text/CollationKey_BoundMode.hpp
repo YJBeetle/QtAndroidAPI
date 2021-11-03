@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::icu::text
 {
 	class CollationKey_BoundMode : public JObject

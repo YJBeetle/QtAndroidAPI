@@ -2,6 +2,9 @@
 
 #include "../../../JObject.hpp"
 
+class JFloatArray;
+class JIntArray;
+class JArray;
 namespace android::icu::util
 {
 	class ULocale;
@@ -22,6 +25,7 @@ namespace android::view::textclassifier
 {
 	class TextClassifierEvent_Builder;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -63,18 +67,18 @@ namespace android::view::textclassifier
 		
 		// Methods
 		jint describeContents();
-		jintArray getActionIndices();
-		jarray getEntityTypes();
+		JIntArray getActionIndices();
+		JArray getEntityTypes();
 		jint getEventCategory();
 		android::view::textclassifier::TextClassificationContext getEventContext();
 		jint getEventIndex();
 		jint getEventType();
 		android::os::Bundle getExtras();
 		android::icu::util::ULocale getLocale();
-		jstring getModelName();
-		jstring getResultId();
-		jfloatArray getScores();
-		jstring toString();
+		JString getModelName();
+		JString getResultId();
+		JFloatArray getScores();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier

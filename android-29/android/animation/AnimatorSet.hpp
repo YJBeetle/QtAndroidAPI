@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Animator.hpp"
 
+class JArray;
 namespace android::animation
 {
 	class Animator;
@@ -11,6 +11,8 @@ namespace android::animation
 {
 	class AnimatorSet_Builder;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class ArrayList;
@@ -44,9 +46,9 @@ namespace android::animation
 		jboolean isStarted();
 		void pause();
 		android::animation::AnimatorSet_Builder play(android::animation::Animator arg0);
-		void playSequentially(jarray arg0);
+		void playSequentially(JArray arg0);
 		void playSequentially(JObject arg0);
-		void playTogether(jarray arg0);
+		void playTogether(JArray arg0);
 		void playTogether(JObject arg0);
 		void resume();
 		void reverse();
@@ -54,11 +56,11 @@ namespace android::animation
 		android::animation::AnimatorSet setDuration(jlong arg0);
 		void setInterpolator(JObject arg0);
 		void setStartDelay(jlong arg0);
-		void setTarget(jobject arg0);
+		void setTarget(JObject arg0);
 		void setupEndValues();
 		void setupStartValues();
 		void start();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::animation
 

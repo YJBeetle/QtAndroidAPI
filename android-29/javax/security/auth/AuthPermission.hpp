@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../../java/security/Permission.hpp"
 #include "../../../java/security/BasicPermission.hpp"
 
+class JString;
 
 namespace javax::security::auth
 {
@@ -17,8 +16,8 @@ namespace javax::security::auth
 		AuthPermission(QAndroidJniObject obj);
 		
 		// Constructors
-		AuthPermission(jstring arg0);
-		AuthPermission(jstring arg0, jstring arg1);
+		AuthPermission(JString arg0);
+		AuthPermission(JString arg0, JString arg1);
 		
 		// Methods
 	};

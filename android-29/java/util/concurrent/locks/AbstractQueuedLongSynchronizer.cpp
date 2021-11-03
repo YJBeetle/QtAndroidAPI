@@ -1,3 +1,4 @@
+#include "../../../../JString.hpp"
 #include "../../../lang/Thread.hpp"
 #include "./AbstractQueuedLongSynchronizer_ConditionObject.hpp"
 #include "./AbstractQueuedLongSynchronizer.hpp"
@@ -161,12 +162,12 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	jstring AbstractQueuedLongSynchronizer::toString()
+	JString AbstractQueuedLongSynchronizer::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean AbstractQueuedLongSynchronizer::tryAcquireNanos(jlong arg0, jlong arg1)
 	{

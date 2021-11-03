@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::system
 {
@@ -20,10 +22,10 @@ namespace android::system
 		
 		// Methods
 		static android::system::StructTimeval fromMillis(jlong arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		jlong toMillis();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::system
 

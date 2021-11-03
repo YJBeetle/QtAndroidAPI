@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/Void.hpp"
 #include "./InetAddress.hpp"
 #include "./Socket.hpp"
@@ -110,13 +112,13 @@ namespace java::net
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	jobject ServerSocket::getOption(JObject arg0)
+	JObject ServerSocket::getOption(JObject arg0)
 	{
 		return callObjectMethod(
 			"getOption",
 			"(Ljava/net/SocketOption;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	jint ServerSocket::getReceiveBufferSize()
 	{
@@ -153,13 +155,13 @@ namespace java::net
 			"()Z"
 		);
 	}
-	java::net::ServerSocket ServerSocket::setOption(JObject arg0, jobject arg1)
+	java::net::ServerSocket ServerSocket::setOption(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/net/ServerSocket;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	void ServerSocket::setPerformancePreferences(jint arg0, jint arg1, jint arg2)
@@ -203,12 +205,12 @@ namespace java::net
 			"()Ljava/util/Set;"
 		);
 	}
-	jstring ServerSocket::toString()
+	JString ServerSocket::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::net
 

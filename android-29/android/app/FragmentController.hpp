@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::app
 {
 	class Fragment;
@@ -50,6 +51,7 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
 
 namespace android::app
 {
@@ -90,13 +92,13 @@ namespace android::app
 		void doLoaderDestroy();
 		void doLoaderStart();
 		void doLoaderStop(jboolean arg0);
-		void dumpLoaders(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
+		void dumpLoaders(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
 		jboolean execPendingActions();
-		android::app::Fragment findFragmentByWho(jstring arg0);
+		android::app::Fragment findFragmentByWho(JString arg0);
 		android::app::FragmentManager getFragmentManager();
 		android::app::LoaderManager getLoaderManager();
 		void noteStateNotSaved();
-		android::view::View onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, JObject arg3);
+		android::view::View onCreateView(android::view::View arg0, JString arg1, android::content::Context arg2, JObject arg3);
 		void reportLoaderStart();
 		void restoreAllState(JObject arg0, android::app::FragmentManagerNonConfig arg1);
 		void restoreAllState(JObject arg0, JObject arg1);

@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ArrayMap.hpp"
 
 namespace android::util
@@ -42,20 +44,20 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean ArrayMap::containsKey(jobject arg0)
+	jboolean ArrayMap::containsKey(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean ArrayMap::containsValue(jobject arg0)
+	jboolean ArrayMap::containsValue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void ArrayMap::ensureCapacity(jint arg0)
@@ -73,21 +75,21 @@ namespace android::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean ArrayMap::equals(jobject arg0)
+	jboolean ArrayMap::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject ArrayMap::get(jobject arg0)
+	JObject ArrayMap::get(JObject arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jint ArrayMap::hashCode()
 	{
@@ -96,20 +98,20 @@ namespace android::util
 			"()I"
 		);
 	}
-	jint ArrayMap::indexOfKey(jobject arg0)
+	jint ArrayMap::indexOfKey(JObject arg0)
 	{
 		return callMethod<jint>(
 			"indexOfKey",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jint ArrayMap::indexOfValue(jobject arg0)
+	jint ArrayMap::indexOfValue(JObject arg0)
 	{
 		return callMethod<jint>(
 			"indexOfValue",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ArrayMap::isEmpty()
@@ -119,13 +121,13 @@ namespace android::util
 			"()Z"
 		);
 	}
-	jobject ArrayMap::keyAt(jint arg0)
+	JObject ArrayMap::keyAt(jint arg0)
 	{
 		return callObjectMethod(
 			"keyAt",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	JObject ArrayMap::keySet()
 	{
@@ -134,14 +136,14 @@ namespace android::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jobject ArrayMap::put(jobject arg0, jobject arg1)
+	JObject ArrayMap::put(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
 	}
 	void ArrayMap::putAll(android::util::ArrayMap arg0)
 	{
@@ -159,13 +161,13 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jobject ArrayMap::remove(jobject arg0)
+	JObject ArrayMap::remove(JObject arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jobject>()
+		);
 	}
 	jboolean ArrayMap::removeAll(JObject arg0)
 	{
@@ -175,13 +177,13 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jobject ArrayMap::removeAt(jint arg0)
+	JObject ArrayMap::removeAt(jint arg0)
 	{
 		return callObjectMethod(
 			"removeAt",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jboolean ArrayMap::retainAll(JObject arg0)
 	{
@@ -191,14 +193,14 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jobject ArrayMap::setValueAt(jint arg0, jobject arg1)
+	JObject ArrayMap::setValueAt(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setValueAt",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1
-		).object<jobject>();
+			arg1.object<jobject>()
+		);
 	}
 	jint ArrayMap::size()
 	{
@@ -207,20 +209,20 @@ namespace android::util
 			"()I"
 		);
 	}
-	jstring ArrayMap::toString()
+	JString ArrayMap::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject ArrayMap::valueAt(jint arg0)
+	JObject ArrayMap::valueAt(jint arg0)
 	{
 		return callObjectMethod(
 			"valueAt",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	JObject ArrayMap::values()
 	{

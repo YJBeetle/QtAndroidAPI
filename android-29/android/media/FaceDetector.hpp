@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::graphics
 {
 	class Bitmap;
@@ -22,7 +23,7 @@ namespace android::media
 		FaceDetector(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint findFaces(android::graphics::Bitmap arg0, jarray arg1);
+		jint findFaces(android::graphics::Bitmap arg0, JArray arg1);
 	};
 } // namespace android::media
 

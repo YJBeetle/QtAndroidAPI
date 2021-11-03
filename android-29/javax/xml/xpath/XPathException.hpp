@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -19,6 +19,8 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
+class JThrowable;
 
 namespace javax::xml::xpath
 {
@@ -32,11 +34,11 @@ namespace javax::xml::xpath
 		XPathException(QAndroidJniObject obj);
 		
 		// Constructors
-		XPathException(jstring arg0);
-		XPathException(jthrowable arg0);
+		XPathException(JString arg0);
+		XPathException(JThrowable arg0);
 		
 		// Methods
-		jthrowable getCause();
+		JThrowable getCause();
 		void printStackTrace();
 		void printStackTrace(java::io::PrintStream arg0);
 		void printStackTrace(java::io::PrintWriter arg0);

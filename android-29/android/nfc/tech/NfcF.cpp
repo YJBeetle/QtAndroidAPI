@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "../Tag.hpp"
 #include "./NfcF.hpp"
 
@@ -34,12 +35,12 @@ namespace android::nfc::tech
 			"()V"
 		);
 	}
-	jbyteArray NfcF::getManufacturer()
+	JByteArray NfcF::getManufacturer()
 	{
 		return callObjectMethod(
 			"getManufacturer",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint NfcF::getMaxTransceiveLength()
 	{
@@ -48,12 +49,12 @@ namespace android::nfc::tech
 			"()I"
 		);
 	}
-	jbyteArray NfcF::getSystemCode()
+	JByteArray NfcF::getSystemCode()
 	{
 		return callObjectMethod(
 			"getSystemCode",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	android::nfc::Tag NfcF::getTag()
 	{
@@ -84,13 +85,13 @@ namespace android::nfc::tech
 			arg0
 		);
 	}
-	jbyteArray NfcF::transceive(jbyteArray arg0)
+	JByteArray NfcF::transceive(JByteArray arg0)
 	{
 		return callObjectMethod(
 			"transceive",
 			"([B)[B",
-			arg0
-		).object<jbyteArray>();
+			arg0.object<jbyteArray>()
+		);
 	}
 } // namespace android::nfc::tech
 

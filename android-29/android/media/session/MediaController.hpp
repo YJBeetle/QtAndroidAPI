@@ -50,6 +50,8 @@ namespace android::view
 {
 	class KeyEvent;
 }
+class JString;
+class JString;
 
 namespace android::media::session
 {
@@ -71,11 +73,11 @@ namespace android::media::session
 		android::os::Bundle getExtras();
 		jlong getFlags();
 		android::media::MediaMetadata getMetadata();
-		jstring getPackageName();
+		JString getPackageName();
 		android::media::session::MediaController_PlaybackInfo getPlaybackInfo();
 		android::media::session::PlaybackState getPlaybackState();
 		JObject getQueue();
-		jstring getQueueTitle();
+		JString getQueueTitle();
 		jint getRatingType();
 		android::app::PendingIntent getSessionActivity();
 		android::os::Bundle getSessionInfo();
@@ -83,7 +85,7 @@ namespace android::media::session
 		android::media::session::MediaController_TransportControls getTransportControls();
 		void registerCallback(android::media::session::MediaController_Callback arg0);
 		void registerCallback(android::media::session::MediaController_Callback arg0, android::os::Handler arg1);
-		void sendCommand(jstring arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2);
+		void sendCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2);
 		void setVolumeTo(jint arg0, jint arg1);
 		void unregisterCallback(android::media::session::MediaController_Callback arg0);
 	};

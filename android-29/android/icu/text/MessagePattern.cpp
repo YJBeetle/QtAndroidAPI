@@ -1,6 +1,8 @@
 #include "./MessagePattern_ApostropheMode.hpp"
 #include "./MessagePattern_Part.hpp"
 #include "./MessagePattern_Part_Type.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./MessagePattern.hpp"
 
 namespace android::icu::text
@@ -43,29 +45,29 @@ namespace android::icu::text
 			"(Landroid/icu/text/MessagePattern$ApostropheMode;)V",
 			arg0.object()
 		) {}
-	MessagePattern::MessagePattern(jstring arg0)
+	MessagePattern::MessagePattern(JString arg0)
 		: JObject(
 			"android.icu.text.MessagePattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jint MessagePattern::validateArgumentName(jstring arg0)
+	jint MessagePattern::validateArgumentName(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.icu.text.MessagePattern",
 			"validateArgumentName",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring MessagePattern::autoQuoteApostropheDeep()
+	JString MessagePattern::autoQuoteApostropheDeep()
 	{
 		return callObjectMethod(
 			"autoQuoteApostropheDeep",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void MessagePattern::clear()
 	{
@@ -82,12 +84,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jobject MessagePattern::clone()
+	JObject MessagePattern::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::icu::text::MessagePattern MessagePattern::cloneAsThawed()
 	{
@@ -103,12 +105,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jboolean MessagePattern::equals(jobject arg0)
+	jboolean MessagePattern::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::icu::text::MessagePattern MessagePattern::freeze()
@@ -165,12 +167,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jstring MessagePattern::getPatternString()
+	JString MessagePattern::getPatternString()
 	{
 		return callObjectMethod(
 			"getPatternString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jdouble MessagePattern::getPluralOffset(jint arg0)
 	{
@@ -180,13 +182,13 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jstring MessagePattern::getSubstring(android::icu::text::MessagePattern_Part arg0)
+	JString MessagePattern::getSubstring(android::icu::text::MessagePattern_Part arg0)
 	{
 		return callObjectMethod(
 			"getSubstring",
 			"(Landroid/icu/text/MessagePattern$Part;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jboolean MessagePattern::hasNamedArguments()
 	{
@@ -216,53 +218,53 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	android::icu::text::MessagePattern MessagePattern::parse(jstring arg0)
+	android::icu::text::MessagePattern MessagePattern::parse(JString arg0)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::MessagePattern MessagePattern::parseChoiceStyle(jstring arg0)
+	android::icu::text::MessagePattern MessagePattern::parseChoiceStyle(JString arg0)
 	{
 		return callObjectMethod(
 			"parseChoiceStyle",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::MessagePattern MessagePattern::parsePluralStyle(jstring arg0)
+	android::icu::text::MessagePattern MessagePattern::parsePluralStyle(JString arg0)
 	{
 		return callObjectMethod(
 			"parsePluralStyle",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::MessagePattern MessagePattern::parseSelectStyle(jstring arg0)
+	android::icu::text::MessagePattern MessagePattern::parseSelectStyle(JString arg0)
 	{
 		return callObjectMethod(
 			"parseSelectStyle",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean MessagePattern::partSubstringMatches(android::icu::text::MessagePattern_Part arg0, jstring arg1)
+	jboolean MessagePattern::partSubstringMatches(android::icu::text::MessagePattern_Part arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"partSubstringMatches",
 			"(Landroid/icu/text/MessagePattern$Part;Ljava/lang/String;)Z",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	jstring MessagePattern::toString()
+	JString MessagePattern::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

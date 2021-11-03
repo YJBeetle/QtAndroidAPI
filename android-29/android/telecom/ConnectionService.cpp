@@ -5,18 +5,19 @@
 #include "./PhoneAccountHandle.hpp"
 #include "./RemoteConference.hpp"
 #include "./RemoteConnection.hpp"
+#include "../../JString.hpp"
 #include "./ConnectionService.hpp"
 
 namespace android::telecom
 {
 	// Fields
-	jstring ConnectionService::SERVICE_INTERFACE()
+	JString ConnectionService::SERVICE_INTERFACE()
 	{
 		return getStaticObjectField(
 			"android.telecom.ConnectionService",
 			"SERVICE_INTERFACE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

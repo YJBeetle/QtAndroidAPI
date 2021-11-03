@@ -5,6 +5,7 @@
 #include "../view/MotionEvent.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./HorizontalScrollView.hpp"
 
 namespace android::widget
@@ -138,12 +139,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	jstring HorizontalScrollView::getAccessibilityClassName()
+	JString HorizontalScrollView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint HorizontalScrollView::getLeftEdgeEffectColor()
 	{

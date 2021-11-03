@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./BaseBundle.hpp"
 
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::os
 {
@@ -27,12 +28,12 @@ namespace android::os
 		PersistableBundle(jint arg0);
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 		android::os::PersistableBundle deepCopy();
 		jint describeContents();
-		android::os::PersistableBundle getPersistableBundle(jstring arg0);
-		void putPersistableBundle(jstring arg0, android::os::PersistableBundle arg1);
-		jstring toString();
+		android::os::PersistableBundle getPersistableBundle(JString arg0);
+		void putPersistableBundle(JString arg0, android::os::PersistableBundle arg1);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::os

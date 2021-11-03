@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./TransformerConfigurationException.hpp"
 
 namespace javax::xml::transform
@@ -13,39 +15,39 @@ namespace javax::xml::transform
 			"javax.xml.transform.TransformerConfigurationException",
 			"()V"
 		) {}
-	TransformerConfigurationException::TransformerConfigurationException(jstring arg0)
+	TransformerConfigurationException::TransformerConfigurationException(JString arg0)
 		: javax::xml::transform::TransformerException(
 			"javax.xml.transform.TransformerConfigurationException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	TransformerConfigurationException::TransformerConfigurationException(jthrowable arg0)
+	TransformerConfigurationException::TransformerConfigurationException(JThrowable arg0)
 		: javax::xml::transform::TransformerException(
 			"javax.xml.transform.TransformerConfigurationException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	TransformerConfigurationException::TransformerConfigurationException(jstring arg0, jthrowable arg1)
+	TransformerConfigurationException::TransformerConfigurationException(JString arg0, JThrowable arg1)
 		: javax::xml::transform::TransformerException(
 			"javax.xml.transform.TransformerConfigurationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
-	TransformerConfigurationException::TransformerConfigurationException(jstring arg0, JObject arg1)
+	TransformerConfigurationException::TransformerConfigurationException(JString arg0, JObject arg1)
 		: javax::xml::transform::TransformerException(
 			"javax.xml.transform.TransformerConfigurationException",
 			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
-	TransformerConfigurationException::TransformerConfigurationException(jstring arg0, JObject arg1, jthrowable arg2)
+	TransformerConfigurationException::TransformerConfigurationException(JString arg0, JObject arg1, JThrowable arg2)
 		: javax::xml::transform::TransformerException(
 			"javax.xml.transform.TransformerConfigurationException",
 			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;Ljava/lang/Throwable;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jthrowable>()
 		) {}
 	
 	// Methods

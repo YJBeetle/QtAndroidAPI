@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JLongArray;
+class JString;
 
 namespace java::util::concurrent::atomic
 {
@@ -15,7 +17,7 @@ namespace java::util::concurrent::atomic
 		AtomicLongArray(QAndroidJniObject obj);
 		
 		// Constructors
-		AtomicLongArray(jlongArray arg0);
+		AtomicLongArray(JLongArray arg0);
 		AtomicLongArray(jint arg0);
 		
 		// Methods
@@ -43,7 +45,7 @@ namespace java::util::concurrent::atomic
 		void setOpaque(jint arg0, jlong arg1);
 		void setPlain(jint arg0, jlong arg1);
 		void setRelease(jint arg0, jlong arg1);
-		jstring toString();
+		JString toString();
 		jlong updateAndGet(jint arg0, JObject arg1);
 		jboolean weakCompareAndSet(jint arg0, jlong arg1, jlong arg2);
 		jboolean weakCompareAndSetAcquire(jint arg0, jlong arg1, jlong arg2);

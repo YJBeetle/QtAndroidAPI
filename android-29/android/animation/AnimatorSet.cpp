@@ -1,5 +1,8 @@
+#include "../../JArray.hpp"
 #include "./Animator.hpp"
 #include "./AnimatorSet_Builder.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "./AnimatorSet.hpp"
 
@@ -110,12 +113,12 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorSet::playSequentially(jarray arg0)
+	void AnimatorSet::playSequentially(JArray arg0)
 	{
 		callMethod<void>(
 			"playSequentially",
 			"([Landroid/animation/Animator;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void AnimatorSet::playSequentially(JObject arg0)
@@ -126,12 +129,12 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorSet::playTogether(jarray arg0)
+	void AnimatorSet::playTogether(JArray arg0)
 	{
 		callMethod<void>(
 			"playTogether",
 			"([Landroid/animation/Animator;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void AnimatorSet::playTogether(JObject arg0)
@@ -188,12 +191,12 @@ namespace android::animation
 			arg0
 		);
 	}
-	void AnimatorSet::setTarget(jobject arg0)
+	void AnimatorSet::setTarget(JObject arg0)
 	{
 		callMethod<void>(
 			"setTarget",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void AnimatorSet::setupEndValues()
@@ -217,12 +220,12 @@ namespace android::animation
 			"()V"
 		);
 	}
-	jstring AnimatorSet::toString()
+	JString AnimatorSet::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::animation
 

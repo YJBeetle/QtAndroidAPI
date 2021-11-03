@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JCharArray.hpp"
 #include "./PBEKeySpec.hpp"
 
 namespace javax::crypto::spec
@@ -8,26 +10,26 @@ namespace javax::crypto::spec
 	PBEKeySpec::PBEKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	PBEKeySpec::PBEKeySpec(jcharArray arg0)
+	PBEKeySpec::PBEKeySpec(JCharArray arg0)
 		: JObject(
 			"javax.crypto.spec.PBEKeySpec",
 			"([C)V",
-			arg0
+			arg0.object<jcharArray>()
 		) {}
-	PBEKeySpec::PBEKeySpec(jcharArray arg0, jbyteArray arg1, jint arg2)
+	PBEKeySpec::PBEKeySpec(JCharArray arg0, JByteArray arg1, jint arg2)
 		: JObject(
 			"javax.crypto.spec.PBEKeySpec",
 			"([C[BI)V",
-			arg0,
-			arg1,
+			arg0.object<jcharArray>(),
+			arg1.object<jbyteArray>(),
 			arg2
 		) {}
-	PBEKeySpec::PBEKeySpec(jcharArray arg0, jbyteArray arg1, jint arg2, jint arg3)
+	PBEKeySpec::PBEKeySpec(JCharArray arg0, JByteArray arg1, jint arg2, jint arg3)
 		: JObject(
 			"javax.crypto.spec.PBEKeySpec",
 			"([C[BII)V",
-			arg0,
-			arg1,
+			arg0.object<jcharArray>(),
+			arg1.object<jbyteArray>(),
 			arg2,
 			arg3
 		) {}
@@ -54,19 +56,19 @@ namespace javax::crypto::spec
 			"()I"
 		);
 	}
-	jcharArray PBEKeySpec::getPassword()
+	JCharArray PBEKeySpec::getPassword()
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()[C"
-		).object<jcharArray>();
+		);
 	}
-	jbyteArray PBEKeySpec::getSalt()
+	JByteArray PBEKeySpec::getSalt()
 	{
 		return callObjectMethod(
 			"getSalt",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 } // namespace javax::crypto::spec
 

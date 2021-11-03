@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./EmbossMaskFilter.hpp"
 
 namespace android::graphics
@@ -8,11 +9,11 @@ namespace android::graphics
 	EmbossMaskFilter::EmbossMaskFilter(QAndroidJniObject obj) : android::graphics::MaskFilter(obj) {}
 	
 	// Constructors
-	EmbossMaskFilter::EmbossMaskFilter(jfloatArray arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	EmbossMaskFilter::EmbossMaskFilter(JFloatArray arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 		: android::graphics::MaskFilter(
 			"android.graphics.EmbossMaskFilter",
 			"([FFFF)V",
-			arg0,
+			arg0.object<jfloatArray>(),
 			arg1,
 			arg2,
 			arg3

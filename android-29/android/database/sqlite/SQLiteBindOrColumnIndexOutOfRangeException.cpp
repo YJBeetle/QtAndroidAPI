@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./SQLiteBindOrColumnIndexOutOfRangeException.hpp"
 
 namespace android::database::sqlite
@@ -13,11 +14,11 @@ namespace android::database::sqlite
 			"android.database.sqlite.SQLiteBindOrColumnIndexOutOfRangeException",
 			"()V"
 		) {}
-	SQLiteBindOrColumnIndexOutOfRangeException::SQLiteBindOrColumnIndexOutOfRangeException(jstring arg0)
+	SQLiteBindOrColumnIndexOutOfRangeException::SQLiteBindOrColumnIndexOutOfRangeException(JString arg0)
 		: android::database::sqlite::SQLiteException(
 			"android.database.sqlite.SQLiteBindOrColumnIndexOutOfRangeException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../util/EventObject.hpp"
 #include "./PropertyChangeEvent.hpp"
 
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -21,7 +21,7 @@ namespace java::beans
 		IndexedPropertyChangeEvent(QAndroidJniObject obj);
 		
 		// Constructors
-		IndexedPropertyChangeEvent(jobject arg0, jstring arg1, jobject arg2, jobject arg3, jint arg4);
+		IndexedPropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3, jint arg4);
 		
 		// Methods
 		jint getIndex();

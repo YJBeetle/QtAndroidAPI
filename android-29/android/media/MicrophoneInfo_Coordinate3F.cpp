@@ -1,3 +1,4 @@
+#include "../../JObject.hpp"
 #include "./MicrophoneInfo_Coordinate3F.hpp"
 
 namespace android::media
@@ -28,12 +29,12 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean MicrophoneInfo_Coordinate3F::equals(jobject arg0)
+	jboolean MicrophoneInfo_Coordinate3F::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::media

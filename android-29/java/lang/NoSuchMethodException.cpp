@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./NoSuchMethodException.hpp"
 
 namespace java::lang
@@ -13,11 +14,11 @@ namespace java::lang
 			"java.lang.NoSuchMethodException",
 			"()V"
 		) {}
-	NoSuchMethodException::NoSuchMethodException(jstring arg0)
+	NoSuchMethodException::NoSuchMethodException(JString arg0)
 		: java::lang::ReflectiveOperationException(
 			"java.lang.NoSuchMethodException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

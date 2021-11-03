@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace java::security::cert
 {
@@ -16,14 +18,14 @@ namespace java::security::cert
 		
 		// Constructors
 		LDAPCertStoreParameters();
-		LDAPCertStoreParameters(jstring arg0);
-		LDAPCertStoreParameters(jstring arg0, jint arg1);
+		LDAPCertStoreParameters(JString arg0);
+		LDAPCertStoreParameters(JString arg0, jint arg1);
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 		jint getPort();
-		jstring getServerName();
-		jstring toString();
+		JString getServerName();
+		JString toString();
 	};
 } // namespace java::security::cert
 

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JString;
 namespace java::time
 {
 	class MonthDay;
@@ -24,7 +25,7 @@ namespace android::app::admin
 		// Methods
 		java::time::MonthDay getEnd();
 		java::time::MonthDay getStart();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::app::admin
 

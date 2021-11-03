@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./UnsupportedOperationException.hpp"
 
 namespace java::lang
@@ -13,24 +15,24 @@ namespace java::lang
 			"java.lang.UnsupportedOperationException",
 			"()V"
 		) {}
-	UnsupportedOperationException::UnsupportedOperationException(jstring arg0)
+	UnsupportedOperationException::UnsupportedOperationException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.lang.UnsupportedOperationException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	UnsupportedOperationException::UnsupportedOperationException(jthrowable arg0)
+	UnsupportedOperationException::UnsupportedOperationException(JThrowable arg0)
 		: java::lang::RuntimeException(
 			"java.lang.UnsupportedOperationException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	UnsupportedOperationException::UnsupportedOperationException(jstring arg0, jthrowable arg1)
+	UnsupportedOperationException::UnsupportedOperationException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"java.lang.UnsupportedOperationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

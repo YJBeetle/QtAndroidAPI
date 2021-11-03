@@ -1,192 +1,193 @@
 #include "../../java/io/File.hpp"
+#include "../../JString.hpp"
 #include "./Environment.hpp"
 
 namespace android::os
 {
 	// Fields
-	jstring Environment::DIRECTORY_ALARMS()
+	JString Environment::DIRECTORY_ALARMS()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_ALARMS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_AUDIOBOOKS()
+	JString Environment::DIRECTORY_AUDIOBOOKS()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_AUDIOBOOKS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_DCIM()
+	JString Environment::DIRECTORY_DCIM()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_DCIM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_DOCUMENTS()
+	JString Environment::DIRECTORY_DOCUMENTS()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_DOCUMENTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_DOWNLOADS()
+	JString Environment::DIRECTORY_DOWNLOADS()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_DOWNLOADS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_MOVIES()
+	JString Environment::DIRECTORY_MOVIES()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_MOVIES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_MUSIC()
+	JString Environment::DIRECTORY_MUSIC()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_MUSIC",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_NOTIFICATIONS()
+	JString Environment::DIRECTORY_NOTIFICATIONS()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_NOTIFICATIONS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_PICTURES()
+	JString Environment::DIRECTORY_PICTURES()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_PICTURES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_PODCASTS()
+	JString Environment::DIRECTORY_PODCASTS()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_PODCASTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_RINGTONES()
+	JString Environment::DIRECTORY_RINGTONES()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_RINGTONES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::DIRECTORY_SCREENSHOTS()
+	JString Environment::DIRECTORY_SCREENSHOTS()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"DIRECTORY_SCREENSHOTS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_BAD_REMOVAL()
+	JString Environment::MEDIA_BAD_REMOVAL()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_BAD_REMOVAL",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_CHECKING()
+	JString Environment::MEDIA_CHECKING()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_CHECKING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_EJECTING()
+	JString Environment::MEDIA_EJECTING()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_EJECTING",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_MOUNTED()
+	JString Environment::MEDIA_MOUNTED()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_MOUNTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_MOUNTED_READ_ONLY()
+	JString Environment::MEDIA_MOUNTED_READ_ONLY()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_MOUNTED_READ_ONLY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_NOFS()
+	JString Environment::MEDIA_NOFS()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_NOFS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_REMOVED()
+	JString Environment::MEDIA_REMOVED()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_REMOVED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_SHARED()
+	JString Environment::MEDIA_SHARED()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_SHARED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_UNKNOWN()
+	JString Environment::MEDIA_UNKNOWN()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_UNKNOWN",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_UNMOUNTABLE()
+	JString Environment::MEDIA_UNMOUNTABLE()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_UNMOUNTABLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::MEDIA_UNMOUNTED()
+	JString Environment::MEDIA_UNMOUNTED()
 	{
 		return getStaticObjectField(
 			"android.os.Environment",
 			"MEDIA_UNMOUNTED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -224,31 +225,31 @@ namespace android::os
 			"()Ljava/io/File;"
 		);
 	}
-	java::io::File Environment::getExternalStoragePublicDirectory(jstring arg0)
+	java::io::File Environment::getExternalStoragePublicDirectory(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.os.Environment",
 			"getExternalStoragePublicDirectory",
 			"(Ljava/lang/String;)Ljava/io/File;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring Environment::getExternalStorageState()
+	JString Environment::getExternalStorageState()
 	{
 		return callStaticObjectMethod(
 			"android.os.Environment",
 			"getExternalStorageState",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Environment::getExternalStorageState(java::io::File arg0)
+	JString Environment::getExternalStorageState(java::io::File arg0)
 	{
 		return callStaticObjectMethod(
 			"android.os.Environment",
 			"getExternalStorageState",
 			"(Ljava/io/File;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	java::io::File Environment::getRootDirectory()
 	{
@@ -258,14 +259,14 @@ namespace android::os
 			"()Ljava/io/File;"
 		);
 	}
-	jstring Environment::getStorageState(java::io::File arg0)
+	JString Environment::getStorageState(java::io::File arg0)
 	{
 		return callStaticObjectMethod(
 			"android.os.Environment",
 			"getStorageState",
 			"(Ljava/io/File;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jboolean Environment::isExternalStorageEmulated()
 	{

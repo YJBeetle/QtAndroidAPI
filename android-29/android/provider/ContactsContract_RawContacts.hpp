@@ -10,6 +10,7 @@ namespace android::net
 {
 	class Uri;
 }
+class JString;
 
 namespace android::provider
 {
@@ -21,8 +22,8 @@ namespace android::provider
 		static jint AGGREGATION_MODE_DISABLED();
 		static jint AGGREGATION_MODE_IMMEDIATE();
 		static jint AGGREGATION_MODE_SUSPENDED();
-		static jstring CONTENT_ITEM_TYPE();
-		static jstring CONTENT_TYPE();
+		static JString CONTENT_ITEM_TYPE();
+		static JString CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
 		
 		// QAndroidJniObject forward

@@ -1,4 +1,5 @@
 #include "./MessageQueue.hpp"
+#include "../../JString.hpp"
 #include "../../java/lang/Thread.hpp"
 #include "./Looper.hpp"
 
@@ -60,13 +61,13 @@ namespace android::os
 			"()V"
 		);
 	}
-	void Looper::dump(JObject arg0, jstring arg1)
+	void Looper::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::os::MessageQueue Looper::getQueue()
@@ -112,12 +113,12 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jstring Looper::toString()
+	JString Looper::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::os
 

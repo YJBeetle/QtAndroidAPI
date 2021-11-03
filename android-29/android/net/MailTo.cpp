@@ -1,15 +1,16 @@
+#include "../../JString.hpp"
 #include "./MailTo.hpp"
 
 namespace android::net
 {
 	// Fields
-	jstring MailTo::MAILTO_SCHEME()
+	JString MailTo::MAILTO_SCHEME()
 	{
 		return getStaticObjectField(
 			"android.net.MailTo",
 			"MAILTO_SCHEME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -18,37 +19,37 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jboolean MailTo::isMailTo(jstring arg0)
+	jboolean MailTo::isMailTo(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.net.MailTo",
 			"isMailTo",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::MailTo MailTo::parse(jstring arg0)
+	android::net::MailTo MailTo::parse(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.MailTo",
 			"parse",
 			"(Ljava/lang/String;)Landroid/net/MailTo;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring MailTo::getBody()
+	JString MailTo::getBody()
 	{
 		return callObjectMethod(
 			"getBody",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MailTo::getCc()
+	JString MailTo::getCc()
 	{
 		return callObjectMethod(
 			"getCc",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject MailTo::getHeaders()
 	{
@@ -57,26 +58,26 @@ namespace android::net
 			"()Ljava/util/Map;"
 		);
 	}
-	jstring MailTo::getSubject()
+	JString MailTo::getSubject()
 	{
 		return callObjectMethod(
 			"getSubject",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MailTo::getTo()
+	JString MailTo::getTo()
 	{
 		return callObjectMethod(
 			"getTo",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MailTo::toString()
+	JString MailTo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::net
 

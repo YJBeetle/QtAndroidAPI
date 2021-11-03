@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JThrowable.hpp"
 #include "./CountedCompleter.hpp"
 
 namespace java::util::concurrent
@@ -27,12 +29,12 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void CountedCompleter::complete(jobject arg0)
+	void CountedCompleter::complete(JObject arg0)
 	{
 		callMethod<void>(
 			"complete",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void CountedCompleter::compute()
@@ -70,12 +72,12 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	jobject CountedCompleter::getRawResult()
+	JObject CountedCompleter::getRawResult()
 	{
 		return callObjectMethod(
 			"getRawResult",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	java::util::concurrent::CountedCompleter CountedCompleter::getRoot()
 	{
@@ -107,12 +109,12 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CountedCompleter::onExceptionalCompletion(jthrowable arg0, java::util::concurrent::CountedCompleter arg1)
+	jboolean CountedCompleter::onExceptionalCompletion(JThrowable arg0, java::util::concurrent::CountedCompleter arg1)
 	{
 		return callMethod<jboolean>(
 			"onExceptionalCompletion",
 			"(Ljava/lang/Throwable;Ljava/util/concurrent/CountedCompleter;)Z",
-			arg0,
+			arg0.object<jthrowable>(),
 			arg1.object()
 		);
 	}

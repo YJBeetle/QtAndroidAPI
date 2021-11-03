@@ -1,14 +1,16 @@
+#include "../../../JShortArray.hpp"
+#include "../../../JString.hpp"
 #include "./Equalizer_Settings.hpp"
 
 namespace android::media::audiofx
 {
 	// Fields
-	jshortArray Equalizer_Settings::bandLevels()
+	JShortArray Equalizer_Settings::bandLevels()
 	{
 		return getObjectField(
 			"bandLevels",
 			"[S"
-		).object<jshortArray>();
+		);
 	}
 	jshort Equalizer_Settings::curPreset()
 	{
@@ -32,20 +34,20 @@ namespace android::media::audiofx
 			"android.media.audiofx.Equalizer$Settings",
 			"()V"
 		) {}
-	Equalizer_Settings::Equalizer_Settings(jstring arg0)
+	Equalizer_Settings::Equalizer_Settings(JString arg0)
 		: JObject(
 			"android.media.audiofx.Equalizer$Settings",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring Equalizer_Settings::toString()
+	JString Equalizer_Settings::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::audiofx
 

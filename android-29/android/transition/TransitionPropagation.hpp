@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::transition
 {
 	class Transition;
@@ -31,7 +32,7 @@ namespace android::transition
 		
 		// Methods
 		void captureValues(android::transition::TransitionValues arg0);
-		jarray getPropagationProperties();
+		JArray getPropagationProperties();
 		jlong getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3);
 	};
 } // namespace android::transition

@@ -1,5 +1,7 @@
 #include "../../os/Parcel.hpp"
 #include "./AccessibilityRecord.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./AccessibilityEvent.hpp"
 
 namespace android::view::accessibility
@@ -342,14 +344,14 @@ namespace android::view::accessibility
 	// Constructors
 	
 	// Methods
-	jstring AccessibilityEvent::eventTypeToString(jint arg0)
+	JString AccessibilityEvent::eventTypeToString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.accessibility.AccessibilityEvent",
 			"eventTypeToString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::view::accessibility::AccessibilityEvent AccessibilityEvent::obtain()
 	{
@@ -427,12 +429,12 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	jstring AccessibilityEvent::getPackageName()
+	JString AccessibilityEvent::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::view::accessibility::AccessibilityRecord AccessibilityEvent::getRecord(jint arg0)
 	{
@@ -511,20 +513,20 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityEvent::setPackageName(jstring arg0)
+	void AccessibilityEvent::setPackageName(JString arg0)
 	{
 		callMethod<void>(
 			"setPackageName",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring AccessibilityEvent::toString()
+	JString AccessibilityEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void AccessibilityEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

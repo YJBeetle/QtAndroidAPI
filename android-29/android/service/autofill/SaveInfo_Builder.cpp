@@ -1,7 +1,9 @@
+#include "../../../JArray.hpp"
 #include "../../content/IntentSender.hpp"
 #include "./CustomDescription.hpp"
 #include "./SaveInfo.hpp"
 #include "../../view/autofill/AutofillId.hpp"
+#include "../../../JString.hpp"
 #include "./SaveInfo_Builder.hpp"
 
 namespace android::service::autofill
@@ -18,22 +20,22 @@ namespace android::service::autofill
 			"(I)V",
 			arg0
 		) {}
-	SaveInfo_Builder::SaveInfo_Builder(jint arg0, jarray arg1)
+	SaveInfo_Builder::SaveInfo_Builder(jint arg0, JArray arg1)
 		: JObject(
 			"android.service.autofill.SaveInfo$Builder",
 			"(I[Landroid/view/autofill/AutofillId;)V",
 			arg0,
-			arg1
+			arg1.object<jarray>()
 		) {}
 	
 	// Methods
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::addSanitizer(JObject arg0, jarray arg1)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::addSanitizer(JObject arg0, JArray arg1)
 	{
 		return callObjectMethod(
 			"addSanitizer",
 			"(Landroid/service/autofill/Sanitizer;[Landroid/view/autofill/AutofillId;)Landroid/service/autofill/SaveInfo$Builder;",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
 	android::service::autofill::SaveInfo SaveInfo_Builder::build()
@@ -51,12 +53,12 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setDescription(jstring arg0)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setDescription(JString arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/service/autofill/SaveInfo$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setFlags(jint arg0)
@@ -76,12 +78,12 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setOptionalIds(jarray arg0)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setOptionalIds(JArray arg0)
 	{
 		return callObjectMethod(
 			"setOptionalIds",
 			"([Landroid/view/autofill/AutofillId;)Landroid/service/autofill/SaveInfo$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setTriggerId(android::view::autofill::AutofillId arg0)

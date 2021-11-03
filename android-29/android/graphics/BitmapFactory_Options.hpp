@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::graphics
 {
 	class Bitmap;
@@ -14,6 +15,7 @@ namespace android::graphics
 {
 	class ColorSpace;
 }
+class JString;
 
 namespace android::graphics
 {
@@ -36,12 +38,12 @@ namespace android::graphics
 		jboolean inScaled();
 		jint inScreenDensity();
 		jint inTargetDensity();
-		jbyteArray inTempStorage();
+		JByteArray inTempStorage();
 		jboolean mCancel();
 		android::graphics::ColorSpace outColorSpace();
 		android::graphics::Bitmap_Config outConfig();
 		jint outHeight();
-		jstring outMimeType();
+		JString outMimeType();
 		jint outWidth();
 		
 		// QAndroidJniObject forward

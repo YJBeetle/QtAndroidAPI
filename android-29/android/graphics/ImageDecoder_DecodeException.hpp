@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
 
 namespace android::graphics
 {
 	class ImageDecoder_Source;
 }
+class JThrowable;
 
 namespace android::graphics
 {

@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./ProviderException.hpp"
 
 namespace java::security
@@ -13,24 +15,24 @@ namespace java::security
 			"java.security.ProviderException",
 			"()V"
 		) {}
-	ProviderException::ProviderException(jstring arg0)
+	ProviderException::ProviderException(JString arg0)
 		: java::lang::RuntimeException(
 			"java.security.ProviderException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	ProviderException::ProviderException(jthrowable arg0)
+	ProviderException::ProviderException(JThrowable arg0)
 		: java::lang::RuntimeException(
 			"java.security.ProviderException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	ProviderException::ProviderException(jstring arg0, jthrowable arg1)
+	ProviderException::ProviderException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(
 			"java.security.ProviderException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

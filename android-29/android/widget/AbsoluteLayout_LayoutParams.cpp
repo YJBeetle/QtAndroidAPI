@@ -1,5 +1,6 @@
 #include "../content/Context.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./AbsoluteLayout_LayoutParams.hpp"
 
 namespace android::widget
@@ -46,13 +47,13 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring AbsoluteLayout_LayoutParams::debug(jstring arg0)
+	JString AbsoluteLayout_LayoutParams::debug(JString arg0)
 	{
 		return callObjectMethod(
 			"debug",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 } // namespace android::widget
 

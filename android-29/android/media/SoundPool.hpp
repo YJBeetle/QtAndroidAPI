@@ -14,6 +14,7 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+class JString;
 
 namespace android::media
 {
@@ -33,7 +34,7 @@ namespace android::media
 		void autoPause();
 		void autoResume();
 		jint load(android::content::res::AssetFileDescriptor arg0, jint arg1);
-		jint load(jstring arg0, jint arg1);
+		jint load(JString arg0, jint arg1);
 		jint load(android::content::Context arg0, jint arg1, jint arg2);
 		jint load(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jint arg3);
 		void pause(jint arg0);

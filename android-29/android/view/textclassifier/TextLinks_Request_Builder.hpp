@@ -18,6 +18,7 @@ namespace android::view::textclassifier
 {
 	class TextLinks_Request;
 }
+class JString;
 
 namespace android::view::textclassifier
 {
@@ -31,7 +32,7 @@ namespace android::view::textclassifier
 		TextLinks_Request_Builder(QAndroidJniObject obj);
 		
 		// Constructors
-		TextLinks_Request_Builder(jstring arg0);
+		TextLinks_Request_Builder(JString arg0);
 		
 		// Methods
 		android::view::textclassifier::TextLinks_Request build();

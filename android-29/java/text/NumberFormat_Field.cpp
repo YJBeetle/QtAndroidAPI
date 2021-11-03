@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./NumberFormat_Field.hpp"
 
 namespace java::text

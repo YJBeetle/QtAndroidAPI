@@ -10,6 +10,7 @@ namespace android::telecom
 {
 	class PhoneAccountHandle;
 }
+class JObject;
 
 namespace android::telecom
 {
@@ -33,7 +34,7 @@ namespace android::telecom
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::telecom::PhoneAccountHandle getPhoneAccountHandle();
 		jint getReason();
 		jint hashCode();

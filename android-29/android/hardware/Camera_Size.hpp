@@ -6,6 +6,7 @@ namespace android::hardware
 {
 	class Camera;
 }
+class JObject;
 
 namespace android::hardware
 {
@@ -24,7 +25,7 @@ namespace android::hardware
 		Camera_Size(android::hardware::Camera arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 	};
 } // namespace android::hardware

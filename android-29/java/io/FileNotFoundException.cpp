@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./FileNotFoundException.hpp"
 
 namespace java::io
@@ -13,11 +14,11 @@ namespace java::io
 			"java.io.FileNotFoundException",
 			"()V"
 		) {}
-	FileNotFoundException::FileNotFoundException(jstring arg0)
+	FileNotFoundException::FileNotFoundException(JString arg0)
 		: java::io::IOException(
 			"java.io.FileNotFoundException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

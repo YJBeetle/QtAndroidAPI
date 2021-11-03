@@ -1,6 +1,7 @@
 #include "./CellLocation.hpp"
 #include "./ServiceState.hpp"
 #include "./SignalStrength.hpp"
+#include "../../JString.hpp"
 #include "./PhoneStateListener.hpp"
 
 namespace android::telephony
@@ -138,13 +139,13 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onCallStateChanged(jint arg0, jstring arg1)
+	void PhoneStateListener::onCallStateChanged(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onCallStateChanged",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void PhoneStateListener::onCellInfoChanged(JObject arg0)

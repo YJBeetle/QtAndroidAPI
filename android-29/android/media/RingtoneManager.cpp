@@ -3,82 +3,83 @@
 #include "../content/res/AssetFileDescriptor.hpp"
 #include "./Ringtone.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./RingtoneManager.hpp"
 
 namespace android::media
 {
 	// Fields
-	jstring RingtoneManager::ACTION_RINGTONE_PICKER()
+	JString RingtoneManager::ACTION_RINGTONE_PICKER()
 	{
 		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"ACTION_RINGTONE_PICKER",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RingtoneManager::EXTRA_RINGTONE_DEFAULT_URI()
+	JString RingtoneManager::EXTRA_RINGTONE_DEFAULT_URI()
 	{
 		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_DEFAULT_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RingtoneManager::EXTRA_RINGTONE_EXISTING_URI()
+	JString RingtoneManager::EXTRA_RINGTONE_EXISTING_URI()
 	{
 		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_EXISTING_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RingtoneManager::EXTRA_RINGTONE_INCLUDE_DRM()
+	JString RingtoneManager::EXTRA_RINGTONE_INCLUDE_DRM()
 	{
 		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_INCLUDE_DRM",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RingtoneManager::EXTRA_RINGTONE_PICKED_URI()
+	JString RingtoneManager::EXTRA_RINGTONE_PICKED_URI()
 	{
 		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_PICKED_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RingtoneManager::EXTRA_RINGTONE_SHOW_DEFAULT()
+	JString RingtoneManager::EXTRA_RINGTONE_SHOW_DEFAULT()
 	{
 		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_SHOW_DEFAULT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RingtoneManager::EXTRA_RINGTONE_SHOW_SILENT()
+	JString RingtoneManager::EXTRA_RINGTONE_SHOW_SILENT()
 	{
 		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_SHOW_SILENT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RingtoneManager::EXTRA_RINGTONE_TITLE()
+	JString RingtoneManager::EXTRA_RINGTONE_TITLE()
 	{
 		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring RingtoneManager::EXTRA_RINGTONE_TYPE()
+	JString RingtoneManager::EXTRA_RINGTONE_TYPE()
 	{
 		return getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint RingtoneManager::ID_COLUMN_INDEX()
 	{

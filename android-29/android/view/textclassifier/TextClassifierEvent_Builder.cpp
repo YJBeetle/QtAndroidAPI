@@ -1,6 +1,10 @@
+#include "../../../JFloatArray.hpp"
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../icu/util/ULocale.hpp"
 #include "../../os/Bundle.hpp"
 #include "./TextClassificationContext.hpp"
+#include "../../../JString.hpp"
 #include "./TextClassifierEvent_Builder.hpp"
 
 namespace android::view::textclassifier
@@ -13,20 +17,20 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setActionIndices(jintArray arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setActionIndices(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"setActionIndices",
 			"([I)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEntityTypes(jarray arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEntityTypes(JArray arg0)
 	{
 		return callObjectMethod(
 			"setEntityTypes",
 			"([Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEventContext(android::view::textclassifier::TextClassificationContext arg0)
@@ -61,28 +65,28 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setModelName(jstring arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setModelName(JString arg0)
 	{
 		return callObjectMethod(
 			"setModelName",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setResultId(jstring arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setResultId(JString arg0)
 	{
 		return callObjectMethod(
 			"setResultId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setScores(jfloatArray arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setScores(JFloatArray arg0)
 	{
 		return callObjectMethod(
 			"setScores",
 			"([F)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0
+			arg0.object<jfloatArray>()
 		);
 	}
 } // namespace android::view::textclassifier

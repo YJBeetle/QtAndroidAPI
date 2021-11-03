@@ -1,3 +1,5 @@
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./KeyChainException.hpp"
 
 namespace android::security
@@ -13,24 +15,24 @@ namespace android::security
 			"android.security.KeyChainException",
 			"()V"
 		) {}
-	KeyChainException::KeyChainException(jstring arg0)
+	KeyChainException::KeyChainException(JString arg0)
 		: java::lang::Exception(
 			"android.security.KeyChainException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	KeyChainException::KeyChainException(jthrowable arg0)
+	KeyChainException::KeyChainException(JThrowable arg0)
 		: java::lang::Exception(
 			"android.security.KeyChainException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	KeyChainException::KeyChainException(jstring arg0, jthrowable arg1)
+	KeyChainException::KeyChainException(JString arg0, JThrowable arg1)
 		: java::lang::Exception(
 			"android.security.KeyChainException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

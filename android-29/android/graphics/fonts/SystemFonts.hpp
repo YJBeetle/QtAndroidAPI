@@ -2,7 +2,6 @@
 
 #include "../../../JObject.hpp"
 
-
 namespace android::graphics::fonts
 {
 	class SystemFonts : public JObject

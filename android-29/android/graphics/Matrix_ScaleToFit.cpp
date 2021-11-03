@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Matrix_ScaleToFit.hpp"
 
 namespace android::graphics
@@ -42,22 +44,22 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::valueOf(jstring arg0)
+	android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Matrix$ScaleToFit",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Matrix$ScaleToFit;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Matrix_ScaleToFit::values()
+	JArray Matrix_ScaleToFit::values()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Matrix$ScaleToFit",
 			"values",
 			"()[Landroid/graphics/Matrix$ScaleToFit;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::graphics
 

@@ -34,6 +34,7 @@ namespace java::io
 {
 	class OutputStream;
 }
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -56,7 +57,7 @@ namespace android::hardware::camera2
 		
 		// Methods
 		void close();
-		android::hardware::camera2::DngCreator setDescription(jstring arg0);
+		android::hardware::camera2::DngCreator setDescription(JString arg0);
 		android::hardware::camera2::DngCreator setLocation(android::location::Location arg0);
 		android::hardware::camera2::DngCreator setOrientation(jint arg0);
 		android::hardware::camera2::DngCreator setThumbnail(android::graphics::Bitmap arg0);

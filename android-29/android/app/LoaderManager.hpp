@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::content
 {
 	class Loader;
@@ -18,6 +19,7 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
 
 namespace android::app
 {
@@ -36,7 +38,7 @@ namespace android::app
 		// Methods
 		static void enableDebugLogging(jboolean arg0);
 		void destroyLoader(jint arg0);
-		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
 		android::content::Loader getLoader(jint arg0);
 		android::content::Loader initLoader(jint arg0, android::os::Bundle arg1, JObject arg2);
 		android::content::Loader restartLoader(jint arg0, android::os::Bundle arg1, JObject arg2);

@@ -1,5 +1,6 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./FillRequest.hpp"
 
 namespace android::service::autofill
@@ -69,12 +70,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring FillRequest::toString()
+	JString FillRequest::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void FillRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

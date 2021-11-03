@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JObject;
 
 namespace android::util
 {
@@ -17,8 +19,8 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jobject getData();
+		jboolean equals(JObject arg0);
+		JObject getData();
 		jint getProcessId();
 		jint getTag();
 		jint getThreadId();

@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::media
 {
@@ -9,18 +10,18 @@ namespace android::media
 	{
 	public:
 		// Fields
-		static jstring CODEC_AUDIO();
-		static jstring CODEC_VIDEO();
-		static jstring DURATION();
-		static jstring ERRORS();
-		static jstring ERROR_CODE();
-		static jstring FRAMES();
-		static jstring FRAMES_DROPPED();
-		static jstring HEIGHT();
-		static jstring MIME_TYPE_AUDIO();
-		static jstring MIME_TYPE_VIDEO();
-		static jstring PLAYING();
-		static jstring WIDTH();
+		static JString CODEC_AUDIO();
+		static JString CODEC_VIDEO();
+		static JString DURATION();
+		static JString ERRORS();
+		static JString ERROR_CODE();
+		static JString FRAMES();
+		static JString FRAMES_DROPPED();
+		static JString HEIGHT();
+		static JString MIME_TYPE_AUDIO();
+		static JString MIME_TYPE_VIDEO();
+		static JString PLAYING();
+		static JString WIDTH();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaPlayer_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

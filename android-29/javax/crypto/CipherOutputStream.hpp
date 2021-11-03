@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/io/OutputStream.hpp"
 #include "../../java/io/FilterOutputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class OutputStream;
@@ -30,9 +29,9 @@ namespace javax::crypto
 		// Methods
 		void close();
 		void flush();
-		void write(jbyteArray arg0);
+		void write(JByteArray arg0);
 		void write(jint arg0);
-		void write(jbyteArray arg0, jint arg1, jint arg2);
+		void write(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace javax::crypto
 

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 namespace java::util::concurrent::atomic
 {
 	class AtomicReferenceFieldUpdater;
@@ -21,18 +22,18 @@ namespace java::sql
 		
 		// Constructors
 		SQLException();
-		SQLException(jstring arg0);
-		SQLException(jthrowable arg0);
-		SQLException(jstring arg0, jstring arg1);
-		SQLException(jstring arg0, jthrowable arg1);
-		SQLException(jstring arg0, jstring arg1, jint arg2);
-		SQLException(jstring arg0, jstring arg1, jthrowable arg2);
-		SQLException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
+		SQLException(JString arg0);
+		SQLException(JThrowable arg0);
+		SQLException(JString arg0, JString arg1);
+		SQLException(JString arg0, JThrowable arg1);
+		SQLException(JString arg0, JString arg1, jint arg2);
+		SQLException(JString arg0, JString arg1, JThrowable arg2);
+		SQLException(JString arg0, JString arg1, jint arg2, JThrowable arg3);
 		
 		// Methods
 		jint getErrorCode();
 		java::sql::SQLException getNextException();
-		jstring getSQLState();
+		JString getSQLState();
 		JObject iterator();
 		void setNextException(java::sql::SQLException arg0);
 	};

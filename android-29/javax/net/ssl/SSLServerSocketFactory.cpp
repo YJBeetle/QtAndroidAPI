@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../ServerSocketFactory.hpp"
 #include "./SSLServerSocketFactory.hpp"
 
@@ -19,19 +20,19 @@ namespace javax::net::ssl
 			"()Ljavax/net/ServerSocketFactory;"
 		);
 	}
-	jarray SSLServerSocketFactory::getDefaultCipherSuites()
+	JArray SSLServerSocketFactory::getDefaultCipherSuites()
 	{
 		return callObjectMethod(
 			"getDefaultCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jarray SSLServerSocketFactory::getSupportedCipherSuites()
+	JArray SSLServerSocketFactory::getSupportedCipherSuites()
 	{
 		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
 } // namespace javax::net::ssl
 

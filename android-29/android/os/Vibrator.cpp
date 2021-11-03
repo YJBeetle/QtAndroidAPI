@@ -1,3 +1,4 @@
+#include "../../JLongArray.hpp"
 #include "../media/AudioAttributes.hpp"
 #include "./VibrationEffect.hpp"
 #include "./Vibrator.hpp"
@@ -49,12 +50,12 @@ namespace android::os
 			arg0
 		);
 	}
-	void Vibrator::vibrate(jlongArray arg0, jint arg1)
+	void Vibrator::vibrate(JLongArray arg0, jint arg1)
 	{
 		callMethod<void>(
 			"vibrate",
 			"([JI)V",
-			arg0,
+			arg0.object<jlongArray>(),
 			arg1
 		);
 	}
@@ -76,12 +77,12 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Vibrator::vibrate(jlongArray arg0, jint arg1, android::media::AudioAttributes arg2)
+	void Vibrator::vibrate(JLongArray arg0, jint arg1, android::media::AudioAttributes arg2)
 	{
 		callMethod<void>(
 			"vibrate",
 			"([JILandroid/media/AudioAttributes;)V",
-			arg0,
+			arg0.object<jlongArray>(),
 			arg1,
 			arg2.object()
 		);

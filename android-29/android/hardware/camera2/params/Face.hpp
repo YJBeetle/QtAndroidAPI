@@ -10,6 +10,7 @@ namespace android::graphics
 {
 	class Rect;
 }
+class JString;
 
 namespace android::hardware::camera2::params
 {
@@ -34,7 +35,7 @@ namespace android::hardware::camera2::params
 		android::graphics::Point getMouthPosition();
 		android::graphics::Point getRightEyePosition();
 		jint getScore();
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::hardware::camera2::params
 

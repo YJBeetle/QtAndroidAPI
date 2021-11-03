@@ -2,6 +2,9 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./Filter.hpp"
+#include "../../JString.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CursorTreeAdapter.hpp"
 
 namespace android::widget
@@ -37,13 +40,13 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring CursorTreeAdapter::convertToString(JObject arg0)
+	JString CursorTreeAdapter::convertToString(JObject arg0)
 	{
 		return callObjectMethod(
 			"convertToString",
 			"(Landroid/database/Cursor;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	JObject CursorTreeAdapter::getChild(jint arg0, jint arg1)
 	{
@@ -184,12 +187,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	JObject CursorTreeAdapter::runQueryOnBackgroundThread(jstring arg0)
+	JObject CursorTreeAdapter::runQueryOnBackgroundThread(JString arg0)
 	{
 		return callObjectMethod(
 			"runQueryOnBackgroundThread",
 			"(Ljava/lang/CharSequence;)Landroid/database/Cursor;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void CursorTreeAdapter::setChildrenCursor(jint arg0, JObject arg1)

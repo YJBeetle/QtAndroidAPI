@@ -10,6 +10,7 @@ namespace android::net::wifi::rtt
 {
 	class RangingResultCallback;
 }
+class JString;
 
 namespace android::net::wifi::rtt
 {
@@ -17,7 +18,7 @@ namespace android::net::wifi::rtt
 	{
 	public:
 		// Fields
-		static jstring ACTION_WIFI_RTT_STATE_CHANGED();
+		static JString ACTION_WIFI_RTT_STATE_CHANGED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiRttManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

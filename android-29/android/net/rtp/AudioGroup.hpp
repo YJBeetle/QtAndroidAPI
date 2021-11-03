@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 
 namespace android::net::rtp
 {
@@ -24,7 +25,7 @@ namespace android::net::rtp
 		// Methods
 		void clear();
 		jint getMode();
-		jarray getStreams();
+		JArray getStreams();
 		void sendDtmf(jint arg0);
 		void setMode(jint arg0);
 	};

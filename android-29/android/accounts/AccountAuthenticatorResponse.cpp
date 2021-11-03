@@ -1,5 +1,6 @@
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./AccountAuthenticatorResponse.hpp"
 
 namespace android::accounts
@@ -33,13 +34,13 @@ namespace android::accounts
 			"()I"
 		);
 	}
-	void AccountAuthenticatorResponse::onError(jint arg0, jstring arg1)
+	void AccountAuthenticatorResponse::onError(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onError",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	void AccountAuthenticatorResponse::onRequestContinued()

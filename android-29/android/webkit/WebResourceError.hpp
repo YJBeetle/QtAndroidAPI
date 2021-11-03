@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::webkit
 {
@@ -17,7 +18,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		jstring getDescription();
+		JString getDescription();
 		jint getErrorCode();
 	};
 } // namespace android::webkit

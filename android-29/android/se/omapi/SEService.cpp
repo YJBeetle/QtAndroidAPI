@@ -1,4 +1,6 @@
+#include "../../../JArray.hpp"
 #include "../../content/Context.hpp"
+#include "../../../JString.hpp"
 #include "./SEService.hpp"
 
 namespace android::se::omapi
@@ -19,19 +21,19 @@ namespace android::se::omapi
 		) {}
 	
 	// Methods
-	jarray SEService::getReaders()
+	JArray SEService::getReaders()
 	{
 		return callObjectMethod(
 			"getReaders",
 			"()[Landroid/se/omapi/Reader;"
-		).object<jarray>();
+		);
 	}
-	jstring SEService::getVersion()
+	JString SEService::getVersion()
 	{
 		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean SEService::isConnected()
 	{

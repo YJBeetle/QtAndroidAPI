@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaDrmException.hpp"
 
 namespace android::media
@@ -8,11 +9,11 @@ namespace android::media
 	MediaDrmException::MediaDrmException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	MediaDrmException::MediaDrmException(jstring arg0)
+	MediaDrmException::MediaDrmException(JString arg0)
 		: java::lang::Exception(
 			"android.media.MediaDrmException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods

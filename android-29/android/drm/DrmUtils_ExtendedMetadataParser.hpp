@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace android::drm
 {
@@ -17,7 +19,7 @@ namespace android::drm
 		// Constructors
 		
 		// Methods
-		jstring get(jstring arg0);
+		JString get(JString arg0);
 		JObject iterator();
 		JObject keyIterator();
 	};

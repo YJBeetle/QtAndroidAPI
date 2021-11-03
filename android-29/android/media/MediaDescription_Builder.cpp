@@ -2,6 +2,8 @@
 #include "./MediaDescription.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./MediaDescription_Builder.hpp"
 
 namespace android::media
@@ -26,12 +28,12 @@ namespace android::media
 			"()Landroid/media/MediaDescription;"
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setDescription(jstring arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setDescription(JString arg0)
 	{
 		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/media/MediaDescription$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::MediaDescription_Builder MediaDescription_Builder::setExtras(android::os::Bundle arg0)
@@ -58,12 +60,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setMediaId(jstring arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setMediaId(JString arg0)
 	{
 		return callObjectMethod(
 			"setMediaId",
 			"(Ljava/lang/String;)Landroid/media/MediaDescription$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::MediaDescription_Builder MediaDescription_Builder::setMediaUri(android::net::Uri arg0)
@@ -74,20 +76,20 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setSubtitle(jstring arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setSubtitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)Landroid/media/MediaDescription$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaDescription_Builder MediaDescription_Builder::setTitle(jstring arg0)
+	android::media::MediaDescription_Builder MediaDescription_Builder::setTitle(JString arg0)
 	{
 		return callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/media/MediaDescription$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::media

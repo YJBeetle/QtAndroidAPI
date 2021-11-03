@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
+class JIntArray;
 namespace android::content::res
 {
 	class ColorStateList;

@@ -1,5 +1,11 @@
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JBooleanArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuilder.hpp"
 #include "../text/DateFormatSymbols.hpp"
 #include "../time/Instant.hpp"
@@ -376,13 +382,13 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	jarray Calendar::getAvailableLocales()
+	JArray Calendar::getAvailableLocales()
 	{
 		return callStaticObjectMethod(
 			"java.util.Calendar",
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
-		).object<jarray>();
+		);
 	}
 	java::util::Calendar Calendar::getInstance()
 	{
@@ -429,20 +435,20 @@ namespace java::util
 			arg1
 		);
 	}
-	jboolean Calendar::after(jobject arg0)
+	jboolean Calendar::after(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"after",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean Calendar::before(jobject arg0)
+	jboolean Calendar::before(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"before",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void Calendar::clear()
@@ -460,19 +466,19 @@ namespace java::util
 			arg0
 		);
 	}
-	jobject Calendar::clone()
+	JObject Calendar::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jint Calendar::compareTo(jobject arg0)
+	jint Calendar::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Calendar::compareTo(java::util::Calendar arg0)
@@ -483,12 +489,12 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Calendar::equals(jobject arg0)
+	jboolean Calendar::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Calendar::get(jint arg0)
@@ -515,14 +521,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jstring Calendar::getCalendarType()
+	JString Calendar::getCalendarType()
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Calendar::getDisplayName(jint arg0, jint arg1, java::util::Locale arg2)
+	JString Calendar::getDisplayName(jint arg0, jint arg1, java::util::Locale arg2)
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -530,7 +536,7 @@ namespace java::util
 			arg0,
 			arg1,
 			arg2.object()
-		).object<jstring>();
+		);
 	}
 	JObject Calendar::getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2)
 	{
@@ -779,12 +785,12 @@ namespace java::util
 			"()Ljava/time/Instant;"
 		);
 	}
-	jstring Calendar::toString()
+	JString Calendar::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util
 

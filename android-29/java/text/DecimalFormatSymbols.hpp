@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class Currency;
@@ -31,40 +34,40 @@ namespace java::text
 		DecimalFormatSymbols(java::util::Locale arg0);
 		
 		// Methods
-		static jarray getAvailableLocales();
+		static JArray getAvailableLocales();
 		static java::text::DecimalFormatSymbols getInstance();
 		static java::text::DecimalFormatSymbols getInstance(java::util::Locale arg0);
-		jobject clone();
-		jboolean equals(jobject arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
 		java::util::Currency getCurrency();
-		jstring getCurrencySymbol();
+		JString getCurrencySymbol();
 		jchar getDecimalSeparator();
 		jchar getDigit();
-		jstring getExponentSeparator();
+		JString getExponentSeparator();
 		jchar getGroupingSeparator();
-		jstring getInfinity();
-		jstring getInternationalCurrencySymbol();
+		JString getInfinity();
+		JString getInternationalCurrencySymbol();
 		jchar getMinusSign();
 		jchar getMonetaryDecimalSeparator();
 		jchar getMonetaryGroupingSeparator();
-		jstring getNaN();
+		JString getNaN();
 		jchar getPatternSeparator();
 		jchar getPerMill();
 		jchar getPercent();
 		jchar getZeroDigit();
 		jint hashCode();
 		void setCurrency(java::util::Currency arg0);
-		void setCurrencySymbol(jstring arg0);
+		void setCurrencySymbol(JString arg0);
 		void setDecimalSeparator(jchar arg0);
 		void setDigit(jchar arg0);
-		void setExponentSeparator(jstring arg0);
+		void setExponentSeparator(JString arg0);
 		void setGroupingSeparator(jchar arg0);
-		void setInfinity(jstring arg0);
-		void setInternationalCurrencySymbol(jstring arg0);
+		void setInfinity(JString arg0);
+		void setInternationalCurrencySymbol(JString arg0);
 		void setMinusSign(jchar arg0);
 		void setMonetaryDecimalSeparator(jchar arg0);
 		void setMonetaryGroupingSeparator(jchar arg0);
-		void setNaN(jstring arg0);
+		void setNaN(JString arg0);
 		void setPatternSeparator(jchar arg0);
 		void setPerMill(jchar arg0);
 		void setPercent(jchar arg0);

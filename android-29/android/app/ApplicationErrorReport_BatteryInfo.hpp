@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -13,9 +14,9 @@ namespace android::app
 	{
 	public:
 		// Fields
-		jstring checkinDetails();
+		JString checkinDetails();
 		jlong durationMicros();
-		jstring usageDetails();
+		JString usageDetails();
 		jint usagePercent();
 		
 		// QAndroidJniObject forward
@@ -27,7 +28,7 @@ namespace android::app
 		ApplicationErrorReport_BatteryInfo(android::os::Parcel arg0);
 		
 		// Methods
-		void dump(JObject arg0, jstring arg1);
+		void dump(JObject arg0, JString arg1);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

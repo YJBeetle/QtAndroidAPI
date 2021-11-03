@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Date.hpp"
 #include "./TimerTask.hpp"
 #include "./concurrent/atomic/AtomicInteger.hpp"
@@ -22,17 +24,17 @@ namespace java::util
 			"(Z)V",
 			arg0
 		) {}
-	Timer::Timer(jstring arg0)
+	Timer::Timer(JString arg0)
 		: JObject(
 			"java.util.Timer",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	Timer::Timer(jstring arg0, jboolean arg1)
+	Timer::Timer(JString arg0, jboolean arg1)
 		: JObject(
 			"java.util.Timer",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	

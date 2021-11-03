@@ -2,10 +2,13 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace java::io
 {
 	class DataInputStream;
 }
+class JObject;
+class JString;
 namespace java::util
 {
 	class HashSet;
@@ -42,17 +45,17 @@ namespace java::util
 		
 		// Methods
 		static JObject getAvailableCurrencies();
-		static java::util::Currency getInstance(jstring arg0);
+		static java::util::Currency getInstance(JString arg0);
 		static java::util::Currency getInstance(java::util::Locale arg0);
-		jstring getCurrencyCode();
+		JString getCurrencyCode();
 		jint getDefaultFractionDigits();
-		jstring getDisplayName();
-		jstring getDisplayName(java::util::Locale arg0);
+		JString getDisplayName();
+		JString getDisplayName(java::util::Locale arg0);
 		jint getNumericCode();
-		jstring getNumericCodeAsString();
-		jstring getSymbol();
-		jstring getSymbol(java::util::Locale arg0);
-		jstring toString();
+		JString getNumericCodeAsString();
+		JString getSymbol();
+		JString getSymbol(java::util::Locale arg0);
+		JString toString();
 	};
 } // namespace java::util
 

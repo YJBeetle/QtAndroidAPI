@@ -1,3 +1,4 @@
+#include "../../JFloatArray.hpp"
 #include "./VolumeShaper_Configuration.hpp"
 #include "./VolumeShaper_Configuration_Builder.hpp"
 
@@ -59,13 +60,13 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setCurve(jfloatArray arg0, jfloatArray arg1)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setCurve(JFloatArray arg0, JFloatArray arg1)
 	{
 		return callObjectMethod(
 			"setCurve",
 			"([F[F)Landroid/media/VolumeShaper$Configuration$Builder;",
-			arg0,
-			arg1
+			arg0.object<jfloatArray>(),
+			arg1.object<jfloatArray>()
 		);
 	}
 	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setDuration(jlong arg0)

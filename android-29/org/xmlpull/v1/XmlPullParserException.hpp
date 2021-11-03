@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace org::xmlpull::v1
 {
@@ -16,12 +17,12 @@ namespace org::xmlpull::v1
 		XmlPullParserException(QAndroidJniObject obj);
 		
 		// Constructors
-		XmlPullParserException(jstring arg0);
-		XmlPullParserException(jstring arg0, JObject arg1, jthrowable arg2);
+		XmlPullParserException(JString arg0);
+		XmlPullParserException(JString arg0, JObject arg1, JThrowable arg2);
 		
 		// Methods
 		jint getColumnNumber();
-		jthrowable getDetail();
+		JThrowable getDetail();
 		jint getLineNumber();
 		void printStackTrace();
 	};

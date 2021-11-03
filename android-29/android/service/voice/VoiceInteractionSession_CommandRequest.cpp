@@ -1,4 +1,5 @@
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./VoiceInteractionSession_CommandRequest.hpp"
 
 namespace android::service::voice
@@ -11,12 +12,12 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	jstring VoiceInteractionSession_CommandRequest::getCommand()
+	JString VoiceInteractionSession_CommandRequest::getCommand()
 	{
 		return callObjectMethod(
 			"getCommand",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void VoiceInteractionSession_CommandRequest::sendIntermediateResult(android::os::Bundle arg0)
 	{

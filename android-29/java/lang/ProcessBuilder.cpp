@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
 #include "../io/File.hpp"
 #include "./Process.hpp"
 #include "./ProcessBuilder_Redirect.hpp"
@@ -11,11 +13,11 @@ namespace java::lang
 	ProcessBuilder::ProcessBuilder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ProcessBuilder::ProcessBuilder(jarray arg0)
+	ProcessBuilder::ProcessBuilder(JArray arg0)
 		: JObject(
 			"java.lang.ProcessBuilder",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		) {}
 	ProcessBuilder::ProcessBuilder(JObject arg0)
 		: JObject(
@@ -34,12 +36,12 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	java::lang::ProcessBuilder ProcessBuilder::command(jarray arg0)
+	java::lang::ProcessBuilder ProcessBuilder::command(JArray arg0)
 	{
 		return callObjectMethod(
 			"command",
 			"([Ljava/lang/String;)Ljava/lang/ProcessBuilder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	java::lang::ProcessBuilder ProcessBuilder::command(JObject arg0)

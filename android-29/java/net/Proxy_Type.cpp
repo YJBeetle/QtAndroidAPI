@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./Proxy_Type.hpp"
 
 namespace java::net
@@ -34,22 +36,22 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	java::net::Proxy_Type Proxy_Type::valueOf(jstring arg0)
+	java::net::Proxy_Type Proxy_Type::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.net.Proxy$Type",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/net/Proxy$Type;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray Proxy_Type::values()
+	JArray Proxy_Type::values()
 	{
 		return callStaticObjectMethod(
 			"java.net.Proxy$Type",
 			"values",
 			"()[Ljava/net/Proxy$Type;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::net
 

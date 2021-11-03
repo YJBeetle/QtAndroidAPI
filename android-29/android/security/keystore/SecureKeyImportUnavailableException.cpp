@@ -1,3 +1,5 @@
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./SecureKeyImportUnavailableException.hpp"
 
 namespace android::security::keystore
@@ -13,24 +15,24 @@ namespace android::security::keystore
 			"android.security.keystore.SecureKeyImportUnavailableException",
 			"()V"
 		) {}
-	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(jstring arg0)
+	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(JString arg0)
 		: java::security::ProviderException(
 			"android.security.keystore.SecureKeyImportUnavailableException",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(jthrowable arg0)
+	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(JThrowable arg0)
 		: java::security::ProviderException(
 			"android.security.keystore.SecureKeyImportUnavailableException",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		) {}
-	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(jstring arg0, jthrowable arg1)
+	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(JString arg0, JThrowable arg1)
 		: java::security::ProviderException(
 			"android.security.keystore.SecureKeyImportUnavailableException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

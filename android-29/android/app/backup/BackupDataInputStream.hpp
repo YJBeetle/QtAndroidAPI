@@ -1,12 +1,13 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/io/InputStream.hpp"
 
+class JByteArray;
 namespace android::app::backup
 {
 	class BackupDataInput;
 }
+class JString;
 
 namespace android::app::backup
 {
@@ -22,10 +23,10 @@ namespace android::app::backup
 		// Constructors
 		
 		// Methods
-		jstring getKey();
+		JString getKey();
 		jint read();
-		jint read(jbyteArray arg0);
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 		jint size();
 	};
 } // namespace android::app::backup

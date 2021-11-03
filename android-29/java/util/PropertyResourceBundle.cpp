@@ -1,5 +1,7 @@
 #include "../io/InputStream.hpp"
 #include "../io/Reader.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./PropertyResourceBundle.hpp"
 
 namespace java::util
@@ -31,13 +33,13 @@ namespace java::util
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jobject PropertyResourceBundle::handleGetObject(jstring arg0)
+	JObject PropertyResourceBundle::handleGetObject(JString arg0)
 	{
 		return callObjectMethod(
 			"handleGetObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 } // namespace java::util
 

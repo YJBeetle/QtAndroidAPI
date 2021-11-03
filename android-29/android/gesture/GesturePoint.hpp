@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObject;
 
 namespace android::gesture
 {
@@ -21,7 +22,7 @@ namespace android::gesture
 		GesturePoint(jfloat arg0, jfloat arg1, jlong arg2);
 		
 		// Methods
-		jobject clone();
+		JObject clone();
 	};
 } // namespace android::gesture
 

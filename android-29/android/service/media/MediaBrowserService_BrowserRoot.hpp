@@ -6,6 +6,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::service::media
 {
@@ -13,20 +14,20 @@ namespace android::service::media
 	{
 	public:
 		// Fields
-		static jstring EXTRA_OFFLINE();
-		static jstring EXTRA_RECENT();
-		static jstring EXTRA_SUGGESTED();
+		static JString EXTRA_OFFLINE();
+		static JString EXTRA_RECENT();
+		static JString EXTRA_SUGGESTED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaBrowserService_BrowserRoot(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaBrowserService_BrowserRoot(QAndroidJniObject obj);
 		
 		// Constructors
-		MediaBrowserService_BrowserRoot(jstring arg0, android::os::Bundle arg1);
+		MediaBrowserService_BrowserRoot(JString arg0, android::os::Bundle arg1);
 		
 		// Methods
 		android::os::Bundle getExtras();
-		jstring getRootId();
+		JString getRootId();
 	};
 } // namespace android::service::media
 

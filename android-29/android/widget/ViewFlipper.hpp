@@ -1,15 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
-#include "./FrameLayout.hpp"
 #include "./ViewAnimator.hpp"
 
 namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::widget
 {
@@ -27,7 +24,7 @@ namespace android::widget
 		ViewFlipper(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getFlipInterval();
 		jboolean isAutoStart();
 		jboolean isFlipping();

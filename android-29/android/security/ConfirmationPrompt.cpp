@@ -1,5 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "../content/Context.hpp"
 #include "./ConfirmationCallback.hpp"
+#include "../../JString.hpp"
 #include "./ConfirmationPrompt.hpp"
 
 namespace android::security

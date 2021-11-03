@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 namespace java::security
 {
 	class Permission;
@@ -28,7 +29,7 @@ namespace java::security
 		jboolean implies(java::security::Permission arg0);
 		jboolean isReadOnly();
 		void setReadOnly();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

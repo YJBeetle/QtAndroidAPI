@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
 namespace java::io
@@ -11,6 +10,8 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
+class JThrowable;
 namespace java::security
 {
 	class ProtectionDomain;
@@ -28,19 +29,19 @@ namespace javax::xml::transform
 		TransformerException(QAndroidJniObject obj);
 		
 		// Constructors
-		TransformerException(jstring arg0);
-		TransformerException(jthrowable arg0);
-		TransformerException(jstring arg0, jthrowable arg1);
-		TransformerException(jstring arg0, JObject arg1);
-		TransformerException(jstring arg0, JObject arg1, jthrowable arg2);
+		TransformerException(JString arg0);
+		TransformerException(JThrowable arg0);
+		TransformerException(JString arg0, JThrowable arg1);
+		TransformerException(JString arg0, JObject arg1);
+		TransformerException(JString arg0, JObject arg1, JThrowable arg2);
 		
 		// Methods
-		jthrowable getCause();
-		jthrowable getException();
-		jstring getLocationAsString();
+		JThrowable getCause();
+		JThrowable getException();
+		JString getLocationAsString();
 		JObject getLocator();
-		jstring getMessageAndLocation();
-		jthrowable initCause(jthrowable arg0);
+		JString getMessageAndLocation();
+		JThrowable initCause(JThrowable arg0);
 		void printStackTrace();
 		void printStackTrace(java::io::PrintStream arg0);
 		void printStackTrace(java::io::PrintWriter arg0);

@@ -1,6 +1,18 @@
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "./ApplicationInfo.hpp"
 #include "./SigningInfo.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./PackageInfo.hpp"
 
 namespace android::content::pm
@@ -42,12 +54,12 @@ namespace android::content::pm
 			"REQUESTED_PERMISSION_GRANTED"
 		);
 	}
-	jarray PackageInfo::activities()
+	JArray PackageInfo::activities()
 	{
 		return getObjectField(
 			"activities",
 			"[Landroid/content/pm/ActivityInfo;"
-		).object<jarray>();
+		);
 	}
 	android::content::pm::ApplicationInfo PackageInfo::applicationInfo()
 	{
@@ -62,19 +74,19 @@ namespace android::content::pm
 			"baseRevisionCode"
 		);
 	}
-	jarray PackageInfo::configPreferences()
+	JArray PackageInfo::configPreferences()
 	{
 		return getObjectField(
 			"configPreferences",
 			"[Landroid/content/pm/ConfigurationInfo;"
-		).object<jarray>();
+		);
 	}
-	jarray PackageInfo::featureGroups()
+	JArray PackageInfo::featureGroups()
 	{
 		return getObjectField(
 			"featureGroups",
 			"[Landroid/content/pm/FeatureGroupInfo;"
-		).object<jarray>();
+		);
 	}
 	jlong PackageInfo::firstInstallTime()
 	{
@@ -82,12 +94,12 @@ namespace android::content::pm
 			"firstInstallTime"
 		);
 	}
-	jintArray PackageInfo::gids()
+	JIntArray PackageInfo::gids()
 	{
 		return getObjectField(
 			"gids",
 			"[I"
-		).object<jintArray>();
+		);
 	}
 	jint PackageInfo::installLocation()
 	{
@@ -95,12 +107,12 @@ namespace android::content::pm
 			"installLocation"
 		);
 	}
-	jarray PackageInfo::instrumentation()
+	JArray PackageInfo::instrumentation()
 	{
 		return getObjectField(
 			"instrumentation",
 			"[Landroid/content/pm/InstrumentationInfo;"
-		).object<jarray>();
+		);
 	}
 	jboolean PackageInfo::isApex()
 	{
@@ -114,68 +126,68 @@ namespace android::content::pm
 			"lastUpdateTime"
 		);
 	}
-	jstring PackageInfo::packageName()
+	JString PackageInfo::packageName()
 	{
 		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray PackageInfo::permissions()
+	JArray PackageInfo::permissions()
 	{
 		return getObjectField(
 			"permissions",
 			"[Landroid/content/pm/PermissionInfo;"
-		).object<jarray>();
+		);
 	}
-	jarray PackageInfo::providers()
+	JArray PackageInfo::providers()
 	{
 		return getObjectField(
 			"providers",
 			"[Landroid/content/pm/ProviderInfo;"
-		).object<jarray>();
+		);
 	}
-	jarray PackageInfo::receivers()
+	JArray PackageInfo::receivers()
 	{
 		return getObjectField(
 			"receivers",
 			"[Landroid/content/pm/ActivityInfo;"
-		).object<jarray>();
+		);
 	}
-	jarray PackageInfo::reqFeatures()
+	JArray PackageInfo::reqFeatures()
 	{
 		return getObjectField(
 			"reqFeatures",
 			"[Landroid/content/pm/FeatureInfo;"
-		).object<jarray>();
+		);
 	}
-	jarray PackageInfo::requestedPermissions()
+	JArray PackageInfo::requestedPermissions()
 	{
 		return getObjectField(
 			"requestedPermissions",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jintArray PackageInfo::requestedPermissionsFlags()
+	JIntArray PackageInfo::requestedPermissionsFlags()
 	{
 		return getObjectField(
 			"requestedPermissionsFlags",
 			"[I"
-		).object<jintArray>();
+		);
 	}
-	jarray PackageInfo::services()
+	JArray PackageInfo::services()
 	{
 		return getObjectField(
 			"services",
 			"[Landroid/content/pm/ServiceInfo;"
-		).object<jarray>();
+		);
 	}
-	jstring PackageInfo::sharedUserId()
+	JString PackageInfo::sharedUserId()
 	{
 		return getObjectField(
 			"sharedUserId",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PackageInfo::sharedUserLabel()
 	{
@@ -183,12 +195,12 @@ namespace android::content::pm
 			"sharedUserLabel"
 		);
 	}
-	jarray PackageInfo::signatures()
+	JArray PackageInfo::signatures()
 	{
 		return getObjectField(
 			"signatures",
 			"[Landroid/content/pm/Signature;"
-		).object<jarray>();
+		);
 	}
 	android::content::pm::SigningInfo PackageInfo::signingInfo()
 	{
@@ -197,19 +209,19 @@ namespace android::content::pm
 			"Landroid/content/pm/SigningInfo;"
 		);
 	}
-	jarray PackageInfo::splitNames()
+	JArray PackageInfo::splitNames()
 	{
 		return getObjectField(
 			"splitNames",
 			"[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jintArray PackageInfo::splitRevisionCodes()
+	JIntArray PackageInfo::splitRevisionCodes()
 	{
 		return getObjectField(
 			"splitRevisionCodes",
 			"[I"
-		).object<jintArray>();
+		);
 	}
 	jint PackageInfo::versionCode()
 	{
@@ -217,12 +229,12 @@ namespace android::content::pm
 			"versionCode"
 		);
 	}
-	jstring PackageInfo::versionName()
+	JString PackageInfo::versionName()
 	{
 		return getObjectField(
 			"versionName",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -258,12 +270,12 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	jstring PackageInfo::toString()
+	JString PackageInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PackageInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

@@ -3,6 +3,7 @@
 #include "./MediaSession2.hpp"
 #include "./MediaSession2_SessionCallback.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
 #include "./MediaSession2_Builder.hpp"
 
 namespace android::media
@@ -36,12 +37,12 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaSession2_Builder MediaSession2_Builder::setId(jstring arg0)
+	android::media::MediaSession2_Builder MediaSession2_Builder::setId(JString arg0)
 	{
 		return callObjectMethod(
 			"setId",
 			"(Ljava/lang/String;)Landroid/media/MediaSession2$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::media::MediaSession2_Builder MediaSession2_Builder::setSessionActivity(android::app::PendingIntent arg0)

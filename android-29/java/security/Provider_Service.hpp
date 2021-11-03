@@ -2,10 +2,15 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::lang
 {
 	class Boolean;
 }
+class JClass;
+class JObject;
+class JString;
 namespace java::lang::ref
 {
 	class Reference;
@@ -27,17 +32,17 @@ namespace java::security
 		Provider_Service(QAndroidJniObject obj);
 		
 		// Constructors
-		Provider_Service(java::security::Provider arg0, jstring arg1, jstring arg2, jstring arg3, JObject arg4, JObject arg5);
+		Provider_Service(java::security::Provider arg0, JString arg1, JString arg2, JString arg3, JObject arg4, JObject arg5);
 		
 		// Methods
-		jstring getAlgorithm();
-		jstring getAttribute(jstring arg0);
-		jstring getClassName();
+		JString getAlgorithm();
+		JString getAttribute(JString arg0);
+		JString getClassName();
 		java::security::Provider getProvider();
-		jstring getType();
-		jobject newInstance(jobject arg0);
-		jboolean supportsParameter(jobject arg0);
-		jstring toString();
+		JString getType();
+		JObject newInstance(JObject arg0);
+		jboolean supportsParameter(JObject arg0);
+		JString toString();
 	};
 } // namespace java::security
 

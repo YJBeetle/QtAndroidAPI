@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TimeUnit.hpp"
 #include "./Semaphore.hpp"
 
@@ -104,12 +105,12 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jstring Semaphore::toString()
+	JString Semaphore::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean Semaphore::tryAcquire()
 	{

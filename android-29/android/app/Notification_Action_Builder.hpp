@@ -22,6 +22,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::app
 {
@@ -36,8 +37,8 @@ namespace android::app
 		
 		// Constructors
 		Notification_Action_Builder(android::app::Notification_Action arg0);
-		Notification_Action_Builder(android::graphics::drawable::Icon arg0, jstring arg1, android::app::PendingIntent arg2);
-		Notification_Action_Builder(jint arg0, jstring arg1, android::app::PendingIntent arg2);
+		Notification_Action_Builder(android::graphics::drawable::Icon arg0, JString arg1, android::app::PendingIntent arg2);
+		Notification_Action_Builder(jint arg0, JString arg1, android::app::PendingIntent arg2);
 		
 		// Methods
 		android::app::Notification_Action_Builder addExtras(android::os::Bundle arg0);

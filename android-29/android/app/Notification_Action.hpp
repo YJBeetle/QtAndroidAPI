@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::app
 {
 	class PendingIntent;
@@ -18,6 +19,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
+class JObject;
 
 namespace android::app
 {
@@ -39,23 +42,23 @@ namespace android::app
 		static jint SEMANTIC_ACTION_UNMUTE();
 		android::app::PendingIntent actionIntent();
 		jint icon();
-		jstring title();
+		JString title();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Notification_Action(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_Action(QAndroidJniObject obj);
 		
 		// Constructors
-		Notification_Action(jint arg0, jstring arg1, android::app::PendingIntent arg2);
+		Notification_Action(jint arg0, JString arg1, android::app::PendingIntent arg2);
 		
 		// Methods
 		android::app::Notification_Action clone();
 		jint describeContents();
 		jboolean getAllowGeneratedReplies();
-		jarray getDataOnlyRemoteInputs();
+		JArray getDataOnlyRemoteInputs();
 		android::os::Bundle getExtras();
 		android::graphics::drawable::Icon getIcon();
-		jarray getRemoteInputs();
+		JArray getRemoteInputs();
 		jint getSemanticAction();
 		jboolean isContextual();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

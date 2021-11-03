@@ -1,4 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./MacAddress.hpp"
 
 namespace android::net
@@ -48,22 +51,22 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	android::net::MacAddress MacAddress::fromBytes(jbyteArray arg0)
+	android::net::MacAddress MacAddress::fromBytes(JByteArray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.MacAddress",
 			"fromBytes",
 			"([B)Landroid/net/MacAddress;",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	android::net::MacAddress MacAddress::fromString(jstring arg0)
+	android::net::MacAddress MacAddress::fromString(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.MacAddress",
 			"fromString",
 			"(Ljava/lang/String;)Landroid/net/MacAddress;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint MacAddress::describeContents()
@@ -73,12 +76,12 @@ namespace android::net
 			"()I"
 		);
 	}
-	jboolean MacAddress::equals(jobject arg0)
+	jboolean MacAddress::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint MacAddress::getAddressType()
@@ -102,26 +105,26 @@ namespace android::net
 			"()Z"
 		);
 	}
-	jbyteArray MacAddress::toByteArray()
+	JByteArray MacAddress::toByteArray()
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring MacAddress::toOuiString()
+	JString MacAddress::toOuiString()
 	{
 		return callObjectMethod(
 			"toOuiString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MacAddress::toString()
+	JString MacAddress::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void MacAddress::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

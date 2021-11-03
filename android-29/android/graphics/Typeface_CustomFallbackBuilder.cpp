@@ -1,6 +1,7 @@
 #include "./Typeface.hpp"
 #include "./fonts/FontFamily.hpp"
 #include "./fonts/FontStyle.hpp"
+#include "../../JString.hpp"
 #include "./Typeface_CustomFallbackBuilder.hpp"
 
 namespace android::graphics
@@ -50,12 +51,12 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	android::graphics::Typeface_CustomFallbackBuilder Typeface_CustomFallbackBuilder::setSystemFallback(jstring arg0)
+	android::graphics::Typeface_CustomFallbackBuilder Typeface_CustomFallbackBuilder::setSystemFallback(JString arg0)
 	{
 		return callObjectMethod(
 			"setSystemFallback",
 			"(Ljava/lang/String;)Landroid/graphics/Typeface$CustomFallbackBuilder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::graphics

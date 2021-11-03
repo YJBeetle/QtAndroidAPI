@@ -1,3 +1,7 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JCharArray.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./SNIServerName.hpp"
 
 namespace javax::net::ssl
@@ -10,20 +14,20 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	jboolean SNIServerName::equals(jobject arg0)
+	jboolean SNIServerName::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jbyteArray SNIServerName::getEncoded()
+	JByteArray SNIServerName::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint SNIServerName::getType()
 	{
@@ -39,12 +43,12 @@ namespace javax::net::ssl
 			"()I"
 		);
 	}
-	jstring SNIServerName::toString()
+	JString SNIServerName::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace javax::net::ssl
 

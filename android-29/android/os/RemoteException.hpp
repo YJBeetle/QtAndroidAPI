@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
+class JString;
 
 namespace android::os
 {
@@ -18,7 +17,7 @@ namespace android::os
 		
 		// Constructors
 		RemoteException();
-		RemoteException(jstring arg0);
+		RemoteException(JString arg0);
 		
 		// Methods
 	};

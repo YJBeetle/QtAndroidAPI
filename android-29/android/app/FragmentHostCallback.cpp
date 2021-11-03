@@ -1,3 +1,4 @@
+#include "../../JArray.hpp"
 #include "./Fragment.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
@@ -8,6 +9,8 @@
 #include "../view/View.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./FragmentHostCallback.hpp"
 
 namespace android::app
@@ -36,15 +39,15 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentHostCallback::onDump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void FragmentHostCallback::onDump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"onDump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
 	android::view::View FragmentHostCallback::onFindViewById(jint arg0)
@@ -55,12 +58,12 @@ namespace android::app
 			arg0
 		);
 	}
-	jobject FragmentHostCallback::onGetHost()
+	JObject FragmentHostCallback::onGetHost()
 	{
 		return callObjectMethod(
 			"onGetHost",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::view::LayoutInflater FragmentHostCallback::onGetLayoutInflater()
 	{
@@ -97,13 +100,13 @@ namespace android::app
 			"()V"
 		);
 	}
-	void FragmentHostCallback::onRequestPermissionsFromFragment(android::app::Fragment arg0, jarray arg1, jint arg2)
+	void FragmentHostCallback::onRequestPermissionsFromFragment(android::app::Fragment arg0, JArray arg1, jint arg2)
 	{
 		callMethod<void>(
 			"onRequestPermissionsFromFragment",
 			"(Landroid/app/Fragment;[Ljava/lang/String;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jarray>(),
 			arg2
 		);
 	}

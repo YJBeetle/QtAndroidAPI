@@ -1,3 +1,4 @@
+#include "../../../JIntArray.hpp"
 #include "./LineBreaker_ParagraphConstraints.hpp"
 #include "./LineBreaker_Result.hpp"
 #include "./MeasuredText.hpp"

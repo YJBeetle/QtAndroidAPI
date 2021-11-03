@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::content::res
 {
 	class AssetFileDescriptor;
@@ -10,6 +11,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 
 namespace android::content::res
 {
@@ -30,15 +32,15 @@ namespace android::content::res
 		
 		// Methods
 		void close();
-		jarray getLocales();
-		jarray list(jstring arg0);
-		java::io::InputStream open(jstring arg0);
-		java::io::InputStream open(jstring arg0, jint arg1);
-		android::content::res::AssetFileDescriptor openFd(jstring arg0);
-		android::content::res::AssetFileDescriptor openNonAssetFd(jstring arg0);
-		android::content::res::AssetFileDescriptor openNonAssetFd(jint arg0, jstring arg1);
-		JObject openXmlResourceParser(jstring arg0);
-		JObject openXmlResourceParser(jint arg0, jstring arg1);
+		JArray getLocales();
+		JArray list(JString arg0);
+		java::io::InputStream open(JString arg0);
+		java::io::InputStream open(JString arg0, jint arg1);
+		android::content::res::AssetFileDescriptor openFd(JString arg0);
+		android::content::res::AssetFileDescriptor openNonAssetFd(JString arg0);
+		android::content::res::AssetFileDescriptor openNonAssetFd(jint arg0, JString arg1);
+		JObject openXmlResourceParser(JString arg0);
+		JObject openXmlResourceParser(jint arg0, JString arg1);
 	};
 } // namespace android::content::res
 

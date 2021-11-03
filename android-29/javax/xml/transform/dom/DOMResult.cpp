@@ -1,15 +1,16 @@
+#include "../../../../JString.hpp"
 #include "./DOMResult.hpp"
 
 namespace javax::xml::transform::dom
 {
 	// Fields
-	jstring DOMResult::FEATURE()
+	JString DOMResult::FEATURE()
 	{
 		return getStaticObjectField(
 			"javax.xml.transform.dom.DOMResult",
 			"FEATURE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -27,12 +28,12 @@ namespace javax::xml::transform::dom
 			"(Lorg/w3c/dom/Node;)V",
 			arg0.object()
 		) {}
-	DOMResult::DOMResult(JObject arg0, jstring arg1)
+	DOMResult::DOMResult(JObject arg0, JString arg1)
 		: JObject(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	DOMResult::DOMResult(JObject arg0, JObject arg1)
 		: JObject(
@@ -41,13 +42,13 @@ namespace javax::xml::transform::dom
 			arg0.object(),
 			arg1.object()
 		) {}
-	DOMResult::DOMResult(JObject arg0, JObject arg1, jstring arg2)
+	DOMResult::DOMResult(JObject arg0, JObject arg1, JString arg2)
 		: JObject(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
@@ -65,12 +66,12 @@ namespace javax::xml::transform::dom
 			"()Lorg/w3c/dom/Node;"
 		);
 	}
-	jstring DOMResult::getSystemId()
+	JString DOMResult::getSystemId()
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DOMResult::setNextSibling(JObject arg0)
 	{
@@ -88,12 +89,12 @@ namespace javax::xml::transform::dom
 			arg0.object()
 		);
 	}
-	void DOMResult::setSystemId(jstring arg0)
+	void DOMResult::setSystemId(JString arg0)
 	{
 		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace javax::xml::transform::dom

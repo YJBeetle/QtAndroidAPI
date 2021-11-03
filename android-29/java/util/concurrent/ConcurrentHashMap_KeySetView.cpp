@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./ConcurrentHashMap.hpp"
 #include "./ConcurrentHashMap_KeySetView.hpp"
 
@@ -11,12 +12,12 @@ namespace java::util::concurrent
 	// Constructors
 	
 	// Methods
-	jboolean ConcurrentHashMap_KeySetView::add(jobject arg0)
+	jboolean ConcurrentHashMap_KeySetView::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ConcurrentHashMap_KeySetView::addAll(JObject arg0)
@@ -27,20 +28,20 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ConcurrentHashMap_KeySetView::contains(jobject arg0)
+	jboolean ConcurrentHashMap_KeySetView::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentHashMap_KeySetView::equals(jobject arg0)
+	jboolean ConcurrentHashMap_KeySetView::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void ConcurrentHashMap_KeySetView::forEach(JObject arg0)
@@ -58,12 +59,12 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ConcurrentHashMap;"
 		);
 	}
-	jobject ConcurrentHashMap_KeySetView::getMappedValue()
+	JObject ConcurrentHashMap_KeySetView::getMappedValue()
 	{
 		return callObjectMethod(
 			"getMappedValue",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jint ConcurrentHashMap_KeySetView::hashCode()
 	{
@@ -79,12 +80,12 @@ namespace java::util::concurrent
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean ConcurrentHashMap_KeySetView::remove(jobject arg0)
+	jboolean ConcurrentHashMap_KeySetView::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ConcurrentHashMap_KeySetView::removeAll(JObject arg0)

@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "../../net/URI.hpp"
 #include "./X509Certificate.hpp"
 #include "./PKIXRevocationChecker.hpp"

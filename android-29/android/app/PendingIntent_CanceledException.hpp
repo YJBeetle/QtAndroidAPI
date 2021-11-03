@@ -1,13 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
 namespace java::lang
 {
 	class Exception;
 }
+class JString;
 
 namespace android::app
 {
@@ -23,7 +22,7 @@ namespace android::app
 		// Constructors
 		PendingIntent_CanceledException();
 		PendingIntent_CanceledException(java::lang::Exception arg0);
-		PendingIntent_CanceledException(jstring arg0);
+		PendingIntent_CanceledException(JString arg0);
 		
 		// Methods
 	};

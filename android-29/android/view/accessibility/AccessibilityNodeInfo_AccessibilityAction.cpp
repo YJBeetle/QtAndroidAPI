@@ -1,3 +1,6 @@
+#include "../../../JString.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./AccessibilityNodeInfo_AccessibilityAction.hpp"
 
 namespace android::view::accessibility
@@ -304,21 +307,21 @@ namespace android::view::accessibility
 	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(jint arg0, jstring arg1)
+	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(jint arg0, JString arg1)
 		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jboolean AccessibilityNodeInfo_AccessibilityAction::equals(jobject arg0)
+	jboolean AccessibilityNodeInfo_AccessibilityAction::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint AccessibilityNodeInfo_AccessibilityAction::getId()
@@ -328,12 +331,12 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	jstring AccessibilityNodeInfo_AccessibilityAction::getLabel()
+	JString AccessibilityNodeInfo_AccessibilityAction::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint AccessibilityNodeInfo_AccessibilityAction::hashCode()
 	{
@@ -342,12 +345,12 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	jstring AccessibilityNodeInfo_AccessibilityAction::toString()
+	JString AccessibilityNodeInfo_AccessibilityAction::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::view::accessibility
 

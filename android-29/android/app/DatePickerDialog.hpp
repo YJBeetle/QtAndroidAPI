@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Dialog.hpp"
 #include "./AlertDialog.hpp"
 
 namespace android::content

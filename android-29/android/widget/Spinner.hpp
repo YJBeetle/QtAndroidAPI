@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
-#include "./AdapterView.hpp"
 #include "./AbsSpinner.hpp"
 
 namespace android::content
@@ -26,6 +22,7 @@ namespace android::view
 {
 	class PointerIcon;
 }
+class JString;
 
 namespace android::widget
 {
@@ -50,7 +47,7 @@ namespace android::widget
 		Spinner(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4, android::content::res::Resources_Theme arg5);
 		
 		// Methods
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jint getBaseline();
 		jint getDropDownHorizontalOffset();
 		jint getDropDownVerticalOffset();
@@ -58,7 +55,7 @@ namespace android::widget
 		jint getGravity();
 		android::graphics::drawable::Drawable getPopupBackground();
 		android::content::Context getPopupContext();
-		jstring getPrompt();
+		JString getPrompt();
 		void onClick(JObject arg0, jint arg1);
 		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
 		void onRestoreInstanceState(JObject arg0);
@@ -74,7 +71,7 @@ namespace android::widget
 		void setOnItemClickListener(JObject arg0);
 		void setPopupBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setPopupBackgroundResource(jint arg0);
-		void setPrompt(jstring arg0);
+		void setPrompt(JString arg0);
 		void setPromptId(jint arg0);
 	};
 } // namespace android::widget

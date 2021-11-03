@@ -1,4 +1,7 @@
+#include "../../../JByteArray.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./CarrierIdentifier.hpp"
 
 namespace android::service::carrier
@@ -17,35 +20,35 @@ namespace android::service::carrier
 	CarrierIdentifier::CarrierIdentifier(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CarrierIdentifier::CarrierIdentifier(jbyteArray arg0, jstring arg1, jstring arg2)
+	CarrierIdentifier::CarrierIdentifier(JByteArray arg0, JString arg1, JString arg2)
 		: JObject(
 			"android.service.carrier.CarrierIdentifier",
 			"([BLjava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
-	CarrierIdentifier::CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5)
+	CarrierIdentifier::CarrierIdentifier(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5)
 		: JObject(
 			"android.service.carrier.CarrierIdentifier",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
+			arg5.object<jstring>()
 		) {}
-	CarrierIdentifier::CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5, jint arg6, jint arg7)
+	CarrierIdentifier::CarrierIdentifier(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5, jint arg6, jint arg7)
 		: JObject(
 			"android.service.carrier.CarrierIdentifier",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
+			arg5.object<jstring>(),
 			arg6,
 			arg7
 		) {}
@@ -58,12 +61,12 @@ namespace android::service::carrier
 			"()I"
 		);
 	}
-	jboolean CarrierIdentifier::equals(jobject arg0)
+	jboolean CarrierIdentifier::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint CarrierIdentifier::getCarrierId()
@@ -73,40 +76,40 @@ namespace android::service::carrier
 			"()I"
 		);
 	}
-	jstring CarrierIdentifier::getGid1()
+	JString CarrierIdentifier::getGid1()
 	{
 		return callObjectMethod(
 			"getGid1",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierIdentifier::getGid2()
+	JString CarrierIdentifier::getGid2()
 	{
 		return callObjectMethod(
 			"getGid2",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierIdentifier::getImsi()
+	JString CarrierIdentifier::getImsi()
 	{
 		return callObjectMethod(
 			"getImsi",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierIdentifier::getMcc()
+	JString CarrierIdentifier::getMcc()
 	{
 		return callObjectMethod(
 			"getMcc",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CarrierIdentifier::getMnc()
+	JString CarrierIdentifier::getMnc()
 	{
 		return callObjectMethod(
 			"getMnc",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CarrierIdentifier::getSpecificCarrierId()
 	{
@@ -115,12 +118,12 @@ namespace android::service::carrier
 			"()I"
 		);
 	}
-	jstring CarrierIdentifier::getSpn()
+	JString CarrierIdentifier::getSpn()
 	{
 		return callObjectMethod(
 			"getSpn",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CarrierIdentifier::hashCode()
 	{
@@ -129,12 +132,12 @@ namespace android::service::carrier
 			"()I"
 		);
 	}
-	jstring CarrierIdentifier::toString()
+	JString CarrierIdentifier::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CarrierIdentifier::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

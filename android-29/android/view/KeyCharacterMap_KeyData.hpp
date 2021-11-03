@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JCharArray;
 
 namespace android::view
 {
@@ -11,7 +12,7 @@ namespace android::view
 		// Fields
 		static jint META_LENGTH();
 		jchar displayLabel();
-		jcharArray meta();
+		JCharArray meta();
 		jchar number();
 		
 		// QAndroidJniObject forward

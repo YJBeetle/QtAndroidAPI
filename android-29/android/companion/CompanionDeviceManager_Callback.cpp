@@ -1,4 +1,5 @@
 #include "../content/IntentSender.hpp"
+#include "../../JString.hpp"
 #include "./CompanionDeviceManager_Callback.hpp"
 
 namespace android::companion
@@ -24,12 +25,12 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	void CompanionDeviceManager_Callback::onFailure(jstring arg0)
+	void CompanionDeviceManager_Callback::onFailure(JString arg0)
 	{
 		callMethod<void>(
 			"onFailure",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::companion

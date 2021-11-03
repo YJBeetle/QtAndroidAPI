@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CellIdentityGsm.hpp"
 
 namespace android::telephony
@@ -19,12 +21,12 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellIdentityGsm::equals(jobject arg0)
+	jboolean CellIdentityGsm::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint CellIdentityGsm::getArfcn()
@@ -62,12 +64,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityGsm::getMccString()
+	JString CellIdentityGsm::getMccString()
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CellIdentityGsm::getMnc()
 	{
@@ -76,19 +78,19 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityGsm::getMncString()
+	JString CellIdentityGsm::getMncString()
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring CellIdentityGsm::getMobileNetworkOperator()
+	JString CellIdentityGsm::getMobileNetworkOperator()
 	{
 		return callObjectMethod(
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint CellIdentityGsm::getPsc()
 	{
@@ -104,12 +106,12 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityGsm::toString()
+	JString CellIdentityGsm::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CellIdentityGsm::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

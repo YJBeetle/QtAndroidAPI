@@ -1,5 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "../bluetooth/le/ScanFilter.hpp"
 #include "./BluetoothLeDeviceFilter.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteOrder.hpp"
 #include "../../java/util/regex/Pattern.hpp"
 #include "./BluetoothLeDeviceFilter_Builder.hpp"
@@ -34,34 +36,34 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRawDataFilter(jbyteArray arg0, jbyteArray arg1)
+	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRawDataFilter(JByteArray arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"setRawDataFilter",
 			"([B[B)Landroid/companion/BluetoothLeDeviceFilter$Builder;",
-			arg0,
-			arg1
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>()
 		);
 	}
-	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRenameFromBytes(jstring arg0, jstring arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4)
+	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRenameFromBytes(JString arg0, JString arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4)
 	{
 		return callObjectMethod(
 			"setRenameFromBytes",
 			"(Ljava/lang/String;Ljava/lang/String;IILjava/nio/ByteOrder;)Landroid/companion/BluetoothLeDeviceFilter$Builder;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3,
 			arg4.object()
 		);
 	}
-	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRenameFromName(jstring arg0, jstring arg1, jint arg2, jint arg3)
+	android::companion::BluetoothLeDeviceFilter_Builder BluetoothLeDeviceFilter_Builder::setRenameFromName(JString arg0, JString arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"setRenameFromName",
 			"(Ljava/lang/String;Ljava/lang/String;II)Landroid/companion/BluetoothLeDeviceFilter$Builder;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
 			arg3
 		);

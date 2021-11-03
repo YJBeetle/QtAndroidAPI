@@ -6,26 +6,27 @@
 #include "./SipProfile.hpp"
 #include "./SipSession.hpp"
 #include "./SipSession_Listener.hpp"
+#include "../../../JString.hpp"
 #include "./SipManager.hpp"
 
 namespace android::net::sip
 {
 	// Fields
-	jstring SipManager::EXTRA_CALL_ID()
+	JString SipManager::EXTRA_CALL_ID()
 	{
 		return getStaticObjectField(
 			"android.net.sip.SipManager",
 			"EXTRA_CALL_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring SipManager::EXTRA_OFFER_SD()
+	JString SipManager::EXTRA_OFFER_SD()
 	{
 		return getStaticObjectField(
 			"android.net.sip.SipManager",
 			"EXTRA_OFFER_SD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint SipManager::INCOMING_CALL_RESULT_CODE()
 	{
@@ -41,23 +42,23 @@ namespace android::net::sip
 	// Constructors
 	
 	// Methods
-	jstring SipManager::getCallId(android::content::Intent arg0)
+	JString SipManager::getCallId(android::content::Intent arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.sip.SipManager",
 			"getCallId",
 			"(Landroid/content/Intent;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring SipManager::getOfferSessionDescription(android::content::Intent arg0)
+	JString SipManager::getOfferSessionDescription(android::content::Intent arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.sip.SipManager",
 			"getOfferSessionDescription",
 			"(Landroid/content/Intent;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	jboolean SipManager::isApiSupported(android::content::Context arg0)
 	{
@@ -104,12 +105,12 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipManager::close(jstring arg0)
+	void SipManager::close(JString arg0)
 	{
 		callMethod<void>(
 			"close",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::sip::SipSession SipManager::createSipSession(android::net::sip::SipProfile arg0, android::net::sip::SipSession_Listener arg1)
@@ -129,20 +130,20 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	jboolean SipManager::isOpened(jstring arg0)
+	jboolean SipManager::isOpened(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isOpened",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean SipManager::isRegistered(jstring arg0)
+	jboolean SipManager::isRegistered(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"isRegistered",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::net::sip::SipAudioCall SipManager::makeAudioCall(android::net::sip::SipProfile arg0, android::net::sip::SipProfile arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
@@ -156,13 +157,13 @@ namespace android::net::sip
 			arg3
 		);
 	}
-	android::net::sip::SipAudioCall SipManager::makeAudioCall(jstring arg0, jstring arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
+	android::net::sip::SipAudioCall SipManager::makeAudioCall(JString arg0, JString arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"makeAudioCall",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/net/sip/SipAudioCall$Listener;I)Landroid/net/sip/SipAudioCall;",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3
 		);
@@ -195,12 +196,12 @@ namespace android::net::sip
 			arg2.object()
 		);
 	}
-	void SipManager::setRegistrationListener(jstring arg0, JObject arg1)
+	void SipManager::setRegistrationListener(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setRegistrationListener",
 			"(Ljava/lang/String;Landroid/net/sip/SipRegistrationListener;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "../helpers/DefaultHandler.hpp"
 
+class JCharArray;
+class JString;
 namespace org::xml::sax
 {
 	class InputSource;
@@ -23,20 +24,20 @@ namespace org::xml::sax::ext
 		DefaultHandler2();
 		
 		// Methods
-		void attributeDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
-		void comment(jcharArray arg0, jint arg1, jint arg2);
-		void elementDecl(jstring arg0, jstring arg1);
+		void attributeDecl(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
+		void comment(JCharArray arg0, jint arg1, jint arg2);
+		void elementDecl(JString arg0, JString arg1);
 		void endCDATA();
 		void endDTD();
-		void endEntity(jstring arg0);
-		void externalEntityDecl(jstring arg0, jstring arg1, jstring arg2);
-		org::xml::sax::InputSource getExternalSubset(jstring arg0, jstring arg1);
-		void internalEntityDecl(jstring arg0, jstring arg1);
-		org::xml::sax::InputSource resolveEntity(jstring arg0, jstring arg1);
-		org::xml::sax::InputSource resolveEntity(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		void endEntity(JString arg0);
+		void externalEntityDecl(JString arg0, JString arg1, JString arg2);
+		org::xml::sax::InputSource getExternalSubset(JString arg0, JString arg1);
+		void internalEntityDecl(JString arg0, JString arg1);
+		org::xml::sax::InputSource resolveEntity(JString arg0, JString arg1);
+		org::xml::sax::InputSource resolveEntity(JString arg0, JString arg1, JString arg2, JString arg3);
 		void startCDATA();
-		void startDTD(jstring arg0, jstring arg1, jstring arg2);
-		void startEntity(jstring arg0);
+		void startDTD(JString arg0, JString arg1, JString arg2);
+		void startEntity(JString arg0);
 	};
 } // namespace org::xml::sax::ext
 

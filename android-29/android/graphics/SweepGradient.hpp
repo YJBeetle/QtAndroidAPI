@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Shader.hpp"
 
+class JFloatArray;
+class JIntArray;
+class JLongArray;
 
 namespace android::graphics
 {
@@ -16,8 +18,8 @@ namespace android::graphics
 		SweepGradient(QAndroidJniObject obj);
 		
 		// Constructors
-		SweepGradient(jfloat arg0, jfloat arg1, jintArray arg2, jfloatArray arg3);
-		SweepGradient(jfloat arg0, jfloat arg1, jlongArray arg2, jfloatArray arg3);
+		SweepGradient(jfloat arg0, jfloat arg1, JIntArray arg2, JFloatArray arg3);
+		SweepGradient(jfloat arg0, jfloat arg1, JLongArray arg2, JFloatArray arg3);
 		SweepGradient(jfloat arg0, jfloat arg1, jint arg2, jint arg3);
 		SweepGradient(jfloat arg0, jfloat arg1, jlong arg2, jlong arg3);
 		

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/text/Format.hpp"
 
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuffer;
@@ -28,17 +29,17 @@ namespace android::icu::text
 		SelectFormat(QAndroidJniObject obj);
 		
 		// Constructors
-		SelectFormat(jstring arg0);
+		SelectFormat(JString arg0);
 		
 		// Methods
-		void applyPattern(jstring arg0);
-		jboolean equals(jobject arg0);
-		jstring format(jstring arg0);
-		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
+		void applyPattern(JString arg0);
+		jboolean equals(JObject arg0);
+		JString format(JString arg0);
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		jint hashCode();
-		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
-		jstring toPattern();
-		jstring toString();
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
+		JString toPattern();
+		JString toString();
 	};
 } // namespace android::icu::text
 

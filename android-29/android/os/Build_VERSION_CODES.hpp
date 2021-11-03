@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::os
 {
 	class Build_VERSION_CODES : public JObject

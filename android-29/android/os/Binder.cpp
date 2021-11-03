@@ -1,7 +1,9 @@
+#include "../../JArray.hpp"
 #include "./Parcel.hpp"
 #include "./UserHandle.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JString.hpp"
 #include "./Binder.hpp"
 
 namespace android::os
@@ -17,11 +19,11 @@ namespace android::os
 			"android.os.Binder",
 			"()V"
 		) {}
-	Binder::Binder(jstring arg0)
+	Binder::Binder(JString arg0)
 		: JObject(
 			"android.os.Binder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
@@ -124,39 +126,39 @@ namespace android::os
 			arg0
 		);
 	}
-	void Binder::attachInterface(JObject arg0, jstring arg1)
+	void Binder::attachInterface(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"attachInterface",
 			"(Landroid/os/IInterface;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void Binder::dump(java::io::FileDescriptor arg0, jarray arg1)
+	void Binder::dump(java::io::FileDescriptor arg0, JArray arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/io/FileDescriptor;[Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	void Binder::dumpAsync(java::io::FileDescriptor arg0, jarray arg1)
+	void Binder::dumpAsync(java::io::FileDescriptor arg0, JArray arg1)
 	{
 		callMethod<void>(
 			"dumpAsync",
 			"(Ljava/io/FileDescriptor;[Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		);
 	}
-	jstring Binder::getInterfaceDescriptor()
+	JString Binder::getInterfaceDescriptor()
 	{
 		return callObjectMethod(
 			"getInterfaceDescriptor",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean Binder::isBinderAlive()
 	{
@@ -181,12 +183,12 @@ namespace android::os
 			"()Z"
 		);
 	}
-	JObject Binder::queryLocalInterface(jstring arg0)
+	JObject Binder::queryLocalInterface(JString arg0)
 	{
 		return callObjectMethod(
 			"queryLocalInterface",
 			"(Ljava/lang/String;)Landroid/os/IInterface;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Binder::transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3)

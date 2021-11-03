@@ -1,7 +1,13 @@
+#include "../../../JDoubleArray.hpp"
+#include "../../../JIntArray.hpp"
+#include "../../../JLongArray.hpp"
+#include "../../../JObjectArray.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/Double.hpp"
 #include "../../lang/IllegalStateException.hpp"
 #include "../../lang/Integer.hpp"
 #include "../../lang/Long.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/StringBuilder.hpp"
 #include "../ArrayList.hpp"
 #include "../DoubleSummaryStatistics.hpp"
@@ -156,24 +162,24 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	JObject Collectors::joining(jstring arg0)
+	JObject Collectors::joining(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
 			"joining",
 			"(Ljava/lang/CharSequence;)Ljava/util/stream/Collector;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	JObject Collectors::joining(jstring arg0, jstring arg1, jstring arg2)
+	JObject Collectors::joining(JString arg0, JString arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
 			"joining",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/util/stream/Collector;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
 	JObject Collectors::mapping(JObject arg0, JObject arg1)
@@ -232,23 +238,23 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	JObject Collectors::reducing(jobject arg0, JObject arg1)
+	JObject Collectors::reducing(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
 			"reducing",
 			"(Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/util/stream/Collector;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
 		);
 	}
-	JObject Collectors::reducing(jobject arg0, JObject arg1, JObject arg2)
+	JObject Collectors::reducing(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
 			"reducing",
 			"(Ljava/lang/Object;Ljava/util/function/Function;Ljava/util/function/BinaryOperator;)Ljava/util/stream/Collector;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object()
 		);

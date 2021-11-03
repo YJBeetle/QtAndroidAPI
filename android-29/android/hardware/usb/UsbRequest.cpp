@@ -1,5 +1,6 @@
 #include "./UsbDeviceConnection.hpp"
 #include "./UsbEndpoint.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/nio/ByteBuffer.hpp"
 #include "./UsbRequest.hpp"
 
@@ -32,12 +33,12 @@ namespace android::hardware::usb
 			"()V"
 		);
 	}
-	jobject UsbRequest::getClientData()
+	JObject UsbRequest::getClientData()
 	{
 		return callObjectMethod(
 			"getClientData",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	android::hardware::usb::UsbEndpoint UsbRequest::getEndpoint()
 	{
@@ -72,12 +73,12 @@ namespace android::hardware::usb
 			arg1
 		);
 	}
-	void UsbRequest::setClientData(jobject arg0)
+	void UsbRequest::setClientData(JObject arg0)
 	{
 		callMethod<void>(
 			"setClientData",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::hardware::usb

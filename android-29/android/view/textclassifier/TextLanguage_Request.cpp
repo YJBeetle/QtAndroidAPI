@@ -1,5 +1,7 @@
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./TextLanguage_Request.hpp"
 
 namespace android::view::textclassifier
@@ -27,12 +29,12 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring TextLanguage_Request::getCallingPackageName()
+	JString TextLanguage_Request::getCallingPackageName()
 	{
 		return callObjectMethod(
 			"getCallingPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle TextLanguage_Request::getExtras()
 	{
@@ -41,12 +43,12 @@ namespace android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring TextLanguage_Request::getText()
+	JString TextLanguage_Request::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void TextLanguage_Request::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

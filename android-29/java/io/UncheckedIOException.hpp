@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
 
 namespace java::io
@@ -12,6 +10,8 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JThrowable;
 
 namespace java::io
 {
@@ -26,7 +26,7 @@ namespace java::io
 		
 		// Constructors
 		UncheckedIOException(java::io::IOException arg0);
-		UncheckedIOException(jstring arg0, java::io::IOException arg1);
+		UncheckedIOException(JString arg0, java::io::IOException arg1);
 		
 		// Methods
 		java::io::IOException getCause();

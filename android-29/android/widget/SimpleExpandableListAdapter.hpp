@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./BaseExpandableListAdapter.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::content
 {
 	class Context;
@@ -15,6 +16,7 @@ namespace android::view
 {
 	class ViewGroup;
 }
+class JObject;
 
 namespace android::widget
 {
@@ -28,16 +30,16 @@ namespace android::widget
 		SimpleExpandableListAdapter(QAndroidJniObject obj);
 		
 		// Constructors
-		SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jarray arg3, jintArray arg4, JObject arg5, jint arg6, jarray arg7, jintArray arg8);
-		SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, JObject arg6, jint arg7, jarray arg8, jintArray arg9);
-		SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, JObject arg6, jint arg7, jint arg8, jarray arg9, jintArray arg10);
+		SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, JArray arg3, JIntArray arg4, JObject arg5, jint arg6, JArray arg7, JIntArray arg8);
+		SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, JArray arg4, JIntArray arg5, JObject arg6, jint arg7, JArray arg8, JIntArray arg9);
+		SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, JArray arg4, JIntArray arg5, JObject arg6, jint arg7, jint arg8, JArray arg9, JIntArray arg10);
 		
 		// Methods
-		jobject getChild(jint arg0, jint arg1);
+		JObject getChild(jint arg0, jint arg1);
 		jlong getChildId(jint arg0, jint arg1);
 		android::view::View getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4);
 		jint getChildrenCount(jint arg0);
-		jobject getGroup(jint arg0);
+		JObject getGroup(jint arg0);
 		jint getGroupCount();
 		jlong getGroupId(jint arg0);
 		android::view::View getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3);

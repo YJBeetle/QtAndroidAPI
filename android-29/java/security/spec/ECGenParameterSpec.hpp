@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 
+class JString;
 
 namespace java::security::spec
 {
@@ -15,7 +15,7 @@ namespace java::security::spec
 		ECGenParameterSpec(QAndroidJniObject obj);
 		
 		// Constructors
-		ECGenParameterSpec(jstring arg0);
+		ECGenParameterSpec(JString arg0);
 		
 		// Methods
 	};

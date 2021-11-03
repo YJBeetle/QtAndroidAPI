@@ -1,4 +1,5 @@
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./VoiceInteractionSession_Request.hpp"
 
 namespace android::service::voice
@@ -18,12 +19,12 @@ namespace android::service::voice
 			"()V"
 		);
 	}
-	jstring VoiceInteractionSession_Request::getCallingPackage()
+	JString VoiceInteractionSession_Request::getCallingPackage()
 	{
 		return callObjectMethod(
 			"getCallingPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint VoiceInteractionSession_Request::getCallingUid()
 	{
@@ -46,12 +47,12 @@ namespace android::service::voice
 			"()Z"
 		);
 	}
-	jstring VoiceInteractionSession_Request::toString()
+	JString VoiceInteractionSession_Request::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::service::voice
 

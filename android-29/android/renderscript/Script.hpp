@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./BaseObj.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::renderscript
 {
 	class Allocation;
@@ -39,6 +40,7 @@ namespace android::renderscript
 {
 	class Script_LaunchOptions;
 }
+class JString;
 
 namespace android::renderscript
 {
@@ -61,7 +63,7 @@ namespace android::renderscript
 		jint getVarI(jint arg0);
 		jlong getVarJ(jint arg0);
 		void getVarV(jint arg0, android::renderscript::FieldPacker arg1);
-		void setTimeZone(jstring arg0);
+		void setTimeZone(JString arg0);
 		void setVar(jint arg0, android::renderscript::BaseObj arg1);
 		void setVar(jint arg0, android::renderscript::FieldPacker arg1);
 		void setVar(jint arg0, jboolean arg1);
@@ -69,7 +71,7 @@ namespace android::renderscript
 		void setVar(jint arg0, jfloat arg1);
 		void setVar(jint arg0, jint arg1);
 		void setVar(jint arg0, jlong arg1);
-		void setVar(jint arg0, android::renderscript::FieldPacker arg1, android::renderscript::Element arg2, jintArray arg3);
+		void setVar(jint arg0, android::renderscript::FieldPacker arg1, android::renderscript::Element arg2, JIntArray arg3);
 	};
 } // namespace android::renderscript
 

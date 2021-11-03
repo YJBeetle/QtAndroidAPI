@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JObject.hpp"
 #include "./RC5ParameterSpec.hpp"
 
 namespace javax::crypto::spec
@@ -16,41 +18,41 @@ namespace javax::crypto::spec
 			arg1,
 			arg2
 		) {}
-	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3)
+	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2, JByteArray arg3)
 		: JObject(
 			"javax.crypto.spec.RC5ParameterSpec",
 			"(III[B)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3
+			arg3.object<jbyteArray>()
 		) {}
-	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
+	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2, JByteArray arg3, jint arg4)
 		: JObject(
 			"javax.crypto.spec.RC5ParameterSpec",
 			"(III[BI)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3,
+			arg3.object<jbyteArray>(),
 			arg4
 		) {}
 	
 	// Methods
-	jboolean RC5ParameterSpec::equals(jobject arg0)
+	jboolean RC5ParameterSpec::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jbyteArray RC5ParameterSpec::getIV()
+	JByteArray RC5ParameterSpec::getIV()
 	{
 		return callObjectMethod(
 			"getIV",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jint RC5ParameterSpec::getRounds()
 	{

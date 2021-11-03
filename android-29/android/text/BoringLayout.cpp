@@ -6,6 +6,7 @@
 #include "./Layout_Directions.hpp"
 #include "./TextPaint.hpp"
 #include "./TextUtils_TruncateAt.hpp"
+#include "../../JString.hpp"
 #include "./BoringLayout.hpp"
 
 namespace android::text
@@ -16,11 +17,11 @@ namespace android::text
 	BoringLayout::BoringLayout(QAndroidJniObject obj) : android::text::Layout(obj) {}
 	
 	// Constructors
-	BoringLayout::BoringLayout(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
+	BoringLayout::BoringLayout(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
 		: android::text::Layout(
 			"android.text.BoringLayout",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object(),
@@ -29,11 +30,11 @@ namespace android::text
 			arg6.object(),
 			arg7
 		) {}
-	BoringLayout::BoringLayout(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
+	BoringLayout::BoringLayout(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
 		: android::text::Layout(
 			"android.text.BoringLayout",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object(),
@@ -46,34 +47,34 @@ namespace android::text
 		) {}
 	
 	// Methods
-	android::text::BoringLayout_Metrics BoringLayout::isBoring(jstring arg0, android::text::TextPaint arg1)
+	android::text::BoringLayout_Metrics BoringLayout::isBoring(JString arg0, android::text::TextPaint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.BoringLayout",
 			"isBoring",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)Landroid/text/BoringLayout$Metrics;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	android::text::BoringLayout_Metrics BoringLayout::isBoring(jstring arg0, android::text::TextPaint arg1, android::text::BoringLayout_Metrics arg2)
+	android::text::BoringLayout_Metrics BoringLayout::isBoring(JString arg0, android::text::TextPaint arg1, android::text::BoringLayout_Metrics arg2)
 	{
 		return callStaticObjectMethod(
 			"android.text.BoringLayout",
 			"isBoring",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;Landroid/text/BoringLayout$Metrics;)Landroid/text/BoringLayout$Metrics;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	android::text::BoringLayout BoringLayout::make(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
+	android::text::BoringLayout BoringLayout::make(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
 	{
 		return callStaticObjectMethod(
 			"android.text.BoringLayout",
 			"make",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;Z)Landroid/text/BoringLayout;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object(),
@@ -83,13 +84,13 @@ namespace android::text
 			arg7
 		);
 	}
-	android::text::BoringLayout BoringLayout::make(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
+	android::text::BoringLayout BoringLayout::make(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
 	{
 		return callStaticObjectMethod(
 			"android.text.BoringLayout",
 			"make",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;I)Landroid/text/BoringLayout;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object(),
@@ -236,12 +237,12 @@ namespace android::text
 			"()I"
 		);
 	}
-	android::text::BoringLayout BoringLayout::replaceOrMake(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
+	android::text::BoringLayout BoringLayout::replaceOrMake(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
 	{
 		return callObjectMethod(
 			"replaceOrMake",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;Z)Landroid/text/BoringLayout;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object(),
@@ -251,12 +252,12 @@ namespace android::text
 			arg7
 		);
 	}
-	android::text::BoringLayout BoringLayout::replaceOrMake(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
+	android::text::BoringLayout BoringLayout::replaceOrMake(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
 	{
 		return callObjectMethod(
 			"replaceOrMake",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;I)Landroid/text/BoringLayout;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object(),

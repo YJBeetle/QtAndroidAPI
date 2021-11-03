@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::util
 {
@@ -18,9 +18,9 @@ namespace java::util
 		
 		// Constructors
 		ConcurrentModificationException();
-		ConcurrentModificationException(jstring arg0);
-		ConcurrentModificationException(jthrowable arg0);
-		ConcurrentModificationException(jstring arg0, jthrowable arg1);
+		ConcurrentModificationException(JString arg0);
+		ConcurrentModificationException(JThrowable arg0);
+		ConcurrentModificationException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

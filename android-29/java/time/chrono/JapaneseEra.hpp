@@ -2,10 +2,14 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::time
 {
 	class LocalDate;
@@ -43,12 +47,12 @@ namespace java::time::chrono
 		
 		// Methods
 		static java::time::chrono::JapaneseEra of(jint arg0);
-		static java::time::chrono::JapaneseEra valueOf(jstring arg0);
-		static jarray values();
-		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
+		static java::time::chrono::JapaneseEra valueOf(JString arg0);
+		static JArray values();
+		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
 		jint getValue();
 		java::time::temporal::ValueRange range(JObject arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::time::chrono
 

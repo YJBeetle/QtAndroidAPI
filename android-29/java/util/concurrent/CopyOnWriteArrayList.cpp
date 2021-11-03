@@ -1,5 +1,9 @@
+#include "../../../JLongArray.hpp"
+#include "../../../JObjectArray.hpp"
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/reflect/Field.hpp"
 #include "./CopyOnWriteArrayList.hpp"
 
@@ -16,11 +20,11 @@ namespace java::util::concurrent
 			"java.util.concurrent.CopyOnWriteArrayList",
 			"()V"
 		) {}
-	CopyOnWriteArrayList::CopyOnWriteArrayList(jobjectArray arg0)
+	CopyOnWriteArrayList::CopyOnWriteArrayList(JObjectArray arg0)
 		: JObject(
 			"java.util.concurrent.CopyOnWriteArrayList",
 			"([Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobjectArray>()
 		) {}
 	CopyOnWriteArrayList::CopyOnWriteArrayList(JObject arg0)
 		: JObject(
@@ -30,21 +34,21 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean CopyOnWriteArrayList::add(jobject arg0)
+	jboolean CopyOnWriteArrayList::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void CopyOnWriteArrayList::add(jint arg0, jobject arg1)
+	void CopyOnWriteArrayList::add(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jboolean CopyOnWriteArrayList::addAll(JObject arg0)
@@ -72,12 +76,12 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArrayList::addIfAbsent(jobject arg0)
+	jboolean CopyOnWriteArrayList::addIfAbsent(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addIfAbsent",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void CopyOnWriteArrayList::clear()
@@ -87,19 +91,19 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	jobject CopyOnWriteArrayList::clone()
+	JObject CopyOnWriteArrayList::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean CopyOnWriteArrayList::contains(jobject arg0)
+	jboolean CopyOnWriteArrayList::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean CopyOnWriteArrayList::containsAll(JObject arg0)
@@ -110,12 +114,12 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArrayList::equals(jobject arg0)
+	jboolean CopyOnWriteArrayList::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void CopyOnWriteArrayList::forEach(JObject arg0)
@@ -126,13 +130,13 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jobject CopyOnWriteArrayList::get(jint arg0)
+	JObject CopyOnWriteArrayList::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jint CopyOnWriteArrayList::hashCode()
 	{
@@ -141,20 +145,20 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	jint CopyOnWriteArrayList::indexOf(jobject arg0)
+	jint CopyOnWriteArrayList::indexOf(JObject arg0)
 	{
 		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jint CopyOnWriteArrayList::indexOf(jobject arg0, jint arg1)
+	jint CopyOnWriteArrayList::indexOf(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;I)I",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
@@ -172,20 +176,20 @@ namespace java::util::concurrent
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint CopyOnWriteArrayList::lastIndexOf(jobject arg0)
+	jint CopyOnWriteArrayList::lastIndexOf(JObject arg0)
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jint CopyOnWriteArrayList::lastIndexOf(jobject arg0, jint arg1)
+	jint CopyOnWriteArrayList::lastIndexOf(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;I)I",
-			arg0,
+			arg0.object<jobject>(),
 			arg1
 		);
 	}
@@ -204,21 +208,21 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean CopyOnWriteArrayList::remove(jobject arg0)
+	jboolean CopyOnWriteArrayList::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject CopyOnWriteArrayList::remove(jint arg0)
+	JObject CopyOnWriteArrayList::remove(jint arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jboolean CopyOnWriteArrayList::removeAll(JObject arg0)
 	{
@@ -252,14 +256,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jobject CopyOnWriteArrayList::set(jint arg0, jobject arg1)
+	JObject CopyOnWriteArrayList::set(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1
-		).object<jobject>();
+			arg1.object<jobject>()
+		);
 	}
 	jint CopyOnWriteArrayList::size()
 	{
@@ -292,27 +296,27 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	jobjectArray CopyOnWriteArrayList::toArray()
+	JObjectArray CopyOnWriteArrayList::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray CopyOnWriteArrayList::toArray(jobjectArray arg0)
+	JObjectArray CopyOnWriteArrayList::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
-	jstring CopyOnWriteArrayList::toString()
+	JString CopyOnWriteArrayList::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::util::concurrent
 

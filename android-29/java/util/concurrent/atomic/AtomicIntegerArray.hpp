@@ -2,6 +2,8 @@
 
 #include "../../../../JObject.hpp"
 
+class JIntArray;
+class JString;
 
 namespace java::util::concurrent::atomic
 {
@@ -15,7 +17,7 @@ namespace java::util::concurrent::atomic
 		AtomicIntegerArray(QAndroidJniObject obj);
 		
 		// Constructors
-		AtomicIntegerArray(jintArray arg0);
+		AtomicIntegerArray(JIntArray arg0);
 		AtomicIntegerArray(jint arg0);
 		
 		// Methods
@@ -43,7 +45,7 @@ namespace java::util::concurrent::atomic
 		void setOpaque(jint arg0, jint arg1);
 		void setPlain(jint arg0, jint arg1);
 		void setRelease(jint arg0, jint arg1);
-		jstring toString();
+		JString toString();
 		jint updateAndGet(jint arg0, JObject arg1);
 		jboolean weakCompareAndSet(jint arg0, jint arg1, jint arg2);
 		jboolean weakCompareAndSetAcquire(jint arg0, jint arg1, jint arg2);

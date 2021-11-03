@@ -1,4 +1,6 @@
+#include "../../JByteArray.hpp"
 #include "./OutputStream.hpp"
+#include "../../JString.hpp"
 #include "./DataOutputStream.hpp"
 
 namespace java::io
@@ -39,12 +41,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void DataOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -65,12 +67,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeBytes(jstring arg0)
+	void DataOutputStream::writeBytes(JString arg0)
 	{
 		callMethod<void>(
 			"writeBytes",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DataOutputStream::writeChar(jint arg0)
@@ -81,12 +83,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeChars(jstring arg0)
+	void DataOutputStream::writeChars(JString arg0)
 	{
 		callMethod<void>(
 			"writeChars",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DataOutputStream::writeDouble(jdouble arg0)
@@ -129,12 +131,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeUTF(jstring arg0)
+	void DataOutputStream::writeUTF(JString arg0)
 	{
 		callMethod<void>(
 			"writeUTF",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace java::io

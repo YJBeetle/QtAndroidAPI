@@ -1,4 +1,6 @@
+#include "../../JObjectArray.hpp"
 #include "./AsyncTask_Status.hpp"
+#include "../../JObject.hpp"
 #include "../../java/util/concurrent/TimeUnit.hpp"
 #include "./AsyncTask.hpp"
 
@@ -50,38 +52,38 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::AsyncTask AsyncTask::execute(jobjectArray arg0)
+	android::os::AsyncTask AsyncTask::execute(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"execute",
 			"([Ljava/lang/Object;)Landroid/os/AsyncTask;",
-			arg0
+			arg0.object<jobjectArray>()
 		);
 	}
-	android::os::AsyncTask AsyncTask::executeOnExecutor(JObject arg0, jobjectArray arg1)
+	android::os::AsyncTask AsyncTask::executeOnExecutor(JObject arg0, JObjectArray arg1)
 	{
 		return callObjectMethod(
 			"executeOnExecutor",
 			"(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;",
 			arg0.object(),
-			arg1
+			arg1.object<jobjectArray>()
 		);
 	}
-	jobject AsyncTask::get()
+	JObject AsyncTask::get()
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject AsyncTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject AsyncTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
 			arg1.object()
-		).object<jobject>();
+		);
 	}
 	android::os::AsyncTask_Status AsyncTask::getStatus()
 	{

@@ -2,6 +2,7 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 namespace android::app::backup
 {
 	class BackupDataInputStream;
@@ -31,7 +32,7 @@ namespace android::app::backup
 		FileBackupHelper(QAndroidJniObject obj);
 		
 		// Constructors
-		FileBackupHelper(android::content::Context arg0, jarray arg1);
+		FileBackupHelper(android::content::Context arg0, JArray arg1);
 		
 		// Methods
 		void performBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2);

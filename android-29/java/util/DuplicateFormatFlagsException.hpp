@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
-#include "../lang/RuntimeException.hpp"
-#include "../lang/IllegalArgumentException.hpp"
 #include "./IllegalFormatException.hpp"
 
+class JString;
 
 namespace java::util
 {
@@ -19,11 +16,11 @@ namespace java::util
 		DuplicateFormatFlagsException(QAndroidJniObject obj);
 		
 		// Constructors
-		DuplicateFormatFlagsException(jstring arg0);
+		DuplicateFormatFlagsException(JString arg0);
 		
 		// Methods
-		jstring getFlags();
-		jstring getMessage();
+		JString getFlags();
+		JString getMessage();
 	};
 } // namespace java::util
 

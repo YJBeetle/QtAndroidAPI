@@ -2,6 +2,7 @@
 #include "../graphics/Canvas.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/View.hpp"
+#include "../../JString.hpp"
 #include "./ExpandableListView.hpp"
 
 namespace android::widget
@@ -150,12 +151,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	jstring ExpandableListView::getAccessibilityClassName()
+	JString ExpandableListView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject ExpandableListView::getAdapter()
 	{

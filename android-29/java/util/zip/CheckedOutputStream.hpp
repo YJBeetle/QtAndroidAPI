@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../io/OutputStream.hpp"
 #include "../../io/FilterOutputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class OutputStream;
@@ -26,7 +25,7 @@ namespace java::util::zip
 		// Methods
 		JObject getChecksum();
 		void write(jint arg0);
-		void write(jbyteArray arg0, jint arg1, jint arg2);
+		void write(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace java::util::zip
 

@@ -1,25 +1,27 @@
+#include "../../JIntArray.hpp"
 #include "./BluetoothDevice.hpp"
 #include "../content/Context.hpp"
+#include "../../JString.hpp"
 #include "./BluetoothA2dp.hpp"
 
 namespace android::bluetooth
 {
 	// Fields
-	jstring BluetoothA2dp::ACTION_CONNECTION_STATE_CHANGED()
+	JString BluetoothA2dp::ACTION_CONNECTION_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothA2dp",
 			"ACTION_CONNECTION_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring BluetoothA2dp::ACTION_PLAYING_STATE_CHANGED()
+	JString BluetoothA2dp::ACTION_PLAYING_STATE_CHANGED()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothA2dp",
 			"ACTION_PLAYING_STATE_CHANGED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint BluetoothA2dp::STATE_NOT_PLAYING()
 	{
@@ -64,12 +66,12 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothA2dp::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothA2dp::getDevicesMatchingConnectionStates(JIntArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0
+			arg0.object<jintArray>()
 		);
 	}
 	jboolean BluetoothA2dp::isA2dpPlaying(android::bluetooth::BluetoothDevice arg0)

@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JObject;
+class JString;
 
 namespace android::media::session
 {
@@ -15,11 +17,11 @@ namespace android::media::session
 		MediaSessionManager_RemoteUserInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		MediaSessionManager_RemoteUserInfo(jstring arg0, jint arg1, jint arg2);
+		MediaSessionManager_RemoteUserInfo(JString arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getPackageName();
+		jboolean equals(JObject arg0);
+		JString getPackageName();
 		jint getPid();
 		jint getUid();
 		jint hashCode();

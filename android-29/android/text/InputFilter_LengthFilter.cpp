@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./InputFilter_LengthFilter.hpp"
 
 namespace android::text
@@ -16,18 +17,18 @@ namespace android::text
 		) {}
 	
 	// Methods
-	jstring InputFilter_LengthFilter::filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
+	JString InputFilter_LengthFilter::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"filter",
 			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object(),
 			arg4,
 			arg5
-		).object<jstring>();
+		);
 	}
 	jint InputFilter_LengthFilter::getMax()
 	{

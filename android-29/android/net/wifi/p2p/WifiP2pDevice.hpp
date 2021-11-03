@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi::p2p
 {
@@ -19,10 +21,10 @@ namespace android::net::wifi::p2p
 		static jint FAILED();
 		static jint INVITED();
 		static jint UNAVAILABLE();
-		jstring deviceAddress();
-		jstring deviceName();
-		jstring primaryDeviceType();
-		jstring secondaryDeviceType();
+		JString deviceAddress();
+		JString deviceName();
+		JString primaryDeviceType();
+		JString secondaryDeviceType();
 		jint status();
 		
 		// QAndroidJniObject forward
@@ -35,11 +37,11 @@ namespace android::net::wifi::p2p
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
 		jboolean isGroupOwner();
 		jboolean isServiceDiscoveryCapable();
-		jstring toString();
+		JString toString();
 		jboolean wpsDisplaySupported();
 		jboolean wpsKeypadSupported();
 		jboolean wpsPbcSupported();

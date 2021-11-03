@@ -1,6 +1,7 @@
 #include "../../app/Person.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/time/ZonedDateTime.hpp"
 #include "./ConversationActions_Message.hpp"
 
@@ -66,12 +67,12 @@ namespace android::view::textclassifier
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
-	jstring ConversationActions_Message::getText()
+	JString ConversationActions_Message::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void ConversationActions_Message::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

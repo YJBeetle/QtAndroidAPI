@@ -1,5 +1,7 @@
+#include "../../JArray.hpp"
 #include "./PrintAttributes.hpp"
 #include "./PrintJobInfo.hpp"
+#include "../../JString.hpp"
 #include "./PrintJobInfo_Builder.hpp"
 
 namespace android::print
@@ -25,22 +27,22 @@ namespace android::print
 			"()Landroid/print/PrintJobInfo;"
 		);
 	}
-	void PrintJobInfo_Builder::putAdvancedOption(jstring arg0, jint arg1)
+	void PrintJobInfo_Builder::putAdvancedOption(JString arg0, jint arg1)
 	{
 		callMethod<void>(
 			"putAdvancedOption",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void PrintJobInfo_Builder::putAdvancedOption(jstring arg0, jstring arg1)
+	void PrintJobInfo_Builder::putAdvancedOption(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"putAdvancedOption",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void PrintJobInfo_Builder::setAttributes(android::print::PrintAttributes arg0)
@@ -59,12 +61,12 @@ namespace android::print
 			arg0
 		);
 	}
-	void PrintJobInfo_Builder::setPages(jarray arg0)
+	void PrintJobInfo_Builder::setPages(JArray arg0)
 	{
 		callMethod<void>(
 			"setPages",
 			"([Landroid/print/PageRange;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 } // namespace android::print

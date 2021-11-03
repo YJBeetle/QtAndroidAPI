@@ -1,5 +1,6 @@
 #include "../os/Parcel.hpp"
 #include "./KeyboardShortcutInfo.hpp"
+#include "../../JString.hpp"
 #include "./KeyboardShortcutGroup.hpp"
 
 namespace android::view
@@ -18,17 +19,17 @@ namespace android::view
 	KeyboardShortcutGroup::KeyboardShortcutGroup(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring arg0)
+	KeyboardShortcutGroup::KeyboardShortcutGroup(JString arg0)
 		: JObject(
 			"android.view.KeyboardShortcutGroup",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring arg0, JObject arg1)
+	KeyboardShortcutGroup::KeyboardShortcutGroup(JString arg0, JObject arg1)
 		: JObject(
 			"android.view.KeyboardShortcutGroup",
 			"(Ljava/lang/CharSequence;Ljava/util/List;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
@@ -55,12 +56,12 @@ namespace android::view
 			"()Ljava/util/List;"
 		);
 	}
-	jstring KeyboardShortcutGroup::getLabel()
+	JString KeyboardShortcutGroup::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void KeyboardShortcutGroup::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

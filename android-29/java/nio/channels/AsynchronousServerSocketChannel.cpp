@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "../../net/SocketAddress.hpp"
 #include "./AsynchronousChannelGroup.hpp"
 #include "./spi/AsynchronousChannelProvider.hpp"
@@ -37,12 +38,12 @@ namespace java::nio::channels
 			"()Ljava/util/concurrent/Future;"
 		);
 	}
-	void AsynchronousServerSocketChannel::accept(jobject arg0, JObject arg1)
+	void AsynchronousServerSocketChannel::accept(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"accept",
 			"(Ljava/lang/Object;Ljava/nio/channels/CompletionHandler;)V",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object()
 		);
 	}
@@ -77,13 +78,13 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
-	java::nio::channels::AsynchronousServerSocketChannel AsynchronousServerSocketChannel::setOption(JObject arg0, jobject arg1)
+	java::nio::channels::AsynchronousServerSocketChannel AsynchronousServerSocketChannel::setOption(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/AsynchronousServerSocketChannel;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 } // namespace java::nio::channels

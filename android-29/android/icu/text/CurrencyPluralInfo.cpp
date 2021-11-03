@@ -1,5 +1,7 @@
 #include "./PluralRules.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "./CurrencyPluralInfo.hpp"
 
@@ -56,28 +58,28 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jobject CurrencyPluralInfo::clone()
+	JObject CurrencyPluralInfo::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean CurrencyPluralInfo::equals(jobject arg0)
+	jboolean CurrencyPluralInfo::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring CurrencyPluralInfo::getCurrencyPluralPattern(jstring arg0)
+	JString CurrencyPluralInfo::getCurrencyPluralPattern(JString arg0)
 	{
 		return callObjectMethod(
 			"getCurrencyPluralPattern",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 	android::icu::util::ULocale CurrencyPluralInfo::getLocale()
 	{
@@ -100,13 +102,13 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	void CurrencyPluralInfo::setCurrencyPluralPattern(jstring arg0, jstring arg1)
+	void CurrencyPluralInfo::setCurrencyPluralPattern(JString arg0, JString arg1)
 	{
 		callMethod<void>(
 			"setCurrencyPluralPattern",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	void CurrencyPluralInfo::setLocale(android::icu::util::ULocale arg0)
@@ -117,12 +119,12 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void CurrencyPluralInfo::setPluralRules(jstring arg0)
+	void CurrencyPluralInfo::setPluralRules(JString arg0)
 	{
 		callMethod<void>(
 			"setPluralRules",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::icu::text

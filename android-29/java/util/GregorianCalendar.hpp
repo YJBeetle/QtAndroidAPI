@@ -1,12 +1,15 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Calendar.hpp"
 
+class JIntArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
 }
+class JObject;
+class JString;
 namespace java::time
 {
 	class ZonedDateTime;
@@ -49,11 +52,11 @@ namespace java::util
 		// Methods
 		static java::util::GregorianCalendar from(java::time::ZonedDateTime arg0);
 		void add(jint arg0, jint arg1);
-		jobject clone();
-		jboolean equals(jobject arg0);
+		JObject clone();
+		jboolean equals(JObject arg0);
 		jint getActualMaximum(jint arg0);
 		jint getActualMinimum(jint arg0);
-		jstring getCalendarType();
+		JString getCalendarType();
 		jint getGreatestMinimum(jint arg0);
 		java::util::Date getGregorianChange();
 		jint getLeastMaximum(jint arg0);

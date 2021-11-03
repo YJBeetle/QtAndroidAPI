@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace android::bluetooth
@@ -25,6 +22,7 @@ namespace android::telecom
 {
 	class CallAudioState;
 }
+class JString;
 
 namespace android::telecom
 {
@@ -32,7 +30,7 @@ namespace android::telecom
 	{
 	public:
 		// Fields
-		static jstring SERVICE_INTERFACE();
+		static JString SERVICE_INTERFACE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InCallService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -51,7 +49,7 @@ namespace android::telecom
 		void onCallAudioStateChanged(android::telecom::CallAudioState arg0);
 		void onCallRemoved(android::telecom::Call arg0);
 		void onCanAddCallChanged(jboolean arg0);
-		void onConnectionEvent(android::telecom::Call arg0, jstring arg1, android::os::Bundle arg2);
+		void onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2);
 		void onSilenceRinger();
 		jboolean onUnbind(android::content::Intent arg0);
 		void requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0);

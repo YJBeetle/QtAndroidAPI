@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::telephony::emergency
 {
@@ -39,20 +41,20 @@ namespace android::telephony::emergency
 		
 		// Methods
 		jint compareTo(android::telephony::emergency::EmergencyNumber arg0);
-		jint compareTo(jobject arg0);
+		jint compareTo(JObject arg0);
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jstring getCountryIso();
+		jboolean equals(JObject arg0);
+		JString getCountryIso();
 		jint getEmergencyCallRouting();
 		JObject getEmergencyNumberSources();
 		JObject getEmergencyServiceCategories();
 		JObject getEmergencyUrns();
-		jstring getMnc();
-		jstring getNumber();
+		JString getMnc();
+		JString getNumber();
 		jint hashCode();
 		jboolean isFromSources(jint arg0);
 		jboolean isInEmergencyServiceCategories(jint arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony::emergency

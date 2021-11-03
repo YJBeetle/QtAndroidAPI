@@ -30,6 +30,8 @@ namespace android::os
 {
 	class Bundle;
 }
+class JObject;
+class JString;
 
 namespace android::media
 {
@@ -46,13 +48,13 @@ namespace android::media
 		
 		// Methods
 		void broadcastSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1);
-		void cancelSessionCommand(android::media::MediaSession2_ControllerInfo arg0, jobject arg1);
+		void cancelSessionCommand(android::media::MediaSession2_ControllerInfo arg0, JObject arg1);
 		void close();
 		JObject getConnectedControllers();
-		jstring getId();
+		JString getId();
 		android::media::Session2Token getToken();
 		jboolean isPlaybackActive();
-		jobject sendSessionCommand(android::media::MediaSession2_ControllerInfo arg0, android::media::Session2Command arg1, android::os::Bundle arg2);
+		JObject sendSessionCommand(android::media::MediaSession2_ControllerInfo arg0, android::media::Session2Command arg1, android::os::Bundle arg2);
 		void setPlaybackActive(jboolean arg0);
 	};
 } // namespace android::media

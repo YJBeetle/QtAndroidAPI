@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../lang/Error.hpp"
-#include "../../lang/VirtualMachineError.hpp"
 #include "../../lang/InternalError.hpp"
 
+class JString;
 
 namespace java::util::zip
 {
@@ -18,7 +16,7 @@ namespace java::util::zip
 		ZipError(QAndroidJniObject obj);
 		
 		// Constructors
-		ZipError(jstring arg0);
+		ZipError(JString arg0);
 		
 		// Methods
 	};

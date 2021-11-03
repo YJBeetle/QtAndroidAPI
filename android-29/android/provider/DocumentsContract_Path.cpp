@@ -1,4 +1,6 @@
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DocumentsContract_Path.hpp"
 
 namespace android::provider
@@ -17,11 +19,11 @@ namespace android::provider
 	DocumentsContract_Path::DocumentsContract_Path(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DocumentsContract_Path::DocumentsContract_Path(jstring arg0, JObject arg1)
+	DocumentsContract_Path::DocumentsContract_Path(JString arg0, JObject arg1)
 		: JObject(
 			"android.provider.DocumentsContract$Path",
 			"(Ljava/lang/String;Ljava/util/List;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
@@ -33,12 +35,12 @@ namespace android::provider
 			"()I"
 		);
 	}
-	jboolean DocumentsContract_Path::equals(jobject arg0)
+	jboolean DocumentsContract_Path::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject DocumentsContract_Path::getPath()
@@ -48,12 +50,12 @@ namespace android::provider
 			"()Ljava/util/List;"
 		);
 	}
-	jstring DocumentsContract_Path::getRootId()
+	JString DocumentsContract_Path::getRootId()
 	{
 		return callObjectMethod(
 			"getRootId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DocumentsContract_Path::hashCode()
 	{
@@ -62,12 +64,12 @@ namespace android::provider
 			"()I"
 		);
 	}
-	jstring DocumentsContract_Path::toString()
+	JString DocumentsContract_Path::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void DocumentsContract_Path::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

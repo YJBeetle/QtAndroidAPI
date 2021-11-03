@@ -1,4 +1,5 @@
 #include "./AlphabeticIndex_Bucket_LabelType.hpp"
+#include "../../../JString.hpp"
 #include "./AlphabeticIndex_Bucket.hpp"
 
 namespace android::icu::text
@@ -11,12 +12,12 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	jstring AlphabeticIndex_Bucket::getLabel()
+	JString AlphabeticIndex_Bucket::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket::getLabelType()
 	{
@@ -39,12 +40,12 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	jstring AlphabeticIndex_Bucket::toString()
+	JString AlphabeticIndex_Bucket::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::icu::text
 

@@ -10,6 +10,7 @@
 #include "../../view/KeyEvent.hpp"
 #include "../../view/MotionEvent.hpp"
 #include "../../view/View.hpp"
+#include "../../../JString.hpp"
 #include "./TvView.hpp"
 
 namespace android::media::tv
@@ -107,13 +108,13 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	jstring TvView::getSelectedTrack(jint arg0)
+	JString TvView::getSelectedTrack(jint arg0)
 	{
 		return callObjectMethod(
 			"getSelectedTrack",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	JObject TvView::getTracks(jint arg0)
 	{
@@ -138,21 +139,21 @@ namespace android::media::tv
 			"()V"
 		);
 	}
-	void TvView::selectTrack(jint arg0, jstring arg1)
+	void TvView::selectTrack(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"selectTrack",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
-	void TvView::sendAppPrivateCommand(jstring arg0, android::os::Bundle arg1)
+	void TvView::sendAppPrivateCommand(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"sendAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -219,12 +220,12 @@ namespace android::media::tv
 			"()V"
 		);
 	}
-	void TvView::timeShiftPlay(jstring arg0, android::net::Uri arg1)
+	void TvView::timeShiftPlay(JString arg0, android::net::Uri arg1)
 	{
 		callMethod<void>(
 			"timeShiftPlay",
 			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -251,21 +252,21 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	void TvView::tune(jstring arg0, android::net::Uri arg1)
+	void TvView::tune(JString arg0, android::net::Uri arg1)
 	{
 		callMethod<void>(
 			"tune",
 			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void TvView::tune(jstring arg0, android::net::Uri arg1, android::os::Bundle arg2)
+	void TvView::tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"tune",
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Transition.hpp"
 
+class JArray;
 namespace android::animation
 {
 	class Animator;
@@ -41,7 +41,7 @@ namespace android::transition
 		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2);
 		jboolean getReparent();
 		jboolean getReparentWithOverlay();
-		jarray getTransitionProperties();
+		JArray getTransitionProperties();
 		void setReparent(jboolean arg0);
 		void setReparentWithOverlay(jboolean arg0);
 	};

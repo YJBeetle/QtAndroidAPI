@@ -10,6 +10,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::app
 {
@@ -25,13 +26,13 @@ namespace android::app
 		jlong activeSince();
 		jint clientCount();
 		jint clientLabel();
-		jstring clientPackage();
+		JString clientPackage();
 		jint crashCount();
 		jint flags();
 		jboolean foreground();
 		jlong lastActivityTime();
 		jint pid();
-		jstring process();
+		JString process();
 		jlong restarting();
 		android::content::ComponentName service();
 		jboolean started();

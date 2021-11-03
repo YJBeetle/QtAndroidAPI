@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./ContentCaptureSessionId.hpp"
 
 namespace android::view::contentcapture
@@ -26,12 +28,12 @@ namespace android::view::contentcapture
 			"()I"
 		);
 	}
-	jboolean ContentCaptureSessionId::equals(jobject arg0)
+	jboolean ContentCaptureSessionId::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint ContentCaptureSessionId::hashCode()
@@ -41,12 +43,12 @@ namespace android::view::contentcapture
 			"()I"
 		);
 	}
-	jstring ContentCaptureSessionId::toString()
+	JString ContentCaptureSessionId::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ContentCaptureSessionId::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

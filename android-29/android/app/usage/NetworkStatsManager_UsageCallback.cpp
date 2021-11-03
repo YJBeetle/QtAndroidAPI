@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./NetworkStatsManager_UsageCallback.hpp"
 
 namespace android::app::usage
@@ -15,13 +16,13 @@ namespace android::app::usage
 		) {}
 	
 	// Methods
-	void NetworkStatsManager_UsageCallback::onThresholdReached(jint arg0, jstring arg1)
+	void NetworkStatsManager_UsageCallback::onThresholdReached(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onThresholdReached",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::app::usage

@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/security/KeyStore.hpp"
 #include "../../../java/security/Provider.hpp"
 #include "./TrustManagerFactorySpi.hpp"
@@ -13,49 +15,49 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	jstring TrustManagerFactory::getDefaultAlgorithm()
+	JString TrustManagerFactory::getDefaultAlgorithm()
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.TrustManagerFactory",
 			"getDefaultAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	javax::net::ssl::TrustManagerFactory TrustManagerFactory::getInstance(jstring arg0)
+	javax::net::ssl::TrustManagerFactory TrustManagerFactory::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.TrustManagerFactory",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	javax::net::ssl::TrustManagerFactory TrustManagerFactory::getInstance(jstring arg0, jstring arg1)
+	javax::net::ssl::TrustManagerFactory TrustManagerFactory::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.TrustManagerFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	javax::net::ssl::TrustManagerFactory TrustManagerFactory::getInstance(jstring arg0, java::security::Provider arg1)
+	javax::net::ssl::TrustManagerFactory TrustManagerFactory::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.TrustManagerFactory",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/TrustManagerFactory;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	jstring TrustManagerFactory::getAlgorithm()
+	JString TrustManagerFactory::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::security::Provider TrustManagerFactory::getProvider()
 	{
@@ -64,12 +66,12 @@ namespace javax::net::ssl
 			"()Ljava/security/Provider;"
 		);
 	}
-	jarray TrustManagerFactory::getTrustManagers()
+	JArray TrustManagerFactory::getTrustManagers()
 	{
 		return callObjectMethod(
 			"getTrustManagers",
 			"()[Ljavax/net/ssl/TrustManager;"
-		).object<jarray>();
+		);
 	}
 	void TrustManagerFactory::init(java::security::KeyStore arg0)
 	{

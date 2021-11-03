@@ -8,6 +8,7 @@
 #include "./drawable/Drawable.hpp"
 #include "../net/Uri.hpp"
 #include "../../java/io/File.hpp"
+#include "../../JString.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "./ImageDecoder.hpp"
 
@@ -100,14 +101,14 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	android::graphics::ImageDecoder_Source ImageDecoder::createSource(android::content::res::AssetManager arg0, jstring arg1)
+	android::graphics::ImageDecoder_Source ImageDecoder::createSource(android::content::res::AssetManager arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
 			"createSource",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/ImageDecoder$Source;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::graphics::ImageDecoder_Source ImageDecoder::createSource(android::content::res::Resources arg0, jint arg1)
@@ -158,13 +159,13 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jboolean ImageDecoder::isMimeTypeSupported(jstring arg0)
+	jboolean ImageDecoder::isMimeTypeSupported(JString arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"android.graphics.ImageDecoder",
 			"isMimeTypeSupported",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void ImageDecoder::close()

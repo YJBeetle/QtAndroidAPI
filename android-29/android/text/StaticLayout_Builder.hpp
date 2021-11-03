@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::text
 {
 	class Layout_Alignment;
@@ -18,6 +19,7 @@ namespace android::text
 {
 	class TextUtils_TruncateAt;
 }
+class JString;
 
 namespace android::text
 {
@@ -33,7 +35,7 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		static android::text::StaticLayout_Builder obtain(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4);
+		static android::text::StaticLayout_Builder obtain(JString arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4);
 		android::text::StaticLayout build();
 		android::text::StaticLayout_Builder setAlignment(android::text::Layout_Alignment arg0);
 		android::text::StaticLayout_Builder setBreakStrategy(jint arg0);
@@ -41,11 +43,11 @@ namespace android::text
 		android::text::StaticLayout_Builder setEllipsizedWidth(jint arg0);
 		android::text::StaticLayout_Builder setHyphenationFrequency(jint arg0);
 		android::text::StaticLayout_Builder setIncludePad(jboolean arg0);
-		android::text::StaticLayout_Builder setIndents(jintArray arg0, jintArray arg1);
+		android::text::StaticLayout_Builder setIndents(JIntArray arg0, JIntArray arg1);
 		android::text::StaticLayout_Builder setJustificationMode(jint arg0);
 		android::text::StaticLayout_Builder setLineSpacing(jfloat arg0, jfloat arg1);
 		android::text::StaticLayout_Builder setMaxLines(jint arg0);
-		android::text::StaticLayout_Builder setText(jstring arg0);
+		android::text::StaticLayout_Builder setText(JString arg0);
 		android::text::StaticLayout_Builder setTextDirection(JObject arg0);
 		android::text::StaticLayout_Builder setUseLineSpacingFromFallbacks(jboolean arg0);
 	};

@@ -10,6 +10,8 @@ namespace android::view::accessibility
 {
 	class AccessibilityNodeInfo;
 }
+class JString;
+class JString;
 
 namespace android::view::accessibility
 {
@@ -28,9 +30,9 @@ namespace android::view::accessibility
 		static android::view::accessibility::AccessibilityRecord obtain();
 		static android::view::accessibility::AccessibilityRecord obtain(android::view::accessibility::AccessibilityRecord arg0);
 		jint getAddedCount();
-		jstring getBeforeText();
-		jstring getClassName();
-		jstring getContentDescription();
+		JString getBeforeText();
+		JString getClassName();
+		JString getContentDescription();
 		jint getCurrentItemIndex();
 		jint getFromIndex();
 		jint getItemCount();
@@ -53,10 +55,10 @@ namespace android::view::accessibility
 		jboolean isScrollable();
 		void recycle();
 		void setAddedCount(jint arg0);
-		void setBeforeText(jstring arg0);
+		void setBeforeText(JString arg0);
 		void setChecked(jboolean arg0);
-		void setClassName(jstring arg0);
-		void setContentDescription(jstring arg0);
+		void setClassName(JString arg0);
+		void setContentDescription(JString arg0);
 		void setCurrentItemIndex(jint arg0);
 		void setEnabled(jboolean arg0);
 		void setFromIndex(jint arg0);
@@ -75,7 +77,7 @@ namespace android::view::accessibility
 		void setSource(android::view::View arg0);
 		void setSource(android::view::View arg0, jint arg1);
 		void setToIndex(jint arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::view::accessibility
 

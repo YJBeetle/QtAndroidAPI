@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::media
 {
 	class MediaCas_Session;
@@ -21,7 +22,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jbyteArray getPrivateData();
+		JByteArray getPrivateData();
 		android::media::MediaCas_Session getSession();
 		jint getSystemId();
 	};

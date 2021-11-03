@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
+class JObjectArray;
+class JString;
 
 namespace android::util
 {
@@ -17,13 +20,13 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		static jint getTagCode(jstring arg0);
-		static jstring getTagName(jint arg0);
-		static void readEvents(jintArray arg0, JObject arg1);
-		static jint writeEvent(jint arg0, jobjectArray arg1);
+		static jint getTagCode(JString arg0);
+		static JString getTagName(jint arg0);
+		static void readEvents(JIntArray arg0, JObject arg1);
+		static jint writeEvent(jint arg0, JObjectArray arg1);
 		static jint writeEvent(jint arg0, jfloat arg1);
 		static jint writeEvent(jint arg0, jint arg1);
-		static jint writeEvent(jint arg0, jstring arg1);
+		static jint writeEvent(jint arg0, JString arg1);
 		static jint writeEvent(jint arg0, jlong arg1);
 	};
 } // namespace android::util

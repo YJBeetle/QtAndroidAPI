@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JArray;
 namespace android::content
 {
 	class ContentResolver;
@@ -26,6 +28,7 @@ namespace android::os
 {
 	class Bundle;
 }
+class JString;
 
 namespace android::database
 {
@@ -45,12 +48,12 @@ namespace android::database
 		void close();
 		void copyStringToBuffer(jint arg0, android::database::CharArrayBuffer arg1);
 		void deactivate();
-		jbyteArray getBlob(jint arg0);
+		JByteArray getBlob(jint arg0);
 		jint getColumnCount();
-		jint getColumnIndex(jstring arg0);
-		jint getColumnIndexOrThrow(jstring arg0);
-		jstring getColumnName(jint arg0);
-		jarray getColumnNames();
+		jint getColumnIndex(JString arg0);
+		jint getColumnIndexOrThrow(JString arg0);
+		JString getColumnName(jint arg0);
+		JArray getColumnNames();
 		jint getCount();
 		jdouble getDouble(jint arg0);
 		android::os::Bundle getExtras();
@@ -61,7 +64,7 @@ namespace android::database
 		JObject getNotificationUris();
 		jint getPosition();
 		jshort getShort(jint arg0);
-		jstring getString(jint arg0);
+		JString getString(jint arg0);
 		jint getType(jint arg0);
 		jboolean getWantsAllOnMoveCalls();
 		JObject getWrappedCursor();

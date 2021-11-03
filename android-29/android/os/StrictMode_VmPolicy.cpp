@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "../../java/util/HashMap.hpp"
 #include "./StrictMode_VmPolicy.hpp"
 
@@ -19,12 +20,12 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	jstring StrictMode_VmPolicy::toString()
+	JString StrictMode_VmPolicy::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::os
 

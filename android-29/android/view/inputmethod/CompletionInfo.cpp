@@ -1,4 +1,6 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./CompletionInfo.hpp"
 
 namespace android::view::inputmethod
@@ -17,22 +19,22 @@ namespace android::view::inputmethod
 	CompletionInfo::CompletionInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, jstring arg2)
+	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, JString arg2)
 		: JObject(
 			"android.view.inputmethod.CompletionInfo",
 			"(JILjava/lang/CharSequence;)V",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		) {}
-	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, jstring arg2, jstring arg3)
+	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, JString arg2, JString arg3)
 		: JObject(
 			"android.view.inputmethod.CompletionInfo",
 			"(JILjava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
 		) {}
 	
 	// Methods
@@ -50,12 +52,12 @@ namespace android::view::inputmethod
 			"()J"
 		);
 	}
-	jstring CompletionInfo::getLabel()
+	JString CompletionInfo::getLabel()
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint CompletionInfo::getPosition()
 	{
@@ -64,19 +66,19 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	jstring CompletionInfo::getText()
+	JString CompletionInfo::getText()
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring CompletionInfo::toString()
+	JString CompletionInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CompletionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

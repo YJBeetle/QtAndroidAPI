@@ -1,4 +1,7 @@
+#include "../../JByteArray.hpp"
 #include "../io/ObjectInputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Signature.hpp"
 #include "./SignedObject.hpp"
 
@@ -20,26 +23,26 @@ namespace java::security
 		) {}
 	
 	// Methods
-	jstring SignedObject::getAlgorithm()
+	JString SignedObject::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jobject SignedObject::getObject()
+	JObject SignedObject::getObject()
 	{
 		return callObjectMethod(
 			"getObject",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jbyteArray SignedObject::getSignature()
+	JByteArray SignedObject::getSignature()
 	{
 		return callObjectMethod(
 			"getSignature",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 	jboolean SignedObject::verify(JObject arg0, java::security::Signature arg1)
 	{

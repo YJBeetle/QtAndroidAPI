@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./ObjectStreamException.hpp"
 
 namespace java::io

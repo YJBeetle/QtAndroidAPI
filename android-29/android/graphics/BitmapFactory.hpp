@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 namespace android::content::res
 {
 	class Resources;
@@ -30,6 +31,7 @@ namespace java::io
 {
 	class InputStream;
 }
+class JString;
 
 namespace android::graphics
 {
@@ -46,10 +48,10 @@ namespace android::graphics
 		BitmapFactory();
 		
 		// Methods
-		static android::graphics::Bitmap decodeByteArray(jbyteArray arg0, jint arg1, jint arg2);
-		static android::graphics::Bitmap decodeByteArray(jbyteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3);
-		static android::graphics::Bitmap decodeFile(jstring arg0);
-		static android::graphics::Bitmap decodeFile(jstring arg0, android::graphics::BitmapFactory_Options arg1);
+		static android::graphics::Bitmap decodeByteArray(JByteArray arg0, jint arg1, jint arg2);
+		static android::graphics::Bitmap decodeByteArray(JByteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3);
+		static android::graphics::Bitmap decodeFile(JString arg0);
+		static android::graphics::Bitmap decodeFile(JString arg0, android::graphics::BitmapFactory_Options arg1);
 		static android::graphics::Bitmap decodeFileDescriptor(java::io::FileDescriptor arg0);
 		static android::graphics::Bitmap decodeFileDescriptor(java::io::FileDescriptor arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2);
 		static android::graphics::Bitmap decodeResource(android::content::res::Resources arg0, jint arg1);

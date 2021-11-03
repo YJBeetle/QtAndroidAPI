@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./Virtualizer_Settings.hpp"
 
 namespace android::media::audiofx
@@ -19,20 +20,20 @@ namespace android::media::audiofx
 			"android.media.audiofx.Virtualizer$Settings",
 			"()V"
 		) {}
-	Virtualizer_Settings::Virtualizer_Settings(jstring arg0)
+	Virtualizer_Settings::Virtualizer_Settings(JString arg0)
 		: JObject(
 			"android.media.audiofx.Virtualizer$Settings",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring Virtualizer_Settings::toString()
+	JString Virtualizer_Settings::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::audiofx
 

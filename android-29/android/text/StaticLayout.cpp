@@ -2,6 +2,7 @@
 #include "./Layout_Directions.hpp"
 #include "./TextPaint.hpp"
 #include "./TextUtils_TruncateAt.hpp"
+#include "../../JString.hpp"
 #include "./StaticLayout.hpp"
 
 namespace android::text
@@ -12,11 +13,11 @@ namespace android::text
 	StaticLayout::StaticLayout(QAndroidJniObject obj) : android::text::Layout(obj) {}
 	
 	// Constructors
-	StaticLayout::StaticLayout(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)
+	StaticLayout::StaticLayout(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)
 		: android::text::Layout(
 			"android.text.StaticLayout",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2,
 			arg3.object(),
@@ -24,11 +25,11 @@ namespace android::text
 			arg5,
 			arg6
 		) {}
-	StaticLayout::StaticLayout(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4, android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8)
+	StaticLayout::StaticLayout(JString arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4, android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8)
 		: android::text::Layout(
 			"android.text.StaticLayout",
 			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object(),
@@ -38,11 +39,11 @@ namespace android::text
 			arg7,
 			arg8
 		) {}
-	StaticLayout::StaticLayout(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4, android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8, android::text::TextUtils_TruncateAt arg9, jint arg10)
+	StaticLayout::StaticLayout(JString arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4, android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8, android::text::TextUtils_TruncateAt arg9, jint arg10)
 		: android::text::Layout(
 			"android.text.StaticLayout",
 			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZLandroid/text/TextUtils$TruncateAt;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2,
 			arg3.object(),

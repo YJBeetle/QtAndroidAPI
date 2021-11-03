@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::telecom
 {
@@ -21,10 +22,10 @@ namespace android::telecom
 		
 		// Methods
 		jint getRttAudioMode();
-		jstring read();
-		jstring readImmediately();
+		JString read();
+		JString readImmediately();
 		void setRttMode(jint arg0);
-		void write(jstring arg0);
+		void write(JString arg0);
 	};
 } // namespace android::telecom
 

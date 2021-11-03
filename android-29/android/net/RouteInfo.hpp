@@ -10,6 +10,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 namespace java::net
 {
 	class InetAddress;
@@ -31,15 +33,15 @@ namespace android::net
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		android::net::IpPrefix getDestination();
 		java::net::InetAddress getGateway();
-		jstring getInterface();
+		JString getInterface();
 		jboolean hasGateway();
 		jint hashCode();
 		jboolean isDefaultRoute();
 		jboolean matches(java::net::InetAddress arg0);
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace android::view
 {
@@ -26,8 +27,8 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		static android::view::ViewDebug_HierarchyTraceType valueOf(jstring arg0);
-		static jarray values();
+		static android::view::ViewDebug_HierarchyTraceType valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace android::view
 

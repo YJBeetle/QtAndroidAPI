@@ -1,4 +1,5 @@
 #include "../../os/Bundle.hpp"
+#include "../../../JString.hpp"
 #include "./MediaBrowser_SubscriptionCallback.hpp"
 
 namespace android::media::browse
@@ -16,39 +17,39 @@ namespace android::media::browse
 		) {}
 	
 	// Methods
-	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, JObject arg1)
+	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onChildrenLoaded",
 			"(Ljava/lang/String;Ljava/util/List;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, JObject arg1, android::os::Bundle arg2)
+	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(JString arg0, JObject arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"onChildrenLoaded",
 			"(Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
 	}
-	void MediaBrowser_SubscriptionCallback::onError(jstring arg0)
+	void MediaBrowser_SubscriptionCallback::onError(JString arg0)
 	{
 		callMethod<void>(
 			"onError",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void MediaBrowser_SubscriptionCallback::onError(jstring arg0, android::os::Bundle arg1)
+	void MediaBrowser_SubscriptionCallback::onError(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onError",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}

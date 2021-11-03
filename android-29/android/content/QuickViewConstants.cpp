@@ -1,55 +1,56 @@
+#include "../../JString.hpp"
 #include "./QuickViewConstants.hpp"
 
 namespace android::content
 {
 	// Fields
-	jstring QuickViewConstants::FEATURE_DELETE()
+	JString QuickViewConstants::FEATURE_DELETE()
 	{
 		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_DELETE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring QuickViewConstants::FEATURE_DOWNLOAD()
+	JString QuickViewConstants::FEATURE_DOWNLOAD()
 	{
 		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_DOWNLOAD",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring QuickViewConstants::FEATURE_EDIT()
+	JString QuickViewConstants::FEATURE_EDIT()
 	{
 		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_EDIT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring QuickViewConstants::FEATURE_PRINT()
+	JString QuickViewConstants::FEATURE_PRINT()
 	{
 		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_PRINT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring QuickViewConstants::FEATURE_SEND()
+	JString QuickViewConstants::FEATURE_SEND()
 	{
 		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_SEND",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring QuickViewConstants::FEATURE_VIEW()
+	JString QuickViewConstants::FEATURE_VIEW()
 	{
 		return getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_VIEW",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

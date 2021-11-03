@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 
 namespace android::telephony
 {
@@ -20,13 +22,13 @@ namespace android::telephony
 		RadioAccessSpecifier(QAndroidJniObject obj);
 		
 		// Constructors
-		RadioAccessSpecifier(jint arg0, jintArray arg1, jintArray arg2);
+		RadioAccessSpecifier(jint arg0, JIntArray arg1, JIntArray arg2);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
-		jintArray getBands();
-		jintArray getChannels();
+		jboolean equals(JObject arg0);
+		JIntArray getBands();
+		JIntArray getChannels();
 		jint getRadioAccessNetwork();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

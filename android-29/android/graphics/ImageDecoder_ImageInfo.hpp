@@ -14,6 +14,7 @@ namespace android::util
 {
 	class Size;
 }
+class JString;
 
 namespace android::graphics
 {
@@ -30,7 +31,7 @@ namespace android::graphics
 		
 		// Methods
 		android::graphics::ColorSpace getColorSpace();
-		jstring getMimeType();
+		JString getMimeType();
 		android::util::Size getSize();
 		jboolean isAnimated();
 	};

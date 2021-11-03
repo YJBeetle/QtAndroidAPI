@@ -1,5 +1,7 @@
 #include "../content/res/AssetManager.hpp"
 #include "../../java/io/File.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Typeface.hpp"
 
 namespace android::graphics
@@ -90,13 +92,13 @@ namespace android::graphics
 			arg1
 		);
 	}
-	android::graphics::Typeface Typeface::create(jstring arg0, jint arg1)
+	android::graphics::Typeface Typeface::create(JString arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Typeface",
 			"create",
 			"(Ljava/lang/String;I)Landroid/graphics/Typeface;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -111,14 +113,14 @@ namespace android::graphics
 			arg2
 		);
 	}
-	android::graphics::Typeface Typeface::createFromAsset(android::content::res::AssetManager arg0, jstring arg1)
+	android::graphics::Typeface Typeface::createFromAsset(android::content::res::AssetManager arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Typeface",
 			"createFromAsset",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	android::graphics::Typeface Typeface::createFromFile(java::io::File arg0)
@@ -130,13 +132,13 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	android::graphics::Typeface Typeface::createFromFile(jstring arg0)
+	android::graphics::Typeface Typeface::createFromFile(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.Typeface",
 			"createFromFile",
 			"(Ljava/lang/String;)Landroid/graphics/Typeface;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	android::graphics::Typeface Typeface::defaultFromStyle(jint arg0)
@@ -148,12 +150,12 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean Typeface::equals(jobject arg0)
+	jboolean Typeface::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Typeface::getStyle()

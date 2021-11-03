@@ -1,5 +1,8 @@
+#include "../../JByteArray.hpp"
 #include "./File.hpp"
 #include "./FileDescriptor.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../nio/channels/FileChannel.hpp"
 #include "./RandomAccessFile.hpp"
 
@@ -11,19 +14,19 @@ namespace java::io
 	RandomAccessFile::RandomAccessFile(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	RandomAccessFile::RandomAccessFile(java::io::File arg0, jstring arg1)
+	RandomAccessFile::RandomAccessFile(java::io::File arg0, JString arg1)
 		: JObject(
 			"java.io.RandomAccessFile",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
-	RandomAccessFile::RandomAccessFile(jstring arg0, jstring arg1)
+	RandomAccessFile::RandomAccessFile(JString arg0, JString arg1)
 		: JObject(
 			"java.io.RandomAccessFile",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
@@ -69,20 +72,20 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint RandomAccessFile::read(jbyteArray arg0)
+	jint RandomAccessFile::read(JByteArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	jint RandomAccessFile::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint RandomAccessFile::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -122,20 +125,20 @@ namespace java::io
 			"()F"
 		);
 	}
-	void RandomAccessFile::readFully(jbyteArray arg0)
+	void RandomAccessFile::readFully(JByteArray arg0)
 	{
 		callMethod<void>(
 			"readFully",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void RandomAccessFile::readFully(jbyteArray arg0, jint arg1, jint arg2)
+	void RandomAccessFile::readFully(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"readFully",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -147,12 +150,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jstring RandomAccessFile::readLine()
+	JString RandomAccessFile::readLine()
 	{
 		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong RandomAccessFile::readLong()
 	{
@@ -168,12 +171,12 @@ namespace java::io
 			"()S"
 		);
 	}
-	jstring RandomAccessFile::readUTF()
+	JString RandomAccessFile::readUTF()
 	{
 		return callObjectMethod(
 			"readUTF",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint RandomAccessFile::readUnsignedByte()
 	{
@@ -213,12 +216,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void RandomAccessFile::write(jbyteArray arg0)
+	void RandomAccessFile::write(JByteArray arg0)
 	{
 		callMethod<void>(
 			"write",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void RandomAccessFile::write(jint arg0)
@@ -229,12 +232,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void RandomAccessFile::write(jbyteArray arg0, jint arg1, jint arg2)
+	void RandomAccessFile::write(JByteArray arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"write",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -255,12 +258,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void RandomAccessFile::writeBytes(jstring arg0)
+	void RandomAccessFile::writeBytes(JString arg0)
 	{
 		callMethod<void>(
 			"writeBytes",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void RandomAccessFile::writeChar(jint arg0)
@@ -271,12 +274,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void RandomAccessFile::writeChars(jstring arg0)
+	void RandomAccessFile::writeChars(JString arg0)
 	{
 		callMethod<void>(
 			"writeChars",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void RandomAccessFile::writeDouble(jdouble arg0)
@@ -319,12 +322,12 @@ namespace java::io
 			arg0
 		);
 	}
-	void RandomAccessFile::writeUTF(jstring arg0)
+	void RandomAccessFile::writeUTF(JString arg0)
 	{
 		callMethod<void>(
 			"writeUTF",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace java::io

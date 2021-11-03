@@ -1,3 +1,5 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Character_Subset.hpp"
 
 namespace java::lang
@@ -10,12 +12,12 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	jboolean Character_Subset::equals(jobject arg0)
+	jboolean Character_Subset::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Character_Subset::hashCode()
@@ -25,12 +27,12 @@ namespace java::lang
 			"()I"
 		);
 	}
-	jstring Character_Subset::toString()
+	JString Character_Subset::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

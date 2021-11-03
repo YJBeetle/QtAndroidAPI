@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./AttributedCharacterIterator_Attribute.hpp"
 
+class JString;
 
 namespace java::text
 {

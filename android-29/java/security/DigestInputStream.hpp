@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../io/InputStream.hpp"
 #include "../io/FilterInputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class InputStream;
 }
+class JString;
 namespace java::security
 {
 	class MessageDigest;
@@ -31,9 +31,9 @@ namespace java::security
 		java::security::MessageDigest getMessageDigest();
 		void on(jboolean arg0);
 		jint read();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 		void setMessageDigest(java::security::MessageDigest arg0);
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::security
 

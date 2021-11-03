@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::net::wifi::hotspot2::pps
 {
@@ -25,13 +27,13 @@ namespace android::net::wifi::hotspot2::pps
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getEapType();
-		jstring getImsi();
+		JString getImsi();
 		jint hashCode();
 		void setEapType(jint arg0);
-		void setImsi(jstring arg0);
-		jstring toString();
+		void setImsi(JString arg0);
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi::hotspot2::pps

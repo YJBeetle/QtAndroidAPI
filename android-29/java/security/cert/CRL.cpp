@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./Certificate.hpp"
 #include "./CRL.hpp"
 
@@ -11,12 +12,12 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	jstring CRL::getType()
+	JString CRL::getType()
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean CRL::isRevoked(java::security::cert::Certificate arg0)
 	{
@@ -26,12 +27,12 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	jstring CRL::toString()
+	JString CRL::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

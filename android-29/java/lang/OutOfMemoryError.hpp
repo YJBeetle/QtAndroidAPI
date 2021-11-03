@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "./Error.hpp"
 #include "./VirtualMachineError.hpp"
 
+class JString;
 
 namespace java::lang
 {
@@ -18,7 +17,7 @@ namespace java::lang
 		
 		// Constructors
 		OutOfMemoryError();
-		OutOfMemoryError(jstring arg0);
+		OutOfMemoryError(JString arg0);
 		
 		// Methods
 	};

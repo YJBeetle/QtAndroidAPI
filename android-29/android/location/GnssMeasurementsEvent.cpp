@@ -1,5 +1,7 @@
+#include "../../JArray.hpp"
 #include "./GnssClock.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./GnssMeasurementsEvent.hpp"
 
 namespace android::location
@@ -41,12 +43,12 @@ namespace android::location
 			"()Ljava/util/Collection;"
 		);
 	}
-	jstring GnssMeasurementsEvent::toString()
+	JString GnssMeasurementsEvent::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void GnssMeasurementsEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

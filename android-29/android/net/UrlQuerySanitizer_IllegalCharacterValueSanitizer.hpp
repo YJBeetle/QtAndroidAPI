@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::net
 {
@@ -40,7 +41,7 @@ namespace android::net
 		UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint arg0);
 		
 		// Methods
-		jstring sanitize(jstring arg0);
+		JString sanitize(JString arg0);
 	};
 } // namespace android::net
 

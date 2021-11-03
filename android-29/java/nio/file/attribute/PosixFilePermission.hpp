@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
 #include "../../../lang/Enum.hpp"
 
+class JArray;
+class JString;
 
 namespace java::nio::file::attribute
 {
@@ -27,8 +28,8 @@ namespace java::nio::file::attribute
 		// Constructors
 		
 		// Methods
-		static java::nio::file::attribute::PosixFilePermission valueOf(jstring arg0);
-		static jarray values();
+		static java::nio::file::attribute::PosixFilePermission valueOf(JString arg0);
+		static JArray values();
 	};
 } // namespace java::nio::file::attribute
 

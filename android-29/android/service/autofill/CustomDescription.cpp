@@ -1,5 +1,6 @@
 #include "../../os/Parcel.hpp"
 #include "./CustomDescription_Builder.hpp"
+#include "../../../JString.hpp"
 #include "./CustomDescription.hpp"
 
 namespace android::service::autofill
@@ -27,12 +28,12 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	jstring CustomDescription::toString()
+	JString CustomDescription::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void CustomDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

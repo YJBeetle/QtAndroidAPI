@@ -1,6 +1,7 @@
 #include "../content/Context.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
+#include "../../JString.hpp"
 #include "./LinearLayout_LayoutParams.hpp"
 
 namespace android::widget
@@ -65,13 +66,13 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring LinearLayout_LayoutParams::debug(jstring arg0)
+	JString LinearLayout_LayoutParams::debug(JString arg0)
 	{
 		return callObjectMethod(
 			"debug",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
 } // namespace android::widget
 

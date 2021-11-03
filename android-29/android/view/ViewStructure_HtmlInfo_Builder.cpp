@@ -1,4 +1,5 @@
 #include "./ViewStructure_HtmlInfo.hpp"
+#include "../../JString.hpp"
 #include "./ViewStructure_HtmlInfo_Builder.hpp"
 
 namespace android::view
@@ -16,13 +17,13 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::view::ViewStructure_HtmlInfo_Builder ViewStructure_HtmlInfo_Builder::addAttribute(jstring arg0, jstring arg1)
+	android::view::ViewStructure_HtmlInfo_Builder ViewStructure_HtmlInfo_Builder::addAttribute(JString arg0, JString arg1)
 	{
 		return callObjectMethod(
 			"addAttribute",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/view/ViewStructure$HtmlInfo$Builder;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	android::view::ViewStructure_HtmlInfo ViewStructure_HtmlInfo_Builder::build()

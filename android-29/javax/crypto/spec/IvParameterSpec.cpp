@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./IvParameterSpec.hpp"
 
 namespace javax::crypto::spec
@@ -8,28 +9,28 @@ namespace javax::crypto::spec
 	IvParameterSpec::IvParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	IvParameterSpec::IvParameterSpec(jbyteArray arg0)
+	IvParameterSpec::IvParameterSpec(JByteArray arg0)
 		: JObject(
 			"javax.crypto.spec.IvParameterSpec",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
-	IvParameterSpec::IvParameterSpec(jbyteArray arg0, jint arg1, jint arg2)
+	IvParameterSpec::IvParameterSpec(JByteArray arg0, jint arg1, jint arg2)
 		: JObject(
 			"javax.crypto.spec.IvParameterSpec",
 			"([BII)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		) {}
 	
 	// Methods
-	jbyteArray IvParameterSpec::getIV()
+	JByteArray IvParameterSpec::getIV()
 	{
 		return callObjectMethod(
 			"getIV",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
 } // namespace javax::crypto::spec
 

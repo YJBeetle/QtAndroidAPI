@@ -1,5 +1,9 @@
+#include "../../JLongArray.hpp"
+#include "../../JObjectArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./ArrayList.hpp"
 
 namespace java::util
@@ -29,21 +33,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean ArrayList::add(jobject arg0)
+	jboolean ArrayList::add(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void ArrayList::add(jint arg0, jobject arg1)
+	void ArrayList::add(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	jboolean ArrayList::addAll(JObject arg0)
@@ -70,19 +74,19 @@ namespace java::util
 			"()V"
 		);
 	}
-	jobject ArrayList::clone()
+	JObject ArrayList::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean ArrayList::contains(jobject arg0)
+	jboolean ArrayList::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void ArrayList::ensureCapacity(jint arg0)
@@ -93,12 +97,12 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean ArrayList::equals(jobject arg0)
+	jboolean ArrayList::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	void ArrayList::forEach(JObject arg0)
@@ -109,13 +113,13 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject ArrayList::get(jint arg0)
+	JObject ArrayList::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jint ArrayList::hashCode()
 	{
@@ -124,12 +128,12 @@ namespace java::util
 			"()I"
 		);
 	}
-	jint ArrayList::indexOf(jobject arg0)
+	jint ArrayList::indexOf(JObject arg0)
 	{
 		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jboolean ArrayList::isEmpty()
@@ -146,12 +150,12 @@ namespace java::util
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint ArrayList::lastIndexOf(jobject arg0)
+	jint ArrayList::lastIndexOf(JObject arg0)
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	JObject ArrayList::listIterator()
@@ -169,21 +173,21 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean ArrayList::remove(jobject arg0)
+	jboolean ArrayList::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jobject ArrayList::remove(jint arg0)
+	JObject ArrayList::remove(jint arg0)
 	{
 		return callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jboolean ArrayList::removeAll(JObject arg0)
 	{
@@ -217,14 +221,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject ArrayList::set(jint arg0, jobject arg1)
+	JObject ArrayList::set(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1
-		).object<jobject>();
+			arg1.object<jobject>()
+		);
 	}
 	jint ArrayList::size()
 	{
@@ -257,20 +261,20 @@ namespace java::util
 			arg1
 		);
 	}
-	jobjectArray ArrayList::toArray()
+	JObjectArray ArrayList::toArray()
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
+		);
 	}
-	jobjectArray ArrayList::toArray(jobjectArray arg0)
+	JObjectArray ArrayList::toArray(JObjectArray arg0)
 	{
 		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
+			arg0.object<jobjectArray>()
+		);
 	}
 	void ArrayList::trimToSize()
 	{

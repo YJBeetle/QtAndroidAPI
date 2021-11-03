@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "./BackupDataInputStream.hpp"
 #include "./BackupDataOutput.hpp"
 #include "../../content/Context.hpp"
@@ -12,12 +13,12 @@ namespace android::app::backup
 	FileBackupHelper::FileBackupHelper(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	FileBackupHelper::FileBackupHelper(android::content::Context arg0, jarray arg1)
+	FileBackupHelper::FileBackupHelper(android::content::Context arg0, JArray arg1)
 		: JObject(
 			"android.app.backup.FileBackupHelper",
 			"(Landroid/content/Context;[Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jarray>()
 		) {}
 	
 	// Methods

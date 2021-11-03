@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MediaCasException_UnsupportedCasException.hpp"
 
 namespace android::media

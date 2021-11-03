@@ -26,6 +26,8 @@ namespace android::view::textservice
 {
 	class SpellCheckerSubtype;
 }
+class JString;
+class JString;
 
 namespace android::view::textservice
 {
@@ -44,14 +46,14 @@ namespace android::view::textservice
 		// Methods
 		jint describeContents();
 		android::content::ComponentName getComponent();
-		jstring getId();
-		jstring getPackageName();
+		JString getId();
+		JString getPackageName();
 		android::content::pm::ServiceInfo getServiceInfo();
-		jstring getSettingsActivity();
+		JString getSettingsActivity();
 		android::view::textservice::SpellCheckerSubtype getSubtypeAt(jint arg0);
 		jint getSubtypeCount();
 		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		jstring loadLabel(android::content::pm::PackageManager arg0);
+		JString loadLabel(android::content::pm::PackageManager arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textservice

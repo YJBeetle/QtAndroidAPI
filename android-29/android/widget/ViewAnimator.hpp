@@ -1,8 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
 
 namespace android::content
@@ -21,6 +18,7 @@ namespace android::view::animation
 {
 	class Animation;
 }
+class JString;
 
 namespace android::widget
 {
@@ -39,7 +37,7 @@ namespace android::widget
 		
 		// Methods
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
-		jstring getAccessibilityClassName();
+		JString getAccessibilityClassName();
 		jboolean getAnimateFirstView();
 		jint getBaseline();
 		android::view::View getCurrentView();

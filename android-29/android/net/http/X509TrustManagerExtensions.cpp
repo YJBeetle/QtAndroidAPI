@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "../../../java/security/cert/X509Certificate.hpp"
 #include "./X509TrustManagerExtensions.hpp"
 
@@ -17,23 +19,23 @@ namespace android::net::http
 		) {}
 	
 	// Methods
-	JObject X509TrustManagerExtensions::checkServerTrusted(jarray arg0, jstring arg1, jstring arg2)
+	JObject X509TrustManagerExtensions::checkServerTrusted(JArray arg0, JString arg1, JString arg2)
 	{
 		return callObjectMethod(
 			"checkServerTrusted",
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jarray>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		);
 	}
-	jboolean X509TrustManagerExtensions::isSameTrustConfiguration(jstring arg0, jstring arg1)
+	jboolean X509TrustManagerExtensions::isSameTrustConfiguration(JString arg0, JString arg1)
 	{
 		return callMethod<jboolean>(
 			"isSameTrustConfiguration",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	jboolean X509TrustManagerExtensions::isUserAddedCertificate(java::security::cert::X509Certificate arg0)

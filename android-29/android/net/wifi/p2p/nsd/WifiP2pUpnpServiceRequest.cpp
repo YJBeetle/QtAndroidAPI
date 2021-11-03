@@ -1,3 +1,4 @@
+#include "../../../../../JString.hpp"
 #include "./WifiP2pUpnpServiceRequest.hpp"
 
 namespace android::net::wifi::p2p::nsd
@@ -18,13 +19,13 @@ namespace android::net::wifi::p2p::nsd
 			"()Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceRequest;"
 		);
 	}
-	android::net::wifi::p2p::nsd::WifiP2pUpnpServiceRequest WifiP2pUpnpServiceRequest::newInstance(jstring arg0)
+	android::net::wifi::p2p::nsd::WifiP2pUpnpServiceRequest WifiP2pUpnpServiceRequest::newInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.net.wifi.p2p.nsd.WifiP2pUpnpServiceRequest",
 			"newInstance",
 			"(Ljava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceRequest;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::net::wifi::p2p::nsd

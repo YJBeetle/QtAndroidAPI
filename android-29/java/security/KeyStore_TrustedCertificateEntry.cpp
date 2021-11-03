@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./cert/Certificate.hpp"
 #include "./KeyStore_TrustedCertificateEntry.hpp"
 
@@ -38,12 +39,12 @@ namespace java::security
 			"()Ljava/security/cert/Certificate;"
 		);
 	}
-	jstring KeyStore_TrustedCertificateEntry::toString()
+	JString KeyStore_TrustedCertificateEntry::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

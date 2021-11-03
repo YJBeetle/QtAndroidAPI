@@ -1,3 +1,8 @@
+#include "../../JCharArray.hpp"
+#include "../../JString.hpp"
+#include "../../JClass.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../util/Optional.hpp"
 #include "./Character.hpp"
 
@@ -473,13 +478,13 @@ namespace java::lang
 			"TITLECASE_LETTER"
 		);
 	}
-	jclass Character::TYPE()
+	JClass Character::TYPE()
 	{
 		return getStaticObjectField(
 			"java.lang.Character",
 			"TYPE",
 			"Ljava/lang/Class;"
-		).object<jclass>();
+		);
 	}
 	jbyte Character::UNASSIGNED()
 	{
@@ -517,97 +522,97 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint Character::codePointAt(jcharArray arg0, jint arg1)
+	jint Character::codePointAt(JCharArray arg0, jint arg1)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"codePointAt",
 			"([CI)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1
 		);
 	}
-	jint Character::codePointAt(jstring arg0, jint arg1)
+	jint Character::codePointAt(JString arg0, jint arg1)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"codePointAt",
 			"(Ljava/lang/CharSequence;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint Character::codePointAt(jcharArray arg0, jint arg1, jint arg2)
+	jint Character::codePointAt(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"codePointAt",
 			"([CII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jint Character::codePointBefore(jcharArray arg0, jint arg1)
+	jint Character::codePointBefore(JCharArray arg0, jint arg1)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"codePointBefore",
 			"([CI)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1
 		);
 	}
-	jint Character::codePointBefore(jstring arg0, jint arg1)
+	jint Character::codePointBefore(JString arg0, jint arg1)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"codePointBefore",
 			"(Ljava/lang/CharSequence;I)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	jint Character::codePointBefore(jcharArray arg0, jint arg1, jint arg2)
+	jint Character::codePointBefore(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"codePointBefore",
 			"([CII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jint Character::codePointCount(jcharArray arg0, jint arg1, jint arg2)
+	jint Character::codePointCount(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"codePointCount",
 			"([CII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);
 	}
-	jint Character::codePointCount(jstring arg0, jint arg1, jint arg2)
+	jint Character::codePointCount(JString arg0, jint arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"codePointCount",
 			"(Ljava/lang/CharSequence;II)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	jint Character::codePointOf(jstring arg0)
+	jint Character::codePointOf(JString arg0)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"codePointOf",
 			"(Ljava/lang/String;)I",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jint Character::compare(jchar arg0, jchar arg1)
@@ -668,14 +673,14 @@ namespace java::lang
 			arg0
 		);
 	}
-	jstring Character::getName(jint arg0)
+	JString Character::getName(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Character",
 			"getName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint Character::getNumericValue(jchar arg0)
 	{
@@ -1137,24 +1142,24 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint Character::offsetByCodePoints(jstring arg0, jint arg1, jint arg2)
+	jint Character::offsetByCodePoints(JString arg0, jint arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"offsetByCodePoints",
 			"(Ljava/lang/CharSequence;II)I",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2
 		);
 	}
-	jint Character::offsetByCodePoints(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	jint Character::offsetByCodePoints(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"offsetByCodePoints",
 			"([CIIII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2,
 			arg3,
@@ -1170,23 +1175,23 @@ namespace java::lang
 			arg0
 		);
 	}
-	jcharArray Character::toChars(jint arg0)
+	JCharArray Character::toChars(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Character",
 			"toChars",
 			"(I)[C",
 			arg0
-		).object<jcharArray>();
+		);
 	}
-	jint Character::toChars(jint arg0, jcharArray arg1, jint arg2)
+	jint Character::toChars(jint arg0, JCharArray arg1, jint arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.lang.Character",
 			"toChars",
 			"(I[CI)I",
 			arg0,
-			arg1,
+			arg1.object<jcharArray>(),
 			arg2
 		);
 	}
@@ -1218,23 +1223,23 @@ namespace java::lang
 			arg0
 		);
 	}
-	jstring Character::toString(jchar arg0)
+	JString Character::toString(jchar arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Character",
 			"toString",
 			"(C)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Character::toString(jint arg0)
+	JString Character::toString(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.Character",
 			"toString",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jchar Character::toTitleCase(jchar arg0)
 	{
@@ -1296,12 +1301,12 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Character::compareTo(jobject arg0)
+	jint Character::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Optional Character::describeConstable()
@@ -1311,12 +1316,12 @@ namespace java::lang
 			"()Ljava/util/Optional;"
 		);
 	}
-	jboolean Character::equals(jobject arg0)
+	jboolean Character::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Character::hashCode()
@@ -1326,12 +1331,12 @@ namespace java::lang
 			"()I"
 		);
 	}
-	jstring Character::toString()
+	JString Character::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::lang
 

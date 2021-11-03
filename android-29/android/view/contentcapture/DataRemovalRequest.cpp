@@ -1,5 +1,6 @@
 #include "../../os/Parcel.hpp"
 #include "./DataRemovalRequest_Builder.hpp"
+#include "../../../JString.hpp"
 #include "./DataRemovalRequest.hpp"
 
 namespace android::view::contentcapture
@@ -41,12 +42,12 @@ namespace android::view::contentcapture
 			"()Ljava/util/List;"
 		);
 	}
-	jstring DataRemovalRequest::getPackageName()
+	JString DataRemovalRequest::getPackageName()
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jboolean DataRemovalRequest::isForEverything()
 	{

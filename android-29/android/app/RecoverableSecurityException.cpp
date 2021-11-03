@@ -1,5 +1,7 @@
 #include "./RemoteAction.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./RecoverableSecurityException.hpp"
 
 namespace android::app
@@ -18,12 +20,12 @@ namespace android::app
 	RecoverableSecurityException::RecoverableSecurityException(QAndroidJniObject obj) : java::lang::SecurityException(obj) {}
 	
 	// Constructors
-	RecoverableSecurityException::RecoverableSecurityException(jthrowable arg0, jstring arg1, android::app::RemoteAction arg2)
+	RecoverableSecurityException::RecoverableSecurityException(JThrowable arg0, JString arg1, android::app::RemoteAction arg2)
 		: java::lang::SecurityException(
 			"android.app.RecoverableSecurityException",
 			"(Ljava/lang/Throwable;Ljava/lang/CharSequence;Landroid/app/RemoteAction;)V",
-			arg0,
-			arg1,
+			arg0.object<jthrowable>(),
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
 	
@@ -42,12 +44,12 @@ namespace android::app
 			"()Landroid/app/RemoteAction;"
 		);
 	}
-	jstring RecoverableSecurityException::getUserMessage()
+	JString RecoverableSecurityException::getUserMessage()
 	{
 		return callObjectMethod(
 			"getUserMessage",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	void RecoverableSecurityException::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

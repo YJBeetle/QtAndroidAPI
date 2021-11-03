@@ -6,6 +6,7 @@ namespace android::mtp
 {
 	class MtpObjectInfo;
 }
+class JString;
 
 namespace android::mtp
 {
@@ -33,8 +34,8 @@ namespace android::mtp
 		android::mtp::MtpObjectInfo_Builder setImagePixDepth(jlong arg0);
 		android::mtp::MtpObjectInfo_Builder setImagePixHeight(jlong arg0);
 		android::mtp::MtpObjectInfo_Builder setImagePixWidth(jlong arg0);
-		android::mtp::MtpObjectInfo_Builder setKeywords(jstring arg0);
-		android::mtp::MtpObjectInfo_Builder setName(jstring arg0);
+		android::mtp::MtpObjectInfo_Builder setKeywords(JString arg0);
+		android::mtp::MtpObjectInfo_Builder setName(JString arg0);
 		android::mtp::MtpObjectInfo_Builder setObjectHandle(jint arg0);
 		android::mtp::MtpObjectInfo_Builder setParent(jint arg0);
 		android::mtp::MtpObjectInfo_Builder setProtectionStatus(jint arg0);

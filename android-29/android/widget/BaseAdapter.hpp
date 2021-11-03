@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::database
 {
 	class DataSetObserver;
@@ -31,7 +32,7 @@ namespace android::widget
 		
 		// Methods
 		jboolean areAllItemsEnabled();
-		jarray getAutofillOptions();
+		JArray getAutofillOptions();
 		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		jint getItemViewType(jint arg0);
 		jint getViewTypeCount();
@@ -41,7 +42,7 @@ namespace android::widget
 		void notifyDataSetChanged();
 		void notifyDataSetInvalidated();
 		void registerDataSetObserver(android::database::DataSetObserver arg0);
-		void setAutofillOptions(jarray arg0);
+		void setAutofillOptions(JArray arg0);
 		void unregisterDataSetObserver(android::database::DataSetObserver arg0);
 	};
 } // namespace android::widget

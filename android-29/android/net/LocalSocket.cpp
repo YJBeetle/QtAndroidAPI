@@ -1,8 +1,10 @@
+#include "../../JArray.hpp"
 #include "./Credentials.hpp"
 #include "./LocalSocketAddress.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/OutputStream.hpp"
+#include "../../JString.hpp"
 #include "./LocalSocket.hpp"
 
 namespace android::net
@@ -79,12 +81,12 @@ namespace android::net
 			arg1
 		);
 	}
-	jarray LocalSocket::getAncillaryFileDescriptors()
+	JArray LocalSocket::getAncillaryFileDescriptors()
 	{
 		return callObjectMethod(
 			"getAncillaryFileDescriptors",
 			"()[Ljava/io/FileDescriptor;"
-		).object<jarray>();
+		);
 	}
 	java::io::FileDescriptor LocalSocket::getFileDescriptor()
 	{
@@ -184,12 +186,12 @@ namespace android::net
 			"()Z"
 		);
 	}
-	void LocalSocket::setFileDescriptorsForSend(jarray arg0)
+	void LocalSocket::setFileDescriptorsForSend(JArray arg0)
 	{
 		callMethod<void>(
 			"setFileDescriptorsForSend",
 			"([Ljava/io/FileDescriptor;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void LocalSocket::setReceiveBufferSize(jint arg0)
@@ -230,12 +232,12 @@ namespace android::net
 			"()V"
 		);
 	}
-	jstring LocalSocket::toString()
+	JString LocalSocket::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::net
 

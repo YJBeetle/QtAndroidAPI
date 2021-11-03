@@ -1,7 +1,10 @@
+#include "../../JArray.hpp"
 #include "./Context.hpp"
 #include "../net/Uri.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./CursorLoader.hpp"
 
 namespace android::content
@@ -18,16 +21,16 @@ namespace android::content
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	CursorLoader::CursorLoader(android::content::Context arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5)
+	CursorLoader::CursorLoader(android::content::Context arg0, android::net::Uri arg1, JArray arg2, JString arg3, JArray arg4, JString arg5)
 		: android::content::AsyncTaskLoader(
 			"android.content.CursorLoader",
 			"(Landroid/content/Context;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1.object(),
-			arg2,
-			arg3,
-			arg4,
-			arg5
+			arg2.object<jarray>(),
+			arg3.object<jstring>(),
+			arg4.object<jarray>(),
+			arg5.object<jstring>()
 		) {}
 	
 	// Methods
@@ -46,52 +49,44 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void CursorLoader::deliverResult(jobject arg0)
-	{
-		callMethod<void>(
-			"deliverResult",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	void CursorLoader::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
+	void CursorLoader::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
 	{
 		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object(),
-			arg3
+			arg3.object<jarray>()
 		);
 	}
-	jarray CursorLoader::getProjection()
+	JArray CursorLoader::getProjection()
 	{
 		return callObjectMethod(
 			"getProjection",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring CursorLoader::getSelection()
+	JString CursorLoader::getSelection()
 	{
 		return callObjectMethod(
 			"getSelection",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jarray CursorLoader::getSelectionArgs()
+	JArray CursorLoader::getSelectionArgs()
 	{
 		return callObjectMethod(
 			"getSelectionArgs",
 			"()[Ljava/lang/String;"
-		).object<jarray>();
+		);
 	}
-	jstring CursorLoader::getSortOrder()
+	JString CursorLoader::getSortOrder()
 	{
 		return callObjectMethod(
 			"getSortOrder",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri CursorLoader::getUri()
 	{
@@ -115,44 +110,36 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void CursorLoader::onCanceled(jobject arg0)
-	{
-		callMethod<void>(
-			"onCanceled",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	void CursorLoader::setProjection(jarray arg0)
+	void CursorLoader::setProjection(JArray arg0)
 	{
 		callMethod<void>(
 			"setProjection",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void CursorLoader::setSelection(jstring arg0)
+	void CursorLoader::setSelection(JString arg0)
 	{
 		callMethod<void>(
 			"setSelection",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void CursorLoader::setSelectionArgs(jarray arg0)
+	void CursorLoader::setSelectionArgs(JArray arg0)
 	{
 		callMethod<void>(
 			"setSelectionArgs",
 			"([Ljava/lang/String;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
-	void CursorLoader::setSortOrder(jstring arg0)
+	void CursorLoader::setSortOrder(JString arg0)
 	{
 		callMethod<void>(
 			"setSortOrder",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void CursorLoader::setUri(android::net::Uri arg0)

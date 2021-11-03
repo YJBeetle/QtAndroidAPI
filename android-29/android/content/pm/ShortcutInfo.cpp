@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../ComponentName.hpp"
 #include "../Intent.hpp"
 #include "../LocusId.hpp"
@@ -5,6 +6,8 @@
 #include "../../os/Parcel.hpp"
 #include "../../os/PersistableBundle.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
 #include "./ShortcutInfo.hpp"
 
 namespace android::content::pm
@@ -74,13 +77,13 @@ namespace android::content::pm
 			"DISABLED_REASON_VERSION_LOWER"
 		);
 	}
-	jstring ShortcutInfo::SHORTCUT_CATEGORY_CONVERSATION()
+	JString ShortcutInfo::SHORTCUT_CATEGORY_CONVERSATION()
 	{
 		return getStaticObjectField(
 			"android.content.pm.ShortcutInfo",
 			"SHORTCUT_CATEGORY_CONVERSATION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -110,12 +113,12 @@ namespace android::content::pm
 			"()Ljava/util/Set;"
 		);
 	}
-	jstring ShortcutInfo::getDisabledMessage()
+	JString ShortcutInfo::getDisabledMessage()
 	{
 		return callObjectMethod(
 			"getDisabledMessage",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint ShortcutInfo::getDisabledReason()
 	{
@@ -131,12 +134,12 @@ namespace android::content::pm
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	jstring ShortcutInfo::getId()
+	JString ShortcutInfo::getId()
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::content::Intent ShortcutInfo::getIntent()
 	{
@@ -145,12 +148,12 @@ namespace android::content::pm
 			"()Landroid/content/Intent;"
 		);
 	}
-	jarray ShortcutInfo::getIntents()
+	JArray ShortcutInfo::getIntents()
 	{
 		return callObjectMethod(
 			"getIntents",
 			"()[Landroid/content/Intent;"
-		).object<jarray>();
+		);
 	}
 	jlong ShortcutInfo::getLastChangedTimestamp()
 	{
@@ -166,19 +169,19 @@ namespace android::content::pm
 			"()Landroid/content/LocusId;"
 		);
 	}
-	jstring ShortcutInfo::getLongLabel()
+	JString ShortcutInfo::getLongLabel()
 	{
 		return callObjectMethod(
 			"getLongLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
-	jstring ShortcutInfo::getPackage()
+	JString ShortcutInfo::getPackage()
 	{
 		return callObjectMethod(
 			"getPackage",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ShortcutInfo::getRank()
 	{
@@ -187,12 +190,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring ShortcutInfo::getShortLabel()
+	JString ShortcutInfo::getShortLabel()
 	{
 		return callObjectMethod(
 			"getShortLabel",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	android::os::UserHandle ShortcutInfo::getUserHandle()
 	{
@@ -243,12 +246,12 @@ namespace android::content::pm
 			"()Z"
 		);
 	}
-	jstring ShortcutInfo::toString()
+	JString ShortcutInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ShortcutInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

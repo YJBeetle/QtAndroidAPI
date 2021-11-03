@@ -14,6 +14,7 @@ namespace android::os
 {
 	class Parcel;
 }
+class JString;
 
 namespace android::net
 {
@@ -32,19 +33,19 @@ namespace android::net
 		// Methods
 		jint describeContents();
 		android::net::NetworkInfo_DetailedState getDetailedState();
-		jstring getExtraInfo();
-		jstring getReason();
+		JString getExtraInfo();
+		JString getReason();
 		android::net::NetworkInfo_State getState();
 		jint getSubtype();
-		jstring getSubtypeName();
+		JString getSubtypeName();
 		jint getType();
-		jstring getTypeName();
+		JString getTypeName();
 		jboolean isAvailable();
 		jboolean isConnected();
 		jboolean isConnectedOrConnecting();
 		jboolean isFailover();
 		jboolean isRoaming();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net

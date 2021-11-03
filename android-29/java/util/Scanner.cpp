@@ -1,6 +1,8 @@
 #include "../io/File.hpp"
 #include "../io/IOException.hpp"
 #include "../io/InputStream.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../math/BigDecimal.hpp"
 #include "../math/BigInteger.hpp"
 #include "../nio/CharBuffer.hpp"
@@ -37,18 +39,18 @@ namespace java::util
 			"(Ljava/lang/Readable;)V",
 			arg0.object()
 		) {}
-	Scanner::Scanner(jstring arg0)
+	Scanner::Scanner(JString arg0)
 		: JObject(
 			"java.util.Scanner",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	Scanner::Scanner(java::io::File arg0, jstring arg1)
+	Scanner::Scanner(java::io::File arg0, JString arg1)
 		: JObject(
 			"java.util.Scanner",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	Scanner::Scanner(java::io::File arg0, java::nio::charset::Charset arg1)
 		: JObject(
@@ -57,12 +59,12 @@ namespace java::util
 			arg0.object(),
 			arg1.object()
 		) {}
-	Scanner::Scanner(java::io::InputStream arg0, jstring arg1)
+	Scanner::Scanner(java::io::InputStream arg0, JString arg1)
 		: JObject(
 			"java.util.Scanner",
 			"(Ljava/io/InputStream;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	Scanner::Scanner(java::io::InputStream arg0, java::nio::charset::Charset arg1)
 		: JObject(
@@ -71,12 +73,12 @@ namespace java::util
 			arg0.object(),
 			arg1.object()
 		) {}
-	Scanner::Scanner(JObject arg0, jstring arg1)
+	Scanner::Scanner(JObject arg0, JString arg1)
 		: JObject(
 			"java.util.Scanner",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	Scanner::Scanner(JObject arg0, java::nio::charset::Charset arg1)
 		: JObject(
@@ -101,12 +103,12 @@ namespace java::util
 			"()Ljava/util/regex/Pattern;"
 		);
 	}
-	JObject Scanner::findAll(jstring arg0)
+	JObject Scanner::findAll(JString arg0)
 	{
 		return callObjectMethod(
 			"findAll",
 			"(Ljava/lang/String;)Ljava/util/stream/Stream;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	JObject Scanner::findAll(java::util::regex::Pattern arg0)
@@ -117,39 +119,39 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jstring Scanner::findInLine(jstring arg0)
+	JString Scanner::findInLine(JString arg0)
 	{
 		return callObjectMethod(
 			"findInLine",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring Scanner::findInLine(java::util::regex::Pattern arg0)
+	JString Scanner::findInLine(java::util::regex::Pattern arg0)
 	{
 		return callObjectMethod(
 			"findInLine",
 			"(Ljava/util/regex/Pattern;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring Scanner::findWithinHorizon(jstring arg0, jint arg1)
+	JString Scanner::findWithinHorizon(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"findWithinHorizon",
 			"(Ljava/lang/String;I)Ljava/lang/String;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
-		).object<jstring>();
+		);
 	}
-	jstring Scanner::findWithinHorizon(java::util::regex::Pattern arg0, jint arg1)
+	JString Scanner::findWithinHorizon(java::util::regex::Pattern arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"findWithinHorizon",
 			"(Ljava/util/regex/Pattern;I)Ljava/lang/String;",
 			arg0.object(),
 			arg1
-		).object<jstring>();
+		);
 	}
 	jboolean Scanner::hasNext()
 	{
@@ -158,12 +160,12 @@ namespace java::util
 			"()Z"
 		);
 	}
-	jboolean Scanner::hasNext(jstring arg0)
+	jboolean Scanner::hasNext(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"hasNext",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	jboolean Scanner::hasNext(java::util::regex::Pattern arg0)
@@ -305,28 +307,28 @@ namespace java::util
 			"()Ljava/util/regex/MatchResult;"
 		);
 	}
-	jstring Scanner::next()
+	JString Scanner::next()
 	{
 		return callObjectMethod(
 			"next",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring Scanner::next(jstring arg0)
+	JString Scanner::next(JString arg0)
 	{
 		return callObjectMethod(
 			"next",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			arg0.object<jstring>()
+		);
 	}
-	jstring Scanner::next(java::util::regex::Pattern arg0)
+	JString Scanner::next(java::util::regex::Pattern arg0)
 	{
 		return callObjectMethod(
 			"next",
 			"(Ljava/util/regex/Pattern;)Ljava/lang/String;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	java::math::BigDecimal Scanner::nextBigDecimal()
 	{
@@ -401,12 +403,12 @@ namespace java::util
 			arg0
 		);
 	}
-	jstring Scanner::nextLine()
+	JString Scanner::nextLine()
 	{
 		return callObjectMethod(
 			"nextLine",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong Scanner::nextLong()
 	{
@@ -459,12 +461,12 @@ namespace java::util
 			"()Ljava/util/Scanner;"
 		);
 	}
-	java::util::Scanner Scanner::skip(jstring arg0)
+	java::util::Scanner Scanner::skip(JString arg0)
 	{
 		return callObjectMethod(
 			"skip",
 			"(Ljava/lang/String;)Ljava/util/Scanner;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::util::Scanner Scanner::skip(java::util::regex::Pattern arg0)
@@ -475,12 +477,12 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jstring Scanner::toString()
+	JString Scanner::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject Scanner::tokens()
 	{
@@ -489,12 +491,12 @@ namespace java::util
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	java::util::Scanner Scanner::useDelimiter(jstring arg0)
+	java::util::Scanner Scanner::useDelimiter(JString arg0)
 	{
 		return callObjectMethod(
 			"useDelimiter",
 			"(Ljava/lang/String;)Ljava/util/Scanner;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::util::Scanner Scanner::useDelimiter(java::util::regex::Pattern arg0)

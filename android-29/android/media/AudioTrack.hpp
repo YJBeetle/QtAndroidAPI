@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JFloatArray;
+class JShortArray;
 namespace android::media
 {
 	class AudioAttributes;
@@ -145,12 +148,12 @@ namespace android::media
 		jint setVolume(jfloat arg0);
 		void stop();
 		void unregisterStreamEventCallback(android::media::AudioTrack_StreamEventCallback arg0);
-		jint write(jbyteArray arg0, jint arg1, jint arg2);
-		jint write(jshortArray arg0, jint arg1, jint arg2);
+		jint write(JByteArray arg0, jint arg1, jint arg2);
+		jint write(JShortArray arg0, jint arg1, jint arg2);
 		jint write(java::nio::ByteBuffer arg0, jint arg1, jint arg2);
-		jint write(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		jint write(jfloatArray arg0, jint arg1, jint arg2, jint arg3);
-		jint write(jshortArray arg0, jint arg1, jint arg2, jint arg3);
+		jint write(JByteArray arg0, jint arg1, jint arg2, jint arg3);
+		jint write(JFloatArray arg0, jint arg1, jint arg2, jint arg3);
+		jint write(JShortArray arg0, jint arg1, jint arg2, jint arg3);
 		jint write(java::nio::ByteBuffer arg0, jint arg1, jint arg2, jlong arg3);
 	};
 } // namespace android::media

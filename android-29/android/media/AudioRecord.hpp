@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JFloatArray;
+class JShortArray;
 namespace android::media
 {
 	class AudioDeviceInfo;
@@ -86,12 +89,12 @@ namespace android::media
 		jint getState();
 		jint getTimestamp(android::media::AudioTimestamp arg0, jint arg1);
 		jint read(java::nio::ByteBuffer arg0, jint arg1);
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read(jshortArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
+		jint read(JShortArray arg0, jint arg1, jint arg2);
 		jint read(java::nio::ByteBuffer arg0, jint arg1, jint arg2);
-		jint read(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		jint read(jfloatArray arg0, jint arg1, jint arg2, jint arg3);
-		jint read(jshortArray arg0, jint arg1, jint arg2, jint arg3);
+		jint read(JByteArray arg0, jint arg1, jint arg2, jint arg3);
+		jint read(JFloatArray arg0, jint arg1, jint arg2, jint arg3);
+		jint read(JShortArray arg0, jint arg1, jint arg2, jint arg3);
 		void registerAudioRecordingCallback(JObject arg0, android::media::AudioManager_AudioRecordingCallback arg1);
 		void release();
 		void removeOnRoutingChangedListener(JObject arg0);

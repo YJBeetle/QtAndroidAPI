@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./TvView_TimeShiftPositionCallback.hpp"
 
 namespace android::media::tv
@@ -15,21 +16,21 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	void TvView_TimeShiftPositionCallback::onTimeShiftCurrentPositionChanged(jstring arg0, jlong arg1)
+	void TvView_TimeShiftPositionCallback::onTimeShiftCurrentPositionChanged(JString arg0, jlong arg1)
 	{
 		callMethod<void>(
 			"onTimeShiftCurrentPositionChanged",
 			"(Ljava/lang/String;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
-	void TvView_TimeShiftPositionCallback::onTimeShiftStartPositionChanged(jstring arg0, jlong arg1)
+	void TvView_TimeShiftPositionCallback::onTimeShiftStartPositionChanged(JString arg0, jlong arg1)
 	{
 		callMethod<void>(
 			"onTimeShiftStartPositionChanged",
 			"(Ljava/lang/String;J)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}

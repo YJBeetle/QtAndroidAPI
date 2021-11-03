@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./Transition.hpp"
 
+class JArray;
 namespace android::animation
 {
 	class Animator;
@@ -39,7 +39,7 @@ namespace android::transition
 		void captureEndValues(android::transition::TransitionValues arg0);
 		void captureStartValues(android::transition::TransitionValues arg0);
 		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2);
-		jarray getTransitionProperties();
+		JArray getTransitionProperties();
 	};
 } // namespace android::transition
 

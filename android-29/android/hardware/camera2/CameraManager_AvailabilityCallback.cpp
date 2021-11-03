@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./CameraManager_AvailabilityCallback.hpp"
 
 namespace android::hardware::camera2
@@ -22,20 +23,20 @@ namespace android::hardware::camera2
 			"()V"
 		);
 	}
-	void CameraManager_AvailabilityCallback::onCameraAvailable(jstring arg0)
+	void CameraManager_AvailabilityCallback::onCameraAvailable(JString arg0)
 	{
 		callMethod<void>(
 			"onCameraAvailable",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void CameraManager_AvailabilityCallback::onCameraUnavailable(jstring arg0)
+	void CameraManager_AvailabilityCallback::onCameraUnavailable(JString arg0)
 	{
 		callMethod<void>(
 			"onCameraUnavailable",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::hardware::camera2

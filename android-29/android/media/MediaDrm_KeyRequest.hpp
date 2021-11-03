@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace android::media
 {
@@ -22,8 +24,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jbyteArray getData();
-		jstring getDefaultUrl();
+		JByteArray getData();
+		JString getDefaultUrl();
 		jint getRequestType();
 	};
 } // namespace android::media

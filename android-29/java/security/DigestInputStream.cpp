@@ -1,4 +1,6 @@
+#include "../../JByteArray.hpp"
 #include "../io/InputStream.hpp"
+#include "../../JString.hpp"
 #include "./MessageDigest.hpp"
 #include "./DigestInputStream.hpp"
 
@@ -41,12 +43,12 @@ namespace java::security
 			"()I"
 		);
 	}
-	jint DigestInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint DigestInputStream::read(JByteArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([BII)I",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
 		);
@@ -59,12 +61,12 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jstring DigestInputStream::toString()
+	JString DigestInputStream::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

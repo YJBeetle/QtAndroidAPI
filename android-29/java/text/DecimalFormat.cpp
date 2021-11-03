@@ -1,5 +1,10 @@
+#include "../../JCharArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JBooleanArray.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../lang/Number.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "../math/BigDecimal.hpp"
 #include "../math/BigInteger.hpp"
@@ -24,50 +29,50 @@ namespace java::text
 			"java.text.DecimalFormat",
 			"()V"
 		) {}
-	DecimalFormat::DecimalFormat(jstring arg0)
+	DecimalFormat::DecimalFormat(JString arg0)
 		: java::text::NumberFormat(
 			"java.text.DecimalFormat",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	DecimalFormat::DecimalFormat(jstring arg0, java::text::DecimalFormatSymbols arg1)
+	DecimalFormat::DecimalFormat(JString arg0, java::text::DecimalFormatSymbols arg1)
 		: java::text::NumberFormat(
 			"java.text.DecimalFormat",
 			"(Ljava/lang/String;Ljava/text/DecimalFormatSymbols;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
 	// Methods
-	void DecimalFormat::applyLocalizedPattern(jstring arg0)
+	void DecimalFormat::applyLocalizedPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyLocalizedPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::applyPattern(jstring arg0)
+	void DecimalFormat::applyPattern(JString arg0)
 	{
 		callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jobject DecimalFormat::clone()
+	JObject DecimalFormat::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jboolean DecimalFormat::equals(jobject arg0)
+	jboolean DecimalFormat::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::lang::StringBuffer DecimalFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
@@ -80,12 +85,12 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DecimalFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
 		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0,
+			arg0.object<jobject>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -100,12 +105,12 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	JObject DecimalFormat::formatToCharacterIterator(jobject arg0)
+	JObject DecimalFormat::formatToCharacterIterator(JObject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	java::util::Currency DecimalFormat::getCurrency()
@@ -164,33 +169,33 @@ namespace java::text
 			"()I"
 		);
 	}
-	jstring DecimalFormat::getNegativePrefix()
+	JString DecimalFormat::getNegativePrefix()
 	{
 		return callObjectMethod(
 			"getNegativePrefix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DecimalFormat::getNegativeSuffix()
+	JString DecimalFormat::getNegativeSuffix()
 	{
 		return callObjectMethod(
 			"getNegativeSuffix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DecimalFormat::getPositivePrefix()
+	JString DecimalFormat::getPositivePrefix()
 	{
 		return callObjectMethod(
 			"getPositivePrefix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DecimalFormat::getPositiveSuffix()
+	JString DecimalFormat::getPositiveSuffix()
 	{
 		return callObjectMethod(
 			"getPositiveSuffix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	java::math::RoundingMode DecimalFormat::getRoundingMode()
 	{
@@ -220,12 +225,12 @@ namespace java::text
 			"()Z"
 		);
 	}
-	java::lang::Number DecimalFormat::parse(jstring arg0, java::text::ParsePosition arg1)
+	java::lang::Number DecimalFormat::parse(JString arg0, java::text::ParsePosition arg1)
 	{
 		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -309,20 +314,20 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setNegativePrefix(jstring arg0)
+	void DecimalFormat::setNegativePrefix(JString arg0)
 	{
 		callMethod<void>(
 			"setNegativePrefix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setNegativeSuffix(jstring arg0)
+	void DecimalFormat::setNegativeSuffix(JString arg0)
 	{
 		callMethod<void>(
 			"setNegativeSuffix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DecimalFormat::setParseBigDecimal(jboolean arg0)
@@ -333,20 +338,20 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setPositivePrefix(jstring arg0)
+	void DecimalFormat::setPositivePrefix(JString arg0)
 	{
 		callMethod<void>(
 			"setPositivePrefix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setPositiveSuffix(jstring arg0)
+	void DecimalFormat::setPositiveSuffix(JString arg0)
 	{
 		callMethod<void>(
 			"setPositiveSuffix",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	void DecimalFormat::setRoundingMode(java::math::RoundingMode arg0)
@@ -357,19 +362,19 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	jstring DecimalFormat::toLocalizedPattern()
+	JString DecimalFormat::toLocalizedPattern()
 	{
 		return callObjectMethod(
 			"toLocalizedPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DecimalFormat::toPattern()
+	JString DecimalFormat::toPattern()
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::text
 

@@ -10,6 +10,7 @@ namespace android::view
 {
 	class View;
 }
+class JString;
 
 namespace android::text::method
 {
@@ -28,10 +29,10 @@ namespace android::text::method
 		// Methods
 		static android::text::method::PasswordTransformationMethod getInstance();
 		void afterTextChanged(JObject arg0);
-		void beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
-		jstring getTransformation(jstring arg0, android::view::View arg1);
-		void onFocusChanged(android::view::View arg0, jstring arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4);
-		void onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
+		void beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3);
+		JString getTransformation(JString arg0, android::view::View arg1);
+		void onFocusChanged(android::view::View arg0, JString arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4);
+		void onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace android::text::method
 

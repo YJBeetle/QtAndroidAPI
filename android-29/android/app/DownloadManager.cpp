@@ -1,141 +1,143 @@
+#include "../../JLongArray.hpp"
 #include "./DownloadManager_Query.hpp"
 #include "./DownloadManager_Request.hpp"
 #include "../content/Context.hpp"
 #include "../net/Uri.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
 #include "../../java/lang/Long.hpp"
+#include "../../JString.hpp"
 #include "./DownloadManager.hpp"
 
 namespace android::app
 {
 	// Fields
-	jstring DownloadManager::ACTION_DOWNLOAD_COMPLETE()
+	JString DownloadManager::ACTION_DOWNLOAD_COMPLETE()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"ACTION_DOWNLOAD_COMPLETE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::ACTION_NOTIFICATION_CLICKED()
+	JString DownloadManager::ACTION_NOTIFICATION_CLICKED()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"ACTION_NOTIFICATION_CLICKED",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::ACTION_VIEW_DOWNLOADS()
+	JString DownloadManager::ACTION_VIEW_DOWNLOADS()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"ACTION_VIEW_DOWNLOADS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_BYTES_DOWNLOADED_SO_FAR()
+	JString DownloadManager::COLUMN_BYTES_DOWNLOADED_SO_FAR()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_BYTES_DOWNLOADED_SO_FAR",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_DESCRIPTION()
+	JString DownloadManager::COLUMN_DESCRIPTION()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_DESCRIPTION",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_ID()
+	JString DownloadManager::COLUMN_ID()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_LAST_MODIFIED_TIMESTAMP()
+	JString DownloadManager::COLUMN_LAST_MODIFIED_TIMESTAMP()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_LAST_MODIFIED_TIMESTAMP",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_LOCAL_FILENAME()
+	JString DownloadManager::COLUMN_LOCAL_FILENAME()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_LOCAL_FILENAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_LOCAL_URI()
+	JString DownloadManager::COLUMN_LOCAL_URI()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_LOCAL_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_MEDIAPROVIDER_URI()
+	JString DownloadManager::COLUMN_MEDIAPROVIDER_URI()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_MEDIAPROVIDER_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_MEDIA_TYPE()
+	JString DownloadManager::COLUMN_MEDIA_TYPE()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_MEDIA_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_REASON()
+	JString DownloadManager::COLUMN_REASON()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_REASON",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_STATUS()
+	JString DownloadManager::COLUMN_STATUS()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_STATUS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_TITLE()
+	JString DownloadManager::COLUMN_TITLE()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_TITLE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_TOTAL_SIZE_BYTES()
+	JString DownloadManager::COLUMN_TOTAL_SIZE_BYTES()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_TOTAL_SIZE_BYTES",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::COLUMN_URI()
+	JString DownloadManager::COLUMN_URI()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_URI",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DownloadManager::ERROR_CANNOT_RESUME()
 	{
@@ -200,29 +202,29 @@ namespace android::app
 			"ERROR_UNKNOWN"
 		);
 	}
-	jstring DownloadManager::EXTRA_DOWNLOAD_ID()
+	JString DownloadManager::EXTRA_DOWNLOAD_ID()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"EXTRA_DOWNLOAD_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS()
+	JString DownloadManager::EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DownloadManager::INTENT_EXTRAS_SORT_BY_SIZE()
+	JString DownloadManager::INTENT_EXTRAS_SORT_BY_SIZE()
 	{
 		return getStaticObjectField(
 			"android.app.DownloadManager",
 			"INTENT_EXTRAS_SORT_BY_SIZE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DownloadManager::PAUSED_QUEUED_FOR_WIFI()
 	{
@@ -312,30 +314,30 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jlong DownloadManager::addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6)
+	jlong DownloadManager::addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6)
 	{
 		return callMethod<jlong>(
 			"addCompletedDownload",
 			"(Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;JZ)J",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3,
-			arg4,
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
 			arg5,
 			arg6
 		);
 	}
-	jlong DownloadManager::addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8)
+	jlong DownloadManager::addCompletedDownload(JString arg0, JString arg1, jboolean arg2, JString arg3, JString arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8)
 	{
 		return callMethod<jlong>(
 			"addCompletedDownload",
 			"(Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;JZLandroid/net/Uri;Landroid/net/Uri;)J",
-			arg0,
-			arg1,
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
 			arg2,
-			arg3,
-			arg4,
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
 			arg5,
 			arg6,
 			arg7.object(),
@@ -350,13 +352,13 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jstring DownloadManager::getMimeTypeForDownloadedFile(jlong arg0)
+	JString DownloadManager::getMimeTypeForDownloadedFile(jlong arg0)
 	{
 		return callObjectMethod(
 			"getMimeTypeForDownloadedFile",
 			"(J)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	android::net::Uri DownloadManager::getUriForDownloadedFile(jlong arg0)
 	{
@@ -382,12 +384,12 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jint DownloadManager::remove(jlongArray arg0)
+	jint DownloadManager::remove(JLongArray arg0)
 	{
 		return callMethod<jint>(
 			"remove",
 			"([J)I",
-			arg0
+			arg0.object<jlongArray>()
 		);
 	}
 } // namespace android::app

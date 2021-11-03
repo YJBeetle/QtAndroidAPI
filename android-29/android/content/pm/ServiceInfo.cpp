@@ -1,4 +1,5 @@
 #include "../../os/Parcel.hpp"
+#include "../../../JString.hpp"
 #include "./ServiceInfo.hpp"
 
 namespace android::content::pm
@@ -109,12 +110,12 @@ namespace android::content::pm
 			"flags"
 		);
 	}
-	jstring ServiceInfo::permission()
+	JString ServiceInfo::permission()
 	{
 		return getObjectField(
 			"permission",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -141,13 +142,13 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	void ServiceInfo::dump(JObject arg0, jstring arg1)
+	void ServiceInfo::dump(JObject arg0, JString arg1)
 	{
 		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jint ServiceInfo::getForegroundServiceType()
@@ -157,12 +158,12 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jstring ServiceInfo::toString()
+	JString ServiceInfo::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void ServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

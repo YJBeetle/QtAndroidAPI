@@ -1,5 +1,6 @@
 #include "../content/Context.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./Telephony_Threads.hpp"
 
 namespace android::provider
@@ -42,14 +43,14 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	jlong Telephony_Threads::getOrCreateThreadId(android::content::Context arg0, jstring arg1)
+	jlong Telephony_Threads::getOrCreateThreadId(android::content::Context arg0, JString arg1)
 	{
 		return callStaticMethod<jlong>(
 			"android.provider.Telephony$Threads",
 			"getOrCreateThreadId",
 			"(Landroid/content/Context;Ljava/lang/String;)J",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 	jlong Telephony_Threads::getOrCreateThreadId(android::content::Context arg0, JObject arg1)

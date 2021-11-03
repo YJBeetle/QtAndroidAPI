@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./ResourceBundle.hpp"
 
 namespace java::io
@@ -11,6 +10,8 @@ namespace java::io
 {
 	class Reader;
 }
+class JObject;
+class JString;
 
 namespace java::util
 {
@@ -29,7 +30,7 @@ namespace java::util
 		
 		// Methods
 		JObject getKeys();
-		jobject handleGetObject(jstring arg0);
+		JObject handleGetObject(JString arg0);
 	};
 } // namespace java::util
 

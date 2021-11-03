@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
-#include "../../java/security/GeneralSecurityException.hpp"
 #include "./BadPaddingException.hpp"
 
+class JString;
 
 namespace javax::crypto
 {
@@ -19,7 +17,7 @@ namespace javax::crypto
 		
 		// Constructors
 		AEADBadTagException();
-		AEADBadTagException(jstring arg0);
+		AEADBadTagException(JString arg0);
 		
 		// Methods
 	};

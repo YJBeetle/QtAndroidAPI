@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "../../java/net/InetAddress.hpp"
 #include "../../java/net/Socket.hpp"
 #include "./SocketFactory.hpp"
@@ -27,12 +28,12 @@ namespace javax::net
 			"()Ljava/net/Socket;"
 		);
 	}
-	java::net::Socket SocketFactory::createSocket(jstring arg0, jint arg1)
+	java::net::Socket SocketFactory::createSocket(JString arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"createSocket",
 			"(Ljava/lang/String;I)Ljava/net/Socket;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		);
 	}
@@ -45,12 +46,12 @@ namespace javax::net
 			arg1
 		);
 	}
-	java::net::Socket SocketFactory::createSocket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
+	java::net::Socket SocketFactory::createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"createSocket",
 			"(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1,
 			arg2.object(),
 			arg3

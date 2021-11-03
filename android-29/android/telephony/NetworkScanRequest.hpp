@@ -2,10 +2,12 @@
 
 #include "../../JObject.hpp"
 
+class JArray;
 namespace android::os
 {
 	class Parcel;
 }
+class JObject;
 namespace java::util
 {
 	class ArrayList;
@@ -26,18 +28,18 @@ namespace android::telephony
 		NetworkScanRequest(QAndroidJniObject obj);
 		
 		// Constructors
-		NetworkScanRequest(jint arg0, jarray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6);
+		NetworkScanRequest(jint arg0, JArray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6);
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jboolean getIncrementalResults();
 		jint getIncrementalResultsPeriodicity();
 		jint getMaxSearchTime();
 		java::util::ArrayList getPlmns();
 		jint getScanType();
 		jint getSearchPeriodicity();
-		jarray getSpecifiers();
+		JArray getSpecifiers();
 		jint hashCode();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

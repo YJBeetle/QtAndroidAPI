@@ -1,23 +1,25 @@
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./DrmInfoRequest.hpp"
 
 namespace android::drm
 {
 	// Fields
-	jstring DrmInfoRequest::ACCOUNT_ID()
+	JString DrmInfoRequest::ACCOUNT_ID()
 	{
 		return getStaticObjectField(
 			"android.drm.DrmInfoRequest",
 			"ACCOUNT_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring DrmInfoRequest::SUBSCRIPTION_ID()
+	JString DrmInfoRequest::SUBSCRIPTION_ID()
 	{
 		return getStaticObjectField(
 			"android.drm.DrmInfoRequest",
 			"SUBSCRIPTION_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint DrmInfoRequest::TYPE_REGISTRATION_INFO()
 	{
@@ -52,22 +54,22 @@ namespace android::drm
 	DrmInfoRequest::DrmInfoRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DrmInfoRequest::DrmInfoRequest(jint arg0, jstring arg1)
+	DrmInfoRequest::DrmInfoRequest(jint arg0, JString arg1)
 		: JObject(
 			"android.drm.DrmInfoRequest",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		) {}
 	
 	// Methods
-	jobject DrmInfoRequest::get(jstring arg0)
+	JObject DrmInfoRequest::get(JString arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			arg0.object<jstring>()
+		);
 	}
 	jint DrmInfoRequest::getInfoType()
 	{
@@ -76,12 +78,12 @@ namespace android::drm
 			"()I"
 		);
 	}
-	jstring DrmInfoRequest::getMimeType()
+	JString DrmInfoRequest::getMimeType()
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject DrmInfoRequest::iterator()
 	{
@@ -97,13 +99,13 @@ namespace android::drm
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void DrmInfoRequest::put(jstring arg0, jobject arg1)
+	void DrmInfoRequest::put(JString arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
 		);
 	}
 } // namespace android::drm

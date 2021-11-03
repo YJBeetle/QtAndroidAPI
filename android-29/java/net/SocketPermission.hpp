@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../security/Permission.hpp"
 
+class JByteArray;
+class JIntArray;
+class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -11,6 +13,8 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
+class JObject;
+class JString;
 namespace java::security
 {
 	class Permission;
@@ -32,11 +36,11 @@ namespace java::net
 		SocketPermission(QAndroidJniObject obj);
 		
 		// Constructors
-		SocketPermission(jstring arg0, jstring arg1);
+		SocketPermission(JString arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getActions();
+		jboolean equals(JObject arg0);
+		JString getActions();
 		jint hashCode();
 		jboolean implies(java::security::Permission arg0);
 		java::security::PermissionCollection newPermissionCollection();

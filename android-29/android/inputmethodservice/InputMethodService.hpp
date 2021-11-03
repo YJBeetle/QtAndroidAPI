@@ -1,11 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../content/Context.hpp"
-#include "../content/ContextWrapper.hpp"
-#include "../app/Service.hpp"
 #include "./AbstractInputMethodService.hpp"
 
+class JArray;
+class JArray;
 namespace android::app
 {
 	class Dialog;
@@ -82,6 +80,8 @@ namespace java::io
 {
 	class PrintWriter;
 }
+class JString;
+class JString;
 
 namespace android::inputmethodservice
 {
@@ -112,7 +112,7 @@ namespace android::inputmethodservice
 		jint getInputMethodWindowRecommendedHeight();
 		android::view::LayoutInflater getLayoutInflater();
 		jint getMaxWidth();
-		jstring getTextForImeAction(jint arg0);
+		JString getTextForImeAction(jint arg0);
 		android::app::Dialog getWindow();
 		void hideStatusIcon();
 		void hideWindow();
@@ -120,7 +120,7 @@ namespace android::inputmethodservice
 		jboolean isFullscreenMode();
 		jboolean isInputViewShown();
 		jboolean isShowInputRequested();
-		void onAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
+		void onAppPrivateCommand(JString arg0, android::os::Bundle arg1);
 		void onBindInput();
 		void onComputeInsets(android::inputmethodservice::InputMethodService_Insets arg0);
 		void onConfigurationChanged(android::content::res::Configuration arg0);
@@ -132,7 +132,7 @@ namespace android::inputmethodservice
 		android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
 		android::view::View onCreateInputView();
 		void onDestroy();
-		void onDisplayCompletions(jarray arg0);
+		void onDisplayCompletions(JArray arg0);
 		jboolean onEvaluateFullscreenMode();
 		jboolean onEvaluateInputViewShown();
 		jboolean onExtractTextContextMenuItem(jint arg0);
@@ -179,8 +179,8 @@ namespace android::inputmethodservice
 		jboolean shouldOfferSwitchingToNextInputMethod();
 		void showStatusIcon(jint arg0);
 		void showWindow(jboolean arg0);
-		void switchInputMethod(jstring arg0);
-		void switchInputMethod(jstring arg0, android::view::inputmethod::InputMethodSubtype arg1);
+		void switchInputMethod(JString arg0);
+		void switchInputMethod(JString arg0, android::view::inputmethod::InputMethodSubtype arg1);
 		jboolean switchToNextInputMethod(jboolean arg0);
 		jboolean switchToPreviousInputMethod();
 		void updateFullscreenMode();

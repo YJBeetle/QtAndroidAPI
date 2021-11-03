@@ -6,6 +6,8 @@ namespace java::io
 {
 	class ObjectStreamClass;
 }
+class JObject;
+class JString;
 
 namespace java::io
 {
@@ -22,16 +24,16 @@ namespace java::io
 		ObjectInputStream_GetField();
 		
 		// Methods
-		jboolean defaulted(jstring arg0);
-		jboolean get(jstring arg0, jboolean arg1);
-		jbyte get(jstring arg0, jbyte arg1);
-		jchar get(jstring arg0, jchar arg1);
-		jdouble get(jstring arg0, jdouble arg1);
-		jfloat get(jstring arg0, jfloat arg1);
-		jint get(jstring arg0, jint arg1);
-		jobject get(jstring arg0, jobject arg1);
-		jlong get(jstring arg0, jlong arg1);
-		jshort get(jstring arg0, jshort arg1);
+		jboolean defaulted(JString arg0);
+		jboolean get(JString arg0, jboolean arg1);
+		jbyte get(JString arg0, jbyte arg1);
+		jchar get(JString arg0, jchar arg1);
+		jdouble get(JString arg0, jdouble arg1);
+		jfloat get(JString arg0, jfloat arg1);
+		jint get(JString arg0, jint arg1);
+		JObject get(JString arg0, JObject arg1);
+		jlong get(JString arg0, jlong arg1);
+		jshort get(JString arg0, jshort arg1);
 		java::io::ObjectStreamClass getObjectStreamClass();
 	};
 } // namespace java::io

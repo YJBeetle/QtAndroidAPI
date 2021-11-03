@@ -2,6 +2,8 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
+class JIntArray;
 namespace android::graphics
 {
 	class Rect;
@@ -23,14 +25,14 @@ namespace android::graphics
 		YuvImage(QAndroidJniObject obj);
 		
 		// Constructors
-		YuvImage(jbyteArray arg0, jint arg1, jint arg2, jint arg3, jintArray arg4);
+		YuvImage(JByteArray arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4);
 		
 		// Methods
 		jboolean compressToJpeg(android::graphics::Rect arg0, jint arg1, java::io::OutputStream arg2);
 		jint getHeight();
-		jintArray getStrides();
+		JIntArray getStrides();
 		jint getWidth();
-		jbyteArray getYuvData();
+		JByteArray getYuvData();
 		jint getYuvFormat();
 	};
 } // namespace android::graphics

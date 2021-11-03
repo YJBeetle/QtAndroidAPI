@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/lang/Exception.hpp"
 #include "./AccountsException.hpp"
 
+class JString;
+class JThrowable;
 
 namespace android::accounts
 {
@@ -18,9 +18,9 @@ namespace android::accounts
 		
 		// Constructors
 		NetworkErrorException();
-		NetworkErrorException(jstring arg0);
-		NetworkErrorException(jthrowable arg0);
-		NetworkErrorException(jstring arg0, jthrowable arg1);
+		NetworkErrorException(JString arg0);
+		NetworkErrorException(JThrowable arg0);
+		NetworkErrorException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

@@ -1,3 +1,5 @@
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
 #include "./MessageDigest.hpp"
 #include "./Provider.hpp"
 #include "./SecureRandomSpi.hpp"
@@ -16,71 +18,71 @@ namespace java::security
 			"java.security.SecureRandom",
 			"()V"
 		) {}
-	SecureRandom::SecureRandom(jbyteArray arg0)
+	SecureRandom::SecureRandom(JByteArray arg0)
 		: java::util::Random(
 			"java.security.SecureRandom",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	java::security::SecureRandom SecureRandom::getInstance(jstring arg0)
+	java::security::SecureRandom SecureRandom::getInstance(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.SecureRandom",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/SecureRandom;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, jstring arg1)
+	java::security::SecureRandom SecureRandom::getInstance(JString arg0, JString arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.SecureRandom",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/SecureRandom;",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
-	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, java::security::Provider arg1)
+	java::security::SecureRandom SecureRandom::getInstance(JString arg0, java::security::Provider arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.SecureRandom",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/SecureRandom;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, JObject arg1)
+	java::security::SecureRandom SecureRandom::getInstance(JString arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.SecureRandom",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/SecureRandomParameters;)Ljava/security/SecureRandom;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, JObject arg1, jstring arg2)
+	java::security::SecureRandom SecureRandom::getInstance(JString arg0, JObject arg1, JString arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.SecureRandom",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/SecureRandomParameters;Ljava/lang/String;)Ljava/security/SecureRandom;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
-			arg2
+			arg2.object<jstring>()
 		);
 	}
-	java::security::SecureRandom SecureRandom::getInstance(jstring arg0, JObject arg1, java::security::Provider arg2)
+	java::security::SecureRandom SecureRandom::getInstance(JString arg0, JObject arg1, java::security::Provider arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.SecureRandom",
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/SecureRandomParameters;Ljava/security/Provider;)Ljava/security/SecureRandom;",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);
@@ -93,29 +95,29 @@ namespace java::security
 			"()Ljava/security/SecureRandom;"
 		);
 	}
-	jbyteArray SecureRandom::getSeed(jint arg0)
+	JByteArray SecureRandom::getSeed(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.SecureRandom",
 			"getSeed",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
-	jbyteArray SecureRandom::generateSeed(jint arg0)
+	JByteArray SecureRandom::generateSeed(jint arg0)
 	{
 		return callObjectMethod(
 			"generateSeed",
 			"(I)[B",
 			arg0
-		).object<jbyteArray>();
+		);
 	}
-	jstring SecureRandom::getAlgorithm()
+	JString SecureRandom::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	JObject SecureRandom::getParameters()
 	{
@@ -131,20 +133,20 @@ namespace java::security
 			"()Ljava/security/Provider;"
 		);
 	}
-	void SecureRandom::nextBytes(jbyteArray arg0)
+	void SecureRandom::nextBytes(JByteArray arg0)
 	{
 		callMethod<void>(
 			"nextBytes",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
-	void SecureRandom::nextBytes(jbyteArray arg0, JObject arg1)
+	void SecureRandom::nextBytes(JByteArray arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"nextBytes",
 			"([BLjava/security/SecureRandomParameters;)V",
-			arg0,
+			arg0.object<jbyteArray>(),
 			arg1.object()
 		);
 	}
@@ -163,12 +165,12 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void SecureRandom::setSeed(jbyteArray arg0)
+	void SecureRandom::setSeed(JByteArray arg0)
 	{
 		callMethod<void>(
 			"setSeed",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		);
 	}
 	void SecureRandom::setSeed(jlong arg0)
@@ -179,12 +181,12 @@ namespace java::security
 			arg0
 		);
 	}
-	jstring SecureRandom::toString()
+	JString SecureRandom::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security
 

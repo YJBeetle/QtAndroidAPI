@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../../os/Parcel.hpp"
 #include "./SigningInfo.hpp"
 
@@ -37,19 +38,19 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	jarray SigningInfo::getApkContentsSigners()
+	JArray SigningInfo::getApkContentsSigners()
 	{
 		return callObjectMethod(
 			"getApkContentsSigners",
 			"()[Landroid/content/pm/Signature;"
-		).object<jarray>();
+		);
 	}
-	jarray SigningInfo::getSigningCertificateHistory()
+	JArray SigningInfo::getSigningCertificateHistory()
 	{
 		return callObjectMethod(
 			"getSigningCertificateHistory",
 			"()[Landroid/content/pm/Signature;"
-		).object<jarray>();
+		);
 	}
 	jboolean SigningInfo::hasMultipleSigners()
 	{

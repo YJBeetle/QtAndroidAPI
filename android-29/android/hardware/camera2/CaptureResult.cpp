@@ -1,5 +1,6 @@
 #include "./CaptureRequest.hpp"
 #include "./CaptureResult_Key.hpp"
+#include "../../../JObject.hpp"
 #include "./CaptureResult.hpp"
 
 namespace android::hardware::camera2
@@ -668,13 +669,13 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	jobject CaptureResult::get(android::hardware::camera2::CaptureResult_Key arg0)
+	JObject CaptureResult::get(android::hardware::camera2::CaptureResult_Key arg0)
 	{
 		return callObjectMethod(
 			"get",
 			"(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;",
 			arg0.object()
-		).object<jobject>();
+		);
 	}
 	jlong CaptureResult::getFrameNumber()
 	{

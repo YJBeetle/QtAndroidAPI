@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JByteArray;
+class JString;
 
 namespace java::security::cert
 {
@@ -15,13 +17,13 @@ namespace java::security::cert
 		PolicyQualifierInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		PolicyQualifierInfo(jbyteArray arg0);
+		PolicyQualifierInfo(JByteArray arg0);
 		
 		// Methods
-		jbyteArray getEncoded();
-		jbyteArray getPolicyQualifier();
-		jstring getPolicyQualifierId();
-		jstring toString();
+		JByteArray getEncoded();
+		JByteArray getPolicyQualifier();
+		JString getPolicyQualifierId();
+		JString toString();
 	};
 } // namespace java::security::cert
 

@@ -1,4 +1,5 @@
 #include "./Parcel.hpp"
+#include "../../JString.hpp"
 #include "./PatternMatcher.hpp"
 
 namespace android::os
@@ -51,11 +52,11 @@ namespace android::os
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	PatternMatcher::PatternMatcher(jstring arg0, jint arg1)
+	PatternMatcher::PatternMatcher(JString arg0, jint arg1)
 		: JObject(
 			"android.os.PatternMatcher",
 			"(Ljava/lang/String;I)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	
@@ -67,12 +68,12 @@ namespace android::os
 			"()I"
 		);
 	}
-	jstring PatternMatcher::getPath()
+	JString PatternMatcher::getPath()
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint PatternMatcher::getType()
 	{
@@ -81,20 +82,20 @@ namespace android::os
 			"()I"
 		);
 	}
-	jboolean PatternMatcher::match(jstring arg0)
+	jboolean PatternMatcher::match(JString arg0)
 	{
 		return callMethod<jboolean>(
 			"match",
 			"(Ljava/lang/String;)Z",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jstring PatternMatcher::toString()
+	JString PatternMatcher::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	void PatternMatcher::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{

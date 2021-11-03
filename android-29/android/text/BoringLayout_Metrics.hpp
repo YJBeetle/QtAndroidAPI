@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../graphics/Paint_FontMetricsInt.hpp"
 
+class JString;
 
 namespace android::text
 {
@@ -20,7 +20,7 @@ namespace android::text
 		BoringLayout_Metrics();
 		
 		// Methods
-		jstring toString();
+		JString toString();
 	};
 } // namespace android::text
 

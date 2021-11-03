@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./DrawFilter.hpp"
-
 
 namespace android::graphics
 {

@@ -1,5 +1,8 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../io/File.hpp"
 #include "../../io/InputStream.hpp"
+#include "../../../JString.hpp"
 #include "../../lang/ThreadLocal.hpp"
 #include "../../lang/ref/SoftReference.hpp"
 #include "../../net/URL.hpp"
@@ -12,13 +15,13 @@
 namespace java::util::jar
 {
 	// Fields
-	jstring JarFile::MANIFEST_NAME()
+	JString JarFile::MANIFEST_NAME()
 	{
 		return getStaticObjectField(
 			"java.util.jar.JarFile",
 			"MANIFEST_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward
@@ -31,11 +34,11 @@ namespace java::util::jar
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
-	JarFile::JarFile(jstring arg0)
+	JarFile::JarFile(JString arg0)
 		: java::util::zip::ZipFile(
 			"java.util.jar.JarFile",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	JarFile::JarFile(java::io::File arg0, jboolean arg1)
 		: java::util::zip::ZipFile(
@@ -44,11 +47,11 @@ namespace java::util::jar
 			arg0.object(),
 			arg1
 		) {}
-	JarFile::JarFile(jstring arg0, jboolean arg1)
+	JarFile::JarFile(JString arg0, jboolean arg1)
 		: java::util::zip::ZipFile(
 			"java.util.jar.JarFile",
 			"(Ljava/lang/String;Z)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1
 		) {}
 	JarFile::JarFile(java::io::File arg0, jboolean arg1, jint arg2)
@@ -93,12 +96,12 @@ namespace java::util::jar
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	java::util::zip::ZipEntry JarFile::getEntry(jstring arg0)
+	java::util::zip::ZipEntry JarFile::getEntry(JString arg0)
 	{
 		return callObjectMethod(
 			"getEntry",
 			"(Ljava/lang/String;)Ljava/util/zip/ZipEntry;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::io::InputStream JarFile::getInputStream(java::util::zip::ZipEntry arg0)
@@ -109,12 +112,12 @@ namespace java::util::jar
 			arg0.object()
 		);
 	}
-	java::util::jar::JarEntry JarFile::getJarEntry(jstring arg0)
+	java::util::jar::JarEntry JarFile::getJarEntry(JString arg0)
 	{
 		return callObjectMethod(
 			"getJarEntry",
 			"(Ljava/lang/String;)Ljava/util/jar/JarEntry;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 	java::util::jar::Manifest JarFile::getManifest()

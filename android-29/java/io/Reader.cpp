@@ -1,4 +1,6 @@
+#include "../../JCharArray.hpp"
 #include "./Writer.hpp"
+#include "../../JObject.hpp"
 #include "../nio/CharBuffer.hpp"
 #include "./Reader.hpp"
 
@@ -49,12 +51,12 @@ namespace java::io
 			"()I"
 		);
 	}
-	jint Reader::read(jcharArray arg0)
+	jint Reader::read(JCharArray arg0)
 	{
 		return callMethod<jint>(
 			"read",
 			"([C)I",
-			arg0
+			arg0.object<jcharArray>()
 		);
 	}
 	jint Reader::read(java::nio::CharBuffer arg0)
@@ -65,12 +67,12 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	jint Reader::read(jcharArray arg0, jint arg1, jint arg2)
+	jint Reader::read(JCharArray arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"read",
 			"([CII)I",
-			arg0,
+			arg0.object<jcharArray>(),
 			arg1,
 			arg2
 		);

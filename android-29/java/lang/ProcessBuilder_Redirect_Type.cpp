@@ -1,3 +1,5 @@
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
 #include "./ProcessBuilder_Redirect_Type.hpp"
 
 namespace java::lang
@@ -50,22 +52,22 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::valueOf(jstring arg0)
+	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect_Type::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect$Type",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/ProcessBuilder$Redirect$Type;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray ProcessBuilder_Redirect_Type::values()
+	JArray ProcessBuilder_Redirect_Type::values()
 	{
 		return callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect$Type",
 			"values",
 			"()[Ljava/lang/ProcessBuilder$Redirect$Type;"
-		).object<jarray>();
+		);
 	}
 } // namespace java::lang
 

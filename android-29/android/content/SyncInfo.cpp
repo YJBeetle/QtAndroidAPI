@@ -1,5 +1,6 @@
 #include "../accounts/Account.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./SyncInfo.hpp"
 
 namespace android::content
@@ -12,12 +13,12 @@ namespace android::content
 			"Landroid/accounts/Account;"
 		);
 	}
-	jstring SyncInfo::authority()
+	JString SyncInfo::authority()
 	{
 		return getObjectField(
 			"authority",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jlong SyncInfo::startTime()
 	{

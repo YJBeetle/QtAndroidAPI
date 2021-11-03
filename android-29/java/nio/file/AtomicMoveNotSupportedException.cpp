@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./AtomicMoveNotSupportedException.hpp"
 
 namespace java::nio::file
@@ -8,13 +9,13 @@ namespace java::nio::file
 	AtomicMoveNotSupportedException::AtomicMoveNotSupportedException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
 	
 	// Constructors
-	AtomicMoveNotSupportedException::AtomicMoveNotSupportedException(jstring arg0, jstring arg1, jstring arg2)
+	AtomicMoveNotSupportedException::AtomicMoveNotSupportedException(JString arg0, JString arg1, JString arg2)
 		: java::nio::file::FileSystemException(
 			"java.nio.file.AtomicMoveNotSupportedException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods

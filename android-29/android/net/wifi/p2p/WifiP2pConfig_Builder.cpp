@@ -1,5 +1,6 @@
 #include "../../MacAddress.hpp"
 #include "./WifiP2pConfig.hpp"
+#include "../../../../JString.hpp"
 #include "./WifiP2pConfig_Builder.hpp"
 
 namespace android::net::wifi::p2p
@@ -56,20 +57,20 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setNetworkName(jstring arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setNetworkName(JString arg0)
 	{
 		return callObjectMethod(
 			"setNetworkName",
 			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pConfig$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setPassphrase(jstring arg0)
+	android::net::wifi::p2p::WifiP2pConfig_Builder WifiP2pConfig_Builder::setPassphrase(JString arg0)
 	{
 		return callObjectMethod(
 			"setPassphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pConfig$Builder;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
 } // namespace android::net::wifi::p2p

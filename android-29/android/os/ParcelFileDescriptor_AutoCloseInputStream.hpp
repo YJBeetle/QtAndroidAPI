@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../../java/io/InputStream.hpp"
 #include "../../java/io/FileInputStream.hpp"
 
+class JByteArray;
 namespace android::os
 {
 	class ParcelFileDescriptor;
@@ -26,8 +25,8 @@ namespace android::os
 		// Methods
 		void close();
 		jint read();
-		jint read(jbyteArray arg0);
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace android::os
 

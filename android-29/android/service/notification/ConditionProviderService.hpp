@@ -1,10 +1,8 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+class JArray;
 namespace android::content
 {
 	class ComponentName;
@@ -21,6 +19,7 @@ namespace android::service::notification
 {
 	class Condition;
 }
+class JString;
 
 namespace android::service::notification
 {
@@ -28,11 +27,11 @@ namespace android::service::notification
 	{
 	public:
 		// Fields
-		static jstring EXTRA_RULE_ID();
-		static jstring META_DATA_CONFIGURATION_ACTIVITY();
-		static jstring META_DATA_RULE_INSTANCE_LIMIT();
-		static jstring META_DATA_RULE_TYPE();
-		static jstring SERVICE_INTERFACE();
+		static JString EXTRA_RULE_ID();
+		static JString META_DATA_CONFIGURATION_ACTIVITY();
+		static JString META_DATA_RULE_INSTANCE_LIMIT();
+		static JString META_DATA_RULE_TYPE();
+		static JString SERVICE_INTERFACE();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConditionProviderService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
@@ -44,7 +43,7 @@ namespace android::service::notification
 		// Methods
 		static void requestRebind(android::content::ComponentName arg0);
 		void notifyCondition(android::service::notification::Condition arg0);
-		void notifyConditions(jarray arg0);
+		void notifyConditions(JArray arg0);
 		JObject onBind(android::content::Intent arg0);
 		void onConnected();
 		void onRequestConditions(jint arg0);

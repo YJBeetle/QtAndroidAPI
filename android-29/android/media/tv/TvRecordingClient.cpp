@@ -3,6 +3,7 @@
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Handler.hpp"
+#include "../../../JString.hpp"
 #include "./TvRecordingClient.hpp"
 
 namespace android::media::tv
@@ -13,12 +14,12 @@ namespace android::media::tv
 	TvRecordingClient::TvRecordingClient(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TvRecordingClient::TvRecordingClient(android::content::Context arg0, jstring arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3)
+	TvRecordingClient::TvRecordingClient(android::content::Context arg0, JString arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3)
 		: JObject(
 			"android.media.tv.TvRecordingClient",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/media/tv/TvRecordingClient$RecordingCallback;Landroid/os/Handler;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object(),
 			arg3.object()
 		) {}
@@ -31,12 +32,12 @@ namespace android::media::tv
 			"()V"
 		);
 	}
-	void TvRecordingClient::sendAppPrivateCommand(jstring arg0, android::os::Bundle arg1)
+	void TvRecordingClient::sendAppPrivateCommand(JString arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"sendAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
@@ -55,21 +56,21 @@ namespace android::media::tv
 			"()V"
 		);
 	}
-	void TvRecordingClient::tune(jstring arg0, android::net::Uri arg1)
+	void TvRecordingClient::tune(JString arg0, android::net::Uri arg1)
 	{
 		callMethod<void>(
 			"tune",
 			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		);
 	}
-	void TvRecordingClient::tune(jstring arg0, android::net::Uri arg1, android::os::Bundle arg2)
+	void TvRecordingClient::tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"tune",
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object(),
 			arg2.object()
 		);

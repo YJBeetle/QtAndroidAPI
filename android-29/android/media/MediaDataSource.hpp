@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JByteArray;
 
 namespace android::media
 {
@@ -19,7 +20,7 @@ namespace android::media
 		
 		// Methods
 		jlong getSize();
-		jint readAt(jlong arg0, jbyteArray arg1, jint arg2, jint arg3);
+		jint readAt(jlong arg0, JByteArray arg1, jint arg2, jint arg3);
 	};
 } // namespace android::media
 

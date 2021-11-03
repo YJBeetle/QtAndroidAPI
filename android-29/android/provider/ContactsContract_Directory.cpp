@@ -1,49 +1,50 @@
 #include "../content/ContentResolver.hpp"
 #include "../net/Uri.hpp"
+#include "../../JString.hpp"
 #include "./ContactsContract_Directory.hpp"
 
 namespace android::provider
 {
 	// Fields
-	jstring ContactsContract_Directory::ACCOUNT_NAME()
+	JString ContactsContract_Directory::ACCOUNT_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"ACCOUNT_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_Directory::ACCOUNT_TYPE()
+	JString ContactsContract_Directory::ACCOUNT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"ACCOUNT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_Directory::CALLER_PACKAGE_PARAM_KEY()
+	JString ContactsContract_Directory::CALLER_PACKAGE_PARAM_KEY()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"CALLER_PACKAGE_PARAM_KEY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_Directory::CONTENT_ITEM_TYPE()
+	JString ContactsContract_Directory::CONTENT_ITEM_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"CONTENT_ITEM_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_Directory::CONTENT_TYPE()
+	JString ContactsContract_Directory::CONTENT_TYPE()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"CONTENT_TYPE",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_Directory::CONTENT_URI()
 	{
@@ -60,21 +61,21 @@ namespace android::provider
 			"DEFAULT"
 		);
 	}
-	jstring ContactsContract_Directory::DIRECTORY_AUTHORITY()
+	JString ContactsContract_Directory::DIRECTORY_AUTHORITY()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"DIRECTORY_AUTHORITY",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_Directory::DISPLAY_NAME()
+	JString ContactsContract_Directory::DISPLAY_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"DISPLAY_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::net::Uri ContactsContract_Directory::ENTERPRISE_CONTENT_URI()
 	{
@@ -98,13 +99,13 @@ namespace android::provider
 			"ENTERPRISE_LOCAL_INVISIBLE"
 		);
 	}
-	jstring ContactsContract_Directory::EXPORT_SUPPORT()
+	JString ContactsContract_Directory::EXPORT_SUPPORT()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"EXPORT_SUPPORT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContactsContract_Directory::EXPORT_SUPPORT_ANY_ACCOUNT()
 	{
@@ -134,21 +135,21 @@ namespace android::provider
 			"LOCAL_INVISIBLE"
 		);
 	}
-	jstring ContactsContract_Directory::PACKAGE_NAME()
+	JString ContactsContract_Directory::PACKAGE_NAME()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"PACKAGE_NAME",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring ContactsContract_Directory::PHOTO_SUPPORT()
+	JString ContactsContract_Directory::PHOTO_SUPPORT()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"PHOTO_SUPPORT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContactsContract_Directory::PHOTO_SUPPORT_FULL()
 	{
@@ -178,13 +179,13 @@ namespace android::provider
 			"PHOTO_SUPPORT_THUMBNAIL_ONLY"
 		);
 	}
-	jstring ContactsContract_Directory::SHORTCUT_SUPPORT()
+	JString ContactsContract_Directory::SHORTCUT_SUPPORT()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"SHORTCUT_SUPPORT",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint ContactsContract_Directory::SHORTCUT_SUPPORT_DATA_ITEMS_ONLY()
 	{
@@ -207,13 +208,13 @@ namespace android::provider
 			"SHORTCUT_SUPPORT_NONE"
 		);
 	}
-	jstring ContactsContract_Directory::TYPE_RESOURCE_ID()
+	JString ContactsContract_Directory::TYPE_RESOURCE_ID()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$Directory",
 			"TYPE_RESOURCE_ID",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	
 	// QAndroidJniObject forward

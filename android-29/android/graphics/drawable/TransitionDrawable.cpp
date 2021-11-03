@@ -1,3 +1,4 @@
+#include "../../../JArray.hpp"
 #include "../Canvas.hpp"
 #include "./TransitionDrawable.hpp"
 
@@ -9,11 +10,11 @@ namespace android::graphics::drawable
 	TransitionDrawable::TransitionDrawable(QAndroidJniObject obj) : android::graphics::drawable::LayerDrawable(obj) {}
 	
 	// Constructors
-	TransitionDrawable::TransitionDrawable(jarray arg0)
+	TransitionDrawable::TransitionDrawable(JArray arg0)
 		: android::graphics::drawable::LayerDrawable(
 			"android.graphics.drawable.TransitionDrawable",
 			"([Landroid/graphics/drawable/Drawable;)V",
-			arg0
+			arg0.object<jarray>()
 		) {}
 	
 	// Methods

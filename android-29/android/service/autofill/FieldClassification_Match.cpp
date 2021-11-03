@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./FieldClassification_Match.hpp"
 
 namespace android::service::autofill
@@ -10,12 +11,12 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	jstring FieldClassification_Match::getCategoryId()
+	JString FieldClassification_Match::getCategoryId()
 	{
 		return callObjectMethod(
 			"getCategoryId",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jfloat FieldClassification_Match::getScore()
 	{
@@ -24,12 +25,12 @@ namespace android::service::autofill
 			"()F"
 		);
 	}
-	jstring FieldClassification_Match::toString()
+	JString FieldClassification_Match::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::service::autofill
 

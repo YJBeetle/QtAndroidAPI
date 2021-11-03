@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace javax::xml::datatype
 {
@@ -17,9 +18,9 @@ namespace javax::xml::datatype
 		
 		// Constructors
 		DatatypeConfigurationException();
-		DatatypeConfigurationException(jstring arg0);
-		DatatypeConfigurationException(jthrowable arg0);
-		DatatypeConfigurationException(jstring arg0, jthrowable arg1);
+		DatatypeConfigurationException(JString arg0);
+		DatatypeConfigurationException(JThrowable arg0);
+		DatatypeConfigurationException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

@@ -6,6 +6,9 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
+class JString;
+class JObject;
+class JString;
 namespace java::time
 {
 	class Clock;
@@ -84,15 +87,14 @@ namespace java::time
 		static java::time::LocalDateTime of(jint arg0, java::time::Month arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		static java::time::LocalDateTime ofEpochSecond(jlong arg0, jint arg1, java::time::ZoneOffset arg2);
 		static java::time::LocalDateTime ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
-		static java::time::LocalDateTime parse(jstring arg0);
-		static java::time::LocalDateTime parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
+		static java::time::LocalDateTime parse(JString arg0);
+		static java::time::LocalDateTime parse(JString arg0, java::time::format::DateTimeFormatter arg1);
 		JObject adjustInto(JObject arg0);
 		java::time::OffsetDateTime atOffset(java::time::ZoneOffset arg0);
 		java::time::ZonedDateTime atZone(java::time::ZoneId arg0);
-		jint compareTo(jobject arg0);
 		jint compareTo(JObject arg0);
-		jboolean equals(jobject arg0);
-		jstring format(java::time::format::DateTimeFormatter arg0);
+		jboolean equals(JObject arg0);
+		JString format(java::time::format::DateTimeFormatter arg0);
 		jint get(JObject arg0);
 		jint getDayOfMonth();
 		java::time::DayOfWeek getDayOfWeek();
@@ -130,11 +132,11 @@ namespace java::time
 		java::time::LocalDateTime plusSeconds(jlong arg0);
 		java::time::LocalDateTime plusWeeks(jlong arg0);
 		java::time::LocalDateTime plusYears(jlong arg0);
-		jobject query(JObject arg0);
+		JObject query(JObject arg0);
 		java::time::temporal::ValueRange range(JObject arg0);
 		java::time::LocalDate toLocalDate();
 		java::time::LocalTime toLocalTime();
-		jstring toString();
+		JString toString();
 		java::time::LocalDateTime truncatedTo(JObject arg0);
 		jlong until(JObject arg0, JObject arg1);
 		java::time::LocalDateTime with(JObject arg0);

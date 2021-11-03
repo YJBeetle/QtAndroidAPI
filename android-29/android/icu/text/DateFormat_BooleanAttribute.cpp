@@ -1,3 +1,5 @@
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
 #include "./DateFormat_BooleanAttribute.hpp"
 
 namespace android::icu::text
@@ -42,22 +44,22 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::valueOf(jstring arg0)
+	android::icu::text::DateFormat_BooleanAttribute DateFormat_BooleanAttribute::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat$BooleanAttribute",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/DateFormat$BooleanAttribute;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jarray DateFormat_BooleanAttribute::values()
+	JArray DateFormat_BooleanAttribute::values()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.DateFormat$BooleanAttribute",
 			"values",
 			"()[Landroid/icu/text/DateFormat$BooleanAttribute;"
-		).object<jarray>();
+		);
 	}
 } // namespace android::icu::text
 

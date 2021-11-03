@@ -1,3 +1,4 @@
+#include "../../../JObject.hpp"
 #include "./ValueIterator_Element.hpp"
 
 namespace android::icu::util
@@ -9,12 +10,12 @@ namespace android::icu::util
 			"integer"
 		);
 	}
-	jobject ValueIterator_Element::value()
+	JObject ValueIterator_Element::value()
 	{
 		return getObjectField(
 			"value",
 			"Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	
 	// QAndroidJniObject forward

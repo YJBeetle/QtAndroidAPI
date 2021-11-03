@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JClass;
+class JObject;
+class JString;
 namespace java::lang
 {
 	class StringBuilder;
@@ -23,19 +26,19 @@ namespace java::io
 		ObjectStreamField(QAndroidJniObject obj);
 		
 		// Constructors
-		ObjectStreamField(jstring arg0, jclass arg1);
-		ObjectStreamField(jstring arg0, jclass arg1, jboolean arg2);
+		ObjectStreamField(JString arg0, JClass arg1);
+		ObjectStreamField(JString arg0, JClass arg1, jboolean arg2);
 		
 		// Methods
-		jint compareTo(jobject arg0);
-		jstring getName();
+		jint compareTo(JObject arg0);
+		JString getName();
 		jint getOffset();
-		jclass getType();
+		JClass getType();
 		jchar getTypeCode();
-		jstring getTypeString();
+		JString getTypeString();
 		jboolean isPrimitive();
 		jboolean isUnshared();
-		jstring toString();
+		JString toString();
 	};
 } // namespace java::io
 

@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../java/lang/ClassLoader.hpp"
 
 namespace java::io
 {
 	class File;
 }
+class JClass;
 namespace java::lang
 {
 	class ClassLoader;
@@ -15,6 +15,7 @@ namespace java::lang
 {
 	class Package;
 }
+class JString;
 namespace java::net
 {
 	class URL;
@@ -32,11 +33,11 @@ namespace dalvik::system
 		BaseDexClassLoader(QAndroidJniObject obj);
 		
 		// Constructors
-		BaseDexClassLoader(jstring arg0, java::io::File arg1, jstring arg2, java::lang::ClassLoader arg3);
+		BaseDexClassLoader(JString arg0, java::io::File arg1, JString arg2, java::lang::ClassLoader arg3);
 		
 		// Methods
-		jstring findLibrary(jstring arg0);
-		jstring toString();
+		JString findLibrary(JString arg0);
+		JString toString();
 	};
 } // namespace dalvik::system
 

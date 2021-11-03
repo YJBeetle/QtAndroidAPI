@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../../JObject.hpp"
 #include "../../lang/Exception.hpp"
 
+class JString;
+class JThrowable;
 
 namespace java::util::concurrent
 {
@@ -16,8 +17,8 @@ namespace java::util::concurrent
 		ExecutionException(QAndroidJniObject obj);
 		
 		// Constructors
-		ExecutionException(jthrowable arg0);
-		ExecutionException(jstring arg0, jthrowable arg1);
+		ExecutionException(JThrowable arg0);
+		ExecutionException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

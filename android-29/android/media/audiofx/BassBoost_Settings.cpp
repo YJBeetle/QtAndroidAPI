@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./BassBoost_Settings.hpp"
 
 namespace android::media::audiofx
@@ -19,20 +20,20 @@ namespace android::media::audiofx
 			"android.media.audiofx.BassBoost$Settings",
 			"()V"
 		) {}
-	BassBoost_Settings::BassBoost_Settings(jstring arg0)
+	BassBoost_Settings::BassBoost_Settings(JString arg0)
 		: JObject(
 			"android.media.audiofx.BassBoost$Settings",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
 	
 	// Methods
-	jstring BassBoost_Settings::toString()
+	JString BassBoost_Settings::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::media::audiofx
 

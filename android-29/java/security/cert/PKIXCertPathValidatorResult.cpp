@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./TrustAnchor.hpp"
 #include "./PKIXCertPathValidatorResult.hpp"
 
@@ -19,12 +21,12 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	jobject PKIXCertPathValidatorResult::clone()
+	JObject PKIXCertPathValidatorResult::clone()
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	JObject PKIXCertPathValidatorResult::getPolicyTree()
 	{
@@ -47,12 +49,12 @@ namespace java::security::cert
 			"()Ljava/security/cert/TrustAnchor;"
 		);
 	}
-	jstring PKIXCertPathValidatorResult::toString()
+	JString PKIXCertPathValidatorResult::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::cert
 

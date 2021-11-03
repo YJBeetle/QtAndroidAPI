@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-
 namespace android::system
 {
 	class Int64Ref : public JObject

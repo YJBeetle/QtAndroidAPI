@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JIntArray;
+class JArray;
 namespace android::os::health
 {
 	class HealthStats;
@@ -23,7 +25,7 @@ namespace android::os::health
 		// Methods
 		android::os::health::HealthStats takeMyUidSnapshot();
 		android::os::health::HealthStats takeUidSnapshot(jint arg0);
-		jarray takeUidSnapshots(jintArray arg0);
+		JArray takeUidSnapshots(JIntArray arg0);
 	};
 } // namespace android::os::health
 

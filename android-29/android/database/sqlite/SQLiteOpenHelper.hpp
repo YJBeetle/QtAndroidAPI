@@ -14,6 +14,7 @@ namespace android::database::sqlite
 {
 	class SQLiteDatabase_OpenParams;
 }
+class JString;
 
 namespace android::database::sqlite
 {
@@ -27,13 +28,13 @@ namespace android::database::sqlite
 		SQLiteOpenHelper(QAndroidJniObject obj);
 		
 		// Constructors
-		SQLiteOpenHelper(android::content::Context arg0, jstring arg1, JObject arg2, jint arg3);
-		SQLiteOpenHelper(android::content::Context arg0, jstring arg1, jint arg2, android::database::sqlite::SQLiteDatabase_OpenParams arg3);
-		SQLiteOpenHelper(android::content::Context arg0, jstring arg1, JObject arg2, jint arg3, JObject arg4);
+		SQLiteOpenHelper(android::content::Context arg0, JString arg1, JObject arg2, jint arg3);
+		SQLiteOpenHelper(android::content::Context arg0, JString arg1, jint arg2, android::database::sqlite::SQLiteDatabase_OpenParams arg3);
+		SQLiteOpenHelper(android::content::Context arg0, JString arg1, JObject arg2, jint arg3, JObject arg4);
 		
 		// Methods
 		void close();
-		jstring getDatabaseName();
+		JString getDatabaseName();
 		android::database::sqlite::SQLiteDatabase getReadableDatabase();
 		android::database::sqlite::SQLiteDatabase getWritableDatabase();
 		void onConfigure(android::database::sqlite::SQLiteDatabase arg0);

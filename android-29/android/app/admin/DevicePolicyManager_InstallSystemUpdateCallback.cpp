@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./DevicePolicyManager_InstallSystemUpdateCallback.hpp"
 
 namespace android::app::admin
@@ -50,13 +51,13 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	void DevicePolicyManager_InstallSystemUpdateCallback::onInstallUpdateError(jint arg0, jstring arg1)
+	void DevicePolicyManager_InstallSystemUpdateCallback::onInstallUpdateError(jint arg0, JString arg1)
 	{
 		callMethod<void>(
 			"onInstallUpdateError",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			arg1.object<jstring>()
 		);
 	}
 } // namespace android::app::admin

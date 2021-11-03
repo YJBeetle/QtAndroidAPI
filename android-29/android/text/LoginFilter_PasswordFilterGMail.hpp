@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./LoginFilter.hpp"
-
 
 namespace android::text
 {

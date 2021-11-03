@@ -1,4 +1,5 @@
 #include "./Intent.hpp"
+#include "../../JObject.hpp"
 #include "./Intent_FilterComparison.hpp"
 
 namespace android::content
@@ -17,12 +18,12 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jboolean Intent_FilterComparison::equals(jobject arg0)
+	jboolean Intent_FilterComparison::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	android::content::Intent Intent_FilterComparison::getIntent()

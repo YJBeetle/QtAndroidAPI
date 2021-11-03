@@ -1,3 +1,4 @@
+#include "../../../JString.hpp"
 #include "./IntFlagMapping.hpp"
 
 namespace android::view::inspector
@@ -15,14 +16,14 @@ namespace android::view::inspector
 		) {}
 	
 	// Methods
-	void IntFlagMapping::add(jint arg0, jint arg1, jstring arg2)
+	void IntFlagMapping::add(jint arg0, jint arg1, JString arg2)
 	{
 		callMethod<void>(
 			"add",
 			"(IILjava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2
+			arg2.object<jstring>()
 		);
 	}
 	JObject IntFlagMapping::get(jint arg0)

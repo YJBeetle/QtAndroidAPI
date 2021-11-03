@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JThrowable;
 
 namespace android::telephony
 {
@@ -21,7 +22,7 @@ namespace android::telephony
 		
 		// Methods
 		void onCellInfo(JObject arg0);
-		void onError(jint arg0, jthrowable arg1);
+		void onError(jint arg0, JThrowable arg1);
 	};
 } // namespace android::telephony
 

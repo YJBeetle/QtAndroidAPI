@@ -3,6 +3,7 @@
 #include "./RemoteInput.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../os/Bundle.hpp"
+#include "../../JString.hpp"
 #include "./Notification_Action_Builder.hpp"
 
 namespace android::app
@@ -19,20 +20,20 @@ namespace android::app
 			"(Landroid/app/Notification$Action;)V",
 			arg0.object()
 		) {}
-	Notification_Action_Builder::Notification_Action_Builder(android::graphics::drawable::Icon arg0, jstring arg1, android::app::PendingIntent arg2)
+	Notification_Action_Builder::Notification_Action_Builder(android::graphics::drawable::Icon arg0, JString arg1, android::app::PendingIntent arg2)
 		: JObject(
 			"android.app.Notification$Action$Builder",
 			"(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
-	Notification_Action_Builder::Notification_Action_Builder(jint arg0, jstring arg1, android::app::PendingIntent arg2)
+	Notification_Action_Builder::Notification_Action_Builder(jint arg0, JString arg1, android::app::PendingIntent arg2)
 		: JObject(
 			"android.app.Notification$Action$Builder",
 			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0,
-			arg1,
+			arg1.object<jstring>(),
 			arg2.object()
 		) {}
 	

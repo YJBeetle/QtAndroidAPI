@@ -1,3 +1,5 @@
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
 #include "./EncodedKeySpec.hpp"
 
 namespace java::security::spec
@@ -8,34 +10,34 @@ namespace java::security::spec
 	EncodedKeySpec::EncodedKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	EncodedKeySpec::EncodedKeySpec(jbyteArray arg0)
+	EncodedKeySpec::EncodedKeySpec(JByteArray arg0)
 		: JObject(
 			"java.security.spec.EncodedKeySpec",
 			"([B)V",
-			arg0
+			arg0.object<jbyteArray>()
 		) {}
 	
 	// Methods
-	jstring EncodedKeySpec::getAlgorithm()
+	JString EncodedKeySpec::getAlgorithm()
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jbyteArray EncodedKeySpec::getEncoded()
+	JByteArray EncodedKeySpec::getEncoded()
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
-		).object<jbyteArray>();
+		);
 	}
-	jstring EncodedKeySpec::getFormat()
+	JString EncodedKeySpec::getFormat()
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace java::security::spec
 

@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
-#include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
 
+class JString;
 
 namespace java::util
 {
@@ -18,8 +17,8 @@ namespace java::util
 		
 		// Constructors
 		IllformedLocaleException();
-		IllformedLocaleException(jstring arg0);
-		IllformedLocaleException(jstring arg0, jint arg1);
+		IllformedLocaleException(JString arg0);
+		IllformedLocaleException(JString arg0, jint arg1);
 		
 		// Methods
 		jint getErrorIndex();

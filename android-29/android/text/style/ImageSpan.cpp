@@ -2,6 +2,7 @@
 #include "../../graphics/Bitmap.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../net/Uri.hpp"
+#include "../../../JString.hpp"
 #include "./ImageSpan.hpp"
 
 namespace android::text::style
@@ -59,12 +60,12 @@ namespace android::text::style
 			arg0.object(),
 			arg1
 		) {}
-	ImageSpan::ImageSpan(android::graphics::drawable::Drawable arg0, jstring arg1)
+	ImageSpan::ImageSpan(android::graphics::drawable::Drawable arg0, JString arg1)
 		: android::text::style::DynamicDrawableSpan(
 			"android.text.style.ImageSpan",
 			"(Landroid/graphics/drawable/Drawable;Ljava/lang/String;)V",
 			arg0.object(),
-			arg1
+			arg1.object<jstring>()
 		) {}
 	ImageSpan::ImageSpan(android::content::Context arg0, android::graphics::Bitmap arg1, jint arg2)
 		: android::text::style::DynamicDrawableSpan(
@@ -90,12 +91,12 @@ namespace android::text::style
 			arg1,
 			arg2
 		) {}
-	ImageSpan::ImageSpan(android::graphics::drawable::Drawable arg0, jstring arg1, jint arg2)
+	ImageSpan::ImageSpan(android::graphics::drawable::Drawable arg0, JString arg1, jint arg2)
 		: android::text::style::DynamicDrawableSpan(
 			"android.text.style.ImageSpan",
 			"(Landroid/graphics/drawable/Drawable;Ljava/lang/String;I)V",
 			arg0.object(),
-			arg1,
+			arg1.object<jstring>(),
 			arg2
 		) {}
 	
@@ -107,12 +108,12 @@ namespace android::text::style
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jstring ImageSpan::getSource()
+	JString ImageSpan::getSource()
 	{
 		return callObjectMethod(
 			"getSource",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace android::text::style
 

@@ -2,6 +2,8 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
+class JString;
 namespace java::nio
 {
 	class ByteBuffer;
@@ -49,8 +51,8 @@ namespace java::nio::charset
 		jfloat maxCharsPerByte();
 		java::nio::charset::CharsetDecoder onMalformedInput(java::nio::charset::CodingErrorAction arg0);
 		java::nio::charset::CharsetDecoder onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0);
-		java::nio::charset::CharsetDecoder replaceWith(jstring arg0);
-		jstring replacement();
+		java::nio::charset::CharsetDecoder replaceWith(JString arg0);
+		JString replacement();
 		java::nio::charset::CharsetDecoder reset();
 		java::nio::charset::CodingErrorAction unmappableCharacterAction();
 	};

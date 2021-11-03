@@ -1,3 +1,4 @@
+#include "../../JString.hpp"
 #include "./MtpObjectInfo.hpp"
 
 namespace android::mtp
@@ -101,19 +102,19 @@ namespace android::mtp
 			"()J"
 		);
 	}
-	jstring MtpObjectInfo::getKeywords()
+	JString MtpObjectInfo::getKeywords()
 	{
 		return callObjectMethod(
 			"getKeywords",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring MtpObjectInfo::getName()
+	JString MtpObjectInfo::getName()
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint MtpObjectInfo::getObjectHandle()
 	{

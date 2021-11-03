@@ -2,6 +2,9 @@
 
 #include "../../JObject.hpp"
 
+class JObjectArray;
+class JObject;
+class JString;
 
 namespace android::util
 {
@@ -21,29 +24,29 @@ namespace android::util
 		ArraySet(JObject arg0);
 		
 		// Methods
-		jboolean add(jobject arg0);
+		jboolean add(JObject arg0);
 		jboolean addAll(JObject arg0);
 		void addAll(android::util::ArraySet arg0);
 		void clear();
-		jboolean contains(jobject arg0);
+		jboolean contains(JObject arg0);
 		jboolean containsAll(JObject arg0);
 		void ensureCapacity(jint arg0);
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jint indexOf(jobject arg0);
+		jint indexOf(JObject arg0);
 		jboolean isEmpty();
 		JObject iterator();
-		jboolean remove(jobject arg0);
+		jboolean remove(JObject arg0);
 		jboolean removeAll(android::util::ArraySet arg0);
 		jboolean removeAll(JObject arg0);
-		jobject removeAt(jint arg0);
+		JObject removeAt(jint arg0);
 		jboolean removeIf(JObject arg0);
 		jboolean retainAll(JObject arg0);
 		jint size();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
-		jstring toString();
-		jobject valueAt(jint arg0);
+		JObjectArray toArray();
+		JObjectArray toArray(JObjectArray arg0);
+		JString toString();
+		JObject valueAt(jint arg0);
 	};
 } // namespace android::util
 

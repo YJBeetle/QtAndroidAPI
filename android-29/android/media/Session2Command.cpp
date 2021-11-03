@@ -1,5 +1,7 @@
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
 #include "./Session2Command.hpp"
 
 namespace android::media
@@ -31,11 +33,11 @@ namespace android::media
 			"(I)V",
 			arg0
 		) {}
-	Session2Command::Session2Command(jstring arg0, android::os::Bundle arg1)
+	Session2Command::Session2Command(JString arg0, android::os::Bundle arg1)
 		: JObject(
 			"android.media.Session2Command",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
+			arg0.object<jstring>(),
 			arg1.object()
 		) {}
 	
@@ -47,12 +49,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean Session2Command::equals(jobject arg0)
+	jboolean Session2Command::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 	jint Session2Command::getCommandCode()
@@ -62,12 +64,12 @@ namespace android::media
 			"()I"
 		);
 	}
-	jstring Session2Command::getCustomAction()
+	JString Session2Command::getCustomAction()
 	{
 		return callObjectMethod(
 			"getCustomAction",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle Session2Command::getCustomExtras()
 	{

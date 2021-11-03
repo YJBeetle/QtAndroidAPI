@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./TypeConverter.hpp"
 
+class JClass;
+class JObject;
 
 namespace android::animation
 {
@@ -16,10 +17,10 @@ namespace android::animation
 		BidirectionalTypeConverter(QAndroidJniObject obj);
 		
 		// Constructors
-		BidirectionalTypeConverter(jclass arg0, jclass arg1);
+		BidirectionalTypeConverter(JClass arg0, JClass arg1);
 		
 		// Methods
-		jobject convertBack(jobject arg0);
+		JObject convertBack(JObject arg0);
 		android::animation::BidirectionalTypeConverter invert();
 	};
 } // namespace android::animation

@@ -18,6 +18,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::service::notification
 {
@@ -28,7 +30,7 @@ namespace android::service::notification
 		static JObject CREATOR();
 		static jint FLAG_RELEVANT_ALWAYS();
 		static jint FLAG_RELEVANT_NOW();
-		static jstring SCHEME();
+		static JString SCHEME();
 		static jint STATE_ERROR();
 		static jint STATE_FALSE();
 		static jint STATE_TRUE();
@@ -36,10 +38,10 @@ namespace android::service::notification
 		jint flags();
 		jint icon();
 		android::net::Uri id();
-		jstring line1();
-		jstring line2();
+		JString line1();
+		JString line2();
 		jint state();
-		jstring summary();
+		JString summary();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Condition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -47,19 +49,19 @@ namespace android::service::notification
 		
 		// Constructors
 		Condition(android::os::Parcel arg0);
-		Condition(android::net::Uri arg0, jstring arg1, jint arg2);
-		Condition(android::net::Uri arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4, jint arg5, jint arg6);
+		Condition(android::net::Uri arg0, JString arg1, jint arg2);
+		Condition(android::net::Uri arg0, JString arg1, JString arg2, JString arg3, jint arg4, jint arg5, jint arg6);
 		
 		// Methods
-		static jboolean isValidId(android::net::Uri arg0, jstring arg1);
+		static jboolean isValidId(android::net::Uri arg0, JString arg1);
 		static android::net::Uri_Builder newId(android::content::Context arg0);
-		static jstring relevanceToString(jint arg0);
-		static jstring stateToString(jint arg0);
+		static JString relevanceToString(jint arg0);
+		static JString stateToString(jint arg0);
 		android::service::notification::Condition copy();
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::notification

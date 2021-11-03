@@ -22,6 +22,7 @@ namespace android::graphics
 {
 	class Rect;
 }
+class JString;
 
 namespace android::graphics
 {
@@ -35,7 +36,7 @@ namespace android::graphics
 		RenderNode(QAndroidJniObject obj);
 		
 		// Constructors
-		RenderNode(jstring arg0);
+		RenderNode(JString arg0);
 		
 		// Methods
 		android::graphics::RecordingCanvas beginRecording();

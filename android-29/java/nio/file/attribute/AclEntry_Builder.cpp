@@ -1,3 +1,6 @@
+#include "../../../../JArray.hpp"
+#include "../../../../JArray.hpp"
+#include "../../../../JClass.hpp"
 #include "./AclEntry.hpp"
 #include "./AclEntryType.hpp"
 #include "./AclEntry_Builder.hpp"
@@ -19,12 +22,12 @@ namespace java::nio::file::attribute
 			"()Ljava/nio/file/attribute/AclEntry;"
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setFlags(jarray arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setFlags(JArray arg0)
 	{
 		return callObjectMethod(
 			"setFlags",
 			"([Ljava/nio/file/attribute/AclEntryFlag;)Ljava/nio/file/attribute/AclEntry$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setFlags(JObject arg0)
@@ -35,12 +38,12 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPermissions(jarray arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPermissions(JArray arg0)
 	{
 		return callObjectMethod(
 			"setPermissions",
 			"([Ljava/nio/file/attribute/AclEntryPermission;)Ljava/nio/file/attribute/AclEntry$Builder;",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPermissions(JObject arg0)

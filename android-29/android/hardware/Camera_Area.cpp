@@ -1,4 +1,5 @@
 #include "../graphics/Rect.hpp"
+#include "../../JObject.hpp"
 #include "./Camera_Area.hpp"
 
 namespace android::hardware
@@ -31,12 +32,12 @@ namespace android::hardware
 		) {}
 	
 	// Methods
-	jboolean Camera_Area::equals(jobject arg0)
+	jboolean Camera_Area::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
 } // namespace android::hardware

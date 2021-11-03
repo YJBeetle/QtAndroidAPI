@@ -1,3 +1,6 @@
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JBooleanArray.hpp"
 #include "../../java/nio/Buffer.hpp"
 #include "../../java/nio/FloatBuffer.hpp"
 #include "../../java/nio/IntBuffer.hpp"
@@ -916,14 +919,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glClipPlanef(jint arg0, jfloatArray arg1, jint arg2)
+	void GLES11::glClipPlanef(jint arg0, JFloatArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glClipPlanef",
 			"(I[FI)V",
 			arg0,
-			arg1,
+			arg1.object<jfloatArray>(),
 			arg2
 		);
 	}
@@ -937,14 +940,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glClipPlanex(jint arg0, jintArray arg1, jint arg2)
+	void GLES11::glClipPlanex(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glClipPlanex",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -982,14 +985,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glDeleteBuffers(jint arg0, jintArray arg1, jint arg2)
+	void GLES11::glDeleteBuffers(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glDeleteBuffers",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -1015,14 +1018,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glGenBuffers(jint arg0, jintArray arg1, jint arg2)
+	void GLES11::glGenBuffers(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glGenBuffers",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -1036,14 +1039,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2)
+	void GLES11::glGetBooleanv(jint arg0, JBooleanArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glGetBooleanv",
 			"(I[ZI)V",
 			arg0,
-			arg1,
+			arg1.object<jbooleanArray>(),
 			arg2
 		);
 	}
@@ -1058,7 +1061,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetBufferParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES11::glGetBufferParameteriv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1066,7 +1069,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1080,14 +1083,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glGetClipPlanef(jint arg0, jfloatArray arg1, jint arg2)
+	void GLES11::glGetClipPlanef(jint arg0, JFloatArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glGetClipPlanef",
 			"(I[FI)V",
 			arg0,
-			arg1,
+			arg1.object<jfloatArray>(),
 			arg2
 		);
 	}
@@ -1101,14 +1104,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glGetClipPlanex(jint arg0, jintArray arg1, jint arg2)
+	void GLES11::glGetClipPlanex(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glGetClipPlanex",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -1122,14 +1125,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glGetFixedv(jint arg0, jintArray arg1, jint arg2)
+	void GLES11::glGetFixedv(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glGetFixedv",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -1143,14 +1146,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glGetFloatv(jint arg0, jfloatArray arg1, jint arg2)
+	void GLES11::glGetFloatv(jint arg0, JFloatArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glGetFloatv",
 			"(I[FI)V",
 			arg0,
-			arg1,
+			arg1.object<jfloatArray>(),
 			arg2
 		);
 	}
@@ -1165,7 +1168,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetLightfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	void GLES11::glGetLightfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1173,7 +1176,7 @@ namespace android::opengl
 			"(II[FI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3
 		);
 	}
@@ -1188,7 +1191,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetLightxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES11::glGetLightxv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1196,7 +1199,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1211,7 +1214,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetMaterialfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	void GLES11::glGetMaterialfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1219,7 +1222,7 @@ namespace android::opengl
 			"(II[FI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3
 		);
 	}
@@ -1234,7 +1237,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES11::glGetMaterialxv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1242,7 +1245,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1257,7 +1260,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetTexEnvfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	void GLES11::glGetTexEnvfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1265,7 +1268,7 @@ namespace android::opengl
 			"(II[FI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3
 		);
 	}
@@ -1280,7 +1283,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES11::glGetTexEnviv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1288,7 +1291,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1303,7 +1306,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetTexEnvxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES11::glGetTexEnvxv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1311,7 +1314,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1326,7 +1329,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	void GLES11::glGetTexParameterfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1334,7 +1337,7 @@ namespace android::opengl
 			"(II[FI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3
 		);
 	}
@@ -1349,7 +1352,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES11::glGetTexParameteriv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1357,7 +1360,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1372,7 +1375,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glGetTexParameterxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES11::glGetTexParameterxv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1380,7 +1383,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1442,14 +1445,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glPointParameterfv(jint arg0, jfloatArray arg1, jint arg2)
+	void GLES11::glPointParameterfv(jint arg0, JFloatArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glPointParameterfv",
 			"(I[FI)V",
 			arg0,
-			arg1,
+			arg1.object<jfloatArray>(),
 			arg2
 		);
 	}
@@ -1473,14 +1476,14 @@ namespace android::opengl
 			arg1.object()
 		);
 	}
-	void GLES11::glPointParameterxv(jint arg0, jintArray arg1, jint arg2)
+	void GLES11::glPointParameterxv(jint arg0, JIntArray arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
 			"glPointParameterxv",
 			"(I[II)V",
 			arg0,
-			arg1,
+			arg1.object<jintArray>(),
 			arg2
 		);
 	}
@@ -1529,7 +1532,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES11::glTexEnviv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1537,7 +1540,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1552,7 +1555,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	void GLES11::glTexParameterfv(jint arg0, jint arg1, JFloatArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1560,7 +1563,7 @@ namespace android::opengl
 			"(II[FI)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jfloatArray>(),
 			arg3
 		);
 	}
@@ -1586,7 +1589,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES11::glTexParameteriv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1594,7 +1597,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}
@@ -1609,7 +1612,7 @@ namespace android::opengl
 			arg2.object()
 		);
 	}
-	void GLES11::glTexParameterxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES11::glTexParameterxv(jint arg0, jint arg1, JIntArray arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.opengl.GLES11",
@@ -1617,7 +1620,7 @@ namespace android::opengl
 			"(II[II)V",
 			arg0,
 			arg1,
-			arg2,
+			arg2.object<jintArray>(),
 			arg3
 		);
 	}

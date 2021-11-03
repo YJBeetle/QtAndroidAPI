@@ -5,6 +5,7 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
+#include "../../JString.hpp"
 #include "./GridView.hpp"
 
 namespace android::widget
@@ -82,12 +83,12 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jstring GridView::getAccessibilityClassName()
+	JString GridView::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject GridView::getAdapter()
 	{

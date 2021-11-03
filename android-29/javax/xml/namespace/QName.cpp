@@ -1,3 +1,5 @@
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
 #include "./QName.hpp"
 
 namespace javax::xml::_namespace
@@ -8,66 +10,66 @@ namespace javax::xml::_namespace
 	QName::QName(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	QName::QName(jstring arg0)
+	QName::QName(JString arg0)
 		: JObject(
 			"javax.xml.namespace.QName",
 			"(Ljava/lang/String;)V",
-			arg0
+			arg0.object<jstring>()
 		) {}
-	QName::QName(jstring arg0, jstring arg1)
+	QName::QName(JString arg0, JString arg1)
 		: JObject(
 			"javax.xml.namespace.QName",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		) {}
-	QName::QName(jstring arg0, jstring arg1, jstring arg2)
+	QName::QName(JString arg0, JString arg1, JString arg2)
 		: JObject(
 			"javax.xml.namespace.QName",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
 		) {}
 	
 	// Methods
-	javax::xml::_namespace::QName QName::valueOf(jstring arg0)
+	javax::xml::_namespace::QName QName::valueOf(JString arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.xml.namespace.QName",
 			"valueOf",
 			"(Ljava/lang/String;)Ljavax/xml/namespace/QName;",
-			arg0
+			arg0.object<jstring>()
 		);
 	}
-	jboolean QName::equals(jobject arg0)
+	jboolean QName::equals(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	jstring QName::getLocalPart()
+	JString QName::getLocalPart()
 	{
 		return callObjectMethod(
 			"getLocalPart",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring QName::getNamespaceURI()
+	JString QName::getNamespaceURI()
 	{
 		return callObjectMethod(
 			"getNamespaceURI",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
-	jstring QName::getPrefix()
+	JString QName::getPrefix()
 	{
 		return callObjectMethod(
 			"getPrefix",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	jint QName::hashCode()
 	{
@@ -76,12 +78,12 @@ namespace javax::xml::_namespace
 			"()I"
 		);
 	}
-	jstring QName::toString()
+	JString QName::toString()
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 } // namespace javax::xml::_namespace
 

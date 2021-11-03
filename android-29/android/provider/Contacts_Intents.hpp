@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JString;
 
 namespace android::provider
 {
@@ -9,13 +10,13 @@ namespace android::provider
 	{
 	public:
 		// Fields
-		static jstring ATTACH_IMAGE();
-		static jstring EXTRA_CREATE_DESCRIPTION();
-		static jstring EXTRA_FORCE_CREATE();
-		static jstring SEARCH_SUGGESTION_CLICKED();
-		static jstring SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED();
-		static jstring SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED();
-		static jstring SHOW_OR_CREATE_CONTACT();
+		static JString ATTACH_IMAGE();
+		static JString EXTRA_CREATE_DESCRIPTION();
+		static JString EXTRA_FORCE_CREATE();
+		static JString SEARCH_SUGGESTION_CLICKED();
+		static JString SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED();
+		static JString SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED();
+		static JString SHOW_OR_CREATE_CONTACT();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Contacts_Intents(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}

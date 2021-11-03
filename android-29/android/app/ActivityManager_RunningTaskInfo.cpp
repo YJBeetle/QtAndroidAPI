@@ -1,5 +1,6 @@
 #include "../graphics/Bitmap.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
 #include "./ActivityManager_RunningTaskInfo.hpp"
 
 namespace android::app
@@ -13,12 +14,12 @@ namespace android::app
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring ActivityManager_RunningTaskInfo::description()
+	JString ActivityManager_RunningTaskInfo::description()
 	{
 		return getObjectField(
 			"description",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint ActivityManager_RunningTaskInfo::id()
 	{

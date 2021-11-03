@@ -1,3 +1,4 @@
+#include "../../../JByteArray.hpp"
 #include "./AdvertiseData.hpp"
 #include "../../os/ParcelUuid.hpp"
 #include "./AdvertiseData_Builder.hpp"
@@ -17,22 +18,22 @@ namespace android::bluetooth::le
 		) {}
 	
 	// Methods
-	android::bluetooth::le::AdvertiseData_Builder AdvertiseData_Builder::addManufacturerData(jint arg0, jbyteArray arg1)
+	android::bluetooth::le::AdvertiseData_Builder AdvertiseData_Builder::addManufacturerData(jint arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"addManufacturerData",
 			"(I[B)Landroid/bluetooth/le/AdvertiseData$Builder;",
 			arg0,
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
-	android::bluetooth::le::AdvertiseData_Builder AdvertiseData_Builder::addServiceData(android::os::ParcelUuid arg0, jbyteArray arg1)
+	android::bluetooth::le::AdvertiseData_Builder AdvertiseData_Builder::addServiceData(android::os::ParcelUuid arg0, JByteArray arg1)
 	{
 		return callObjectMethod(
 			"addServiceData",
 			"(Landroid/os/ParcelUuid;[B)Landroid/bluetooth/le/AdvertiseData$Builder;",
 			arg0.object(),
-			arg1
+			arg1.object<jbyteArray>()
 		);
 	}
 	android::bluetooth::le::AdvertiseData_Builder AdvertiseData_Builder::addServiceUuid(android::os::ParcelUuid arg0)

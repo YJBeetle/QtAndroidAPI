@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JIntArray;
 namespace android::bluetooth
 {
 	class BluetoothDevice;
@@ -10,6 +11,7 @@ namespace android::content
 {
 	class Context;
 }
+class JString;
 
 namespace android::bluetooth
 {
@@ -17,7 +19,7 @@ namespace android::bluetooth
 	{
 	public:
 		// Fields
-		static jstring ACTION_CONNECTION_STATE_CHANGED();
+		static JString ACTION_CONNECTION_STATE_CHANGED();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothHearingAid(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,7 +30,7 @@ namespace android::bluetooth
 		// Methods
 		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		JObject getDevicesMatchingConnectionStates(jintArray arg0);
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
 	};
 } // namespace android::bluetooth
 

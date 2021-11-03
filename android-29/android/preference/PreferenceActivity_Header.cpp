@@ -2,6 +2,8 @@
 #include "../content/res/Resources.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
 #include "./PreferenceActivity_Header.hpp"
 
 namespace android::preference
@@ -15,12 +17,12 @@ namespace android::preference
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
-	jstring PreferenceActivity_Header::breadCrumbShortTitle()
+	JString PreferenceActivity_Header::breadCrumbShortTitle()
 	{
 		return getObjectField(
 			"breadCrumbShortTitle",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint PreferenceActivity_Header::breadCrumbShortTitleRes()
 	{
@@ -28,12 +30,12 @@ namespace android::preference
 			"breadCrumbShortTitleRes"
 		);
 	}
-	jstring PreferenceActivity_Header::breadCrumbTitle()
+	JString PreferenceActivity_Header::breadCrumbTitle()
 	{
 		return getObjectField(
 			"breadCrumbTitle",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint PreferenceActivity_Header::breadCrumbTitleRes()
 	{
@@ -48,12 +50,12 @@ namespace android::preference
 			"Landroid/os/Bundle;"
 		);
 	}
-	jstring PreferenceActivity_Header::fragment()
+	JString PreferenceActivity_Header::fragment()
 	{
 		return getObjectField(
 			"fragment",
 			"Ljava/lang/String;"
-		).object<jstring>();
+		);
 	}
 	android::os::Bundle PreferenceActivity_Header::fragmentArguments()
 	{
@@ -81,12 +83,12 @@ namespace android::preference
 			"Landroid/content/Intent;"
 		);
 	}
-	jstring PreferenceActivity_Header::summary()
+	JString PreferenceActivity_Header::summary()
 	{
 		return getObjectField(
 			"summary",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint PreferenceActivity_Header::summaryRes()
 	{
@@ -94,12 +96,12 @@ namespace android::preference
 			"summaryRes"
 		);
 	}
-	jstring PreferenceActivity_Header::title()
+	JString PreferenceActivity_Header::title()
 	{
 		return getObjectField(
 			"title",
 			"Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	jint PreferenceActivity_Header::titleRes()
 	{
@@ -126,37 +128,37 @@ namespace android::preference
 			"()I"
 		);
 	}
-	jstring PreferenceActivity_Header::getBreadCrumbShortTitle(android::content::res::Resources arg0)
+	JString PreferenceActivity_Header::getBreadCrumbShortTitle(android::content::res::Resources arg0)
 	{
 		return callObjectMethod(
 			"getBreadCrumbShortTitle",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring PreferenceActivity_Header::getBreadCrumbTitle(android::content::res::Resources arg0)
+	JString PreferenceActivity_Header::getBreadCrumbTitle(android::content::res::Resources arg0)
 	{
 		return callObjectMethod(
 			"getBreadCrumbTitle",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring PreferenceActivity_Header::getSummary(android::content::res::Resources arg0)
+	JString PreferenceActivity_Header::getSummary(android::content::res::Resources arg0)
 	{
 		return callObjectMethod(
 			"getSummary",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
-	jstring PreferenceActivity_Header::getTitle(android::content::res::Resources arg0)
+	JString PreferenceActivity_Header::getTitle(android::content::res::Resources arg0)
 	{
 		return callObjectMethod(
 			"getTitle",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
 			arg0.object()
-		).object<jstring>();
+		);
 	}
 	void PreferenceActivity_Header::readFromParcel(android::os::Parcel arg0)
 	{

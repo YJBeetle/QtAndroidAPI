@@ -6,6 +6,8 @@ namespace android::os
 {
 	class Parcel;
 }
+class JObject;
+class JString;
 
 namespace android::service::notification
 {
@@ -31,7 +33,7 @@ namespace android::service::notification
 		
 		// Methods
 		jint describeContents();
-		jboolean equals(jobject arg0);
+		jboolean equals(JObject arg0);
 		jint getPriorityCallSenders();
 		jint getPriorityCategoryAlarms();
 		jint getPriorityCategoryCalls();
@@ -50,7 +52,7 @@ namespace android::service::notification
 		jint getVisualEffectPeek();
 		jint getVisualEffectStatusBar();
 		jint hashCode();
-		jstring toString();
+		JString toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::notification

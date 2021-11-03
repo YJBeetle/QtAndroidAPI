@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "./InputStream.hpp"
 
+class JByteArray;
 namespace java::io
 {
 	class OutputStream;
@@ -20,8 +20,8 @@ namespace java::io
 		ByteArrayInputStream(QAndroidJniObject obj);
 		
 		// Constructors
-		ByteArrayInputStream(jbyteArray arg0);
-		ByteArrayInputStream(jbyteArray arg0, jint arg1, jint arg2);
+		ByteArrayInputStream(JByteArray arg0);
+		ByteArrayInputStream(JByteArray arg0, jint arg1, jint arg2);
 		
 		// Methods
 		jint available();
@@ -29,9 +29,9 @@ namespace java::io
 		void mark(jint arg0);
 		jboolean markSupported();
 		jint read();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jbyteArray readAllBytes();
-		jint readNBytes(jbyteArray arg0, jint arg1, jint arg2);
+		jint read(JByteArray arg0, jint arg1, jint arg2);
+		JByteArray readAllBytes();
+		jint readNBytes(JByteArray arg0, jint arg1, jint arg2);
 		void reset();
 		jlong skip(jlong arg0);
 		jlong transferTo(java::io::OutputStream arg0);

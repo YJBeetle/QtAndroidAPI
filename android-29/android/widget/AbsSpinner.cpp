@@ -3,6 +3,7 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/autofill/AutofillValue.hpp"
+#include "../../JString.hpp"
 #include "./AbsSpinner.hpp"
 
 namespace android::widget
@@ -53,12 +54,12 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring AbsSpinner::getAccessibilityClassName()
+	JString AbsSpinner::getAccessibilityClassName()
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		);
 	}
 	JObject AbsSpinner::getAdapter()
 	{

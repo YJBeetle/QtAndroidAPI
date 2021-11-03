@@ -6,6 +6,7 @@ namespace android::os
 {
 	class PowerManager_WakeLock;
 }
+class JString;
 
 namespace android::os
 {
@@ -14,8 +15,8 @@ namespace android::os
 	public:
 		// Fields
 		static jint ACQUIRE_CAUSES_WAKEUP();
-		static jstring ACTION_DEVICE_IDLE_MODE_CHANGED();
-		static jstring ACTION_POWER_SAVE_MODE_CHANGED();
+		static JString ACTION_DEVICE_IDLE_MODE_CHANGED();
+		static JString ACTION_POWER_SAVE_MODE_CHANGED();
 		static jint FULL_WAKE_LOCK();
 		static jint LOCATION_MODE_ALL_DISABLED_WHEN_SCREEN_OFF();
 		static jint LOCATION_MODE_FOREGROUND_ONLY();
@@ -48,14 +49,14 @@ namespace android::os
 		jint getCurrentThermalStatus();
 		jint getLocationPowerSaveMode();
 		jboolean isDeviceIdleMode();
-		jboolean isIgnoringBatteryOptimizations(jstring arg0);
+		jboolean isIgnoringBatteryOptimizations(JString arg0);
 		jboolean isInteractive();
 		jboolean isPowerSaveMode();
 		jboolean isScreenOn();
 		jboolean isSustainedPerformanceModeSupported();
 		jboolean isWakeLockLevelSupported(jint arg0);
-		android::os::PowerManager_WakeLock newWakeLock(jint arg0, jstring arg1);
-		void reboot(jstring arg0);
+		android::os::PowerManager_WakeLock newWakeLock(jint arg0, JString arg1);
+		void reboot(JString arg0);
 		void removeThermalStatusListener(JObject arg0);
 	};
 } // namespace android::os

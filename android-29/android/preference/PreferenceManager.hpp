@@ -14,6 +14,8 @@ namespace android::preference
 {
 	class PreferenceScreen;
 }
+class JString;
+class JString;
 
 namespace android::preference
 {
@@ -21,8 +23,8 @@ namespace android::preference
 	{
 	public:
 		// Fields
-		static jstring KEY_HAS_SET_DEFAULT_VALUES();
-		static jstring METADATA_KEY_PREFERENCES();
+		static JString KEY_HAS_SET_DEFAULT_VALUES();
+		static JString METADATA_KEY_PREFERENCES();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PreferenceManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -32,20 +34,20 @@ namespace android::preference
 		
 		// Methods
 		static JObject getDefaultSharedPreferences(android::content::Context arg0);
-		static jstring getDefaultSharedPreferencesName(android::content::Context arg0);
+		static JString getDefaultSharedPreferencesName(android::content::Context arg0);
 		static void setDefaultValues(android::content::Context arg0, jint arg1, jboolean arg2);
-		static void setDefaultValues(android::content::Context arg0, jstring arg1, jint arg2, jint arg3, jboolean arg4);
+		static void setDefaultValues(android::content::Context arg0, JString arg1, jint arg2, jint arg3, jboolean arg4);
 		android::preference::PreferenceScreen createPreferenceScreen(android::content::Context arg0);
-		android::preference::Preference findPreference(jstring arg0);
+		android::preference::Preference findPreference(JString arg0);
 		JObject getPreferenceDataStore();
 		JObject getSharedPreferences();
 		jint getSharedPreferencesMode();
-		jstring getSharedPreferencesName();
+		JString getSharedPreferencesName();
 		jboolean isStorageDefault();
 		jboolean isStorageDeviceProtected();
 		void setPreferenceDataStore(JObject arg0);
 		void setSharedPreferencesMode(jint arg0);
-		void setSharedPreferencesName(jstring arg0);
+		void setSharedPreferencesName(JString arg0);
 		void setStorageDefault();
 		void setStorageDeviceProtected();
 	};

@@ -1,5 +1,9 @@
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JThrowable.hpp"
 #include "../../lang/ref/ReferenceQueue.hpp"
 #include "./ForkJoinPool.hpp"
 #include "./TimeUnit.hpp"
@@ -30,14 +34,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::ForkJoinTask ForkJoinTask::adapt(JObject arg0, jobject arg1)
+	java::util::concurrent::ForkJoinTask ForkJoinTask::adapt(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
 			"adapt",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/ForkJoinTask;",
 			arg0.object(),
-			arg1
+			arg1.object<jobject>()
 		);
 	}
 	java::util::concurrent::ForkJoinPool ForkJoinTask::getPool()
@@ -89,13 +93,13 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void ForkJoinTask::invokeAll(jarray arg0)
+	void ForkJoinTask::invokeAll(JArray arg0)
 	{
 		callStaticMethod<void>(
 			"java.util.concurrent.ForkJoinTask",
 			"invokeAll",
 			"([Ljava/util/concurrent/ForkJoinTask;)V",
-			arg0
+			arg0.object<jarray>()
 		);
 	}
 	void ForkJoinTask::invokeAll(java::util::concurrent::ForkJoinTask arg0, java::util::concurrent::ForkJoinTask arg1)
@@ -125,20 +129,20 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void ForkJoinTask::complete(jobject arg0)
+	void ForkJoinTask::complete(JObject arg0)
 	{
 		callMethod<void>(
 			"complete",
 			"(Ljava/lang/Object;)V",
-			arg0
+			arg0.object<jobject>()
 		);
 	}
-	void ForkJoinTask::completeExceptionally(jthrowable arg0)
+	void ForkJoinTask::completeExceptionally(JThrowable arg0)
 	{
 		callMethod<void>(
 			"completeExceptionally",
 			"(Ljava/lang/Throwable;)V",
-			arg0
+			arg0.object<jthrowable>()
 		);
 	}
 	java::util::concurrent::ForkJoinTask ForkJoinTask::fork()
@@ -148,28 +152,28 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ForkJoinTask;"
 		);
 	}
-	jobject ForkJoinTask::get()
+	JObject ForkJoinTask::get()
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject ForkJoinTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject ForkJoinTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
 		return callObjectMethod(
 			"get",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
 			arg1.object()
-		).object<jobject>();
+		);
 	}
-	jthrowable ForkJoinTask::getException()
+	JThrowable ForkJoinTask::getException()
 	{
 		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
+		);
 	}
 	jshort ForkJoinTask::getForkJoinTaskTag()
 	{
@@ -178,19 +182,19 @@ namespace java::util::concurrent
 			"()S"
 		);
 	}
-	jobject ForkJoinTask::getRawResult()
+	JObject ForkJoinTask::getRawResult()
 	{
 		return callObjectMethod(
 			"getRawResult",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
-	jobject ForkJoinTask::invoke()
+	JObject ForkJoinTask::invoke()
 	{
 		return callObjectMethod(
 			"invoke",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	jboolean ForkJoinTask::isCancelled()
 	{
@@ -220,12 +224,12 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	jobject ForkJoinTask::join()
+	JObject ForkJoinTask::join()
 	{
 		return callObjectMethod(
 			"join",
 			"()Ljava/lang/Object;"
-		).object<jobject>();
+		);
 	}
 	void ForkJoinTask::quietlyComplete()
 	{
